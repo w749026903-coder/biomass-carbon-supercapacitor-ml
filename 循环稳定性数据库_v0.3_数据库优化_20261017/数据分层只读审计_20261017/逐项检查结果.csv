@@ -1,0 +1,50 @@
+﻿name,passed,detail
+sqlite_integrity,True,
+foreign_key_integrity,True,
+endpoint_join_no_loss_or_expansion,True,
+material_test_paper_identity_consistent,True,
+same_material_characterization_not_cross_paired,True,
+r3_to_r4_unchanged:raw_records,True,
+r3_to_r4_unchanged:papers,True,
+r3_to_r4_unchanged:materials,True,
+r3_to_r4_unchanged:cycling_tests,True,
+r3_to_r4_unchanged:cycling_endpoints,True,
+r3_to_r4_unchanged:endpoint_features,True,
+r3_to_r4_unchanged:admissions,True,
+r3_to_r4_unchanged:review_events,True,
+r3_to_r4_unchanged:field_evidence,True,
+r3_to_r4_unchanged:validation_group_assignments,True,
+r3_to_r4_unchanged:source_files,True,
+profile_grain_unique,True,
+combined_view_is_profile_memberships_not_endpoint_grain,True,Intentional nested memberships; never stack as independent rows.
+no_3E_CV_capacity_or_hybrid_in_any_profile,True,
+all_profiles_molar_concentration_only,True,
+area_current_not_treated_as_mass_current,True,
+no_censored_or_missing_target_admitted,True,
+approximate_only_in_declared_extension,True,
+residue_only_in_declared_extensions,True,
+canonical_current_not_fabricated,True,
+strict_current_subset_still_zero,True,
+primary_view_fixed_profile,True,
+same_paper_not_split_between_groups,True,
+folds_cover_each_endpoint_once:literature_core7_exact,True,
+folds_cover_each_endpoint_once:literature_residue_sensitivity,True,
+folds_cover_each_endpoint_once:literature_approx_sensitivity,True,
+no_source_material_test_cross_fold_leakage,True,[]
+field_ledger_matches_effective_values,False,"{'fields': 21, 'endpoints': 10}"
+new_profile_legacy_blockers_have_structured_per_blocker_dispositions,False,Legacy blockers retained; r4 narrative reviews exist but no per-profile per-blocker mapping is implemented.
+baseline_visible_in_single_training_view,False,"['R091_CY01', 'R112_CY02', 'R112_CY03', 'R107_CY01', 'R020_CY01']"
+full_json_matches_database:literature_approx_sensitivity,True,
+matrix_grain_and_values:literature_approx_sensitivity,True,
+full_json_matches_database:literature_core7_exact,True,
+matrix_grain_and_values:literature_core7_exact,True,
+full_json_matches_database:literature_residue_sensitivity,True,
+matrix_grain_and_values:literature_residue_sensitivity,True,
+validator_explicitly_rejects_capacity_target,False,{'rejected': False}
+validator_rejects_incompatible_system_method_units_label,True,
+r4_manifest_hashes,True,"{'verified': 49, 'mismatches': []}"
+older_deliverables_hashes,True,"{'checked': 379, 'mismatches': []}"
+original_source_hashes,True,"{'checked': 141, 'mismatches': []}"
+root_entry_discloses_r4_separate_profile_revision,False,Both root entries still say latest independent database is r3. r4 manifest declares proposed contract changes and no scientific merge.
+candidate_literature_not_marked_admitted,True,
+audit_database_bytes_unchanged,True,

@@ -1,0 +1,1055 @@
+{
+  "executed_at": "2026-10-17T20:56:13+08:00",
+  "scope": "126 archived papers/89 endpoint database; r3/r4 comparison; staged literature admission boundary. Not a full new extraction of all papers.",
+  "data_modified": false,
+  "research_fit_calls": 0,
+  "synthetic_fit_calls": 0,
+  "counts": {
+    "papers": 126,
+    "source_files": 141,
+    "materials": 67,
+    "cycling_tests": 83,
+    "cycling_endpoints": 89,
+    "raw_records": 89,
+    "field_evidence": 2492,
+    "material_observations": 134
+  },
+  "checks": [
+    {
+      "name": "sqlite_integrity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "foreign_key_integrity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_join_no_loss_or_expansion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "material_test_paper_identity_consistent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "same_material_characterization_not_cross_paired",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:raw_records",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:papers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:materials",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:cycling_tests",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:cycling_endpoints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:endpoint_features",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:admissions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:review_events",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:field_evidence",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:validation_group_assignments",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r3_to_r4_unchanged:source_files",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "profile_grain_unique",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "combined_view_is_profile_memberships_not_endpoint_grain",
+      "passed": true,
+      "detail": "Intentional nested memberships; never stack as independent rows."
+    },
+    {
+      "name": "no_3E_CV_capacity_or_hybrid_in_any_profile",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_profiles_molar_concentration_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "area_current_not_treated_as_mass_current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_censored_or_missing_target_admitted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "approximate_only_in_declared_extension",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "residue_only_in_declared_extensions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "canonical_current_not_fabricated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "strict_current_subset_still_zero",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "primary_view_fixed_profile",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "same_paper_not_split_between_groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "folds_cover_each_endpoint_once:literature_core7_exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "folds_cover_each_endpoint_once:literature_residue_sensitivity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "folds_cover_each_endpoint_once:literature_approx_sensitivity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_source_material_test_cross_fold_leakage",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "field_ledger_matches_effective_values",
+      "passed": false,
+      "detail": {
+        "fields": 21,
+        "endpoints": 10
+      }
+    },
+    {
+      "name": "new_profile_legacy_blockers_have_structured_per_blocker_dispositions",
+      "passed": false,
+      "detail": "Legacy blockers retained; r4 narrative reviews exist but no per-profile per-blocker mapping is implemented."
+    },
+    {
+      "name": "baseline_visible_in_single_training_view",
+      "passed": false,
+      "detail": [
+        "R091_CY01",
+        "R112_CY02",
+        "R112_CY03",
+        "R107_CY01",
+        "R020_CY01"
+      ]
+    },
+    {
+      "name": "full_json_matches_database:literature_approx_sensitivity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "matrix_grain_and_values:literature_approx_sensitivity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "full_json_matches_database:literature_core7_exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "matrix_grain_and_values:literature_core7_exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "full_json_matches_database:literature_residue_sensitivity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "matrix_grain_and_values:literature_residue_sensitivity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "validator_explicitly_rejects_capacity_target",
+      "passed": false,
+      "detail": {
+        "rejected": false
+      }
+    },
+    {
+      "name": "validator_rejects_incompatible_system_method_units_label",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "r4_manifest_hashes",
+      "passed": true,
+      "detail": {
+        "verified": 49,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "older_deliverables_hashes",
+      "passed": true,
+      "detail": {
+        "checked": 379,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "original_source_hashes",
+      "passed": true,
+      "detail": {
+        "checked": 141,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "root_entry_discloses_r4_separate_profile_revision",
+      "passed": false,
+      "detail": "Both root entries still say latest independent database is r3. r4 manifest declares proposed contract changes and no scientific merge."
+    },
+    {
+      "name": "candidate_literature_not_marked_admitted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "audit_database_bytes_unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 44,
+  "failed": 5,
+  "systems": [
+    {
+      "system": "2E_as_reported",
+      "method": "CV",
+      "endpoints": 1
+    },
+    {
+      "system": "2E_asymmetric",
+      "method": "GCD",
+      "endpoints": 5
+    },
+    {
+      "system": "2E_asymmetric",
+      "method": "GCD_unspecified_protocol",
+      "endpoints": 1
+    },
+    {
+      "system": "2E_asymmetric_gel",
+      "method": "GCD",
+      "endpoints": 5
+    },
+    {
+      "system": "2E_same_carbon_mass_unbalanced",
+      "method": "GCD",
+      "endpoints": 2
+    },
+    {
+      "system": "2E_symmetric",
+      "method": "CV",
+      "endpoints": 2
+    },
+    {
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "endpoints": 35
+    },
+    {
+      "system": "2E_symmetric",
+      "method": "GCD_unspecified_protocol",
+      "endpoints": 1
+    },
+    {
+      "system": "2E_symmetric_gel",
+      "method": "GCD",
+      "endpoints": 2
+    },
+    {
+      "system": "3E",
+      "method": "CV",
+      "endpoints": 2
+    },
+    {
+      "system": "3E",
+      "method": "GCD",
+      "endpoints": 22
+    },
+    {
+      "system": "3E",
+      "method": "GCD_protocol_wording_issue",
+      "endpoints": 4
+    },
+    {
+      "system": "3E",
+      "method": "GCD_unspecified_protocol",
+      "endpoints": 1
+    },
+    {
+      "system": "Li_half_cell",
+      "method": "GCD",
+      "endpoints": 3
+    },
+    {
+      "system": "Zn_hybrid",
+      "method": "GCD",
+      "endpoints": 1
+    },
+    {
+      "system": "system_pending",
+      "method": "GCD",
+      "endpoints": 2
+    }
+  ],
+  "metrics": [
+    {
+      "metric_kind": "capacitance_retention",
+      "retention_relation": "approx",
+      "endpoints": 11
+    },
+    {
+      "metric_kind": "capacitance_retention",
+      "retention_relation": "eq",
+      "endpoints": 70
+    },
+    {
+      "metric_kind": "capacitance_retention",
+      "retention_relation": "gt",
+      "endpoints": 5
+    },
+    {
+      "metric_kind": "capacity_retention",
+      "retention_relation": "eq",
+      "endpoints": 3
+    }
+  ],
+  "concentrations": [
+    {
+      "concentration_unit": null,
+      "tests": 25
+    },
+    {
+      "concentration_unit": "M",
+      "tests": 1
+    },
+    {
+      "concentration_unit": "mol/L",
+      "tests": 55
+    },
+    {
+      "concentration_unit": "mol/kg",
+      "tests": 2
+    }
+  ],
+  "current_units": [
+    {
+      "mass_specific_tests": 61,
+      "area_specific_tests": 6,
+      "scan_rate_tests": 5
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "literature_approx_sensitivity",
+      "rows": 11,
+      "endpoints": 11,
+      "papers": 10,
+      "materials": 10
+    },
+    {
+      "profile": "literature_core7_exact",
+      "rows": 8,
+      "endpoints": 8,
+      "papers": 8,
+      "materials": 8
+    },
+    {
+      "profile": "literature_residue_sensitivity",
+      "rows": 10,
+      "endpoints": 10,
+      "papers": 9,
+      "materials": 9
+    }
+  ],
+  "combined_profile_view": {
+    "rows": 29,
+    "distinct_endpoints": 11
+  },
+  "ledger_mismatches": [
+    {
+      "record_id": "R013_CY02",
+      "field": "BET_m2_g",
+      "ledger_value": null,
+      "effective_value": 1589.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R013_CY02",
+      "field": "total_pore_volume_cm3_g",
+      "ledger_value": null,
+      "effective_value": 0.82,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R091_CY01",
+      "field": "current_density_A_g",
+      "ledger_value": null,
+      "effective_value": 3.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY01",
+      "field": "N_at_pct",
+      "ledger_value": null,
+      "effective_value": 1.26,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY01",
+      "field": "O_at_pct",
+      "ledger_value": null,
+      "effective_value": 9.13,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY01",
+      "field": "voltage_lower_V",
+      "ledger_value": null,
+      "effective_value": 0.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY01",
+      "field": "voltage_upper_V",
+      "ledger_value": null,
+      "effective_value": 1.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY02",
+      "field": "N_at_pct",
+      "ledger_value": null,
+      "effective_value": 1.26,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY02",
+      "field": "O_at_pct",
+      "ledger_value": null,
+      "effective_value": 9.13,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R108_CY05",
+      "field": "current_density_mA_cm2",
+      "ledger_value": null,
+      "effective_value": 20.0,
+      "ledger_status": "not_yet_paired_or_not_recorded_not_proven_absent"
+    },
+    {
+      "record_id": "R111_CY01",
+      "field": "concentration_unit",
+      "ledger_value": null,
+      "effective_value": "M",
+      "ledger_status": "not_yet_paired_or_not_recorded_not_proven_absent"
+    },
+    {
+      "record_id": "R111_CY01",
+      "field": "concentration_value",
+      "ledger_value": null,
+      "effective_value": 6.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R111_CY01",
+      "field": "electrolyte",
+      "ledger_value": null,
+      "effective_value": "KOH",
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R117_CY01",
+      "field": "BET_m2_g",
+      "ledger_value": null,
+      "effective_value": 3345.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R117_CY01",
+      "field": "total_pore_volume_cm3_g",
+      "ledger_value": null,
+      "effective_value": 2.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R117_CY02",
+      "field": "BET_m2_g",
+      "ledger_value": null,
+      "effective_value": 1253.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R117_CY02",
+      "field": "total_pore_volume_cm3_g",
+      "ledger_value": null,
+      "effective_value": 0.5,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "SRC093_CY01",
+      "field": "current_density_mA_cm2",
+      "ledger_value": null,
+      "effective_value": 2.0,
+      "ledger_status": "not_yet_paired_or_not_recorded_not_proven_absent"
+    },
+    {
+      "record_id": "SRC093_CY01",
+      "field": "voltage_lower_V",
+      "ledger_value": null,
+      "effective_value": 0.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "SRC093_CY01",
+      "field": "voltage_upper_V",
+      "ledger_value": null,
+      "effective_value": 0.8,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "SRC121_CY01",
+      "field": "BET_m2_g",
+      "ledger_value": null,
+      "effective_value": 1374.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    }
+  ],
+  "primary_core_value_ledger_mismatches": [
+    {
+      "record_id": "R091_CY01",
+      "field": "current_density_A_g",
+      "ledger_value": null,
+      "effective_value": 3.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY01",
+      "field": "voltage_lower_V",
+      "ledger_value": null,
+      "effective_value": 0.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R107_CY01",
+      "field": "voltage_upper_V",
+      "ledger_value": null,
+      "effective_value": 1.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R111_CY01",
+      "field": "concentration_value",
+      "ledger_value": null,
+      "effective_value": 6.0,
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    },
+    {
+      "record_id": "R111_CY01",
+      "field": "electrolyte",
+      "ledger_value": null,
+      "effective_value": "KOH",
+      "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+    }
+  ],
+  "legacy_open_with_profile_eligibility": [
+    {
+      "record_id": "R112_CY02",
+      "code": "baseline_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY02",
+      "code": "freeze_cleared",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY02",
+      "code": "independence_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY02",
+      "code": "material_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY02",
+      "code": "silicon_product_scope",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY03",
+      "code": "baseline_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY03",
+      "code": "freeze_cleared",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY03",
+      "code": "independence_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY03",
+      "code": "material_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R112_CY03",
+      "code": "silicon_product_scope",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R020_CY01",
+      "code": "baseline_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R020_CY01",
+      "code": "freeze_cleared",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R020_CY01",
+      "code": "independence_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R020_CY01",
+      "code": "material_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R020_CY01",
+      "code": "protocol_checked",
+      "affects_core7": 1
+    },
+    {
+      "record_id": "R020_CY01",
+      "code": "v03_specific_review_gap",
+      "affects_core7": 1
+    }
+  ],
+  "baseline_missing_from_training_view": [
+    "R091_CY01",
+    "R112_CY02",
+    "R112_CY03",
+    "R107_CY01",
+    "R020_CY01"
+  ],
+  "in_memory_guard_checks": {
+    "metric_kind": {
+      "rejected": false
+    },
+    "system": {
+      "rejected": true,
+      "message": "Outside reviewed symmetric GCD protocol"
+    },
+    "method": {
+      "rejected": true,
+      "message": "Outside reviewed symmetric GCD protocol"
+    },
+    "retention_relation": {
+      "rejected": true,
+      "message": "Label precision outside profile"
+    },
+    "concentration_unit": {
+      "rejected": true,
+      "message": "Molar concentration required; m/mol/kg cannot be converted without evidence"
+    },
+    "retention_pct": {
+      "rejected": true,
+      "message": "Missing/invalid numeric:retention_pct"
+    }
+  },
+  "database_sha256_before": {
+    "循环稳定性数据库_v0.3_数据库优化_20261017\\第三轮_逐条准入闭环_20261017\\cycling_v0_3r3.sqlite": "7f1b54e5d22af1effa8c4a15f19d147096669a8ad6b9e3b389608e0fc729e73f",
+    "循环稳定性数据库_v0.3_数据库优化_20261017\\第四轮_专业复核与训练数据_20261017\\cycling_v0_3r4.sqlite": "66c8555bcd9583ea7f30afec1c174ea780c2102eeed363ea9f428f9f95bc83ad"
+  },
+  "database_sha256_after": {
+    "循环稳定性数据库_v0.3_数据库优化_20261017\\第三轮_逐条准入闭环_20261017\\cycling_v0_3r3.sqlite": "7f1b54e5d22af1effa8c4a15f19d147096669a8ad6b9e3b389608e0fc729e73f",
+    "循环稳定性数据库_v0.3_数据库优化_20261017\\第四轮_专业复核与训练数据_20261017\\cycling_v0_3r4.sqlite": "66c8555bcd9583ea7f30afec1c174ea780c2102eeed363ea9f428f9f95bc83ad"
+  },
+  "queries": {
+    "integrity": {
+      "sql": "PRAGMA integrity_check",
+      "parameters": [],
+      "rows": [
+        {
+          "integrity_check": "ok"
+        }
+      ]
+    },
+    "foreign_keys": {
+      "sql": "PRAGMA foreign_key_check",
+      "parameters": [],
+      "rows": []
+    },
+    "cross_paper_material": {
+      "sql": "SELECT t.cycle_test_id,t.paper_id,m.paper_id AS material_paper FROM cycling_tests t JOIN materials m USING(material_id) WHERE t.paper_id!=m.paper_id",
+      "parameters": [],
+      "rows": []
+    },
+    "material_feature_variation": {
+      "sql": "SELECT material_id,COUNT(DISTINCT BET_m2_g) AS nbet,COUNT(DISTINCT total_pore_volume_cm3_g) AS npore FROM endpoint_review GROUP BY material_id HAVING nbet>1 OR npore>1",
+      "parameters": [],
+      "rows": []
+    },
+    "systems": {
+      "sql": "SELECT system,method,COUNT(*) AS endpoints FROM endpoint_review GROUP BY system,method",
+      "parameters": [],
+      "rows": [
+        {
+          "system": "2E_as_reported",
+          "method": "CV",
+          "endpoints": 1
+        },
+        {
+          "system": "2E_asymmetric",
+          "method": "GCD",
+          "endpoints": 5
+        },
+        {
+          "system": "2E_asymmetric",
+          "method": "GCD_unspecified_protocol",
+          "endpoints": 1
+        },
+        {
+          "system": "2E_asymmetric_gel",
+          "method": "GCD",
+          "endpoints": 5
+        },
+        {
+          "system": "2E_same_carbon_mass_unbalanced",
+          "method": "GCD",
+          "endpoints": 2
+        },
+        {
+          "system": "2E_symmetric",
+          "method": "CV",
+          "endpoints": 2
+        },
+        {
+          "system": "2E_symmetric",
+          "method": "GCD",
+          "endpoints": 35
+        },
+        {
+          "system": "2E_symmetric",
+          "method": "GCD_unspecified_protocol",
+          "endpoints": 1
+        },
+        {
+          "system": "2E_symmetric_gel",
+          "method": "GCD",
+          "endpoints": 2
+        },
+        {
+          "system": "3E",
+          "method": "CV",
+          "endpoints": 2
+        },
+        {
+          "system": "3E",
+          "method": "GCD",
+          "endpoints": 22
+        },
+        {
+          "system": "3E",
+          "method": "GCD_protocol_wording_issue",
+          "endpoints": 4
+        },
+        {
+          "system": "3E",
+          "method": "GCD_unspecified_protocol",
+          "endpoints": 1
+        },
+        {
+          "system": "Li_half_cell",
+          "method": "GCD",
+          "endpoints": 3
+        },
+        {
+          "system": "Zn_hybrid",
+          "method": "GCD",
+          "endpoints": 1
+        },
+        {
+          "system": "system_pending",
+          "method": "GCD",
+          "endpoints": 2
+        }
+      ]
+    },
+    "metrics": {
+      "sql": "SELECT metric_kind,retention_relation,COUNT(*) AS endpoints FROM endpoint_review GROUP BY metric_kind,retention_relation",
+      "parameters": [],
+      "rows": [
+        {
+          "metric_kind": "capacitance_retention",
+          "retention_relation": "approx",
+          "endpoints": 11
+        },
+        {
+          "metric_kind": "capacitance_retention",
+          "retention_relation": "eq",
+          "endpoints": 70
+        },
+        {
+          "metric_kind": "capacitance_retention",
+          "retention_relation": "gt",
+          "endpoints": 5
+        },
+        {
+          "metric_kind": "capacity_retention",
+          "retention_relation": "eq",
+          "endpoints": 3
+        }
+      ]
+    },
+    "concentrations": {
+      "sql": "SELECT concentration_unit,COUNT(*) AS tests FROM cycling_tests GROUP BY concentration_unit",
+      "parameters": [],
+      "rows": [
+        {
+          "concentration_unit": null,
+          "tests": 25
+        },
+        {
+          "concentration_unit": "M",
+          "tests": 1
+        },
+        {
+          "concentration_unit": "mol/L",
+          "tests": 55
+        },
+        {
+          "concentration_unit": "mol/kg",
+          "tests": 2
+        }
+      ]
+    },
+    "current_units": {
+      "sql": "SELECT COUNT(current_density_A_g) AS mass_specific_tests,COUNT(current_density_mA_cm2) AS area_specific_tests,COUNT(scan_rate_mV_s) AS scan_rate_tests FROM cycling_tests",
+      "parameters": [],
+      "rows": [
+        {
+          "mass_specific_tests": 61,
+          "area_specific_tests": 6,
+          "scan_rate_tests": 5
+        }
+      ]
+    },
+    "profiles": {
+      "sql": "SELECT profile,COUNT(*) AS rows,COUNT(DISTINCT record_id) AS endpoints,COUNT(DISTINCT paper_id) AS papers,COUNT(DISTINCT material_id) AS materials FROM training_rows_r4 GROUP BY profile",
+      "parameters": [],
+      "rows": [
+        {
+          "profile": "literature_approx_sensitivity",
+          "rows": 11,
+          "endpoints": 11,
+          "papers": 10,
+          "materials": 10
+        },
+        {
+          "profile": "literature_core7_exact",
+          "rows": 8,
+          "endpoints": 8,
+          "papers": 8,
+          "materials": 8
+        },
+        {
+          "profile": "literature_residue_sensitivity",
+          "rows": 10,
+          "endpoints": 10,
+          "papers": 9,
+          "materials": 9
+        }
+      ]
+    },
+    "union_grain": {
+      "sql": "SELECT COUNT(*) AS rows,COUNT(DISTINCT record_id) AS distinct_endpoints FROM training_rows_r4",
+      "parameters": [],
+      "rows": [
+        {
+          "rows": 29,
+          "distinct_endpoints": 11
+        }
+      ]
+    },
+    "group_identity": {
+      "sql": "SELECT paper_id,COUNT(DISTINCT group_id) AS n FROM endpoint_review JOIN validation_group_assignments USING(record_id) GROUP BY paper_id HAVING n>1",
+      "parameters": [],
+      "rows": []
+    },
+    "profile_legacy_open": {
+      "sql": "SELECT DISTINCT p.record_id,b.code,s.affects_core7 FROM profile_admissions_r4 p\n      JOIN record_blockers b USING(record_id) LEFT JOIN blocker_scopes s USING(record_id,code)\n      WHERE p.eligible=1 AND b.status='open' AND b.code!='mass_basis_checked' AND COALESCE(s.affects_core7,1)=1",
+      "parameters": [],
+      "rows": [
+        {
+          "record_id": "R112_CY02",
+          "code": "baseline_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY02",
+          "code": "freeze_cleared",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY02",
+          "code": "independence_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY02",
+          "code": "material_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY02",
+          "code": "silicon_product_scope",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY03",
+          "code": "baseline_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY03",
+          "code": "freeze_cleared",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY03",
+          "code": "independence_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY03",
+          "code": "material_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R112_CY03",
+          "code": "silicon_product_scope",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R020_CY01",
+          "code": "baseline_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R020_CY01",
+          "code": "freeze_cleared",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R020_CY01",
+          "code": "independence_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R020_CY01",
+          "code": "material_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R020_CY01",
+          "code": "protocol_checked",
+          "affects_core7": 1
+        },
+        {
+          "record_id": "R020_CY01",
+          "code": "v03_specific_review_gap",
+          "affects_core7": 1
+        }
+      ]
+    }
+  },
+  "csv_disagreements": [],
+  "limitations": [
+    "System labels are checked structurally and against selected original source passages; this is not a fresh full-text adjudication of every endpoint.",
+    "A stale null ledger does not prove the effective value is wrong; relevant review events must be consulted.",
+    "Legacy scope blockers can legitimately remain open for stricter models; profile-specific exceptions must not be called universal clearance."
+  ]
+}

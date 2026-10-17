@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "separated-profiles",
+      "title": "三组用途各自无重复，当前入选记录未混入三电极或容量保持率",
+      "queries": [
+        {
+          "id": "profile-counts",
+          "source": {
+            "label": "第四轮SQLite",
+            "tables": [
+              "training_rows_r4"
+            ],
+            "files": [
+              {
+                "label": "cycling_v0_3r4.sqlite"
+              }
+            ],
+            "sql": "SELECT profile,COUNT(*) AS rows,COUNT(DISTINCT record_id) AS endpoints,COUNT(DISTINCT paper_id) AS papers,COUNT(DISTINCT material_id) AS materials FROM training_rows_r4 GROUP BY profile",
+            "executedAt": "2026-10-17T20:56:13+08:00",
+            "caveats": [
+              "结构检查和针对性原文复核不等于全部原文重新终审。",
+              "严格物理电流口径仍为0；报告工况主集为8，两者定义不同。"
+            ]
+          },
+          "columns": [
+            "profile",
+            "rows",
+            "endpoints",
+            "papers",
+            "materials"
+          ],
+          "rows": [
+            {
+              "profile": "literature_approx_sensitivity",
+              "rows": 11,
+              "endpoints": 11,
+              "papers": 10,
+              "materials": 10
+            },
+            {
+              "profile": "literature_core7_exact",
+              "rows": 8,
+              "endpoints": 8,
+              "papers": 8,
+              "materials": 8
+            },
+            {
+              "profile": "literature_residue_sensitivity",
+              "rows": 10,
+              "endpoints": 10,
+              "papers": 9,
+              "materials": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ledger-inconsistency",
+      "title": "21个字段、10个端点的证据台账空值与有效数值不一致",
+      "queries": [
+        {
+          "id": "field-mismatches",
+          "source": {
+            "label": "第四轮字段证据与有效输入",
+            "tables": [
+              "field_evidence",
+              "modeling_effective_inputs"
+            ],
+            "files": [
+              {
+                "label": "字段证据台账不一致21项.csv"
+              }
+            ],
+            "executedAt": "2026-10-17T20:56:13+08:00",
+            "caveats": [
+              "空值台账滞后不证明有效数值错误；需要结合后续审查事件判读。"
+            ]
+          },
+          "columns": [
+            "record_id",
+            "field",
+            "ledger_value",
+            "effective_value",
+            "ledger_status"
+          ],
+          "rows": [
+            {
+              "record_id": "R013_CY02",
+              "field": "BET_m2_g",
+              "ledger_value": null,
+              "effective_value": 1589.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R013_CY02",
+              "field": "total_pore_volume_cm3_g",
+              "ledger_value": null,
+              "effective_value": 0.82,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R091_CY01",
+              "field": "current_density_A_g",
+              "ledger_value": null,
+              "effective_value": 3.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R107_CY01",
+              "field": "N_at_pct",
+              "ledger_value": null,
+              "effective_value": 1.26,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R107_CY01",
+              "field": "O_at_pct",
+              "ledger_value": null,
+              "effective_value": 9.13,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R107_CY01",
+              "field": "voltage_lower_V",
+              "ledger_value": null,
+              "effective_value": 0.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R107_CY01",
+              "field": "voltage_upper_V",
+              "ledger_value": null,
+              "effective_value": 1.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R107_CY02",
+              "field": "N_at_pct",
+              "ledger_value": null,
+              "effective_value": 1.26,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R107_CY02",
+              "field": "O_at_pct",
+              "ledger_value": null,
+              "effective_value": 9.13,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R108_CY05",
+              "field": "current_density_mA_cm2",
+              "ledger_value": null,
+              "effective_value": 20.0,
+              "ledger_status": "not_yet_paired_or_not_recorded_not_proven_absent"
+            },
+            {
+              "record_id": "R111_CY01",
+              "field": "concentration_unit",
+              "ledger_value": null,
+              "effective_value": "M",
+              "ledger_status": "not_yet_paired_or_not_recorded_not_proven_absent"
+            },
+            {
+              "record_id": "R111_CY01",
+              "field": "concentration_value",
+              "ledger_value": null,
+              "effective_value": 6.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R111_CY01",
+              "field": "electrolyte",
+              "ledger_value": null,
+              "effective_value": "KOH",
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R117_CY01",
+              "field": "BET_m2_g",
+              "ledger_value": null,
+              "effective_value": 3345.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R117_CY01",
+              "field": "total_pore_volume_cm3_g",
+              "ledger_value": null,
+              "effective_value": 2.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R117_CY02",
+              "field": "BET_m2_g",
+              "ledger_value": null,
+              "effective_value": 1253.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "R117_CY02",
+              "field": "total_pore_volume_cm3_g",
+              "ledger_value": null,
+              "effective_value": 0.5,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "SRC093_CY01",
+              "field": "current_density_mA_cm2",
+              "ledger_value": null,
+              "effective_value": 2.0,
+              "ledger_status": "not_yet_paired_or_not_recorded_not_proven_absent"
+            },
+            {
+              "record_id": "SRC093_CY01",
+              "field": "voltage_lower_V",
+              "ledger_value": null,
+              "effective_value": 0.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "SRC093_CY01",
+              "field": "voltage_upper_V",
+              "ledger_value": null,
+              "effective_value": 0.8,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            },
+            {
+              "record_id": "SRC121_CY01",
+              "field": "BET_m2_g",
+              "ledger_value": null,
+              "effective_value": 1374.0,
+              "ledger_status": "not_yet_paired_or_not_found_in_local_evidence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nested-membership",
+      "title": "合并用途视图有29行，但只有11个不同端点",
+      "queries": [
+        {
+          "id": "union-grain",
+          "source": {
+            "label": "第四轮用途成员视图",
+            "tables": [
+              "training_rows_r4"
+            ],
+            "sql": "SELECT COUNT(*) AS rows,COUNT(DISTINCT record_id) AS distinct_endpoints FROM training_rows_r4",
+            "executedAt": "2026-10-17T20:56:13+08:00",
+            "caveats": [
+              "三个集合嵌套；现有load_ready按profile筛选，不能裸表合训。"
+            ]
+          },
+          "columns": [
+            "rows",
+            "distinct_endpoints"
+          ],
+          "rows": [
+            {
+              "rows": 29,
+              "distinct_endpoints": 11
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
