@@ -1,0 +1,1389 @@
+
+===== PDF PAGE 1 =====
+From Pyrolysis Oil to Advanced Biographite Anode:
+Unravelling Biocoke Structural Evolution and Delayed
+Coking Effects
+Shaikat Chandra Dey 1 | Seong-Min Cho 1 | Jose A. Gonzalez-Aguirre 1 | Md. Nazrul Islam 1 | Ravindra Kumar Bhardwaj 2 |
+Bertrand J. Tremolet de Villers 2 | Brian J. Worfolk 3 | William Joe Sagues 4 | Steven M. Rowland 5 | Mark R. Nimlos 5 |
+Sunkyu Park 1
+1Department of Forest Biomaterials, North Carolina State University, Raleigh, North Carolina, USA | 2Materials, Chemical, and Computational Science
+Directorate, National Laboratory of the Rockies, Golden, Colorado, USA | 3Worfolk Consulting, Raleigh, North Carolina, USA | 4Department of Biological
+and Agricultural Engineering, North Carolina State University, Raleigh, North Carolina, USA | 5Bioenergy Science and Technology Directorate, National
+Laboratory of the Rockies, Golden, Colorado, USA
+Correspondence: Sunkyu Park ( sunkyu_park@ncsu.edu)
+Received: 18 December 2025 | Revised: 20 February 2026 | Accepted: 23 February 2026
+Keywords: anode | biocoke | biographite | delayed coking | lithium-ion batteries | pyrolysis oil | sustainable aviation fuel
+ABSTRACT
+Catalytic graphitization of biomass-derived carbon offers a promising route to produce biographite as a sustainable alternative to
+petroleum-based synthetic graphite for lithium-ion battery (LIB) anodes. This study investigates the physicochemical properties of
+biocokes produced from pyrolysis oil at carbonization temperatures ranging from 150°C to 500°C. Using an iron (Fe) catalyst,
+graphitization was performed at 1500°C, significantly lower than the /C243000°C required for conventional synthetic graphite. The
+effects of introducing an intermediate-temperature hold (400°C –600°C) prior to graphitization were evaluated, simulating a
+“delayed coking ” process to enable the coproduction of sustainable aviation fuels (SAFs). Chemical structure evolution during
+biocoke formation was analyzed, and proposed mechanisms are presented. Biographites produced via the delayed coking pathway
+exhibited high crystallinity and excellent electrochemical performance in both half-cell and full-cell LIB configurations. The full
+cells exhibited an initial discharge capacity close to the theoretical capacity of the NMC622 cathode (175 mAh/g at 4.2 V), and high
+capacity retention (/C2488%) after 150 cycles. Notably, the graphitic and electrochemical properties remained stable across the range
+of intermediate hold temperatures. These findings provide a foundation for optimizing temperature parameters in delayed coking
+systems to enable scalable, integrated production of biographite and SAFs from pyrolysis oil.
+1 | Introduction
+Rechargeable lithium-ion batteries (LIBs) were developed and
+commercialized as high-performing and cost-effective energy stor-
+age systems. Since commercialization in 1991, LIBs have revolu-
+tionized the electrochemical energy storage technology owing to
+their high energy density, light-weight nature, small size, high
+Coulombic efficiency (CE), long cycle life, good rate performance,
+high working voltage, minimal self-discharge, negligible memory
+effect, etc [ 1–5]. The LIBs are extensively used in portable
+electronic devices, grid energy storage, and electric vehicles
+(EVs). The EVs, powered by LIBs, can achieve longer driving
+ranges and are transforming the automotive sector by offering a
+sustainable, environmentally friendly mode of transportation with
+lower carbon emissions [ 6]. In 2023, almost 14 million EVs were
+sold worldwide, with a 35% year-on-year increase, indicating the
+rapid adoption and growing confidence in EVs as a sustainable
+transportation solution [ 7]. Due to the increased popularity of
+EVs, the demand for LIBs is increasing exponentially.
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided
+the original work is properly cited.
+© 2026 The Author(s). Advanced Energy and Sustainability Research published by Wiley-VCH GmbH.
+Advanced Energy and Sustainability Research , 2026; 7:e70168 1o f1 8
+https://doi.org/10.1002/aesr.70168
+Advanced Energy and Sustainability Research
+www.advenergysustres.com
+RESEARCH ARTICLE
+
+===== PDF PAGE 2 =====
+Among the various essential components in LIBs, the active mate-
+rials are most widely studied, as they are responsible for the revers-
+ible intercalation and deintercalation of lithium ions (i.e., Li+)[ 8].
+Commercial LIBs use graphite as the anode active material,
+together with a binder and conductive carbon. Graphite is pre-
+ferred because of its high gravimetric capacity (theoretical maxi-
+mum /C24372 mAh/g), low delithiation potential (/C250.2 V vs. Li/Li+),
+high CE, extended plateau capacity, long cyclability, good rate per-
+formance, low voltage hysteresis, cost effectiveness, environmental
+friendliness, etc [ 9–15]. Both natural and synthetic graphites are
+used in the commercial LIB cells. Natural graphite is extracted
+from geographically constrained natural reserves. Mining, refin-
+ing, and beneficiation of natural graphite require substantial
+energy and lead to greenhouse gas (GHG) emissions. These pro-
+cesses are also associated with the generation of mining dust and
+the utilization of toxic hydrofluoric acid [16]. Compared to natural
+graphite, synthetic graphite offers greater consistency and tunabil-
+ity. Thermal treatments of soft carbon precursors (e.g., petroleum
+coke) at very high temperatures (/C243000°C) make synthetic graph-
+ite. It is worth noting that graphite is considered a critical material,
+and synthetic graphite has the potential to provide a secure and
+reliable supply chain for graphite in LIBs. However, the produc-
+tion of synthetic graphite involves nonrenewable feedstocks and
+emits GHG. Additionally, the process is energy-intensive (i.e.,
+costly) and takes longer times [ 17].
+Catalytic graphitization of renewable biocarbon is an emerging
+alternative approach to sustainably produce anode-grade biogra-
+phite for LIBs at low temperature and shorter time, overcoming
+the key limitations of synthetic graphite [ 18–21]. Group VIII
+transition metals, e.g., iron [ 22], cobalt [ 23], or nickel [ 24],
+can catalyze the graphitization process via a dissolution-
+precipitation mechanism [22] and/or a formation-decomposition
+mechanism [25]. Among these transition metals, iron-based cat-
+alysts are mostly used because of relatively higher carbon solu-
+bility in iron, d-orbital electron vacancies, availability, low cost,
+etc [26, 27]. Although iron can be used in many different forms to
+catalyze the graphitization process, reduced metallic iron powder
+is preferred over other available forms such as salts, oxides, orga-
+nometallics, etc [ 13].
+Feedstock selection is another key variable to consider for scal-
+able production of biographite [ 18, 28]. To date, various biocar-
+bon feedstocks have been catalytically graphitized such as
+softwood [20], hardwood [ 29], glucose [ 30], lignin [ 23], lignocel-
+lulose [ 31], cellulose [ 32], hemicellulose [ 33], biochar [ 34],
+bagasse [ 35], coconut coir [ 36], corn straw [ 37], waste coffee
+grounds [ 38], passion fruit shells [ 39], olive pomace [ 40], beech
+[41], fiberboard [ 12], paper towel [ 19], etc. An emerging feed-
+stock for catalytic graphitization is pyrolysis oil (also known
+as bio-oil), which is derived from the fast pyrolysis of biomass.
+Given the scalable production of biographite, pyrolysis oil offers
+several key advantages, including low inorganic content, high
+carbon content, and easier handling and transportation [ 42–44].
+Our recent study explored the mechanism of iron-catalyzed
+graphitization of pyrolysis oil. Catalyst loading was optimized,
+and the effects of temperature and pyrolysis oil aging were also
+studied. The optimal biographite demonstrated promising perfor-
+mance as anode active material in LIB half-cells [ 22]. However,
+the process ’s scalability was challenged by several factors. Our
+follow-up work addressed the key challenges in processing
+pyrolysis oil into LIB-grade graphite via iron catalysis at scale,
+including viscosity, iron-induced foaming, swelling, and aging.
+To address these challenges, five pathways were explored, includ-
+ing (i) defoamer use, (ii) use of iron oxide (Fe 2O3) as graphitiza-
+tion catalyst, (iii) pH adjustment of pyrolysis oil, (iv) pyrolysis oil
+coking at 300°C–500°C, and (v) thermal pretreatment of pyrolysis
+oil at 150°C –200°C. The low-temperature pretreatment pathway
+successfully addressed the aforementioned challenges and pro-
+duced highly crystalline biographites showing impressive electro-
+chemical performance in LIB half-cells [ 45].
+The objective of this study was to thoroughly characterize the
+physicochemical properties of products obtained via pretreat-
+ment and coking of pyrolysis oil at 150, 200, 300, 400, and
+500°C under inert nitrogen flow and without iron catalyst.
+For simplification, the products obtained at five temperatures
+are called biocokes, hereafter, and named BC-150, BC-200,
+BC-300, BC-400, and BC-500, respectively. Biographites were
+made from BC-150 at 1500°C using iron catalyst following an
+intermediate hold step (i.e., delayed coking) at three different
+temperatures (400, 500, and 600°C) for 1 h. The biographites
+were purified via acid refluxing and named BG-400, BG-500,
+and BG-600, hereafter. The electrochemical performance of
+these biographites was tested as anode active materials in
+LIB half-cells and full-cells.
+2 | Experimental Section
+2.1 | Materials
+This study utilized pyrolysis oil, collected from Ensyn Technologies
+Inc. (Ontario, Canada), as feedstock for the preparation of biocokes
+and biographites. The oil was produced through fast pyrolysis of
+woody biomass and had a dark brown opaque appearance. The spe-
+cific gravity of the supplied pyrolysis oil sample was 1.15 –1.25 at
+20°C, and the pH was 3.2. Reduced iron in powder form (particle
+size < 10 μm; 99.9% trace metals basis; Sigma–Aldrich) was used as
+a catalyst for the graphitization of biocoke. Hydrochloric acid
+(HCl, 37% w/w; Fisher Scientific) was applied to chemically separate
+residual iron from the product after graphitization. Conductive
+carbon black (C45, Timcal), styr ene-butadiene rubber (SBR, MSE
+Supplies LLC), carboxymethyl c ellulose (CMC, MSE Supplies
+LLC), and Milli-Q water were used to prepare the electrode. The
+electrolyte for half-cell testing was purchased from Tomiyama
+Pure Chemical Industries, Ltd, and comprised 1.2 M lithium hexa-
+fluorophosphate (LiPF6) in a 3:7 weight ratio of ethylene carbonate
+(EC)/ethyl methyl carbonate (EMC).
+2.2 | Preparation of Biocokes
+Biocokes were prepared as described in our previous work [ 45].
+Briefly, the raw pyrolysis oil was heated at five different temper-
+atures, i.e., 150°C (5 h), 200°C (1 h), 300°C (1 h), 400°C (1 h), and
+500°C (1 h). The experiments were conducted under nitrogen flow
+(100 mL/min) to ensure an inert atmosphere. Figure 1a–e repre-
+sents the experimental conditions (temperature, hold time, heat-
+ing rate, and cooling rate) used for biocoke preparation. The raw
+pyrolysis oil did not solidify into biocoke when pretreated at 100°C
+for an extended period (12 h), and therefore was not considered for
+further study.
+2o f1 8 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 3 =====
+2.3 | Catalytic Graphitization of Biocoke
+As reported in our recent work, a low-temperature pretreatment
+(150°C–200°C) of pyrolysis oil was very effective for scalable pro-
+duction of biographite using reduced iron catalyst [ 45]. The pres-
+ent study considered BC-150 only for catalytic graphitization.
+Before mixing with iron, BC-150 was ground into fine powder
+in a mortar. The iron loading was kept at 2.5 times the fixed car-
+bon content of the pyrolysis oil. The readers are referred to our
+previous report that strategically explored the effect of iron load-
+ing on the catalytic graphitization of pyrolysis oil [ 22]. The BC-
+150 and iron were dry-mixed and loaded on an alumina boat
+before graphitization in a tube furnace (GSL-1500X, MTI
+Corporation, Richmond, California, USA) under nitrogen atmo-
+sphere (flow rate: 100 mL/min). The graphitization was per-
+formed at 1500°C for /C2424 h, with a heating and cooling rate
+of 4°C/min below 600°C and 2°C/min above 600°C. The mixture
+of BC-150 and iron powder was held at three different interme-
+diate temperatures (400°C, 500°C, and 600°C) for 1 h. Figure 1f–h
+schematically demonstrates the temperature profile for biogra-
+phite preparation using iron catalyst.
+2.4 | Removal of Iron via Acid Refluxing
+The catalytic graphitization transformed the biocoke into biogra-
+phite with the help of iron; however, the removal of iron from
+biographite was essential, considering the anode application of
+biographite in LIBs. The solid mixture of biographite and iron
+was powdered before refluxing with HCl for 3 h. The size reduc-
+tion step (i.e., milling) helped efficiently isolate the iron from
+biographite as acid-soluble iron chloride. To prepare high-purity
+biographite, acid refluxing was continued 5 times, using fresh
+HCl in each step. After acid refluxing, biographite was recovered
+from the acid via vacuum filtration. The biographite powder
+(BG-400, BG-500, and BG-600) was dried at 105°C for 4 h before
+further study.
+2.5 | Materials Characterization
+The morphology was examined using an FEI Quanta 650 scanning
+electron microscope (SEM) equipped with a field-emission source.
+Energy-dispersive X-ray spectroscopy (EDS) data were acquired
+using an Oxford Silicon Drift Detector (SDD) with a 150 mm win-
+dow. The surface profile and roughness of the samples were
+recorded using a confocal laser scanning microscope (Keyence
+VK × 1100) at 5X and 10X magnifications. The particle size distri-
+butions of biocoke and biographite samples were measured using
+the laser diffraction (LD) method with a Microtrac S3500 particle
+size analyzer. Carbon, hydrogen, and nitrogen in the biocoke sam-
+ples were directly measured using a LECO elemental analyzer.
+The oxygen content was measured as a balance. The crystallinity
+was evaluated by X-ray diffraction (XRD) using a PANalytical
+Empyrean X-ray diffractometer equipped with a monochromatic
+Cu Kα radiation source (λ = 1.54 Å), over a 2θ range of 10°–90° and
+a step size of 0.026°. Fourier transform infrared (FTIR) spectra of
+the biocoke samples were recorded on a FTIR spectrophotometer
+(Frontier FT-IR, PerkinElmer, Inc., USA) coupled with an attenu-
+ated total reflectance (ATR) sampling accessory. The surface
+chemical properties were analyzed using X-ray photoelectron
+spectroscopy (XPS) with a PHOIBOS 150 analyzer in an XPS/
+UVS-SPECS system. Time-of-flight secondary ion mass spectrom-
+etry (TOF-SIMS) analysis was conducted using a TOF SIMS V
+(ION TOF, Inc. Chestnut Ridge, NY) instrument equipped with
+aB i n
+m+ (n = 1–5, m = 1,2) liquid metal ion gun, Cs + sputtering
+gun, and electron flood gun for charge compensation. The thermal
+characteristics of samples were analyzed by thermogravimetric
+analysis (TGA 550, TA Instruments, USA) in a nitrogen
+FIGURE 1 | Schematic showing the temperature profile for the preparation of (a –e) biocokes and (f –h) biographites using pyrolysis oil feedstock
+under an inert nitrogen atmosphere.
+Advanced Energy and Sustainability Research, 2026 3o f1 8
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 4 =====
+atmosphere. The Horiba XploRA PLUS Confocal Raman
+Microscope, operating at 532 nm, was used to acquire Raman spec-
+tra over 1000–3000 cm− 1 range. High-resolution transmission elec-
+tron microscopy (HR-TEM) images were acquired using a Titan
+TEM (Thermo Fisher Scientific) operating at 300 kV. Images were
+acquired with a Gaton Oneview camera. X-ray fluorescence (XRF)
+analysis was performed using a Malvern-Panalytical Epsilon 3x
+ED-XRF system. The biographite samples were evaluated for their
+specific surface area (SSA) via the Brunauer–Emmett–Teller (BET)
+adsorption technique on a Micromeritics Instrument Corporation
+Gemini VII Version 5.03 surface area analyzer.
+2.6 | Electrochemical Testing of Biographite
+Anodes in LIBs
+2.6.1 | Half-Cell Assembly and Testing
+To perform electrochemical testing, a slurry was prepared by mix-
+ing biographite with conductive carbon black, SBR, and CMC in a
+weight ratio of 95:2:2:1, using Milli-Q (18 MΩ ⋅cm) water as the dis-
+persing medium. This mixture was then coated onto a 25μmt h i c k
+copper foil. The coated electrodes were vacuum-dried at 120°C for
+20 h. Post drying, the active material layer on the copper foil was/C25
+50 μm thick. Electrochemical evaluation of three biographite sam-
+ples (BG-400, BG-500, and BG-600) was performed in CR2032 coin
+cells. For assembly, 15 mm-diameter biographite electrode discs
+served as the working electrode, and 16 mm-diameter lithium
+metal discs were used as both the counter and reference electrodes.
+A 19 mm diameter Celgard-2500 separator was placed between the
+electrodes, and each cell was filled with 50 μLo fa ne l e c t r o l y t e
+composed of 1.2 M LiPF 6 dissolved in a 3:7 (w/w) mixture of
+EC and EMC. The electrode loading of biographite was measured
+to be 4 mg/cm 2. Cell assembly was carried out in an argon-filled
+glovebox (H 2Oa n dO 2 levels < 0.5 ppm). Galvanostatic charge –
+discharge tests were conducted using a MACCOR cycler at various
+C-rates (1C = 335 mA/g), within a potential window of 0.002 –
+1.5 V, at a constant temperature of 30°C.
+2.6.2 | Full-Cell Assembly and Testing
+To further assess the practical applicability of the biographite anode,
+full-cell configurations were also assembled using commercial-
+grade NMC622 (LiNi0.6Mn0.2Co0.2O2) cathodes obtained from the
+cell aanalysis, modeling, and pro totyping facility at Argonne
+National Laboratory. The NMC622 cathodes were precoated and
+provided with an areal capacity of 1.58 mA/cm2. Before assembling
+the full cell, the negative-to-positive (N/P) capacity ratio was calcu-
+lated to ensure a well-balanced electrochemical system. The result-
+ing N/P ratios were 1.2 –1.25, which are generally considered
+optimal for graphite-based full cells, as they ensure sufficient lith-
+ium availability and a balanced capacity during cycling. For the full-
+cell assembly, 14 mm-diameter discs were punched from the
+NMC622 cathode sheets and used as working electrodes, while
+15 mm-diameter discs of the biographite anode were used as both
+the counter and reference electrodes. A Celgard 2500 separator
+(19 mm) was used to separate the el ectrodes. Each cell was filled
+with /C2550 μL of the same EC:EMC (3:7) based electrolyte with
+1.2 M LiPF6. The mass loading of biographite remained consistent
+with the half-cell configuration, at/C254m g / c m2. Full-cell coin assem-
+b l yw a sa l s op e r f o r m e di na na r g o n - f i l l e dg l o v eb o xw i t ho x y g e na n d
+moisture concentrations maintained below 0.5 ppm to prevent oxi-
+dation or hydrolysis of electrolyte salts and electrodes. Galvanostatic
+cycling was carried out using a MACCOR battery tester at various
+C-rates. In this case, the C-rate was defined based on the cathode’s
+theoretical capacity (1C= 179 mA/g). The cells were cycled within
+a voltage range of 2.8–4.2 V, which corresponds to the typical oper-
+ating window for NMC622-based LIBs. All experiments were
+conducted at a controlled temperature of 30°C to maintain consis-
+tency and minimize thermal fluctuations.
+3 | Results and Discussion
+3.1 | Characterization of Biocokes
+3.1.1 | Biocoke Yield
+The yield of biocoke is an important parameter considering the
+economic aspects of the process. Here, yield is defined as the solid
+residue remaining after pyrolysis oil is coked under nitrogen
+atmosphere for a period of 1 –5 h. The biocoke yield as a function
+of coking temperature is plotted in Figure 2a. It is to be noted that
+pyrolysis oil contains a significant fraction of volatile compounds,
+which are released during heating. As shown in Figure 2a, BC-
+150 had a yield of /C2445%, which declined to /C2440% for BC-200 and
+dropped to /C2426% for BC-300. The two other biocokes (BC-400
+FIGURE 2 | (a) Biocoke yield as a function of coking temperature, (b) photographs of biocokes.
+4o f1 8 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 5 =====
+and BC-500) showed nearly identical yields of /C2421%, indicating
+that most of the volatiles were removed by 300°C.
+3.1.2 | Biocoke Color
+The coking temperature determined the color of the biocokes, as
+depicted in Figure 2b. The physical appearance of BC-150 and BC-
+200 was similar when cooled to room temperature. Both of these
+biocokes showed a moderate degree of swelling (formation of an
+expanded and perforated solid coke structure) [45]. These biocokes
+(BC-150 and BC-200) were easily crushed into brown colored pow-
+der using a mortar. It is noted that the brown color of the biocoke
+slightly faded in the case of BC-200. On the other hand, BC-300,
+BC-400, and BC-500 showed a comparatively higher degree of
+swelling after cooling to room temperature. The rapid release of
+volatiles at higher coking temperatures could be correlated with
+the highly swelled structure of these biocokes. These three biocokes
+had a black appearance as opposed to the brown color of BC-150
+and BC-200. The change of color from brown (BC-150 and BC-200)
+to black (BC-300, BC-400, and BC-500) indicates the formation of
+biocokes with successively higher proportions of carbon.
+3.1.3 | SEM-EDS Analysis
+The surface morphological features of the biocokes were evalu-
+ated by recording the SEM microphotographs, as shown in the
+top two rows in Figure 3. The BC-150 and BC-200 biocokes dem-
+onstrated similar morphology with a heterogeneous distribution
+of the micron-sized particles. The edges of the particles seemed
+smooth. The morphology of the other three biocokes differed
+from that of BC-150 and BC-200. Interestingly, BC-300, BC-
+400, and BC-500 biocokes showed nearly identical morphology
+and a homogeneous distribution of particle sizes in the micron
+range. The edges of the particles looked sharper. It is worth not-
+ing that very few pores were visually detected on the SEM image
+of all five biocokes.
+To explore the elemental distribution on the surfaces of the bio-
+cokes, EDS maps were recorded. As demonstrated in the third
+and fourth rows of Figure 3, the biocokes were mainly composed
+of carbon and oxygen, with the dominant presence of carbon,
+especially for samples prepared at higher coking temperatures.
+3.1.4 | Optical Profilometry Analysis
+The optical profilometry technique helped study the surface
+roughness of the biocoke samples. As shown in Figure 3 (bottom
+row), the surface roughness of biocokes increased with an
+increase in coking temperature from 150°C to 500°C. Figure
+S1 shows the tilted images for a better understanding of the sur-
+face roughness. The increase in roughness is quantitatively
+understood in terms of two key parameters, i.e., arithmetic mean
+FIGURE 3 | SEM microphotographs of biocokes at 60X and 250X magnifications (first and second rows), EDS maps of biocokes (third and fourth
+rows), where the green and yellow colors represent carbon and oxygen, respectively, and optical profilometry images of the surfaces of biocokes
+(fifth row).
+Advanced Energy and Sustainability Research, 2026 5o f1 8
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 6 =====
+height (SA) and maximum peak-to-valley height (SZ). The term SA
+is defined as the average height deviation from a reference plane
+across the measured area, while the term SZ is defined as the ver-
+tical distance between the highest peak and lowest valley, i.e., the
+sum of the largest peak height value and the largest pit depth value
+within the defined area. As listed in Table S1, the values of bothSA
+and SZ increased with an increase in coking temperature. Due to
+relatively lower surface roughness, the physical mixing of iron
+powder with BC-150 and BC-200 was easier, and therefore final
+graphite quality was superior. On the other hand, the increased
+surface roughness made the mixing with iron powder difficult,
+ultimately compromising the final biographite quality.
+3.1.5 | Particle Size Analysis
+The particle size distribution of biocokes is critical, as it controls
+the physical mixing with powder catalyst. Figure 4 shows the par-
+ticle size distribution of the five biocokes, and the corresponding
+Dv10, Dv50, and Dv90 values are summarized in Table S2. The
+BC-150 and BC-200 samples showed nearly identical particle size
+distributions, with relatively smaller particles. Biocoke, having a
+smaller particle size, possesses relatively more available surface
+for interaction with the catalyst powder. However, the Dv10,
+Dv50, and Dv90 increased progressively as the coking tempera-
+ture increased. For example, the Dv50 of BC-150 was 49.46 μm,
+whereas for BC-500, it was 283.3 μm. A poor coke-catalyst mixing
+was observed for BC-300, BC-400, and BC-500 as they had con-
+siderably larger particle sizes and lower available surface to inter-
+act with the catalyst. In addition to the larger particle size, it was
+also very difficult to mill these coke samples (BC-300, BC-400,
+and BC-500), which ultimately resulted in the formation of
+poor-quality biographite [ 45].
+3.1.6 | Elemental Analysis
+Chemical analysis quantified the distribution of key elements
+(C, H, N, and O) in the prepared biocokes. The results of the ele-
+mental analysis are displayed in Table S3. The biocoke samples
+showed significant changes in elemental distribution with
+increasing coking temperature. Carbon was found to be predom-
+inantly present in all the biocoke samples, and its content
+increased with coking temperature due to the removal of hydro-
+gen and oxygen via dehydration, decarboxylation, and dehydro-
+genation reactions. Both hydrogen and oxygen content decreased
+with temperature, leading to a decline in H/C and O/C ratios.
+Hydrogen and oxygen are released during coking as H 2O,
+CO2, CO, etc., resulting in a condensed aromatic structure of bio-
+coke. The nitrogen content in biocoke increased progressively
+with temperature. This is because nitrogen is often lost during
+the carbonization of biomass at relatively higher temperatures
+as volatile compounds. Moreover, nitrogen could be incorporated
+into the stable heterocyclic aromatic structure of biocoke during
+the coking process. While the oxygen-rich light components are
+evaporated, the remaining heavier components polymerize into
+solid biocoke [ 46].
+3.1.7 | XRD Analysis
+The processing temperature has a profound impact on the crys-
+talline structure, i.e., hierarchical ordering of carbon materials.
+The nanocrystalline graphitic domains are strongly influenced
+by the carbonization temperature. The crystallinity of biocokes
+was assessed by applying the XRD technique at room tempera-
+ture. The recorded XRD patterns of the biocokes are shown in
+Figure 5a. All the biocokes exhibited broad diffraction patterns
+over a range of 2 θ values. The broad nature of the peaks suggests
+predominantly amorphous carbon with very limited crystallinity.
+In general, the characteristic (002) and (100) peaks of graphitic
+carbon appear clearly when the coking is performed at a rela-
+tively higher temperature. For example, calcined coke made from
+the residue of atmospheric and vacuum distillation of pyrolysis
+oil at 1200°C showed both the (002) and (100) peaks [ 47]. The
+coking experiment in this study was performed at 500°C or lower.
+As a result, the long-range ordering was not formed in the bio-
+cokes, which is evident from the absence of the (100) peak and
+the presence of a very broad (002) peak. The coking
+temperature (150°C –500°C) led to the volatilization of low-
+molecular-weight compounds from pyrolysis oil, resulting in
+increased carbon content in the biocokes. However, the position
+of the (002) peak shifted to higher 2 θ diffraction angles with an
+increase in coking temperature, as indicated by the arrow. This
+observation supports the formation of biocokes containing high-
+molecular-weight polyaromatic hydrocarbons. Considering the
+broader diffraction patterns of the biocokes, the peak fitting tech-
+nique was not applied to estimate the characteristic parameters
+such as crystallite size ( Lc) and interlayer distance (d 002) follow-
+ing the Debye Scherrer equation and Bragg ’s law.
+FIGURE 4 | Particle size distribution of biocokes determined via laser diffraction method.
+6o f1 8 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 7 =====
+3.1.8 | FTIR Analysis
+The FTIR spectroscopy technique was applied to study the surface
+chemical functionality and carbon skeleton structure of biocokes
+made at different temperatures. The heat treatment considerably
+influenced the quantity and distribution of surface functional groups
+in biocokes, shown in Figure 5b. The FTIR spectrum of biocoke
+made at 150°C, i.e., BC-150, identified numerous chemical moieties
+including –OH (3361 cm − 1), aliphatic C –H (2934 cm − 1), C = O
+(1696 cm− 1), C = C (1603 cm − 1, 1514 cm − 1), C –H (1452 cm − 1),
+and C-O (1201 cm− 1, 1045 cm− 1). The coking temperature (150°C)
+was slightly above the atmospheri c drying temperature of pyrol-
+ysis oil; therefore, the BC-150 bi ocoke closely resembled the raw
+pyrolysis oil feedstock in terms of chemical composition except
+for the water and some other volatile compounds that were released
+during coking. As understood from Figure 5b, intensities of these
+characteristic absorption bands decreased gradually with an
+increase in coking temperature, indicating a series of processes
+including further removal of the volatile organic compounds, cleav-
+age of oxygen-containing groups, cleavage of alkyl side chains, ring
+opening of oxygen-containing groups, etc. These chemical reactions
+further accelerated the condensation and polymerization of the car-
+bon backbone [48]. At the higher coking temperatures (BC-400, BC-
+500), most of the FTIR signals disappeared. The BC-400 and BC-500
+biocokes exhibited a low-intensity, broad absorption peak at
+1560 cm− 1, characteristic of the unsaturated C= Cb o n do fa na r o -
+matic ring. It is to be noted that the aromatic ring carbon skeleton is
+not highly IR active. The presence of only unsaturated C= Cb o n d s
+in BC-400 and BC-500 indicates homogenization of chemical com-
+position and structure, coupled with enhanced restriction of bond
+vibrations due to structural order via aromatization [47]. This obser-
+vation is strongly supported by the high carbon content of the bio-
+cokes at higher coking temperature (Table S3). Based on the FTIR
+analysis, it is strongly emphasized that heat treatment not only
+helped eliminate volatiles but also accelerated molecular transfor-
+mation, leading to the formation of solidified biocokes.
+3.1.9 | XPS Analysis
+The XPS technique examines the elemental composition and
+chemical bonding state of a sample’s surface by irradiating it with
+X-rays and measuring the kinetic energy of the emitted photoelec-
+trons. The XPS spectra of the biocokes were recorded to investigate
+their surface chemistry. The low-resolution survey spectra, shown
+in Figure S2, indicate the presence of C 1s and O 1s on the surface
+of biocokes; however, their relative proportion varied as listed in
+the inserted table in Figure 6. The carbon content increased with
+coking temperature while the oxygen content decreased. The BC-
+150 biocoke had 72.4% C 1s and 27.6% O 1s, while BC-500 showed
+90.3% C 1s and only 9.7% O 1s, indicating a greater degree of car-
+bonization in BC-500 than in BC-150.
+To further explore the nature of chemical bonding, i.e., the chem-
+ical states of carbon in biocokes, C 1s peaks were fitted, i.e.,
+deconvoluted. The results of the XPS analysis after peak fitting
+are summarized in Figure 6. The peak fitting identified different
+types of chemical bonding in biocokes. The relative proportion of
+these chemical species is listed in Table S4. The C –C and C –H
+bonds were predominantly present in all the samples, and their
+relative proportion increased with coking temperature. The pro-
+portion of C –OH (alcohol) and C –O–C (ether) chemical bonds
+decreased significantly with coking, indicating the removal of
+oxygen with temperature. The carbonyl (C = O) and ester
+(O–C=O) functional groups were present in relatively lower per-
+centages compared to the aforementioned species; however, their
+proportion also varied with an increase in coking temperature.
+3.1.10 | TOF-SIMS Analysis
+The typical analysis depth of the TOF-SIMS technique is 1 –2n m ,
+which means this method provides information about the very top
+layer of materials. The surface chemistry of the biocoke samples
+was studied by recording the TOF-SIMS spectra, and the results
+are shown in Figure 7. As shown in Figure 7a, a number of
+ion fragments were detected in the TOF-SIMS spectra of biocokes
+over the mass (m/z) range of 40 –80. While the intensities of sec-
+ondary ions cannot be used for quantitative determination of abso-
+lute molecular composition, the relative intensities of identical ion
+peaks across various samples can be compared to extract funda-
+mental information about surface chemistry. Two characteristic
+ion fragments, namely C 4
+− and C 4H− , were detected at 48 and
+49 mass (m/z) units, respectively, for all the biocokes. However,
+with the increase in coking temperature, the area ratio of C 4H−
+to C4
+− peaks decreased (Figure 7b), which indicates that removal
+of hydrogen was accelerated with an increase in coking tempera-
+ture. Another characteristic ion fragment was detected at 65 mass
+(m/z) unit, which could be assigned to the C 4OH− ion fragment.
+This particular ion fragment can serve as an indicator of an oxygen
+atom bound to carbon. Figure 7c depicts the area of C 4OH− ,a sa
+function of coking temperature. With an increase in coking tem-
+perature, the peak area of the C 4OH− ion fragment decreased,
+FIGURE 5 | (a) XRD diffractograms and (b) FTIR spectra of biocokes.
+Advanced Energy and Sustainability Research, 2026 7o f1 8
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 8 =====
+indicating enhanced oxygen removal from the samples. The TOF-
+SIMS results support that elements such as hydrogen and oxygen
+were released gradually with coking temperature, leading to
+increased concentration of carbon in the biocokes.
+3.1.11 | TGA Analysis
+The thermal stability of the biocokes was studied by recording
+thermograms up to 900°C. The results of the TGA experiments
+are shown in Figure 8. The patterns of the TGA thermograms
+(Figure 8a) indicate improved thermal stability with coking tem-
+perature. To understand the insights into the change in thermal
+behavior with temperature, various parameters, including the tem-
+perature for 10% weight loss ( T10), i.e., onset degradation temper-
+ature ( Tonset), and temperature for 50% weight loss ( T50), were
+recorded. As understood from Table S5, the onset degradation
+temperature shifted to higher value with an increase in coking
+temperature. The BC-150 showed a T10 at 258°C, while
+FIGURE 7 | (a) Negative ion TOF-SIMS spectra of biocokes, (b) C 4H− to C4
+− peak area ratio with coking temperature, and (c) C 4OH− peak area as a
+function of coking temperature. The peak areas were normalized by total ion intensity.
+FIGURE 6 | Deconvolution of C1s XPS peaks of biocokes. The inserted table shows the distribution of C 1s and O 1s across the five biocokes.
+8o f1 8 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 9 =====
+BC-200, BC-300, BC-400, and BC-500 exhibited T10 at 283°C,
+385°C, 395°C, and 442°C, respectively. The T50 for BC-150 was
+found to be 480°C, while BC-200 showed a relatively higher T50
+value (542°C). It is noted that the three other biocokes (BC-300,
+BC-400, and BC-500) exhibited less than 50% weight loss.
+As observed from the derivative thermograms (DTG), shown in
+Figure 8b, the peak degradation temperature ( Tmax) also shifted
+to higher values with an increase in coking temperature. The
+nonvolatile matters present in the biocoke, including fixed car-
+bon and ash, also increased with increasing coking temperature
+(Table S5). The higher weight losses, especially for BC-150 and
+BC-200 is attributed to the presence of a relatively higher propor-
+tion of volatile compounds compared to BC-300, BC-400, and BC-
+500. The formation of polycondensed aromatic structure could
+explain the improved thermal stability of biocoke formed at suc-
+cessively higher temperatures [ 48].
+3.2 | Mechanism of Biocoke Formation
+Biocoke is a solid carbonaceous material that inevitably forms
+during the chemical and/or thermal upgradation of pyrolysis
+oil [ 49]. For the preparation of carbon materials from pyrolysis
+oil, coking was performed in this study. For other thermal upgra-
+dation processes of pyrolysis oil, the formation of coke presents
+safety and economic challenges, including catalyst fouling/deac-
+tivation, thermal reactor clogging, and diminished energy effi-
+ciency. Yet, little is known about the mechanism of biocoke
+formation during the heating of pyrolysis oil. Biocoke can be
+formed by thermally treating pyrolysis oil over a broad tempera-
+ture range [ 50]. Cellulose, hemicellulose, and lignin-derived
+components actively participate in the formation of biocoke.
+Interactions among the components present in pyrolysis oil play
+a key role in defining the properties of biocoke, including yield.
+Both the water-soluble and water-insoluble fractions in pyrolysis
+oil can form coke at low temperatures. The water-soluble fraction
+includes alcohols, aldehydes, ketones, carboxylic acids, anhydro-
+sugars, lignin monomers, etc. The water-insoluble fraction con-
+tains lignin-derived oligomers having larger aromatic ring
+systems [ 51–54]. Pyrolysis oil is extremely complex in terms of
+chemical composition, and some of the functional groups are
+exceedingly reactive at room temperature, e.g., sugars, aldehydes,
+carboxylic acids, etc [ 50]. These chemical compounds become
+more activated when pyrolysis oil is heated and undergoes
+decomposition, chemical interaction with each other, and poly-
+merization, leading to the formation of biocoke. Wang et al.
+found that levoglucosan, furans, and cyclic ketones in the
+water-soluble fraction formed biocoke at a temperature range
+of 250°C –450°C [ 50]. It is to be noted that levoglucosan is the
+single most abundant chemical compound in pyrolysis oil (6 –
+7 wt%). The authors defined coke as the solid residue insoluble
+in CHCl3:CH3OH (80:20 v/v) mixture. In addition to the inherent
+chemical properties of pyrolysis oil including, ash, other factors
+potentially influence the biocoke formation, such as temperature,
+heating rate, reaction atmosphere, atmosphere pressure, etc [ 49].
+With increasing temperature, the degree of aromatization
+increases, leading to the formation of biocoke with a more con-
+densed structure and lower O/C and H/C ratios. Several studies
+have reported that solid biocoke forms from liquid pyrolysis oil
+due to the polymerization of chemical compounds via free radical
+reactions [ 55–57]. The free radicals are generated from the rup-
+ture of covalent bonds upon the action of heat, and the concen-
+tration of free radicals increases with temperature. Two types of
+free radicals are involved during the coking process: (i) long-lived
+stable free radicals and (ii) short-lived transient/active free rad-
+icals. The stable free radicals can be monitored in-situ using con-
+tinuous wave electron paramagnetic resonance (EPR)
+spectroscopy. However, due to the short lifetimes of transient free
+radicals (microseconds), it is difficult to detect them by EPR, as
+the time resolution of continuous-wave EPR is milliseconds. A
+large number of active free radicals are annihilated during the
+process. One possible strategy to capture the active free radicals
+is the use of 9,10-dihydrophenanthrene (DHP) as a hydrogen
+donor and then measuring the hydrogen donation reaction of
+DHP [56]. During the early stage of coking, there is an induction
+period during which lighter components progressively polymer-
+ize into heavier components, encompassing the critical coke pre-
+cursors, i.e., polycyclic aromatics, which dissolve and accumulate
+in pyrolysis oil [ 55]. When the coke precursors in pyrolysis oil
+reach their solubility threshold, they precipitate and polymerize
+to form coke. Certain transient free radicals are incorporated into
+macromolecular coke products and transformed into stable free
+radicals. These stable free radicals are then confined/trapped by
+the steric hindrance of nascent coke macromolecules with small
+aromatic structures, thereby prolonging their lifespans and
+reducing their reactivity. During the later stage, the coke precur-
+sors are exhausted, and the coke structure undergoes thermal
+condensation, resulting in the formation of larger aromatic
+FIGURE 8 | (a) TGA and (b) DTG curves of the biocokes recorded under nitrogen flow ( Tmax: peak degradation temperature).
+Advanced Energy and Sustainability Research, 2026 9o f1 8
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 10 =====
+structures. Figure 9 illustrates the proposed temperature-depen-
+dent structural evolution of biocokes to facilitate the understand-
+ing of the biocoke formation mechanism. The structural models
+were developed based on comprehensive characterization results
+discussed earlier (Section 3.1). Detailed methodologies, assump-
+tions, and parameters used to predict the biocokes structural
+models are provided in the supplementary information
+(Section S.1, Table S6 through Table S9).
+3.3 | Catalytic Graphitization of Biocokes via
+Delayed Coking
+Considering the economic aspects of the overall process, it is
+essential to capture volatiles before graphitization, as they
+can be further processed into sustainable aviation fuels
+(SAFs). To capture volatiles, an intermediate hold step is
+required, which needs to be performed in a separate unit.
+The idea is similar to delayed coking as applied to petroleum
+oil upgrading. Delayed coking is a thermal cracking process that
+converts low-value residues from the atmospheric and vacuum
+distillation of crude petroleum oil into high-value products such
+as petroleum coke, lighter gases, naphtha, gasoline, diesel,
+heavy gas oils, etc [ 58–61]. The process is typically performed
+at a temperature of /C24500°C under a low-pressure, low-oxygen
+environment with hydrocarbon vapors acting as the primary
+atmosphere inside the coke drum. Depending on the feedstock
+and process conditions, three different types of cokes can be
+formed, namely shot coke, sponge coke, and needle coke.
+The green needle coke (GNC) has a needle-like long structure
+and is produced from low-sulfur and highly aromatic feed-
+stocks. The GNC can be calcined at 1000°C –1500°C to remove
+remaining volatile materials and enhance carbon purity [ 62]. The
+calcined needle coke is processed at /C242800°C into anode-grade
+synthetic graphite for LIBs [ 63]. This study aimed to explore the
+effects of delayed coking at three intermediate temperatures on
+the physicochemical and electrochemical performance of BG-400,
+BG-500, and BG-600 biographites. The capture and processing of
+volatiles into SAFs are outside the scope of this study and will
+be available in future reports.
+3.3.1 | XRD Analysis
+The XRD is a key technique for analyzing graphite structures
+because it provides detailed information on crystallinity, which
+is crucial for understanding the properties of graphite. For the
+application of graphite as an LIB anode, a high crystallinity is
+desired as this property is directly correlated with the reversible
+intercalation and deintercalation of Li +. The crystalline struc-
+tures of the three biographites were studied by recording the
+XRD patterns at room temperature. The diffractograms of
+the biographites are demonstrated in Figure 10 (top row). The
+XRD patterns of BG-400, BG-500, and BG-600 were found to
+be very sharp, indicating highly crystalline structures. Various
+crystallographic planes, including (002), (100), (101), (102),
+(004), (103), (110), (112), (105), and (006), are labeled with respect
+to the 2 θ positions. These planes are found in ideal graphite. The
+sharp peak at 2 θ/C2426.5° corresponds to the reflection of the (002)
+plane. The sharpness of this peak indicates the formation of biog-
+raphite with a higher crystallite size and lower interlayer spacing.
+The full width at half maximum (FWHM) of this peak was used
+to calculate the crystallite size or stacking height (i.e., Lc) follow-
+ing the Debye Scherrer equation. The 2θ position of this peak was
+used to calculate the interlayer spacing, i.e., d 002, according to
+FIGURE 9 | Predicted chemical structures of biocokes.
+10 of 18 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 11 =====
+Bragg’s law of diffraction. Table 1 summarizes the Lc and d 002
+values of the three biographites. The Lc values were calculated
+to be 177, 161, and 181 Å for BG-400, BG-500, and BG-600,
+respectively. The d-spacing values were 0.3355, 0.3353, and
+0.3355 nm, respectively. The sharp diffractograms, high Lc, and
+low d 002 indicate that all three biographites were highly crystal-
+line, and suitable for use as anodes in LIBs.
+3.3.2 | Raman Analysis
+Raman spectroscopy is highly sensitive to structural disorder in
+graphitic materials. The typical Raman spectrum of graphite
+exhibits three peaks at /C241350, 1580, and 2700 cm − 1, correspond-
+ing to the D-band, G-band, and 2D-band, respectively. The
+D-band emerges due to the out-of-plane defects (sp 3 carbon
+vibrations), while G-band is indicative of in-plane order (sp 2 car-
+bon vibrations) [23]. The 2D-band is sensitive to stacking and the
+number of graphene layers. The Raman spectra of BG-400, BG-
+500, and BG-600 are displayed in Figure 10 (bottom row). The
+Raman spectra were averaged over 10 scans. It is worth empha-
+sizing that Raman spectroscopy analyzes a small sample and can
+provide spatially resolved information, whereas XRD is a bulk
+characterization technique that analyzes a relatively larger sam-
+ple. Table 1 lists various parameters obtained from the Raman
+spectra analysis. In particular, the intensity ratio of the D-band
+to G-band, i.e., ID/IG, was used to assess the degree of disorder in
+graphitic materials. The ID/IG values of BG-400, BG-500, and BG-
+600 were calculated to be 0.08, 0.12, and 0.09, indicating a very
+low degree of disorder. The degree of graphitization factor ( α) for
+BG-400, BG-500, and BG-600 was estimated as 92, 89, and 91%,
+respectively. The lower ID/IG and higher α values support the
+higher degree of graphitization in the three biographites. The
+intensity ratio of 2D-band to G-band, i.e., I2D/IG, was calculated
+to investigate the multilayer graphene sheets in the biographites
+(monolayer: I2D/IG /C242–3, bilayer: 1 <I2D/IG < 2, multilayer:
+I2D/IG < 1) [ 23]. The I2D/IG values for BG-400, BG-500, and
+BG-600 were estimated at 0.41, 0.43, and 0.41, respectively, indi-
+cating that the biographites had multilayer structures.
+3.3.3 | SEM-EDS Analysis
+The SEM images were recorded to study the surface morphology
+of the biographites. The top row in Figure 11 presents the SEM
+microphotographs. The micron-sized and flaky biographite par-
+ticles are stacked in foliated layers. The stacking of layers in par-
+allel patterns is suitable considering the desired properties of
+anode materials in LIBs. This type of morphology is typical
+for processing anode-grade graphite because it helps align par-
+ticles during the calendering step, which improves packing,
+tap density, energy density, electron transport, and mechanical
+FIGURE 10 | XRD patterns (top row) and Raman spectra (bottom row) of BG-400, BG-500, and BG-600 biographites.
+TABLE 1 | Summary of the properties of biographites based on XRD, Raman spectroscopy, BET, and particle size analysis.
+Biographite
+(002)
+position,
+°
+Lc,
+Å
+d002,
+nm
+D, band,
+cm− 1
+G, band,
+cm− 1
+2D, band,
+cm− 1 ID/IG α I2D/IG
+SBET,
+m2/g
+Dv50,
+μm
+BG-400 26.55 177 0.3355 1347 1576 2713 0.08 92 0.41 1.77 49.09
+BG-500 26.57 161 0.3353 1352 1579 2717 0.12 89 0.43 1.56 43.57
+BG-600 26.55 181 0.3355 1352 1579 2715 0.09 91 0.41 1.47 52.12
+Advanced Energy and Sustainability Research, 2026 11 of 18
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 12 =====
+strength of the electrode film. The BG-400, BG-500, and BG-600
+showed minor difference in the morphology investigation indi-
+cating that the delayed coking temperatures did not affect the
+biographite particle structure. However, it is worth emphasizing
+that the SEM-observed foliation reflects particle-scale morphol-
+ogy, rather than atomic-scale graphitic ordering. The EDS anal-
+ysis helped assess the purity and map the elemental distribution
+in the biographites. Figure S3 shows the EDS elemental maps of
+BG-400, BG-500, and BG-600. The elemental maps identify car-
+bon (denoted with green color) as the predominant element on
+the biographite’s surface with a trace amount of oxygen (denoted
+with yellow color), indicating the preparation of high-purity
+biographites.
+3.3.4 | HR-TEM Analysis
+The HR-TEM images were recorded to visualize the evolution of
+graphitic crystalline structures. Figure 11 (bottom row) shows
+the HR-TEM photographs of biographites. The photos illustrate thin
+overlapping sheets and layers typical of graphitic structures featur-
+ing well-aligned planes. As visible in the images, the experimental
+conditions maintained during the c atalytic graphitization process
+ensured the formation of close ly spaced graphene layers with
+low interlayer spacing (d 002). This observation is supported by
+the low d 002 values calculated from the XRD data shown in
+Table 1. The HR-TEM images also reveal significant growth of
+the graphene sheets along the c-direction, giving rise to high stack-
+ing height ( Lc) and a-direction offering high lateral size ( La). The
+onion-like morphology, having overlapping graphene sheets and
+long-range ordering, suggests high crystallinity of the biographites.
+The SAED patterns reveal bright concentric diffraction rings, indi-
+cating high crystallinity. The presence of slightly curved and wrin-
+kled domains, suggestive of partially ordered structures, was not
+prominent in the HR-TEM images. Based on the investigation of
+the well-defined lattice fringes demonstrated in HR-TEM images,
+it can be stated that all three biographites (BG-400, BG-500, and
+BG-600) were formed with high crystallinity. Therefore, the varia-
+tion in delayed coking temperature had a negligible effect on the
+crystallinity of the biographites.
+3.3.5 | Particle Size Analysis
+The electrochemical performance of a battery is strongly influ-
+enced by the particle size and particle size distribution of the
+electrode active materials [ 64]. All the important performance
+matrices, including capacity, discharge/charge behavior,
+cycling performance, C rates, CE, etc., are influenced by the par-
+ticle size distribution of the active material. A narrow particle
+distribution yields superior cell performance compared to
+broader distributions. Nonetheless, particle size reduction has
+limitations, as excessively small particles can adversely affect
+performance. Moreover, regardless of particle size distribution,
+the presence of coarse particles is observed to facilitate lithium
+plating, thereby diminishing cell efficiency and compromising
+battery safety. In this study, the particle size distribution of biog-
+raphites was determined with LD method. As listed in Table S2,
+the average Dv10, Dv50, and Dv90 were 12.94 μm, 49.09 μm, and
+98.74 μm for BG-400; 12.93 μm, 43.57 μm, and 68.86 μmf o r
+BG-500; and 14.44 μm, 52.12 μm, and 99.55 μm for BG-600.
+The histograms shown in Figure 12 indicate that the particle
+size distribution of BG-400 and BG-600 is nearly similar and
+broad, while the BG-500 sample shows a relatively narrower
+particle size distribution.
+3.3.6 | BET Analysis
+The surface area of the biographite samples after acid purifica-
+tion was determined using the nitrogen adsorption isotherm
+FIGURE 11 | SEM and HR-TEM images of BG-400, BG-500, and BG-600 samples (insets in HR-TEM images show selected area electron diffraction
+pattern (SAED) of biographites.
+12 of 18 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 13 =====
+method. The specific surface area ( SBET) of BG-400, BG-500, and
+BG-600 was determined to be 1.77 m2/g, 1.56 m2/g, and 1.47 m2/g,
+respectively (Table 1). The BET surface area of the biographite
+samples was similar to commercial LIB anode-grade synthetic
+graphite as reported in our previous study [ 45]. The low surface
+area of graphite is highly desired for developing energy-efficient
+anode materials for LIB applications [65]. The anode surface area
+should be well balanced with the energy density and power den-
+sity of the LIB cells. A high anode surface area accelerates the
+irreversible consumption of Li + during the first cycle, leading
+to undesired solid electrolyte interphase (SEI) formation via
+reductive decomposition of electrolyte. To improve the energy
+density of LIB cells, it is essential to minimize the anode materi-
+al’s surface area. However, it should be emphasized that the low
+anode surface area is responsible for the low power density of the
+cell, i.e., the capacity of the cell at high C rates, which may affect
+the fast charging ability of the cells.
+3.3.7 | XRF Analysis
+The purity of the biographites after acid refluxing was assessed
+via XRF analysis. The results of the XRF analysis after 5 steps of
+acid refluxing are presented in Table S10. The results are pre-
+sented as either percent (%) or parts per million (ppm) units.
+The carbon content was determined by balance. As is evident,
+all the biographites (BG-400, BG-500, and BG-600) demonstrated
+high carbon purity, which is required for their prospective use in
+LIB cells. It is to be noted that Fe was not completely removed
+from biographites even after 5 steps of acid refluxing.
+3.4 | Electrochemical Performance of Biographite
+Anodes in LIBs
+3.4.1 | Half-Cell Performance Analysis
+Figure 13a presents the initial galvanostatic charge/discharge
+profiles of LIB half-cells using BG-600 (green), BG-500 (blue),
+and BG-400 (red) as anode materials. The 1 st lithiation capacities
+were determined to be 420 mAh/g for BG-600, 413 mAh/g for
+BG-500, and 411 mAh/g for BG-400. The 1st delithation capacities
+were 387 mAh/g, 381 mAh/g, 374 mAh/g, respectively. These
+capacities slightly surpass the theoretical capacity of commercial
+graphite (372 mAh/g). This enhanced capacity can be attributed
+to structural modifications in the biographite materials, includ-
+ing a nanostructured surface, higher defect density, and slight
+variations in interlayer spacing. The elevated initial capacities
+are attributed to surface defects, which are known to enhance
+Li+ storage in carbon-based anodes. Previous studies have
+reported similar findings, where increased defect density corre-
+lated with capacities exceeding theoretical values [ 66, 67].
+Table 2 summarizes the charge/discharge capacities of all three
+biographite samples over the first two cycles. Table 2 also repre-
+sents the CE for the first 2 cycles. The first-cycle CE values were
+92.13% for BG-600, 92.10% for BG-500, and 90.99% for BG-400.
+These values were slightly lower than the commercial graphite
+anodes, which are /C2494%. It should be noted that commercial
+graphite is usually surface passivated with a soft carbon coating,
+so the reason for the biographite ’s lower initial CE is likely due
+to higher surface reactivity and compositional heterogeneity in
+the biographite, which may promote side reactions and SEI
+FIGURE 12 | Particle size distribution of biographites determined via laser diffraction method.
+FIGURE 13 | (a) Galvanostatic charge/discharge curves for the biographite samples BG-400 (red), BG-500 (blue), and BG-600 (green). (b) Cycling
+performance of biographite samples BG-400 (red), BG-500(blue), and BG-600 (green).
+Advanced Energy and Sustainability Research, 2026 13 of 18
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 14 =====
+formation. However, the CE significantly improved in the second
+cycle, reaching 98.98% for BG-600, 98.67% for BG-500, and
+98.51% for BG-400, suggesting the formation of a stable SEI layer
+after the initial cycle.
+Figure 13b displays the cycling performance of the three biogra-
+phite anodes at a current rate of C/10 for the first 50 cycles. All
+samples exhibited excellent cycling stability, with capacities
+remaining nearly constant after 50 cycles, indicating robust
+long-term performance. This observation is strongly correlated
+with the development of a highly crystalline microstructure
+(Table 1). Among the three, BG-600 demonstrated the highest
+capacity retention and overall performance, as supported by
+its relatively lower specific surface area (1.47 m 2/g) compared
+to BG-500 (1.56 m 2/g) and BG-400 (1.77 m 2/g).
+3.4.2 | Full-Cell Performance Analysis
+Figure 14a,b depicts the voltage profiles of BG ||NMC622 full cells.
+All three cells exhibited an initial discharge capacity close to the
+theoretical capacity of the NMC622 cathode, which is 175 mAh/g
+at 4.2 V, indicating efficient electrochemical utilization. Consistent
+with the trends observed in the half-cell configurations, the
+BG-600||NMC622 full cell demonstrated the highest capacity
+among the three samples. Interestingly, the first charge plateau
+in cycle 1 occurred around /C243.5 V, whereas in cycle 2 it shifted
+to /C243.4 V. This shift indicates a reduction in overpotential during
+the lithiation of the biographite anode and suggests improved elec-
+trochemical kinetics at the biographite –electrolyte interface. The
+primary reason for this behavior is a decrease in biographite ’s
+impedance, most likely due to SEI stabilization during the initial
+TABLE 2 | Charge/discharge capacity and CE of the biographite samples for the first 2 cycles.
+Biographite
+Specific capacity, mAh/g CE, %
+Cycle 1 Cycle 2
+Cycle 1 Cycle 2Lithiation Delithiation Lithiation Delithiation
+BG-400 420 387 392 388 92.13 98.98
+BG-500 413 381 386 382 92.10 98.67
+BG-600 411 374 380 375 90.99 98.51
+FIGURE 14 | Galvanostatic charge/discharge curves of BG ||NMC622 full-cell: (a) cycle 1, (b) cycle 2, (c) specific discharge capacity versus cycle
+number, and (d) rate capability test.
+14 of 18 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 15 =====
+cycle. In cycle 1, SEI formation consumed Li + and introduced
+additional interfacial resistance. By cycle 2, a more stable and pas-
+sivating SEI layer was formed, reducing impedance and enabling
+Li+ to intercalate into biographite more efficiently, thereby lower-
+ing the energy required and shifting the charge plateau to a lower
+voltage. The first-cycle CEs of the full cells were 89.23% for BG-
+600, 89.13% for BG-500, and 89.34% for BG-400. In the second
+cycle, the CEs markedly increased to 99.45%, 99.42%, and
+99.43%, respectively. This significant improvement confirms the
+formation of a stable SEI following the initial cycle.
+Figure 14c presents the galvanostatic cycling performance of the
+full cells over the first 12 cycles and then cycles 44 –94 (after a
+C-rate test). Notably, the BG-600 anode delivered the highest lith-
+iation capacity throughout. All three full cells exhibited excellent
+capacity retention ( /C2488%), with final capacities of 156 mAh/g
+for BG-600 ||NMC622, 153 mAh/g for BG-500 ||NMC622, and
+152 mAh/g for BG-400 ||NMC622 after 150 cycles, respectively.
+Figure 14d represents a C-rate test in which the applied current
+was successively increased after 5 cycles from C/10 to 2C. As is
+evident, the BG-600 anode exhibited the best fast-charging
+response, especially at 2C, demonstrating that BG-600 had the
+lowest Li + diffusion barriers. After 2C charging, the current
+was returned to C/10 to assess the material ’s recovery during
+slower charging. Again, BG-600 yielded the highest capacity;
+however, all the cells showed some capacity loss compared to
+the first set of C/10 charging, likely due to Li plating at a current
+rate > 1C.
+4 | Conclusion
+This study systematically investigated the physicochemical
+characteristics of pyrolysis oil-derived biocokes and their con-
+version to high-performance biographites via catalytic graphiti-
+zation. Biocokes produced at varying coking temperatures
+(150°C–500°C) exhibited significant changes in elemental com-
+position, morphology, thermal stability, and carbon structure,
+which were comprehensively characterized using numerous
+analytical techniques. The biocoke formed at 150°C was identi-
+fied as the most suitable precursor for graphitization due to its
+favorable particle size, surface morphology, and ease of catalyst
+integration. Catalytic graphitization of BC-150 at 1500°C, incor-
+porating an intermediate ‘delayed coking ’ step at 400°C –600°C,
+produced highly crystalline biographites with low surface area
+and excellent purity —properties that are essential for anode
+materials in LIBs. Importantly, t he intermediate hold tempera-
+ture did not cause wide variation in the crystallinity, structure,
+and electrochemical performance of the resulting biographites.
+All samples demonstrated strong performance in both half-cell
+and full-cell LIB configurations. These findings offer a promis-
+ing pathway for the scalable, low-temperature production of
+biographite from pyrolysis oil. The incorporation of a delayed
+coking step enables simultaneous recovery of condensable
+vapors—potential feedstocks for SAF production —positioning
+this approach as a compelling biorefinery strategy. Future work
+should focus on integrating SAF synthesis into the biographite
+production system and on conducting detailed techno-
+economic and life-cycle assessments to evaluate commercial
+feasibility and environm ental benefits at scale.
+Acknowledgments
+The pyrolysis oil was cordially supplied by Ensyn, Ontario, Canada.
+Utilization of the XRF, SEM (with EDS), and TEM instruments within
+University of Virginia ’s Nanoscale Materials Characterization Facility
+(NMCF) was fundamental to this work, and the authors acknowledge
+the assistance of Catherine Dukes and Dr. Helge Heinrich for performing
+experiments and analysis of the data. This work was performed in part at
+the Analytical Instrumentation Facility (AIF) at North Carolina State
+University, which is supported by the State of North Carolina and the
+National Science Foundation (award number ECCS-2025064). The AIF
+is a member of the North Carolina Research Triangle Nanotechnology
+Network (RTNN), a site in the National Nanotechnology Coordinated
+Infrastructure (NNCI). This work was authored in part by the
+National Laboratory of the Rockies for the U.S. Department of Energy
+(DOE) under Contract No. DE-AC36-08GO28308. The views expressed
+in the article do not necessarily represent the views of the DOE or the
+US government. The US government and the publisher, by accepting
+the article for publication, acknowledge that the US government retains
+a nonexclusive, paid-up, irrevocable, worldwide license to publish or
+reproduce the published form of this work, or allow others to do so,
+for US government purposes.
+Funding
+This work was supported by the U.S. Department of Energy (DOE)
+(Award number: DE-EE0009260).
+Conflicts of Interest
+The authors declare no conflicts of interest.
+Data Availability Statement
+The data that support the findings of this study are available from the
+corresponding author upon reasonable request.
+References
+1. M. Li, J. Lu, Z. Chen, and K. Amine, “30 Years of Lithium-Ion
+Batteries,” Advanced Materials 30, no. 33 (2018): 1800561, https://doi.
+org/10.1002/adma.201800561.
+2. Y. Wang, H. Xiang, Y.-Y. Soo, and X. Fan, “Aging Mechanisms,
+Prognostics and Management for Lithium-Ion Batteries: Recent
+Advances,” Renewable and Sustainable Energy Reviews 207 (2025):
+114915, https://doi.org/10.1016/j.rser.2024.114915.
+3. F. Maxharraj, K. Voigt, A. Werwein, et al., “Structured Electrodes for
+Lithium-Ion Batteries and Their Impact on Cell Energy Density and
+Power Density: A Review, ” Advanced Energy & Sustainability Research
+6, no. 6 (2025): 2400377, https://doi.org/10.1002/aesr.202400377.
+4. M. A. Martuza, L. Mädler, and S. Pokhrel, “Metal Sulfides as Potential
+Materials for Next Generation Lithium Ion Batteries: A Review, ”
+Advanced Energy & Sustainability Research 6, no. 8 (2025): 2400448,
+https://doi.org/10.1002/aesr.202400448.
+5. S. Das, K. C. Bhowmik, M. A. Rahman, and S. Barua, “Anatase TiO2 as
+Anode of Lithium-Ion Batteries: A Comprehensive Review on
+Sustainable Synthesis and Electrochemical Properties, ” Advanced
+Energy & Sustainability Research6, no. 12 (2025): 2500190, https://doi.org/
+10.1002/aesr.202500190.
+6. H. Li, M. B. Kaleem, K. Liu, Y. Wu, W. Liu, and Q. Peng, “Fault
+Prognosis of Li-Ion Batteries in Electric Vehicles: Recent Progress,
+Challenges and Prospects, ” Journal of Energy Storage 116 (2025):
+116002, https://doi.org/10.1016/j.est.2025.116002.
+Advanced Energy and Sustainability Research, 2026 15 of 18
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 16 =====
+7. IEA, Global EV Outlook 2024 (International Energy Agency, 2024,
+https://www.iea.org/repor ts/global-ev-outlook-2024 , Accessed: 16
+February 2025).
+8. Z. Tong, C. Lv, G.-D. Bai, Z.-W. Yin, Y. Zhou, and J.-T. Li, “A Review on
+Applications and Challenges of Carbon Nanotubes in Lithium-Ion
+Battery,” Carbon Energy 7, no. 2 (2024): e643, https://doi.org/10.1002/
+cey2.643.
+9. Y. Liu, H. Shi, and Z.-S. Wu, “Recent Status, Key Strategies and
+Challenging Perspectives of Fast-Charging Graphite Anodes for
+Lithium-Ion Batteries, ” Energy & Environmental Science 16, no. 11
+(2023): 4834 –4871, https://doi.org/10.1039/d3ee02213g.
+10. Y.-X. Yao, C. Yan, and Q. Zhang, “Emerging Interfacial Chemistry of
+Graphite Anodes in Lithium-Ion Batteries,” Chemical Communication 56,
+no. 93 (2020): 14570 –14584, https://doi.org/10.1039/d0cc05084a.
+11. M. Kakunuri, S. Kali, and C. S. Sharma, “Catalytic Graphitization of
+Resorcinol-Formaldehyde Xerogel and Its Effect on Lithium Ion
+Intercalation,” Journal of Analytical and Applied Pyrolysis 117 (2016):
+317–324, https://doi.org/10.1016/j.jaap.2015.10.017.
+12. A. Gomez-Martin, J. Martinez-Fernandez, M. Ruttert, et al., “Iron-
+Catalyzed Graphitic Carbon Materials from Biomass Resources as
+Anodes for Lithium-Ion Batteries, ” ChemSusChem 11, no. 16 (2018):
+2776–2787, https://doi.org/10.1002/cssc.201800831.
+13. L. Frankenstein, P. Glomb, J. Ramirez-Rico, M. Winter, T. Placke, and
+A. Gomez-Martin, “Revealing the Impact of Different Iron-Based
+Precursors on the ‘Catalytic’ Graphitization for Synthesis of Anode
+Materials for Lithium Ion Batteries, ” ChemElectroChem 10, no. 5
+(2023): e202201073, https://doi.org/10.1002/celc.202201073.
+14. S. Ahmadi, D. Maddipatla, B. J. Bazuin, and M. Z. Atashbar, “A
+Comprehensive Experimental Study on Microstructure-Graded
+Graphite Anodes for Enhancing Fast-Charging Capability of Lithium-
+Ion Batteries, ” Advanced Energy & Sustainability Research 5, no. 8
+(2024): 2300213, https://doi.org/10.1002/aesr.202300213.
+15. M. Bolsinger, C. Weisenberger, T. Waldmann, M. Kamlah, and
+V. Knoblauch, “Exploring the Inhomogeneous Nature of Li
+Intercalation and Li Plating on Graphite Anodes —An Experimental
+Study Combining Inert Gas High-Resolution Light Microscopy with
+Colorimetric and Machine Learning-Based Image Analysis, ” Advanced
+Energy & Sustainability Research 7, no. 1 (2026): e202500181, https://
+doi.org/10.1002/aesr.202500181.
+16. A. D. Jara, A. Betemariam, G. Woldetinsae, and J. Y. Kim,“Purification,
+Application and Current Market Trend of Natural Graphite: A Review, ”
+International Journal of Mining Science and Technology 29, no. 5 (2019):
+671–689, https://doi.org/10.1016/j.ijmst.2019.04.003.
+17. J. Zhang, C. Liang, and J. B. Dunn, “Graphite Flows in the U.S.:
+Insights into a Key Ingredient of Energy Transition, ” Environmental
+Science & Technology 57, no. 8 (2023): 3402 –3414, https://doi.org/10.
+1021/acs.est.2c08655.
+18. L. Lower, S. C. Dey, T. Vook, M. Nimlos, S. Park, and W. J. Sagues,
+“Catalytic Graphitization of Biocarbon for Lithium-Ion Anodes: A
+Minireview,” ChemSusChem 16, no. 24 (2023): e202300729, https://doi.
+org/10.1002/cssc.202300729.
+19. T. Vook, S. C. Dey, J. Yang, et al., “Sustainable Li-Ion Anode Material
+from Fe-Catalyzed Graphitization of Paper Waste, ” Journal of Energy
+Storage 73 (2023): 109242, https://doi.org/10.1016/j.est.2023.109242.
+20. W. J. Sagues, J. Yang, N. Monroe, et al.,“A Simple Method for Producing
+Bio-Based Anode Materials for Lithium-Ion Batteries,” Green Chemistry 22,
+no. 20 (2020): 7093 –7108, https://doi.org/10.1039/d0gc02286a.
+21. L. Lower, S. M. Rowland, M. Regula, et al., “Sustainable Graphite and
+Jet Fuel from Biorefinery Residue, ” ChemSusChem 18, no. 10 (2025):
+e202402509, https://doi.org/10.1002/cssc.202402509.
+22. S. C. Dey, L. Lower, T. Vook, et al., “Catalytic Graphitization
+of Pyrolysis Oil for Anode Application in Lithium-Ion Batteries, ”
+Green Chemistry 26, no. 15 (2024): 8840 –8853, https://doi.org/10.1039/
+d4gc01647e.
+23. M. A. A. Farid, A. L. T. Zheng, T. Tsubota, and Y. Andou, “Catalytic
+Graphitization of Biomass-Derived Ethanosolv Lignin Using Fe, Co, Ni,
+and Zn: Microstructural and Chemical Characterization, ” Journal of
+Analytical and Applied Pyrolysis 173 (2023): 106064, https://doi.org/10.
+1016/j.jaap.2023.106064.
+24. R. Wang, S. K. Rish, J. Wang, S. Lee, A. Tahmasebi, and J. Yu,
+“Synthesis of 3D Graphitic Carbon Foams via Pressurized Pyrolysis of
+Victorian Brown Coal as Anode Material for Li-Ion Battery, ” Journal
+of Analytical and Applied Pyrolysis 164 (2022): 105489, https://doi.org/
+10.1016/j.jaap.2022.105489.
+25. L. Tang, Q. Mao, Z. You, et al., “Catalytic Graphitization in Anthracite
+by Reduced Iron Particles and Investigating the Mechanism of Catalytic
+Transformation via Molecular Dynamics, ” Carbon 188 (2022): 336 –348,
+https://doi.org/10.1016/j.carbon.2021.12.031.
+26. R. D. Hunter, J. Ramírez-Rico, and Z. Schnepp, “Iron-Catalyzed
+Graphitization for the Synthesis of Nanostructured Graphitic Carbons, ”
+Journal of Materials Chemistry A 10, no. 9 (2022): 4489 –4516, https://
+doi.org/10.1039/d1ta09654k.
+27. H. Du, F. Deng, R. R. Kommalapati, and A. S. Amarasekara,“Iron Based
+Catalysts in Biomass Processing, ” Renewable and Sustainable Energy
+Reviews 134 (2020): 110292, https://doi.org/10.1016/j.rser.2020.110292.
+28. M. Mennani, A. A. Benhamou, A. A. Mekkaoui, et al., “Probing the
+Evolution in Catalytic Graphitization of Biomass-Based Materials for
+Enduring Energetic Applications, ” Journal of Materials Chemistry A
+12, no. 12 (2024): 6797 –6825, https://doi.org/10.1039/d3ta07449h.
+29. N. A. Banek, K. R. McKenzie, D. T. Abele, and M. J. Wagner,
+“Sustainable Conversion of Biomass to Rationally Designed Lithium-
+Ion Battery Graphite, ” Scientific Reports 12 (2022): 8080, https://doi.
+org/10.1038/s41598-022-11853-x.
+30. M. N. Obrovac, X. Zhao, L. T. Burke, and R. A. Dunlap, “Reversible
+Lithium Insertion in Catalytically Graphitized Sugar Carbon, ”
+Electrochemistry Communications 60 (2015): 221 –224, https://doi.org/
+10.1016/j.elecom.2015.09.015.
+31. H. Jeong, J. A. Kim, S.-H. Lee, D. U. Kim, J. Kim, and J. Yang, “Iron-
+Catalyzed Graphitization of Lignocellulose: A Pathway to Develop
+Artificial Graphite as Anode Materials for Lithium-Ion Batteries
+Applications,” Journal of Alloys and Compounds 1020 (2025): 179485,
+https://doi.org/10.1016/j.jallcom.2025.179485.
+32. R. D. Hunter, M. Takeguchi, A. Hashimoto, et al., “Elucidating the
+Mechanism of Iron-Catalyzed Graphitization: The First Observation of
+Homogeneous Solid-State Catalysis, ” Advanced Materials 36, no. 36
+(2024): 2404170, https://doi.org/10.1002/adma.202404170.
+33. S. T. Neeli and H. Ramsurn, “Synthesis and Formation Mechanism of
+Iron Nanoparticles in Graphitized Carbon Matrices Using Biochar from
+Biomass Model Compounds as a Support, ” Carbon 134 (2018): 480 –490,
+https://doi.org/10.1016/j.carbon.2018.03.079.
+34. Z. Shi, Y. Jin, T. Han, et al., “Bio-Based Anode Material Production for
+Lithium–ion Batteries through Catalytic Graphitization of Biochar: The
+Deployment of Hybrid Catalysts, ” Scientific Reports 14 (2024): 3966,
+https://doi.org/10.1038/s41598-024-54509-8.
+35. D. Dirayanti, S. Roddecha, and T. Phraewphiphat, “The
+Electrochemical Performance Comparison of the Bagasse Derived
+Carbon Electrode Materials Prepared from Different Applied Catalyst
+Loading Techniques for the Iron Catalytic Graphitization, ” Materials
+Today: Proceedings 97 (2024): 36 –43, https://doi.org/10.1016/j.matpr.
+2023.09.025.
+36. F. Destyorini, S. Priyono, H. S. Oktaviano, Y.-I. Hsu, R. Yudianti, and
+H. Uyama, “Porous Graphitic Carbon from Coconut Coir Biochar
+Developed by Ni –KOH Single-Pot Graphitization Process for Lithium-
+Ion Battery Anodes, ” Waste and Biomass Valorization 15 (2023): 2881 –
+2895, https://doi.org/10.1007/s12649-023-02343-w.
+16 of 18 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 17 =====
+37. X. Tang, T. Dong, M. Wang, et al., “From Waste Corn Straw to
+Graphitic Porous Carbon: A Trade-Off between Specific Surface Area
+and Graphitization Degree for Efficient Peroxydisulfate Activation, ”
+Journal of Hazardous Materials 471 (2024): 134422, https://doi.org/10.
+1016/j.jhazmat.2024.134422.
+38. J. A. Kim, D. Yu, D. Kim, J. Kim, and J. Yang, “Development of Bio-
+Graphite from Waste Coffee Grounds via Catalytic Graphitization for
+Sustainable Lithium Ion Batteries Anodes, ” FlatChem 51 (2025):
+100867, https://doi.org/10.1016/j.flatc.2025.100867.
+39. B. Yang, D. Zhang, Y. Li, et al., “Locally Graphitized Biomass-Derived
+Porous Carbon Nanosheets with Encapsulated Fe 3O4 Nanoparticles for
+Supercapacitor Applications, ” Chemical Engineering Journal 479
+(2024): 147662, https://doi.org/10.1016/j.cej.2023.147662.
+40. M. Mennani, A. A. Benhamou, H. Xiu, C. Scheu, and Z. Kassab,
+“Production of Bioderived Graphitizable Materials by Alternative
+Catalytic Processing: Technoeconomic Assessment and Upscaling
+Insights,” ACS Sustainable Chemistry & Engineering 13, no. 19 (2025):
+6946–6961, https://doi.org/10.1021/acssuschemeng.4c09559.
+41. A. Gutiérrez-Pardo, J. Ramírez-Rico, R. Cabezas-Rodríguez, and
+J. Martínez-Fernández, “Effect of Catalytic Graphitization on the
+Electrochemical Behavior of Wood Derived Carbons for Use in
+Supercapacitors,” Journal of Power Sources 278 (2015): 18 –26, https://
+doi.org/10.1016/j.jpowsour.2014.12.030.
+42. N. Jendoubi, F. Broust, J. M. Commandre, G. Mauviel, M. Sardin, and
+J. Lédé, “Inorganics Distribution in Bio Oils and Char Produced by
+Biomass Fast Pyrolysis: The Key Role of Aerosols, ” Journal of
+Analytical and Applied Pyrolysis 92, no. 1 (2011): 59 –67, https://doi.
+org/10.1016/j.jaap.2011.04.007.
+43. X. Hu and M. Gholizadeh, “Biomass Pyrolysis: A Review of the
+Process Development and Challenges from Initial Researches up to
+the Commercialisation Stage, ” Journal of Energy Chemistry 39 (2019):
+109–143, https://doi.org/10.1016/j.jechem.2019.01.024.
+44. J. A. Gonzalez-Aguirre, S. C. Dey, W. J. Sagues, et al., “Process Design
+and Techno-Economic Analysis for Bio-Based Graphite and Liquid
+Hydrocarbons Production from Lignocellulosic Biomass, ” Bioresource
+Technology 438 (2025): 133156, https://doi.org/10.1016/j.biortech.2025.
+133156.
+45. S. C. Dey, B. J. Worfolk, W. J. Sagues, et al., “Low-Temperature
+Processing of Pyrolysis Bio-Oil for Sustainable Biographite
+Production,” Energy & Fuels 39, no. 23 (2025): 11372 –11387, https://
+doi.org/10.1021/acs.energyfuels.5c01132.
+46. A. Enders, K. Hanley, T. Whitman, S. Joseph, and J. Lehmann,
+“Characterization of Biochars to Evaluate Recalcitrance and
+Agronomic Performance, ” Bioresource Technology 114 (2012): 644 –653,
+https://doi.org/10.1016/j.biortech.2012.03.022.
+4 7 .Y .E l k a s a b i ,A .A .B o a t e n g ,a n dM .A .J a c k s o n ,“Upgrading of Bio-Oil
+Distillation Bottoms into Biorenewable Calcined Coke, ” Biomass and
+Bioenergy81 (2015): 415–423, https://doi.org/10.1016/j.biombioe.2015.07.028.
+48. B. Li, J. Tang, H. Huang, et al.,“Biocoke Production from Heat Treatment
+of Bio-Oil: Effect of Temperature,” Journal of Analytical and Applied Pyrolysis
+161 (2022): 105401, https://doi.org/10.1016/j.jaap.2021.105401.
+49. X. Hu, Z. Zhang, M. Gholizadeh, et al., “Coke Formation During
+Thermal Treatment of Bio-Oil, ” Energy & Fuels 34, no. 7 (2020): 7863 –
+7914, https://doi.org/10.1021/acs.energyfuels.0c01323.
+50. Y. Wang, D. Mourant, X. Hu, S. Zhang, C. Lievens, and C.-Z. Li,
+“Formation of Coke During the Pyrolysis of Bio-Oil, ” Fuel 108 (2013):
+439–444, https://doi.org/10.1016/j.fuel.2012.11.052.
+51. A. Oasmaa and E. Kuoppala, “Fast Pyrolysis of Forestry Residue. 3.
+Storage Stability of Liquid Fuel, ” Energy & Fuels 17, no. 4 (2003): 1075 –
+1084, https://doi.org/10.1021/ef030011o.
+52. A. Oasmaa, E. Kuoppala, S. Gust, and Y. Solantausta, “Fast Pyrolysis
+of Forestry Residue. 1. Effect of Extractives on Phase Separation of
+Pyrolysis Liquids, ” Energy & Fuels 17, no. 1 (2003): 1 –12, https://doi.
+org/10.1021/ef020088x.
+53. J. Meng, A. Moore, D. C. Tilotta, S. S. Kelley, S. Adhikari, and S. Park,
+“Thermal and Storage Stability of Bio-Oil from Pyrolysis of Torrefied
+Wood,” Energy & Fuels 29, no. 8 (2015): 5117 –5126, https://doi.org/10.
+1021/acs.energyfuels.5b00929.
+54. J. Meng, A. Moore, D. Tilotta, S. Kelley, and S. Park, “Toward
+Understanding of Bio-Oil Aging: Accelerated Aging of Bio-Oil
+Fractions,” ACS Sustainable Chemistry & Engineering 2, no. 8 (2014):
+2011–2018, https://doi.org/10.1021/sc500223e.
+55. L. Ma, W. Deng, X. Hu, et al., “Identifying the Coking of Bio-Oil in
+Pyrolysis: An in-Situ EPR Investigation, ” Fuel Processing Technology 253
+(2024): 108012, https://doi.org/10.1016/j.fuproc.2023.108012.
+56. G. Xiao, Z. Xiong, S. S. A. Syed-Hassan, et al., “Coke Formation
+During the Pyrolysis of Bio-Oil: Further Understanding on the
+Evolution of Radicals, ” Applications in Energy and Combustion Science
+9 (2022): 100050, https://doi.org/10.1016/j.jaecs.2021.100050.
+57. Z. Xiong, S. S. A. Syed-Hassan, J. Xu, et al., “Evolution of Coke
+Structures During the Pyrolysis of Bio-Oil at Various Temperatures
+and Heating Rates, ” Journal of Analytical and Applied Pyrolysis 134
+(2018): 336 –342, https://doi.org/10.1016/j.jaap.2018.06.023.
+58. N. P. Zambrano, L. J. Duarte, J. C. Poveda-Jaramillo, H. J. Picón,
+F. Martínez Ortega, and M. E. Nino-Gómez, “Delayed Coker Coke
+Characterization: Correlation between Process Conditions, Coke
+Composition, and Morphology, ” Energy & Fuels 32, no. 3 (2018):
+2722–2732, https://doi.org/10.1021/acs.energyfuels.7b02788.
+59. M. Siskin, S. R. Kelemen, M. L. Gorbaty, et al., “Chemical Approach to
+Control Morphology of Coke Produced in Delayed Coking, ” Energy &
+Fuels 20, no. 5 (2006): 2117 –2124, https://doi.org/10.1021/ef060261f.
+60. Ö. Gül, L. R. Rudnick, and H. H. Schobert, “Delayed Coking of Decant
+Oil and Coal in a Laboratory-Scale Coking Unit, ” Energy & Fuels 20, no. 4
+(2006): 1647 –1655, https://doi.org/10.1021/ef0503820.
+61. J. A. D. Mu ˜noz, R. Aguilar, L. C. Casta ˜neda, and J. Ancheyta,
+“Comparison of Correlations for Estimating Product Yields from
+Delayed Coking, ” Energy & Fuels 27, no. 11 (2013): 7179 –7190, https://
+doi.org/10.1021/ef4014423.
+62. H. Zhu, Y. Zhu, Y. Xu, et al., “Transformation of Microstructure of
+Coal-Based and Petroleum-Based Needle Coke: Effects of Calcination
+Temperature,” Asia-Pacific Journal of Chemical Engineering 16, no. 5
+(2021): e2674, https://doi.org/10.1002/apj.2674.
+63. L. Wang, C. Du, Z. Li, Y. Han, N. Feng, and J. Yang, “Catalytic
+Graphitization of Coke and Electrochemical Performances of Coke-
+Based Graphite, ” Journal of Alloys and Compounds 960 (2023): 170949,
+https://doi.org/10.1016/j.jallcom.2023.170949.
+64. L. Bläubaum, F. Röder, C. Nowak, H. S. Chan, A. Kwade, and
+U. Krewer, “Impact of Particle Size Distribution on Performance of
+Lithium-Ion Batteries, ” ChemElectroChem 7, no. 23 (2020): 4755 –4766,
+https://doi.org/10.1002/celc.202001249.
+65. S. J. An, J. Li, C. Daniel, D. Mohanty, S. Nagpure, and D. L. Wood,
+“The State of Understanding of the Lithium-Ion-Battery Graphite Solid
+Electrolyte Interphase (SEI) and Its Relationship to Formation
+Cycling,” Carbon 105 (2016): 52 –76, https://doi.org/10.1016/j.carbon.
+2016.04.008.
+66. J. Martin, P. Axmann, M. Wohlfahrt-Mehrens, and M. Mancini,
+“Lithium Intercalation Kinetics and Fast-Charging Lithium-Ion
+Batteries: Rational Design of Graphite Particles Via Spheroidization, ”
+Energy Technology 11, no. 11 (2023): 2201469, https://doi.org/10.1002/
+ente.202201469.
+6 7 .M .H e ,H .P .Z h o u ,G .Q .D i n g ,e ta l . ,“Theoretical-Limit Exceeded
+Capacity of the N 2+H2 Plasma Modified Graphite Anode Material, ”
+Carbon 146 (2019): 194 –199, https://doi.org/10.1016/j.carbon.2019.
+01.084 .
+Advanced Energy and Sustainability Research, 2026 17 of 18
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 18 =====
+Supporting Information
+Additional supporting information can be found online in the Supporting
+Information section. Supporting Fig. S1: Optical profilometry images
+(tilted) of the surfaces of biocokes. Supporting Fig. S2: XPS survey scans
+of biocokes. Supporting Fig. S3: Energy dispersive X-ray spectroscopy
+(EDS) images of BG-400, BG-500, and BG-600. Carbon (C) is denoted with
+green color and oxygen (O) is denoted with yellow color. Supporting
+Table S1: Surface roughness analysis of biocokes determined via optical
+profilometry method. Supporting Table S2: Particle size distribution of
+biocokes and biographites. Supporting Table S3: Elemental distribution
+in biocoke samples (%). Supporting Table S4: Distribution of chemical
+species (%) in biocoke samples determined from C 1s peak fitting.
+Supporting Table S5: Thermal properties of biocokes. Supporting
+Table S6: Summary of the number of atoms in the suggested biocoke
+structures. Supporting Table S7: Summary of the carbon skeletal infor-
+mation about the suggested biocoke structures. Supporting Table S8:
+Possible oxygen functional groups in biocoke considering biocoke pro-
+duction temperature and thermal degradation temperature of oxygen
+functional groups. Supporting Table S9: Summary of the number of
+each oxygen functional group in the suggested biocoke structures.
+Supporting Table S10: XRF elemental analysis results of BG-400,
+BG-500, and BG-600 after acid refluxing for 5 steps. Supporting
+Section S1: Methods of predicting structural models of biocokes.
+18 of 18 Advanced Energy and Sustainability Research , 2026
+ 26999412, 2026, 3, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aesr.70168 by Cochrane France, Wiley Online Library on [31/07/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+

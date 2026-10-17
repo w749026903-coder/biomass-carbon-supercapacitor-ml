@@ -1,0 +1,904 @@
+
+===== PDF PAGE 1 =====
+Research papers
+Research on specific capacitance prediction of biomass carbon-based
+supercapacitors based on machine learning
+Chenxi Zhao
+a , *
+, Xueying Lu
+a
+, Huanyu Tu
+a
+, Yulong Yang
+a
+, Siyu Wang
+a
+, Aihui Chen
+b
+,
+Haibin Zhang
+b
+a
+School of Mechanical and Power Engineering, Harbin University of Science and Technology, Harbin 150080, China
+b
+Heilongjiang Academy of Agricultural Machinery Sciences, Heilongjiang Academy of Agricultural Sciences, Harbin 150086, China
+ARTICLE INFO
+Keywords:
+Machine learning
+Biomass
+Porous carbon
+Supercapacitor
+Capacitance
+ABSTRACT
+With the development of computer technology, a variety of machine learning models have been used to predict
+the electrochemical performance of energy storage devices. In this study, the elemental analysis, industrial
+analysis and structural composition, activation conditions, and current density of biomass are innovatively
+selected as input conditions from the biomass raw material characteristics perspective and predict specific
+capacitance based on the light gradient boosting machine (LightGBM) and deep neural network (DNN) algo-
+rithm. Meanwhile, the prediction effects of the contrast capacitance under seven different input combinations are
+compared. The results show that the combination prediction effect of retaining all features is the best, and the
+industrial analysis and structural composition of biomass have a greater impact on the model than elemental
+analysis, this conclusion is also verified by SHapley Additive exPlanations (SHAP) value analysis, indicating that
+they are essential for the model. It is also found that the Light GBM model has more advantages, with R
+2
+of 0.951,
+mean absolute error (MAE) of 11.090, and Root-mean-square error (RMSE) of 14.756. This study builds a key
+bridge between the basic composition information of biomass raw materials and the electrochemical perfor-
+mance. Also, it helps to understand the related formation mechanism of biomass-derived carbon materials.
+1. Introduction
+With the increasing emphasis on renewable energy and the
+increasing demand for addressing climate change, the demand for effi-
+cient energy storage technologies is becoming more and more urgent.
+Therefore, creating innovative and effective energy storage solutions has
+emerged as a significant global challenge [ 1 ]. Among the spectrum of
+energy storage devices, supercapacitors, as a new form of energy stor-
+age, have become highly promising candidates. Their advantages lie in
+their high power density, wide temperature range, and economical and
+environmentally friendly characteristics [ 2 , 3 ]. The selection and per-
+formance of electrode materials have a crucial impact on the overall
+performance and cost of supercapacitors. As a key component of the
+supercapacitor structure, it directly determines its key parameters such
+as electrochemical performance, energy density, power density, and
+cycle life [ 4 ]. Among many electrode materials, biomass-derived carbon
+has been widely used in supercapacitors due to its high specific surface
+area (SSA), low cost, high porosity, large-scale production, and
+environmental friendliness [ 5 , 6 ].
+Although supercapacitors have been particularly widely used, man-
+ufacturers are still seeking higher energy-density supercapacitors to
+meet the needs of transportation, energy, and aerospace. [ 7 ] The com-
+plex composition and structure of biomass make the synthesized carbon
+materials often exhibit inhomogeneity [ 8 , 9 ]. Moreover, biomass-
+derived carbon materials have irregular pore structures and single-
+pore channels, resulting in an increase in the diffusion distance and
+resistance of ions in the electrolyte, which significantly reduces the rate
+performance of assembling supercapacitors [ 10 ]. Therefore, various
+methods have been tried to prepare high-performance porous carbon
+materials, such as the molten salt method, activation method, hydro-
+thermal carbonization method, and template method [ 11 – 12 ]. In many
+experiments preparing porous carbon materials for supercapacitors, a
+common method is to chemically or physically activate biochar [ 11 , 12 ].
+Physical activation involves subjecting carbon materials to high-
+temperature atmospheres (CO2, O2, etc.) to form pores [ 13 ]. Chemi-
+cal activation, on the other hand, involves using acids or strong bases
+* Corresponding author.
+E-mail address: Zhaochenxi312@outlook.com (C. Zhao).
+Contents lists available at ScienceDirect
+Journal of Energy Storage
+journal homepag e: www.else vier.com/loc ate/est
+https://doi.org/10.1016/j.est.2024.112974
+Received 8 March 2024; Received in revised form 16 June 2024; Accepted 9 July 2024
+Journal of Energy Storage 97 (2024) 112974 
+Available online 16 July 2024 
+2352-152X/© 2024 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies. 
+
+
+===== PDF PAGE 2 =====
+(such as sodium hydroxide, potassium hydroxide, etc.) as activators to
+react with the surface of carbon materials, removing impurities or sur-
+face functional groups, and adjusting the mesopore/micropore ratio to
+produce porous carbon materials with a large SSA [ 14 ]. Additionally,
+due to the direct proportionality between energy density and capaci-
+tance, researchers are keen on enhancing the performance of super-
+capacitors by increasing the specific capacitance of carbon-based
+electrodes. For example, many researchers have improved the wetta-
+bility of carbon materials to the electrolyte by heteroatom doping
+method, promoted the ion transport rate, increased the electrochemi-
+cally active sites of carbon-based materials, increased the porosity, and
+provided a larger specific capacitance value for supercapacitors, thereby
+effectively improving the energy density and rate performance of
+supercapacitors [ 15 , 16 ]. However, the traditional methods for studying
+the electrochemical performance of carbon materials require extensive
+experimentation. The process optimization for biochar-based super-
+capacitor materials is not yet clear, and it is not easy to prepare carbon
+materials with unique properties through experiments alone. By utiliz-
+ing technologies such as machine learning and data mining, experi-
+mental results can be optimized quickly [ 17 ].
+In recent years, machine learning has played an important role in
+predicting complex nonlinear reaction processes. A variety of machine
+learning models have been used to predict the electrochemical perfor-
+mance of energy storage devices [ 20 – 21 ]. Several reviews have sum-
+marized the application of machine learning in the research and
+development of supercapacitor materials and capacitance prediction
+and summarized its general characteristics including structure (surface
+area, pore volume, etc.), synthesis conditions (activation temperature,
+residence time, etc.) and operation (voltage, current density, etc.)
+[ 22 – 23 ]. Based on an ANN and backpropagation learning algorithm,
+Reddy et al. [ 18 ] used voltage (V), I
+D
+/I
+G
+, N/O doping amount, pore size,
+and SSA as input conditions to predict the specific capacitance of
+carbon-based supercapacitors, and found that the neural network model
+had better advantages in predicting the specific capacitance. Zhu et al.
+[ 19 ] selected five features to calculate their effects on capacitance,
+including SSA, calculated pore size, I
+D
+/I
+G
+, N doping level, and voltage.
+Compared with other machine learning methods (linear regression and
+lasso), ANN shows the best accuracy and adaptability in capacitance
+prediction. Yang et al. [ 20 ] established four machine-learning algo-
+rithms: Decision Tree (DT), ANN, XGBoost, and Random Forest (RF).
+The type of activator, activation temperature, activator ratio, elemental
+analysis, SSA, residence time, and capacitance test conditions of biochar
+were used to predict the capacitance of biochar as an electrode material,
+and the result showed that the tree model had the best effect and was
+most suitable for its data set. It can be seen from the above studies that
+most of the existing studies use the intermediate measurement variables
+(SSA, pore volume, etc.) that have indirect effects on the contrast
+capacitance as the input conditions of the prediction model, and the
+basic composition information of the biomass raw materials is the key
+factor affecting the biochar. It is the source variable that affects the
+specific capacitance of carbon-based supercapacitors. These parameters
+are obtained by experimental measurement, which are easier to obtain
+than intermediate variables (SSA, pore volume, etc.), and are more
+operable and feasible for experimental verification.
+In this study, from the perspective of the characteristics of biomass
+raw materials, no intermediate variable (specific surface area, pore
+volume of biochar) was selected, it only selected the elemental analysis,
+industrial analysis, structural composition, activation conditions, and
+current density of biomass raw materials as input conditions. Based on
+the Light GBM and DNN algorithm, a prediction model for the specific
+capacitance of carbon-based supercapacitors was established. At the
+same time, the prediction effect of the contrast capacitance under the
+input combination of 7 different characteristics is compared. Then,
+through the SHAP value analysis, the characteristics that have a great
+influence on the contrast capacitance are found, and the partial corre-
+lation analysis of these characteristics is carried out to explore the
+specific influence of the input characteristics on the contrast capaci-
+tance. This method of predicting the specific capacitance from the
+perspective of the characteristics of biomass raw materials can correlate
+these parameters with the specific capacitance by establishing a math-
+ematical model under closer practical application conditions, simplify
+the process of estimating the performance of electrode materials, and is
+expected to improve efficiency and reduce costs. Meanwhile, it also has
+certain reference significance in predicting other performance parame-
+ters of supercapacitors.
+2. Material and methods
+2.1. Data source and processing
+The data of this paper are derived from the experiments of different
+agricultural biomass wastes as activated carbon electrode precursors for
+supercapacitors reported in the literature. In this study, the experi-
+mental method is limited to a two-step preparation method of carbon-
+ization and activation. The carbonization of the precursor occurs under
+low temperatures and anaerobic conditions. To ensure that the physical
+and chemical properties of pyrolysis biochar prepared in the first step of
+each literature are roughly the same, the selection of pyrolysis process
+parameters is relatively concentrated. The activation process is the
+process of converting carbon-containing substances into activated car-
+bon by thermal decomposition in a controlled atmosphere, heated in a
+furnace or microwave. In this study, the data collected were limited to
+several commonly used activators such as KOH, ZnCl
+2
+, H
+3
+PO
+4
+, and
+NaOH, etc. Finally, a total of 195 data sets related to the specific
+capacitance of supercapacitors were collected and listed in Supple-
+mentary Table A. The dataset includes common biomass types: herba-
+ceous plants, fruit shells, straws, and wood, and each dataset contains
+the valid values of all variables. Table 1 summarizes the statistics of the
+input/output parameter data sets used in the study. The Min, Max,
+Mean, and standard deviation (SD) numbers of each group of data are
+also given in the table.
+2.2. Selection of input features
+The characteristics of biomass feedstock include elemental analysis,
+industrial analysis, and structural composition. The key activation pa-
+rameters of biomass include the ratio of activator to biochar, activation
+temperature, activation time, and heating rate. In addition, the influence
+of electrochemical test conditions on the electron transport process is
+also very significant. These parameters have a significant impact on the
+physicochemical properties and energy storage properties of biochar, so
+they are used as input conditions for the model. The input variables of
+Table 1
+Statistics of input/output parameter data sets used in current research.
+Variable Min Max Mean SD
+C (%) 40.81 51.40 45.49 2.53
+H (%) 4.60 6.55 5.75 0.41
+O (%) 36.47 52.04 42.88 4.04
+N (%) 0.17 2.90 0.94 0.76
+M (%) 1.20 18.30 8.85 3.44
+VM (%) 58.80 80.20 72.72 5.24
+Ash (%) 0.92 18.79 7.14 4.29
+FC (%) 0.81 24.10 13.75 5.40
+Cel (%) 4.54 47.60 35.93 10.59
+Hem (%) 16.60 46.10 29.97 10.25
+Lig (%) 3.92 49.10 18.57 8.91
+AT(
+◦
+C) 350.00 950.00 730.00 115.51
+HR(
+◦
+C/min) 3.00 10.00 5.45 1.74
+RT(min) 60.00 180.00 93.23 42.14
+IR 0.00 6.00 2.18 1.36
+Cond(A/g) 0.10 100.00 6.94 11.62
+Cap(F/g) 80.00 421.00 233.47 66.49
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+2 
+
+
+===== PDF PAGE 3 =====
+this study include the raw material characteristics of biomass and the
+operating conditions of the experiment: (1) C, H, O, and N (wt%), each
+element has a significant effect on the pyrolysis products. (2) moisture
+(M), Ash, volatile matter (VM), and fixed carbon (FC) (wt%), in which
+moisture was measured before drying of raw materials. (3) cellulose
+(Cel), hemicellulose (Hem), and lignin (Lig), ignoring other components.
+(4) activation temperature (AT), heating rate (HR), residence time (RT),
+and the ratio of activator to biochar, are recorded as impregnation ratio
+(IR), (5) current density is recorded as Cond (A / g), and the output
+variable is the specific capacitance of the supercapacitor (F / g). Then,
+each data subset of the two sets of (4) and (5) is retained, and (1) 、 (2) 、
+(3) are arranged and combined to obtain a total of seven subsets, as
+shown in Table 2 .
+2.3. Pearson correlation coefficient analysis
+For multi-input and single-output predictive models, it is imperative
+to reprocess the dataset to mitigate its complexity and enhance the
+interpretability of output data [ 21 ]. In this regard, analyzing correla-
+tions is pivotal, with the Pearson Correlation Coefficient (PCC) emerging
+as a potent tool. PCC is typically utilized to assess the degree of corre-
+lation between variables, with larger absolute values indicating stronger
+correlations [ 22 ]. Generally, when PCC exceeds 0.6, it signifies a robust
+correlation between two variables, and the simultaneous occurrence of
+such strong correlations may lead to model overfitting, necessitating
+trade-offs during the training process [ 23 ]. By scrutinizing the numeri-
+cal distributions between capacitance and other variables, one can
+construct a correlation matrix, facilitating effective feature selection.
+2.4. Model development
+To further enhance the diversity and persuasion of the study, the tree
+model LightGBM and the typical neural network model DNN, which
+performed well in previous studies, are selected for the prediction of
+specific capacitance, they are more suitable for our data set. By
+comparing the prediction results of the two models, we can evaluate
+their accuracy and stability more comprehensively, and provide more
+powerful guidance for practical application and decision making.
+As a machine learning model based on a gradient boosting frame-
+work, LightGBM provides an efficient and reliable basis for model
+training and prediction. The technology of histogram storage features is
+introduced into the LightGBM model, which can efficiently process
+large-scale data sets and reduce memory consumption and computing
+time. The gradient unilateral sampling algorithm introduced makes only
+the data with a larger gradient absolute value concerned when each
+node is split, which reduces the computational complexity. The mutu-
+ally exclusive feature binding algorithm is used to optimize the feature
+space, reduce the risk of model over-fitting, and improve the general-
+ization ability. In addition, LightGBM also adopts the Leaf-wise growth
+strategy, and each time selects the leaf nodes that reduce the loss
+function the most to split, which can build a deeper tree faster. The
+comprehensive application of these principles enables LightGBM to
+significantly improve the training speed and efficiency while
+maintaining the accuracy of the model and becomes one of the preferred
+algorithms for solving regression and classification problems.
+The principle of the DNN model is to transfer the input data layer by
+layer through the construction and training of the multi-layer percep-
+tron, and finally generate the output. The process continues through
+forward propagation until the output layer. In neural networks, the
+activation function, loss function, and optimization algorithm are the
+key components. In this paper, ReLU is used as the activation function,
+the negative input value is set to zero, and the positive input value re-
+mains unchanged. The gradient descent method is used to solve the
+optimal value of the mean square error loss function, and the model is
+optimized by minimizing the mean square error to make it fit the
+training data more accurately. The commonly used optimization algo-
+rithms are the stochastic gradient descent method, momentum method,
+and Adam method. In this study, the Adam algorithm is selected, which
+combines the momentum method and the adaptive learning rate and has
+better convergence speed and robustness. Compared with traditional
+machine learning methods, the DNN model can learn deeper feature
+representations, thereby improving the abstraction ability and general-
+ization performance of data [ 32 – 33 ].
+2.5. Evaluation of the model
+In this study, 195 data sets related to the specific capacitance of
+supercapacitors are divided into two parts, of which 80 % is used as a
+training set for model training, and the remaining 20 % is used as a test
+set for evaluating the performance of the model. In the hyperparameter
+adjustment stage, to ensure that the model has good generalization
+ability, it can also show good performance in the face of invisible data,
+not just on the training data, we use the cross-validation method to train
+models. The purpose of this step is through cross-validation, the per-
+formance of the model on different data sets can be evaluated more
+comprehensively and objectively. MAE is used as a criterion for
+searching optimal hyperparameters, which helps to determine the per-
+formance of the model under various parameter combinations. The
+optimal hyperparameters corresponding to the model are determined
+according to MAE. The performance and generalization ability of the
+model are further improved by repeatedly training the machine learning
+model. Then, the test set data is used for test verification to ensure its
+effectiveness on unknown data. Combined with R
+2
+and RMSE for
+comprehensive evaluation. The comprehensive assessment of these
+metrics provides a thorough evaluation of the predictive ability of the
+model, offering a reliable reference for subsequent practical
+applications.
+In this study, in order to prevent over-fitting, three metrics were used
+to evaluate the prediction of the model. R
+2
+is called the coefficient of
+determination and is a measure of goodness of fit statistics. MAE stands
+as a widely used performance metric, determining the average disparity
+between predicted and actual values. It prioritizes absolute error
+assessment [ 24 ]. RMSE is another widely used metric, which evaluates
+the performance of the model in predicting numerical data by capturing
+the average size of the prediction error [ 25 , 26 ]. The specific formula is
+as follows:
+R
+2
+= 1  
+∑
+m
+i = 1
+( y
+i
+  ̂y
+i
+)
+2
+∑
+m
+i = 1
+( y
+i
+  y )
+2
+(1)
+MAE =
+1
+m
+∑
+m
+i = 1
+|( y
+i
+  ̂y
+i
+)| (2)
+RMSE =
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅̅̅̅ ̅
+1
+m
+∑
+m
+i = 1
+( y
+i
+  ̂y
+i
+)
+2
+√
+(3)
+Where y
+i
+represents the true value, ̂y
+i
+represents the predicted value, y
+Table 2
+Input feature information for the data subset.
+Number Input
+Combination
+Input Variables
+1 (1) (4) (5) C, H, O, N, IR, AT, HR, RT, Cond
+2 (2) (4) (5) M, Ash, VMM, FC, AT, HR, RT, IR, Cond
+3 (3) (4) (5) Cel, Hem, Lig, AT, HR, RT, IR, Cond
+4 (1) (2) (4) (5) C, H, O, N, M, Ash, VM, FC, AT, HR, RT, IR, Cond
+5 (1) (3) (4) (5) C, H, O, N, Cel, Hem, Lig, AT, HR, RT, IR, Cond
+6 (2) (3) (4) (5) M, Ash, VM, FC, Cel, Hem, Lig, AT, HR, RT, IR, Cond
+7 (1) (2) (3) (4) (5) C, H, O, N, M, Ash, VM, FC, Cel, Hem, Lig, AT, HR,
+RT, IR, Cond
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+3 
+
+
+===== PDF PAGE 4 =====
+represents the average value, and m is the number of samples.
+3. Results and discussion
+3.1. Statistical analysis
+In this study, all variables of specific capacitance prediction of
+biomass-derived carbon materials were statistically described by box
+plot, as shown in Fig. 1 . The box diagram provides a comprehensive data
+description, which can intuitively show the approximate range of data.
+It can be seen from the figure that the contents of C, H, O, and N elements
+in the elemental analysis of raw materials are mainly concentrated in 41
+% -52 %, 4 % -6.5 %, 36 % -52 %, and 0.1 % -3 %. The distribution of M,
+volatiles, Ash, and FC in the industrial analysis of raw materials is
+mainly concentrated in 1 % -15 %, 60 % -80 %, 5 % -30 %, and 10 % -20
+%. In the structural composition of biomass raw materials, cellulose,
+hemicellulose, and lignin are mainly concentrated in 15 % ~ 50 %, 15 %
+~ 45 %, and 5 % ~ 30 %. The variations in these statistics across each
+dataset may be linked to the diversity and intricacy of biomass re-
+sources. The AT in the activation conditions is the most critical activa-
+tion parameter, which ranges from 500
+◦
+C to 900
+◦
+C. The HR and RT
+were 5 – 10
+◦
+C / min and 60 – 180 min, respectively. The IR is concen-
+trated in the range of 0 – 6. The specific capacitance is in the range of
+100 – 400 F / g. In this paper, we choose the MAE index as the basis for
+judging the hyper-parameter optimization of the model. When dealing
+with outliers, MAE can better resist the interference of outliers, so that it
+will not have a great impact on the performance evaluation of the model.
+Therefore, even if there are outliers, we can still accurately evaluate the
+performance of the model through MAE without eliminating outliers.
+This approach helps to retain more data information and can more fully
+reflect the performance of the model in the real world [ 27 ].
+3.2. Pearson correlation coefficient analysis
+Pearson correlation coefficient (PCC) serves as a valuable tool in
+uncovering trends and relationships among variables, shedding light on
+patterns and correlations within the dataset. Fig. 2 shows the correlation
+between the specific capacitance of the supercapacitor and the influ-
+encing factors (biomass raw material characteristics, activation condi-
+tions, and current density), and intuitively shows the influence of
+biomass raw material characteristics, activation conditions, and current
+density on the specific capacitance of the supercapacitor. It can be seen
+from Fig. 2 that the Pearson correlation coefficient (PCC) between each
+input variable is < 0.6, indicating that the linear relationship between
+each variable is weak, which ensures that the input features are rela-
+tively independent, so these variables can be used as the input of the
+model at the same time. It can be seen from Fig. 3 that carbon ( p <
+0.001), hydrogen ( p < 0.05), and oxygen ( p < 0.01) in the analysis of
+biomass elements, volatiles (p < 0.001), and Ash (p < 0.001) in biomass
+industrial analysis, and cellulose (p < 0.01) in biomass structure
+composition are significantly correlated with specific capacitance,
+indicating that the specific capacitance of biomass raw materials is a
+very important influencing factor. At the same time, the activation
+temperature (p < 0.001), heating rate (p < 0.001), and residence time
+(p < 0.001) in the activation conditions are also significantly correlated
+with the specific capacitance. As reported in the literature, the physical
+and chemical properties of porous carbon will be significantly affected
+by activation temperature, activation time, and heating rate [ 28 ],
+indicating that the activation conditions of biomass are very important
+factors affecting the specific capacitance; the current density in the test
+conditions of the capacitance also has a significant effect on the capac-
+itance ( p < 0.01). In summary, the raw material characteristics, acti-
+vation conditions, and current density of biomass have been proven to
+have a certain influence on the specific capacitance of supercapacitors.
+Fig. 1. Sample set box diagram.
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+4 
+
+
+===== PDF PAGE 5 =====
+Taking them as input characteristics of the model helps to improve the
+prediction effect and interpretability of the model, to better adapt to the
+actual application requirements.
+3.3. Comparison of prediction models with various combinations of input
+features
+Table 3 and Table 4 are the comparison results of the prediction
+accuracy of Light GBM and DNN models under different input feature
+combinations, and the R
+2
+, RMSE, and MAE of the training set and test set
+of the two models under 7 groups of input feature combinations are
+given. From the table, it can be seen that there are some differences in
+the prediction accuracy of the model under different input feature
+combinations, among which the combination of Number 7 with all
+features retained has the best prediction effect, and the three indicators
+Fig. 2. Pearson correlation coefficient diagram of any two variables.
+Fig. 3. Comparison of the predicted value of Light GBM and DNN models with experimental values.
+Table 3
+Comparison results of prediction accuracy of Light GBM model under different
+input feature combinations.
+Number Training Testing
+R
+2
+RMSE MAE R
+2
+RMSE MAE
+1 0.909 20.613 14.126 0.885 23.164 17.189
+2 0.923 18.395 12.360 0.896 21.377 16.835
+3 0.919 19.013 12.987 0.880 22.423 17.004
+4 0.937 16.608 10.561 0.932 17.423 13.049
+5 0.935 17.119 11.062 0.930 18.035 13.657
+6 0.943 15.854 10.122 0.939 16.448 12.240
+7 0.952 14.701 9.839 0.951 14.756 11.090
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+5 
+
+
+===== PDF PAGE 6 =====
+of R
+2
+, RMSE, and MAE are better than the combination of other input
+features. When the Light GBM model is used to predict the specific
+capacitance, the R
+2
+of Number 7 decreases from 0.951 to 0.939, 0.930,
+and 0.932 when the biomass element analysis, industrial analysis, and
+structural composition are removed respectively. In the case of only
+retaining parameters such as elemental analysis, industrial analysis, and
+structural composition, we observed that R
+2
+decreased more, while
+RMSE and MAE indicators increased, indicating that the prediction ac-
+curacy of the model gradually decreased with the decrease of input
+features. This may be because the parameters such as elemental analysis,
+industrial analysis and structural composition of biomass cover many
+aspects of biomass characteristics. This comprehensiveness helps the
+prediction model to capture the multi-level characteristics of biomass
+and provide more comprehensive information for the prediction of
+specific capacitance. Therefore, retaining more input features can
+enhance the predictive ability of the model, so that it can more accu-
+rately reflect the complexity and diversity of biomass.
+At the same time, it can also be found that the industrial analysis and
+structural composition of biomass have a better prediction effect than
+elemental analysis in predicting specific capacitance. In particular, the
+introduction of industrial analysis of biomass has a significant
+improvement in the specific capacitance prediction effect of super-
+capacitors. This may be because industrial analysis and structural
+composition can provide richer information covering the physical and
+chemical properties of biomass, thus more effectively influencing the
+prediction results of specific capacitance. Therefore, when establishing a
+prediction model, paying attention to these parameters may lead to
+more accurate and reliable prediction results.
+In summary, retaining the number 7 of all features is crucial for
+building a prediction model. This can not only provide more detailed
+and comprehensive information for the prediction model but also
+improve the prediction accuracy and generalization ability in the face of
+unknown data. Therefore, in all subsequent discussions, we will use the
+number 7 as an input feature to ensure that our analysis and models are
+built on the most adequate basis to better understand and predict the
+phenomena studied.
+3.4. Comparison of the prediction accuracy with Light GBM and DNN
+models
+Using all features as input for the model, we designed and assessed
+the predictive capabilities of the Light GBM and DNN models. Fig. 3
+illustrates the performance of both models on the training and test sets
+for predicted specific capacitance. Additionally, the results for the three
+indicators—R
+2
+, RMSE, and MAE—of both models are presented to
+provide a comprehensive evaluation of their predictive performance. In
+the diagram, the x-axis is the true value of the specific capacitance, and
+the y-axis is the predicted value of the specific capacitance, where the
+dotted line indicates that the predicted output is in good agreement with
+the experimental data. It can be found that the prediction effect of the
+Light GBM model is better than that of the DNN model on both the test
+set and training set, which is more suitable for the prediction of specific
+capacitance. Similarly, the three indicators of R
+2
+, RMSE, and MAE in this
+study are better than the previously reported results based on Lasso,
+SVMR, and ANN. The values of R, RMSE, and MAE of the ANN model are
+0.89537, 30.82, and 46.5624, respectively. It can be found that the Light
+GBM model in this study is significantly lower than the results of other
+literature, especially in the two error evaluation indexes of MAE and
+RMSE, and has a better prediction effect [29]. In summary, it is feasible
+to establish a specific capacitance prediction model from the perspective
+of raw material characteristics, and the prediction effect is ideal.
+3.5. SHAP value analysis
+SHAP value analysis is a method to explain machine learning model
+prediction, which characterizes the relative importance of each feature
+for model prediction. Its positive or negative number indicates the
+positive or negative impact of the feature on the prediction. By analyzing
+the SHAP value, we can determine which features are more important
+for the prediction of the model, select features, and evaluate the
+importance of features. At the same time, it can also help readers un-
+derstand and explain the prediction process of machine learning models,
+which plays an important role in improving the interpretability and
+credibility of the model [30]. In this study, SHAP value analysis was
+performed on all features under Light GBM and DNN models, and the
+results are shown in Fig. 4.
+Fig. 4 (a) shows the order and importance of importance of all fea-
+tures under the Light GBM model, and Fig. 4 (b) shows the order and
+importance of importance of all features under the DNN model. From the
+results of the SHAP value analysis, it can be seen that under the two
+models, the characteristics with greater influence on the contrast
+capacitance are almost the same, including current density (Cond),
+residence time (RT), activation temperature (AT), Ash, volatile matter
+(VM), lignin (Lig) and hemicellulose (Hem). Among them, current
+density (Cond) and residence time (RT) are the most significant char-
+acteristics affecting the specific capacitance in the two models. It can be
+seen that the SHAP values of these two characteristics have coverage
+points from negative to positive values, and the degree of accumulation
+is smaller than the following characteristics. The explanation is the most
+important feature that affects the model, and the influence instability
+plays a different important role in different samples. At the same time, it
+can be found that the combined effect of industrial analysis and struc-
+tural composition (cellulose, hemicellulose, and lignin) of biomass on
+the specific capacitance is greater than that of elemental analysis. Sahu
+et al. [31] showed that cellulose, hemicellulose, lignin, and Ash of
+biomass had a significant impact on the properties of biomass-derived
+carbon materials. Therefore, it is very important to deeply study the
+specific influence of the composition of biomass raw materials on the
+specific capacitance and other characteristics of carbon materials, which
+helps us to understand the formation mechanism of biomass-derived
+carbon materials.
+3.6. Univariate PDP analysis of specific capacitance correlation
+prediction
+A partial correlation diagram (PDP) is a global method that infers the
+relationship between features and predicted values by using all the data
+in the dataset. By visualizing the relationship between input features and
+model prediction, we can deeply understand how the change of input
+variables affects model prediction, to explain the model behavior in
+detail. In Fig. 5, we show the results of the PDP analysis, focusing on the
+first eight features that have the greatest influence on the contrast
+capacitance under the Light GBM model. Through this analysis, we have
+a deeper understanding of how changes in different input characteristics
+affect the specific capacitance and can identify patterns and trends in the
+relationship between input characteristics and model predictions.
+From the comparison of Fig. 5, it can be seen that the influence of
+different input characteristics on the contrast capacitance changes. The
+Table 4
+Comparison results of prediction accuracy of the DNN model under different
+input feature combinations.
+Number Training Testing
+R
+2
+RMSE MAE R
+2
+RMSE MAE
+1 0.794 30.883 24.989 0.784 33.197 23.854
+2 0.813 28.799 23.397 0.800 32.303 22.990
+3 0.804 29.114 24.277 0.789 33.001 23.611
+4 0.826 26.832 22.081 0.809 31.990 22.702
+5 0.823 27.141 22.399 0.807 32.333 23.404
+6 0.832 25.598 20.576 0.814 31.744 20.921
+7 0.838 25.470 19.079 0.822 29.198 19.922
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+6 
+
+
+===== PDF PAGE 7 =====
+specific capacitance decreases with the increase of current density,
+which is consistent with the result in [ 28 ]. This may be due to the in-
+crease in current density, the polarization effect inside the dielectric
+becomes stronger, resulting in a decrease in the effective capacitance of
+the capacitor. The specific capacitance decreases with the increase of
+Ash, which may be due to the role of Ash as a catalyst in the pyrolysis
+process, affecting the formation of carbon materials. Other studies have
+also shown that high-Ash biomass-derived carbon materials often have a
+low surface area and poor electrochemical performance in super-
+capacitors [ 31 ]. With the increase of FC content, the specific capacitance
+increases first and then decreases. Moderate FC content may help to
+improve the conductivity of the electrode and improve the performance
+of the supercapacitor. With the increase of activation time (RT), the
+specific capacitance shows an upward trend, indicating that the acti-
+vation process is intensified. This trend suggests that the pore structure
+of carbon materials is gradually optimized during the activation process.
+This may be because, with the increase of activation time, the erosion of
+the activator on the carbon precursor material is enhanced, resulting in
+the further opening and optimization of the pore configuration of the
+carbon material. Therefore, the pore wall gradually becomes thinner,
+(a) SHAP value analysis of LightGBM model  (b) SHAP value analysis of DNN model 
+Fig. 4. SHAP value analysis is performed on all features under LightGBM and DNN models.
+Fig. 5. Single variable PDP analysis of specific capacitance.
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+7 
+
+
+===== PDF PAGE 8 =====
+which is conducive to transforming carbon from a poorly connected
+macropore to a multi-level pore configuration [32]. The formation of
+this structure increases the SSA and pore capacity of the carbon material,
+thereby enhancing its electrochemical performance and energy storage
+capacity.
+The specific capacitance decreases with the increase of VM, which
+may be because the VM content in biomass affects the texture and pore
+structure of the electrode, thus affecting the surface area of the electrode
+surface for charge storage, and the higher surface area is usually bene-
+ficial to improve the performance of the capacitor. From Fig. 5, it can be
+seen that the specific capacitance decreases first and then increases with
+the increase of AT. This changing trend may be due to the release of gas
+and volatile organic compounds from biomass in the early stage of
+activation. These gases may temporarily occupy the pore space, which
+hurts the electrochemical performance of the capacitor, resulting in a
+short decrease in the specific capacitance. However, as the temperature
+continues to increase, the pore structure becomes more obvious and the
+pore volume increases, thereby creating a better channel, which con-
+tributes to the effective transport of electrolyte ions during charge and
+discharge, and improves the overall performance of the material [33].
+With the increase of hemicellulose content, the specific capacitance
+gradually increases, and with the increase of lignin content, the specific
+capacitance gradually decreases, because the hemicellulose-rich derived
+carbon materials in biomass usually have higher surface area, richer
+pore structure, and better electrochemical performance in super-
+capacitors, while the lignin-rich biomass-derived carbon materials tend
+to have lower surface area and poor electrochemical performance
+[33,34]. There are also some reviews on the composition and structure
+of biomass in detail. It is found that the unique structure and chemical
+diversity of cellulose, hemicellulose, and lignin in biomass will directly
+affect the surface area of biomass-derived carbon materials in super-
+capacitors, contributes to the porosity of biochar, and then affect the
+electrochemical performance of supercapacitors [35,36]. It can be seen
+that the specific structure in the structural composition of biomass
+covers more useful information and has certain advantages in the pre-
+diction of specific capacitance. Therefore, it has great potential to
+incorporate it into the specific capacitance prediction model.
+4. Conclusion
+In this study, the elemental analysis, industrial analysis, structural
+composition, activation conditions, and current density of biomass raw
+materials were innovatively selected as input conditions from the
+biomass raw material characteristics perspective. Based on the Light
+GBM and DNN models, the specific capacitance of biomass-derived
+carbon materials supercapacitors was predicted. At the same time, the
+prediction effect of the contrast capacitance under the input combina-
+tion of 7 different characteristics is compared. Then through the SHAP
+value analysis, the characteristics of the greater influence of the contrast
+capacitance are found, and the factors that have a greater influence on
+the contrast capacitance are deeply explored. The results show that:
+(1) The combination of retaining all features covers multiple aspects
+of biomass characteristics, which has the best prediction effect, and the
+industrial analysis and structural composition of biomass have a greater
+impact on the model than elemental analysis.
+(2) The LightGBM model is more suitable for the prediction of spe-
+cific capacitance, R
+2
+is 0.951, MAE is 11.090, RMSE is 14.756, and MAE
+and RMSE are significantly lower than the existing reported prediction
+results.
+In summary, it is feasible to establish a capacitance prediction model
+based on the characteristics of biomass raw materials. This model builds
+a bridge between the basic components of biomass and electrochemical
+performance. This study provides a new idea for optimizing the prepa-
+ration of biochar-based energy storage materials and provides a theo-
+retical and practical basis for the design of high-performance
+supercapacitor materials. In the future, it is possible to compare more
+different models to predict the performance of supercapacitors, try
+ensemble learning methods to improve performance, and use larger data
+sets. Explore multi-scale modeling methods, connect microstructure and
+macroscopic properties, design and synthesize high-performance
+biomass supercapacitor materials, and promote the sustainable use of
+energy.
+Supplementary data to this article can be found online at https://doi.
+org/10.1016/j.est.2024.112974.
+CRediT authorship contribution statement
+Chenxi Zhao: Writing – original draft, Validation, Supervision, Re-
+sources, Funding acquisition, Formal analysis, Conceptualization.
+Xueying Lu: Writing – original draft, Validation, Software, Methodol-
+ogy, Data curation, Conceptualization. Huanyu Tu: Writing – review &
+editing, Investigation. Yulong Yang: Writing – review & editing, Vali-
+dation. Siyu Wang: Visualization, Validation. Aihui Chen: Writing –
+review & editing, Project administration, Conceptualization. Haibin
+Zhang: Funding acquisition, Supervision.
+Declaration of competing interest
+The authors assert that no known competing financial interests or
+personal relationships exist that might have seemed to influence the
+work reported in this paper.
+Data availability
+Data will be made available on request.
+Acknowledgments
+This work was supported by the National “Belt and Road” Innovative
+Talent Exchange Program for Foreign Experts (DL2022012002L), the
+National Natural Science Foundation of China (51406045), and the
+Natural Science Foundation of Heilongjiang Province of China
+(LH2021E084).
+References
+[1] H. Liu, X. Liu, S. Wang, H.K. Liu, L. Li, Transition metal based battery-type
+electrodes in hybrid supercapacitors: a review, Energy Storage Materials. 28 (2020)
+122–145.
+[2] Z. Li, W. Zhang, H. Wang, Z. Qin, Activated pyrene decorated graphene with
+enhanced performance for electrochemical energy storage, Chem. Eng. J. 334
+(2018) 845–854.
+[3] S. Yang, S. Wang, X. Liu, L. Li, Biomass derived interconnected hierarchical micro-
+meso-macro-porous carbon with ultrahigh capacitance for supercapacitors, Carbon
+147 (2019) 540–549.
+[4] A.M. Abioye, F.N. Ani, Recent development in the production of activated carbon
+electrodes from agricultural waste biomass for supercapacitors: a review, Renew.
+Sustain. Energy Rev. 52 (2015) 1282–1293.
+[5] Z. Li, D. Guo, Y. Liu, H. Wang, L. Wang, Recent advances and challenges in biomass
+-derived porous carbon nanomaterials for supercapacitors, Chem. Eng. J. 397
+(2020) 125418.
+[6] C. Yuan, H. Xu, S.A. El-khodary, G. Ni, S. Esakkimuthu, S. Zhong, S. Wang, Recent
+advances and challenges in biomass-derived carbon materials for supercapacitors:
+a review, Fuel 362 (2024) 130795.
+[7] P. Jayaraman, H.A. Therese, Flexible interdigitated symmetric solid-state micro-
+supercapacitors with higher energy density for wearable electronics, J. Power
+Sources 581 (2023) 233489.
+[8] S. Lin, F. Wang, Z. Shao, Biomass applied in supercapacitor energy storage devices,
+J. Mater. Sci. 56 (2021) 1943–1979.
+[9] M. Xie, H. Meng, J. Chen, Y. Zhang, C. Du, L. Wan, Y. Chen, High-volumetric
+supercapacitor performance of ordered mesoporous carbon electrodes enabled by
+the faradaic-active nitrogen doping and decrease of microporosity, Acs Applied
+Energy Materials. 4 (2) (2021) 1840–1850.
+[10] S. Zhang, Y. Yu, M. Xie, C. Du, J. Chen, L. Wan, Y. Zhang, Clean production of N, O-
+doped activated carbon by water vapor carbonization/activation of expired coffee
+for high-volumetric supercapacitor, Appl. Surf. Sci. 589 (2022) 153011.
+[11] I.I.G. Inal, Z. Aktas, Enhancing the performance of activated carbon based scalable
+supercapacitors by heat treatment, Appl. Surf. Sci. 514 (2020) 145895.
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+8 
+
+
+===== PDF PAGE 9 =====
+[12] P.K. Vudisi, S. Jayanti, R. Chetty, State of charge and power rating gains in
+industrial-scale vanadium redox flow batteries through thermal activation of
+electrodes, Journal of Energy Storage. 72 (2023) 108734.
+[13] Z. Jin, X. Yan, Y. Yu, G. Zhao, Sustainable activated carbon fibers from liquefied
+wood with controllable porosity for high-performance supercapacitors, J. Mater.
+Chem. A 2 (30) (2014) 11706–11715.
+[14] J. Wang, S. Kaskel, KOH activation of carbon-based materials for energy storage,
+J. Mater. Chem. 22 (45) (2012) 23710–23725.
+[15] S. Ghosh, S. Barg, S.M. Jeong, K. Ostrikov, Heteroatom-doped and oxygen-
+functionalized nanocarbons for high-performance supercapacitors, Adv. Energy
+Mater. 10 (32) (2020) 2001239.
+[16] Y. Zhang, L. Zhang, L. Cheng, D. Yang, L. Wan, C. Du, J. Chen, M. Xie, Synthesis of
+faradaic-active N, O-doped carbon nanosheets from m-trihydroxybenzene and
+piperazine for high-performance supercapacitor, Appl. Surf. Sci. 538 (2021)
+148040.
+[17] M.A. Mohammed, M.A. Ahmed, A.V. Hacimahmud, Data-driven sustainability:
+leveraging big data and machine learning to build a greener future, Babylonian
+Journal of Artificial Intelligence. 2023 (2023) 17–23.
+[18] B.S. Reddy, P.L. Narayana, A.K. Maurya, U.M.R. Paturi, J. Sung, H.J. Ahn, K.
+K. Cho, N.S. Reddy, Modeling capacitance of carbon-based supercapacitors by
+artificial neural networks, Journal of Energy Storage. 72 (2023) 108537.
+[19] S. Zhu, J. Li, L. Ma, C. He, E. Liu, F. He, C. Shi, N. Zhao, Artificial neural network
+enabled capacitance prediction for carbon-based supercapacitors, Mater. Lett. 233
+(2018) 294–297.
+[20] X. Yang, C. Yuan, S. He, D. Jiang, B. Cao, S. Wang, Machine learning prediction of
+specific capacitance in biomass derived carbon materials: effects of activation and
+biochar characteristics, Fuel 331 (2023) 125718.
+[21] J. Ma, S. Zhang, X. Liu, J. Wang, Machine learning prediction of biochar yield
+based on biomass characteristics, Bioresour. Technol. 389 (2023) 129820.
+[22] Y. Liu, Y. Mu, K. Chen, Y. Li, J. Guo, Daily activity feature selection in smart homes
+based on Pearson correlation coefficient, Neural. Process. Lett. 51 (2020)
+1771–1787.
+[23] J.H. McDonald, K.W. Dunn, Statistical tests for measures of colocalization in
+biological microscopy, J. Microsc. 252 (3) (2013) 295–302.
+[24] J. Deng, S. Zhang, J. Zhang, Y. Xun, A. Liu, Loss function and application research
+in supervised learning, Big Data Research. 6 (1) (2020) 0.
+[25] X. Zhu, Y. Li, X. Wang, Machine learning prediction of biochar yield and carbon
+contents in biochar based on biomass characteristics and pyrolysis conditions,
+Bioresour. Technol. 288 (2019) 121527.
+[26] D.S.K. Karunasingha, Root mean square error or mean absolute error? Use their
+ratio as well, Information Sciences. 585 (2022) 609–629.
+[27] T.O. Hodson, Root-mean-square error (RMSE) or mean absolute error (MAE): when
+to use them or not, Geosci. Model Dev. 10 (14) (2022) 5481–5487.
+[28] X. Li, Z. Huang, S. Shao, Y. Cai, Machine learning prediction of physical properties
+and nitrogen content of porous carbon from agricultural wastes: effects of
+activation and do** process, Fuel 356 (2024) 129623.
+[29] W.Z. Tawfik, S.N. Mohammad, K.H. Rahouma, E. Tammam, G.M. Salama, An
+artificial neural network model for capacitance prediction of porous carbon-based
+supercapacitor electrodes, Journal of Energy Storage. 73 (2023) 108830.
+[30] S.M. Lundberg, S.I. Lee, A unified approach to interpreting model predictions, Adv.
+Neural Inf. Proces. Syst. 30 (2017) 4765–4774.
+[31] R.K. Sahu, S. Gangil, V.K. Bhargav, P. Sahu, B. Ghritalahre, Synthesizing biomass
+into nano carbon for use in high-performance supercapacitors-a brief critical
+review, Journal of Energy Storage. 72 (2023) 108348.
+[32] B. Wang, Y. Li, Z. Gu, H. Wang, X. Liu, S. Li, X. Chen, X. Liang, Z. Jiang, K. Ogino,
+H. Si, Synthesis and design of biomass-derived heteroatom-doped hierarchical
+porous carbon systems for high-voltage supercapacitors, Fuel Process. Technol. 247
+(2023) 107776.
+[33] W.K.P. Wickramaarachchi, M. Minakshi, X. Gao, R. Dabare, K.W. Wong,
+Hierarchical porous carbon from mango seed husk for electro-chemical energy
+storage, Chemical Engineering Journal Advances 8 (2021) 100158.
+[34] H. Lin, Y. Liu, Z. Chang, S. Yan, S. Liu, S. Han, A new method of synthesizing
+hemicellulose-derived porous activated carbon for high-performance
+supercapacitors, Microporous Mesoporous Mater. 292 (2020) 109707.
+[35] W. Li, J. Shi, Lignin-derived carbon material for electrochemical energy storage
+applications: insight into the process-structure-properties-performance
+correlations, Front. Bioeng. Biotechnol. 11 (2023) 1121027.
+[36] P. Manasa, S. Sambasivam, F. Ran, Recent progress on biomass waste derived
+activated carbon electrode materials for supercapacitors applications—a review,
+Journal of Energy Storage. 54 (2022) 105290.
+C. Zhao et al. Journal of Energy Storage 97 (2024) 112974 
+9 
+

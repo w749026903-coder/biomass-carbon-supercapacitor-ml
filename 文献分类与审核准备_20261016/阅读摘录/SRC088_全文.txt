@@ -1,0 +1,846 @@
+
+===== PDF PAGE 1 =====
+Spark Plasma Sintered Binder-Free Carbon Electrodes for 
+Decoupled Water Electrolysis
+Mārtiņš Vanags1, Mairis Iesalnieks1, Toms Valdemārs Eiduks1, Artūrs Plūdons1, Krišjānis 
+Šmits2,3, Reinis Drunka1, Ints Šteins1, Andris Šutka1* 
+1 Institute of Physics and Materials Science, Faculty of Natural Sciences and Technology, Paula 
+Valdena 3/7, Riga, LV1010, Latvia
+2Baltic Biomaterials Centre of Excellence, Headquarters at Riga Technical University, P. 
+Valdena Str. 3, Riga, LV-1048 Latvia
+3Institute of Biomaterials and Bioengineering, Faculty of Natural Sciences and Technology, 
+Riga Technical University, P. Valdena Str. 3, Riga, LV-1048 Latvia
+Abstract
+Water electrolysis is the dominant approach for producing green hydrogen from renewable 
+energy, providing an alternative to fossil fuels. Conventional water electrolysis faces many 
+problems due to the intermittent nature of renewable power and the need for a membrane to 
+avoid the formation of an explosive gas mixture. To avoid the use of a membrane, the 
+decoupled water electrolysis approach has been introduced, where one catalyst electrode is 
+replaced by a solid redox mediator. So far, redox mediators for decoupled electrolysis have 
+been prepared using fluoropolymer binders, which pose a serious environmental burden and 
+are facing a ban. This is a limiting factor for further implementation of emerging decoupled 
+water electrolysis technology. In this work, we report a binder-free charcoal electrode for use 
+as a redox mediator electrode in acid and alkaline decoupled water electrolysis. The binder-
+free redox mediator electrodes were prepared by a solvent-free spark plasma sintering. The 
+sintering temperature was optimised to obtain a volumetric redox mediator with a high specific 
+capacitance of 175 F g-1 and a specific charge capacity of 41 mAh g-1 at a current density of 50 
+mA g-1. The observed values are higher than reported in the literature for volumetric carbon-
+based supercapacitor materials. 
+Keywords: Spark plasma sintering, decoupled electrolysis, activated charcoal, double-layer 
+capacitor.
+Introduction
+The energy sector is currently undergoing a transformation from fossil to renewable energy 
+sources (solar, wind, hydropower, tidal, etc.) [1]. Renewable energy is inexhaustible, and it 
+does not pollute the environment. However, they are characterised by intermittency. Energy 
+consumers require stability, availability, and energy security; therefore, there must be a stable, 
+efficient, and secure connection between the renewable energy production plant and consumers. 
+One of the most promising is “green hydrogen”.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 2 =====
+Green hydrogen is hydrogen produced by water electrolysis powered by renewable energy 
+sources. Since 2021, green hydrogen production has risen by 50 %, reaching a production 
+capacity of 1 million tonnes per year (Mtpa). In parallel, the installed capacity of water 
+electrolysers has grown ninefold, and electrolyser production has increased fourfold, 
+highlighting the growing role of hydrogen in the global energy transition. The International 
+Energy Agency (IEA) has also strongly recommended further increases in green hydrogen 
+production [2].
+In water electrolysis, water is split into hydrogen and oxygen. A conventional electrolysis cell 
+consists of two metal catalyst electrodes (anode and cathode) immersed in an aqueous 
+electrolyte. An oxygen evolution reaction (OER) occurs on the anode, and a hydrogen 
+evolution reaction (HER) occurs on the cathode. As a result, hydrogen and oxygen are 
+produced by consuming electricity and splitting water.
+Currently, the highest technology readiness levels (TRLs) available for low-temperature 
+electrolysis are alkaline electrolysers (AWE), proton exchange membrane electrolysers 
+(PEMWE), and anion exchange membrane electrolysers (AEMWE). The voltage efficiencies 
+of these electrolysers range from 60-80 % for AWE, 65-82 % for PEMWE, and 52-67 % for 
+AEMWE [3]. 
+All of the aforementioned water electrolysers use membranes or diaphragms to separate the 
+cathode and anode and prevent the formation of an explosive mixture of oxygen and hydrogen. 
+There are several challenges for existing membrane-based water electrolysis. The diaphragm, 
+or membrane, typically does not exceed 0.5 mm in thickness, which causes cross-diffusion of 
+hydrogen and oxygen. Moreover, oxygen is released at twice the volume of hydrogen; therefore, 
+pressure management is required to avoid membrane deformation and rupture. In addition, 
+membranes used in water electrolysis increase the overpotential for gas generation due to the 
+resistance of ion exchange and transport across the membrane [4]. Membranes are made from 
+harsh fluoropolymers, and their manufacturing and exploitation cause severe environmental 
+issues [5].
+For this reason, decoupled water electrolysis (DWE) has recently been proposed to split water 
+without using membranes [6]. In this concept, one of the metal/catalyst electrodes in a water 
+electrolysis cell is replaced by a solid redox electrode, and the membrane is removed. The 
+process is typically cyclic. In one cycle, the OER reaction occurs at the metal electrode while 
+the redox electrode is reduced. In the second cycle, the HER reaction occurs at the metal 
+electrode, and the redox electrode is oxidised [7]. In such a process, simultaneous release of 
+oxygen and hydrogen is avoided. 
+Redox mediator electrode selection and design are critical for the successful construction of a 
+DWE device for H 2 production. Turning attention to solid-state redox electrodes, they are 
+typically charge-storage electrodes that can be divided into three major groups according to the 
+charge-storage mechanism: battery-type [8], pseudocapacitive [9], and electric double-layer 
+capacitance electrodes [10]. Electrodes must meet specific criteria for successful decoupled 
+electrolysis. Redox potentials of electrode materials should lie between the OER and HER 
+onset potentials; the materials should be durable for long-term redox cycling, non-corrosive in 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 3 =====
+the environment, non-toxic, and readily available. Battery pseudocapacitive electrodes have 
+been the most studied since 2013 [11], when Cronin first proposed the concept of decoupled 
+water electrolysis [12]. Both organic and inorganic electrodes have been demonstrated in 
+alkaline [13,14], acidic [15,16], and amphoteric conditions [17,18], achieving 70-95% 
+efficiency with 100% faradaic efficiency, good stability, cyclability, and durability. 
+A high current density (0.952 A cm -2) in DWE has been achieved using an electric double-
+layer (EDL) charge/discharge mediator based on metal-free carbon [19,20]. EDL 
+charge/discharge occurs without a Faradaic redox process, unlike a reduction-oxidation process, 
+thus eliminating diffusion limitations within active material. The EDL capacitance is purely a 
+function of the electrode area, and by using activated large-surface carbon materials, it is 
+possible to achieve large specific surfaces and increase the power-to-volume ratio of the 
+electrolysis device [21,22].
+The significant drawback for redox mediators is the need for a fluoropolymer binder to prepare 
+the electrode material [23]. Binder significantly affects the electrode's conductivity and blocks 
+the active surface, thus limiting overall capacity, and introduces the electrode's dead mass [24]. 
+Moreover, fluoropolymers raise significant environmental issues and are expected to be banned 
+in the EU soon [25]. For this reason, attention has been paid to the synthesis of binder-free 
+electrodes. The binder-free carbon electrodes for supercapacitors have been made by drop-
+casting [26], thermal pyrolysis of phenolic resin-impregnated cellulose paper [21], and vacuum 
+filtration [27]. The various methods are summarised in a review article [28]. However, these 
+approaches can hardly be up-scaled, and prepared electrode materials have not been tested as 
+redox mediators in DWE.
+Herein, we demonstrate the use of spark plasma sintering (SPS) to produce binder-free carbon 
+redox mediators for both acidic and alkaline DWE. We will discuss the effects of processing 
+parameters on sample microstructure and how these effects are reflected in electrochemical 
+performance in DWE. 
+2. Experimental
+2.1. Preparation of carbon redox mediator materials
+Carbon redox mediator materials were prepared from activated charcoal powder (Sigma 
+Aldrich, 100 mesh, 161551) as demonstrated in Figure S1. Samples were prepared using a Dr 
+Sinter SPS 825 (SPS Syntex, Japan). Sample series with sintering temperature 500-1000 °C 
+were prepared.  1.6 g of activated charcoal was poured into a 20 mm graphite mould lined with 
+0.35 mm graphite paper. The outside of the mould was covered with a 4.5 mm-thick carbon 
+fibre thermal insulation material, held in place by a carbon fibre cord. A built-in thermocouple 
+was used to measure temperature during sintering. The graphite mould was closed by graphite 
+disks. After inserting the mould into the SPS machine, the distance between the electrodes was 
+reduced until the top electrode contacted the top graphite disk. The pressure applied to the 
+sample was then gradually increased to 38 kg cm -2. The atmospheric pressure in the chamber 
+was reduced to approximately 6 Pa, and the sample was held for 20 min until no further 
+shrinkage was observed. In the SPS process temperature was increased by approximately 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 4 =====
+100 °C min -1 until it was 20 °C below the sintering temperature. Furthermore, the rate was 
+reduced to 20 °C min-1 to reach the set temperature, and samples were sintered for 4 minutes. 
+Cooling was carried out under vacuum for 20 min until the sample reached approximately 300 
+°C. The chamber was then opened and cooled to room temperature. After sintering, samples 
+were polished to remove the adhered graphite paper using a 220-grit resin-bonded diamond 
+grinding wheel on the Struers LaboPol-6 polishing system (Denmark) by hand at 
+approximately 300rpm.
+2.2. Characterisation of physical properties
+Sample morphology was studied by scanning electron microscopy (SEM/STEM, Verios 5 UC, 
+Thermo Fisher Scientific, USA). Before SEM measurements, samples were crushed to access 
+their cross-sections. Chemical compositions before and after sintering were analysed by X-ray 
+fluorescence spectrometer (XRF, Rigaku Supermini, Japan) in a helium atmosphere, as well as 
+by X-ray photoelectron spectroscopy (XPS, Escalab Xi +, ThermoScientific, USA). The SPS 
+tablets were ground prior to XPS measurements, and the powders were pressed into the indium 
+substrate. The carbon peak at 284.8 eV was used as a calibration point at XPS to correct the 
+peak shift. Peaks were fitted using Avantage 5.2 software.
+The specific surface area and pore distribution of the SPS tablets were determined using an N2 
+adsorption porosimeter (Quantachrome Nova 1200e, USA) and a Brunauer-Emmet-Teller 
+(BET) analysis. Before analysis, all samples were air-dried at 100 °C for 4 hours to eliminate 
+any moisture. Multipoint BET was measured at P/P 0 intervals of 0.08 and 0.44. Data were 
+analysed using the built-in Nova software and the BET model. Pore size distribution was 
+analysed based on the built-in DFT (density functional theory) and the DA (Dubinin-Astakhov) 
+module.
+Raman analysis was conducted at room temperature using the Renishaw InVia V-727 (United 
+Kingdom) spectrometer in backscattering geometry. A green laser (Ar+, λ = 514.5 nm, grating 
+– 1200 mm -1, 10 mW) was utilised for phonon excitation, and the sample exposure duration 
+was 10 s. Raman spectra were fitted using open source KherveFitting 1.7 software [29].
+The electrical resistivity was measured on cuboid pieces approximately 18.5 mm in length, 4.3 
+mm in width, and with the original height after sintering and primary sanding, ranging from 3 
+to 5.1 mm, cut from sintered samples using the MTI Corporation (USA) SYJ-160 low-speed 
+diamond saw.  The Cu wires were attached to a planar surface using MG Chemicals 843AR 
+super shield silver-coated copper-particle conductive paste, as shown in Figure S2a. Electrical 
+resistance was measured with a Keysight 34455A (USA) digital multimeter. Resistance 
+measurement for each sample was taken as the average of a continuous 10-minute measurement. 
+Differences in the resistance did not exceed 1% during the measurement.
+2.3. Electrochemical measurements
+Prior to the electrochemical measurements, the prepared redox mediator samples were placed 
+in a 50 ml beaker containing 0.5 M H 2SO4 or 1 M KOH electrolyte solution. 95-98 % H 2SO4 
+(Hempur, p.a.) and KOH pellets (Merck, for analysis) were used to prepare the solutions. Baker 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 5 =====
+was inserted in a vacuum desiccator at -0.8 atm for 10 min to degas the pores. Then, the 
+pressure was raised to ambient, and samples were kept in the electrolyte for a further 24 h. 
+Electrochemical measurements were performed by potentiostat/galvanostat Autolab 
+PGSTAT302N (Metrohm, The Netherlands) in a self-made two-electrode electrolysis cell 
+(Figure S3), which integrates the SPS charcoal carbon redox mediator (working) electrode and 
+the auxiliary (gas) electrode RuO 2-coated Ti mesh (Shaanxi Yunzhong metal technology co, 
+hole size: 4.5 x 12.5mm, RuO 2 coating thickness 0.5µm, Ti mesh thickness 2mm), in acidic 
+electrolyte and a Ni foil (Sigma Aldrich, ≥99.9 %, thickness 0.125 mm) in alkaline electrolyte. 
+A Ti foil  (in acidic electrolyte) or a Ni foil (in alkaline electrolyte) was placed at the bottom 
+of the SPS tablet for electrical contact, without contacting the electrolyte. The electrodes were 
+characterised by the chronopotentiometry method. In the anodic direction, the threshold 
+potential was 1.5 V in all measurements, while in the cathodic direction, it was -2 V. Upon 
+reaching the set threshold potential, the current changes direction. To control weight loss, the 
+samples were dried in a laboratory oven (Memmert UN55, Germany) for 24 h at 60 °C. The 
+specific charge capacity in mAh/g and capacitance in F/g were determined using the equations:
+𝑄 =
+𝐼 ∙ 𝑡
+3600 ∙ 𝑚
+(1)
+𝐶 =
+𝐼 ∙ ∆𝑡
+∆𝐸 ∙ 𝑚
+(2)
+where I - current (A), t - time (s), ΔE - voltage change from the chronopotentiometry curve in 
+time Δt and m - mass of the carbon electrode (g)
+Impedance measurements were performed on the same two-electrode cell at open-circuit 
+potential using the intercalated working electrode. Impedance was measured over the 
+frequency range from 100 kHz to 0.1 Hz using a 10 mV sinusoidal voltage signal. The results 
+were processed with Nova 2.1 software by modelling the equivalent circuit of the 
+electrolyte/electrode interface from the Nyquist plot.
+The H2 and O2 flows were determined by the volumetric displacement method. For this purpose, 
+a 100 µl glass capillary (Brand, Blaubrand intraMark) was used, placed in an isolated cell. The 
+transit time of the electrolyte level in the capillary was recorded. The gas flow rate was 
+determined from the displaced volume. The produced gas rate was measured during both the 
+OER and HER cycles to determine the O 2 and H 2 flows, respectively. Assuming that the H 2 
+gas flow should be twice as large as the O2 flow, the Faradaic efficiency was estimated by the 
+formula:
+𝜂𝐹=
+𝑘 ∙ 𝑉 ∙ 𝐹
+𝑉𝑀∙ 𝐼 ∙ 𝑡
+(3)
+where VM = 22.4 L mol -1 is volumetric Avogadro number, F (C mol -1) is Faraday constant, V 
+(l) is displaced gas volume per time t (s), I (A) is current and k = 2 in HER reaction.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 6 =====
+Knowing the Faradaic efficiency, the energy efficiency was determined using the 
+following formula:
+𝜂 =
+𝐻𝐻𝑉 ∙ 𝑀𝑚𝑜𝑙∙ 𝜂𝐹∙ 𝑡
+𝐹 ∙ ∫ 
+  𝑉(𝑡)𝑑𝑡
+(4)
+HHV is the highest heating value for hydrogen gas (140 MJ kg -1), M mol is hydrogen 
+molar mass (0.001 kg mol-1), ηF is faradaic efficiency, t (s) is chronopotenciometry cycle time, 
+F (C mol-1) is faraday constant and ∫  V(t)dt is the integral of the voltage curve over time.
+3. Results and discussion
+In this work, we used the SPS method to prepare a carbon redox mediator (working) electrode 
+for decoupled electrolysis. The SPS enables the production of materials with industrial-scale 
+productivity and reproducibility [30], while avoiding the use of organic binders. Currently, the 
+vast majority of capacitive carbon electrode materials used in supercapacitors and 
+pseudocapacitors, or as solid redox mediators in electrolysis, are prepared by using an organic 
+(mostly fluoropolymer) binder to provide mechanical integrity [23]. However, the binder 
+introduces inactive mass that increases internal electrical resistance, blocks pores, and surface 
+active sites [24]. Moreover, fluoropolymers are expected to be banned in the European Union 
+soon due to the environmental issues they cause [31]. 
+For preparing carbon electrodes by SPS, we chose charcoal. The charcoal contains P 2O5, a 
+natural minor component of the plant from the soil [32]. Phosphorus-containing species derived 
+from P 2O5 during thermal treatment can cross-link carbon structures by forming bridges 
+between carbon atoms via C–O–P or C–P–O linkages [33]. The presence of phosphorus in the 
+charcoal was confirmed by XRF, which showed a P content of approximately 2.5 wt% 
+(Supplementary Table S1). P 2s signal was observed also in XPS studies (Supplementary 
+Figure S4), as in direct confirmation in XRF results. For sintering, we also tested other carbons 
+that do not contain a significant amount of phosphorous, such as Acetylene black or MWCNT, 
+but mechanical integrity was not observed, as presented in Supplementary Figure S5.
+The charcoral carbon powders were sintered at different temperatures to meet the optimal 
+microstructures for carbon electrodes in decoupled electrolysis. The sintering pressure of 12 
+kN was chosen to ensure safe repeated use of graphite dies. We performed sintering in a wide 
+temperature range. With increasing the sintering temperature from 500 °C to 1000 °C, the 
+averaged sample shrinkage increased from 5.2 % to 31.5 % (Figure 1b), Supplementary Figure 
+S6), the density increased from 0.72 g cm -3 to 1.08 g cm -3 (Figure 1b), BET specific surface 
+area decreased from 1043 m 2 g -1 to 673 m 2 g -1 (Figure 1c, Supplementary Figure S7). The 
+morphology of the sintered materials was determined considering the measured adsorbed N 2 
+volume and the shape of the isotherm (Supplementary Figure S7). 
+According to the Dubinin-Radushkevich theory, all produced samples contain micro- and 
+mesopores. The pore-size distribution for various samples is shown in Figure 1d. The total pore 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 7 =====
+volume decreases by 13.5% from 0.843 m³ g-1 to 0.729 m³ g-1  when comparing the raw material 
+and the sample sintered at 500 °C to 0.403 m³ g -1 for the sample sintered at 1000 °C. The 
+average pore radius and volume decrease with increasing sintering temperature, with lower 
+temperature samples having the largest amount of mesopores. During the annealing, mesopores 
+are condensed, and the micropores become dominant. Mesopore volume decreases from 20.46 
+% in the raw material to 11.59 % for the sample sintered at 500 °C and to only 1.74 % at 1000 
+°C. The summary of all structural parameters observed from nitrogen adsorption measurements 
+is depicted in Supplementary Table S2. 
+These observed densification, reduced pore volume, and specific surface area were expected 
+due to increased temperature. On the other hand, it is important for the redox mediators to have 
+a high electrical conductivity to supply electrons to balance the adsorbed ions. The electrical 
+resistivity decreased from 0.98  m to 2.4 10 -3  m (Supplementary Figure S2b) when the 
+sintering temperature was changed from 500 °C to 1000 °C. Densification provides more 
+electrical contacts, sintering between carbon particles, and a higher volumetric density of 
+conductive particles, thereby increasing electrical conductivity.
+Figure 1. Schematic representation of SPS process (a), apparent density and shrinkage (b) 
+and specific surface area (c) dependence on sintering temperature, differential pore 
+distribution (d) and SEM image of samples sintered at 500 oC, 600 oC and 700 oC (e).  
+SEM images depicting the fracture surfaces of sintered charcoal powder at temperatures 
+ranging from 500 °C to 1000 °C are demonstrated in Figure 1e and Supplementary Figure S8. 
+All micrographs are acquired at 1000x magnification using secondary electron detection mode 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 8 =====
+at low accelerating voltage (5.0–5.6 kV) and beam current (0.10–0.16 nA), enabling clear 
+visualisation of surface topography and porosity. The microstructures do not present dramatic 
+changes, albeit gradual, but trend toward reduced porosity and sintering. The SEM results are 
+consistent with the results above.
+To better understand changes in charcoal structure during plasma sintering, Raman 
+spectroscopy with peak fitting was used (SI Fig. S9). Five distinctive Raman peaks in the 500-
+2000 cm-1 range were convoluted. In the raw material, a peak at 1697.3 cm -1, assigned to the 
+C=O stretching vibration, is observed. After sintering, this peak disappears due to the thermal 
+decomposition of oxidised carbon species. This can also be observed in the XPS data, where 
+the C=O signal is most prevalent in the raw material, as discussed below.
+To probe changes in charcoal during sintering, the D 1/G1 ratio can serve as a metric. The D 1 
+band reflects high regularity of the carbon material with a combination of 6 or more benzene 
+rings, while D2 corresponds to alkyl-alkyl ether sequences, and the shoulder peak D 3 at 1061 
+cm-1 is related to hydrogen in the charcoal structure [34]. D 1 can also reveal the presence of 
+heteroatoms and some defects. The G 1 band centered at 1598.6 cm -1 reveals two distinctive 
+vibrations, representing the graphitic region, the quadratic one of the aromatic rings and the 
+E2g2 vibration of activated charcoal. The G 2 band at 1526 cm -1 (valley band) is ascribed as a 
+mixture of two vibration modes of sp2 carbon, asymmetric stretch, and the breathing mode [34–
+37]. Charcoal, being highly disordered, non-graphitic, and amorphous, usually shows a high 
+D1/G ratio. 
+Initial material shows a relatively low D 1/G1 ratio of 0.681 (SI Table S3). When charcoal is 
+exposed to SPS, the D1/G1 ratio increases up to 1.509. A higher D 1/G1 ratio indicates a higher 
+degree of disorder, smaller graphitic domains, and a higher defect concentration [38].
+The sample crystallite size La was calculated based on the D1/G1 ratio:
+𝐿𝑎= (2.4 ⋅ 10―10) ⋅ 𝜆41(
+𝐷1
+𝐺1)
+―1 (5)
+Where La is crystalline size (nm), 𝜆 1 is a laser wavelength (nm). The crystalite size after SPS 
+decreases from 24.69 nm to 11.14 nm (Table S3), indicating more amorphous material.
+Further, we investigated the effect of sintering on the chemical composition of carbon by XPS. 
+As indicated by the XPS spectra of C1s and O1s (Supplementary Figures S10 and S11, Table 
+S4), the SPS process does not significantly affect the carbon structure, which remains similar 
+at all processing temperatures. C1s spectra reveal two distinctive peaks: the Csp 2 graphite 
+signal at around 283.5 eV and the carbon organic species signal at around 286.8 eV.  C1s 
+signals can be associated with different carbon-oxygen species (C-O, C=O, -O(C=O)-C, etc.). 
+These are hard to distinguish from one another due to the asymmetric form of the C sp2 signal 
+and the low C-O peak intensity. The O1s spectra reveal three distinct signals related to oxygen 
+species associated with –OH, C-O-C groups (approx. 529.7 eV), C=O groups (approx. 531.7 
+eV), and O-(C=O)- groups (approx. 534.7 eV). The O1s spectra show a decrease in oxygen 
+content from 16.18 at% to 8.39 at% with increasing sintering temperature (Supplementary 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 9 =====
+Figure S11, Table S4). The decrease in the oxygen content is due to the decomposition of 
+oxygenated carbon species in charcoal [39]. 
+The obtained samples were tested in acid decoupled water electrolysis (DWE). Acid-DWE has 
+several advantages over alkaline electrolysis. Namely, the HER standard potential is 0 V vs 
+SHE in an acidic environment, while -0.83 V vs SHE in an alkaline environment [40]. The 
+conductivity of an acidic medium is higher, allowing a higher current density than in an alkaline 
+medium [41]. Using an acidic medium also enables gas production at elevated pressures, 
+reducing the energy required to pressurise systems. Also, in an alkaline environment, gas 
+bubbles form more than in an acidic environment [42,43].
+The cell used in electrochemical measurements is schematically shown in Figure 2a. The two-
+electrode electrochemical cell consists of a RuO 2-coated Ti mesh for gas evolution, and a 
+carbon redox electrode pressed on a Ti current collector for H + ion accumulation and release, 
+as described in the experimental section. The electrodes were tested in a 0.5M H2SO4 aqueous 
+solution.  Acid-DWE is a two-step process in which, in the first step (OER cycle), the negative 
+pole of the power source is connected to the carbon electrode and the positive pole to the gas 
+electrode. When a potential is applied, a double-layer charging occurs on the carbon electrode, 
+in which H + ions are accumulated, while OER occurs on the gas electrode according to the 
+reaction: 2H2O → 4H+ + O2 + 4e-. As the cycle continues, the potential gradually increases due 
+to double-layer charging. When the set potential is reached during the OER cycle, the cell 
+polarity is changed to continue with the HER cycle. In this step, the electric double layer is 
+discharged by releasing H+ ions from the carbon redox electrode while the HER occurs on the 
+gas electrode according to the reaction 2H + + 2e- → H2. The cycle continues until the EDL is 
+discharged and reaches a set threshold potential, thereby avoiding OER on carbon.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 10 =====
+Figure 2. Electrochemical properties of SPS sintered carbon electrodes in acidic 
+environment: Schematic representation of cell design (a); Intercalation and deintercalation 
+cycle potential vs time (b); Charge capacity of electrode during 60 cycles (c); Nyquist plots 
+from electrical impedance measurements (d). The inset figure shows the equivalent circuit of 
+the electrode/electrolyte interface; Charge capacity of 700 °C and 1000 °C sintered samples 
+at different relative sample thicknesses (e).
+Figure 2b shows chronopotentiometry curves for all samples sintered at different temperatures. 
+The carbon electrode sample sintered at 500 °C lacked mechanical integrity for the 
+measurement as it fractured during electrolyte infusion; thus, it is not included in the 
+electrochemical studies. Before the measurement, the electrodes were stabilised by cycling 50 
+cycles. At the beginning of both cycles, the voltage changes rapidly from approximately -1 V 
+to 0.75 V in the first five minutes, reflecting 10 F of capacitance due to H + ion deintercalation 
+and intercalation in the RuO 2 gas electrode material [44]. After approximately 5 minutes, the 
+slope of the curve changes rapidly and remains constant for the rest of the cycle time, up to 50 
+minutes. During this period, H + accumulates (OER cycle) or is released (HER cycle) at the 
+carbon redox electrode. This slope change characterises the onset of OER/HER on the RuO 2 
+electrode and the charging/discharging of the carbon electrode. There is no time difference 
+between the two cycles, indicating the absence of parasitic reactions.
+The charge capacity for 60 consecutive chronopotentiometry measurements during the HER 
+cycle is shown in Fig. 2 (c). The charge capacity of the samples does not change more than 4%, 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 11 =====
+except for the sample sintered at 900 °C. On average, over 60 cycles, the highest charge 
+capacity of 42 mAh g -1 is observed for the 700 °C sintered sample, while the charge capacity 
+of the 1000 °C sintered sample is, on average, 18 mAh/g. The 900 °C sintered sample gradually 
+increases its charge capacity from 14 mAh/g to 31 mAh g -1 over sixty cycles. This gradual 
+increase in charge capacity could indicate gradual electrolyte absorption into the electrode, 
+thereby accessing more adsorption sites on the carbon electrode surface. By increasing the 
+current density from 100 mA to 200 mA (SI Figure S12), all samples lose charge capacity by 
+up to 8 times for 100mA and 20 times for 200 mA due to a decrease in the diffusion area, which 
+significantly affects the electrode's charge capacity, especially for the thick electrode materials 
+used here. After cycling between 100 mA and 200 mA for 100 cycles and then returning to 50 
+mA mode, the charge capacity returns to its original value, indicating electrode stability.
+Table 1. Charge capacity and specific capacitance of carbon electrodes in an acidic 
+environment
+Sample Charge capacity mAh g-1 Specific capacitance F g-1
+600 °C 35 175
+700 °C 42 156
+800 °C 40 127
+900 °C 31 104
+1000 °C 18 62
+The charge capacity and specific capacitance, calculated from the chronopotentiometry curves, 
+are summarised in Table 1. The highest capacitance is for the 600 °C sample, reaching 175 F 
+g-1. However, the carbon electrode sintered at 600 °C shows a higher potential during the HER 
+cycle than those sintered at 700 °C, 800 °C, and 900 °C. This can be related to the sample's 
+lower resistance as demonstrated by electric resistivity measurements (Supplementary Figure 
+S2b) and impedance measurements discussed below. A higher potential for H + accumulation 
+or release decreases the efficiency of the decoupled electrolysis device [45], so the optimal 
+temperature for carbon electrode sintering is 700 °C. 
+The capacitance correlates well with the measured surface area of the carbon electrodes (Fig. 
+1 (c)). This suggests that the main charging mechanism of the carbon electrode is the surface 
+double-layer charging. To better understand the dominant mechanism of activated carbon 
+electrodes, Raman spectroscopy was used to detect changes between the charged and 
+discharged states (Figure S13). Raman spectra were measured ex-situ as an average of multiple 
+points during OER and HER cycles. No significant changes in peak position or intensity were 
+observed in Raman, further confirming the surface-dominated effect.
+Fig. 2 (d) shows the Nyquist plots for all samples obtained from electrical impedance 
+measurements in the frequency range from 100 kHz to 0.1 Hz. The inset of the figure shows 
+the equivalent circuit for the electrode/electrolyte interface. This type of circuit is also used 
+elsewhere to characterise carbon electrodes [46]. 
+The parameters extracted from equivalent circuit analysis are provided in Table S5. The series 
+resistance R s is mainly determined by the electrode's electrical conductivity and the 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 12 =====
+electrolyte's ionic conductivity. The component Rs also includes the resistance of the cell leads, 
+which is orders of magnitude lower than the cell's resistance. The sample sintered at 600 °C 
+shows the largest R s value, indicating the lowest electrical conductivity. This correlates with 
+the HER onset potential in Fig. 2 (b) being more shifted towards the cathodic potential. 
+The remaining three equivalent circuit blocks are: R p1 and CPE 1, which characterise high-
+frequency charging; Rp2 and CPE2, which characterise medium-frequency charging; and 
+CPE3, which characterises low-frequency charging. This three-region charge distribution 
+arises naturally from the hierarchical pore structure of the carbon electrode, as indicated by the 
+porosity measurements above. In the high-frequency region, H+ ions adsorb on more accessible 
+pore surfaces, whereas in the mid- and low-frequency regions, smaller pores with less 
+accessible surfaces, such as micropores, are populated. 
+The admittance factor (Y01) value for the CPE 1 element (Table S5) is a direct indicator of the 
+presence of accessible adsorption sites. This value is the largest for the sample sintered at 
+600 °C due to the higher mesopore content (Supplementary Table S2). Consequently, the Y 02 
+and Y03 values of CPE 2 and CPE 3 are smaller for the 600 °C electrode sample than those for 
+the other electrodes. For the 700 °C and 800 °C sintered samples, Y01 drops rapidly, while Y02 
+and Y 03 increase. This indicates that the medium- and low-frequency charging process is 
+dominant in these samples. For the 1000 °C sample, the semicircle in the high frequency 
+interval does not appear, indicating a very accessible surface area, as a result of which the 100 
+kHz frequency limits the resonance of the Y 01/R1 contour. Y 02 and Y 03 are also smaller, 
+indicating closed pores and, accordingly, less electrolyte access to the surface. These 
+measurements also explain the high potentials observed in chronopotentiometry for the 
+electrode sample sintered at 1000 °C.
+To demonstrate the formation of closed pores and inactive areas in a carbon electrode sintered 
+at 1000 °C, we investigated the electrode mass participating in the reaction. For the experiment, 
+samples sintered at 700 °C and 1000 °C were selected. The initial thickness of the samples after 
+sintering was reduced by grinding to 66 % and 33 %. Then, chronopotentiometry measurements 
+were performed to assess the effect of grinding on the sample capacitance. It is expected that 
+reducing the tablet thickness will increase the gravimetric charge capacity of the 1000 °C 
+sample, indicating inefficient mass utilisation in the thicker sample. 
+Figure 2e shows the specific charge capacity for 50 subsequent cycles for samples sintered at 
+700 °C and 1000 °C with different thicknesses. The curves showing the potential change during 
+the ion accumulation and release cycle versus time are shown in Supplementary Figure S14. 
+The 700 °C sample shows a similar specific charge capacity across all thicknesses, indicating 
+effective use of the electrode mass and interconnected pore network. However, the specific 
+charge capacity of the 1000 °C sample increases from 14.5 mAh g-1 to 23.2 mAh g-1 when the 
+thickness is reduced from 100 % to 33 %, respectively, indicating the presence of dead areas 
+and closed pores in the sample.
+Nyquist plots show that, for the sample sintered at 700 °C, the semicircle radius increases with 
+decreasing sample thickness (Supplementary Figure S15). This means that, by reducing the 
+sample thickness, the double-layer capacitance decreases (CPE1 in the equivalent circuit (inset 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 13 =====
+in Figure S15) and the polarisation resistance R p increases. At the same time, the series 
+resistance decreases for a thinner 700 °C sample. From this model, it can be concluded that the 
+700 °C sample works throughout the volume. Reducing its thickness immediately leads to a 
+proportional decrease in the double-layer capacitance and an increase in the polarisation 
+resistance, because the active surface on which double-layer polarisation occurs decreases. Due 
+to the thinner sample, the series resistance decreases. The parameters of the modelled 
+equivalent circuit for this 700 °C sample are summarised in Table S6.
+To test the versatility of the sintered carbon electrode samples, we performed electrochemical 
+tests in an alkaline environment (Figure 3). Here, Ni foil was used as the OER/HER catalyst 
+electrode, and the electrolyte was 1 M KOH. Here, charging of the carbon electrode double 
+layer occurs in the anodic potential region, as H2 is released on the Ni foil (negative electrode) 
+and OH- charges the carbon electrode (positive electrode) (Figure 3 (a)). The charge capacity 
+after 60 cycles (Figure 3(b)) for samples sintered at different temperatures in an alkaline 
+medium is approximately half that in an acidic medium. The sample sintered at 600 °C exhibits 
+the highest charge capacity of 26.5 mAh g -1  and capacitance of 119 F g -1. This indicates 
+hindered diffusion and surface polarisation of OH - ions relative to H + ions. Both H + and OH- 
+ions have large diffusion coefficients, but still the H + ion diffusion coefficient (7.62·10 -5 cm2 
+s-1) is almost twice as large as the OH- ion (4.56·10-5 cm2 s-1) [47]. The difference in diffusion 
+coefficients also results in differences in charge capacity. In general, the 600 °C sample shows 
+the highest charge capacity among the other samples and also shows an increase in charge 
+capacity in the middle of cycling, which could be associated with the formation of microcracks 
+and deeper electrolyte access to the electrode surface. The other samples are characterised by 
+an increase in charge capacity in the first 10 cycles, followed by a constant value in the 
+remaining cycles.  
+Figure 3. Electrochemical properties of SPS sintered carbon electrodes in an alkaline 
+environment. a) Schematic representation of cell design (a); Charge capacity of electrode 
+during 60 cycles (b); Last intercalation and deintercalation cycle potential vs time (c).
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 14 =====
+Table 2. Charge capacity and specific capacitance of carbon electrodes in an alkaline 
+environment
+Sample Charge capacity mAh g-1 Specific capacitance F g-1
+600 °C 26 119
+700 °C 21 98
+800 °C 21 88
+900 °C 18 78
+1000 °C 10 48
+Individual charge and discharge cycles in alkaline media for all samples are shown in Figure 3 
+(c). Both the charge and discharge cycles are characterised by a rapid change in potential, 
+reaching a pronounced breakpoint within a few minutes when the charge/discharge region is 
+reached. This rapid transition is associated with the reduction/oxidation of the Ni foil. Due to 
+the relatively small area of Ni, this process occurs quickly, and the HER/OER reaction begins 
+at negative/positive potentials on the Ni foil and at positive/negative potentials on the carbon 
+electrode, respectively. Comparing the potential curves in acidic and alkaline environments 
+(Figure 2(b) and Figure 3(c)), it is seen that their shapes are similar, with no noticeable 
+asymmetry between the charge and discharge cycles. Since the standard potential of the HER 
+in acidic environments is 0 V vs NHE and in alkaline environments -0.82 V vs NHE, it would 
+be expected that the charge/discharge potentials would be lower during charging in acidic 
+environments and higher during discharging in alkaline environments and vice versa. The 
+similar potentials in alkaline and acidic environments suggest that the process is primarily 
+dictated by the carbon electrode.
+The impedance results taken in alkaline media are similar to those taken in acidic media. 
+Nyquist plots for all samples are shown in Figure S16. Table S7 summarises the values of the 
+equivalent circuit elements. For tablets sintered at 600 °C and 700 °C, all elements in the 
+equivalent circuit are present, indicating that a larger surface area is available for charging the 
+double layer at higher frequencies. For tablets sintered above 700 °C, the first semicircle 
+disappears. We explain this disappearance by the fact that at higher sintering temperatures, the 
+open, active surface area decreases, and no charging is observed at 100 kHz. This is also 
+indicated by the rapid decrease in the CPE1 Y0 value for 600 °C and 700 °C tablets. 
+To evaluate the efficiency of water splitting in a decoupled water electrolysis cell, the faradaic 
+efficiency was determined for a sample sintered at 700 °C in an acidic and alkaline environment. 
+This was done using quantitative gas analysis, namely, by determining the displaced gas 
+volume in the HER and OER cycles. In Figure S17, the H 2 and O 2 flow rates are shown for 
+2000 s. The average H2 flow rate divided by the O2 flow rate for 2000 ss is 2.07, which is close 
+to theory. This indicates that the gas purity in the HER and OER cycles is high enough to apply 
+equation (3). Using the equation, the calculated Faradaic efficiency in both environments is 
+97.8 ± 0.8 %. Using this (4), the energy efficiency, calculated based on the highest heating 
+value for hydrogen gas, is 54.2 ± 0.6 % in an acid environment and 50.7 ± 0.4 % in an alkaline 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 15 =====
+environment. The limited efficiency is due to polarization resistance in the thick redox mediator 
+sample used in the study, which, in turn, increases the intercalation and deintercalation 
+potentials and reduces efficiency.
+A comparison of different carbon-based volumetric electrodes for decoupled electrolysis and 
+supercapacitors is shown in Fig. 2. For now, most volumetric carbon electrodes were produced 
+by heat treating various wood- or cellulose-based materials with the addition of modifiers, such 
+as graphite oxide (GO) or various inorganic compounds. If we compare our produced SPS 
+samples with Wood-derived ones, we can see that our material reaches high volumetric 
+capacities of 137.17 F cm -3 (0.5 M H 2SO4) and 86.33 F cm -3 (1 M KOH), which are 
+significantly higher than those of wood- or biomass-derived electrodes. We can achieve this by 
+a relatively high electrode density (0.88 g/cm 3), resulting in low electrode volume. Wood-
+derived electrodes often exhibit a lower density due to the presence of larger channels in the 
+wood structure.
+Table 2. Specific capacitance and surface area comparison between different carbon-based 
+electrodes.
+Material and 
+morphology
+Electrolyte, 
+Current 
+density
+Specific 
+capacity 
+F g-1
+Specific 
+surface 
+area m2 g-1
+Volumetric 
+capacity F cm-3
+Ref.
+Porous self-standing 
+electrode, derived from 
+wood
+6M KOH
+(1 mA cm-2) 26.6 1049.9 120 [48]
+Wood-derived free-
+standing electrode, 
+impregnated with GO
+6M KOH
+(5 mA cm-2) 12.5 - 31.4
+(5 mA cm-3) [49]
+Wood-derived carbon 
+electrodes, modified 
+with Ag@NiCo2S4 
+nanoparticles
+6M KOH
+(50 mA cm-2) 220 600 11.3 [50]
+Bamboo-derived 
+flexible electrode
+3M KOH
+(50 A g-1) 170 - 2.1
+(50mA cm-3) [51]
+Cellulose textile 
+modified with GO
+1M H2SO4
+(1 mA cm-2)
+3.1 (F 
+cm-2) 347.6 10.1 [52]
+Wood-derived 
+electrodes, decorated 
+with Co(OH)2
+2M KOH
+(1 mA cm-2)
+3.72
+(F cm-2) 568.13 14.2 [53]
+0.5M H2SO4
+(50 mA g-1) 156.46 137.17Self-standing SPS 
+tablet, sintered at 700 ºC 
+from activated charcoal 1M KOH
+(50 mA g-1) 98.19
+924.02
+86.33
+This 
+work
+Conclusions
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 16 =====
+In conclusion, a self-standing binder-free bulk electrode was prepared from commercially 
+available charcoal powder via spark plasma sintering. Sintered supercapacitive electrodes were 
+used as redox mediator electrodes in decoupled water electrolysis. The presence of phosphorus 
+in the charcoal acts as a crosslinking agent during sintering. With increasing the sintering 
+temperature from 500 °C to 1000 °C, the averaged sample shrinkage increased from 5.2 % to 
+33.2 % the density increased from 0.72 g cm-3 to 1.08 g cm-3, and the BET specific surface area 
+decreased from 1043 m2 g-1 to 673 m2 g-1. 
+Decoupled water electrolysis using carbon electrodes in both acidic and alkaline environments 
+was successfully demonstrated. As the sintering temperature increases, both the charge 
+capacity and the capacitance of the carbon electrodes decrease, and this decrease is strongly 
+correlated with the BET surface area. The results showed that the main ion-mediating 
+mechanism at the carbon electrode is the electric double-layer charging. The best performance 
+in the DWE cell is achieved with the electrode sintered at 700 °C in an acidic environment, 
+yielding a specific capacitance of 175 F g-1 and a charge capacity of 42 mAh g-1. Produced gas 
+volume measurements in the OER and HER cycles show 98.4 % faradaic efficiency. The 
+obtained energy efficiency for complete water splitting is 54.2 %.
+Acknowledgements
+Authors acknowledges support from 5.2.1.1.i.0/2/24/I/CFLA/003 Inovation grant RTU-IG-
+2024/1-0013 "Sustainable high-capacity redox auxiliary electrodes for decoupled acid 
+electrolysis"
+References
+[1] Power Systems Transformation: Delivering Competitive, Resilient Electricity in High-
+Renewable Systems. Energy Transitions Commission n.d. https://www.energy-
+transitions.org/publications/power-systems-transformation/ (accessed February 27, 
+2026).
+[2] Global Hydrogen Review 2024 – Analysis. IEA 2024. 
+https://www.iea.org/reports/global-hydrogen-review-2024 (accessed February 27, 
+2026).
+[3] Li W, Tian H, Ma L, Wang Y, Liu X, Gao X. Low-temperature water electrolysis: 
+fundamentals, progress, and new strategies. Mater Adv 2022;3:5598–644. 
+https://doi.org/10.1039/D2MA00185C.
+[4] Liu L, Ma H, Khan M, Hsiao BS. Recent Advances and Challenges in Anion Exchange 
+Membranes Development/Application for Water Electrolysis: A Review. Membranes 
+2024;14:85. https://doi.org/10.3390/membranes14040085.
+[5] Henkensmeier D, Cho W-C, Jannasch P, Stojadinovic J, Li Q, Aili D, et al. Separators 
+and Membranes for Advanced Alkaline Water Electrolysis. Chem Rev 2024;124:6393–
+443. https://doi.org/10.1021/acs.chemrev.3c00694.
+[6] Wallace AG, Symes MD. Decoupling Strategies in Electrochemical Water Splitting and 
+Beyond. Joule 2018;2:1390–5. https://doi.org/10.1016/j.joule.2018.06.011.
+[7] Wei J, Shao Y, Xu J, Yin F, Li Z, Qian H, et al. Sequential oxygen evolution and 
+decoupled water splitting via electrochemical redox reaction of nickel hydroxides. Nat 
+Commun 2024;15:9012. https://doi.org/10.1038/s41467-024-53310-5.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 17 =====
+[8] Chalkley MJ, Garrido-Barros P, Peters JC. A molecular mediator for reductive 
+concerted proton-electron transfers via electrocatalysis. Science 2020;369:850–4. 
+https://doi.org/10.1126/science.abc1607.
+[9] Datta B, Bhatt P, Dutta G. A Redox Mediator-Free Highly Selective and Sensitive 
+Electrochemical Aptasensor for Patulin Mycotoxin Detection in Apple Juice Using Ni–
+NiO Pseudocapacitive Nanomaterials. J Agric Food Chem 2024;72:5993–6005. 
+https://doi.org/10.1021/acs.jafc.3c07886.
+[10] Mathur A, Diesendruck CE. Advanced Device Architecture Strategies for Decoupled 
+Water Splitting: A Review. ACS Materials Lett 2024;6:2725–37. 
+https://doi.org/10.1021/acsmaterialslett.4c00745.
+[11] Zhou K, Huang J, Xiang D, Deng A, Du J, Liu H. Decoupled water electrolysis: 
+Flexible strategy for pure hydrogen production with small voltage inputs. Journal of 
+Energy Chemistry 2024;94:340–56. https://doi.org/10.1016/j.jechem.2024.03.001.
+[12] Symes MD, Cronin L. Decoupling hydrogen and oxygen evolution during electrolytic 
+water splitting using an electron-coupled-proton buffer. Nature Chem 2013;5:403–9. 
+https://doi.org/10.1038/nchem.1621.
+[13] Dotan H, Landman A, Sheehan SW, Malviya KD, Shter GE, Grave DA, et al. 
+Decoupled hydrogen and oxygen evolution by a two-step electrochemical–chemical 
+cycle for efficient overall water splitting. Nat Energy 2019;4:786–95. 
+https://doi.org/10.1038/s41560-019-0462-7.
+[14] Chen L, Dong X, Wang Y, Xia Y. Separating hydrogen and oxygen evolution in 
+alkaline water electrolysis using nickel hydroxide. Nat Commun 2016;7:11741. 
+https://doi.org/10.1038/ncomms11741.
+[15] Chen Z, Peng Y, Liu F, Le Z, Zhu J, Shen G, et al. Hierarchical Nanostructured WO 3 
+with Biomimetic Proton Channels and Mixed Ionic-Electronic Conductivity for 
+Electrochemical Energy Storage. Nano Lett 2015;15:6802–8. 
+https://doi.org/10.1021/acs.nanolett.5b02642.
+[16] Iesalnieks M, Vanags M, Alsiņa LL, Šutka A. Increasing the capacity of 
+pseudocapacitive WO3 auxiliary electrode for enhanced two-step decoupled acid water 
+electrolysis. Renewable Energy 2024;228:120599. 
+https://doi.org/10.1016/j.renene.2024.120599.
+[17] Huang J, Xie Y, Yan L, Wang B, Kong T, Dong X, et al. Decoupled amphoteric water 
+electrolysis and its integration with Mn–Zn battery for flexible utilization of renewables. 
+Energy Environ Sci 2021;14:883–9. https://doi.org/10.1039/D0EE03639K.
+[18] Vanags M, Kulikovskis G, Kostjukovs J, Jekabsons L, Sarakovskis A, Smits K, et al. 
+Membrane-less amphoteric decoupled water electrolysis using WO 3 and Ni(OH) 2 
+auxiliary electrodes. Energy Environ Sci 2022;15:2021–8. 
+https://doi.org/10.1039/D1EE03982B.
+[19] Zhu Z, Jiang T, Sun J, Liu Z, Xie Z, Liu S, et al. pH-Universal Decoupled Water 
+Electrolysis Enabled by Electrocatalytic Hydrogen Gas Capacitive Chemistry. JACS Au 
+2023;3:488–97. https://doi.org/10.1021/jacsau.2c00624.
+[20] Toledo-Carrillo EA, García-Rodríguez M, Sánchez-Moren LM, Dutta J. Decoupled 
+supercapacitive electrolyzer for membrane-free water splitting. Sci Adv 
+2024;10:eadi3180. https://doi.org/10.1126/sciadv.adi3180.
+[21] Platek-Mielczarek A, Beda A, Fic K, Matei Ghimbeu C. Synthesis and performance of 
+binder-free porous carbon electrodes in electrochemical capacitors. J Mater Chem A 
+2024;12:6412–25. https://doi.org/10.1039/D3TA04971J.
+[22] Liu C, Han G, Chang Y, Xiao Y, Li M, Zhou W, et al. Properties of Porous Carbon 
+Derived from Cornstalk Core in High‐Performance Electrochemical Capacitors. 
+ChemElectroChem 2016;3:323–31. https://doi.org/10.1002/celc.201500376.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 18 =====
+[23] Landi G, La Notte L, Palma AL, Sorrentino A, Maglione MG, Puglisi G. A 
+Comparative Evaluation of Sustainable Binders for Environmentally Friendly Carbon-
+Based Supercapacitors. Nanomaterials 2021;12:46. 
+https://doi.org/10.3390/nano12010046.
+[24] Lai T, Wang L, Liu Z, Bhayo AM, Wang Y, He X. Tackling Challenges and Exploring 
+Opportunities in Cathode Binder Innovation. Nano-Micro Lett 2026;18:9. 
+https://doi.org/10.1007/s40820-025-01848-4.
+[25] Commission restricts use of a sub-group of PFAS chemicals. European Commission - 
+European Commission n.d. 
+https://ec.europa.eu/commission/presscorner/detail/en/ip_24_4763 (accessed February 
+27, 2026).
+[26] Chiheb RNEH, Nabti Z, Benayahoum A, Chaib C, Bordjiba T, Bouakkaz S, et al. 
+Electrochemically activated binder-free carbon nanocomposite electrode for enhanced 
+electrochemical capacitor. Journal of Energy Storage 2024;102:113980. 
+https://doi.org/10.1016/j.est.2024.113980.
+[27] Bai Q, Zhang G, Bai X, Liu Y, Wang Y, Li C, et al. The design of binder-free self-
+supporting carbon paper electrode based on biomass derived hierarchical porous 
+carbon/cellulose nanofibers for sustainable flexible supercapacitors. Applied Surface 
+Science 2024;678:161140. https://doi.org/10.1016/j.apsusc.2024.161140.
+[28] Wang Y, Qu Q, Gao S, Tang G, Liu K, He S, et al. Biomass derived carbon as binder-
+free electrode materials for supercapacitors. Carbon 2019;155:706–26. 
+https://doi.org/10.1016/j.carbon.2019.09.018.
+[29] Kerherve G, Skinner WSJ, Hochhaus JA, Graf A, Morgan DJ, Isaacs MA, et al. 
+KherveFitting: An Open Source Software for Fitting X‐Ray Photoelectron Spectroscopy 
+Data. Surface &amp; Interface Analysis 2026;58:54–65. 
+https://doi.org/10.1002/sia.70032.
+[30] Ratzker B, Sokol M. Exploring the capabilities of high-pressure spark plasma sintering 
+(HPSPS): A review of materials processing and properties. Materials & Design 
+2023;233:112238. https://doi.org/10.1016/j.matdes.2023.112238.
+[31] Sherrell PC, Šutka A, Timusk M, Šutka A. Alternatives to Fluoropolymers for 
+Motion‐Based Energy Harvesting: Perspectives on Piezoelectricity, Triboelectricity, 
+Ferroelectrets, and Flexoelectricity. Small 2024;20:2311570. 
+https://doi.org/10.1002/smll.202311570.
+[32] Solaiman ZM, Blackwell P, Shafi MI, Salman ND, Storer P, Babur E. Co-application of 
+biochar and phosphorus increases soil microbial biomass, mycorrhizal colonization, 
+growth, and nutrition of subterranean clover. AIMSMICRO 2025;11:59–73. 
+https://doi.org/10.3934/microbiol.2025004.
+[33] Li M, Bi Z, Xie L, Sun G, Liu Z, Kong Q, et al. From Starch to Carbon Materials: 
+Insight into the Cross-Linking Reaction and Its Influence on the Carbonization Process. 
+ACS Sustainable Chem Eng 2019;7:14796–804. 
+https://doi.org/10.1021/acssuschemeng.9b02821.
+[34] Smith MW, Dallmeyer I, Johnson TJ, Brauer CS, McEwen J-S, Espinal JF, et al. 
+Structural analysis of char by Raman spectroscopy: Improving band assignments 
+through computational calculations from first principles. Carbon 2016;100:678–92. 
+https://doi.org/10.1016/j.carbon.2016.01.031.
+[35] Khalil AM, Msaadi R, Sassi W, Ghanmi I, Pires R, Michely L, et al. Facile diazonium 
+modification of pomegranate peel biochar: a stupendous derived relationship between 
+thermal and Raman analyses. Carbon Lett 2022;32:1519–29. 
+https://doi.org/10.1007/s42823-022-00374-2.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 19 =====
+[36] Cao B, Yuan J, Jiang D, Wang S, Barati B, Hu Y, et al. Seaweed-derived biochar with 
+multiple active sites as a heterogeneous catalyst for converting macroalgae into acid-
+free biooil containing abundant ester and sugar substances. Fuel 2021;285:119164. 
+https://doi.org/10.1016/j.fuel.2020.119164.
+[37] Li C-Z. Some recent advances in the understanding of the pyrolysis and gasification 
+behaviour of Victorian brown coal. Fuel 2007;86:1664–83. 
+https://doi.org/10.1016/j.fuel.2007.01.008.
+[38] Guo M, Li Y, Liu P, Jia X, Zhang X. Synthesis and electrochemical properties of porous 
+carbon materials from sludge sources. Circular Economy 2023;2:100064. 
+https://doi.org/10.1016/j.cec.2023.100064.
+[39] Dang H, Xu R, Zhang J, Wang M, Ye L, Jia G. Removal of oxygen-containing 
+functional groups during hydrothermal carbonization of biomass: Experimental and 
+DFT study. Energy 2023;276:127436. https://doi.org/10.1016/j.energy.2023.127436.
+[40] LeRoy RL, Bowen CT, LeRoy DJ. The Thermodynamics of Aqueous Water 
+Electrolysis. J Electrochem Soc 1980;127:1954–62. https://doi.org/10.1149/1.2130044.
+[41] Zheng Y, Jiao Y, Vasileff A, Qiao S. The Hydrogen Evolution Reaction in Alkaline 
+Solution: From Theory, Single Crystal Models, to Practical Electrocatalysts. Angew 
+Chem Int Ed 2018;57:7568–79. https://doi.org/10.1002/anie.201710556.
+[42] Yang L, Gao L, Shan G, Huo X, Zhang M, Wang Y, et al. Recent progress of enhanced 
+bubble separation in alkaline water electrolyzer. Chem Synth 2023;3. 
+https://doi.org/10.20517/cs.2023.25.
+[43] Guo C, Lu X, Zhu Y, Ma L, Jing D. Insight into the electrolyte concentration impact on 
+single hydrogen bubble evolution dynamics at a microelectrode during electrochemical 
+water splitting. Physics of Fluids 2024;36:073339. https://doi.org/10.1063/5.0213646.
+[44] Karlsson RKB, Cornell A, Pettersson LGM. Structural Changes in RuO 2 during 
+Electrochemical Hydrogen Evolution. J Phys Chem C 2016;120:7094–102. 
+https://doi.org/10.1021/acs.jpcc.5b11696.
+[45] Slobodkin I, Davydova E, Sananis M, Breytus A, Rothschild A. Electrochemical and 
+chemical cycle for high-efficiency decoupled water splitting in a near-neutral 
+electrolyte. Nat Mater 2024;23:398–405. https://doi.org/10.1038/s41563-023-01767-y.
+[46] Wang W, Guo S, Lee I, Ahmed K, Zhong J, Favors Z, et al. Hydrous Ruthenium Oxide 
+Nanoparticles Anchored to Graphene and Carbon Nanotube Hybrid Foam for 
+Supercapacitors. Sci Rep 2014;4:4452. https://doi.org/10.1038/srep04452.
+[47] Lee SH, Rasaiah JC. Proton transfer and the mobilities of the H+ and OH− ions from 
+studies of a dissociating model for water. The Journal of Chemical Physics 
+2011;135:124505. https://doi.org/10.1063/1.3632990.
+[48] Wu J, Dai Q, Li X, Li W, Hao S, Zeng M, et al. Wood‐Derived Monolithic Ultrathick 
+Porous Carbon Electrodes Filled with Reduced Graphene Oxide for High‐Performance 
+Supercapacitors with Ultrahigh Areal Capacitances. ChemElectroChem 2021;8:4328–
+36. https://doi.org/10.1002/celc.202100937.
+[49] Zhu X, Han J, Wang B, Song Y, Shao C, Li N, et al. Wood-derived carbon electrode for 
+all-solid-state supercapacitor with ultrahigh volumetric and area capacitances. Industrial 
+Crops and Products 2025;227:120715. https://doi.org/10.1016/j.indcrop.2025.120715.
+[50] Wang F, Liu X, Duan G, Yang H, Cheong JY, Lee J, et al. Wood‐Derived, Conductivity 
+and Hierarchical Pore Integrated Thick Electrode Enabling High Areal/Volumetric 
+Energy Density for Hybrid Capacitors. Small 2021;17:2102532. 
+https://doi.org/10.1002/smll.202102532.
+[51] Sun Y, Sills RB, Hu X, Seh ZW, Xiao X, Xu H, et al. A Bamboo-Inspired 
+Nanostructure Design for Flexible, Foldable, and Twistable Energy Storage Devices. 
+Nano Lett 2015;15:3899–906. https://doi.org/10.1021/acs.nanolett.5b00738.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 20 =====
+[52] Chen R, Yang Y, Huang Q, Ling H, Li X, Ren J, et al. A multifunctional interface 
+design on cellulose substrate enables high performance flexible all-solid-state 
+supercapacitors. Energy Storage Materials 2020;32:208–15. 
+https://doi.org/10.1016/j.ensm.2020.07.030.
+[53] Wang Y, Lin X, Liu T, Chen H, Chen S, Jiang Z, et al. Wood‐Derived Hierarchically 
+Porous Electrodes for High‐Performance All‐Solid‐State Supercapacitors. Adv Funct 
+Materials 2018;28:1806207. https://doi.org/10.1002/adfm.201806207.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed
+
+===== PDF PAGE 21 =====
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=6477658
+Preprint not peer reviewed

@@ -1,0 +1,312 @@
+{
+  "kind": "SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH",
+  "completion_file": "completion.json",
+  "feature_set": "plus_BET_pore",
+  "features": [
+    "log10_cycle_count",
+    "current_density_A_g",
+    "concentration_value",
+    "voltage_lower_V",
+    "voltage_upper_V",
+    "BET_m2_g",
+    "total_pore_volume_cm3_g",
+    "electrolyte"
+  ],
+  "config": {
+    "status": "preparation_only_no_training_authorized_or_executed",
+    "target": "capacitance_retention_pct_at_specified_cycle_count_and_conditions",
+    "database_view": "training_ready",
+    "primary_system": "2E_symmetric",
+    "method": "GCD",
+    "label_relation": "eq",
+    "screening_min_cycles": 1000,
+    "screening_boundary_is_universal_quality_rule": false,
+    "required_conditions": [
+      "cycle_count",
+      "current_density_A_g",
+      "electrolyte",
+      "concentration_value",
+      "voltage_lower_V",
+      "voltage_upper_V"
+    ],
+    "categorical_features": [
+      "electrolyte"
+    ],
+    "optional_sensitivity_feature": "total_pore_volume_cm3_g",
+    "forbidden_features": [
+      "record_id",
+      "paper_id",
+      "doi",
+      "material_id",
+      "study_group",
+      "retention_pct",
+      "post_cycle_EIS",
+      "post_cycle_XPS",
+      "discharge_time",
+      "final_capacitance",
+      "retention_sd_pct",
+      "concentration_unit",
+      "reported_concentration_value",
+      "reported_concentration_unit",
+      "positive_negative_mass_ratio",
+      "retention_relation",
+      "year",
+      "source_category"
+    ],
+    "excluded_from_primary": [
+      "CV",
+      "3E",
+      "gel",
+      "mass_unbalanced",
+      "Li_half_cell",
+      "Zn_hybrid",
+      "metal_composites",
+      "scope_pending",
+      "approximate_or_lower_bound_labels",
+      "frozen_fields"
+    ],
+    "missing_target_policy": "never_impute",
+    "missing_feature_policy": "Core seven inputs are not imputed. Optional pore only: fold-trained median plus missing indicator. Missing material characterization cannot be hidden by inventing BET.",
+    "retention_above_100_policy": "preserve_reported_values_no_clipping",
+    "split": {
+      "group": "study_group",
+      "method": "GroupKFold",
+      "folds_up_to": 2,
+      "random_state": 20261017,
+      "shuffle": true,
+      "tuning": "nested group validation; tune only inside outer training groups; never row-random validation",
+      "independence_final_audit_required": true
+    },
+    "training_weight": "equal_total_weight_per_source_study",
+    "models": [
+      "mean_baseline",
+      "ridge",
+      "random_forest",
+      "xgboost",
+      "mlp"
+    ],
+    "evaluation": [
+      "study_macro_MAE_percentage_points",
+      "study_balanced_RMSE_percentage_points",
+      "pooled_R2_when_defined",
+      "per_source_errors",
+      "protocol_only_vs_plus_BET_sensitivity"
+    ],
+    "readiness": "all record admission checks passed, frozen fields resolved, source overlap audited; no universal sample-count promise",
+    "user_model_clarification": "2026-10-17: user explicitly clarified mgl as MLP",
+    "tuning": {
+      "inner_group_folds_up_to": 2,
+      "candidate_budget_per_model": 2,
+      "selection_metric": "study_macro_MAE_percentage_points",
+      "search_space": "model_spaces.json",
+      "single_inner_group_policy": "use predeclared defaults, never select using outer test group",
+      "budget_by_model": {
+        "ridge": 2
+      }
+    },
+    "mlp_policy": {
+      "small_networks": [
+        [
+          8
+        ],
+        [
+          16
+        ],
+        [
+          16,
+          8
+        ]
+      ],
+      "feature_scaling": "inside each training fold",
+      "target_scaling": "inside each training fold via TransformedTargetRegressor",
+      "solver": "lbfgs",
+      "early_stopping": false,
+      "reason": "avoid MLP internal random validation splitting correlated observations"
+    },
+    "database_file": "cycling_v0_3r2.sqlite",
+    "feature_sets": {
+      "protocol_only": [
+        "log10_cycle_count",
+        "current_density_A_g",
+        "concentration_value",
+        "voltage_lower_V",
+        "voltage_upper_V"
+      ],
+      "plus_BET": [
+        "log10_cycle_count",
+        "current_density_A_g",
+        "concentration_value",
+        "voltage_lower_V",
+        "voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "plus_BET_pore": [
+        "log10_cycle_count",
+        "current_density_A_g",
+        "concentration_value",
+        "voltage_lower_V",
+        "voltage_upper_V",
+        "BET_m2_g",
+        "total_pore_volume_cm3_g"
+      ]
+    },
+    "comparison_policy": "Main declared model is plus_BET (seven physical inputs); protocol_only is the same-cohort six-input comparator; plus_BET_pore is an eight-input prespecified sensitivity analysis, never selected on outer scores as an unbiased final result.",
+    "normalization_reference_policy": "author_initial_reference_may_be_recorded_without_guessing_a_cycle_index; admission requires final harmonization review",
+    "primary_required_material_features": [
+      "BET_m2_g"
+    ],
+    "common_cohort_policy": "All three primary comparisons use the same admitted cohort with directly available BET; optional pore values may be missing. Protocol-only on a larger cohort is a separate diagnostic, not a fair material-feature comparison.",
+    "normalization_policy": "Concentration canonicalized to mol/L; M and mol/L synonymous, mM divided by1000. mol/kg and mass fraction never converted without solvent-density/composition evidence. Units remain provenance, not predictors.",
+    "research_training_authorized": false
+  },
+  "resolved_model_spaces": {
+    "mean_baseline": {
+      "base": {
+        "strategy": "mean"
+      },
+      "default": {},
+      "grid": {}
+    },
+    "ridge": {
+      "base": {},
+      "default": {
+        "alpha": 1.0
+      },
+      "grid": {
+        "alpha": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ]
+      }
+    },
+    "random_forest": {
+      "base": {
+        "n_estimators": 300,
+        "n_jobs": 1
+      },
+      "default": {
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "grid": {
+        "max_depth": [
+          3,
+          5
+        ],
+        "min_samples_leaf": [
+          1,
+          2,
+          4
+        ],
+        "max_features": [
+          0.7,
+          1.0
+        ]
+      }
+    },
+    "xgboost": {
+      "base": {
+        "objective": "reg:squarederror",
+        "tree_method": "hist",
+        "n_jobs": 1
+      },
+      "default": {
+        "max_depth": 2,
+        "n_estimators": 150,
+        "learning_rate": 0.03,
+        "min_child_weight": 5,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      "grid": {
+        "max_depth": [
+          2,
+          3
+        ],
+        "n_estimators": [
+          150,
+          300
+        ],
+        "learning_rate": [
+          0.03,
+          0.08
+        ],
+        "min_child_weight": [
+          2,
+          5
+        ],
+        "subsample": [
+          0.7,
+          1.0
+        ],
+        "colsample_bytree": [
+          0.7,
+          1.0
+        ],
+        "reg_lambda": [
+          1.0,
+          10.0
+        ],
+        "reg_alpha": [
+          0.0,
+          0.1
+        ]
+      }
+    },
+    "mlp": {
+      "base": {
+        "max_iter": 2000,
+        "solver": "lbfgs",
+        "early_stopping": false
+      },
+      "default": {
+        "hidden_layer_sizes": [
+          8
+        ],
+        "alpha": 0.1
+      },
+      "grid": {
+        "alpha": [
+          0.001,
+          0.01,
+          0.1,
+          1.0
+        ],
+        "hidden_layer_sizes": [
+          [
+            8
+          ],
+          [
+            16
+          ],
+          [
+            16,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  "rows_sha256": "eaa35eab19bfea468815654f4f8f4b23c02ec697aba71064b4d74ac0eaf3afbc",
+  "code_sha256": {
+    "benchmark_engine.py": "108934d1cc5ec980bcceebf2aa89181a9ffa5070dd166cb7e9ff77e9fc266e92",
+    "check_input_contract.py": "5e7fc52d711f51a4cce306a60b52128ce447d14a4922e544251b317b5f552c0d",
+    "check_interfaces.py": "acecd1602291ac3fdbc6e5cc3f478a40850e20a5b23e571d7eaf68abad0e8d56",
+    "check_v03_group_guards.py": "bf9b23f544bfadc42017f9d5e330bb82a4daf53deb512e3881b44e05e4739378",
+    "prediction_inputs.py": "1168c96642ff3246aca7daeecd83f37862af7584566b2b072a7764f72a600b1a",
+    "prepare_dataset.py": "2a31df979827b332e9ce0e85b2c79a5c0b81aa5fcb3a687d2c155c2e54068eb1",
+    "train_grouped.py": "7a3581d3fb009b46a45250c2f7bacb14c8ccbfddd5b6c6b0519202992a8eb379",
+    "train_nested.py": "1d3af5c1a6ab68e2bccae3ca4e540621638dafb1d4ee6e672999c8afe3928290"
+  },
+  "versions": {
+    "numpy": "2.3.4",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "xgboost": "3.1.1"
+  }
+}

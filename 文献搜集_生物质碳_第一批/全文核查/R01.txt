@@ -1,0 +1,2334 @@
+
+--- PDF页 1 ---
+Review article
+Machine learning-driven optimization of biochar-based supercapacitors for 
+sustainable energy storage: Mechanisms, trends, and perspectives
+Fatima Sajjad
+a
+, Rashid Iftikhar
+a , *
+, Muhammad Ali Inam
+a , b
+, Saifullah Zadran
+c
+,  
+Salman Haider
+d
+, Sahar Saleem
+e
+, Humayun Nadeem
+f
+, Alim-un-Nisa
+g
+a
+Institute of Environmental Sciences and Engineering, School of Civil and Environmental Engineering, National University of Sciences and Technology, Islamabad 44000, 
+Pakistan
+b
+Institute for Water Resources and Water Supply, Hamburg University of Technology (TUHH), Am Schwarzenberg-Campus 3, Hamburg 21073, Germany
+c
+Department of Robotics and Artificial Intelligence, School of Mechanical and Manufacturing Engineering, NUST, Islamabad, Pakistan
+d
+Faculty of Software Engineering, Torrens University, Sydney, Australia
+e
+Department of Sciences, School of Interdisciplinary Engineering & Science (SINES), National University of Science and Technology (NUST), Islamabad, Pakistan
+f
+School of Chemical and Materials Engineering (SCME), National University of Sciences and Technology (NUST), Islamabad 44000, Pakistan
+g
+Food and Biotechnology Research Centre, Pakistan Council of Scientific and Industrial Research, Lahore, Pakistan
+ARTICLE INFO
+Keywords:
+Carbon electrode modification
+Heteroatom doping
+Nanocomposite engineering
+Predictive modeling
+Electrochemical energy storage
+ABSTRACT
+Global transition toward sustainable and efficient energy storage has intensified research into supercapacitors, 
+valued for their rapid charge-discharge capability, high power density, and long operational lifespan. Among 
+carbonaceous materials, biomass-derived biochar has emerged as a low-cost, renewable, and structurally tunable 
+precursor for electrode design. This review provides a structured and critical synthesis of biochar-based super -
+capacitor strategies, systematically categorizing heteroatom doping, nanocomposite engineering, and hybrid 
+architecture within an integrated electrochemical performance framework. Unlike existing literature that pre -
+dominantly summarizes modification approaches, this review emphasizes cross-study comparability, mechanistic 
+attribution, and device-level relevance to clarify transferable design principles. A consolidated analysis of recent 
+machine learning (ML) applications reveals a paradigm shift from empirical optimization to data-driven pre -
+dictive design. Benchmarking against reported datasets, descriptors, and model architectures, we confirm that 
+tree-based ensemble and neural-network models (e.g., XGBoost, LightGBM, ANN) consistently achieve high 
+predictive accuracy (R² > 0.9), while also identifying current limitations in data standardization and descriptor 
+harmonization. The review critically evaluates how ML can move beyond correlation towards interpretable and 
+transferable optimization under realistic device constraints.
+Finally, a converging research roadmap is proposed, prioritizing standardized reporting, device-level bench -
+marking, and constraint-aware ML integration to accelerate scalable implementation. By integrating materials 
+engineering, data-driven modeling, and practical deployment considerations, this review establishes a compre -
+hensive framework for advancing sustainable biochar-based supercapacitors toward real-world energy storage 
+applications.
+1. Introduction
+The swift progression of emerging technologies has led to a rise in 
+global energy demand, accompanied by escalating concerns over fossil 
+fuel depletion and the deterioration of natural environment. Although 
+renewable energy options such as wind and solar power have progressed 
+considerably, their intermittent nature necessitates the development of 
+reliable and high-efficiency energy storage systems. Systems capable of 
+meeting the escalating energy requirements resulting from worldwide 
+population growth [1] . Continuous development and exploration of 
+sustainable energy storage technologies is vital for replacing fossil 
+fuel-based energy systems. Among novel solutions, supercapacitors have 
+gained remarkable prominence due to their superior power density, 
+safety, cycling stability, and reversibility [2,3] . Owing to their rapid 
+charging capability and excellent power performance, supercapacitors 
+are increasingly used in portable electronics and electric transportation 
+* Corresponding author.
+E-mail addresses: rashid.iftikhar@iese.nust.edu.pk , rashid.iftikhar@hotmail.com (R. Iftikhar). 
+Contents lists available at ScienceDirect
+Next Materials
+journal homep age: www.sci encedirect. com/journa l/next-mat erials
+https://doi.org/10.1016/j.nxmate.2026.101971
+Received 27 December 2025; Received in revised form 3 March 2026; Accepted 23 March 2026  
+Next Materials 11 (2026) 101971 
+Available online 31 March 2026 
+2949-8228/© 2026 The Author(s). Published by Elsevier Ltd. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+
+--- PDF页 2 ---
+systems [4,5] . Like rechargeable batteries, supercapacitors belong to the 
+class of electrochemical energy storage devices (EESDs), that is they rely 
+on ion diffusion and migration mechanisms to store and transform en -
+ergy. Supercapacitors typically contain two electrodes divided by an 
+ion-permeable separator that permits ion transport while inhibiting 
+electron transfer, whereas the electrolyte provides a conductive medium 
+for ion transfer between the electrodes [6,7] . Supercapacitors have 
+various benefits, including rapid charging and switching, long cycle life, 
+and significant power density. The electrode itself, electrolyte, and 
+electrode-electrolyte interactions all have an impact on supercapacitor 
+properties. The overall storage capability of a supercapacitor depends on 
+interfacial charge accumulation, highlighting the importance of elec -
+trode material in their performance.
+Carbon-based materials are considered as one of the leading candi -
+dates for constructing supercapacitor electrodes due to their surface 
+area, chemical robustness, electrical conductivity, and economic feasi -
+bility [8] . Among carbon sources, biomass-based carbon stands out as a 
+renewable, carbon-neutral resource with low environmental impact and 
+reduced carbon dioxide emissions [9] . Biomass can be transformed into 
+porous carbon structures such as biochar through pyrolysis, which has 
+attracted increasing attention for its inherently large surface area, hi -
+erarchical pore network, adjustable surface functionalities, and capacity 
+for heteroatom doping [10 – 12] . Compared to other materials, biochar 
+also offers additional advantages such as environmental sustainability, 
+cost-effectiveness, reusability, and facile synthesis [13] . The 
+physico-structural properties of biochar, particularly particle size, 
+strongly influence its subsequent modification behavior. Depending on 
+the pyrolysis method and operational parameters, biochar particles may 
+vary in size ranging from micrometers to centimeters [14] . Recently, 
+nano-biochar has emerged as an innovative subclass of biomass-based 
+carbon materials that combine the advantages of biochar and nano -
+structured systems. At particle sizes below 100 nm, the markedly 
+increased surface to volume ratio leads to higher surface energy and 
+adsorption capacity [15 – 17] . Nanoscale enhancement enables modifi -
+cation processes, such as heteroatom incorporation and composite 
+development, to be carried out more efficiently.
+The post-synthesis engineering of biochar is a primary factor that 
+defines the electrochemical behavior of an electrode, independent of the 
+biomass source, its intrinsic purity and the pyrolysis conditions. Broadly, 
+two modification strategies have been reported in literature with rare 
+overlaps. The first deals with activation and structural modification 
+involving chemical and physical treatments to improve the surface 
+functions and pore accessibility. These treatments are often combined 
+with nanocomposite inclusion to improve conductivity and catalytic 
+behavior. The second focuses on heteroatom doping, where elements 
+such as sulfur, nitrogen, phosphorus, or boron are introduced into the 
+carbon structure to alter charge distribution, electronic configuration, 
+and surface polarity. While structural modification and electronic 
+configuration are two distinct modification strategies, they occasionally 
+overlap and collectively describe biochar design for electrochemical 
+applications. Despite a great deal of research into the modification 
+processes for biochar-based materials, an in-depth analysis that connects 
+the performance of biochar-based electrode materials with cutting-edge 
+AI and machine learning methods is still missing.
+To systematically address this shortcoming, the present review is 
+structured into four primary objectives. First, establish an integrated 
+structural electrochemical performance framework that systematically 
+links biochar modification strategies to device-level metrics. Second, 
+critically compare heteroatom doping and nanocomposite engineering 
+through mechanistic attribution and cross-study benchmarking to 
+identify transferable design principles. Third, evaluate current machine 
+learning approaches by analyzing dataset scope, descriptor selection, 
+model interpretability, and predictive reliability, highlighting both ca -
+pabilities and limitations. Finally, we propose a converging research 
+roadmap that aligns materials design, device validation, and constraint- 
+aware ML optimization under realistic scalability and manufacturing 
+considerations. By explicitly bridging materials science and artificial 
+intelligence within a device-relevant context, this review aims to pro -
+vide a strategic and actionable perspective for advancing sustainable 
+biochar-based supercapacitors beyond empirical optimization.
+2. Biomass precursors and their composition
+A high carbon content and favorable elemental composition (C, H, O, 
+N) play a critical role in defining the structure, surface chemistry, and 
+electrochemical behavior of biochar-based supercapacitor electrodes. 
+To assess their suitability to produce biochar and energy storage appli -
+cations, researchers have historically evaluated various lignocellulosic 
+feedstocks, such as agricultural residues like rice husk, sugarcane 
+bagasse, and rice husk, woody biomass such as hardwood, softwood, nut 
+shells and organic wastes that includes biosolids and municipal organics 
+[18 – 21] . Although most biomass feedstocks contain substantial fixed 
+carbon suitable for electrode applications, their inherent ash and inor -
+ganic constituents particularly K, Na, Ca, and Mg, can significantly 
+diminish the porosity and electrical conductivity of the resulting biochar 
+if not properly removed. To meet electrode purity standards, water 
+washing and mild acid leaching are commonly employed to eliminate 
+soluble and acid-extractable metal impurities, thereby reducing ash 
+content by over 90%. The porosity and conductivity of biochar can 
+further be improved by chemical activation, making them suitable for 
+high-performance supercapacitors applications [22 – 24] . Raw biomass 
+preparation, particularly maintaining biomass moisture content below 
+10%, is essential in continuous pyrolysis systems to reduce drying 
+related energy demand and increase operational safety. On the other 
+hand, maintaining a volatile matter content in the range of 60 – 70% 
+promotes effective pore formation, while simultaneously retaining 
+enough fixed carbon to achieve desirable biochar yield [25] .
+2.1. Pyrolysis and carbonization pathways
+Pyrolyzed biochar is a solid carbonaceous product obtained after the 
+thermal decomposition of biomass, a process which involves heating a 
+carbon-rich material under little oxygen or inert conditions. Among the 
+various pyrolysis approaches, slow and fast pyrolysis are most utilized 
+methods, with slow pyrolysis generally considered the most effective for 
+its high biochar yield [26 – 28] . Slow pyrolysis is carried out at atmo -
+spheric pressure with moderate temperatures between 300 and 550
+◦
+C, 
+low heating rates between 0.1 and 0.8 
+◦
+C min
+  1
+, and extended residence 
+times spanning from 5 to 30 min to as long as 25 – 35 h [29] . Slow py -
+rolysis is generally favored for biochar synthesis due to its longer resi -
+dence time and controlled heating rate, which promotes higher solid 
+yield ( > 30 wt percent), enhanced carbonization, and more stable pore 
+structures, which is ideal for electrode applications. In contrast, fast 
+pyrolysis biochar tends to be less ordered, more oxygen-rich, and ob -
+tained at lower yield lower (~10 – 20 wt%), which is less ideal for elec -
+trode fabrication. However, the rapid devolatilization can produce 
+biochar ’ s with greater specific surface areas (often > 400 m²/g) and 
+well-developed pore structures. The pyrolysis temperature strongly in -
+fluences biochar characteristics through volatile release, increasing 
+temperature promotes further cracking of volatile fractions into 
+low-molecular-weight gases and liquids rather than solid carbon, 
+thereby reducing biochar yield [30 – 33] . Although the resultant porous 
+structure can be beneficial for supercapacitor applications, the reduced 
+solid yield remains a major limitation [21] . As summarized in Table 1 , 
+pyrolysis yields more stable, higher-mass biochar, while fast and flash 
+processes favor volatile release and reduced char yield due to rapid 
+heating.
+2.2. Modification strategies for biochar electrochemical enhancement
+The two principal, though occasionally overlapping, strategies for 
+biochar modification in electrode applications are: (i) activation and 
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+2 
+
+--- PDF页 3 ---
+structural engineering, which improve porosity, surface area, and 
+interfacial properties and are often extended through nanocomposite 
+formation; and (ii) heteroatom doping, which tailors the electronic 
+structure and surface chemistry by adding elements like N, S, P, or B into 
+the carbon matrix. These approaches optimize the structural-interfacial 
+and electronic-chemical domains of biochar, respectively, providing 
+complementary ways of performance enhancement. In the subsequent 
+sections, both modification approaches are discussed in detail, with 
+emphasis on how they influence the structure – property relationships 
+and overall capacitive behavior of biochar-based electrodes.
+2.3. Activation and structural engineering
+The pore structure and surface functionalities of biochar can be 
+customized for supercapacitor applications through various physical 
+and chemical activation techniques. Physical activation takes place at 
+high temperatures, whereas chemical activation often includes low 
+temperatures and lesser activation times than physical activation. 
+Despite these benefits, chemical activation has certain downsides, 
+including the necessity for post-activation water-washing to remove 
+pollutants and the need for treatment facilities to handle polluted water. 
+These reasons undermine the technique's environmental sustainability 
+and cost-effectiveness [40] . In physical activation, pyrolysed biochar is 
+exposed to oxidizing gases such as steam, CO ₂ , or air at 700 – 1100 
+◦
+C. 
+This selective oxidation of carbon atoms by steam or CO ₂ generates 
+micro- and mesoporous networks while preserving the carbon frame -
+work. Steam activation typically leads to higher carbon loss with 
+abundant micropore formation, whereas CO ₂ activation offers better 
+control over pore development with reduced carbon loss [41] . The 
+physical activation is valued for its environmental compatibility and 
+scalability as it can yield surface areas of 700 – 900 m²/g with specific 
+capacitances around 90 – 100 F/g [21,42] .
+Chemical activation includes heating a biomass carbon precursor 
+and activating agent to temperatures between 450 and 900 
+◦
+C. Chemical 
+activation has various benefits over physical activation, including lower 
+pyrolysis temperatures, higher carbon yields, larger surface area 
+(3600 m2 g
+  1
+), and well-developed microporous structures [43] . In 
+chemical activation, chemical compounds such as KOH, NaOH, or H ₃ PO ₄ 
+promote dehydration and redox reactions during pyrolysis, thereby 
+enhancing pore formation and surface functionality. KOH activation is 
+unique among chemical activation procedures, notably for increasing 
+specific surface area and improving porous structure, which is beneficial 
+for energy storage applications [44] . Compared to physical activation, 
+chemical activation usually results in a significantly larger specific 
+surface area (SSA) and microporosity. Within chemical activating 
+agents, KOH is generally preferred, as acidic activators diminish con -
+ductivity, whereas KOH being the most reactive alkali yields superior 
+porosity and electrochemical behavior. The porosity originates from the 
+strong chemical interaction between KOH and the carbon matrix during 
+activation, leading to the development of hierarchical structures [45] . 
+As shown in Table 2 , chemical activation using KOH or mixed 
+KOH – H ₃ PO ₄ yields the highest surface areas and tunable porosity, 
+whereas physical agents like CO ₂ and steam offer eco-friendly scalable 
+activation routes.
+2.3.1. Carbon-based composites
+Carbon-based composites are designed to overcome the intrinsic 
+energy-density limitation of pure biochar electrodes, which predomi -
+nantly store charge through electric double-layer capacitance (EDLC) 
+mechanisms [47] . While high surface area activated biochar can achieve 
+capacitance values exceeding 300 F g ⁻ ¹ under optimized conditions, its 
+energy density remains constrained by purely electrostatic charge 
+storage.
+The incorporation of redox-active components such as metal oxides, 
+MXenes, or conductive polymers introduces faradaic charge storage 
+pathways, enabling hybrid EDLC – pseudocapacitive behavior [48 – 53] . 
+Structurally, the effectiveness of these composites depends on intimate 
+interfacial contact between biochar and the active phase, hierarchical 
+pore accessibility, and preservation of conductive carbon pathways.
+For example, KOH/KNO ₃ -activated biochar derived from rose flower 
+waste achieved a high specific surface area (~1980 m² g ⁻ ¹) and deliv -
+ered 350 F g ⁻ ¹ at 1 A g ⁻ ¹ in a three-electrode configuration [55] . The 
+enhanced rate capability (165 F g ⁻ ¹ at 150 A g ⁻ ¹) and long-term cycling 
+stability (95.4% retention after 140,000 cycles) indicate that hierar -
+chical porosity and conductive carbon backbone play a dominant role in 
+sustaining pseudocapacitive enhancement. However, such high perfor -
+mance is strongly dependent on measurement configuration, as 
+three-electrode systems may overestimate practical device-level metrics.
+Metal oxide incorporation (e.g., RuO ₂ , MnO ₂ , NiO, Co ₃ O ₄ , V ₂ O ₅ ) 
+further increases theoretical capacitance through fast surface redox re -
+actions [54] . Nevertheless, trade-offs frequently arise and volume 
+expansion during cycling, interfacial resistance, and limited electrical 
+conductivity can reduce rate performance and long-term durability. 
+Consequently, composite performance is governed not solely by the 
+intrinsic capacitance of the metal oxide phase but by the efficiency of 
+charge transfer across the carbon-oxide interface and the stability of the 
+composite architecture.
+Cross-study discrepancies reported in composite performance 
+commonly stem from differences in oxide loading fraction, particle 
+dispersion, pore blocking effects, electrolyte type, and electrode mass 
+loading. Excessive oxide incorporation may increase theoretical capac -
+itance while simultaneously blocking micropores and reducing con -
+ductivity, thereby diminishing rate capability. Overall, carbon-based 
+composites provide a pathway to enhanced energy density through 
+Table 1 
+Comparison of pyrolysis techniques for biochar production, highlighting operating conditions, yields, surface areas, and volatile release trends.
+Pyrolysis Temperature (
+◦
+C) Heating Rate(
+◦
+C/s) Biochar Yield(%) BET Surface Area (m²/g) Volatile Matter Release References
+Slow 400 – 500 0.1 – 1 30 – 60 0.397 - 3.45(varied feedstocks) VM ↓ as temp ↑ [34-36]
+Fast 850 – 1250 10 – 200 15 – 30 Generally low VM ↑ [34-36]
+Intermediate 500 – 650 1.0 – 10 15 – 25 25 – 270 (varied stocks) No data found [37,38]
+Vacuum 450 – 600 0.1 – 1.0 12 Not widely reported for biochar Generally 
+Lower than slow pyrolysis
+[36,39]
+Flash 900 – 1200 1000 30 – 50 < 20 No authentic data found [34,36]
+Table 2 
+Comparison of common activation methods for biochar-derived carbons, summarizing conditions, textural properties, yields, and key performance advantages.
+Method Temp (
+◦
+C) Agent Ratio SSA (m²/g) Pore Volume Yield Key Advantages Reference
+CO ₂₂ 800 — ~800 – 1000 0.5 – 0.8 25 – 35 Clean, mild etching, scalable [21,46]
+Steam 750 — 1000 – 1400 0.6 – 1.0 20 – 30 Faster pore development, higher SSA [39]
+KOH 700 – 800 1:2 – 6:1 1500 – 2200 1.0 – 1.4 20 – 25 Very high SSA, tailored micro or meso pores [42]
+H ₃₃ PO ₄₄ (or mixed KOH þ H ₃₃ PO ₄₄ ) 500 – 600 ~1:1 or mixed 1500 – 1950 0.8 – 1.4 25 – 35 P-functional groups, pseudocapacitive enhancement [46]
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+3 
+
+--- PDF页 4 ---
+hybrid charge storage, but their practical effectiveness depends critically 
+on interfacial engineering, oxide loading optimization, and preservation 
+of conductive carbon networks.
+2.3.1.1. Metal oxide–biochar composites. Metal oxide–biochar compos -
+ites are designed to integrate the high electrical conductivity and 
+structural stability of biochar with the redox-active properties of tran -
+sition metal oxides such as MnO₂, Fe₃O₄, Co₃O₄, NiO, and layered double 
+hydroxides (LDHs). In this hybrid architecture, biochar functions as a 
+conductive scaffold that facilitates electron transport and prevents oxide 
+particle agglomeration, while the metal oxide phase contributes faradaic 
+pseudocapacitance through reversible surface or near-surface redox re -
+actions [56–58] .
+Structurally, the effectiveness of these composites depends on ho -
+mogeneous oxide dispersion, optimized oxide loading fraction, and 
+preservation of hierarchical pore accessibility. Electrochemically, the 
+introduction of metal oxides can substantially increase theoretical 
+capacitance compared to pure biochar by adding redox-active sites 
+beyond electric double-layer capacitance (EDLC). However, practical 
+performance is strongly governed by interfacial charge transfer effi -
+ciency between the oxide phase and the carbon matrix.
+Despite their enhanced redox activity, intrinsic limitations of metal 
+oxides including low electrical conductivity and volume expansion 
+during repeated cycling can compromise rate capability and long-term 
+stability. Excessive oxide loading may block micropores, reduce acces -
+sible surface area, and increase internal resistance, thereby offsetting 
+theoretical capacitance gains. Consequently, reported performance im -
+provements vary widely across studies depending on oxide content, 
+particle size distribution, electrolyte type, and electrode mass loading.
+Cross-study discrepancies frequently arise from differences in syn -
+thesis method (hydrothermal vs. co-precipitation vs. in situ growth), 
+oxide crystallinity, and carbon structural integrity. In systems where 
+conductive pathways are preserved and oxide loading is carefully opti -
+mized, metal oxide-biochar composites achieve significant capacitance 
+enhancement while maintaining acceptable cycling stability. 
+Conversely, poorly engineered interfaces or high oxide fractions often 
+lead to rapid performance decay. Overall, metal oxide-biochar com -
+posites represent a viable strategy for increasing energy density through 
+hybrid charge storage, but their effectiveness relies on precise control of 
+interfacial engineering, oxide dispersion, and structural integrity rather 
+than simply maximizing redox-active content.
+2.3.1.2. Polymer–biochar composites. Polymer-biochar composites are 
+engineered to combine the high electrical conductivity and structural 
+rigidity of biochar with the fast and reversible redox activity of con -
+ducting polymers such as polyaniline (PANI), polypyrrole (PPy), and 
+poly(3,4-ethylenedioxythiophene) (PEDOT). Structurally, biochar 
+functions as a mechanically robust and porous support matrix that 
+suppresses polymer agglomeration, buffers volumetric expansion, and 
+provide continuous conductive pathways for efficient electron transport 
+[59–61] .
+Electrochemically, conducting polymers contribute substantial 
+pseudocapacitance through reversible redox reactions occurring at 
+heteroatom sites (e.g., amine/imine groups in PANI). These rapid ion -
+–electron coupling processes significantly increase specific capacitance 
+compared to EDLC-dominated carbon electrodes.
+The hybrid architecture partially mitigates the degradation of bio -
+char that restricts excessive polymer expansion and improves interfacial 
+electron transfer, thereby enhancing cycling stability relative to pristine 
+polymers. Nevertheless, performance variability across reported systems 
+arises from differences in polymer loading fraction, polymer distribution 
+within the pore network, electrolyte type, and electrode mass loading. 
+Excessive polymer content can block micropores and reduce effective 
+ion diffusion, while insufficient loading limits pseudocapacitive contri -
+bution. Consequently, polymer-biochar composite performance reflects 
+a trade-off between redox-enhanced capacitance and mechanical dura -
+bility. Optimal systems maintain moderate polymer content, uniform 
+interfacial contact, and preserved pore accessibility to balance capaci -
+tance enhancement with long-term stability. Despite their high con -
+ductivity and flexibility, polymer swelling and contraction remain 
+critical limiting factors for extended cycle life [59–61] .
+2.3.1.3. Carbonaceous nano-hybrid composites. Carbonaceous nano- 
+hybrid composites integrate biochar with highly conductive carbon 
+nanomaterials such as carbon nanotubes (CNTs) and graphene to 
+enhance electron transport pathways and structural integrity. Structur -
+ally, the incorporation of CNTs or graphene introduces a percolated 
+conductive network within the biochar matrix, reducing internal resis -
+tance and improving charge transport efficiency [62–64] .
+From an electrochemical perspective, this enhanced conductivity 
+facilitates rapid electron transfer during charge–discharge cycles, 
+thereby improving power density and rate capability. The high intrinsic 
+surface area and layered architecture of graphene-like carbon frame -
+works also promote electrolyte ion diffusion and enable efficient pseu -
+docapacitive contributions when combined with redox-active 
+components such as PANI. Consequently, carbonaceous nano-hybrids 
+frequently exhibit superior high-rate performance and enhanced 
+cycling stability compared to pristine biochar electrodes.
+However, the performance gains of nano-hybrid systems are strongly 
+dependent on uniform nanocarbon dispersion and interfacial compati -
+bility. Poor dispersion of CNTs or graphene can result in agglomeration, 
+reduced accessible surface area, and ineffective conductive pathways, 
+limiting practical performance improvement. Additionally, excessive 
+nanocarbon loading may obstruct micropores and hinder ion transport. 
+Cross-study discrepancies arise from variations in nanocarbon loading 
+fraction, dispersion technique (e.g., in situ growth versus physical 
+mixing), degree of graphitization, and electrolyte selection. While nano- 
+hybrids significantly enhance rate capability and power density, their 
+large-scale implementation remains constrained by the high cost of 
+CNTs and graphene, as well as challenges associated with reproducible 
+dispersion.
+Overall, carbonaceous nano-hybrid composites represent a strategy 
+primarily aimed at conductivity enhancement, power density optimi -
+zation and practical utility depends on achieving uniform conductive 
+networks at minimal nanocarbon loading to balance performance 
+improvement with economic feasibility.
+2.3.1.4. Core–shell metal–carbon composites. Core–shell metal carbon 
+composites are architecturally designed systems in which a redox-active 
+metal or metal oxide core is encapsulated within a conductive carbon 
+shell. Structurally, the carbon shell functions as a protective and 
+conductive barrier, restricting direct electrolyte exposure of the active 
+core while maintaining continuous electron transport pathways [65,66] .
+From an electrochemical standpoint, this configuration enhances 
+charge storage through two primary mechanisms. First, the conductive 
+shell reduces interfacial resistance and facilitates rapid electron transfer 
+between the core and the external circuit. Second, physical confinement 
+of the metal oxide core mitigates volume expansion during redox 
+cycling, thereby preserving structural integrity and improving cycling 
+stability. Compared to simple metal oxide–biochar composites, core– -
+shell architectures often exhibit improved retention due to reduced 
+pulverization and suppressed dissolution of active species.
+However, performance is highly sensitive to shell thickness, core– -
+shell interface quality, and uniformity of encapsulation. An excessively 
+thick carbon shell may hinder ion diffusion and limit utilization of the 
+active core, while an insufficient shell may fail to suppress structural 
+degradation. Additionally, non-uniform core distribution or incomplete 
+encapsulation can result in localized stress accumulation and acceler -
+ated capacity fading.
+As summarized in Table 3 , hybrid systems such as NiFe-LDH/Biochar 
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+4 
+
+--- PDF页 5 ---
+and PANI/Biochar demonstrate enhanced capacitance and retention, 
+reflecting the broader principle that interfacial engineering governs 
+long-term electrochemical stability. Cross-study discrepancies in re -
+ported performance frequently arise from differences in core loading 
+fraction, crystallinity, shell conductivity, and synthesis method (e.g., in 
+situ growth versus post-encapsulation). Precise control over shell 
+thickness and uniform dispersion remains a critical barrier to scalable 
+production.
+Overall, core – shell metal carbon composites represent an advanced 
+strategy focused on interfacial stabilization and confinement-controlled 
+redox behavior. Their practical success depends on balancing conduc -
+tive shell thickness with ion accessibility to maximize active-site utili -
+zation while maintaining structural durability.
+2.4. Heteroatom-doping
+Heteroatom doping introduces external atoms into the carbon matrix 
+of biochar, thereby altering its ion-accessible porosity, electronic dis -
+tribution, and surface chemistry. This modification is typically catego -
+rized into metal-ion doping and non-metal element doping. While metal- 
+ion doping is predominantly employed in anode materials to enhance 
+electrical conductivity and charge transport, non-metal doping is more 
+common in cathode materials due to its ability to introduce surface 
+functionalities and active sites. In some cases, dual doping is employed, 
+which involves the simultaneous incorporation of metal and non-metal 
+species to synergistically enhance electrochemical performance. Along 
+with creating adequate pore shapes, doping heteroatoms in the carbon 
+structure is a typical technique for improving the electrochemical 
+characteristics of porous carbon materials. This includes nitrogen [79, 
+80] , sulfur [81,82] , phosphorous [83] and boron [84] . The doped 
+carbon structure with pores is gaining attention with a variety of het -
+eroatom sources being exploited. These ecologically friendly organic 
+substances are used not only as a dopant of nitrogen-, sulfur-, or 
+co-doped heteroatoms [85,86] , as well as a carbon precursor for pro -
+ducing heteroatom-doped carbon-based compounds [87 – 89] . In doped 
+biochar, structural and electronic changes enhance charge transfer ki -
+netics, surface redox activity, and electrolyte wettability, which collec -
+tively govern the electrochemical performance of supercapacitors [90, 
+91] . Doped biochar electrodes are therefore known to demonstrate 
+distinctly improved electronic and ionic properties compared to their 
+undoped counterparts [92 – 94] . Fig. 2 depicts the heteroatom doped 
+structures of biochar enhances charge storage capacity of electrodes. To 
+date, heteroatom doping of biochar has primarily focused on nitrogen 
+(N), sulfur (S), and phosphorus (P) either individually or in combination, 
+each imparting distinct structural and electrochemical functionalities, 
+discussed in the following sections.
+2.4.1. Nitrogen doping
+Nitrogen doping represents one of the most effective and scalable 
+strategies for enhancing biochar-based supercapacitor electrodes due to 
+its simultaneous modulation of electronic structure and surface chem -
+istry [95 – 99] . Nitrogen atoms are typically incorporated as pyridinic-N 
+(N-6), pyrrolic-N (N-5), and graphitic-N (N-Q), with each configuration 
+exerting distinct electrochemical effects. Pyridinic and pyrrolic nitrogen 
+introduce defect sites and localized lone-pair electrons that promote 
+surface redox reactions, whereas graphitic nitrogen enhances electrical 
+conductivity through substitution within the carbon lattice [95 – 97] .
+From a structural perspective, the distribution and relative content of 
+nitrogen species depend strongly on precursor chemistry and carbon -
+ization temperature, which govern both defect density and 
+Table 3 
+Comparison of biochar-based composite electrodes for supercapacitors, highlighting feedstocks, synthesis routes, capacitance, and cycling performance.
+Composite Type Feedstock Capacitance (F/g) Cycling Retention Synthesis Method Reference
+MnO ₂₂ /Biochar Wood, Bagasse, Banana peel 200 – 345 80 – 92% after 5000 cycles Hydrothermal, Solvothermal [67]
+Fe ₃₃ O ₄₄ /Biochar Rice husk, Corncob 150 – 300 up to 5000 cycles Co-precipitation, Hydrothermal [24,68]
+NiFe-LDH/Biochar Rice husk, Coconut shell 300 – 450 85 – 90% after 8000 cycles Hydrothermal [69]
+PANI/Biochar Sugarcane bagasse, Rice husk 350 – 400 65 – 75% at high current In-situ polymerization [70-72]
+PEDOT/Biochar Brewery bagasse, Agricultural waste 300 – 350 > 90% Electropolymerization [73]
+CNT/Biochar Rice husk, Corn cob 350 – 420 80 – 85% In-situ CNT growth [74]
+[75]
+Fe – C (core – shell) Rice husk, Peanut shell 250 – 300 High stability Pyrolysis of Fe-doped biochar [76]
+Co – C (core – shell) Wood-based biochar, Cashew shell 280 – 310 Stable and high-rate capability Co-pyrolysis [77,78]
+Fe₂O₃
+NiO
+MgCo₂O₄
+π- π
+Bonding
+Biochar –
+Nanocomposite  
+Doped
+Electrodes 
+-
+-
+-
+-
+Charge storage mechanism at 
+electrode-electrolyte interface
+MnO₂
+Ti₃C₂
+-
+-
+Fig. 1. Conceptual illustration of charge storage pathways within biochar – nanocomposite doped electrodes.
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+5 
+
+--- PDF页 6 ---
+graphitization degree [95,98] . Increased pyridinic-N content generally 
+correlates with enhanced pseudocapacitive behavior, while excessive 
+defect generation may disrupt conductive pathways and compromise 
+rate capability [96 – 99] .
+Electrochemically, optimized nitrogen doping enhances electrolyte 
+wettability and facilitates ion-accessible active sites, leading to 
+improved charge storage kinetics. Several high-performance systems 
+illustrate this structural-electrochemical synergy. For example, 
+nitrogen-functionalized microporous carbon nanoparticles achieved 
+approximately 391 F g ⁻ ¹ at 0.1 A g ⁻ ¹ in 6 M KOH, attributed to the 
+combined effect of high specific surface area (~1938 m² g ⁻ ¹) and 
+nitrogen-enriched defect sites [138] . Similarly, activated 
+nitrogen-doped carbons derived from biomass precursors demonstrated 
+capacitance values up to ~385 F g ⁻ ¹ under alkaline conditions when 
+hierarchical porosity was coupled with optimized nitrogen incorpora -
+tion [139] . In contrast, systems with moderate nitrogen content and 
+predominantly microporous structures more commonly report capaci -
+tance values in the range of 200 – 300 F g ⁻ ¹ [95 – 99] , indicating that 
+dopant concentration alone does not dictate performance.
+Cross-study discrepancies in reported capacitance frequently arise 
+from variations in electrolyte type (e.g., concentrated alkaline vs. 
+neutral aqueous systems), electrode mass loading, and measurement 
+configuration (two-electrode versus three-electrode testing), with the 
+latter often yielding inflated capacitance values [95 – 99,138,139] . 
+Furthermore, excessive nitrogen incorporation or aggressive activation 
+may increase defect density but reduce graphitic conductivity, leading 
+to diminished rate capability and cycling stability [96 – 99] . Overall, the 
+collective evidence indicates that optimal nitrogen doping is achieved 
+through a balanced interplay between defect-induced pseudocapaci -
+tance and preserved electronic conductivity, rather than maximization 
+of total nitrogen content. Controlled dopant speciation combined with 
+hierarchical pore architecture consistently yields the most favorable 
+configuration between specific capacitance, rate capability, and 
+long-term stability [95 – 99,138,139] .
+2.4.2. Sulfur doping
+Sulfur doping modifies the carbon framework of biochar through the 
+incorporation of thiophenic, sulfonic, and sulfide species, typically 
+introduced via sulfur-containing precursors such as thiourea, elemental 
+sulfur, Na ₂ S, or organosulfur compounds during pyrolysis, or by post- 
+treatment sulfur vapor exposure [100 – 102] . Structurally, sulfur atoms 
+introduce lattice distortion due to their larger atomic radius compared to 
+carbon, altering local electronic density and potentially generating 
+redox-active surface functionalities.
+From an electrochemical perspective, sulfur-containing functional 
+groups can enhance surface wettability and introduce additional pseu -
+docapacitive reactions, contributing to improved charge storage kinetics 
+[103 – 106] . In highly conductive carbon architectures such as 
+sulfur-doped graphene and porous carbon nanosheets, capacitance 
+values exceeding 300 F g ⁻ ¹ have been reported [107,108] . However, 
+these systems typically benefit from inherently high conductivity and 
+well-developed mesoporosity, which amplify the electrochemical 
+contribution of sulfur functionalities.
+In contrast, sulfur doping applied to activated carbon frameworks 
+with limited structural optimization yields more modest performance 
+enhancement. For example, the incorporation of 2.7% sulfur into acti -
+vated carbon increased specific capacitance from 44.6 to 62.0 F g ⁻ ¹ at 
+1.4 A g ⁻ ¹ , representing a ~40% improvement but remaining substan -
+tially lower than graphene-based analogues [109] . This discrepancy 
+highlights that sulfur incorporation alone does not guarantee high 
+capacitance; rather, its electrochemical effectiveness is strongly depen -
+dent on the underlying pore architecture, electrical conductivity, and 
+dopant distribution.
+Several challenges remain associated with sulfur-doped biochar 
+systems, including sluggish redox kinetics, limited rate capability, 
+cycling degradation, and relatively low achievable energy density 
+[110] . Excessive sulfur incorporation may also introduce structural 
+instability or block micropores, reducing ion accessibility. Furthermore, 
+cross-study variability arises from differences in sulfur content, precur -
+sor chemistry, porosity development, and electrolyte selection, making 
+direct comparison of reported capacitance values difficult [100 – 102] . 
+Collectively available evidence suggests that sulfur doping is most 
+effective when integrated with hierarchical pore engineering and 
+conductive carbon frameworks, rather than as a standalone modification 
+strategy. Optimized sulfur content combined with controlled porosity 
+can provide incremental capacitance enhancement, but the overall 
+performance remains strongly governed by structural factors.
+2.4.3. Phosphorus doping
+Phosphorus doping in biochar exploits its multiple valence states and 
+larger atomic radius, enabling out-of-plane substitution within the car -
+bon lattice and inducing local structural distortion. During pyrolysis, 
+phosphorus-containing functional groups such as C – P – O, C – O – P, P = O, 
+and PO ₃ are generated through interactions between phosphorus pre -
+cursors and oxygen-containing surface sites. The formation and relative 
+abundance of these groups are strongly governed by pyrolysis temper -
+ature and precursor chemistry [111] .
+From a structural perspective, phosphorus incorporation introduces 
+B
+S
+NP
+N
+P
+Pore
+π- π
+Bonding
+Biochar -
+Heteroatom Doped
+Electrodes (+)
+-
+-
+C
+Charge storage mechanism at 
+electrode-electrolyte interface
+-
+-
+-
+-
+Fig. 2. Conceptual illustration of charge storage pathways within biochar – heteroatom doped electrodes.
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+6 
+
+--- PDF页 7 ---
+defect sites and modifies local charge density distribution, which can 
+enhance surface polarity and electrolyte affinity. Electrochemically, 
+these effects may promote additional redox-active sites and improve ion- 
+accessible surface area. However, unlike nitrogen doping, phosphorus 
+incorporation often reduces graphitization degree, thereby decreasing 
+intrinsic electrical conductivity if not carefully controlled. The net 
+electrochemical performance of phosphorus-doped biochar therefore 
+reflects a balance between defect-induced pseudocapacitance and con -
+ductivity loss. Moderate phosphorus incorporation can enhance capac -
+itance through increased surface functionality and improved electrolyte 
+wettability, whereas excessive phosphorus content may disrupt 
+conductive pathways and limit rate capability [111] . In systems where 
+pore architecture and graphitic domains are preserved, phosphorus 
+doping contributes to measurable capacitance enhancement; however, 
+when graphitization is significantly suppressed, performance gains may 
+plateau or decline.
+Discrepancies in reported phosphorus-doped biochar performance 
+frequently arise from variations in dopant concentration, pyrolysis 
+temperature, precursor type, and pore development. Additionally, dif -
+ferences in electrolyte composition and electrode configuration 
+complicate direct cross-study comparison. Consequently, phosphorus 
+doping is most effective when integrated with controlled thermal 
+treatment or co-doping strategies that preserve electronic conductivity 
+while leveraging phosphorus-induced surface reactivity. Optimized 
+phosphorus content combined with structural engineering is essential to 
+achieve simultaneous improvement in capacitance, rate capability, and 
+cycling stability.
+2.4.4. Multi-element co-doping
+As single-element doping approaches performance saturation, 
+increasing attention has shifted toward multi-element co-doping stra -
+tegies in biochar systems. Co-doping leverages synergistic interactions 
+between heteroatoms such as N–B, N–S, or N–P combinations to engi -
+neer the carbon matrix in a more complex and tunable manner. Struc -
+turally, the simultaneous incorporation of multiple heteroatoms 
+modifies lattice distortion, defect density, and charge redistribution 
+beyond what is achievable through single-element substitution 
+[112–115] .
+From an electronic perspective, co-doping can create complementary 
+effects: for example, nitrogen introduces electron-rich defect sites, while 
+boron acts as an electron acceptor, promoting localized charge polari -
+zation. The formation of C–N–B bonding configurations in N–B co-doped 
+biochar has been shown to suppress the generation of polycyclic aro -
+matic hydrocarbons (PAHs) during pyrolysis while stabilizing the car -
+bon framework [116] . Such interactions highlight the broader structural 
+impact of co-doping beyond simple additive effects of individual 
+dopants.
+Electrochemically, co-doping can enhance active site density, 
+improve surface polarity, and promote synergistic pseudocapacitive 
+behavior. However, the electrochemical response of co-doped systems is 
+not always predictable. Emergent properties arise from dopant–dopant 
+interactions, making performance outcomes highly sensitive to dopant 
+ratio, spatial distribution, and thermal treatment conditions. Improper 
+co-doping may increase structural disorder excessively, reduce electrical 
+conductivity, or introduce unstable surface groups, thereby negatively 
+affecting rate capability and cycling durability. To move beyond quali -
+tative interpretation, quantitative assessment of co-doping synergy is 
+essential.
+Experimentally, synergy can be assessed by comparing the measured 
+performance of co-doped systems against the weighted average perfor -
+mance of individually doped counterparts under identical testing con -
+ditions. A synergistic interaction may be inferred when the observed 
+capacitance or energy density exceeds the linear combination predicted 
+from single-element doping contributions.
+From a modeling perspective, machine learning offers a systematic 
+approach to quantifying interaction effects. Interaction terms between 
+dopant concentrations can be explicitly incorporated into regression 
+models, while tree-based ensemble methods inherently capture 
+nonlinear feature interactions. Feature importance ranking and SHAP- 
+based interaction analysis can further quantify whether combined 
+dopant descriptors contribute more significantly than individual ele -
+ments alone. However, current literature does not establish a universal 
+composition window for optimal atomic ratios, as the effective ratio 
+depends strongly on feedstock type, pyrolysis temperature, activation 
+conditions, and electrolyte environment. Furthermore, performance 
+landscapes often exhibit non-monotonic dependence on dopant ratios, 
+suggesting the existence of system-specific optimal ranges.
+Discrepancies in reported performance of co-doped biochar systems 
+frequently stem from differences in dopant concentration ratios, pre -
+cursor compatibility, porosity evolution, and graphitization degree. 
+Moreover, the lack of standardized reporting on dopant speciation and 
+bonding configuration complicates cross-study outcome comparison. 
+Unlike single-element doping, where structure–property relationships 
+are relatively well-established, co-doping introduces higher- 
+dimensional design space complexity that challenges both experi -
+mental optimization and predictive modeling [111] . Overall, co-doping 
+represents a promising but intrinsically complex approach demanding 
+systematic experimental datasets utilization in conjunction with 
+computational modeling to identify optimal dopant combinations and 
+concentration windows that maximize output without sacrificing rate 
+performance.
+2.5. Approaches for heteroatom doping
+2.5.1. In-situ doping
+In situ, self-doping (endogenous) is achieved by directly carbonizing 
+biowaste rich in the target element, enabling efficient heteroatom 
+incorporation and consequent alteration of the biochar’s surface area, 
+functional groups, crystallinity, carbon defect density and active sites 
+[117] . Heteroatoms like N, P, S and O can self-dope into biochar via 
+pyrolysis, hydrothermal, or microwave processing. For example, the N 
+and O in bamboo are retained during carbonization, enhancing pore 
+formation in the resulting biochar [118] . This happens because nitrogen 
+and oxygen species drive gas evolution and generate microchannels 
+during devolatilization, which improves porosity while also providing 
+surface-active areas conducive to redox reactions. In situ doping can also 
+be achieved by combining biomass with external dopant sources such as 
+phosphoric acid for P or urea for N, either prior to or during heat 
+treatment. Such co-doping routes allow finer control over heteroatom 
+concentration but may also cause competitive reactions between 
+external and intrinsic species, influencing final dopant bonding config -
+urations (e.g., pyridinic-N vs. graphitic-N, or C–O–P linkages). Chen 
+et al. [119] reported successful synthesis of N-doped biochar from 
+bamboo by pyrolyzing under an ammonia atmosphere [119] . Although 
+self-doping is simple and low cost, accurately determining the type, 
+quantity, and distribution of dopant within inherent material remains 
+challenging [111] .
+2.5.2. Ex-situ doping
+Biowastes with inherently low heteroatom content such as bagasse, 
+maize stalks, grapefruit peels, fruit hulls, or banyan residues are exog -
+enously (ex situ) doped by introducing external dopant as a post- 
+treatment to achieve targeted heteroatom incorporation. Compared 
+with in-situ doping, exogenous doping offers greater control over dopant 
+concentration and distribution, as well as providing easier quantifica -
+tion of heteroatom levels in the resulting biochar [111] . Direct contact 
+approaches and chemical vapor deposition (CVD) are the two main 
+methods of exogenous doping. The CVD method offers excellent control 
+over dopant uniformity and concentration, enabling precise incorpora -
+tion of heteroatoms onto biochar surfaces via gas-phase reactions. In 
+contrast, direct contact methods rely on physical mixing or impregna -
+tion of biochar with dopant precursors followed by thermal treatment. 
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+7 
+
+--- PDF页 8 ---
+Although simpler and more cost-effective, direct contact methods often 
+lead to less uniform doping and weaker dopant – carbon bonding 
+compared with CVD [120] . Wu et al. (2025) prepared N, O, and P 
+co-doped biochar from sawdust using phosphoric acid and urea activa -
+tion under air plasma post-treatment, achieving a surface area of 
+1240 m² g ⁻ ¹ , capacitance of 332 F g ⁻ ¹ at 1 A g ⁻ ¹ , and 94% retention 
+after 5000 cycles [121] . Compared to in-situ methods, post-treatment 
+doping often shows reduced efficiency and poor electrochemical sta -
+bility owing to insufficient dopant anchoring [21] . The selection of 
+appropriate biomass, doping method, and dopant level is critical for 
+achieving biochar properties suited to the target application [111] .
+2.6. Physicochemical properties of modified biochar
+2.6.1. Specific storage area and porosity
+A high surface area and hierarchical pore structure are crucial for 
+maximizing the electrode-electrolyte interface, facilitating ion diffusion, 
+and enabling rapid charge accumulation. Nanocomposite modification 
+often results in a substantial increase in SSA and total pore volume. This 
+is mainly because nanoparticles inhibit pore collapse during carbon -
+ization and introduce additional mesopores. For instance, Ghori et al. 
+[122] observed nearly an eight-fold rise in SSA (from 14 to 117 m² g ⁻ ¹) 
+when biochar was composited with KCuCl ₃ nanoparticles. Other studies 
+report even higher SSA ( > 2900 m² g ⁻ ¹) creating a hierarchical pore 
+network favorable for both ion transport and electrolyte penetration 
+[122] . However, obtaining consistently dispersed hierarchical pores 
+remains difficult, since uncontrolled nanoparticle aggregation or un -
+equal activation can result in dead holes and decreased volumetric en -
+ergy density. Thus, synthesis control and pore-size distribution 
+optimization are critical for translating structural advantages into 
+practical device performance. These structural gains translate into 
+higher capacitance and rate capability [123] . GCN-S-0.5, a graphe -
+ne – silk fibroin nanocomposite activated with KOH, delivered a specific 
+capacitance of ~256 F g ⁻ ¹ at 0.5 A g ⁻ ¹ , the nanocomposite retained 
+~73.4% of capacitance at an ultrahigh current density of 50 A g ⁻ ¹ and 
+maintained ~96.3% capacitance after 10,000 cycles, demonstrating 
+both high-rate capability and excellent cycling stability [124] .
+Heteroatom doping, especially with nitrogen or phosphorus, can also 
+enhance porosity through simultaneous activation. For example, co- 
+activation using alkali salts (KOH and NaOH) and urea produces 
+doped biochars exceeding 2200 m² g ⁻ ¹ [120] . In such systems, N and P 
+containing precursors act both as dopants and activating agents, forming 
+micro to mesoporous structures with abundant surface defects that 
+contribute to redox-active sites. However, excessive activation can 
+over-etch the carbon skeleton, jeopardizing mechanical integrity and 
+electrical continuity. Balancing activation intensity and dopant con -
+centration is consequently critical for maintaining conductivity while 
+increasing accessible surface area. However, the porosity enhancement 
+from doping is typically less pronounced compared to nanoparticle 
+composites [125,126] . In summary, nanocomposite dominates in 
+boosting physical pore architecture, while heteroatom doping refines 
+surface chemistry and defect porosity, with both improving 
+ion-accessible surface area but through distinct mechanisms.
+2.6.2. Electrical conductivity
+Electrical conductivity determines the charge transfer speed and 
+influences both power density and cyclic stability. In heteroatom-doped 
+biochars, conductivity arises from electronic structure modification. 
+Nitrogen and phosphorus introduce defects that expand π -electron 
+delocalization, lower the band gap, and enhance charge-carrier mobility 
+[127] . These dopant-induced states act as charge hopping sites, allowing 
+for quicker electron transport across sp² domains while maintaining the 
+mechanical stiffness of the carbon framework. However, excessive 
+dopant incorporation can result in scattering centers that impair overall 
+mobility, emphasizing the importance of regulated doping concentra -
+tion. Ehsani et al. [128] demonstrated that nitrogen doping can 
+significantly enhance the electrical conductivity of biochar, boosting its 
+electrochemical performance [128] .
+In contrast, nanocomposite biochar improve conductivity through 
+electron pathways supported by conductive fillers such as rGO, Fe ₃ O ₄ , or 
+transition metal oxides. These materials provide interconnected net -
+works that bridge poorly conducting carbon domains, thereby mini -
+mizing internal resistance and accelerating redox kinetics [129] . 
+Conducting polymers often undergo structural degradation, while metal 
+oxides are constrained by limited electrical conductivity. Furthermore, 
+repetitive volumetric expansion and contraction of metal oxides or 
+conducting polymers during cycling can disturb interfacial connections, 
+resulting in increased resistance and performance degradation. Strate -
+gies that combine flexible carbon scaffolds with nanoscale confinement 
+of these materials assist in reducing deterioration. In contrast, 
+self-co-doped heteroatom biochar provides a stable, highly conductive, 
+and electrochemically efficient framework for advanced supercapacitor 
+applications [130 – 132] . Thus, while doping supports intrinsic conduc -
+tivity at the atomic scale, nanocomposites improve extrinsic pathways 
+through percolation and interfacial properties. This multi-scale con -
+duction synergy is a critical development for next-generation high- -
+power supercapacitors.
+2.6.3. Structural and morphological stability
+Supercapacitors demand materials that retain structure under 
+repeated charge – discharge cycles. Pure biochar, though lightweight and 
+porous, tends to suffer from pore collapse and fragmentation upon 
+cycling. Nanocomposite modification addresses this by introducing 
+reinforcing nanostructures (Fe ₃ O ₄ , CoFe ₂ O ₄ , MnO ₂ ) that act as mechan -
+ical stabilizers. These nanostructures serve not only as reinforcements, 
+but also as stress distributors, turning localized strain into elastic 
+deformation across the carbon matrix. Core – shell structures such as 
+CoFeO ₄ @C maintain pore structure and resist aggregation during 
+operation [133] . These structural frameworks distribute stress and 
+preserve electrochemical integrity over long-term cycling. Heteroge -
+neous particle loading can cause local stress spots and speed up deteri -
+oration, emphasizing the need for synthesis control in scalable electrode 
+production. In electrochemical energy storage, nanocomposite-modified 
+biochars retain their structure more effectively, resulting in longer ser -
+vice life and steadier performance [134] . On the other hand, heteroatom 
+doping alters morphology by inducing microcracks and wrinkled tex -
+tures through activation and gas release [120] . While this roughness 
+enhances ion accessibility, excessive doping, especially with phosphorus 
+at high temperature can degrade stability by over-etching or introducing 
+weak crosslinking sites [135] . Controlled crack creation, on the other 
+hand, can be helpful because it creates microchannels that allow for ion 
+transport and electrolyte penetration. Hybrid techniques, which 
+combine mild doping with nanostructural reinforcement, provide a 
+feasible solution to improve ion transport while also increasing me -
+chanical endurance.
+2.7. Synergistic coupling of heteroatom doping and nanocomposite 
+engineering
+Recent developments increasingly combine heteroatom doping with 
+nanocomposite engineering to achieve multi-scale optimization of 
+biochar-based supercapacitor electrodes. While these two strategies are 
+often discussed independently, their concurrent implementation can 
+produce synergistic effects that exceed the performance enhancement 
+achievable through either approach alone. The intrinsic synergy arises 
+from the coupling of electronic modulation, interfacial charge transfer, 
+and structural confinement within a unified architecture.
+Heteroatom doping alters the electronic structure of the carbon 
+matrix by introducing defect sites, modifying local charge density, and 
+enhancing surface polarity. When nanocomposite phases such as MnO ₂ 
+are incorporated into doped carbon matrices, dopant-induced defects 
+frequently act as anchoring and nucleation sites that promote uniform 
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+8 
+
+--- PDF页 9 ---
+oxide dispersion and stronger interfacial coupling. For example, MnO ₂ 
+integrated with sulfur-doped porous carbon spheres demonstrated 
+improved packing density and electrochemical performance compared 
+to undoped counterparts [49] . Similarly, MnO ₂ /nitrogen-doped gra -
+phene nanocomposites have shown enhanced charge transfer charac -
+teristics attributed to defect-mediated interfacial bonding and reduced 
+internal resistance [54] .
+From a structural perspective, nanocomposite integration can 
+compensate for certain limitations introduced by doping alone. 
+Although high dopant concentrations may disrupt graphitic domains 
+and reduce intrinsic conductivity, incorporation of redox-active phases 
+such as MnO ₂ can amplify pseudocapacitive contribution while the 
+carbon matrix buffers volume expansion during cycling. In such dual- 
+modified systems, the interplay between defect chemistry and hetero -
+junction formation enables simultaneous enhancement of capacitance, 
+rate capability, and cycling durability beyond singly modified systems.
+The synergistic mechanism can therefore be interpreted as co- 
+optimization of three coupled domains that includes electronic tuning 
+through heteroatom-induced defect engineering, redox amplification 
+via composite phase integration, and structural stabilization through 
+hierarchical pore confinement. However, non-uniform dopant distribu -
+tion or excessive composite loading may result in pore blockage, con -
+ductivity loss, or increased internal resistance. Unlike conventional 
+reviews that treat doping and composite engineering as parallel modi -
+fication routes, this integrated perspective highlights their co- 
+engineering potential as a unified design paradigm. By intentionally 
+coupling electronic and structural optimization, dual-modification 
+strategies represent a critical pathway toward overcoming the 
+inherent trade-offs of single-strategy approaches and advancing biochar- 
+based supercapacitors toward higher energy density and operational 
+stability. The multi-parameter interdependence inherent in such systems 
+further expands the design space complexity, underscoring the necessity 
+of data-driven and machine learning frameworks capable of navigating 
+coupled structural-electronic electrochemical variables.
+3. Performance comparison of biochar modification strategies in 
+supercapacitors
+The electrochemical performance of biochar-based supercapacitors 
+is primarily governed by their specific surface area (SSA), porosity, 
+electrical conductivity, and structural stability. Each of these properties 
+influences the capacitance, energy density, and cycling stability of 
+electrodes in distinct ways, while the modification route either nano -
+composite formation or heteroatom doping lays the foundation.
+3.1. Capacitance enhancement
+Nanocomposites enhance charge storage primarily by increasing 
+surface accessibility and introducing additional charge storage mecha -
+nisms. Guardia et al. [136] reported that composites of microporous 
+carbon derived from grape seeds with reduced graphene oxide (rGO) 
+achieved 260 F g ⁻ ¹ at 1 mA cm ⁻ ², demonstrating that combining biochar 
+with conductive nanomaterials can substantially improve electron 
+transport and ion accessibility [136] . Shang et al. [137] developed 
+nanocomposites from chitin nanofibers followed by carbonization to 
+achieve a specific capacity of 128.5 F g ⁻ ¹ at 0.2 A g ⁻ ¹ [137] . In contrast, 
+heteroatom doping enhances capacitance through the creation of addi -
+tional active sites and pseudocapacitive behavior. Nitrogen doping 
+(pyridinic, pyrrolic, and graphitic N) improves conductivity and in -
+troduces fast redox-active sites, while sulfur doping widens interlayer 
+spacing and provides thiophenic redox centers. N, S co-doped biochar 
+from pea peels achieved capacity of 80.25 F g ⁻ ¹ at 1 A g ⁻ ¹ , significantly 
+higher than undoped carbon. Boron-doped biochar has been reported to 
+have capacitance as high as 539.5 F g ⁻ ¹ , owing to strong surface po -
+larization effects [95] . In another research, N-MCN was synthesized in a 
+single-step reaction involving terephthalaldehyde and 
+m-phenylenediamine in dioxane utilizing acetic acid as its catalyst. 
+As-prepared N-MCNs assemble Qualities include a high surface area 
+(~1938 m2 g), unusual porosity, distinctive shape, and nitrogen func -
+tional groups. The N-MCN850 electrode exhibits superb capacitive ac -
+tivity (391 F g at 0.1 A g), ultrahigh-rate effectiveness (145 F g at 
+100 A g), and persistent cycling stability (98% retention over 5000 cy -
+cles at 2 A g) in a 6 M KOH aqueous electrolyte. N-MCNs, with their 
+superior efficiency, offer new options for supercapacitor applications 
+[138] . Similarly, the weight ratio of NaOH/biochar majorly impacts 
+carbon porosity and surface chemical composition. Specific surface area 
+and nitrogen content can vary from 323 to 3012 m2 g   1 and 
+0.88 – 9.26 at%, respectively. Carbon's peculiar microstructure and ni -
+trogen capabilities allow for a high capacitance of up to 385 F g
+  1 
+in 
+6 mol L
+  1 
+KOH aqueous electrolytes. This is due to the interaction of 
+double layer capacitance and pseudo-capacitance. It has high rate po -
+tential (235 F g
+  1 
+at 50 A g
+  1
+) and cycle endurance, which make it a 
+viable substance for electrodes for supercapacitors as shown by Xu et al. 
+(2012) [139] . While nanocomposites generally improve capacitance by 
+facilitating charge transport and increasing surface area, heteroatom 
+doping introduces chemical and electrochemical active sites that 
+contribute pseudocapacitance. Nanocomposites often show higher ab -
+solute capacitance when paired with conductive additives like rGO, 
+whereas heteroatom-doped biochars excel in boosting charge storage via 
+redox reactions.
+3.2. Energy density
+Commercial supercapacitors typically utilize electrodes composed of 
+pure carbon, which store charge primarily via the electrochemical 
+double-layer mechanism. While this provides high power capability, the 
+energy density of such devices is often low, limiting their application 
+range [140] . For example, a supercapacitor with pure carbon electrodes 
+was reported to have a maximum energy density of 0.762 Wh kg ⁻ ¹ at a 
+power density of 184 W kg ⁻ ¹ [141] . Energy density ( E =
+1
+2
+CV
+2
+) depends 
+on both the specific capacitance (C) and the operating voltage (V). 
+Nanocomposite electrodes improve energy density primarily through 
+enhanced charge storage and ion transport via hierarchical porosity and 
+conductive networks. Heteroatom-doped biochars, on the other hand, 
+introduce pseudocapacitive sites and hydrophilic groups, which 
+improve ion accessibility and translate into higher energy density at the 
+device level. While dopants primarily enhance capacitance, they also 
+improve electrode – electrolyte interactions, allowing safe operation at 
+wider voltage windows in certain electrolytes [135] . Phosphorus and 
+nitrogen co-doping also enhance meso-porosity and hydrophilicity, 
+further boosting energy density by facilitating ion transport and redox 
+reactions. Boron-doped biochar has been reported to attain an energy 
+density of 40.5 Wh kg ⁻ ¹ , while N, S co-doped biochar reached 
+13.87 Wh kg ⁻ ¹ , both outperforming undoped biochar [135,142] . The 
+relative advantage depends on the target application, nanocomposites 
+excel when electron transport dominates, while heteroatom doping is 
+more beneficial when redox-active sites contribute significantly to en -
+ergy storage.
+3.3. Cycling stability
+For practical supercapacitor applications, cycling stability and 
+capacitance retention are critical performance metrics. Nanocomposite 
+electrodes can provide enhanced cycling stability by combining 
+conductive networks with electroactive materials. The synergistic 
+incorporation decreases volumetric strain and avoids active material 
+separation during redox cycling, which is a frequent destruction route in 
+single-phase electrodes. Furthermore, the conductive framework assures 
+homogeneous current dispersion, minimizing localized excess potentials 
+that generally boost failure. Zhao et al. [143] synthesized a porous 
+Mn ₂ O ₃ /C@Co ₃ O ₄ composite via a two-step hydrothermal process, 
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+9 
+
+--- PDF页 10 ---
+achieving a reversible specific capacitance of 523.8 F g ⁻ ¹ with 90.6% 
+retention after 3000 cycles [143] . Similarly, nickel and 
+manganese-based hybrid composite (NiO/MnO ₂ /BHC) demonstrated an 
+88% capacitance retention over 5000 cycles across a 1.6 V operating 
+window [144] . These results highlight that well-designed composites 
+can maintain high performance under extended cycling through stabi -
+lized electrode structure and electron transport facilitation. But the 
+equilibrium of such nanocomposites frequently relies on interfacial 
+connection force and lattice connectivity between phases. Weak 
+coupling or imbalance can result into microcracking or interfacial 
+resistance anticipation during extended cycling. Heteroatom-doped 
+carbons, on the other hand, offer a distinct advantage in durability 
+and long-term stability. Moderate doping reinforces the carbon frame -
+work and preserves conductive networks, mitigating capacitance 
+degradation during repeated cycling. N-doped carbons typically retain 
+94 – 99% of their capacitance over 5000 – 10,000 cycles, while P-doped 
+carbons have shown nearly 98% retention after 10,000 cycles [135] . 
+Even co-doped systems (N, S or N, P) maintain > 95% retention, 
+demonstrating that carefully tuned doping not only enhances electro -
+chemical performance but also ensures excellent durability for practical 
+applications. Parameters such as carbonization temperature strongly 
+influences hard carbon interlayer spacing and graphitization, which in 
+turn also affects long-term stability [145] . Nanocomposites excel in 
+stabilizing structure under cycling and facilitate rapid charge or 
+discharge due to conductive additives and hierarchical porosity. While 
+Heteroatom-doped biochars provide exceptional intrinsic durability, 
+with doping reinforcing the carbon matrix and maintaining long-term 
+capacitance retention. Selecting the appropriate strategy depends on 
+the balance between absolute capacitance and long-term cycling 
+stability.
+3.4. Cost analysis
+Heteroatom doping (N, P, S, B) on biomass carbons can remain near 
+activated-carbon economics when using inexpensive dopants or acti -
+vators like urea, melamine, H ₃ PO ₄ or self-doped N-rich feedstocks. The 
+price benefit enables heteroatom doping, especially appealing for large- 
+scale deployment, as it depends on plentiful intermediate and simple 
+manufacturing techniques. Furthermore, doping operations often take 
+place under comparable thermal activation settings as traditional 
+carbonization, necessitating no major capital modifications to current 
+commercial setup. The estimated AC production costs cluster around 
+$2.7-$2.9 kg ⁻ ¹ , with energy or activation the key OPEX driver [69,146] . 
+The consumption of energy during activation frequently leads to oper -
+ational expenses, particularly for chemical activators that require 
+post-treatment or neutralization. Process intensification using micro -
+wave or hydrothermal activation has been proposed to cut consumption 
+of energy by 30 – 40%, however industrial adoption is still restricted 
+owing to scale-up and reactor design issues. Nanocomposite doping is 
+price sensitive. MnO ₂ /NiO methods are consistently stated as 
+low-cost/industrial-feasible, but graphene oxide drives costs dramati -
+cally upward $400-$700 kg ⁻ ¹ industrial and rGO $50-$150 kg ⁻ ¹ [147] , 
+[148] . Doped biochar is the most cost-effective option for 
+commercial-size supercapacitors, but nanocomposite techniques have 
+greater potential for high-performance specific uses.
+As summarized in Table 4 , biochar modification strategies demon -
+strate distinct and quantifiable trade-offs between electrochemical per -
+formance, durability, and techno-economic feasibility. Among the 
+evaluated approaches, heteroatom-doped biochars currently represent 
+the most industrially translatable strategy, combining high cycling sta -
+bility (94 – 99%), competitive capacitance values ( > 200 F g ⁻ ¹), and 
+scalability enabled by low-cost precursors and single-phase structural 
+modification. In contrast, metal oxide and polymer-based composites 
+often achieve higher peak capacitance through faradaic contributions, 
+yet suffer from interfacial degradation, volumetric expansion, and me -
+chanical fatigue, which constrain long-term reliability and scale-up 
+Table 4 
+Integrated Comparative Framework of Biochar Modification Strategies for Supercapacitor Design.
+Strategy Dominant 
+Mechanism
+Typical 
+Capacitance (F 
+g ⁻⁻ ¹)
+Energy 
+Density (Wh 
+kg ⁻⁻ ¹)
+Cycling 
+Stability 
+(%)
+Cost Level Scalability ML Predictability Technology Maturity Key Limitation References
+Physical Activation Micropore-driven 
+EDLC
+90 – 150 < 10 > 90 Low High High (simple 
+structural descriptors)
+Commercially mature Limited 
+pseudocapacitance 
+contribution
+[21] , [42]
+Chemical Activation 
+(KOH)
+Hierarchical porosity 
++ defect engineering
+150 – 385 10 – 20 90 – 98 Medium Medium Moderate Industrially feasible Requires post-treatment; 
+chemical waste handling
+[43] , [139]
+Heteroatom Doping 
+(N, S, P, B)
+Electronic structure 
+tuning + surface 
+redox activity
+200 – 500 + 10 – 40 94 – 99 Low – Medium High High (clear 
+descriptors: SSA, ID/ 
+IG, dopant %)
+Scalable 
+academic – industrial 
+bridge
+Dopant instability or over- 
+etching at high loading
+[95] , [135] , 
+[142]
+Metal Oxide – Biochar 
+Composites
+Faradaic redox 
+coupling
+250 – 520 15 – 35 85 – 92 Medium Medium Moderate (multi- 
+variable interfaces)
+Academic-dominant Volume expansion and 
+conductivity decay
+[143] , [56]
+Polymer – Biochar 
+Hybrids
+Surface redox 
+polymer activity
+200 – 400 10 – 25 80 – 90 Medium Medium Low – Moderate Academic Polymer swelling and 
+mechanical fatigue
+[59] , [61]
+Carbon Nano-Hybrid 
+(rGO/CNT)
+Conductive 
+percolation network
+250 – 420 15 – 30 90 – 95 High Low Moderate Lab-scale High material cost and 
+aggregation challenges
+[136] , [62]
+Core – Shell 
+Metal – Carbon
+Interfacial 
+stabilization and 
+confined redox
+250 – 520 up to ~40 88 – 95 Medium – High Low Low – Moderate Early-stage Complex synthesis and 
+shell thickness control
+[76] , [143]
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+10 
+
+--- PDF页 11 ---
+potential. Carbon nano-hybrid systems enhance conductivity and rate 
+capability; however, material cost and dispersion control make their 
+adoption challenging. This integrated comparison provides a rational 
+basis for strategy selection aligned with performance targets, cost con -
+straints, and data-driven optimization objectives.
+3.5. Overlaps and the case for integrated ML frameworks
+Despite extensive studies on activation techniques, heteroatom 
+doping, nanocomposite engineering, and the growing significance of 
+machine learning in biochar-based supercapacitors independently, a 
+unified perspective integrating these approaches remains lacking. The 
+intrinsic overlaps between structural and electronic tuning are particu -
+larly critical for achieving synergistic optimization of conductivity, 
+porosity, and electrochemical stability in biochar-based electrodes. For 
+example, aggressive KOH activation facilitates in-situ incorporation of 
+nitrogen or oxygen groups from the precursor or environment in addi -
+tion to creating hierarchical porosity [149] . Such heteroatom doping, 
+especially nitrogen or sulfur, can alter graphitization and pore distri -
+bution, which in turn affects textural properties [150] . Recognizing 
+these overlaps avoids oversimplified distinctions and underscores the 
+importance of unified design approaches for advancing biochar-based 
+supercapacitors. The goal is to resolve these nonlinear in -
+terdependencies by employing approaches such as machine learning in 
+bridging framework that links structural, electronic, and electro -
+chemical descriptors. Our proposal for a multi-domain, phys -
+ics-informed machine learning paradigm that incorporates textural, 
+chemical, and electrochemical descriptors into interpretable models 
+offers a logical path forward from compartmentalized datasets. A unique 
+addition to the logical design of next-generation, sustainable super -
+capacitor materials are made by this viewpoint, which not only elimi -
+nates experimental redundancy but also makes predictive, closed-loop 
+optimization of biochar electrodes possible. Fig. 3 illustrates the 
+sequence of framework ’ s data collection, designing models, and vali -
+dation approaches for supercapacitor features prediction by ML models.
+3.6. Mechanism-informed feature engineering and model interpretability
+Most existing ML models in biochar-based supercapacitor research 
+rely primarily on experimentally reported descriptors such as surface 
+area, pore volume, and dopant concentration. However, deeper inte -
+gration of physicochemical mechanisms requires customized feature 
+engineering that encodes intrinsic electronic and structural behaviors. 
+For example, π – π interactions between graphitic domains may be 
+approximated using graphitization indices such as Raman ID/IG ratio, 
+interlayer spacing metrics, or estimated aromatic cluster size derived 
+from structural characterization. Charge redistribution associated with 
+doped heteroatoms can be represented using XPS-derived bonding 
+configurations (e.g., pyridinic-N, graphitic-N fractions) or 
+electronegativity-weighted dopant descriptors. Similarly, pore evolution 
+kinetics during activation may be parameterized using activation tem -
+perature gradients, heating rates, or micropore-to-mesopore ratios as 
+proxies for diffusion-controlled pore development.
+To quantify the contribution of these physically motivated de -
+scriptors, interpretability-driven validation strategies should be imple -
+mented. Feature analysis where mechanism-derived variables are 
+selectively removed, can evaluate their incremental effect on cross- 
+validated R² and mean absolute error. Explainable AI techniques such 
+as SHAP (Shapley Additive Explanations) or permutation feature enable 
+quantitative ranking of descriptor influence on predictive outputs [151, 
+152] . Improvements in extrapolation stability under constrained test 
+sets or unseen synthesis conditions provide additional evidence of 
+physically meaningful generalization. By systematically comparing 
+empirical-only descriptor sets with mechanism-augmented feature 
+spaces, the added value of physicochemical encoding can be quantita -
+tively assessed. This approach enables ML frameworks to transition from 
+statistical fitting toward physically grounded predictive modeling for 
+biochar-based supercapacitors.
+Current machine learning (ML) applications in biochar-based 
+supercapacitors largely focus on supervised regression for performance 
+prediction using tree-based ensembles and neural networks. However, 
+next-generation progress requires integrated physics-data driven 
+frameworks that embed electrochemical constraints directly into model 
+architectures. Physics-informed machine learning (PIML), increasingly 
+adopted in energy materials research [147 – 150] , enables incorporation 
+of physically meaningful descriptors such as defect density, effective 
+electronic conductivity, ion diffusion length, and redox site density into 
+predictive workflows.
+An integrated framework can be structured into four coordinated 
+layers. First, a standardized data architecture must harmonize structural 
+descriptors (BET surface area, pore size distribution, Raman ID/IG ratio, 
+dopant configuration), device-level parameters (mass loading, voltage 
+window, electrolyte type), and durability metrics to improve cross-study 
+generalizability [151] . Second, physics-informed constraints can be 
+embedded via hybrid modeling approaches or regularization schemes 
+that enforce thermodynamic consistency in predicted outputs, for 
+example by constraining energy density predictions within 
+voltage-dependent theoretical limits [152,153] .
+Third, multi-objective optimization should replace single-metric 
+maximization. Practical implementation requires simultaneous optimi -
+zation of capacitance, rate capability, cycling stability, mass loading, 
+and cost. Pareto-front analysis and Bayesian optimization using 
+Gaussian process regression provide systematic exploration of con -
+strained design spaces while quantifying uncertainty [154,155] . Fourth, 
+Fig. 3. Sequential workflow of the ML model from data acquisition to performance evaluation for supercapacitor property prediction.
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+11 
+
+--- PDF页 12 ---
+closed-loop experimental workflows integrating active learning and 
+uncertainty-guided sampling can iteratively recommend synthesis con -
+ditions, incorporate new experimental data, and retrain models to 
+accelerate convergence in high-dimensional parameter spaces [156, 
+157] .
+By converging standardized data infrastructure, physics-informed 
+modeling, multi-objective optimization, and adaptive experimentation, 
+ML can evolve from correlation-driven prediction toward mechanisti -
+cally guided and scalable materials design for biochar-based 
+supercapacitors.
+3.7. Application of advanced machine learning techniques
+One of the most cutting-edge electrical energy storage technologies 
+in recent years has been supercapacitors (SCs), which have the capacity 
+to store up to 100 times more energy per unit volume/mass than 
+traditional electrolytic capacitors [151,152] . SCs are often used in 
+wearable technology, telecommunications, public transit, and the 
+automobile industry. With advances in AI, data-driven materials 
+research now enables precise prediction and rational design of novel 
+materials with exceptional performance [153 – 155] . This synergy be -
+tween AI and materials science heralds a new era of innovation in 
+supercapacitor research, where intelligent data analysis enables the 
+identification of promising materials and structural designs with the 
+potential to transform energy storage technology. This interdisciplinary 
+strategy will enhance the understanding of electrochemical processes 
+and open new avenues for next-generation energy storage technologies.
+3.8. Machine learning-guided investigation of nanocomposite and 
+heteroatom doping in biochar-based supercapacitors
+Nanocomposite biochar electrodes combine biochar conductivity 
+with redox-active metal species to achieve synergistic charge storage 
+behavior. Recent machine learning (ML) advances have systematically 
+unraveled these nonlinear interdependencies, establishing quantitative 
+links between synthesis variables and electrochemical performance 
+[156] . Tang et al. [157] developed a comprehensive machine learning 
+(ML) framework to predict the specific capacitance of MgCo ₂ O ₄ -based 
+supercapacitor electrodes. Drawing upon literature-derived dataset 
+comprising 324 experimental records, the study applied a hybrid 
+recursive feature elimination (RFE) strategy to identify the most influ -
+ential features controlling capacitance behavior. Among ML algorithms, 
+Random Forest (RF), Extreme Gradient Boosting (XGBoost), and 
+Regression Tree (RT), the XGB-RFE-XGB model ( XGBoost serving as 
+both selector and regressor) exhibited the highest predictive accuracy 
+(R² = 0.95, RMSE = 111.8 F g ⁻ ¹, and MAE = 68.3 F g ⁻ ¹) [157] .
+Mulla et al. (2025) employed an XGBoost regression model trained 
+on NiCo ₂ S ₄ /graphene datasets to quantitatively link synthesis variables 
+to specific capacitance, achieving R² ≈ 0.95 [158] . SHAP analysis 
+revealed that 3D hierarchical and hollow nanostructures, balanced 
+Ni/Co ratios, and optimal graphene content as the key determinants of 
+electrochemical performance, highlighting ML ’ s strength in resolving 
+nonlinear structure – function relationships in bimetallic sulfide – carbon 
+electrodes. Similarly, RF, SVR, GBR, XGBoost, and ANN models were 
+employed to predict the specific capacitance of NiCo ₂ O ₄ /MXene com -
+posites, with XGBoost and ANN achieving the best performance (R² ≈
+0.96). The optimal 20 wt% GNP composition delivered a specific 
+capacitance of 226.6 F g ⁻ ¹ at 5 mV s ⁻ ¹ , with 84.2% retention after 5000 
+cycles. Mixed-phase NiO/Co ₃ O ₄ composites typically trade gravimetric 
+capacitance for enhanced rate capability and stability, a balance that ML 
+techniques can effectively assess [159] . Three ML algorithms were 
+developed and optimized including Bayesian Ridge Regression (BRR), 
+K-Nearest Neighbors (KNN), and Artificial Neural Networks (ANN) for 
+Ti ₃ C ₂ MXene-based supercapacitors. The KNN model achieved the best 
+performance (R² = 0.928, RMSE = 0.040), whereas the ANN model 
+demonstrated capability to capture nonlinear interdependencies 
+between input features. The study provided insights for establishing a 
+scalable predictive route for supercapacitor design optimization [160] .
+Parwaiz et al. [161] applied machine-learning models to predict the 
+cyclic-voltammetry (CV) of cobalt-based reduced graphene oxide 
+nanocomposites, using scan-rate, potential, redox state and substitution 
+level as input features [161] . Data-driven models including ANN and 
+ensemble methods, were able to accurately map the complex electro -
+chemical responses of composite electrodes, offering a rapid alternative 
+to purely experimental CV characterization. Ravichandran et al. [162]
+used XGBoost, ANN, and RF models to predict current responses in cyclic 
+voltammetry profiles of zinc and cobalt- substituted Bismuth ferrite 
+(BiFeO ₃ ) composites. All models achieved high predictive accuracy (R² 
+> 0.97), demonstrating that ML can reliably forecast electrochemical 
+behavior and specific capacitance directly from CV data, reducing 
+experimental effort [162] . Overall, machine learning studies on nano -
+composite biochar electrodes have demonstrated that tree-based 
+ensemble (XGBoost, RF, GBR) and neural-network models (ANN) can 
+effectively capture the nonlinear interdependence between metal type, 
+loading ratio, and carbon support morphology. These approaches can 
+accurately predict specific capacitance while revealing structur -
+e – function synergies, highlighting the potential of ML framework for 
+identifying optimal design “ sweet spots ” in nanocomposite super -
+capacitors. Adding heteroatoms such as nitrogen (N), sulfur (S), phos -
+phorus (P) or boron (B) to the sp² carbon lattice alters charge density and 
+generates new surface functions, allowing for fast surface redox re -
+actions [163] , [164] . Recent studies have employed machine learning to 
+identify structure-performance correlations in huge and diverse datasets 
+of doped carbon materials. Mishra et al. [165] compiled a large database 
+(~4899 experimental entries) of carbon electrodes, employed linear, 
+support vector and tree-based models and showed that nonlinear models 
+particularly XGBoost achieved superior predictive accuracy in capturing 
+the complex interactions [165] . Furthermore, the study determined the 
+most influential physicochemical descriptors for estimating specific 
+capacitance and ranked them in priority order, identifying specific 
+surface area and doping level as top ranked influencing descriptors. 
+Similarly, Lu et al. [166] employed XGBoost, LightGBM, and deep neural 
+networks to model the energy and power densities of biomass-derived 
+carbon supercapacitors. Specific surface area, pore structure, and het -
+eroatom content were identified as dominant descriptors governing 
+performance whereas LightGBM achieved the best energy-density pre -
+diction (R² = 0.922) and XGBoost excelled in power-density prediction 
+(R² = 0.984) [166] .
+Liao et al. [167] provided a deeper, more targeted mapping of 
+structure-dopant performance relationships for a specific electrode 
+material class, allowing optimization of descriptors rather than just 
+ranking. Random Forest and XGBoost models using 303 literature en -
+tries were tested under uniform three-electrode conditions in 6 M KOH. 
+The optimized XGBoost model with 5-fold cross-validation achieved R² 
+= 0.96 and RMSE = 15.83, outperforming other regressors. SHAP 
+interpretation revealed specific surface area and degree of graphitiza -
+tion as dominant descriptors. Among nitrogen functionalities, 
+pyridinic-N (N-6) had the greatest positive effect and excess pyrrolic-N 
+(N-5) suppresses performance. Partial-dependence analyses indicated 
+optimal descriptor values yielding model-predicted maximum capaci -
+tance of ~303 F g ⁻ ¹ at 1 A g ⁻ ¹ [167] . On the contrary, Sun et al. [168]
+revealed that machine learning tools can quantitatively establish a 
+correlation between biochar synthesis parameters such activation tem -
+perature and activation agent concentration to the resulting electro -
+chemical capacitance, suggesting how initial preparation parameters 
+influence performance [168] . For optimal performance, ML-guided an -
+alyses identified balanced ID/IG ratios that sustain electrical conduc -
+tivity while retaining defect-active sites, moderate heteroatom doping 
+levels and a meso-porosity range of 30 – 40% as the most favorable 
+structural attribute [169] . In heteroatom-doped biochar systems, 
+XGBoost, LightGBM, and RF models outperform linear regressors in 
+resolving nonlinear couplings among dopant chemistry, porosity, and 
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+12 
+
+--- PDF页 13 ---
+graphitization degree, achieving R² ≈ 0.90 – 0.96 across diverse datasets. 
+SHAP interpretability has highlighted specific surface area, ID/IG ratio, 
+and nitrogen speciation (notably pyridinic-N, N-6) as the most influen -
+tial descriptors governing capacitance [170] .
+3.8.1. Strategy-specific models
+Gradient boosting models have demonstrated high predictive fidelity 
+for biomass-derived carbon systems, with LightGBM achieving R² =
+0.922 for energy density and XGBoost reaching R² = 0.984 for power 
+density. SHAP analysis further reveals that precursor composition and 
+activation conditions act as dominant, system-specific determinants of 
+electrochemical performance, reinforcing the importance of descriptor- 
+level sensitivity in model construction [171] . Although ensemble 
+models such as XGBoost and LightGBM often demonstrate strong pre -
+dictive performance across aggregated datasets, the dominant governing 
+factors for heteroatom-doped systems and nanocomposite-based sys -
+tems differ fundamentally. Heteroatom doping primarily modulates 
+electronic structure, defect chemistry, and surface polarity, whereas 
+nanocomposite systems are additionally governed by interfacial heter -
+ojunction formation, phase dispersion, and structural stabilization ef -
+fects. These distinctions imply divergence in descriptor distributions and 
+feature relevance. A unified model trained on combined datasets may 
+capture global correlations but risk underrepresenting subgroup-specific 
+nonlinearities. Scenario-specific sub-models developed separately for 
+heteroatom-doped and nanocomposite systems may improve interpret -
+ability and predictive robustness. Alternatively, hierarchical modeling 
+approaches can be implemented, where an initial classifier distinguishes 
+modification strategy type, followed by specialized regressors trained on 
+strategy-relevant descriptors.
+Comparative validation between unified and strategy-specific 
+models can be assessed through cross-validation R², mean absolute 
+error (MAE), and subgroup extrapolation stability. Statistically signifi -
+cant improvement in subgroup models would justify differentiated 
+modeling architectures and reduce bias arising from descriptor hetero -
+geneity. Such strategy-aware ML design offers a pathway toward more 
+precise structure – performance mapping in biochar-based 
+supercapacitors.
+As summarized in Table 5 , tree-based ensemble algorithms, partic -
+ularly XGBoost and LightGBM, consistently outperform linear regressors 
+across datasets ranging from approximately 300 to nearly 5000 entries. 
+Predictive accuracy improves markedly when datasets are standardized 
+by electrolyte condition and electrode configuration, as evidenced by 
+higher R² values in curated subsets. Descriptor selection plays a decisive 
+role in model robustness; specific surface area, dopant speciation, and 
+graphitization degree repeatedly emerge as dominant features govern -
+ing capacitance prediction. In contrast, multiphase composite systems 
+introduce more complex and less constrained interfacial variables, 
+which may limit cross-study model transferability [173] . These obser -
+vations underscore the importance of structured feature reporting and 
+standardized testing protocols for improving reproducibility and 
+generalizability in ML-driven supercapacitor research.
+4. Challenges and trends
+Despite notable advances, several challenges continue to hinder the 
+predictive reliability and transferability of ML models in biochar-based 
+supercapacitor outcomes. In heteroatom-doped systems, data inconsis -
+tency and incomplete feature reporting remain major barriers such as 
+many studies report only the total nitrogen content without resolving 
+chemical states (pyridinic-, pyrrolic-, or graphitic-N) or merge data from 
+two- and three-electrode configurations, resulting in model bias and 
+limited generalizability. Similarly, nanocomposite datasets are often 
+small, fragmented, and poorly annotated, with inconsistent descriptors 
+for metal loading, dispersion, oxidation state, and carbon texture, which 
+limits cross-study benchmarking and robust model training [172,174] . 
+Bridging this gap requires data harmonization and hierarchical feature 
+Table 5 
+Summary of recent ML studies on supercapacitor performance prediction using carbon and biochar electrodes, highlighting dataset scope, model type, best algorithm, and reported performance metrics (R², RMSE, MAE).
+Study Focus Dataset Size Target Variable Key Input Features Models 
+Evaluated
+Best Model Best R² Additional Metrics Validation Strategy Reference
+Carbon electrodes (EDLC) 4899 entries 
+from 147 
+papers
+Specific 
+capacitance
+SSA, pore volume, dopant 
+level, electrolyte 
+configuration
+OLS, SVR, DT, 
+RF, XGBoost
+XGBoost 0.95* Subset R²: 0.89 – 0.95 Cross-validation [165]
+N-doped biochar (standardized 
+6 M KOH)
+303 Specific 
+capacitance
+N-speciation, ID/IG ratio, SSA RF, XGBoost XGBoost 0.96 RMSE = 15.83 5-fold cross- 
+validation
+[149]
+Biochar preparation – performance 
+mapping
+~300 Specific 
+capacitance
+Activation temperature, 
+precursor type
+RF, GBR, ETR GBR 0.93 — Cross-validation [150]
+Biomass-derived carbon 
+electrodes
+> 400 Energy density; 
+Power density
+Pore structure, heteroatom 
+content
+XGBoost, 
+LightGBM, DNN
+LGBM (energy); 
+XGBoost (power)
+0.922 (energy); 
+0.984 (power)
+— Cross-validation [175]
+Porous carbons (ML +
+experimental validation)
+— Specific 
+capacitance
+Textural and compositional 
+descriptors
+LR, RF, XGBoost, 
+LGBM
+LGBM 0.92 — ML + experimental 
+validation
+[153]
+MgCo ₂ O ₄ /carbon composites 324 Specific 
+capacitance
+Synthesis variables 9 hybrid RFE- 
+based models
+XGB-RFE-XGB 0.94 RMSE = 120 F g ⁻ ¹ ; 
+MAE = 62 F g ⁻ ¹
+RFE + cross- 
+validation
+[139]
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+13 
+
+--- PDF页 14 ---
+integration across scales linking synthesis variables, microstructural 
+features, and electrochemical metrics. Incorporating process-level de -
+scriptors (activation temperature, precursor type) with density function 
+theory derived physicochemical properties such as adsorption energies 
+and charge transfer at dopant sites can establish a mechanistic bridge 
+between atomic-level electronic effects and device-level performance, 
+providing a truly predictive basis for rational electrode design.
+Recent methodological trends highlight a transition toward auton -
+omous, data-centric experimentation powered by machine learning and 
+closed-loop optimization. The integration of Bayesian optimization, 
+active learning, and self-driving laboratory systems is revolutionizing 
+materials discovery by replacing traditional “ one-variable-at-a-time ” 
+experimentation with adaptive, feedback-driven synthesis workflows. 
+These frameworks minimize failed synthesis attempts, reduce experi -
+mental costs, and accelerate the identification of optimal activation 
+conditions, dopant ratios, and co-doping combinations for high- 
+performance electrodes [175] . At the algorithmic frontier, 
+physics-informed ML models such as graph neural networks (GNNs) and 
+hybrid architectures incorporating pore-network descriptors, XPS-based 
+heteroatom embeddings, and microscopy-derived morphological fea -
+tures are improving both prediction accuracy and interpretability. These 
+models reveal how pore topology, ion mobility, and electronic structure 
+co-govern charge storage behavior while maintaining generalizability 
+across diverse feedstocks, electrolytes, and testing protocols [150] . The 
+coupling of operando data streams with ML (e.g., in situ Raman or 
+electrochemical impedance) is also emerging as a critical direction for 
+capturing dynamic electrochemical processes in real time. Building on 
+these achievements, inverse-design and generative ML models are now 
+enabling the rational optimization of co-doped and nanocomposite 
+biochar including tetra-element-doped carbons and ternary hybrids with 
+transition-metal oxides, ferrites, or conducting polymers. These models 
+facilitate balanced optimization of energy density, equivalent series 
+resistance (ESR), cycle stability, and manufacturing cost under realistic 
+synthesis constraints [176] .
+5. Conclusion and future perspective
+Biochar-based supercapacitors represent a sustainable and structur -
+ally tunable platform that bridges circular biomass utilization with 
+electrochemical energy storage. This review systematically evaluates 
+heteroatom doping, nanocomposite engineering, and multi-element co- 
+doping strategies within a unified structural electrochemical perfor -
+mance framework. The analysis demonstrates that performance 
+enhancement in biochar systems arises from controlled defect engi -
+neering, electronic modulation, interfacial charge transfer optimization, 
+and hierarchical pore architecture design. Heteroatom doping primarily 
+improves electronic conductivity and surface redox activity, while 
+nanocomposite integration amplifies pseudocapacitive contributions 
+and structural stability. When co-engineered, these strategies offer 
+synergistic pathways for enhancing capacitance, rate capability, and 
+cycling durability. The incorporation of machine learning further shifts 
+the field from empirical optimization toward predictive design, enabling 
+identification of nonlinear structure – property relationships across syn -
+thesis variables and electrochemical metrics.
+Despite these advances, several structural bottlenecks limit trans -
+lation from laboratory demonstration to scalable deployment. In our 
+assessment, the most immediate and impactful priority is the estab -
+lishment of standardized data reporting and device-level benchmarking. 
+Variability in electrolyte selection, voltage window, mass loading, 
+electrode configuration (two- versus three-electrode systems), and 
+normalization bases frequently obscures meaningful cross-study com -
+parison. Without harmonized descriptors including dopant speciation, 
+graphitization degree, pore size distribution, and conductivity metrics, 
+machine learning models risk capturing dataset-specific correlations 
+rather than transferable design principles. Addressing this issue requires 
+community-level agreement on minimum reporting standards and 
+consistent electrochemical testing protocols.
+The second critical priority lies in realistic device-level validation. 
+Many reported performance metrics are obtained under low mass 
+loading ( < 2 mg cm ⁻ ²) or short cycling durations, conditions that do not 
+reflect commercial supercapacitor operation. Future studies must 
+emphasize practical electrode mass loading ( ≥ 5 – 10 mg cm ⁻ ²), long-term 
+cycling stability ( > 50,000 cycles), and performance retention under 
+wide temperature ranges. Additionally, benchmarking against com -
+mercial activated carbon electrodes is essential to define genuine 
+competitive advantages. Biochar systems must demonstrate not only 
+enhanced gravimetric capacitance but also favorable cost-to- 
+performance ratios, scalable synthesis routes, and environmental 
+compatibility in activation processes. Green chemistry considerations, 
+including reduced chemical waste in activation and sustainable pre -
+cursor sourcing, remain essential for maintaining the ecological value 
+proposition of biomass-derived materials.
+From a data-driven perspective, progress depends on improved 
+descriptor engineering and model interpretability. Physics-informed 
+feature construction incorporating Raman ID/IG ratios, XPS-derived 
+dopant bonding configurations, pore distribution metrics, and conduc -
+tivity proxies can strengthen mechanistic alignment between structural 
+parameters and predictive outputs. However, the feasibility of such 
+approaches depends fundamentally on high-quality, standardized 
+datasets. Multi-objective optimization frameworks, rather than single- 
+metric maximization, represent a practical pathway forward. Real- 
+world deployment requires simultaneous optimization of capacitance, 
+rate performance, cycling stability, mass loading, and cost constraints. 
+Techniques such as Pareto-front analysis and Bayesian optimization 
+provide systematic tools for navigating these coupled trade-offs under 
+realistic engineering boundaries.
+High-impact, longer-term directions include the integration of hier -
+archical modeling architecture and closed-loop experimentation. 
+Strategy-specific ML sub-models may better capture descriptor diver -
+gence between heteroatom-doped and nanocomposite systems, while 
+active learning frameworks can iteratively refine synthesis conditions 
+based on uncertainty-guided sampling. Although autonomous experi -
+mentation holds transformative potential, its widespread implementa -
+tion remains limited by infrastructure cost and dataset scarcity. 
+Therefore, incremental integration starting with uncertainty-aware 
+model validation and constrained optimization is more feasible in the 
+near term.
+In multi-element co-doping systems, quantitative evaluation of 
+dopant – dopant synergy remains an open challenge. Experimental 
+comparison against weighted additive baselines, coupled with 
+interaction-aware machine learning analysis, can clarify whether per -
+formance enhancement arises from genuine synergistic charge redistri -
+bution or from increased defect density alone. Current evidence suggests 
+that optimal atomic ratios are system-dependent rather than universal, 
+underscoring the importance of controlled parametric studies and 
+compositional mapping.
+Overall, the field is transitioning from isolated performance maxi -
+mization towards integrated, reproducible, and constraint-aware design. 
+The most impactful near-term investments should prioritize standard -
+ized electrochemical reporting and descriptor harmonization, realistic 
+device-level validation under practical mass loading and cycling con -
+ditions, and interpretable, multi-objective ML modeling grounded in 
+physicochemical principles. Longer-term efforts in closed-loop experi -
+mentation and multi-scale simulation offer substantial promise but 
+require coordinated data infrastructure and collaborative frameworks.
+CRediT authorship contribution statement
+Rashid Iftikhar: Project administration, Investigation, Conceptual -
+ization. Fatima Sajjad: Writing – original draft, Methodology, Investi -
+gation. Humayun Nadeem: Writing – review & editing. Sahar Saleem: 
+Writing – review & editing. Alim-un-Nisa: Writing – review & editing. 
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+14 
+
+--- PDF页 15 ---
+Salman Haider: Writing – review & editing. Saifullah Zadran: Writing 
+– review & editing. Muhammad Ali Inam: Validation, Supervision.
+Declaration of Generative AI and AI-assisted technologies in the 
+writing process
+During the preparation of this work the authors used Generative AI 
+GPT 5 plus to rephrase. After using this tool, the authors reviewed the 
+content as needed and take full responsibility for the content of the 
+published article.
+Declaration of Competing Interest
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+Data availability
+No data was used for the research described in the article.
+References
+[1] U. Safder, J. Loy-Benitez, C.K. Yoo, Techno-economic assessment of a novel 
+integrated multigeneration system to synthesize e-methanol and green hydrogen 
+in a carbon-neutral context, Energy 290 (Mar. 2024), https://doi.org/10.1016/j. 
+energy.2023.130104 .
+[2] B.H. Cheng, R.J. Zeng, H. Jiang, Recent developments of post-modification of 
+biochar for electrochemical energy storage, Elsevier Ltd, 2017, https://doi.org/ 
+10.1016/j.biortech.2017.07.060 .
+[3] H. J. and H.-Q.Y. Liu Wu-Jun, ‘Emerging applications of biochar-based materials 
+for energy storage and conversion ’ , Energy Environ Sci , vol. 12, no. 6, pp. 
+1751 – 1779, 2019, Accessed: Nov. 10, 2025. [Online]. Available: 〈 https://pubs. 
+rsc.org/en/content/articlelanding/2019/ee/c9ee00206e 〉 .
+[4] A.M. Abioye, F.N. Ani, Recent development in the production of activated carbon 
+electrodes from agricultural waste biomass for supercapacitors: A review, Elsevier 
+Ltd, 2015, https://doi.org/10.1016/j.rser.2015.07.129 .
+[5] S. Rawal, B. Joshi, Y. Kumar, Synthesis and characterization of activated carbon 
+from the biomass of Saccharum bengalense for electrochemical supercapacitors, 
+J. Energy Storage 20 (Dec. 2018) 418 – 426, https://doi.org/10.1016/j. 
+est.2018.10.009 .
+[6] A. Dutta, S. Mitra, M. Basak, T. Banerjee, A comprehensive review on batteries 
+and supercapacitors: Development and challenges since their inception, John 
+Wiley and Sons Inc, 2023, https://doi.org/10.1002/est2.339 .
+[7] M. Yu, Y. Peng, X. Wang, F. Ran, Emerging Design Strategies Toward Developing 
+Next-Generation Implantable Batteries and Supercapacitors, John Wiley and Sons 
+Inc, 2023, https://doi.org/10.1002/adfm.202301877 .
+[8] Weijia Zhou, Xiaojun Liu, Kai Zhou, Jin Jia, Carbon Materials for 
+Supercapacitors, Nanomater. Adv. Batter. Supercapacitors (2016) 271 – 315 .
+[9] F. Bilgili, et al., The influence of biomass energy consumption on CO2 emissions: 
+a wavelet coherence approach, Environ. Sci. Pollut. Res. 23 (19) (Oct. 2016) 
+19043 – 19061, https://doi.org/10.1007/s11356-016-7094-2 .
+[10] S. Wang, et al., Comparison of the pyrolysis behavior of lignins from different tree 
+species, Biotechnol. Adv. 27 (5) (Sep. 2009) 562 – 567, https://doi.org/10.1016/j. 
+biotechadv.2009.04.010 .
+[11] G.D.L.Z. Prof. S.W. Yingying Liu, ‘Green Conversion of Microalgae into High- 
+Performance Sponge-Like Nitrogen-Enriched Carbon ’ , Chem electro chem , 2018.
+[12] S. Wang, X. Guo, K. Wang, Z. Luo, Influence of the interaction of components on 
+the pyrolysis behavior of biomass, J. Anal. Appl. Pyrolysis 91 (1) (2011) 183 – 189, 
+https://doi.org/10.1016/j.jaap.2011.02.006 .
+[13] P.R. Yaashikaa, P.S. Kumar, S. Varjani, A. Saravanan, A critical review on the 
+biochar production techniques, characterization, stability and applications for 
+circular bioeconomy, Elsevier B.V, 2020, https://doi.org/10.1016/j.btre.2020. 
+e00570 .
+[14] S.J. Johannes Lehmann, Biochar Environ. Manag. Sci. Technol. Implement. 
+Taylor Fr. Group (2015), https://doi.org/10.4324/9780203762264 .
+[15] M.T.R.P.T.R.S.K.B.M.V.R.Y.S. Mitra Naghdi, Pine-wood derived nanobiochar for 
+removal of carbamazepine from aqueous media: Adsorption behavior and 
+influential parameters ’ , Arab. J. Chem. (2019) .
+[16] L. Lonappan, et al., Adsorption of methylene blue on biochar microparticles 
+derived from different waste materials, Waste Manag. 49 (Mar. 2016) 537 – 544, 
+https://doi.org/10.1016/j.wasman.2016.01.015 .
+[17] M.N.S.K.B.E.J.K.M.V.A.A.R.R.Y.S.J.R.V.M. Taheran, ‘Adsorption study of 
+environmentally relevant concentrations of chlortetracycline on pinewood 
+biochar ’ , Sci. Total Environ. 571 (2016) 772 – 777 .
+[18] W. Chen, et al., Biomass pyrolysis for N-doped biochar: Relationship among 
+preparation process. N-doped biochar properties, and supercapacitors, Elsevier 
+Ltd, 2026, https://doi.org/10.1016/j.fuel.2025.136372 .
+[19] M. Jalali, Z. Panam, M. Jalali, W. Buss, The impact of feedstock type and pyrolysis 
+parameters on the physical and chemical properties of biochars for sorption, 
+agricultural and carbon sequestration applications: A meta-analysis, Elsevier B.V, 
+2025, https://doi.org/10.1016/j.jaap.2025.107271 .
+[20] M.K. Zafeer, R.A. Menezes, H. Venkatachalam, K.S. Bhat, Sugarcane bagasse- 
+based biochar and its potential applications: a review, Inst. Ion. (2024), https:// 
+doi.org/10.1007/s42247-023-00603-y .
+[21] R. Mehdi, A.H. Khoja, S.R. Naqvi, N. Gao, N.A.S. Amin, A Review on Production 
+and Surface Modifications of Biochar Materials via Biomass Pyrolysis Process for 
+Supercapacitor Applications, MDPI (2022), https://doi.org/10.3390/ 
+catal12070798 .
+[22] J. Zhou, X. Ren, Z. Liu, S. Yuan, Improving the cycling stability of biochar 
+electrodes by purification via ion exchange, Mater. Today Sustain. 20 (Dec. 
+2022), https://doi.org/10.1016/j.mtsust.2022.100225 .
+[23] M. Ajorloo, M. Ghodrat, J. Scott, V. Strezov, Heavy metals removal/stabilization 
+from municipal solid waste incineration fly ash: a review and recent trends, 
+Springer, 2022, https://doi.org/10.1007/s10163-022-01459-w .
+[24] Z. Song, T. Feng, D.W. Kirk, C.Q. Jia, Electrochemical Performance of Pre- 
+Modified Birch Biochar Monolith Supercapacitors by Ferric Chloride and Ferric 
+Citrate, Batteries 11 (2) (Feb. 2025), https://doi.org/10.3390/ 
+batteries11020047 .
+[25] N. Rambhatla, T.F. Panicker, R.K. Mishra, S.K. Manjeshwar, A. Sharma, Biomass 
+pyrolysis for biochar production: Study of kinetics parameters and effect of 
+temperature on biochar yield and its physicochemical properties, Results Eng. 25 
+(Mar. 2025), https://doi.org/10.1016/j.rineng.2024.103679 .
+[26] Y. Lee, P.R.B. Eum, C. Ryu, Y.K. Park, J.H. Jung, S. Hyun, Characteristics of 
+biochar produced from slow pyrolysis of Geodae-Uksae 1, Bioresour. Technol. 
+130 (2013) 345 – 350, https://doi.org/10.1016/j.biortech.2012.12.012 .
+[27] M. Tripathi, J.N. Sahu, P. Ganesan, Effect of process parameters on production of 
+biochar from biomass waste through pyrolysis: A review, Elsevier Ltd, 2016, 
+https://doi.org/10.1016/j.rser.2015.10.122 .
+[28] P. Tanger, J.L. Field, C.E. Jahn, M.W. DeFoort, J.E. Leach, Biomass for 
+thermochemical conversion: Targets and challenges, Frontiers Research 
+Foundation, 2013, https://doi.org/10.3389/fpls.2013.00218 .
+[29] P. Roy, G. Dias, Prospects for pyrolysis technologies in the bioenergy sector: A 
+review, Elsevier Ltd, 2017, https://doi.org/10.1016/j.rser.2017.03.136 .
+[30] S. Yu, J. Park, M. Kim, C. Ryu, J. Park, Characterization of biochar and 
+byproducts from slow pyrolysis of hinoki cypress, Bioresour. Technol. Rep. 6 
+(Jun. 2019) 217 – 222, https://doi.org/10.1016/j.biteb.2019.03.009 .
+[31] M. Jouiad, N. Al-Nofeli, N. Khalifa, F. Benyettou, L.F. Yousef, Characteristics of 
+slow pyrolysis biochars produced from rhodes grass and fronds of edible date 
+palm, J. Anal. Appl. Pyrolysis 111 (Jan. 2015) 183 – 190, https://doi.org/ 
+10.1016/j.jaap.2014.10.024 .
+[32] F. Ronsse, S. van Hecke, D. Dickinson, W. Prins, Production and characterization 
+of slow pyrolysis biochar: Influence of feedstock type and pyrolysis conditions, 
+GCB Bioenergy 5 (2) (2013) 104 – 115, https://doi.org/10.1111/gcbb.12018 .
+[33] J. Park, Y. Lee, C. Ryu, Y.K. Park, Slow pyrolysis of rice straw: Analysis of 
+products properties, carbon and energy yields, Bioresour. Technol. 155 (2014) 
+63 – 70, https://doi.org/10.1016/j.biortech.2013.12.084 .
+[34] M.K. Bahng, C. Mukarakate, D.J. Robichaud, M.R. Nimlos, Current technologies 
+for analysis of biomass thermochemical processing: A review, Anal. Chim. Acta 
+651 (2) (Oct. 2009) 117 – 138, https://doi.org/10.1016/J.ACA.2009.08.016 .
+[35] L. Li, J.S. Rowbotham, H. Christopher Greenwell, P.W. Dyer, An Introduction to 
+Pyrolysis and Catalytic Pyrolysis: Versatile Techniques for Biomass Conversion, 
+N. Future Dev. Catal. Catal. Biomass-.-. Convers. (2013) 173 – 208, https://doi. 
+org/10.1016/B978-0-444-53878-9.00009-6 .
+[36] L. Zhang, C. (Charles) Xu, P. Champagne, Overview of recent advances in thermo- 
+chemical conversion of biomass, Energy Convers. Manag 51 (5) (May 2010) 
+969 – 982, https://doi.org/10.1016/J.ENCONMAN.2009.11.038 .
+[37] G. SriBala, H.H. Carstensen, K.M. Van Geem, G.B. Marin, Measuring biomass fast 
+pyrolysis kinetics: State of the art, John Wiley and Sons Ltd, 2019, https://doi. 
+org/10.1002/wene.326 .
+[38] A. Shaaban, S.M. Se, M.F. Dimin, J.M. Juoi, M.H. Mohd Husin, N.M.M. Mitan, 
+Influence of heating temperature and holding time on biochars derived from 
+rubber wood sawdust via slow pyrolysis, J. Anal. Appl. Pyrolysis 107 (May 2014) 
+31 – 39, https://doi.org/10.1016/J.JAAP.2014.01.021 .
+[39] E.T. Awoh, J. Kiplagat, S.K. Kimutai, A.C. Mecha, Sonication-assisted activation 
+of empty fruit bunches to produce activated carbon for supercapacitor ’ s 
+electrodes: Surface chemistry and morphology characterization, Heliyon 10 (21) 
+(Nov. 2024) e38975, https://doi.org/10.1016/J.HELIYON.2024.E38975 .
+[40] Ms.P.H. Dr.P.B.S.Ms Shilpa Simon, Green Power: The Role of Plant-Based Biochar 
+in Advanced Energy Storage ’ , ChemPhysChem (2024) .
+[41] E.T. Awoh, J. Kiplagat, S.K. Kimutai, A.C. Mecha, Sonication-assisted activation 
+of empty fruit bunches to produce activated carbon for supercapacitor ’ s 
+electrodes: Surface chemistry and morphology characterization, Heliyon 10 (21) 
+(Nov. 2024), https://doi.org/10.1016/j.heliyon.2024.e38975 .
+[42] J. Cheng, et al., Impact of Activation Conditions on the Electrochemical 
+Performance of Rice Straw Biochar for Supercapacitor Electrodes, Molecules 30 
+(3) (Feb. 2025), https://doi.org/10.3390/molecules30030632 .
+[43] M. Galinski, K. Babe ł , K. Jurewicz, Performance of an Electrochemical double 
+layer capacitor based on coconut shell active material and ionic liquid as an 
+electrolyte, J. Power Sources 228 (Apr. 2013) 83 – 88, https://doi.org/10.1016/J. 
+JPOWSOUR.2012.11.048 .
+[44] Y.S. Yun, et al., Microporous carbon nanoplates from regenerated silk proteins for 
+supercapacitors, Adv. Mater. 25 (14) (2013) 1993 – 1998 .
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+15 
+
+--- PDF页 16 ---
+[45] K. Jedynak, B. Charmas, Adsorption properties of biochars obtained by KOH 
+activation, Adsorption 30 (2) (Feb. 2024) 167–183, https://doi.org/10.1007/ 
+s10450-023-00399-7.
+[46] A. Pimsawat, A. Tangtrakarn, N. Pimsawat, A. Khamkongkaeo, S. Daengsakul, 
+Microwave assisted activation of silkworm excrement for fast adsorption of 
+methylene blue and high performance supercapacitor, Sci. Rep. 14 (1) (Dec. 
+2024), https://doi.org/10.1038/s41598-024-77568-3.
+[47] S. Raviolo, et al., Valorization of brewer’s spent grain via systematic study of KOH 
+activation parameters and its potential application in energy storage, Biomass-.-. 
+Bioenergy 192 (Jan. 2025), https://doi.org/10.1016/j.biombioe.2024.107494.
+[48] a Y. B. a S. C. a Z. H. b P. W. a Y. Q and S.Z. Xiaoxiao Ma, ‘A composite of 
+pineapple leaf-derived porous carbon integrated with ZnCo-MOF for high- 
+performance supercapacitors’, Physical Chemistry Chemical Physics, no. 45, 2024.
+[49] S. Yao, L. Chen, Y. Guo, S. Zong, H. Zhang, J. Feng, Hydrangea-like MnO2@ 
+sulfur-doped porous carbon spheres with high packing density for high- 
+performance supercapacitor, J. Electroanal. Chem. 976 (Jan. 2025), https://doi. 
+org/10.1016/j.jelechem.2024.118802.
+[50] Y. Wang, et al., Hydrangea-like NiMn layered double hydroxide grown on 
+biomass-derived porous carbon as a high-performance supercapacitor electrode, 
+Ind. Crops Prod. 222 (Dec. 2024), https://doi.org/10.1016/j. 
+indcrop.2024.120035.
+[51] L. Wei, W. Deng, S. Li, Z. Wu, J. Cai, J. Luo, Sandwich-like chitosan porous carbon 
+Spheres/MXene composite with high specific capacitance and rate performance 
+for supercapacitors, J. Bioresour. Bioprod. 7 (1) (Feb. 2022) 63–72, https://doi. 
+org/10.1016/j.jobab.2021.10.001.
+[52] K.K.R. Reddygunta, B.D. Kumar, Biomass Activated Carbon Composites and Their 
+Potential in Supercapacitor Applications: Current Trends and Future Perspectives, 
+American Chemical Society, 2024, https://doi.org/10.1021/acs. 
+energyfuels.4c01159.
+[53] Suman, G. Rani, R. Ahlawat, H. Kumar, Green source-based carbon quantum dots, 
+composites, and key factors for high-performance of supercapacitors, J. Power 
+Sources 617 (Oct. 2024) 235170, https://doi.org/10.1016/J. 
+JPOWSOUR.2024.235170.
+[54] H.R. Naderi, P. Norouzi, M.R. Ganjali, Electrochemical study of a novel high 
+performance supercapacitor based on MnO2/nitrogen-doped graphene 
+nanocomposite, Appl. Surf. Sci. 366 (Mar. 2016) 552–560, https://doi.org/ 
+10.1016/J.APSUSC.2016.01.058.
+[55] R.A.S. Dr, J.P. Prof, Y.S. Prof, X.L. Prof, Abrar Khan, Hierarchically Porous 
+Biomass Carbon Derived from Natural Withered Rose Flowers as High- 
+Performance Material for Advanced Supercapacitors’, BATTERIES suppercaps 
+(2020) .
+[56] Y.N. Zhang, C.Y. Su, J.L. Chen, W.H. Huang, R. Lou, Recent progress of transition 
+metal-based biomass-derived carbon composites for supercapacitor, Springer, 
+2023, https://doi.org/10.1007/s12598-022-02142-7.
+[57] X. Yang, T. Lv, J. Qiu, High Mass-Loading Biomass-Based Porous Carbon 
+Electrodes for Supercapacitors: Review and Perspectives, John Wiley and Sons 
+Inc, 2023, https://doi.org/10.1002/smll.202300336.
+[58] N. Waris, et al., A Review on Development of Carbon-Based Nanomaterials for 
+Energy Storage Devices: Opportunities and Challenges, American Chemical 
+Society, 2023, https://doi.org/10.1021/acs.energyfuels.3c03213.
+[59] M.F. Ahmer, Q. Ullah, M.K. Uddin, Magnetic metal oxide assisted conducting 
+polymer nanocomposites as eco-friendly electrode materials for supercapacitor 
+applications: A review, Walter de Gruyter GmbH, 2025, https://doi.org/10.1515/ 
+polyeng-2024-0101.
+[60] D. Jiang, et al., Electromagnetic Interference Shielding Polymers and 
+Nanocomposites - A Review’, Apr. 03, Taylor Fr. Inc. (2019), https://doi.org/ 
+10.1080/15583724.2018.1546737.
+[61] H.K. a, O. logo *a B. J. B. a R. S. O. logo a G. K. a R. K. a A. D. a A. Y. a D. S. O. 
+logo b and P. K. Aarti Tundwal, ‘Developments in conducting polymer-, metal 
+oxide-, and carbon nanotube-based composite electrode materials for 
+supercapacitors: a review, RSC Adv. 14 (2024) .
+[62] M. Zhong, M. Zhang, X. Li, Carbon nanomaterials and their composites for 
+supercapacitors’, Sep. 01, John Wiley Sons Inc. (2022), https://doi.org/10.1002/ 
+cey2.219.
+[63] V.T. Nguyen, et al., Biomass-derived materials for energy storage and 
+electrocatalysis: recent advances and future perspectives’, Dec. 01, Springer, 
+2024, https://doi.org/10.1007/s42773-024-00388-1.
+[64] H. He, et al., Functional Carbon from Nature: Biomass-Derived Carbon Materials 
+and the Recent Progress of Their Applications’, Jun. 02, John Wiley Sons Inc. 
+(2023), https://doi.org/10.1002/advs.202205557.
+[65] D. Liu, et al., Flexible Fiber-Shaped Supercapacitors: Structures, Materials, 
+Fabrication Methods, and Applications’, May 01, John Wiley Sons Inc. (2025), 
+https://doi.org/10.1002/idm2.12243.
+[66] S. Mourdikoudis, A. Kostopoulou, A.P. LaGrow, Magnetic Nanoparticle 
+Composites: Synergistic Effects and Applications’, Jun. 01, John Wiley Sons Inc. 
+(2021), https://doi.org/10.1002/advs.202004951.
+[67] F.Z. Kouidri, A.A. Alayyaf, M. Kiari, A. Benyoucef, B.D. Alkoudsi, L. Sabantina, 
+Enhancing Supercapacitor Performance Using Co-doped Biochar Embedded on 
+Oxide Metal/polyaniline Ternary Composite as Electrode Materials, J. Inorg. 
+Organomet Polym. Mater. 35 (5) (May 2025) 3415–3427, https://doi.org/ 
+10.1007/s10904-024-03464-y.
+[68] M.A. Abdallah, et al., Green Pomegranate Peel and Potato Peel Starch-Derived 
+Magnetic Nanocomposite as Efficient Sorbent of Ascorbic Acid Extracted from 
+Fruit Juices, Food Bioproc Tech. 18 (5) (May 2025) 4443–4460, https://doi.org/ 
+10.1007/s11947-024-03728-y.
+[69] T. Zhang, J. Li, Mild and Efficient One-Step Synthesis of Nitrogen-Doped 
+Multistage Porous Carbon for High-Performance Supercapacitors, Molecules 28 
+(24) (Dec. 2023), https://doi.org/10.3390/molecules28248136.
+[70] M.R. Fornari, B.M. Hryniewicz, T.T.S. Matos, J. Schultz, M. Vidotti, A. 
+S. Mangrich, Graphene-like biochars from pyrolysis of sugarcane bagasse and 
+exhausted black acacia bark for the production of supercapacitors, Biomass-.-. 
+Bioenergy 193 (Feb. 2025) 107567, https://doi.org/10.1016/J. 
+BIOMBIOE.2024.107567.
+[71] I. Radja, et al., Construction of a ternary composite of mg-doped biochar/CuO, 
+and PAni for supercapacitor applications, J. Energy Storage 108 (Feb. 2025) 
+114785, https://doi.org/10.1016/J.EST.2024.114785.
+[72] T. Yu, P. Zhang, L. Chen, L. Huang, H. Wu, X. Zhou, Preparation of high- 
+performance supercapacitors using bark activated carbon/polyaniline composite 
+electrode, Biomass-.-. Bioenergy 197 (Jun. 2025) 107813, https://doi.org/ 
+10.1016/J.BIOMBIOE.2025.107813.
+[73] T.A. Hamdalla, S.A. Al-Ghamdi, S. Alfadhli, A.M. Alsharari, M. Chiesa, S. Khasim, 
+PEDOT: PSS Doped Activated Biochar as a Novel Composite Material for 
+Photocatalytic and Efficient Energy Storage Application, Catalysts 14 (9) (Sep. 
+2024), https://doi.org/10.3390/catal14090630.
+[74] F. Mahmood, et al., A review of biochar production and its employment in 
+synthesizing carbon-based materials for supercapacitors, Ind. Crops Prod. 227 
+(May 2025) 120830, https://doi.org/10.1016/J.INDCROP.2025.120830.
+[75] D.C. M. A, N.T. Rishabh Anand Omar, Functional Nanoparticle-Coated Biochar 
+(FNs-BC)-Based Composites and Their Applications, Compos Sci. Technol. (2025) 
+73–105 .
+[76] Y. Ye, et al., Core–shell structure carbon coated ferric oxide (Fe2O3@C) 
+nanoparticles for supercapacitors with superior electrochemical performance, 
+J. Alloy. Compd. 639 (Aug. 2015) 422–427, https://doi.org/10.1016/J. 
+JALLCOM.2015.03.113.
+[77] F. Wei, J. Jiang, G. Yu, Y. Sui, A novel cobalt–carbon composite for the 
+electrochemical supercapacitor electrode material, Mater. Lett. 146 (May 2015) 
+20–22, https://doi.org/10.1016/J.MATLET.2015.01.143.
+[78] A.J.B.R.B.R.R.N.R.T.A.H.R.R.K.Bandhana Devi, ‘Cobalt-Embedded N-Doped 
+Carbon Nanostructures for Oxygen Reduction and Supercapacitor Applications’, 
+ACS Appl. Nano Mater. 3 (7) (2020) .
+[79] G. Lin, R. Ma, Y. Zhou, Q. Liu, X. Dong, J. Wang, KOH activation of biomass- 
+derived nitrogen-doped carbons for supercapacitor and electrocatalytic oxygen 
+reduction, Electro Acta 261 (Jan. 2018) 49–57, https://doi.org/10.1016/j. 
+electacta.2017.12.107.
+[80] Yuanfu Deng, Ye Xie, Kaixiang Zoua, Xiulei Ji, Review on recent advances in 
+nitrogen-doped carbons: preparations and applications in supercapacitors, 
+J. Mater. Chem. A Mater. 4 (2016) .
+[81] S. Huo, et al., Methanesulfonic acid-assisted synthesis of N/S co-doped 
+hierarchically porous carbon for high performance supercapacitors, J. Power 
+Sources 387 (May 2018) 81–90, https://doi.org/10.1016/j. 
+jpowsour.2018.03.061.
+[82] H. Tang, D. Yan, T. Lu, L. Pan, Sulfur-doped carbon spheres with hierarchical 
+micro/mesopores as anode materials for sodium-ion batteries, Electro Acta 241 
+(Jul. 2017) 63–72, https://doi.org/10.1016/j.electacta.2017.04.112.
+[83] J. Yi, et al., Lignocellulose-derived porous phosphorus-doped carbon as advanced 
+electrode for supercapacitors, J. Power Sources 351 (2017) 130–137, https://doi. 
+org/10.1016/j.jpowsour.2017.03.036.
+[84] Wang Xin, Lu Han, Yonghui Song, Jianfeng Peng, and Ruixia Liu, ‘Synthesis of 
+Biomass-Derived Mesoporous Carbon with Super Adsorption Performance by an 
+Aqueous Cooperative Assemble Route’, ACS Sustainable Chemistry & 
+EngineeringVol 5/Issue 3Article, vol. 5, no. 3.
+[85] G.P. Hao, W.C. Li, S. Wang, G.H. Wang, L. Qi, A.H. Lu, Lysine-assisted rapid 
+synthesis of crack-free hierarchical carbon monoliths with a hexagonal array of 
+mesopores, Carbon N. Y 49 (12) (Oct. 2011) 3762–3772, https://doi.org/ 
+10.1016/j.carbon.2011.05.010.
+[86] Stephanie-Angelika Wohlgemuth, Filipe Vilela, Maria-Magdalena Titiricia, 
+Markus Antoniettia, A one-pot hydrothermal synthesis of tunable dual 
+heteroatom-doped carbon microspheres, Green. Chem. (2012) .
+[87] X. Gao, et al., Direct Heating Amino Acids with Silica: A Universal Solvent-Free 
+Assembly Approach to Highly Nitrogen-Doped Mesoporous Carbon Materials, 
+Adv. Funct. Mater. 26 (36) (Sep. 2016) 6649–6661, https://doi.org/10.1002/ 
+adfm.201601640.
+[88] G. Ma, Z. Zhang, H. Peng, K. Sun, F. Ran, Z. Lei, Facile preparation of nitrogen- 
+doped porous carbon for high performance symmetric supercapacitor, J. Solid 
+State Electrochem. 20 (6) (Jun. 2016) 1613–1623, https://doi.org/10.1007/ 
+s10008-016-3171-1.
+[89] M. Zhou, et al., A Molecular Foaming and Activation Strategy to Porous N-Doped 
+Carbon Foams for Supercapacitors and CO2 Capture, Nanomicro Lett. 12 (1) (Feb. 
+2020), https://doi.org/10.1007/s40820-020-0389-3.
+[90] R.L. Shrestha, et al., Nanoporous carbon materials derived fromwashnut seed 
+with enhanced supercapacitance, Materials 13 (10) (May 2020), https://doi.org/ 
+10.3390/ma13102371.
+[91] T.D.K.K.Y.K.H.K.T.A.K.N. George Hasegawa, ‘High-Level Doping of Nitrogen, 
+Phosphorus, and Sulfur into Activated Carbon Monoliths and Their 
+Electrochemical Capacitances’, Chem. Mater. 27 (13) (2015) .
+[92] Q. Liu, Z. Hu, C. Zou, H. Jin, S. Wang, L. Li, Structural engineering of electrode 
+materials to boost high-performance sodium-ion batteries, Cell Rep. Phys. Sci. 2 
+(9) (Sep. 2021) 100551, https://doi.org/10.1016/J.XCRP.2021.100551.
+[93] K.T.K.S.P.A. VAN A. Y. Y, J.M. Lijun Fu, ‘Nitrogen doped porous carbon fibres as 
+anode materials for sodium ion batteries with excellent rate performance’, 
+Nanoscale 3 (2014) .
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+16 
+
+--- PDF页 17 ---
+[94] X. Zhang, X. Cheng, Q. Zhang, Nanostructured energy materials for 
+electrochemical energy conversion and storage: A review, J. Energy Chem. 25 (6) 
+(Nov. 2016) 967–984, https://doi.org/10.1016/J.JECHEM.2016.11.003.
+[95] M.A.H. A W. M, S.Y.P. G. G. N. L.-S, A.S. G. K, Wasiu Olakunle Makinde, 
+‘Heteroatom co-doped green pea peel-derived biochar for high-performance 
+energy storage applications’, RSC Adv. 20 (2025) .
+[96] A. Kaur, O.P. Pandey, L.K. Brar, Synergic effect of B and N dopants in graphene 
+for supercapacitance and electrochemical sensing applications, J. Phys. Chem. 
+Solids 180 (Sep. 2023) 111460, https://doi.org/10.1016/J.JPCS.2023.111460.
+[97] R. Liu, J.X. Wang, W.D. Yang, Hierarchical Porous Heteroatoms—Co-Doped 
+Activated Carbon Synthesized from Coconut Shell and Its Application for 
+Supercapacitors, Nanomaterials 12 (19) (Oct. 2022), https://doi.org/10.3390/ 
+nano12193504.
+[98] S. Liu, et al., Nitrogen-Doped Porous Carbons Derived from Peanut Shells as 
+Efficient Electrodes for High-Performance Supercapacitors, Int J. Mol. Sci. 25 (14) 
+(Jul. 2024), https://doi.org/10.3390/ijms25147583.
+[99] Y. Li, X. Xu, Y. He, Y. Jiang, K. Lin, Nitrogen doped macroporous carbon as 
+electrode materials for high capacity of supercapacitor, Polym. (Basel) 9 (1) 
+(2017), https://doi.org/10.3390/polym9010002.
+[100] A.C.J.Z. B R. L, Q.L.C. Z. Y. B. Z.-H, H.W. S, F.K. Xiaoliang Yu, ‘Facile synthesis of 
+nitrogen-doped carbon nanosheets with hierarchical porosity for high 
+performance supercapacitors and lithium–sulfur batteries’, J. Mater. Chem. A 
+Mater. 36 (2015) .
+[101] B. Karamanova, A. Stoyanova, M. Shipochka, C. Girginov, R. Stoyanova, On the 
+cycling stability of biomass-derived carbons as electrodes in supercapacitors, 
+J. Alloy. Compd. 803 (Sep. 2019) 882–890, https://doi.org/10.1016/J. 
+JALLCOM.2019.06.334.
+[102] Y. Deng, Y. Ji, H. Wu, F. Chen, Enhanced electrochemical performance and high 
+voltage window for supercapacitor based on multi-heteroatom modified porous 
+carbon materials, Chem. Commun. 55 (10) (2019) 1486–1489, https://doi.org/ 
+10.1039/C8CC08391F.
+[103] A.Y.Z. B P. T. C, D.J. Cheng Zhan, ‘Enhancing graphene capacitance by nitrogen: 
+effects of doping configuration and concentration’, Phys. Chem. Chem. Phys. 6 
+(2016) .
+[104] Q. Xu, G. Yang, X. Fan, W. Zheng, Improving the quantum capacitance of 
+graphene-based supercapacitors by the doping and co-doping: first-principles 
+calculations, ACS Omega 4 (8) (Aug. 2019) 13209–13217, https://doi.org/ 
+10.1021/acsomega.9b01359.
+[105] P.A. Denis, R. Faccio, A.W. Mombru, Is it possible to dope single-walled carbon 
+nanotubes and graphene with sulfur? ChemPhysChem 10 (4) (Mar. 2009) 
+715–722, https://doi.org/10.1002/cphc.200800592.
+[106] W. Song, et al., Tuning the Double Layer of Graphene Oxide through Phosphorus 
+Doping for Enhanced Supercapacitance, ACS Energy Lett. 2 (5) (May 2017) 
+1144–1149, https://doi.org/10.1021/acsenergylett.7b00275.
+[107] A.M.O. A. B S. A. A, M.H. C, supercapacitor electrode materials Nazish Parveen, 
+‘Simultaneous sulfur doping and exfoliation of graphene from graphite using an 
+electrochemical method for supercapacitor electrode materials’, JOURNALS 
+Mater. Chem. A (1) (2016) .
+[108] A.Y.Z. A L, Y. A Y. T, A.M. M, Q.X. Wenfang Deng, ‘Sulfur-doped porous carbon 
+nanosheets as an advanced electrode material for supercapacitors’, RSC Adv. 17 
+(2015) .
+[109] Y. Huang, et al., Sulfurized activated carbon for high energy density 
+supercapacitors, J. Power Sources 252 (Apr. 2014) 90–97, https://doi.org/ 
+10.1016/J.JPOWSOUR.2013.12.004.
+[110] X. Chen, et al., Emerging Nitrogen and Sulfur Co-doped Carbon Materials for 
+Electrochemical Energy Storage and Conversion’, Mar. 19, John Wiley Sons Inc. 
+(2025), https://doi.org/10.1002/smll.202412191.
+[111] J. Zhao, Y. Jiang, X. Chen, C. Wang, H. Nan, Unlocking the potential of element- 
+doped biochar: from tailored synthesis to multifunctional applications in 
+environment and energy’, Dec. 01, Springer, 2025, https://doi.org/10.1007/ 
+s42773-025-00467-x.
+[112] J. Zhao, Y. Li, Z. Xu, D. Wang, C. Ban, H. Zhang, Unique porous Mn2O3/C cube 
+decorated by Co3O4 nanoparticle: Low-cost and high-performance electrode 
+materials for asymmetric supercapacitors, Electro Acta 289 (Nov. 2018) 72–81, 
+https://doi.org/10.1016/J.ELECTACTA.2018.09.042.
+[113] Wu-Jun LiuOrcidWen-Wei, Li.Hong JiangOrcidHan-Qing, Yu Orcid, Fates of 
+Chemical Elements in Biomass during Its Pyrolysis, Chem. Rev. 117 (9) (2017) .
+[114] Y. Liu, S. Yao, Y. Wang, H. Lu, S.K. Brar, S. Yang, Bio- and hydrochars from rice 
+straw and pig manure: Inter-comparison, Bioresour. Technol. 235 (Jul. 2017) 
+332–337, https://doi.org/10.1016/J.BIORTECH.2017.03.103.
+[115] Y. He, et al., Consequence of replacing nitrogen with carbon dioxide as 
+atmosphere on suppressing the formation of polycyclic aromatic hydrocarbons in 
+catalytic pyrolysis of sawdust, Bioresour. Technol. 297 (Feb. 2020) 122417, 
+https://doi.org/10.1016/J.BIORTECH.2019.122417.
+[116] C.M. Hung, C.W. Chen, C.P. Huang, Y.Y. Yang, C.Di Dong, Suppression of 
+polycyclic aromatic hydrocarbon formation during pyrolytic production of lignin- 
+based biochar via nitrogen and boron co-doping, Bioresour. Technol. 355 (Jul. 
+2022) 127246, https://doi.org/10.1016/J.BIORTECH.2022.127246.
+[117] X. Zheng, et al., In-situ synthesis of NiS-modified MgO/S-doped biochar for 
+boosting the adsorption-photocatalytic activity, J. Ind. Eng. Chem. 126 (Oct. 
+2023) 492–500, https://doi.org/10.1016/J.JIEC.2023.06.037.
+[118] K. Chaturvedi, et al., Bamboo for producing charcoal and biochar for versatile 
+applications’, Jul. 01, Springe Sci. Bus. Media Dtschl. GmbH (2024), https://doi. 
+org/10.1007/s13399-022-03715-3.
+[119] W. F. Y, L.K. C. Z, X.M. G. M, C.Y. Y. H, T.X. C. H, Chen, ‘Bamboo wastes catalytic 
+pyrolysis with N-doped biochar catalyst for phenols products, in: Applied Energy, 
+260, Elsevier, 2020 .
+[120] N. Ahmed, et al., Advancements in Biochar Modification for Enhanced 
+Phosphorus Utilization in Agriculture’, May 01, Multidisciplinary Digital 
+Publishing Institute (MDPI), 2024, https://doi.org/10.3390/land13050644.
+[121] Zongjin Wu, et al., Sawdust-based N, O and P co-doped porous biochar for high- 
+performance supercapacitors’, N. J. Chem. (26) (2025) .
+[122] M.I. Ghori, et al., Harnessing biochar based metal halide (KCuCl3) for highly 
+efficient energy storage application, J. Energy Storage 119 (May 2025) 116253, 
+https://doi.org/10.1016/J.EST.2025.116253.
+[123] Y. Geng, et al., Situ N, O-Dually Doped Nanoporous Biochar Derived from Waste 
+Eutrophic Spirulina for High-Performance Supercapacitors, Nanomaterials 13 
+(17) (Sep. 2023), https://doi.org/10.3390/nano13172431.
+[124] Y. Wang, Y. Song, Y. Wang, X. Chen, Y. Xia, Z. Shao, Graphene/silk fibroin based 
+carbon nanocomposites for high performance supercapacitors, J. Mater. Chem. A 
+Mater. 3 (2) (2015) 773–781, https://doi.org/10.1039/C4TA04772A.
+[125] H. Yang, et al., Effect mechanism of phosphorous-containing additives on carbon 
+structure evolution and biochar stability enhancement, Biochar 6 (1) (Dec. 2024), 
+https://doi.org/10.1007/s42773-024-00330-5.
+[126] S. Chen, L. Tian, X. Feng, H. Bao, H. Wang, Biomaterial-derived porous carbon 
+doped with heteroatoms as a separator coating for high-energy–density Zn-I 
+batteries, Biochar 6 (1) (Dec. 2024), https://doi.org/10.1007/s42773-024- 
+00399-y.
+[127] N. Kasera, P. Kolar, S.G. Hall, Nitrogen-doped biochars as adsorbents for 
+mitigation of heavy metals and organics from water: a review’, Dec. 01, Springer, 
+2022, https://doi.org/10.1007/s42773-022-00145-2.
+[128] A. Ehsani, H. Parsimehr, Electrochemical energy storage electrodes from fruit 
+biochar, Adv. Colloid Interface Sci. 284 (Oct. 2020) 102263, https://doi.org/ 
+10.1016/J.CIS.2020.102263.
+[129] A. ATES ¸ , K.O. OSKAY, Preparation and characterization of nanosized Fe3O4- 
+biochar electrocatalysts with large surface area for H2O2 sensing, Surf. Interfaces 
+29 (Apr. 2022) 101733, https://doi.org/10.1016/J.SURFIN.2022.101733.
+[130] G.A. Snook, P. Kao, A.S. Best, Conducting-polymer-based supercapacitor devices 
+and electrodes, J. Power Sources 196 (1) (Jan. 2011) 1–12, https://doi.org/ 
+10.1016/J.JPOWSOUR.2010.06.084.
+[131] J.M.C.L. Hao Jiang, Mesoporous Carbon Incorporated Metal Oxide Nanomaterials 
+as Supercapacitor Electrodes’, Adv. Mater. (2012) .
+[132] R.R. Salunkhe, Y.V. Kaneti, Y. Yamauchi, Metal-Organic Framework-Derived 
+Nanoporous Metal Oxides toward Supercapacitor Applications: Progress and 
+Prospects’, Jun. 27, Am. Chem. Soc. (2017), https://doi.org/10.1021/ 
+acsnano.7b02796.
+[133] M. Haghshenas, M. Mazloum-Ardakani, F. Tamaddon, A. Nasiri, CoFe2O4@ 
+methyl cellulose core-shell nanostructure and their hybrids with functionalized 
+graphene aerogel for high performance asymmetric supercapacitor, Int J. Hydrog. 
+Energy 46 (5) (Jan. 2021) 3984–3995, https://doi.org/10.1016/J. 
+IJHYDENE.2020.10.253.
+[134] M. Kaur, H. Kaur, Synergistic effect of biochar impregnated with ZnO nano- 
+flowers for effective removal of organic pollutants from wastewater, Appl. Surf. 
+Sci. Adv. 12 (Dec. 2022) 100339, https://doi.org/10.1016/J. 
+APSADV.2022.100339.
+[135] new journal of chemistry, ‘Boron-doped biomass-derived nanocarbon for efficient 
+supercapacitors: bridging waste recycling and energy storage’, Dharmender Singh 
+Rana, Ritika Sharma, Abhishek Awasthi,d Dilbag Singh and Anshu Sharma, no. 32, 
+2025.
+[136] L. Guardia, et al., Biomass waste-carbon/reduced graphene oxide composite 
+electrodes for enhanced supercapacitors, Electro Acta 298 (Mar. 2019) 910–917, 
+https://doi.org/10.1016/J.ELECTACTA.2018.12.160.
+[137] Z. Shang, et al., Chitin nanofibers as versatile bio-templates of zeolitic imidazolate 
+frameworks for N-doped hierarchically porous carbon electrodes for 
+supercapacitor, Carbohydr. Polym. 251 (Jan. 2021) 117107, https://doi.org/ 
+10.1016/J.CARBPOL.2020.117107.
+[138] Y. Zhao, et al., Nitrogen-functionalized microporous carbon nanoparticles for 
+high performance supercapacitor electrode, Electro Acta 153 (Jan. 2015) 
+448–455, https://doi.org/10.1016/J.ELECTACTA.2014.11.173.
+[139] Bin Xu, Shanshan Hou, Feng Wu, Yusheng Yanga, Gaoping Cao, Sustainable 
+nitrogen-doped porous carbon with high surface areas prepared from gelatin for 
+supercapacitors, ’ J. Mater. Chem. (36) (2012) .
+[140] Y. Jiang, C. Zhou, J. Liu, A non-polarity flexible asymmetric supercapacitor with 
+nickel nanoparticle@ carbon nanotube three-dimensional network electrodes, 
+Energy Storage Mater. 11 (Mar. 2018) 75–82, https://doi.org/10.1016/J. 
+ENSM.2017.09.013.
+[141] Z. Husain, et al., Nano-sized mesoporous biochar derived from biomass pyrolysis 
+as electrochemical energy storage supercapacitor, Mater. Sci. Energy Technol. 5 
+(Jan. 2022) 99–109, https://doi.org/10.1016/J.MSET.2021.12.003.
+[142] Y. Yang, Z. Shao, Boron and nitrogen co-doped carbon nanospheres for 
+supercapacitor electrode with excellent specific capacitance, Nanotechnology 33 
+(18) (Apr. 2022), https://doi.org/10.1088/1361-6528/ac4eb2.
+[143] J. Zhao, Y. Li, Z. Xu, D. Wang, C. Ban, H. Zhang, Unique porous Mn2O3/C cube 
+decorated by Co3O4 nanoparticle: Low-cost and high-performance electrode 
+materials for asymmetric supercapacitors, Electro Acta 289 (Nov. 2018) 72–81, 
+https://doi.org/10.1016/J.ELECTACTA.2018.09.042.
+[144] A.B.X.Z.B.X. Y. B X. Z, B.R. Meiqing Fan, ‘Rational design of asymmetric 
+supercapacitors via a hierarchical core–shell nanocomposite cathode and biochar 
+anode’, RSC Adv. 72 (2019) .
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+17 
+
+--- PDF页 18 ---
+[145] G. He, X. Yuan, Y. Wang, M. Yilmaz, J. Li, S. Yuan, N, S-codoped porous biochar 
+derived from bagasse-based polycondensate for high-performance CO2 capture 
+and supercapacitor, Sep Purif. Technol. 354 (Feb. 2025) 128826, https://doi.org/ 
+10.1016/J.SEPPUR.2024.128826 .
+[146] A.J.S.B.Z. W. A Z. Z, A.Y.Z. A Y. L, B. L. H, C.Y. Qiuli Chen, ‘Sustainable rose 
+multiflora derived nitrogen/oxygen-enriched micro-/mesoporous carbon as a 
+low-cost competitive electrode towards high-performance electrochemical 
+supercapacitors ’ , RSC Adv. 17 (2018) .
+[147] B. Bounor, et al., Low-cost micro-supercapacitors using porous Ni/MnO2 
+entangled pillars and Na-based ionic liquids, Energy Storage Mater. 63 (Nov. 
+2023) 102986, https://doi.org/10.1016/J.ENSM.2023.102986 .
+[148] H. Soltani, H. Bahiraei, S. Ghasemi, M. Hashempour, Rate capability and 
+electrolyte concentration: Tuning MnO2 supercapacitor electrodes through 
+electrodeposition parameters, Heliyon 11 (1) (Jan. 2025) e41427, https://doi. 
+org/10.1016/J.HELIYON.2024.E41427 .
+[149] W. Chen, et al., Biomass pyrolysis for N-doped biochar: Relationship among 
+preparation process, N-doped biochar properties, and supercapacitors, Fuel 404 
+(Jan. 2026) 136372, https://doi.org/10.1016/J.FUEL.2025.136372 .
+[150] K.Y.L.Z.W.W.S. Z. B. W. M. X. S. Y, R.T. Xinhua Liu, A Fast Forward Prediction 
+Framework for Energy Materials Design Based on Machine Learning Methods, 
+Energy Mater. Adv. 5 (2024) .
+[151] R. K ¨otz, M. Carlen, Principles and applications of electrochemical capacitors, 
+Electro Acta 45 (15 – 16) (May 2000) 2483 – 2498, https://doi.org/10.1016/ 
+S0013-4686(00)00354-6 .
+[152] H. Yuan, D. Tan, X. Wei, H. Dai, Fault Diagnosis of Fuel Cells by a Hybrid Deep 
+Learning Network Fusing Characteristic Impedance, IEEE Trans. Transp. 
+Electrification 10 (1) (Mar. 2024) 1482 – 1493, https://doi.org/10.1109/ 
+TTE.2023.3272654 .
+[153] J.W.P.P.W.J.S.S.T.T.L. D. P. S. J. S. J. R. S, A.C. Edward, O. Pyzer-Knapp, 
+Accelerating materials discovery using artificial intelligence, high performance 
+computing and robotics, NPJ Comput. Mater. 84 (8) (2022) .
+[154] D.W.D. H. C. O. I, A.W. Keith, T. Butler, Machine learning for molecular and 
+materials science, Nature 559 (2018) 547 – 555 .
+[155] N.O. Lide, M. Rodriguez-Martinez, ‘Emerging Nanotechnologies in Rechargeable 
+Energy Storage Systems ’ , 1, Elsevier, 2017 .
+[156] A.P. Khedulkar, V.D. Dang, A. Thamilselvan, R.A.N. Doong, B. Pandit, Sustainable 
+high-energy supercapacitors: Metal oxide-agricultural waste biochar composites 
+paving the way for a greener future, J. Energy Storage 77 (Jan. 2024) 109723, 
+https://doi.org/10.1016/J.EST.2023.109723 .
+[157] M. Tang, Y. Ding, T. Hu, X. Zhu, G. Zheng, Y. Tian, Machine Learning-Based 
+Prediction of Supercapacitor Capacitance for MgCo2O4 Electrodes, 
+ChemPhysChem 25 (21) (Nov. 2024), https://doi.org/10.1002/cphc.202400629 .
+[158] H.S. Mulla, et al., Machine Learning a Predictive Tool for the Analysis of 
+NiCo2S4/Graphene Composites for Supercapacitor ’ , Jul. 17, John Wiley Sons Inc. 
+(2025), https://doi.org/10.1002/cssc.202402559 .
+[159] M. Shariq, et al., Machine learning models for prediction of electrochemical 
+properties in supercapacitor electrodes using MXene and graphene nanoplatelets, 
+Chem. Eng. J. 484 (Mar. 2024) 149502, https://doi.org/10.1016/J. 
+CEJ.2024.149502 .
+[160] Sanjith Krishna, Afkham Mir, Unlocking the potential of Ti3C2 electrodes: a data- 
+driven capacitance prediction study ’ , R. Soc. Chem. 3 (2024) 2986 – 2998 .
+[161] Shaikh ParwaizOwais Ahmed, MalikDebabrata PradhanMohammad, 
+Mansoob Khan, Machine-Learning-Based Cyclic Voltammetry Behavior Model for 
+Supercapacitance of Co-Doped Ceria/rGO Nanocomposite ’ , J. Chem. Inf. Model 
+58 (12) (2018) .
+[162] Abhilash RavichandranValliappan, RamanYogapriya SelvarajPrabhavathy, 
+MohanrajHemalatha Kuzhandaivel, Machine Learning-Based Prediction of Cyclic 
+Voltammetry Behavior of Substitution of Zinc and Cobalt in BiFeO3/Bi25FeO40 
+for Supercapacitor Applications ’ , ACS Omega 9 (31) (2024) .
+[163] Jens Peter Paraknowitsch, Arne Thomasa, Doping carbons beyond nitrogen: an 
+overview of advanced heteroatom doped carbons with boron, sulphur and 
+phosphorus for energy applications, Energy Environ. Sci. (10) (2013) .
+[164] S.B.S.M.J.K. Ken, O. Subrata Ghosh, Heteroatom-doped and oxygen- 
+functionalized nanocarbons for high-performance supercapacitors ’ , Adv. Energy 
+Mater. (2020) .
+[165] R.S.A.M. A. A. E. C. M. F, P.A. Sachit Mishra, The impact of physicochemical 
+features of carbon electrodes on the capacitive performance of supercapacitors: a 
+machine learning approach, Sci. Rep. 6494 (13) (2023) .
+[166] X. Lu, C. Zhao, H. Tu, S. Wang, A. Chen, H. Zhang, Research on prediction of 
+energy density and power density of biomass carbon-based supercapacitors based 
+on machine learning, Sustain. Mater. Technol. 44 (Jul. 2025) e01309, https://doi. 
+org/10.1016/J.SUSMAT.2025.E01309 .
+[167] H. Liao, et al., Machine learning prediction of supercapacitor performance of N- 
+doped biochar from biomass wastes based on N-containing groups, element 
+compositions, and pore structures, J. Energy Storage 100 (Oct. 2024) 113548, 
+https://doi.org/10.1016/J.EST.2024.113548 .
+[168] Y. Sun, et al., Machine learning in clarifying complex relationships: Biochar 
+preparation procedures and capacitance characteristics, Chem. Eng. J. 485 (Apr. 
+2024) 149975, https://doi.org/10.1016/J.CEJ.2024.149975 .
+[169] Tonio Buonassisi Juan Lavista Ferres, T. Keith, Butler Felipe Oviedo, 
+‘Interpretable and Explainable Machine Learning for Materials Science and 
+Chemistry, Acc. Mater. Res (2022) 597 – 607 .
+[170] S.L. B S. D. C. L. Y. S, H.L. Haiping Su, Predicting the capacitance of carbon-based 
+electric double layer capacitors by machine learning, Nanoscale Adv. 6 (2019) .
+[171] X. Lu, C. Zhao, H. Tu, S. Wang, A. Chen, H. Zhang, Research on prediction of 
+energy density and power density of biomass carbon-based supercapacitors based 
+on machine learning, Sustain. Mater. Technol. 44 (Jul. 2025) e01309, https://doi. 
+org/10.1016/J.SUSMAT.2025.E01309 .
+[172] X. Y. H, X.P. T. Y, Y.C.G.W. Liu, Machine learning modeling of the capacitive 
+performance of N-doped porous biochar electrodes with experimental 
+verification, Renew. Energy (2024) .
+[173] M. Rahimi, S.A. Salaudeen, Synthesis-feature-coupled machine learning 
+approaches to predict the capacitance of biomass-derived carbon electrodes in 
+supercapacitors, Mater. Chem. Phys. 348 (Jan. 2026) 131525, https://doi.org/ 
+10.1016/J.MATCHEMPHYS.2025.131525 .
+[174] A. Emad-Eldeen, M.A. Azim, M. Abdelsattar, A. AbdelMoety, Utilizing machine 
+learning and deep learning for enhanced supercapacitor performance prediction, 
+J. Energy Storage 100 (Oct. 2024) 113556, https://doi.org/10.1016/J. 
+EST.2024.113556 .
+[175] A.G. Kusne, et al., On-the-fly closed-loop materials discovery via Bayesian active 
+learning, Nat. Commun. 11 (1) (Nov. 2020) 5966, https://doi.org/10.1038/ 
+s41467-020-19597-w .
+[176] X. Yang, C. Yuan, S. He, D. Jiang, B. Cao, S. Wang, Machine learning prediction of 
+specific capacitance in biomass derived carbon materials: effects of activation and 
+biochar characteristics, Fuel 331 (Jan. 2023) 125718, https://doi.org/10.1016/J. 
+FUEL.2022.125718 .
+F. Sajjad et al.                                                                                                                                                                                                                                   Next Materials 11 (2026) 101971 
+18 

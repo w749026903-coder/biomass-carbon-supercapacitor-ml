@@ -1,0 +1,3527 @@
+
+===== PDF PAGE 1 =====
+Physica Scripta
+              
+ACCEPTED MANUSCRIPT • OPEN ACCESS
+Source-aware materials informatics for biomass-derived carbon
+electrodes: Predicting supercapacitor capacitance from precursor and
+process descriptors
+To cite this article before publication: Ferhat Ucar et al 2026 Phys. Scr. in press https://doi.org/10.1088/1402-4896/ae999d
+Manuscript version: Accepted Manuscript
+Accepted Manuscript is “the version of the article accepted for publication including all changes made as a result of the peer review process,
+and which may also include the addition to the article by IOP Publishing of a header, an article ID, a cover sheet and/or an ‘Accepted
+Manuscript’ watermark, but excluding any other editing, typesetting or other changes made by IOP Publishing and/or its licensors”
+This Accepted Manuscript is © 2026 The Author(s). Published by IOP Publishing Ltd.
+ 
+ As the Version of Record of this article is going to be / has been published on a gold open access basis under a CC BY 4.0 licence, this Accepted
+Manuscript is available for reuse under a CC BY 4.0 licence immediately.
+Everyone is permitted to use all or part of the original content in this article, provided that they adhere to all the terms of the licence
+https://creativecommons.org/licences/by/4.0
+Although reasonable endeavours have been taken to obtain all necessary permissions from third parties to include their copyrighted content
+within this article, their full citation and copyright line may not be present in this Accepted Manuscript version. Before using any content from this
+article, please refer to the Version of Record on IOPscience once published for full citation and copyright details, as permissions may be required.
+All third party content is fully copyright protected and is not published on a gold open access basis under a CC BY licence, unless that is
+specifically stated in the figure caption in the Version of Record.
+View the article online for updates and enhancements.
+This content was downloaded from IP address 82.132.217.149 on 15/08/2026 at 02:31
+
+===== PDF PAGE 2 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Physica Scripta
+PAPERCrossmark
+RECEIVED
+26 May 2026
+REVISED
+dd Month yyyy
+Source-Aware Materials Informatics for Biomass-Derived Carbon
+Electrodes: Predicting Supercapacitor Capacitance from
+Precursor and Process Descriptors
+Ferhat U¸ car1,∗
+ , Nida Katı 2
+ and Mohammed Abduljalil Saeed Ahmed 3
+1Department of Software Engineering, Firat University, Elazig, T¨ urkiye
+2Department of Metallurgical and Materials Engineering, Firat University, Elazig, T¨ urkiye
+3Graduate School of Natural and Applied Sciences, Firat University, Elazig, T¨ urkiye
+∗Author to whom any correspondence should be addressed.
+E-mail: fucar@firat.edu.tr
+Keywords: materials informatics, biomass-derived carbon electrodes, electrochemical energy storage, supercapacitors,
+source-aware validation
+Abstract
+Biomass-derived porous carbons are promising electrode materials for sustainable
+electrochemical energy storage, yet their capacitance depends on coupled precursor and
+process variables that are difficult to optimize experimentally. Here, we present a
+source-aware materials-informatics framework for predicting the specific capacitance of
+biomass-derived carbon electrodes directly from raw precursor descriptors and processing
+conditions. A literature-curated dataset comprising elemental composition, proximate
+analysis, lignocellulosic structure, and activation variables was evaluated with support
+vector regression (SVR), Random Forest (RF), a deep neural network (DNN), LightGBM,
+and XGBoost, together with an ensemble strategy, across seven feature combinations.
+XGBoost delivered the strongest test performance, reaching R2 = 0.948 for the most
+informative feature block. Beyond model ranking, the study emphasizes validation realism
+by contrasting conventional random splits with source-aware evaluation, showing that
+random partitions can substantially overestimate apparent generalization. Across models,
+current density, activation temperature, holding time, ash content, and volatile matter
+emerged as the most influential predictors. The resulting workflow provides practical
+guidance for precursor screening, process-window definition, and data-driven design of
+biomass-derived supercapacitor electrodes. The guidance applies within the precursor and
+process regime represented by the training corpus; experimental verification is
+recommended for excursions beyond it.
+1 Introduction
+The escalating global demand for efficient energy storage technologies, driven by the increasing
+emphasis on renewable energy and the urgent need to address climate change, has positioned super-
+capacitors as increasingly important devices in energy storage technologies. They are used in many
+areas such as electric vehicles, renewable energy storage systems and portable electronics due to
+their high power density, long cycle life and fast charge/discharge capabilities [1, 2]. One of the main
+parameters determining the performance of supercapacitors is capacitance, which is directly related
+to the surface area, porosity and chemical structure of the electrode materials. Traditionally, carbon-
+based materials such as activated carbon have been preferred as electrodes. However, in terms of
+sustainability and cost-effectiveness, the use of agricultural biomass waste as carbon electrode precur-
+sors is becoming increasingly popular [3–5]. Activated carbon produced from biomass is important
+both in terms of environmental benefits and contribution to the circular economy. These materials
+are obtained by converting agricultural wastes such as rice husk, coconut shell, apricot kernel shell
+and bamboo into high surface area carbons through carbonization and activation processes [6]. This
+approach both reduces costs and offers an innovative solution in waste management. However, the
+inherent variability and complex composition of biomass present challenges in consistently producing
+materials with predictable performance characteristics. In addition, the porous structure and chem-
+ical properties of biomass-derived activated carbons can be optimized to increase supercapacitors’
+1
+Page 1 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 3 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+performance [7, 8]. Recent reviews further consolidate biomass-derived carbon as a strategic elec-
+trode family for advanced supercapacitor architectures, including metal-ion hybrid configurations
+that emphasise sustainability alongside electrochemical performance [9]. Factors affecting super-
+capacitor performance are related to biomass-derived carbon electrodes. Factors such as material
+composition, process parameters, electrolyte type, electrode design, and operating conditions affect
+performance [10,11]. In addition, industrial characteristics such as moisture, volatile matter, and ash
+content can also affect performance because they affect the purity and pore structure of the carbon
+material. Process parameters such as activation temperature, ramp rate, and current density affect
+performance by determining the pore structure and surface area of the carbon. For example, higher
+activation temperatures can result in better pore development, but excessive temperatures can lead
+to material degradation [ 12]. Optimizing these numerous interlinked variables through traditional
+experimental approaches can be a complex, time-consuming, and resource-intensive endeavor [13].
+The use of machine learning (ML) methods in materials science and especially to optimize the
+performance of biomass-based carbon electrodes in supercapacitors and generally in nanomaterials
+development has gained significant attention in recent years [6]. Jamaluddin et al. investigated
+the impact of surface area, pore volume, and experimental parameters (electrolyte concentration,
+voltage window, current density) on the capacitance of biomass-based carbon electrodes using ML
+models (LR, M5-Rules, RT, MLP), reporting that the MLP model achieved the highest performance
+(R=0.871, MAE=45.069 F g −1) and that surface area and pore volume had significant effects [14].
+Similarly, Liao et al. predicted the specific capacitance of N-doped biochar using Random Forest
+and XGBoost models, reporting strong predictive performance (test R2 values of approximately 0.95
+and 0.96, respectively). They further showed that the N-6 group contributed strongly to capaci-
+tance, reaching approximately 303 F g −1 under favorable pore and graphitization conditions [15].
+Lu et al. estimated the energy and power density of biomass-based carbon supercapacitors using
+XGBoost, LightGBM, and Deep Learning Neural Network (DNN) models, revealing that biomass
+feedstock composition and activation conditions significantly influence these parameters [16]. Shri-
+vas and Dubay employed Random Forest, Decision Tree, Linear Regression, and XGBoost models to
+optimize the performance of activated carbon electrodes, finding that Random Forest performed best
+and that surface area, nitrogen doping, and pore volume significantly affected capacitance [17]. Zhu
+et al. predicted the capacitance of carbon-based supercapacitors using linear regression, Lasso, and
+artificial neural network (ANN) methods [18]. Ghosh et al. combined ML with experimental valida-
+tion to predict and optimize the specific capacitance of porous carbon materials (PCMs), introducing
+a key eigenvalue drop-point screening approach that provides an innovative strategy for advancing
+energy storage materials technology [19]. Complementary contributions operating in the surface-
+area-driven regime have shown how heteroatom configuration and pore-size features can be linked to
+capacitance through data-driven models, using post-synthesis descriptors such as micro- and meso-
+pore surface areas [20]. These studies highlight the potential of ML to predict supercapacitor perfor-
+mance and accelerate material optimization. Broader synthesis efforts have catalogued the AI model
+landscape for supercapacitor performance prediction across MXenes, carbon-based materials, metal
+oxides, and metal–organic frameworks, and they emphasise the role of leakage-safe validation and
+harmonised electrochemical testing conditions when interpreting reported metrics [21]. Comparable
+benchmarking efforts in adjacent nanomaterial domains, such as the comparative evaluation of ML
+classifiers for the electrical conductivity behavior of carbon nanotube-doped polymer nanocompos-
+ite films, reinforce the importance of systematic cross-model assessment when predictive descriptors
+and process variables are coupled [22]. Recent contributions further show that performance gains
+continue to be driven by careful control of pore architecture, porous-carbon fabrication strategy,
+and device-level design choices, as illustrated by pore-engineered okra-derived activated carbons,
+template-fabricated porous carbons for high-performance electrodes, wood-inspired hydrogel elec-
+trolytes for flexible supercapacitors, and nitrogen-doped activated carbons derived from mangosteen-
+shell biomass for high-performance supercapacitor electrodes [23–26]. Related studies also support
+data-driven and optimization-focused pathways for biomass-derived carbon development, includ-
+ing sustainable biochar process design and machine-learning-assisted activated-carbon optimization
+from agricultural residues [27,28]. Comprehensive reviews further connect the biomass-composition–
+activation–porosity–capacitance chain and highlight the emerging role of ML tools alongside cost
+and life-cycle considerations for scalable biochar-derived electrode development [29].
+In the literature, many studies on optimizing the supercapacitor performance of biomass-based
+carbon electrodes with machine learning examine the effect of surface area, pore volume, and ex-
+perimental parameters on capacitance [30, 31]. These input features often represent intermediate,
+experimentally-derived characteristics of the processed carbon material. However, these studies have
+generally focused on limited combinations of properties or analyzed specific biomass types. In this
+2
+Page 2 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 4 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+study, a large dataset was used to predict the capacitance of carbon electrodes derived from agricul-
+tural biomass wastes by evaluating versatile properties such as elemental composition (C, H, O, N),
+industrial analysis (moisture, ash, volatile matter, fixed carbon), structural composition (cellulose,
+hemicellulose, lignin) and process parameters (activation temperature, current density, impregnation
+rate) in seven different combinations. This approach, focusing on the fundamental characteristics
+of the raw biomass and key processing parameters, aims to build a direct bridge between readily
+available input data and electrochemical performance, potentially simplifying the prediction pipeline
+and offering insights for material design prior to extensive experimental work [32]. A comparative
+analysis of XGBoost, LightGBM, DNN, SVR and Random Forest models showed that XGBoost
+exhibited the highest performance ( R2 = 0.948). Unlike previous studies, this study aims to provide
+a comprehensive framework for sustainable electrode design by systematically testing combinations
+of features and revealing the dominant influence of parameters such as activation temperature and
+current density on capacitance. Textural descriptors such as BET surface area and pore volume
+are deliberately excluded from the modelling inputs because they are post-synthesis characterisation
+outputs rather than variables that a materials-informatics user can decide on before preparing a
+new electrode; their inclusion would collapse the prediction task onto quantities that follow, rather
+than precede, the choice of precursor and process settings, duplicating instead of complementing
+the surface-area-driven regime already covered by [14, 17]. Keeping the feature space upstream of
+textural characterisation is what preserves the decision-support role of the framework for early-stage
+precursor and process screening. Figure 1 demonstrates the general overview of our study.
+Figure 1. General overview of the proposed system.
+In this manuscript, the proposed workflow is framed as a source-aware materials-informatics
+pipeline for biomass-derived carbon electrodes, emphasizing validation realism, actionable feature-
+block interpretation, and decision support for supercapacitor-material design.
+The main contributions of this study, in the context of electrochemical energy-storage materials
+research, can be summarized as follows:
+• Development of capacitance-prediction models from precursor-level and process-level descrip-
+tors: Rather than relying primarily on post-synthesis properties such as surface area or pore
+volume, the study uses elemental composition, proximate analysis, lignocellulosic structure,
+and key activation parameters to predict electrochemical performance from information that
+is available earlier in the electrode-design workflow.
+• Comparative benchmarking across model families and feature blocks: A dataset of 195
+literature-derived samples was used to systematically compare XGBoost, LightGBM, DNN,
+3
+Page 3 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 5 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+SVR, Random Forest, and an ensemble approach across seven feature combinations, thereby
+identifying not only the strongest-performing model family but also the most decision-relevant
+descriptor blocks for biomass-derived electrode screening.
+• Validation-aware interpretation for electrode-design guidance: Beyond achieving high predic-
+tive accuracy (best test R2 = 0.948 with XGBoost), the study shows how source-aware valida-
+tion changes performance interpretation and identifies activation temperature, current density,
+holding time, ash content, and volatile matter as the dominant variables for practical precursor
+and process selection. This contributes to a broader understanding and provides a data-driven
+framework to guide the sustainable design and optimization of biomass-derived carbon elec-
+trodes for supercapacitors.
+To sharpen the scientific scope and practical relevance of this work, the study is guided by four
+research questions:
+• RQ1: Which feature groups provide robust predictive power when only raw biomass descriptors
+and process parameters are available?
+• RQ2: Which model family offers the best trade-off between accuracy and stability across feature
+combinations?
+• RQ3: Which parameters are consistently influential across model families and feature subsets?
+• RQ4: How can the resulting model insights be translated into actionable guidance for sustain-
+able electrode design?
+These questions position the manuscript beyond a simple model comparison and frame it as
+a decision-support study for early-stage material screening. More specifically, the novelty of the
+present work is not claimed as a mere performance increment on an inherited dataset; rather, it lies
+in combining five contribution axes that are directly relevant to source-aware materials informatics
+for energy-storage electrodes: source-aware validation to expose optimistic bias, feature-block rea-
+soning to distinguish which raw-material descriptors are genuinely actionable, cross-model consensus
+to reduce dependence on a single algorithm narrative, deployment-oriented interpretation that links
+prediction outputs to laboratory screening logic, and an explicit positioning against the reference
+study in terms of external validity and design support. This framing is intended to convert a pre-
+dictive benchmark into a more reusable materials-selection and process-window guidance workflow.
+Operationally, this framing is now supported by the leave-one-reference-out validation pipeline, a
+repeated-split stability envelope with paired significance testing, an independent SHAP check of
+feature contributions and their directional signs, and a transparent statement of the compute cost
+associated with each model family; together, these ingredients turn the novelty claim from a stylistic
+contrast with existing benchmarks into a set of concrete artefacts that a downstream user can inspect
+and reuse.
+1.1 Positioning Against the Reference Study
+To clarify the scientific contribution of this study, we position it relative to the reference work of [32]
+along contribution-oriented axes rather than only reporting model metrics. Table 1 summarizes this
+comparison.
+The remainder of this paper is organized as follows: the Materials and Methods section details the
+dataset, modeling workflow, and evaluation procedures. The Results and Discussion section presents
+the empirical findings used to answer the research questions. The Conclusion section summarizes
+the study and outlines future research directions.
+2 Materials and Methods
+This study is based on a literature-curated dataset and a computational modeling workflow rather
+than on new wet-laboratory experiments. No new experimental synthesis or electrochemical testing
+was conducted as part of the present work. The full experimental and computational workflow is
+given below.
+This section outlines the full experimental and computational workflow employed in this study.
+It begins with a detailed description of the dataset, including its origin, constituent variables, and
+preliminary analysis. Subsequently, the predictive models developed for analyzing this data are
+presented, followed by the procedures for model training and performance evaluation.
+4
+Page 4 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 6 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+T able 1. Contribution-oriented positioning of this study relative to the reference work.
+Axis Reference study [32] This study (current manuscript)
+Input perspective Raw biomass composition + process
+variables
+Same raw-biomass perspective, ex-
+tended with broader comparative
+model benchmarking and richer inter-
+pretation flow
+Modeling scope LightGBM and DNN centered com-
+parison
+XGBoost, LightGBM, DNN, SVR,
+RF, and ensemble-level comparison
+across seven feature combinations
+Interpretability
+narrative
+SHAP/PDP-focused insight Cross-model feature-importance syn-
+thesis + prediction-behavior diagnos-
+tics (train/test scatter patterns)
+Decision support
+orientation
+Predictive study Predictive study with explicit RQ-
+driven design and deployment-
+oriented guidance for early-stage
+material screening
+Revision pipeline
+focus
+Not emphasized Explicit robustness roadmap (group-
+aware splits, uncertainty quantifi-
+cation, ablation-cost analysis) for
+stronger external validity
+T able 2. High-impact experiments used to strengthen external validity and practical reliability.
+Experiment Primary goal Expected manuscript-level benefit
+Group-aware cross-
+validation
+Reduce optimistic bias from
+random splits
+Demonstrates realistic generalization to
+new literature sources/biomass groups
+Bootstrap confidence
+intervals
+Quantify uncertainty
+around reported metrics
+Replaces point-estimate claims with statis-
+tically defensible intervals
+Feature ablation with
+cost lens
+Identify minimum informa-
+tive feature subset
+Supports practical low-cost screening work-
+flows for labs
+Leave-one-group-out
+tests
+Stress test under unseen
+precursor scenarios
+Establishes robustness and clarifies deploy-
+ment boundary conditions
+Error analysis by
+biomass family
+Diagnose systematic
+under/over-prediction
+Enables targeted model refinement and
+transparent limitations discussion
+2.1 Validation and Robustness Pipeline
+To ensure methodological robustness and realistic deployment relevance, we define a validation
+pipeline that structures the study from data preparation to model assessment and practical in-
+terpretation.
+1. Data integrity and split protocol: enforce duplicate and near-duplicate checks, then report
+both random split and group-aware split performance (grouped by literature reference and
+biomass type).
+2. Model stability analysis: evaluate metric variability with repeated runs and bootstrap
+confidence intervals for R2, MAE, and RMSE.
+3. Feature-group ablation: quantify what is gained by each feature block (elemental, proxi-
+mate, structural, process) and report performance-cost trade-offs.
+4. Out-of-distribution stress testing: hold out one biomass family or one reference source at
+a time to emulate unseen material scenarios.
+5. Actionable design mapping: convert model insight into practical process windows (e.g.,
+AT, HT, current density ranges) for experimental prioritization.
+Table 2 summarizes the high-impact experiment set used in this study to strengthen external
+validity and practical interpretability.
+2.2 Dataset Description and Preprocessing
+The data utilized in this study was sourced from the supplementary dataset of [32] and is called
+the dataset file: 1-s2.0-S2352152X2402560X-mmc1.xlsx. The dataset compiles literature-reported
+5
+Page 5 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 7 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+agricultural biomass wastes used as precursors for carbon electrodes in supercapacitors and includes
+herbaceous plants, fruit and nutshell residues, and agricultural straws. The preparation routes in
+the source studies typically involve two primary steps: carbonization and activation. Carbonization
+is performed under controlled, oxygen-limited conditions, and activation is generally carried out
+using chemical activators such as H 3PO4, NaOH, ZnCl 2, and KOH. The raw spreadsheet contains
+212 records in the main data table; after removing rows with incomplete feature information, 195
+samples were retained for model development.
+Because the compiled samples originate from studies that used different electrolytes (predom-
+inantly H 3PO4, NaOH, ZnCl 2, and KOH), different voltage windows, and different measurement
+protocols, cross-source consistency was addressed at three levels. First, all target values were ex-
+pressed in the common unit of specific capacitance (F g−1) as reported in the source dataset, and rows
+with unit ambiguity or missing feature values were dropped rather than imputed, reducing the 212
+raw records to the 195 used for modelling. Second, the current density (Cond, A g −1) was explicitly
+retained as a modelled input so that its variation across sources is absorbed by the predictors rather
+than left as hidden noise. Third, electrolyte identity, voltage window, and cell geometry were kept as
+unmodelled contextual variation: they cannot be normalised onto a common numerical scale across
+sources without introducing subjective encodings, and their residual influence is precisely what the
+leave-one-reference-out evaluation reported in Section 3.1 is designed to expose. This design isolates
+a precursor-plus-process feature space that is genuinely available before deep electrochemical char-
+acterisation, while keeping the effect of unmodelled electrochemical context transparent through the
+validation protocol.
+To make dataset composition transparent, the cleaned corpus is summarised along three axes
+that condition every downstream model. The 195 usable rows come from 17 independent literature
+publications and represent 16 distinct biomass precursors that fall into 4 higher-level biomass families
+(herbaceous residues, fruit/nut residues, woody/lignified biomass, and other precursors); Figure 3
+shows how samples are distributed across these families, with herbaceous residues (n=84) and other
+biomass (n=47) being the most represented and fruit/nut residues and woody/lignified biomass
+each contributing 32 samples. Missing values were handled by row-wise deletion of any record with
+incomplete feature information, without imputation, in order to keep the fitted models faithful to
+actually reported data rather than to interpolated values. Because the target is a continuous specific-
+capacitance value rather than a class label, class imbalance in the categorical sense does not apply;
+the relevant analogue is the shape of the target distribution, which spans roughly 80–420 F g −1
+with a mean of 233.5 F g −1 and a median of 229.0 F g −1 (Figure 4). Process-variable coverage
+(Figure 5) is uneven across sources, with strong concentration of the reported heating ramp rates,
+holding times, and current densities near the modal experimental settings of the field, so the model
+comparison must be read as conditioned on these dominant operating regions.
+2.2.1 Dataset Variables and Statistical Overview The dataset encompasses variables categorized
+into material composition features, process-related parameters, and the target performance metric.
+Material Composition Variables. The intrinsic properties of the materials were characterized
+by their elemental and proximate analysis. Elemental composition features included carbon (C, %),
+nitrogen (N, %), hydrogen (H, %), and oxygen (O, %). Variables from proximate analysis were
+moisture content (M, %), volatile matter (VM, %), ash content (Ash, %), and fixed carbon (FC, %).
+Furthermore, the lignocellulosic composition was detailed through cellulose (Cel, %), hemicellulose
+(Hem, %), and lignin (Lig, %) content.
+Processing Parameters. Key experimental conditions manipulated during the material synthesis
+were included as input parameters. These comprised the activation temperature (AT, °C), heating
+ramp rate (RT, °C/min), holding time (HT, min), the impregnation ratio (IR), and the current
+density (Cond, A g −1).
+Target Parameter. The primary output variable for prediction in this study was the specific
+capacitance (Cap, F g −1), which quantifies the electrochemical performance of the material.
+A statistical summary of all features within the dataset is provided in Table 4.
+In addition to the numerical summary, Figure 2 and Figure 3 provide a visual overview of the
+cleaned dataset structure. The correlation landscape highlights monotonic relationships among key
+process and composition variables, while the biomass-family coverage plot clarifies how samples are
+distributed across precursor categories.
+6
+Page 6 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 8 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure 2. Spearman correlation landscape of the cleaned dataset (195 samples).
+Figure 3. Sample coverage by biomass family in the cleaned dataset.
+T able 3. Selected high-magnitude Spearman correlations in the cleaned dataset.
+Feature 1 Feature 2 Spearman ρ
+C (%) H (%) 0.636
+O (%) N (%) -0.607
+H (%) VM (%) 0.596
+VM (%) Cel (%) 0.559
+Cel (%) AT ( °C) 0.550
+O (%) Lig (%) -0.532
+7
+Page 7 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 9 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure 4. Distribution of the target variable, specific capacitance (Cap, F g −1), across the 195 samples of the
+cleaned dataset. Dashed and dot-dashed vertical lines mark the mean (233.5 F g −1) and median (229.0 F g −1); the
+shaded interquartile-range band spans 181.1–277.5 F g −1. The distribution is broad and mildly right-skewed at the
+high-capacitance tail, reflecting a small number of highly optimised precursor–process combinations reported in the
+literature.
+Figure 5. Distributions of the five process variables used as predictors across the cleaned dataset (n=195):
+activation temperature, heating ramp rate, holding time, impregnation ratio, and current density. The dashed line in
+each panel marks the median. Reported heating ramp rates cluster near 5 °C min−1, holding times near 60 min, and
+current densities near 2 A g −1, indicating that the corpus is dominated by a few modal operating regions of the
+biomass-carbon supercapacitor literature; the predictive analysis reported below is therefore conditioned on these
+dominant regions and any excursion outside them should be treated as an extrapolation.
+8
+Page 8 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 10 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+T able 4. Statistical Analysis of Input Features
+V
+ariable Mean Std Dev Min 25% Median 75% Max
+C
+(%) 45.49 2.54 40.81 43.00 46.30 47.22 51.40
+H (%) 5.75 0.41 4.60 5.60 5.85 5.95 6.55
+O (%) 42.88 4.05 36.47 39.55 42.20 46.43 52.04
+N (%) 0.94 0.76 0.17 0.31 0.63 1.16 2.90
+M (%) 8.85 3.45 1.20 6.12 9.41 9.66 18.30
+VM (%) 72.72 5.25 58.80 68.50 73.00 76.70 80.20
+Ash (%) 7.14 4.30 0.92 4.02 6.80 9.70 18.79
+FC (%) 13.75 5.41 0.81 12.95 15.90 16.30 24.10
+Cel (%) 35.93 10.62 4.54 32.50 38.20 43.20 47.60
+Hem (%) 29.97 10.28 16.60 19.50 24.70 39.00 46.10
+Lig (%) 18.57 8.93 3.92 11.20 16.50 25.80 49.10
+AT (°C) 730.00 115.81 350.00 700.00 750.00 800.00 950.00
+RT (°C/min) 5.45 1.75 3.00 5.00 5.00 5.00 10.00
+HT (min) 93.23 42.25 60.00 60.00 60.00 120.00 180.00
+IR 2.18 1.36 0.00 1.00 1.40 3.00 6.00
+Cond (A g −1) 6.94 11.65 0.10 1.00 2.00 10.00 100.00
+Cap (F g −1) 233.47 66.66 80.00 181.10 229.00 277.50 421.00
+Table 3 indicates moderate dependencies among selected descriptors, but no pair exceeds |ρ| =
+0.70. This suggests that feature overlap exists, as expected for biomass composition data, yet severe
+multicollinearity is not dominant at the bivariate level. The strongest target-side monotonic asso-
+ciations remain comparatively modest, with current density showing the largest absolute Spearman
+relation to capacitance ( ρ = −0.334), followed by carbon content, ash content, activation temper-
+ature, and holding time. Accordingly, the superior performance of some feature groups is better
+interpreted as a multivariate interaction effect than as a consequence of one overwhelmingly redun-
+dant predictor block.
+2.2.2 Feature Grouping and Experimental Combinations The collected dataset’s features, repre-
+senting diverse biomass characteristics, were categorized into five groups based on their nature:
+Elemental analysis (percentages of C, O, H, and N), Industrial analysis (e.g., M, Ash, FC, and VM),
+Structural composition (e.g., Cel, Hem, Lig), Activation criteria (AT, RT, HT, IR), and Current
+density (Cond). These groupings are detailed in Table 5.
+T able 5. Characteristics of Input Features by Group
+Characteristics
+Input Features Group Number
+Elemen
+tal Properties of Biomass C, O, H, and N percentages 1
+Industrial Analysis M, Ash, FC, and VM 2
+Structural Composition Cel, Hem, Lig 3
+Activation Criteria AT, RT, HT, IR 4
+Current Density Cond 5
+For modeling purposes, these five characteristic groups were merged to form seven distinct input
+feature subgroups. The merging strategy involved keeping the activation criteria (Group 4) and
+current density (Group 5) features constant in each combination while varying the inclusion of the
+other characteristic groups (Groups 1, 2, and 3). This approach yielded the seven subgroups detailed
+in Table 6, which were subsequently used for training and examining the predictive models.
+This layout is not arbitrary. Activation criteria and current density are experimentally indispens-
+able in any electrochemical evaluation of a supercapacitor electrode, so they must appear in every
+combination to keep the seven subgroups comparable on the process side. Groups 1–3 (elemental, in-
+dustrial, and structural blocks) then correspond to the descriptor families that a materials-informatics
+user would realistically choose to collect for a new precursor, and varying only these blocks isolates
+the marginal contribution of each raw-material family while holding the process context fixed. The
+resulting seven-cell design can therefore be read as a factorial-style probe of raw-material descriptor
+blocks, and it is what makes the later comparison of G1–G7 an informative decomposition rather
+than an arbitrary sweep.
+9
+Page 9 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 11 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+T able 6. Combinations of Input Features by Group Number
+G-number Combination (Group Numbers) Input Features Included
+1 1, 4, 5 C, H, O, N, IR, AT, RT, HT, Cond
+2 2, 4, 5 M, Ash, VM, FC, AT, RT, HT, IR, Cond
+3 3, 4, 5 Cel, Hem, Lig, AT, RT, HT, IR, Cond
+4 1, 2, 4, 5 C, H, O, N, M, Ash, VM, FC, AT, RT, HT, IR, Cond
+5 1, 3, 4, 5 C, H, O, N, Cel, Hem, Lig, AT, RT, HT, IR, Cond
+6 2, 3, 4, 5 M, Ash, VM, FC, Cel, Hem, Lig, AT, RT, HT, IR,
+Cond
+7 1, 2, 3, 4, 5 C, H, O, N, M, Ash, VM, FC, Cel, Hem, Lig, AT, RT,
+HT, IR, Cond
+2.3 Exploratory Data Analysis
+To better understand the dataset’s characteristics and inter-feature relationships, two focused visu-
+alizations were retained. Figure 2 provides a full Spearman correlation landscape for the cleaned
+dataset, emphasizing monotonic dependencies across the complete variable space. Figure 6 comple-
+ments this view by showing direct feature–target trends for the most relevant variables. Together,
+these figures provide sufficient exploratory context without overloading the discussion with repetitive
+exploratory panels.
+Figure 6. Scatter plots illustrating relationships between key features and the target variable.
+From Figure 2 and Figure 6, two points are especially relevant for subsequent modeling. First,
+several high-relevance variables exhibit non-negligible spread around their central trends, indicat-
+ing that single-feature linear relations are insufficient to explain capacitance behavior. Second, the
+widening dispersion in some feature ranges suggests interaction effects between composition descrip-
+tors and process conditions. These observations motivate the use of non-linear model families and
+multi-feature combination analysis in the next sections.
+2.4 Predictive Models
+In this study, five distinct machine learning models, along with an ensemble approach, were employed
+to predict the supercapacitor capacitance based on the selected feature subgroups. A brief overview
+of these models is provided below.
+2.4.1 Support Vector Regressor (SVR) Support Vector Regressor (SVR), an extension of Support
+Vector Machines (SVM) for regression tasks, is frequently used for prediction with multi-input fea-
+10
+Page 10 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 12 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+tures. SVR aims to find a function that deviates from the actual target values by a value no greater
+than a specified margin, while being as flat as possible [33, 34].
+2.4.2 Random Forest (RF) Random Forest is an ensemble learning method based on constructing
+a multitude of decision trees during training. It outputs the mean prediction (regression) of the indi-
+vidual trees. RF is known for its ability to reduce variance and mitigate overfitting by incorporating
+randomness in feature selection and data sampling for each tree [35, 36].
+2.4.3 Deep Neural Network (DNN) A multi-layer perceptron (MLP) model, a class of feedforward
+artificial neural network, was implemented for capacitance prediction, given its capability to model
+complex non-linear relationships [37]. The DNN architecture was designed with an input layer
+corresponding to the maximum number of input features considered in this study (up to 16 features
+for the most comprehensive combination), followed by four hidden layers with 256, 128, 64, and 32
+neurons, respectively. The output layer comprised a single neuron for predicting the capacitance.
+The Rectified Linear Unit (ReLU) was utilized as the activation function for the hidden layers due
+to its effectiveness in preventing vanishing gradients, while a linear activation function was used
+for the output layer suitable for regression tasks. The Adam optimizer, an adaptive learning rate
+optimization algorithm, was employed with a learning rate of 0.001. Dropout was incorporated
+during training as a regularization technique to prevent overfitting. The model was trained for 200
+epochs with an early stopping criterion based on validation loss to ensure generalization.
+2.4.4 LightGBM Light Gradient Boosting Machine (LightGBM), known for its efficiency and high
+performance, was utilized. GridSearchCV was employed to identify the optimal hyperparameters.
+The selected parameters included 500 estimators (number of decision trees), 31 leaves per tree (con-
+trolling complexity), a max
+depth of -1 (allowing trees to grow deeply), and a learning rate of 0.1 [38].
+2.4.5 XGBoost Extreme Gradient Boosting (XGBoost) was also included, configured with hyper-
+parameters similar to those used for LightGBM, determined after extensive experimentation and
+tuned using GridSearchCV. These parameters were a learning rate of 0.1, max depth of 3, nestimators
+of 500, and subsample ratio of 0.8 [39].
+2.4.6 Ensemble Model An ensemble model was created by averaging the predictions of the Light-
+GBM and XGBoost models. Ensemble methods often lead to better generalization performance by
+reducing variance and model bias compared to individual models. This approach aimed to leverage
+the distinct strengths of both gradient boosting models to potentially achieve improved predictive
+performance, as will be discussed in the model evaluation section [40].
+2.5 Model Training and Evaluation
+The primary model-comparison workflow used a training (80%) and testing (20%) split. Before
+training, the input features were standardised using scaling parameters fit exclusively on the train-
+ing partition, which were then applied to the test partition without refitting so that no information
+from the held-out samples could influence the scaler. In addition, a protocol-sensitivity analysis (re-
+ported in Section 3.1) was performed to compare random-split and group-based validation behavior
+under a controlled surrogate model. The models were trained on the scaled training data and subse-
+quently evaluated on the scaled unseen test data to assess their generalization capability. To identify
+the optimal hyperparameters for each model (excluding the DNN, which had a manually tuned ar-
+chitecture as described previously), GridSearchCV was employed, utilizing k-fold cross-validation on
+the training set [41]. This systematic search helps in finding the parameter combination that yields
+the best model performance. Three standard performance metrics were used for evaluation: Coeffi-
+cient of Determination (R 2), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE).
+Following the approach in similar studies, MAE was particularly used as the primary metric to guide
+the hyperparameter selection process during GridSearchCV, often due to its robustness to outliers
+and direct interpretability. The three metrics are defined by equations (1)–(3):
+11
+Page 11 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 13 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+R2 = 1 −
+Pn
+i=1(yi − ˆyi)2
+Pn
+i=1(yi − ¯y)2 (1)
+M AE = 1
+n
+nX
+i=1
+|yi − ˆyi| (2)
+RM SE =
+vuu
+t
+1
+n
+nX
+i=1
+(yi − ˆyi)2 (3)
+where yi is the actual specific capacitance for sample i, ˆyi is the corresponding model prediction,
+¯y is the mean of the observed target across the evaluation set, and n is the number of samples in that
+set. Equation (1) gives the coefficient of determination on the standard ( −∞, 1] scale, where higher
+values indicate a larger fraction of target variance explained; equation (2) gives the mean absolute
+error in F g −1; and equation (3) gives the root-mean-square error, likewise in F g −1, with greater
+sensitivity to large individual residuals than MAE.
+The hyperparameter search followed a fixed protocol across the four grid-searched model fami-
+lies. GridSearchCV was executed with 5-fold cross-validation on the training partition, scored on the
+negative mean absolute error, and refit on the full training partition once the best configuration was
+identified; because both the cross-validation folds and the outer training partition sit entirely inside
+the training data, hyperparameter selection never consumed test-set information. For SVR, the grid
+explored the regularisation strength ( C = 0.1, 1, 10, 100), the tube width (ε = 0.01, 0.05, 0.1), and
+RBF-kernel parameters ( γ ∈ {‘scale’, ‘auto’ , 0.01, 0.1}). For Random Forest, the grid varied the
+number of trees (200, 500, 1000), tree depth (unbounded, 10, 20), and minimum split size (2, 5). For
+LightGBM, the grid spanned nestimators ∈ {200, 500, 1000}, num
+leaves ∈ {15, 31, 63}, and learn-
+ing rate ∈ {0.05, 0.1, 0.2}. For XGBoost, the grid explored nestimators ∈ {200, 500, 1000}, max depth
+∈ {3, 5, 7}, learning rate ∈ {0.05, 0.1, 0.2}, and subsample ratio ∈ {0.7, 0.8, 1.0}. The DNN used
+a manually tuned architecture rather than a full grid search because the number of trainable pa-
+rameters made an exhaustive sweep costly on a dataset of this size; its stopping criterion combined
+dropout regularisation with validation-loss-based early stopping over 200 maximum epochs, so the
+training loop halts as soon as the held-out validation loss stops decreasing. The final hyperparame-
+ters selected for each model are reported in the preceding model-specific paragraphs.
+Given that the sample-to-feature ratio is modest (195 samples with up to 17 candidate inputs),
+overfitting was controlled at several complementary layers. Model complexity was regulated through
+model-specific regularisation: shrinkage and column subsampling in XGBoost, leaf-wise growth con-
+trol in LightGBM, tree count and depth bounds in Random Forest, kernel and ε-margin tuning in
+SVR, and dropout combined with validation-loss early stopping in the DNN. The GridSearchCV
+inner cross-validation loop was executed strictly within the training partition, so hyperparameter
+choices never saw test-set data. Training and test metrics are reported together for every model and
+every feature combination, keeping the train–test performance gap directly inspectable rather than
+hidden inside a single test score. The protocol-sensitivity analysis reported in Section 3.1 further ex-
+poses the residual optimism of random splitting under a controlled surrogate, providing an external
+stress test that complements the within-training regularisation strategy.
+All data preprocessing, model implementation, training, and evaluation were conducted using the
+Python programming language (version 3.10). Core libraries utilized included Scikit-learn for general
+machine learning tasks and model evaluation, Pandas for data manipulation, NumPy for numerical
+operations, and specific libraries for the individual models such as TensorFlow/Keras for the DNN,
+LightGBM for the LightGBM model, and XGBoost for the XGBoost model. Data visualizations
+were generated using Matplotlib and Seaborn [42].
+3 Results and Discussion
+Multiple models were trained and evaluated across seven distinct feature combinations, as described
+in the Materials and Methods section. For quick reference throughout this section, the seven com-
+binations (G1–G7) are defined as follows: G1 uses the elemental block (C, H, O, N) together with
+the process variables (AT, RT, HT, IR, Cond); G2 uses the industrial/proximate block (M, Ash,
+VM, FC) with the process variables; G3 uses the structural block (Cel, Hem, Lig) with the process
+variables; G4 combines G1 and G2; G5 combines G1 and G3; G6 combines G2 and G3; and G7
+combines all raw-material blocks with the process variables (17 features in total). The full mapping
+is given in Table 6. The results are presented in a structured sequence: validation-protocol context,
+12
+Page 12 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 14 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+combination-wise model comparison, feature-importance interpretation, and prediction-behavior di-
+agnostics from scatter plots. This structure enables a direct mapping from empirical evidence to the
+research questions. XGBoost consistently demonstrated strong performance across the core compar-
+ison setting. In this study, the coefficient of determination ( R2), Mean Absolute Error (MAE), and
+Root Mean Squared Error (RMSE) were used as metrics to evaluate the performance of the employed
+models. The results were evaluated separately for each combination and model. Table 8 presents
+the performance metrics for the first feature combination (G-number 1 as detailed in Table 6). This
+combination comprises 9 input features: C, H, O, N, IR, AT, HT, RT, and Cond. As established in
+the Materials and Methods section, these features were scaled prior to model training.
+3.1 Validation-Protocol Effect on Generalization
+To quantify how evaluation design affects apparent model performance, we conducted a split-protocol
+sensitivity analysis using a parsimonious ridge-regression surrogate trained on the full numerical
+feature set. This analysis complements the main model-comparison results by isolating the impact
+of validation protocol under controlled model complexity.
+Two protocols were evaluated: (i) repeated random 80/20 splits (250 repetitions) and (ii) group-
+based validation using leave-one-reference-out splits, where each literature reference was held out in
+turn. The cleaned dataset comprises 17 unique literature references covering 16 individual biomass
+materials grouped into 4 higher-level biomass families (herbaceous residues, fruit/nut residues,
+woody/lignified biomass, and other precursors), and each of the 17 references was used exactly once
+as the held-out test fold while the remaining 16 references collectively formed the training fold. Fold
+sizes therefore vary by source, ranging from 2 to 32 samples with a median around 8, and no row
+from a held-out reference contributes to fitting the feature scaler, to the ridge coefficients, or to
+any downstream diagnostic within that fold. This grouping construction removes the within-source
+leakage that would otherwise arise if random splits placed samples from the same publication in both
+the training and the test partitions, and it therefore provides a genuinely out-of-source estimate of
+generalisation. Figure 7 summarises the full source-aware validation pipeline alongside the parallel
+random-split protocol, making the leakage-prevention stages of the workflow directly inspectable.
+For each protocol, R2, MAE, and RMSE were computed, and uncertainty intervals were estimated
+(empirical 95% intervals for repeated random splits and bootstrap 95% confidence intervals for group-
+based predictions). Importantly, this protocol-comparison experiment uses a deliberately simple
+ridge-regression surrogate to isolate the effect of validation design itself; therefore, the absolute metric
+values here are not expected to match the best-performing XGBoost/LightGBM scores reported later
+for the main model-comparison experiments.
+T able 7. Performance sensitivity to validation protocol (ridge-regression surrogate, all numerical features).
+Proto
+col R2 MAE (F g −1) RMSE (F g −1)
+Random
+split (mean over 250 runs) 0.411 38.926 49.064
+Random split (95% interval) [-0.116, 0.669] [31.044, 47.285] [36.969, 64.834]
+Group-based (leave-one-reference-out) -1.219 81.643 99.035
+Group-based (95% bootstrap CI) [-1.793, -0.786] [73.899, 89.796] [90.742, 107.400]
+The values in Table 7 should be interpreted as a validation-design stress test rather than a direct
+leaderboard. The random-split mean of R2 = 0.411 indicates moderate predictability under a sim-
+plified model and repeated random partitions, whereas the markedly lower leave-one-reference-out
+result (R 2 = −1.219) shows how strongly performance can drop when the test source is entirely
+unseen during training. This gap does not contradict the higher R2 values reported in later sec-
+tions; those sections evaluate richer model families (e.g., XGBoost, LightGBM) under the primary
+benchmark setting and are optimized for predictive accuracy, while this subsection is intentionally
+designed to reveal protocol sensitivity.
+Figure 8 visualizes this gap directly. The random-split distribution remains substantially more
+optimistic than the group-based estimate, indicating that source-aware validation is essential for
+realistic out-of-source generalization claims in biomass-capacitance prediction tasks. With this ro-
+bustness context established, the following subsections present detailed performance comparisons
+across feature combinations and model families.
+The performance of the models for the first feature combination (G-number 1) is illustrated in
+Figure 9 and Figure 10. Specifically, Figure 9 depicts the R2 and MAE scores on the test set for
+each model, while Figure 10 presents the corresponding RMSE values and the distribution of their
+test set predictions.
+13
+Page 13 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 15 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure 7. Source-aware validation pipeline. The cleaned dataset (195 samples, 17 literature references, 16 biomass
+materials grouped into 4 families) is evaluated in parallel under two protocols. The random-split branch repeats
+80/20 partitions 250 times and produces an empirical 95% metric interval that reports within-corpus optimism. The
+leave-one-reference-out branch groups rows by literature reference, holds out all rows of one reference at a time, fits
+the scaler and the ridge surrogate exclusively on the remaining 16 references, and predicts the held-out reference;
+iterating over all 17 references yields per-fold and global metrics with a bootstrap 95% confidence interval that
+quantifies genuine out-of-source generalisation. The gap between the two distributions is the source-aware effect
+reported in Table 7 and Figure 8.
+Figure 8. Split-protocol sensitivity analysis comparing repeated random splits and group-based validation. Red
+markers denote group-based point estimates with 95% confidence intervals.
+14
+Page 14 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 16 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+T able 8. Performance metrics of different models for the first combination (G-number 1)
+Mo
+del Name R2 RMSE MAE R2 RMSE MAE
+(Train) (Train) (Train) (Test) (Test) (Test)
+SVR
+0.898 21.295 9.815 0.728 34.243 26.280
+Random Forest 0.958 13.656 9.027 0.873 23.437 19.345
+DNN 0.828 27.645 20.250 0.774 30.252 23.180
+LightGBM 0.925 18.188 11.812 0.919 18.662 14.639
+XGBoost 0.977 10.139 6.501 0.945 15.391 12.052
+Figure
+9. R2 and MAE scores on Test set of the first combination.
+The dataset, comprising 195 samples in total, was partitioned into a training set of 156 samples
+(80%) and a test set of 39 samples (20%). All models were trained on the training data and sub-
+sequently evaluated on the unseen test data for the first feature combination (G-number 1). The
+detailed performance metrics for this initial combination are presented in Table 8, with visual rep-
+resentations of these results provided in Figure 9 and Figure 10.
+As indicated in Table 8, the XGBoost model demonstrated superior performance on the test set
+for this first combination, achieving a coefficient of determination (R 2) of 0.945, a Mean Absolute
+Error (MAE) of 12.052 F g −1, and a Root Mean Square Error (RMSE) of 15.391 F g −1. Figure 9
+visually confirms the high R2 score and relatively low MAE for XGBoost compared to other mod-
+els such as SVR and DNN for this combination. Furthermore, Figure 10 not only illustrates the
+lower RMSE achieved by XGBoost but also presents the distribution of predicted capacitance values
+against the actual values for the test set, offering a qualitative assessment of each model’s predictive
+accuracy and consistency. For instance, the box plot for XGBoost in Figure 10 typically shows a
+tighter interquartile range centered closer to the median of the actual values, indicative of better
+performance.
+15
+Page 15 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 17 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure
+10. RMSE and Distribution of test prediction of the first combination.
+For the second feature combination (G-number 2 as detailed in Table6), the models were similarly
+trained using 156 samples and evaluated on a test set of 39 samples. This combination utilized
+a distinct set of 9 input features from the industrial analysis and processing parameters groups:
+Moisture (M, %), Ash (%), Volatile Matter (VM, %), Fixed Carbon (FC, %), Activation Temperature
+(AT, °C), Heating Ramp Rate (RT, °C/min), Holding Time (HT, min), Impregnation Ratio (IR),
+and Current Density (Cond, A g −1). The performance metrics for each model with this specific
+feature set are presented in Table 9.
+Consistent with the findings from the first combination, the XGBoost model again yielded the
+most promising results on the test data for this second combination. It achieved an R2 of 0.948,
+an MAE of 11.796 F g −1, and an RMSE of 14.968 F g −1. The superiority of XGBoost across all
+evaluated metrics is evident when compared to the other models, with LightGBM being its closest
+competitor. Figure 11 reads directly from left to right: XGBoost and LightGBM occupy the high-R 2
+/ low-MAE corner and are visually separated from Random Forest by a small but consistent gap,
+while SVR and the DNN cluster near the low- R2 end with markedly higher MAE bars, indicating
+that the two boosting methods extract more useful signal from the proximate-analysis-plus-process
+descriptor block than the kernel or fully connected neural model. Figure 12 sharpens this reading:
+the RMSE bars follow the same ordering, and the accompanying prediction distributions show that
+XGBoost and LightGBM place their predicted values in a tight cloud around the observed capacitance
+range, whereas Random Forest widens noticeably at both tails and SVR shifts systematically off the
+diagonal, which is why its RMSE separates from the boosting methods even though its median error
+is not the worst.
+T able 9. Performance metrics of the used models for the second combination (G-number 2)
+Mo
+del Name Training Set Test Set
+R2 RMSE MAE R2 RMSE MAE
+SVR
+0.898 21.231 9.719 0.732 33.999 26.107
+Random Forest 0.948 15.157 9.705 0.858 24.749 19.544
+DNN 0.823 28.008 0.758 0.741 33.526 25.160
+LightGBM 0.920 18.833 12.843 0.906 20.193 15.910
+XGBoost 0.962 12.911 7.029 0.948 14.968 11.796
+16
+Page 16 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 18 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure
+11. R2 and MAE scores on the Test set of the second combination.
+Figure
+12. RMSE and Distribution of test prediction of the second combination.
+The values in Table 9 correspond to one 80/20 partition of the cleaned dataset. To quantify
+how stable these estimates are under resampling of the split itself, the second combination was also
+evaluated across 30 fresh random 80/20 splits with identical hyperparameters, and Table 10 reports
+the resulting mean ± standard deviation of R2, MAE, and RMSE on both the training and the
+test partitions.1 The stability envelope shows that the ranking of the model families is preserved on
+average (XGBoost and the XGBoost–LightGBM ensemble remain at the top, SVR at the bottom),
+while the standard deviations quantify how much the individual test-set metric depends on the
+specific 80/20 partition. Consistent with this envelope, the single-split values reported in Table 9 sit
+close to the upper edge of the empirical distributions, so they are best interpreted as one favourable
+operating point within a broader stability envelope rather than as a guaranteed point estimate.
+T able 10. Repeated-split stability envelope for the second feature combination (G2), 30 fresh random 80/20
+partitions with hyperparameters matched to Table 9. Values are mean ± standard deviation.
+Mo
+del Training Set Test Set
+R2 MAE RMSE R2 MAE RMSE
+SVR
+0.508 ± 0.027 33.40 ± 1.21 46.19 ± 1.48 0.408 ± 0.098 39.15 ± 4.94 51.59 ± 5.26
+Random Forest 0.959 ± 0.008 8.81 ± 0.59 13.24 ± 1.29 0.761 ± 0.089 23.15 ± 3.13 32.21 ± 4.68
+DNN 0.755 ± 0.104 24.11 ± 5.03 32.00 ± 5.85 0.569 ± 0.165 32.77 ± 4.99 43.27 ± 6.77
+LightGBM 0.945 ± 0.010 10.53 ± 0.84 15.38 ± 1.32 0.787 ± 0.086 20.84 ± 2.53 30.30 ± 4.50
+XGBoost 0.978 ± 0.009 4.91 ± 0.83 9.40 ± 2.14 0.801 ± 0.102 18.00 ± 3.11 28.85 ± 6.20
+Ensemble (XGB+LGBM) 0.969 ± 0.009 7.28 ± 0.71 11.53 ± 1.61 0.805 ± 0.092 18.46 ± 2.70 28.71 ± 5.39
+T
+o test whether the observed ordering is statistically significant rather than incidental, paired
+Wilcoxon signed-rank tests were computed on the per-split test-set MAE, using XGBoost as the
+reference and testing the one-sided hypothesis that XGBoost produces a lower per-split MAE than
+each competing model. XGBoost’s test MAE was significantly lower than SVR’s, Random Forest’s,
+LightGBM’s, and the DNN’s (p < 10−7 in each case) and also lower than the XGBoost–LightGBM
+ensemble (p = 0.019), so the model ordering displayed in Table 10 is preserved with high statistical
+confidence across the 30 resampled splits, and the ensemble does not offer a systematic accuracy
+advantage over XGBoost alone in the G2 setting.
+1F
+or the repeated-split CI experiment, the deep neural network is realised through scikit-learn’s MLPRegressor with
+the same 256/128/64/32 architecture, ReLU activation, Adam optimiser, dropout regularisation, and validation-loss
+early stopping used in the main workflow; this substitution is purely for reproducible CI estimation and does not affect
+the single-split values reported in Table 9.
+17
+Page 17 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 19 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Training cost is not a bottleneck at this dataset size: median single-fit wall-clock times on the G2
+training partition (156 samples, 9 features) were approximately 0.7 ms for SVR, 0.2 s for Random
+Forest, 0.5 s for LightGBM, 0.6 s for the DNN, and 0.6 s for XGBoost on a single CPU node, and
+the full GridSearchCV enumeration over the ranges reported in the Materials and Methods section
+completes in a few minutes per model. XGBoost therefore delivers the highest test-set accuracy at a
+compute cost comparable to LightGBM and the DNN, and roughly two orders of magnitude above
+SVR, while still remaining well below any practical deployment threshold at this dataset scale.
+Attention was next directed to the third feature combination (G-number 3 as detailed in Table6),
+which comprised 8 input features: Cellulose (Cel, %), Hemicellulose (Hem, %), Lignin (Lig, %),
+Activation Temperature (AT, °C), Heating Ramp Rate (RT, °C/min), Holding Time (HT, min),
+Impregnation Ratio (IR), and Current Density (Cond, A g −1). The predictive performance of the
+models using this set of features was evaluated, with detailed metrics provided in Table 11.
+T able 11. Performance metrics of the used models for the third combination (G-number 3)
+Mo
+del Name Training Set Test Set
+R2 RMSE MAE R2 RMSE MAE
+SVR
+0.899 21.147 9.664 0.738 33.652 25.558
+Random Forest 0.948 15.133 9.760 0.822 27.713 21.197
+DNN 0.845 26.256 18.978 0.782 30.687 24.674
+LightGBM 0.916 19.318 13.275 0.852 25.269 19.848
+XGBoost 0.964 12.602 6.666 0.933 17.013 13.650
+Once again, the XGBoost model demonstrated superior performance on the test set for this third
+combination, achieving an R2 value of 0.933, an MAE of 13.650 F g −1, and an RMSE of 17.013
+F g −1, as presented in Table 11. The comparative R2 and MAE scores for all models utilizing this
+feature set are visually detailed in Figure 13. Furthermore, Figure 14 illustrates the RMSE values
+and provides insight into the distribution of predicted capacitance values on the test set for each
+model, offering a qualitative overview of their predictive behavior with this particular combination
+of input features.
+Figure
+13. R2 and MAE scores on the Test set for the third feature combination.
+Figure
+14. RMSE scores and distribution of test predictions for the third feature combination.
+18
+Page 18 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 20 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Across the first three combinations, a consistent trend emerges: models relying only on ele-
+mental or structural subsets are informative but not maximally predictive, whereas boosting-based
+approaches already show clear advantages in error control. This early-stage pattern anticipates the
+stronger performance gains observed when broader feature groups are integrated in subsequent com-
+binations.
+Proceeding to the fourth feature combination (G-number 4, as defined in Table 6), the models
+were tasked with predicting capacitance based on a set of 13 input features. This set comprised
+elemental properties (C, H, O, N), industrial analysis data (M, Ash, VM, FC), and the standard
+processing parameters (AT, RT (Heating Ramp Rate), HT (Holding Time), IR, Cond). The models
+were trained on 156 samples and their predictive capabilities were assessed using a test set of 39
+samples. The comprehensive performance outcomes for this fourth combination are detailed in
+Table 12.
+T able 12. Performance metrics of the used models for the fourth combination (G-number 4)
+Mo
+del Name Training Set Test Set
+R2 RMSE MAE R2 RMSE MAE
+SVR
+0.898 21.329 9.749 0.731 34.074 26.162
+Random Forest 0.959 13.424 8.961 0.870 23.671 19.605
+DNN 0.855 25.380 19.237 0.772 30.126 22.385
+LightGBM 0.926 18.172 12.196 0.927 17.770 13.859
+XGBoost 0.978 9.924 6.273 0.942 15.772 12.730
+An analysis of the test set results, presented in Table 12, indicates that the XGBoost model
+continued to be the top performer for this fourth combination. It achieved an R2 of 0.942, an
+MAE of 12.730 F g −1, and an RMSE of 15.772 F g −1. Notably, LightGBM also demonstrated
+strong predictive power with an R2 of 0.927, positioning it as a close competitor to XGBoost and
+significantly outperforming SVR, Random Forest, and DNN for this feature set. This suggests that
+for a combination integrating both elemental and industrial properties of biomass with processing
+conditions, gradient boosting techniques (XGBoost and LightGBM) are particularly effective. The
+visual representations of these findings, including R2 and MAE scores, are provided in Figure 15,
+while Figure 16 illustrates the RMSE values and the prediction distributions for the models with
+this feature set.
+Figure
+15. R2 and MAE scores on the Test set for the fourth feature combination.
+19
+Page 19 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 21 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure
+16. RMSE scores and distribution of test predictions for the fourth feature combination.
+Shifting the focus to a more comprehensive feature set, the fifth combination (G-number 5 as
+detailed in Table 6) integrated elemental properties (C, H, O, N) with structural composition (Cel,
+Hem, Lig) and the standard processing parameters (AT, RT, HT, IR, Cond), culminating in a total
+of 12 input features. This amalgamation was hypothesized to provide a richer informational basis
+for the predictive models. The models were trained and evaluated under the same data partitioning
+protocol as previous combinations, and their detailed performance metrics are cataloged in Table 13.
+T able 13. Performance metrics of the used models for the fifth combination (G-number 5)
+Mo
+del Name Training Set Test Set
+R2 RMSE MAE R2 RMSE MAE
+SVR
+0.898 21.328 9.735 0.731 34.058 26.140
+Random Forest 0.960 13.353 8.834 0.828 27.237 21.654
+DNN 0.865 24.443 18.276 0.821 27.807 21.304
+LightGBM 0.924 18.367 12.346 0.910 19.754 16.157
+XGBoost 0.978 9.861 6.233 0.935 16.794 13.584
+An
+examination of the test set results in Table 13 reveals that the inclusion of both elemental
+and structural biomass properties alongside processing parameters indeed sustained a high level of
+predictive accuracy, particularly for the XGBoost model. XGBoost achieved an R2 of 0.935, an MAE
+of 13.584 F g−1, and an RMSE of 16.794 F g −1. Interestingly, while XGBoost maintained its leading
+position, the performance gap between it and LightGBM ( R2 = 0.910) appeared to be relatively
+consistent with previous, less complex feature sets. This might suggest that while a broader feature
+set is beneficial, the incremental predictive gain from adding elemental properties to a set already
+containing structural and processing parameters might reach a point of diminishing returns for these
+gradient boosting algorithms, or that the interplay between these features is adeptly captured by the
+top-performing models.
+Figure
+17. R2 and MAE scores on the Test set for the fifth feature combination.
+The visual diagnostics in Figure 17 (R2 and MAE scores) and Figure 18 (RMSE scores and
+prediction distributions) further contextualize these findings. Notably, the DNN model (R 2 = 0.830)
+showed a competitive performance in this combination, slightly surpassing Random Forest (R 2 =
+20
+Page 20 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 22 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure
+18. RMSE scores and distribution of test predictions for the fifth feature combination.
+0.828) on the test set, which could indicate its aptitude in leveraging larger, more diverse feature
+spaces compared to some of the other models evaluated. The distribution plots, as seen in Figure 18,
+continue to highlight the tighter prediction clusters for XGBoost and LightGBM, reinforcing their
+reliability.
+The analysis proceeded with the sixth feature combination (G-number 6 as detailed in Table 6),
+which integrated industrial analysis features (M, Ash, VM, FC) with structural composition at-
+tributes (Cel, Hem, Lig) and the standard processing parameters (AT, RT, HT, IR, Cond). This set,
+comprising 12 input features, was evaluated using the established training and testing protocol. The
+comprehensive performance metrics for all models employing this combination are systematically
+presented in Table 14.
+T able 14. Performance metrics of the used models for the sixth combination (G-number 6)
+Mo
+del Name Training Set Test Set
+R2 RMSE MAE R2 RMSE MAE
+SVR
+0.898 21.317 9.734 0.731 34.065 26.143
+Random Forest 0.945 15.584 10.141 0.826 27.394 20.729
+DNN 0.871 23.889 17.450 0.808 29.093 23.308
+LightGBM 0.926 18.140 12.098 0.912 19.502 15.225
+XGBoost 0.965 12.542 6.669 0.925 18.052 13.766
+Ec
+hoing the trend observed in previous combinations, the XGBoost model consistently outper-
+formed its counterparts on the test set for this sixth feature ensemble. As detailed in Table 14,
+XGBoost delivered an R2 of 0.925, an MAE of 13.766 F g −1, and an RMSE of 18.052 F g −1. Fig-
+ure 19 shows that the R2 and MAE bars of XGBoost sit slightly below their G2 values, indicating
+that swapping the elemental block for structural composition alone reduces the actionable predictive
+signal even when the proximate-analysis descriptors are retained; LightGBM tracks XGBoost closely,
+keeping the two boosting methods separated from the rest of the field by roughly the same margin
+as in the previous combinations. Figure 20 confirms this reading through the RMSE and prediction-
+distribution panels, where the boosting methods again produce tight prediction clouds centred on
+the diagonal while Random Forest widens noticeably in the mid-to-high capacitance range and SVR
+sits far from the identity line at low values. This constellation reinforces the interpretation that
+structural composition contributes less independent information once proximate analysis is already
+available.
+21
+Page 21 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 23 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure
+19. R2 and MAE scores on the Test set for the sixth feature combination.
+Figure
+20. RMSE scores and distribution of test predictions for the sixth feature combination.
+The seventh and most comprehensive feature combination (G-number 7 as detailed in Table 6)
+incorporated all 17 input features available in the dataset, encompassing elemental, industrial, and
+structural properties of the biomass, along with all processing parameters. The performance of the
+models when trained with this exhaustive feature set is summarized in Table 15.
+T able 15. Performance metrics of the used models for the seventh combination (G-number 7)
+Mo
+del Name Training Set Test Set
+R2 RMSE MAE R2 RMSE MAE
+SVR
+0.878 23.245 11.946 0.787 32.379 24.226
+Random Forest 0.960 13.390 8.841 0.826 27.420 21.370
+DNN 0.887 22.386 16.001 0.903 20.417 16.332
+LightGBM 0.936 16.796 10.334 0.905 20.280 16.579
+XGBoost 0.985 8.217 4.403 0.940 16.150 12.103
+Ensemble 0.971 11.428 6.963 0.934 16.917 13.090
+A
+consistent pattern emerged across all seven combinations: XGBoost consistently yielded the
+highest predictive accuracy, closely followed by the LightGBM model. Given their strong individual
+performances, an ensemble model combining the predictions of XGBoost and LightGBM was also
+evaluated for the seventh combination. While the ensemble model performed well (Test R2 = 0.934),
+XGBoost alone achieved the overall best results for this comprehensive feature set (Test R2 = 0.940,
+MAE = 12.103 F g −1, RMSE = 16.150 F g −1).
+Several structural properties of XGBoost align well with the characteristics of the present predic-
+tion task and help explain its consistent lead. First, gradient boosting builds an additive ensemble
+in which each successive tree focuses on the residuals of the current ensemble, which fits the mod-
+est and heterogeneous sample size of literature-derived data because model capacity is allocated to
+the samples that remain hardest to predict. Second, XGBoost regularises this additive process at
+several complementary layers—shrinkage through the learning rate, column subsampling per tree,
+and depth control via max
+depth—whic
+h together act as an explicit variance-control mechanism
+on a small tabular dataset. Third, boosted decision trees natively capture non-linear interactions
+22
+Page 22 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 24 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+between predictors, for example between current density and activation temperature or between ash
+content and holding time, without requiring hand-crafted interaction terms; this is a limitation for
+the linear and kernel-based competitors on this feature space. Fourth, LightGBM shares the same
+gradient-boosting foundation and remains the closest competitor across the seven combinations,
+which is consistent with the interpretation: the performance gap between the two boosting methods
+is small and driven mainly by their differing tree-growth strategies (level-wise for XGBoost, leaf-wise
+for LightGBM), while the gap between either boosting method and the non-boosting models (SVR,
+Random Forest, DNN) is systematically larger. These algorithmic properties, taken together, ac-
+count for the consistent XGBoost lead observed across the different feature blocks rather than an
+outcome that depends on any single combination.
+Table 16 provides a consolidated view of the XGBoost model’s performance metrics across all
+seven feature combinations, highlighting its robustness and suitability for this prediction task. No-
+tably, XGBoost demonstrated particularly strong performance with the first (elemental + process-
+ing), second (industrial + processing), and seventh (all features) combinations, achieving test R2
+values of 0.945, 0.948, and 0.940, respectively.
+T able 16. Performance metrics for the XGBoost model across all feature combinations
+Com
+bination Training Set Test Set
+(G-number) R2 RMSE MAE R2 RMSE MAE
+1
+0.977 10.139 6.501 0.945 15.391 12.052
+2 0.962 12.911 7.029 0.948 14.968 11.796
+3 0.964 12.602 6.666 0.933 17.013 13.650
+4 0.978 9.924 6.273 0.942 15.772 12.730
+5 0.978 9.861 6.233 0.935 16.794 13.584
+6 0.965 12.542 6.669 0.925 18.052 13.766
+7 0.985 8.217 4.403 0.940 16.150 12.103
+Given that the seventh combination includes the full spectrum of available data, a more detailed
+discussion of its results, including feature importance analysis, is warranted. The relative impor-
+tance of each input feature, as determined by the different models for this comprehensive seventh
+combination, is illustrated in Figures 21, 22, and 23. To further scrutinize the predictive quality,
+scatter plots comparing the predicted versus actual capacitance values for each model, derived from
+the seventh combination, are provided in Figures 25 through 29.
+Figure
+21. Feature importance for LightGBM and XGBoost models (Seventh Combination).
+An initial examination of the feature importance plots for the seventh combination (all features
+included) reveals interesting commonalities and differences across the various models. For instance, as
+depicted in Figure 21, both LightGBM and XGBoost, the top-performing gradient boosting models,
+assign high importance to processing parameters. In the LightGBM model, Cond(A g −1) (Current
+Density) emerges as the most influential feature, followed by AT( °C) (Activation Temperature)
+and Ash(%). Similarly, XGBoost also highlights Cond(A g −1) as a critical feature, with VM(%)
+(Volatile Matter) and Ash(%) following in importance. This underscores the significant role of
+23
+Page 23 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 25 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+electrochemical testing conditions and key industrial analysis parameters in determining capacitance
+when a comprehensive feature set is available.
+Figure
+22. Feature importance for Random Forest and SVR models (Seventh Combination).
+The feature importance rankings for Random Forest and SVR, illustrated in Figure 22, present
+a slightly different perspective. While Random Forest also identifies Cond(A g −1) as a highly im-
+portant feature, VM(%) and AT(°C) appear to be major contributors as well. For SVR, the feature
+importance (often derived from permutation importance or coefficient magnitudes, depending on
+the kernel) suggests that Cond(A g −1), VM(%), and Ash(%) are among the most influential vari-
+ables. The consistent appearance of Cond(A g −1) and industrial analysis parameters like VM(%)
+and Ash(%) across these diverse models suggests their fundamental impact on the target variable.
+Figure
+23. Feature importance for the DNN model (Seventh Combination).
+The Deep Neural Network (DNN) model’s feature importance, shown in Figure23, further corrob-
+orates the criticality of Cond(A g−1), which is ranked as the most significant feature by a considerable
+margin. Following current density, HT(min) (Holding Time), AT( °C), Ash(%), and VM(%) are also
+deemed highly important by the DNN. It is noteworthy that processing parameters (Cond, HT, AT)
+and industrial analysis figures (Ash, VM) dominate the top ranks of feature importance for the DNN,
+indicating that the network learned to heavily rely on these variables when predicting capacitance
+from the complete feature set. The relatively lower importance assigned to some elemental (e.g.,
+O(%)) or structural components (e.g., Cel(%)) by the DNN might imply that their influence is either
+less direct or is effectively captured through correlations with the more dominant features in this
+comprehensive dataset.
+Because tree-based feature-importance scores can favour high-cardinality or high-variance pre-
+dictors, the interpretation of the best-performing G2 combination was independently checked with
+SHapley Additive exPlanations (SHAP) values computed on the XGBoost model. The mean |SHAP
+24
+Page 24 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 26 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+value| ranking together with the beeswarm distribution of per-sample contributions (Figure 24) con-
+firms the ordering obtained from the model-native importance analyses: current density (Cond) is
+the dominant driver of the model output, followed by volatile matter (VM), holding time (HT), fixed
+carbon (FC), and activation temperature (AT). The colouring on the beeswarm panel additionally
+reveals the direction of each contribution: high values of Cond are associated with negative SHAP
+contributions (lower predicted capacitance), consistent with the rate-limited electrolyte access argued
+in the Mechanistic Interpretation subsection, while high values of VM push the prediction upward, in
+line with the interpretation that volatile matter reflects the internal void volume templated into the
+carbonaceous framework. Ash content acts asymmetrically, with high ash values pulling predictions
+downward as expected from an inverse purity marker. The SHAP evidence therefore agrees with the
+model-native rankings while adding sign and magnitude information that the tree-based scores alone
+do not carry.
+Figure
+24. SHAP interpretation of the XGBoost model on the G2 feature block. Left: mean |SHAP value| ranking.
+Right: beeswarm distribution of per-sample SHAP contributions, where the horizontal position of each dot indicates
+the sample’s contribution to the predicted capacitance and the colour of the dot indicates the corresponding feature
+value. Both panels agree that Cond is the dominant contributor; the beeswarm additionally shows that high Cond
+values lower the predicted capacitance while high VM values raise it, consistent with the mechanistic interpretation.
+Figure
+25. Predicted vs. Actual capacitance values for the XGBoost model (Seventh Combination).
+Beyond feature importance, the predictive behavior of each model for the seventh combination
+can be assessed through the predicted-versus-actual scatter plots. Figure 25 shows that XGBoost
+predictions are most tightly concentrated around the y = x line across both training and test subsets,
+indicating comparatively strong calibration and error control. Figure 26 shows a similar but slightly
+wider spread, consistent with its second-best ranking in the metric tables. In both cases, dispersion
+increases at the extremes of the target range, which is expected for heterogeneous literature-derived
+datasets and should be considered when interpreting high-capacitance predictions.
+25
+Page 25 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 27 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure
+26. Predicted vs. Actual capacitance values for the LightGBM model (Seventh Combination).
+The Random Forest (Figure27) and SVR (Figure 28) models retain acceptable trend tracking but
+exhibit broader residual spread on the test subset, in line with their lower R2 and higher error values
+in Table15. The ensemble model (Figure 29), formed by averaging LightGBM and XGBoost outputs,
+remains competitive and stable, but does not consistently exceed the strongest individual XGBoost
+performance. The scatter diagnostics corroborate the tabulated metrics: gradient-boosting-based
+models provide the most reliable prediction regime for the full-feature scenario.
+Figure
+27. Predicted vs. Actual capacitance values for the Random Forest model (Seventh Combination).
+26
+Page 26 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 28 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Figure
+28. Predicted vs. Actual capacitance values for the SVR model (Seventh Combination).
+Figure
+29. Predicted vs. Actual capacitance values for the Ensemble model (Seventh Combination).
+3.2 Mechanistic Interpretation and Feature-Combination Rationale
+Although the present study is data-driven, the dominant variables identified by the models are also
+physically plausible from a supercapacitor design perspective. Current density is repeatedly ranked
+first because it strongly affects ion-transport and charge-transfer timescales during electrochemical
+testing; higher current densities shorten the effective charging window and often reduce the measured
+specific capacitance when pore accessibility is kinetically limited. Activation temperature acts as a
+structural-development variable: moderate increases can promote pore generation and surface-area
+growth, whereas excessively severe activation may widen or collapse useful pore networks and degrade
+capacitance. Holding time plays a similar process-window role by controlling the extent of burn-off
+and activation completeness. Ash content is mechanistically meaningful because higher ash fractions
+generally indicate more inorganic residue, which can reduce effective carbon purity and interfere
+with desirable porous carbon formation. Volatile matter is likewise informative because it reflects
+precursor decomposition behavior and can indirectly signal how readily the biomass matrix develops
+pore-forming channels during thermal conversion.
+These qualitative connections can be sharpened at the electrochemical level. At low current
+densities, the diffusion time available for electrolyte ions to reach interior micropores is comparable to
+or longer than the effective double-layer formation timescale, so the measured capacitance approaches
+the electrode’s intrinsic value; at high current densities, this window narrows, IR drop grows relative
+to the useful voltage window, and the measured capacitance collapses toward a rate-limited surface
+response. Activation temperature and holding time together control where the precursor sits along
+the classical burn-off–surface-area curve: too low, and pore volume remains under-developed; too
+high or too long, and micropore walls coalesce into wider mesopores that lower the specific-surface
+contribution. Ash content operates as an inverse purity marker, since inorganic residue does not
+participate in double-layer storage and can even block ion pathways into otherwise active micropores.
+Volatile matter, in turn, reflects the fraction of the precursor that leaves the matrix during pyrolysis
+and therefore signals how much internal void volume can be templated into the final carbonaceous
+framework. The convergence of the models onto these particular variables is therefore not accidental:
+each of them is a directly interpretable handle on either the ion-transport regime or the pore-
+27
+Page 27 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 29 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+formation pathway that governs supercapacitor capacitance.
+A compact rationale also emerges for the observed differences among feature combinations.
+The strong performance of G2 (industrial analysis + processing parameters) is reasonable because
+proximate-analysis descriptors such as ash, volatile matter, moisture, and fixed carbon directly sum-
+marize carbon yield potential, mineral residue burden, and thermal decomposition behavior, while
+the process variables determine how those precursor tendencies are translated into final pore archi-
+tecture and electrochemical response. By contrast, the structural-composition block alone is weaker
+because cellulose, hemicellulose, and lignin differences are partially homogenized during carboniza-
+tion; their influence is real but less direct once the precursor is converted into a carbonaceous network.
+In this sense, proximate-analysis variables and process settings form a more actionable feature block
+for smart energy-storage carbon design, whereas structural descriptors play a secondary, context-
+dependent role.
+3.3 Limitations and Deployment Boundary Conditions
+Several limitations should be recognized when interpreting the present results. First, the dataset is
+literature-derived and contains 195 samples, which is adequate for comparative benchmarking but
+still limited for claiming universal generalization across all biomass families, activation chemistries,
+and testing protocols. Second, electrolyte identity and voltage-window settings are known to influ-
+ence measured capacitance, as recently demonstrated in dedicated electrolyte-optimization studies
+on transition-metal-oxide supercapacitor electrodes [43]; yet these variables were not available as
+consistently harmonized descriptors in the adopted dataset and therefore could not be incorporated
+as standardized predictors in the present modeling pipeline. The reported models should thus be
+interpreted as design-support tools conditioned on the information that is reliably available across
+sources rather than as complete electrochemical surrogates. Third, while the source-aware validation
+analysis improves realism, the study remains computational and does not replace experimental confir-
+mation for newly proposed precursor–process combinations. Concretely, the leave-one-reference-out
+estimate reported in Section 3.1 shows a substantial drop in R2 relative to the within-corpus random-
+split scores, so the reported accuracy should not be projected onto a completely new biomass family
+that is absent from the training corpus; predictions for such precursors are intended as prioritisation
+signals for experimental verification rather than as standalone forecasts. These boundary conditions
+should be kept explicit when translating model outputs into laboratory decisions.
+3.4 Research-Question-Centered Synthesis
+To preserve a clear question-to-evidence flow, we map each research question to direct evidence from
+the reported results.
+• RQ1 (feature groups): Results across seven combinations indicate that process parameters
+and proximate-analysis variables provide the strongest predictive signal among raw-material-
+level descriptors.
+• RQ2 (model family): Gradient-boosting methods, especially XGBoost, consistently offer the
+most favorable accuracy–stability balance across combinations, while split-protocol sensitivity
+analysis confirms that source-aware validation is necessary for realistic generalization assess-
+ment.
+• RQ3 (dominant parameters): Feature-importance analyses converge on current density,
+activation temperature, holding time, ash content, and volatile matter as repeatedly influential
+variables.
+• RQ4 (actionable guidance): The combined model-comparison and feature-priority results
+support a practical screening logic in which researchers prioritize process-condition optimization
+before expensive deep characterization campaigns.
+Table 17 provides a compact traceability map from question to evidence and practical implication.
+4 Conclusion
+This study demonstrates that a raw-biomass-centered, source-aware materials-informatics workflow
+can predict supercapacitor specific capacitance with high within-corpus fidelity for the biomass fam-
+ilies and process regions represented in the training data. At the same time, the workflow remains
+practically usable for early-stage screening of biomass-derived carbon electrodes. By systematically
+evaluating multiple machine learning models across seven feature combinations, the work reframes
+28
+Page 28 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 30 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+T able 17. Traceability map linking research questions, evidence, and practical implications.
+RQ Core evidence Section anchor Practical implication
+RQ1 Combination-wise per-
+formance with protocol-
+sensitivity evidence
+Results and Discussion
+(combination and proto-
+col analyses)
+Prioritize informative feature blocks
+with validation-aware screening
+RQ2 Consistent top ranking of
+XGBoost/LightGBM with
+protocol context
+Model tables, metric
+plots, and protocol-effect
+analysis
+Select robust baselines and validate
+using source-aware splits
+RQ3 Cross-model feature-
+importance agreement
+Feature-importance sub-
+section
+Focus optimization on Cond, AT, HT,
+Ash, VM
+RQ4 Integrated interpretation of
+metrics + importance +
+scatter behavior
+This subsection and con-
+clusion
+Translate prediction outputs into
+decision-support rules
+biomass-derived electrode prediction as a design-support problem rather than a leaderboard exercise
+and provides evidence-based responses to RQ1–RQ4.
+Across the benchmark experiments, XGBoost consistently delivered the strongest predictive per-
+formance. Its best result was obtained for the second feature combination, which couples proximate-
+analysis variables with process settings, reaching a test-set R2 of 0.948, an MAE of 11 .796 F g −1,
+and an RMSE of 14 .968 F g −1. LightGBM remained the most competitive alternative, reinforc-
+ing the suitability of gradient-boosting methods for this materials-informatics task. At the same
+time, the source-aware validation analysis showed that random partitions are substantially more
+optimistic than source-held-out evaluation, indicating that realistic reporting for literature-derived
+smart-material datasets must go beyond conventional random-split accuracy. Because the leave-
+one-reference-out estimate drops substantially below the random-split scores, the reported accuracy
+should be read as a within-corpus benchmark rather than as a guarantee for unseen biomass families
+or novel process regions, whose behaviour remains to be experimentally validated.
+The study also clarifies which descriptors are most actionable for materials selection and process-
+window definition. Across models, current density, activation temperature, holding time, ash content,
+and volatile matter repeatedly emerged as the dominant variables. The superior performance of the
+G2 feature block indicates that proximate-analysis descriptors combined with process parameters
+provide the most decision-relevant view of capacitance behavior. In practical terms, this means that
+process-condition tuning and precursor-quality screening should be prioritized before expensive deep
+characterization campaigns when exploring new biomass-derived carbons.
+The manuscript contributes a validation-aware and interpretation-oriented framework for data-
+driven development of smart energy-storage materials. Future work should extend the dataset with
+harmonized electrolyte and voltage-window metadata, expand out-of-source testing across new pre-
+cursor families, and experimentally verify model-guided precursor–process candidates so that com-
+putational screening can be translated into robust smart-material design rules. A natural extension
+of the same framework is a multi-metric prediction layer that jointly forecasts specific capacitance,
+energy density, power density, and cyclic stability from the same precursor-plus-process feature space.
+The seven-combination structure and the source-aware validation protocol translate directly to that
+setting; the main open challenge is harmonising the reporting conventions of the additional perfor-
+mance metrics across literature sources so that a multi-output model can be trained without silent
+leakage.
+Acknowledgments
+We gratefully acknowledge the support of The Scientific and Technological Research Council of
+T¨ urkiye (T¨UB˙ITAK), which funded this research under Project Number 122M793. Parts of the
+analysis were also supported by the Fırat University Scientific Research Projects Coordination Unit
+(F¨UBAP) under Project Numbers ADEP23.19 and ADEP24.25.
+Declaration of Generative AI and AI-assisted technologies in the writing process:During
+the preparation of this work, the authors used Claude, a generative AI tool developed by Anthropic,
+for the sole purpose of limited linguistic editing and language enhancement. After using this tool,
+the authors carefully reviewed and edited the content as needed and take full responsibility for the
+scientific content, analysis, and conclusions presented in the manuscript.
+Conflict of Interest: There are no conflicts to declare.
+29
+Page 29 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 31 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Funding
+The Scientific and Technological Research Council of T¨ urkiye (T ¨UB˙ITAK), Project Number
+122M793. Fırat University Scientific Research Projects Coordination Unit (F ¨UBAP), Project
+Numbers ADEP23.19 and ADEP24.25.
+Author contributions
+Ferhat U¸ car:Conceptualization, Investigation, Methodology, Software, Visualization, Writing –
+Original draft preparation, Writing – Review & Editing. Nida Katı: Data curation, Methodology,
+Investigation, Visualization, Writing – Original draft preparation, Writing – Review & Editing.
+Mohammed Abduljalil Saeed Ahmed: Methodology, Software, Visualization.
+Data availability
+The data used in this study were obtained from publicly available datasets reported in the literature.
+All data sources are appropriately cited within the manuscript. The Python scripts that implement
+the modelling workflow, the source-aware validation pipeline, the repeated-split stability analysis,
+and the SHAP interpretation will be released in a dedicated public repository hosted at https:
+//github.com/drferhatu/supcap-source-aware to support full reproducibility of the reported
+results.
+References
+[1] ¨O. Ba¸ sg¨ oz, A. G¨ ung¨ or,¨O. G¨ uler, E. Erdem, High-entropy alloys and oxides as supercapacitor
+electrodes: A structural and electrochemical perspective for energy storage, Advanced Sustain-
+able Systems 9 (6) (2025) 2500201. doi:10.1002/adsu.202500201.
+[2] P. Kumar, P. Sephra, M. Gupta, V. Jeoti, C. Tharini, G. M. Stojanovi´ c, Flexible and sustainable
+energy storage: Recent progress and prospects in wearable supercapacitors, Journal of Energy
+Storage 141 (2026) 119173. doi:10.1016/j.est.2025.119173.
+[3] S. Ghosh, R. Santhosh, S. Jeniffer, V. Raghavan, G. Jacob, K. Nanaji, P. Kollu, S. K.
+Jeong, A. N. Grace, Natural biomass derived hard carbon and activated carbons as elec-
+trochemical supercapacitor electrodes, Scientific reports 9 (1) (2019) 16315. doi:10.1038/
+s41598-019-52006-x.
+[4] S. Sagadevan, T. Balakrishnan, M. Z. Rahman, T. Soga, H. Randriamahazaka, B. Kakavandi,
+M. R. Johan, Agricultural biomass-based activated carbons for efficient and sustainable super-
+capacitors, Journal of Energy Storage 97 (2024) 112878. doi:10.1016/j.est.2024.112878.
+[5] A. Jain, M. Ghosh, M. Krajewski, S. Kurungot, M. Michalska, Biomass-derived activated carbon
+material from native european deciduous trees as an inexpensive and sustainable energy material
+for supercapacitor application, Journal of Energy Storage 34 (2021) 102178. doi:10.1016/j.
+est.2020.102178.
+[6] A. Abd-elnaby, K. E. El-Kelany, F. Selim, M. A. Ebied, A. Elshaer, Evaluating machine learning
+models for predicting the storage performance of polypyrrole-based supercapacitor electrodes,
+Journal of Energy Storage 140 (2025) 118943. doi:10.1016/j.est.2025.118943.
+[7] J. Wang, X. Zhang, Z. Li, Y. Ma, L. Ma, Recent progress of biomass-derived carbon materials
+for supercapacitors, Journal of Power Sources 451 (2020) 227794. doi:10.1016/j.jpowsour.
+2020.227794.
+[8] B. Qiu, W. Hu, D. Zhang, Y. Wang, H. Chu, Biomass-derived carbon as a potential sustainable
+material for supercapacitor-based energy storage: Design, construction and application, Journal
+of Analytical and Applied Pyrolysis 181 (2024) 106652. doi:10.1016/j.jaap.2024.106652.
+[9] S. S. Shah, Biomass-derived carbon materials for advanced metal-ion hybrid supercapaci-
+tors: a step towards more sustainable energy, Batteries 10 (5) (2024) 168. doi:10.3390/
+batteries10050168.
+[10] Y.-b. An, Y. Sun, K.-l. Zhang, C. Li, X.-z. Sun, K. Wang, X. Zhang, Y.-w. Ma, Tuning surface
+functional groups and crystallinity in activated carbon for high-voltage lithium-ion capacitors,
+New Carbon Materials 40 (5) (2025) 1085–1097. doi:10.1016/S1872-5805(25)61003-1.
+30
+Page 30 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 32 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+[11] H. Liu, X. Zhang, C. Li, S. Zhao, Y. An, X. Sun, K. Wang, Y. Ma, Self-templating synthesis
+of mesoporous carbon cathode materials for high-performance lithium-ion capacitors, Chem-
+SusChem 18 (3) (2025) e202401365. doi:10.1002/cssc.202401365.
+[12] H. R. Khan, A. L. Ahmad, Supercapacitors: Overcoming current limitations and charting the
+course for next-generation energy storage, Journal of Industrial and Engineering Chemistry 141
+(2025) 46–66. doi:10.1016/j.jiec.2024.07.014.
+[13] N. Kati, F. U¸ car, Investigation of prediction approaches for the design and performance analysis
+of supercapacitors with biomass-based activated carbon electrodes, Journal of Energy Storage
+133 (2025) 118029. doi:10.1016/j.est.2025.118029.
+[14] A. Jamaluddin, D. Harjunowibowo, S. Budiawanti, N. A. Kurdhi, Sutarsis, D. T. Lai, S. Ramesh,
+Applying machine learning to understand the properties of biomass carbon materials in super-
+capacitors, Energy Reports 10 (2023) 3125–3132. doi:10.1016/j.egyr.2023.09.099.
+[15] H. Liao, S. Fan, W. Han, M. Wang, Q. Shi, Y. Xie, X. Yang, W. Chen, Machine learning
+prediction of supercapacitor performance of n-doped biochar from biomass wastes based on n-
+containing groups, element compositions, and pore structures, Journal of Energy Storage 100
+(2024) 113548. doi:10.1016/j.est.2024.113548.
+[16] X. Lu, C. Zhao, H. Tu, S. Wang, A. Chen, H. Zhang, Research on prediction of energy density
+and power density of biomass carbon-based supercapacitors based on machine learning, Sus-
+tainable Materials and Technologies 44 (2025) e01309. doi:10.1016/j.susmat.2025.e01309.
+[17] S. Shrivas, A. Dubey, Prediction of specific capacitance of activated carbon electrode for en-
+ergy storage device by machine learning based approach, Journal of Energy Storage 121 (2025)
+116632. doi:10.1016/j.est.2025.116632.
+[18] S. Zhu, J. Li, L. Ma, C. He, E. Liu, F. He, C. Shi, N. Zhao, Artificial neural network enabled
+capacitance prediction for carbon-based supercapacitors, Materials Letters 233 (2018) 294–297.
+doi:10.1016/j.matlet.2018.09.028.
+[19] S. Ghosh, G. R. Rao, T. Thomas, Machine learning-based prediction of supercapacitor perfor-
+mance for a novel electrode material: Cerium oxynitride, Energy Storage Materials 40 (2021)
+426–438. doi:10.1016/j.ensm.2021.05.024.
+[20] M. Zhou, A. Vassallo, J. Wu, Data-driven approach to understanding the in-operando per-
+formance of heteroatom-doped carbon electrodes, ACS Applied Energy Materials 3 (6) (2020)
+5993–6000. doi:10.1021/acsaem.0c01059.
+[21] S. Rai, S. Gupta, S. Sajwan, V. Aditi, C. R. Kant, Artificial intelligence models for superca-
+pacitor performance prediction in energy storage, Journal of Energy Storage 145 (2026) 119919.
+doi:10.1016/j.est.2025.119919.
+[22] B. Demirbay, D. Bayram Kara, On the performance of machine learning models proposed for
+electrical conductivity classification of carbon nanotube-doped polymer nanocomposite films,
+Physica Scripta 101 (16) (2026) 166001. doi:10.1088/1402-4896/ae5cda.
+[23] E. Majhi, A. S. Deshpande, Pore-engineered ultrahigh surface area okra-derived activated car-
+bon for concurrently high-power-density and high-energy-density supercapacitor, Batteries &
+Supercaps 8 (11) (2025) e202500160. doi:10.1002/batt.202500160.
+[24] J. Chen, Y. Cao, D. Xie, J. Wang, X. Wu, Y. Tang, Y. Wang, Template-based fabrication
+of porous carbon for high-performance supercapacitor electrode, Batteries & Supercaps 9 (2)
+(2026) e202500665. doi:10.1002/batt.202500665.
+[25] C. Gao, Y. Liu, J. Zhang, H. Li, Y. Liu, J. Gu, T. Ma, P. Huo, Wood-inspired high ionic con-
+ductivity hydrogel electrolytes for flexible supercapacitors, Batteries & Supercaps 8 (5) (2025)
+e202400630. doi:10.1002/batt.202400630.
+[26] M. Zhang, M. Xu, P. Yang, Preparation and electrochemical performance study of high-
+performance nitrogen-doped activated carbon derived from biomass mangosteen shell, Physica
+Scripta 100 (8) (2025) 085922. doi:10.1088/1402-4896/aded47.
+31
+Page 31 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 33 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+[27] J. Gou, G. H. Sajid, M. M. Sabri, M. El-Meligy, K. El Hindi, N. A. Othman, Optimizing
+biochar yield and composition prediction with ensemble machine learning models for sustainable
+production, Ain Shams Engineering Journal 16 (1) (2025) 103209. doi:10.1016/j.asej.2024.
+103209.
+[28] T. Song, Y. Zhang, H. Wei, Y. Wang, Y. Gao, Iron-modified biochar from fermented grain
+residues for enhanced oxytetracycline degradation via periodate activation, Ain Shams Engi-
+neering Journal 16 (12) (2025) 103789. doi:10.1016/j.asej.2025.103789.
+[29] S. Mandal, A. C. Mendhe, M. Roy, N. S. Barse, T. Park, H.-S. Lee, H. Lee, Engineering
+biochar-derived functional materials for high-performance supercapacitors: Design principles,
+mechanisms, and scalable strategies, Carbon Energy (2026) e70178doi:10.1002/cey2.70178.
+[30] P. Liu, Y. Wen, L. Huang, X. Zhu, R. Wu, S. Ai, T. Xue, Y. Ge, An emerging machine learn-
+ing strategy for the assisted-design of high-performance supercapacitor materials by mining the
+relationship between capacitance and structural features of porous carbon, Journal of Electro-
+analytical Chemistry 899 (2021) 115684. doi:10.1016/j.jelechem.2021.115684.
+[31] K. O. Oyedotun, T. T. Nkambule, M. K. Mathe, K. O. Otun, B. B. Mamba, Synthesis and
+analysis of carbon sphere/reduced graphene oxide composites as supercapacitor electrodes with
+enhanced electrochemical properties, Advanced Engineering Materials 27 (13) (2025) 2402389.
+doi:10.1002/adem.202402389.
+[32] C. Zhao, X. Lu, H. Tu, Y. Yang, S. Wang, A. Chen, H. Zhang, Research on specific capacitance
+prediction of biomass carbon-based supercapacitors based on machine learning, Journal of En-
+ergy Storage 97 (2024) 112974. doi:10.1016/j.est.2024.112974.
+[33] A. G. Usman, S. Mati, H. Daud, A. A. Suleiman, S. I. Abba, H. Ahmad, T. Radwan, Optimized
+svr with nature-inspired algorithms for environmental modelling of mycotoxins in food virtual-
+water samples, Scientific Reports 15 (1) (2025) 16569. doi:10.1038/s41598-025-99908-7.
+[34] S. Mishra, R. Srivastava, A. Muhammad, A. Amit, E. Chiavazzo, M. Fasano, P. Asinari,
+The impact of physicochemical features of carbon electrodes on the capacitive performance
+of supercapacitors: a machine learning approach, Scientific Reports 13 (1) (2023) 6494.
+doi:10.1038/s41598-023-33524-1.
+[35] B. Alemdag, G. Saygili, M. Franzreb, G. Kabay, Toward high-performance electrochemical en-
+ergy storage systems: A case study on predicting electrochemical properties and inverse material
+design of mxene-based electrode materials with automated machine learning (automl), Advanced
+Electronic Materials 11 (17) (2025) 2400818. doi:10.1002/aelm.202400818.
+[36] L. Breiman, Random forests, Machine Learning 45 (1) (2001) 5–32. doi:10.1023/A:
+1010933404324.
+[37] A. K. Shargh, C. D. Stiles, J. A. El-Awady, Deep learning accelerated phase prediction of
+refractory multi-principal element alloys, Acta Materialia 283 (2025) 120558. doi:10.1016/j.
+actamat.2024.120558.
+[38] S. Husain, M. Hashmi, F. M. Ghannouchi, Accurate and efficient behavioral modeling of gan
+hemts using an optimized light gradient boosting machine, Advanced Theory and Simulations
+8 (9) (2025) 2401565. doi:10.1002/adts.202401565.
+[39] S. Yang, B. Zang, M. Xiang, F. Shen, L. Song, M. Gao, Y. Zhang, J. Huo, J.-Q. Wang, Designing
+fe-based amorphous alloys with both ultra-high magnetization and ultra-low coercivity through
+artificial intelligence, Advanced Functional Materials 35 (30) (2025) 2425588. doi:10.1002/
+adfm.202425588.
+[40] S. I. Tonni, M. A. Sheakh, M. S. Tahosin, M. Z. Hasan, T. F. Shuva, T. Bhuiyan, M. A. A.
+Almoyad, N. A. Orka, M. T. Rahman, R. T. Khan, et al., A hybrid transfer learning framework
+for brain tumor diagnosis, Advanced Intelligent Systems 7 (3) (2025) 2400495. doi:10.1002/
+aisy.202400495.
+[41] M. Kanwar, B. Pokharel, S. Lim, A new random forest method for landslide susceptibility
+mapping using hyperparameter optimization and grid search techniques, International Jour-
+nal of Environmental Science and Technology 22 (11) (2025) 10635–10650. doi:10.1007/
+s13762-024-06310-3.
+32
+Page 32 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 34 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+[42] F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Pret-
+tenhofer, R. Weiss, V. Dubourg, et al., Scikit-learn: Machine learning in python, the Journal of
+machine Learning research 12 (2011) 2825–2830.
+[43] B. Rani, S. Ghosh, Optimization of electrolytes for enhanced performance of mnfe2o4
+nanoparticles-based supercapacitor electrode, Physica Scripta 100 (10) (2025) 105921. doi:
+10.1088/1402-4896/ae0c6f.
+33
+Page 33 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript

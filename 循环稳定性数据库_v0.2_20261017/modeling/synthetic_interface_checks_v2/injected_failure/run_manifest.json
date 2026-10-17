@@ -1,0 +1,297 @@
+{
+  "kind": "SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH",
+  "completion_file": "completion.json",
+  "feature_set": "protocol_only",
+  "features": [
+    "log10_cycle_count",
+    "current_density_A_g",
+    "concentration_value",
+    "voltage_lower_V",
+    "voltage_upper_V",
+    "electrolyte",
+    "concentration_unit"
+  ],
+  "config": {
+    "status": "preparation_only_no_training_authorized_or_executed",
+    "target": "capacitance_retention_pct_at_specified_cycle_count_and_conditions",
+    "database_view": "training_ready",
+    "primary_system": "2E_symmetric",
+    "method": "GCD",
+    "label_relation": "eq",
+    "screening_min_cycles": 1000,
+    "screening_boundary_is_universal_quality_rule": false,
+    "required_conditions": [
+      "cycle_count",
+      "current_density_A_g",
+      "electrolyte",
+      "concentration_value",
+      "concentration_unit",
+      "voltage_lower_V",
+      "voltage_upper_V"
+    ],
+    "categorical_features": [
+      "electrolyte",
+      "concentration_unit"
+    ],
+    "optional_sensitivity_feature": "total_pore_volume_cm3_g",
+    "forbidden_features": [
+      "record_id",
+      "paper_id",
+      "doi",
+      "material_id",
+      "study_group",
+      "retention_pct",
+      "post_cycle_EIS",
+      "post_cycle_XPS",
+      "discharge_time",
+      "final_capacitance",
+      "retention_sd_pct"
+    ],
+    "excluded_from_primary": [
+      "CV",
+      "3E",
+      "gel",
+      "mass_unbalanced",
+      "Li_half_cell",
+      "Zn_hybrid",
+      "metal_composites",
+      "scope_pending",
+      "approximate_or_lower_bound_labels",
+      "frozen_fields"
+    ],
+    "missing_target_policy": "never_impute",
+    "missing_feature_policy": "required_conditions_not_imputed; optional_BET_and_pore_median_and_indicator_fit_on_training_fold_only",
+    "retention_above_100_policy": "preserve_reported_values_no_clipping",
+    "split": {
+      "group": "study_group",
+      "method": "GroupKFold",
+      "folds_up_to": 2,
+      "random_state": 20261017,
+      "shuffle": true,
+      "tuning": "nested group validation; tune only inside outer training groups; never row-random validation",
+      "independence_final_audit_required": true
+    },
+    "training_weight": "equal_total_weight_per_source_study",
+    "models": [
+      "mean_baseline",
+      "ridge",
+      "random_forest",
+      "xgboost",
+      "mlp"
+    ],
+    "evaluation": [
+      "study_macro_MAE_percentage_points",
+      "study_balanced_RMSE_percentage_points",
+      "pooled_R2_when_defined",
+      "per_source_errors",
+      "protocol_only_vs_plus_BET_sensitivity"
+    ],
+    "readiness": "all record admission checks passed, frozen fields resolved, source overlap audited; no universal sample-count promise",
+    "user_model_clarification": "2026-10-17: user explicitly clarified mgl as MLP",
+    "tuning": {
+      "inner_group_folds_up_to": 2,
+      "candidate_budget_per_model": 2,
+      "selection_metric": "study_macro_MAE_percentage_points",
+      "search_space": "model_spaces.json",
+      "single_inner_group_policy": "use predeclared defaults, never select using outer test group",
+      "budget_by_model": {
+        "ridge": 2
+      }
+    },
+    "mlp_policy": {
+      "small_networks": [
+        [
+          8
+        ],
+        [
+          16
+        ],
+        [
+          16,
+          8
+        ]
+      ],
+      "feature_scaling": "inside each training fold",
+      "target_scaling": "inside each training fold via TransformedTargetRegressor",
+      "solver": "lbfgs",
+      "early_stopping": false,
+      "reason": "avoid MLP internal random validation splitting correlated observations"
+    },
+    "database_file": "cycling_v0_2.sqlite",
+    "feature_sets": {
+      "protocol_only": [
+        "log10_cycle_count",
+        "current_density_A_g",
+        "concentration_value",
+        "voltage_lower_V",
+        "voltage_upper_V"
+      ],
+      "plus_BET": [
+        "log10_cycle_count",
+        "current_density_A_g",
+        "concentration_value",
+        "voltage_lower_V",
+        "voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "plus_BET_pore": [
+        "log10_cycle_count",
+        "current_density_A_g",
+        "concentration_value",
+        "voltage_lower_V",
+        "voltage_upper_V",
+        "BET_m2_g",
+        "total_pore_volume_cm3_g"
+      ]
+    },
+    "comparison_policy": "prespecified exploratory sensitivity; do not select best feature set on outer scores as unbiased final result",
+    "normalization_reference_policy": "author_initial_reference_may_be_recorded_without_guessing_a_cycle_index; admission requires final harmonization review"
+  },
+  "resolved_model_spaces": {
+    "mean_baseline": {
+      "base": {
+        "strategy": "mean"
+      },
+      "default": {},
+      "grid": {}
+    },
+    "ridge": {
+      "base": {},
+      "default": {
+        "alpha": 1.0
+      },
+      "grid": {
+        "alpha": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ]
+      }
+    },
+    "random_forest": {
+      "base": {
+        "n_estimators": 300,
+        "n_jobs": 1
+      },
+      "default": {
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "grid": {
+        "max_depth": [
+          3,
+          5
+        ],
+        "min_samples_leaf": [
+          1,
+          2,
+          4
+        ],
+        "max_features": [
+          0.7,
+          1.0
+        ]
+      }
+    },
+    "xgboost": {
+      "base": {
+        "objective": "reg:squarederror",
+        "tree_method": "hist",
+        "n_jobs": 1
+      },
+      "default": {
+        "max_depth": 2,
+        "n_estimators": 150,
+        "learning_rate": 0.03,
+        "min_child_weight": 5,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      "grid": {
+        "max_depth": [
+          2,
+          3
+        ],
+        "n_estimators": [
+          150,
+          300
+        ],
+        "learning_rate": [
+          0.03,
+          0.08
+        ],
+        "min_child_weight": [
+          2,
+          5
+        ],
+        "subsample": [
+          0.7,
+          1.0
+        ],
+        "colsample_bytree": [
+          0.7,
+          1.0
+        ],
+        "reg_lambda": [
+          1.0,
+          10.0
+        ],
+        "reg_alpha": [
+          0.0,
+          0.1
+        ]
+      }
+    },
+    "mlp": {
+      "base": {
+        "max_iter": 2000,
+        "solver": "lbfgs",
+        "early_stopping": false
+      },
+      "default": {
+        "hidden_layer_sizes": [
+          8
+        ],
+        "alpha": 0.1
+      },
+      "grid": {
+        "alpha": [
+          0.001,
+          0.01,
+          0.1,
+          1.0
+        ],
+        "hidden_layer_sizes": [
+          [
+            8
+          ],
+          [
+            16
+          ],
+          [
+            16,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  "rows_sha256": "bd64c0ffe6af4101df8b249349feaf275f519fdf353cbda8abfdaaf1fe4db4e4",
+  "code_sha256": {
+    "benchmark_engine.py": "108934d1cc5ec980bcceebf2aa89181a9ffa5070dd166cb7e9ff77e9fc266e92",
+    "check_interfaces.py": "529fe6002ee61f9e21a64dfd26ec63246c6e394a60265072696c4815f16408ec",
+    "prepare_dataset.py": "c159b92e48c79111c6b62fd621c1434ee8988cef49a3eb2ad462298e77fcd15a",
+    "train_grouped.py": "7a3581d3fb009b46a45250c2f7bacb14c8ccbfddd5b6c6b0519202992a8eb379",
+    "train_nested.py": "81e86b27ce8c197426be89c2ee39cac68ac4e5e21ccd554e475d9d5a1a3994d7"
+  },
+  "versions": {
+    "numpy": "2.3.4",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "xgboost": "3.1.1"
+  }
+}

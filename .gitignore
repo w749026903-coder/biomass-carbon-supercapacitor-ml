@@ -1,0 +1,42 @@
+# Reproducible local runtimes and caches; original research assets remain tracked.
+**/.venv/
+**/venv/
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ipynb_checkpoints/
+.local-literature-cache/
+.git-sync/
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
+~$*
+.DS_Store
+Thumbs.db
+
+# Credentials and local account state must never enter the repository.
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.pfx
+*.p12
+id_rsa
+id_ed25519
+**/credentials.json
+**/cookies.txt
+**/cookies.json
+**/hosts.yml
+**/.aws/
+**/.ssh/
+**/.azure/
+**/.codex/
+
+# Original web response contains an expired signed URL; portable sanitized copy is tracked.
+/同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/web_round01.json

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "database-preparation",
+      "title": "数据库初版与训练准入状态",
+      "queries": [
+        {
+          "id": "database-counts",
+          "source": {
+            "label": "循环稳定性数据库 v0.1",
+            "files": [
+              {
+                "label": "cycling_v0_1.sqlite"
+              },
+              {
+                "label": "数据库与建模入口核验.json"
+              }
+            ],
+            "sql": "SELECT (SELECT count(*) FROM papers) AS papers,(SELECT count(*) FROM materials) AS provisional_materials,(SELECT count(*) FROM cycling_tests) AS cycling_tests,(SELECT count(*) FROM cycling_endpoints) AS candidate_endpoints,(SELECT count(*) FROM training_ready) AS admitted_training_rows;",
+            "metricDefinitions": [
+              {
+                "label": "候选终点",
+                "definition": "同一循环测试在某个循环次数的已摘录报告结果，不代表独立材料。"
+              },
+              {
+                "label": "暂定材料",
+                "definition": "按原论文样品名关联的材料编号，跨论文独立性仍待终审。"
+              }
+            ],
+            "caveats": [
+              "只有51篇当前存在循环候选；126篇是文献目录规模。",
+              "正式训练视图当前0行；本轮未拟合模型。",
+              "缺失字段表示当前尚未配对，不能判定原文未报告。"
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "check",
+                "title": "数据库检查",
+                "detail": "完整性和外键检查通过；89条原始候选值保留，分组检查拦截同一材料重复节点跨集合。"
+              }
+            ]
+          },
+          "columns": [
+            "papers",
+            "provisional_materials",
+            "cycling_tests",
+            "candidate_endpoints",
+            "admitted_training_rows"
+          ],
+          "rows": [
+            {
+              "papers": 126,
+              "provisional_materials": 67,
+              "cycling_tests": 83,
+              "candidate_endpoints": 89,
+              "admitted_training_rows": 0
+            }
+          ],
+          "reportingPeriod": "2026-10-17"
+        }
+      ]
+    }
+  ]
+}

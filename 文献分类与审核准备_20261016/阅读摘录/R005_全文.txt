@@ -1,0 +1,1048 @@
+
+===== PDF PAGE 1 =====
+Machine learning applied to the optimization of biomass char-based 
+supercapacitors: Effect of experimental parameters on 
+supercapacitor performance
+Jing Chen
+a , b
+, Zhaosheng Yu
+a , b , *
+, Jinxi Dong
+a , b
+, Wenchang Yue
+a , b
+, Xiaoqian Ma
+a , b
+a
+School of Electric Power, South China University of Technology, Guangzhou 510620, China
+b
+Guangdong Province Key Laboratory of Efficient and Clean Energy Utilization, Guangzhou 510620, China
+ARTICLE INFO
+Keywords:
+Interpretable machine learning
+Supercapacitor
+Experimental conditions
+Transformer regression
+Biomass char
+ABSTRACT
+To address the optimization issue of experimental parameters during the experimental preparation of biomass 
+char supercapacitors, this study applied six different regression models (four machine learning models and two 
+deep learning models) to predict the specific capacitance of biomass char supercapacitors. The results indicate 
+that the Transformer model performs best in terms of prediction accuracy, with an R
+2 
+(coefficient of determi -
+nation) of 0.9609, an MAE (mean absolute error) of 16.8599, and an RMSE (root mean square error) of 19.4569. 
+Furthermore, analysis indicates that among the experimental parameters, the activation temperature exerts the 
+most significant influence on the specific capacitance. The carbonization temperature and carbonization time 
+exhibit a strong coupled relationship with the specific capacitance: at low carbonization temperatures, 
+carbonization time shows a positive correlation with specific capacitance, whereas at high carbonization tem -
+peratures, carbonization time correlates negatively with specific capacitance. A high heating rate demonstrates a 
+strong negative correlation with specific capacitance. This study employs regression models to analyze experi -
+mental parameter data, thereby providing novel approaches for optimizing experiments aimed at designing 
+superior supercapacitors.
+1. Introduction
+As developed and developing nations progressively implement their 
+strategic objectives of carbon peaking and carbon neutrality, countries 
+are gradually reducing their reliance on fossil fuel energy sources, 
+decreasing the share of thermal power capacity, and pursuing greener, 
+lower-carbon methods of electricity generation [ 1 ], which has fostered 
+the continuous advancement of renewable energy, with particular 
+emphasis on enhancing the utilization of wind and solar power [ 2 ]. 
+However, unlike thermal and nuclear power these renewable energy 
+sources lack the stable power output and easy-to-implement power 
+regulation capabilities of generation methods. Their electricity output is 
+thus subject to fluctuations due to temporal and spatial factors [ 3 ]. 
+Consequently, the integration of green yet intermittent power genera -
+tion methods such as wind and solar energy into the grid gives rise to a 
+series of new grid challenges, including voltage fluctuations, frequency 
+instability, and diminished grid frequency regulation and peak load 
+management capabilities [ 4 ]. The construction of energy storage power 
+plants (such as supercapacitor energy storage, electrochemical energy 
+storage, pumped hydro storage, thermal energy storage, and.) is one of 
+the most effective methods for addressing these issues [ 5 ].Among these, 
+supercapacitor energy storage stands out as the most promising and 
+sought-after energy storage device for grid frequency regulation due to 
+its high power density, rapid charge-discharge capabilities, and 
+extended cycle life [ 6 ]. The preparation of supercapacitors typically 
+employs char-based materials. Biomass char, as a low-carbon-footprint, 
+environmentally friendly, and cost-effective carbon-rich material, ex -
+hibits favorable capacitive physicochemical properties, together with 
+the potential of abundant functional groups, and a tunable pore struc -
+ture. Consequently, it has been extensively explored for the fabrication 
+of high performance supercapacitors [ 7 ].
+However, biomass char derived from simple carbonization processes 
+often suffers from underdeveloped pore structures, limited functional 
+groups, and suboptimal surface morphologies. As a result, super -
+capacitors fabricated using such char materials show suboptimal energy 
+storage performance, which hinders their practical application in grid 
+* Corresponding author.
+E-mail address: zsyu@scut.edu.cn (Z. Yu). 
+Contents lists available at ScienceDirect
+Electrochimica Acta
+journal homep age: www.jou rnals.elsev ier.com/ele ctrochimica-a cta
+https://doi.org/10.1016/j.electacta.2026.148543
+Received 27 December 2025; Received in revised form 23 February 2026; Accepted 24 February 2026  
+Electrochimica Acta 558 (2026) 148543 
+Available online 24 February 2026 
+0013-4686/© 2026 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies. 
+
+
+===== PDF PAGE 2 =====
+frequency regulation [ 8 ]. Over the past decade, scientists have 
+employed a wide array of methods to prepare porous char materials with 
+enhanced performance characteristics. These approaches encompass 
+adjustments to carbonization temperature, time, and heating rates 
+during biomass carbonization; modifications to activation temperature, 
+time, heating rates, and activator ratios during the activation process; as 
+well as optimization of activators, heteroatoms doping, and metallic 
+elements modification [ 9 – 13 ], all these strategies are designed to 
+enhance the physicochemical properties of biomass char, thereby 
+fabricating high-performance supercapacitors. Xiaodi Han et al. utilized 
+chestnut shells as raw material to investigate the effect of varying acti -
+vator ratios on supercapacitor performance. Porous char produced with 
+an activator ratio of 4 exhibited a specific capacitance as high as 448 F/g 
+under test conditions of 0.5 A/g [ 14 ]; Sabin Aryal et al., investigated the 
+effect of different carbonization temperatures on the specific capaci -
+tance of supercapacitors using Prunus persica (peach) seed stones as raw 
+material. At a carbonization temperature of 800 
+◦
+C, they produced 
+activated porous char with the highest specific surface area (788.01 
+m
+2
+/g) and measured a specific capacitance of 299.2 F/g under test 
+conditions of 1 A/g [ 15 ]. T. Rajesh Kumar et al., conducted 26 sets of 
+experiments using waste American poplar fruit as feedstock to deter -
+mine optimal parameter combinations. They investigated the influence 
+of five experimental parameters — carbonization temperature, activation 
+temperature, activation time, carbonization time, and activator ratio -
+— on supercapacitor performance. The resulting biomass char based 
+supercapacitors exhibited an extraordinarily high specific capacitance of 
+423 F/g at 1 A/g [ 16 ]. Owing to the large number of variable experi -
+mental parameters, the substantial workload involved, and the coupled 
+effects between these parameters, it is challenging to investigate their 
+interrelationships through individual experiments alone. Consequently, 
+researchers have begun employing alternative methodologies to opti -
+mise the production process of biomass char based supercapacitors. 
+Machine learning regression algorithms represent one of the most 
+widely adopted approaches [ 17 ]. These algorithms can process large 
+volumes of complex data, analyse non-linear relationships between data 
+points, and generate models that reflect the intricate relationships be -
+tween input and output data. This enables us to analyse the coupled 
+relationships between factors influencing supercapacitor performance 
+through these models, thereby establishing more optimal experimental 
+methods for fabricating higher-performance supercapacitors. Ahmed 
+Emad-Eldeen et al. utilized a biomass char based supercapacitor dataset 
+comprising 130 samples (encompassing material physicochemical 
+properties and test conditions) to compare the training efficacy of seven 
+machine learning algorithms and eight deep learning algorithms on a 
+test set. The results indicated that machine learning algorithms are more 
+effective in the field of supercapacitor performance prediction [ 18 ]. 
+Peng Liu et al. compiled experimental data from 669 biomass char based 
+EDLCs published between 2017 and 2023, encompassing 14 input fea -
+tures including experimental parameters, pore structure, chemical 
+composition, and measurement conditions. They employed eight ma -
+chine learning models, including CatBoost, to predict specific capaci -
+tance, with a particular focus on exploring the influence of biomass 
+porous char microstructure on specific capacitance [ 19 ]. Yuxuan Sun 
+et al. collected data on 157 biomass porous char samples prepared using 
+potassium salt activators and nitrogen doping (including experimental 
+conditions, physicochemical properties, and testing conditions). 
+Employing three machine learning models for training, they revealed 
+that heating rate is the most critical factor influencing the specific 
+capacitance of biomass char, optimized the preparation process for 
+biomass porous char and designed experiments to experimentally vali -
+date the models [ 20 ]. Although these studies employing machine 
+learning regression algorithms to optimize supercapacitor performance 
+have achieved some progress, the input features in these studies include 
+both experimental variables and pore structure parameters. These two 
+features are not mutually independent(the experimental variables can 
+affect the pore structure); the coupling effects among parameters 
+inevitably influence the final model prediction outcomes, making it 
+challenging to independently reflect the impact of individual experi -
+mental parameters on supercapacitor performance [ 21 ].
+Therefore, in order to independently explore the influence of 
+experimental parameters on the performance of biomass char based 
+supercapacitors, this study selected only seven experimental parameters 
+derived from the carbonization and activation processes as input vari -
+ables. This limited set of input variables poses a significant challenge for 
+training a high-performance regression prediction model [ 19 ]. Never -
+theless, the specific capacitance prediction model trained on such a 
+dataset — with high feature independence — can more accurately reflect 
+the influence of each experimental parameter on supercapacitor per -
+formance. This facilitates analysis of the coupling relationships among 
+parameters and identification of optimal parameter. Finally, experi -
+ments were designed based on the optimized experimental parameters 
+obtained from the model to validate the model ’ s outputs and the con -
+clusions of the model analysis. Collectively, this work holds a great 
+significance for the fabrication of high-performance biomass char based 
+supercapacitors.
+2. Materials and methods
+The research content of this paper encompasses data collection, 
+database establishment, model selection, as well as model training, 
+analysis, and interpretation. This study selected six machine learning 
+regression models, covering two major technical directions: deep 
+learning and ensemble learning. Among them, deep learning models 
+included two neural network architectures: Transformer and Gate 
+Recurrent Unit (GRU). Ensemble learning-based models comprised four 
+regression models: XGBoost, Random Forest (RF), CatBoost, and 
+LightGBM. Three evaluation metrics were employed to assess the pre -
+dictive efficacy of these models for the specific capacitance of biomass 
+char based supercapacitors. The predictive performance of the six 
+models was compared to identify the optimal model. Finally, the optimal 
+model was analyzed via three model interpretability methods, exploring 
+the key factors influencing the specific capacitance of biomass char 
+based supercapacitors and their trends of influence. This provides 
+theoretical guidance for the experimental parameter optimisation of 
+higher-performance biomass char based supercapacitors.
+2.1. Data collection and processing
+Machine learning regression tasks require a dataset with sufficient 
+sample size and high-quality samples. A sufficiently reliable dataset can 
+significantly enhance the predictive performance and reliability of the 
+model [ 22 ]. In this study, all data were collected from relevant literature 
+on biomass char based supercapacitors published between 2021 and 
+2025, Keywords such as ‘pre-carbonization ’ , ‘KOH activation ’ , ‘super -
+capacitor ’ , and ‘porous char ’ were used to search relevant papers in 
+various literature search engines(e.g., Web of Science, X-MOL, ELSEV -
+IER). The specific capacitance of biomass char based supercapacitors is 
+influenced not only by the experimental preparation process but also by 
+factors such as the type of activator employed during activation and the 
+testing conditions applied during testing. Therefore, to ensure consis -
+tency and eliminate confounding variables, all selected samples were 
+porous char materials prepared using KOH activation. Testing was 
+conducted under a three-electrode configuration with 6 M KOH solution 
+as the test electrolyte. The selected data points were all specific capac -
+itances measured at a current density of 1 A/g. As most data related to 
+supercapacitor specific capacitance in the literature were presented as 
+images, the data were digitized and extracted using GetData Graph 
+Digitizer 2.22 software and the impact of Graphic digitization noise was 
+analyzed in S1. A total of 144 sample data points were collected from 36 
+papers concerning biomass char based supercapacitors(Table.S7). 
+Additionally, factors potentially affecting the specific capacitance of 
+biomass char based supercapacitors during preparation and testing(such 
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+2 
+
+
+===== PDF PAGE 3 =====
+as mass loading, binder/carbon black content, and potential window) 
+were analyzed in S2.
+Each sample in the dataset comprises eight features: seven input 
+features and one output feature. The input features include three pa -
+rameters from per-carbonization process — pre-carbonization temper -
+ature (PerCarT), carbonization heating rate (CarHS) and carbonization 
+time (CarTime) — and four parameters from the activation process: 
+activation temperature (ActT), activation heating rate (ActHS), activa -
+tion time (ActTime) and activator ratio (ActRatio). The output feature is 
+the specific capacitance, measured under test conditions comprising a 
+three-electrode system, 6 M KOH electrolyte solution, and a current 
+density of 1 A/g.
+2.2. ML model training
+Machine learning and deep learning models have progressively 
+gained greater influence in the field of supercapacitor performance 
+prediction in recent years. This study selected two deep learning algo -
+rithms (Transformer and GRU) alongside four ensemble learning algo -
+rithms (XGBoost, RF, CatBoost, and LightGBM) to establish relationship 
+models between various experimental parameters during the super -
+capacitor fabrication process and the resulting specific capacitance. For 
+the four ensemble learning models, the Particle Swarm Optimization 
+(PSO) algorithm was employed to optimize the model hyperparameters 
+[ 23 ]. For both neural network model, the Adam optimizer was used to 
+adjust the neuron parameter weights, enabling the neural network al -
+gorithms to gradually converge towards a high-performance state [ 24 ].
+Transformer is a deep learning model based on the self-attention 
+mechanism, proposed by Vaswani et al. in 2017 [ 25 ]. In regression 
+tasks, the Transformer model employs the self-attention mechanism 
+within its encoder to capture global dependencies among input features. 
+It extracts deep features and maps them to continuous target values, 
+optimizing parameters via a regression loss function (RMSE) and back -
+propagation. This ultimately yields the mapping rules between input 
+and continuous output. This approach entirely eliminates the reliance on 
+recurrent structures inherent in traditional sequence models (such as 
+Recurrent Neural Networks), demonstrating exceptional parallel pro -
+cessing capabilities and strong ability to capture global dependencies. 
+Consequently, it is frequently employed in tasks spanning natural lan -
+guage processing, machine translation, and computer vision [ 26 ]. Its 
+ability to model complex inter-parameter relationships makes it suitable 
+for optimizing experimental parameters.
+GRU is an enhanced variant of the recurrent neural network (RNN) 
+model, proposed by Cho et al. in 2014 [ 27 ] to address the issue of 
+gradient explosion in traditional RNN models. GRU efficiently captures 
+long-range dependencies within sequential data by dynamically 
+capturing key temporal information through two gating units (update 
+gate and reset gate). This generates hidden states containing global 
+temporal information, which are then processed through an output layer 
+to produce continuous predictions. Error is calculated via a regression 
+loss function, and neural parameters are updated through back -
+propagation of gradients using Backpropagation Through Time(BPTT), 
+enabling predictions to progressively approximate true values. This 
+model is particularly well-suited for sequence regression tasks involving 
+limited sample sizes [ 28 ].
+The four selected ensemble learning models are all based on decision 
+trees as their fundamental components. By integrating the predictions 
+from multiple trees, these models enhance their generalization capa -
+bilities and reduce overfitting. Among them, the RF model is an 
+ensemble method based on Bagging. This approach reduces variance by 
+training multiple independent trees in parallel, representing an 
+ensemble technique characterized by ‘unbiased estimation coupled with 
+high variance’ [ 29 ]. The other three are all gradient-boosted decision 
+tree (GBDT) ensemble algorithms, which sequentially train multiple 
+trees to progressively reduce prediction error. They belong to the cate -
+gory of ensemble methods that employ ‘iterative error correction’ [ 30 ].
+The RF regression model comprises multiple independent decision 
+trees. Each individual tree is trained using a subsample generated via 
+bootstrap sampling from the original dataset. Training ceases when each 
+tree reaches to a predefined depth or achieves optimal predictive per -
+formance, the final prediction of the RF model is the average of all de -
+cision tree predictions. This training method renders the predictions of 
+the RF model more stable and improves its generalization performance.
+XGBoost, CatBoost, and LightGBM are all optimized variants of the 
+Gradient Boosting Decision Tree (GBDT) algorithm. During training, 
+they construct multiple regression trees through serial iteration, opti -
+mising the loss function via splitting nodes. Each tree uses the residuals 
+from the previous tree's predictions as its training data. Upon comple -
+tion, each tree is assigned a weight, with the final prediction being the 
+weighted output of all trees. The primary distinction among these three 
+GBDT models lies in their differing decision tree splitting strategies. 
+XGBoost employs an exact greedy algorithm [ 31 ], which selects the 
+optimal split by traversing all possible split points. CatBoost employs an 
+ordered splitting strategy [ 32 ], After sorting the feature values, select 
+the splitting point to avoid the issue of model overfitting;LightGBM 
+employs a histogram algorithm [ 33 ], discretising continuous features 
+into histograms (reducing the number of split points), combined with 
+gradient one-sided sampling and feature bundling to reduce dimen -
+sionality, can significantly enhance the splitting efficiency of decision 
+trees.
+2.3. Hyperparameter optimization
+In the training of neural network models, optimizers serve as indis -
+pensable component. Their function lies in adjusting parameters such as 
+the weights and biases of neurons within the neural network, thereby 
+minimizing the model's loss function. This process ensures the model's 
+predicted outcomes approximate the sample values as closely as 
+possible. Traditional optimizers include Stochastic Gradient Descent 
+(SGD), momentum-based methods, and Root Mean Square Propagation 
+(RMSprop). These optimizers require manual adjustment of the learning 
+rate and suffer from issues such as slow convergence and poor optimi -
+zation performance. This study selected the Adaptive Moment Estima -
+tion (Adam) algorithm as the optimizer for both the Transformer and 
+GRU models. This optimizer combines the advantages of momentum and 
+RMSprop algorithms, offering benefits such as rapid convergence, strong 
+stability, and adaptive learning rates without requiring extensive 
+parameter tuning. It stands as one of the most widely employed opti -
+mizers in neural network model training. Additionally, parameters such 
+as the number of layers, heads, positional encoding, learning rate, batch 
+size, which pertain to model architecture and training, are difficult to 
+optimize using a single hyperparameter optimization algorithm to find 
+the optimal combination. Therefore, hyperparameter tuning for both the 
+Transformer and GRU neural network models is performed manually to 
+achieve a high level of fitting performance for these two models.
+During the training process of machine learning models, adjusting 
+hyperparameters significantly enhances predictive performance. This 
+study employs the Particle Swarm Optimization algorithm as the 
+hyperparameter optimization method for this task. PSO is an algorithm 
+originating from the collaborative behaviors of animal groups, such as 
+bird feeding and fish migration. Compared to the high computational 
+cost of traditional grid search, the PSO algorithm efficiently locates the 
+optimal combination of hyperparameters within the parameter space by 
+simulating group collaboration during the optimization process.
+Furthermore, to mitigate overfitting and ensure robust performance 
+evaluation, a five-fold cross-validation method was adopted to access 
+models performance [ 34 ].
+2.4. Evaluation of model performance
+The evaluation of a regression task model's predictive performance 
+primarily assesses the closeness or distance between the model's 
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+3 
+
+
+===== PDF PAGE 4 =====
+predicted values and actual values within the test set, typically repre -
+sented using the coefficient of determination R², root mean square error 
+(RMSE), and mean absolute error (MAE). R² serves as a standardized, 
+dimensionless evaluation metric reflecting the model's goodness-of-fit, 
+ranging from 0 to 1, where values closer to 1 indicate superior fit. The 
+dimensions of RMSE and MAE are F/g, reflecting the magnitude of 
+prediction errors. Higher values indicate greater errors in the model's 
+predicted values. The distinction lies in RMSE assigning greater weight 
+to predictions with larger errors, whereas MAE assigns equal weight to 
+each predicted value. The formula for the three is as follows: 
+R
+2
+= 1  
+∑
+N
+i = 1
+( y
+i
+  ̂y
+i
+)
+2
+∑
+N
+i = 1
+( y
+i
+  y )
+2 
+RMSE =
+̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅ ̅̅̅̅
+1
+N
+∑
+N
+i = 1
+( y
+i
+  ̂y
+i
+)
+2
+√
+√
+√
+√
+MAE =
+1
+N
+∑
+N
+i = 1
+|( y
+i
+  ̂y
+i
+)|
+where N represents the volume of data in the test set, y
+i 
+represent the 
+actual capacitance value, ̂y
+i 
+represent the predicted values, y represent 
+the average of the actual capacitance value.
+2.5. Machine learning explainability tools
+Machine learning regression models explore the intricate relation -
+ships between input and output variables. However, machine learning 
+models are typically black-box models, where the internal processes 
+underlying the model's predictions remain opaque and difficult for the 
+modeler to comprehend – a characteristic particularly pronounced in 
+deep learning models. To address this, this study employs three methods 
+for interpretative analysis of the optimal model: SHapely Additive ex -
+Planations (SHAP), Individual Conditional Expectation (ICE), and Par -
+tial Dependence Plots (PDP). This approach enables a comprehensive 
+analysis of the optimal model. SHAP is a game theory-based model 
+interpretation method capable of quantifying the contribution value of 
+each input feature to the model predictions [ 35 ]. It provide a unified 
+framework for explaining predictions by attributing outcomes to specific 
+features; ICE is employed to visualize the individual influence of single 
+features on model prediction outcomes, presenting how each sample ’ s 
+predicted value changes as the feature ’ s value varies [ 36 ]; PDP can 
+visualize the average marginal effect on model prediction results for 
+either a single feature (one-dimensional(1D) dependency plot) or two 
+features (two-dimensional(2D) dependency plot). Unlike ICE, PDP fo -
+cuses more on overall trend changes rather than the trend changes of 
+individual data samples [ 37 ].
+Additionally, to evaluate the importance of each feature with respect 
+to specific capacitance, a gradient-based feature importance analysis 
+approach was employed. This method is particularly suitable for neural 
+network models, as it works by calculating the gradients of input fea -
+tures to quantify the impact of minor variations in features on the model 
+output, thereby enabling the evaluation of feature importance.
+2.6. Verification experiment
+Peach Wood (PW) — a representative lignocellulosic biomass feed -
+stock — was selected as the precursor, with KOH serving as the activator, 
+biomass porous char was prepared via a sequential carbonization and 
+activation process, with experimental conditions determined based on 
+the optimized parameters output by the Transformer mode. Among 
+them, the PerCarT was set at 400 
+◦
+C and 650 
+◦
+C, the CarTime was set at 1 
+h and 3 h, which was purpose to explore the coupling effect of PerCarT 
+and CarTime on specific capacitance. Beyond that, the CarHS and ActHS 
+was fix at 3 
+◦
+C/min, the ActT was fix at 600 
+◦
+C, the ActTime was fix at 1 
+h, and the ActRatio was fix at 2(mass ratio of KOH to biomass precursor), 
+After carbonization and activation, the resultant char material was 
+rinsed sequentially with 2 M hydrochloric acid and deionized water until 
+the effluent reached neutral pH, then dried. The obtained porous char 
+samples were denoted as PW-x-y, where x corresponds to the PerCarT, 
+and y corresponds to the CarTime.
+Three-electrode electrochemical testing of porous char materials was 
+carried out by a CHI 660 E electrochemical workstation in 6 M KOH. 
+Among them, platinum plate and Hg/HgO were used as counter elec -
+trode and reference electrode, respectively. Porous char (80 %), acety -
+lene black (10 %) and polytetrafluoroethylene(PTFE, 10 %) were mixed 
+uniformly in a mortar and ethanol was added as a dispersant. The 
+mixture was evenly coated onto the nickel foam and dried at 105 
+◦
+C in a 
+desiccator. Then, the working electrode was obtained by pressing the 
+nickel foam under 10 MPa pressure for 20 s. Galvanostatic char -
+ge – discharge(GCD) and cyclic voltammetry were tested on the electro -
+chemical test platform. The specific capacitance of the biomass porous 
+char could be calculated by Eq. (S1) by GCD curve.
+3. Results and discussion
+3.1. Data statistics and analysis
+Firstly, a statistical analysis was conducted on the established data -
+set. The dataset comprised a total of eight parameters, including seven 
+input parameters and one output parameter. Furthermore, the distri -
+bution of each parameter was statistically characterized using a semi- 
+violin plot ( Fig. 1 ). Fig. 1 a presents the data distribution of PerCarT, 
+ActT, and specific capacitance(SC) in the original dataset. During the 
+preparation of porous char for biomass char based supercapacitors, the 
+PerCarT exhibits a broad selection range, spanning from hydrothermal 
+carbonization at 180 
+◦
+C to high-temperature pre-carbonization at 1000 
+◦
+C. Samples are relatively uniformly distributed between 300 
+◦
+C and 800 
+◦
+C, with 400 
+◦
+C being the most frequent choices; ActT has a narrower 
+range than that of PerCarT, falling between 400 
+◦
+C and 1000 
+◦
+C, with 
+600 
+◦
+C, 700 
+◦
+C, and 800 
+◦
+C as the most frequent choices, If the ActT is 
+too low to provide the energy requirements necessary for the activation 
+process. Thus, the activation temperature is generally above 400 
+◦
+C 
+[ 38 ]. Among the collected specific capacitance data, the lowest specific 
+capacitance was 66 F/g and the highest was 458.6 F/g. The data 
+exhibited roughly normal distribution, indicating that the dataset is 
+representative. Fig. 1 b illustrates the distribution of CarHS, ActHS, and 
+ActRatio. The selection of CarHS and ActHS primarily centers on heating 
+rates of 3, 5, and 10 
+◦
+C/min, with 5 
+◦
+C/min being the widely chosen 
+heating rate for both carbonization and activation stages. The distribu -
+tion of ActRatio exhibits a certain degree of normality, ranging from 0.5 
+to 6, the most frequently selected ActRatio are 2 and 3, with a median of 
+3. Fig. 1 c shows the distribution of CarTime and ActTime. CarTime data 
+clusters mainly around 60 min and 120 min, with a smaller portion at 
+240 min. ActTime includes a small number of samples at 90 min and 180 
+min, included to diversify the dataset.
+Fig. 2 presents the Pearson correlation coefficient matrix for the 
+dataset employed in this study, illustrating the linear relationships be -
+tween experimental parameters and specific capacitance. The figure 
+reveals that among the factors influencing specific capacitance, the 
+CarHS, ActT, and ActHS are negatively correlated with specific capaci -
+tance, exhibiting correlation coefficients of -0.36, -0.26, and -0.3 
+respectively. Notably, all heating rates show negative correlation with 
+specific capacitance — this is consistent with the findings of Yuxuan Sun 
+et al.'s research [ 20 ]. The mechanism underlying this trend is: a lower 
+heating rate facilitates the formation of well-developed porous struc -
+ture, whereas excessively high heating rates intensify thermal reactions. 
+Overly vigorous reactions may damage the pore structure of biomass 
+char [ 39 ], thereby reducing its specific capacitance. ActT also exhibits a 
+moderate negative correlation with specific capacitance, which is 
+related to the fact that the porous char materials studied in the collected 
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+4 
+
+
+===== PDF PAGE 5 =====
+papers were predominantly produced via KOH activation. As Xin Cui 
+et al. research indicates that the optimal activation temperature for KOH 
+activators is around 600 
+◦
+C [ 40 ]; excessively high activation tempera -
+tures lower the effective electrochemical interface and pseudocapacitive 
+reaction, and enlarge the pore size — all which decrease the specific 
+capacitance of the supercapacitor.
+3.2. Model performance and evaluation
+Fig. 3 illustrates the comparison between predicted and actual values 
+on the test set for biomass char based supercapacitor specific capaci -
+tance prediction models established using six distinct machine learning 
+algorithms. The red line represents the optimal prediction line, while the 
+Fig. 1. Half-violin plot of raw data.
+Fig. 2. Pearson correlation coefficient plot of experimental parameters versus specific capacitance.
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+5 
+
+
+===== PDF PAGE 6 =====
+blue line denotes the linear regression line for the 95 % confidence in -
+terval of the predicted values. As can be seen from Fig. 3 e, the Trans -
+former model achieved the best predictive performance on the test set: 
+The largest R² (0.9609), the smallest RMSE (19.45), and the second-best 
+MAE (16.8599). The plotted data points for its predicted values and 
+actual values are densely distributed on either side of the optimal pre -
+diction line, with the linear fit line for the data points nearly coinciding 
+with the optimal prediction line. This demonstrates the superior pre -
+dictive performance of the Transformer model. As shown in Fig. 3 f, the 
+GRU regression model achieved the second-largest R² (0.9566) and a 
+small RMSE (20.5023) on the test set, alongside the lowest MAE 
+(16.2159). Its linear regression line closely approximated the optimal 
+prediction line, demonstrating the GRU model's excellent predictive 
+accuracy. Notably, both top-performing models are neural network- 
+based, indicating that neural network models can also achieve favor -
+able prediction results in the field of predicting the specific capacitance 
+of biomass char based supercapacitors. The other four machine learning 
+models — XGBoost, RF, LightGBM, and CatBoost — achieved a relatively 
+good prediction performance in this task by employing the PSO opti -
+mization algorithm to refine hyperparameters. Their R² values all 
+exceeded 0.85, while both RMSE and MAE remained within acceptable 
+error ranges.
+As shown in Fig. 3 b, the CatBoost model demonstrated the most 
+effective prediction performance among the four machine learning 
+models, achieving an R² value of 0.9240 and a MAE of 18.8359, both 
+within a relatively favorable range. However, the RMSE was notably 
+higher than its MAE, indicating that for certain data samples within the 
+test set, the CatBoost model's predicted values deviated significantly 
+from the actual values, thereby contributing to a substantial root mean 
+square error. The remaining three models all exhibited relatively high 
+RMSE values on the test set, indicating excessive deviation between 
+predicted and actual values in certain samples [ 41 ]. This indicates the 
+instability of ensemble learning models in predicting specific capaci -
+tance values for this task, suggesting that applying ensemble learning 
+algorithms to predict specific capacitance may yield substantial bias 
+under certain data samples.
+Additionally, as shown in Table.S4, We reviewed multiple studies 
+employing different models and datasets for predicting specific capaci -
+tance, comparing them with our work using R² as the comparative 
+metric. Comparative studies indicate that the R² value of our optimal 
+model, the Transformer, achieved a relatively high level.
+3.3. SHAP and feature importance analysis
+Employing SHAP analysis and gradient-based feature importance 
+assessment, we conducted an in-depth examination of the significance 
+and directional influence of input variables across samples within the 
+Transformer model on their corresponding specific capacitance. Within 
+SHAP plots, higher feature values are represented by redder hues, while 
+lower values appear bluer. The horizontal axis illustrates the relation -
+ship between the significance of a feature's impact on specific capaci -
+tance and the direction of that feature's influence. Fig. 4 a demonstrates 
+that among the experimental parameters, the activation temperature 
+exerts the most significant influence on the specific capacitance. This 
+aligns with the feature importance analysis results obtained via 
+gradient-based feature importance analysis in Fig. 4 b, indicating that 
+the activation temperature is the most critical parameter in the experi -
+mental process, with an importance score as high as 0.40. The distri -
+bution of SHAP values of activation temperatures indicates that 
+excessively high activation temperatures exert a negative influence on 
+the specific capacitance of supercapacitors, whereas lower activation 
+temperatures exert a positive influence on enhancing the specific 
+capacitance of supercapacitors. Unlike the effect of activation temper -
+ature, At high values, carbonization temperature shows a positive effect 
+on the Specific Capacitance, while at low values it shows a negative 
+effect. This is primarily due to the relatively wide range of carbonization 
+temperatures for biomass, with lower values being particularly low (180 
+◦
+C – 400 
+◦
+C). At these temperatures, the carbonization process of biomass 
+is relatively slow and incomplete, requiring a longer carbonization time 
+to complete the process. Moreover, the carbonization process does not 
+involve the participation of an activator, thus avoiding the complex 
+chemical reactions that would occur between the activator and the char 
+Fig. 3. Predicted data against actual data for the best results of each model: (a) XGBoost, (b) CatBoost, (c) RF, (d) LightGBM, (e) Transformer, (f) GRU.
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+6 
+
+
+===== PDF PAGE 7 =====
+material, which highlights the trend of high carbonization temperatures 
+affecting specific capacitance.
+Beyond activation temperature, the SHAP plot indicates that the 
+second most influential factor affecting the specific capacitance of 
+supercapacitors is the carbonization heating rate. This factor also ranks 
+third in importance scores derived from gradient-based methods, with a 
+score of 0.297 that is nearly identical to the second-ranked factor — the 
+proportion of activator. A low heating rate exerts a positive influence on 
+specific capacitance prediction, whereas a high heating rate exerts a 
+significant negative influence. The heating rate during the activation 
+process also exhibits the same trend of influence on specific capacitance 
+prediction. There are studies indicating that excessively rapid heating 
+rates are detrimental to the formation of pore structures, which is highly 
+likely to result in a decrease in the specific capacitance of super -
+capacitors [ 42 ].
+3.4. Partial correlation analysis
+Fig. 5 displays the ICE plots (blue) and 1D PDP plots (red) based on 
+the optimal model Transformer interpretation, including ActT, PerCarT, 
+ActHS, and CarHS. These plots describe the specific influence relation -
+ships between these critical parameters and the specific capacitance of 
+biomass char based supercapacitors. As depicted in Fig. 5 a, consistent 
+with Pearson correlation coefficients and SHAP value analyses, 
+activation temperature exhibits a strong negative correlation with spe -
+cific capacitance. This finding is significantly influenced by the data 
+collection methodology, A substantial portion of the dataset consist of 
+experiments utilizing KOH for activation. Due to its highly reactive 
+nature, KOH can induce vigorous activation reactions with biomass char 
+at relatively low temperatures. However, excessively high temperatures 
+may lead to overly vigorous reactions, damaging the pore structure of 
+the porous char and consequently reducing the specific capacitance [ 43 ,
+44 ]. The effect of PerCarT on capacitance is opposite to that of ActT 
+( Fig. 5 b). Within the 200 – 500 
+◦
+C temperature range, it exhibits a strong 
+positive correlation with specific capacitance, with higher temperatures 
+facilitating faster and more effective carbonization of biomass. exces -
+sively low temperatures are detrimental to the pre-carbonization of 
+biomass, and inadequate carbonization can significantly impact subse -
+quent activation processes. Moreover, as shown in Fig. 5 c and Fig. 5 d, a 
+significant negative correlation exists between high heating rates and 
+specific capacitance, consistent with SHAP plot analysis. However, a 
+different pattern emerges: activation heating rates within the 3 – 5 
+◦
+C/min range exhibit a certain positive correlation with specific 
+capacitance, whereas carbonization heating rates within this range show 
+only weak correlation with specific capacitance. Only a minority of 
+samples demonstrate positive correlation, yet a strong negative corre -
+lation persists at high heating rates.
+Besides, As depicted in Fig. S2a and S2b, the 1D PDP generated by 
+Fig. 4. (a) SHAP summary explanation diagram for the Transformer model; (b) gradient-based model feature importance analysis diagram.
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+7 
+
+
+===== PDF PAGE 8 =====
+different tree-based machine learning models exhibit discontinuous, 
+abrupt fluctuations, While those produced by the Transformer neural 
+network model ( Fig. 5 ) are smooth without any abrupt changes. This 
+discrepancy originates from their fundamental mathematical charac -
+teristics: tree-based models are piecewise constant functions, whose 
+output shifts abruptly when feature values cross the splitting threshold, 
+leading to non-smooth PDP, whereas the Transformer ’ s continuous and 
+differentiable self-attention mechanisms and fully connected layers 
+enable the predicted specific capacitance to change continuously with 
+input features, thus generating smooth PDP curves. It should be noted 
+that the smoothness of PDP curves is merely a result of structural dif -
+ferences between the two model types, rather than an indicator of su -
+perior predictive validity, and the predictive performance of models 
+should still be evaluated by quantitative metrics such as R², MAE and 
+RMSE. That said, the Transformer ’ s smooth PDP curves offer a practical 
+convenience for visualization and interpretability, as they intuitively 
+reflect the continuous trend of specific capacitance as input parameters 
+vary. Since the PDP diagram is generated by the Transformer model 
+through parameter adjustments, it can only partially reflect the trend of 
+specific capacitance as various parameters change. The reliability of 
+conclusions drawn from the PDP plot is lower in regions with sparse 
+data, while conclusions derived in densely populated areas are more 
+reliable(The density distribution of the raw data is shown in Fig. 1 ).
+In the process of preparing biomass char based supercapacitors, 
+various experimental parameters are mutually coupled and collectively 
+influence the specific capacitance of the supercapacitors. Therefore, to 
+comprehensively optimize experimental parameters and fabricate 
+higher-performance biomass char based supercapacitors, a two- 
+dimensional PDP plot method was employed to analyze the coupling 
+relationships between these parameters.
+As illustrated in Fig. 6 a, a strong coupling relationship exists between 
+carbonization temperature and carbonization time in predicting specific 
+capacitance. At low carbonization temperatures, extending carboniza -
+tion time positively influences predicted specific capacitance, whereas 
+at high carbonization temperatures, it exerts a negative effect. There -
+fore, controlling the relationship between carbonization temperature 
+(600 – 800 
+◦
+C) and duration during the pre-carbonization stage facilitates 
+achieving high specific capacitance in biomass char based super -
+capacitors. The coupling between carbonization temperature and heat -
+ing rate is relatively weak, with specific capacitance predictions 
+exhibiting trends consistent with the 1D PDP ( Fig. 6 b). Both activation 
+temperature and activation time exhibit negative correlations with 
+Fig. 5. 1D PDP plots (red curve) and ICE plots illustrating the relationship between ActT, PerCarT, ActHS, CarHS, and SC based on the Transformer model.
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+8 
+
+
+===== PDF PAGE 9 =====
+predicted specific capacitance. Shorter activation times (1 h) and lower 
+activation temperatures facilitate higher specific capacitance ( Fig. 6 c), 
+which correlates with the pre-carbonization process significantly 
+reducing the reaction time required during activation. The coupled ef -
+fects of Act, activation heating rate, and activator ratio on specific 
+capacitance are illustrated in Fig. 6 d-e. Lower activation temperatures, 
+combined with reduced heating rates (3 – 5 
+◦
+C/min), moderate activator 
+ratios (2 – 3), and lower activation temperatures (500 – 600 
+◦
+C), exert a 
+significant positive influence on the predicted specific capacitance of 
+supercapacitors.
+In the same vein with the 1D PDP, Fig.S2c and S2d present the 2D 
+PDP output from the gradient boosting regression (GBR) and CatBoost 
+models. These plots exhibit disordered color distributions and unclear 
+trends in specific capacitance, which complicates the interpretation of 
+parameter coupling effects and the extraction of insights from visual 
+analysis. In contrast, the 2D PDP generated by the Transformer model 
+feature distinct color gradients and clear specific capacitance trends, a 
+visual characteristic that simply facilitates intuitive analysis of param -
+eter interactions and the extraction of relevant conclusions about their 
+coupling relationships.
+3.5. Experimental validation
+Fig. 7 a illustrates the specific capacitances of these samples at 
+Fig. 6. 2D PDP of variable pairs: (a)PerCarT and CarTime, (b) PerCarT and CarHS, (c) ActT and ActTime, (d) Act and ActHS, (e) ActT and ActRatio.
+Fig. 7. (a) Specific capacitances at different charge-discharge current densities (b) GCD curves under different current densities from 0.5 to 20A/g of PW-650-1.
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+9 
+
+
+===== PDF PAGE 10 =====
+varying current densities. At a current density of 1 A/g, the specific 
+capacitances of PW-650 – 1, PW-650 – 3, PW-400 – 3, and PW-400 – 1 are 
+362.2 F/g, 346.6 F/g, 353.2 F/g, and 276 F/g, respectively. Notably, at 
+the low carbonization temperature (400 
+◦
+C), extending the carboniza -
+tion time from 1 h to 3 h yielded a 77.2 F/g increase in specific capac -
+itance. This trend arises because the pyrolysis rate of peach wood 
+powder is relatively low at 400 
+◦
+C; insufficient carbonization time leads 
+to incomplete graphitization of the precursor [ 45 ], which impairs sub -
+sequent activation and thus results in a reduced specific capacitance. 
+Conversely, at the high carbonization temperature (650 
+◦
+C), extending 
+the carbonization time from 1 h to 3 h reduced the specific capacitance 
+by 15.6 F/g. Prolonged high-temperature carbonization densifies the 
+char structure, disfavors the filtration of activator and sequent activa -
+tion [ 46 ]. The experimental results validated that the coupling rela -
+tionship between CarT and CarTime revealed by the model holds ture in 
+actual experiments( Fig. 6 a.). This confirms that the established Trans -
+former model effectively captures the coupling relationship between 
+PerCarT and CarTime, as well as the direction and extent of their effects 
+on specific capacitance, demonstrated the model ’ s guidance value. 
+Additionally, Fig. 7 b displays the GCD curves of sample PW-650 – 1 
+(prepared using the optimal parameters predicted by the model) at 
+varying current densities. Under the test conditions (three-electrode 
+configuration, 6 M KOH electrolyte, 1 A/g current density), PW-650 – 1 
+exhibits a high specific capacitance of 362.2 F/g — representing a sub -
+stantial 86.2 F/g enhancement relative to PW-400 – 1. This result con -
+firms a positive correlation between PerCarT and specific capacitance(at 
+constant CarTime), Which verifies the pattern of specific capacitance 
+variation predicted by the Transformer model ( Fig. 5 b).
+In summary, the experimental results robustly validate that the 
+established machine learning model can effectively simulates the 
+coupling relationships among experimental parameters and their col -
+lective impacts on the specific capacitance of biomass char based 
+supercapacitors. The optimal parameters derived from the model enable 
+targeted optimization of the preparation process, leading to a significant 
+improvement in the specific capacitance of biomass char based 
+supercapacitors.
+4. Conclusion
+This study employed six interpretable machine learning regression 
+models — four ensemble learning models (XGBoost, CatBoost, LightGBM, 
+and RF) and two deep learning models (Transformer and GRU) — using 
+experimental parameters from the preparation of porous char from 
+biomass via carbonization-activation as input data to predict the specific 
+capacitance of biomass char based supercapacitors. Among these, the 
+Transformer model demonstrated the highest predictive performance, 
+achieving an R² of 0.9609, MAE of 16.8599, RMSE of 19.4569. Using the 
+optimal Transformer model as the subject, we conducted an in-depth 
+investigation into the influence trends of experimental parameters on 
+the specific capacitance of biomass char based supercapacitors, drawing 
+the following conclusions: 1. Activation temperature is the most critical 
+factor in preparing biomass char based supercapacitors. Experimental 
+data primarily using highly active KOH as the activator indicate that 
+relatively low activation temperatures (500 – 600 
+◦
+C) can achieve high 
+specific capacitance, which decreases as temperature increases. 2. At 
+low pre-carbonization temperatures, extending carbonization duration 
+effectively enhances specific capacitance. Conversely, prolonging 
+carbonization time at elevated temperatures leads to a decrease in 
+specific capacitance. 3. Heating rate exhibits a strong negative correla -
+tion with specific capacitance. This inverse relationship holds true 
+during both the carbonization and activation stages, manifesting at high 
+heating rates. This work provides a valuable reference framework for 
+quantitatively predicting trends in the influence of experimental pa -
+rameters on the specific capacitance of biomass char based super -
+capacitors, as well as the coupled relationships among these parameters 
+affecting specific capacitance. The study offers essential guidance for 
+laboratory preparation of higher-performance biomass char based 
+supercapacitors and exhibit the convenience of deep learning models in 
+terms of model visualization and interpretability.
+It's noteworthy that, given the numerous factors influencing the 
+specific capacitance of biomass char based supercapacitors, this study 
+impose stringent screening conditions during data collection(such as 
+Carbonization method: Tube furnace, two-step carbonization, Electro -
+lyte:6 M KOH, Capacitance: mass specific capacitance) to ensure the 
+reliability of the dataset. Therefore the model developed in this study 
+has certain limitations when predicting specific capacitance values for 
+supercapacitors prepared using different methods (e.g., one-step acti -
+vation) or under varying test conditions (e.g., different test electrolyte, 
+different current density).
+CRediT authorship contribution statement
+Jing Chen: Writing – original draft, Methodology, Conceptualiza -
+tion. Zhaosheng Yu: Supervision, Methodology. Jinxi Dong: Writing – 
+review & editing, Data curation. Wenchang Yue: Visualization, Inves -
+tigation. Xiaoqian Ma: Supervision, Methodology.
+Declaration of competing interest
+The authors declare the following financial interests/personal re -
+lationships which may be considered as potential competing interests:
+Zhaosheng yu reports financial support was provided by Chinese 
+Academy of Sciences Guangzhou Institute of Energy Conversion. If there 
+are other authors, they declare that they have no known competing 
+financial interests or personal relationships that could have appeared to 
+influence the work reported in this paper.
+Acknowledgments
+This work was supported by the National Natural Science Foundation 
+of China (22373035), the Key Technologies Research and Development 
+Program of Guangzhou (202206010122) and the CAS Key Laboratory of 
+Renewable Energy, Guangzhou Institute of Energy Conversion 
+(E229kf0201).
+Supplementary materials
+Supplementary material associated with this article can be found, in 
+the online version, at doi:10.1016/j.electacta.2026.148543 .
+Data availability
+Data will be made available on request.
+References
+[1] Z. Wang, C. Wang, How carbon offsetting scheme impacts the duopoly output in 
+production and abatement: analysis in the context of carbon cap-and-trade, 
+J. Clean. Prod. 103 (2015) 715 – 723 .
+[2] M K Islam, N M S Hassan, M G Rasul, et al., Forecasting of solar and wind resources 
+for power generation, Energies 16 (17) (2023) 6247 .
+[3] S. Vig, H. Singh, Mitigation of voltage instability in the hybrid solar or wind system 
+using facts device, in: IOP Conference Series: Earth and Environmental Science 
+1110, IOP Publishing, 2023 012080 .
+[4] Q. Feng, Z. Du, D. Zhou, et al., Research on broadband oscillation characteristics 
+and additional damping control of new energy grid connected systems, Front. 
+Energy Res. 13 (2025) 1531338 .
+[5] H. Zhang, X. Zhang, Z. Wang, et al., Capacity configuration of hybrid energy 
+storage power stations participating in power grid frequency modulation, Processes 
+11 (10) (2023) 2843 .
+[6] M. Khalid, A review on the selected applications of battery-supercapacitor hybrid 
+energy storage systems for microgrids, Energies 12 (23) (2019) 4559 .
+[7] E. Raymundo-Pi ˜nero, K. Kierzek, J. Machnikowski, et al., Relationship between the 
+nanoporous texture of activated carbons and their capacitance properties in 
+different electrolytes, Carbon. N. Y. 44 (12) (2006) 2498 – 2507 .
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+10 
+
+
+===== PDF PAGE 11 =====
+[8] D. Zhang, P. Yang, Y. Zhang, et al., Facile synthesis of pompon-like manganese 
+dioxide decorated activated carbon composite for supercapacitor electrode, 
+J. Energy Storage 56 (2022) 106134 .
+[9] R. Li, Q. Zhang, Y. Zhang, et al., Polyatomic self-doping millet-derived porous 
+carbon for supercapacitor, Diam. Relat. Mater. 146 (2024) 111250 .
+[10] Y R Huang, N W Pu, G M Wu, et al., Study on the application of nitrogen-doped 
+holey graphene in supercapacitors with organic electrolyte, Nanomaterials 13 (10) 
+(2023) 1640 .
+[11] H. Jia, S. Wang, J. Sun, et al., Nitrogen-doped microporous carbon derived from a 
+biomass waste-metasequoia cone for electrochemical capacitors, J. Alloys. Compd. 
+794 (2019) 163 – 170 .
+[12] S. Diao, Z. Xie, G. Wei, et al., Synthesis of rice husk derived porous carbon as low- 
+cost and high-performance electrode material for supercapacitors, Diam. Relat. 
+Mater. 149 (2024) 111622 .
+[13] J. Ni, W. Chen, X. Zhang, et al., Nitrogen doped hierarchical porous carbon for 
+supercapacitors and zinc ion hybrid capacitors, Ind. Chem. Mater. (2025) .
+[14] X. Han, L. Jianhui, Facile preparation of chestnut shell hierarchical porous carbon 
+for high-capacity supercapacitor, J. Power. Sources. 641 (2025) 236862 .
+[15] S. Aryal, K R Shrestha, T. Shrestha, et al., Activated carbon from Prunus persica 
+seed stones as a negatrode material for high-performance supercapacitors, J. Mol. 
+Struct. 1323 (2025) 140810 .
+[16] T R Kumar, R A Senthil, Z. Pan, et al., A tubular-like porous carbon derived from 
+waste American poplar fruit as advanced electrode material for high-performance 
+supercapacitor, J. Energy Storage 32 (2020) 101903 .
+[17] V. Sawant, R. Deshmukh, C. Awati, Machine learning techniques for prediction of 
+capacitance and remaining useful life of supercapacitors: a comprehensive review, 
+J. Energy Chem. 77 (2023) 438 – 451 .
+[18] A. Emad-Eldeen, M A Azim, M. Abdelsattar, et al., Utilizing machine learning and 
+deep learning for enhanced supercapacitor performance prediction, J. Energy 
+Storage 100 (2024) 113556 .
+[19] P. Liu, Y. Ge, H. Li, et al., New insights into the performance of biomass carbon- 
+based supercapacitors based on interpretable machine learning approach, 
+J. Energy Storage 118 (2025) 116300 .
+[20] Y. Sun, P. Sun, J. Jia, et al., Machine learning in clarifying complex relationships: 
+biochar preparation procedures and capacitance characteristics, Chem. Eng. J. 485 
+(2024) 149975 .
+[21] Y. Ma, P. Zeng, X. Yang, N/O/B-doped phenolic resin-based high-performance 
+porous carbon materials for supercapacitor applications, J. Electroanal. Chem. 
+(2025) 119434 .
+[22] I. Vaccari, A. Carlevaro, S. Narteni, et al., eXplainable and reliable against 
+adversarial machine learning in data analytics, IEEe Access. 10 (2022) 
+83949 – 83970 .
+[23] D. Wang, D. Tan, L. Liu, Particle swarm optimization algorithm: an overview, Soft. 
+Comput. 22 (2) (2018) 387 – 408 .
+[24] P. Zhou, X. Xie, Z. Lin, et al., Towards understanding convergence and 
+generalization of AdamW, IEEe Trans. Pattern. Anal. Mach. Intell. 46 (9) (2024) 
+6486 – 6493 .
+[25] A. Vaswani, N. Shazeer, N. Parmar, et al., Attention is all you need, Adv. Neural Inf. 
+Process. Syst. (2017) 30 .
+[26] K. Pawar, Z. Chen, N J Shah, et al., A deep learning framework for transforming 
+image reconstruction into pixel classification, IEEe Access. 7 (2019) 
+177690 – 177702 .
+[27] Cho K, Van Merri ¨enboer B, Gulcehre C, et al. Learning phrase representations using 
+RNN encoder-decoder for statistical machine translation. arXiv preprint arXiv: 
+1406.1078, 2014.
+[28] Y. Wu, F. Hu, C. Yue, et al., Residual-time gated recurrent unit, Neurocomputing. 
+624 (2025) 129396 .
+[29] K. Saneep, K. Sundareswaran, P S R Nayak, et al., State of charge estimation of 
+lithium-ion batteries using PSO optimized random forest algorithm and 
+performance analysis, J. Energy Storage 114 (2025) 115879 .
+[30] Z. Gao, L. Cheng, X. Yang, et al., Reactive load pre-measurement for large 
+industrial users based on improved GBDT regression algorithm, in: Journal of 
+Physics: Conference Series 2872, IOP Publishing, 2024 012047 .
+[31] N. Lin, J. Fu, R. Jiang, et al., Lithological classification by hyperspectral images 
+based on a two-layer XGBoost model, combined with a greedy algorithm, Remote 
+Sens. (Basel) 15 (15) (2023) 3764 .
+[32] J T Hancock, T M Khoshgoftaar, CatBoost for big data: an interdisciplinary review, 
+J. Big. Data 7 (1) (2020) 94 [EB/OL] .
+[33] D. Wang, L. Li, D. Zhao, Corporate finance risk prediction based on LightGBM, Inf. 
+Sci. (Ny) 602 (2022) 259 – 268 .
+[34] B. Anandan, M. Manikandan, Machine learning approach with various regression 
+models for predicting the ultimate tensile strength of the friction stir welded AA 
+2050-T8 joints by the K-Fold cross-validation method, Mater. Today Commun. 34 
+(2023) 105286 .
+[35] Z. Wu, S. Wang, L. Li, et al., An interpretable ship risk model based on machine 
+learning and SHAP interpretation technique, Ocean Eng. 335 (2025) 121686 .
+[36] M S Mahmood, T. Ali, I. Inam, et al., Machine learning prediction and 
+explainability analysis of high strength glass powder concrete using SHAP PDP and 
+ICE, Sci. Rep. 15 (1) (2025) 22089 .
+[37] B. Liang, H. Liu, E L Cressey, et al., Uncertainty of partial dependence relationship 
+between climate and vegetation growth calculated by machine learning models, 
+Remote Sens. (Basel) 15 (11) (2023) 2920 .
+[38] X. Cui, Y. Jiang, Z. He, et al., Preparation of tank-like resin-derived porous carbon 
+sphere for supercapacitor: the influence of KOH activator and activation 
+temperature on structure and performance, Diam. Relat. Mater. 136 (2023) 
+110054 .
+[39] J. Hong, W. Xiaomin, G. Zhengrong, Hierarchical carbon materials from high ash 
+bio-char of distiller's dried grain with solubles for supercapacitor, Mater. Focus 2 
+(2) (2013) 105 – 112 .
+[40] X. Cui, Y. Jiang, Z. He, et al., Preparation of tank-like resin-derived porous carbon 
+sphere for supercapacitor: the influence of KOH activator and activation 
+temperature on structure and performance, Diam. Relat. Mater. 136 (2023) 
+110054 .
+[41] P. Liu, Y. Wen, L. Huang, et al., An emerging machine learning strategy for the 
+assisted-design of high-performance supercapacitor materials by mining the 
+relationship between capacitance and structural features of porous carbon, 
+J. Electroanal. Chem. 899 (2021) 115684 .
+[42] A. Elmouwahidi, Z. Zapata-Benabithe, F. Carrasco-Marín, et al., Activated carbons 
+from KOH-activation of argan (Argania spinosa) seed shells as supercapacitor 
+electrodes, Bioresour. Technol 111 (2012) 185 – 190 .
+[43] J. Jian, Z. Lu, S. Yao, et al., Effects of thermal conditions on char yield and char 
+reactivity of woody biomass in stepwise pyrolysis, J. Anal. Appl. Pyrolysis. 138 
+(2019) 211 – 217 .
+[44] C. Yin, C. Tao, F. Cai, et al., Effects of activation temperature on the deoxygenation, 
+specific surface area and supercapacitor performance of graphene, Carbon. N. Y. 
+109 (2016) 558 – 565 .
+[45] Chen Deng Yu C D Y, Yu XinZhi Y X Z, Song Chao S C, et al. Effect of pyrolysis 
+temperature on the chemical oxidation stability of bamboo biochar[J]. 2016.
+[46] X. Tong, Z. Chen, H. Zhuo, et al., Tailoring the physicochemical properties of 
+chitosan-derived N-doped carbon by controlling hydrothermal carbonization time 
+for high-performance supercapacitor application, Carbohydr. Polym. 207 (2019) 
+764 – 774 .
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+11 
+

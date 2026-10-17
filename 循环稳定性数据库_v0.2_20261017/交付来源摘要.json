@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "record-admission",
+      "title": "首批记录审查与训练准入",
+      "queries": [
+        {
+          "id": "admission-outcomes",
+          "source": {
+            "label": "循环稳定性数据库 v0.2",
+            "files": [
+              {
+                "label": "cycling_v0_2.sqlite"
+              }
+            ],
+            "sql": "SELECT status,count(*) AS endpoints FROM admissions WHERE source_checked=1 GROUP BY status UNION ALL SELECT 'training_ready',count(*) FROM training_ready",
+            "metricDefinitions": [
+              {
+                "label": "首批记录",
+                "definition": "本批审查12个候选终点，来自10篇来源与10个暂定材料。"
+              }
+            ],
+            "caveats": [
+              "有条件保留仍不允许进入训练集。",
+              "终点数不等于独立材料数，跨论文独立性仍待终审。"
+            ]
+          },
+          "columns": [
+            "status",
+            "endpoints"
+          ],
+          "rows": [
+            {
+              "status": "conditional_hold",
+              "endpoints": 8
+            },
+            {
+              "status": "frozen_pending_clarification",
+              "endpoints": 4
+            },
+            {
+              "status": "training_ready",
+              "endpoints": 0
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "首批审查结论及正式训练视图的实际计数。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "software-checks",
+      "title": "合成接口检查与版本保护",
+      "queries": [
+        {
+          "id": "check-summaries",
+          "source": {
+            "label": "本地执行结果",
+            "files": [
+              {
+                "label": "synthetic_interface_checks_v2 summary.json"
+              },
+              {
+                "label": "核验与覆盖_v02.json"
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "接口检查",
+                "definition": "16项最终合成接口检查全部通过，涉及五种候选模型的实际拟合。"
+              },
+              {
+                "label": "版本核验",
+                "definition": "23项版本与数据保护核验全部通过，包含137份原文来源文件指纹核对。"
+              }
+            ],
+            "caveats": [
+              "所有模型拟合检查使用明确标记的合成数据，没有研究模型分数或赢家。"
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "validation",
+                "title": "实际执行",
+                "detail": "五种模型的嵌套合成流程和边界场景均完成；故意注入的拟合失败已被正确记录。"
+              }
+            ]
+          },
+          "columns": [
+            "check",
+            "count",
+            "passed"
+          ],
+          "rows": [
+            {
+              "check": "synthetic_interface_tests",
+              "count": 16,
+              "passed": true
+            },
+            {
+              "check": "revision_protection_checks",
+              "count": 23,
+              "passed": true
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "已保存执行结果的计数，不展示合成误差作为研究指标。"
+          }
+        }
+      ]
+    }
+  ]
+}

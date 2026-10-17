@@ -1,0 +1,259 @@
+
+===== PDF PAGE 1 =====
+Electron 
+-
+REVIEW
+OPEN ACCESS
+MXene‐Induced Selective Ion Separation in Capacitive 
+Deionization: Bridging Fundamentals With Frontier 
+Innovations
+Rahat Alam
+1
+| Linda Zou
+2
+| Louis C. P. M. de Smet
+3
+| Constantinos V. Chrysikopoulos
+1 , 4
+1
+Department of Civil and Environmental Engineering, Khalifa University of Science and Technology, Abu Dhabi, UAE |
+2
+Institute for Sustainable Industries & 
+Liveable Cities, Victoria University, Melbourne, Australia |
+3
+Laboratory of Organic Chemistry, Wageningen University, Wageningen, the 
+Netherlands |
+4
+School of Chemical and Environmental Engineering, Technical University of Crete, Chania, Greece
+Correspondence: Linda Zou ( Linda.Zou1@vu.edu.au ) | Louis C. P. M. de Smet ( louis.desmet@wur.nl )
+Received: 13 January 2026 | Revised: 4 June 2026 | Accepted: 1 July 2026
+Keywords: capacitive deionization | MXene | resource recovery | selective ion separation
+ABSTRACT
+Selective ion separation is essential for effective water treatment and resource recovery. Conventional techniques, such as 
+adsorption, coagulation/flocculation, and membrane technologies, suffer from low selectivity, substantial cost, and high energy 
+requirements. Alternatively, ion separation using capacitive deionization (CDI) has shown strong potential for energy efficiency, 
+cost‐effectiveness, environmental sustainability, and selective removal. However, traditional carbon electrodes used in CDI have 
+limitations for selective separations. MXene‐based electrodes present an attractive alternative for CDI due to their exceptional 
+electrochemical properties. Nevertheless, MXenes are typically unstable over extended cycles, and to achieve ion selectivity, 
+controlled interlayer spacing adjustment is required. Methods such as hybridization and functionalization can improve the 
+selectivity properties of MXenes by tailoring their interlayer spacing. Several studies have reported the use of MXenes as CDI 
+electrodes; however, most focus on brackish water desalination, while selective ion separation is rarely addressed. This review 
+presents an in‐depth analysis of the role of modified MXene electrodes in advancing ion‐selective CDI technologies, exploring 
+various strategies to achieve the desired selectivity. Moreover, it highlights critical challenges that hinder scalability and 
+practical implementation. Finally, the review showcases the strategic roadmap for future opportunities toward next‐generation 
+water purification and resource recovery solutions.
+1
+|
+Introduction
+Water scarcity and wastewater generation have become critical 
+challenges of the 21st century due to increasing population and 
+industrial growth [ 1, 2 ]. Projections indicate that global water 
+demand may rise by over 50% in the coming decades, whereas 
+nearly one‐fourth of major urban centers are already under sig -
+nificant water stress [ 3 ]. Consequently, the need for water recla -
+mation and resource recovery is growing rapidly to bridge the 
+increasing gap between water demand and supply. Similarly, 
+wastewater generation is progressively rising. Every year, the 
+world produces around 380 billion m
+3 
+of municipal wastewater. 
+This number is expected to rise by 24% by 2030 and 51% by 2050 
+[ 4 ]. Yet, wastewater is predominantly regarded as a problematic 
+waste stream and is typically treated as a pollutant requiring 
+removal. However, wastewater presents a valuable resource, 
+containing recoverable water, energy, and high‐value nutrients.
+To meet the increasing water demand, desalination technologies, 
+including reverse osmosis (RO), membrane distillation, and 
+electrodialysis, are found to be more efficient technologies in 
+comparison with others [ 5–7 ]. However, these technologies often 
+suffer from high energy consumption required for pumping or 
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the 
+original work is properly cited.
+© 2026 The Author(s). Electron published by Harbin Institute of Technology and John Wiley & Sons Australia, Ltd.
+Electron , 2026; 00:e70063 1 of 23
+https://doi.org/10.1002/elt2.70063
+
+
+===== PDF PAGE 2 =====
+heating, membrane fouling, as well as high capital and mainte -
+nance costs [ 8 ]. Despite a significant reduction in energy con -
+sumption from 20 to 2–4 kWh m
+− 3 
+[ 9 ], RO remains an energy‐ 
+intensive process to fulfill the water demand. Therefore, the 
+need for an alternative nonpressure‐driven water reclamation 
+technology still exists to make the process less energy‐intensive 
+and sustainable. In addition, industrial wastewater consisting of 
+ions or charged pollutants requires ion removal and selective ion 
+recovery. Conventionally, coagulation, softening, adsorption, and 
+membrane technology are applied to treat ion‐containing waste -
+water. Again, the high cost of chemicals, membranes, adsorbents, 
+and adsorbent disposal challenges make the abovementioned 
+technologies less sustainable. These ion‐containing waters and 
+wastewaters often contain valuable resources, including lithium, 
+precious metals, nitrate, and phosphate, which could be recov -
+ered for value‐adding and the circular economy.
+Over the past decades, electrochemical ion separation technol -
+ogies have evolved significantly, diversifying in both device 
+types and target applications. However, novel pseudocapacitive 
+materials remain to be explored for various purposes, including 
+selective ion separation, resource recovery, and water reclama -
+tion. A brief capacitive deionization (CDI) timeline is summa -
+rized in Figure 1 [ 10 ].
+Several improvements in CDI have been made in terms of cell 
+architecture, system design, and optimization of operational pa -
+rameters [ 10 ]. Researchers shifted their focus toward exploring 
+alternative electrode materials and identified pseudocapacitive 
+materials as highly suitable for CDI applications (Section 2.2 ). 
+Pseudocapacitive materials bridge the gap between capacitive and 
+battery‐type electrodes, offering a combination of high capaci -
+tance and excellent rate capability. They are categorized as either 
+reversible redox reaction‐based or ion intercalation‐based mate -
+rials. Various types of pseudocapacitive materials have been uti -
+lized as electrodes, with the majority being intercalation‐type 
+materials. Examples include sodium manganese oxides [ 13 ], 
+NaTi
+2
+(PO
+4
+)
+3 
+[ 14 ], Na
+3
+V
+2
+(PO
+4
+)
+3 
+[ 15 ], Prussian blue [ 16 ], and, since 
+almost a decade also, MXenes [ 17 ].
+MXene‐based electrodes have shown great promise in CDI for 
+achieving high electrosorption capacities and tunable selective 
+ion removal. The selective removal of ionic species can be 
+quantified using the selectivity coefficient ( ρ ), defined as the 
+ratio of the percentage removal of the target ion to that of the 
+competing ion. Other definitions of selectivity can be found in 
+the paper of de Smet and coworkers [ 18 ]. However, their prac -
+tical application is often hindered by issues such as restacking, 
+limited electrical conductivity, and poor cyclic stability. These 
+factors collectively reduce their specific adsorption capacity 
+(SAC) and ion selectivity. To highlight these limitations and 
+consolidate the progress made so far, especially studies based on 
+ion‐selective separation, a comprehensive review is warranted.
+Several reviews have already been published based on MXene 
+electrodes in CDI [ 19–21 ]. For instance, Huang et al. [ 19 ] 
+FIGURE 1
+|
+A brief timeline of electrochemical deionization. This graph is adapted from ref. [ 10 ] and has been updated to incorporate the latest 
+developments. The boxes provide an overview of the three generations of materials: carbon, intercalative, and catalytic, respectively. Additionally, two 
+new CDI architectures, three‐phase CDI (T‐CDI) [ 11 ], and magnetic CDI [ 12 ], are introduced from the literature for further study. T‐CDI employs a 
+gas–liquid–solid three‐phase interface at the cathode to achieve stable water desalination and simultaneous hydrogen peroxide (H
+2
+O
+2
+) generation. 
+Magnetic CDI uses a superimposed magnetic field by combining the material’s internal magnetic properties with an external field, enabling 
+synergistic physical adsorption, magnetic, and electrostatic attraction. CDI, capacitive deionization.
+2 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 3 =====
+reviewed the role of MXenes in CDI, covering preparation 
+strategies and applications in seawater desalination, NH
+4
++
+re -
+covery, and ion‐selective removal. However, the review lacks a 
+dedicated discussion on ion‐selective removal using MXene 
+electrodes in CDI. Zhu et al. [ 21 ] discussed a decade of progress 
+in MXene‐based ion‐selective technologies, covering synthesis, 
+functionalization, transport mechanisms, and applications in 
+membranes, adsorbents, and CDI. However, the review did not 
+offer a dedicated, in‐depth discussion of MXene‐based selective 
+ion separation within CDI systems. Samejo et al. [ 22 ] presented 
+a comprehensive overview of MXene‐based composites in 
+CDI, covering synthesis methods, composite architectures, and 
+desalination performance. Although the cation‐selective prop -
+erties were addressed, little attention was given to any selec -
+tive ion separation. Similarly, Cui et al. [ 23 ] published a 
+review on emerging MXene‐based electrodes for efficient CDI, 
+also primarily focusing on the material properties and general 
+deionization capabilities of MXene composites, omitting stra -
+tegic approaches to selective separation. This review aims to 
+bridge the fundamental principles of CDI with insights into 
+the ion selectivity mechanisms enabled by MXene electrodes, 
+thereby providing a roadmap for the rational design and 
+implementation of MXene‐based electrodes in targeted sepa -
+ration processes.
+2
+|
+Fundamentals of Capacitive Deionization
+2.1
+|
+Electrical Double‐Layer (EDL) Model
+In carbon‐based CDI, the electrosorption is largely based on the 
+electrical double‐layer (EDL) mechanism. EDLs are formed near 
+the interface of the highly porous carbonaceous electrode ma -
+terial and water, in which charges can be stored. Alternatively, 
+when using pseudocapacitive materials, ion storage is facilitated 
+by either a reversible surface redox mechanism or an ion de/ 
+intercalation mechanism in the case of crystals or multilayered 
+materials (Section 2.2 ).
+A common EDL concept is depicted in Figure 2 by taking the 
+positive electrode with the negative ions. When a potential 
+difference is applied across the electrodes (only one electrode is 
+shown for matters of simplicity), the ions present in the water 
+move toward the electrodes having opposite polarities and start 
+forming EDLs on the available surfaces. This explains why, in 
+CDI, materials with high surface areas are preferred because 
+they provide a larger surface for the formation of larger 
+EDLs [ 24 ].
+When dealing with a porous material with pores significantly 
+larger than the thickness of the EDL, we can assume that the 
+EDLs do not overlap. Under these conditions, the classical 
+Gouy–Chapman–Stern (GCS) theory, developed for a single 
+planar electrode, can be applied (Figure 2A ). This assumption is 
+valid in cases of high salt concentrations (resulting in a short 
+Debye length) or when the pores are sufficiently large (macro -
+pores). In such scenarios, the general Boltzmann relationship 
+describes the ion concentration at a distance x from the carbon 
+surface, C
+j
+, as a function of ϕ , the dimensionless potential 
+relative to the neutral bulk solution (macropores), where the 
+salt concentration is C
+salt,mA
+, as
+C
+j
+( x ) = C
+salt , mA
+× exp     Z
+j
+× ϕ ( x ) ) ( 1 )
+where Z
+j 
+is the ionic charge number (ion valence), ϕ ( x ) is the 
+dimensionless potential, defined as the dimensional voltage V 
+divided by the thermal voltage V
+T
+, and C
+salt,mA 
+is the salt con -
+centration in the neutral bulk solution (macropores).
+However, this model has limitations when the Debye length is 
+comparable to the micropore sizes of porous electrodes. Debye 
+length is basically a measure of the distance where charge 
+separation could occur. In the case of CDI, this GCS model does 
+not give proper results, as microporous electrodes are used. 
+Thus, usually, the modified Donnan (mD) model (Figure 2B ) is 
+used to explain the mechanism in CDI, as it considers EDLs 
+FIGURE 2
+|
+(A) GCS model‐EDL formation on the electrode surface, (B) mD model‐EDL formation inside a pore. EDL, electrical double‐layer; 
+GCS, Gouy–Chapman–Stern; mD, modified Donnan.
+Electron, 2026 3 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+

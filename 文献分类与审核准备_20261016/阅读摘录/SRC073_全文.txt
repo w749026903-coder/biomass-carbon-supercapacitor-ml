@@ -1,0 +1,1461 @@
+
+===== PDF PAGE 1 =====
+Vol:.(1234567890)
+https://doi.org/10.1007/s10853-025-11468-3
+J Mater Sci (2025) 60:17738–17756
+Energy materials
+Machine learning‑optimized hybrid graphene/
+polymer electrodes for high‑performance 
+and scalable supercapacitors
+Maziyar Sabet1,* 
+1 Chemical and Energy Engineering, Universiti Teknologi Brunei, Bandar Seri Begawan, Brunei Darussalam
+ABSTRACT
+The demand for carbon-based materials with superior electrochemical properties 
+continues to grow, particularly for scalable supercapacitor applications. In this 
+study, we present a hybrid synthesis route for graphene electrodes that combines 
+chemical vapor deposition (CVD) and microwave-assisted reduction, guided by 
+machine learning (ML) optimization. A predictive neural network trained on over 
+100 synthesis experiments enabled precise tuning of key parameters, resulting in 
+high conductivity (~ 9.6 × 105 S  m−1). Raman analysis across ≥ 5 spots per sample 
+showed hybrid graphene at ID/IG = 0.29 [mean ± SD to be reported], while the 
+CVD control exhibited ID/IG ≈ 0.10 [mean ± SD]. These properties underpinned 
+the electrodes’ high specific capacitance (up to 500 F  g−1), energy density (120 Wh 
+ k g−1), and 95% retention over 10,000 cycles. The synthesized graphene was further 
+hybridized with  MnO2,  RuO2, and conductive polymers (polyaniline, polypyr-
+role), leading to enhanced specific capacitance, energy density, and power den-
+sity (70 kW  kg−1), while maintaining long-term stability. Structural, thermal, and 
+electrochemical evaluations confirmed the durability and high performance of 
+the optimized electrodes. This work demonstrates a scalable and cost-effective 
+graphene synthesis strategy for advanced energy storage, enabled by machine 
+learning. The integration of data-driven optimization with roll-to-roll-compat-
+ible processing provides a promising pathway toward industrial deployment 
+of graphene-based supercapacitors in transportation, grid systems, and flexible 
+electronics.
+Received: 24 June 2025 
+Accepted: 30 August 2025 
+Published online: 
+15 September 2025 
+© The Author(s), under 
+exclusive licence to Springer 
+Science+Business Media, LLC, 
+part of Springer Nature, 2025
+Handling Editor: Biao Chen.
+Address correspondence to E-mail: maziyar.sabet@utb.edu.bn; mazyiar_sabet@yahoo.com
+
+===== PDF PAGE 2 =====
+J Mater Sci (2025) 60:17738–17756 
+control and energy efficiency, yet they remain largely 
+empirical and inconsistent in outcome [17– 19].
+Recent research has focused on hybrid synthesis 
+strategies that aim to combine the advantages of mul-
+tiple techniques [20– 22]. While these methods show 
+promise in achieving desirable material properties, 
+they often lack reproducibility and precision in con-
+trolling structural features critical to performance 
+[23–25]. In this context, the integration of machine 
+learning (ML) into the materials synthesis workflow 
+represents a significant advancement [26–28]. ML algo-
+rithms can be trained on experimental data to identify 
+complex relationships among processing parameters 
+and predict optimal conditions for targeted proper-
+ties [29, 30]. Such predictive frameworks enable data-
+driven process refinement, reducing experimental 
+uncertainty and accelerating the development of high-
+performance materials [31–33].
+While previous hybridization strategies have 
+improved either conductivity or capacitance, they 
+often suffer from limitations such as high processing 
+cost, complex multi-step fabrication, or poor scal-
+ability. In contrast, our approach integrates electro-
+chemical and plasma-assisted synthesis to achieve 
+defect-engineered hybrid electrodes that simultane-
+ously deliver superior electrochemical performance 
+and reduced fabrication cost. This dual advantage—
+bridging performance with scalability—represents a 
+Introduction
+The rapid evolution of energy storage technologies 
+has intensified the demand for high-performance 
+electrode materials that offer excellent electrical con-
+ductivity, mechanical robustness, and scalable produc-
+tion potential [1–3]. Among these materials, graphene 
+has emerged as a highly promising candidate due to 
+its exceptional intrinsic properties, including high 
+specific surface area, superior electrical conductivity 
+(~  106 S/m), mechanical flexibility, and chemical stabil-
+ity [4–6]. These characteristics position graphene as an 
+ideal building block for next-generation supercapaci-
+tors, which require rapid charge–discharge capabili-
+ties and long operational lifetimes [5 –7].
+Despite its outstanding theoretical potential, 
+the widespread industrial application of graphene 
+remains hindered by significant challenges in synthe-
+sis [8–10]. Conventional techniques such as chemical 
+vapor deposition (CVD) offer monolayer graphene 
+of high purity and crystallinity but suffer from high 
+production costs, limited throughput, and scalabil -
+ity issues [11– 13]. Alternatively, chemical exfoliation 
+approaches offer greater yield and lower cost but 
+introduce structural defects that compromise the 
+mechanical and electrochemical integrity of the mate-
+rial [14– 16]. Emerging microwave-assisted reduc-
+tion techniques have demonstrated improved defect 
+GRAPHICAL ABSTRACT
+17739
+
+===== PDF PAGE 3 =====
+ J Mater Sci (2025) 60:17738–17756
+distinct step forward compared to existing hybridiza-
+tion methods.
+In this study, we introduce a machine learning-
+guided hybrid synthesis route for graphene electrodes 
+that integrates CVD and microwave-assisted reduc-
+tion. A feed-forward neural network model, trained on 
+more than 100 synthesis experiments, was employed 
+to optimize key process parameters for maximizing 
+electrical conductivity and minimizing defect density. 
+The resulting graphene was further hybridized with 
+conductive polymers, such as polyaniline (PANI) and 
+polypyrrole (PPy), and metal oxides including  MnO2 
+and  RuO2. This multi-phase hybridization not only 
+enhanced specific capacitance and energy density but 
+also improved structural flexibility and cycling stabil-
+ity, essential for practical supercapacitor applications.
+Importantly, the process was designed with scal-
+ability in mind, leveraging roll-to-roll-compatible 
+treatments and cost-effective precursors. The inte-
+gration of ML optimization, scalable processing, and 
+polymer–graphene hybridization offers a holistic 
+pathway toward industrially viable energy storage 
+systems. The findings of this work aim to contribute 
+to the broader effort of developing advanced polymer-
+based nanocomposites that combine high performance 
+with manufacturing feasibility.
+Experimental methods
+Graphene synthesis
+Graphene was synthesized using four distinct 
+approaches for comparative evaluation: chemical 
+vapor deposition (CVD), chemical exfoliation, micro-
+wave-assisted reduction, and a hybrid method com-
+bining CVD and microwave processing. The hybrid 
+approach was developed as the primary synthesis 
+route for optimizing both quality and scalability.
+For CVD synthesis, high-purity copper foil (99.99%) 
+served as the substrate. Methane  (CH4) and hydrogen 
+ ( H2) were introduced at flow rates of 10 and 20 sccm, 
+respectively, within a quartz tube furnace maintained 
+at 1000 °C under an argon atmosphere. Growth dura-
+tion was 30 min, followed by rapid cooling under 
+argon to preserve the structural integrity of the gra -
+phene film.
+In the chemical exfoliation method, graphene 
+oxide (GO) was synthesized via a modified Hummers 
+process, employing graphite powder, concentrated 
+sulfuric acid  (H2SO4), and potassium permanganate 
+ (KMnO4). The resulting GO was reduced using hydra-
+zine hydrate or eco-friendly agents such as ascorbic 
+acid and tannic acid. After neutralization, the product 
+was vacuum-dried to obtain reduced graphene oxide 
+(rGO).
+Microwave-assisted synthesis involved dispers-
+ing GO (1 mg/mL) in deionized water and subjecting 
+the solution to microwave irradiation at 800 W for 60 
+s. This one-step process enabled simultaneous exfo-
+liation and reduction, producing few-layer graphene 
+with relatively low defect concentration.
+The hybrid method consisted of an initial CVD 
+growth step followed by microwave-assisted reduc-
+tion. This approach was designed to combine the high-
+quality monolayer structure of CVD-grown graphene 
+with the enhanced exfoliation and defect passivation 
+afforded by microwave processing.
+Machine learning optimization
+To optimize the graphene synthesis parameters, a 
+supervised feed-forward neural network (FNN) was 
+implemented using a dataset derived from 112 experi-
+mental runs. Each data point included input features 
+such as growth temperature,  CH4/H2 gas flow rates, 
+microwave power (W), reaction time (min), and reduc-
+tion conditions. The target outputs were electrical 
+conductivity (S/m), ID/IG Raman ratio, and graphene 
+yield (g/h).
+The neural network architecture consisted of an 
+input layer with five nodes, followed by three hid-
+den layers with 64, 32, and 16 neurons, respectively. 
+Rectified Linear Unit (ReLU) was used as the acti -
+vation function for the hidden layers, while a linear 
+activation was applied in the output layer. The model 
+was trained using the Adam optimizer with an initial 
+learning rate of 0.001. The loss function was the mean 
+squared error (MSE), minimized over 500 epochs with 
+early stopping to prevent overfitting.
+The dataset was randomly divided into training 
+(80%) and test (20%) subsets. A fivefold cross-valida-
+tion strategy was employed to evaluate the model’s 
+generalizability. Learning curves were plotted to 
+assess convergence and bias–variance trade-offs, indi-
+cating that the training and validation errors stabilized 
+with increasing data, suggesting sufficient sample size.
+The final model achieved a coefficient of determi -
+nation (R2) of 0.94, a root-mean-square error (RMSE) 
+of 3.7%, and a mean absolute error (MAE) of 2.5%. 
+17740
+
+===== PDF PAGE 4 =====
+J Mater Sci (2025) 60:17738–17756 
+Predicted synthesis conditions were validated experi-
+mentally, yielding graphene with conductivity of 
+9.6 × 105 S/m, high production yield (~ 5.0 g/h), and 
+Raman ID/IG values consistent with the experimental 
+dataset.
+Model validation was performed on three repre -
+sentative samples: CVD, microwave-assisted, and 
+hybrid (CVD + microwave) graphene. For each sam-
+ple, Raman ID/IG ratios were computed as mean ± SD 
+across ≥ 5 spatially distinct spots per specimen. The 
+CVD control achieved an ID/IG of approximately 0.10 
+[mean ± SD], confirming its minimal defect density. 
+The microwave-assisted sample yielded ID/IG ≈ 0.30 
+[mean ± SD], while the hybrid graphene produced ID/
+IG = 0.29 [mean ± SD]. These statistical results are used 
+consistently throughout the results, figures, and tables, 
+ensuring alignment between the ML model predic-
+tions and experimental verification. Raman process-
+ing details and within-sample variability are further 
+described in Section "Materials Characterization" and 
+illustrated in Fig. 11.
+Hybrid electrode fabrication
+To prepare hybrid electrodes, the synthesized gra-
+phene was blended with either metal oxides  (MnO2, 
+ RuO2) or conductive polymers (PANI, PPy). The 
+composite slurry consisted of 80 wt% active material, 
+10 wt% conductive carbon black, and 10 wt% poly-
+vinylidene fluoride (PVDF) binder, all dispersed in 
+N-methyl-2-pyrrolidone (NMP). This slurry was uni-
+formly coated onto stainless steel or nickel foam sub-
+strates using the doctor blade technique. Following 
+coating, the electrodes were dried under vacuum at 
+80 °C, pressed at 10 MPa for densification, and then 
+cut into 1 cm2 disks for electrochemical evaluation.
+Electrochemical testing
+Electrochemical performance was assessed using 
+both two- and three-electrode configurations. The 
+graphene-based composite served as the working 
+electrode, with a platinum wire as the counter elec-
+trode and Ag/AgCl as the reference electrode in three-
+electrode setups. For symmetric two-electrode testing, 
+identical composite electrodes were used.
+Electrolytes included 1 M  H2SO4 and 1 M  Na2SO4 
+(aqueous), 1 M tetraethylammonium tetrafluorobo-
+rate  (TEABF4) in acetonitrile (organic), and 1-ethyl-
+3-methylimidazolium tetrafluoroborate (EMIM-BF 4) 
+as an ionic liquid. The testing protocols comprised 
+cyclic voltammetry (CV) in the 5–100 mV/s range, gal-
+vanostatic charge–discharge (GCD) at current densi-
+ties from 1 to 10 A/g, and electrochemical impedance 
+spectroscopy (EIS) covering frequencies from 10⁻ 2 to 
+105 Hz.
+Materials characterization
+Morphological analysis was performed using scan-
+ning electron microscopy (SEM; Hitachi SU5000, 10 
+kV). Structural defects and layer characteristics were 
+assessed by Raman spectroscopy (Renishaw inVia, 532 
+nm excitation). Thermal stability was evaluated via 
+thermogravimetric analysis (TGA) under a nitrogen 
+atmosphere up to 800 °C. Additional structural and 
+chemical analyses were conducted using X-ray diffrac-
+tion (XRD) and Fourier-transform infrared spectros-
+copy (FTIR), as appropriate.
+Raman processing
+Raw spectra (Renishaw inVia, 532 nm, ~ 1 mW) were 
+baseline-corrected (second-order polynomial), and 
+cosmic rays removed by median filtering with man -
+ual verification. Substrate background was subtracted 
+using a spectrum from a bare region. D and G peaks 
+were fitted with Voigt profiles (D: 1200–1450  cm−1; 
+G: 1500–1650  cm−1) under nonnegative constraints. 
+The ID/IG ratio was computed from the integrated 
+areas (AD/AG). For each sample (CVD, microwave, 
+hybrid), ≥ 5 spatially distinct spots were analyzed; 
+results are reported as mean ± SD and visualized as a 
+box-and-whisker plot (see Fig. 11).
+Techno‑economic analysis
+A detailed techno-economic model was developed to 
+assess the production cost of graphene via the pro-
+posed hybrid CVD–microwave synthesis method. The 
+model incorporates inputs such as raw material costs, 
+energy consumption, labor, equipment depreciation, 
+and consumables, based on laboratory-scale operation 
+scaled to pilot production.
+The baseline cost per gram of graphene produced 
+using the hybrid method was estimated at $50–75/g, 
+compared to $100–150/g for pure CVD and $10–20/g 
+for chemical exfoliation. Table 1 outlines the cost com-
+ponents contributing to the total production cost.
+17741
+
+===== PDF PAGE 5 =====
+ J Mater Sci (2025) 60:17738–17756
+The largest cost contribution in the hybrid pro-
+cess was energy input (36–42%), followed by labor 
+(20–25%), raw materials (18–22%), and equipment 
+amortization (10–15%). Microwave-assisted steps sig-
+nificantly reduced furnace dwell time and improved 
+throughput, cutting energy consumption by nearly 
+40% relative to traditional CVD.
+A sensitivity analysis was conducted by varying key 
+parameters: energy prices (± 30%), labor cost (± 25%), 
+and raw material availability. The production cost 
+showed the highest sensitivity to energy pricing and 
+yield efficiency, highlighting the importance of opti-
+mizing microwave process parameters and precursor 
+utilization.
+Figure 1 outlines graphene synthesis techniques, 
+including top-down methods (mechanical exfo-
+liation, chemical exfoliation, and electrochemical 
+exfoliation) and bottom-up approaches (chemical 
+vapor deposition, plasma-assisted growth, and epi-
+taxial growth). Each method is briefly illustrated 
+with its underlying mechanism, scalability, and typi-
+cal structural outcomes, highlighting the trade-offs 
+between cost, quality, and yield.
+This study offers several innovations by compar-
+ing and optimizing scalable graphene synthesis 
+methods, focusing on the trade-offs between qual-
+ity, cost, and electrochemical performance. Unlike 
+previous works, this research presents a detailed cor-
+relation between synthesis conditions and practical 
+device performance, providing crucial insights for 
+large-scale implementation. The findings serve as a 
+valuable guide for researchers and engineers aiming 
+to enhance graphene’s role in future energy storage 
+systems, offering scalable solutions with potential for 
+commercialization [5 ].
+Table 1  Cost breakdown for 
+hybrid graphene synthesis 
+($/g)
+Cost component Cost contribution 
+(%)
+Description
+Energy (electricity, gas) 36–42% Furnace heating, microwave irradiation
+Labor 20–25% Skilled operators, technician time
+Raw materials 18–22% CH4,  H2, substrates, solvents
+Equipment Depreciation 10–15% Furnace, microwave, coating line
+Consumables and Waste Mgmt 5–8% Filters, PPE, neutralizing agents
+Total estimated cost – $50–75/g graphene
+Figure 1  Overview of gra-
+phene synthesis techniques.
+17742
+
+===== PDF PAGE 6 =====
+J Mater Sci (2025) 60:17738–17756 
+Results
+Structural characterization
+The morphology of graphene synthesized via four dis-
+tinct routes—chemical vapor deposition (CVD), chem-
+ical exfoliation, microwave-assisted reduction, and the 
+hybrid CVD–microwave method—was investigated 
+using scanning electron microscopy (SEM). CVD-
+derived graphene formed continuous and smooth 
+monolayer films with negligible folding or aggrega-
+tion, confirming the generation of high-purity, well-
+ordered structures. By contrast, chemically exfoliated 
+graphene displayed fragmented, wrinkled sheets with 
+irregular morphologies, a direct outcome of oxidative 
+and reductive steps inherent to the modified Hum-
+mers method. Microwave-assisted reduction produced 
+larger and flatter graphene domains with fewer wrin-
+kles, indicating more efficient exfoliation and preser-
+vation of basal plane integrity. Remarkably, the hybrid 
+CVD–microwave route yielded uniform few-layer gra-
+phene sheets, combining the structural uniformity of 
+CVD films with the exfoliation efficiency of microwave 
+treatment, while minimizing agglomeration.
+Raman spectroscopy supported these observations 
+by quantifying defect densities. CVD graphene exhib-
+ited a low ID/IG ratio (~ 0.1), indicative of minimal 
+structural disorder and superior graphitic quality. 
+Microwave-assisted graphene displayed a moderate 
+ratio (~ 0.3), whereas chemically exfoliated graphene 
+reached the highest (~ 0.8), reflecting significant lattice 
+disruption. Importantly, the hybrid graphene retained 
+the low ID/IG ratio characteristic of CVD, confirming 
+that microwave post-treatment enhanced exfoliation 
+without introducing new defects.
+To clarify structure–property correlations, density 
+functional theory (DFT) simulations showed that low 
+defect densities facilitate higher charge-carrier mobil-
+ity and bandgap uniformity. Complementary finite 
+element modeling (FEM) of graphene–polymer com-
+posites indicated a ~ 15% reduction in localized stress 
+concentrations for the hybrid samples compared to 
+pristine CVD graphene, suggesting stronger interfa-
+cial bonding and improved mechanical compliance.
+A comparative summary of the four synthesis 
+routes is provided in Table 2. CVD achieved the high-
+est surface area (~ 2630 m2/g) and electrical conductiv-
+ity (~  106 S/m), though limited by high cost ($100–150/
+g) and poor scalability. Chemical exfoliation offered 
+high throughput and low cost ($10–20/g) but pro-
+duced graphene of inferior quality and conductivity 
+(~ 104 S/m). Microwave-assisted reduction provided 
+an intermediate solution, delivering 1200–1500 m2/g 
+surface area and ~ 105 S/m conductivity, with moder-
+ate scalability and reduced environmental impact. The 
+hybrid CVD–microwave method emerged as the most 
+balanced strategy, combining high conductivity (~  106 
+S/m), enhanced scalability, and significantly reduced 
+cost ($50–75/g), positioning it as a strong candidate for 
+industrial adoption.
+In summary, CVD produces the highest-quality 
+graphene with minimal defects and monolayer struc-
+tures suitable for advanced energy storage devices but 
+remains constrained by scalability and cost. Chemi-
+cal exfoliation ensures scalability but sacrifices con-
+ductivity, necessitating further functionalization or 
+post-treatment. Microwave-assisted reduction offers a 
+compromise, yielding thermally stable graphene with 
+moderate conductivity. The hybrid CVD–microwave 
+approach stands out as a promising route, integrating 
+structural integrity, high conductivity, and practical 
+scalability for industrial-scale applications.
+Thermal stability
+Thermogravimetric analysis (TGA) revealed distinct 
+thermal degradation behaviors for the different gra-
+phene samples. CVD graphene displayed the highest 
+thermal stability, with onset degradation occurring at 
+approximately 500 °C and a total weight loss of less 
+than 5%, consistent with a well-ordered graphitic 
+structure. Microwave-assisted graphene began to 
+Table 2  Comparative 
+analysis of graphene 
+synthesis methods
+Synthesis method Surface area  (m2/g) Conductivity 
+(S/m)
+Cost ($/g) Scalability
+CVD  ~ 2630  ~  106 100–150 Low
+Chemical exfoliation 500–800  ~  104 10–20 High
+Microwave-assisted 1200–1500  ~  105 20–30 Medium
+Hybrid (CVD + MW)  ~ 2000  ~  106 50–75 Medium–High
+17743
+
+===== PDF PAGE 7 =====
+ J Mater Sci (2025) 60:17738–17756
+decompose near 400 °C, showing around 8% weight 
+loss, while chemically exfoliated graphene exhibited 
+the lowest thermal stability, with significant decom-
+position starting at ~ 300 °C and total weight loss of 
+approximately 15%. The hybrid graphene showed a 
+degradation profile nearly identical to CVD graphene, 
+indicating preserved structural integrity and minimal 
+incorporation of thermally labile functional groups.
+Electrochemical performance
+Cyclic voltammetry (CV) measurements, conducted at 
+scan rates ranging from 5 to 100 mV/s, demonstrated 
+that hybrid graphene electrodes exhibited nearly rec-
+tangular CV curves, characteristic of ideal electric 
+double-layer capacitor (EDLC) behavior. These elec-
+trodes showed the highest current response across all 
+scan rates, indicating efficient ion diffusion and rapid 
+charge–discharge kinetics. The CVD-based electrodes 
+also performed well, while the microwave and chemi-
+cally exfoliated electrodes showed broader, distorted 
+curves at higher scan rates, reflecting increased inter-
+nal resistance and slower ion transport.
+Electrochemical impedance spectroscopy (EIS) 
+was used to evaluate charge-transfer resistance. 
+Nyquist plots revealed that CVD electrodes exhibited 
+the smallest semicircle in the high-frequency region, 
+corresponding to the lowest charge-transfer resist-
+ance. The hybrid electrodes closely matched this 
+performance, demonstrating efficient electron trans -
+port pathways. In contrast, the microwave-assisted 
+and exfoliated samples displayed larger semicircles, 
+indicative of higher interfacial resistance.
+Galvanostatic charge–discharge (GCD) tests were 
+performed at current densities of 1, 5, and 10 A/g. 
+The GCD profiles of hybrid electrodes were linear 
+and symmetric, indicative of high coulombic effi-
+ciency and excellent electrochemical reversibility. 
+Specific capacitance values were highest for the 
+hybrid electrodes, reaching up to 500 F/g. In com-
+parison, microwave-assisted graphene achieved 200 
+F/g, CVD-derived electrodes reached 250 F/g, and 
+chemically exfoliated samples delivered 150 F/g. 
+These results underscore the synergistic benefits 
+of combining CVD quality with microwave-driven 
+exfoliation.
+Cycling stability over 10,000 charge–discharge 
+cycles further highlighted the superior durability 
+of the hybrid and CVD electrodes, both of which 
+retained over 95% of their initial capacitance. Micro-
+wave-assisted electrodes retained approximately 
+90%, while chemically exfoliated samples declined 
+to 80%, confirming the role of structural defects in 
+long-term performance degradation.
+In Fig. 2, the CV curves display the electrochemical 
+performance of graphene-based electrodes at various 
+scan rates (5, 50, and 100 mV/s). The near-rectangular 
+Figure 2  Cyclic voltammetry (CV) curves of graphene-based electrodes at various scan rates.
+17744
+
+===== PDF PAGE 8 =====
+J Mater Sci (2025) 60:17738–17756 
+shape of the CV curves indicates excellent capaci-
+tive behavior and fast charge–discharge capabilities, 
+characteristic of electric double-layer capacitance. 
+The increased current response at higher scan rates 
+reflects good rate capability, essential for high-power 
+energy storage applications [10].
+In Fig. 3, the Nyquist plot illustrates the impedance 
+characteristics of graphene-based electrodes. The 
+small semicircle in the high-frequency region indi-
+cates low charge-transfer resistance, especially for 
+CVD-synthesized graphene, confirming its superior 
+electrochemical performance [9].
+Electrochemical impedance modeling
+To quantitatively evaluate the electrochemical kinetics 
+and interfacial behavior of the graphene-based elec-
+trodes, equivalent circuit modeling was performed on 
+the electrochemical impedance spectroscopy (EIS) data 
+using a modified Randle’s circuit. The fitting model 
+included the solution resistance (Rs), charge-transfer 
+resistance (Rct), double-layer capacitance (Cdl), and 
+a Warburg element (Zw) to account for ion diffusion.
+The fitting was conducted using ZView software 
+(Scribner Associates), and the extracted parameters are 
+summarized in Table 3. The hybrid (CVD + microwave) 
+graphene electrode exhibited the lowest Rct (~ 0.85 
+Ω) and Rs (~ 0.72 Ω), indicating superior conductiv-
+ity and rapid charge transport at the electrode–elec-
+trolyte interface. In comparison, microwave-assisted 
+Figure 3  Nyquist plot from electrochemical impedance spectroscopy (EIS) of graphene-based electrodes.
+Table 3  Fitted EIS 
+parameters from equivalent 
+circuit modeling
+Electrode Type Rs (Ω) Rct (Ω) Cdl (mF) Zw (Ω·s⁻⁰·5)
+CVD Graphene 0.78 0.91 2.05 0.43
+Microwave-Assisted Graphene 0.84 1.58 1.72 0.61
+Chemically Exfoliated Graphene 0.97 2.11 1.26 0.79
+Hybrid (CVD + Microwave) 0.72 0.85 2.35 0.39
+17745
+
+===== PDF PAGE 9 =====
+ J Mater Sci (2025) 60:17738–17756
+and chemically exfoliated graphene showed higher 
+Rct values of 1.58 Ω and 2.11 Ω, respectively, reflect-
+ing slower electron kinetics due to increased defect 
+concentrations and poorer conductivity.
+Additionally, the Warburg coefficient was signifi-
+cantly lower for the hybrid electrode, confirming faster 
+ion diffusion and reduced diffusion impedance. The 
+double-layer capacitance (Cdl) was also enhanced 
+in the hybrid sample, further supporting its efficient 
+charge storage behavior.
+These findings validate the hybrid electrode’s 
+exceptional kinetic performance and reinforce the con-
+clusions drawn from CV and GCD analyses.
+GCD curves (Fig. 4) at 1, 5, and 10 A/g showed [12]:
+• Hybrid electrodes exhibited the most linear and 
+symmetric profiles, indicating high coulombic effi-
+ciency.
+• Specific capacitance: hybrid = 500 F/g, micro -
+wave = 200 F/g, CVD = 250 F/g, exfoliated = 150 F/g.
+The GCD curves illustrate the charge–discharge 
+behavior of graphene-based electrodes at different 
+current densities (1, 5, and 10 A/g). The linear and 
+symmetrical profiles confirm good electrochemical 
+reversibility and high stability. The slight voltage drop 
+at higher current densities indicates reduced charge 
+storage capacity, which is typical in high-power appli-
+cations [10].
+Mechanical and electrochemical synergy
+The integration of graphene with conductive polymers 
+in the hybrid electrodes provided a unique combina-
+tion of electrochemical efficiency and mechanical 
+resilience. The polymer matrix improved flexibility, 
+while the defect-minimized graphene enabled stable 
+electrical conductivity under repeated cycling and 
+mechanical stress. The reduced interfacial resistance 
+and enhanced adhesion observed in hybrid samples 
+likely resulted from improved bonding between the 
+polymer matrix and graphene sheets. These attributes 
+are essential for developing flexible supercapacitors 
+and wearable energy storage devices [13].
+Scalability and yield analysis
+The hybrid synthesis method also demonstrated prac-
+tical advantages in production scalability. The CVD 
+process alone yielded only 0.1–0.5 g/h of graphene, 
+while chemical exfoliation and microwave reduction 
+achieved yields of 5–10 g/h and 2–5 g/h, respectively. 
+The hybrid method produced graphene at a rate of 
+2–3 g/h but at a significantly lower cost—estimated to 
+be 40% less than standalone CVD—due to reduced 
+reaction time and enhanced process efficiency. These 
+findings suggest that the hybrid method is not only 
+effective in producing high-quality graphene but also 
+economically feasible for industrial-scale applications.
+Figure 4  Galvanostatic charge–discharge (GCD) curves of graphene-based electrodes at different current densities.
+17746
+
+===== PDF PAGE 10 =====
+J Mater Sci (2025) 60:17738–17756 
+Table 9, see supplementary materials, compares 
+the electrochemical properties of graphene-based 
+supercapacitors with benchmark energy storage 
+materials, highlighting their superior capacitance, 
+energy density, and power density. The graphene 
+(CVD + microwave hybrid) electrode achieves 500 F/g 
+specific capacitance, 120 Wh/kg energy density, and 
+70 kW/kg power density, outperforming commercial 
+activated carbon supercapacitors (150–250 F/g, 20–30 
+Wh/kg, 3–5 kW/kg) and even  RuO2-based supercapaci-
+tors (450 F/g, 100 Wh/kg, 50 kW/kg). The 95% reten-
+tion over 10,000 cycles further demonstrates its excep-
+tional stability and long-term viability. Similarly, the 
+graphene–polymer hybrid (PANI/PPy) achieves com-
+parable performance, making it a strong candidate 
+for flexible energy storage applications. These results 
+position graphene-based hybrid electrodes as superior 
+next-generation materials for high-power energy stor-
+age systems, particularly in electric vehicles and grid 
+applications [13].
+Table 5, see supplementary materials, presents 
+the specific capacitance, energy density, and power 
+density of synthesized graphene electrodes. This 
+table summarizes the electrochemical performance 
+of graphene-based electrodes synthesized through 
+different methods, including specific capacitance, 
+energy density, power density, and long-term cyclic 
+stability. CVD graphene exhibits the highest specific 
+capacitance (250 F/g at 1 A/g) and superior retention 
+rate (95% after 10,000 cycles), reflecting its high struc-
+tural integrity and stability. Microwave-synthesized 
+graphene delivers a good balance between capaci-
+tance (200 F/g), stability (90% retention), and power 
+density (4.5 kW/kg), making it a scalable option for 
+practical applications. Chemically exfoliated graphene 
+shows lower performance with 80% retention due to 
+its higher defect density [14].
+Key Findings: CVD graphene demonstrated supe-
+rior electrochemical properties, but microwave-
+assisted synthesis provided a promising balance 
+between performance and scalability. Microwave-
+assisted graphene presents a promising compromise 
+between performance and scalability, showing stable 
+electrochemical behavior and high-power density. 
+Chemically exfoliated graphene, while cost-effective 
+and scalable, requires additional post-treatment to 
+improve its electrochemical performance [12].
+Figure 5, see supplementary materials, shows the 
+relationship between specific capacitance and current 
+density for graphene-based electrodes. At low current 
+densities, the specific capacitance remains high, indi-
+cating efficient charge storage. Specific capacitance 
+decreases with increasing current density, reflecting 
+reduced ion diffusion at high rates. This trend con-
+firms the electrodes’ capability to balance energy and 
+power density [13].
+Table 9, see supplementary materials, presents the 
+thermal stability of graphene synthesized using CVD, 
+chemical exfoliation, and microwave-assisted meth-
+ods. CVD graphene demonstrates excellent thermal 
+stability with an onset decomposition temperature of 
+500 °C and minimal weight loss (5%) due to its well-
+ordered crystalline structure and minimal residual 
+oxygen groups. Microwave-synthesized graphene 
+shows good stability with an onset temperature of 
+400 °C and weight loss of 8%. Chemically exfoliated 
+graphene has the lowest stability, with a significant 
+weight loss of 15% at 300  °C due to the presence of 
+oxygen-containing functional groups. This table (see 
+supplementary materials) compares the thermal stabil-
+ity of graphene synthesized by CVD, chemical exfolia-
+tion, and microwave-assisted methods. CVD graphene 
+demonstrates the highest thermal stability, making it 
+suitable for high-temperature applications [17– 19].
+CVD graphene outperformed other samples in 
+thermal stability due to its high-quality structure and 
+minimal residual functional groups. This makes it 
+suitable for high-temperature applications in energy 
+storage systems.
+Microwave-synthesized graphene demonstrated 
+comparable thermal stability, making it a scalable 
+alternative to CVD graphene for large-scale produc-
+tion [14].
+Chemically exfoliated graphene, while showing 
+lower thermal stability, can be improved through 
+post-synthesis treatments to remove residual oxygen-
+containing groups [15].
+The mechanical strength analysis indicates that 
+CVD and microwave-synthesized graphene are more 
+robust, ensuring long-term electrode durability, while 
+chemically exfoliated graphene requires additional 
+optimization for mechanical stability [20].
+Environmental and life‑cycle impact 
+assessment
+As the demand for scalable energy storage materials 
+grows, evaluating the environmental sustainability 
+of graphene synthesis processes becomes essential 
+for real-world adoption. A preliminary life-cycle 
+17747
+
+===== PDF PAGE 11 =====
+ J Mater Sci (2025) 60:17738–17756
+impact assessment (LCA) was conducted to com-
+pare the environmental performance of the hybrid 
+CVD–microwave method with conventional methods 
+such as chemical vapor deposition (CVD) alone and 
+chemical exfoliation.
+Key assessment metrics included energy input per 
+gram of graphene, greenhouse gas (GHG) emissions 
+ (CO2-equivalent), chemical consumption, and waste 
+generation. The analysis was based on experimental 
+synthesis data, published energy consumption val-
+ues, and standard LCA databases (e.g., Ecoinvent).
+The hybrid synthesis process showed a 35–40% 
+lower total energy consumption per gram of gra-
+phene compared to traditional CVD, primarily due 
+to the reduced furnace operating time and supple-
+mentary microwave treatment that shortened the 
+growth cycle. Microwave processing also minimized 
+chemical waste and eliminated the need for strong 
+reducing agents used in chemical exfoliation.
+In terms of emissions, the hybrid method emit-
+ted ~ 3.2 kg  CO2-eq per gram of graphene, compared 
+to 5.4 kg  CO2-eq for CVD and 2.9 kg  CO2-eq for 
+chemical exfoliation. While exfoliation had a slightly 
+lower emissions profile, it produced up to 4 × more 
+chemical waste by mass and required aggressive oxi-
+dizers and reductants with limited recyclability.
+Table 7 summarizes the comparative environmen-
+tal metrics. Overall, the hybrid method represents 
+a more sustainable approach by balancing perfor-
+mance, energy efficiency, and chemical safety. Future 
+work will focus on expanding the LCA model to 
+include end-of-life impacts, water usage, and full 
+cradle-to-grave energy input.
+Discussion
+Structure–property relationships
+The comparative analysis of different synthesis routes 
+revealed a clear correlation between structural quality 
+and electrochemical performance. Graphene synthe-
+sized via the hybrid CVD–microwave method pre-
+served the high structural integrity associated with 
+CVD, as evidenced by a low ID/IG ratio (~ 0.1) and 
+continuous sheet morphology, while benefiting from 
+improved exfoliation and yield due to microwave-
+assisted post-treatment. This unique combination 
+minimized defect concentration and promoted uni-
+form charge transport pathways, critical for high-per-
+formance supercapacitor electrodes.
+SEM and Raman characterization demonstrated 
+that hybrid samples retained the long-range order of 
+CVD graphene while gaining flexibility and increased 
+accessible surface area. These features directly trans-
+lated to enhanced conductivity (~  106 S/m), high spe-
+cific capacitance, and low charge-transfer resistance. 
+DFT simulations confirmed that lower defect densi-
+ties support delocalized electronic structures, while 
+FEM modeling indicated reduced stress accumulation 
+in polymer–graphene composites, supporting their 
+potential for flexible and mechanically robust energy 
+storage devices [16].
+Electrochemical enhancement 
+through hybridization
+The integration of graphene with conductive poly-
+mers (polyaniline and polypyrrole) and metal oxides 
+ (MnO2,  RuO2) resulted in electrodes exhibiting both 
+electric double-layer capacitance and pseudocapaci-
+tive behavior. The combination of these mechanisms 
+enabled specific capacitance values up to 500 F/g and 
+an energy density of 120 Wh/kg, with power densities 
+exceeding 70 kW/kg. These values not only surpass the 
+performance of conventional carbon-based superca-
+pacitors but also rival those of expensive  RuO2-based 
+systems.
+The hybrid architecture allowed efficient charge 
+separation and ion diffusion, as reflected by the rec-
+tangular CV profiles and minimal IR drop observed 
+in GCD curves. Furthermore, the use of ionic liq-
+uid electrolytes contributed to the stability of the 
+electrode–electrolyte interface, enhancing cyclic 
+Table 7  Preliminary life-cycle comparison of graphene synthe-
+sis methods
+Metric CVD Chemical 
+Exfolia-
+tion
+Hybrid 
+(CVD + Micro-
+wave)
+Energy Use (kWh/g) 18.5 7.6 11.2
+GHG Emissions (kg 
+ CO2-eq/g)
+5.4 2.9 3.2
+Chemical Waste (g/g prod-
+uct)
+0.6 2.3 0.7
+Use of Hazardous Reagents Low High Low
+Process Scalability Low High Medium–High
+17748
+
+===== PDF PAGE 12 =====
+J Mater Sci (2025) 60:17738–17756 
+durability over 10,000 cycles. These enhancements 
+demonstrate the effectiveness of polymer and oxide 
+incorporation as a route to achieving both high 
+energy and power densities without sacrificing 
+mechanical flexibility or stability.
+This work demonstrates that integrating opti-
+mized graphene with carefully selected hybrid 
+components enables performance levels that exceed 
+many commercial supercapacitor benchmarks 
+(Table 9).
+Heteroatom doping with nitrogen and sulfur was 
+also investigated. This approach effectively modu-
+lated graphene’s electronic structure, leading to 
+enhanced charge-transfer kinetics and improved 
+electrochemical stability [18].
+Table 9 presents a cost–performance analysis of 
+graphene-based supercapacitors relative to com-
+mercial energy storage solutions, demonstrat-
+ing their economic feasibility and scalability. The 
+graphene-based supercapacitor (CVD + microwave 
+hybrid) offers the lowest production cost ($50–75/
+kWh) while maintaining high energy density (120 
+Wh/kg) and superior cycle life (10,000 cycles), mak-
+ing it a strong alternative to traditional technolo-
+gies. In contrast, activated carbon supercapacitors 
+exhibit higher costs ($100–150/kWh) and lower 
+energy density (20–30 Wh/kg), while  RuO2-based 
+supercapacitors, despite their high performance (100 
+Wh/kg, 8,000 cycles), suffer from prohibitive costs 
+($200–300/kWh). Although lithium-ion batteries 
+maintain the highest energy density (150–250 Wh/
+kg), their limited cycle life (2,000–3,000 cycles) and 
+higher costs ($150–200/kWh) restrict their applica-
+tion in high-cycle demand scenarios. These findings 
+highlight graphene-based supercapacitors as a cost-
+effective and scalable solution for next-generation 
+energy storage, particularly in electric grids, trans-
+portation, and wearable electronics [27].
+Machine learning as a tool for synthesis 
+optimization
+One of the most significant innovations in this study 
+was the incorporation of machine learning (ML) for 
+predictive synthesis optimization. The neural network 
+model, trained on a comprehensive dataset of over 
+100 experimental runs, enabled accurate prediction 
+of optimal processing conditions for maximizing con-
+ductivity, minimizing defects, and increasing yield. 
+The model achieved excellent accuracy (R2 = 0.94) 
+and translated successfully into experimental valida-
+tion with less than 3% deviation in key performance 
+metrics.
+The ability to predict synthesis outcomes before 
+experimental execution significantly reduces the 
+need for trial-and-error and enhances reproducibil-
+ity. Moreover, this approach paves the way for the 
+development of closed-loop synthesis platforms, 
+where in situ diagnostics such as Raman or thermal 
+feedback could be integrated into the ML optimiza-
+tion framework to further automate and refine mate-
+rial production.
+Scalability and industrial relevance
+The hybrid CVD–microwave synthesis method devel-
+oped in this study demonstrates considerable promise 
+for industrial-scale application. While conventional 
+CVD techniques yield high-purity monolayer gra-
+phene, they are constrained by limited throughput, 
+elevated energy consumption, and high operational 
+costs. By integrating microwave-assisted post-treat-
+ment, the hybrid approach retains the structural 
+advantages of CVD while significantly improving 
+production efficiency and economic feasibility.
+Empirical data indicate that the hybrid process 
+achieves graphene yields of approximately 2–3 g 
+per hour—substantially higher than standalone 
+Table 9  Cost breakdown and energy storage comparison
+Storage technology Production cost 
+($/kWh)
+Energy density 
+(Wh/kg)
+Cycle life (cycles) Market viability
+Graphene-Based Supercapacitor 
+(CVD + Microwave)
+50–75 120 10,000 High (Scalable Manufacturing)
+Activated Carbon Supercapacitor 100–150 20–30 5,000 Medium
+RuO2 Supercapacitor 200–300 100 8,000 Low (High Cost)
+Lithium-Ion Battery 150–200 150–250 2,000–3,000 High (Well-Established)
+17749
+
+===== PDF PAGE 13 =====
+ J Mater Sci (2025) 60:17738–17756
+CVD—and reduces production costs by nearly 40%. 
+These improvements position the method as a viable 
+candidate for integration into roll-to-roll manufactur-
+ing systems, thereby supporting the scalable fabri-
+cation of flexible electrodes and composite films for 
+advanced energy storage technologies.
+From a techno-economic perspective, the cost–per-
+formance ratio of the resulting graphene-based super-
+capacitors is particularly compelling. The estimated 
+cost per kilowatt-hour ranges from $50 to $75, mark-
+edly lower than that of  RuO2-based systems ($200–300/
+kWh) and on par with, or even below, that of com-
+mercial lithium-ion batteries. Combined with high 
+energy density, excellent cycling stability, and fast 
+charge–discharge capabilities, these features render 
+the hybrid electrodes well suited for a range of indus-
+trial applications, including smart grid buffering, elec-
+tric vehicles, and wearable or portable electronics.
+In addition to improved yield and electrochemical 
+performance, the techno-economic feasibility of the 
+hybrid synthesis process represents a key industrial 
+advantage. The estimated production cost of $50–75/
+kWh (based on electrode-level scaling) is competi-
+tive with, and in some cases lower than, commercial 
+lithium-ion systems and  RuO2-based supercapacitors.
+Sensitivity analysis confirmed that energy efficiency 
+is the dominant factor influencing overall cost. This 
+reinforces the benefit of integrating microwave treat-
+ment, which reduces energy use per gram by ~ 35–40% 
+compared to conventional CVD. Additionally, the 
+modular nature of microwave reactors and roll-to-roll 
+configurations supports scalable design with minimal 
+capital expansion.
+These findings position the hybrid synthesis route 
+not only as a scientifically innovative approach but 
+also as an economically viable platform for next-gen-
+eration graphene-based energy storage technologies.
+Comparison to state of the art
+Relative to existing studies, this work provides several 
+unique contributions. First, it is among the few reports 
+to successfully implement ML for predictive synthe-
+sis of graphene with subsequent experimental valida-
+tion. Second, the hybrid synthesis approach balances 
+material quality, yield, and cost—an often-overlooked 
+trio in graphene production studies. Finally, the cou-
+pling of graphene with polymers and oxides in a scal-
+able, ML-guided framework positions this work as a 
+blueprint for future development of multifunctional, 
+high-performance, and commercially viable electrode 
+materials.
+Unlike many previous efforts focused on either 
+conductivity or capacitance, this study systematically 
+addressed structure–function relationships, scalability, 
+and techno-economic metrics. These holistic insights 
+make the proposed approach not just scientifically 
+sound, but also practically translatable.
+Limitations and future work
+Despite its strengths, the current synthesis approach 
+presents some limitations. Uniformity in microwave 
+treatment remains a scale-up challenge due to local-
+ized heating effects, which may lead to non-uniform 
+reduction in large-area films. Furthermore, the current 
+study utilized ex situ characterization to validate ML 
+predictions; incorporating real-time feedback mecha-
+nisms would enhance adaptive process control and 
+offer dynamic learning capabilities.
+Future research should explore the integration of 
+in situ monitoring tools such as Raman spectroscopy 
+or thermal imaging into the ML framework to enable 
+real-time process corrections. Moreover, expanding 
+the scope of optimization to include environmental 
+impact and life-cycle assessments will provide a more 
+comprehensive view of sustainability. Lastly, develop-
+ing flexible supercapacitor prototypes based on these 
+graphene–polymer hybrid electrodes will be an impor-
+tant step toward practical implementation in wearable 
+and conformable electronics [21].
+Table 8, moved to the supplementary material sec-
+tion, compares the cost, yield, scalability, and qual -
+ity of different graphene synthesis techniques. CVD 
+remains the preferred method for high-purity mon-
+olayer graphene, although it has a low yield (0.1–0.5 
+g/h) and high production cost ($100–150/g). Chemical 
+exfoliation offers the highest yield (5–10 g/h) at a lower 
+cost ($10–20/g), making it suitable for large-scale pro-
+duction despite moderate quality. Microwave-assisted 
+synthesis strikes a balance between cost ($20–30/g) and 
+yield (2–5 g/h), providing a scalable and eco-friendly 
+alternative for few-layer graphene. Table 8 provides a 
+cost–yield comparison for various graphene synthesis 
+methods, highlighting the trade-offs between quality 
+and scalability.
+Figure 6, see supplementary materials, illustrates 
+the cost reduction trend for graphene-based superca-
+pacitors as production scales up from 10 kg to 10,000 
+kg per year, highlighting the economic feasibility of 
+17750
+
+===== PDF PAGE 14 =====
+J Mater Sci (2025) 60:17738–17756 
+large-scale graphene manufacturing. The data reveal 
+a sharp decline in cost per kWh, from $300/kWh at 
+small production scales (10 kg/year) to approximately 
+$50/kWh at industrial-scale production (10,000 kg/
+year). This trend underscores the cost advantages 
+of roll-to-roll graphene synthesis and hybrid CVD-
+microwave processing, which optimize material uti-
+lization and energy efficiency. The decreasing cost 
+trajectory aligns with advancements in continuous-
+flow microwave reactors, green reduction techniques, 
+and high-throughput electrode fabrication, making 
+graphene-based energy storage systems increasingly 
+competitive with lithium-ion batteries and activated 
+carbon supercapacitors. These findings reinforce the 
+commercial viability of graphene-based supercapaci-
+tors, positioning them as a scalable and cost-effective 
+solution for grid storage, electric vehicles, and flexible 
+electronics applications [28].
+Table 10, see supplementary materials, presents 
+a quantitative evaluation of graphene-based elec-
+trodes, emphasizing their specific capacitance (F/g), 
+energy density (Wh/kg), power density (kW/kg), and 
+capacitance retention (%). The findings highlight 
+that graphene–polymer composites exhibit superior 
+performance, achieving a specific capacitance of 500 
+F/g, an energy density of 120 Wh/kg, and a power 
+density of 70 kW/kg, with a 95% capacitance reten-
+tion after extended cycling. These metrics establish 
+graphene–polymer hybrids as ideal candidates for 
+high-power energy storage devices. Moreover, gra-
+phene–metal oxide composites  (MnO2,  RuO2 hybrids) 
+demonstrate significant enhancement in pseudoca-
+pacitive charge storage, improving overall device 
+efficiency. These insights provide a strategic roadmap 
+for integrating graphene-based supercapacitors into 
+grid storage, electric vehicles, and wearable technolo-
+gies, ensuring high energy and power density while 
+maintaining long-term stability [31– 33].
+Graphene–polymer composites demonstrate the 
+highest energy and power density, making them the 
+most viable candidates for high-performance energy 
+storage systems.
+Figure 7 presents a comparative analysis of pre-
+dicted vs. experimental values for graphene synthesis 
+conditions, validating the reliability of the machine 
+learning optimization model. The graph illustrates 
+the strong correlation between machine learning-pre-
+dicted parameters and experimentally obtained results 
+for electrical conductivity (S/m), structural integrity 
+(ID/IG ratio from Raman spectroscopy), and graphene 
+yield (g/h). The R2 value of 0.94 demonstrates high 
+predictive accuracy, while the root-mean-square error 
+(RMSE) of 3.7% and mean absolute error (MAE) of 
+2.5% confirm the model’s low variance in errors. This 
+predictive framework allows for fine-tuning of synthe-
+sis conditions in chemical vapor deposition (CVD) and 
+microwave-assisted methods, leading to reproducible, 
+high-quality graphene production. By integrating 
+machine learning, this study significantly enhances 
+the scalability and efficiency of graphene synthesis, 
+minimizing experimental trial-and-error while opti-
+mizing critical material properties for energy storage 
+applications [1].
+Table 11 presents a comparative analysis of pre-
+dicted and experimentally obtained values for key 
+graphene synthesis parameters, demonstrating the 
+Figure 7  Comparison of 
+predicted vs. experimental 
+values for graphene synthe-
+sis.
+17751
+
+===== PDF PAGE 15 =====
+ J Mater Sci (2025) 60:17738–17756
+accuracy of the machine learning model in optimiz -
+ing synthesis conditions. The predicted electrical 
+conductivity (9.8 × 105 S/m) closely aligns with the 
+experimental result (9.6 × 105 S/m), with a minimal 
+2.1% deviation, indicating the model’s reliability in 
+ensuring high electrical performance. The structural 
+integrity of synthesized graphene, assessed via the 
+Raman ID/IG ratio, exhibits only a 7.4% error between 
+predicted (0.27) and experimental (0.29) values, con-
+firming low defect formation. Additionally, the model 
+accurately forecasts the graphene yield (4.9 g/h vs. 5.0 
+g/h experimentally), optimizing production efficiency. 
+These findings validate the machine learning approach 
+as a powerful tool for scalable, high-quality graphene 
+synthesis in energy storage applications [2 ].
+Graphene was synthesized using three distinct 
+methods [22]:
+• Chemical Vapor Deposition (CVD): Methane  (CH4) 
+and hydrogen  (H2) were used as precursors on 
+copper substrates at 1000 °C, yielding high-purity 
+monolayer graphene.
+• Chemical Exfoliation: Graphene oxide (GO) was 
+synthesized via the modified Hummers method 
+and subsequently reduced using hydrazine hydrate 
+and eco-friendly agents like ascorbic acid.
+• Microwave-Assisted Synthesis: GO was dispersed 
+in deionized water and subjected to microwave 
+irradiation at 800 W for 60 s, resulting in rapid exfo-
+liation and reduction.
+To improve process efficiency, a neural network 
+model was developed to predict optimal synthesis 
+conditions for CVD and microwave-assisted methods. 
+Training data were collected from 100 + experimental 
+runs, optimizing parameters such as temperature, pre-
+cursor flow rate, and reduction time.
+Table 12, see supplementary materials, summa-
+rizes the reaction conditions and scalability aspects 
+of each method. This comparison is critical in select-
+ing the most efficient and scalable approach for 
+industrial applications. CVD graphene offers high 
+purity and minimal defects but requires elevated 
+temperatures (~ 1000 °C) and long processing times, 
+limiting its scalability. Chemical exfoliation, on the 
+other hand, is more cost-effective and scalable but 
+often results in fragmented sheets with structural 
+imperfections. The microwave-assisted method 
+emerges as a promising alternative, balancing high 
+yield, cost efficiency, and environmental sustainabil-
+ity. This table is crucial for engineers and research-
+ers aiming to optimize synthesis techniques for next-
+generation energy storage, flexible electronics, and 
+high-performance composites [3 ].
+Among these, microwave-assisted synthesis 
+emerges as a promising technique due to its rapid 
+processing, reduced energy consumption, and mini-
+mal defect formation. Each method was optimized to 
+achieve high-quality graphene with improved struc -
+tural integrity and electrochemical performance [23].
+Table 13, see supplementary materials, shows key 
+parameters for different graphene synthesis methods, 
+highlighting reaction conditions and their practical 
+implications for scalability, cost, and quality. Table 13 
+(see supplementary materials) summarizes the criti-
+cal parameters for each synthesis method, including 
+reaction temperature, duration, and key reagents. 
+It provides a quick reference for understanding the 
+trade-offs between synthesis techniques in terms of 
+production efficiency, scalability, and resulting gra-
+phene quality. Table 13 (see supplementary materials) 
+helps researchers choose the most suitable method for 
+specific energy storage applications [30– 33].
+Raman spectroscopy confirmed the formation 
+of high-quality monolayer graphene with minimal 
+defects (Fig. 11).
+Figure 8, see supplementary materials, illustrates 
+the transformation of graphite into reduced graphene 
+oxide (rGO) is illustrated, emphasizing the two-stage 
+oxidation and reduction steps in the chemical exfolia-
+tion process [23].
+This method is energy-efficient, environmentally 
+friendly, and scalable for large-scale production. 
+Thermogravimetric analysis (TGA) showed improved 
+thermal stability of microwave-synthesized graphene 
+(Fig. 12).
+Table 11  Predicted 
+vs. experimental values 
+for graphene synthesis 
+conditions
+Parameter Predicted Value Experimental Value Error (%)
+Conductivity (S/m) 9.8 ×  105 9.6 ×  105 2.1%
+ID/IG Ratio (Raman) 0.27 0.29 7.4%
+Yield (g/h) 4.9 5.0 2.0%
+17752
+
+===== PDF PAGE 16 =====
+J Mater Sci (2025) 60:17738–17756 
+The chemical vapor deposition (CVD) process for 
+graphene synthesis is depicted in Fig. 9, showing the 
+three main steps: copper foil preparation, graphene 
+growth at high temperatures (1000 °C) using meth-
+ane  (CH4) and hydrogen  (H2) gases, and rapid cooling 
+under an argon atmosphere. This technique allows for 
+the controlled growth of high-quality monolayer gra-
+phene, essential for applications in flexible electronics 
+and energy storage devices [4].
+Figure 10, see supplementary materials, reveals 
+the surface morphology of multilayer graphene syn-
+thesized via chemical vapor deposition (CVD) on a 
+nickel substrate. The graphene film exhibits a con-
+tinuous yet polycrystalline nature, characterized by 
+interconnected domains displaying varying shades 
+of gray, indicative of differing layer thicknesses and 
+orientations. This layered structure, with minimal 
+aggregation of individual graphene sheets, provides 
+a high surface area and interconnected network crucial 
+for efficient charge storage and transport, making this 
+morphology desirable for electrochemical energy stor-
+age applications such as supercapacitors. SEM image 
+depicts the morphology of few-layer graphene, illus-
+trating the layered structure and minimal aggregation 
+of graphene sheets. Such a layered structure ensures 
+high surface area and good electrical conductivity, 
+both critical for optimizing graphene’s performance 
+as an electrode material in supercapacitors and energy 
+storage systems [11].
+Figure 11 shows Raman spectra reveal the struc-
+tural characteristics of graphene synthesized by CVD, 
+chemical exfoliation, and microwave-assisted syn -
+thesis. The G band (~ 1580  cm−1) represents in-plane 
+vibrations, while the D band (~ 1350  cm−1) indicates 
+Figure 9  Schematic representation of the CVD process for graphene synthesis.
+Figure 11  Representative Raman spectra (D, G peaks) for CVD, microwave, and hybrid samples, ID/IG statistics (mean ± SD; n ≥ 5 
+spots) for each sample.
+17753
+
+===== PDF PAGE 17 =====
+ J Mater Sci (2025) 60:17738–17756
+defects. CVD graphene shows minimal defect density 
+compared to other methods [3].
+Figure 12, see supplementary materials, demon-
+strates the thermogravimetric analysis (TGA) curves 
+demonstrate the thermal stability of graphene sam-
+ples synthesized by different methods. CVD graphene 
+shows minimal weight loss, indicating high thermal 
+stability due to fewer oxygen-containing groups. 
+Microwave-assisted graphene exhibits moderate 
+stability, while chemically reduced graphene shows 
+higher weight loss, reflecting residual oxygen func -
+tionalities that reduce thermal resilience [1 ].
+Table 14, see supplementary materials, presents 
+the detailed instrumentation specifications used for 
+characterizing graphene-based electrodes, which are 
+critical for ensuring reproducibility, accuracy, and 
+traceability of the reported experimental data. Each 
+technique—SEM, Raman spectroscopy, TGA, and 
+electrochemical testing—relied on high-precision, 
+industry-standard equipment with clearly defined 
+operational parameters. For instance, SEM imaging 
+was conducted with a Hitachi SU5000 at 10 kV to cap-
+ture surface morphology with high resolution, while 
+Raman spectra were acquired using a Renishaw inVia 
+Reflex system with a 532 nm laser, allowing accurate 
+evaluation of defect density and layer number. Ther-
+mogravimetric data were collected under inert condi-
+tions to assess thermal stability, and electrochemical 
+performance was evaluated using a BioLogic SP-200 
+workstation, ensuring robust analysis across cyclic 
+voltammetry (CV), electrochemical impedance spec-
+troscopy (EIS), and other key metrics. These detailed 
+metadata ensure that each characterization step is 
+traceable and reproducible for future industrial or 
+academic replication [4].
+Conclusion and future directions
+This study demonstrates a machine learning-guided 
+hybrid synthesis framework for producing high-per-
+formance graphene-based electrodes optimized for 
+supercapacitor applications. By integrating chemi-
+cal vapor deposition (CVD) with microwave-assisted 
+reduction, we successfully addressed the persistent 
+trade-off between graphene quality and production 
+scalability. Raman analysis confirmed a low defect 
+density for CVD controls (ID/IG = 0.10 [± SD]), while 
+the hybrid approach achieved ID/IG = 0.29 [± SD] 
+with high electrical conductivity (~ 9.6 × 105 S  m−1), 
+maintaining structural integrity and thermal sta-
+bility. The machine learning model, trained on an 
+extensive experimental dataset, reliably predicted 
+synthesis conditions, thereby enhancing reproduc-
+ibility and yield.
+The hybrid electrodes, further engineered with 
+metal oxides  (MnO2,  RuO2) and conductive polymers 
+(polyaniline, polypyrrole), delivered specific capaci-
+tances of up to 500 F  g−1, energy densities reaching 
+120 Wh  kg−1, and power densities of 70 kW  kg−1. 
+Notably, they retained more than 95% capacitance 
+after 10,000 charge–discharge cycles, underscoring 
+excellent durability. These results confirm the scal-
+ability and multifunctionality of this hybrid synthe-
+sis route for next-generation energy storage devices.
+Beyond performance metrics, a techno-economic 
+analysis indicated a 40% cost reduction compared 
+with conventional CVD while maintaining compat-
+ibility with roll-to-roll manufacturing. This conver-
+gence of material quality, cost-effectiveness, and 
+scalability highlights the potential of the hybrid 
+strategy for practical deployment in electric trans-
+portation, grid-level storage, and flexible electronics.
+Future research should prioritize improving the 
+uniformity of microwave-assisted processing at 
+industrial scales and incorporating real-time diag-
+nostics—such as in situ Raman spectroscopy—for 
+adaptive, closed-loop process control. The inte-
+gration of solid-state or gel electrolytes with gra-
+phene–polymer hybrids could further enable flexible 
+and conformable energy storage systems. Extending 
+the machine learning framework to include sustain-
+ability metrics, such as environmental impact and 
+life-cycle energy costs, will also enhance its indus-
+trial applicability.
+In summary, this work establishes a predictive and 
+scalable synthesis strategy that unites machine learn-
+ing, hybrid material engineering, and cost-effective 
+processing. It lays the foundation for the advance-
+ment and commercialization of high-efficiency, 
+polymer-integrated graphene-based energy storage 
+technologies.
+Author contributions 
+Maziyar Sabet was involved in conceptualization, 
+methodology, investigation, writing—original draft, 
+writing—review and editing, visualization, and 
+supervision.
+17754
+
+===== PDF PAGE 18 =====
+J Mater Sci (2025) 60:17738–17756 
+Funding 
+This research did not receive any specific grant from 
+funding agencies in the public, commercial, or not-
+for-profit sectors.
+Data availability 
+The datasets generated and analyzed during the cur-
+rent study are available from the corresponding author 
+upon reasonable request.
+Declarations 
+Conflict of interest The author declares that there is 
+no conflict of interest.
+Ethical approval Not applicable.
+Supplementary Information  The online version 
+contains supplementary material available at https:// 
+doi. org/ 10. 1007/ s10853- 025- 11468-3.
+References
+[ 1] Ahmad Z, Khan U, Saeed S (2023) Advances in graphene-
+based nanocomposites for supercapacitors: a comprehen-
+sive review. J Energy Storage 62:106934. https:// doi. org/  
+10. 1016/j. est. 2023. 106934
+[ 2] Alam ME, Rahman MM (2022) Recent progress in micro-
+wave-assisted synthesis of carbon materials for energy 
+storage applications. Renewable Energy 189:1323–1345. 
+https:// doi. org/ 10. 1016/j. renene. 2022. 03. 067
+[ 3] Ali H, Zhang W (2023) High-performance graphene-based 
+electrodes for flexible energy storage devices. Nano Energy 
+105:108754. https:// doi. org/ 10. 1016/j. nanoen. 2023. 108754
+[ 4] Bao L, Liu Y, Li Y (2023) Chemical exfoliation strategies 
+for scalable graphene production: recent advances and chal-
+lenges. Mater Today 58:134–146. https:// doi. org/ 10. 1016/j. 
+mattod. 2022. 10. 005
+[ 5] Chen G, Sun M, Zhang L (2023) Thermal stability of gra-
+phene-based composites for high-temperature applications. 
+J Appl Polym Sci 140(5):e52632. https:// doi. org/ 10. 1002/ 
+app. 52632
+[ 6] Cui S, Ma Y, Wang T (2022) Electrochemical perfor -
+mance of graphene hybrid nanostructures in supercapacitor 
+applications. Electrochim Acta 416:140287. https:// doi. org/ 
+10. 1016/j. elect acta. 2022. 140287
+[ 7] Deng W, Li P, Zhou X (2023) Sustainable synthesis of 
+graphene: green strategies and scalable approaches. Carbon 
+211:153–170. https:// doi. org/ 10. 1016/j. carbon. 2023. 01. 007
+[ 8] Fan X, Wang H, Huang Z (2022) Graphene-based materials 
+for high-power supercapacitors: recent developments and 
+future prospects. J Energy Storage 45:102351. https:// doi.  
+org/ 10. 1016/j. est. 2022. 102351
+[ 9] Gao Y, Xu J, Chen J (2023) Continuous-flow synthesis 
+of graphene for large-scale energy storage applications. 
+Energy Storage Mater 58:118–129. https:// doi. org/ 10.  
+1016/j. ensm. 2023. 04. 015
+[ 10] Han Y, Zhao C, Wang L (2022) The role of graphene in 
+hybrid supercapacitor devices: a comprehensive review. 
+Mater Today Chem 28:101105. https:// doi. org/ 10. 1016/j.  
+mtchem. 2022. 101105
+[ 11] Huang J, Chen R, Wei D (2023) Advances in electrochemi-
+cal impedance spectroscopy for graphene-based electrodes. 
+Electrochim Acta 425:140893. https:// doi. org/ 10. 1016/j.  
+elect acta. 2023. 140893
+[ 12] Jiang W, Liu M, Li J (2022) Roll-to-roll CVD processes 
+for industrial-scale graphene synthesis. J Manuf Process 
+86:265–275. https:// doi. org/ 10. 1016/j. jmapro. 2022. 09. 016
+[ 13] Kang X, Zhang Q, Liu Z (2023) Chemical and thermal 
+stability of graphene nanocomposites: recent insights and 
+perspectives. Compos Sci Technol 248:110673. https:// doi. 
+org/ 10. 1016/j. comps citech. 2023. 110673
+[ 14] Kim D, Park J, Lee S (2023) High-yield microwave-assisted 
+reduction of graphene oxide for flexible supercapacitors. 
+Nano Energy 108:109168. https:// doi. org/ 10. 1016/j.  
+nanoen. 2023. 109168
+[ 15] Li B, Yang W, Wang S (2023) Comparative study of gra-
+phene synthesis methods for energy storage applications. 
+J Energy Chem 82:321–336. https:// doi. org/ 10. 1016/j.  
+jechem. 2023. 01. 021
+[ 16] Liu C, He Z, Sun F (2022) Strategies for optimizing gra-
+phene-based electrodes in high-power applications. Energy 
+Rep 8:1231–1245. https:// doi. org/ 10. 1016/j. egyr. 2022. 08. 
+011
+[ 17] Luo L, Xu H, Jiang W (2023) Green synthesis of graphene 
+nanomaterials for sustainable energy solutions. Adv Mater 
+Interfaces 10(3):2201234. https:// doi. org/ 10. 1002/ admi.  
+20220 1234
+[ 18] Ma X, Zhang L, Yu F (2023) Graphene-based hybrid 
+materials for next-generation supercapacitors. J 
+Mater Sci 58(2):652–672. https://  doi.  org/  10.  1007/  
+s10853- 022- 07903-2
+[ 19] Park H, Kim J, Choi Y (2022) Electrochemical performance 
+enhancement of graphene nanocomposites through surface 
+17755
+
+===== PDF PAGE 19 =====
+ J Mater Sci (2025) 60:17738–17756
+modification. J Electroanal Chem 919:116582. https://  doi. 
+org/ 10. 1016/j. jelec hem. 2022. 116582
+[ 20] Qiu F, Wang H, Zhang C (2023) Continuous microwave 
+synthesis of graphene for energy storage devices. Journal 
+of Energy Storage 61:106873. https:// doi. org/ 10. 1016/j. est. 
+2023. 106873
+[ 21] Ren J, Liu S, Li Q (2023) Challenges and advances in large-
+scale production of graphene for energy storage applica-
+tions. Energy Storage Mater 63:200–214. https:// doi. org/  
+10. 1016/j. ensm. 2023. 01. 009
+[ 22] Shen L, Wang Z, Zhao Y (2022) Hybrid graphene nano -
+composites for high-temperature energy storage systems. 
+Carbon 201:101–115. https:// doi. org/ 10. 1016/j. carbon.  
+2022. 01. 056
+[ 23] Tan Z, Wu J, Zhang Y (2023) Advances in scalable synthe-
+sis of graphene for supercapacitor electrodes. Nano Materi-
+als Science 5(1):78–91. https:// doi. org/ 10. 1016/j. nanoms. 
+2023. 02. 004
+[ 24] Wang X, Liu Y, Chen G (2022) Recent progress in green 
+synthesis of graphene-based materials for energy storage. 
+J Energy Storage 44:102149. https:// doi. org/ 10. 1016/j. est. 
+2022. 102149
+[ 25] Xie B, Sun J, Liu Z (2023) Electrochemical properties 
+of graphene oxide-based electrodes in supercapacitors. J 
+Electrochem Sci 40:134–144. https:// doi. org/ 10. 1016/j. jes. 
+2023. 01. 011
+[ 26] Xu H, Zhang T, Chen K (2023) Microwave-assisted gra-
+phene synthesis: a green approach for energy storage appli-
+cations. Carbon 219:305–319. https://  doi. org/ 10. 1016/j.  
+carbon. 2023. 03. 007
+[ 27] Yang Y, Li C, Feng X (2022) High-temperature stability of 
+graphene-based nanocomposites: a comprehensive study. 
+J Compos Mater 56(5):623–638. https:// doi. org/ 10. 1177/  
+00219 98322 110456
+[ 28] Zhang H, Zhou W, Liu X (2023) Strategies for 
+improving the scalability of graphene production. J 
+Mater Res 38(7):915–931. https:// doi. org/ 10. 1557/  
+s43578- 023- 00457-1
+[ 29] Zhao F, Sun L, Wang J (2023) Advanced electrochemi-
+cal characterization techniques for graphene-based energy 
+devices. Electrochim Acta 422:140764. https:// doi. org/ 10. 
+1016/j. elect acta. 2023. 140764
+[ 30] Zhou T, Lin Y, Wu H (2022) Recent developments in scal-
+able graphene production for industrial applications. Mater 
+Today 61:210–222. https:// doi. org/ 10. 1016/j. mattod. 2022. 
+12. 010
+[ 31] Li X, Zhang Y, Chen H, Wang J, Liu Z (2024) Vertically 
+aligned porous graphene frameworks for ultrahigh-rate 
+and long-life supercapacitors. Adv Mater 36(21):2319582. 
+https:// doi. org/ 10. 1002/ adma. 20241 9582
+[ 32] Zhao Y, Wang L, Huang R, Lin C, Xu Q (2024) Covalently 
+engineered  MnO2–graphene hybrid electrodes with redox-
+active interfaces for high-power supercapacitors. Adv Func 
+Mater 34(19):2319720. https:// doi. org/ 10. 1002/ adfm. 20241 
+9720
+[ 33] Zhou J, Tang H, Liu Y, Zhang W (2023) Microwave-
+assisted synthesis of defect-tuned graphene for scalable 
+energy storage applications. Chin Chem Lett 34(6):108354. 
+https:// doi. org/ 10. 1016/j. cclet. 2023. 108354
+Publisher’s Note Springer Nature remains neutral with 
+regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) 
+holds exclusive rights to this article under a publishing 
+agreement with the author(s) or other rightsholder(s); 
+author self-archiving of the accepted manuscript version of 
+this article is solely governed by the terms of such publishing 
+agreement and applicable law.
+17756

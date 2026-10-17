@@ -1,0 +1,3967 @@
+
+===== PDF PAGE 1 =====
+Electron 
+-
+REVIEW
+OPEN ACCESS
+MXene‐Induced Selective Ion Separation in Capacitive 
+Deionization: Bridging Fundamentals With Frontier 
+Innovations
+Rahat Alam
+1
+| Linda Zou
+2
+| Louis C. P. M. de Smet
+3
+| Constantinos V. Chrysikopoulos
+1 , 4
+1
+Department of Civil and Environmental Engineering, Khalifa University of Science and Technology, Abu Dhabi, UAE |
+2
+Institute for Sustainable Industries & 
+Liveable Cities, Victoria University, Melbourne, Australia |
+3
+Laboratory of Organic Chemistry, Wageningen University, Wageningen, the 
+Netherlands |
+4
+School of Chemical and Environmental Engineering, Technical University of Crete, Chania, Greece
+Correspondence: Linda Zou ( Linda.Zou1@vu.edu.au ) | Louis C. P. M. de Smet ( louis.desmet@wur.nl )
+Received: 13 January 2026 | Revised: 4 June 2026 | Accepted: 1 July 2026
+Keywords: capacitive deionization | MXene | resource recovery | selective ion separation
+ABSTRACT
+Selective ion separation is essential for effective water treatment and resource recovery. Conventional techniques, such as 
+adsorption, coagulation/flocculation, and membrane technologies, suffer from low selectivity, substantial cost, and high energy 
+requirements. Alternatively, ion separation using capacitive deionization (CDI) has shown strong potential for energy efficiency, 
+cost‐effectiveness, environmental sustainability, and selective removal. However, traditional carbon electrodes used in CDI have 
+limitations for selective separations. MXene‐based electrodes present an attractive alternative for CDI due to their exceptional 
+electrochemical properties. Nevertheless, MXenes are typically unstable over extended cycles, and to achieve ion selectivity, 
+controlled interlayer spacing adjustment is required. Methods such as hybridization and functionalization can improve the 
+selectivity properties of MXenes by tailoring their interlayer spacing. Several studies have reported the use of MXenes as CDI 
+electrodes; however, most focus on brackish water desalination, while selective ion separation is rarely addressed. This review 
+presents an in‐depth analysis of the role of modified MXene electrodes in advancing ion‐selective CDI technologies, exploring 
+various strategies to achieve the desired selectivity. Moreover, it highlights critical challenges that hinder scalability and 
+practical implementation. Finally, the review showcases the strategic roadmap for future opportunities toward next‐generation 
+water purification and resource recovery solutions.
+1
+|
+Introduction
+Water scarcity and wastewater generation have become critical 
+challenges of the 21st century due to increasing population and 
+industrial growth [ 1, 2 ]. Projections indicate that global water 
+demand may rise by over 50% in the coming decades, whereas 
+nearly one‐fourth of major urban centers are already under sig -
+nificant water stress [ 3 ]. Consequently, the need for water recla -
+mation and resource recovery is growing rapidly to bridge the 
+increasing gap between water demand and supply. Similarly, 
+wastewater generation is progressively rising. Every year, the 
+world produces around 380 billion m
+3 
+of municipal wastewater. 
+This number is expected to rise by 24% by 2030 and 51% by 2050 
+[ 4 ]. Yet, wastewater is predominantly regarded as a problematic 
+waste stream and is typically treated as a pollutant requiring 
+removal. However, wastewater presents a valuable resource, 
+containing recoverable water, energy, and high‐value nutrients.
+To meet the increasing water demand, desalination technologies, 
+including reverse osmosis (RO), membrane distillation, and 
+electrodialysis, are found to be more efficient technologies in 
+comparison with others [ 5–7 ]. However, these technologies often 
+suffer from high energy consumption required for pumping or 
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the 
+original work is properly cited.
+© 2026 The Author(s). Electron published by Harbin Institute of Technology and John Wiley & Sons Australia, Ltd.
+Electron , 2026; 00:e70063 1 of 23
+https://doi.org/10.1002/elt2.70063
+
+
+===== PDF PAGE 2 =====
+heating, membrane fouling, as well as high capital and mainte -
+nance costs [ 8 ]. Despite a significant reduction in energy con -
+sumption from 20 to 2–4 kWh m
+− 3 
+[ 9 ], RO remains an energy‐ 
+intensive process to fulfill the water demand. Therefore, the 
+need for an alternative nonpressure‐driven water reclamation 
+technology still exists to make the process less energy‐intensive 
+and sustainable. In addition, industrial wastewater consisting of 
+ions or charged pollutants requires ion removal and selective ion 
+recovery. Conventionally, coagulation, softening, adsorption, and 
+membrane technology are applied to treat ion‐containing waste -
+water. Again, the high cost of chemicals, membranes, adsorbents, 
+and adsorbent disposal challenges make the abovementioned 
+technologies less sustainable. These ion‐containing waters and 
+wastewaters often contain valuable resources, including lithium, 
+precious metals, nitrate, and phosphate, which could be recov -
+ered for value‐adding and the circular economy.
+Over the past decades, electrochemical ion separation technol -
+ogies have evolved significantly, diversifying in both device 
+types and target applications. However, novel pseudocapacitive 
+materials remain to be explored for various purposes, including 
+selective ion separation, resource recovery, and water reclama -
+tion. A brief capacitive deionization (CDI) timeline is summa -
+rized in Figure 1 [ 10 ].
+Several improvements in CDI have been made in terms of cell 
+architecture, system design, and optimization of operational pa -
+rameters [ 10 ]. Researchers shifted their focus toward exploring 
+alternative electrode materials and identified pseudocapacitive 
+materials as highly suitable for CDI applications (Section 2.2 ). 
+Pseudocapacitive materials bridge the gap between capacitive and 
+battery‐type electrodes, offering a combination of high capaci -
+tance and excellent rate capability. They are categorized as either 
+reversible redox reaction‐based or ion intercalation‐based mate -
+rials. Various types of pseudocapacitive materials have been uti -
+lized as electrodes, with the majority being intercalation‐type 
+materials. Examples include sodium manganese oxides [ 13 ], 
+NaTi
+2
+(PO
+4
+)
+3 
+[ 14 ], Na
+3
+V
+2
+(PO
+4
+)
+3 
+[ 15 ], Prussian blue [ 16 ], and, since 
+almost a decade also, MXenes [ 17 ].
+MXene‐based electrodes have shown great promise in CDI for 
+achieving high electrosorption capacities and tunable selective 
+ion removal. The selective removal of ionic species can be 
+quantified using the selectivity coefficient ( ρ ), defined as the 
+ratio of the percentage removal of the target ion to that of the 
+competing ion. Other definitions of selectivity can be found in 
+the paper of de Smet and coworkers [ 18 ]. However, their prac -
+tical application is often hindered by issues such as restacking, 
+limited electrical conductivity, and poor cyclic stability. These 
+factors collectively reduce their specific adsorption capacity 
+(SAC) and ion selectivity. To highlight these limitations and 
+consolidate the progress made so far, especially studies based on 
+ion‐selective separation, a comprehensive review is warranted.
+Several reviews have already been published based on MXene 
+electrodes in CDI [ 19–21 ]. For instance, Huang et al. [ 19 ] 
+FIGURE 1
+|
+A brief timeline of electrochemical deionization. This graph is adapted from ref. [ 10 ] and has been updated to incorporate the latest 
+developments. The boxes provide an overview of the three generations of materials: carbon, intercalative, and catalytic, respectively. Additionally, two 
+new CDI architectures, three‐phase CDI (T‐CDI) [ 11 ], and magnetic CDI [ 12 ], are introduced from the literature for further study. T‐CDI employs a 
+gas–liquid–solid three‐phase interface at the cathode to achieve stable water desalination and simultaneous hydrogen peroxide (H
+2
+O
+2
+) generation. 
+Magnetic CDI uses a superimposed magnetic field by combining the material’s internal magnetic properties with an external field, enabling 
+synergistic physical adsorption, magnetic, and electrostatic attraction. CDI, capacitive deionization.
+2 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 3 =====
+reviewed the role of MXenes in CDI, covering preparation 
+strategies and applications in seawater desalination, NH
+4
++
+re -
+covery, and ion‐selective removal. However, the review lacks a 
+dedicated discussion on ion‐selective removal using MXene 
+electrodes in CDI. Zhu et al. [ 21 ] discussed a decade of progress 
+in MXene‐based ion‐selective technologies, covering synthesis, 
+functionalization, transport mechanisms, and applications in 
+membranes, adsorbents, and CDI. However, the review did not 
+offer a dedicated, in‐depth discussion of MXene‐based selective 
+ion separation within CDI systems. Samejo et al. [ 22 ] presented 
+a comprehensive overview of MXene‐based composites in 
+CDI, covering synthesis methods, composite architectures, and 
+desalination performance. Although the cation‐selective prop -
+erties were addressed, little attention was given to any selec -
+tive ion separation. Similarly, Cui et al. [ 23 ] published a 
+review on emerging MXene‐based electrodes for efficient CDI, 
+also primarily focusing on the material properties and general 
+deionization capabilities of MXene composites, omitting stra -
+tegic approaches to selective separation. This review aims to 
+bridge the fundamental principles of CDI with insights into 
+the ion selectivity mechanisms enabled by MXene electrodes, 
+thereby providing a roadmap for the rational design and 
+implementation of MXene‐based electrodes in targeted sepa -
+ration processes.
+2
+|
+Fundamentals of Capacitive Deionization
+2.1
+|
+Electrical Double‐Layer (EDL) Model
+In carbon‐based CDI, the electrosorption is largely based on the 
+electrical double‐layer (EDL) mechanism. EDLs are formed near 
+the interface of the highly porous carbonaceous electrode ma -
+terial and water, in which charges can be stored. Alternatively, 
+when using pseudocapacitive materials, ion storage is facilitated 
+by either a reversible surface redox mechanism or an ion de/ 
+intercalation mechanism in the case of crystals or multilayered 
+materials (Section 2.2 ).
+A common EDL concept is depicted in Figure 2 by taking the 
+positive electrode with the negative ions. When a potential 
+difference is applied across the electrodes (only one electrode is 
+shown for matters of simplicity), the ions present in the water 
+move toward the electrodes having opposite polarities and start 
+forming EDLs on the available surfaces. This explains why, in 
+CDI, materials with high surface areas are preferred because 
+they provide a larger surface for the formation of larger 
+EDLs [ 24 ].
+When dealing with a porous material with pores significantly 
+larger than the thickness of the EDL, we can assume that the 
+EDLs do not overlap. Under these conditions, the classical 
+Gouy–Chapman–Stern (GCS) theory, developed for a single 
+planar electrode, can be applied (Figure 2A ). This assumption is 
+valid in cases of high salt concentrations (resulting in a short 
+Debye length) or when the pores are sufficiently large (macro -
+pores). In such scenarios, the general Boltzmann relationship 
+describes the ion concentration at a distance x from the carbon 
+surface, C
+j
+, as a function of ϕ , the dimensionless potential 
+relative to the neutral bulk solution (macropores), where the 
+salt concentration is C
+salt,mA
+, as
+C
+j
+( x ) = C
+salt , mA
+× exp     Z
+j
+× ϕ ( x ) ) ( 1 )
+where Z
+j 
+is the ionic charge number (ion valence), ϕ ( x ) is the 
+dimensionless potential, defined as the dimensional voltage V 
+divided by the thermal voltage V
+T
+, and C
+salt,mA 
+is the salt con -
+centration in the neutral bulk solution (macropores).
+However, this model has limitations when the Debye length is 
+comparable to the micropore sizes of porous electrodes. Debye 
+length is basically a measure of the distance where charge 
+separation could occur. In the case of CDI, this GCS model does 
+not give proper results, as microporous electrodes are used. 
+Thus, usually, the modified Donnan (mD) model (Figure 2B ) is 
+used to explain the mechanism in CDI, as it considers EDLs 
+FIGURE 2
+|
+(A) GCS model‐EDL formation on the electrode surface, (B) mD model‐EDL formation inside a pore. EDL, electrical double‐layer; 
+GCS, Gouy–Chapman–Stern; mD, modified Donnan.
+Electron, 2026 3 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 4 =====
+overlapping, where the potential inside the pore is assumed to 
+be constant [ 25 ].
+To address the limitations of the GCS model, the mD‐model 
+introduces two key modifications:
+1. Inclusion of the Stern Layer: The Stern layer is introduced 
+between the electronic charge (located in the carbon ma -
+trix) and the ionic charge present in the electrolyte‐filled 
+micropores. This layer accounts for the fact that ionic 
+charges cannot approach the electronic charges infinitely 
+closely. This limitation arises due to factors such as the size 
+of hydrated or dehydrated ions or the atomic roughness at 
+the carbon/electrolyte interface, preventing the electronic 
+charge from being precisely at the surface of the carbon 
+material.
+2. Chemical Attraction Energy ( μ
+att
+): The mD‐model in -
+corporates a chemical attraction energy term ( μ
+att
+) to 
+describe the ion's affinity for entering the carbon particles. 
+This term represents a nonelectrostatic attraction that en -
+courages ions to migrate into the pores, even in the absence 
+of an electronic charge. This phenomenon has been experi -
+mentally observed and provides a more comprehensive un -
+derstanding of ion behavior within the carbon matrix [ 26 ]. By 
+including these modifications, the mD‐model offers a more 
+accurate representation of ion interactions within carbon 
+electrodes.
+The mD‐model, incorporating these modifications, is described 
+by the following equation. The concentration of ion j within the 
+micropores of the carbon particle is expressed as
+C
+j , mi
+= C
+salt , mA
+× exp     Z
+j
+× Δ ϕ
+d
++ μ
+att
+) ( 2 )
+where the subscript “mi” refers to the intraparticle (micropores) 
+within the carbon particle, whereas the subscript “mA” denotes 
+the macropores, which serve as transport pathways outside the 
+particles. Based on these equations, dynamic CDI transport 
+models could be developed for EDL electrodes. It must be 
+realized, however, that intercalation materials deviate from 
+these theoretical frameworks [ 18, 27 ], resulting in the extension 
+of existing models to better capture adsorption and ion transport 
+dynamics. Moreover, material‐specific conditions such as elec -
+tronic configuration, that is, the number of occupied electrons/ 
+unoccupied d orbitals, influenced by surface terminations such 
+as –O, –OH, and –F, affect the EDL capacitance [ 28 ]. Electrical 
+conductivity, thickness of the MXene layer, and interlayer 
+spacing can influence the parameter − Z
+j 
+× Δ ϕ
+d 
+in the theo -
+retical framework. However, a well‐developed equation for 
+MXene‐based materials is yet to be fully developed. In the next 
+section, mechanistic aspects of ion transport in intercalation 
+materials, with a strong focus on MXene, are addressed.
+2.2
+|
+Pseudocapacitive Adsorption
+For pseudocapacitive electrodes, ion storage is facilitated mainly 
+by the ion de/intercalation mechanism. Here, the ions are 
+intercalated into the crystal lattice (well‐defined channels) of 
+layered crystals or nanocrystals, and intercalated easily when a 
+reverse potential is applied. Because this is also a physical 
+phenomenon like EDL, the electrode’s integrity is maintained 
+over the cycle. However, there could be a lattice expansion/ 
+contraction over time, which could be avoided by designing a 
+highly stable crystal.
+The ion storage capacity (specific capacitance ( C
+s
+)) is an impor -
+tant parameter in the CDI system, which gives an idea about how 
+many ions could be stored by a particular electrode per unit mass. 
+Usually, it is measured in capacitance per gram of active mass 
+either in (F g
+− 1
+) or (mAh g
+− 1
+). Electrochemical analyses such as 
+cyclic voltammetry (CV), electrochemical impedance spectros -
+copy, and galvanostatic charge‐discharge (GCD) can give valu -
+able information regarding the electrosorption capacity and 
+mechanism of the electrode material and its selectivity toward a 
+particular ion. Particularly for intercalation materials, CV gives 
+good information for the selection of an active electrode material 
+for a particular ion removal. The clue is that a higher cathodic 
+peak potential associated with the intercalation of a particular ion 
+is directly correlated with the preferred intercalation of that ion 
+toward the electrode [ 29, 30 ].
+In practice, the ion storage process is not fully governed by a single 
+mechanism; rather, it often involves contributions from both 
+pseudocapacitive/intercalation and EDL formation. To differen -
+tiate between capacitive and pseudocapacitive‐controlled contri -
+butions, Equation ( 3 ) was utilized, with the results represented as 
+a log(peak current) versus log(scan rate) plot:
+i = av
+b
+( 3 )
+where a and b are constants. This equation enables the identi -
+fication of charge storage mechanisms. It does so by analyzing 
+the relationship between the peak current ( i ) and the scan rate 
+( v ) derived from cyclic CV curves. If the b ‐value equals 0.5, the 
+process is diffusion‐controlled (pseudocapacitive). Conversely, a 
+b ‐value of 1 indicates a capacitive‐dominated process.
+Additionally, Dunn's method (Equation ( 4 )) could be utilized to 
+quantify the contributions of capacitive and diffusion‐controlled 
+processes to the total capacitance of pseudocapacitive mate -
+rials [ 31 ].
+i ( V ) = k
+1
+v + k
+2
+v
+0 . 5
+( 4 )
+where diffusion‐controlled processes are represented by the 
+term k
+2
+v
+0 . 5
+, whereas capacitive processes are associated with the 
+term k
+1
+v [ 32 ].
+Lastly, computational modeling, particularly density functional 
+theory (DFT) and molecular dynamics, has also proven to be 
+helpful to elucidate ion transport mechanisms [ 33, 34 ].
+3
+|
+MXene‐Based Electrode Materials
+The discovery of graphene with its outstanding properties has 
+propelled research on other 2D materials; MXene is one of them, 
+which was reported for the first time in 2011 [ 35 ]. These layered 
+and nonlayered 2D materials attracted the attention of re -
+searchers working in CDI as well because of their unique phys -
+ical, chemical, and functional properties and their ability to 
+uptake ions reversibly [ 36 ]. The origin of the structural properties 
+is mainly associated with the dimensionality effect and modula -
+tion in their band structure, which makes them suitable for a 
+4 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 5 =====
+wider range of applications, including, next to CDI electrodes, 
+photocatalysts, sensors, nanoreactors, and nanocontainers 
+[ 37, 38 ].
+As explained in Section 2.2 , intercalation is a reversible process 
+that allows the reversible insertion of foreign species (molecules/ 
+ions) between the weakly bonded layers of the intercalating ma -
+terial or into the well‐defined crystal lattice [ 39 ]. As a result, a high 
+charge storage capacity could be achieved without the availability 
+of a high surface area. However, the key challenge with MXene 
+materials is to make them stable for several ion‐storage cycles. 
+Section 3.1 will discuss the synthesis, functionalization, and 
+optimization of MXene electrodes for ion selectivity.
+3.1
+|
+Synthesis of MXene
+The origin of MXene lies in the etching of MAX phases, which 
+are metal carbides and nitrides with a general formula M
+n + 1
+AX
+n 
+where M is a D‐block metal, A is the layered group (A‐layer 
+such as Al or Si), and X is carbon (C) or nitrogen (N) [ 40, 41 ]. 
+MAX phases can be considered as 2D materials connected by 
+M–A layers. Here, the M–A bond is relatively weaker than the 
+M–X bond, and hence, the A‐layer can be removed by a proper 
+etching method. This process results in vacant layers in the 
+MXene material with a stronger M–X bond, making it suitable 
+for several applications, including ion sieving, water desalina -
+tion, and seawater splitting [ 42–44 ].
+3.1.1
+|
+Conventional Synthesis Process of MXene
+Conventionally, the MAX phase precursor is used to prepare 
+MXene via an etching process followed by exfoliation to convert 
+bulk into monolayer MXene sheets if needed, as shown in 
+Figure 3 . Hydrofluoric acid (HF) is typically used as an etchant 
+[ 42 ]. However, HF is very toxic to both human health and the 
+environment. Therefore, other environmentally friendly etchants 
+should be explored. The following equations (Equations 5–7 ) 
+could describe MXene preparation by HF etchant from the MAX 
+phase.
+M
+n + 1
+AX
+n
+( s ) + 3 HF ( aq ) → M
+n + 1
+X
+n
+( s ) + AF
+3
+( s )
++
+3
+2
+H
+2
+( g ) ( 5 )
+M
+n + 1
+X
+n
+( s ) + 2 H
+2
+O ( l ) → M
+n + 1
+X
+n
+( OH )
+2
+( s ) + H
+2
+( g ) ( 6 )
+M
+n + 1
+X
+n
+( s ) + 2 HF ( aq ) → M
+n + 1
+X
+n
+F
+2
+( s ) + H
+2
+( g ) ( 7 )
+In the first stage, the A‐layer in the MAX phase reacts with the 
+etchant (HF). Further, in the second stage, MAX phase atoms 
+are replaced by hydrophilic groups such as − OH, − O, or − F. 
+Finally, in the third stage, loosely packed graphite‐like 2D 
+MXene (M
+n + 1
+X
+n
+) is formed in the absence of a strong bond 
+between the layers.
+The prepared MXene is negatively charged due to the presence 
+of functional groups ( − OH, − O, and/or − F) on the surfaces, 
+which makes it stable in dispersion [ 45 ]. Titanium aluminum 
+carbide (Ti
+3
+AlC
+2
+) is the most common MAX precursor for 
+MXene fabrication, with the most common etchant being HF. In 
+the past, several MXenes, including Mo
+2
+C, Ti
+2
+C, and Ti
+3
+SiC
+2
+, 
+have been synthesized using HF etchant [ 46–49 ]. However, 
+HF poses extreme toxicity to both human health and the envi -
+ronment when handled and used. A safety guideline based on 
+MXene synthesis should be recalled [ 50 ]. Therefore, a more 
+suitable MXene preparation method is required to overcome 
+these challenges.
+3.1.2
+|
+Emerging Techniques for MXene Preparation
+Several techniques and milder etchants have been introduced 
+recently for MXene preparation to reduce human and environ -
+mental hazards [ 50–52 ]. Applying milder agents in closed hy -
+drothermal reactors is one of them. In hydrothermal processes, a 
+milder etchant, for example, NH
+4
+F or NaBF
+4
+, is used in the closed 
+environment (hydrothermal reactor), reducing health risks and 
+environmental hazards. Guo et al. [ 53 ] used NaBF
+4 
+etchant for the 
+etching of Ti
+3
+AlC
+2 
+to prepare Ti
+3
+C
+2
+T
+x 
+MXene by the hydrother -
+mal method. In addition, the authors reported that MXene pre -
+pared by the hydrothermal method was more efficient in A group 
+removal, had a larger interlayer space, and possessed higher c‐ 
+lattice parameters than HF‐prepared MXene [ 53 ].
+Apart from this technique, there are other milder etchants, for 
+example, lithium fluoride (LiF), sodium fluoride (NaF), and 
+potassium fluoride (KF), which could be used in combination 
+with HCl to avoid high levels of toxicity posed by HF [ 52, 54, 
+FIGURE 3
+|
+Electron microscopy image of multilayer MXene (Ti
+3
+C
+2
+T
+x
+) prepared from the MAX phase (Ti
+3
+AlC
+2
+).
+Electron, 2026 5 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 6 =====
+55 ]. In addition, MXene prepared by the combination of LiF/ 
+HCl etchant possesses more defect‐free, high‐quality mono -
+layers than MXene obtained by the HF etchant [ 51, 56 ].
+Similarly, molten salt, salt‐templated, and chemical vapor 
+deposition are some other emerging techniques that are free 
+from HF use [ 57–59 ]. The Al layer of MAX could also be leached 
+out by the immersion of Ti
+3
+AlC
+2 
+in NaOH (1 M, 80°C, 100 h), 
+followed by a hydrothermal reaction with H
+2
+SO
+4 
+(1 M, 80°C, 
+2 h) [ 60 ]. Despite its effectiveness, this multi‐step process is 
+time‐consuming and cumbersome. Therefore, the development 
+of safer, more efficient synthetic strategies that produce MXenes 
+with superior surface characteristics and fewer structural de -
+fects remains a vital objective.
+3.1.3
+|
+Delamination
+After the etching process, the prepared MXene tends to restack 
+due to the attraction of van der Waals forces [ 61 ]. This 
+restacking phenomenon in MXene limits the interlayer spacing 
+and, consequently, intercalating activity and SAC of prepared 
+electrodes. To avoid this, delamination is frequently used to 
+expand interlayer spacing using organic solvents. Delamination 
+is also used to get individual MXene sheets from multilayer 
+MXene.
+Dimethyl sulphoxide (DMSO) is amongst the first delaminators 
+employed for Ti
+3
+C
+2
+T
+x 
+delamination [ 62 ]. Although relatively 
+nontoxic, it could penetrate the skin and act as a carrier of dis -
+solved substances, and hence it should be used in ventilated areas 
+with proper personal protective equipment. In the delamination 
+process, organic solvents are drawn into stacked MXene for a few 
+hours, which weakens the van der Waals attractive forces and 
+regenerates proper interlayer spaces [ 63 ]. Other organic solvents 
+used in delamination are tetrabutylammonium hydroxide 
+(TBAOH) and lithium chloride [ 64 ]. These solvents and salts are 
+comparatively less toxic. However, they are strong bases and 
+should be treated with safety protocols. Apart from inserting 
+organic solvents, sonication with deionized water is also an option 
+for further delamination and size reduction. However, it could 
+add significant defects to the MXene structure [ 65 ].
+Although MXene shows promise as an electrode material for 
+CDI, its practical application is limited by structural instability 
+during cycling. A common strategy to mitigate MXene 
+restacking is hybridization with materials such as graphene 
+oxide (GO) or reduced graphene oxide (rGO). Table 1 summa -
+rizes recent progress in engineering MXene CDI electrodes, 
+highlighting strategies such as doping, hybridization, and 
+functionalization that have been employed to achieve superior 
+CDI performance.
+3.2
+|
+Chemical Functionalization and Surface 
+Tuning for Enhanced CDI Performance
+Several MXene modification strategies can be employed not 
+only to tailor MXene properties based on process requirements, 
+but also to stabilize the MXene's chemical reactivity. A 
+comprehensive schematic illustration of MXene modification, 
+including chemical functionalization, hybridization and nano -
+compositing, interlayer tuning, and surface terminations, is 
+presented in Figure 4 . The surface of MXene, terminated with 
+groups such as –O, –OH, and –F, provides a versatile platform 
+for precise chemical modification. These functionalization 
+strategies are essential for tailoring MXene’s properties, such as 
+its interlayer spacing, electrical conductivity, and specific af -
+finity for target ions, to enhance its performance in applications 
+such as selective separation and energy storage. Common 
+methods for MXene surface tuning include direct chemical 
+modification of its native –O, –OH, and –F terminations and 
+grafting of functional molecules or polymers. Approaches, such 
+as silanization or polymer intercalation, are employed to sys -
+tematically tailor interlayer spacing, stability, and surface 
+chemistry for enhanced performance.
+Challenges such as surface oxidation and re‐stacking in aqueous 
+environments limit their performance. Several studies have 
+explored innovative strategies to enhance the stability and per -
+formance of MXene electrodes in CDI applications. These 
+strategies include surface modifications, for example, via an 
+alkali treatment followed by thermal annealing [ 84 ], formation 
+of binder‐free composites that exhibit resistance to surface 
+oxidation after 30 desalination cycles [ 85 ], and structural engi -
+neering, with a focus on alkali‐induced strategies to produce 
+wrinkled surfaces [ 86 ], which collectively contribute to 
+improved electrochemical stability and desalination efficiency.
+To break the brackishwater limitation of traditional CDI, Yang 
+et al. [ 66 ] engineered an MXene cathode for seawater desalination 
+by precisely tailoring its surface chemistry. Using a novel plasma‐ 
+activated water (PAW) method, they converted the typically 
+mixed functional groups on pristine MXene into a uniform 
+oxygen‐terminated (–O) surface. This –O functionalization 
+created a selective pathway for Na
++
+ions by providing higher 
+adsorption energy for sodium, while simultaneously minimizing 
+the unwanted uptake of chloride anions during cycling. This 
+strategic functionalization enabled the membrane‐free system to 
+achieve exceptional desalination capacity for high‐salinity water 
+(35,000 mg L
+− 1 
+NaCl) by ensuring selective sodium capture 
+through a Faradaic intercalation mechanism. Similarly, Li et al. 
+[ 77 ] demonstrated a controlled, slight oxidation of TiVCT
+x 
+MXene 
+that created a synergistic architecture. Selective oxidation of 
+surface Ti atoms to TiO
+2 
+nanoparticles expanded the interlayer 
+spacing, a key parameter verified by DFT calculations. The in situ‐ 
+formed nanomaterials provided abundant active sites, whereas 
+retained V atoms maintained electrical conductivity. The result -
+ing modified MXene electrode achieved exceptional selectivity for 
+divalent Ca
+2 +
+and Mg
+2 +
+over Na
++
+, with separation factors of 
+S
+Ca/Na 
+= 13.67 and S
+Mg/Na 
+= 11.12, when the initial solution 
+concentration ( C
+0
+) ratio Na
++
+: Ca
+2 +
+: Mg
+2 +
+was 5:1:1, respectively. 
+This high selectivity was attributed to the optimized interlayer 
+confinement that preferentially stabilized higher‐valence cations 
+through a combination of tailored spacing and modified surface 
+chemistry.
+Moreover, Faheem et al. [ 80 ] designed a polystyrene sulfonate‐ 
+MXene (PSS‐MXene) composite electrode that achieved supe -
+rior performance for lithium recovery by selectively removing 
+divalent impurities. The PSS functionalization provided the 
+MXene with a tailored negative surface charge, enhancing its 
+selectivity for Ca
+2 +
+and Mg
+2 +
+over Li
++
+( C
+0 
+= 5 mg L
+− 1 
+each, 
+applied voltage (AV) = 1.2 V) and enabling the production of a 
+6 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 7 =====
+TABLE 1 | A summary of the modified MXene electrodes in CDI for selective ion separation applications.
+Modified MXene
+Electrode 
+property 
+improvement
+CDI 
+type Application
+Initial 
+conditions 
+( C
+0 
+in 
+mg L
+¡ 1
+)
+Selectivity 
+coefficient ( ρ )
+CDI 
+performance 
+(SAC in mg g
+¡ 1
+, 
+ASAR in 
+mg g
+¡ 1 
+min
+¡ 1
+) Ref.
+–O functionalized 
+MXene
+Oxygen‐ 
+terminated (–O) 
+surface
+CDI Selective Na
++
+removal, X = Nil
+C
+0 
+= 35,000 
+(NaCl), 
+AV = 1.2 V, 
+pH = Nil
+Nil SAC = 124.7 
+(NaCl), 
+ASAR = 4.3, 
+CR = ~86%
+a
+(100 
+cycles), η = Nil
+[ 66 ]
+NiO/O
+x
+− MXene 
+(dual‐redox centers 
+(Ti
+3 +
+/Ni
+2 +
+))
+Redox‐active sites, 
+electron transfer, 
+and stability
+MCDI Selective Cr(VI) 
+capture, X = Cl
+−
+, 
+NO
+3
+−
+, SO
+4
+2 −
+C
+0 
+= 5 (Cr 
+(VI)), 
+AV = 0.9 V, 
+pH = ~6
+ρ
+Cr
+Cl 
+= 83.81, 
+ρ
+Cr
+NO
+3 
+= 83.10, 
+ρ
+Cr
+SO
+4 
+= 44.79
+SAC = 18.54, 
+ASAR = Nil, 
+CR = Nil, 
+η = ~98%
+[ 67 ]
+Ti
+3
+C
+2
+T
+x
+@SnO
+2 
+composite
+Restacking and 
+electron transfer
+HCDI Selective Li
++
+recovery, 
+X = K
++
+, Na
++
+C
+0 
+= 212
+b
+(LiCl), 
+AV = 1.4 V 
+pH = Nil
+ρ
+Li
+K 
+= 1.82, 
+ρ
+Li
+Na 
+= 1.48
+SAC = 103.4 
+(LiCl), 
+ASAR = 8.1, 
+CR = 82.7% (20 
+cycles), η = 42.4%
+[ 68 ]
+3D Ni‐1,3,5‐ 
+benzenetricarboxylate/ 
+Ti
+3
+C
+2
+T
+x
+Restacking, 
+surface area, and 
+charge transfer
+CDI Cr(VI) removal, 
+X = Nil
+C
+0 
+= 30 (Cr 
+(VI)), 
+AV = 4 V, 
+pH = Nil
+Nil SAC = 124.5, 
+ASAR = Nil, 
+CR = ~93%
+a
+(5 cycles), η = 94%
+[ 69 ]
+CoTi‐ZIF‐9‐derived 
+carbon/Ti
+3
+C
+2
+T
+x
+Restacking, 
+electron transfer, 
+and conductivity
+CDI SW desalination, 
+X = Nil
+C
+0 
+= 580 
+(NaCl), 
+AV = 1.2 V, 
+pH = Nil
+Nil SAC = 67.4, 
+ASAR = Nil, 
+CR = 93% (15 
+cycles), η = Nil
+[ 70 ]
+Vertically aligned 
+Ti
+3
+C
+2
+T
+x
+− Prussian 
+blue (PB)
+Low tortuosity, 
+pseudocapacitive 
+behavior, and ion 
+exchange sites
+CDI U(VI) and Cs(I) 
+removal, X = Na
++
+, 
+K
++
+, Cr
+3 +
+, Co
+2 +
+, 
+Zn
+2 +
+, Sr
+2 +
+, Pb
+2 +
+, 
+Ba
+2 +
+, Cu
+2 +
+C
+0 
+= 20 (U 
+(VI) and Cs 
+(I)), 
+AV = 1.2 V, 
+pH = 7
+ρ
+U
+X 
+= ~8.86
+b
+, 
+ρ
+Cs
+X 
+= ~7.21
+b
+SAC = 476.2 (U), 
+378.8 (Cs), 
+ASAR = Nil, 
+CR = 80% (5 
+cycles), η = 90%
+[ 71 ]
+Amidoxime‐ 
+functionalized 
+MXene/CoZn‐MOF
+Porous structure, 
+surface area, mass 
+transport, and 
+high uranyl 
+selectivity
+FCDI U(VI) removal, 
+X = Ca
+2 +
+, Cu
+2 +
+, 
+Na
++
+, Mg
+2 +
+, 
+K
++
+, Fe
+2 +
+C
+0 
+= 500 (U 
+(VI)), 
+AV = 1.2 V, 
+pH = 5
+ρ
+U
+Ca 
+= ~240
+a
+, 
+ρ
+U
+Mg 
+= ~45
+a
+, 
+ρ
+U
+K 
+= ~35
+a
+, 
+ρ
+U
+Na 
+= ~30
+a
+SAC = 2322 U 
+(VI), 
+ASAR = 19.35, 
+CR = 90.5% (20 
+cycles), η = 95.6%
+[ 72 ]
+Coupling silver 
+nanowires with holey 
+MXene
+Anti‐oxidation 
+stability, surface 
+area, ion 
+transport, and 
+conductivity
+CDI Desalination 
+X = Nil
+C
+0 
+= 500 
+(NaCl), 
+AV = 1 V, 
+pH = 6
+Nil SAC = 49.5 
+(NaCl), 
+ASAR = 1.65, 
+CR = 85% (50 
+cycles), η = Nil
+[ 73 ]
+Binder‐free 
+Bi@MXene film
+Restacking and 
+volume expansion 
+prevention
+HCDI Desalination and 
+chloride storage, 
+X = Nil
+C
+0 
+= 500 
+(NaCl), 
+AV = 1.2 V, 
+pH = 7
+Nil SAC = 113.4, 
+ASAR = 4.2, 
+CR = 84.6% (50 
+cycles), η = Nil
+[ 74 ]
+FeS
+2
+/MXene Redox centers 
+(Fe
+2 +
+/Fe
+3 +
+and 
+Cu
+2 +
+/Cu
++
+) and 
+ion intercalation
+CDI Selective removal 
+of Cu
+2 +
+, X = Mn
+2 +
+, 
+Co
+2 +
+, Ni
+2 +
+, Zn
+2 +
+C
+0 
+= 100 
+(Cu
+2 +
+), 
+AV = 1 V, 
+pH = Nil
+ρ
+Cu
+X 
+> 3 SAC = 80.02 
+(Cu
+2 +
+), 
+ASAR = 0.2, 
+CR = 37.5% (6 
+cycle), η = 96%
+[ 75 ]
+3D porous MnHCF/ 
+MXene
+Stability, porous 
+structure, ion 
+diffusion, and 
+conductivity
+MCDI Desalination 
+X = Nil
+C
+0 
+= 1168
+b
+(NaCl), 
+AV = 1.2 V, 
+pH = 7
+Nil SAC = 177.12 
+NaCl, 
+ASAR = 9.84, 
+[ 76 ]
+(Continues)
+Electron, 2026 7 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 8 =====
+high‐purity lithium solution (up to 96%). This strategic surface 
+tuning resulted in an exceptionally high lithium enrichment 
+factor ( S
+Li/Mg 
+= 268), showcasing how targeted functionalization 
+can optimize MXene for specific ion‐separation tasks.
+3.3
+|
+Hybridization and Composite Materials
+MXenes are typically hybridized by incorporating secondary 
+materials such as polymers, metal oxides, or nanosheets. This 
+is achieved through methods such as in situ growth, simple 
+mixing, or layer‐by‐layer assembly to form composite struc -
+tures. Several attempts have been made for the hybridization 
+of MXenes to enhance ion selectivity, electrosorption capacity, 
+and stability for multiple cycles [ 67, 68, 72, 75, 87 ]. Chand 
+et al. [ 67 ] developed a hybrid electrode by loading nickel 
+oxide onto oxidized MXene (NiO/O
+x
+‐MXene) to tackle the 
+selective removal of toxic Cr(VI) from wastewater. The hy -
+bridization critically enhanced the material’s performance by 
+creating dual redox‐active sites (Ti
+3 +
+/Ti
+4 +
+and Ni
+2 +
+/Ni
+3 +
+), 
+which boosted charge transfer kinetics by 67% and improved 
+structural stability, retaining 83% efficiency over 5 cycles. 
+Here, Cr(VI) was not just electrostatically adsorbed, but it was 
+selectively reduced at these redox centers to less toxic Cr(III) 
+via specific surface complexation and electron transfer. As a 
+result, a high selectivity factor was achieved ( ρ
+Cr
+Cl 
+= 83.81, 
+ρ
+Cr
+NO
+3 
+= 83.10, ρ
+Cr
+SO
+4 
+= 44.79) with a C
+0 
+= 20:1:1:1 of Cr(IV) 
+over competing ions.
+For uranium extraction, Cai et al. [ 88 ] designed a flexible ternary 
+composite, PPy@MoSe
+2
+@MXene, which achieved an exceptional 
+TABLE 1 | (Continued)
+Modified MXene 
+Electrode 
+property 
+improvement 
+CDI 
+type Application 
+Initial 
+conditions 
+( C
+0 
+in 
+mg L
+¡ 1
+) 
+Selectivity 
+coefficient ( ρ ) 
+CDI 
+performance 
+(SAC in mg g
+¡ 1
+, 
+ASAR in 
+mg g
+¡ 1 
+min
+¡ 1
+) Ref.
+CR = 93.13% (150 
+cycles), η = Nil
+Slightly oxidized 
+TiVCT
+x 
+MXene
+MXene spacing, 
+ion diffusion, and 
+abundant sites
+CDI Water 
+softening, X = Na
++
+C
+0 
+= 1110
+b
+(CaCl
+2
+), 
+AV = 1.4 V, 
+pH = Nil
+ρ
+Ca
+Na 
+= 13.67, 
+ρ
+Ca
+Mg 
+= 11.12
+SAC = 59, 
+ASAR = ~6
+a
+, 
+CR = 90% (55 
+cycles), η = Nil
+[ 77 ]
+PANI‐Cl
+x
+/Ti
+3
+C
+2
+T
+x
+Charge‐transfer, 
+activation energy, 
+and intercalation
+CDI Selective F
+– 
+removal, X = Nil
+C
+0 
+= 50 (F
+–
+), 
+AV = 1.2 V, 
+pH = 7
+Nil SAC = 32.8, 
+ASAR = 4.7, 
+CR = Nil, η = Nil
+[ 78 ]
+Nitrogen‐doped 
+Ti
+3
+C
+2
+T
+x
+Electrical 
+conductivity, and 
+layer spacing
+CDI Selective removal 
+of Pb(II), X = Na
++
+, 
+Ca
+2 +
+, Mg
+2 +
+C
+0 
+= 5 
+(Pb
+2 +
+), 
+AV = 1.5 V, 
+pH = 5.0,
+ρ
+Pb
+X 
+= ~5 SAC = Nil, 
+ASAR = Nil, 
+CR = 97% (5 
+cycles), η = 99.5%
+[ 79 ]
+Polystyrene sulfonate‐ 
+MXene
+Stability and 
+zetapotential
+MCDI Li
++
+recovery and 
+purification, 
+X = K
++
+, 
+Ca
+2 +
+, Mg
+2 +
+C
+0 
+= 5 (each 
+ion), 
+AV = 1.2 V, 
+pH = 7
+ρ
+Ca
+Li 
+= 3.18, 
+ρ
+Mg
+Li 
+= 3.2, 
+ρ
+K
+Li 
+= 1.66
+SAC = 275, 
+ASAR = 4.23, 
+CR = Nil, η = 95% 
+(Ca
+2 +
+, Mg
+2 +
+)
+[ 80 ]
+Ti
+3
+C
+2
+T
+x
+/rGO Stability, 
+conductivity, and 
+transport 
+channels
+MCDI Water softening, 
+X = K
++
+, Li
++
+C
+0 
+= 5 (each 
+ion), 
+AV = 1.2 V, 
+pH = 7.0
+ρ
+Mg
+Li 
+= 2.804, 
+ρ
+Ca
+Li 
+= 2.845
+SAC = 130, 
+ASAR = 0.72, 
+CR = 97% (3 
+cycles), η = Nil
+[ 81 ]
+Few‐layered 2D 
+MXene (F‐Ti
+3
+C
+2
+F
+x
+)
+Spacing and redox 
+host sites
+MCDI Selective ion 
+separation, X = K
++
+, 
+Na
++
+, Li
++
+, Zn
+2 +
+C
+0 
+= 214 
+(Zn
+2 +
+), 
+AV = 1.2 V, 
+pH = 7
+ρ
+Zn
+Li 
+= 2.88
+b
+, 
+ρ
+Zn
+Na 
+= 1.92
+b
+, 
+ρ
+Zn
+K 
+= 1.17
+b
+SAC = 91.38 
+(Zn
+2 +
+), 
+ASAR = Nil, 
+CR = 88% (18 
+cycles), η = Nil
+[ 82 ]
+MXene cathodes 
+coupled with NiAl‐ 
+LMO anodes
+Introduction of 
+valence 
+compensation
+HCDI Selective Ca
+2 +
+separation, 
+X = Na
++
+, Mg
+2 +
+C
+0 
+= 80 
+(Ca
+2 +
+), 
+AV = 1.2 V, 
+pH = 6.5
+ρ
+Ca
+Na 
+= 9.8, 
+ρ
+Ca
+Mg 
+= 2.6
+SAC = 110
+a
+(Ca
+2 +
+), 
+ASAR = 1.83
+a
+, 
+CR = 96
+b
+(5 
+cycles), η = 47%
+[ 83 ]
+Abbreviations: ASAR, average specific adsorption rate; AV, applied voltage; C, capacity; CDI, capacitive deionization; C
+0
+, initial concentration; CR, capacity retention; 
+FCDI, flow‐electrode capacitive deionization; FL, flowrate; HCDI, hybrid capacitive deionization; MCDI, membrane capacitive deionization; MOF, metal–organic 
+frameworks; SAC, specific adsorption capacity; X , competitive ions; η , removal efficiency; ρ , selectivity coefficient.
+a
+Calculated from graph.
+b
+Normalized.
+8 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 9 =====
+uranium extraction capacity of 659 mg g
+− 1 
+( C
+0 
+= 300 mg L
+− 1
+, 
+pH = 5, AV = 1.2 V) and maintained 84% capacity retention over 
+10 cycles, demonstrating significant stability. The high selectivity 
+of the composite ( ρ
+UO
+2
+Na 
+= 493) even in complex ionic mixtures was 
+attributed to a synergistic mechanism: the polypyrrole (PPy) 
+component provided nitrogen‐rich sites for selective ion‐ 
+exchange and the electro‐reduction of U(VI) to U(IV), a process 
+verified by in situ Raman spectroscopy. Concurrently, the 
+MoSe
+2
+@MXene heterostructure facilitated rapid pseudocapaci -
+tive intercalation. The DFT calculations exhibited a significantly 
+lower diffusion energy barrier for UO
+2
+2 +
+(0.064 eV) compared to 
+competing ions, ensuring both fast kinetics and selective uranium 
+capture. Similarly, Zhang et al. [ 89 ] synthesized MXene‐incor -
+porated, metal–organic framework (MOF)‐derived carbon elec -
+trodes (MIP‐202/MXene) for selective uranium (VI) removal from 
+a multi‐ionic water matrix. The hybrid MIP‐202/MXene benefited 
+from improved pore structure, high specific surface area, high 
+conductivity, and mechanical robustness, which facilitated rapid 
+ion transfer with an additional nitrogen source for excellent 
+electrosorption (SAC = 582.46 mg g
+  1 
+under initial conditions: 
+C
+0 
+= 60 mg L
+  1
+, pH = 4, and AV = 1.2 V). In the presence of 
+competing ions (Na
++
+, Ca
+2 +
+, and Mg
+2 +
+), the SAC of UO
+2
+2 +
+was 
+found to be 36.82 mg g
+  1
+, much higher than the SAC of competing 
+ions (almost negligible), showing excellent selectivity.
+To address the critical challenge of selective lithium recovery, 
+Askari et al. [ 68 ] engineered a Ti
+3
+C
+2
+T
+x 
+MXene@SnO
+2 
+composite 
+electrode. The hybridization with SnO
+2 
+nanoparticles mitigated 
+MXene restacking, which enhanced structural stability (retain -
+ing 82.7% capacity over 20 cycles) and improved electrical 
+conductivity for faster ion kinetics. Although competing ions 
+such as Na
++
+and K
++
+were adsorbed via surface‐driven processes, 
+Li
++
+ions were selectively captured through structure‐dependent 
+interactions (selectivity coefficients; ρ
+Li
+K 
+and ρ
+Li
+Na 
+were 1.82 and 
+1.48, respectively), likely involving selective intercalation within 
+the expanded MXene‐SnO
+2 
+matrix.
+Moreover, Fu et al. [ 78 ] synthesized a hybrid electrode by 
+modulating Ti
+3
+C
+2
+T
+x 
+MXene with a polyaniline salt (PANI‐Cl
+x
+) to 
+selectively remove fluoride from groundwater. The PANI‐Cl
+x 
+layer significantly enhanced F
+−
+selectivity ( ρ
+F
+NO
+3
+, ρ
+F
+PO
+4
+, ρ
+F
+SO
+4
+, ρ
+F
+CO
+3 
+, 
+and ρ
+F
+Cl 
+were 5.7, 3.2, 3.0, 2.7, and 1.8, respectively, with initial 
+conditions: C
+0 
+= 50 mg‐F
+ 
+g
+  1
+, AV = 1.2 V, and pH = 7) through 
+its nitrogen‐containing motifs, which selectively target F
+ 
+ions, 
+while simultaneously improving electrode stability (F
+ 
+removal 
+efficiency ( η ) was maintained at 82.4% after 50 cycles). This 
+synergy created a highly efficient removal mechanism where the 
+MXene substrate ensured rapid ion intercalation kinetics, and 
+the polymer overlay provided specific capture sites, resulting in 
+an ultrafast and selective electrochemical nanosystem for fluo -
+ride removal from groundwater. Similarly, Lu et al. [ 90 ] 
+improved MXene by etching it with a Lewis acid molten salt 
+(MS‐Ti
+3
+C
+2
+T
+x
+), which created terminal –OH and –Cl groups for 
+enhanced fluoride selectivity. This MS‐MXene was combined 
+with PANI and AC to form a composite (MTPA), boosting 
+the average fluoride removal rate to 3.415 mg m
+  2 
+s
+  1
+. The 
+electrode demonstrated selectivity for F
+ 
+over competing 
+anions (order: PO
+4
+3  
+> SO
+4
+2  
+> NO
+3
+ 
+> Cl
+ 
+) with a ρ up to 2.80, 
+and maintained > 85% removal after 50 cycles. The removal 
+mechanism involved ligand exchange with MXene’s terminal 
+groups, ion intercalation, electrostatic attraction, and PANI 
+redox reactions.
+For water softening applications, Cai et al. [ 91 ] studied the se -
+lective removal of Ca
+2 +
+and Mg
+2 +
+ions over Na
++
+ions by syn -
+thesizing a hybridized NiCo‐LDH@Mxene electrode using PPy, 
+NiCo‐LDH, and MXene through the hydrothermal method. This 
+way, they elegantly improved the electrical conductivity, charge 
+FIGURE 4
+|
+A comprehensive schematic illustration on MXene modification strategies (clockwise from top left): chemical functionalization, 
+hybridization and nanocompositing, surface termination, and interlayer tuning.
+Electron, 2026 9 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 10 =====
+diffusion rate, mechanical stability, and fast electrosorption ki -
+netics by preventing the restacking of MXene. A good selectivity 
+of Ca
+2 +
+and Mg
+2 +
+ions over Na
++
+was found to be 3.79 and 2.36, 
+respectively, with an equimolar initial concentration of 15 mM 
+each. Similarly, for the electrosorption of Ca
+2 +
+ions, Sun et al. 
+[ 83 ] employed MXene as a cathode and NiAl‐LMO as an anode. 
+By utilizing a Ni–Al layered hybridized metal oxide anode, the 
+valence compensation balance effect facilitated an enhanced 
+Ca
+2 +
+adsorption by the MXene cathode, with a significant 
+selectivity of 9.84 (Ca
+2 +
+/Na
++
+) at C
+0 
+= 2 mmol L
+− 1 
+each.
+For the selective removal of dyes from wastewater, Yao et al. 
+[ 92 ] used a porous MXene/single‐walled carbon nanotubes (p‐ 
+MXene/SWCNTs) film as an electrode in CDI. Here, hybridi -
+zation was performed by the vacuum filtration of the MXene/ 
+PS/SWCNTs film, followed by the freeze‐drying method. 
+Excellent SAC of methylene blue (1068.8 mg g
+− 1
+) was claimed 
+at C
+0 
+= 30 mg L
+− 1
+, with a great recycling ability (reusability 95% 
+after multiple cycles).
+Besides functionalization and hybridization, MXene doping has 
+emerged as an elegant and effective strategy for enhancing 
+electrochemical performance. Wang et al. [ 79 ] demonstrated 
+nitrogen doping that significantly enhanced Ti
+3
+C
+2
+T
+x 
+MXene’s 
+performance for lead removal, achieving a 99.5% removal effi -
+ciency for Pb(II) and excellent selectivity in mixed solutions at 
+optimal pH = 5. The doping increased layer spacing and elec -
+trical conductivity, whereas the introduced nitrogen groups and 
+enhanced [Ti–O]–H
++
+complexes provided specific sites for se -
+lective Pb(II) binding. Furthermore, the electrode exhibited 
+remarkable stability, maintaining 97% removal efficiency after 
+five adsorption–desorption cycles due to the strong, reversible 
+complexation enabled by the nitrogen doping. Recent works on 
+hybridized, functionalized, and doped MXene electrodes are 
+summarized and presented in Table 1 .
+Based on Table 1 , it can be deduced that selectivity coefficients 
+are positively correlated with redox centers and chelating agents 
+present in modified MXene. However, their capacity fades 
+significantly in fewer than 20 cycles. Additionally, intercalating 
+materials (e.g., PB and NiHCF) show higher SAC with lower 
+capacity retention due to volume expansion.
+4
+|
+General Selectivity Criteria and Strategies
+MXenes can be hybridized with other dimensional materials 
+and engineered for multiple removal mechanisms, such as ion 
+intercalation and modified redox centers. Beyond these, selec -
+tivity can be enabled by tailoring pore sizes and surface charge 
+chemistry. This section will focus on general selectivity criteria 
+and strategies, including electrode properties, ion characteris -
+tics, the use of ion exchange membranes, and the tuning of 
+operational parameters such as voltage, pH, and flow rate.
+4.1
+|
+Properties of Ions and Electrodes
+Several studies support that ionic properties such as hydrated 
+radius, ionic charge, and valence significantly affect the selec -
+tive and sequential removal of ions from a multi‐ionic solution 
+in CDI [ 80, 93–95 ]. Morphological features of electrodes, such 
+as pore size, pore size distribution, and pore shape, as well as 
+intrinsic charge properties of the electrode, are among the key 
+factors in achieving such an ion selectivity [ 18 ]. The combina -
+tion of these features and properties induces several removal 
+mechanisms that can be categorized as physical (e.g., size 
+exclusion via interlayer spacing and electrostatic affinity via 
+tuning terminal groups) and chemical mechanisms (affinity via 
+surface functionalization).
+In a nanocomposite electrode with tight mesopores, the ion‐ 
+sieving effect, illustrated in Figure 5A , governs selectivity. Ions 
+with smaller hydrated radii are selectively adsorbed, as the 
+restrictive pore architecture physically excludes larger hydrated 
+ions from accessing the internal surface area [ 96–98 ]. For 
+instance, in the study by Gabelich et al. [ 99 ], ion selectivity in 
+carbon aerogel was governed by a combination of hydrated 
+radius and pore size constraints. The electrodes exhibited higher 
+selectivity for monovalent ions (e.g., Na
++
+) over divalent ions 
+(e.g., Ca
+2 +
+), as ions with smaller hydrated radii could more 
+easily access the limited adsorption sites. This occurred despite 
+the higher charge of divalent ions because the material’s small 
+mesopores (4–9 nm) significantly restricted the available surface 
+area for divalent ion sorption. Consequently, the pore structure 
+acted as a sieve, making the hydrated radius a critical factor for 
+selectivity, where smaller hydrated ions were selectively 
+removed. Similarly, Han et al. [ 100 ] found that ion selectivity in 
+carbon electrodes was primarily controlled by microporosity, 
+which imposed a strong ion‐sieving effect (Figure 5A ). As 
+microporosity increased, electrodes exhibited a heightened 
+preference for ions with smaller hydrated radii, as these could 
+access confined spaces, whereas larger ions were sterically 
+excluded. In contrast, mesopores exhibited weak size‐based 
+selectivity. These studies suggest that optimizing the meso‐to‐ 
+microporosity ratio is a critical design strategy for tailoring 
+MXene‐composite electrodes as well, as their overall adsorption 
+performance integrates this pore‐driven selectivity with 
+inherent capacitive and intercalation mechanisms.
+Beyond the ion‐sieving effect, electrostatic affinity (Figure 5B ) is 
+a critical selectivity mechanism (physically selective), describing 
+an electrode’s preference for ions with higher valence or charge 
+density. Hou et al. [ 93 ] reported ion selectivity in activated 
+carbon (AC) electrodes governed by electrostatic affinity, rather 
+than a strict ion‐sieving effect. For ions of the same valence 
+(same charge), selectivity was determined by the hydrated 
+radius; the smaller K
++
+was selectively adsorbed over the larger 
+Na
++
+because its compact hydration shell was less hindered 
+by overlapping EDLs in micropores (ion‐sieving effect). 
+Conversely, divalent cations were favored over monovalent ones 
+due to their stronger electrostatic attraction (electrostatic affin -
+ity, Figure 5B ), underscoring selectivity driven by the electrode’s 
+surface charge. Similarly, in the study of Ren et al. [ 101 ], 
+divalent cations (Ca
+2 +
+and Mg
+2 +
+) were selectively removed over 
+monovalent ions (K
++
+, Na
++
+, and Li
++
+). The selectivity was gov -
+erned by the same electrostatic affinity for ions with a higher 
+charge‐to‐size ratio, as divalent ions were attracted more toward 
+the negative surface charge of the carbon particles. A secondary 
+ion‐sieving effect was also observed, where, within the same 
+valence group, ions with a smaller hydrated radius (e.g., K
++
+over 
+Na
++
+and Ca
+2 +
+over Mg
+2 +
+) were favored due to easier access to 
+electrode nanopores (ion‐sieving effect). The overall selectivity 
+trend followed the order of Ca
+2 +
+> Mg
+2 +
+> K
++
+> Na
++
+> Li
++
+10 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 11 =====
+with an initial concentration of 10 mM each in a multi‐ionic 
+solution. This selectivity trend is consistent with our group’s 
+findings for MXene/rGO electrodes [ 81 ], a system in which 
+selectivity arose from the synergistic effects of ion sieving and 
+electrostatic affinity.
+The selectivity of nanoporous electrodes could also be dictated 
+by hydration energy, defined as the energy required to remove 
+water molecules from an ion’s solvation shell. Kalluri et al. [ 102 ] 
+attributed ion selectivity in sub‐nanometer pores to hydration 
+energy, which creates a decisive energy barrier for entry into the 
+confined space, as illustrated in Figure 5C . Their combined 
+experimental and simulation study revealed that ions only 
+penetrate pores when the applied electrical potential is suffi -
+cient to overcome this energy and partially strip their hydration 
+shell. This results in a threshold‐like charging behavior, where 
+pores selectively admit ions based on their hydrated size and 
+hydration strength. Consequently, divalent Ca
+2 +
+, with its 
+stronger hydration shell, required a higher surface charge den -
+sity to enter narrow pores compared to Na
++
+. Similarly, Mao 
+et al. [ 103 ] presented an atom‐level understanding of ion 
+selectivity using molecular dynamics simulations for NO
+3
+−
+and 
+Cl
+−
+ions, explaining the versatile role of hydration energy. The 
+study found high selectivity of 4–15 for NO
+3
+−
+over Cl
+−
+at lower 
+potential (0–1 V). This was attributed to the easier dehydration 
+of NO
+3
+−
+(lower hydration energy compared to Cl
+−
+). Although 
+NO
+3
+−
+had a larger ionic and hydrated radius, its surrounding 
+water molecules had a shorter residence time (5 vs. 13 ps for 
+Cl
+−
+), allowing NO
+3
+−
+to remove its hydration shell more readily. 
+This stronger desolvation ability enables NO
+3
+−
+to enter confined 
+pores more easily than Cl
+−
+at lower potential. However, at 
+higher potential (1–2.5 V), the selectivity of NO
+3
+−
+over Cl
+−
+decreased from 15 to 3, as Cl
+−
+began shedding its hydration 
+shell at higher voltages and became more competitive with 
+NO
+3
+−
+. Besides pore size and distribution, the specific shape of 
+carbon nanopores can significantly influence ion selectivity 
+[ 104, 105 ]. Hawks et al. [ 105 ] achieved NO
+3
+−
+selectivity by 
+using an ultramicroporous carbon electrode with a pore‐size 
+distribution dominated by narrow ( < 1 nm) slit pores. This 
+architecture imposed a strong ion‐sieving effect, effectively 
+excluding the larger, strongly hydrated sulfate ion. The high 
+selectivity for NO
+3
+−
+over Cl
+−
+( ρ ~ 6) was attributed to nitrate’s 
+lower hydration energy and planar molecular structure, which 
+facilitated its entry into the confined ultramicropores. These 
+selectivity strategies, based on the interplay between ion char -
+acteristics and pore geometry, are transferable to MXene com -
+posites, where the stacking of two‐dimensional layers creates 
+well‐defined slit‐like pores. Thus, designing the interlayer 
+confinement for planar‐shaped ions, such as NO
+3
+−
+, would be an 
+interesting alternative route for selective separation in MXene 
+composites.
+Moreover, Li et al. [ 95 ] introduced the hydration ratio (hydrated 
+radius/bare ion radius) as a key descriptor for ion selectivity in 
+CDI, illustrated in Figure 5D , arguing that it better reflects the 
+strength of an ion’s electric polarization than the hydrated 
+radius alone. They demonstrated that for ions of the same 
+valence, a lower hydration ratio correlates with higher selec -
+tivity, as seen with the order NH
+4
++
+> K
++
+> Na
++
+, due to a 
+stronger effective electrostatic attraction. However, valence re -
+mains dominant, with divalent ions (e.g., Ca
+2 +
+) being preferred 
+over monovalent ions despite their higher hydration ratio 
+because of their greater charge. This framework also explains 
+dynamic processes such as ion substitution, where adsorbed 
+ions can be displaced by others with a lower hydration ratio or 
+higher valence.
+FIGURE 5
+|
+General selectivity mechanisms for porous carbon electrodes based on (A) ion‐sieving effect, (B) surface with electrostatic effect, 
+(C) hydration energy concept, (D) hydration ratio concept, (E) electronegativity, and (F) affinity toward surface functional groups.
+Electron, 2026 11 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 12 =====
+Beyond established parameters, the ion’s electronegativity, which 
+is a measure of an atom’s ability to attract shared electrons toward 
+itself, is a critical factor influencing its selectivity. Sun et al. [ 106 ] 
+revealed that electronegativity could be a factor governing anion 
+selectivity, at times outweighing the influence of the hydrated 
+radius, as shown in Figure 5E . They developed a model showing 
+that anions with higher electronegativity exhibit higher selec -
+tivity, leading to the order: ReO
+4
+−
+> NO
+3
+−
+> Cl
+−
+> SO
+4
+2 −
+.
+Apart from physical ion separation mechanisms, chemical 
+mechanisms induced by functionalization and hybridization of 
+MXenes serve as pivotal strategies for selective separation 
+(Figure 5F ). These processes utilize complexation, ligand ex -
+change, or redox reactions to precisely target ions of interest. 
+However, as these processes are not fully reversible, they are 
+generally avoided in CDI to ensure long‐term system function -
+ality. For instance, Deng et al. [ 107 ] studied the effect of func -
+tional groups on anion selectivity using carboxyl‐modified AC 
+electrodes. In a multi‐ionic system (equimolar Cl
+−
+, NO
+3
+−
+, 
+H
+2
+PO
+4
+−
+, and SO
+4
+2 −
+), the oxygen atoms in the carboxyl groups 
+formed stronger hydrogen bonds with H
+2
+PO
+4
+−
+under neutral 
+pH, leading to higher selectivity. In contrast, competing anions 
+demonstrated lower selectivity due to their inability to form 
+such bonds. However, the adsorbed H
+2
+PO
+4
+−
+was much harder 
+to remove during regeneration because of its strong hydrogen 
+bond.
+Moreover, selective ion separation can also be achieved through 
+a charge compensation effect driven by redox reactions or defect 
+engineering in intercalative electrodes. In 2020, the group of 
+coauthor de Smet [ 108 ] demonstrated higher Na
++
+selectivity 
+over Ca
+2 +
+and Mg
+2 +
+, with average separation factors of β (Na
++
+/ 
+Ca
+2 +
+) ~15 and (Na
++
+/Mg
+2 +
+) ~25 in an equimolar solution using 
+NiHCF electrodes. The higher Na
++
+selectivity was driven by a 
+charge compensation effect, where Na
++
+intercalation required 
+the reduction of only one Fe
+3 +
+center, whereas divalent ions 
+required the simultaneous reduction of two Fe
+3 +
+sites, creating 
+an additional entropic barrier for multivalent ions. Additionally, 
+divalent ions faced a thermodynamic barrier as well due to their 
+higher dehydration energies (Ca
+2 +
+: 4.12 Å, Mg
+2 +
+: 4.28 Å hy -
+drated radii vs. Na
++
+: 3.58 Å), making multivalent ions unfa -
+vorable. Such intercalating strategies could also be interesting 
+for MXene‐based electrodes. Thus, these multifaceted engi -
+neering strategies enable the targeted design of MXene‐based 
+electrodes for the selective removal of specific ions.
+4.2
+|
+Use of Ion‐Exchange Membranes (IEMs)
+IEMs are widely used in membrane capacitive deionization 
+(MCDI) or flow‐electrode capacitive deionization (FCDI) de -
+vices. IEMS are classified by type: a cation‐exchange membrane 
+(CEM) carries negatively charged groups such as − SO
+3
+−
+, 
+− COO
+−
+, and PO
+3
+H
+−
+, or an anion‐exchange membrane (AEM) 
+with positively charged groups, for instance, − NH
+3
++
+, − NRH
+2
++
+, 
+and NR
+3
++
+inside a polymer backbone support. The presence of 
+charged groups facilitates the selective passing of oppositely 
+charged ions, while, ideally, excluding ions with the same 
+charge, as shown in Figure 6A,B .
+Additionally, these IEMs contribute to the selective removal of 
+ions with similar charges. For instance, CEMs selectively attract 
+positively charged ions with higher valence over those with 
+lower valence. Interestingly, the selectivity can be manipulated 
+by tuning IEMs. Sahin et al. [ 109 ] modified a standard CEM 
+with a polyelectrolyte multilayer (PEM) that reversed its 
+inherent ion selectivity in MCDI. The unmodified membrane 
+was naturally selective for Mg
+2 +
+over Na
++
+due to stronger 
+Coulombic attraction to its negative surface groups. However, 
+coating it with a positively charged PEM created a selective 
+barrier that selectively rejected the divalent Mg
+2 +
+via Donnan 
+exclusion, while allowing monovalent Na
++
+to pass more easily. 
+This strategic modification successfully switched the selectivity 
+from Mg
+2 +
+( ρ
+Na
+Mg 
+= ~ 0.5) to Na
++
+( ρ
+Na
+Mg 
+= ~ 2.8), highlighting a 
+versatile method for tuning membrane selectivity.
+Moreover, Tan et al. [ 110 ] designed a carrier‐facilitated, ion‐ 
+exchange membrane for the selective removal of chromium 
+and chloride ions in FCDI. In this study, Cr(VI) transport in the 
+membrane was reported to occur via continuous pathways 
+rather than a fixed‐site hopping mechanism and achieved an 
+unprecedented ρ of > 20. Furthermore, Yang et al. [ 111 ] ach -
+ieved selective phosphate removal in MCDI by fabricating an 
+AEM composed of Mn
+2
+O
+3
+. The selectivity mechanism was pri -
+marily based on chemisorption, where DFT calculations 
+revealed that the adsorption of HPO
+4
+2 −
+onto the Mn
+2
+O
+3 
+surface 
+was more favorable (by 314 kcal mol
+− 1
+) than its adsorption onto 
+a pristine AEM. This created a specific, low‐energy pathway for 
+phosphate transport through the membrane. The system ach -
+ieved a P/Cl selectivity of 1.1 with a low energy consumption of 
+0.0070 kWh g
+− 1 
+P at 1.5 V, revealing the importance of 
+embedding selective adsorbents in the IEMs for strategic 
+removal of target ions.
+4.3
+|
+Tuning Operational Parameters
+Although material engineering is fundamental to achieving ion 
+selectivity, the performance of CDI systems is equally governed 
+by operational parameters. The deliberate tuning of variables, 
+including cell voltage, current density, feed concentration, flow 
+rate, and pH, provides a complementary and essential strategy 
+for optimizing selective separation.
+4.3.1
+|
+Initial Concentration and Competitive Ions
+Species with higher concentrations could show higher selectivity 
+initially because there will be more ions available to be adsorbed 
+onto the electrode surface. Zhao et al. [ 112 ] studied the ion 
+selectivity in a solution of Na
++
+and Ca
+2 +
+ions with a concentra -
+tion ratio of 5:1. In the early stage of the CDI cycle, the electro -
+sorption of Na
++
+ions was 5 times higher than that of Ca
+2 +
+ions. 
+However, with passing time, the electrosorption of Ca
+2 +
+increased over Na
++
+because of the stronger interaction of diva -
+lent ions with the electrode surface. Similarly, Hou and Huang 
+[ 93 ] reported that the initial molar concentration of an ion is a 
+dominant factor for its electrosorption capacity, at times over -
+riding the influence of the hydrated radius and charge. In the 
+experiment, when the concentration of Na
++
+was increased from 2 
+to 4 mM, its electrosorption capacity surged by > 40%, allowing it 
+to outcompete both smaller K
++
+and higher‐charge Ca
+2 +
+ions for 
+adsorption sites. This led to a capacity trend directly following 
+the initial concentrations: Na
++
+(~132 μmol g
+− 1
+) > Mg
+2 +
+(~62 μmol g
+− 1
+) > Ca
+2 +
+(~34 μmol g
+− 1
+) > K
++
+(~3 μmol g
+− 1
+).
+12 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 13 =====
+Although this may seem obvious, it is noted that this is not 
+always the case. If the target ion is highly selective over 
+competing ions, the selectivity of the target ion will remain 
+higher, even if the concentration of the competing ions is 
+increased. Xu et al. [ 113 ] investigated LiMn
+2
+O
+4 
+nanoparticles in 
+situ embedded within carbon networks for lithium extraction 
+from brine using hybrid capacitive deionization. The obtained 
+SACs of Mg
+2 +
+and Li
++
+at an equimolar (1:1) concentration were 
+compared, yielding values of 0.48 and 2.46 mmol g
+− 1
+, respec -
+tively. Interestingly, even at a 20:1 Mg
+2 +
+to Li
++
+concentration 
+ratio, the adsorption of Mg
+2 +
+remained comparable to that of 
+Li
++
+, contradicting the expectation of increased Mg
+2 +
+adsorption 
+at higher concentration ratios.
+Regarding the presence of a competitive species in the feed 
+solution, Huang et al. [ 114 ] conducted research using AC 
+electrodes for the selective removal of Cu
+2 +
+ions in the presence 
+of NaCl and natural organic matter (NOM) from an aqueous 
+solution. In experiments with 50 mg L
+− 1 
+Cu
+2 +
+at 0.8 V, the 
+capacity decreased from 2.48 mg g
+− 1 
+without NOM to 
+2.19 mg g
+− 1 
+at a high NOM concentration of 30 mg L
+− 1 
+TOC. 
+This reduction was attributed to NOM fouling, where dissoci -
+ated humic acid ions competed with Cu
+2 +
+for access to the 
+charged electrode surface. Therefore, the ion‐selective electro -
+sorption could be influenced by the target ion’s concentration 
+and the competitive background matrix. This understanding, 
+derived from studies on conventional carbon electrodes, is also 
+applicable to next‐generation MXene‐based composites in 
+complex ionic environments.
+4.3.2
+|
+Voltage Change
+Generally, increasing the cell voltage or current density reduces 
+the selectivity of a target ion over a competing ion. In the 
+absence of an applied voltage, the intrinsic selectivity of an 
+electrode material is primarily governed by the affinity between 
+the ion and the electrode surface. However, as the voltage in -
+creases, ions with higher mobility tend to be selectively adsor -
+bed, thereby compromising the selectivity of the target ion. Li 
+et al. [ 77 ] investigated the effect of voltage on the selectivity 
+between divalent and monovalent ions using TiVCT
+x 
+MXene. 
+Their study revealed that the selectivity ratio of Ca
+2 +
+/Na
++
+decreased from 5.3 to 4.3 as the applied voltage was increased 
+from 1.0 to 1.6 V. Despite this reduction in selectivity, the SAC 
+was found to be higher, consistent with trends reported in 
+existing literature [ 115, 116 ]. Similarly, Jiang et al. [ 117 ] inves -
+tigated the impact of voltage on ion selectivity, revealing that the 
+selectivity for Li
++
+over Mg
+2 +
+decreased significantly from 18.7 to 
+6.6 as the applied voltage increased from 0.6 to 1.2 V. Thus, 
+applied voltage/current density could be manipulated to 
+enhance selectivity toward a certain ion.
+4.3.3
+|
+Flow Rate
+Flow rate can positively or negatively influence selectivity, 
+depending on the specific conditions. Jiang et al. [ 117 ] investi -
+gated a bifunctional ionomeric CDI (BICDI) system and studied 
+the influence of flow rate on ion selectivity. For the separation 
+of Li
++
+from Mg
+2 +
+, the ρ rose from 5.2 to 13.4 as the flow rate was 
+increased from 10 to 40 mL min
+− 1
+. This improvement was 
+attributed to enhanced ion diffusion at higher flow rates because 
+of a reduction in the diffusion boundary layer, which improved 
+mass transport.
+In contrast, Xu et al. [ 118 ] reported the effect of flow rate on 
+selective fluoride removal using FCDI. Experiments were con -
+ducted with a flow rate varying from 16 to 25 mL min
+− 1
+. Their 
+findings revealed that increasing the flow rate slowed down F
+−
+adsorption, with optimum adsorption achieved at 16 mL min
+− 1
+. 
+This result was attributed to sufficient residence time at the 
+lower flow rate for F
+−
+ions to access and undergo specific ligand 
+exchange with the titanium (IV) hydroxide sites, while ensuring 
+efficient delivery of ions to the electrode surface. Therefore, the 
+dependence of both selectivity and adsorption performance on 
+flow rate underscores its role as a key variable requiring detailed 
+investigation and optimization.
+4.3.4
+|
+pH Conditions
+Ion selectivity can be significantly influenced by the pH of the 
+feed solution, as it alters the presence of competing ions such as 
+H
++
+and OH
+3
+, changes the form of ionic species, and modifies 
+the surface charge/functional groups of the electrodes, thereby 
+affecting the selective adsorption of the target ion(s). Xu et al. 
+[ 118 ] further investigated the effect of pH on F
+−
+selectivity in an 
+FCDI system using a titanium (IV) hydroxide‐modified biochar 
+FIGURE 6
+|
+Schematic diagram for selective ion separation by IEMs; (A) CEM, (B) AEM. AEM, anion‐exchange membrane; CEM, cation‐ 
+exchange membrane; IEMs, ion‐exchange membranes.
+Electron, 2026 13 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 14 =====
+electrode. Their study revealed that fluoride adsorption was 
+optimum at pH 5. At higher pH levels, the increased competi -
+tion from OH
+−
+reduced F
+−
+selectivity, whereas at lower pH, the 
+formation of HF
+2
+−
+and HF species, characterized by lower ionic 
+charge and larger ionic radii, led to a decline in fluoride removal 
+capacity. Similarly, Bian et al. [ 119 ] found that the electrolyte 
+pH critically influenced phosphate adsorption and transport in 
+FCDI by dictating the dominant phosphorus species. At lower 
+pH (pH 5), the primary species was the monovalent H
+2
+PO
+4
+−
+, 
+which was more effectively removed, leading to higher removal. 
+Conversely, at higher pH (pH 9), the divalent HPO
+4
+2 −
+dominated, 
+resulting in poorer removal. Furthermore, a high flow‐electrode 
+pH (pH 11) shifted the distribution, favoring phosphate recov -
+ery during the discharge phase. Therefore, optimizing pH is 
+essential for enhancing both selective removal and recovery in 
+electrochemical systems.
+5
+|
+Challenges in MXene‐Based Electrodes in CDI
+Besides the advantages of the MXene electrode over common 
+carbon‐based electrodes, MXene faces several challenges that 
+need to be addressed for wider application in the field of CDI. 
+The next sections list some challenges associated with MXene‐ 
+based electrodes.
+5.1
+|
+Material Stability and Durability
+Delaminated MXene flakes are prone to oxidation when 
+exposed to air and water. An oxidized layer on the MXene 
+surface can significantly reduce the adsorption capacity and 
+expected selectivity by decreasing the electrical conductivity 
+and altering the oxygen groups [ 120 ]. When water adsorbs onto 
+the hydrophilic MXene surface, it can trigger hydrolysis re -
+actions, resulting in the formation of metal hydroxides and the 
+oxidation of the transition metal [ 121 ]. The nucleophilic attack 
+of water initiates the oxidation of high‐valent metal atoms. The 
+process involves complex intermediates that are modulated by 
+surface terminations and defects present in the MXene [ 122 ]. 
+Wan et al. [ 123 ] employed Ab initio molecular dynamics 
+(AIMD) simulations to investigate the stability of MXenes in 
+aqueous solution. The study reveals that the oxidation of 
+Ti
+2
+CT
+x 
+MXene in water was highly dependent on surface 
+termination, pH, and applied potential. − O‐terminated and 
+vacancy‐defected surfaces easily degraded under neutral con -
+ditions, whereas − F or − OH‐terminated surfaces remained 
+stable by preventing close contact between water and surface 
+Ti atoms through electronic repulsion and steric hindrance. 
+Ghassemi et al. [ 124 ] systematically studied the interaction of 
+MXene (Ti
+3
+C
+2
+T
+x
+) with air using environmental transmission 
+electron microscopy along with Raman spectroscopy. Upon 
+oxidation, Ti
+3
+C
+2
+T
+x 
+was found to gradually convert into a TiO
+2
+‐ 
+carbon hybrid material, with the characteristics of TiO
+2
+, such 
+as particle size, crystal structure, and morphology, strongly 
+influenced by the temperature. Other factors, such as MXene 
+etching, MXene concentration, and flake size, also contribute 
+to MXene oxidation, and hence all of them are relevant to the 
+CDI process [ 125 ].
+Long‐term stability ( > 1000 cycles) of MXene electrodes in CDI 
+devices is still warranted. Most long‐term stability studies have 
+been conducted in three‐electrode electrochemical systems with 
+concentrated electrolytes, which is a different environment from 
+a CDI cell. Zhang et al. [ 126 ] employed a WS
+2 
+antioxidant 
+coating for enhancing the durability of MXene as a CDI elec -
+trode. The WS
+2
+@MXene heterostructure exhibited superior 
+long‐term durability, retaining ~90% of its capacitance after 
+1000 GCD cycles in 1 M NaCl solution. However, only 40 CDI 
+cycles were studied with a capacitance retention of ~95% (vs. 
+~84% for bare MXene). Recently, Liu et al. [ 127 ] utilized rice 
+husk‐derived activated carbon/MXene composites (RHAC/ 
+MXene) as supercapacitor electrodes and studied much longer 
+stability. The optimized RHAC/MXene electrode exhibited 
+about 85%–90% capacity retention after 10,000 GCD cycles in 
+6 M KOH solution. Although the work focuses on super -
+capacitors, the stability performance information can be rele -
+vant in CDI as well.
+A few attempts have been reported to suppress the MXene 
+oxidation by manipulating pH, potential, and terminal groups. 
+Kumar et al. [ 128 ] chemically encapsulated Ti
+3
+C
+2
+T
+x 
+MXene 
+nanosheets with succinic acid. The modification prevented 
+oxidation in aqueous media by forming beneficial hydrogen‐ 
+bonding interactions with Ti sites having a reduced coordi -
+nation number. Consequently, MXene modified with succinic 
+acid demonstrated long‐term stability in water for up to 
+35 weeks by maintaining a specific capacity of 321 F g
+− 1 
+at 
+1 A g
+− 1
+. Similarly, Zhao et al. [ 129 ] found that chelation‐ 
+forming antioxidants (citric acid, tartaric acid, and oxalic 
+acid) effectively prevented Ti
+3
+C
+2
+T
+x 
+and Ti
+2
+CT
+x 
+MXene oxida -
+tion. The prevention mechanism was driven by chelation in -
+teractions with the transition metal (Ti) atoms on the 
+nanosheet surface, showing minimal MXene degradation after 
+the 14‐day storage period.
+The stability of MXene electrodes in CDI devices could also be 
+compromised by ion intercalation, which induces dynamic 
+changes in the MXene interlayer spacing during charge – discharge 
+cycling. Repeated ion intercalation and deintercalation can cause 
+mechanical strain and progressive volume changes within the 
+electrode structure. These cumulative structural degradations 
+ultimately lead to performance decay through capacity fading 
+[ 130 ], representing one of the most critical challenges in devel -
+oping durable CDI electrode materials. Advancements in elec -
+trode design for electrochemical energy storage systems, which 
+address similar issues of structural stability during ion insertion/ 
+extraction, could provide valuable strategies to enhance the long‐ 
+term cycling performance of MXenes in CDI applications.
+5.2
+|
+Scalability and Cost
+One of the main challenges in applying MXenes as an electrode 
+material in CDI is their low scalability and high production cost. 
+The synthesis of 2D materials typically follows two general 
+routes: bottom‐up and top‐down approaches. Bottom‐up 
+methods construct the material atom by atom, often yielding 
+high‐quality, defect‐free structures. Despite recent advance -
+ments that have improved crystal size and slightly reduced 
+costs, these methods remain expensive and difficult to scale 
+up [ 131 ].
+On the other hand, top‐down approaches involve breaking 
+down bulk materials through processes such as selective 
+14 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 15 =====
+etching, mechanical exfoliation, solution processing, or soni -
+cation. Although these methods are more scalable and 
+compatible with existing industrial technologies, they tend to 
+produce materials with nonuniform particle size, higher defect 
+density, and variable properties [ 132 ]. Additionally, top‐down 
+methods often involve toxic etchants, raising environmental 
+concerns. Even with the development of low‐cost etching pro -
+cesses, the cost of MXene per gram remains significantly higher 
+than that of conventional carbon‐based materials.
+Moreover, Shuck et al. [ 133 ] demonstrated a scalable synthesis 
+of Ti
+3
+C
+2
+T
+x 
+MXene via a selective wet etching process, which, 
+unlike many other 2D materials, was not constrained by sub -
+strate size or precursor limitations. Their study confirmed that 
+scaling the reaction from 1‐g to 50‐g batches yielded MXene 
+flakes with essentially identical structural, morphological, and 
+electrical properties. This direct scalability, achieved by simply 
+increasing the reactor volume, underscores the strong potential 
+for the commercial production of high‐quality MXenes, a sig -
+nificant advantage for their application in CDI and other in -
+dustrial technologies. Furthermore, Zaed et al. [ 134 ] conducted 
+a cost analysis of MXene production aimed at identifying 
+pathways for low‐cost synthesis. Their study considered the 
+complete production process, including the costs of precursors, 
+ball milling, thermal treatment, grinding, etching, stirring, 
+hazard control, washing, drying, characterization, and labor. 
+They estimated the total cost to be approximately $20.33 USD 
+per gram. This is significantly higher than the typical cost of 
+conventional carbon‐based materials, such as AC, which ranges 
+from $0.15 to $0.28 USD per kilogram. Additionally, extensive 
+life cycle assessment (LCA) studies on MXene synthesis could 
+support scalable production. Firouzjaei et al. [ 135 ] conducted an 
+LCA for the synthesis of 1 kg of Ti
+3
+C
+2
+T
+x 
+MXene and compared 
+its carbon footprint with that of aluminum and copper. The 
+results showed that MXene had a much higher carbon footprint 
+(around 428.1 kg CO
+2 
+per kg) compared to industrial‐scale 
+aluminum and copper foil production (23.0 and 8.75 kg of 
+CO
+2
+, respectively).
+However, about 70% of the environmental impact was linked to 
+electricity use during etching and delamination, which could be 
+reduced by utilizing renewable energy resources and recycled 
+chemicals. For MXene and other 2D materials to be widely 
+adopted in CDI applications, future efforts must focus on 
+reducing production costs along with the carbon footprint 
+associated with material synthesis. On the other hand, when 
+moving from desalination with water as the main product to ion 
+removal for recovery purposes, the value of the recovered ma -
+terial adds to the economic equation.
+5.3
+|
+Fouling and Regeneration
+MXene flakes are highly susceptible to fouling when used as a 
+CDI electrode in water and wastewater systems containing 
+organic and inorganic contaminants. Their intrinsically high 
+surface energy and hydrophilic nature, originating from surface 
+functional groups such as − OH, − O, and − F, make them prone 
+to attract a wide range of foulants [ 136 ]. These include NOM, 
+humic substances, surfactants, as well as pH‐dependent inor -
+ganic scaling agents, which can precipitate and block active sites 
+and interlayer spaces [ 137 ]. Additionally, microbial colonization 
+and the accumulation of sediment or colloidal particles further 
+exacerbate fouling, leading to performance degradation [ 138 ].
+A major challenge with MXene‐based electrodes is achieving 
+effective and sustained regeneration over prolonged cycling. 
+Repeated use in fouling‐prone environments can lead to irre -
+versible structural changes, such as oxidation, pore clogging, 
+and the restacking of nanosheets [ 139 ]. These issues compro -
+mise the regeneration efficiency, progressively reducing ion 
+SAC and limiting long‐term operational stability.
+Most of the work on electrode fouling is reported for capacitive 
+materials [ 137, 140–142 ]. However, the fouling effect could be 
+significantly different for intercalation materials. Liu et al. [ 143 ] 
+investigated the fouling effect of humic acid (HA) on both 
+capacitive and insertion electrodes for desalination. They found 
+that while HA adsorbs onto the mesopores of capacitive carbon 
+electrodes, it has a negligible impact ( < 5% capacity loss) on 
+their ion storage capacity and cycling stability. In contrast, HA 
+fouling severely degrades insertion electrodes (Na
+4
+Mn
+9
+O
+18
+), 
+causing over 25% capacity loss. This high capacity decay was 
+attributed to both hindered ion diffusion in the presence of 
+adsorbed HA, as well as HA mediated electrode dissolution.
+Moreover, Zeng et al. [ 144 ] developed a fouling‐resistant lead 
+ion‐selective electrode (Pb
+2 +
+‐ISE) for electrochemical systems 
+through a strategic protective layer design. A coating of den -
+dritic peptides provided the antifouling properties by rendering 
+the surface highly hydrophilic and electrically neutral. This 
+modification reduced the water contact angle from ~90° to ~30°, 
+which facilitated a protective hydration barrier that physically 
+blocks the adhesion of contaminants. The efficacy of this layer 
+was validated in antifouling experiments, where the modified 
+electrodes maintained a stable Nernstian response for up to six 
+days while immersed in concentrated bacterial suspensions (10
+6 
+CFU mL
+− 1 
+of Escherichia coli or Staphylococcus aureus ). 
+Detailed fouling investigations on MXene electrodes in CDI are 
+barely reported. Therefore, comprehensive studies are required 
+to develop effective anti‐fouling strategies, surface modifica -
+tions, and regeneration techniques that can preserve the struc -
+tural integrity and electrochemical performance of MXene 
+electrodes across extended CDI cycles.
+6
+|
+Addressing Challenges and Future Directions
+As outlined in the previous sections, MXene‐based materials 
+present certain challenges, stimulating research opportunities to 
+further enhance their development for CDI applications. In this 
+section, we focus on MXene‐based hybrid materials (Sec -
+tion 6.1 ), the use of AI (Section 6.2 ), and the integration of 
+MXene‐based CDI in technology trains (Section 6.3 ) as illus -
+trated in Figure 7 .
+6.1
+|
+Emerging MXene‐Based Materials and 
+Composites
+MXene oxidation and instability are the key issues when used as 
+a CDI electrode. Kong et al. [ 73 ] tackled the inherent oxidation 
+instability of MXene, which typically limits operating voltages to 
+≤ 0.6 V. By creating a composite holey MXene with silver 
+Electron, 2026 15 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 16 =====
+nanowires (Ag@hMXene), they prevented capacity loss by 
+controlling the electrode’s potential distribution. The key 
+mechanism was a depolarization effect: the incorporated silver, 
+with its lower work function, donated electrons to the MXene, 
+lowering the overall work function and open‐circuit potential. 
+This strategically prevented the MXene from reaching potentials 
+where it oxidizes. Consequently, the cell could operate stably at 
+a high voltage of 1.0 V, achieving a 3‐fold increase in SAC and 
+retaining over 85% of its capacity after 50 cycles.
+Moreover, Wang et al. [ 76 ] developed a 3D porous manganese 
+hexacyanoferrate/MXene (MnHCF/MXene) composite electrode 
+to improve deionization performance in high‐salinity water. By 
+integrating MXene with MnHCF, the authors achieved a nano -
+composite with significantly enhanced desalination properties. 
+The electrode demonstrated a high desalination capacity of 
+177 mg g
+− 1
+, a rapid desalination rate of 9.84 mg g
+− 1 
+min
+− 1
+, and 
+low energy consumption of just 0.58 Wh g
+− 1
+. Additionally, the 
+composite electrode exhibited excellent cycling stability, retain -
+ing 93% of its capacitance after 150 cycles.
+Zhang et al. [ 69 ] synthesized a confinement‐induced Ni‐based 
+MOF grown on Ti
+3
+C
+2
+T
+x 
+MXene to enhance CDI performance for 
+chromium (VI) removal. The resulting three‐dimensional Ni‐ 
+1,3,5‐benzenetricarboxylate/Ti
+3
+C
+2
+T
+x 
+(Ni‐BTC/Ti
+3
+C
+2
+T
+x
+) compos -
+ite electrode was designed to boost both electrochemical activity 
+and ion removal efficiency. The uniform decoration of Ni‐BTC 
+on the MXene surface not only inhibits sheet aggregation but 
+also contributes to a large specific surface area and a well‐ 
+developed porous structure. As a result, the composite elec -
+trode achieved a remarkable chromium (VI) removal rate of 
+94%, with an electrosorption capacity of 124.5 mg g
+− 1
+, signifi -
+cantly surpassing that of pristine Ti
+3
+C
+2
+T
+x 
+(55.5 mg g
+− 1
+).
+Similarly, Faheem et al. [ 80 ] explored lithium recovery using 
+MXene functionalized with PSS, aiming to selectively separate 
+monovalent lithium ions from divalent ions. Through surface 
+functionalization, the zeta potential and cyclic stability of the 
+electrode material were enhanced. As a result, the PSS‐MXene 
+composite exhibited a ρ of approximately 3 for Ca
+2 +
+/Li
++
+, 
+demonstrating effective discrimination between divalent and 
+monovalent ions.
+These very recent studies highlight the potential of hybridizing 
+MXenes with innovative materials to significantly enhance their 
+stability, adsorption capacity, and ion selectivity. Progress in 
+these directions could be further fueled by cross‐disciplinary 
+knowledge transfer, where strategies from fields including en -
+ergy storage devices [ 145–148 ] and electrocatalysis [ 149–151 ] 
+are expected to have the potential to advance MXene electrodes. 
+Such synergies open new avenues for tailoring stable MXene‐ 
+based composites for targeted, high‐performance applications 
+in electrochemical ion separation.
+6.2
+|
+Computational and Artificial Intelligence‐ 
+Driven Strategies
+Optimizing operational parameters using computational strate -
+gies, including AI‐driven approaches, could enhance the overall 
+performance. In fact, these strategies could be applied to study 
+the cyclic stability, material cost, and fouling, and they could 
+help to choose the best MXene from a range of MXenes.
+He et al. [ 152 ] applied machine learning (ML) and symbolic 
+regression to study the stability of MXenes. Using a small 
+dataset, they tested several ML models, including random forest, 
+K‐nearest neighbors, logistic regression, support vector machine 
+FIGURE 7
+|
+An outline highlighting opportunities and future directions (clockwise from top): composite materials and chemical control, hybrid 
+CDI system integration, and computational and AI strategies. CDI, capacitive deionization.
+16 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 17 =====
+(SVM), and Gaussian Naive Bayes (GaussianNB). SVM showed 
+the highest accuracy in classifying MXene stability. Symbolic 
+regression also helped uncover key descriptors related to sta -
+bility without prior labeling. This work highlights the value of 
+ML and symbolic regression in predicting and explaining ma -
+terial stability.
+Similarly, AI could support the discovery of new MXene mate -
+rials with customized properties. A novel method was used for 
+classification and multi‐target regression to link MXene struc -
+tures with electrochemical performance [ 153 ]. This inverse 
+design approach identified Li
+2
+M
+2
+C and Mg
+2
+M
+2
+C (M = Sc, Ti, Cr) 
+as promising for applications such as batteries and CDI due to 
+their favorable capacity, voltage, and charge behavior. The study 
+demonstrates how AI can address key challenges in MXene 
+development.
+6.3
+|
+Integration With Hybrid Systems
+MXene electrodes typically exhibit lower selectivity for re -
+sources such as lithium compared to conventional battery 
+electrodes. However, combining MXene‐assisted CDI systems 
+with existing ion separation techniques holds promise for 
+enhancing selectivity and improving resource recovery.
+Chung et al. [ 154 ] demonstrated a reverse osmosis‐flow capac -
+itive deionization (RO‐FCDI) hybrid system that uses seawater 
+or RO concentrate as the flowing electrolyte, eliminating the 
+need for a separate salt solution. This integrated system ach -
+ieved a remarkably low energy consumption of 1.3 kWh m
+− 3 
+in 
+batch mode, producing a high‐quality effluent with a total dis -
+solved solids below 300 mg L
+− 1 
+and demonstrating over 95% ion 
+removal efficiency. Furthermore, by employing selective IEMs, 
+the FCDI unit selectively removed monovalent ions, producing 
+a final water rich in divalent ions that is more suitable for dis -
+tribution and can minimize remineralization costs.
+Moreover, Chen et al. [ 155 ] attempted a novel membrane stack 
+design for continuous and energy‐efficient desalination using an 
+integrated capacitive‐electrodialysis (CapED) process. The 
+anode/AEM/CEM/AEM/CEM/cathode configuration was based 
+on three chambers separated by IEMs, enabling simultaneous 
+desalination and concentration of streams. During charging, 
+both capacitive electrosorption and electrodialytic separation 
+contributed to salt removal. In the discharging step, stored en -
+ergy pushed further desalination via dialytic separation. The 
+system achieved continuous operation with enhanced salt 
+removal at higher voltages and low energy consumption 
+(0.53–1.45 kWh kg
+− 1
+). CapED was reported to effectively 
+combine capacitive and electrodialytic mechanisms for 
+improved desalination. Similar approaches can also be utilized 
+to explore smart combinations, aiming to include or enhance 
+selective ion separation.
+Furthermore, Xu et al. [ 156 ] developed an integrated CDI‐ 
+photocatalysis system for efficient ammonium removal from 
+low‐concentration wastewater. By making reduced graphene 
+oxide/cerium dioxide (rGO/CeO
+2
+) composites, an electro -
+sorption capacity as high as 7.66 mg g
+− 1 
+was achieved under 
+optimal conditions (1.2 V, 1.0 mmol L
+− 1
+, 30 mL min
+− 1
+, 20°C). 
+The composite also showed strong photocatalytic activity, 
+removing 88% of ammonia and reducing total ammonium to 
+1.35 mg L
+− 1
+, meeting China’s surface water quality standards. 
+This performance was driven by the synergistic effect between 
+rGO and CeO
+2
+.
+Additionally, progress in materials for other processes, for 
+example, catalysis, could also advance CDI [ 157, 158 ]. A recent 
+study elucidates that orbital hybridization governs adsorption, 
+activation, and transformation in heterogeneous catalysis, 
+thereby affecting activity and selectivity [ 159 ]. These insights 
+could be applicable to CDI electrode materials by tuning surface 
+orbital interactions with target ions, enabling selective ion sep -
+aration through controlled electron transfer.
+These recent studies underscore that coupling CDI with 
+complementary processes creates a synergistic effect, signifi -
+cantly enhancing advanced wastewater treatment efficiency and 
+resource recovery. We expect further implementation of 
+advanced MXene electrodes in such hybrid systems remains an 
+important future research direction.
+7
+|
+Concluding Remarks
+CDI is an elegant electro‐driven ion separation technique that 
+not only can be used for brackish water desalination but also is 
+particularly interesting for a wide range of ion‐selective treat -
+ment and resource‐recovery applications. However, traditional 
+carbon‐based electrodes used in CDI do not provide sufficient 
+SAC and selectivity toward target ions. This is where emerging 
+materials such as MXene come into play; their employment as a 
+CDI electrode offers a high capacity due to their distinctive 2D 
+layers, tunable and reversible, selective ion storage, and facile 
+integration possibilities with other advanced materials to further 
+exploit these interesting properties. In this review, a compre -
+hensive overview of CDI technology is presented, focusing on 
+the latest studies on MXene‐based electrodes and their, possibly 
+underrated, potential in selective ion separations. The discus -
+sion includes in‐depth details of state‐of‐the‐art CDI techniques, 
+architectures, electrode materials, additives, electrolytes, sepa -
+rators, membranes, and various configurations. With a focus on 
+MXene, the discussion delves into the latest developments in 
+their preparation techniques, highlighting the critical challenges 
+associated with conventional MXene synthesis and exploring 
+potential opportunities for emerging MXene etching techniques. 
+MXene engineering strategies for selective ion separation are 
+also included, such as interlayer spacing adjustment, surface 
+charge modification, and the introduction of redox‐active cen -
+ters through functionalization, hybridization, and doping. 
+Additionally, the tuning of operational parameters, such as pH, 
+applied voltage, flow rate, and initial ion concentrations, for 
+selective ion separation is critically analyzed. Furthermore, 
+challenges associated with MXene‐based materials, such as 
+limited cyclic stability and durability, susceptibility to fouling 
+and oxidation, pore blocking, and high cost, have been dis -
+cussed. Currently, these challenges remain significant obstacles 
+to scaling up MXene‐powered CDI systems, prompting the need 
+for further research. Finally, potential opportunities such as the 
+development of suitable MXene composites, AI‐driven optimi -
+zation strategies, and integration of CDI with existing technol -
+ogies are explored. All combined, this review aims to serve as a 
+valuable resource for guiding future innovations in CDI and 
+Electron, 2026 17 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 18 =====
+advancing the use of MXene‐based materials for high‐ 
+performance, selective ion separation.
+Author Contributions
+Rahat Alam: conceptualization, methodology, investigation, formal 
+analysis, writing, visualization. Linda Zou: conceptualization, writing – 
+review and editing. Louis C. P. M. de Smet: conceptualization, writing – 
+review and editing. Constantinos V. Chrysikopoulos: investigation, 
+formal analysis, validation, supervision.
+Acknowledgments
+The authors acknowledge Khalifa University for providing the Ph.D. 
+scholarship for Rahat Alam. Louis C. P. M. de Smet acknowledges 
+funding from the European Union's Horizon 2020 research and inno -
+vation program (ERC Proof of Concept grant PassIon, Agreement No. 
+101158035) and the Dutch Research Council (NWO) through the Vici 
+grant Mind_Gap (No. 19415).
+Conflicts of Interest
+The authors have nothing to report.
+Data Availability Statement
+The authors have nothing to report.
+References
+1. Z. Chen, X. Xu, Y. Liu, et al., “Ultra‐Durable and Highly‐Efficient 
+Hybrid Capacitive Deionization by MXene Confined MoS
+2 
+Hetero -
+structure,” Desalination 528 (2022): 115616, https://doi.org/10.1016/j.de 
+sal.2022.115616 .
+2. J. Guo, L. Wang, X. Wei, et al., “Direct Z‐Scheme CuInS
+2
+/Bi
+2
+MoO
+6 
+Heterostructure for Enhanced Photocatalytic Degradation of Tetracy -
+cline Under Visible Light,” Journal of Hazardous Materials 415 (2021): 
+125591, https://doi.org/10.1016/j.jhazmat.2021.125591 .
+3. J. Lund Schlamovitz and P. Becker, “Differentiated Vulnerabilities 
+and Capacities for Adaptation to Water Shortage in Gaborone, 
+Botswana,” International Journal of Water Resources Development 37 , 
+no. 2 (2021): 278–299, https://doi.org/10.1080/07900627.2020.1756752 .
+4. ReliefWeb, Wastewater as a Resource—May 2022 (European Invest -
+ment Bank, 2022), https://doi.org/10.2867/31206 .
+5. G. Amy, N. Ghaffour, Z. Li, et al., “Membrane‐Based Seawater 
+Desalination: Present and Future Prospects,” Desalination 401 (2017): 
+16–21, https://doi.org/10.1016/j.desal.2016.10.002 .
+6. Z. Li, X. Xu, X. Sheng, et al., “Solar‐Powered Sustainable Water 
+Production: State‐of‐the‐Art Technologies for Sunlight‐Energy‐Water 
+Nexus,” ACS Nano 15 , no. 8 (2021): 12535–12566, https://doi.org/10.10 
+21/acsnano.1c01590 .
+7. H. Xu, M. Li, S. Gong, et al., “Constructing Titanium Carbide 
+MXene/Reduced Graphene Oxide Superlattice Heterostructure via 
+Electrostatic Self‐Assembly for High‐Performance Capacitive Deioniza -
+tion,” Journal of Colloid and Interface Science 624 (2022): 233–241, 
+https://doi.org/10.1016/j.jcis.2022.05.131 .
+8. X. Liu, S. Zhang, G. Feng, et al., “Core‐Shell MOF@COF Motif Hy -
+bridization: Selectively Functionalized Precursors for Titanium Dioxide 
+Nanoparticle‐Embedded Nitrogen‐Rich Carbon Architectures With Su -
+perior Capacitive Deionization Performance,” Chemistry of Materials 33 , 
+no. 5 (2021): 1657–1666, https://doi.org/10.1021/acs.chemmater.0c0 
+4129 .
+9. G. L. Meerganz von Medeazza, “‘Direct’ and Socially‐Induced Envi -
+ronmental Impacts of Desalination,” Desalination 185 , no. 1–3 (2005): 
+57–70, https://doi.org/10.1016/j.desal.2005.03.071 .
+10. L. Wang, Y. Zhang, K. Moh, and V. Presser, “From Capacitive 
+Deionization to Desalination Batteries and Desalination Fuel Cells,” 
+Current Opinion in Electrochemistry 29 (2021): 100758, https://doi.org/1 
+0.1016/j.coelec.2021.100758 .
+11. J. Wu, Z. Chen, F. Lv, J. Li, and Y. Li, “Supplementary H
+2
+O
+2 
+Gen -
+eration in Capacitive Deionization With a Three‐Phase Architecture and 
+Its Application in Simultaneous Desalination and Organics Control,” 
+Chemical Engineering Journal 483 (2024): 149139, https://doi.org/10.101 
+6/j.cej.2024.149139 .
+12. S. Wang, H. Wang, X. Huang, Z. Wu, H. Xue, and C. Zhao, “A Novel 
+Magnetic Adsorption and Capacitive Deionization Coupled Technology 
+for Industrial Saline Wastewater Recycling,” Water Research 281 (2025): 
+123559, https://doi.org/10.1016/j.watres.2025.123559 .
+13. Y. Zhao, B. Liang, M. Zong, M. Duan, K. Li, and C. Lv, “Different 
+Crystallographic Sodium Manganese Oxides for Capacitive Deioniza -
+tion: Performance Comparison and the Associated Mechanism,” Envi -
+ronmental Science Nano 6 , no. 10 (2019): 3091–3101, https://doi.org/10.1 
+039/C9EN00759H .
+14. C. Han, Q. Meng, B. Cao, and G. Tian, “Enhanced Hybrid Capaci -
+tive Deionization Performance by Sodium Titanium Phosphate/Reduced 
+Porous Graphene Oxide Composites,” ACS Omega 4 , no. 7 (2019): 
+11455–11463, https://doi.org/10.1021/acsomega.9b00984 .
+15. W. Zhao, M. Ding, L. Guo, and H. Y. Yang, “Dual‐Ion Electro -
+chemical Deionization System With Binder‐Free Aerogel Electrodes,” 
+Small 15 , no. 9 (2019): 1805505, https://doi.org/10.1002/smll.201805505 .
+16. W. Shi, X. Liu, T. Deng, et al., “Enabling Superior Sodium Capture 
+for Efficient Water Desalination by a Tubular Polyaniline Decorated 
+With Prussian Blue Nanocrystals,” Advanced Materials 32 , no. 33 (2020): 
+1907404, https://doi.org/10.1002/adma.201907404 .
+17. B. Chen, A. Feng, R. Deng, K. Liu, Y. Yu, and L. Song, “MXene as a 
+Cation‐Selective Cathode Material for Asymmetric Capacitive Deion -
+ization,” ACS Applied Materials and Interfaces 12 , no. 12 (2020): 
+13750–13758, https://doi.org/10.1021/acsami.9b19684 .
+18. J. G. Gamaethiralalage, K. Singh, S. Sahin, et al., “Recent Advances 
+in Ion Selectivity With Capacitive Deionization,” Energy & Environ -
+mental Science 14 , no. 3 (2021): 1095–1120, https://doi.org/10.1039/D0E 
+E03145C .
+19. M.‐R. Huang, L. Rao, J. Chen, et al., “Advancements in Electrode 
+Materials: The Role of MXenes in Capacitive Deionization Technology,” 
+ACS Materials Letters 7 , no. 4 (2025): 1400–1418, https://doi.org/10.102 
+1/acsmaterialslett.4c02160 .
+20. P. Dubey, “MXene‐Based Capacitive Deionization–Strong Compet -
+itor Among Faradaic Electrode Systems: Current Status and Future 
+Perspectives,” ChemistrySelect 8 , no. 47 (2023): e202302281, https://doi. 
+org/10.1002/slct.202302281 .
+21. Z. Zhu, J. Huang, Y. Zhao, et al., “Review on the Rise of MXenes in 
+Ion‐Selective Technologies: A Decade of Progress and Future Di -
+rections,” Desalination 631 (2026): 120183, https://doi.org/10.1016/j.des 
+al.2026.120183 .
+22. B. A. Samejo, K. Naseer, S. Samejo, et al., “MXene‐based Compos -
+ites for Capacitive Deionization—The Advantages, Progress, and Their 
+Role in Desalination—A Review,” Water Resources and Industry 31 
+(2024): 100230, https://doi.org/10.1016/j.wri.2023.100230 .
+23. Z. Cui, H. Wang, C. Li, W. Liu, W. Peng, and J. Liu, “Emerging 
+MXene‐based Electrode Materials for Efficient Capacitive Deionization: 
+A Comprehensive Review,” Desalination 586 (2024): 117837, https://doi. 
+org/10.1016/j.desal.2024.117837 .
+18 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 19 =====
+24. R. L. Zornitta, L. A. M. Ruotolo, and L. C. P. M. de Smet, “High‐ 
+Performance Carbon Electrodes Modified With Polyaniline for Stable 
+and Selective Anion Separation,” Separation and Purification Technol -
+ogy 290 (2022): 120807, https://doi.org/10.1016/j.seppur.2022.120807 .
+25. P. M. Biesheuvel, Y. Fu, and M. Z. Bazant, “Diffuse Charge and 
+Faradaic Reactions in Porous Electrodes,” Physics Review E 83 , no. 6 
+(2011): 061507, https://doi.org/10.1103/PhysRevE.83.061507 .
+26. H. A. Arafat, M. Franz, and N. G. Pinto, “Effect of Salt on the 
+Mechanism of Adsorption of Aromatics on Activated Carbon,” Lang -
+muir 15 , no. 18 (1999): 5997–6003, https://doi.org/10.1021/la9813331 .
+27. K. Singh, H. J. M. Bouwmeester, L. C. P. M. de Smet, M. Z. Bazant, 
+and P. M. Biesheuvel, “Theory of Water Desalination With Intercalation 
+Materials,” Physical Review Applied 9 , no. 6 (2018): 064036, https://doi. 
+org/10.1103/PhysRevApplied.9.064036 .
+28. H. Shou, Q. Zhou, P. Zhang, et al., “Unveiling the Critical Rela -
+tionship Between MXene Double‐Layer Capacitance and Electronic 
+Configuration,” Journal of Physical Chemistry C 128 , no. 9 (2024): 
+3955–3964, https://doi.org/10.1021/acs.jpcc.3c07472 .
+29. P. Srimuk, J. Lee, S. Fleischmann, M. Aslan, C. Kim, and V. Presser, 
+“Potential‐Dependent, Switchable Ion Selectivity in Aqueous Media 
+Using Titanium Disulfide,” ChemSusChem 11 , no. 13 (2018): 2091–2100, 
+https://doi.org/10.1002/cssc.201800452 .
+30. T. Kim, C. A. Gorski, and B. E. Logan, “Low Energy Desalination 
+Using Battery Electrode Deionization,” Environmental Science and 
+Technology Letters 4 , no. 10 (2017): 444–449, https://doi.org/10.1021/acs. 
+estlett.7b00392 .
+31. Z. Sun, H. Xu, J. Fu, et al., “A Novel ε‐MnO
+2
+/MXene Composite as 
+an Electrode With Excellent Conductivity and Ultrahigh Capacitive 
+Deionization,” Separation and Purification Technology 347 (2024): 
+127520, https://doi.org/10.1016/j.seppur.2024.127520 .
+32. V. Augustyn, P. Simon, and B. Dunn, “Pseudocapacitive Oxide 
+Materials for High‐Rate Electrochemical Energy Storage,” Energy & 
+Environmental Science 7 , no. 5 (2014): 1597–1614, https://doi.org/10.103 
+9/c3ee44164d .
+33. S. Liu, V. Q. Do, and K. C. Smith, “Modeling of Electrochemical 
+Deionization Across Length Scales: Recent Accomplishments and New 
+Opportunities,” Current Opinion in Electrochemistry 22 (2020): 72–79, 
+https://doi.org/10.1016/j.coelec.2020.05.003 .
+34. A. Boutahar, A. S. Idrissi, Z. Mansouri, et al., “Intrinsic Ion‐ 
+Intercalation Mechanism and Desalination Performance of Uncoated 
+Na
+3
+Fe
+2
+(PO
+4
+)
+3 
+in Hybrid Capacitive Deionization,” Desalination 630 
+(2026): 120148, https://doi.org/10.1016/j.desal.2026.120148 .
+35. M. Naguib, M. Kurtoglu, V. Presser, et al., “Two‐Dimensional 
+Nanocrystals Produced by Exfoliation of Ti
+3
+AlC
+2
+,” Advanced Materials 
+23 , no. 37 (2011): 4248–4253, https://doi.org/10.1002/adma.201102306 .
+36. A. Gupta, T. Sakthivel, and S. Seal, “Recent Development in 2D 
+Materials Beyond Graphene,” Progress in Materials Science 73 (2015): 
+44–126, https://doi.org/10.1016/j.pmatsci.2015.02.002 .
+37. D. Pradhan and K. T. Leung, “Vertical Growth of Two‐Dimensional 
+Zinc Oxide Nanostructures on ITO‐Coated Glass: Effects of Deposition 
+Temperature and Deposition Time,” Journal of Physical Chemistry C 
+112 , no. 5 (2008): 1357–1364, https://doi.org/10.1021/jp076890n .
+38. H. Younes, D. Lou, M. M. Rahman, D. Choi, H. Hong, and L. Zou, 
+“Review on 2D MXene and Graphene Electrodes in Capacitive Deion -
+ization,” Environmental Technology & Innovation 28 (2022): 102858, 
+https://doi.org/10.1016/j.eti.2022.102858 .
+39. J. Zhou, Z. Lin, H. Ren, et al., “Layered Intercalation Materials,” 
+Advanced Materials 33 , no. 25 (2021): 2004557, https://doi.org/10.1002/a 
+dma.202004557 .
+40. S. K. Hwang, S. M. Kang, M. Rethinasabapathy, C. Roh, and Y. S. 
+Huh, “MXene: An Emerging Two‐Dimensional Layered Material for 
+Removal of Radioactive Pollutants,” Chemical Engineering Journal 397 
+(2020): 125428, https://doi.org/10.1016/j.cej.2020.125428 .
+41. F. Dixit, K. Zimmermann, R. Dutta, et al., “Application of MXenes 
+for Water Treatment and Energy‐Efficient Desalination: A Review,” 
+Journal of Hazardous Materials 423 (2022): 127050, https://doi.org/10.10 
+16/j.jhazmat.2021.127050 .
+42. R. M. Ronchi, J. T. Arantes, and S. F. Santos, “Synthesis, Structure, 
+Properties and Applications of MXenes: Current Status and Perspec -
+tives,” Ceramics International 45 , no. 15 (2019): 18167–18188, https:// 
+doi.org/10.1016/j.ceramint.2019.06.114 .
+43. C. Tan, X. Cao, X. J. Wu, et al., “Recent Advances in Ultrathin Two‐ 
+Dimensional Nanomaterials,” Chemical Reviews 117 , no. 9 (2017): 
+6225–6331, https://doi.org/10.1021/acs.chemrev.6b00558 .
+44. S. Ligani Fereja, A. Mehmood, Q. Ji, et al., “Advancing the Utili -
+zation of 2D Materials for Electrocatalytic Seawater Splitting,” InfoMat 
+7 , no. 1 (2025): e12623, https://doi.org/10.1002/inf2.12623 .
+45. M. Beidaghi, “(Invited) 2D MXenes as Building Blocks for Assembly 
+of High‐Performance Electrodes for Electrochemical Energy Storage,” 
+ECS Meeting Abstracts MA2019‐02 , no. 50 (2019): 2214, https://doi.org/1 
+0.1149/ma2019‐02/50/2214 .
+46. M. Vural, H. Zhu, A. Pena‐Francesch, H. Jung, B. D. Allen, and 
+M. C. Demirel, “Self‐Assembly of Topologically Networked Protein‐ 
+Ti
+3
+C
+2
+T
+x 
+MXene Composites,” ACS Nano 14 , no. 6 (2020): 6956–6967, 
+https://doi.org/10.1021/acsnano.0c01431 .
+47. A. S. Levitt, M. Alhabeb, C. B. Hatter, A. Sarycheva, G. Dion, and Y. 
+Gogotsi, “Electrospun MXene/Carbon Nanofibers as Supercapacitor 
+Electrodes,” Journal of Materials Chemistry A 7 , no. 1 (2019): 269–277, 
+https://doi.org/10.1039/c8ta09810g .
+48. R. P. Pandey, K. Rasool, P. A. Rasheed, and K. A. Mahmoud, 
+“Reductive Sequestration of Toxic Bromate From Drinking Water Using 
+Lamellar Two‐Dimensional Ti
+3
+C
+2
+T
+X 
+(MXene),” ACS Sustainable 
+Chemistry & Engineering 6 , no. 6 (2018): 7910–7917, https://doi.org/10.1 
+021/acssuschemeng.8b01147 .
+49. S. Wang, Y. Liu, Y. Liu, and W. Hu, “Effect of HF Etching on Ti -
+tanium Carbide (Ti
+3
+C
+2
+T
+x
+) Microstructure and Its Capacitive Properties,” 
+Chemical Engineering Journal 452 (2023): 139512, https://doi.org/10.101 
+6/j.cej.2022.139512 .
+50. C. E. Shuck, K. Ventura‐Martinez, A. Goad, S. Uzun, M. Shekhirev, 
+and Y. Gogotsi, “Safe Synthesis of MAX and MXene: Guidelines to 
+Reduce Risk During Synthesis,” ACS Chemical Health & Safety 28 , no. 5 
+(2021): 326–338, https://doi.org/10.1021/acs.chas.1c00051 .
+51. M. Jeon, B. M. Jun, S. Kim, et al., “A Review on MXene‐Based 
+Nanomaterials as Adsorbents in Aqueous Solution,” Chemosphere 261 
+(2020): 127781, https://doi.org/10.1016/j.chemosphere.2020.127781 .
+52. F. Bibi, A. Numan, Y. S. Tan, and M. Khalid, “Facile Extraction of 
+Mo
+2
+Ti
+2
+C
+3
+T
+x 
+MXene via Hydrothermal Synthesis for Electrochemical 
+Energy Storage,” Journal of Energy Storage 85 (2024): 111154, https:// 
+doi.org/10.1016/j.est.2024.111154 .
+53. Y. Guo, S. Jin, L. Wang, et al., “Synthesis of Two‐Dimensional 
+Carbide Mo
+2
+CT
+x 
+MXene by Hydrothermal Etching With Fluorides and 
+Its Thermal Stability,” Ceramics International 46 , no. 11 (2020): 
+19550–19556, https://doi.org/10.1016/j.ceramint.2020.05.008 .
+54. X. Wang, C. Garnero, G. Rochard, et al., “A New Etching Envi -
+ronment (FeF
+3
+/HCl) for the Synthesis of Two‐Dimensional Titanium 
+Carbide MXenes: A Route Towards Selective Reactivity: Vs. Water,” 
+Journal of Materials Chemistry A 5 , no. 41 (2017): 22012–22023, https:// 
+doi.org/10.1039/c7ta01082f .
+Electron, 2026 19 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 20 =====
+55. X. Zhan, C. Si, J. Zhou, and Z. Sun, “MXene and MXene‐based 
+Composites: Synthesis, Properties and Environment‐Related Applica -
+tions,” Nanoscale Horizons 5 , no. 2 (2020): 235–258, https://doi.org/10.103 
+9/c9nh00571d .
+56. Z. Xiao, X. Xiao, L. B. Kong, et al., “MXenes and MXene‐Based 
+Composites for Energy Conversion and Storage Applications,” Journal 
+of Materials 9 , no. 6 (2023): 1067–1112, https://doi.org/10.1016/j.jmat.20 
+23.04.013 .
+57. P. Urbankowski, B. Anasori, T. Makaryan, et al., “Synthesis of Two‐ 
+Dimensional Titanium Nitride Ti
+4
+N
+3 
+(MXene),” Nanoscale 8 , no. 22 
+(2016): 11385–11391, https://doi.org/10.1039/c6nr02253g .
+58. R. Malik, “Maxing Out Water Desalination With MXenes,” Joule 2 , 
+no. 4 (2018): 591–593, https://doi.org/10.1016/j.joule.2018.04.001 .
+59. Y. Wang and L. Huang, “Recent Advances in Salt‐Assisted Synthesis 
+of 2D Materials,” Small 21 , no. 5 (2025): 2410028, https://doi.org/10.100 
+2/smll.202410028 .
+60. V. Natu, R. Pai, M. Sokol, M. Carey, V. Kalra, and M. W. Barsoum, 
+“2D Ti
+3
+C
+2
+Tz MXene Synthesized by Water‐Free Etching of Ti
+3
+AlC
+2 
+in 
+Polar Organic Solvents,” Chem 6 , no. 3 (2020): 616–630, https://doi.org/1 
+0.1016/j.chempr.2020.01.019 .
+61. W. Bao, X. Tang, X. Guo, et al., “Porous Cryo‐Dried MXene for 
+Efficient Capacitive Deionization,” Joule 2 , no. 4 (2018): 778–787, 
+https://doi.org/10.1016/j.joule.2018.02.018 .
+62. O. Mashtalir, M. Naguib, V. N. Mochalin, et al., “Intercalation and 
+Delamination of Layered Carbides and Carbonitrides,” Nature Com -
+munications 4 , no. 1 (2013): 1716, https://doi.org/10.1038/ncomms2664 .
+63. R. Ma and T. Sasaki, “Two‐Dimensional Oxide and Hydroxide 
+Nanosheets: Controllable High‐Quality Exfoliation, Molecular Assem -
+bly, and Exploration of Functionality,” Accounts of Chemical Research 
+48 , no. 1 (2015): 136–143, https://doi.org/10.1021/ar500311w .
+64. K. Montazeri, H. Badr, K. Ngo, et al., “Delamination of MXene 
+Flakes Using Simple Inorganic Bases,” Journal of Physical Chemistry C 
+127 , no. 21 (2023): 10391–10397, https://doi.org/10.1021/acs.jpcc.3c0 
+2318 .
+65. M. Alhabeb, K. Maleski, B. Anasori, et al., “Guidelines for Synthesis 
+and Processing of Two‐Dimensional Titanium Carbide (Ti
+3
+C
+2
+T
+x 
+MXene),” Chemistry of Materials 29 , no. 18 (2017): 7633–7644, https:// 
+doi.org/10.1021/acs.chemmater.7b02847 .
+66. H. Yang, H. Feng, Y. Luo, et al., “Membrane‐Free Dual‐Ion Faradaic 
+Deionization of High‐Salinity Water,” Separation and Purification 
+Technology 372 (2025): 133523, https://doi.org/10.1016/j.seppur.2025.13 
+3523 .
+67. H. Chand, S. Yang, J. He, et al., “Selective Chromium Removal and 
+Detoxification via Capacitive Deionization Using Nickel Oxide‐Loaded 
+Oxidized MXene Electrode: The Critical Role of Ti/Ni Dual‐Redox 
+Centers,” Desalination 617 (2026): 119430, https://doi.org/10.1016/j.des 
+al.2025.119430 .
+68. M. Askari, A. Merenda, D. Shah, L. Tijing, and H. K. Shon, “High‐ 
+Capacity and Selective Lithium‐Ion Recovery via Ti
+3
+C
+2
+T
+x
+@SnO
+2 
+Com -
+posite Electrodes Using Hybrid Capacitive Deionization,” Chemical 
+Engineering Journal 526 (2025): 170526, https://doi.org/10.1016/j.cej.202 
+5.170526 .
+69. X. Zhang, Z. Wang, and X. Guo, “Confinement‐Induced Ni‐Based 
+MOF Formed on Ti
+3
+C
+2
+T
+x 
+MXene Support for Enhanced Capacitive 
+Deionization of Chromium(VI),” Scientific Reports 15 , no. 1 (2025): 3727, 
+https://doi.org/10.1038/s41598‐025‐87642‐z .
+70. S. Cao, W. Feng, Y. Tang, Y. Ding, and H. Pang, “Fabrication of 
+CoTi‐ZIF‐9‐Derived Carbon/MXene Heterostructures for Enhanced 
+Capacitive Deionization in Simulated Seawater Desalination,” Desali -
+nation 613 (2025): 119059, https://doi.org/10.1016/j.desal.2025.119059 .
+71. S. Yang, X. Cheng, H. Yu, et al., “Vertically Aligned Mxene@Pb 
+Electrode by Directional Freeze‐Casting for Simultaneous Capacitive 
+Deionization of U(VI) and Cs(I) With Enhanced Performance,” Desali -
+nation 612 (2025): 118964, https://doi.org/10.1016/j.desal.2025.118964 .
+72. K. Wan, S. Yuan, J. Zhang, et al., “Enhanced Seawater Uranium 
+Extraction via Flow Capacitive Deionization by Amidoxime‐ 
+Functionalized MXene/CoZn‐MOF Heterostructure Electrodes,” Water 
+Research 285 (2025): 124149, https://doi.org/10.1016/j.watres.2025.12 
+4149 .
+73. W. Kong, X. Lu, K. Tan, et al., “Controlling Electrode‐Potential 
+Distribution to Enable Oxidation Stability of MXene‐Based CDI Desa -
+lination Cells,” Water Research 284 (2025): 123948, https://doi.org/10.10 
+16/j.watres.2025.123948 .
+74. M. Xu, Z. Tan, Y. Tian, et al., “Binder‐Free Bi@MXene Film With 
+3D Sandwich Structure for Highly Hybrid Capacitive Deionization,” 
+Separation and Purification Technology 363 (2025): 132263, https://doi. 
+org/10.1016/j.seppur.2025.132263 .
+75. K. Jiang, J. Zhang, B. Xu, et al., “Selective Removal and Utilization 
+of Copper From Electroplating Wastewater by Modified MXene‐Based 
+Capacitive Deionization,” Separation and Purification Technology 363 
+(2025): 132303, https://doi.org/10.1016/j.seppur.2025.132303 .
+76. H. Wang, Y. Zhang, Y. Shi, et al., “A 3D Porous MnHCF/MXene 
+Electrode for Enhanced Deionization Performance in High‐Salinity 
+Water,” Separation and Purification Technology 363 (2025): 131986, 
+https://doi.org/10.1016/j.seppur.2025.131986 .
+77. Q. Li, X. Zhang, Y. Ren, N. Liu, F. Yu, and J. Ma, “Atomically Se -
+lective Oxidation of Double Transition‐Metal TiVCT
+X 
+MXene for Highly 
+Selective Mg
+2 +
+/Ca
+2 +
+Separation,” Separation and Purification Technol -
+ogy 361 (2025): 131295, https://doi.org/10.1016/j.seppur.2024.131295 .
+78. X. Fu, M. Liang, Y. Ning, et al., “Ultrafast, Targeting Fluorion‐ 
+Capture Electrochemical Nanosystem Assembled With Polymeraldine 
+Salt‐Modulated Ti
+3
+C
+2
+T
+x 
+MXene,” Nano Letters 25 , no. 13 (2025): 
+5210–5219, https://doi.org/10.1021/acs.nanolett.4c06319 .
+79. Y. Wang, W. Chen, X. Yang, A. Li, T. Lu, and G. Qiu, “Enhanced 
+Removal of Lead Ions From Wastewaters by Electrochemical Adsorp -
+tion Using Nitrogen‐Doped Ti
+3
+C
+2
+T
+x 
+MXene,” Chemical Engineering 
+Journal 498 (2024): 155463, https://doi.org/10.1016/j.cej.2024.155463 .
+80. M. Faheem, R. Alam, A. Alhajaj, and L. Zou, “Recovery of Lithium 
+by Pseudocapacitive Electrodes in Capacitive Deionization,” Electro -
+chimica Acta 489 (2024): 144267, https://doi.org/10.1016/j.electacta.202 
+4.144267 .
+81. R. Alam, M. Faheem, Y. He, X. Su, and L. Zou, “Ion Selective 
+Electrosorption by Two Pseudocapacitive Intercalating Nanocomposite 
+Electrodes,” Desalination 566 (2023): 116923, https://doi.org/10.1016/j.d 
+esal.2023.116923 .
+82. Z. Zhang, Z. Wang, and H. Li, “The Origin of Selective Electro‐ 
+Adsorption of Cations by Few‐Layered 2D MXene Electrode,” Desali -
+nation 548 (2023): 116295, https://doi.org/10.1016/j.desal.2022.116295 .
+83. J. Sun, Q. Mu, T. Wang, J. Qi, and C. Hu, “Selective Electrosorption 
+of Ca
+2 +
+by MXene Cathodes Coupled With NiAl‐LMO Anodes Through 
+Ion Intercalation,” Journal of Colloid and Interface Science 590 (2021): 
+539–547, https://doi.org/10.1016/j.jcis.2021.01.058 .
+84. M. Medhin Ashebo, N. Liu, F. Yu, and J. Ma, “Surface Functional 
+Modification of Nb
+2
+CT
+x 
+MXene for High Performance Capacitive 
+Deionization,” Separation and Purification Technology 343 (2024): 
+127125, https://doi.org/10.1016/j.seppur.2024.127125 .
+85. R. Alfahel, Y. Tong, M. Pasha, A. H. Hawari, and K. A. Mahmoud, 
+“A Lamellar Chitosan‐Lignosulfonate/MXene Nanocomposite as 
+Binder‐Free Electrode for High‐Performance Capacitive Deionization,” 
+Desalination 573 (2024): 117187, https://doi.org/10.1016/j.desal.2023.11 
+7187 .
+20 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 21 =====
+86. H. Liu, J. Shang, L. Liu, R. Yuan, J. Long, and C. Xu, “Capacitive 
+Deionization Using Wrinkle‐Engineered Nb
+4
+C
+3
+T
+x
+‐MXene Freestanding 
+Membranes,” Chemical Engineering Journal 507 (2025): 160441, https:// 
+doi.org/10.1016/j.cej.2025.160441 .
+87. D. Fang, X. Zhang, F. Liu, et al., “From Parasitic to Productive: 
+Leveraging ORR‐Generated Alkalinity for Electrochemical Lithium 
+Recovery via Ti
+3
+C
+2
+T
+x
+/Li
+4
+Ti
+5
+O
+12 
+Microenvironment Design,” Water 
+Research 289 (2026): 124912, https://doi.org/10.1016/j.watres.2025.12 
+4912 .
+88. Y. Cai, P. Li, Q. Yuan, J. Zhao, and P. Tsiakaras, “Efficient and 
+Selective Uranium Electrochemical Extraction Over Flexibly Engineered 
+Bi‐Functional Polypyrole@MoSe
+2
+@MXene,” Chemical Engineering 
+Journal 507 (2025): 160496, https://doi.org/10.1016/j.cej.2025.160496 .
+89. Y. Zhang, J. Zhou, D. Wang, R. Cao, and J. Li, “Performance of 
+MXene Incorporated MOF‐Derived Carbon Electrode on Deionization 
+of Uranium(VI),” Chemical Engineering Journal 430 (2022): 132702, 
+https://doi.org/10.1016/j.cej.2021.132702 .
+90. Z. Lu, D. Zhang, H. Kang, et al., “Construction of MS‐Ti
+3
+C
+2
+T
+X 
+MXene Continuous Conductive Structure for Highly Efficient Fluoride 
+Removal in Flow‐Electrode Capacitive Deionization,” Chemical Engi -
+neering Journal 497 (2024): 154664, https://doi.org/10.1016/j.cej.2024.15 
+4664 .
+91. Y. Cai, Y. Wang, R. Fang, and J. Wang, “Flexible Structural Engi -
+neering of PPy‐NiCo‐LDH@Mxene for Improved Capacitive Deioniza -
+tion and Efficient Hard Water Softening Process,” Separation and 
+Purification Technology 280 (2022): 119828, https://doi.org/10.1016/j.sep 
+pur.2021.119828 .
+92. C. Yao, W. Zhang, L. Xu, et al., “A Facile Synthesis of Porous 
+MXene‐Based Freestanding Film and Its Spectacular Electrosorption 
+Performance for Organic Dyes,” Separation and Purification Technology 
+263 (2021): 118365, https://doi.org/10.1016/j.seppur.2021.118365 .
+93. C. H. Hou and C. Y. Huang, “A Comparative Study of Electro -
+sorption Selectivity of Ions by Activated Carbon Electrodes in Capacitive 
+Deionization,” Desalination 314 (2013): 124–129, https://doi.org/10.101 
+6/j.desal.2012.12.029 .
+94. M. Mossad and L. Zou, “A Study of the Capacitive Deionisation 
+Performance Under Various Operational Conditions,” Journal of Haz -
+ardous Materials 213–214 (2012): 491–497, https://doi.org/10.1016/j.jhaz 
+mat.2012.02.036 .
+95. Y. Li, C. Zhang, Y. Jiang, T. J. Wang, and H. Wang, “Effects of the 
+Hydration Ratio on the Electrosorption Selectivity of Ions During 
+Capacitive Deionization,” Desalination 399 (2016): 171–177, https://doi. 
+org/10.1016/j.desal.2016.09.011 .
+96. H. Li, L. Zou, L. Pan, and Z. Sun, “Using Graphene Nano‐Flakes as 
+Electrodes to Remove Ferric Ions by Capacitive Deionization,” Separa -
+tion and Purification Technology 75 , no. 1 (2010): 8–14, https://doi.org/1 
+0.1016/j.seppur.2010.07.003 .
+97. Z. Chen, H. Zhang, C. Wu, Y. Wang, and W. Li, “A Study of Elec -
+trosorption Selectivity of Anions by Activated Carbon Electrodes in 
+Capacitive Deionization,” Desalination 369 (2015): 46–50, https://doi. 
+org/10.1016/j.desal.2015.04.022 .
+98. S. J. Seo, H. Jeon, J. K. Lee, et al., “Investigation on Removal of 
+Hardness Ions by Capacitive Deionization (CDI) for Water Softening 
+Applications,” Water Research 44 , no. 7 (2010): 2267–2275, https://doi. 
+org/10.1016/j.watres.2009.10.020 .
+99. C. J. Gabelich, T. D. Tran, and I. H. Suffet, “Electrosorption of 
+Inorganic Salts From Aqueous Solution Using Carbon Aerogels,” 
+Environmental Science and Technology 36 , no. 13 (2002): 3010–3019, 
+https://doi.org/10.1021/es0112745 .
+100. L. Han, K. G. Karthikeyan, M. A. Anderson, and K. B. Gregory, 
+“Exploring the Impact of Pore Size Distribution on the Performance of 
+Carbon Electrodes for Capacitive Deionization,” Journal of Colloid and 
+Interface Science 430 (2014): 93–99, https://doi.org/10.1016/j.jcis.2014.0 
+5.015 .
+101. P. Ren, B. Wang, J. G. de Andrade Ruthes, M. Torkamanzadeh, 
+and V. Presser, “Cation Selectivity During Flow Electrode Capacitive 
+Deionization,” Desalination 592 (2024): 118161, https://doi.org/10.1016/ 
+j.desal.2024.118161 .
+102. R. K. Kalluri, M. M. Biener, M. E. Suss, et al., “Unraveling the 
+Potential and Pore‐Size Dependent Capacitance of Slit‐Shaped Graphitic 
+Carbon Pores in Aqueous Electrolytes,” Physical Chemistry Chemical 
+Physics 15 , no. 7 (2013): 2309, https://doi.org/10.1039/c2cp43361c .
+103. Y. Mao, V. R. Ardham, L. Xu, P. Cui, and D. Wu, “Insight Into 
+Electrosorption Behavior of Monovalent Ions and Their Selectivity in 
+Capacitive Deionization: An Atomic Level Study by Molecular Dy -
+namics Simulation,” Chemical Engineering Journal 415 (2021): 128920, 
+https://doi.org/10.1016/j.cej.2021.128920 .
+104. L. Eliad, G. Salitra, A. Soffer, and D. Aurbach, “Ion Sieving Effects 
+in the Electrical Double Layer of Porous Carbon Electrodes: Estimating 
+Effective Ion Size in Electrolytic Solutions,” Journal of Physical Chem -
+istry B 105 , no. 29 (2001): 6880–6887, https://doi.org/10.1021/jp010086y .
+105. S. A. Hawks, M. R. Cerón, D. I. Oyarzun, et al., “Using Ultra -
+microporous Carbon for the Selective Removal of Nitrate With Capac -
+itive Deionization,” Environmental Science and Technology 53 , no. 18 
+(2019): 10863–10870, https://doi.org/10.1021/acs.est.9b01374 .
+106. Z. Sun, L. Chai, M. Liu, et al., “Effect of the Electronegativity on 
+the Electrosorption Selectivity of Anions During Capacitive Deioniza -
+tion,” Chemosphere 195 (2018): 282–290, https://doi.org/10.1016/j.chem 
+osphere.2017.12.031 .
+107. W. Deng, Y. Chen, Z. Wang, et al., “Regulation, Quantification and 
+Application of the Effect of Functional Groups on Anion Selectivity in 
+Capacitive Deionization,” Water Research 222 (2022): 118927, https:// 
+doi.org/10.1016/j.watres.2022.118927 .
+108. K. Singh, Z. Qian, P. M. Biesheuvel, H. Zuilhof, S. Porada, and L. C. 
+P. M. de Smet, “Nickel Hexacyanoferrate Electrodes for High Mono/ 
+Divalent Ion‐Selectivity in Capacitive Deionization,” Desalination 481 
+(2020): 114346, https://doi.org/10.1016/j.desal.2020.114346 .
+109. S. Sahin, J. E. Dykstra, H. Zuilhof, R. L. Zornitta, and L. C. P. M. de 
+Smet, “Modification of Cation‐Exchange Membranes With Poly -
+electrolyte Multilayers to Tune Ion Selectivity in Capacitive Deioniza -
+tion,” ACS Applied Materials and Interfaces 12 , no. 31 (2020): 
+34746–34754, https://doi.org/10.1021/acsami.0c05664 .
+110. M. Tan, S. Yang, C. Song, et al., “Selective Removal of Chromium 
+and Chloride by Flow Electrode Capacitive Deionization (FCDI) With 
+Carrier‐Facilitated Ion Exchange Membrane,” Chemical Engineering 
+Journal 499 (2024): 156182, https://doi.org/10.1016/j.cej.2024.156182 .
+111. B. Yang, X. Zhang, B. Shrimant, T. Kulkarni, R. Kumar, and C. G. 
+Arges, “Selective Phosphate Removal With Manganese Oxide Compos -
+ite Anion Exchange Membranes in Membrane Capacitive Deioniza -
+tion,” Chemical Engineering Journal 495 (2024): 153468, https://doi.org/ 
+10.1016/j.cej.2024.153468 .
+112. R. Zhao, M. van Soestbergen, H. H. M. Rijnaarts, A. van der Wal, 
+M. Z. Bazant, and P. M. Biesheuvel, “Time‐Dependent Ion Selectivity in 
+Capacitive Charging of Porous Electrodes,” Journal of Colloid and 
+Interface Science 384 , no. 1 (2012): 38–44, https://doi.org/10.1016/j.jcis.2 
+012.06.022 .
+113. Y. Xu, W. Wu, Q. Yi, et al., “LiMn
+2
+O
+4 
+Nanoparticles In Situ 
+Embedded in Carbon Networks for Lithium Extraction From Brine via 
+Hybrid Capacitive Deionization,” ACS Applied Materials and Interfaces 
+17 , no. 3 (2025): 4821–4831, https://doi.org/10.1021/acsami.4c16382 .
+114. S. Y. Huang, C. S. Fan, and C. H. Hou, “Electro‐Enhanced Removal 
+of Copper Ions From Aqueous Solutions by Capacitive Deionization,” 
+Journal of Hazardous Materials 278 (2014): 8–15, https://doi.org/10.101 
+6/j.jhazmat.2014.05.074 .
+Electron, 2026 21 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 22 =====
+115. C. Wang, L.‐F. Ren, D. Ying, J. Jia, and J. Shao, “Enhancing Per -
+formance of Capacitive Deionization Under High Voltage by Suppress -
+ing Anode Oxidation Using a Novel Membrane Coating Electrode,” 
+Journal of Membrane Science 652 (2022): 120506, https://doi.org/10.101 
+6/j.memsci.2022.120506 .
+116. X. Wang, S. Shan, Y. Zhang, S. Q. Shi, and C. Xia, “Enhancing 
+Capacitive Deionization for Water Desalination: The Role of Activated 
+Carbon in Contaminant Removal,” Environmental Science: Water 
+Research & Technology 10 , no. 5 (2024): 1034–1060, https://doi.org/10.10 
+39/D4EW00026A .
+117. T. Jiang, Y. Wei, H. Wei, G. Cao, L. Yang, and H. Zhou, “Selective 
+Mono/Divalent Ion Separation in Bifunctional Ionomeric Capacitive 
+Deionization Incorporated With Counter‐Charge Ionomer Layer,” Sep -
+aration and Purification Technology 354 (2025): 128902, https://doi.org/1 
+0.1016/j.seppur.2024.128902 .
+118. B. Xu, Z. Han, Y. Gan, et al., “Titanium (IV) Hydroxide‐Modified 
+Biochar Electrode for Efficient and Selective Fluorine Removal by 
+Flow‐Electrode Capacitive Deionization,” Separation and Purification 
+Technology 361 (2025): 131329, https://doi.org/10.1016/j.seppur.2024.13 
+1329 .
+119. Y. Bian, X. Chen, and Z. J. Ren, “pH Dependence of Phosphorus 
+Speciation and Transport in Flow‐Electrode Capacitive Deionization,” 
+Environmental Science and Technology 54 , no. 14 (2020): 9116–9123, 
+https://doi.org/10.1021/acs.est.0c01836 .
+120. A. Lipatov, M. Alhabeb, M. R. Lukatskaya, A. Boson, Y. Gogotsi, 
+and A. Sinitskii, “Effect of Synthesis on Quality, Electronic Properties 
+and Environmental Stability of Individual Monolayer Ti
+3
+C
+2 
+MXene 
+Flakes,” Advanced Electronic Materials 2 , no. 12 (2016): 1600255, https:// 
+doi.org/10.1002/aelm.201600255 .
+121. S. Huang and V. N. Mochalin, “Hydrolysis of 2D Transition‐Metal 
+Carbides (MXenes) in Colloidal Solutions,” Inorganic Chemistry 58 , no. 3 
+(2019): 1958–1966, https://doi.org/10.1021/acs.inorgchem.8b02890 .
+122. Y. Tian, P. Hou, H. Zhang, et al., “Theoretical Insights on 
+Potential‐Dependent Oxidation Behaviors and Antioxidant Strategies of 
+MXenes,” Nature Communications 15 , no. 1 (2024): 10099, https://doi. 
+org/10.1038/s41467‐024‐54455‐z .
+123. P. Wan, Y. Chen, and Q. Tang, “Electrochemical Stability of 
+MXenes in Water Based on Constant Potential AIMD Simulations,” 
+ChemPhysChem 25 , no. 18 (2024): e202400325, https://doi.org/10.1002/c 
+phc.202400325 .
+124. H. Ghassemi, W. Harlow, O. Mashtalir, et al., “In Situ Environ -
+mental Transmission Electron Microscopy Study of Oxidation of Two‐ 
+Dimensional Ti
+3
+C
+2 
+and Formation of Carbon‐Supported TiO
+2
+,” Jour -
+nal of Materials Chemistry A 2 , no. 35 (2014): 14339–14343, https://doi. 
+org/10.1039/c4ta02583k .
+125. S. Kumar, N. Kumari, T. Singh, and Y. Seo, “Shielding 2D MXenes 
+Against Oxidative Degradation: Recent Advances, Factors and Preven -
+tive Measures,” Journal of Materials Chemistry C 12 , no. 23 (2024): 
+8243–8281, https://doi.org/10.1039/D4TC00884G .
+126. S. Zhang, R. Fang, L. Zhang, S. Huang, Y. Zhao, and Y. Wang, 
+“Fully Coated WS
+2 
+Antioxidant Film With Mesoporous Structure for 
+Enhancing the Structural Stability and CDI Performance of Mxene,” 
+Desalination 574 (2024): 117226, https://doi.org/10.1016/j.desal.2023.11 
+7226 .
+127. J. Liu, Z. Kuli, K. Toshtay, J. Lee, K. Askaruly, and S. Azat, 
+“Biomass‐Derived Activated Carbon/MXene Composites as Super -
+capacitor Electrodes,” Electrochemistry Communications 188 (2026): 
+108166, https://doi.org/10.1016/j.elecom.2026.108166 .
+128. J. Kumar, R. A. Soomro, B. Fan, J. Tan, N. Sun, and B. Xu, 
+“Butanedioic Acid Unlock Shelf‐Stable Ti
+3
+C
+2
+T
+x 
+(MXene) Dispersions 
+and Their Electrochemical Performance in Supercapacitor,” Journal of 
+Alloys and Compounds 1009 (2024): 176749, https://doi.org/10.1016/j.jal 
+lcom.2024.176749 .
+129. X. Zhao, H. Cao, B. J. Coleman, et al., “The Role of Antioxidant 
+Structure in Mitigating Oxidation in Ti
+3
+C
+2
+T
+x 
+and Ti
+2
+CT
+x 
+MXenes,” 
+Advanced Materials Interfaces 9 , no. 20 (2022): 2200480, https://doi.org/ 
+10.1002/admi.202200480 .
+130. T. Habib, X. Zhao, S. A. Shah, et al., “Oxidation Stability of Ti
+3
+C
+2
+T
+x 
+MXene Nanosheets in Solvents and Composite Films,” npj 2D Materials 
+and Applications 3 , no. 1 (2019): 8, https://doi.org/10.1038/s41699‐019‐0 
+089‐3 .
+131. M. Long, P. Wang, H. Fang, and W. Hu, “Progress, Challenges, and 
+Opportunities for 2D Material Based Photodetectors,” Advanced Func -
+tional Materials 29 , no. 19 (2019): 1803807, https://doi.org/10.1002/adf 
+m.201803807 .
+132. C. E. Shuck and Y. Gogotsi, “Taking MXenes From the Lab to 
+Commercial Products,” Chemical Engineering Journal 401 (2020): 
+125786, https://doi.org/10.1016/j.cej.2020.125786 .
+133. C. E. Shuck, A. Sarycheva, M. Anayee, et al., “Scalable Synthesis of 
+Ti
+3
+C
+2
+T
+x 
+MXene,” Advanced Engineering Materials 22 , no. 3 (2020): 
+1901241, https://doi.org/10.1002/adem.201901241 .
+134. M. A. Zaed, K. H. Tan, N. Abdullah, R. Saidur, A. K. Pandey, and 
+A. M. Saleque, “Cost Analysis of MXene for Low‐Cost Production, and 
+Pinpointing of Its Economic Footprint,” Open Ceramics 17 (2024): 
+100526, https://doi.org/10.1016/j.oceram.2023.100526 .
+135. M. Dadashi Firouzjaei, S. K. Nemani, M. Sadrzadeh, E. K. Wujcik, 
+M. Elliott, and B. Anasori, “Life‐Cycle Assessment of Ti
+3
+C
+2
+T
+x 
+MXene 
+Synthesis,” Advanced Materials 35 , no. 31 (2023): 2300422, https://doi. 
+org/10.1002/adma.202300422 .
+136. T. Bashir, S. A. Ismail, J. Wang, W. Zhu, J. Zhao, and L. Gao, 
+“MXene Terminating Groups =O, –F or –OH, –F or =O, –OH, –F, or 
+=O, –OH, –Cl?,” Journal of Energy Chemistry 76 (2023): 90–104, https:// 
+doi.org/10.1016/j.jechem.2022.08.032 .
+137. A. Hassanvand, G. Q. Chen, P. A. Webley, and S. E. Kentish, “An 
+Investigation of the Impact of Fouling Agents in Capacitive and Mem -
+brane Capacitive Deionisation,” Desalination 457 (2019): 96–102, 
+https://doi.org/10.1016/j.desal.2019.01.031 .
+138. S. Pandit, S. Shanbhag, M. Mauter, Y. Oren, and M. Herzberg, 
+“Influence of Electric Fields on Biofouling of Carbonaceous Electrodes,” 
+Environmental Science and Technology 51 , no. 17 (2017): 10022–10030, 
+https://doi.org/10.1021/acs.est.6b06339 .
+139. S. Sunderiya, S. Suragtkhuu, S. Purevdorj, et al., “Understanding 
+the Oxidation Chemistry of Ti
+3
+C
+2
+T
+x 
+(MXene) Sheets and Their Catalytic 
+Performances,” Journal of Energy Chemistry 88 (2024): 437–445, https:// 
+doi.org/10.1016/j.jechem.2023.09.037 .
+140. X. Kong, C. Zhang, C.‐H. Hou, T. D. Waite, and J. Ma, “Fouling in 
+Capacitive Deionization: A Critical Review,” Environmental Science and 
+Technology 59 , no. 27 (2025): 13566–13584, https://doi.org/10.1021/acs.e 
+st.5c01155 .
+141. C.‐M. Zhang, J. Guan, L.‐N. Liu, Z.‐H. Wan, S.‐G. Wang, and X.‐F. 
+Sun, “Impact of Molecular Size and Electrical Polarity on Fouling of 
+Capacitive Electrodes During Water Desalination,” Desalination 500 
+(2021): 114846, https://doi.org/10.1016/j.desal.2020.114846 .
+142. M. Mossad and L. Zou, “Study of Fouling and Scaling in Capacitive 
+Deionisation by Using Dissolved Organic and Inorganic Salts,” Journal 
+of Hazardous Materials 244–245 (2013): 387–393, https://doi.org/10.101 
+6/j.jhazmat.2012.11.062 .
+143. X. Liu, J. F. Whitacre, and M. S. Mauter, “Mechanisms of Humic 
+Acid Fouling on Capacitive and Insertion Electrodes for Electro -
+chemical Desalination,” Environmental Science and Technology 52 , no. 
+21 (2018): 12633–12641, https://doi.org/10.1021/acs.est.8b03261 .
+22 of 23 Electron, 2026
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+
+===== PDF PAGE 23 =====
+144. X. Zeng, Z. Pang, E. Lu, et al., “A Stable and Low‐Fouling Lead 
+Ion‐Selective Electrode Employing Polyaniline‐MXene Composite for 
+Solid Contact and Polypeptide for Antifouling,” Sensors and Actuators B: 
+Chemical 418 (2024): 136237, https://doi.org/10.1016/j.snb.2024.136237 .
+145. Q. Zhang, H. Yang, Y. Liang, et al., “Constructing Zincophilic 
+BiOI‐MXene Heterostructure Interfacial Layer for High‐Performance 
+Zinc Anode,” Journal of Colloid and Interface Science 704 (2026): 
+139261, https://doi.org/10.1016/j.jcis.2025.139261 .
+146. L. Luo, N. Shi, D. Lu, et al., “Unveiling the Mechanism of In Situ 
+Construction of Heterostructured SnS
+2
+@MXene/Porous Carbon Nano -
+fibers Enabled Superior Lithium‐Ion Batteries,” Journal of Colloid and 
+Interface Science 704 (2026): 139407, https://doi.org/10.1016/j.jcis.2025.1 
+39407 .
+147. Y. Cui, J. Sun, Y. Wang, et al., “MXene‐Supported MOF‐Derived 
+Multicore ZrSe
+2
+@MnSe
+2 
+Complex Structure for High‐Rate and Long‐ 
+Cycle‐Life Supercapacitors,” Fuel 405 (2026): 136630, https://doi.org/1 
+0.1016/j.fuel.2025.136630 .
+148. Y. Chen, J. Jing, X. Xie, et al., “Synergistically Coupled NiCo
+2
+O
+4
+/ 
+MXene Heterostructures via Electrostatic Self‐Assembly Enabling High 
+Capacitance and Ultrastable Supercapacitors,” Electrochimica Acta 545 
+(2026): 147720, https://doi.org/10.1016/j.electacta.2025.147720 .
+149. S. Zhou, F. Liu, J. Wang, et al., “Development of Hollow Co 
+Nanoparticles Coupled With Oxygen Vacancy‐Modified MXene for 
+Enhanced HER/OER Electrocatalysis,” Renewable Energy 256 (2026): 
+124325, https://doi.org/10.1016/j.renene.2025.124325 .
+150. A. Bahari and N. Moradbeigi, “Synergistic Engineering of TiN/ 
+MXene (TiCT
+x
+) Hybrid Electrocatalyst for Efficient and Durable Oxygen 
+Reduction in Alkaline Media,” Colloids and Surfaces A: Physicochemical 
+and Engineering 727 (2025): 138314, https://doi.org/10.1016/j.colsurfa.2 
+025.138314 .
+151. J. Li, J. Hu, C. Chen, X. Lv, and J. Dang, “Nitrogen‐Doped Carbon 
+Shells and MXene Double‐Confined High‐Entropy Phosphates for 
+Robust Anion Exchange Membrane Water Electrocatalysis,” Chemical 
+Engineering Journal 522 (2025): 167854, https://doi.org/10.1016/j.cej.202 
+5.167854 .
+152. M. He and L. Zhang, “Machine Learning and Symbolic Regression 
+Investigation on Stability of MXene Materials,” Computational Materials 
+Science 196 (2021): 110578, https://doi.org/10.1016/j.commatsci.2021.11 
+0578 .
+153. S. Li and A. S. Barnard, “Inverse Design of MXenes for High‐ 
+Capacity Energy Storage Materials Using Multi‐Target Machine 
+Learning,” Chemistry of Materials 34 , no. 11 (2022): 4964–4974, https:// 
+doi.org/10.1021/acs.chemmater.2c00200 .
+154. H. J. Chung, J. Kim, D. I. Kim, G. Gwak, and S. Hong, “Feasibility 
+Study of Reverse Osmosis–Flow Capacitive Deionization (RO‐FCDI) for 
+Energy‐Efficient Desalination Using Seawater as the Flow‐Electrode 
+Aqueous Electrolyte,” Desalination 479 (2020): 114326, https://doi.org/1 
+0.1016/j.desal.2020.114326 .
+155. T.‐H. Chen, Y.‐A. Chen, S.‐W. Tsai, D.‐M. Wang, and C.‐H. Hou, 
+“Development of an Integrated Capacitive‐Electrodialysis Process 
+(CapED) for Continuous, Low‐Energy Electrochemical Deionization,” 
+Separation and Purification Technology 274 (2021): 119063, https://doi. 
+org/10.1016/j.seppur.2021.119063 .
+156. B. Xu, K. Jiang, Y. Gan, et al., “An Integrated Capacitive Deion -
+ization and Photocatalysis System for Efficient Ammonium Removal 
+From Low‐Concentration Wastewater,” Journal of Water Process Engi -
+neering 58 (2024): 104912, https://doi.org/10.1016/j.jwpe.2024.104912 .
+157. Z. Li, Y. Liu, J. Hu, et al., “RuO
+2 
+Sub‐Nanocluster Decorated Co
+3
+O
+4 
+as Efficient and pH‐Universal Oxygen Evolution Electrocatalyst,” Info -
+Mat 7 , no. 5 (2025): e70003, https://doi.org/10.1002/inf2.70003 .
+158. W. Mo, J. J. Foo, and W.‐J. Ong, “Allying Interfacial Engineering of 2D 
+Carbon Nanosheet‐Graphene‐and Graphdiyne‐Based Heterostructured 
+Electrocatalysts Toward Hydrogen Evolution and Overall Water Splitting,” 
+Electron 2 , no. 1 (2024): e20, https://doi.org/10.1002/elt2.20 .
+159. X. Yue, L. Cheng, E. Baráth, R. V. Jagadeesh, and Q. Xiang, 
+“Deciphering Orbital Hybridization in Heterogeneous Catalysis,” Elec -
+tron 2 , no. 1 (2024): e16, https://doi.org/10.1002/elt2.16 .
+Electron, 2026 23 of 23
+ 27512614, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/elt2.70063 by Central South University, Wiley Online Library on [16/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+

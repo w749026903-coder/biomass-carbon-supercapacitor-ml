@@ -1,0 +1,248 @@
+
+===== PDF PAGE 1 =====
+Deep eutectic solvents: A green and efficient approach for biomass 
+fractionation and delignification with industrial potential
+Karo Almassi Tighi
+*
+, Rama Layek, Ikenna Anugwom
+Department of Separation Science, LUT University, Mukkulankatu 19, Lahti, 15210, Finland
+ARTICLE INFO
+Keywords:
+Deep eutectic solvent
+Biomass fractionation
+Delignification
+Mechanism
+Molecular dynamic
+Simulation
+Modelling
+Process optimization
+Sustainability
+Economic viability
+ABSTRACT
+Deep eutectic solvents (DESs) represent a new generation of environmentally friendly solvents that show great 
+promise for sustainable lignocellulosic biomass separation. The article presents an original assessment of DES 
+formulations through advanced computational modeling and molecular dynamics (MD) simulations, which 
+reveal essential mechanistic details that previous reviews have not fully explored. This work reviews MD sim -
+ulations, DFT, and ML methods to study detailed hydrogen-bonding systems and proton-catalytic and ionic in -
+teractions between DESs and biomass components, which leads to their high selectivity for lignin and 
+hemicellulose extraction. The review establishes a fundamental understanding of DESs by studying their 
+chemical makeup and physical characteristics, and experimental results when processing different biomass 
+materials. The review combines molecular-level findings with process optimization methods, economic assess -
+ments, and sustainability impact evaluations. The review establishes a complete understanding by connecting 
+atomic-scale interactions to industrial-scale applications through computational modeling, which enables the 
+creation of optimized DES-based biorefinery systems.
+1. Introduction
+Growing global demand for energy and materials, coupled with 
+climate concerns and fossil fuel depletion, drives the search for renew -
+able alternatives. Lignocellulosic biomass and microalgae offer prom -
+ising, sustainable raw materials used in producing energy sources, 
+chemical products, and industrial compounds, lessening the usage of oil, 
+along with limiting environmental outcomes.
+The environmental viability and process effectiveness of the different 
+methods of breaking down biomass face multiple essential barriers in 
+their conventional approaches. The NaOH/urea pretreatment from 
+agricultural residues of rice straw enhances plant-based polysaccharides 
+like cellulose and hemicellulose, achieving high yields but producing 
+excessive salts, which need costly removal procedures ( Dong et al., 
+2018 ). Application of organic liquids for hemicellulose and lignin 
+removal from poplar through organic acid/solvent blends proves effec -
+tive yet remains impractical because it requires substantial solvent 
+volumes and produces harmful compounds ( Yang et al., 2020 ). The 
+conventional methods experience three major drawbacks, which include 
+equipment corrosion, high operational costs, and complex chemical 
+recovery procedures, thus limiting their suitability for large-scale 
+sustainable biomass processing ( Rastogi and Shrivastava, 2017 ). 
+Organic solvents used in conventional processes face multiple draw -
+backs, including their volatile nature and corrosive effects on equipment 
+and toxic properties, which prevent their use in biomass processing 
+( Hong et al., 2020 ). Specific advantages associated with ionic liquids 
+(ILs) make them attractive for lignocellulosic biorefinery applications 
+because they are non-flammable, have low vapor pressure, and lack 
+volatility ( Wang et al., 2017 ). The extensive deployment of ILs is limited 
+by their expensive production costs and challenging preparation 
+methods.
+Deep eutectic solvents (DES) present an environmentally friendly 
+solution to traditional biomass pretreatment procedures through their 
+ability to overcome major challenges, including high energy re -
+quirements and corrosive or expensive chemical usage. The pretreat -
+ment process with DES produces better glucose yields and maintains 
+stable cellulase enzymes while decreasing both energy requirements and 
+environmental effects ( Liu et al., 2019; Tan et al., 2018; Sai and Lee, 
+2019 ). The DES method operates without requiring severe processing 
+conditions or expensive solvents that traditional methods need. The 
+fractionation of complex biomass microalgae through biomass process -
+ing using DES composed of lactic acid (LA) and choline chloride (ChCl) 
+* Corresponding author.
+E-mail address: karo.almassi.tighi@lut.fi (K. Almassi Tighi). 
+Contents lists available at ScienceDirect
+Industrial Crops & Products
+journal homepag e: www.else vier.com/loc ate/indcrop
+https://doi.org/10.1016/j.indcrop.2026.124341
+Received 20 November 2025; Received in revised form 14 May 2026; Accepted 6 September 2026  
+Industrial Crops & Products 252 (2026) 124341 
+Available online 9 September 2026 
+0926-6690/© 2026 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+
+
+===== PDF PAGE 2 =====
+achieved lipid extraction at 17.7%, which exceeded the extraction rate 
+of untreated biomass by more than double (7.7%) ( Yu et al., 2024a ). 
+Introduction of 0.5 aqueous molar equivalent to the solvent system 
+modified its polarity and increased its hydrogen bond acidity (from 1.37 
+to 1.42) and alkalinity (from 0.52 to 0.54), which led to 89.4% lipid 
+extraction and 84.2% protein dissolution. The research demonstrates 
+DES as a promising method for complete biomass processing that com -
+bines efficiency with environmental sustainability. Fig. 1 illustrates the 
+application of DESs in the fractionation of lignocellulosic biomass and 
+the subsequent utilization of cellulose, hemicellulose, and lignin as 
+renewable feedstocks for the production of value-added materials and 
+chemicals.
+DESs have the highest potential among other solvents to be consid -
+ered as green solvents, which stems from their distinctive characteris -
+tics. The solvents possess several key characteristics, which include 
+structural integrity, high dissolution efficiency, excellent biological 
+tolerance, affordable manufacturing expenses, and reduced evaporative 
+loss with straightforward preparation procedures. These solvents exhibit 
+distinctive features, which include low toxicity and tunability, thus 
+showing promise for pollution prevention and sustainability initiatives 
+( Ee et al., 2023 ).
+While the potential of DESs is widely acknowledged, this review aims 
+to provide an original assessment by leveraging advanced computa -
+tional modeling and molecular dynamics (MD) simulations to reveal 
+essential mechanistic details that previous reviews have not fully 
+explored. Our objective is to establish a fundamental, molecular-level 
+understanding of DES-biomass interactions and connect these atomic- 
+scale phenomena to industrial-scale applications and economic viability.
+The review follows this structure to achieve its purpose. It starts by 
+explaining how lignocellulosic biomass exists and why it needs efficient 
+fractionation methods. Thereafter, it explains what DESs consist of and 
+their industrial value and chemical properties. Our main contribution 
+appears in the following sections, which explain biomass fractionation 
+through DESs and provide detailed molecular dynamics and thermo -
+dynamic studies of DES systems. The study also examines simulation and 
+modeling approaches, including machine learning and kinetic models, 
+which serve as essential tools for DES performance prediction and 
+optimization beyond experimental data. Furthermore, it moves into 
+practical aspects, which include industrial process optimization, DES- 
+based process sustainability evaluation, economic feasibility assess -
+ment, and scalability issues. Finally, there is a summary of acquired 
+knowledge and proposed research paths for the field. This review unites 
+fundamental molecular studies with process optimization and economic 
+evaluations to create a complete system for building efficient, environ -
+mentally friendly, and cost-effective DES-based biorefineries.
+2. Lignocellulosic biomass: challenges and fractionation 
+requirements
+Biorefineries use lignocellulosic biomass (LCB) as their primary 
+feedstock because this renewable resource exists abundantly in quanti -
+ties reaching 200 gigatons per year. The development of sustainable bio- 
+based industries depends heavily on lignocellulosic biomass which 
+comes from agricultural and forest residues and energy crops including 
+both herbal and woody types and specialty crops ( Kumar et al., 2020; 
+Rai et al., 2022 ). The production of LCB through halophytes which are 
+salt-resistant plants growing on salt-damaged lands provides a 
+cost-effective sustainable solution that frees up arable land and fresh -
+water resources ( Fugol et al., 2023; Jankowski et al., 2020; Li et al., 
+2023a; Rajput and Sheikh, 2019 ).
+Lignocellulosic biomass (LCB) contains three primary biopolymers 
+which include cellulose as a linear crystalline glucose polymer and 
+hemicellulose as a branched amorphous heteropolysaccharide and 
+lignin as a complex aromatic polymer that together form more than 70% 
+of the biomass. Recent studies have identified proteins along with in -
+organics and resins and other compounds as minor constituents in 
+addition to the main three biopolymers ( Hallac and Ragauskas, 2011; 
+French, 2017 ). The chemical diversity of these components is demon -
+strated through their molecular structures which are shown in Fig. 2 .
+Cellulose contains a highly structured and resistant framework that 
+consists primarily of glucose units that bond through glycosidic linkages. 
+The biomass section contains high crystallinity because of its intra- and 
+intermolecular hydrogen bond connections. Different biomasses show 
+varying levels of polymerization. The degree of polymerization in agri -
+cultural residues reaches 900 units, but woody biomass contains be -
+tween 4000 and 5500 units ( Hallac and Ragauskas, 2011 ).
+Lignin, the second most abundant natural polymer, is a hydrophilic 
+phenolic substance present in the plant cell wall that provides greater 
+resistance to microbial attacks ( Sakakibara, 1980 ). Chemically, it is a 
+highly complex polymer with plant-specific compositions and linkage 
+motifs, lacking a defined primary structure; instead, it consists of 
+random phenylpropanoid (C9) polyphenols primarily linked by aryl -
+glycerol ether bonds between the phenolic units of para-coumaryl 
+alcohol (H-type), coniferyl alcohol (G-type), and sinapyl alcohol 
+(S-type). The majority of a plant's lignin (75 – 85%) is located within the 
+considerably larger volume of the secondary cell wall ( Holtman et al., 
+2003 ).
+LCB maintains its structural integrity because of the complex 
+bonding between its components, which creates a major processing 
+obstacle. The biopolymers maintain strong covalent bonds between 
+lignin-carbohydrate complexes (LCCs) and hydrogen bonds that create a 
+three-dimensional cross-linked matrix structure ( Sun et al., 2023 ). Fig. 3
+shows detailed lignin linkage types which demonstrate the complex 
+nature of the structure. The strong bonding network protects poly -
+saccharides from enzymatic and microbial breakdown while making it 
+difficult to separate individual components, and affects both biomass 
+physical characteristics and processing complexity. The strategic 
+Fig. 1. Biomass fractionation and valorization into industrial products 
+using DES.
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+2 
+
+
+===== PDF PAGE 3 =====
+placement of these components throughout plant cell walls, including 
+the intercellular layer and primary wall, and the secondary wall, de -
+termines lignification levels and overall structural rigidity ( Hou et al., 
+2021 ).
+The European Union has established lignocellulosic biomass as a 
+strategic primary source, which includes (1) forest biomass, (2) agri -
+cultural residues, (3) non-edible/non-energy crops, and (4) edible/non- 
+edible byproducts. The following tables present the composition dif -
+ferences between these sources, which determine their potential uses in 
+various biorefinery applications.
+The chemical composition of LCB shows significant variations based 
+on source material and depends on wood species, plant varieties, and 
+residue types. The lignin content in hardwoods, including Poplar, 
+Eucalyptus, and Beechwood, ranges between 18% and 25% but soft -
+woods such as Pine and Spruce, along with cork, contain higher lignin 
+levels (27 – 33%) with distinct cellulose crystallinity and cell wall density 
+that impact fractionation processes ( Soares et al., 2021; Suota et al., 
+2021 ). Leftover biomass from crops, including corn stalks, wheat straw, 
+rice straw, and Bagasse, contains lower lignin amounts (12 – 24%) along 
+with less rigid structures that simplify the separation process ( Arora 
+et al., 2020 ). Large amounts of industrial wastes and energy crops like 
+Spent Coffee Grounds, Oil Palm Empty Fruit Bunches (OPEFB), Mis -
+canthus, and Switchgrass are available yet contain high ash levels and 
+particular lignin types which need specific attention ( Jablonsky et al., 
+2019; Rahighi et al., 2021; Yen et al., 2022 ), thus demonstrating the 
+significance of compositional differences for process optimization.
+The complex network of LCB creates significant resistance to con -
+verting its valuable products directly. The process of fractionation 
+followed by pretreatment represents a vital step, which consumes 
+approximately 40% of the total process expense ( Haldar et al., 2018 ). 
+The pretreatment method destroys the lignin barrier and breaks LCCs 
+and reduces cellulose crystallinity, which results in increased biomass 
+porosity and accessibility for subsequent processing ( Sun et al., 2023; 
+Tuck et al., 2012 ). The structural modification required for efficient 
+biomass utilization becomes clear through this concept.
+The biorefinery utilizes fractionation to separate cellulose, hemi -
+cellulose, and lignin components from LCB, which then become valuable 
+products. Cellulose can be converted into glucose for fermentation, as 
+well as nanocellulose, regenerated fibers, and materials with improved 
+downstream yields because of its increased crystallinity ( Lim et al., 
+2021; Smirnov et al., 2020; Mnasri et al., 2022 ). Separation of hemi -
+cellulose from biomass yields oligosaccharides together with xylose and 
+furfural (2-F) and functional chemicals ( Roy et al., 2023; Gundupalli 
+et al., 2023 ) while the non-carbohydrate fraction of plant biomass can be 
+converted into aromatics, polymers, carbon materials, and binders 
+( Varilla-Mazaba et al., 2022 ). The sustainable biorefinery depends on 
+fractionation because this method creates various valuable streams 
+while extracting the full potential from each biomass component.
+3. Deep eutectic solvents: composition, properties, and 
+industrial relevance
+In 2012, DESs were initially applied to biomass pretreatment, 
+showcasing their strong effectiveness across different biomass types 
+( Francisco et al., 2012 ).
+Binary or ternary mixtures are created from HBAs and HBDs in 
+Fig. 2. Structural illustration of LCB.
+Fig. 3. The primary linkage type between structural units of lignin.
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+3 
+

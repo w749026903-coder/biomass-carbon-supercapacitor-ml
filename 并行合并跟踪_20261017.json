@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "notified_events": [],
+  "automation_id": "automation",
+  "last_checked_at": "2026-10-17T09:37:54.159Z",
+  "status": "waiting_for_database_active_turn",
+  "merge_started": false,
+  "reason": "Both saved manifests are ready, but database chat has a newer active turn. Do not merge artifacts while their owner is still working.",
+  "tasks": {
+    "database": {
+      "thread_id": "01a1491c-a9b5-79d2-81b3-5defc5aebc21",
+      "thread_status": "active",
+      "active_turn_id": "01a14938-0d55-7d73-82e2-2aba2ddec2d1",
+      "manifest_ready": true,
+      "manifest_sha256": "9d0a17aa4a910074e283e6ee77783ea9f558bad75cc44e703d1debf507c68e3f",
+      "wait_cursor": "85fa49ce-5b45-4afc-8090-85068d7f8a74:2"
+    },
+    "literature": {
+      "thread_id": "01a1491d-0422-79e2-926c-c6e2648bccb5",
+      "thread_status": "idle",
+      "manifest_ready": true,
+      "manifest_sha256": "acbfc2f1de9b07a6ff3a5e590a614117fe638d5a374c4d11e1829d0d9ac482fe",
+      "wait_cursor": "f5d2e00e-8e77-42bd-881d-397b3cc72b77:2"
+    }
+  }
+}

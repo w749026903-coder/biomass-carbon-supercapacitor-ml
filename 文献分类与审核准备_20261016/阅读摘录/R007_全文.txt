@@ -1,0 +1,1709 @@
+
+===== PDF PAGE 1 =====
+Vol:.(1234567890)
+https://doi.org/10.1007/s10853-026-12759-z
+J Mater Sci (2026) 61:15940–15960
+Energy materials 
+Machine learning‑based energy density prediction 
+of bio‑based supercapacitor with Shapley additive 
+model interpretation
+Damilare Samuel Oyebamiji1 and Davannendran Chandran1,* 
+1 Department of Mechanical Engineering, Universiti Teknologi PETRONAS, 32610 Seri Iskandar, Perak, Malaysia
+ABSTRACT
+This paper aims to develop machine learning (ML) models to predict bio-based 
+supercapacitor energy density from electrode physical and elemental composi-
+tion, as well as potential window (PW), to accelerate materials discovery and 
+reduce the resources and time required for experimental optimization. Extreme 
+gradient boosting (XGB), random forest (RF), extremely randomized tree (ERT) 
+and categorical boosting (CB) ML algorithms were employed to develop predic-
+tive ML models. The training datasets for ML models are extracted from experi-
+mental data from existing published articles on bio-based supercapacitors. XGB, 
+RF, ERT and RF models’ performance was evaluated with coefficient of deter-
+mination (R2), root-mean-square error (RMSE), mean absolute percentage error 
+(MAPE) and mean absolute error (MAE). Among the models, XGB had the best 
+performance with R2 value of 0.885, followed by CB, RF and ERT at 0.841, 0.781 
+and 0.637, respectively, when tested with new experimental data. With testing 
+data, XGB recorded the lowest MAE of 4.81 Wh/kg, ERT, CB and RF recorded 
+MAE of 9.23 Wh/kg, 6.51 Wh/kg and 8.14 Wh/kg, respectively. Shapley additive 
+explanations (SHAP) analysis indicated that PW exhibited the highest impact 
+in all models used to predict energy density as compared to other independent 
+variables, such as specific surface area (SSA), intensity ratio (IR) and average 
+pore size (PS), emphasizing its critical influence in developing predictive models 
+and enhancing supercapacitor energy density. The impact of PW in predicting 
+energy density of bio-based supercapacitors can be attributed to its quadratic 
+relationship with energy density. Consequently, the models accurately pre-
+dict bio-based supercapacitor energy density, demonstrating the role of PW in 
+designing and optimizing bio-based materials for the development of sustainable 
+supercapacitors.
+Received: 3 February 2026 
+Accepted: 7 April 2026 
+Published online: 
+18 April 2026 
+© The Author(s), under 
+exclusive licence to Springer 
+Science+Business Media, LLC, 
+part of Springer Nature, 2026
+Handling Editor: Narendra Nath Ghosh.
+Address correspondence to E-mail: davannendran@utp.edu.my
+
+===== PDF PAGE 2 =====
+J Mater Sci (2026) 61:15940–15960 
+Abbreviations
+C  Carbon
+C/O  Carbon-to-oxygen
+CB  Categorical boosting
+ERT  Extremely randomized tree
+GHG  Greenhouse gas
+IR  Intensity ratio
+MAE  Mean absolute error
+MAPE  Mean absolute percentage error
+ML  Machine learning
+PS  Average pore size
+PW  Potential window
+R2  Coefficient of determination
+RF  Random forest
+RMSE  Root mean square error
+SHAP  Shapley additive explanations
+SSA  Specific surface area
+XGB  Extreme gradient boosting
+%  Percentage
+kJ/mol  Kilojoules per mole
+m2/g  Metre square per gram
+nm  Nanometre
+V  Volt
+Wh/kg  Watt-hour per kilogram
+Introduction
+Global energy supply remains dependent on fos-
+sil fuels, which adversely contribute to greenhouse 
+gas emissions (GHG) and accelerate climate change. 
+Between 2000 and 2023, global GHG emission was 
+reported increased by 32% [1 ]. The rise in global 
+average temperature up to 1.5 °C resulting from the 
+increase in GHG emissions has increased the occur-
+rence of floods, drought and earthquakes, emphasiz-
+ing the need for sustainable energy alternatives [2]. In 
+response, renewable energy sources, such as sunlight, 
+wind and hydroelectric power, have gained attention 
+as cleaner and more sustainable pathway towards 
+carbon (C) neutralization. However, effective utili-
+zation of renewable energy across key sectors, espe-
+cially transportation, demands for stable and efficient 
+energy storage system. Among existing technologies, 
+supercapacitors and lithium-ion batteries are at the 
+forefront for storing renewable energy for utiliza -
+tion in transportation sector. Supercapacitors’ high-
+power density, broad operating temperature range, 
+long cycle life (ability of supercapacitor to maintain 
+its performance and reliability over extended periods) 
+and rapid charge–discharge, make them suitable for 
+regenerative braking and energy storage systems of 
+hybrid electric vehicles [3, 4].
+Supercapacitors are categorized into electric double 
+layer capacitor and pseudocapacitors. Electric double 
+layer capacitors mainly store electric energy through 
+attraction of ions on electrode and electrolyte interface, 
+while a pseudocapacitor includes reduction and oxi-
+dation reaction [5, 6]. Supercapacitors face challenges 
+such as low energy density as compared to batteries, 
+as well as the use of toxic materials, which limits its 
+development for electric vehicle [7 , 8]. To overcome 
+these challenges, existing studies explored alternative 
+materials such as metal oxide, composite, biomass 
+materials and conductive polymers for the develop-
+ment of supercapacitor’s electrode, electrolyte and 
+binder. Poudel et al. [9] utilized iron oxide nanorod 
+to prepare anode for supercapacitor. The fabricated 
+asymmetric supercapacitor exhibited energy den-
+sity of 111.72 Wh/kg. Tian et al. [10] used manganese 
+oxide/carbon composite cathode to develop asymmet-
+ric supercapacitor having energy density of 50.20 Wh/
+kg. Zeng et al. [11] utilized kelp-derived biomass as a 
+multifunctional material to prepare electrode, electro-
+lyte, binder and separator for bio-based supercapaci-
+tor. Although the energy density of the supercapacitor 
+was 8 Wh/kg, the study highlighted trade-off between 
+conventional high-performance materials and more 
+environmentally friendly alternatives. To provide bal-
+anced assessment of bio-based supercapacitor perfor-
+mance, metrics such as biodegradability, or life-cycle 
+environmental impact could complement energy den-
+sity, enabling direct evaluation of the environmental 
+benefits alongside electrochemical performance.
+Bio-based supercapacitor’s performance is influ-
+enced by the electrode’s active materials’ specific 
+surface area (SSA) and average pore size (PS), which 
+affects charge storage, as well as conductivity for effi-
+cient charge transfer [3 ]. High SSA and well-devel-
+oped pore active materials directly enhance superca-
+pacitor performance, owing to more available surface 
+for ion adsorption. Song et al. [12] prepared activated 
+carbon from Eucommia Ulmoides Oliver wood with 
+enhanced SSA and PS of 1589.00  m2/g and 2.51 nm, 
+respectively. The assembled supercapacitor achieved 
+energy density of 95.58  Wh/kg. Electrode material 
+with enhanced electrical conductivity is crucial for 
+efficient ion transport and reduced internal resistance 
+in the supercapacitor. In the study by Tabarov et al. 
+[13], the authors reported that incorporating carbon 
+15941
+
+===== PDF PAGE 3 =====
+ J Mater Sci (2026) 61:15940–15960
+nanotubes enhanced electrode conductivity, which 
+resulted in reduced internal series resistance and 
+improved ion transport speed in supercapacitor devel-
+oped. This indicates the need to optimize electrode 
+materials to achieve enhanced SSA, PS and improved 
+electrical conductivity to improve performance of 
+supercapacitor.
+Optimizing supercapacitor electrode materials’ 
+properties is crucial for achieving enhanced perfor-
+mance. Tri Yulianti et al. [14] optimized ratio of KOH 
+to oil palm empty fruit bunch in which high SSA 
+of 763.73  m2/g and pore volume of 0.44  cm3/g was 
+achieved with optimum ratio (1:2) compared to 1:3 
+(659.29  m2/g and 0.43  cm3/g) and 1:1 (300.44  m2/g and 
+0.17  cm3/g). The supercapacitor assembled with the 
+optimized carbon achieved enhance energy density 
+of 4.45 Wh/kg. Ayinla et al. [15] reported that wood 
+pine bark-derived activated carbon synthesized using 
+different activating agents  (H3PO4,   K2CO3, and  ZnCl2) 
+showed high specific capacitance of 578.5 F/g when 
+activated with  H3PO4 compared to  K2CO3 (315.3 F/g) 
+and  ZnCl 2 (293 F/g), which resulted in enhanced 
+energy density of 14.75 Wh/kg for the assembled 
+supercapacitor. These show that optimizing electrode 
+active materials results in enhanced electrochemical 
+performance of supercapacitor. Traditionally, acti-
+vated carbons derived from coal tar, a toxic by-product 
+of coal processing, have been widely utilized as active 
+materials in supercapacitor electrodes despite their 
+environmental and health concerns [16, 17]. With this 
+toxicity of coal tar-based activated carbon, biomass-
+derived activated carbon has received researchers’ 
+attention as alternative supercapacitor material due 
+to its abundance, sustainability, non-toxic and high 
+performance, more than commercial carbon electrode 
+[18].
+Porous activated carbon with hierarchical SSA have 
+been synthesized from various biomass precursor 
+including cottonseed meal [19], cashew nut shell [20], 
+camphor leaves [21], rice husk [22], green tea waste 
+[23], Job’s tears straw [ 24], pistachio shell [ 25], sun -
+flower stalks [26], Eucommia Ulmoides Oliver wood 
+[12], purple sweet potato [27] and macadamia nutshell 
+[28] for supercapacitor electrode application. Xu et al. 
+[21] synthesized porous activated carbon from cam-
+phor leaves, achieving SSA and PS of 2401.30  m2/g 
+and 2.31 nm, respectively. The assembled supercapaci-
+tor exhibited enhanced energy density of 10.83 Wh/
+kg. Yao et al. [22] utilized rice husk to produce acti-
+vated carbon with SSA of 3272.50  m2/g, resulting in 
+supercapacitor energy density of 14.5  Wh/kg. Also, 
+Chaiammart et al. [20] KOH-activated cashew nut shell 
+yielded activated carbon with SSA of 1698.00  m2/g and 
+the energy density of supercapacitor fabricated was 
+2.43 Wh/kg. Chen et al. [24], reported synthesis of 
+activated carbon from Job’s tears straw exhibited SSA 
+of 2149.79  m2/g, which resulted in enhanced superca-
+pacitor energy density of 20.3 Wh/kg. These studies 
+highlight the potential of biomass-based activated car-
+bon as electrode materials to enhance supercapacitor 
+energy density for different applications, including 
+electric vehicles.
+In comparison with conventional activated carbon 
+derived from fossil resources, biomass-derived acti -
+vated carbon contributes to sustainability of super-
+capacitor materials and reduces GHG emissions 
+associated with the mining and production of fossil/
+coal-based activated carbon. Zeng et  al. [11] com-
+pared performance of conventional activated carbon 
+with kelp-derived activated carbon as supercapacitor 
+electrode active materials. They reported that kelp-
+derived activated carbon electrode achieved specific 
+capacitance of 277 F/g, which is higher compared to 
+195 F/g achieved with conventional activated carbon 
+electrode. Biomass-based activated carbon outper-
+forms conventional activated carbon as supercapacitor 
+electrode material by offering enhanced surface area 
+and porosity for ion adsorption. This highlights the 
+importance of replacing conventional materials with 
+activated carbon derived from biomass sources.
+Utilization of biomass-based activated carbon in 
+fabrication of supercapacitor electrode offers advan-
+tages, such as waste minimization, abundance, 
+enhanced performance and cost effectiveness. To 
+enhance performance of bio-based supercapacitors, 
+optimization and functionalization of different bio-
+mass feedstocks are required to improve the material 
+properties of biomass-derived activated carbon. This 
+optimization and functionalization process consumes 
+considerable time and resources, making effective 
+determinations of bio-based supercapacitor energy 
+density a challenging and slow progress towards 
+commercialization. However, integration of compu-
+tational methods, such as machine learning (ML) and 
+simulation, presents a promising pathway to acceler-
+ate materials discovery, design and optimization of 
+supercapacitor materials, which enable faster assess-
+ment of energy density. Computational approach 
+holds potential to advance development of efficient, 
+cost-effective and sustainable energy storage systems.
+15942
+
+===== PDF PAGE 4 =====
+J Mater Sci (2026) 61:15940–15960 
+Computational studies have advantages of low 
+cost, in-depth understanding of physical and chemi-
+cal properties and high accuracy when compared to 
+experimental studies. Density function theory as a 
+first-principle simulation is one of the computational 
+methods used to study electrode properties and their 
+interaction with electrolyte in supercapacitor. In the 
+study by Yang et al. [29], first-principles density func-
+tion theory was employed to investigate the capacitive 
+performance of supercapacitor electrode. The study 
+revealed that capacitive behaviour of the electrode is 
+influenced by electrostatic potential surface and potas-
+sium ion adsorption properties. Dong et al. [30] uti-
+lized density function theory to calculate potassium 
+ion adsorption energy on different oxygen functional 
+groups on carbon surface. The calculation shows that 
+introduction of oxygen functional group enhances the 
+wettability of electrolyte ions to the carbon electrode, 
+resulting in higher adsorption energy of − 151.13 kJ/
+mol in lactone group sample compared to − 91.02 kJ/
+mol for undoped sample. Density functional theory 
+calculations can predict materials properties, which 
+helps in optimization and functionalizing of electrode 
+materials to expedite materials discovery for improv-
+ing supercapacitor electrochemical performance, such 
+as capacitance, power density and energy density. 
+Density function theory calculation helps identify 
+materials with enhanced electrochemical performance 
+and structural stability to reduce cost and time associ-
+ated with experimental optimization of supercapacitor 
+materials. However, density function theory applica-
+tion in development of bio-based supercapacitor faces 
+challenges such as high computational demand, com-
+plex system simplification before calculation and high 
+computing time and resources, which limit its effec-
+tiveness for bio-materials optimization [31].
+ML emerged as an alternative computational 
+method to overcome limitations of density function 
+theory calculations for evaluating performance of 
+bio-based supercapacitors. ML is capable of handling 
+materials systems with large-scale and multi-compo-
+nent systems and can also be combined with differ-
+ent computational methods [ 31]. With this, ML can 
+be utilized to identify the critical features of electrode 
+materials that contribute to discovery of novel and 
+sustainable materials for enhancing supercapacitor 
+performance, such as energy density, power density 
+and capacitance. ML provides data-driven approach 
+for developing predictive models for specific capaci-
+tance, power density and energy density of bio-based 
+supercapacitors by leveraging datasets obtained from 
+existing experimental studies [32– 35]. ML provides 
+insight into relationship between input and output 
+variables without requiring detailed physical expla-
+nation of features [36]. Several ML algorithms, such 
+as random forest (RF), decision tree, extreme gradient 
+boosting (XGB), categorical boosting (CB) and linear 
+regression have been employed in existing studies to 
+predict supercapacitor energy density, power density 
+and specific capacitance [33, 35, 37–40]. In the study 
+by Lu et al. [35], light gradient boosting model was 
+reported to predict energy density of bio-based super-
+capacitors with coefficient of determination (R 2) of 
+0.922. Shrivas et al. [33] employed different ML models 
+for predicting bio-based supercapacitor specific capac-
+itance. They reported that RF regressor (0.845) outper-
+form decision tree (0.827), linear regression (0.645) and 
+XGB (0.702). Also, CB model was employed by Li et al. 
+[34] to predict specific capacitance of bio-based super-
+capacitor and R2 value of 0.978 was observed from the 
+study. These studies revealed the potential of data-
+driven modelling in identifying important materials 
+properties and reducing time and resources consumed 
+by experimental optimization of bio-based materials 
+as electrode for enhancing bio-based supercapacitor 
+performance. To accelerate materials discovery for 
+supercapacitor application, ML assists with material 
+selection, performance prediction and digitalization 
+of energy storage systems. However, there are lim -
+ited studies on bio-based supercapacitor energy den-
+sity predictions at present. Also, no existing study has 
+reported ML-based prediction of bio-based superca-
+pacitor energy density using the physical properties 
+and elemental composition of electrode active materi-
+als and potential window (PW). Although it has been 
+used to develop model for predicting bio-based super-
+capacitor specific capacitance.
+Considering the potential of electrode active mate-
+rials’ physical properties and elemental composition, 
+as well as PW, this study aims to develop predictive 
+model for predicting energy density of bio-based 
+supercapacitor using physical properties such as SSA 
+and PS, chemical properties such as carbon and oxy-
+gen percentage, as well as PW. The data used in this 
+computational study were extracted from existing 
+experimental studies on bio-based supercapacitors. 
+XGB, Extremely Randomized Tree (ERT), RF and 
+CB algorithms were used for the ML modelling and 
+prediction. Additionally, Shapley additive explana-
+tions (SHAP) analysis was employed to determine 
+15943
+
+===== PDF PAGE 5 =====
+ J Mater Sci (2026) 61:15940–15960
+the contribution of input parameters to the predicted 
+response.
+Research materials and methodology
+The flowchart for modelling and prediction of 
+bio-based supercapacitor energy density using 
+ML is shown in Fig. 1. The process involves data 
+extraction, data cleaning, feature correlation, ML 
+modelling, performance analysis, and energy den -
+sity predictions. Python 3.13.7 was utilized for the 
+ML study. Correlation heatmap was used to ana-
+lyse the relationship between the input features and 
+energy density of bio-based supercapacitor, RF was 
+employed for feature importance ranking of input 
+features to output variables. Different ML algorithms 
+(XGB, ERT, RF and CB) were utilized to develop 
+model and predict the energy density of bio-based 
+supercapacitor.
+Figure 1  ML workflow for biomass-based supercapacitor energy density prediction.
+15944
+
+===== PDF PAGE 6 =====
+J Mater Sci (2026) 61:15940–15960 
+Data processing methods
+For this study, data were extracted from existing 
+experimental studies on bio-based supercapacitors 
+from Scopus database between 2018 and 2025. The 
+source of biomass carbon materials for developing 
+bio-based supercapacitor electrode includes but is 
+not limited to sugarcane bagasse, pear, bitter melon, 
+litchi and soybean straw with specific properties 
+and experimental procedures. The dataset’s features 
+including physical properties (SSA, PS and intensity 
+ratio (IR)), elemental composition (carbon and car-
+bon-to-oxygen (C/O)), and PW were chosen to pre-
+dict bio-based supercapacitor energy density due 
+to their direct and significant impact on bio-based 
+supercapacitor performance based on scientific 
+knowledge in the area compared to other physical/
+electrochemical descriptors such as scan rate [33].
+The SSA and PS of biomass-derived carbon were 
+determined with Brunauer–Emmett–Teller analyzer, 
+which measure adsorption and desorption proper-
+ties of electrode active materials. Bio-based material 
+with high SSA provides more active surface for dou-
+ble-layer capacitance, permitting ion adsorption on 
+electrode–electrolyte interface [ 33]. PS influences effi-
+cient ion transfer and storage by balancing surface 
+area with ion accessibility and diffusion, which are 
+crucial for bio-based supercapacitor energy density 
+[41]. IR was determined using Raman spectroscopy, 
+which measures disorder, defects and degree of gra -
+phitization of carbon materials. Existing study has 
+highlighted IR as part of the primary factor influenc-
+ing performance of bio-based supercapacitors due 
+to carbon materials’ defect ability to enhance pseu -
+docapacitance, which contributes to enhancing bio-
+based supercapacitor energy density [34]. Biomass 
+materials’ surface elemental composition in atomic 
+percentage (C and O) was determined with X-ray 
+photoelectron spectroscopy. Carbon content is asso-
+ciated with the stability and electrical conductivity of 
+electrode active materials, while oxygen contributes 
+to pseudocapacitance; both are crucial for enhancing 
+the energy density of bio-based supercapacitors. Bio-
+based electrode PW, measured in volts (V), is crucial 
+to energy density prediction, as increase voltage sig-
+nificantly contributes to enhancing bio-based super-
+capacitor energy density. Carbon pore volume (PV) 
+was initially included as descriptor for the modelling 
+and prediction of bio-based supercapacitor energy 
+density.
+For manual extraction of datasets used for model-
+ling supercapacitor performance prediction with ML, 
+2275 experimental studies was sorted out from Scopus 
+database using keywords (“biomass” OR “bio-based” 
+OR “organic” OR “plant material”) AND (“activated 
+carbon” OR “charcoal” OR “carbonaceous” OR “car-
+bon material”) AND (“supercapacitor” OR “ultraca-
+pacitor” OR “energy storage” OR “capacitive”) AND 
+(“electrode” OR “electrode material” OR “conductive” 
+OR “current collector”). 305 datasets were extracted 
+for this study after removing datasets with missing 
+material properties and energy density values. Miss-
+ing PS values were calculated using Wheeling equa-
+tion, as shown in Eq. 1 [42]. The manual extraction of 
+the 305 datasets from existing published studies was 
+carried out by carefully identifying relevant variables 
+from text, tables and figures, which were then trans-
+ferred into a structured spreadsheet (Microsoft Excel). 
+The datasets were extracted from the main article and 
+supplementary materials. Quantitative data, such as 
+PW, which are presented only in figures, were recov-
+ered by using OriginLab. All feature units were har-
+monized, and unit conversion was carried out where 
+necessary to ensure consistency across the datasets.
+Machine learning model and hyperparameter 
+optimization
+For ML modelling and prediction of bio-based super-
+capacitor energy density, dataset was randomly 
+divided into 90% for training and 10% for testing. 
+This study employed four (4) ML algorithms, which 
+include XGB, ERT, RF and CB to create model for pre-
+dicting energy density of bio-based supercapacitors. 
+XGB creates prediction model via weighted summa-
+tion of responses from various decision trees. Each 
+decision tree in model created by XGB influences 
+the prediction through mapping of input column to 
+specific weights assigned to leaf nodes. It iteratively 
+builds and optimizes decision tree, leverages gradi-
+ent descent and adds regularization to prevent overfit-
+ting, resulting in robust and accurate model suitable 
+for prediction [43].
+RF is a homogeneous supervised ML algorithm that 
+combines numerous decision trees to reduce overfit-
+ting and improve prediction performance [44]. RF cre-
+ates several decision trees using bootstrap aggregating 
+(1)PS = 4000 × PV
+SSA
+15945
+
+===== PDF PAGE 7 =====
+ J Mater Sci (2026) 61:15940–15960
+and feature selection, which reduces overfitting that 
+often affects the performance of single decision tree 
+algorithms [33]. Each decision tree in RF model is 
+trained separately on different subsets of dataset and 
+final prediction is based on averaging the predictions 
+of all decision trees [33].
+ERT is an ensemble learning algorithm similar to 
+RF, as it is also based on building multiple decision 
+trees, reducing overfitting and averaging performance 
+of all trees. ERT is known as extension of RF due to 
+its ability to recognize relevant features for splitting 
+each node. Additionally, ERT employed full datasets 
+to train each decision trees unlike RF, which utilizes 
+bootstrap [45].
+CB, known for speed and accuracy, is a novel gradi-
+ent boost decision tree. CB employed ordered boosting 
+and permutation-driven techniques to resolve estima-
+tion deviation of utilizing similar datasets in boosting 
+iteration repeatedly in traditional gradient boosting 
+decision tree algorithm [34]. Additionally, CB is effi-
+cient for categorical features with small number of 
+preprocessing steps, as it does not require converting 
+categorical features into numerical values [34].
+For generalization, enhancement of ML models 
+performance and reducing overfitting, hyperparam -
+eters tunning is employed during cross-validation of 
+the 90% datasets assigned for training the model to 
+prevent model underfitting or overfitting. Grid search 
+cross-validation strategy was implemented in obtain-
+ing optimal hyperparameters for enhancing the model 
+performance due to its integrations, exhaustive search 
+and evaluation of all possible combinations of hyper-
+parameter to reduce errors. Tenfold cross-validation 
+was used in the hyperparameter tuning of each regres-
+sion model developed. Table 1 shows the parameters 
+range and optimum used for tuning the training data-
+sets for all models. Learning curve was used to discuss 
+how training and validation errors change with data-
+set size to diagnose underfitting or overfitting, while 
+bias-variance decomposition quantifies the contribu-
+tion of systematic error (bias) and prediction variabil-
+ity (variance) to the model’s overall error.
+Model performance metrics
+Determination of model performance is crucial to assess 
+accuracy and consistency of ML model. This step will 
+help in identifying model with the best predictive capa-
+bilities between XGB, RF, CB and ERT. Several data vis-
+ualizations, such as correlation heatmap and statistical 
+analysis, were employed to provide statistical insight 
+from the datasets and assess performance of XGB, RF, 
+CB and ERT. This study performance metric evalu-
+ation includes root mean square error (RMSE), mean 
+absolute percentage error (MAPE), mean absolute error 
+(MAE) and R2 and their respective equation are shown 
+in Eqs. 2, 3, 4 and 5 below.
+where n, Yacti , Ypredi
+ , and Ypredi
+ is the number of data 
+points, actual recovery factor, model predicted recov-
+ery factor and mean of Ypredi
+ , respectively.
+(2)RMSE =
+/uni221A.t/uni221A.x/uni221A.x/uni221A.s41
+n
+n/uni2211.s1
+i=1
+/parenleft.s2
+Yacti − Ypredi
+/parenright.s22
+(3)MAPE =( 1
+n
+n/uni2211.s1
+i=1
+/uni007C.x/uni007C.x/uni007C.x/uni007C.x/uni007C.x
+Yacti − Ypredi
+RFacti
+/uni007C.x/uni007C.x/uni007C.x/uni007C.x/uni007C.x
+)× 100
+(4)MAE = 1
+n
+n/uni2211.s1
+i=1
+/uni007C.varYacti − Ypredi
+/uni007C.var
+(5)R2 = 1 −
+∑ n
+i=1
+�
+Yacti − Ypredi
+�2
+∑ n
+i=1
+�
+Yacti − Ypredi
+�2
+Table 1  Hyperparameters for machine learning models and opti-
+mum parameter
+Model Hyperparameter Options Optimum
+XGB Maximum depth 3–20 20
+Minimum child weight 1–4 4
+Column sampling by tree 0.6–1.0 0.8
+Number of estimators 100–1000 100
+CB Depth 5–10 5
+Number of estimators 100–1000 900
+Random subspace method 0.8–1.0 1.0
+Minimum data in leaf 1–4 1
+RF Maximum depth 5–20 20
+Maximum features sqrt, log2 sqrt
+Number of estimators 100–1000 100
+Minimum samples split 2–10 2
+Minimum samples leaf 1–4 1
+ERT Maximum depth None-30 None
+Maximum features sqrt, log2, 0.5 0.5
+Number of estimators 100–1000 150
+Minimum samples split 2–15 2
+Minimum samples leaf 1–6 2
+15946
+
+===== PDF PAGE 8 =====
+J Mater Sci (2026) 61:15940–15960 
+RMSE utilize difference between predicted and 
+actual data to measure model performance and 
+accuracy. Lower RMSE value indicate model’s high 
+prediction accuracy and fitness with the datasets. 
+MAPE is another model performance metric that 
+measures average magnitude error in prediction sets 
+and expressed it as percentage of actual data. MAE 
+measure average error between predicted and actual 
+values of the model without considering their direc-
+tion. Model with low MAE indicates good model accu-
+racy, consistency and performance prediction. MAE 
+was utilized as loss function for regression model in 
+this study, aligning with its scale-invariant properties 
+suitable for bio-based supercapacitor datasets. R 2 is a 
+common model performance metrics which quantify 
+proportion of variance in the output variable that is 
+explained by the model [46]. A model with good per-
+formance is expected to have R2 value close to 1, which 
+indicates that the model can explain nearly all vari-
+ation in the output values, signifying a near-perfect 
+fit. For model interpretation, SHAP was employed. 
+SHAP estimates Shapley values of each feature with 
+respect to the corresponding output, thereby quan-
+tifying their individual contributions to prediction 
+[47, 48]. This approach draws inspiration from game 
+theory’s allocation method, ensuring a fair distribution 
+of contributions among features. To determine how 
+the model learn from the data, ablation testing was 
+employed for the best performing model developed 
+by modelling with PW and electrode active materials 
+properties separately.
+Result and discussion
+This study utilized datasets containing 6 independ-
+ent variables, which include SSA, PS, IR, PW, C, and 
+C/O to develop model for predicting energy density 
+of bio-based supercapacitor. Table 2 presents statis-
+tical analysis of the datasets, including count, mean, 
+minimum, maximum, first quartile, second quartile, 
+third quartile and standard deviation. Notably, energy 
+density range was 0.34–124.00 Wh/kg, which is higher 
+compared to the energy density range reported in 
+the study by Lu et al. [35], where predictive model 
+was developed for bio-based supercapacitor energy 
+density. Energy density range highlights the repre-
+sentation of both high and low bio-based superca-
+pacitor energy density in the datasets. As shown in 
+Table 2, SSA values of biomass-based supercapaci-
+tor electrode are between 6.32 and 4472.70  m2/g, and 
+IR values are between wide range of 0.49–4.30. The 
+SSA mean of 1690.20  m2/g and interquartile range 
+of 1066.90–2155.00  m2/g revealed that both low and 
+high SSA carbons are well captured rather than focus-
+ing on narrow region. IR standard deviation of 0.56 
+reflected the variability expected in the datasets. The 
+maximum SSA and IR values obtained in this study 
+are higher than the maximum SSA (4070  m2/g) and 
+IR (3.91) reported in datasets statistics of the model 
+developed by Shrivas et al. [33] for predicting bio-
+based supercapacitor specific capacitance. The PS has 
+minimum value of 0.21 nm, which is lower compared 
+to minimum PS (0.54 nm) used by Shrivas et  al. [33]. 
+Similarly, PS standard deviation of 1.66 also represent 
+the variability in structure of carbon active materials 
+due to different synthesis methods. PW has maximum, 
+mean, standard deviation, and minimum values of 
+4.00 V, 1.42 V, 0.58 V and 0.60 V, respectively. The PW 
+range (0.80–4.00 V), mean (1.04 V) and standard devi-
+ation (0.50) of datasets used in the study by Shrivas 
+et al. [33], where 100 datasets are employed was lower 
+compared to this study. Variation in PW demonstrates 
+the representation expected due to difference in elec-
+trolyte types and electrode stability window.
+Table 2  Datasets statistical 
+analysis Variables count mean Standard 
+deviation
+Min 25% 50% 75% Max
+SSA  (m2/g) 305.00 1690.20 875.96 6.32 1066.90 1642.00 2155.00 4472.70
+PS (nm) 305.00 2.76 1.66 0.21 2.00 2.40 3.05 14.96
+IR 305.00 1.18 0.56 0.49 0.94 1.02 1.14 4.30
+PW (V) 305.00 1.42 0.58 0.60 1.00 1.20 1.80 4.00
+C (%) 305.00 84.41 9.20 6.04 81.32 85.70 90.27 98.82
+C/O 305.00 11.76 19.59 0.46 5.50 8.12 13.26 267.27
+ED (Wh/kg) 305.00 20.30 17.90 0.34 9.20 14.70 25.40 124.00
+15947
+
+===== PDF PAGE 9 =====
+ J Mater Sci (2026) 61:15940–15960
+Biochar carbon content determined by chemi-
+cal composition analysis in existing studies ranged 
+from minimum value of 6.04% to maximum value 
+of 98.82%, interquartile range of 81.32–90.27% with 
+an average value of 84.41%, which is lower than the 
+average value of 84.67% observed in the study by Liu 
+et al. [34] where model was developed for predict-
+ing supercapacitor specific capacitance. C/O ranged 
+was 0.46–267.27, which is higher than C/O range 
+(2.08–85.55) in study by Liu et al. [34]. The variation in 
+elemental composition of activated carbon is reported 
+to be influenced by biomass precursor [49]. The car-
+bon mean and interquartile range revealed that they 
+are consistently high, whereas C/O range and mean 
+(11.76) show positively skewed which indicates that 
+both high and low C/O ratio were included in the 
+datasets. This study retained outliers in the datasets 
+as MAE metric demonstrates robustness to outliers, 
+thereby providing more reliable measure of model 
+performance compared to other error metrics, such as 
+RMSE or mean squared error [50].
+Figure 2 illustrates the distribution histogram plots 
+of both the input and output features. SSA exhibits 
+near-normal distribution with slight right skewness, 
+whereas PS, IR, PW and energy density display strong 
+right skewness, indicating that most property values 
+are concentrated at the lower end with only a few at 
+higher values. C values are centred around higher 
+range, confirming carbon-rich nature of biomass sam-
+ples [51]. C/O values are heavily skewed, with most 
+and few values at lower and higher region, respec-
+tively. The histogram plot of the datasets highlights 
+the variation in datasets and suggests normalization 
+and standardization of datasets for performance corre-
+lation. However, tree-based ensemble ML algorithms 
+used in this study are inherently scale-invariant, as 
+their data splitting mechanism is based on feature 
+ordering rather than absolute magnitude.
+Figure  3a, b illustrates the Pearson correlation 
+heatmap created using Python, which depicts cor-
+relation coefficients between dependent-dependent 
+and dependent-independent features. It is important 
+Figure 2  Datasets distribution plot.
+15948
+
+===== PDF PAGE 10 =====
+J Mater Sci (2026) 61:15940–15960 
+to note that Pearson correlation coefficient is limited 
+to capturing only linear relationships between fea-
+tures, which restricts its ability to reveal nonlinear 
+relationships between features [52]. Positive cor-
+relation coefficient between two different features 
+indicates that features tend to increase or decrease 
+together, whereas a negative correlation coefficient 
+implies an inverse relationship, demonstrating that 
+when one feature increases, the other decreases. As 
+shown in Fig. 3a, the initial correlation matrix of 
+datasets highlights the high correlation between SSA 
+and PV data with a correlation coefficient of 0.83. 
+High correlation between SSA and PV can result 
+in reduced ML model generalizability and perfor-
+mance, while increasing the computation time and 
+resources for training the ML models. As shown 
+in Fig. 3b, it was observed that PW, with a corre-
+lation coefficient of 0.59, influences energy density 
+as it plays a crucial role in calculating supercapaci-
+tor’s energy density as shown in Eq. 6 [53–55]. In 
+the study by Lu et al. [35], PW and electrode active 
+material physical properties and elemental composi-
+tion as independent variables were not included in 
+the model developed for predicting energy density 
+of bio-based supercapacitor. Carbon and SSA have 
+positive correlation coefficient of 0.23, while Carbon 
+and C/O have 0.21. Others have low positive and 
+negative correlation coefficients, which indicate a 
+weak relationship between the features. This corre-
+lation coefficient shows that the input features have 
+a reasonable degree of independence among them, 
+demonstrating their importance as input for energy 
+density modelling.
+where Csp represent the specific capacitance of 
+supercapacitor.
+Missing PS values determine with Wheeling equa-
+tion may introduce some systematic and random error 
+in ML models. However, correlation heatmap indi-
+cates that PS exhibits only weak correlations with the 
+other descriptors with coefficients close to zero across 
+the heatmap. Therefore, any uncertainty arising from 
+the Wheeling-based calculation is unlikely to have 
+substantially biased the overall correlation structure 
+or inflated spurious linear relationships, as no strong 
+clusters or unexpected trends are observed. Given this 
+low interdependence, the propagated error from PS 
+into the multivariate model predictions is expected 
+to be limited, affecting primarily local contribution of 
+PS rather than global predictive power of ML models. 
+Nonetheless, modest negative correlation between PS 
+and SSA and near-zero correlations with ED suggest 
+that, within explored design space, PS plays a second-
+ary role compared with PW, and thus any bias in PS 
+is more likely to slightly attenuate than to artificially 
+enhance its apparent importance in ML models.
+Figure  4b shows RF feature importance score 
+for the regression model showcasing the impact of 
+(6)Energy density =
+CspΔPW2
+7.2
+Figure 3  Pearson correlation heatmap (a) with and b without pore volume as descriptor.
+15949
+
+===== PDF PAGE 11 =====
+ J Mater Sci (2026) 61:15940–15960
+each independent variable on model prediction. 
+PW appears to have the highest feature with impor-
+tance score of 0.478, while C, with a score of 0.0913, 
+appears as the lowest for the RF model. Other fea-
+tures’ importance follows the trend C/O, SSA, PS and 
+IR with importance scores of 0.136, 0.103, 0.0991 and 
+0.0916, respectively. Among all independent variables 
+in this investigation, PW remains the most influen-
+tial independent variable in prediction of bio-based 
+supercapacitor energy density, while C has the least 
+influence. The order of feature importance identi-
+fied by the RF model in this study differs from that 
+reported by Shrivas et al. [33], where a predictive 
+model was developed to predict specific capacitance 
+of bio-based supercapacitors. This study observed SSA 
+as the most influential properties to enhancing super-
+capacitor specific capacitance. This difference may 
+be attributed to the quadratic relationship of PW to 
+energy density [56]. Feature importance comparative 
+analysis improves interpretation and transparency of 
+RF model, enabling the understanding between input 
+features and bio-based supercapacitor energy density.
+PW of bio-based supercapacitors strongly depends 
+on type of electrolyte used, electrode stability win-
+dow, and experimental configuration. In this study, 
+the datasets were primarily obtained from symmetric 
+two-electrode configurations to ensure consistency in 
+experimental configuration. Electrolyte type signifi-
+cantly influences the operating PW of the bio-based 
+supercapacitors. Aqueous electrolytes such as KOH, 
+ N a2SO4, and  H2SO4 typically operate within PW 
+range of ~ 0.8–1.8 V. In contrast, organic electrolytes 
+such as TEABF4/acetonitrile, operates at a wider PW 
+range of ~ 2.0–4.0 V. Ionic liquid electrolytes, such 
+as  EMIMBF4, operate within a range of ~ 2.2–3.6 V. 
+Solid-state electrolytes show variable PW depending 
+on their chemical composition. Additionally, stability 
+window of bio-based supercapacitor electrodes varies 
+depending on ion-electrode surface interactions. These 
+surface reactions influence the achievable device PW.
+Conversely, modelling PW with electrode active 
+materials properties such as SSA, PS, and IR may lead 
+to overweighing PW due to its sensitivity to experi-
+mental conditions and electrolyte type, as well as its 
+interdependence with electrode properties which 
+influences bio-based supercapacitor performance. 
+However, PW is highlighted in several existing stud-
+ies as a critical factor in determining supercapacitor 
+performance, such as energy density [57, 58]. For 
+developing the predictive models, PW was treated as 
+a critical electrochemical feature due to its direct influ-
+ence on energy density, thereby enabling all models 
+to capture nonlinear relationship of PW to bio-based 
+supercapacitor energy density.
+The goal of this predictive model is to create a 
+robust model capable of predicting energy density of 
+bio-based supercapacitor. RMSE, MAPE, MAE and 
+R2 utilized in these studies provide insight on accu-
+racy, precision and consistency of four algorithms 
+employed, which include RF, XGB, CB and ERT. 
+Notably, RF, XGB, CB and ERT models exhibited bet-
+ter predictive performance during training, with R2 
+values ranging from 0.748 to 0.990 as compared to 
+testing, where R2 values ranged from 0.637 to 0.885, 
+as shown in Fig. 5d and Table 3. From Fig. 5a–c, train-
+ing set exhibited RMSE, MAE and MAPE values of 
+1.68–8.66 Wh/kg, 0.348–5.34 Wh/kg and 2.17–61.64%, 
+respectively, whereas testing set recorded higher val-
+ues ranging from 7.65 to 13.62 Wh/kg, 4.81–9.23 Wh/
+kg and 88.23–158.88%, respectively.
+After hyperparameter tuning with grid search 
+cross-validation, the model developed with ERT algo-
+rithm exhibited the lowest prediction accuracy, pre-
+cision and consistency as compared to XGB, CB and 
+RF. From Fig. 5a–d and Table 2, XGB exhibited lowest 
+R2 value of 0.637 and highest RMSE and MAE values 
+of 13.64 Wh/kg and 9.23 Wh/kg, respectively. Among 
+the algorithms employed, XGB demonstrated the best 
+performance in modelling and predicting the energy 
+PW C/OS SA PS IR C
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5ecnatropmI
+Variables
+Figure  4  Random Forest feature importance quantifying the 
+contribution of independent variables to the prediction of bio-
+based supercapacitor energy density.
+15950
+
+===== PDF PAGE 12 =====
+J Mater Sci (2026) 61:15940–15960 
+density of bio-based supercapacitors with highest R2 
+value of 0.885 and smallest RMSE and MAE values of 
+7.65 Wh/kg and 4.81  Wh/kg, respectively. Although 
+XGB model achieved the highest R2 by effectively 
+explaining variance across bio-based supercapacitor 
+data, it exhibited highest MAPE of 158%, driven by rel-
+ative errors on low energy density values where actual 
+targets approached zero as evident in Table 2. The 
+training R2 value of XGB in this study (0.990) exceeded 
+the value reported by Lu et al. [35] where LightGBM 
+achieved an R2 of 0.922. However, the testing R2 value 
+obtained in Lu et al. [35] study (0.916) is higher than 
+the value observed in this study (0.885). This may be 
+attributed to the difference in features and number of 
+datasets used in developing the predictive model. The 
+four ML models ranked as follows: XGB greater than 
+CB greater than RF greater than ERT, as illustrated 
+in Fig.  5d. This investigation reveals the accuracy 
+and efficiency of ensemble ML techniques, specifi-
+cally XGB, in predicting energy density of bio-based 
+(a) (b)
+(d)(c)
+047. 5
+075. 01
+086. 1
+056. 7
+085. 3
+020. 9
+066. 8
+026. 31
+TrainT est
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18)gk/hW(rorreerauqsnaemtooR
+RF
+XGB
+CB
+ERT
+066. 3
+041. 8
+843. 0
+018. 4
+006. 2
+015. 6
+043. 5
+032. 9
+TrainT est
+0
+2
+4
+6
+8
+10
+12)gk/hW(rorrEetulosbAnaeM
+RF
+XGB
+CB
+ERT
+096. 54
+002. 511
+071. 2
+088. 851
+082. 42
+032. 88
+046. 16
+013. 89
+TrainT est
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200)%(rorrEegatnecrePetulosbAnaeM
+RF
+XGB
+CB
+ERT
+988. 0
+187. 0
+099. 0
+588. 0
+759. 0
+148. 0
+847. 0
+736. 0
+TrainT est
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4noitanimretedfotneiciffeoC (R2) RF XGBC BE RT
+Figure 5  ML model a root mean square error, b mean absolute error, c mean absolute percentage error and d coefficient of determina-
+tion.
+Table 3  ML model 
+performance metrics Metrics RF XGB CB ERT
+Train Test Train Test Train Test Train Test
+RMSE (Wh/kg) 5.74 10.57 1.68 7.65 3.58 9.02 8.66 13.62
+MAE (Wh/kg) 3.66 8.14 0.348 4.81 2.60 6.51 5.34 9.23
+R2 0.889 0.781 0.990 0.885 0.957 0.841 0.748 0.637
+MAPE (%) 45.69 115.20 2.17 158.88 24.28 88.23 61.64 98.31
+15951
+
+===== PDF PAGE 13 =====
+ J Mater Sci (2026) 61:15940–15960
+supercapacitors. Difference in model performance 
+metric can be attributed to the model’s statistical and 
+theoretical framework’s impact on bio-based super-
+capacitor energy density [59]. XGB captures complex 
+relationships or trends in the datasets by recognizing 
+relevant features for splitting each node into multiple 
+decision trees.
+Figure 6 illustrates model prediction performance 
+of RF, XGB, CB and ERT by comparing the actual 
+energy density with the predicted energy density of 
+each model. The closer the scatter plot to equality 
+line, the higher the accuracy of the ML model. Fig-
+ure 6b displays that XGB and CB models consistently 
+shows closer scatter plot to the regression line, indi-
+cating more accurate predictions, especially at higher 
+energy density. XGB and CB appear strong, with 
+many of the scattered plots closely aligned, reflect-
+ing slight deviation between the predicted energy 
+density and actual energy density. This closer per-
+formance was highlighted in Fig. 5b, d with closer 
+R2 value of 0.885 and 0.841 for XGB and CB mod-
+els, respectively. In contrast, Fig. 6a shows that 
+ERT predicted energy density follows the trend of 
+actual energy density, but several outliers, espe-
+cially at higher actual energy density, deviate from 
+the regression line, which indicates lower prediction 
+Figure 6  Predicted versus actual data comparison for a random forest, b extreme gradient boost, c categorical boost, and d extremely 
+randomized tree.
+15952
+
+===== PDF PAGE 14 =====
+J Mater Sci (2026) 61:15940–15960 
+accuracy compared to XGB, CB and RF. RF has closer 
+scatter plot to the regression line compared to ERT, 
+as shown in Fig. 6c. However, there is also slight 
+deviation from the regression line at higher energy 
+density. Overall, XGB model outperform CB, ERT 
+and RF models by predicting accurate and consist-
+ent energy density across the entire test and training 
+dataset.
+Learning curve of the XGB model revealed that 
+training MAE remains close to zero across all training-
+set sizes, while the validation MAE decreases sharply 
+as training samples increases to 247 and then plateaus 
+with only marginal improvement beyond this point, 
+indicating that additional data bring limited benefits 
+in XGB model generalization. ED error decomposition 
+reveals bias of 50.3% of MAE compared with variance 
+of 49.7%. The approximately equal contribution of bias 
+and variance indicates that XGB exhibits a balanced 
+trade-off between underfitting and overfitting. Bias 
+reflects systematic error due to XGB model’s limited 
+capacity to fully capture relationships in datasets, 
+while variance reflects sensitivity to fluctuations in 
+training data. These results suggest that while the 
+model can learn major trends in the dataset, there 
+remains room for improvement in both reducing sys-
+tematic error (bias) and stabilizing predictions (vari-
+ance). The between bias and variance, together with 
+non-converging gap between training and valida-
+tion MAE at large sample sizes, implies that relaxing 
+model complexity constraints and feature engineering 
+would be more effective for reducing ED prediction 
+error than simply enlarging the training set.
+Table 4 compares this study with existing studies on 
+prediction of bio-based supercapacitor performance. 
+It can be observed that there are limited studies on 
+developing ML model for predicting bio-based super-
+capacitor energy density. The study by Lu et al. [35] 
+utilized 16 independent variables, which include, but 
+are not limited to, biomass elemental composition, 
+moisture content, ash content, fixed carbon, and bio-
+mass structural composition, while employing three 
+(3) different ML models: XGB, LightGBM, and DNN 
+[35]. The best performing model for energy (Light-
+GBM) and power density prediction (XGB) in the 
+study has R2 value of 0.916 and 0.921, respectively, 
+with 119 datasets [35]. Additionally, Ahmed et al. [60] 
+utilized 3 features with 70 datasets to develop predic-
+tive model for supercapacitor energy density, power 
+density and specific capacitance using artificial neu-
+ral network and RF algorithm. After hyperparameter 
+tuning, they reported R2 value of 0.921 (ANN), 0.964 
+(RF) and 0.956 (ANN) for energy density, power den-
+sity and specific capacitance, respectively. Tawfik 
+et al. [61] achieved R2 value of 0.895 with ANN model 
+developed using 8 features and 260 datasets to predict 
+carbon electrode supercapacitor specific capacitance. 
+Shrivas et al. [33] predicted activated carbon electrode 
+specific capacitance with ML. They reported that RF 
+model developed with 6 features and 100 datasets 
+achieved R2 value of 0.840. In the study by Kushwaha 
+et al. [62], ANN model developed with 5 features and 
+148 datasets, predicted specific capacitance of car-
+bon-based electrode supercapacitor with R2 value of 
+0.920. Lastly, Tawfik et al. [63] developed ML model 
+Table 4  Comparison with 
+existing predictive models References Performance Features Datasets Model R2 MAE RMSE
+[35] Energy density 15 119 XGB 0.908 6.84 10.27
+[35] Energy density 15 119 LightGBM 0.916 5.41 9.27
+[35] Power density 15 119 XGB 0.921 6036.93 8550.39
+[60] Energy density 3 70 ANN 0.921 0.58
+[60] Power density 3 70 RF 0.964 0.16
+[60] Capacitance 3 70 ANN 0.956 18.13
+[61] Capacitance 8 260 ANN 0.895 46.56 30.82
+[33] Capacitance 6 100 RF 0.840 46.69 61.88
+Capacitance 5 148 ANN 0.920 21.93 29.32
+[63] Capacitance 8 260 ANFIS 0.900 39.76 22.80
+This work Energy density 6 305 XGB 0.885 4.89 7.21
+This work Energy density 6 305 ERT 0.637 5.05 7.14
+This work Energy density 6 305 CB 0.841 5.878 7.96
+This work Energy density 6 305 RF 0.781 6.92 9.76
+15953
+
+===== PDF PAGE 15 =====
+ J Mater Sci (2026) 61:15940–15960
+to predict specific capacitance of porous carbon-based 
+supercapacitor electrodes. They reported R2 value of 
+0.900 with the model developed with adaptive neuro-
+fuzzy inference system (ANFIS) using 260 datasets 
+with 8 features.
+In contrast, this study employed four (4) different 
+ML models, which include XGB, RF, CB and ERT to 
+develop predictive model for bio-based supercapacitor 
+energy density with 6 features. The best performing 
+model (XGB) in this study has R2, MAE and RMSE 
+values of 0.885, 4.81and 7.65, respectively, which are 
+lower and like some result from existing studies. This 
+may be attributed to the difference in features used 
+in developing the predictive model in this study. We 
+utilized PW, SSA, IR, C, C/O and PS to create models 
+and enhance bio-based supercapacitor energy density 
+prediction accuracy. Variation in number of datasets 
+influence ML model performance in bio-based super-
+capacitor prediction via high-dimensionality-induced 
+overfitting, sample inefficiency causing unstable vari-
+ance and distribution shifts from biomass precursor 
+clustering reducing cross-biomass generalization, and 
+multicollinearity inflation, explain why the 6 features, 
+350 dataset achieves competitive R2 value of 0.885 ver-
+sus literature despite fewer parameters.
+Figure 7a, c, e and g shows SHAP interpretation 
+plot of RF, XGB, CB and ERT model, respectively, 
+highlight the important independent variables to 
+energy density of bio-based supercapacitor. SHAP 
+interpretation plot consists of SHAP value on x-axis 
+and y-axis for independent variable order based on 
+SHAP mean absolute value. SHAP demonstrated the 
+independent variable value from blue to red and the 
+smaller the feature value the closer the sample point 
+to blue. Feature consisting of both negative and posi-
+tive SHAP mean values indicates that the model can 
+decrease or increase the energy density predicted. As 
+shown in Fig.  7a, higher values of PW (indicated in 
+red) at positive SHAP values signify an increase in 
+RF model supercapacitor energy density predictions. 
+This confirms the positive contribution of PW to RF 
+model prediction. This can be because wide PW are 
+required to achieve high energy density as its square is 
+directly proportional to energy density, thereby high-
+lighting that increasing electrode PW led to increase 
+in energy density of supercapacitor [64, 65]. Also, 
+SSA have some higher value (towards red) and small 
+lower value (toward blue) at positive SHAP value, 
+indicating that it can increase and decrease superca-
+pacitor energy density. This may be attributed to ions 
+adsorbed on the accessible electrode and electrolytes 
+interface in bio-based supercapacitor [66]. In contrast, 
+low IR (towards blue) at positive SHAP value indicates 
+a decrease in RF model energy density predictions. 
+From Fig. 7b, feature importance order for RF model 
+is PW, followed by C/O SSA, followed by IR, followed 
+by PS, followed by C. Overall, PW dominates feature 
+contribution to RF model while C/O, SSA, C, IR, and 
+PS are essential secondary features for shaping the 
+model accuracy.
+In XGB, CB and ERT models, PW remains the most 
+important feature in bio-based supercapacitor energy 
+density prediction. However, there are different fea-
+tures ranking in each model. For the XGB model, fea-
+ture importance order as PW greater than PS greater 
+than C/O greater than SSA greater than IR greater than 
+C for accurately predicting bio-based supercapacitor 
+energy density as shown in Fig. 7c, d. The PW and SSA 
+in XGB model have positive values at positive SHAP, 
+which highlight that increase in PW and SSA tends 
+to increase bio-based supercapacitor energy density. 
+However, presence of SSA blue dot at positive SHAP 
+revealed that increasing SSA may result in decreas-
+ing energy density of bio-based supercapacitor. PS 
+have lower value at positive SHAP values, indicating 
+that increasing PS tends to decrease energy density 
+of bio-based supercapacitor. With this, PW and SSA 
+strongly contribute to the accuracy, consistency and 
+performance of XGB model in predicting the energy 
+density, unlike RF model.
+For the CB model, feature importance order as 
+PW greater than C/O greater than SSA greater than 
+PS greater than IR greater than C for predicting bio-
+based supercapacitor energy density as shown in 
+Fig. 7e, f). Similar to XGB, CB model PW have higher 
+values (red dot) and fall at positive SHAP values while 
+SSA still have some blue dot at positive SHAP. Lastly, 
+ERT order as PW greater than C/O greater than IR 
+greater than SSA greater than C greater than PS. In 
+summary, PW is the most important feature high-
+lighted by RF, XGB, CB and ERT models in this study 
+to predict energy density of bio-based supercapacitor 
+when compared to SSA, PS, IR, C/O and C. Increas -
+ing electrode PW is expected to increase energy den-
+sity of bio-based supercapacitor more than primarily 
+focusing on increasing SSA of electrode materials only. 
+High SSA may result in reduced energy density due 
+to increased micropore, reduced mesopore and poor 
+electrical conductivity of the carbon which affects ion 
+transport [67, 68]. Lower C/O ratio, reflecting higher 
+15954
+
+===== PDF PAGE 16 =====
+J Mater Sci (2026) 61:15940–15960 
+surface oxygen content, enhances electrode wettabil-
+ity and facilitates electrolyte access to porous carbon 
+active sites, which in turn improves charge storage 
+through electric double layer capacitance mechanism. 
+Chemical logic explains why ML models developed 
+assigns significant importance to C/O ratio in predict-
+ing bio-based supercapacitor energy density.
+This study’s SHAP analysis reveals that electrode 
+operating PW plays role in predicting bio-based 
+supercapacitor energy density, whereas existing stud-
+ies have highlighted activation residence time as an 
+important predictive feature [35]. This difference is 
+suggested to have occurred due to the use of electrode 
+PW as independent variable in this study. Furthermore, 
+SHAP results show that higher electrode PW gener-
+ally leads to increased energy density, highlighting its 
+importance in building accurate, consistent and reliable 
+predictive models for supercapacitor energy density. 
+Figure  7  Shapley additive explanations Beeswarm plot for a 
+random forest c extreme gradient boost e categorical boost and g 
+extremely randomized tree. Shapley additive explanations mean 
+for b random forest d extreme gradient boost f categorical boost 
+and h extremely randomized tree.
+15955
+
+===== PDF PAGE 17 =====
+ J Mater Sci (2026) 61:15940–15960
+Consequently, incorporating electrode PW into predic-
+tive models is essential, and increasing electrode PW 
+could enhance supercapacitor performance for different 
+applications, such as electric vehicles.
+Table 5 comparing the performance of XGB-based 
+predictive model developed with all datasets, PW and 
+materials properties, highlighted that the model signifi-
+cantly learns from both PW and materials properties 
+due to the R2 values. All datasets achieved R2 of 0.885 
+for testing data, which is greater than R2 value of 0.478 
+and 0.310 achieved with only materials properties and 
+PW data, respectively. This shows that the model is gov-
+ern by materials properties, while PW provide second-
+ary support for the model performance. SHAP mean 
+revealed the contribution of each materials property 
+to the performance of only material properties-based 
+prediction of testing data (Fig. 8). SSA was observed 
+to be the most influential contributor, while C remain 
+the least contributor. In summary, PW and materials 
+properties are crucial for developing predictive model 
+for bio-based supercapacitor energy density due to their 
+synergetic contribution to the learning process.
+Conclusion
+The paper developed a predictive model for bio-based 
+supercapacitor energy density to speed up materials 
+discovery and reduce resources and time consumption 
+associated with experimental optimization. RF, XGB, CB 
+and ERT model was developed with PW and bio-based 
+electrode physical and chemical properties. 305 datasets 
+from existing experimental studies on bio-based super-
+capacitors were extracted and split into 90% for training 
+and 10% for testing. Metrics employed for the model 
+performance analysis were R2, RMSE, MAPE and MAE. 
+With R2 value of 0.885, XGB model was deemed the 
+best ML model for predicting bio-based supercapacitor 
+energy density with PW and electrode properties when 
+compared with RF (0.781), CB (0.841) and ERT (0.637). 
+ERT exhibited larger MAE of 9.23 Wh/kg, followed by 
+RF with 8.14 Wh/kg. With XGB MAE value of 4.81 Wh/
+kg, the developed model achieves accurate, precise 
+and consistent prediction for bio-based supercapacitor 
+energy density. SHAP analysis confirmed that PW is the 
+most influential independent variable in model develop-
+ment and prediction of bio-based supercapacitor energy 
+density. This highlights that the incorporation of PW 
+in supercapacitor energy density predictive model is 
+essential. This study shows possibility to determine bio-
+based supercapacitor energy density using ML model 
+to reduce time and cost associated with experimental 
+investigation of bio-based materials in development of 
+supercapacitors. Also, it can assist to expedite discovery 
+of sustainable materials from biomass for development 
+of advanced and high-performance electrochemical 
+energy storage.
+Acknowledgements 
+The authors acknowledge the support provided by 
+Universiti Teknologi PETRONAS through the Yayasan 
+Universiti Teknologi PETRONAS (YUTP) Research 
+Grant 015LC0-472 in facilitating this study.
+Author contributions 
+Damilare Samuel Oyebamiji: Investigation, Writing—
+Original Draft. Davannendran Chandran: Conceptu-
+alization, Funding acquisition, Project administration, 
+Resources, Supervision, Writing—Review & Editing.
+Table 5  Ablation analysis using all features, only material prop-
+erties and only PW
+Datasets Testing R2 Training R2
+All 0.885 0.990
+Material properties 0.478 0.990
+PW 0.310 0.478
+Figure 8  Shapley additive mean of model developed with mate-
+rials properties only.
+15956
+
+===== PDF PAGE 18 =====
+J Mater Sci (2026) 61:15940–15960 
+Funding 
+Universiti Teknologi PETRONAS through the Yayasan 
+Universiti Teknologi PETRONAS (YUTP) Research 
+Grant 015LC0-472.
+Data availability 
+Will be made available upon request.
+Declarations 
+Conflict of interest The authors declare no conflict 
+interest.
+Ethical approval Not applicable.
+Supplementary Information  The online version 
+contains supplementary material available at https:// 
+doi. org/ 10. 1007/ s10853- 026- 12759-z.
+References
+[ 1] H. Ritchie, P. Rosado, M. Roser (2020) Greenhouse gas 
+emissions. https:// ourwo rldin data. org/ green house- gas- 
+emiss ions. Accessed 06 Dec 2024
+[ 2] IPCC, Summary for Policymakers In: Masson-Delmotte V, 
+Zhai P, Portner H-O, Roberts D, Skea J, Shukla PR, Pirani 
+A, Moufouma-Okia W, P´ean C, Pidcock R, Connors S, 
+Matthews JBR, Chen Y, Zhou X, Gomis MI, Lonnoy E, 
+Maycock T, Tignor M, Waterfield T (eds) Global Warming 
+of 1.5°C. An IPCC Special Report on the impacts of global 
+warming of 1.5°C above pre-industrial levels and related 
+global greenhouse gas emission pathways, in the context of 
+strengthening the global response to the threat of climate 
+change, sustainable development, and efforts to eradicate 
+poverty, Cambridge University Press, Cambridge, UK and 
+New York, NY, USA, 2018, pp 3–24 https:// doi. org/ 10.  
+1017/ 97810 09157 940. 001
+[ 3] Adhikari MP, Shahi S, Ma R, Hill JP, Ariga K, Shrestha LK 
+(2025) Ultrahigh surface area self-nitrogen-doped nanopo-
+rous carbon materials from Macrotyloma uniflorum (horse 
+gram) seed for high-performance supercapacitor applica-
+tions. J Power Sources 631:236239. https:// doi. org/ 10.  
+1016/j. jpows our. 2025. 236239
+[ 4] Guo L, Hu P, Wei H (2023) Development of supercapaci-
+tor hybrid electric vehicle. J Energy Storage 65:107269. 
+https:// doi. org/ 10. 1016/j. est. 2023. 107269
+[ 5] Cai S (2024) Systematic analysis of double electric layer 
+capacitors in modern energy storage, IET Conferen. Proc. 
+IET 327–332. https:// doi. org/ 10. 1049/ icp. 2024. 4004
+[ 6] Lamba P, Singh P, Bharti, Kumar A, Gupta M, Kumar 
+Y (2022) Recent advancements in supercapacitors based 
+on different electrode materials: classifications, synthesis 
+methods and comparative performance. J Energy Storage 
+48:103871. https:// doi. org/ 10. 1016/j. est. 2021. 103871
+[ 7] Roy BK, Tahmid I, Rashid TU (2021) Chitosan-based 
+materials for supercapacitor applications: a review. J Mater 
+Chem A 9(33):17592–17642. https:// doi. org/ 10. 1039/  
+D1TA0 2997E
+[ 8] Kumar A, Hsu CY, Ved A, Premkumar R, Sahu BN, Kant 
+S, Aggarwal A, Jassal P, Dehghanipour M (2025) Emerg-
+ing frontiers in supercapacitors: synergistic applications of 
+two-dimensional and three-dimensional composite mate-
+rials for energy storage. J Energy Storage 132:117667. 
+https:// doi. org/ 10. 1016/j. est. 2025. 117667
+[ 9] Poudel MB, Kim AA, Lohani PC, Yoo DJ, Kim HJ (2023) 
+Assembling zinc cobalt hydroxide/ternary sulfides hetero-
+structure and iron oxide nanorods on three-dimensional 
+hollow porous carbon nanofiber as high energy density 
+hybrid supercapacitor. J Energy Storage 60:106713. https://  
+doi. org/ 10. 1016/j. est. 2023. 106713
+[ 10] Tian Z, Li H, Yang W, Jian S, Zhang C, Jiang S (2023) 
+Fabrication of manganese oxides/carbon composites for 
+high energy density asymmetric supercapacitor. Diam 
+Relat Mater 131:109582. https:// doi. org/ 10. 1016/j. diamo 
+nd. 2022. 109582
+[ 11] Zeng J, Wei L, Guo X (2017) Bio-inspired high-perfor -
+mance solid-state supercapacitors with the electrolyte, 
+separator, binder and electrodes entirely from kelp. J Mater 
+Chem A 5(48):25282–25292. https:// doi. org/ 10. 1039/  
+C7TA0 8095F
+[ 12] Song H, Qu Q, Yang Z, Zhang Y, Qiu L, Zhao Y, Li C, Zhu 
+M, Yang X (2025) Supercapacitor performance of activated 
+carbon from Eucommia ulmoides Oliver wood optimized by 
+the activation method. ACS Omega 10(15):15368–15380. 
+https:// doi. org/ 10. 1021/ acsom ega. 4c115 29
+[ 13] Tabarov FS, Astakhov MV, Klimont AA, Kalashnik AT, 
+Galimzyanov RR, Isaeva NV (2019) Carbon nanofibers as 
+a conductive additive for supercapacitor electrodes. Nano-
+technol Rus 14(1):16–20. https:// doi. org/ 10. 1134/ S1995  
+07801 90101 17
+[ 14] Yulianti RT, Destyorini F, Irmawati Y, Umar AA, Fauzia 
+V, Yudianti R (2024) Heteroatom  SiO2-N/S co-dopant on 
+hierarchical meso/macroporous palm empty fruit bunches 
+15957
+
+===== PDF PAGE 19 =====
+ J Mater Sci (2026) 61:15940–15960
+carbon for flexible solid-state supercapacitors. Mater Sci 
+Eng B Adv Funct Solid-State Mater 303:117282. https://  
+doi. org/ 10. 1016/j. mseb. 2024. 117282
+[ 15] Ayinla RT, Elsayed I, Hassan EB (2025) Wood-based elec-
+trode and electrolyte for sustainable high-performance 
+solid-state supercapacitor. J Energy Storage 108:115025. 
+https:// doi. org/ 10. 1016/j. est. 2024. 115025
+[ 16] Wu P, Xu X, Xue Y, Dou Q, Luo H, Zhou C, Li W, Lv 
+Y (2025) Response surface optimization of coal tar-based 
+porous carbon and its supercapacitor performance analysis. 
+Electrochim Acta 514:145660. https:// doi. org/ 10. 1016/j.  
+elect acta. 2025. 145660
+[ 17] Ren Z, Pei Y, Wu X, Lv Y, Xue R, Guo J, Zhang X (2025) 
+Synthesis of coal tar-based hypercrosslinked polymers via 
+Friedel-Crafts alkylation: an efficient way to access car -
+bon electrode material for supercapacitors. Energy Environ 
+Mater. https:// doi. org/ 10. 1002/ eem2. 70161
+[ 18] Li J, Chen K, Li W, Qi S, Yang M, Ma X, Xia W (2025) 
+Self-activation strategy toward walnut shell-based porous 
+carbon for supercapacitors. Diam Relat Mater 155:112290. 
+https:// doi. org/ 10. 1016/j. diamo nd. 2025. 112290
+[ 19] Jia B, Mian Q, Wu D, Wang T (2022) Heteroatoms self-
+doped porous carbon from cottonseed meal using  K2CO3 as 
+activator and DES electrolyte for supercapacitor with high 
+energy density. Mater Today Chem 24:100828. https:// doi.  
+org/ 10. 1016/j. mtchem. 2022. 100828
+[ 20] Chaiammart N, Vignesh V, Thu MM, Eiad-ua A, Mai -
+yalagan T, Panomsuwan G (2025) Chemically activated 
+carbons derived from cashew nut shells as potential elec-
+trode materials for electrochemical supercapacitors. Car -
+bon Resour Convers 8(2):100267. https:// doi. org/ 10. 1016/j. 
+crcon. 2024. 100267
+[ 21] Xu R, Chen Z, Jin R, Ouyang Y, Wang S, Zhang W, Lin X, 
+Peng Y (2025) Sustainable synthesis of hierarchical porous 
+carbon from deoiled camphor leaves via cellulase hydroly -
+sis and potassium bicarbonate activation for high-perfor -
+mance supercapacitors. Bioresour Technol 433:132730. 
+https:// doi. org/ 10. 1016/j. biort ech. 2025. 132730
+[ 22] Yao F, Sugimoto A, Sks SK, Fukuhara C, Kong CY (2025) 
+High specific capacitance carbon materials from rice husk 
+ash: synthesis and insights into energy storage mechanism. 
+J Energy Storage 127:117107. https:// doi. org/ 10. 1016/j. est. 
+2025. 117107
+[ 23] Sekar S, Lee Y, Kim DY, Lee S (2019) Substantial LIB 
+anode performance of graphitic carbon nanoflakes derived 
+from biomass green-tea waste. Nanomaterials 9(6):871. 
+https:// doi. org/ 10. 3390/ nano9 060871
+[ 24] Chen Z, Weng X, Zeng Q, Xie Y, Liu Y, Lv Y, Liu M 
+(2025) Regulation of nitrogen species on biomass-based 
+porous activated carbon surfaces by varying nitrogen 
+sources for high-performance supercapacitors. J Power 
+Sources 636:236387. https:// doi. org/ 10. 1016/j. jpows our. 
+2025. 236387
+[ 25] Benitez A, Morales J, Caballero A (2020) Pistachio shell-
+derived carbon activated with phosphoric acid: a more effi-
+cient procedure to improve the performance of Li-s bat -
+teries. Nanomaterials 10(5):840. https:// doi. org/ 10. 3390/  
+nano1 00508 40
+[ 26] Wei Z, Jia R, Wang Y, Zhang J, Cui Y, Sun X, Li X, Xu 
+Y, Li Y, Pei S (2025) Nitrogen-oxygen co-doped porous 
+carbon prepared from sunflower stalks and its applica-
+tion in Zn-ion hybrid supercapacitors. Mater Today Chem 
+49:103089. https:// doi. org/ 10. 1016/j. mtchem. 2025. 103089
+[ 27] Li Y, Liu W, Li S, Meng F, Chen Y, Wu H, Liu J (2022) 
+From purple sweet potato to sustainable lithium-sulfur bat-
+teries. Mater Lett 325:132893. https:// doi. org/ 10. 1016/j.  
+matlet. 2022. 132893
+[ 28] Chang Y, Ren Y, Zhu L, Li Y, Li T, Ren B (2022) Prepara-
+tion of Macadamia nut shell porous carbon and its electro-
+chemical performance as cathode material for lithium–sul -
+fur batteries. Electrochim Acta 420:140454. https:// doi. org/ 
+10. 1016/j. elect acta. 2022. 140454
+[ 29] Yang C, Yun S, Shi J, Sun M, Zafar N, Arshad A, Zhang Y, 
+Zhang L (2021) Tailoring the supercapacitive behaviors of 
+Co/Zn-ZIF derived nanoporous carbon via incorporating 
+transition metal species: a hybrid experimental-computa-
+tional exploration. Chem Eng J 419:129636. https:// doi. org/ 
+10. 1016/j. cej. 2021. 129636
+[ 30] Dong D, Zhang Y, Xiao Y, Wang T, Wang J, Pan WP 
+(2020) Synthesis of O-doped coal-based carbon electrode 
+materials by ultrasound-assisted bimetallic activation for 
+application in supercapacitors. Appl Surf Sci 529:147074. 
+https:// doi. org/ 10. 1016/j. apsusc. 2020. 147074
+[ 31] Dong Y, Liu Y, Mao F, Wu H (2025) Energy storage in 
+supercapacitor researches: interdisciplinary applications 
+from molecular simulations to machine learning. Appl 
+Energy 393:126074. https:// doi. org/ 10. 1016/j. apene rgy.  
+2025. 126074
+[ 32] Saad AG, Emad-Eldeen A, Tawfik WZ, El-Deen AG (2022) 
+Data-driven machine learning approach for predicting the 
+capacitance of graphene-based supercapacitor electrodes. 
+J Energy Storage 55:105411. https:// doi. org/ 10. 1016/j. est. 
+2022. 105411
+[ 33] Shrivas S, Dubey A (2025) Prediction of specific capaci-
+tance of activated carbon electrode for energy storage 
+device by machine learning based approach. J Energy Stor -
+age 121:116632. https:// doi. org/ 10. 1016/j. est. 2025. 116632
+[ 34] Liu P, Ge Y, Li H, Wen Y, Chen T, Zeng X (2025) New 
+insights into the performance of biomass carbon-based 
+supercapacitors based on interpretable machine learning 
+15958
+
+===== PDF PAGE 20 =====
+J Mater Sci (2026) 61:15940–15960 
+approach. J Energy Storage 118:116300. https:// doi. org/  
+10. 1016/j. est. 2025. 116300
+[ 35] Lu X, Zhao C, Tu H, Wang S, Chen A, Zhang H (2025) 
+Research on prediction of energy density and power density 
+of biomass carbon-based supercapacitors based on machine 
+learning. Sustain Mater Technol 44:e01309. https:// doi. org/ 
+10. 1016/j. susmat. 2025. e01309
+[ 36] Zhou Y (2022) Advances of machine learning in multi-
+energy district communities‒  mechanisms, applications 
+and perspectives. Energy AI 10:100187. https:// doi. org/  
+10. 1016/j. egyai. 2022. 100187
+[ 37] Zhou M, Gallegos A, Liu K, Dai S, Wu J (2020) Insights 
+from machine learning of carbon electrodes for electric 
+double layer capacitors. Carbon 157:147–152. https:// doi.  
+org/ 10. 1016/j. carbon. 2019. 08. 090
+[ 38] Zhou M, Vassallo A, Wu J (2020) Data-driven approach 
+to understanding the in-operando performance of heter -
+oatom-doped carbon electrodes. ACS Appl Energy Mater 
+3(6):5993–6000. https:// doi. org/ 10. 1021/ acsaem. 0c010 59
+[ 39] Oladipo AA (2021) N,S co–doped biocarbon for superca-
+pacitor application: effect of electrolytes concentration and 
+modelling with artificial neural network. Mater Chem Phys 
+260:124129. https:// doi. org/ 10. 1016/j. match emphys. 2020. 
+124129
+[ 40] Jamaluddin A, Harjunowibowo D, Budiawanti S, Kur -
+dhi NA, Sutarsis, Lai DTC, Ramesh S (2023) Applying 
+machine learning to understand the properties of biomass 
+carbon materials in supercapacitors. Energy Rep 10:3125–
+3132. https:// doi. org/ 10. 1016/j. egyr. 2023. 09. 099
+[ 41] Suárez L, Barranco V, Centeno TA (2021) Impact of car -
+bon pores size on ionic liquid based-supercapacitor perfor -
+mance. J Colloid Interface Sci 588:705–712. https://  doi. 
+org/ 10. 1016/j. jcis. 2020. 11. 093
+[ 42] Liu P, Wen Y, Huang L, Zhu X, Wu R, Ai S, Xue T, Ge 
+Y (2021) An emerging machine learning strategy for the 
+assisted-design of high-performance supercapacitor mate-
+rials by mining the relationship between capacitance and 
+structural features of porous carbon. J Electroanal Chem 
+899:115684. https:// doi. org/ 10. 1016/j. jelec  hem. 2021. 
+115684
+[ 43] Fouillen E, Boyer C, Sangnier M (2023) Proximal boosting: 
+aggregating weak learners to minimize non-differentiable 
+losses. Neurocomputing 520:301–319. https:// doi. org/ 10.  
+1016/j. neucom. 2022. 11. 065
+[ 44] Zuo X, Satterlee N, Guwalani R, Park CW, Kang JS (2026) 
+Comparative analysis of machine learning approaches for 
+leak detection in pipelines using hydrophone acoustic sens-
+ing. Measurement 261:120005. https:// doi. org/ 10. 1016/j.  
+measu rement. 2025. 120005
+[ 45] Ahmad MW, Reynolds J, Rezgui Y (2018) Predictive mod-
+elling for solar thermal energy systems: a comparison of 
+support vector regression, random forest, extra trees and 
+regression trees. J Clean Prod 203:810–821. https:// doi.  
+org/ 10. 1016/j. jclep ro. 2018. 08. 207
+[ 46] Cao L, Zhao Y, Chen X, Zhang H, Zhao N, Ding Y, Duan S, 
+Qian M, Ren G, Wang Z, Xiao W (2026) Integrated quality 
+evaluation of traditional Chinese medicine based on chemi-
+cal composition and biological effects using high-level data 
+fusion of near-infrared and ultraviolet spectroscopy com-
+bined with machine learning. Measurement 258:118972. 
+https:// doi. org/ 10. 1016/j. measu rement. 2025. 118972
+[ 47] Sun R, Tang B, Liu Z (2025) Explainable machine learn-
+ing for 2D material layer group prediction with automated 
+descriptor selection. Mater Today Chem 44:102567. https://  
+doi. org/ 10. 1016/j. mtchem. 2025. 102567
+[ 48] Zou HH, He PJ, Lü F, Peng W, Zhang H (2026) Spectral 
+preprocessing across featureless NIR and feature-rich MIR: 
+machine learning classification of black plastics. Measure-
+ment 258:119480. https:// doi. org/ 10. 1016/j. measu rement. 
+2025. 119480
+[ 49] Hassan M, Liu Y, Naidu R, Parikh SJ, Du J, Qi F, Willett IR 
+(2020) Influences of feedstock sources and pyrolysis tem-
+perature on the properties of biochar and functionality as 
+adsorbents: a meta-analysis. Sci Total Environ 744:140714. 
+https:// doi. org/ 10. 1016/j. scito tenv. 2020. 140714
+[ 50] Hodson TO (2022) Root mean square error (RMSE) or 
+mean absolute error (MAE): When to use them or not. 
+Geosci Model Dev Discuss 2022:1–10. https:// doi. org/ 10. 
+5194/ gmd- 15- 5481- 2022
+[ 51] Young C, Chen HT, Guo SZ (2022) Highly porous holey 
+carbon for high areal energy density solid-state superca-
+pacitor application. Micromachines 13(6):916. https:// doi.  
+org/ 10. 3390/ mi130 60916
+[ 52] De Winter JC, Gosling SD, Potter J (2016) Comparing the 
+Pearson and Spearman correlation coefficients across dis-
+tributions and sample sizes: a tutorial using simulations 
+and empirical data. Psychol Method 21(3):273
+[ 53] Wan L, Li X, Li N, Xie M, Du C, Zhang Y, Chen J (2019) 
+Multi-heteroatom-doped hierarchical porous carbon 
+derived from chestnut shell with superior performance in 
+supercapacitors. J Alloys Compd 790:760–771. https:// doi.  
+org/ 10. 1016/j. jallc om. 2019. 03. 241
+[ 54] Wan L, Wei W, Xie M, Zhang Y, Li X, Xiao R, Chen J, Du 
+C (2019) Nitrogen, sulfur co-doped hierarchically porous 
+carbon from rape pollen as high-performance supercapaci-
+tor electrode. Electrochim Acta 311:72–82. https:// doi. org/ 
+10. 1016/j. elect acta. 2019. 04. 106
+[ 55] Wang D, Xu Z, Lian Y, Ban C, Zhang H (2019) Nitrogen 
+self-doped porous carbon with layered structure derived 
+15959
+
+===== PDF PAGE 21 =====
+ J Mater Sci (2026) 61:15940–15960
+from porcine bladders for high-performance supercapaci-
+tors. J Colloid Interface Sci 542:400–409. https:// doi. org/  
+10. 1016/j. jcis. 2019. 02. 024
+[ 56] Ramavath JN, Potham S, Ramanujam K (2021) Energy-
+dense aqueous carbon/carbon supercapacitor with a wide 
+voltage window. J Electrochem Soc 168(7):070538. https://  
+doi. org/ 10. 1149/ 1945- 7111/ ac1319
+[ 57] Jabeen N, Hussain A, Ali J (2023) Transition metal oxides 
+with broaden potential window for high-performance 
+supercapacitors. In: Inamuddin, Altalhi T, Adnan SM (eds.) 
+Electroceramics for high performance supercapacitors, 
+Scrivener Publishing LLC., Massachusetts, pp 203–231
+[ 58] Haldar P (2021) Achieving wide potential window and 
+high capacitance for supercapacitors using different metal 
+oxides (viz.:  ZrO2,  WO3 and  V2O5) and their PANI/gra-
+phene composites with  Na2SO4 electrolyte. Electrochim 
+Acta 381:138221. https:// doi. org/ 10. 1016/j. elect acta. 2021. 
+138221
+[ 59] Joshua T, Nii TOB, Victor DO, Aslam MYM, Abdul-Halim 
+AL (2024) Data-driven interfacial tension modeling of qua -
+ternary aqueous  H2 systems using sequential and parallel 
+ensemble learning techniques and the implications on  H2 
+geo-storage. SSRN. https:// doi. org/ 10. 2139/ ssrn. 48737 70
+[ 60] Ahmed SI, Radhakrishnan S, Nair BB, Thiruvengadathan 
+R (2021) Efficient hyperparameter-tuned machine learn-
+ing approach for estimation of supercapacitor performance 
+attributes. J Phys Commun 5(11):115011. https:// doi. org/  
+10. 1088/ 2399- 6528/ ac3574
+[ 61] Tawfik WZ, Mohammad SN, Rahouma KH, Tammam E, 
+Salama GM (2023) An artificial neural network model for 
+capacitance prediction of porous carbon-based superca-
+pacitor electrodes. J Energy Storage 73:108830. https://  
+doi. org/ 10. 1016/j. est. 2023. 108830
+[ 62] Kushwaha R, Singh MK, Krishnan S, Rai DK (2023) 
+Machine learning enabled property prediction of car -
+bon-based electrodes for supercapacitors. J Mater 
+Sci 58(39):15448–15458. https://  doi.  org/  10.  1007/  
+s10853- 023- 08981-8
+[ 63] Tawfik WZ, Mohammad SN, Rahouma KH, Salama 
+GM, Tammam E (2024) Machine learning models for 
+capacitance prediction of porous carbon-based superca-
+pacitor electrodes. Phys Scr 99(2):026001. https:// doi. org/  
+10. 1088/ 1402- 4896/ ad190c
+[ 64] Lee WSV, Xiong T, Loh GC, Tan TL, Xue J (2018) Opti-
+mizing electrolyte physiochemical properties toward 
+2.8 V aqueous supercapacitor. ACS Appl Energy Mater 
+1(7):3070–3076. https:// doi. org/ 10. 1021/ acsaem. 8b007 51
+[ 65] Li YC, Lin LY (2020) Novel pseudo-parallel activated car -
+bon/carbon cloth electrodes connected in novel series for 
+flexible symmetric supercapacitor with enlarged potential 
+window. Electrochim Acta 363:137275. https:// doi. org/ 10. 
+1016/j. elect acta. 2020. 137275
+[ 66] Sun L, Gong Y, Li D, Pan C (2022) Biomass-derived 
+porous carbon materials: synthesis, designing, and applica-
+tions for supercapacitors. Green Chem 24(10):3864–3894. 
+https:// doi. org/ 10. 1039/ D2GC0 0099G
+[ 67] Cheng MC, Chung CY, Huang CH, Yang PS, Tsai DC, 
+Shieu FS (2026) Superior performance supercapacitor 
+based on high-value porous carbon microspheres derived 
+from jute fibers with localized graphitic domains (few-layer 
+graphene). J Energy Storage 153:120933. https:// doi. org/  
+10. 1016/j. est. 2026. 120933
+[ 68] Luo XY, Chen Y, Mo Y (2021) A review of charge stor -
+age in porous carbon-based supercapacitors. New Car -
+bon Mater 36(1):49–68. https:// doi. org/ 10. 1016/ S1872-  
+5805(21) 60004-5
+Publisher’s Note Springer Nature remains neutral with 
+regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) 
+holds exclusive rights to this article under a publishing 
+agreement with the author(s) or other rightsholder(s); 
+author self-archiving of the accepted manuscript version of 
+this article is solely governed by the terms of such publishing 
+agreement and applicable law.
+15960

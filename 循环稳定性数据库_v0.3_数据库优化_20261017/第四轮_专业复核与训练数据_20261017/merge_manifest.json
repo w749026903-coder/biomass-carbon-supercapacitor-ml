@@ -1,0 +1,348 @@
+{
+  "task_role": "database",
+  "revision": "v0.3r4",
+  "output_directory": "D:\\机器学习-超级电容器\\循环稳定性数据库_v0.3_数据库优化_20261017\\第四轮_专业复核与训练数据_20261017",
+  "target_unchanged": "capacitance_retention_pct_at_requested_cycles_and_protocol",
+  "default_profile": "literature_core7_exact",
+  "preflight": {
+    "status": "data_ready_for_exploratory_reported_protocol_regression",
+    "default_profile": "literature_core7_exact",
+    "profiles_nested_not_additive": {
+      "literature_core7_exact": {
+        "endpoints": 8,
+        "papers": 8,
+        "materials": 8,
+        "tests": 8,
+        "source_groups": 8,
+        "unknown_current_denominator": 8,
+        "approximate_labels": 0,
+        "missing_optional_pore": 2
+      },
+      "literature_residue_sensitivity": {
+        "endpoints": 10,
+        "papers": 9,
+        "materials": 9,
+        "tests": 9,
+        "source_groups": 9,
+        "unknown_current_denominator": 10,
+        "approximate_labels": 0,
+        "missing_optional_pore": 2
+      },
+      "literature_approx_sensitivity": {
+        "endpoints": 11,
+        "papers": 10,
+        "materials": 10,
+        "tests": 10,
+        "source_groups": 10,
+        "unknown_current_denominator": 11,
+        "approximate_labels": 1,
+        "missing_optional_pore": 3
+      }
+    },
+    "canonical_current_ready": 0,
+    "dependencies": {
+      "numpy": true,
+      "sklearn": true,
+      "xgboost": true
+    },
+    "research_training_performed": false,
+    "small_sample_accuracy_claim_supported": false,
+    "limitation": "Current is an uncalibrated literature descriptor; source grouping cannot remove physical denominator uncertainty."
+  },
+  "validation_summary": {
+    "passed": true,
+    "checks_count": 672,
+    "original_source_files_unchanged": 141,
+    "parent_artifacts_unchanged": 379,
+    "profile_summary": {
+      "literature_core7_exact": {
+        "rows": 8,
+        "sources": 8,
+        "outer_folds": 8,
+        "fits_performed": 0
+      },
+      "literature_residue_sensitivity": {
+        "rows": 10,
+        "sources": 9,
+        "outer_folds": 9,
+        "fits_performed": 0
+      },
+      "literature_approx_sensitivity": {
+        "rows": 11,
+        "sources": 10,
+        "outer_folds": 10,
+        "fits_performed": 0
+      }
+    },
+    "research_fit_calls": 0,
+    "synthetic_fit_calls": 15,
+    "synthetic_warning_count": 0,
+    "scope": "Evidence-preserving preparation only. No research accuracy reported."
+  },
+  "ready_for_merge": true,
+  "merge_authority": "other designated merge task; no merge executed",
+  "scientific_objective_all_available_records_admitted": false,
+  "bounded_deliverable_complete": true,
+  "research_training_performed": false,
+  "proposed_contract_changes": [
+    "Use reported_current_A_g as literal literature-protocol covariate; unknown physical denominator retained; canonical subset remains separate.",
+    "Default profile8; explicitly nested residue10 and numeric-approx11 sensitivities. Legacy admissions unchanged.",
+    "Prepare leave-one-source-out folds; same-cohort omit-current sensitivity; fixed defaults for initial exploratory comparisons."
+  ],
+  "unresolved": [
+    "Unknown cycling current mass denominators",
+    "Small and unevenly distributed sources/limited repeated horizons",
+    "SRC028 protocol/electrolyte inconsistency",
+    "SRC112 device electrolyte missing",
+    "R10720000 own window missing",
+    "SRC123 predecessor association",
+    "Other78 endpoints not qualified for largest present profile; see full disposition export"
+  ],
+  "artifacts": [
+    {
+      "path": "build_training_revision.py",
+      "sha256": "457ba98186dd0b044ec87e686b6ce8edcf3dd0389a6478f01f32926e4306f1f2",
+      "bytes": 18551
+    },
+    {
+      "path": "cycling_v0_3r4.sqlite",
+      "sha256": "66c8555bcd9583ea7f30afec1c174ea780c2102eeed363ea9f428f9f95bc83ad",
+      "bytes": 2805760
+    },
+    {
+      "path": "evidence_images\\R020_p13.png",
+      "sha256": "73591b952d6c4c42f9743999dcf30fae2d46765224e8c910f135842fd41ba8fb",
+      "bytes": 334858
+    },
+    {
+      "path": "evidence_images\\R112_p13.png",
+      "sha256": "12f21eb358d0e2062e40eac50135bf540cdd223ad8abcc4d9d52df0e82e2598d",
+      "bytes": 491831
+    },
+    {
+      "path": "evidence_images\\SRC028_p9.png",
+      "sha256": "2c5cf3e83a17a30c8e04950af695ffb64b77194cd70260dade575471f8e12235",
+      "bytes": 541781
+    },
+    {
+      "path": "evidence_images\\SRC112_p10.png",
+      "sha256": "56a4817369eea7c7ecbad494c77fe86849cb7a0757efd05f3e5e219ee387eb48",
+      "bytes": 340725
+    },
+    {
+      "path": "exports\\field_evidence_全部保留.json",
+      "sha256": "4467475f0e0e2a93c7c90cbf6420da323dab97fbcd22be295ffac74acb06a3b8",
+      "bytes": 1165798
+    },
+    {
+      "path": "exports\\literature_approx_sensitivity.csv",
+      "sha256": "f57040afa6c6ee3e09fa55f84a827f38083029428213153f9cae9a1bfd70ddd8",
+      "bytes": 14834
+    },
+    {
+      "path": "exports\\literature_approx_sensitivity.json",
+      "sha256": "bc282bf893c93cd2def3d9ace8b7915766f70837131352b335f9ab32d0e35239",
+      "bytes": 29220
+    },
+    {
+      "path": "exports\\literature_approx_sensitivity_训练矩阵.csv",
+      "sha256": "d202a5fe9497054c78353f1babdfd6d1b995dcad74b04f1d70be18baa339bb4b",
+      "bytes": 1445
+    },
+    {
+      "path": "exports\\literature_core7_exact.csv",
+      "sha256": "682a3369f08d9bc2c2372af588a40464df9a159a1387935bdc768394af9a59f0",
+      "bytes": 11271
+    },
+    {
+      "path": "exports\\literature_core7_exact.json",
+      "sha256": "bd9456744e4e6e6faa674b278b658b9e721451630257c21ce02f9a55c9d3545b",
+      "bytes": 21500
+    },
+    {
+      "path": "exports\\literature_core7_exact_训练矩阵.csv",
+      "sha256": "6d1941817c8ef2557b0b30890bf502f1d5b99ab867e15ae5d2a8adf2d81affe2",
+      "bytes": 1114
+    },
+    {
+      "path": "exports\\literature_residue_sensitivity.csv",
+      "sha256": "08251587c62ab12e0660f5673cf4c13ca9b7f307c37ef7ba21c046bf67895c9b",
+      "bytes": 13807
+    },
+    {
+      "path": "exports\\literature_residue_sensitivity.json",
+      "sha256": "475493050f7cf7654ecef7f8a8565261b3a3c552db522bad5f6b2b041881c874",
+      "bytes": 26802
+    },
+    {
+      "path": "exports\\literature_residue_sensitivity_训练矩阵.csv",
+      "sha256": "094853100cef6101ab314122b19884979b80a273b1acf654f3608a957fe3764f",
+      "bytes": 1344
+    },
+    {
+      "path": "exports\\material_observations_全部保留.json",
+      "sha256": "a760e7933ecdeab50ca1204b3d2227396acd51e221b6d22fef3cd6a78150112d",
+      "bytes": 78819
+    },
+    {
+      "path": "exports\\专业复核证据_r4.csv",
+      "sha256": "4b1c3dbaad7708bca5ef7a2b6fa4c713a8693d1f7bd66ddc35d5308673fb43bc",
+      "bytes": 10589
+    },
+    {
+      "path": "exports\\专业复核证据_r4.json",
+      "sha256": "de47ebf04d3cef4c009a8ae644efdb6d9721403fb6bed712e8690a9d0499fa18",
+      "bytes": 13511
+    },
+    {
+      "path": "exports\\全部89端点_单行用途总表.csv",
+      "sha256": "7680198f3a9c465bd96b2dcaa57aa937aded4d9fd5c5c1f889e0714325d1f850",
+      "bytes": 74665
+    },
+    {
+      "path": "exports\\全部89端点_单行用途总表.json",
+      "sha256": "7eb100e68a63e69651af0c0b627b57500c9abe48d572d2f42327fa74d0a35540",
+      "bytes": 121562
+    },
+    {
+      "path": "exports\\全部89端点_逐用途准入与待补项.csv",
+      "sha256": "5364cfda6ba1bdf5cf701f294f073ada97b46f45dc0de8c485b2f2b7eca6eb2d",
+      "bytes": 163674
+    },
+    {
+      "path": "exports\\全部89端点_逐用途准入与待补项.json",
+      "sha256": "324e6ed2f2c77c661b243bce0cadbb10dcbc3fc9e3eb0fff2fd9fb97d9f83fd4",
+      "bytes": 217829
+    },
+    {
+      "path": "legacy_training_ready_definition.json",
+      "sha256": "8c08e3637497ea45b42054aa25d3eeaaa36b9c9f6f78e7818b1a5da48254cc33",
+      "bytes": 1468
+    },
+    {
+      "path": "methodology_sources\\Nanda2022_download_receipt.json",
+      "sha256": "04204e69c07f2b90f6e261abc1b9e4bc2737e555fbdb5034887fc212880e09dd",
+      "bytes": 273
+    },
+    {
+      "path": "modeling\\benchmark_engine.py",
+      "sha256": "0c2ae2b0f1ea270c3968b58ce5167c16764cc1d13810542bbe8cf57715a686c1",
+      "bytes": 12052
+    },
+    {
+      "path": "modeling\\model_contract.json",
+      "sha256": "42ff42e5c2cf5f13c1b12f7927a1bf733b458764dc12f415263d3dad85754aa1",
+      "bytes": 5892
+    },
+    {
+      "path": "modeling\\model_spaces.json",
+      "sha256": "560890476ce21cf6a5e967050bb42fe7f54d8fb18aaec8cb8e220290369cada2",
+      "bytes": 1088
+    },
+    {
+      "path": "modeling\\prepare_dataset.py",
+      "sha256": "14b71d5629a477efe0bbf592467070e6b430d569cd449c812ab68dcdd589caf9",
+      "bytes": 7958
+    },
+    {
+      "path": "modeling\\SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH\\completion.json",
+      "sha256": "f155cf66951c138d703b17437bf19c9416a402ef048ede6bb3f0c7a8d4b96bda",
+      "bytes": 142
+    },
+    {
+      "path": "modeling\\SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH\\fit_group_audit.json",
+      "sha256": "279ccc6af4a03f3cf12e879ad27159431d71cd9e0d89cc5e7ac057aab4338af0",
+      "bytes": 4251
+    },
+    {
+      "path": "modeling\\SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH\\fold_assignments.json",
+      "sha256": "7b5748c17e07c1ef78e947a31659b5c4de162dacd3e96e6a2d926f512432d3fb",
+      "bytes": 1803
+    },
+    {
+      "path": "modeling\\SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH\\metrics.json",
+      "sha256": "c6925ecaa7f48390a00fcad09ad15d191d4eca7bc3c342b2c1f0e227437bf27a",
+      "bytes": 13426
+    },
+    {
+      "path": "modeling\\SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH\\predictions.json",
+      "sha256": "319e5d729be943cb55c1c4b47a28db131191246809b9b99b20be4c7b4c2aac08",
+      "bytes": 15257
+    },
+    {
+      "path": "modeling\\SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH\\run_manifest.json",
+      "sha256": "e70f566d5b204c8ffd5c90e9f704ed98527345ddba8b4e12ac5260665f9031c7",
+      "bytes": 9520
+    },
+    {
+      "path": "modeling\\SYNTHETIC_INTERFACE_CHECK_NOT_RESEARCH\\warnings.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "modeling\\train_nested.py",
+      "sha256": "1d3af5c1a6ab68e2bccae3ca4e540621638dafb1d4ee6e672999c8afe3928290",
+      "bytes": 1067
+    },
+    {
+      "path": "modeling\\分组验证计划_未拟合.json",
+      "sha256": "069cba76de38b8602014785fa7a7f6268c135561c0e8845d389059c3a8e0ceef",
+      "bytes": 19840
+    },
+    {
+      "path": "package_revision.py",
+      "sha256": "2703e5e2af2d506d47462c0881bbcc6fabb236271b883a2a83dc5f0b415bf861",
+      "bytes": 12906
+    },
+    {
+      "path": "prediction_input_contract.json",
+      "sha256": "a3f626b7b102bfe2a7aff859f2b74638cd9821b09b2554fad7503f90381f50d3",
+      "bytes": 6030
+    },
+    {
+      "path": "protected_parent_fingerprints.json",
+      "sha256": "4d22d75adcde3d0a6f0419eeba27dde6381b2e4fb5c333ce9fe429798f43078e",
+      "bytes": 100124
+    },
+    {
+      "path": "verify_and_prepare.py",
+      "sha256": "88e0446256cfb3aaf07a0b4f3ad44f5985a969e2dd9fef3a4059d72862490be1",
+      "bytes": 11799
+    },
+    {
+      "path": "专业学习与数据修订依据.md",
+      "sha256": "f8758ffa86766df03cd8b856862d596676f1825d4ffcc71cdd134078e69162ef",
+      "bytes": 8406
+    },
+    {
+      "path": "来源分组复核_r4.json",
+      "sha256": "621f87f3509c9c778f167a42da8dcc93a23324e782a699c541ce762a31faff24",
+      "bytes": 1989
+    },
+    {
+      "path": "核验结果_r4.json",
+      "sha256": "3ee4a4bf17baf9a4c530d08d9ab489f16ab7e605a307ec76a0e03aa072c818ae",
+      "bytes": 140386
+    },
+    {
+      "path": "现有表征字段覆盖_按端点计数.json",
+      "sha256": "289ae66673a660b6532c16dc8fc94e2dcbbcb5b23169c951a1569796afb26be8",
+      "bytes": 151
+    },
+    {
+      "path": "第四轮数据交付说明.md",
+      "sha256": "f04d0b7fb40ce06848c4031d1e431fedff22115ccccb7599665d201ce2b496fa",
+      "bytes": 5529
+    },
+    {
+      "path": "训练数据只读预检.ipynb",
+      "sha256": "08c0b00c2b2c9399553572874bf721a6f6ee11346b10386bf861a1c9e13a46a5",
+      "bytes": 7659
+    },
+    {
+      "path": "训练数据预检.json",
+      "sha256": "fd5dd77e307fb5fd825a1672359336345cfa4ac4526e69f4742632af81f4366c",
+      "bytes": 1317
+    }
+  ]
+}

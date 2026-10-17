@@ -1,0 +1,1192 @@
+
+--- PDF页 1 ---
+Integrated Experimental and Machine Learning for Optimization and Performance 
+Prediction of Cobalt-Based Metal-Organic Framework-Coated Nickel Foam Electrodes 
+for Symmetric Supercapacitors
+Radhakrishnan K1, Rohit Kumar Shaw1, D V Siva Krishna Rao K1, Aditya Kumar1,*
+Department of Energy and Environment, National Institute of Technology, Tiruchirappalli, Tamil Nadu, India
+*Corresponding Author: adityakumar@nitt.edu
+Abstract:
+Key challenges in designing high-performance metal–organic framework (MOF)-based 
+supercapacitor electrodes include optimizing precursor concentration and properly predicting 
+electrochemical performance. In this article, we provide an integrated experimental and 
+machine learning (ML) framework to optimize Co-MOF-coated nickel foam electrodes 
+manufactured via a simple and scalable dip-coating process. Concentration-dependent 
+structural and morphological evolution was validated by X-ray diffraction (XRD) and scanning 
+electron microscopy (SEM), with the 3 mmol Co precursor electrode (NFC3) showing the most 
+uniform coating and superior electrochemical performance. The improved NFC3 electrode was 
+built into an NFC3//NFC3 symmetric supercapacitor with a specific capacitance of 19.97 F 
+g−1 at 1 A g−1 and 72% capacitance retention after 1000 charge–discharge cycles. 
+Electrochemical studies, such as cyclic voltammetry (CV), galvanostatic charge–discharge 
+(GCD), electrochemical impedance spectroscopy (EIS), Ragone analysis, b-value and Dunn's 
+analysis, demonstrated that the charge storage process was mostly surface-controlled 
+capacitive. Five ML regression models were trained using experimentally generated CV data 
+to predict the electrochemical current response. Among these, the Random Forest model had 
+the highest prediction accuracy (R² = 0.999825, RMSE = 1.28 × 10⁻⁴ A, MAE = 3.10 × 10⁻⁵ 
+A). The proposed experimental-ML framework provides an effective technique for optimizing 
+MOF-based electrodes and accelerates the data-driven creation of high-performance symmetric 
+supercapacitors.
+Keywords: Co-MOF; Nickel foam electrode; Symmetric Supercapacitor; Machine Learning; 
+Random Forest Regression; Electrochemical Energy Storage; Current Response Prediction.
+Graphical Abstract:
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 2 ---
+Figure - Graphical Abstract describes the fabrication of Co-MOF-coated nickel foam electrodes, electrochemical 
+characterization, symmetric device fabrication, and machine learning prediction workflow.
+1. INTRODUCTION:
+The rapid expansion of renewable energy systems, electric vehicles (EVs), portable devices 
+and smart power grids has created an urgent demand for energy storage technologies with high 
+power density, fast charge–discharge rate and long operating lifetime [1–3]. Renewable energy 
+sources such as solar, wind and hydropower are sustainable alternatives to fossil fuels. 
+However, the intermittent nature of these sources needs the use of efficient energy storage 
+systems to ensure continuous power delivery and increase grid stability [4–7]. Supercapacitors 
+are remarkable for their high-power density, quick charge/discharge ability, excellent cycling 
+stability, and long service life, and several electrical energy storage technologies have garnered 
+considerable attention [8–10]. These advantages make them particularly desirable for 
+applications where the power delivery is instantaneous such as electric vehicles, portable 
+gadgets, wearable devices and hybrid energy storage systems [2,11,12]. However, further 
+research of improved electrode materials and optimized device architectures are required to 
+increase the energy and power performance without affecting the long-term cycle stability to 
+sustain efficient electrochemical performance at high current densities  [13–15].
+Supercapacitors are often categorized as electric double-layer capacitors (EDLCs), 
+pseudocapacitors and hybrid supercapacitors according to charge-storage mechanism [16–20]. 
+EDLCs store charge via a non-faradaic process of ion adsorption and possess great power 
+density and cycling stability, but have a restricted energy density. Pseudocapacitors, in contrast, 
+use rapid and reversible faradaic reactions to obtain larger capacitance, whereas hybrid 
+supercapacitors combine capacitive and battery-type electrodes to balance energy and power 
+densities [18–20].  However, nonlinear electrochemical behaviour arising from the intricate 
+interaction between electrode structure, electrolyte and operating circumstances makes 
+performance optimization difficult [9,21]. Metal-organic frameworks (MOFs) have attracted 
+considerable attention as supercapacitor electrode materials because of their high surface area, 
+tuneable pore structures, and abundant electroactive sites, which facilitate rapid ion transport 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 3 ---
+and enhanced charge storage [22–24]. However, their intrinsically low electrical conductivity 
+limits direct application, necessitating conductive supports or composite architecture [21,24]. 
+Nickel foam serves as an effective three-dimensional current collector by providing excellent 
+electrical conductivity, efficient electrolyte accessibility, and improved active material 
+utilization, thereby enhancing the electrochemical performance of MOF-based electrodes 
+[15,22,23,25].
+ML algorithms have surfaced as a formidable instrument for forecasting electrochemical 
+performance, identify optimal operating conditions, and reduce trial-and-error experiments 
+[8,26,27]. Among various ML approaches, several regression algorithms have been 
+successfully applied to predict supercapacitor performance, including LR, DT, RF, GBR, and 
+KNN [14,28–30]. These models can predict electrochemical current response and specific 
+capacitance using experimental parameters such as scan rate, potential, discharge time, 
+equivalent series resistance (ESR), and IR drop [9,31]. For instance, GBR and RF have 
+demonstrated high predictive accuracy for specific capacitance by learning from experimental 
+CV and GCD data [14,30]. Machine learning models enable the identification of complex 
+nonlinear relationships between electrochemical parameters and charge-storage behaviour, 
+resulting in supporting rapid performance prediction and electrode optimization [32–34]. 
+However, many existing models remain limited by small datasets, overfitting, poor 
+interpretability, and insufficient validation using practical symmetric supercapacitor devices 
+[8,10,16,31,34].Despite significant progress in machine learning (ML)-driven supercapacitor 
+research, several critical gaps remain unaddressed. First, only a limited number of studies have 
+combined cobalt based metal-organic framework (MOF) coated nickel foam electrodes with 
+machine-learning-based prediction [24,30]. The systematic investigation of how precursor 
+concentration influences electrochemical performance in MOF-coated electrodes using data-
+driven approaches remains absent from the literature [4,30]. Recently, efforts have sought to 
+integrate electrochemical kinetics analysis with ML predictions and validate the models using 
+practical symmetric device performance [30,34,35]. Scan-rate-resolved electrochemical 
+datasets (2-200 mV/s) remain limited, restricting the development of robust machine-learning 
+models for capturing nonlinear relationships between scan rate, charge-storage kinetics, and 
+electrochemical performance [1,16]. Furthermore, most studies focus on capacitance prediction 
+using three-electrode systems, with limited integration of comprehensive electrochemical 
+kinetics (CV, GCD, EIS, b-value, and Dunn’s analysis) and validation using practical 
+symmetric devices [2,15,33,35]. To address these gaps, this study develops an integrated 
+experimental-machine learning framework for concentration-optimization of Co-MOF-coated 
+nickel foam electrodes.
+A complete experimental and machine learning framework was created to study the effect of 
+cobalt precursor concentration on structural, electrochemical and predictive performance of 
+Co-MOF coated nickel foam electrodes for supercapacitor applications. In an effort to optimize 
+the electrode architecture, a simple and scalable dip-coating process was first employed to 
+create Co-MOF electrodes with three different cobalt precursor concentrations (1–3 mmol) in 
+a systematic concentration-dependent investigation. Finally, the optimized electrode was 
+fabricated into a realistic symmetric two-electrode supercapacitor to test the real-device 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 4 ---
+performance. Cyclic voltammetry (CV), galvanostatic charge-discharge (GCD), 
+electrochemical impedance spectroscopy (EIS), b-value analysis and Dunn’s analysis were 
+performed to comprehensively understand the charge-storage mechanism and establish clear 
+relationships between precursor concentration, electrode morphology and electrochemical 
+behaviour. Beside the experimental investigation, a number of machine learning regression 
+models, such as Linear Regression (LR), Decision Tree (DT), Random Forest (RF), Gradient 
+Boosting Regression (GBR) and K-Nearest Neighbours (KNN) were built to predict the 
+electrochemical current response as a function of the scan rate and the applied potential. Out 
+of the studied models, the Random Forest approach had the highest prediction accuracy (R^2 
+= 0.9998), indicating its potential for reliable prediction of electrochemical performance. 
+Compared to prior works that focused mostly on the experimental optimization of MOF-based 
+electrodes, this study combines systematic electrode optimization with data-driven prediction 
+modelling to reduce the dependence on large amounts of trial-and-error experiments. The 
+proposed experimental–machine learning paradigm provides an effective pathway for 
+expediting the rational design, optimization and performance prediction of next generation 
+MOF-based supercapacitor electrodes.
+Figure 1 - Schematic Flowchart of the fabrication process for Co-MOF-coated nickel foam electrodes.
+2. EXPERIMENTAL METHODOLOGY
+2.1 Materials and Chemicals
+Analytical-grade chemicals were employed throughout this investigation and were utilized 
+without additional distillation. Nickel foam substrates (2 x 1 cm 2), provide an exposed 
+electrochemically active area of 1 x 1 cm 2, were used as the current collectors and obtained 
+from The Electrode Store, Hosur, India. Cobalt nitrate hexahydrate (98% purity), 2-
+methlylimidazole (99% purity), KOH (potassium hydroxide - 85% purity), methanol, ethanol, 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 5 ---
+and deionized water were utilized during electrode fabrication and electrochemical testing. The 
+cobalt precursor, organic linker, and potassium hydroxide for electrolyte were purchased from 
+Sisco Research Laboratory (SRL) Pvt. Ltd., India. Deionized water and analytical-grade 
+solvents were used throughout the electrode preparation and cleaning procedures.
+2.2 Electrode Fabrication
+2.2.1 NF Pretreatment
+Nickel foam (NF) strips with measurements of 2 cm x 1 cm and an exposed electrochemically 
+active area of 1 x 1 cm2 were used as the substrates for electrode construction. Before coating, 
+the NF (nickel foam) strips were subjected to ultrasonic cleaning in 1 M HCl for 15 mis to 
+eliminate native oxide files and surface impurities. After cleaning, the nickel substrates were 
+subsequently cleaned thoroughly using deionized water followed by ethanol to eliminate 
+residual acid and contaminants. After washing, substrates were allowed dry naturally under 
+ambient conditions prior to Co-MOF layer. The cleaned nickel foam substrates served as the 
+substrates of subsequent Co-MOF deposition and electrochemical evaluation. Finally, the 
+measured masses of the bare nickel foam electrodes were 0.0355 g, 0.03621 g, 0.03565 g for 
+NFC1, NFC2, and NFC3, respectively. 
+2.2.2 MOF Preparation
+Co-MOF coatings were deposited directly onto the pre-treated nickel foam substrates to 
+improve their electrochemical performance. Cobalt nitrate hexahydrate (Co (NO 3)2.6H2O) 
+served as the metal source, whereas 2-methylimidazole was employed as the organic ligand. 
+Methanol was selected as the solvent because it provides uniform precursor dissolution and 
+promotes controlled MOF crystal growth. Three MOF-coated electrodes (NFC1, NFC2, and 
+NFC3) were prepared with cobalt nitrate hexahydrate concentrations of 1, 2, and 3 mmol for 
+each and with the same metal-to-linker molar ratio of 1:8 with 2-methylimidazole. For each 
+sample, 50 mL of methanol with the respective amount of cobalt nitrate hexahydrate was used 
+to dissolve. Subsequently, 2-methylimidazole was added in a fixed molar ratio of 1:8 (metal-
+to-linker) with respect to the cobalt precursor concentration. The ensuring precursor solution 
+was magnetically stirred it up to 5 minutes to obtain a standardized reaction mixture before 
+electrode deposition.
+Prior to immersion, the pre-treated nickel foam strips were ultrasonically cleaned using 
+deionized water and ethanol to eradicate any outstanding surface contaminants. Furthermore, 
+the strips were dipped in the arranged precursor solution and preserved at room temperature 
+(25OC) for 10 h, allowing to Co-MOF layer to nucleate and grow directly on the NF surface. 
+Following deposition process, the coated electrode was carefully removed and dried at 30 OC 
+for 3 hours, followed by ambient drying for 10-12 h to confirm complete solvent evaporation 
+and maintenance of the deposited coating. No hydrothermal treatment was used during the 
+synthesis. The adopted dip-coating method provides a simple, cost-effective, and scalable route 
+for fabricating MOF-coated NF electrodes.
+The deposited active material was determined from the mass difference among the coated 
+together with bare substrates according to:
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 6 ---
+𝑚𝑎𝑐𝑡𝑖𝑣𝑒=  𝑚𝑐𝑜𝑎𝑡𝑒𝑑― 𝑚𝑏𝑎𝑟𝑒
+When 𝑚𝑎𝑐𝑡𝑖𝑣𝑒,𝑚𝑐𝑜𝑎𝑡𝑒𝑑, 𝑚𝑏𝑎𝑟𝑒 represent the active mass, coated electrode mass, and bare 
+substrate mass, respectively. Based on this calculation, the deposited active masses were 
+5.50mg (NFC1), 2.15mg (NFC2), and 1.60mg (NFC3).
+The measure active masses did not scale with precursor concentration, as the reported values 
+correspond to the electrochemically active material remaining on the electrode after washing 
+and drying, and not the total precursor used during synthesis. Weakly bonded or loosely 
+attached Co-MOF particles were removed during washing, resulting in different retained active 
+masses despite the higher precursor concentration. Therefore, the coating morphology and 
+crystallinity were mainly influenced by the precursor concentration rather than by final retained 
+electrode mass.
+2.3 Structural and Morphological Characterization
+The structural and surface characteristics of the fabricated Co-MOF-coated nickel foam 
+electrodes (NFC1, NFC2, and NFC3) were systematically examined using X-ray diffraction 
+(XRD) and Scanning electron microscopy (SEM) [22,24]. Phase identification and crystal 
+structure analysis were performed using an X-ray diffractometer (Rigaku Ultima IV), equipped 
+with Cu Kα radiation (λ = 1.5406 Å) [36]. The diffraction patterns were compared with 
+standard reference data to evaluate the crystallinity and phase composition of the synthesized 
+coatings [23,36–38]. Surface morphology, coating uniformity, and microstructural features of 
+fabricated electrodes were studied by ZEISS EVO 18 - SEM. The SEM observations were 
+employed to assess the influence of precursor concentration on Co-MOF nucleation, crystal 
+growth, and surface coverage of the nickel foam substrate [22,38]. The structural information 
+obtained from XRD was correlated with the morphological features observed by SEM to create 
+the connection among material characteristics and electrochemical performance.  
+Characterization combined approach enabled a full estimation of the outcome of precursor 
+concentration on the development of Co-MOF-coated electrodes for SC applications.
+2.4 Electrochemical Measurements
+The electrochemical performance of the fabricated Co-MOF-coated nickel foam electrodes 
+(NFC1, NFC2, and NFC3) was investigated using a conventional three-electrode cell 
+connected to an Admiral Instruments Squidstat Solo electrochemical workstation. The Co-
+MOF-coated NF was used as the working electrode in a conventional three-electrode 
+configuration, with a platinum wire acting as the counter electrode and Ag/AgCl as the 
+reference electrode. Electrochemical measurements were carried out in 1 M aqueous KOH at 
+room temperature [36].
+Electrochemical characterization was performed using OCP, LSV, CV, GCD, and EIS 
+measurements. OCP was initially recorded to establish the equilibrium potential and confirm 
+system stability before electrochemical testing [6]. LSV was conducted to determine the 
+electrochemical stability window and identify the safe operating potential by minimizing 
+parasitic reactions such as water splitting [6]. CV measurements were performed at scan rates 
+2, 4, 8, 16, 32, and 200 mV/s within the stable potential window obtained from LSV to 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 7 ---
+investigate charge-storage behaviour, pseudocapacitive characteristics, reversibility, and rate 
+capability [6,14]. GCD measurements were carried out at current densities of 0.5, 1, 2, and 4 
+A/g to evaluate specific capacitance, coulombic efficiency, capacitance retention, energy 
+density, and power density. Owing to unstable discharge behaviour at 4 A/g, quantitative 
+analysis was limited to 0.5-2 A/g, while the optimized NFC3 electrode was subjected to 1000 
+charge-discharge cycles at 1 A/g to assess long-term cycling stability [6,14]. EIS measurements 
+were performed over a frequency range of 100 kHZ – 0.01 Hz with a 10 mV AC amplitude at 
+OCP to determine the equivalent series resistance (Rs), charge-transfer resistance (Rct), and 
+ion diffusion characteristics from the Nyquist plots [6,15,32].
+A symmetric supercapacitor device with two identical NFC3 electrodes were constructed using 
+the optimal cobalt precursor concentration in 1 M KOH electrolyte. The NFC3 electrodes were 
+positioned face-to-face with an exposed active area of 1 x 1 cm 2, and electrochemical 
+assessments were conducted within specified potential boundaries of 0 to 1.0 V. The assembled 
+(NFC3//NFC3) device was subsequently assessed using CV, GCD, EIS, and long-term cycling 
+tests to determine the electrochemical performance under practical two-electrode operating 
+conditions. Then find its specific capacitance, rate capability, energy density, power density, 
+and cycling stability
+2.5 Charge Storage Kinetics
+To study the charge retention behaviour with the electrode arrangements of NFC3//NFC3 
+symmetric device supercapacitor, CV data collected at difference scan rates were analyzed 
+using the b-value and Dunn’s methods. These analyses distinguish the contributions of (kinetic 
+analysis) surface and diffusion-controlled charge-storage methods [18,25]. The charge-storage 
+mechanism was analysed employing the power-law correlation 𝑖 = 𝑎𝑣𝑏 was used, where 𝑖 is 
+the current response, 𝑣 is the scan rate, and 𝑏 is derived from the gradient of log (𝑖) in relation 
+to log ( 𝑣). A b-value of 0.5 indicates diffusion-dominated (battery-type) behaviour, whereas 
+b=1.0 corresponds to an ideal capacitive process [18,39]. The capacitive and diffusion-
+dominated offers were quantified with Dunn’s relationship 𝑖(𝑉) =  𝑘1𝑣 +  𝑘2𝑣1/2 which can be 
+rearranged, 𝑖(𝑉) 𝑣1/2=  𝑘1𝑣1/2+ 𝑘2.  The coefficients 𝑘1 and 𝑘2 denote the contributions of 
+capacitive and diffusion-dominated currents, respectively. The relative contribution of each 
+mechanism was evaluated at difference scan rates [14,39].
+2.6 Data-Driven Prediction Framework
+ML algorithms were established to predict the current response of the NFC3//NFC3 symmetric 
+supercapacitor using experimentally generated from cyclic voltammetry (CV) data [1,15,16]. 
+The dataset consisted of experimental CV data with scan rates of 2, 4, 8, 16, 32, and 200 mV/s, 
+where potential together with scanning speed were input features, and current was output 
+[6,29]. The dataset was pre-processes using moving-average smoothing, normalization (zero 
+mean and unit variance), and an 80/20 division of training and testing data [29]. Five regression 
+algorithms - LR (baseline), DT, RF (200 estimators, depth = 10), GBR (500 estimators, learning 
+rate = 0.05), and KNN (K = 5). The hyperparameters were then tested using grid search cross-
+validation [14,15]. Model performance was evaluated with R 2, MAE, and RMSE are the 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 8 ---
+coefficient of determination, mean absolute error, and root mean square error, respectively 
+[16,26]. Machine learning models were implemented using Python in the Jupyter Notebook 
+environment with the Scikit-learn library.
+3. RESULTS AND DISCUSSION
+3.1 X-Ray Diffraction Analysis
+Figure 2(E) presents the X-ray diffraction (XRD) patterns of bare nickel foam (NF) and the 
+Co-MOF-coated nickel foam electrodes (NFC1, NFC2, NFC3). All samples exhibit three 
+dominant diffraction peaks located at 44.54-44.86 O, 51.9O, and 76.42 O, corresponding to the 
+FCC Ni crystal planes indexed as (111), (200), and (220) confirming the crystalline nature of 
+the NF substrate [22]. After coating the MOF layer, the characteristic diffraction peaks of 
+nickel clearly visible, demonstrating that Co-MOF deposition preserved the substrate FCC 
+crystal structure of the nickel foam substrate [23]. Furthermore, the Ni (111) peak shifts from 
+44.54O for NF to 44.70 O, 44.86 O, and 44.58 O for NFC1, NFC2, and NFC3, respectively, 
+indicating the interaction of the MOF layer and the nickel substrate at the surface [22]. The 
+structural parameters calculated from the XRD data are summarized in Table 1. No additional 
+diffraction peaks corresponding to crystalline impurity phases were observed. The FWHM of 
+the Ni (111) reflection decreased with increasing precursor concentration, and the crystallite 
+size (Scherrer equation) increased from 33.35 nm (NF) to 34.00 nm (NFC1), 37.60 nm (NFC2), 
+and 40.18nm (NFC3). Microstrain decreased from 3.92x10 -3 (NF) to 2.12x10 -3 (NFC2), and 
+the dislocation density decreased from 8.99x10 -3 nm -2 (NF) to 6.20x10 -4 nm -2 (NFC3) with 
+smaller defects. The crystallite size and dislocation density of NFC3 were the largest and 
+smallest, respectively, and it showed better structure with no defects, while the FCC nickel 
+structure remained preserved [23]. The increase in crystallite size and the reduction in lattice 
+defects is expected to improve electron conduction routes and structural stability, leading to 
+contributing to the improved electrochemical behaviour of NFC3 observed in subsequent CV 
+and GCD measurements [38]. The findings agree with the observation that higher precursor 
+concentration increased crystallinity without affecting the FCC nickel structure, further 
+indicating that the Co-MOF deposition on the NFC3 electrode was successful and that the 
+current collector remains intact. The improved crystallinity and reduced lattice defects 
+observed in NFC3 suggest enhanced electrochemical activity, which was further investigated 
+by SEM analysis of the surface morphology.
+Table 1 Structural Parameters obtained from XRD Analysis Values
+Sample 2θ (°) FWHM (°) β (rad) Crystallite 
+Size (nm) Microstrain Dislocation 
+Density
+NF 44.54 0.25754 0.004493 33.3501 0.00392287 0.000899095
+NFC1 44.7 0.25275 0.004409 34.00161 0.00293867 0.00086497
+NFC2 44.86 0.22869 0.003989 37.60048 0.00212482 0.000707316
+NFC3 44.58 0.21381 0.00373 40.17686 0.00302666 0.00061951
+3.2 SEM Analysis
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 9 ---
+Figure 2 (A-D) presents the SEM images of bare nickel foam (NF) and the Co-MOF-coated 
+nickel foam electrodes (NFC1, NFC2, and NFC3). Bare NF showed a relatively smooth, 
+metallic surface with three-dimensional interconnected porous framework, suitable for 
+anchoring active materials [24]. After deposition at 1 mmol, NFC1 showed partial coverage 
+with isolated particles from nickel ligaments, with a low nucleation and growth rate. In contrast, 
+NFC2 showed a denser, more uniform coating with connected particulate domains, indicating 
+greater material deposition. The systematic precursor-concentration optimization produced 
+progressively improved coating morphology, with the optimized condition (NFC3) exhibiting 
+a continuous and uniform Co-MOF layer [23]. The morphological evolution from isolated 
+nucleation sites (NFC1) to a dense, continuous architecture (NFC3) is consistent with XRD 
+results, which showed increased crystallite size and reduced defect density with increasing 
+precursor concentration. NFC3 exhibited the most uniform and well-developed structure 
+among the investigated electrodes. The uniform Co-MOF coating and interconnected porous 
+architecture of NFC3 are expected to promote effective electrolyte infiltration, generate 
+numerous electrochemically active sites, and reduce ion diffusion pathways, which enhances 
+the overall electrochemical behaviour observed in subsequent analyses [23,24]. The 
+progressive morphological evolution from NFC1 to NFC3 confirms the precursor 
+concentrations as a critical parameter for controlling the Co-MOF nucleation, crystal growth 
+and surface coverage, which directly influences electrolyte accessibility and charge-transfer 
+pathways. The enhanced surface morphology and homogenous coating of Co-MOF on NFC3 
+are anticipated to promote the efficient permeation of electrolyte and charge transfer, these 
+structural characteristics are anticipated to contribute to the enhanced electrochemical 
+behaviour observed in the subsequent OCP, LSV, CV, GCD, and EIS results.
+(A) (B)
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 10 ---
+(C) (D)
+(E)
+Figure 2 - (A), (B), (C), (D) SEM micrographs of NF, NFC1, NFC2, NFC3 at low and high magnifications (100µm (inner 
+figure) & 2µm), respectively. (E) XRD patterns of bare nickel foam (NF) and Co-MOF-coated nickel foam 
+electrodes (NFC1, NFC2, and NFC3)
+3.3 OCP Analysis
+Figure 3 (A) shows the open-circuit potential (OCP) profiles of NFC1, NFC2, and NFC3 
+electrodes recorded over 900s. All electrodes exhibited stable potential responses with small 
+fluctuations, indicating that an electrochemical equilibrium had been established at the 
+electrode/electrolyte interface prior to further electrochemical measurements [40]. NFC3 
+exhibited the most stable response, with NFC2 and NFC1 exhibiting greater constancy and 
+suggesting improved interfacial stability at high precursor concentrations [23]. NFC2 and 
+NFC3 exhibited smaller potential fluctuations than NFC1, indicating improved electrochemical 
+permanency and reduced surface polarization during the equilibration process [40]. The stable 
+OCP behaviour confirms that all electrodes reached symmetry prior to the subsequent 
+electrochemical measurements, ensuring reliable and reproducible electrochemical 
+characterization[40]. Overall, increasing the precursor concentration improved interfacial 
+stability, with NFC3 demonstrating the most favourable evenness behaviour among all 
+fabricated electrodes. The steady OCP profiles ensured that all subsequent electrochemical 
+measurements were performed under balance conditions, consequently improving the 
+reliability and reproducibility of the electrochemical results. Following OCP measurements, 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 11 ---
+the electrochemically even potential window of the fabricated electrodes was subsequently 
+evaluated by LSV.
+(A) (B)
+Figure 3 - (A) Open Circuit Potential profiles of NFC1, NFC2, NFC3, (B) Linear Sweep Voltammetry Curves of NFC1, 
+NFC2, NFC3 (inset shows the enlarged low-current region) measured in 1 M KOH electrolyte
+3.4 Linear Sweep Voltammetry Analysis
+Figure 3 (B) presents the linear sweep voltammetry (LSV) of the NFC1, NFC2, and NFC3 
+electrodes. At lower applied potentials, all electrodes exhibited negligible current responses, 
+indicating minimal electrochemical activity within this potential region. As the applied 
+potential increased, the anodic current increased progressively owing to Faradaic oxidation 
+processes associated with the electroactive cobalt species in the Co-MOF coating [23]. 
+Increasing the precursor concentration systematically enhanced the electrochemical activity, 
+with the optimization study identifying NFC3 as the optimum electrode [34]. Weak anodic and 
+cathodic features observed between 0.10 and 0.35 V are assigned to the reversible surface 
+faradaic redox reactions of active cobalt centres within the deposited MOF structure [41]. A 
+pronounced rise in anodic current beyond higher applied potentials marks the onset of the 
+oxygen evolution (OER), ultimately defining the upper electrochemical stability limit of the 
+electrode/electrolyte system [42]. Among the electrodes investigated, NFC3 exhibited the most 
+significant anodic current response, which can be attributed to its uniform Co-MOF coating, 
+greater surface coverage, combined with its interconnected porous morphology revealed in the 
+SEM microstructural analysis [23]. Collectively, the LSV results demonstrate that all 
+electrodes remained electrochemically stable within the investigated potential range, with 
+NFC3 exhibiting the highest electrochemical activity [23,34,43]. The higher electrochemical 
+stability found for NFC3 also supports its choice for the assembling the symmetric 
+supercapacitor device. The stable electrochemical potential window identified by LSV was 
+subsequently used for CV to conduct a more in-depth examination of the charge-storage 
+mechanism of the constructed electrodes.
+3.5 Cyclic Voltammetry Performance
+3.5.1 Three-Electrode Performance
+CV (Cyclic Voltammetry) was employed to examine the electrochemical response of NFC1, 
+NFC2, together with NFC3 at scanning speed ranging from 2 to 200 mV/s (Figure 4 (A), (B), 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 12 ---
+(C), & (D)). All fabricated electrodes displayed quasi-rectangular voltammetric profiles with 
+well-defined redox features, confirming the simultaneous contribution of electrical double-
+layer capacitance (EDLC) together with reversible Faradaic pseudocapacitive charge-discharge 
+reactions associated with the Co-MOF coating [6,41]. As the applied scanning speed increased, 
+the measured current response grew proportionally while the overall CV shape was well 
+preserved, demonstrating favourable rate capability, rapid ion transport, and excellent 
+electrochemical reversibility [43]. CV profile maintenance at elevated scanning speeds 
+indicates efficient charge-transfer kinetics and structural stability within the Co-MOF 
+electrodes during repeated polarization [41,43]. The concentration-optimization strategy 
+identified NFC3 as the optimum electrode, delivering a capacitance of 47.06 F/g at 2 mV/s 
+while outperforming the lower precursor concentrations. NFC3 retained 15.24 F/g at 200 mV/s 
+(32.4%), although NFC2 & NFC1 maintained 11.3% and 9.4%, respectively. The superior 
+capacitance retention of NFC3 is attributed to improve electrolyte accessibility, enhance 
+electrical conduction, together with a greater power concentration of electrochemically active 
+sites resulting from its uniform Co-MOF coating [29,34,44]. The improved CV response of 
+NFC3 is well consistent with the SEM and XRD observations, showing that the improved 
+surface morphology and crystallinity promoted faster electron transport and ion migration. The 
+improved CV response of NFC3 agrees well with the SEM and XRD analyses, confirming that 
+the proposed optimization workflow successfully identified the optimum precursor 
+concentration for enhanced electrochemical performance. The charge-storage performance 
+obtained from the analysis of cyclic voltammetry was further quantified through the 
+measurements of galvanostatic charge-discharge for regulate the capacitance together with rate 
+capability of the SC electrodes.
+(A) (B)
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 13 ---
+(C) (D)
+(E) (F)
+(G)
+Figure 4 – (A), (B), (C), (D) CV profiles of various Scan Rates (2, 4, 8, 16, 32 mV/s) of NFC1, NFC2, NFC3, and Device 
+Level respectively, (E) & (F) CV Curve of Scan Rate 200 mV/s with 100 Cycles of NFC3 & Device Level, (G) Specific 
+Capacitance with Scan Rate for NFC1, NFC2, NFC3 and Device Level
+3.5.2 Electrochemical Performance of the Symmetric Device
+The overall electrochemical performance of the fabricated NFC3//NFC3 symmetric 
+supercapacitor device was examined by using cyclic voltammetry at the same applied scan 
+rates (Figure 4 (D&F)). The symmetric device exhibited quasi-rectangular CV profiles at all 
+scan rates, indicating efficient electrochemical reversibility [43]. The symmetric device 
+exhibited a reduced specific capacitance (16.19 F/g at 2 mV/s) compared with the three-
+electrode configuration because of voltage distribution between identical electrodes and the 
+increased internal resistance of the fuel-cell configuration [43]. The Capacitance decreased to 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 14 ---
+4.66 F/g to 200 mV/s because of diffusion limitations and increased polarization at elevated 
+scan rates; however, the CV profiles remained nearly unchanged without significant distortion 
+[43,45] . The overall electrochemical behaviour of the assembled device is similar to the trend 
+observed obtained from the three-electrode measurements, confirming the electrochemical 
+performance of the optimized Co-MOF coating after the full cell assembly [34].
+3.6 Charge-Storage Kinetics Analysis (b-Value)
+The charge-storage mechanisms were analyzed based on the power-law correlation 𝑖 = 𝑎𝑣𝑏, in 
+which b ≈ 0.5 represents diffusion-dominated and b ≈ 1.0 indicates a predominantly surface-
+dominated capacitive process (Figure 5A to C) [46,47]. The higher b-values of NFC3 (0.75, 
+1.28, and 0.69 at 0.3, 0.4, and 0.5 V) indicate a stronger capacitive contribution while retaining 
+a diffusion-assisted charge-storage mechanism. NFC2 has the intermediate b-values (0.53 to 
+1.17) and NFC1 has the high b-values between 0.41 to 1.10, indicating more diffusion-
+dominated contributions (due to less favourable electrode shape). The symmetric NFC3//NFC3 
+device exhibited b-values ranging from 0.89 to 0.98 indicating that the charge-storage was 
+primarily dominated by surface capacitive behaviour. The b-values slightly exceeding unity 
+may arise from highly reversible pseudocapacitive behaviour, experimental uncertainty during 
+linear fitting, and the complex charge-storage characteristics of porous transition-metal-based 
+electrodes reported in previous studies [18,43]. Values slightly greater than unity may arise 
+from highly reversible pseudocapacitive kinetics, experimental fitting uncertainty, or complex 
+porous electrode behaviour and have been reported previously for transition-meta-based 
+supercapacitor electrodes. Overall, b-value analysis shows that the optimized NFC3 exhibits 
+predominantly capacitive charge storage with sufficient ion diffusion to support rapid 
+electrochemical kinetics. Although the b-value analysis provides an overall kinetic 
+interpretation, a more quantitative separation of capacitive and diffusion-dominated charge 
+contributions was obtained through Dunn’s analysis.
+(A) (B)
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 15 ---
+(C) (D)
+(E) (F)
+(G) (H)
+Figure 5 – (A), (B), (C), & (D) Determination of b-value analysis from log (Peak Current) vs log (Scan Rate) of NFC1, 
+NFC2, NFC3, & Device Level, respectively. (E), (F), (G), & (H) Capacitive & Diffusion controlled charge-storage 
+contributions obtained from Dunn Method Analysis for NFC1, NFC2, NFC3, & Device Level, respectively
+3.7 Dunn’s Kinetic Analysis
+Dunn’s analysis was performed to determine the relative contributions from surface-capacitive 
+and diffusion-dominated charge-storage mechanisms [25,47]. For the 3-eletrode system, NFC3 
+showed the maximum capacitive contribution (89% at 0.3 V), which showed that the 
+mechanism arises from a fast surface redox reaction. At 0.4 V, the capacitive contribution was 
+high (84%), while at 0.5 V diffusion-controlled contributions were higher (36%) (i.e. the ion 
+diffusion is more dependent on the polarization), indicating a greater participation of ion 
+diffusion at higher applied potentials. NFC2 showed a mixed mechanism with 97% capacitive 
+contribution at 0.4 V but diffusion-dominated behaviour at 0.3 V (78%) and 0.5 V (58%) 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 16 ---
+(Figure 5 (E), (F), (G), & (H)). These observations suggest that the charge-storage behaviour 
+of NFC2 was more sensitive to variations in applied potential, leading to greater contribution 
+from diffusion-controlled processes. NFC1 showed a somewhat intermediate level of 
+capacitive contributions (49-85%), which may be attributed to the comparatively lower density 
+of electrochemically active sites resulting from the lower cobalt precursor concentration. The 
+symmetric NFC3//NFC3 device showed good capacitive behaviour for all potentials, with 
+94%, 84%, and 90% capacitive contribution at 0.3, 0.4, and 0.5 V, respectively, and diffusion-
+controlled contributions were below 16%. Overall, the charge-storage of both the half-cell and 
+symmetric device was primarily governed by rapid surface-controlled capacitive processes, 
+while only a limited contribution originated from diffusion-dominated kinetics [25,47]. The 
+high capacitive contribution obtained from Dunn’s analysis is consistent with the b-value 
+results, explaining the superior electrochemical reversibility together with fast charge-
+discharge characteristics of the optimized NFC3 electrode material [43,47]. Dunn analysis 
+confirms the b-value results and shows that NFC3 electrochemical performance is mainly 
+driven by surface-controlled pseudocapacitive processes instead of diffusion-controlled 
+electrochemical behaviour. Based on its superior overall electrochemical performance 
+demonstrated by NFC3, the optimized electrode was subsequently assembled into a practical 
+symmetric two-electrode supercapacitor device.
+3.8 Galvanostatic Charge-Discharge Analysis
+3.8.1 Three-Electrode Performance
+GCD measurements were conducted under applied current loadings of 1, 2, and 4 A/g. All 
+electrodes exhibited almost balanced charge-discharge profiles accompanied by smaller IR 
+drops, indicating high electrochemical reversibility and low internal resistance [41,43]. 
+Increasing the applied current density resulted in shorter discharge durations since electrolyte 
+ions possessed adequate time for diffusion through the porous electrode architecture network 
+[43]. NFC3 displayed the most significant electrochemical activity, delivering a capacitance of 
+46.96 F/g measured at 1 A/g. This capacitance increased reaching 48.12 F/g after 100 charge-
+discharge cycles, primarily associated electrochemical activation of previously inaccessible 
+active sites and improved electrolyte wetting during the early cycling process [18]. At 2 A/g, 
+the capacitance reached over 40.05 F/g and 4 A/g, the capacitance was around 27.11 F/g, which 
+is a very good rate capability. These electrochemical responses observed from the GCD 
+analysis correlates well with the CV and kinetic analyses, confirming that NFC3 offers the 
+most advantageous combination of charge-storage capacity and rate behaviour. NFC2 has 
+moderate electrochemical behaviour, delivering a capacitance of 53.93 F/g at 2 A/g. The 
+improvement in capacitance at the intermediate current density can be attributed to the 
+progressive electrode activation, improved wetting of the electrolyte penetration together with 
+improved utilization of the electrochemically accessible active sites. When the current loading 
+increased 4 A/g of the specific capacitance is down to 25.63 F/g because of the increased 
+polarization and limited ion diffusion. NFC1 had the lowest capacitance value the three 
+electrodes at all current densities investigated. The enhanced performance of NFC3 is primarily 
+related to its higher Co-MOF loading, higher electrical conductivity, and improved electrolyte-
+ion transport kinetics through its interconnected porous nickel foam architecture [34,41]. NFC3 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 17 ---
+has a maximum energy density reaching of 1.45 Wh/kg at 1 A/g together with a maximum 
+power density of 778.54 W/kg at 4 A/g GCD performance results was further examined by EIS 
+measurements to characterize charge-transfer resistance together with the ionic-diffusion 
+characteristics within the fabricated electrodes.
+3.8.2 Symmetric Two-Electrode Performance
+The NFC3//NFC3 symmetric device was evaluated under applied current densities of 0.5, 1, 
+and 2 A/g (Figure 6A, Table 6). The recorded GCD profiles displayed nearly triangular with 
+excellent charge-discharge symmetry while illustrated reversible electrochemical performance 
+[43]. The discharge time shortened as higher applied current loading because the available ion 
+diffusion time was shorter [43]. The device reached a maximum capacitance reaching 19.97 
+F/g at an applied current density of 1 A/g, with 18.92 F/g at 0.5 A/g, and 14.08 F/g at 2 A/g. 
+During extended cycling of 1 A/g, the measured capacitance showed gradual decline from 
+12.00 F/g to 7.58 F/g together followed by the cycles of 100 to 1000, and the corresponding 
+coulombic productivity was remained closure to 100%, confirming excellent electrochemical 
+reversibility [43]. This observed decrease in capacity retention decay is primarily related to 
+structural evolution within the Co-MOF coating, partial depletion of electrochemically active 
+sites, and repeated ion insertion/extraction during prolonged cycling [18]. The specific 
+capacitance obtained for the symmetric device was lower that its three-electrode counterpart as 
+expected because practical full-cell configurations contains both electrodes and also internal 
+resistance and polarization effects. The maximum specific energy was 0.27 Wh/kg (0.5 A/g) 
+together with maximum specific power of 102.44 W/kg (1 A/g) were achieved by our device. 
+These findings demonstrate that the superior electrochemical behaviour obtained from the 
+three-electrode configuration was successfully translated into the practical NFC3//NFC3 
+symmetric supercapacitor device [34]. The practical performance of the symmetric device was 
+subsequently validated through long-term cycling stability and electrochemical impedance 
+analyses.
+(A) (B)
+Figure 6 – (A) GCD profiles recorded at different applied current density, (B) Cycling performance in terms of capacitance 
+retention and coulombic efficiency
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 18 ---
+Table 2. Summary of electrochemical performance values are with respect to the current density from GCD cycles of device 
+level electrode.
+Current 
+Density (A/g)
+Specific 
+capacitance (F/g)
+Energy density 
+(Wh/kg)
+Power density 
+(W/kg)
+Coulombic 
+efficiency Retention ESR
+0.5 18.92 0.27 80.42 100% 100% 421.68
+1 19.97 0.12 102.44 100% 98% 241.85
+2 14.08 0.01 71.05 100% 97% 105.55
+3.9 Cycling Stability
+The cycling durability of the NFC3//NFC3 assembled symmetric device was assessed over 
+1000 galvanostatic charge-discharge (GCD) cycles using an applied current density of 1 A/g 
+(Figure 6B). Initially, measured capacitance improved from 10.54 F/g (1 Cycle) reaching 12.00 
+F/g (100 Cycles), which is mainly linked with the progressive electrochemical activation at the 
+electrode/electrolyte interface together with enhanced ion penetration of electrolyte ions into 
+the interconnected porous Co-MOF framework during initial cycling phase [18]. After the 
+initial activation stage, the measured capacitance progressively decreased to 11.38 F/g (200 
+Cycles), 10.50 F/g (500 Cycles), 9.25 F/g (750 Cycles), and 7.48 F/g (1000 Cycles), 
+corresponding to approximately 72% capacitance retention. The gradual capacitance decay is 
+attributed to structural rearrangement of the Co-MOF coating, repeated ion 
+insertion/extraction, together with gradual reduction in electrochemically accessible active 
+sites during prolonged cycling [18]. Meanwhile, the coulombic efficiency remained between 
+98% and 100% during the cycling experiment, representing exceptionally reversible charge 
+retention characteristics while minimizing parasitic side reactions [43]. The high coulombic 
+efficiency obtained on the cycling test indicates that capacitance loss is mainly due to 
+permanent structural changes of the collector rather than irreversible parasitic electrochemical 
+reactions. The nearly constant coulombic efficiency demonstrates that the charge-discharge 
+process remained highly efficient despite the gradual decrease in specific capacitance. Overall, 
+the NFC3//NFC3 symmetric supercapacitor exhibited good cycling stability, which agrees well 
+with the CV, GCD and EIS results [43]. Following stability evaluation, impedance analysis 
+was performed to investigate the internal resistance and charge-transfer behaviour of the 
+assembled device.
+3.10 Electrochemical Impedance Spectroscopy Analysis (EIS)
+3.10.1 Three-Electrode Impedance Analysis
+Electrochemical impedance spectroscopy (EIS) was conducted to examine the interfacial 
+electron-transfer kinetics and ion-transport behaviour of the fabricated electrode system 
+(Figure 7, Table 7). The measured impedance spectra were analysed using an equivalent circuit 
+Rs+(Rct//CPE1) + CPE2, where Rs corresponds to the electrolyte resistance, Rct denotes the 
+interfacial charge-transfer resistance, CPE1 denotes a non-ideal double-layer capacitance, and 
+CPE2 corresponds to the low-frequency pseudocapacitive response associated with ion 
+diffusion [43]. For all electrodes, the high-frequency intercept (Rs) was constant at 0.50 Ω, 
+which confirms that the electrolyte conductivity is consistent. The value of Rct for NFC1 = 
+1.339 Ω, NFC2 = 1.534 Ω and NFC3 = 1.556 Ω. The relatively small interfacial charge-transfer 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 19 ---
+resistance shows rapid electron-transfer kinetics across the electrode-electrolyte boundary, 
+facilitating rapid Faradic reactions [43]. The higher CPE1-T value obtained for NFC3 7.45 x 
+10-6 F suggests a larger effective electrochemically active interfacial area compared with the 
+other electrodes [18]. The CPE fitting parameters further confirmed the non-ideal behaviour 
+associated with the porous Co-MOF-coated electrodes [43]. The relatively low Rct together 
+with the near-vertical low-frequency response suggests rapid ionic transport together with 
+enhanced capacitive behaviour, which agrees all with the CV and GCD observations [18,43]. 
+Collectively, the impedance findings agree well with the CV, GCD, and kinetic analyses, 
+confirming the optimized NFC3 electrode provides efficient charge storage and favourable ion-
+transport characteristics. The experimentally generated electrochemical dataset served as the 
+basis subsequently for developing and validate the machine-learning models.
+3.10.2 Symmetric Device Impedance Analysis
+The symmetric NFC3//NFC3 device was fitted with the same equivalent circuit (Figure 7, 
+Table 7). The symmetric device exhibited a (Rs) solution resistance of 2.20 Ω, which was 
+slightly higher than the three-electrode system because of the additional electrode/electrolyte 
+interfaces present in the full-cell configuration [43]. The low charge-transfer resistance (Rct = 
+2.0 Ω) indicates effective electron-transfer kinetics across the electrode-electrolyte interface 
+[43]. The extracted CPE parameters indicate effective interfacial EDLC storage at the electrode 
+surface together with stable pseudocapacitive behaviour [18]. The CPE exponent values (n = 
+0.75 – 0.80) indicate non-ideal capacitive behaviour typical of porous transition-metal-based 
+electrodes [18]. Excellent goodness-of-fit (χ2 = 1.63 x 10-3) shows a good agreement between 
+experimental and simulated spectra. Although the symmetric device exhibited a slightly higher 
+Rs than the three-electrode configuration, the difference is expected for practical two-electrode 
+devices and had only a minor influence on the overall electrochemical performance [43]. The 
+experimentally generated electrochemical dataset was subsequently employed to develop and 
+validate ML models to predict the current response for the symmetric supercapacitor.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 20 ---
+Figure 7- Nyquist impedance spectra of NFC1, NFC2, NFC3 and the symmetric device-level measured in 1 M KOH. The 
+inset illustrates the equivalent circuit employed for impedance-spectrum fitting
+Table 3 - Rs, Rct, CPE Values Calculated from fitting of EIS curve with Z view fitting software with respect to NFC1, 
+NFC2, NFC3 & Device level electrodes
+Samples Rs Rct CPE1-t CPE1-P CPE2-T CPE2-P
+NFC1 0.5 1.339 2.99E-06 0.98 0.001685 0.77633
+NFC2 0.5 1.534 2.72E-06 0.98 0.001574 0.76352
+NFC3 0.5 1.556 7.45E-06 0.9 0.00156 0.76743
+Device Level 2.201 2 0.0023267 0.8 0.0019704 0.75
+3.11 Ragone Plot
+The practical energy-storage performance of the NFC3//NFC3 symmetric supercapacitor was 
+evaluated using a Ragone plot (Figure 8). The Ragone plot shows that trade-off between 
+specific energy and power, highlighting practical performance of the assembled symmetric 
+device in high-power energy-storage applications. Symmetric assembled device achieved a 
+maximum specific energy reaching 0.27 Wh/kg and a corresponding power density of 80.42 
+W/kg at 0.5 A/g. At 1 A/g, the energy density decreased to 0.12 Wh/kg whereas the specific 
+power increased to 102.44 W/kg. When the current loading of 1.5 A/g was applied, the power 
+density decreased by 86.83 W/kg, corresponding to a 0.065 Wh/kg decrease. At 2 A/g, energy 
+density was 0.01 Wh/kg with specific power 71.05 W/kg. The decrease in energy density as 
+the applied current density increase is primarily associated with ohmic polarization and internal 
+resistance at high currents, which will reduce the effective discharge voltage [43]. The energy 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 21 ---
+density varies with the square of the effective discharge voltage, so a small drop in voltage will 
+greatly reduce the amount of energy stored in the device [43,48]. Overall, the NFC3//NFC3 
+symmetric device maintained stable electrochemical performance at higher current densities 
+while exhibiting the expected energy-power trade-off characteristic of supercapacitor system 
+[41]. 
+Figure 8 - Ragone plot of the NFC3//NFC3 symmetric supercapacitor illustrating the variation in specific energy and specific 
+power under different applied current densities (0.5, 1, 1.5, and 2 A/g).
+3.12 Machine Learning Model Performance
+A data-driven ML framework was established to estimate the electrochemical current response 
+for the NFC3//NFC3 symmetric supercapacitor from CV data [13,40]. The dataset comprised 
+experimentally measured currents at scan rates of 2, 4, 8, 16, 32, and 200 mV/s, with working 
+electrode potential and scan rate as inputs and measured current as the prediction target. Five 
+regression algorithms, LR, DT, RF, GBR, and KNN were evaluated (Figure 9A-E) respectively 
+of device level electrode [38].
+Among all evaluated models, Random Forest algorithm provided the best prediction accuracy 
+(R2 = 0.999825, RMSE = 1.28 x 10 -4 A, and MAE = 3.10 x 10 -5 A), demonstrating excellent 
+agreement between predicted and actual current responses. KNN is also good (R2 = 0.999673), 
+followed by GBR (R 2 = 0.994990), and DT (R 2 = 0.987298). Linear Regression is the worst 
+(R2 = 0.774371) due to the very nonlinear electrochemical response of the MOF-coated 
+electrode [38].
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 22 ---
+The improved prediction accuracy of the Random Forest model is mainly associated with its 
+ensemble-learning framework, which integrates the predictions of an ensemble of decision 
+trees enabling reduce variance and improve generalization. Unlike the Linear Regression 
+model, which is based on a linear association among the input features together with target 
+response, Random Forest effectively captures the complex nonlinear interactions between 
+electrode potential, scan rate, and electrochemical current without requiring prior assumptions 
+regarding the data distribution. Decision Tree models more susceptible to overfitting because 
+they rely on a single tree structure, whereas Random Forest averages the predictions of 
+numerous independently trained trees, which enhances improving prediction robustness. 
+Although Gradient Boosting Regression and K-Nearest Neighbour also achieved high 
+prediction accuracy, their performance is more sensitive to hyperparameter selection, local data 
+distribution, and experimental noise. Consequently, Random Forest provided the highest 
+prediction accuracy and the most reliable generalization performance for the present 
+electrochemical dataset [26,49].
+The predicted-versus-actual current plots demonstrate that ensemble learning algorithms 
+provide superior generalization capability for nonlinear electrochemical datasets [18]. The 
+Random Forest model exhibited strong correlation between the predicted and actual current 
+responses over the entire potential window, whereas KNN and GBR showed only minor 
+deviations at higher current values. The Decision Tress model captured the overall trend but 
+produced stepwise predictions because of recursive data partitioning, while Linear Regression 
+failed to accurately describe the nonlinear current response, particularly within the Faradaic 
+redox region [49]. The excellent prediction capability of the Random Forest Model indicates 
+that ensemble-learning algorithms effectively model to nonlinear relationships among 
+electrode potential, scan rate, and electrochemical current. The nonlinear behaviour of cyclic 
+voltammetry originates from the simultaneous contributions of electric double-layer charging, 
+reversible Faradaic charge-transfer reactions, diffusion-controlled ion transport, and potential-
+dependent electrochemical kinetics. Consequently, machine-learning models, particularly 
+Random Forest, provide an efficient data-driven framework for accurately predicting 
+electrochemical performance while reducing experimental effort during electrode optimization 
+[26,49].
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 23 ---
+(A) (B)
+(C) (D)
+(E)
+Figure 9 – Comparison between actual and predicted current responses from CV cycle of Scan Rate 200mV/s (100 Cycles) 
+of (A) Linear Regression, (B) Decision Tree, (C) Random Forest, (D) Gradient Boost Regression, and (E) K-Nearest 
+Neighbour
+3.13 Feature Importance Analysis
+The Pearson correlation heatmap and Random Forest feature contribution analysis were 
+employed to evaluate the relative importance of the selected electrochemical predictor 
+variables on current prediction model (Figure 10). Results from the Pearson correlation matrix 
+indicated a moderately positive association between working electrode potential and measured 
+current response (r = 0.39), and the scan rate exhibited a very weak correlation (r = 0.02), 
+indicating that electrochemical current cannot be adequately described using simple linear 
+relationships [49]. Random Forest feature-importance analysis identified the working electrode 
+potential as the dominant predictor (88.18%), whereas the scan rate contributed only 11.82% 
+to the prediction model. The dominant contribution of the working electrode potential arises 
+from expected because the measured current is directly governed by potential-dependent 
+Faradaic redox reactions together with charge accumulation occurring across the electrode-
+electrolyte boundary [26,47]. Although scan rate contributed less to the prediction model, it 
+remains an important experimental parameter because it influences ionic diffusion, 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 24 ---
+polarization, together with electrolyte accessibility through the porous electrode network [43]. 
+Furthermore, the difference between the Pearson correlation coefficients and the Random 
+Forest feature-importance scores highlights the capability of ensemble-based learning 
+algorithms for identifying highly complex nonlinear relationships that cannot be captured by 
+conventional linear statistical methods [26,49]. Overall, the Random Forest model successfully 
+captured the complex electrochemical behaviour of the symmetric supercapacitor and provides 
+accurate current prediction over the entire operating range, demonstrating the effectiveness of 
+machine learning for electrochemical performance analysis [49].
+(A) (B)
+(C) (D)
+Figure 10 - (A) & (B) Feature Importance of Random Forest machine learning respectively three electrode & two electrodes 
+(Device Level), (C) Residual plot of Random Forest for the best model, and (D) Heatmap correlation of Working Electrode 
+with current density
+The efficacy of five machine learning models across various train-test divisions (60:40, 70:30, 
+and 80:20) in relation to the regression model, discovering that the leading ensemble learning 
+algorithms in Random Forest (RF), which exhibits the highest coefficient of determination (R2 
+= 0.999-1.0000), alongside the minimal RMSE and MAE across all train-test divisions. The 
+Gradient Boosting Regressor (GBR) and K-Nearest Neighbours (KNN) exhibited remarkable 
+predictive efficacy, achieving a high R2 = 0.995 alongside minimal prediction error, while the 
+Decision Tree (DT) demonstrated somewhat worse, although still commendable performance. 
+Linear Regression (LR) exhibited the minimal R 2 value of (0.714 – 0.801) together with the 
+lowest RMSE and MAE with reference to Figure 11. Research indicated that Linear Regression 
+(LR) lacks the ability to forecast nonlinear correlations within the electrochemical datasets; 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 25 ---
+consequently, ensemble learning algorithms, especially Random Forest, proved to be the most 
+efficient and dependable for predicting the electrochemical performance of the fabricated 
+supercapacitor electrodes.
+Figure 11 – A heatmap illustrating the comparative predictive efficacy of all the Five regression algorithms across various 
+train-test divisions (60:40, 70:30, 80:20).
+Machine learning has emerged as an effective tool in electrochemical energy-storage research 
+has become a promising approach for predicting supercapacitor electrochemical behaviour, 
+understanding charge-storage mechanisms, and the optimization advanced electrode material 
+[13,18,38,49]. As summarized in Table 8, previous studies have investigated diverse electrode 
+architectures, including conductive polymer-based materials, transition-metal oxide electrodes, 
+MXenes, biomass-derived carbons, metal phosphides, and hybrid nanocomposites using 
+regression models, ensemble-learning algorithms, artificial neural networks, and deep-learning 
+techniques, achieving prediction accuracies ranging from R2 = 0.84 – 0.99 [18,38,49].
+In this present study, the optimized NFC3//NFC3 symmetric supercapacitor was evaluated 
+using five regression algorithms (LR, DT, RF, GBR, and KNN) among which the Random 
+Forest model delivered the best prediction accuracy (R 2 = 0.999825, RMSE = 1.28 x 10 -4 A, 
+and MAE = 3.10 x 10 -5 A), and demonstrating good agreement between predicted and 
+experimental measured current responses.
+Compared with previously reported ML-assisted supercapacitor studies, the present work 
+uniquely integrates comprehensive electrochemical characterization including CV, GCD, EIS, 
+b-value evaluation, Dunn’s analysis, Ragone plot assessment, and cycling stability with 
+machine-learning-based current prediction, correlation analysis, and feature-importance 
+evaluation. This integrated experimental and data-driven framework not only provides a highly 
+accurate prediction of electrochemical performance but also offers physical mechanistic 
+understanding of the key performance-determining variables governing electrochemical 
+storage behaviour, consequently demonstrating the value of machine-learning-driven 
+methodologies towards rational development of next-generation supercapacitor electrodes 
+[26,49].
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 26 ---
+Table 4 - Comparison table of Material Coating with Machine learning mode and their accuracy value with key 
+contributions for the best ML model.
+Material ML Model Accuracy Key Contribution
+NiCo₂O₄ on Ni foam 
+(PTFE binder) [3]
+ANN, GBC, RF, SVM, 
+MLP R²=0.95
+Machine learning-assisted design 
+combined with experimental 
+validation
+NiO/CoO and 
+CuO/CoO on Ni foam 
+[4]
+LR, RR, DTR, RFR, 
+GBR, KNR, SVR, 
+XGBR
+R²=0.98 ML-guided fabrication of 
+bimetallic TMO nanocomposites
+NiCo₂O₄ with coatings 
+(graphene, CNTs, 
+PANI) [5]
+RF, RS, RC, MCC, RT, 
+SVM, RVM, NN, 
+GBRT, ANN, ELM, 
+HGA+LSTM, 
+BOHB+DBN
+R=0.6886 ML predicts cyclic stability from 
+intrinsic features
+MnO₂ (carbon-based 
+substrate) [6]
+LM, ANN, GB, RF, 
+CART R²=0.92
+ML-driven optimisation and 
+experimental insights for 
+high-performance MnO₂ SCs
+Biomass-derived 
+carbon [8]
+Linear, logistic, RF, 
+gradient boosting R²=0.92
+ML + XAI reveal physical insights 
+for biomass-derived carbon 
+supercapacitors
+Lead vanadate (PbV) 
+on Ni foam 
+(binder-free) [15]
+MLR, RF, MLP, LSTM, 
+GRU, RFE R²=0.83
+Binder-free PbV on Ni foam with 
+ML (LSTM) capacitance 
+prediction
+Biochar, activated 
+carbon, MOF [16] KNN, DTR, BRR, ANN R²=0.88
+ANN predicts specific capacitance 
+of graphene-based SCs; N/O 
+doping most influential
+Biomass char (porous) 
+on Ni foam [30]
+Transformer, GRU, 
+XGBoost, RF, 
+CatBoost, LightGBM
+R²=0.96
+ML regression optimises biomass 
+char SC production; Transformer 
+best
+NiCoP (Ni₁.₃Co₀.₅₅P) 
+on Ni foam [34]
+CNN-BiGRU-Attention, 
+GRU, BiGRU, 
+CNN-BiGRU
+R²=0.98
+The Hybrid 
+CNN-BiGRU-Attention model 
+predicts NiCoP capacitance with 
+high precision
+MgCo₂O₄ (composite 
+with carbon, LDH, 
+TMO, TMS) [35]
+RF, XGB, RT R²=0.95 XGB-RFE-XGB model accurately 
+predicts MgCo₂O₄ capacitance
+N-S functionalized 
+NiO/CoO on Ni foam 
+[50]
+LR, RR, DTR, RFR, 
+GBR, KNNR, SVR, 
+XGBR
+R²=0.97
+ML-facilitate the synthesis of N-S 
+doped NiO/CoO to enhance SC 
+behaviour
+MXene, ZIF-67 film, 
+etc. (TENG) [51]
+RFR, SVR, XGBoost, 
+GPR, logistic, NN, 
+k-means, PCA, t-SNE, 
+CNN, GNN, RL
+R² > 0.95
+Comprehensive review on TENGs 
+with advanced materials and 
+ML/AI optimisation
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 27 ---
+Co-MOF/
+NFC3//NFC3
+This Work
+LR, DT, RF, GBR, 
+KNN R2=0.999825
+Integrated Co-MOF/Ni foam 
+electrode optimization with 
+comprehensive electrochemical 
+characterization (CV, GCD, EIS, 
+b-value, Dunn analysis, Ragone 
+plot) and machine-learning-
+based current prediction with 
+feature-importance analysis.
+4. CONCLUSION
+Co-MOF-coated nickel foam electrodes with precursor concentrations of 1, 2, and 3 mmol were 
+successfully synthesized and comprehensively evaluated to examine how precursor 
+concentration influences the structural characteristics and electrochemical behaviour. 
+Structural characterization confirmed the successful construction of the Co-MOF coating. The 
+proposed concentration-optimization strategy identified the 3 mmol precursor concentration 
+(NFC3) as the optimum condition, resulting in enhanced charge-storage behaviour and 
+electrochemical stability.
+The optimized NFC3 electrode was subsequently employed to assemble an NFC3//NFC3 
+symmetric device of supercapacitor. The assembled symmetric device delivered a maximum 
+capacitance reaching 19.97 F/g measured when 1 A/g together with maintained approximately 
+72% of the early capacitance following 1000 charge-discharge cycles, demonstrating good 
+stable cycling performance. Charge-storage kinetic analysis using b-value evaluation and 
+Dunn’s analysis found that charge-storage mechanism was primarily dominated by surface-
+capacitive processes with a smaller diffusion-controlled contribution. Electrochemical 
+impedance spectroscopy further confirmed the favourable charge-transfer properties and 
+surface-capacitive processes accompanied by a minor diffusion-controlled contribution.
+Machine learning regression models were developed using experimentally generated cyclic 
+voltammetry data for predicting the electrochemical current response for the symmetric 
+supercapacitor. Among the investigated algorithms, the Random Forest algorithm provided the 
+best predictive performance (R 2 = 0.999825, RMSE = 1.28 x 10 -4 A, and MAE = 3.10 x              
+10-5 A), and while feature-importance analysis identified the working electrode potential as the 
+dominant variable governing the current response. The results demonstrate that experimentally 
+derived electrochemical parameters can be accurately predicted using machine-learning 
+techniques. The close agreement between structural characterization, electrochemical analysis 
+and machine-learning prediction illustrates that the proposed integrated experimental-machine 
+learning framework provides a reliable approach for the rapid optimization and design of 
+advanced MOF-based supercapacitor electrodes. The proposed experimental-machine learning 
+framework provides a transferable methodology that can be extended to other MOF-based and 
+transition-metal-based supercapacitor electrode systems.
+Overall, this study establishes an integrated experimental-machine learning framework that 
+combines material optimization, electrochemical characterization, kinetic analysis, symmetric-
+device validation, and data-driven prediction. The proposed framework provides a transferable 
+methodology for accelerating the evaluation, optimization, and future development of MOF-
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 28 ---
+based and other advanced supercapacitor electrodes. Furthermore, the proposed integrated 
+experimental-machine learning framework contributes to the development of efficient 
+electrochemical energy-storage technologies that support sustainable and clean energy 
+systems. 
+5. FUTURE WORK
+Future research should incorporate explainable AI (XAI) to improve the clarity of ML 
+algorithms and identify the electrochemical variables governing device performance. 
+Integration of real-time prediction models with electrochemical testing systems could enable 
+rapid performance assessment during experimentation. Active-learning strategies may further 
+minimize experimental effort through the selection of the most informative experiments for 
+model refinement. In addition, expanding and more diverse electrochemical datasets covering 
+different electrode material, electrolytes, and operating conditions will improve model 
+generalization and support the development of robust predictive tools for next-generation 
+supercapacitor systems.
+Highlights:
+Optimization of Co-MOF-coated nickel foam electrodes using precursor concentration.
+NFC3 exhibited the best electrochemical performance among the prepared electrodes.
+NFC3//NFC3 symmetric device achieved stable charge-storage performance.
+Random Forest predicted the current response with R 2 = 0.9998.
+Feature importance identified electrode potential as the dominant predictor.
+Integrated electrochemical and machine-learning framework for supercapacitor 
+optimization.
+Acknowledgement
+The authors would like to express their appreciation for all the support provided by the National 
+Institute of Technology Tiruchirappalli, Tamil Nadu, India. 
+Disclosure of Interest:
+The authors declare that they have no known competing financial interests or personal 
+relationships that could have appeared to influence the work reported in this paper. 
+References:
+[1] A.E. Abd-elnaby, K.E. El-Kelany, F. Selim, M.A. Ebied, A.M. Elshaer, Evaluating machine learning 
+models for predicting the storage performance of polypyrrole-based supercapacitor electrodes, J. Energy 
+Storage 140 (2025). https://doi.org/10.1016/j.est.2025.118943.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 29 ---
+[2] A. Hefnawy, J. El Nady, A.M. Hassan, F.M. Mahgoub, S. Ebrahim, R.A. Emanfaloty, A.M. Elshaer, 
+Machine learning model of polypyrrole based-supercapacitor electrode: Fabrication, characterization, and 
+prediction, J. Alloys Compd. 1019 (2025). https://doi.org/10.1016/j.jallcom.2025.179240.
+[3] L. Zhang, Z. Zhao, T. Dang, X. Yang, Y. Lan, R. Cao, Data-driven design and experimental validation of 
+high-precision Ni-Co bimetallic compound-based pseudocapacitor models, J. Mater. Chem. A Mater. 13 
+(2025) 22120–22141. https://doi.org/10.1039/d5ta03175c.
+[4] A. Hussain, A.S. Almalki, A. Sami, M. Tariq, F. Zafar, M.A. Khan, N. Akhtar, S. Ahmad, M.U.U. 
+Rehman, G.A.M. Mersal, M.M. Ibrahim, Machine learning-guided fabrication of NiO/CoO and CuO/CoO 
+based nanocomposites for high-performance supercapacitors, Mater. Chem. Phys. 347 (2026). 
+https://doi.org/10.1016/j.matchemphys.2025.131455.
+[5] S. Nanda, S. Ghosh, T. Thomas, Machine learning aided cyclic stability prediction for supercapacitors, J. 
+Power Sources 546 (2022). https://doi.org/10.1016/j.jpowsour.2022.231975.
+[6] N. Mursal, A.R. Shelake, S.A. Ahir, P.P. Sonawane, M. Selvaraj, M.A. Assiri, S. V. Kulkarni, S.S. Sutar, 
+R.U. Amate, C.W. Jeon, T.D. Dongale, P.P. Shah, From data to device: Machine learning-driven 
+optimization, predictions, and experimental insights for engineering high-performance MnO2 
+supercapacitors, Colloids Surf. A Physicochem. Eng. Asp. 727 (2025). 
+https://doi.org/10.1016/j.colsurfa.2025.138392.
+[7] K.T. Alao, A.K. Hamzat, K. Sopian, S.I.U.H. Gilani, T.O. Alao, Z. Aslam, H.A. Kazem, Synergistic 
+hybrid systems of 2D-MOFs and TMDs for advanced energy harvesting, Green Energy and Resources 4 
+(2026) 100188. https://doi.org/https://doi.org/10.1016/j.gerr.2026.100188.
+[8] S. Ghosh, A. Sibi, T. Thomas, Machine learning and explainable artificial intelligence reveal physical 
+insights into biomass-derived carbon for high-performance supercapacitors, J. Power Sources 665 (2026) 
+239040. https://doi.org/10.1016/j.jpowsour.2025.239040.
+[9] S. Ghosh, A. Sibi, G.S. Priyanga, Z.C. Dagdia, T. Thomas, Temperature-dependent performance 
+prediction for cerium oxynitride solid-state symmetric supercapacitor using machine learning, J. Energy 
+Storage 113 (2025). https://doi.org/10.1016/j.est.2025.115562.
+[10] H. Azimi, E.G. Kalhor, S.R. Nabavi, M. Behbahani, M.T. Vardini, Data-based modeling for prediction of 
+supercapacitor capacity: Integrated machine learning and metaheuristic algorithms, J. Taiwan Inst. Chem. 
+Eng. 170 (2025). https://doi.org/10.1016/j.jtice.2025.105996.
+[11] S. Jha, M. Yen, Y.S. Salinas, E. Palmer, J. Villafuerte, H. Liang, Machine learning-assisted materials 
+development and device management in batteries and supercapacitors: performance comparison and 
+challenges, J. Mater. Chem. A Mater. 11 (2023) 3904–3936. https://doi.org/10.1039/d2ta07148g.
+[12] P. Bhojane, Recent advances and fundamentals of Pseudocapacitors: Materials, mechanism, and its 
+understanding, J. Energy Storage 45 (2022). https://doi.org/10.1016/j.est.2021.103654.
+[13] M.A. Ebied, M. A.Azim, A. Emad-Eldeen, AI-based approach for predicting the storage performance of 
+zinc oxide-based supercapacitor electrodes, J. Energy Storage 94 (2024). 
+https://doi.org/10.1016/j.est.2024.112292.
+[14] M. Ahmad, A.S. Almalki, W. Sajjad, F. Zafar, H.M. Asif, M.A. Khan, N. Akhtar, M. Sohail, G.A.M. 
+Mersal, M.M. Ibrahim, Design and fabrication of machine learning optimized Ni and Co-doped CuO 
+nanocomposite as promising material for supercapacitor application, Journal of Electroanalytical 
+Chemistry 992 (2025). https://doi.org/10.1016/j.jelechem.2025.119282.
+[15] Q.A. Sial, U. Safder, R.B. Ali, S. Iqbal, L.T. Duy, B.G. Pollet, S.S. Kalanur, H. Seo, Enhanced 
+supercapacitive performance of lead vanadate hybrid architect on nickel foam with machine learning-
+driven capacitance prediction, J. Power Sources 608 (2024). 
+https://doi.org/10.1016/j.jpowsour.2024.234580.
+[16] A.G. Saad, A. Emad-Eldeen, W.Z. Tawfik, A.G. El-Deen, Data-driven machine learning approach for 
+predicting the capacitance of graphene-based supercapacitor electrodes, J. Energy Storage 55 (2022). 
+https://doi.org/10.1016/j.est.2022.105411.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 30 ---
+[17] B. Chettiannan, E. Dhandapani, G. Arumugam, R. Rajendran, M. Selvaraj, Metal-organic frameworks: A 
+comprehensive review on common approaches to enhance the energy storage capacity in supercapacitor, 
+Coord. Chem. Rev. 518 (2024). https://doi.org/10.1016/j.ccr.2024.216048.
+[18] S. Fleischmann, J.B. Mitchell, R. Wang, C. Zhan, D.E. Jiang, V. Presser, V. Augustyn, 
+Pseudocapacitance: From Fundamental Understanding to High Power Energy Storage Materials, Chem. 
+Rev. 120 (2020) 6738–6782. https://doi.org/10.1021/acs.chemrev.0c00170.
+[19] A. Priyadharshini, S.P. Vinodhini, J.R. Xavier, Recent advances and emerging trends in 2D chalcogenide-
+polymer hybrid nanocomposites for supercapacitor applications, J. Alloys Compd. 1048 (2025) 185282. 
+https://doi.org/https://doi.org/10.1016/j.jallcom.2025.185282.
+[20] A. Priyadharshini, S.P. Vinodhini, J.R. Xavier, Recent advances and emerging trends in 2D chalcogenide-
+polymer hybrid nanocomposites for supercapacitor applications, J. Alloys Compd. 1048 (2025) 185282. 
+https://doi.org/https://doi.org/10.1016/j.jallcom.2025.185282.
+[21] Z. Wang, T. Wu, L. Zeng, J. Peng, X. Tan, D. Yu, M. Gao, G. Feng, Machine Learning Relationships 
+Between Nanoporous Structures and Electrochemical Performance in MOF Supercapacitors, Advanced 
+Materials 37 (2025). https://doi.org/10.1002/adma.202500943.
+[22] T.N. Pham-Truong, H. Guemiza, H. Lavillunière, C. Vancaeyzeele, P.H. Aubert, Electrochemical 
+behavior of in-situ electrosynthetized 3D metal-organic framework (MOF) as ultra-stable thin film on 
+nickel foam, Electrochim. Acta 441 (2023). https://doi.org/10.1016/j.electacta.2022.141792.
+[23] F. Xu, N. Chen, Z. Fan, G. Du, Ni/Co-based metal organic frameworks rapidly synthesized in ambient 
+environment for high energy and power hybrid supercapacitors, Appl. Surf. Sci. 528 (2020). 
+https://doi.org/10.1016/j.apsusc.2020.146920.
+[24] T. Nakkhong, T. Inprasit, A. Pangon, Zeolite imidazole framework-67 (ZIF-67)/phosphorus-doped carbon 
+nanofiber hybrid materials for binder-free supercapacitor electrodes, Chemical Engineering Journal 497 
+(2024). https://doi.org/10.1016/j.cej.2024.154655.
+[25] A. Rafique, U. Naeem, A. Marques, I. Ferreira, S. Rizwan, A.C. Baptista, Understanding the Capacitive 
+and Diffusion-Controlled Behavior of Electrophoretically Deposited V2CTx on Carbon Yarn as a 
+Potential Anode for Asymmetric Devices, ACS Omega 10 (2025) 7621–7634. 
+https://doi.org/10.1021/acsomega.4c06035.
+[26] A. Emad-Eldeen, M.A. Azim, M. Abdelsattar, A. AbdelMoety, Utilizing machine learning and deep 
+learning for enhanced supercapacitor performance prediction, J. Energy Storage 100 (2024). 
+https://doi.org/10.1016/j.est.2024.113556.
+[27] V. Raj, M.R. Nair, N.I. Soaid, M.S.M. Saheed, Benchmarking classical machine learning and neural 
+networks for supercapacitor electrodes optimization, Diam. Relat. Mater. 161 (2026) 113085. 
+https://doi.org/10.1016/j.diamond.2025.113085.
+[28] Y.F. Wang, M.Y.F. Wang, L.Y. Tu, An Evaluation of Machine Learning Models for Forecasting Short-
+Term U.S. Treasury Yields, Applied Sciences (Switzerland) 15 (2025). 
+https://doi.org/10.3390/app15126903.
+[29] G.K. Yogesh, D. Nandi, R. Yeetsorn, W. Wanchan, C. Devi, R.P. Singh, A. Vasistha, M. Kumar, P. 
+Koinkar, K. Yadav, A machine learning approach for estimating supercapacitor performance of graphene 
+oxide nano-ring based electrode materials, Energy Advances 4 (2024) 119–139. 
+https://doi.org/10.1039/d4ya00577e.
+[30] J. Chen, Z. Yu, J. Dong, W. Yue, X. Ma, Machine learning applied to the optimization of biomass char-
+based supercapacitors: Effect of experimental parameters on supercapacitor performance, Electrochim. 
+Acta 558 (2026). https://doi.org/10.1016/j.electacta.2026.148543.
+[31] Z. Xu, C. Zhu, H. Tang, L. Duan, Feature-enhanced machine learning prediction of supercapacitor cycle 
+life from limited early-cycle data, Electrochim. Acta 538 (2025). 
+https://doi.org/10.1016/j.electacta.2025.147039.
+[32] N. Mishra, N. Bahadursha, A.S. Reddy, S. Kanungo, A. Bhattacharjee, Ab-initio calculation driven 
+machine learning based prediction of quantum capacitance of titanium-doped graphene for efficient 
+supercapacitor electrode design, J. Energy Storage 107 (2025). https://doi.org/10.1016/j.est.2024.115038.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 31 ---
+[33] A.R. Shelake, V.C. Karade, M. Selvaraj, M.A. Assiri, D.D. More, A.D. Patil, M.G. Mali, S.S. Sutar, R.U. 
+Amate, C.W. Jeon, T.G. Kim, T.D. Dongale, Machine learning-guided optimization, predictive modeling, 
+and experimental validation of MXene-based supercapacitors, J. Power Sources 663 (2026). 
+https://doi.org/10.1016/j.jpowsour.2025.238863.
+[34] Q. Shen, L. Zhu, Z. Shen, T. Ru, M. Guo, J. Ren, T. Wu, Z. Liu, Capacity prediction of cobalt nickel 
+phosphide supercapacitors based on machine learning, Chemical Engineering Journal 539 (2026). 
+https://doi.org/10.1016/j.cej.2026.177313.
+[35] M. Tang, Y. Ding, T. Hu, X. Zhu, G. Zheng, Y. Tian, Machine Learning-Based Prediction of 
+Supercapacitor Capacitance for MgCo2O4 Electrodes, ChemPhysChem 25 (2024). 
+https://doi.org/10.1002/cphc.202400629.
+[36] G. Manju, P.U. Mahalingam, R. Krishnamoorthi, P.K. Sudheeran, K. Dhanapal, A. Indhrapriyadarshini, 
+A.V.A. Mariadoss, J. Lee, K.S. Kim, Bioprocessing of Pacific White Shrimp (Litopenaeus vannamei) 
+Shells for α-Chitin Extraction via Sequential Fermentation with Bacillus haynesii and Lactobacillus 
+delbrueckii, Polysaccharides 7 (2026). https://doi.org/10.3390/polysaccharides7020061.
+[37] J. Liang, M. Lu, L. Zheng, F. Yi, Y. Zhang, A. Gao, Metal-organic frameworks derived in situ carbon-
+doped hollow nickel-cobalt phosphate microspheres for high performance zinc-ion hybrid 
+supercapacitors, Electrochim. Acta 513 (2025). https://doi.org/10.1016/j.electacta.2024.145589.
+[38] S. Ahmad, M. Tariq, H. Ni, S.A. Alqarni, A.U. Khan, K. Tahir, T.M. Althagafi, E.A. Alabbad, Z.M. 
+Almarhoon, M.E.A. Zaki, Engineering 3D Delhi flower-like ZIF-67 derived NiCo layer double hydroxide 
+electrodes with vertically aligned channels for high performance supercapacitor, Electrochim. Acta 542 
+(2025). https://doi.org/10.1016/j.electacta.2025.147517.
+[39] M. Wang, Y. Feng, Y. Zhang, S. Li, M. Wu, L. Xue, J. Zhao, W. Zhang, M. Ge, Y. Lai, J. Mi, Ion 
+regulation of hollow nickel cobalt layered double hydroxide nanocages derived from ZIF-67 for High-
+Performance supercapacitors, Appl. Surf. Sci. 596 (2022). https://doi.org/10.1016/j.apsusc.2022.153582.
+[40] X. Liu, K. Fan, X. Huang, J. Ge, Y. Liu, H. Kang, Recent advances in artificial intelligence boosting 
+materials design for electrochemical energy storage, Chemical Engineering Journal 490 (2024) 151625. 
+https://doi.org/https://doi.org/10.1016/j.cej.2024.151625.
+[41] C.M. Hangarter, B. Dyatkin, M. Laskoski, M.C. Palenik, J.B. Miller, M. Tyagi, C.A. Klug, A cobalt-
+based layered MOF material for supercapacitor applications, J. Energy Storage 89 (2024) 111476. 
+https://doi.org/https://doi.org/10.1016/j.est.2024.111476.
+[42] W. Wu, S. Luo, Y. Huang, H. He, P.K. Shen, J. Zhu, Recent advances in transition metal phosphide-based 
+heterostructure electrocatalysts for the oxygen evolution reaction, Mater. Chem. Front. 8 (2024) 1064–
+1083. https://doi.org/10.1039/d3qm00793f.
+[43] Y. Zhang, X. Li, Z. Li, F. Yang, Evaluation of electrochemical performance of supercapacitors from 
+equivalent circuits through cyclic voltammetry and galvanostatic charge/discharge, J. Energy Storage 86 
+(2024) 111122. https://doi.org/https://doi.org/10.1016/j.est.2024.111122.
+[44] G. Zeinolabedinpour, M. Arvand, H.Z. Mousavi, Engineering hierarchical metal-organic framework and 
+conductive polymer structures on 3D substrates for improved supercapacitor performance, J. Energy 
+Storage 169 (2026) 122819. https://doi.org/https://doi.org/10.1016/j.est.2026.122819.
+[45] K. Zhang, X. Gao, F. Yao, Y. Xie, H. Bai, Y. Sun, R. Liu, H. Yue, Construction of hierarchical MOF-
+derived CoS2 microsheet arrays@NiMo2S4 nanoflakes on Ni foam as a high-performance supercapacitor 
+electrode, J. Colloid Interface Sci. 650 (2023) 105–111. 
+https://doi.org/https://doi.org/10.1016/j.jcis.2023.06.135.
+[46] J. González, E. Laborda, Á. Molina, Voltammetric Kinetic Studies of Electrode Reactions: Guidelines for 
+Detailed Understanding of Their Fundamentals, J. Chem. Educ. 100 (2023) 697–706. 
+https://doi.org/10.1021/acs.jchemed.2c00944.
+[47] R. Kumar, M. Bag, Quantifying Capacitive and Diffusion-Controlled Charge Storage from 3D Bulk to 
+2D Layered Halide Perovskite-Based Porous Electrodes for Efficient Supercapacitor Applications, 
+Journal of Physical Chemistry C 125 (2021) 16946–16954. https://doi.org/10.1021/acs.jpcc.1c05493.
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed
+
+--- PDF页 32 ---
+[48] I. Beyers, A. Bensmann, R. Hanke-Rauschenbach, Ragone plots revisited: A review of methodology and 
+application across energy storage technologies, J. Energy Storage 73 (2023) 109097. 
+https://doi.org/https://doi.org/10.1016/j.est.2023.109097.
+[49] S. Rai, S. Gupta, S. Sajwan, V. Aditi, C.R. Kant, Artificial intelligence models for supercapacitor 
+performance prediction in energy storage, J. Energy Storage 145 (2026) 119919. 
+https://doi.org/https://doi.org/10.1016/j.est.2025.119919.
+[50] S. Ahmad, M.A. Khan, G. Eid, M.S. Khan, Aqsa, M.M. Ahmad, N. Akhtar, F. Zafar, M.I. Khan, Machine 
+learning-assisted synthesis of N-S functionalized NiO/CoO nanocomposite for enhanced supercapacitor 
+performance, Electrochim. Acta 546 (2026). https://doi.org/10.1016/j.electacta.2025.147782.
+[51] T. Ramachandran, L. Zheng, H. Butt, M. Rezeq, Energy nexus: MXene–MOF–chalcogenide hybrids 
+triboelectric nanogenerators (TENGs) for self-powered supercapacitor storage with machine learning 
+insights, Mater. Today Adv. 29 (2026). https://doi.org/10.1016/j.mtadv.2025.100675.
+ 
+This preprint research paper has not been peer reviewed. Electronic copy available at: https://ssrn.com/abstract=7291036
+Preprint not peer reviewed

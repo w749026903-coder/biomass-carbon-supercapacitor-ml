@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-17",
+  "counts": {
+    "papers": 126,
+    "source_files": 137,
+    "materials": 67,
+    "cycling_tests": 83,
+    "cycling_endpoints": 89,
+    "material_observations": 73,
+    "field_evidence": 2492,
+    "issues": 234,
+    "admissions": 89,
+    "training_ready": 0
+  },
+  "all_candidates": {
+    "endpoints": 89,
+    "provisional_materials": 67,
+    "papers": 51,
+    "study_groups": 51
+  },
+  "main_screening_pool": {
+    "endpoints": 12,
+    "provisional_materials": 10,
+    "papers": 10,
+    "study_groups": 10
+  },
+  "main_basic_conditions": {
+    "endpoints": 10,
+    "provisional_materials": 8,
+    "papers": 8,
+    "study_groups": 8
+  },
+  "main_basic_BET_voltage": {
+    "endpoints": 8,
+    "provisional_materials": 7,
+    "papers": 7,
+    "study_groups": 7
+  },
+  "cohorts": [
+    {
+      "system": "2E_as_reported",
+      "method": "CV",
+      "endpoints": 1,
+      "provisional_materials": 1
+    },
+    {
+      "system": "2E_asymmetric",
+      "method": "GCD",
+      "endpoints": 5,
+      "provisional_materials": 4
+    },
+    {
+      "system": "2E_asymmetric",
+      "method": "GCD_unspecified_protocol",
+      "endpoints": 1,
+      "provisional_materials": 1
+    },
+    {
+      "system": "2E_asymmetric_gel",
+      "method": "GCD",
+      "endpoints": 5,
+      "provisional_materials": 2
+    },
+    {
+      "system": "2E_same_carbon_mass_unbalanced",
+      "method": "GCD",
+      "endpoints": 1,
+      "provisional_materials": 1
+    },
+    {
+      "system": "2E_symmetric",
+      "method": "CV",
+      "endpoints": 2,
+      "provisional_materials": 2
+    },
+    {
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "endpoints": 35,
+      "provisional_materials": 30
+    },
+    {
+      "system": "2E_symmetric",
+      "method": "GCD_unspecified_protocol",
+      "endpoints": 2,
+      "provisional_materials": 2
+    },
+    {
+      "system": "2E_symmetric_gel",
+      "method": "GCD",
+      "endpoints": 2,
+      "provisional_materials": 2
+    },
+    {
+      "system": "3E",
+      "method": "CV",
+      "endpoints": 2,
+      "provisional_materials": 2
+    },
+    {
+      "system": "3E",
+      "method": "GCD",
+      "endpoints": 21,
+      "provisional_materials": 19
+    },
+    {
+      "system": "3E",
+      "method": "GCD_protocol_wording_issue",
+      "endpoints": 4,
+      "provisional_materials": 4
+    },
+    {
+      "system": "3E",
+      "method": "GCD_unspecified_protocol",
+      "endpoints": 1,
+      "provisional_materials": 1
+    },
+    {
+      "system": "Li_half_cell",
+      "method": "GCD",
+      "endpoints": 3,
+      "provisional_materials": 3
+    },
+    {
+      "system": "Zn_hybrid",
+      "method": "GCD",
+      "endpoints": 1,
+      "provisional_materials": 1
+    },
+    {
+      "system": "system_pending",
+      "method": "GCD",
+      "endpoints": 3,
+      "provisional_materials": 3
+    }
+  ],
+  "label_relations": [
+    {
+      "retention_relation": "approx",
+      "n": 11
+    },
+    {
+      "retention_relation": "eq",
+      "n": 73
+    },
+    {
+      "retention_relation": "gt",
+      "n": 5
+    }
+  ],
+  "missing_fields_in_current_extraction": {
+    "cycle_count": 1,
+    "retention_pct": 4,
+    "current_density_A_g": 25,
+    "concentration_value": 28,
+    "voltage_lower_V": 46,
+    "BET_m2_g": 55,
+    "total_pore_volume_cm3_g": 68
+  },
+  "checks": {
+    "sqlite_integrity": "ok",
+    "foreign_key_violations": 0,
+    "flattened_join_rows": 89,
+    "raw_snapshot_values_preserved": true,
+    "training_rows": 0,
+    "retention_above_100_not_clipped": 10
+  },
+  "limitations": [
+    "All material identities are provisional; 89 endpoints do not mean 89 independent samples.",
+    "Missing values describe current extraction, not proven absence from original papers.",
+    "Primary screening pool is a work queue, not training admission.",
+    "126 papers catalogued does not mean 126 papers have extracted cycling labels.",
+    "1000 cycles is a project screening convention, not a universal quality threshold."
+  ]
+}

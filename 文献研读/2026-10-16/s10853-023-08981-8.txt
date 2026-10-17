@@ -1,0 +1,777 @@
+
+--- PDF页 1 ---
+Vol:.(1234567890)
+https://doi.org/10.1007/s10853-023-08981-8
+J Mater Sci (2023) 58:15448–15458
+Computation & theory
+Machine learning enabled property prediction 
+of carbon‑based electrodes for supercapacitors
+Rajat Kushwaha1, Mayank K. Singh1, Sarathkumar Krishnan1, and Dhirendra K. Rai1,* 
+1 Sustainable Energy and Environmental Materials (SEEM) Lab, Department of Metallurgical Engineering and Materials Science, 
+Indian Institute of Technology, Indore, Simrol, Indore 453552, India
+ABSTRACT
+For supercapacitor electrodes, carbon is one of the most sought materials. Many 
+synthetic strategies have been reported for carbon materials with a wide range 
+of features in terms of surface area, porosity, the extent of the disorder, and 
+the presence of various doping elements. Though there are many reports on the 
+independent impact of these properties on supercapacitive outcomes of carbon 
+materials, the collective effect of these features on the supercapacitive behavior 
+is still not well understood. Therefore, it is imperative to explore new methods 
+to predict the supercapacitive performance of carbon material without attempt-
+ing experimentation. In this regard, this work reports on the comparative effi-
+cacy of five machine-learning (ML) techniques for estimating the capacitance of 
+carbon-based supercapacitors, including Linear Regression, Lasso Regression, 
+XGBoost, Random Forest Regressor, and Artificial Neural Networks (ANN). We 
+gathered data from various research papers and articles to prepare the dataset, 
+followed by Data Cleaning and Feature Selection to select the best parameters 
+for training our Machine Learning model. Additionally, five factors were cho-
+sen to determine their effects on capacitance: voltage window, specific surface 
+area  (m2/g), pore size (nm),  ID/IG ratio, and extent of N-doping. Out of five ML 
+approaches, XGBoost, Random Forest Regressor, and Artificial Neural Networks 
+(ANN) produced respectable prediction results when tested against actual data. 
+More significantly, this project demonstrates the promise of Machine-Learning 
+in selecting suitable materials for energy storage applications.
+Introduction
+Compared to batteries, supercapacitors possess the 
+unique advantages of fast charging and discharg-
+ing, high power density, and longer cyclic life [1 , 2]. 
+However, the energy they can store is much less than 
+the batteries. Such difference in behavior is mainly 
+because of different charge storage mechanisms oper-
+ating in batteries and supercapacitors. While charge 
+storage in a battery is achieved by electron transfer 
+Received: 26 April 2023 
+Accepted: 22 September 2023 
+Published online: 
+11 October 2023 
+© The Author(s), under 
+exclusive licence to Springer 
+Science+Business Media, LLC, 
+part of Springer Nature, 2023
+Handling Editor: Kyle Brinkman.
+Address correspondence to E-mail: dkrai@iiti.ac.in
+
+--- PDF页 2 ---
+J Mater Sci (2023) 58:15448–15458 
+across the electrode–electrolyte interface [3 ], there is 
+simple ion accumulation at or near the electrode in 
+the case of supercapacitors [4]. Because of high power 
+density and rapid charging, supercapacitors are 
+increasingly appealing to various sectors, including 
+transportation, aircraft, and communications [5 –7]. 
+Electrodes are the most crucial part of supercapaci-
+tors. Carbon-based materials have been extensively 
+employed as electrode materials for supercapacitors 
+due to their outstanding chemical and physical quali-
+ties, low cost, easy availability, significant capacitance, 
+and high electrical conductivity associated with their 
+large specific surface area [8–10].
+Researchers are keen to boost the specific capaci-
+tance of carbon-based electrodes to improve super-
+capacitors’ performance. For instance, numerous 
+attempts have been made to alter the pore structure, 
+add surface functional groups, and increase specific 
+surface area to enhance the capacitance [11– 15]. Nev-
+ertheless, presently there is no accepted guiding prin-
+ciple that can adequately explain ways to enhance 
+capacity; hence, the work of modification on capaci-
+tor electrodes only depends on a few empirical ideas 
+or hazy theoretical models [16]. The workable solu-
+tion to this issue is to derive conclusions from a lot 
+of data. In this connection, Machine Learning (ML), 
+one of several data science technologies, is useful for 
+establishing a predicted link between input and out-
+put variables [17].
+Since ML techniques can effectively and accurately 
+anticipate property connections by utilizing datasets 
+that are already accessible, this can be a perfect tech-
+nique to predict the materials properties without actu-
+ally attempting the experiment [18– 26]. Hence, with 
+appropriate data set feed, ML can be implemented to 
+obtain an advanced evaluation method for predicting 
+the capacitance of carbon-based electrodes for super-
+capacitors. Most of the time, data sets to feed ML for 
+materials property predictions (primarily electrical, 
+optical, and mechanical) are derived from theoretical 
+calculations [27] or large-scale projects such as Materi-
+als Genomic Initiative [28]. However, such approaches 
+are not viable for carbonaceous materials as their com-
+position is constant, which is carbon. Therefore, the 
+possible dataset input for carbon materials should be 
+based on their microstructures, degree of the disor-
+der, and extent of different dopings. Moreover, for 
+supercapacitive property prediction, experimental 
+conditions, such as potential window and type of 
+electrolyte, can also be used as the data set. Therefore, 
+simply extracting data from the available publications 
+and establishing a relationship between multivari-
+ate information and performance is the most logical 
+course of action.
+More than 1000 publications concerning carbon-
+based supercapacitors have been compiled by Zhu 
+et al. [29]. It has been the source for the extraction of 
+more than 10,000 data points, which include physi-
+cal and chemical characteristics of the carbon mate-
+rial (specific surface area, pore size, the ratio of  ID/IG, 
+and doping elements) and the experimental conditions 
+(such as electrolyte, test voltage window, and corre-
+sponding specific capacity). Using these data points 
+and theoretically derived input values, there have been 
+reports on ML-assisted supercapacitive prediction of 
+carbon-based materials [ 29]. For example, Zhao and 
+co-workers have reported on the use of Linear regres-
+sion [30], Lasso regression [31], and Artificial Neural 
+Networks (ANN) [32] models of ML to predict super-
+capacitive features of carbonaceous electrodes. During 
+the application of ML, the ANN model has been used 
+in most cases [ 33, 34], which has been able to fetch 
+respectable predictions upon comparison with the test 
+data. However, ANN is costly in terms of time and 
+computer power, requiring hectic training [35]. Moreo-
+ver, ANN is known to overfit the simple dataset [36]. 
+To the best of our knowledge, the efficacy of superca-
+pacitive behavior prediction of carbon materials using 
+XGBoost, Random Forest Regressor models of ML has 
+not been attempted and compared with other reported 
+models, such as Linear regression, Lasso regression, 
+and Artificial Neural Networks (ANN).
+Here, we introduce ML to forecast how well carbon 
+materials will perform in terms of capacitance. Although 
+ML encompasses a vast array of various techniques, 
+this report focuses on the efficacy comparison of Linear 
+regression, Lasso regression, XGBoost, Random Forest 
+Regressor, and ANN in predicting the carbonaceous 
+material supercapacitive behavior. A least-squares 
+function known as a linear regression equation is used 
+to analyze the connection between one or more inde-
+pendent variables and dependent variables in statistics 
+[30]. Lasso, in contrast, is a regression analysis technique 
+that carries out both variable selection and regularisa-
+tion in order to improve the statistical models’ capacity 
+to predict outcomes [31]. Variable selection and regu-
+larisation when fitting a generalized linear model are 
+characteristics of lasso regression. Therefore, utilizing 
+Lasso regression, the dependent/response variable may 
+be modeled and then predicted regardless of whether 
+15449
+
+--- PDF页 3 ---
+ J Mater Sci (2023) 58:15448–15458
+it is continuous, binary, or multivariate. One of the gra-
+dient boosting methods, XGBoost [37] has a few tech-
+nological benefits, such as In-built Regularization, a 
+more direct path to the least error, faster convergence 
+with fewer steps using parallel processing, and simpler 
+computations to increase speed and reduce computa-
+tion costs. Random Forest is a bagging algorithm based 
+on ensemble learning [38]. On the subset of the data, it 
+builds as many trees as possible and then aggregates the 
+results of all the trees. In doing so, it reduces the issue 
+of overfitting in decision trees, lowers the variance, and 
+ultimately increases accuracy. An efficient strategy for 
+approximating parameters for complex and associated 
+non-linear behavior is ANN [32]. ANNs may success-
+fully be used to estimate models for systems when such 
+links are not clearly known since they can find relation-
+ships between the inputs and outputs of a system with-
+out a comprehensive grasp of the mechanisms involved. 
+In this report, we have reported on the comparative effi-
+cacy of the abovementioned five ML models for predict-
+ing the supercapacitive performance of the most widely 
+used electrode material, carbon. Such comprehensive 
+studies are not only important in providing the correct 
+direction for appropriate modification of carbon materi-
+als to derive the best supercapacitive performance, but 
+also helps in choosing suitable ML models.
+Methods and models
+Data extraction
+We gathered data regarding Carbon-based superca-
+pacitors from more than 1000 published papers, mostly 
+inherited from Zhu et al. [29] dataset, along with some 
+new data sets from recent publications. Out of these 
+papers, more than 600 rows of data were collected, 
+which included information like the test voltage win-
+dow and specific capacity of the test system, as well as 
+the physical and chemical characteristics of the carbon 
+material such as the specific surface area, pore size, the 
+ratio of  ID/IG, and extent of nitrogen doping.
+Data cleaning
+Since the data collected was extracted from various 
+sources, hence, to maintain the uniformity of data, we 
+performed various data cleaning procedures like
+• Dealing with NULL & NAN values by eliminating 
+their associated rows or replacing them with the 
+mean of other values in the same row.
+• Outlier Detection Outliers are observations that 
+stand out (have unique characteristics) from the 
+rest of the data in a population sample. Removal of 
+data corresponding to such outliers is essential as 
+they may negatively influence the trained model. 
+The capacitance values distribution for our dataset 
+is shown in Fig. 1.
+  In this work, we have calculated outliers using 
+the Z-Score. It is calculated using the formula given 
+below:
+  It assumes that the data is normally distributed, 
+and therefore, approx. 68% of data lie between ± 1 
+standard deviation, 95% lie between ± 2 standard 
+deviation, and 99.7% lie between ± 3 standard 
+deviation. Hence, a point can safely be declared an 
+outlier if it has a Z-score > 3.
+• Feature Scaling Feature scaling can be defined as a 
+method for standardizing the independent char-
+acteristics included in the data within a predeter-
+mined range. It is done during the pre-processing 
+of the data to manage extremely variable magni-
+tudes, values, or units [39]. Without scaling the fea-
+ture, an ML algorithm would give more priority to 
+larger values over smaller ones, irrespective of the 
+unit of measurement. Feature Scaling also increases 
+the efficiency of an ML model by helping converge 
+the gradient descent whose working details are 
+beyond the scope of this work. We performed fea-
+ture scaling using MinMaxScaler from SkLearn’s 
+Z-score (i) =( x(i)− mean)/standard deviation
+Figure 1  Distribution of capacitance values.
+15450
+
+--- PDF页 4 ---
+J Mater Sci (2023) 58:15448–15458 
+pre-processing python library, which scales the 
+data between the range of 0–1.
+Feature selection
+Further to data extraction and cleaning, appropriate 
+variables have been selected because our database has 
+a wide variety of them. The independent features were 
+selected considering they have a physical significance 
+and impact on the property, which means they should 
+be able to explain the dependent variable adequately. 
+The ideal collection of variables for the model can be 
+chosen in a variety of ways. In this work, we have 
+employed two methods:
+1. The first method is to select features according to 
+the basic domain and scientific knowledge.
+2. The second way is by plotting a correlation matrix 
+of various features
+Feature selection according to domain 
+knowledge
+The following features were finalized through domain 
+knowledge:
+(a) Specific surface area (m2/g) As the charge storage 
+in a supercapacitor occurs through the adsorp-
+tion of ions on the electrode surface, the specific 
+surface area is the most crucial characteristic of 
+carbon materials-based electrodes. The higher 
+specific surface area offers a larger platform for 
+ion adsorption and, thus, offers high specific 
+capacitance.
+(b) Voltage window (V) Though for a perfect electrical 
+double layer (EDL) supercapacitor, theoretically, 
+the applied potential window should not affect 
+the specific capacitance; however, its energy den-
+sity is proportional to the square of the applied 
+voltage  (Ed = 1/2CV 2). The choice of the opera-
+tional potential window depends upon the type 
+of electrolyte used. In this way, the voltage win-
+dow is a key indicator of how well the device 
+works overall.
+(c) ID/IG Besides the microstructures, carbon has 
+other inherent characteristics that may be studied 
+using Raman spectroscopy, such as the degree of 
+crystallization and the pattern of hybridization. 
+Generally, the degree of crystallization of carbon 
+compounds is evaluated using the intensity ratio 
+of the D peak (peak arising due to disorder in 
+the sheet) to the G peak (peak arising due to  sp2 
+C–C bond vibration) (I D/IG). The ID/IG ratio is a 
+straightforward measure of the extent of disorder 
+in the carbonaceous material, which eventually 
+significantly affects the surface area and porosity. 
+Moreover, the conductivity of carbon materials 
+is also strongly dependent on their crystalline or 
+disordered structure.
+(d) Pore size (nm) The distribution of carbon pore sizes 
+has an impact on the accessibility of electrolyte 
+ions as well. For example, a significant increase 
+in capacitance has been observed with nonaque-
+ous solvents when electrode pore size lies below 
+1 nm [40]. The pore size can be calculated using 
+the methods described below:
+(e) Heteroatom (N) In addition to optimized struc-
+tures, carbonaceous materials for electrochemi-
+cal energy storage applications also significantly 
+depend on the appropriate components. Among 
+several other elements, Nitrogen is one of the 
+most commonly used heteroatoms in the carbon 
+matrix. Owing to its lone pair electrons, the pres-
+ence of N in the carbon matrix facilitates effective 
+ion adsorption and enhances the wettability of the 
+hydrophobic carbon surface.
+Feature selection using a correlation matrix
+An easy way to describe a correlation matrix is as a 
+table that shows the correlation coefficients for dif-
+ferent features. The matrix displays the relationships 
+between every possible pair of values in a table. It is a 
+useful tool for finding patterns in the data and show-
+ing them visually, as well as for summarizing a very 
+large set of data. The variables are shown in the rows 
+and columns of a correlation matrix. There is a correla-
+tion coefficient in each cell of a table. The range of the 
+correlation coefficient lies from −1 to + 1. The correla-
+tion matrix for chosen features in this work has been 
+plotted in Fig. 2 for our data using popular Python 
+libraries: Matplotlib and Seaborn.
+From the correlation matrix, it can be concluded 
+that the following features have a positive correlation 
+coefficient with capacitance:
+Pore size calculated = 4 ∗ Pore Volume
+Specific Surface Area
+15451
+
+--- PDF页 5 ---
+ J Mater Sci (2023) 58:15448–15458
+(a) Voltage Window (V)
+(b) ID/IG
+(c) Pore size (nm)
+(d) N (at.%)
+ Although specific surface area showed a negative 
+correlation coefficient, from the domain knowledge, 
+we know that it significantly impacts capacitance. 
+Hence, based on our conclusions from domain 
+knowledge and correlation matrix selection meth-
+ods, we moved forward with a total of 5 features: 
+specific surface area  (m2/g), voltage window (V),  ID/
+IG ratio, pore size (nm), and N content (at.%). The 
+final dataset included 148 datasets which was split-
+ted in a 9:1 ratio between training and testing dataset 
+respectively.
+Model building
+After selecting the appropriate features, machine 
+learning models were built. Total 5 machine learning 
+techniques were implemented, and their prediction 
+accuracies were compared. The selected models are 
+briefly detailed below:
+Figure 2  Correlation matrix for selected features.
+15452
+
+--- PDF页 6 ---
+J Mater Sci (2023) 58:15448–15458 
+1. Linear Regression Linear Regression can be stated 
+as an ML algorithm based on supervised learning 
+[30], which performs a regression task. Using inde-
+pendent variables as input, regression models a 
+target prediction value. Finding out how variables 
+and predictions relate to one another is its primary 
+purpose. The optimal line for predicting the value 
+of “y” for a given value of “x” is fitted while train-
+ing this model. By locating the best values of coef-
+ficients θ 1 and θ 2, the model produces the best 
+regression fit line where θ 1 represents intercept 
+and θ2 represents the coefficient of x.
+2. Lasso Regression Lasso regression is one of the regu-
+larization techniques. It is preferred over regres-
+sion techniques for a more accurate prediction. 
+This model uses the concept of shrinkage[31]. 
+When data values shrink toward the mean, it is 
+referred to as shrinkage. The lasso regression 
+method involves simple and sparse models (i.e., 
+models having fewer parameters). The Lasso 
+regression penalizes the coefficient value of each 
+feature to decrease or shrink toward zero. There-
+fore, it is acceptable for the less important variable 
+to have a coefficient of zero or almost zero. It is 
+usually used for an overfitting model.
+3. XGBoost XGBoost (Extreme Gradient Boosting) is 
+a decision-tree-based ensemble Machine Learn -
+ing algorithm [37], which uses a gradient boost-
+ing method. Decision trees are generated sequen-
+tially in this approach. Weights are significant in 
+XGBoost. All independent variables are given a 
+weight, and the decision tree that forecasts out -
+comes uses these weights to predict the outcomes. 
+Variables that the tree incorrectly predicted are 
+given more weight before being placed into the 
+next decision tree. These distinct classifiers/predic-
+tors are then combined to produce a robust and 
+accurate model.
+4. Random Forest Regressor Random Forest is an 
+ensemble approach capable of completing both 
+regression and classification tasks [38]. It does 
+this by using several decision trees in conjunction 
+with a technique called Bootstrap and Aggrega-
+tion, which is more frequently referred to as bag-
+ging. Simply put, this method takes the results of 
+multiple decision trees and averages them into a 
+single result, which can then be used to make more 
+accurate predictions or classifications than would 
+be possible using a single decision tree alone.
+5. Artificial Neural Network The phrase "Artificial 
+Neural Network" comes from biological neural 
+networks, which create the structure of the human 
+brain. Neurons in artificial neural networks are 
+connected to one another in the same way that 
+neurons in the human brain. These networks have 
+multiple layers, each containing a different number 
+of neurons, referred to as nodes. It is a branch of 
+artificial intelligence that tries to copy the network 
+of neurons in the human brain so that computers 
+can understand and make decisions in a way that 
+is similar to how humans do. The artificial neu-
+ral network is made by programming computers 
+to act like brain cells that are linked together. The 
+ANN model used in our work is made up of 6 
+dense layers (Fig. 3). A Dense layer represents a 
+fully connected layer, where each neuron is con-
+nected to all neurons in the previous layer. The 
+network starts with a smaller number of neurons 
+i.e., 5 neurons (units) which represent the 5 input 
+parameters we have considered in our work and 
+gradually increases the number of neurons in sub-
+sequent layers, potentially allowing the network 
+to learn complex patterns from the input data. We 
+have used Rectified Linear Unit (ReLU) activation 
+function in each of the layers which is a popular 
+choice for neural networks due to its ability to 
+introduce non-linearity while being computation-
+ally efficient.
+In our study, we fitted our data to all five ML 
+Algorithms. The best performance was achieved by 
+ANN followed up by Random Forest Regressor and 
+XGBoost. However, observed performances of Linear 
+regression and Lasso regression models were below 
+the acceptance level. To compare the performance 
+of all 5 models, we used the following three metrics:
+1. Root Mean Squared Error  The RMSE calculates the 
+squared root of the average squared difference 
+between the predicted and actual values.
+2. Mean Absolute Error The term "mean absolute error" 
+refers to the arithmetic mean of all absolute errors 
+for a given collection of measurements of the same 
+quantity.
+RMSE =
+� ∑ N
+i=1 ��y(i)− y�(i)��
+2
+N
+15453
+
+--- PDF页 7 ---
+ J Mater Sci (2023) 58:15448–15458
+3. R-Squared (R2-Score) R-Squared, also called the 
+coefficient of determination, is a statistical measure 
+used in a regression model to find out how much 
+of the variation in the dependent variable can 
+be caused by the independent variable. In other 
+words, R-squared demonstrates how well the data 
+match the regression model.
+Results and discussions
+The correlation matrix for chosen features in this 
+work has been plotted in Fig. 2 for our data. The 
+Root Mean Squared Error (RMSE), Mean Absolute 
+Error (MAE) and  R2-Score for predicted vs. actual 
+Capacitance (F/g) and the Training Time (ms) of 
+the five models are mentioned in Table 1. From the 
+table, we can observe that the order of RMSE values 
+for different algorithms is: Lasso Regression > Lin-
+ear Regression > XGBoost > Random Forest Regres -
+sor > ANN and the order of MAE values is: Lasso 
+Regression > Linear Regression > Random Forest 
+MAE =
+∑ n
+i=1 �yi − xi�
+n
+Regressor > XGBoost > ANN thus reflecting the higher 
+accuracy of the complex algorithms like Random For-
+est Regressor, XGBoost and ANN. This accuracy is fur-
+ther justified by the  R2-Score values as ANN model 
+gives the closest prediction among other models in 
+terms of the  R2-Score value. Although compared to 
+Linear and Lasso Regressions, XGBoost and Random 
+Forest Regressor algorithms also gave an acceptable 
+level of accuracy.
+The observed order of training time for all the 
+models is Lasso Regression (4.04  ms) < Linear 
+(4.07 ms) < XGBoost (61.74 ms) < Random Forest 
+Regressor (123.73 ms) < ANN (10,253.60 ms).This 
+hierarchy in training times highlights the trade-off  
+between computational efficiency and predictive accu-
+racy. While Lasso and Linear Regression models are 
+the quickest to train, they are outperformed in terms 
+of accuracy by more complex models such as XGBoost, 
+Random Forest Regressor, and ANN.
+The best fit lines for true vs predicted capacitance 
+values have been plotted for different ML algorithms 
+used in this work (Fig. 4). To further evaluate the per-
+formance of these ML models, we subjected them to 
+a challenging test scenario. Specifically, we tasked all 
+five ML models with predicting capacitance values 
+Figure 3  ANN model archi-
+tecture.
+Table 1  RMSE (Root 
+Mean Squared Error), MAE 
+(Mean Absolute Error), and 
+ R2-Score values for linear 
+regression, lasso regression, 
+XGBoost, random forest 
+regressor and ANN
+Model Root mean 
+squared error 
+(F/g)
+Mean abso-
+lute error 
+(F/g)
+R2-Score Training time (ms)
+Linear regression 71.35 57.78 0.52 4.07
+Lasso regression 74.49 59.49 0.48 4.04
+XGBoost 41.02 28.06 0.84 61.74
+Random forest Regressor 37.97 28.97 0.86 123.73
+Artificial neural Network (ANN) 29.32 21.93 0.92 10,253.60
+15454
+
+--- PDF页 8 ---
+J Mater Sci (2023) 58:15448–15458 
+ 15455
+
+--- PDF页 9 ---
+ J Mater Sci (2023) 58:15448–15458
+for a set of 10 data points, as outlined in Table S1 
+in the supplementary data. These data points were 
+deliberately selected to encompass a wide range of 
+real capacitance values, spanning from 25 to 350 F/g. 
+This diverse range of values was chosen to rigorously 
+assess the predictive capabilities of our models under 
+varying conditions. The outcomes of this rigorous test-
+ing are displayed in Fig. 5, where we have plotted the 
+predicted capacitance values generated by each ML 
+model against their corresponding actual values. This 
+comparative visualization serves as a clear indicator 
+of the models’ performance across the entire spectrum 
+of capacitance values.
+Upon close examination of the results presented 
+in Fig. 5, it becomes evident that the XGBoost, Ran-
+dom Forest Regressor, and Artificial Neural Network 
+(ANN) models stand out as robust performers. These 
+models consistently demonstrate the ability to predict 
+capacitance values within the broad range of 25–350 
+F/g with a commendable level of accuracy. Their con-
+sistent and accurate predictions underscore their suita-
+bility for tasks involving capacitance value estimation.
+Conclusion
+In order to forecast the capacitance performance of car-
+bon materials in supercapacitors, this work used five 
+ML-based models (Linear regression, Lasso, XG-Boost, 
+Random Forest Regressor and ANN using the data 
+extracted from more than 1000 research papers. For 
+the training of these ML models, five parameters (Spe-
+cific surface area  (m2/g), Voltage window (V),  ID/IG 
+ratio, Pore Size (nm), & N (at.%)) were used as features 
+based on domain knowledge and correlation matrix 
+selection methods. When evaluated with actual data, 
+the ANN model showed the best prediction outcomes, 
+with the least RMSE and MAE and highest  R2-Score 
+values. XGBoost and Random Forest Regressor also 
+performed very close to the ANN model despite tak-
+ing less training time. This work provides the correct 
+direction for suitable modification of carbon materials 
+to derive the best supercapacitive features. Moreover, 
+it also helps researchers choose suitable ML models 
+for accurate performance prediction in the fields of 
+Material Science.
+Figure  4  Best fit line for true vs. predicted capacitance values 
+by different ML models.
+◂
+Figure 5  Comparison of real vs. predicted capacitance values for all ML models.
+15456
+
+--- PDF页 10 ---
+J Mater Sci (2023) 58:15448–15458 
+Acknowledgements 
+All authors thank Department of Metallurgical Engi-
+neering and Materials Science, IIT Indore, for provid-
+ing research infrastructure. M.K.S and S.K thank IIT 
+Indore for the research fellowships. Rajat Kushwaha 
+wants to thank Anushka Kushwaha for her continuous 
+support and motivation.
+Supplementary Information  The online version 
+contains supplementary material available at https:// 
+doi. org/ 10. 1007/ s10853- 023- 08981-8.
+References
+[ 1] Singh MK, Gupta AK, Krishnan S, Guha N, Marimuthu 
+S, Rai DK (2021) A new hierarchically porous Cu-MOF 
+composited with rGO as an efficient hybrid supercapacitor 
+electrode material. J Energy Storage 43:103301–103313. 
+https:// doi. org/ 10. 1016/j. est. 2021. 103301
+[ 2] Krishnan S, Gupta AK, Singh MK, Guha N, Rai DK (2022) 
+Nitrogen-rich Cu-MOF decorated on reduced graphene 
+oxide nanosheets for hybrid supercapacitor applications 
+with enhanced cycling stability. Chem Eng J 43:135042–
+135054. https:// doi. org/ 10. 1016/j. cej. 2022. 135042
+[ 3] Fan E, Li L, Wang Z, Lin J, Huang Y, Yao Y, Chen R, Wu F 
+(2020) Sustainable recycling technology for Li-ion batteries and 
+beyond: challenges and future prospects. Chem Rev 120:7020–
+7063. https:// doi. org/ 10. 1021/ acs. chemr ev. 9b005 35
+[ 4] Forse AC, Merlet C, Griffin JM, Grey CP (2016) New per -
+spectives on the charging mechanisms of supercapacitors. 
+J Am Chem Soc 138:5731–5744. https:// doi. org/ 10. 1021/ 
+jacs. 6b021 15
+[ 5] Wang DG, Liang Z, Gao S, Qu C, Zou R (2020) Metal-
+organic framework-based materials for hybrid superca-
+pacitor application. Coord Chem Rev 404:213093–213115. 
+https:// doi. org/ 10. 1016/j. ccr. 2019. 213093
+[ 6] Gopalakrishnan A, Badhulika S (2020) Effect of self-
+doped heteroatoms on the performance of biomass-derived 
+carbon for supercapacitor applications. J Power Sources 
+480:228830–228846. https:// doi. org/ 10. 1016/j. jpows our. 
+2020. 228830
+[ 7] Sundriyal S, Kaur H, Bhardwaj SK, Mishra S, Kim KH, 
+Deep A (2018) Metal-organic frameworks and their com-
+posites as efficient electrodes for supercapacitor applica-
+tions. Coord Chem Rev 369:15–38. https:// doi. org/ 10.  
+1016/j. ccr. 2018. 04. 018
+[ 8] Miao L, Song Z, Zhu D, Li L, Gan L, Liu M (2020) Recent 
+advances in carbon-based supercapacitors. Mater Adv 
+1:945–966. https:// doi. org/ 10. 1039/ d0ma0 0384k
+[ 9] Dubey R, Guruviah V (2019) Review of carbon-based 
+electrode materials for supercapacitor energy storage. 
+Ionics (Kiel) 25:1419–1445. https:// doi. org/ 10. 1007/  
+s11581- 019- 02874-0
+[ 10] Bose S, Kuila T, Mishra AK, Rajasekar R, Kim NH, Lee 
+JH (2012) Carbon-based nanostructured materials and their 
+composites as supercapacitor electrodes. J Mater Chem 
+22:767–784. https:// doi. org/ 10. 1039/ c1jm1 4468e
+[ 11] Vinodh R, Gopi CVVM, Kummara VGR, Atchudan R, 
+Ahamad T, Sambasivam S, Yi M, Obaidat IM, Kim HJ 
+(2020) A review on porous carbon electrode material 
+derived from hypercross-linked polymers for supercapaci-
+tor applications. J Energy Storage 32:101831–101850. 
+https:// doi. org/ 10. 1016/j. est. 2020. 101831
+[ 12] Najib S, Erdem E (2019) Current progress achieved in 
+novel materials for supercapacitor electrodes: mini review. 
+Nanoscale Adv 1:2817–2827. https:// doi.  org/  10.  1039/  
+c9na0 0345b
+[ 13] Shi Y, Liu G, Jin R, Xu H, Wang Q, Gao S (2019) Car -
+bon materials from melamine sponges for supercapacitors 
+and lithium battery electrode materials: a review. Carbon 
+Energy 1:253–275. https:// doi. org/ 10. 1002/ cey2. 19
+[ 14] Simon P, Gogotsi Y (2008) Materials for electrochemical 
+capacitors. Nat Mater 7:845–854. https:// doi. org/ 10. 1038/ 
+nmat2 297
+[ 15] Zhang LL, Zhao XS (2009) Carbon-based materials as 
+supercapacitor electrodes. Chem Soc Rev 38(9):2520–
+2531. https:// doi. org/ 10. 1039/ b8138 46j
+[ 16] Bharti A, Kumar G, Ahmed M, Gupta P, Bocchetta R, 
+Adalati R, Chandra Y. Kumar (2021) Theories and mod-
+els of supercapacitors with recent advancements: impact 
+and interpretations. Nano Express. 2(2):022004–022031. 
+https:// doi. org/ 10. 1088/ 2632- 959X/ abf8c2
+[ 17] Nasrabadi NM (2007) Pattern recognition and machine 
+learning. J Electron Imaging 16:49901–49902. https:// doi.  
+org/ 10. 1117/1. 28191 19
+[ 18] Sawant V, Deshmukh R, Awati C (2023) Machine learn-
+ing techniques for prediction of capacitance and remain-
+ing useful life of supercapacitors: a comprehensive review. 
+J Energy Chem 77:438–451 https:// doi. org/ 10. 1016/j.  
+jechem. 2022. 11. 012
+[ 19] Adekoya GJ, Adekoya OC, Ugo UK, Sadiku ER, Hamam 
+Y, Ray SS (2022) A mini-review of artificial intelligence 
+techniques for predicting the performance of supercapaci-
+tors. Mater Today Proc 62:S184–S188 https:// doi. org/ 10.  
+1016/j. matpr. 2022. 05. 079
+15457
+
+--- PDF页 11 ---
+ J Mater Sci (2023) 58:15448–15458
+[ 20] Rahimi M, Fard MHA, Rohani A (2021) A multi-data-
+driven procedure towards a comprehensive understanding 
+of the activated carbon electrodes performance (using for 
+supercapacitor) employing ANN technique. Renew Energy. 
+180:980–992. https:// doi. org/ 10. 1016/j. renene. 2021. 08. 102
+[ 21] Liu P, Wen Y, Huang L, Zhu X, Wu R, Ai S, Xue T, Ge Y 
+(2021) An emerging machine learning strategy for the assisted-
+design of high-performance supercapacitor materials by mining 
+the relationship between capacitance and structural features of 
+porous carbon. J Electroanal Chem 899:115684–115691. https:// 
+doi. org/ 10. 1016/j. jelec hem. 2021. 115684
+[ 22] Gheytanzadeh M, Baghban A, Habibzadeh S, Mohadde-
+spourd A, Abida O (2021) Insights into the estimation of 
+capacitance for carbon-based supercapacitors. RSC Adv 
+11(10):5479–5486. https:// doi. org/ 10. 1039/ D0RA0 9837J
+[ 23] Su H, Lin S, Deng S, Lian C, Shang Y, Liu H (2019) Pre-
+dicting the capacitance of carbon-based electric double 
+layer capacitors by machine learning. Nanoscale Adv. 
+1(6):2162–2166. https:// doi. org/ 10. 1039/ C9NA0 0105K
+[ 24] Zhu S, Li J, Ma L, He C, Liu E, He F, Shi C, Zhao N (2018) 
+Artificial neural network enabled capacitance prediction for 
+carbon-based supercapacitors. Matter Lett 233:294–297. 
+https:// doi. org/ 10. 1016/j. matlet. 2018. 09. 028
+[ 25] Oladipo AA (2021) N, S, Co–doped biocarbon for supercapacitor 
+application: effect of electrolytes concentration and modelling 
+with artificial neural network. Mater Chem Phys 260:124129–
+124140. https:// doi. org/ 10. 1016/j. match emphys. 2020. 124129
+[ 26] Rahimi M, Ab-Fard MH, Rohani A (2022) Synergetic effect 
+of N/O functional groups and microstructures of activated 
+carbon on supercapacitor performance by machine learn-
+ing. J Power Sour 521:230968–230981. https:// doi. org/ 10. 
+1016/j. jpows our. 2021. 230968
+[ 27] Schleder GR, Padilha ACM, Acosta CM, Costa M, 
+Fazzio A (2019) From DFT to machine learning: recent 
+approaches to materials science: a review. J Phys Mater 
+7:032001–032046. https:// doi. org/ 10. 1088/ 2515- 7639/ 
+ab084b
+[ 28] C. Kalil Tom And Wadia, Materials genome initiative for 
+global competitiveness, genome. (2011) pp 1–18. http://  
+www. white house. gov/ sites/ defau lt/ files/ micro sites/ ostp/ 
+mater ials_ genome_ initi ative- final. pdf.
+[ 29] Zhu S, Li J, Ma L, He C, Liu E, He F, Shi C, Zhao N 
+(2018) Machine learning enabled capacitance prediction 
+for carbon-based supercapacitors. ChemRxiv. https:// doi.  
+org/ 10. 26434/ chemr xiv. 62222 21. v2
+[ 30] Copeland KAF (1997). Appl Linear Stat Models. https://  
+doi. org/ 10. 1080/ 00224 065. 1997. 11979 760
+[ 31] Shrinkage R (1996) Regression shrinkage and selection via 
+the lasso author (s): robert tibshirani source. J R Stat Soc 
+Ser B 58(1):267–288
+[ 32] Grossi E, Buscema M (2007) Introduction to artificial neu -
+ral networks. Eur J Gastroenterol Hepatol 19:1046–1054. 
+https:// doi. org/ 10. 1097/ MEG. 0b013 e3282 f198a0
+[ 33] Farsi H, Gobal F (2007) Artificial neural network simulator 
+for supercapacitor performance prediction. Comput Mater 
+Sci 39:678–683. https:// doi. org/ 10. 1016/j. comma tsci. 2006. 
+08. 024
+[ 34] Adetokun BB, Adekitan AI, Somefun TE, Aligbe A, 
+Ogunjuyigbe ASO (2023) Artificial neural network-based 
+capacitance prediction model for optimal voltage control of 
+stand-alone wind-driven self-excited reluctance generator. 
+https:// doi. org/ 10. 1109/ Power Africa. 2018. 85209 96
+[ 35] Bonfitto A, Feraco S, Tonoli A, Amati N, Monti F (2019) Estima-
+tion accuracy and computational cost analysis of artificial neural 
+networks for state of charge estimation in lithium batteries. Bat-
+teries 5:47–63. https:// doi. org/ 10. 3390/ batte ries5 020047
+[ 36] Pasini A (2015) Artificial neural networks for small dataset 
+analysis. J Thorac Dis 7:953–960. https:// doi. org/ 10. 3978/j. 
+issn. 2072- 1439. 2015. 04. 61
+[ 37] Chen T, Guestrin C (2016) XGBoost: a scalable tree boost-
+ing system. In: Proceedings of ACM SIGKDD international 
+conference on knowledge discovery and data mining, pp 
+785–794. https:// doi. org/ 10. 1145/ 29396 72. 29397 85.
+[ 38] Biau G (2012) Analysis of a random forests model. J Mach 
+Learn Res 13:1063–1095
+[ 39] Ozsahin DU, Mustapha MT, Mubarak AS, Ameen ZS, 
+Uzun B (2022) Impact of feature scaling on machine learn-
+ing models for the diagnosis of diabetes. In: International 
+conference on artificial intelligence in everything, pp 
+87–94. https:// doi. org/ 10. 1109/ AIE57 029. 2022. 00024.
+[ 40] Chmiola J, Yushin G, Gogotsi Y, Portet C, Simon P, Tab-
+erna PL (2006) Anomalous increase in carbon capacitance 
+at pore sizes less than 1 nanometer. Science 313(80):1760–
+1763. https:// doi. org/ 10. 1126/ scien ce. 11321 95
+Publisher’s Note Springer Nature remains neutral with 
+regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) 
+holds exclusive rights to this article under a publishing 
+agreement with the author(s) or other rightsholder(s); 
+author self-archiving of the accepted manuscript version of 
+this article is solely governed by the terms of such publishing 
+agreement and applicable law.
+15458

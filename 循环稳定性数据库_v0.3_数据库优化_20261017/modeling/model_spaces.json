@@ -1,0 +1,19 @@
+{
+  "mean_baseline": {"base": {"strategy": "mean"}, "default": {}, "grid": {}},
+  "ridge": {"base": {}, "default": {"alpha": 1.0}, "grid": {"alpha": [0.1, 1.0, 10.0, 100.0]}},
+  "random_forest": {
+    "base": {"n_estimators": 300, "n_jobs": 1},
+    "default": {"max_depth": 3, "min_samples_leaf": 2, "max_features": 1.0},
+    "grid": {"max_depth": [3, 5], "min_samples_leaf": [1, 2, 4], "max_features": [0.7, 1.0]}
+  },
+  "xgboost": {
+    "base": {"objective": "reg:squarederror", "tree_method": "hist", "n_jobs": 1},
+    "default": {"max_depth": 2, "n_estimators": 150, "learning_rate": 0.03, "min_child_weight": 5, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 10.0, "reg_alpha": 0.0},
+    "grid": {"max_depth": [2, 3], "n_estimators": [150, 300], "learning_rate": [0.03, 0.08], "min_child_weight": [2, 5], "subsample": [0.7, 1.0], "colsample_bytree": [0.7, 1.0], "reg_lambda": [1.0, 10.0], "reg_alpha": [0.0, 0.1]}
+  },
+  "mlp": {
+    "base": {"max_iter": 2000},
+    "default": {"hidden_layer_sizes": [8], "alpha": 0.1},
+    "grid": {"alpha": [0.001, 0.01, 0.1, 1.0]}
+  }
+}

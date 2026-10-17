@@ -1,0 +1,69 @@
+# 待补全文63篇
+
+用户已表示其余能取得的论文已补入。本清单用于记录剩余缺口，不继续反复尝试失败下载，也不要求全部补齐后才能开始已有全文审核。R073现只有2022年预印本，不算正式版全文。
+
+| 编号 | 年份 | 题名 | DOI |
+|---|---|---|---|
+| R003 | 2026 | Machine learning and explainable artificial intelligence reveal physical insights into biomass-derived carbon for high-performance supercapacitors | [10.1016/j.jpowsour.2025.239040](https://doi.org/10.1016/j.jpowsour.2025.239040) |
+| R004 | 2026 | Interpretable machine learning for optimizing the specific capacitance of biomass-derived supercapacitors | [10.1016/j.fuel.2026.138681](https://doi.org/10.1016/j.fuel.2026.138681) |
+| R006 | 2025 | Research on prediction of energy density and power density of biomass carbon-based supercapacitors based on machine learning | [10.1016/j.susmat.2025.e01309](https://doi.org/10.1016/j.susmat.2025.e01309) |
+| R014 | 2024 | Biomass-derived B/N/P co-doped porous carbons as bifunctional materials for supercapacitors and sodium-ion batteries | [10.1039/d4ta02115k](https://doi.org/10.1039/d4ta02115k) |
+| R015 | 2026 | Biomass-derived activated carbon/MXene composites as supercapacitor electrodes | [10.1016/j.elecom.2026.108166](https://doi.org/10.1016/j.elecom.2026.108166) |
+| R016 | 2025 | MXene/Biomass-derived activated carbon composite for supercapacitor applications | [10.1016/j.carbon.2025.120101](https://doi.org/10.1016/j.carbon.2025.120101) |
+| R019 | 2024 | Interfacial regulation of biomass-derived carbon towards high-performance supercapacitor | [10.1016/j.est.2024.111301](https://doi.org/10.1016/j.est.2024.111301) |
+| R022 | 2025 | Biomass-derived graphitic-like hierarchical porous carbon for electrochemical supercapacitor application | [10.1016/j.est.2025.116037](https://doi.org/10.1016/j.est.2025.116037) |
+| R023 | 2025 | Heteroatom-Doped Biomass-Derived Porous Carbon for Supercapacitor Applications: A Review | [10.48048/tis.2025.10115](https://doi.org/10.48048/tis.2025.10115) |
+| R025 | 2023 | Biomass Derived High Porous Carbon via CO2 Activation for Supercapacitor Electrodes | [10.3390/jcs7100444](https://doi.org/10.3390/jcs7100444) |
+| R026 | 2024 | Enhancing supercapacitor performance with biomass-derived activated carbon interlinked CoS2 embedded graphitic carbon nitride | [10.1016/j.jallcom.2024.174076](https://doi.org/10.1016/j.jallcom.2024.174076) |
+| R029 | 2023 | Biomass derived N/O self-doped porous carbon for advanced supercapacitor electrodes | [10.1016/j.indcrop.2023.117032](https://doi.org/10.1016/j.indcrop.2023.117032) |
+| R030 | 2023 | Phosphomolybdic acid embedded into biomass-derived biochar carbon electrode for supercapacitor applications | [10.1016/j.jelechem.2023.117354](https://doi.org/10.1016/j.jelechem.2023.117354) |
+| R034 | 2024 | Enhancing Supercapacitor Performance with Biomass-Derived Carbon Materials: A Review of Dimensional Innovations | [10.54392/nnxt2443](https://doi.org/10.54392/nnxt2443) |
+| R039 | 2025 | Enhanced electrochemical performance and stability of biomass-derived activated carbon for supercapacitor applications | [10.1016/j.jics.2025.101927](https://doi.org/10.1016/j.jics.2025.101927) |
+| R040 | 2023 | 3D meso-macroporous carbon derived spruce leaf biomass for excellent electrochemical symmetrical supercapacitor | [10.1016/j.matpr.2023.01.371](https://doi.org/10.1016/j.matpr.2023.01.371) |
+| R044 | 2025 | Fenton-like reaction enhanced activation of biomass-derived porous carbon for high-performance supercapacitor | [10.1016/j.electacta.2025.145880](https://doi.org/10.1016/j.electacta.2025.145880) |
+| R046 | 2024 | Preparation of biomass-derived activated carbon from golden needle mushroom roots for supercapacitor electrodes | [10.1016/j.matlet.2024.136644](https://doi.org/10.1016/j.matlet.2024.136644) |
+| R049 | 2025 | Preparation of Biomass-Derived Carbon Materials via Molten Salt Method and Their Supercapacitor Performance | [10.5796/electrochemistry.25-71119](https://doi.org/10.5796/electrochemistry.25-71119) |
+| R050 | 2025 | Biomass-derived porous carbon from banana leaves for efficient supercapacitor applications – An experimental analysis | [10.1016/j.biombioe.2025.108104](https://doi.org/10.1016/j.biombioe.2025.108104) |
+| R051 | 2026 | From waste to power: Advances in biomass-derived carbon materials for sustainable supercapacitor electrodes | [10.1016/j.est.2026.121558](https://doi.org/10.1016/j.est.2026.121558) |
+| R052 | 2024 | Locally graphitized biomass-derived porous carbon nanosheets with encapsulated Fe3O4 nanoparticles for supercapacitor applications | [10.1016/j.cej.2023.147662](https://doi.org/10.1016/j.cej.2023.147662) |
+| R054 | 2023 | Biomass-Derived N-Doped Activated Carbon from Eucalyptus Leaves as an Efficient Supercapacitor Electrode Material | [10.3390/c9010024](https://doi.org/10.3390/c9010024) |
+| R055 | 2026 | Biomass-derived activated carbon from empty fruit bunches for supercapacitor electrodes: Crystallinity and electrochemical analysis | [10.1016/j.nxmate.2026.101640](https://doi.org/10.1016/j.nxmate.2026.101640) |
+| R058 | 2023 | A facile salt-templating synthesis route of bamboo-derived hierarchical porous carbon for supercapacitor applications | [10.1016/j.carbon.2023.02.060](https://doi.org/10.1016/j.carbon.2023.02.060) |
+| R059 | 2023 | Agricultural waste to real worth biochar as a sustainable material for supercapacitor | [10.1016/j.scitotenv.2023.161441](https://doi.org/10.1016/j.scitotenv.2023.161441) |
+| R060 | 2024 | Ultrahigh surface area hierarchical porous carbon derived from biomass via a new KOH activation strategy for high-performance supercapacitor | [10.1016/j.ijhydene.2023.10.319](https://doi.org/10.1016/j.ijhydene.2023.10.319) |
+| R063 | 2024 | Production of hierarchical porous bio‑carbon based on deep eutectic solvent fractionated lignin nanoparticles for high-performance supercapacitor | [10.1016/j.apenergy.2023.122095](https://doi.org/10.1016/j.apenergy.2023.122095) |
+| R064 | 2024 | Nitrogen enriched high specific surface area biomass porous carbon: A promising electrode material for supercapacitors | [10.1016/j.renene.2024.120144](https://doi.org/10.1016/j.renene.2024.120144) |
+| R065 | 2023 | Biomass derived nitrogen-doped activated carbon and novel biocompatible gel electrolytes for solid-state supercapacitor applications | [10.1016/j.est.2023.108543](https://doi.org/10.1016/j.est.2023.108543) |
+| R066 | 2023 | Novel metal-lignin assembly strategy for one-pot fabrication of lignin-derived heteroatom-doped hierarchically porous carbon and its application in high-performance supercapacitor | [10.1016/j.ijbiomac.2023.123603](https://doi.org/10.1016/j.ijbiomac.2023.123603) |
+| R067 | 2023 | Biomass valorisation of marula nutshell waste into nitrogen-doped activated carbon for use in high performance supercapacitors | [10.1016/j.electacta.2023.141828](https://doi.org/10.1016/j.electacta.2023.141828) |
+| R068 | 2025 | Green synthesis of hierarchical nitrogen-doped porous activated carbon material based on biomass waste for high-performance energy storage as supercapacitor | [10.1016/j.biombioe.2025.107818](https://doi.org/10.1016/j.biombioe.2025.107818) |
+| R070 | 2023 | Preparation of spherical porous carbon from lignin-derived phenolic resin and its application in supercapacitor electrodes | [10.1016/j.ijbiomac.2023.126271](https://doi.org/10.1016/j.ijbiomac.2023.126271) |
+| R071 | 2023 | Tailoring hierarchically porous structure of biomass-derived carbon for high-performance supercapacitors | [10.1016/j.renene.2023.119375](https://doi.org/10.1016/j.renene.2023.119375) |
+| R072 | 2023 | Novel laurel aromatic evergreen biomass derived hierarchical porous carbon nanosheet as sustainable electrode for high performance symmetric supercapacitor | [10.1016/j.est.2023.107567](https://doi.org/10.1016/j.est.2023.107567) |
+| R073 | 2023 | Preparation of hierarchical porous carbon through one-step KOH activation of coconut shell biomass for high-performance supercapacitor | [10.1007/s10854-023-09885-8](https://doi.org/10.1007/s10854-023-09885-8) |
+| R074 | 2023 | Secondary utilization of jujube shell bio-waste into biomass carbon for supercapacitor electrode materials study | [10.1016/j.elecom.2023.107512](https://doi.org/10.1016/j.elecom.2023.107512) |
+| R075 | 2024 | Loofah sponge-derived 3D flexible porous carbon electrode for high performance supercapacitor | [10.1016/j.est.2023.110295](https://doi.org/10.1016/j.est.2023.110295) |
+| R076 | 2024 | Activated carbon synthesized from Jack wood biochar for high performing biomass derived composite double layer supercapacitors | [10.1016/j.cartre.2024.100359](https://doi.org/10.1016/j.cartre.2024.100359) |
+| R077 | 2023 | Biomass-based porous carbon for high-performance supercapacitor electrode materials prepared from Canada goldenrod | [10.1016/j.est.2023.109268](https://doi.org/10.1016/j.est.2023.109268) |
+| R079 | 2025 | Molten base carbonisation and activation of non-lignin-rich biomass into hierarchically porous carbon with surface-rich functionalities for supercapacitor electrodes | [10.1016/j.cej.2025.161386](https://doi.org/10.1016/j.cej.2025.161386) |
+| R080 | 2023 | Lignin-derived carbon aerogels with high surface area for supercapacitor applications | [10.1016/j.cej.2023.143118](https://doi.org/10.1016/j.cej.2023.143118) |
+| R082 | 2025 | Boosting electrochemical behavior of biomass-derived porous carbon via N, S, and N, S co-doping for enhanced supercapacitor performance | [10.1016/j.diamond.2025.112850](https://doi.org/10.1016/j.diamond.2025.112850) |
+| R083 | 2023 | Biomass-derived porous activated carbon for ultra-high performance supercapacitor applications and high flux removal of pollutants from water | [10.1016/j.ceramint.2023.01.122](https://doi.org/10.1016/j.ceramint.2023.01.122) |
+| R084 | 2023 | Nanofiber-enrich dispersed activated carbon derived from coconut shell for supercapacitor material | [10.1016/j.rineng.2023.101070](https://doi.org/10.1016/j.rineng.2023.101070) |
+| R086 | 2023 | Novel hierarchical porous carbon derived from biomass Citrus limetta pulp for high-performance quasi-solid-state supercapacitor electrodes | [10.1016/j.est.2023.108121](https://doi.org/10.1016/j.est.2023.108121) |
+| R089 | 2024 | Deashing Strategy on Biomass Carbon for Achieving High-Performance Full-Supercapacitor Electrodes | [10.1021/acsami.4c11778](https://doi.org/10.1021/acsami.4c11778) |
+| R090 | 2025 | N-doped porous carbon derived from different lignocellulosic biomass models for high-performance supercapacitors: the role of lignin, cellulose and hemicellulose | [10.1016/j.ijbiomac.2024.138815](https://doi.org/10.1016/j.ijbiomac.2024.138815) |
+| R094 | 2023 | Tailored Properties of Carbon for Supercapacitors by Blending Lignin and Cellulose to Mimic Biomass as Carbonaceous Precursor | [10.1002/cssc.202300357](https://doi.org/10.1002/cssc.202300357) |
+| R096 | 2025 | Lignin‐Derived Deep Eutectic Solvent Gel Electrolytes Paired With Porous Carbon Electrodes for Advanced Supercapacitor Application | [10.1002/smll.202500473](https://doi.org/10.1002/smll.202500473) |
+| R098 | 2024 | Machine learning prediction of supercapacitor performance of N-doped biochar from biomass wastes based on N-containing groups, element compositions, and pore structures | [10.1016/j.est.2024.113548](https://doi.org/10.1016/j.est.2024.113548) |
+| R099 | 2024 | Biomass-based carbon nanofibers enhanced by carbon quantum dots for high-performance supercapacitors and moist-electric generators | [10.1016/j.jpowsour.2024.234264](https://doi.org/10.1016/j.jpowsour.2024.234264) |
+| R100 | 2023 | Application of long fibrous coconut silk-based porous carbon in flexible supercapacitor | [10.1016/j.est.2023.107410](https://doi.org/10.1016/j.est.2023.107410) |
+| R101 | 2024 | Sodium carboxymethyl cellulose derived carbon aerogels synthesized by zinc nitrate hexahydrate and urea for supercapacitor electrodes | [10.1016/j.est.2024.111300](https://doi.org/10.1016/j.est.2024.111300) |
+| R109 | 2024 | Fabrication of solid-state high capacitance supercapacitor from N-doped biomass porous carbon | [10.1016/j.diamond.2023.110612](https://doi.org/10.1016/j.diamond.2023.110612) |
+| R110 | 2024 | Sustainable graphitic carbon derived from oil palm frond biomass for supercapacitor application: Effect of redox additive and artificial neural network‑based modeling approach | [10.1016/j.jelechem.2024.118570](https://doi.org/10.1016/j.jelechem.2024.118570) |
+| R113 | 2024 | Coconut Husk Waste‐Derived Nitrogen‐Doped Mesoporous Carbon Nanomaterial as an Efficient and Sustainable Supercapacitor | [10.1002/ente.202400294](https://doi.org/10.1002/ente.202400294) |
+| R114 | 2024 | The design of binder-free self-supporting carbon paper electrode based on biomass derived hierarchical porous carbon/cellulose nanofibers for sustainable flexible supercapacitors | [10.1016/j.apsusc.2024.161140](https://doi.org/10.1016/j.apsusc.2024.161140) |
+| R116 | 2024 | The amorphous porous carbon incorporating 1D-nanofiber as electroactive biomass with integrated pyrolysis for high-performance symmetrical supercapacitors | [10.1016/j.inoche.2024.113069](https://doi.org/10.1016/j.inoche.2024.113069) |
+| R118 | 2024 | Hydroquinone-mediated, bio-renewable corn starch electrolyte assembled with corn leaf-derived activated carbon for a high-performance, sustainable supercapacitor | [10.1016/j.biombioe.2024.107095](https://doi.org/10.1016/j.biombioe.2024.107095) |
+| R119 | 2024 | A one-stone-two-birds strategy to lignin-derived porous carbon for supercapacitor electrodes | [10.1016/j.diamond.2024.110831](https://doi.org/10.1016/j.diamond.2024.110831) |
+| R120 | 2023 | Rapid synthesis of biomass-derived carbon via induction pyrolysis for supercapacitors | [10.1016/j.diamond.2023.109956](https://doi.org/10.1016/j.diamond.2023.109956) |

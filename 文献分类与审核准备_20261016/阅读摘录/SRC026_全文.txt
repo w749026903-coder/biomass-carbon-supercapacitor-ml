@@ -1,0 +1,1700 @@
+
+===== PDF PAGE 1 =====
+ORIGINAL ARTICLE
+Neural Computing and Applications (2026) 38:716 https://doi.org/10.1007/s00521-026-12438-9
+Neural Computing and Applications (2026) 38:716
+Engineering the future of heat transfer: artificial neural 
+network and genetic algorithm synergy to model next-
+generation hybrid nanofluid performance
+Md. Munirul Hasan · Md Mustafizur Rahman  · Suraya Abu Bakar · Devarajan Ramasany
+Received: 19 June 2025 / Accepted: 10 July 2026 / Published online: 31 August 2026
+© The Author(s), under exclusive licence to Springer-Verlag London Ltd., part of Springer Nature 2026
+Abstract
+The use of conventional heat transfer fluids has many limitations, and industrial applications require efficient 
+heat transfer systems. Existing cooling systems suffer from low thermal conductivity and poor heat transfer, 
+which result in reduced efficiency and high power consumption. This study proposes an optimised artificial 
+neural network (ANN) and genetic algorithm (GA)-based artificial intelligence model to predict the thermal 
+conductivity and viscosity of graphene nanoplatelets (GNP)–Cellulose nanocrystals (CNC)/Ethylene Glycol 
+(EG)-water hybrid nanofluids, thereby improving heat transfer performance. Single GNP and hybrid GNP/CNC 
+nanofluids are studied, with field-emission scanning electron microscopy and transmission electron microscopy 
+used to characterise nanoparticles. A two-step preparation method was used for thermal conductivity and vis -
+cosity measurements across temperatures (30–80 °C) and volume concentrations (0.02–0.2 vol%). The research 
+employs a combined experimental analysis and modern machine learning methods, including ANN and GA, to 
+develop an optimised predictive model. The results indicate a considerable improvement in thermal conductiv -
+ity, with GNP/CNC hybrid nanofluids at 0.2 vol% and 80 °C showing a 52.77% increase over the base fluid. 
+The rheological behaviour analysis reveals that viscosity increases with volume concentration and decreases 
+with increasing temperature. At a low concentration of 0.2 vol%, the viscosities at 30 °C are approximately 
+27.5% higher (hybrid nanofluid). The developed GA-ANN model demonstrated a high predictive ability, with 
+a coefficient of determination (R²) = 0.998, RMSE = 0.3231, and MAE = 0.683, which was significantly more 
+accurate than conventional ANN models ( P < 0.01). The results demonstrate the feasibility of hybrid nanoflu -
+ids for enhanced heat-transfer applications and provide a consistent predictive framework for estimating their 
+properties. This study represents significant progress in thermal management systems, paving the way for new 
+heat transfer solutions for next-generation technologies.
+Keywords Thermal conductivity · Viscosity · Artificial neural network · Genetic algorithms · Optimisation
+
+===== PDF PAGE 2 =====
+1 3
+2716 Page 2 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+1 Introduction
+The limitations of classical heat transfer fluids have underscored the need for effective cooling approaches, par -
+ticularly as modern thermal management systems become increasingly sophisticated. Nanofluids are one pos -
+sible solution, consisting of microstructures dispersed in a base fluid (such as water, ethylene glycol, oil, or 
+glycerol), which offer improved thermophysical properties. The tunability of these fluids, achieved by modifying 
+nanoparticle characteristics, enables unprecedented versatility across various applications [ 1]. Recent contribu-
+tions include hybrid nanofluids, whose composition comprises multiple nanomaterials that interact synergisti -
+cally, resulting in enhanced performance. These hybrid systems improve thermal performance by optimising the 
+thermal networks and aspect ratios of different nanomaterials [ 2]. Their use encounters real-world difficulties, 
+namely increased viscosity, which requires higher pressure drops and pumping power [ 3]. Thus, a critical area 
+that needs further investigation and optimisation is the trade-off between improved thermal performance and 
+system power efficiency. The growing need for thermal management systems has spurred in-depth investigations 
+into advanced heat-transfer materials. This followed Choi’s [ 4] groundbreaking work introducing nanofluids, 
+which demonstrated improved thermal properties arising from suspending nanoparticles in base fluids. This work 
+has since attracted tremendous research activity in various fields, including chemistry, energy, and industry [ 5]. 
+Carbon nanostructure-based fluids have been widely studied, with a focus on carbon nanotubes [ 6], graphene 
+derivatives, and their hybrids [ 7]. Graphene nanoplatelets (GNP) are among the most promising materials, bal -
+ancing the challenging thermal performance of monolayer graphene with the proven stability and cost-effective 
+properties of graphitic carbon. These innovations help overcome the fundamental limitation of classical cooling 
+systems: the low thermal conductivity of the heat-transfer fluids.
+On the other hand, there are considerable research gaps in hybrid nanofluids. Although considerable work has 
+been done on single-carbon nanostructures, hybrid arrangements that offer synergistic advantages have not been 
+extensively studied. The interaction mechanism between nanofluid composition and thermophysical properties 
+in multi-nanofluid systems is not entirely understood. While graphene nanoplatelets possess various promising 
+properties, challenges in dispersion stability and long-term performance warrant further exploration. A detailed 
+study of the optimisation of combinations of carbon nanostructures and their synergy to date for thermal conduc-
+tivity enhancement is still lacking. Such a gap is critical to the cost-effectiveness and practicality of realistic ther-
+mal management systems. In addition, although machine learning methods can predict nanofluid characteristics, 
+there is an opportunity to combine genetic algorithms with neural networks to optimise hybrid nanofluid charac-
+teristics. This combination has been barely explored. Graphene-based nanofluids have recently gained consider-
+able interest due to significant advancements in thermal management systems and the availability of GNP in the 
+market. Despite this, the specific surface area of GNP continues to increase, leading to a strong tendency toward 
+aggregate formation via van der Waals forces, which remains a major hurdle for thermal applications requiring 
+stable dispersion [7]. To overcome this limitation, researchers investigated different innovative methods. Kulan-
+daivel et al. [8] explored the use of environmentally friendly GNP-palm oil and CNC hybrid alternatives. GNP 
+nanofluids based on water were examined by Bansal et al. [ 9], who investigated possible behaviours as a func -
+tion of concentration over a volume concentration range of 0.0125% to 0.0375%. Carbon-based materials have 
+evolved for several generations in thermal applications, from simple carbon black to distributed nanostructures 
+[10], such as functionalised carbon nanotubes [11]. Over the last decade, carbon spheres of various sizes, ranging 
+from the nanostructure scale to the mesoscale, have emerged individually. Among these, graphene nanoplatelets 
+have shown great promise, providing a practical compromise between the remarkable characteristics of graphene 
+and low-cost manufacture [12]. These multi-layered graphene flakes retain many of graphene’s attractive proper-
+ties while enhancing cost-effectiveness for industrial applications.
+Recent developments in artificial intelligence (AI) have revolutionised nanofluid research through complex 
+data-driven technologies such as artificial neural networks (ANNs), adaptive neuro-fuzzy inference systems 
+(ANFIS), and support vector machines (SVMs). These AI approaches have accurately predicted the thermophysical 
+
+===== PDF PAGE 3 =====
+1 3
+3Page 3 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+properties of nanofluids [13]. Among the significant studies, Zamay and Abad [14] compared several AI models 
+(Multi-layer perceptron (MLP), radial basis function (RBF), and least-squares support vector machine (LSSVM) 
+for the analysis of hybrid nanofluids (ZnO-MWCNT/EG-water), with the accuracy of their RBF model being 
+quite impressive (R² = 0.9951). The development highlights the significance of AI approaches for designing 
+nanofluid openings to reduce the need for experimentation. However, AI has recently revolutionised the predic -
+tion and optimisation of nanofluid properties, addressing the major challenge of accurately estimating their prop-
+erties in thermal applications [14]. Hybrid nanofluid behaviour is complex and involves non-linear relationships 
+among parameters. This problem has inspired many machine learning methods, including multilayer perceptron 
+models, which have shown excellent results with optimised networks and adaptive training algorithms. Adopting 
+advanced hybrid methods, in which different AI techniques are usefully integrated [15]. These were MLP models 
+with optimised two-hidden-layer structures, activated by hyperbolic tangent and logarithmic sigmoid functions, 
+trained using cutting-edge algorithms such as the Levenberg–Marquardt (LM) algorithm, Bayesian Regularisa -
+tion (BR), and Scaled Conjugate Gradient (SCG) [ 16]. Integrating these techniques with committee machine 
+intelligent systems (CMIS) resulted in excellent accuracy, with an average error in predicting thermal conduc -
+tivity of only 1.064%. Significant issues, particularly regarding hyperparameter optimisation and maximising 
+synergistic benefits from multiple AI techniques, persist in current AI modelling approaches, indicating the need 
+for a next-level methodological approach. However, recently introduced data-driven methods have shown great 
+potential in predicting hybrid nanofluids. Said et al. [ 17] demonstrated that ML-based methods, including Mul -
+tivariate Linear Regression (MLR) and its interaction variant (MLRI), outperformed traditional empirical cor -
+relations for nanodiamond-Fe3O4 hybrid nanofluids. Using optimised ANN structures (1–4−1 and 1–5−1) with 
+tangent sigmoid activation functions integrated with the ANFIS and RSM methodologies, Borode and Olubambi 
+[18] demonstrated considerable success in predicting viscosity. Some additional comprehensive work on predic-
+tive modelling of MWCNT-MgO hybrid nanofluids was outlined using the 3–104-1 MLP architecture, achieving 
+an MSE as low as 4.73 × 10−5 with the well-known Levenberg-Marquardt paradigm [19]. These drives, confirmed 
+by previous studies [ 19, 20], emphasise the rising potential of machine learning to characterise complex fluid 
+classes, such as nanofluids.
+Computational approaches for predicting the thermophysical properties of advanced materials are becoming 
+more complex. The ability of the genetic algorithm (GA) to optimise ANN models’ weights and biases to improve 
+predictive performance makes it a practical tool for global optimisation [21]. Previous research has demonstrated 
+higher predictive accuracy for GA-optimized ANN models than for conventional approaches [22]. GA and ANN 
+Models have been applied to various fields in recent years. Some notable successes include Li et al. [ 23], who 
+achieved 92.3% accuracy in predicting nitrogen diffusion behaviour, and Chi et al. [ 24], who successfully pre -
+dicted erosion rates in shale gas systems. Several studies have shown that GA optimisation improves the configu-
+ration and prediction stability of ANN networks [25]. Nonetheless, significant research gaps remain in applying 
+GA-based ANN models to predict thermophysical properties, particularly for complex systems such as nanoflu-
+ids. The exploration of hyperparameter tuning for maximum prediction accuracy with optimised model complex-
+ity and size remains unexplored, as anticipated, which is a key challenge in thermal engineering applications.
+In this regard, the current study aims to advance hybrid nanofluid technology through experimental studies and 
+AI-based modelling. The main novelties of the article are outlined below:
+1. This study investigates the synergistic effects of two distinct elongating nanoparticles, graphene nanoplatelets 
+and cellulose nanocrystals, in aqueous and aqueous-ethylene glycol nanofluids, highlighting the research gap 
+regarding CNC as green cooling promoters. This study involves the experimental characterisation of the sta -
+bility and properties of the GNP-CNC hybrid nanofluid.
+2. The study developed a genetic algorithm-optimised artificial neural network (GA-ANN) for property predic-
+tion. The study also reveals a relationship between thermal conductivity and viscosity as a function of tem -
+perature and volume fraction.
+
+===== PDF PAGE 4 =====
+1 3
+4716 Page 4 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+3. A fully optimised ANN architecture (2–5632-2) is proposed and validated. By applying LM training and tuned 
+activation functions, this configuration achieves significantly higher accuracy than the conventional ANN 
+model. Validation of the GA-ANN model demonstrates accuracy relative to experimental data, indicating 
+better predictive performance than the standalone ANN model and aligning with current trends in artificial 
+intelligence implementations for thermal system optimisation.
+4. Unlike previous studies that are either experimental or computational only, this work systematically integrates 
+the experimental measurements with AI-based multi-parameter prediction, providing a validated modelling 
+framework with superior accuracy (R² = 0.998).
+5. This study also proposes new empirical correlation equations based on experimental data. These correlations 
+provide simple, physically interpretable mathematical expressions to estimate the thermal conductivity and 
+viscosity of the hybrid nanofluid, eliminating the need for complex tools or models.
+Table 1 presents the thermophysical properties of the nanofluid used to predict heat transfer as a function of sev-
+eral input parameters, including temperature, volume concentration, SR, and nanoparticle size. It is worth noting 
+that the nanofluid’s thermophysical properties are predicted using at least two inputs, such as temperature and 
+volume concentration. The data presented in Fig. 1 provide a dual-view bibliometric analysis from the Scopus 
+database (2015–2024), representing the dynamic development in artificial nanofluid explorations, including AI 
+nanomaterials. The first part of this paper analyses the interlinked relationships prevalent in nanofluid applica -
+tions, which primarily concern thermal conductivity, viscosity, and heat transfer properties. The second provides 
+insight into the accelerating adoption of artificial intelligence approaches, particularly machine learning and neu-
+ral networks, for nanofluid properties, predictive modelling, and optimisation. The paradigm shift to AI-enabled 
+approaches in thermal engineering applications is illustrated in this visualisation, which mirrors the increasing 
+complexity of nanofluid research methods.
+Table 1 Summary of existing studies that apply different ML models to predict the thermophysical properties of nanoflu -
+ids (T = Temperature, φ = V olume concentration, SR = Shear Rate, f = friction factor, Re = Reynold number, dp = Diameter of 
+nanoparticle, К= Thermal conductivity, µ = Viscosity)
+Refs. Nanofluids Input/Output Applied ML models Best performing 
+model
+Findings of the best 
+model
+ [26] (PAO-hBN/water T, φ, SR/µ ANN, SVM, ANFIS ANN R2 = 0.99994
+ARE = 1.89%
+ [27] CuO/water T, φ, dp/µ MPR, MARS, ANN-MLP, 
+GMDH, M5-tree
+ANN-MLP R2 = 0.9997, 
+AAPR = 1.312%,
+ [28] Al2O3/water T, φ/К, ANN, LR, DTR, GBR, XGBoost R2=0.991, RMSE = 0.016
+ [29] water-Al2O3 Re, φ/CFD error ANFIS, ANN ANN MSE = 1.12230 × 10− 3
+ [30] GO-TiO2, GO-SiO2, GO/water T, φ/К, µ RF, GB, DT RF R2=0.9701, 
+MSE = 0.0041
+ [31] TiO2/water T, φ/К ANN, GBR, SVR,
+DTR, RFR
+GBR R2=0.991,
+MSE = 0.0003
+ [32] EG–Al2O3 T, φ, dp/К ANN, DT, GBDT, KNN, 
+MLP, XGBoost
+GBDT MSE = 6.7735 × 10− 6, 
+R2 = 0.9974
+ [14] ZnO-MWCNT/EG-water T, φ/К MLP, RBF, LSSVM RBF R2=0.9926,
+AARD = 0.4996%
+ [28] SiO2/Gly-W Re, φ, Pr/Nu, f XGBoost, MGGP MGGP R2=0.9899,
+MSE = 8.37222
+
+===== PDF PAGE 5 =====
+1 3
+5Page 5 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+2 Methods and materials
+Two distinct nanoparticles were selected for their complementary properties in thermal applications. High-purity 
+(99.9%) graphene nanoplatelets (GNPs) were procured from Nanografi Nanotechnology (USA), exhibiting 
+exceptional characteristics, including a specific surface area of 800 m²·g⁻¹, a uniform thickness of 3 nm, and 
+a consistent diameter of 1.5 μm. These properties make GNP particularly suitable for applications requiring 
+enhanced thermal conductivity. Cellulose nanocrystal (CNC), sourced from MY Biomass Sdn. Bhd. (Malaysia) 
+were selected as a sustainable complement to GNP. All nanoparticle measurements were conducted using an 
+Internal Sartorius Analytical Balance (Model: BSA24S-CW), ensuring accuracy within ± 0.1 mg for reliable 
+sample preparation and characterisation. The preparation process employed specialised equipment to achieve a 
+uniform dispersion of nanoparticles. This included a magnetic stirrer with a rotating magnetic probe (Thermo 
+Fisher, USA) and an advanced ultrasonicator system (CE ISO Ultrasonic Homogeniser Sonicator Processor Cell 
+Disruptor Mixer). The ultrasonication process was conducted at 20 kHz with a power output of 950 W, capable 
+of effectively processing sample volumes ranging from 20 to 1000 mL.
+A challenge in CNC preparation arose from its inherent hydrophilicity, necessitating the development of a 
+specialised spray-drying technique for powder conversion. This process utilised a small fan system in which the 
+CNC suspension was exposed to heated air through the spray dryer nozzle, facilitating rapid moisture evapora -
+tion and the formation of stable CNC flakes. These flakes were collected and pulverised into a fine powder. The 
+resulting CNC nanoparticles exhibited excellent characteristics, including a crystallinity index of 80%, crystal 
+lengths ranging from 100 to 150 nm, crystal diameters of 9–14 nm, and a hydrodynamic diameter of 150 nm. 
+The physical properties of both GNP and CNC nanoparticles are detailed in Table 2. In contrast, Table 3 presents 
+the thermophysical properties of the base fluids (water and ethylene glycol) at a reference temperature of 30 °C. 
+These properties are fundamental parameters for the subsequent analysis and characterisation of the hybrid nano-
+fluid system.
+Fig. 1 An annotated bibliography of hybrid and nanofluids’ achieved properties
+ 
+
+===== PDF PAGE 6 =====
+1 3
+6716 Page 6 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+2.1 Nanofluid preparation
+The preparation of nanofluids followed a two-phase protocol encompassing both single-component and hybrid 
+nanofluid synthesis. In the first phase, GNP was dispersed in a 60:40 base fluid at precise volume concentrations 
+of 0.02%, 0.06%, 0.1%, 0.15%, and 0.2%. While carbon-based nanoparticles tend to be hydrophobic, GNPs can 
+disperse without surfactants due to their novel electrical and thermal conductivities. Hence, the EG-to-water ratio 
+of 60:40 was chosen because it offers a favourable balance among thermal conductivity, viscosity, freezing-point 
+suppression, and corrosion protection. Water provides excellent heat-transfer characteristics, whereas ethylene 
+glycol improves thermal stability and operational reliability across a wide range of conditions. The 60:40 ratio 
+has been widely adopted in thermal management systems and nanofluid investigations, making it a practical and 
+representative base fluid for evaluating the thermophysical performance of the prepared hybrid nanofluids [ 17]. 
+For the first 2 h, a magnetic stirrer was used to disperse the solution before transferring it to the probe ultrasoni-
+cator with a 13-mm-diameter probe. The dispersion was ultrasonicated for 5 h at 50% power to ensure optimal 
+dispersion without compromising stability. In the second phase, hybrid nanofluids of GNP-CNC were synthe -
+sised by mixing both nanoparticles in equal quantities at a volume concentration of 0.02% to 0.2%. Initially, the 
+mixture was stirred magnetically at 400–500 rpm, then mixed for 120–180 min to achieve optimal powder blend-
+ing, with systematic 15-minute stirring intervals. The first mixing phase played a crucial role in ensuring uniform 
+dispersion of nanoparticles in the base fluid.
+After the mixing step, the solutions were stabilised. This included treatment in an ultrasonic bath, followed by 
+probe ultrasonication for 5 h at 50% power output. One noteworthy aspect of this method was the introduction 
+of 5-minute cooling breaks every 15 min during sonication. Such a controlled interval approach was crucial for 
+the dispersion process, ensuring that the fluid temperature remained fixed at a low value and the geometry of the 
+nanoparticles remained intact. The weight and density of the hybrid nanoparticles were calculated using estab -
+lished equations (Eqs. 1 and 2) to characterise the final nanofluid compositions [34] accurately.
+ 
+W CN C/GN P =
+( ϕ
+100− ϕ
+)
+×
+(
+σCN C/GN P
+σbf
+)
+W bf (1)
+ 
+σCN C/GN P = σCNC ϕCNC + σGN P ϕGN P
+ϕtotal
+ (2)
+Properties EG (C2H6O2) Water
+Vapour pressure (kPa) 0.007 3.169
+Density (kg/m3) 1100 1000
+Viscosity (mPa·s) 16.59 1.0015
+Molar mass (g/mol) 62.07 18.0153
+Specific heat (J/kgK) 2348 4178
+Thermal conductivity (W/mK) 0.258 0.608
+Table 3 Thermophysical 
+properties of base fluid [33]
+ 
+Properties CNC GNP
+Purity - 99.9%
+Colour White (dry powder) Black
+Structure Crystalline form Platelet-shaped sheets
+Particle size (nm) 50–100 50–100
+Density (kg/m3) 1050 2267
+Specific surface area (m2/g) - 800
+Table 2 Thermophysical 
+properties of nanoparticles 
+[33]
+ 
+
+===== PDF PAGE 7 =====
+1 3
+7Page 7 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+where W and ϕ  are the weight and volume concentration of the hybrid nanofluid, σ  defines the density, and bf 
+denotes the base fluid.
+2.2 Stability analysis
+The intrinsic tendency of nanoparticles to agglomerate due to their high surface area poses a challenge to the 
+stability of hybrid nanofluids and their practical applicability. To address this crucial problem, the stability and 
+dispersibility of CNC-containing nanofluids were analysed using various characterisation techniques. The frame-
+work of this investigation was based on three approaches: temporal sedimentation imaging, UV-Vis spectroscopy, 
+and Zeta potential analysis. UV-Vis spectroscopy was conducted using a PerkinElmer LAMBDA UV/Vis spec-
+trophotometer, with measurements taken from 200 to 800 nm. Samples were placed in specialised quartz cuvettes 
+and carefully diluted to ensure optimal clarity for accurate transmission measurements of incident light. The 
+physical stability of the nanofluid dispersions was quantitatively assessed using zeta potential measurements on 
+an Anton Paar Litesizer 500, which quantified electrostatic repulsion between similarly charged particles. On the 
+other hand, Thermogravimetric Analysis (TGA) (PerkinElmer TGA 4000) was used to characterise the thermal 
+stability of the synthesised nanofluids. Thermogravimetric (TG) analyses (TGA) were performed at atmospheric 
+pressure, in a nitrogen atmosphere, from 30 °C to 500 °C with a heating rate of 10 °C min − 1, giving insights into 
+the thermal properties of the nanofluid systems.
+2.3 Characterization
+Microstructural and compositional analyses were conducted on the fabricated nanofluids using various sophis -
+ticated characterisation tools. The dispersion properties and particle size distribution of GNP and GNP-CNC 
+hybrid nanofluids in EG-water base fluid were assessed using a digital Transmission Electron Microscopy (TEM) 
+system (Tecnai G220S-TWIN, USA). TEM images were obtained from nanofluid samples sonicated for 15 min 
+to ensure homogeneous dispersion prior to TEM analysis. The examination was performed at an accelerating 
+voltage of 200 kV to achieve optimal resolution and contrast. The surface morphology was studied using a 
+Scanning Electron Microscope (Hitachi TM-3030 Plus, Czech Republic). After applying appropriate coating 
+procedures, a sputter coating was applied to increase surface conductivity, thereby permitting in situ visualisa -
+tion of the nanofluid microstructure. Fourier Transform Infrared (FTIR) spectroscopy was performed to analyse 
+the chemical composition and molecular interactions of the nanofluids. The FTIR spectra (4000–500 cm⁻¹) were 
+recorded using KBr pellets to obtain the best signal. This information provides useful insights into the functional 
+groups and chains, as well as their interactions, in nanofluid systems.
+2.4 Thermal conductivity measurement
+The thermal conductivity of Water/EG-based GNP/CNC hybrid nanofluids was measured using a KD2-Pro ther-
+mal analyser (Decagon Devices Inc., USA) based on the transient hot-wire (THW) principle. However, the THW 
+method is the most frequently used method for measuring the thermal conductivity of nanofluids [ 35]. The pre-
+cisely controllable range for volume concentrations and temperatures was established with the experimental 
+setup, as depicted in Fig. 2. All temperatures were calibrated using a WNB7-MEMMERT temperature bath 
+(Germany). In particular, probe placement and vibration were controlled to minimise the experimental error. The 
+temperature bath has been integrated with a custom-designed horizontal frame that ensures the KS-1 probe is ver-
+tically positioned at the centre of each sample vial. Twenty consecutive readings were taken at five intervals for 
+each combined concentration at a given volume and temperature to ensure measurement reliability and statistical 
+significance. The technical parameters of the KD2-Pro thermal analyser are shown in Table 4.
+
+===== PDF PAGE 8 =====
+1 3
+8716 Page 8 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+2.5 Viscosity
+Rheological characterisation was conducted using two complementary systems: a Brookfield DV-I prime vis -
+cometer and an RST coaxial cylinder rheometer. Viscosity measurements were performed at various volume 
+concentrations across a 20–80 °C temperature range. The RST rheometer, equipped with a precision-controlled 
+circulating water jacket, offered an extensive measurement capability ranging from − 200 °C to + 180 °C, with 
+viscosity detection limits from 0.0001 Pa·s to 5.4 × 10⁶ Pa·s. All experiments were conducted under steady-state 
+conditions using rotational measurements with controlled shear rates. Base fluid viscosities were compared with 
+ASHRAE standard data to verify the accuracy of the measurements. However, all tests used a normalised sample 
+volume of 15.7 mL, and data were acquired via direct computer interfacing with the RST rheometer. Addition -
+ally, five independent readings were taken for each condition to ensure measurement reliability and statistical 
+significance, and the results were averaged to mitigate experimental uncertainty. This approach follows the gen-
+eral principles of rheological characterisation demonstrated in earlier studies, in which analogous Brookfield 
+rheometer methods were used [36].
+2.6 Intelligence methods
+2.6.1 Artificial neural network
+Artificial Neural Networks (ANNs) are complex systems inspired by biological neural networks, consisting of 
+artificial neurons connected to one another, with each neuron acting as a computational unit with unique input/
+output (I/O) properties [37]. ANNs have advantages over mathematical models, such as quick data assimilation, 
+Parameters Description
+Accuracy ± 5% Thermal conductivity
+Operation range 0–80 °C
+Measurement range 0.02–2 W/mK
+KS-1sensor Needle diameter: 1.3 mm Needle length: 60 mm
+Table 4 Device features 
+for thermal conductivity 
+measurement
+ 
+Fig. 2 Preparation of CNC/
+GNP hybrid nanofluid
+ 
+
+===== PDF PAGE 9 =====
+1 3
+9Page 9 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+operational simplicity, and the ability to reveal non-linear relationships in training data, making them suitable for 
+complex multivariate problems with multiple variables [38]. The ANN modelling process, shown in Fig. 3, uses 
+iterative optimisation. The network produces outputs from inputs through weighted connections, then validates 
+for accuracy. The process ends when the outputs meet the accuracy criteria, with weights adjusted via backpropa-
+gation until the results are satisfactory or the accuracy drops below the threshold. The ANN’s math framework is 
+expressed in Eq. (3).
+ 
+Pij = fj
+( n∑
+i=1
+W jiZj + bij
+)
+ (3)
+where Pij  is the output of i neurons in the j layer, and fj  is the activation function, which can be tangent sigmoid, 
+binary sigmoid, Gaussian, identity function, linear function, or any other. Wji  is the connected weight of every 
+variable in the i neuron in the j layer, selected randomly at the beginning of the training process. is the input vec-
+tor, and is the bias of the i neuron in the j layer [39].
+Various ANN architectures and training functions serve as key hyperparameters shaping their operation. The 
+main training algorithms include Levenberg-Marquardt (LM), Gradient Descent (GD), Bayesian Regularisa -
+tion (BR), Scaled Conjugate Gradient (SCG), and BFGS Quasi-Newton methods. These algorithms influence 
+the network’s functioning, formation, and structure, reflecting human cognitive processing while prioritising 
+computational efficiency. The main difference between training functions is how they adjust weights and biases 
+during training. Weights are adjustable parameters that control synaptic connections, either excitatory (amplify-
+ing signals) or inhibitory (weakening signals). This represents a numerical change in weights, a feature com -
+mon to all ANN models. It parameterises the artificial neural network (ANN) and customises it with a specific 
+training function. These elements influence the network’s learning capability and performance. The primary 
+objective is to refine the network’s responses within designated problem domains by systematically adjusting 
+weights and biases. Although the underlying mathematical structure remains consistent across different ANN 
+models, the parameters can be modified to suit particular applications. This adaptability is essential for attain -
+ing optimal network performance across diverse problem areas [40]. Choosing the appropriate training function 
+is crucial, as it influences the learning process and neural network architecture, thereby affecting the network’s 
+problem-solving ability. Figure 3 shows the ANN process structure, depicting the relationships between training 
+functions, weight changes, and overall network performance. By building neuron communication lines for spe -
+cific dimensions, we can precisely control the network’s pathways and balance weights in the problem domain. 
+This enables optimal training, allowing the network to generalise and predict exercises by effectively managing 
+neuron connections. ANNs handle complex nonlinear challenges through their hierarchical system, enabling 
+Fig. 3 Artificial neural network architecture [42]
+ 
+
+===== PDF PAGE 10 =====
+1 3
+10716 Page 10 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+accurate data representation across different levels of abstraction [ 41]. They outperform in applications such as 
+predictive modelling, pattern recognition, network evaluation, digital filters, classification analytics, optimisa -
+tion, and simulation.
+2.6.2 Genetic algorithm optimisation
+The Genetic Algorithm (GA) is a computational, adaptive, probabilistic optimisation methodology that integrates 
+Darwinian evolution with Mendel’s theory of mixed heredity, making it more effective in optimising complex 
+systems [ 43]. GA was initially conceived by Holland [ 44] and later further developed by many researchers, 
+including Whitley [ 45], Houck et al. [ 46], and Deb et al. [ 47]. Due to its flexibility and proven optimisation 
+performance, it is utilised in various applications, including function optimisation, image recognition, neural 
+network optimisation, and scheduling problems. Combining GA with neural networks is a promising approach to 
+optimise network parameters. In this hybrid framework, each individual in the GA population represents a poten-
+tial solution, encoding weights and biases for both the hidden and output layers. The population consists of such 
+individuals, forming a complete search space. The neural network prediction error is used as each individual’s 
+fitness; the Mean Squared Error (MSE) is the primary fitness measure in this study.
+Four basic mechanisms of the GA optimisation process work together to evolve the optimal solutions. The 
+algorithm starts by randomly creating a community of weights and biases. In the selection phase, Roulette Wheel 
+Selection is applied to obtain the most promising individuals (those with higher fitness values have a greater 
+probability of selection). Next, select the genetic information followed by crossover, for which a single-point 
+crossover is used with a probability of 0.97. Finally, with a probability of 0.01, mutations change random bits 
+to maintain genetic diversity within the population. This evolutionary process repeats across generations, with 
+each typically producing better solutions through the selective retention of superior individuals and the elimina-
+tion of suboptimal ones. Against the backdrop of evolution, the purposeful blending of GA with neural networks 
+illustrates a complementary optimisation strategy that juxtaposes and harnesses the global search qualities of evo-
+lutionary algorithms with the modelling characteristics of neural networks. It combines the advantages of both 
+approaches to deliver better performance on complex prediction problems by identifying optimal neural network 
+weights and biases that yield high accuracy.
+2.6.3 GA-ANN model development
+Neural networks primarily rely on the proper choice of weights and biases, as these parameters significantly 
+impact prediction accuracy. Misconfiguration of these essential parameters can cause the model to become stuck 
+in local optima, leading to poor performance [ 48]. As with conventional neural networks, data passes through 
+the network first, and weights and biases are adjusted in reverse [ 49]. This initialisation can cause significant 
+inconsistencies in their behaviour, affecting prediction accuracy, since these parameters control how features are 
+extracted from raw input data. To overcome these limitations, the use of the GA as a component of neural net -
+works has been proposed as an effective approach to enhance the model’s generalisation ability [24]. The inclu-
+sion of GA helps the optimisation process to find the optimal weights and biases for the network as a whole, thus 
+improving the network’s performance. The overall system flow of GA-ANN optimisation is illustrated in Fig. 4. 
+Next, the number of iterations (i.e., generations) in the ANN and GA components is independently initialised 
+for the optimisation framework. The GA takes the initial weights and biases as its starting population. Then, the 
+process iteratively follows systematic evolutionary steps: evaluating each population member’s fitness using a 
+specified fitness function and performing genetic operations such as selection, crossover, and mutation. This evo-
+lutionary cycle continues iteratively, with continuous reassessment of fitness, until specific termination criteria 
+are met. Once these conditions are met, the optimised weights and biases are returned to the ANN as optimal 
+values. This trained network, with the optimal parameters, can be used to make performance predictions.
+
+===== PDF PAGE 11 =====
+1 3
+11Page 11 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+2.7 Evaluation metrics
+Validation of computational models by comparing predictions with experimental observations requires rigor -
+ous statistical tools to evaluate prediction accuracy and determine the optimal structural form of a model. This 
+allows comparison of different models using various statistical metrics to evaluate the strength of correlations 
+and quantify resulting prediction errors [50]. Statistical parameters, such as the correlation coefficients and error 
+calculation, are used to analyse the model’s performance. One of the most fundamental metrics for assessing 
+how linearly correlated the amount is is the correlation coefficient (R). Higher values imply a stronger relation -
+ship, whilst a negative value reflects the inverse; this parameter provides quantitative insight into the relationship 
+between predicted and experimental values [ 51]. Several complementary metrics for error quantification, such 
+as mean squared error (MSE) and root mean squared error (RMSE), are used to provide percentage measures of 
+prediction accuracy. At the same time, Mean Absolute Error (MAE) represents the average absolute difference 
+between predicted values and experimental values [ 52]. Model performance is better when the MAE is lower 
+because, as already mentioned, the value reflects the average difference between predicted points and actual 
+measurements. The mean deviation between predicted and experimental values was assessed using the MOD 
+(Margin of Deviation) metric, another representation of model accuracy. The statistical measures are presented 
+conventionally, utilising standardised equations that establish quantitative guidelines for application as synergis-
+tic tools within a unified protocol for assessing predictive performance and reliability. Below are the mathemati-
+cal expressions of these metrics:
+Fig. 4 GA-assisted ANN model flowchart
+ 
+
+===== PDF PAGE 12 =====
+1 3
+12716 Page 12 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+ 
+R =1 −
+∑ n
+i=1
+(
+Xexp (i)− Xann(i)
+)2
+∑ n
+i=1
+(
+Xexp (i)− Xave(i)
+)2  (4)
+ 
+MSE = 1
+n
+n∑
+i=1
+(
+Xexp(i)− Xann(i)
+)2
+ (5)
+ RM SE =
+√
+MSE  (6)
+ 
+MOD =
+(
+Xexp − Xann
+Xexp
+)
+× 100 (7)
+ 
+M AE = 1
+n
+n∑
+i=1
+|Xexp − Xann | (8)
+where Xexp is the laboratory data, Xann is the output data from ANN, and n is the experiment number.
+2.8 Data preparation
+The effectiveness of neural networks depends on their ability to learn mappings between samples and their cor -
+responding targets. The performance and predictive ability of the network model depend heavily on the training 
+and testing datasets, and these should be key considerations when tuning the model. The diverse range of sample 
+data leads to significant fluctuations during the network learning and training phases, which can affect the model’s 
+accuracy and reliability.
+To address these obstacles, data preprocessing is becoming increasingly necessary. Several preprocessing 
+methods can be applied to the experimental data, including min-max normalisation and z-score standardisa -
+tion. In this study, the min-max normalisation technique is applied, which is widely recommended for machine 
+learning, particularly neural networks, due to its compatibility with activation functions and its effectiveness in 
+improving training stability and convergence. Conversely, Z-score standardisation is more suitable when the 
+dataset is normally distributed, as it centres and scales the data based on statistical variance ([53]). The min-max 
+technique normalises the data into a predefined range of −1 to 1, as defined by Eqs. (9) and (10). The network 
+can learn the underlying architecture more effectively and stably by scaling all input parameters to a standard 
+range. Therefore, the likely interval for normalisation is between − 1 and 1, as it preserves relationships among 
+values while preventing smaller-scale variables from overflowing larger-scale variables during model training. 
+Such standardisation mechanisms have been successfully used to accelerate convergence and improve the overall 
+accuracy of neural network models.
+ 
+Anormal = Aexp − Amin
+Amax + Amin
+ (9)
+where Aexp and Anormal  and are the experimental and normalisation data, Amax and Amin are the maximum 
+and minimum values of the experimental data.
+
+===== PDF PAGE 13 =====
+1 3
+13Page 13 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+ 
+ (10)
+The construction of the dataset matrix A involved selecting the closest relevant input variables, namely tem -
+perature and volume concentration, which are key factors in the model. The matrix expression accounts for all 
+[1 to n] data points, embodying the overarching experiment. The data points represent specific combinations of 
+temperatures and concentrations corresponding to a discussion period, during which the variation in the values 
+predicts particular behaviours of the nanofluid. One of the most critical steps in model training is transforming 
+raw data into a normalised form, which must be completed before training begins. Normalisation is a crucial step 
+in preparing the data before feeding it into the model, as it enables the model to learn efficiently and treat all fea-
+tures uniformly, regardless of their ranges. Standardisation is a technique that scales input parameters to a similar 
+range, minimising the effect of differing input magnitudes and thereby improving the model’s ability to detect 
+latent patterns and relationships within the data.
+A total of 212 experimental data points were generated and subsequently normalised. The data treatment 
+stage divided the normalised dataset into an adequate model set and a validation set. The first part of the dataset, 
+comprising 85% of the total data, was the training set shown in Fig. 5, and the remaining 15% formed the testing 
+set. The training dataset was then split into training and validation sets following established machine learning 
+practices: 70% was used to train the model, and 15% was used for validation. A 5-fold cross-validation approach 
+was employed to enhance the model’s generalisation capacity and robustness. This method divided the entire 
+dataset into five folds, with the first four used for training and the last for validation in each round. The neural 
+network was trained iteratively over five rounds, with each fold used to train the model, thereby mitigating bias 
+and improving prediction accuracy. Finally, the model was evaluated on the testing subset, using data not seen 
+to assess its predictive capabilities accurately. To measure the model’s predictive power, we reported the mean 
+performance metrics across the five iterations. By leveraging such an extensive validation approach, we ensure 
+the robustness and generalizability of the developed forecasting model, thereby mitigating potential overfitting 
+during model fitting.
+Fig. 5 Five-fold 
+cross-validation
+ 
+
+===== PDF PAGE 14 =====
+1 3
+14716 Page 14 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+3 Results and discussion
+3.1 Preparation of hybrid nanofluid
+Hybrid nanoparticle dispersions were prepared and characterised using a systematic two-step method at the 
+Advanced Automotive Liquid Laboratory (A2LL), Faculty of Mechanical and Automotive Engineering Technol-
+ogy at the Universiti Malaysia Pahang Al-Sultan Abdullah. In the first step, the ultrasonication method is used, as 
+it is considered the most important method for preparing stable dispersions of hybrid nanoparticles [54]. For this 
+study, the mixing period was 5 h (under ultrasonication) to achieve adequate particle fragmentation and suspen-
+sion in the base fluid (without surfactant addition), and the ingredient concentration ranged from 0.01% to 0.2%. 
+This period is consistent with the optimal sonication periods reported for hybrid nanofluid stability [ 55]. Addi-
+tionally, the stability of the prepared hybrid nanofluids was assessed using a range of characterisation techniques 
+to evaluate their long-term viability, including visual observation, sedimentation analysis, and zeta potential 
+measurements [56]. A stable analysis of the study design enabled an operational focus on study preparation and 
+informed sample selection based on long-term stability characteristics. A pre-preparation step was performed to 
+identify the important parameters (including determining the concentration of GNP and CNC in the base fluid). 
+However, there were standard (weights being calculated through Eq. (1) of NPs) methods for calculating volumes 
+of both GNP and CNC through Equations ( 20) and (2), respectively. This approach is consistent with literature 
+optimisation methods for hybrid nanofluid preparation.
+Morphological characterisation was performed, particularly with scanning electron microscopy (SEM), to 
+obtain a detailed surface inspection of the dispersion of graphene and CNC in the base fluids. The particle disper-
+sion data under various magnifications are shown in Fig. 6, indicating good particle dispersion. Since the morpho-
+logical understanding of hybrid nanofluids is crucial for improving their thermal and electrophysical properties 
+[57], optimising their structural density and organisation is necessary. These numbers provide an adequate rep -
+resentation of the distribution of the hybrid nanofluid and its respective structural composition. This enables 
+surfactant-free hybrid nanofluids to be applied to practical applications. This suggests that prolonged sonication 
+time is vital for obtaining stable dispersions, a key challenge in manufacturing the nanofluid [ 58]. Unlike many 
+nanofluid formulations that rely on surfactants to enhance dispersion stability, the present hybrid nanofluid was 
+prepared without the use of any chemical dispersion agent. Surfactants can improve nanoparticle suspension; 
+however, they may also affect thermophysical properties, increase viscosity, promote foaming, and degrade at 
+elevated temperatures. Therefore, achieving high colloidal stability in a surfactant-free system is advantageous 
+for long-term thermal applications [59].
+Fig. 6 SEM images of hybrid nanoparticles in base fluid at different volume concentrations (a) G + CNC 0.01%, (b) G + CNC 
+0.05%, (c) G + CNC 0.1%, (d) G + CNC 0.2%
+ 
+
+===== PDF PAGE 15 =====
+1 3
+15Page 15 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+3.2 Thermogravimetric analysis
+Thermogravimetric Analysis (TGA) is used to assess a material’s thermal stability by measuring mass changes 
+as a function of temperature. The analysis examines material properties under various environmental conditions, 
+providing valuable information for evaluating thermal stability. The TGA measurements of nanofluids of GNP-
+EG/W and GNP/CNC-EG/W were performed at various volume concentrations in temperature ranges of 30 °C 
+up to 500 °C (Fig. 7). GNP showed a different degradation pattern than GNP + CNC mixtures. There was a con-
+siderable weight loss between 100 °C and 200 °C. For GNP (0.02–0.2%) and GNP + CNC (0.02–0.06%), a loss 
+of weight around 130 °C and CNC concentrations (0.1–0.2%), a loss of weight near 150 °C was noticed, which 
+is primarily an initial loss due to moisture evaporation from the samples [60].
+A positive correlation between higher nanoparticle concentration and degradation temperature was demon -
+strated. An increase in the volume concentration of GNP and GNP: CNC nanoparticles resulted in a noticeable 
+shift toward higher degradation temperatures. These shifts in the TGA curves indicate higher thermal stability of 
+the nanofluids compared to the base fluid (EG/W) and demonstrate improved temperature resistance with increas-
+ing nanoparticle concentration. The third weight-loss event, occurring near 200 °C, is likely due to the removal 
+of oxygenated functional groups from the nanoparticle surfaces [61]. The hydrophobic nature of both GNPs and 
+CNCs can further explain the observed thermal behaviour. Furthermore, under air, TGA involves two competing 
+and simultaneous processes that contribute oppositely to the weight: a weight loss associated with the oxidation 
+of carbon, which produces gaseous CO 2, and a weight gain associated with the oxidation of residual metallic 
+catalyst particles [62].
+3.3 FESEM and TEM analysis
+High-resolution microscopy images shown in Fig. 8 elucidate the microstructural characteristics and dispersion 
+behaviour of both GNPs and CNCs in hybrid nanofluids. These techniques complement each other: Field Emis-
+sion Scanning Electron Microscopy (FESEM) and Transmission Electron Microscopy (TEM) reveal distinct 
+morphological details at different magnifications and play a crucial role in understanding the performance of 
+these hybrid nanomaterials in heat transfer applications. The acquired FESEM micrographs (Fig. 8a and b) at 
+magnifications of ×2500 and ×10,500, respectively, confirm an optimal, homogeneous, and uniform distribution 
+of GNPs and CNCs. The particles display an even distribution across 10 μm at a lower magnification (Fig. 8a), 
+consistent with their approach that the graphical descriptions in [63] indicate that they have also identified simi-
+lar morphological features in graphene-derived nanofluids. The higher-magnification image (Fig. 8b) provides 
+accurate dimensional data for individual particles, with well-defined sizes ranging from 0.5 μm to 4.35 μm, as 
+Fig. 7 TGA analysis graph of nanofluid weight (%) against 
+temperature (°C)
+ 
+
+===== PDF PAGE 16 =====
+1 3
+16716 Page 16 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+assigned to the image. It provides quantitative support for the multi-scale nature of these materials, which Mah -
+bubul et al. [ 64] recognised as essential to optimising the thermal conductivity of hybrid nanofluids. FESEM 
+images further validate the unique dendritic microstructure of GNP and the corresponding 2D sheet morphol -
+ogy, as evidenced by the observed platelet-like formations. As Xing et al. [65] noted, the high-rated architectural 
+structure provides a larger heat-transfer area, thereby significantly improving thermal conductivity. Simultane -
+ously, the CNCs feature a characteristic porous microstructure that Kedzior et al. [66] correlated with enhancing 
+rheological behaviour and colloidal stability of different dispersions.
+Figure 8c and d show TEM images of the 0.2% GNP/CNC hybrid nanofluid, from which additional informa -
+tion can be obtained regarding the internal arrangement and dispersion at various magnifications. The identified 
+graphene structures are then indicated by colour-coded dotted circles (red in Fig. 8c and yellow in Fig. 8d) as 
+they appear within the transparent CNC matrix. This is further confirmed by the higher-magnification TEM 
+image, which shows the integrated morphology of graphene platelets within the CNC matrix (Fig. 8d), in which 
+yellow dotted circles indicate potential agglomeration. The TEM analysis reveals that an increased nanoparticle 
+concentration reduces clarity, as reported by Azmi et al. [ 67], a significant parameter affecting agglomeration 
+performance in nanofluids. This finding is consistent with Wang et al. [68], who correlated hybrid systems with 
+nanoparticle concentration and agglomeration tendencies. However, the morphology of the GNP and CNC dis -
+plays delicate structural behaviour in the base fluid. CNC has smooth external surfaces, while GNP retains its 
+Fig. 8 FESEM pictures of GNP/CNC hybrid nanofluids at two different magnifications: ( a) at ×2500 and ( b) at ×10,500 
+at 0.2% GNP/CNC hybrid nanofluid. TEM images are displayed with ( c) at a lower magnification and ( d) at a greater 
+magnification
+ 
+
+===== PDF PAGE 17 =====
+1 3
+17Page 17 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+standard platelet structure. Because the CNC matrix is more electron-transparent than the GNP, a hybrid system 
+with an interlocked network forms rather than a simple mixture. In this transparent CNC base, the visibility of 
+dispersed GNP confirms the effective preparation method used in this work, which yielded a uniform distribu -
+tion in the EG/W base fluid. It further confirms the synthesis of stable and well-dispersed GNP/CNC hybrid 
+nanofluids, providing the microstructural basis for the enhanced thermal conductivity observed in subsequent 
+experimental measurements.
+3.4 Stability analysis
+3.4.1 Visual observation
+GNP is highly hydrophobic and exhibits a magnetic-repelling zone toward water [ 69], thus posing a significant 
+challenge to achieving stable dispersions in aqueous-based fluids. To bridge this gap, we prepared hybrid nano -
+fluids according to a two-step method and further treated them with ultrasonication for prolonged times (50% 
+power output for 5 h with 5 min cool-off periods every 15 min), as this is known to be a beneficial approach to 
+improve the stabilisation of nanofluids regardless of surfactants [1] The validity of this preparation approach was 
+confirmed through stability tests by visual observation monitoring the samples over a long-time range, as docu -
+mented in Fig. 9, where the sedimentation and phase separation are completely undetectable during the entire 
+observation (60 days), showing outstanding colloidal stability. Such noteworthy stability is achieved through the 
+performed ultrasonication step, which effectively disrupts nanoparticle networks and ensures good dispersion of 
+nanoparticles within the base fluid matrix [34].
+Visual stability was evaluated in laboratory-controlled conditions (constant temperature of 25 ± 2 °C), with the 
+samples placed in sealed transparent vials. This prolonged stability is a remarkable improvement over previously 
+reported conventional carbon-based nanofluids, which tend to exhibit significant sedimentation within 7–14 days 
+Fig. 9 Visual assessment of the stability of GNP and GNP/CNC hybrid nanofluids at ( a) immediately post-preparation, 
+b) 10 days, c) 30 days, and d) 60 days post-preparation with no sign of visible sedimentation, indicating excellent colloidal 
+stability
+ 
+
+===== PDF PAGE 18 =====
+1 3
+18716 Page 18 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+[70]. Based on our analysis, the optimised preparation conditions (ultrasonication protocol and nanoparticle 
+loading of 0.02–0.2 vol%) enable the production of GNP and GNP/CNC hybrid nanofluids at thermodynamically 
+stable conditions, establishing a path for delivering GNP-based nanofluids for heat transfer applications.
+Figure 10 illustrates the variation in absorbance retention with ultrasonication time, indicating the dispersion 
+stability of the prepared nanofluids. The results reveal that the sample subjected to 7 h of ultrasonication exhibited 
+the highest absorbance retention, maintaining more than 70% of its initial absorbance after ten days of storage. 
+The performance was notably superior to that of the sample sonicated for short durations (3, 4, 5, and 6 h), indi-
+cating improved nanoparticle dispersion and reduced sedimentation. The findings suggest that prolonged ultra -
+sonication enhances the uniform distribution of nanoparticles within the base fluids, thereby improving colloidal 
+stability. Consequently, an ultrasonication time of 7 h was identified as the optimum preparation condition for 
+the investigated nanofluids. The developed preparation protocol enables the production of nanofluids with stable 
+suspension characteristics for more than three weeks, which is essential for ensuring consistent thermophysical 
+performance, operational reliability, and practical applicability in long-term thermal management systems.
+3.4.2 UV–Vis spectroscopic analysis
+Using UV–vis spectroscopy, a standard method for assessing nanofluid stability [ 71], the sedimentation per -
+formance of GNP and GNP/CNC nanoparticles at different volume concentrations in EG/W was investigated. 
+Spectra were recorded over the wavelength range of 200–800 nm using standard methods for nanomaterial 
+characterisation [ 72]. All samples were placed in quartz cuvettes for measurement at defined intervals, with 
+absorbance optimised in the UV region. UV–vis analysis was performed on CNC nanoparticles and on different 
+noncovalently functionalized GNP dispersions. As shown in Fig. 11(a), the graphene nanoplatelet nanofluids 
+exhibit significant light absorption in the 200–800 nm wavelength range. A typical π-transition band for the C = C 
+bond of graphene exhibits an intense absorption band at 238 nm. It can be observed that the peak absorption, due 
+to the presence of GNP in all samples, lies in the wavelength region of 250–320 nm, consistent with earlier spec-
+troscopic studies of graphene nanoplatelets [73]. As shown in Fig. 11(b), a decrease in absorbance was found in 
+all trials beyond this peak, similar to the optical behaviour of dilute GNP suspensions. The absorbance band was 
+observed for nanofluids with GNP volume concentrations of 0.02%, 0.06%, 0.10%, 0.15%, and 0.20%, as well as 
+GNP: CNC. It was also observed that, for all samples, the peak absorption bands broadened as the concentrations 
+of GNPs and GNPs: CNC nanoparticles increased. As shown in the UV–vis spectra of different nanofluid concen-
+trations, the 0.20% GNP and GNP/EG-W showed the highest absorption peak, indicating improved suspension 
+stability. As previously reported [74], the Beer-Lambert law illustrates the relationship between the absorbance 
+Fig. 10 The absorbance ratio and sedimentation time varia -
+tions under specific ultrasound durations
+ 
+
+===== PDF PAGE 19 =====
+1 3
+19Page 19 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+intensity of the dispersion and the concentration of the nanoparticles, where the absorbance intensity is propor -
+tional to the concentration of suspended nanoparticles. Higher absorbance values indicate better nanoparticle 
+dispersion, whereas a decrease in absorbance over time is generally associated with particle agglomeration and 
+sedimentation. Thereby enabling the quantitative evaluation of dispersion stability over time. In the study, the 
+high absorbance intensity and the preservation of characteristic absorbance peaks also indicate effective nanopar-
+ticle dispersion and confirm the excellent colloidal stability of the prepared nanofluids.
+3.4.3 Zeta potential analysis
+Zeta potential measurements of single and hybrid nanofluids were performed using an Anton Paar Litesizer 500 
+(Germany) to assess the stability characteristics of the fluids. In this method, changes in the conductivity of a 
+nanopatterned system are used to electrokinetically characterise suspended nanoparticles. The Z-potential meth-
+odology is widely used to evaluate colloidal stability for its accuracy and reliability [75]. The zeta potential pro-
+files of GNPs and GNPs: CNC, which are presented as experimental data, are illustrated in Fig. 12. This allows 
+us to quantitatively correlate the prepared nanofluids’ capability to maximise the aggregation of particles with 
+the mechanisms of colloidal stability. The values of zeta potential measure the effective surface charge that par-
+ticles have at the shear plane and can predict interparticle interactions in the suspension. The electrical potential 
+at the sliding plane serves as a crucial boundary between the fluid layer, which remains stationary at the particle 
+surface, and the bulk fluid, which flows [76]. The zeta potential measurements in Fig. 11 show that the prepared 
+nanofluids exhibited considerable zeta potential, with most cases falling between − 73 mV and 82 mV . These 
+large magnitudes provide valuable insights into the electrostatic stabilisation mechanisms in colloidal systems. 
+A zeta potential well outside the range of ± 30 mV indicates that the dispersions are strongly stable due to strong 
+interparticle repulsion forces, inhibiting agglomeration phenomena [77].
+Experimental analysis shows that the magnitudes of the zeta potential depend on the concentrations of the GNP 
+nanofluid samples. The 0.2% GNP nanofluid exhibited the highest zeta potential value of absolute magnitude 
+78.82 mV , indicating the highest electrostatic stability. The gradual development of stability characteristics was 
+observed in the concentration spectrum, with measurements of −47.68 mV , −53.88 mV , 58.18 mV , and 62.73 mV 
+corresponding to volume concentrations of 0.02%, 0.06%, 0.10%, and 0.15%, respectively. However, electro -
+static stabilisation was enhanced at intermediate concentrations of hybrid GNP/CNC nanofluids. The zeta poten-
+tial maxima were obtained as − 71.625 mV and 81.065 mV at volumes of 0.06% and 0.1%, respectively. These 
+values are significantly higher than the critical value for colloidal stability, ensuring that the hybrid nanoparticles 
+Fig. 11 UV–Vis analysis of (a) GNP and (b) GNP + CNC
+ 
+
+===== PDF PAGE 20 =====
+1 3
+20716 Page 20 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+can be effectively dispersed in the EG/W base fluid matrix. Negative and positive zeta potential values across 
+different samples indicated diverse surface charge characteristics, with consistently high colloidal stability. The 
+stable nature of fabrications of GNP and hybrid GNP/CNC dispersions in EG/W base fluid was shown through 
+this electrokinetic analysis. High absolute zeta potential values, irrespective of charge sign (either positive or 
+negative), guarantee colloidal stability by acting via intensive repelling forces, a fact already well-known from 
+colloid science. On the other hand, technologies with lower zeta potential values are more prone to coagulation 
+and sedimentation [78].
+The observed positive and negative zeta potential values reflect variations in the net surface charge of the 
+dispersed nanoparticles, which are influenced by nanoparticle concentration, surface chemistry, ionic absorption, 
+and particle-fluid interactions. In colloidal systems, the sign of the zeta potential indicates the polarity of the 
+particle surface charge, whereas its magnitude determines the degree of electrostatic repulsion between particles. 
+Therefore, both highly positive and highly negative zeta potential values can indicate excellent colloidal stability. 
+In the present study, the measured zeta potential values ranged from approximately − 73 mV to + 82 mV , signifi-
+cantly exceeding the commonly accepted stability criterion of ± 30 mV , thereby confirming strong electrostatic 
+stabilisation and resistance to particle agglomeration.
+The stability of nanofluids is remarkably influenced by several factors, including material properties, tem -
+perature, particle morphology, and concentration [ 76]. As such, temperature plays a vital role in the stability 
+of dispersion through modulating interparticle interactions, with experiments finding that the dispersion has an 
+optimal window of stability between 20 °C and 80 °C, with operation below 20 °C or above 80 °C deteriorating 
+the thermal conductivity performance of the dispersion due to loss of colloidal stability. Optimising the concen-
+trations is a significant trade-off in nanofluid formulation. Lower concentrations (typically < 0.01% v/v) yield 
+minimal improvements in properties, whereas concentrations of 3–5% v/v or higher can cause agglomeration, 
+phase separation, and increased viscosity, thereby increasing the pumping power required. Results confirm an 
+ideal concentration range of 0.1–0.2% by volume for most heat transfer applications. This is the critical point at 
+which the efficiency of thermal enhancement is maximised while having minimal impact on stability and rheo -
+logical behaviour. It also produces minor property enhancement or stability via hydrodynamic penalties [79].
+Fig. 12 ( a) Zeta potential diagram, (b) zeta potential analysis of hybrid GNP/CNC nanofluids
+ 
+
+===== PDF PAGE 21 =====
+1 3
+21Page 21 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+3.5 Thermal conductivity
+The thermal conductivity of GNP and GNP/CNC hybrid nanofluids was studied in the 30–80 °C temperature 
+range and at volume concentrations of 0.01–0.2%. Figure 13(a) and (b) show thermal conductivity at vary -
+ing concentrations and temperatures, alongside ASHRAE [ 80] data for benchmarking. The results reveal that 
+all examined nanofluids consistently outperform the thermal conductivity of the 60% EG base fluid, with this 
+increase primarily credited to the far greater thermophysical properties exhibited by the nanoparticles compared 
+to the ASHRAE reference value for 40% EG. The thermal conductivity enhancement percentage and contour 
+plots are shown in Fig. 12(c) and (d), calculated using Eq. (11). In this process, low weight percentages were 
+chosen to avoid increasing the effective viscosity and causing sedimentation issues [81]. Conductivity increased 
+proportionally with graphene concentration, as expected. As stated, GNP nanofluid had a thermal conductivity 
+of 0.352 W/m·K at 0.02% concentration and 30 °C. In contrast, at a 0.2% concentration and 80 °C, a sustainable 
+high enhancement of 26.81% in thermal conductivity was achieved, with a rate of 0.5824 W/m·K. This is the 
+Fig. 13 Thermal conductivity at different (a) temperatures, (b)volume concentrations (H=hybrid nanofluid), (c) Increment of 
+thermal conductivity in percentage at different temperatures and concentrations, and (d) Contour plot
+ 
+
+===== PDF PAGE 22 =====
+1 3
+22716 Page 22 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+maximum enhancement in GNP/CNC hybrid nanofluids and indicates that they exhibit greater thermal conduc -
+tivity enhancements than metallic and ceramic nanofluids [82].
+The significant improvement in thermal conductivity at elevated temperatures and high volume concentra -
+tions is attributed to two primary mechanisms. According to percolation theory, larger particles create chain-like 
+network structures that provide efficient heat-transfer pathways [83]. Second, smaller particles exhibit Brownian 
+motion, which increases with temperature and leads to micro-convective effects [76, 83]. However, these two dif-
+fusion and micro-convection mechanisms create a high level of hybrid heat transfer in these new graphene nano-
+fluids, leading to an extraordinary nonlinear increase in thermal conductivity with temperature and concentration, 
+respectively. This nonlinear effect can depend on the properties of both the Nanoparticles and the base fluid [79]. 
+The final value of thermal conductivity increases by 15.91% at 30 °C and 52.77% at 80 °C, respectively, at a 
+weight concentration of 0.02% of GNP/CNC hybrid nanofluid; such a temperature-dependent increment can be 
+attributed to the lower inter-particle distance at higher volume fraction, consequently reinforcing the percolation 
+effect and forming much more active thermal transport networks [83]. This behaviour increases as the particles’ 
+concentration increases, and they become more relevant because the gap, known as the volume between particles, 
+decreases rapidly.
+ 
+Thermal conductivity increment (%) =
+(
+φnf
+φbf
+− 1
+)
+∗100 (11)
+ 
+3.6 Viscosity of GNP-CNC
+The viscosity of GNP and GNP/CNC hybrid nanofluids with EG/W (60:40 ratio) was measured across various 
+volume concentrations and temperatures, as illustrated in Fig. 14(a-d), which show viscosity values, percentage 
+Fig. 14 Viscosity at different 
+(a) temperatures, (b) volume 
+concentrations, (c) Increment 
+of thermal conductivity in 
+percentage at different tem-
+peratures and concentrations, 
+and (d) Contour plot
+ 
+
+===== PDF PAGE 23 =====
+1 3
+23Page 23 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+increments, and contour plots. Viscosity is a critical parameter that directly affects pressure drop and pumping 
+power requirements in practical applications [ 37, 84]. Incorporating nanoparticles into the base fluid produces 
+additional friction at fluid-surface interfaces due to surface collisions, interlayer resistance, and interfacial forces 
+[76]. At 30 °C, the base fluid viscosity was 5.692 mPa·s, consistent with literature values. Viscosity showed a 
+direct proportional relationship with nanoparticle volume concentration, owing to its effect on the fluid’s internal 
+shear rate [36]. Conversely, viscosity decreased with increasing temperature due to weakened intermolecular and 
+interparticle adhesion forces [79].
+Comparative analysis revealed that at 30 °C and 0.2% volume concentration, GNP nanofluids exhibited approx-
+imately 23% higher viscosity than the base fluid, while hybrid nanofluids (GNP/CNC) showed a more significant 
+increase of 27.5%. This differential diminished at elevated temperatures; at 80 °C and 0.2% concentration, GNP 
+nanofluids were only 15.3% more viscous than the base fluid, while GNP/CNC hybrid nanofluids remained 
+19.3% higher [3]. The GNP/CNC samples demonstrated superior stability and achieved the greatest increase in 
+average viscosity. For heat-transfer applications, optimal nanofluid formulations must strike a balance between 
+high colloidal stability and minimal increases in viscosity [ 76]. The elevated friction factor observed at higher 
+volume concentrations, attributed to the widespread distribution of nanoparticles, directly enhanced the dynamic 
+viscosity. However, the strength of intermolecular adhesion forces decreased at higher temperatures, resulting 
+in reduced dynamic viscosity values [79]. The percentage viscosity enhancement was calculated using Eq. (12):
+ 
+Viscosity increment(%) =
+(
+µnf
+µbf
+− 1
+)
+∗100 (12)
+ 
+3.7 ANN configuration
+The hybrid GA-ANN methods were employed in this study to predict the thermal conductivity and viscosity of 
+GNP-CNC/EG-water hybrid nanofluid mixtures. Normalising suitable hyperparameters was crucial for building 
+a model with generalisation ability and accurate predictive performance [76]. We calibrated the model’s optimal 
+configuration parameters using a trial-and-error approach, with the results presented in Table 5. The structure of 
+hidden layers and the corresponding neurons is crucial for making predictions, as well as the computational cost 
+of neural networks [50]. We optimised the network architecture using a random search cross-validation technique, 
+employing the RMSE and MAE as evaluation metrics. As illustrated in Fig. 15(a), the hidden-layer optimisation 
+Hyperparameters Values
+ANN Inputs 2
+Outputs 2
+Hidden layers 2
+Neurons in Hidden Layer 1 36
+Neurons in Hidden Layer 2 24
+Activation functions Logsig, purelin
+Training function LM
+Learning rate 0.01
+Minimum training error
+Epochs 500
+GA Population range 250
+Maximum generations 200
+Selection method roulette
+Probability crossover 0.7
+Probability mutation 0.1
+Tournament range 3
+Table 5 Parameters of 
+hybrid GA-ANN/LM model
+ 
+
+===== PDF PAGE 24 =====
+1 3
+24716 Page 24 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+was performed with all hyperparameters fixed except for the number of layers, which ranged from 1 to 5. The 
+analysis yielded the highest coefficient of determination (R²) value, 0.998, for a two-hidden-layer configuration. 
+Although using more than two layers showed only minor variations in R², RMSE, and MAE, the two-layer layout 
+improved significantly, with values of 0.0237 and 0.0331, respectively. Adding more than three layers did not 
+further improve R² or reduce RMSE or MAE. Hence, to maximise the final model predictions, the network was 
+implemented with two hidden layers, consistent with recent studies on predicting and understanding thermal 
+properties [19]. Figure 15(b) illustrates the impact of learning rate variation on model performance, another cru-
+cial parameter in ANN model development [42]. Four distinct learning rates (0.1, 0.01, 0.001, and 0.0001) were 
+evaluated, with 0.01 identified as the most effective for optimising network performance. These four values were 
+selected because they represent the standard logarithmic range commonly used for initial learning-rate tuning 
+in neural network training. This deliberate approach allowed the quick identification of the appropriate order of 
+magnitude that yields stable convergence without overfitting, similar to the optimal learning rates reported by 
+Borode and Olubambi [85] in their study of GNP-alumina hybrid nanofluids.
+Following the selection of a two-hidden-layer architecture, the research determined the optimal number of 
+neurons for each layer. The number of neurons per layer was varied from 4 to 64 in increments of 2, with 
+adjustments based on dataset characteristics and input parameters. A selective testing methodology, Bayesian 
+optimisation, was implemented to identify the optimal neuron configuration, with over 250 distinct network 
+configurations evaluated based on their final R² scores. The k-fold cross-validation approach helped establish the 
+optimal neuron distribution across layers, consistent with the methodology employed by Adun et al. [20] for ther-
+mophysical property estimation. As shown in Fig. 16(a), the optimal configuration (highlighted in red) consisted 
+of 56 neurons in the first hidden layer and 32 in the second layer, achieving the highest R² score of 0.989 during 
+5-fold validation. Figure 16(b) displays the RMSE values across various configurations, with the optimal setup 
+(highlighted in blue) yielding the lowest RMSE of 0.03. Similarly, Fig. 16(c) shows the MAE values, with the 
+same configuration (highlighted in blue) achieving the lowest MAE of 0.0543 and outperforming all alternative 
+architectures. This optimisation approach significantly outperforms the conventional methods used in previous 
+studies [24, 51].
+This optimisation process ensured the development of a highly accurate predictive model for thermal conduc-
+tivity and viscosity in hybrid nanofluids, with performance metrics significantly superior to those of conventional 
+ANN structures without genetic algorithm optimisation [24]. The methodology aligns with recent advancements 
+in machine learning techniques for predicting the thermophysical properties of nanofluids [14, 86]. As discussed 
+in the last section, two hidden layers were chosen, and this section describes how this was achieved to determine 
+the optimal number of neurons in each layer. The neurons in each layer ranged from 4 to 64, with a step size of 
+Fig. 15 Performance of different (a) hidden layers and (b) learning rates
+ 
+
+===== PDF PAGE 25 =====
+1 3
+25Page 25 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+2, depending on the dataset and input parameters. The neuron configuration was determined through a selective 
+testing approach. More than 250 separate configurations on the network were tested and compared to generate the 
+final R² Score. The optimal number of neurons for each layer was determined from a range of R² values obtained 
+via k-fold cross-validation.
+Various training functions used in developing the ANN model are compared in Fig. 17(a). The study was 
+conducted using five training algorithms: Levenberg-Marquardt (LM), Bayesian Regularisation (BR), Gradient 
+Descent (GD), Scaled Conjugate Gradient (SCG), and BFGS Quasi-Newton (BFGS), all with the same hyperpa-
+rameters across all experiments. Using this methodology, the study assesses each algorithm’s ability to optimise 
+the prediction of nanofluid thermal conductivity [87]. The best-performing training function was the Levenberg-
+Marquardt, which achieved the highest coefficient of determination (R² = 0.9837) and the lowest error values 
+found (RMSE = 0.0452, MAE = 0.0846). This result is consistent with an earlier study by Lv et al. [ 42], which 
+suggests that LM algorithms tend to outperform other training approaches in engineering applications with mod-
+erate-sized datasets. Lin et al. [19] reported similar results in predicting the thermal conductivity of hybrid nano-
+fluids using back-propagation algorithms.
+Additionally, as shown in Fig. 17(b), the study included the design choice of investigating the effect of multiple 
+activation functions on overall model performance. Five different activation functions, Sigmoid, Softmax, Tan -
+gent Hyperbolic (Tanh), Rectified Linear Unit (ReLU), and Exponential Linear Unit (ELU), were evaluated using 
+a single hidden-layer model with 56 neurons for the experimental framework. The mathematical formulations 
+Fig. 16 The variation of (a) R2, (b) RMSE, and (c) MAE for two hidden layers
+ 
+
+===== PDF PAGE 26 =====
+1 3
+26716 Page 26 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+of each function are presented in Eqs. 13–18, following the standard formulations described by Pare and Ghosh 
+[88]. The sigmoid activation function yielded slightly better performance, with the greatest R² (0.9878) and the 
+lowest error metrics (MAE = 0.476, RMSE = 0.0965). However, all tested activation functions yielded similar 
+results, with only marginal differences in the performance metrics. The best-performing Tanh function, for exam-
+ple, yielded an R² value of 0.984, an RMSE of 0.454, and an MAE of 0.937, thus demonstrating its potential for 
+this application. This observation aligns with the findings reported by Borode and Olubambi [ 85], who adopted 
+tansig activation functions for implementing GNP-based hybrid nanofluid viscosity prediction. Due to the ran -
+dom allocation of weights and biases, as well as the random split of the training and validation sets to minimise 
+the impact of randomness in the neural network model’s design, the reported results are averages from 10 con -
+secutive training iterations. This increases the statistical stability of the findings, as recommended by Yadav et al. 
+[25] for optimising hybrid artificial intelligence models.
+The experimental results indicate that the outputs of the Tanh and Sigmoid functions are better for small data 
+sets. At the same time, ReLU often performs better with large amounts of data. On the other hand, ReLU func -
+tions are usually favoured in larger-scale settings [ 41]. Although the ReLU function is widely used in current 
+deep learning libraries, the Tanh and Sigmoid functions yielded better performance on the relatively small dataset 
+used in this work, enabling more accurate predictions of the thermal conductivity and viscosity of GNP-CNC/
+EG-water hybrid nanofluids. Sahin et al. [ 51] also reached similar conclusions when developing AI models to 
+predict the thermophysical properties of magnetic nanofluids. These findings underscore the importance of tailor-
+ing neural network architecture to the specific characteristics of the dataset and application domains, rather than 
+defaulting to currently popular algorithmic approaches, as emphasised in the comprehensive review by Basu et 
+al. [86] on AI methods for predicting the thermophysical properties of nanofluids. 
+ Sigmoida (g)= 1
+1+e −g  (13)
+ Tangent a (g)= eg − e−g
+eg + e−g  (14)
+ 
+ 
+Softmax a (gj)= egj
+∑n
+j=1 egj  (15)
+ 
+Fig. 17 ANN model optimisation for (a) various training functions and (b) activation functions
+ 
+
+===== PDF PAGE 27 =====
+1 3
+27Page 27 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+ ReLU a (g)= max (0,g) (16)
+ 
+ 
+ELU a (g)=
+{ g f or g≥ 0
+a(eg − 1)f or g < 0  (17)
+ 
+ Linear a (g)= g (18)
+ 
+An optimal artificial neural network topology was developed based on rigorous experimental analysis to pre -
+dict the thermophysical properties of GNP-CNC/EG-water hybrid nanofluids, as illustrated in Fig. 18. After 
+evaluating various network configurations, the architecture that demonstrated superior predictive performance 
+consisted of a two-hidden-layer structure with 56 neurons in the first hidden layer and 32 neurons in the second, 
+resulting in a 2–5632-2 topology. This model is developed using two input variables, namely temperature and 
+nanoparticle volume concentration, to predict the thermal conductivity and viscosity of the nanofluids. Separate 
+single-output models were constructed for thermal conductivity and viscosity prediction to maximise predic -
+tion accuracy and simplify network training. Consequently, each model employed a 2–56–32–1 architecture 
+comprising two input neurons, two hidden layers with 56 and 32 neurons, respectively, and one output neuron 
+corresponding to either thermal conductivity or viscosity. The GA–ANN model utilised the same network struc-
+ture, with the genetic algorithm employed to optimise the ANN parameters and enhance predictive performance. 
+This configuration aligns with previous findings that multilayer networks can more effectively capture complex 
+nonlinear relationships in thermophysical property data [20]. The sigmoid function was applied in the first hidden 
+layer. Conversely, the tanh function was chosen for the second hidden layer following its impressive performance 
+on network optimisation testing tasks [ 51]. As a regression problem, the pureline activation function was used 
+for the output layer. The Levenberg-Marquardt algorithm was used as the training function for both hidden layers 
+due to its faster convergence compared to other training algorithms [ 42], as supported by performance criteria. 
+The learning rate was optimised to 0.01, resulting in the most desirable tradeoff between convergence speed 
+and stability during training. Table 5 presents a set of optimised hyperparameters for this architecture, obtained 
+and evaluated using MATLAB 2020a. Using the 212 experimental data points, the optimised model achieved 
+the highest forecast accuracy, with an R² of 0.998. The proposed ANN architecture optimisation is a notable 
+Fig. 18 Developed network 
+configuration
+ 
+
+===== PDF PAGE 28 =====
+1 3
+28716 Page 28 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+improvement over earlier studies that used simpler network architectures to predict the thermophysical properties 
+of nanofluids [19, 85].
+3.8 GA configuration
+A GA method creates an optimal ANN, primarily by optimising the population size parameter. This optimisation 
+strategy is important because an earlier study showed that population size significantly affects GA performance 
+[89]. Choosing an appropriate population size is an inherent compromise: smaller populations may converge on 
+local optima. In comparison, larger populations may increase computational complexity and simulator runtime 
+without proportional improvements in performance [ 43]. The empirical findings on model performance metrics 
+are shown in Fig. 19(a), where evaluation was performed incrementally across population ranges of 50. A popula-
+tion size of 250 achieved optimal performance, with an R² of 0.972, an RMSE of 0.968, and an MAE of 2.253. 
+These values decrease significantly with reduced and expanded population sizes, indicating the importance of this 
+parameter in the GA optimisation [90]. Hence, the population range was selected based on preliminary sensitivity 
+analysis and convergence studies. Population sizes ranging from 50 to 250 were evaluated in increments of 50. 
+It was observed that smaller populations were susceptible to premature convergence and local optima, whereas 
+increases beyond a population size of 250 yielded only marginal improvements in model performance. Therefore, 
+a population size of 250 was adopted as a compromise between optimisation accuracy and convergence stability.
+Another critical factor, the number of generations, was also explored. As shown in Fig. 19(b), the model per-
+formance presentation with a constant population size of 50 illustrates the positive effect of the generation count 
+on model performance. The best results were obtained from testing in the range of 50 to 400 generations (incre -
+ment: 50), yielding an R² of 0.986, an RMSE of 0.843, and an MAE of 2.67 for 250 generations (the optimal 
+number of generations). This finding is consistent with research by Deb et al. [47], which suggests that reproduc-
+ing the evolutionary process beyond this step yields rapidly diminishing returns in model accuracy, accompanied 
+by an increasing computational burden. Additional GA parameters, including selection method (roulette wheel), 
+crossover probability (0.7), mutation probability (0.1), and tournament range (3), were established based on pre-
+liminary testing and are detailed comprehensively in Table 5. These parameters were selected in accordance with 
+the best practices described by Houck et al. [91]. The combination of these optimised parameters yielded a GA-
+ANN model with enhanced predictive capabilities for estimating the thermophysical properties of GNP-CNC/
+EG-water hybrid nanofluids compared to conventional ANN approaches, consistent with the findings of Zhang 
+et al. [92] and Hashmi et al. [21].
+Fig. 19 Optimisation of GA for (a) Population range and (b) Number of generations
+ 
+
+===== PDF PAGE 29 =====
+1 3
+29Page 29 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+The fitness function is the primary foundation of GA’s evolutionary search. In this study, the fitness value 
+Ffitness is defined as the sum of the absolute errors between the predicted and actual values for all nodes in the 
+output layer, as shown in Eq. (19). Here, N denotes the number of samples, Pk represents the predicted value, and 
+Ok signifies the actual value, respectively.
+ 
+Ff itness=
+N∑
+k=1
+(|Pk + Qk |) (19)
+Figures 20(a) and 19(b) illustrate the fitness evolution curves for the genetic algorithm-optimised artificial neural 
+network (GA-ANN) model for predicting the thermal conductivity and viscosity of GNP-CNC/EG-water hybrid 
+nanofluids. The fitness values show a consistent decline as iterations progress, confirming the appropriate conver-
+gence behaviour of the GA optimisation process [43, 93]. For thermal conductivity prediction, the fitness function 
+stabilises after approximately 28 iterations, whereas viscosity prediction requires approximately 30 iterations to 
+Fig. 20 Analysis of the GA-ANN model for regression forecasting: (a) fitness curve of thermal conductivity, (b) fitness curve 
+of viscosity, comparison between the real value and predicted value with error for (c) thermal conductivity, and (d) viscosity
+ 
+
+===== PDF PAGE 30 =====
+1 3
+30716 Page 30 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+converge. This stabilisation indicates that the neural network’s weights and biases have attained their optimal 
+values through the evolutionary process, as described by Holland [ 93] and further refined by Whitley [ 94] and 
+Deb et al. [47]. Figure 19(c-d) comprehensively compare predicted (output) and experimental (target) values for 
+thermal conductivity and viscosity, along with their corresponding error distributions. The thermal conductivity 
+predictions maintain error margins between − 0.01 and 0.01 W/m·K, while viscosity predictions exhibit slightly 
+wider error ranges between − 0.02 and 0.02 mPa·s. These minimal error ranges demonstrate the high precision 
+of the GA-ANN model, aligning with previous findings by Chi et al. [ 24] and Zhang et al. [ 92] regarding GA-
+optimized neural networks for complex thermophysical property prediction. The strong correlation between pre-
+dicted and experimental values confirms the robustness of the GA-ANN modelling approach, achieving superior 
+prediction accuracy compared to standard ANN methodologies [21]. This concordance validates the effectiveness 
+of genetic algorithm optimisation in enhancing the predictive capabilities of neural networks for estimating the 
+thermophysical properties of hybrid nanofluids, as previously established in similar studies [ 90]. The minimal 
+prediction errors further support the findings of Borode and Olubambi [85], who reported similar improvements 
+in prediction accuracy when utilising genetic algorithms to optimise artificial neural networks for predicting 
+nanofluid viscosity.
+3.9 Comparison between GA-ANN and ANN models
+Experimental work and model performance comparisons between GA-ANN and conventional ANN, as shown 
+in Fig. 21, indicate that the hybrid GA-optimized ANN model is significantly more reliable than a simple ANN 
+approach. In this study, the predictive performance for the thermophysical properties of GNP-CNC/EG-water 
+hybrid nanofluids was notably enhanced. The performance of the GA-ANN model was superior to that of the 
+ANN model in predicting a higher percentage of the test set, as indicated by various statistical measures. The 
+results show that the R² improved from 0.975 to 0.998 for thermal conductivity prediction by adopting genetic 
+algorithm optimisation. This significant performance improvement is consistent with results from similar studies 
+showing that GA optimisation increased the neural network’s ability to predict complex thermophysical proper-
+ties [21, 92]. When predicting thermal conductivity, the GA-ANN model achieved a mean relative error (MOD) 
+of 4.81%, compared to 6.72% for the ANN model, representing a 28.4% improvement in prediction accuracy. 
+Likewise, the GA-ANN model’s MOD of 3.57% for viscosity prediction is significantly better than the ANN 
+model’s 7.34% (a 51.4% improvement).
+According to MSE analysis, the developed GA-ANN model achieved a prediction error of 2.5314х10− 4 com-
+pared with 3.584х10− 4 for the conventional ANN model. This corresponds to a 29.37% reduction in prediction 
+error for thermal conductivity, demonstrating the veGA-ANN model’s superior prediction accuracy and optimi-
+sation capability. Similarly, for viscosity, GA-ANN achieved a lower prediction error of 7.294 × 10⁻⁴, compared 
+with 9.526 × 10⁻⁴ for the conventional ANN model. This represents a 23.43% reduction in prediction error. How-
+ever, these accuracy enhancements confirm findings from Li et al. [ 43], who reported similar error reductions 
+when using GA optimisation for neural networks to predict diffusion behaviour in complex systems. Both ther -
+mophysical properties (thermal conductivity and viscosity) showed lower RMSE and MAE with the GA-ANN 
+model, indicating better performance. The above error has been reduced by GA optimisation. This is possible 
+because GA-based neural networks can model the well-established nonlinear relationship between input param -
+eters (temperature and volume concentration) and output properties (thermal conductivity and viscosity) [ 90]. 
+The improvement in predictive performance can be attributed to the GA-optimized weights and biases of neural 
+networks, which circumvent convergence to local optima—a drawback for ANNs using traditional backpropa -
+gation algorithms [25]. The genetic algorithm employs an evolutionary process that can fully utilise parameter 
+space searching to enhance generalisation ability and prevent overfitting [85].
+In addition, the GA-ANN model exhibits excellent stability and consistency in prediction under various tem -
+perature and concentration conditions. A similar finding has been reported by Adun et al. [ 20], who revealed 
+that GA optimisation increased the reliability of neural networks in correlating the thermophysical properties of 
+
+===== PDF PAGE 31 =====
+1 3
+31Page 31 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+hybrid nanofluids, particularly when the input-output variable relationships were highly nonlinear. The predic -
+tive enhancement of a GA-ANN model, combined with its fast computational performance, offers unprecedented 
+utility for designing and deploying hybrid nanofluids in the heat transfer community, eliminating the need for 
+extensive experimentation. This more accurate estimation of thermal conductivity and viscosity can improve 
+system design and optimisation, potentially resulting in greater efficiency for heat transfer applications, according 
+to Zamany and Abad [95]. Furthermore, the reduced prediction error of the GA-ANN model indicates its greater 
+reliability in practical applications, where even a minor deviation in estimating thermophysical properties can 
+significantly impact system performance [81]. In this regard, the comparative analysis in this study reveals that 
+a hybrid model combining genetic algorithms and artificial neural networks can provide a more reliable frame -
+work for predicting the complex thermophysical properties of hybrid nanofluids compared to classical modelling 
+approaches.
+3.10 Proposed correlation
+It is challenging to find clear correlations between the thermal conductivity and viscosity of nanofluids due to 
+the contributions of multiple physical mechanisms and their interactions. temperature, volume concentration of 
+Fig. 21 Comparison of experimental results with GA-ANN and ANN models: (a, b) GA-ANN and ANN prediction of ther-
+mal conductivity, and (c, d) GA-ANN and ANN prediction of viscosity
+ 
+
+===== PDF PAGE 32 =====
+1 3
+32716 Page 32 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+nanofluids, nanoparticle size and shape, material preparation methodology, and colloidal stability are among 
+the parameters that affect the thermophysical properties of nanofluids [79]. To address this challenge, this study 
+proposes mathematical correlations to estimate the thermal conductivity and viscosity of graphene nanoplatelets, 
+cellulose nanocrystals, and their hybrid nanofluid systems dispersed in ethylene glycol-water mixtures.
+To accurately define the relationship between thermal conductivity, temperature (T), and volume concentration 
+(φ), Eq. (20) describes the method used, which was obtained through a nonlinear power method to correlate the 
+thermal conductivity relation as presented in Eq. (20).
+ khnf =0 .32036 + 0.2979T 0.99669 +5 .0210−4φ 1.1156 +0 .00168T 0.99669φ 1.1156 (20)
+A nonlinear curve-fitting approach (to account for the characteristic fourth-order dependence) for viscosity pre -
+diction was used to determine the correlation in Eq. (21).
+ µhnf =7 .56861 + 4.61805T − 0.0468φ +3 .04042T 2 − 3.7104110−4φ 2 − 0.04315Tφ  (21)
+For the thermal conductivity correlation, the coefficient of determination and the mean square error were 0.968 
+and 0.4638, respectively, while for the viscosity correlation, they were 0.975 and 0.6746, respectively. Such a 
+performance demonstrated remarkable consistency between the predicted values and experimental data in the 
+investigated temperature range (30–80 °C) and volume concentration range (0.02–0.2 vol%).
+These derived correlations can be considered for potential use in heat transfer analysis within automotive 
+applications under variable application conditions to predict thermal properties and optimise cooling perfor -
+mance. Both correlations showed no significant deviations from experimental measurements, thus verifying their 
+suitability for engineering design calculations related to GNP-CNC hybrid nanofluid systems and for predicting 
+thermal performance. While the GA-ANN model achieves excellent predictive accuracy with an R 2 of 0.998, 
+developing empirical correlations remains important to ensure the practical applicability and wider usability of 
+the outcomes. These correlations provide straightforward, model-independent equations that researchers, engi -
+neers, and industry professionals can use without computational tools or ML models. Although GA-ANN pro -
+vides superior predictive accuracy, it operates as a black-box technique with restricted interpretability. In contrast, 
+the empirical correlations offer clear, physics-based insights and can be easily applied in analytical calculations, 
+simulations, and design practices. Thus, both methods serve complementary roles; GA-ANN delivers precise pre-
+diction capability, while the correlations provide a practical and user-friendly tool for engineering applications.
+The validation results presented in Fig. 22 warrant a more in-depth analysis to fully understand the strengths 
+and limitations of both predictive approaches. The GA-ANN model consistently outperforms the correlation-
+based predictions across the entire temperature range (30–80 °C), particularly at the boundaries of the experi -
+mental domain. This superior performance can be attributed to the neural network’s inherent ability to capture the 
+complex nonlinear relationships between input parameters (temperature and concentration) and the target ther -
+mophysical properties [76]. The neural network architecture utilises multiple input features, including nanopar -
+ticle concentration and temperature. At the same time, the GA-optimized weights and biases capture the complex 
+mapping between these inputs and the calculated thermal conductivity and viscosity. This optimisation process, 
+involving 250 population members that evolved over 200 generations, has resulted in a robust predictive model 
+that generalises well to unseen data points. The genetic algorithm’s capability to escape local optima and explore 
+the global solution space provides a significant advantage over traditional gradient-based optimisation tech -
+niques. The error metrics warrant further scrutiny regarding the model’s confidence level. As for thermal con -
+ductivity prediction, the GA-ANN model achieved an MSE of 5.2147 × 10− 3, approximately 12.5% lower than 
+the correlation with MSE = 0.4638. Similarly, the GA-ANN model with an MSE of 9.0256 × 10− 3 for viscosity 
+prediction greatly enhances correlation performance.
+The margin of deviation (MOD) reveals the phenomenon, yielding respective values of 4.81% and 4.13% 
+for thermal conductivity and viscosity for the GA-ANN model. These values are better than the high deviations 
+observed with traditional ANN models without genetic algorithm optimisation, where MOD was reported at 
+
+===== PDF PAGE 33 =====
+1 3
+33Page 33 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+6.72% and 7.34% [96]. While the GA-ANN model performed better in terms of prediction accuracy, the devel -
+oped correlations possess unique strengths in particular scenarios. Equations (20–21) describe mathematical 
+expressions that can be translated into computationally efficient code that can be implemented in a computational 
+fluid dynamics simulation. The thermal conductivity correlation (Eq. 20) effectively captures the coupling of tem-
+perature and concentration on thermal transport properties, explicitly considering the independent contributions 
+and their synergetic interactions between the two parameters. Likewise, the viscosity equation (Eq. 21) accurately 
+describes the complex rheological behaviour observed in hybrid nanofluids.
+The temperature-dependent behaviour impacting heat transfer applications is described in Fig. 21. The GA-
+ANN model accurately predicts the nonlinear increase in thermal conductivity as the temperature rises from 30 °C 
+to 80 °C. Especially for the hybrid GNP/CNC nanofluid, a 52.77% increase in thermal conductivity over the base 
+fluid is achieved at 0.2 vol% and 80 °C. This improvement is attributed to increased Brownian motion at higher 
+temperatures, which leads to percolation networks with larger nanoparticles and lower interfacial thermal resis -
+tance. Especially in the upper-temperature range, where mechanisms become more complex and interdependent, 
+the GA-ANN model captures these phenomena more effectively than the correlation [ 83]. Although predictive 
+methods demonstrate good performance, there are multiple opportunities for improvement. Since these properties 
+affect thermophysical properties, the correlation models could be improved by introducing additional parameters 
+(e.g., particle size distribution, geometry, aspect ratio, and surface functionalization). Additional research could 
+include extending the GA-ANN model to ensemble techniques and implementing deep learning architectures 
+to improve prediction accuracy [ 19]. Thus, integrating these predictive models into real-time monitoring and 
+control systems would enable adaptive optimisation of thermal management processes in real industrial systems. 
+This synergy would greatly benefit automotive cooling systems, electronic thermal management, and renewable 
+energy applications, which are characterised by rapid changes in operating conditions [85]. The GA-ANN model 
+and the developed correlations represent significant advancements in predicting the thermophysical properties 
+of GNP-CNC/EG-water hybrid nanofluids. While the GA-ANN model offers superior accuracy, particularly for 
+complex nonlinear relationships, the mathematical correlations provide a practical and computationally efficient 
+alternative for engineering applications. The complementary nature of these approaches offers researchers and 
+engineers a toolkit for designing and optimising nanofluid-based thermal management systems.
+The GA–ANN model demonstrated superior predictive performance, achieving an R² of 0.998, significantly 
+higher than the developed empirical correlations (R² = 0.968 for thermal conductivity and R² = 0.975 for viscosity). 
+Fig. 22 Comparison of experimental data, GA-ANN predictions, and correlation model outputs for (a) Thermal conductivity, 
+(b) Viscosity of GNP and CNC-GNP hybrid nanofluids
+ 
+
+===== PDF PAGE 34 =====
+1 3
+34716 Page 34 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+The inclusion of empirical correlations remains important for several practical and scientific reasons. First, cor -
+relation models provide explicit mathematical expressions that are simple, transparent, and easy to implement 
+in engineering calculations. Second, correlations are computationally efficient and more accessible for real-time 
+applications, preliminary design analyses, and situations with limited computational resources. Third, empiri -
+cal correlations enhance interpretability by revealing direct relationships between input variables and output 
+responses. This is particularly valuable for understanding the underlying physical trends. Finally, providing both 
+approaches ensures broader usability of the study. The GA-ANN model is suitable for high-precision predictions, 
+while the correlation models serve as practical tools for engineers and researchers who require rapid estimations 
+with reasonable accuracy. Therefore, the correlation models are not intended to replace the GA-ANN model but 
+to complement it by offering simplicity, interpretability, and ease of application, thereby increasing the overall 
+utility and impact of the work.
+3.11 Research significance
+The application of hybrid nanofluids has attracted considerable attention for enhancing thermal management sys-
+tems due to their superior heat transfer characteristics compared with conventional fluids. Among emerging nano-
+fluid formulations, GNP-based hybrid nanofluids offer significant potential due to their high thermal conductivity 
+and favourable stability. However, several knowledge gaps remain in the current literature. First, few studies 
+have investigated the combined thermophysical behaviour of GNP-CNC hybrid nanofluids across a wide range 
+of temperatures and nanoparticle concentrations. Second, most existing studies rely on conventional empirical 
+correlations or standard ANNs, which often exhibit limited accuracy in capturing the complex nonlinear relation-
+ships between operating parameters and thermophysical properties. Third, comprehensive optimisation of ANN 
+architectures for predicting multiple thermophysical properties of hybrid nanofluids remains underexplored.
+To address these gaps, the present study experimentally investigates the thermal conductivity and viscosity 
+of highly stable GNP-CNC/EG-water hybrid nanofluids prepared using a surfactant-free two-step method. Fur -
+thermore, a hybrid GA-ANN framework is developed to optimise network architecture, learning parameters, and 
+prediction performance. By integrating experimental characterisation with intelligent computational modelling, 
+this study provides a reliable and accurate methodology for predicting thermal conductivity and viscosity while 
+reducing the need for extensive experimental measurements. The findings advance data-driven thermal-fluid 
+research and support the development of efficient thermal management systems for engineering applications.
+4 Conclusions
+This study explores GNP-CNC/EG-water hybrid nanofluids and uses AI to predict their thermophysical proper -
+ties. Stable GNP and GNP-CNC hybrid nanofluids were synthesised using a two-step method with prolonged 
+ultrasonication. Findings are summarised below.
+i) These nanofluids showed excellent stability over 60 days without surfactant, with zeta potentials from − 73 
+to 82 mV confirming this. FESEM and TEM analyses validated nanoparticle dispersion and the formation 
+of network structures.
+ii) Thermophysical property measurements showed notable improvements in thermal transport. Thermal con -
+ductivity increased with temperature and concentration, reaching a maximum of 29% at 0.2% volume and 
+80 °C, due to percolation and increased Brownian motion.
+iii) Viscosity studies showed moderate increases with nanoparticle volume fraction (from 23 to 25.5% at 0.2%) 
+and decreases with rising temperature due to weaker intermolecular forces. GNP-CNC hybrid nanofluids had 
+a slightly higher viscosity than pure GNP nanofluids but remained practical, balancing heat-transfer benefits 
+and pumping power requirements.
+
+===== PDF PAGE 35 =====
+1 3
+35Page 35 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+iv) A hybrid GA-ANN model was developed to predict thermophysical properties accurately. The optimal setup 
+involved two hidden layers (56–32 neurons) and was optimised for the architecture, parameters, and training 
+functions. The best models achieved R² of 0.998 for thermal conductivity and viscosity across the experi -
+mental domain.
+v) The GA-driven model outperformed standard ANN methods, reducing mean relative error by 28.4% for 
+thermal conductivity and 51.4% for viscosity. Empirical correlations from nonlinear regression offer a sim-
+pler engineering alternative, with R2 values of 0.968 and 0.975.
+vi) This work presents a stable, surfactant-free hybrid nanofluid as an eco-friendly, cost-effective thermal man-
+agement solution. The GA-ANN framework advances predictive modelling of complex nanofluids, reducing 
+experimental effort and aiding the design of nanofluids for specific applications.
+vii) Despite promising results, the study was limited to specific concentration (0.01–0.2%) and temperature 
+(30–80 °C) ranges and did not consider particle size or surface chemistry. Future work should expand the 
+experimental domain, include additional physicochemical parameters, assess real-time heat transfer, explore 
+ternary systems such as ZnO-TiO2-SiC, and conduct techno-economic and life-cycle analyses to support 
+industrial adoption.
+This research enhances thermal management through the use of nanomaterials and AI. The new surfactant-free 
+hybrid nanofluids and the GA-ANN model show promise for automotive, electronics, renewable energy, and 
+industrial cooling applications, supporting sustainable energy efforts. It highlights the potential of hybrid nano -
+materials and computational methods for complex thermal energy issues.
+Acknowledgements The authors express gratitude to the University Malaysia Pahang Al-Sultan Abdullah (UMPSA), 
+Malaysia, for giving laboratory resources and financial support under the International Publication Research Grant No. 
+RDU223301.
+Author contributions Md. Munirul Hasan was involved in data curation, methodology, software, original draft preparation 
+and visualization; Md. Mustafzur Rahman took part in supervision, idea generation, conceptualization, reviewing, editing, 
+and validation; Suraya Abu Bakar was involved in supervision, reviewing, and editing; Devarajan Ramasany was reviewing 
+and editing.
+Funding The authors extend their appreciation to the University of Malaysia Pahang, Al-Sultan Abdullah, Malaysia, for 
+providing laboratory facilities and financial assistance. This research has been made possible through the support of the In-
+ternational Publication Research Grant No. RDU223301.
+Data availability Data can be provided upon request.
+Declarations
+Conflict of interest All authors declare that they have no conflict of interest.
+Ethical approval This declaration is not applicable.
+References
+ 1. Sandhya M, Ramasamy D, Sudhakar K, Kadirgama K, Harun WSW (2021) Ultrasonication an intensifying tool for 
+preparation of stable nanofluids and study the time influence on distinct properties of graphene nanofluids – a systematic 
+overview. Ultrason Sonochem 73:105479. https://doi.org/10.1016/j.ultsonch.2021.105479
+ 2. Sreekumar S, Ganguly A, Khalil S, Chakrabarti S, Hewitt N, Mondol JD, Shah N (2024) Thermo-optical characterization 
+of novel MXene/Carbon-dot hybrid nanofluid for heat transfer applications. J Clean Prod 434:140395.  h t t p s : / / d o i . o r g / 1 0 
+. 1 0 1 6 / j . j c l e p r o . 2 0 2 3 . 1 4 0 3 9 5       
+
+===== PDF PAGE 36 =====
+1 3
+36716 Page 36 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+ 3. Alfellag MA, Kamar HM, Abidin U, Kazi SN, Sidik NAC, Muhsan AS, Alawi OA (2024) Optimizing mixing ratio of 
+multi-walled carbon nanotubes and titanium dioxide: a green approach to high-performance hybrid nanofluids for heat 
+transfer. Powder Technol 436:119509. https://doi.org/10.1016/j.powtec.2024.119509
+ 4. Choi SUS (1995) Enhancing thermal conductivity of fluids with nanoparticles, in: Am Soc Mech Eng Fluids Eng Div 
+FED, pp 99–105
+ 5. Kursus M, Liew PJ, Che Sidik NA, Wang J (2022) Recent progress on the application of nanofluids and hybrid nanofluids 
+in machining: a comprehensive review. Int J Adv Manuf Technol 121:1455–1481.  h t t p s : / / d o i . o r g / 1 0 . 1 0 0 7 / s 0 0 1 7 0 - 0 2 2 - 0 
+9 4 0 9 - 4       
+ 6. Zhang J, Hu XG, Ji K, Zhao S, Liu D, Li B, Hou PX, Liu C, Liu L, Stranks SD, Cheng HM, Silva SRP, Zhang W (2024) 
+High-performance bifacial perovskite solar cells enabled by single-walled carbon nanotubes. Nat Commun 15:2245. 
+https://doi.org/10.1038/s41467-024-46620-1
+ 7. Prakasha DG, Sudharani MVVNL, Kumar KG, Chamkha AJ (2023) Comparative study of hybrid (graphene/magnesium 
+oxide) and ternary hybrid (graphene/zirconium oxide/magnesium oxide) nanomaterials over a moving plate. Int Commun 
+Heat Mass Transf 140:106557. https://doi.org/10.1016/j.icheatmasstransfer.2022.106557
+ 8. Kulandaivel S, Samykano M, Keng NW, Suraparaju SK, Rajamony RK (2024) Assessing thermophysical properties of 
+Nanostructured Cellulose Nano Crystal (CNC) and Graphene Nanoplatelets (GNP) Additives in Palm Oil-Based Heat 
+Transfer Fluid, in: E3S Web Conf., https://doi.org/10.1051/e3sconf/202448802003
+ 9. Bansal A, Sharma GP, Singh R (2023) Thermal properties of graphene oxide nanofluids. Indian J Phys 97:3003–3010. 
+https://doi.org/10.1007/s12648-023-02671-6
+ 10. Yildiz T, Wiechers P, Nirschl H, Gleiß M (2024) Direct recycling of carbon black and graphite from an aqueous anode 
+slurry of lithium-ion batteries by centrifugal fractionation. Next Energy 2:100082.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . n x e n e r . 2 0 2 3 
+. 1 0 0 0 8 2       
+ 11. Akbari A, Fazel SAA, Maghsoodi S, Kootenaei AS (2019) Thermo-physical and stability properties of raw and 
+functionalization of graphene nanoplatelets-based aqueous nanofluids. J Dispers Sci Technol 4:17–24.  h t t p s : / / d o i . o r g / 1 0 
+. 1 0 8 0 / 0 1 9 3 2 6 9 1 . 2 0 1 8 . 1 4 6 2 7 1 3       
+ 12. Tunioli F, Khaliha S, Mantovani S, Bianchi A, Kovtun A, Xia Z, Bafqi MSS, Okan BS, Marforio TD, Calvaresi M, 
+Palermo V , Navacchia ML, Melucci M (2023) Adsorption of emerging contaminants by graphene related materials and 
+their alginate composite hydrogels. J Environ Chem Eng 11:109566. https://doi.org/10.1016/j.jece.2023.109566
+ 13. Hossen A, Hasan M, Ahmed Y , Abd A, Yaacof N, Hon K (2025) Experimental and AI-driven enhancements in gas-
+phase photocatalytic CO 2 conversion over synthesized highly ordered anodic TiO 2 nanotubes. Energy Convers Manag 
+327:119544. https://doi.org/10.1016/j.enconman.2025.119544
+ 14. Zamany MS, Abad ATK (2024) Statistical Analysis and Accurate Prediction of Thermophysical Properties of ZnO-
+MWCNT/EG-Water Hybrid Nanofluid Using Several Artificial Intelligence Methods, Arab. J Sci Eng 50:1–10
+ 15. Ghadery-Fahliyany H, Ansari S, Mohammadi MR, Jafari S, Schaffie M, Ghaedi M, Hemmati-Sarapardeh A (2024) 
+Toward predicting thermal conductivity of hybrid nanofluids: application of a committee of robust neural networks, 
+theoretical, and empirical models. Powder Technol 437:119506. https://doi.org/10.1016/j.powtec.2024.119506
+ 16. Hasan MM, Rahman MM, Saiful Islam M, Chan WH, Yasser MA, Nomani Kabir M, Abu Bakar S, Ramasamy D (2024) 
+Artificial Neural Network Modeling for Predicting Thermal Conductivity of EG/Water-Based CNC Nanofluid for Engine 
+Cooling Using Different Activation Functions, Front. Heat Mass Transf 22:537–556.  h t t p s : / / d o i . o r g / 1 0 . 3 2 6 0 4 / f h m t . 2 0 2 4 
+. 0 4 7 4 2 8       
+ 17. Said Z, Jamei M, Sundar LS, Pandey AK, Allouhi A, Li C (2022) Thermophysical properties of water, water and ethylene 
+glycol mixture-based nanodiamond + Fe3O4 hybrid nanofluids: an experimental assessment and application of data-
+driven approaches. J Mol Liq 347:117944. https://doi.org/10.1016/j.molliq.2021.117944
+ 18. Borode A, Olubambi P (2024) Optimisation of artificial intelligence models and response surface methodology for 
+predicting viscosity and relative viscosity of GNP-alumina hybrid nanofluid: incorporating the effects of mixing ratio 
+and temperature. J Supercomput 80:4841–4869. https://doi.org/10.1007/s11227-023-05652-y
+ 19. Lin C, Zhou J, Lu Q, Khabaz MK, Andani AK, Al-Yasiri M, Pan G (2023) Thermal conductivity prediction of WO3-
+CuO-Ag (35:40:25)/water hybrid ternary nanofluid with Artificial Neural Network and back-propagation algorithm. 
+Mater Today Commun 36:106807. https://doi.org/10.1016/j.mtcomm.2023.106807
+ 20. Adun H, Wole-Osho I, Okonkwo EC, Ruwa T, Agwa T, Onochie K, Ukwu H, Bamisile O, Dagbasi M (2022) Estimation 
+of thermophysical property of hybrid nanofluids for solar Thermal applications: Implementation of novel Optimizable 
+Gaussian Process regression (O-GPR) approach for Viscosity prediction. Neural Comput Appl 34:11233–11254.  h t t p s : / / 
+d o i . o r g / 1 0 . 1 0 0 7 / s 0 0 5 2 1 - 0 2 2 - 0 7 0 3 8 - 2       
+ 21. Hashmi AF, Ayaz M, Bilal A, Shariq M, Baqi A (2023) GA-based hybrid ANN optimization approach for the prediction 
+of compressive strength of high-volume fly ash concrete mixes. Asian J Civ Eng 24:1115–1128.  h t t p s : / / d o i . o r g / 1 0 . 1 0 0 7 / 
+s 4 2 1 0 7 - 0 2 2 - 0 0 5 5 7 - 2       
+ 22. Garud KS, Jayaraj S, Lee MY (2021) A review on modeling of solar photovoltaic systems using artificial neural networks, 
+fuzzy logic, genetic algorithm and hybrid models. Int J Energy Res 45:6–35. https://doi.org/10.1002/er.5608
+
+===== PDF PAGE 37 =====
+1 3
+37Page 37 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+ 23. Li B, Chi M, Gao M, Wang L, Xu J, Zeng X (2024) Factor analysis and GA-BP-ANN prediction of nitrogen diffusion 
+behavior in underground laboratory under ventilation conditions. Sci Rep 14:13427.  h t t p s : / / d o i . o r g / 1 0 . 1 0 3 8 / s 4 1 5 9 8 - 0 2 
+4 - 6 3 8 2 9 - 8       
+ 24. Chi M, Zeng X, Gao Y , Li W, Jiang H, Sun R (2024) The erosion rate prediction for the elbow in shale gas gathering and 
+transportation system: RSM and GA-BP-ANN modeling. Powder Technol 435:119429.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . p o w t e c 
+. 2 0 2 4 . 1 1 9 4 2 9       
+ 25. Yadav A, Chithaluru P, Singh A, Albahar MA, Jurcut A, Álvarez RM, Mojjada RK, Joshi D (2022) Suspended sediment 
+yield forecasting with single and multi-objective optimization using hybrid artificial intelligence models. Mathematics 
+10:4263. https://doi.org/10.3390/math10224263
+ 26. AbuShanab Y , Al-Ammari WA, Gowid S, Sleiti AK (2023) Accurate prediction of dynamic viscosity of polyalpha-olefin 
+boron nitride nanofluids using machine learning. Heliyon 9:e16716. https://doi.org/10.1016/j.heliyon.2023.e16716
+ 27. Ahmadi MH, Mohseni-Gharyehsafa B, Ghazvini M, Goodarzi M, Jilte RD, Kumar R (2020) Comparing various machine 
+learning approaches in modeling the dynamic viscosity of CuO/water nanofluid. J Therm Anal Calorim 139:2585–2599. 
+https://doi.org/10.1007/s10973-019-08762-z
+ 28. Moolya R, Rajendra P, Moolya S, Kulal S (2025) Evaluating machine learning models for predicting thermal conductivity 
+of Al2O3 nanofluids. J Therm Anal Calorim 150:13673–13685. https://doi.org/10.1007/s10973-025-14567-0
+ 29. Al Mahmud S, Noor WI, Khan MR, Ismail AF (2025) Artificial neural network for numerical uncertainty quantification 
+of water-Al2O3 nanofluids heat transfer enhancement simulation using CFD multiphase mixture model. Numer Heat 
+Transfer B Fundam 86:1707–1729. https://doi.org/10.1080/10407790.2024.2320719
+ 30. Nasirzadehroshenin F, pourmozafari A, Maddah H, Sakhaeinia H (2020) Experimental and Theoretical Investigation 
+of Thermophysical Properties of Synthesized Hybrid Nanofluid Developed by Modeling Approaches. Arab J Sci Eng 
+45:7205–7218. https://doi.org/10.1007/s13369-020-04352-6
+ 31. Sharma P, Ramesh K, Parameshwaran R, Deshmukh SS (2022) Thermal conductivity prediction of titania-water 
+nanofluid: A case study using different machine learning algorithms. Case Stud Therm Eng 30:101658.  h t t p s : / / d o i . o r g / 1 
+0 . 1 0 1 6 / j . c s i t e . 2 0 2 1 . 1 0 1 6 5 8       
+ 32. Zhu T, Mei X, Zhang J, Li C (2024) Prediction of thermal conductivity of EG–Al2O3 nanofluids using six supervised 
+machine learning models. Appl Sci (Basel) 14:6264. https://doi.org/10.3390/app14146264
+ 33. Sandhya M, Ramasamy D, Kadirgama K, Harun WSW, Saidur R (2023) Thermo-physical properties prediction of 
+carbon-based magnetic nanofluids based on an artificial neural network. Int J Thermophys 44:55.  h t t p s : / / d o i . o r g / 1 0 . 1 0 0 
+7 / s 1 0 7 6 5 - 0 2 3 - 0 3 1 6 2 - w       
+ 34. Ramadhan AI, Azmi WH, Mamat R (2021) Experimental investigation of thermo-physical properties of tri-hybrid 
+nanoparticles in water-ethylene glycol mixture. Walailak J Sci Technol 18:9335–9315.  h t t p s : / / d o i . o r g / 1 0 . 4 8 0 4 8 / w j s t . 2 0 2 
+1 . 9 3 3 5       
+ 35. Zhao X, Wang X, Dong X, Wang Y , Zhao Y , Sheng B, Gong M (2024) A new transient hot-wire thermal conductivity 
+apparatus and measurements of helium at temperatures from 20 K to 300 K. J Chem Thermodyn 192:107233.  h t t p s : / / d o 
+i . o r g / 1 0 . 1 0 1 6 / j . j c t . 2 0 2 3 . 1 0 7 2 3 3       
+ 36. Minakov A V , Pryazhnikov MI, Mikhienkova EI, V oronenkova YO (2023) Systematic experimental study of the 
+temperature dependence of viscosity and rheological behavior of water-based drilling fluids with nano-additives. 
+Petroleum 9:534–544. https://doi.org/10.1016/j.petlm.2022.03.001
+ 37. Okwu MO, Tartibu LK (2021) Artificial Neural Network. Stud Comput Intell 133–145.  h t t p s : / / d o i . o r g / 1 0 . 1 0 0 7 / 9 7 8 - 3 - 0 
+3 0 - 6 1 1 1 1 - 8 _ 1 4       
+ 38. Ding S, Li H, Su C, Yu J, Jin F (2013) Evolutionary artificial neural networks: a review. Artif Intell Rev 39:251–260. 
+https://doi.org/10.1007/s10462-011-9270-6
+ 39. Pare A, Ghosh SK (2021) A unique thermal conductivity model (ANN) for nanofluid based on experimental study. 
+Powder Technol 337:429–438. https://doi.org/10.1016/j.powtec.2020.09.011
+ 40. Kurucan M, Özbaltan M, Yetgin Z, Alkaya A (2024) Applications of artificial neural network based battery management 
+systems: A literature review. Renew Sustain Energy Rev 192:114262. https://doi.org/10.1016/j.rser.2023.114262
+ 41. Yaghoubi E, Yaghoubi E, Khamees A, Vakili AH (2024) A systematic review and meta-analysis of artificial neural 
+network, machine learning, deep learning, and ensemble learning approaches in field of geotechnical engineering. 
+Springer Lond. https://doi.org/10.1007/s00521-024-09893-7
+ 42. Lv C, Xing Y , Zhang J, Na X, Li Y , Liu T, Cao D, Wang FY (2018) Levenberg-marquardt backpropagation training of 
+multilayer neural networks for state estimation of a safety-critical cyber-physical system. IEEE Trans Ind Inf 14:3436–
+3446. https://doi.org/10.1109/TII.2017.2777460
+ 43. Li B, Chi M, Gao M, Wang L, Xu J, Zeng X (2024) Factor analysis and GA–BP–ANN prediction of nitrogen diffusion 
+behavior in underground laboratory under ventilation conditions. Sci Rep 14:13427
+ 44. Holland JH (1992) Genetic Algorithms, Sci Am 267 (1992) 66–73
+ 45. Whitley D (1994) A genetic algorithm tutorial. Stat Comput. https://doi.org/10.1007/BF00175354
+ 46. Houck CR, Joines JA, Kay MG (1995) A Genetic Algorithm for Function Optimization: A Matlab Implementation. Ncsu-
+Ie Tr 95:1–10
+
+===== PDF PAGE 38 =====
+1 3
+38716 Page 38 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+ 47. Deb K, Pratap A, Agarwal S, Meyarivan T (2002) A fast and elitist multiobjective genetic algorithm: NSGA-II. IEEE 
+Trans Evol Comput 6:182–197. https://doi.org/10.1109/4235.996017
+ 48. Luíza da Costa N, Dias de Lima M, Barbosa R (2021) Evaluation of feature selection methods based on artificial neural 
+network weights. Expert Syst Appl 168:114312. https://doi.org/10.1016/j.eswa.2020.114312
+ 49. Liu X, Qin J, Zhao K, Featherston CA, Kennedy D, Jing Y , Yang G (2023) Design optimization of laminated composite 
+structures using artificial neural network and genetic algorithm. Compos Struct 305:116500.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . c o 
+m p s t r u c t . 2 0 2 2 . 1 1 6 5 0 0       
+ 50. Runge J, Zmeureanu R (2019) Forecasting energy use in buildings using artificial neural networks: a review. Energies 
+12:3254. https://doi.org/10.3390/en12173254
+ 51. Sahin F, Genc O, Gökcek M, Çolak AB (2023) From experimental data to predictions: artificial intelligence supported 
+new mathematical approaches for estimating thermal conductivity, viscosity and zeta potential in Fe3O4-water magnetic 
+nanofluids. Powder Technol 430:118974. https://doi.org/10.1016/j.powtec.2023.118974
+ 52. Hasan M, Rahman M, Abu S, Muhammad B, Kabir N (2025) Performance evaluation of various training functions using 
+ANN to predict the thermal conductivity of EG / water – based GNP / CNC hybrid nanofluid for heat transfer application. 
+J Therm Anal Calorim 150:1907–1932. https://doi.org/10.1007/s10973-024-13873-3
+ 53. Ullah M, Hasan MM, Roslan R, Jose R, Misnon II (2024) Sustainable graphitic carbon derived from oil palm frond 
+biomass for supercapacitor application: effect of redox additive and artificial neural network-based modeling approach. 
+J Electroanal Chem 971:118570. https://doi.org/10.1016/j.jelechem.2024.118570
+ 54. Bakhtiari R, Kamkari B, Afrand M, Abdollahi A (2021) Preparation of stable TiO2-Graphene/Water hybrid nanofluids 
+and development of a new correlation for thermal conductivity. Powder Technol 385:466–477.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . 
+p o w t e c . 2 0 2 1 . 0 3 . 0 1 0       
+ 55. Rehman A, Yaqub S, Ali M, Nazir H, Shahzad N, Shakir S, Liaquat R, Said Z (2023) Effect of surfactants on the stability 
+and thermophysical properties of Al2O3 + TiO2 hybrid nanofluids. J Mol Liq 391:123350
+ 56. Gosavi GD, Sivamurugan P, Shende MD, Pingale AD (2023) Recent developments of sonication process in stability and 
+efficiency of nanofluid-based coolants: A review. Mater Today Proc. https://doi.org/10.1016/j.matpr.2023.07.068
+ 57. Zhao HYHR, Ding JH, Ji D, Xu BY (2019) Highly thermoconductive fluid with aqueous compatible graphene. Mater 
+Res Express 5:055014
+ 58. Mahbubul IM, Saidur R, Amalina MA, Niza ME (2016) Influence of ultrasonication duration on rheological properties 
+of nanofluid: An experimental study with alumina-water nanofluid. Int Commun Heat Mass Transf 76:33–40.  h t t p s : / / d o i 
+. o r g / 1 0 . 1 0 1 6 / j . i c h e a t m a s s t r a n s f e r . 2 0 1 6 . 0 5 . 0 1 4       
+ 59. Shafiq A, Iqbal MA, Sindhu TN, Iqbal H, Iqbal H (2025) Synthesis, thermophysical behavior, and environmental 
+implications of nanofluids: A comprehensive review. Results Eng 28:107763. https://doi.org/10.1016/j.rineng.2025.107763
+ 60. Lin H, Jian Q, Bai X, Li D, Huang Z, Huang W, Feng S, Cheng Z (2023) Recent advances in thermal conductivity and 
+thermal applications of graphene and its derivatives nanofluids. Appl Therm Eng 218:119176.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . 
+a p p l t h e r m a l e n g . 2 0 2 2 . 1 1 9 1 7 6       
+ 61. Urmi WT, Rahman MM, Kadirgama K, Ramasamy D, Maleque MA (2020) An overview on synthesis, stability, 
+opportunities and challenges of nanofluids. Mater Today Proc 41:30–37. https://doi.org/10.1016/j.matpr.2020.10.998
+ 62. Kiani MMMR, Meshksar M (2022) Preparation, stability, and characterization of nanofluids. Nanofluids Mass Transf. pp 
+21–38
+ 63. Amiri A, Sadri R, Shanbedi M, Ahmadi G, Chew BT, Kazi SN, Dahari M (2015) Performance dependence of thermosyphon 
+on the functionalization approaches: an experimental study on thermo-physical properties of graphene nanoplatelet-
+based water nanofluids. Energy Convers Manag 92:322–330. https://doi.org/10.1016/j.enconman.2014.12.051
+ 64. Mahbubul IM, Saidur R, Amalina MA (2013) Thermal conductivity, viscosity and density of R141b refrigerant based 
+nanofluid. Procedia Eng 56:310–315. https://doi.org/10.1016/j.proeng.2013.03.124
+ 65. Xing M, Yu J, Wang R (2015) Experimental study on the thermal conductivity enhancement of water based nanofluids 
+using different types of carbon nanotubes. Int J Heat Mass Transf 88:609–616.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . i j h e a t m a s s t r a n s f 
+e r . 2 0 1 5 . 0 5 . 0 0 5       
+ 66. Kedzior SA, Marway HS, Cranston ED (2017) Tailoring Cellulose Nanocrystal and Surfactant Behavior in Miniemulsion 
+Polymerization. Macromolecules 50:2645–2655. https://doi.org/10.1021/acs.macromol.7b00516
+ 67. Alklaibi AM, Mouli KVVC, Sundar LS (2024) Heat transfer, and friction factor of Fe3O4–SiO2/Water hybrid nanofluids 
+in a plate heat exchanger: Experimental and ANN predictions. Int J Therm Sci 195:108608.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . i j t h 
+e r m a l s c i . 2 0 2 3 . 1 0 8 6 0 8       
+ 68. Wang Y , Al-Saaidi HAI, Kong M, Alvarado JL (2018) Thermophysical performance of graphene based aqueous 
+nanofluids. Int J Heat Mass Transf 119:408–417. https://doi.org/10.1016/j.ijheatmasstransfer.2017.11.019
+ 69. Wang J, Yang X, Klemeš JJ, Tian K, Ma T, Sunden B (2023) A review on nanofluid stability: preparation and application. 
+Renew Sustain Energy Rev 188:113854. https://doi.org/10.1016/j.rser.2023.113854
+ 70. Urmi WT, Rahman MM, Kadirgama K, Ramasamy D, Samykano M, Ali MY (2023) Exploring surfactant-enhanced 
+stability and thermophysical characteristics of water-ethylene glycol-based Al2O3-TiO2 hybrid nanofluids. WSEAS 
+Trans Heat Mass Transf 18:195–206. https://doi.org/10.37394/232012.2023.18.16
+
+===== PDF PAGE 39 =====
+1 3
+39Page 39 of 40 716
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+ 71. Zhu D, Wang L, Yu W, Xie H (2018) Intriguingly high thermal conductivity increment for CuO nanowires contained 
+nanofluids with low viscosity. Sci Rep 8:1–12. https://doi.org/10.1038/s41598-018-23174-z
+ 72. Gupta M, Singh V , Kumar R, Said Z (2017) A review on thermophysical properties of nanofluids and heat transfer 
+applications. Renew Sustain Energy Rev 74:638–670. https://doi.org/10.1016/j.rser.2017.02.073
+ 73. Ali N, Bahman AM, Aljuwayhel NF, Ebrahim SA, Mukherjee S, Alsayegh A (2021) Carbon-based nanofluids and their 
+advances towards heat transfer applications—a review. Nanomaterials 11:1628. https://doi.org/10.3390/nano11061628
+ 74. Abdolkarimi-Mahabadi M, Bayat A, Mohammadi A (2021) Use of UV-Vis Spectrophotometry for Characterization of 
+Carbon Nanostructures: a Review. Theor Exp Chem 57:191–198. https://doi.org/10.1007/s11237-021-09687-1
+ 75. (2024) Colloid stability over months of highly crystalline high-pressure high-temperature hydrogenated nanodiamonds 
+in water, Carbon N Y 438–449
+ 76. Yang WX, Klemeš JJ, Tian K, Ma T, Sunde B (2023) A review on nanofluid stability: preparation and application, Renew. 
+Sustain Energy Rev 188:113854. https://doi.org/10.1016/j.rser.2023.113854
+ 77. Clogston APJD (2010) Zeta potential measurement. Characterization of nanoparticles intended for drug delivery. Charact. 
+Nanoparticles Intend. Drug Deliv. pp 63–70
+ 78. Honary S, Zahir F (2013) Effect of zeta potential on the properties of nano-drug delivery systems - A review (Part 1). 
+Trop J Pharm Res 12:255–264. https://doi.org/10.4314/tjpr.v12i2.19
+ 79. Rahman MA, Hasnain SMM, Pandey S, Tapalova A, Akylbekov N, Zairov R (2024) Review on Nanofluids: Preparation, 
+Properties, Stability, and Thermal Performance Augmentation in Heat Transfer Applications. ACS Omega 9:32328–
+32349. https://doi.org/10.1021/acsomega.4c03279
+ 80. Ashrae AGAH (2009) American society of Heating. Refrigerating and Air-Conditioning Engineers, 1
+ 81. Shi L, Zhang S, Arshad A, Hu Y , He Y , Yan Y (2021) Thermo-physical properties prediction of carbon-based magnetic 
+nanofluids based on an artificial neural network. Renew Sustain Energy Rev 149:111341.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . r s e r . 2 
+0 2 1 . 1 1 1 3 4 1       
+ 82. Kanti PK, Maiya MP (2022) Rheology and thermal conductivity of graphene oxide and coal fly ash hybrid nanofluids 
+for various particle mixture ratios for heat transfer applications: Experimental study. Int Commun Heat Mass Transf 
+138:106408. https://doi.org/10.1016/j.icheatmasstransfer.2022.106408
+ 83. Asadi A, Asadi M, Rezaniakolaei A, Rosendahl LA, Afrand M, Wongwises S (2018) Heat transfer efficiency of Al2O3-
+MWCNT/thermal oil hybrid nanofluid as a cooling fluid in thermal and energy management applications: an experimental 
+and theoretical investigation. Int J Heat Mass Transf 117:474–486.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . i j h e a t m a s s t r a n s f e r . 2 0 1 7 . 1 0 . 0 
+3 6       
+ 84. Sepehrnia M, Mohammadzadeh K, Hemmati Rozbahani M, Ghiasi MJ, Amani M (2024) Experimental study, prediction 
+modeling, sensitivity analysis, and optimization of rheological behavior and dynamic viscosity of 5W30 engine oil based 
+SiO2/MWCNT hybrid nanofluid. Ain Shams Eng J 15:102257. https://doi.org/10.1016/j.asej.2023.102257
+ 85. Borode A, Olubambi P (2024) Optimisation of artificial intelligence models and response surface methodology for 
+predicting viscosity and relative viscosity of GNP-alumina hybrid nanofluid: incorporating the effects of mixing ratio 
+and temperature. J Supercomput 80:4841–4869. https://doi.org/10.1007/s11227-023-05652-y
+ 86. Basu A, Saha A, Banerjee S, Roy PC, Kundu B (2024) A Review of Artificial Intelligence Methods in Predicting 
+Thermophysical Properties of Nanofluids for Heat Transfer Applications. Energies 17:1351
+ 87. Kunal Sandip Garud M-YL, Jayaraj S (2021) A review on modeling of solar photovoltaic systems using artificial neural 
+networks, fuzzy logic, genetic algorithm and hybrid models. Int J Energy Res 45:6–35
+ 88. Pare A, Ghosh SK (2021) A unique thermal conductivity model (ANN) for nanofluid based on experimental study. 
+Powder Technol 377:429–438. https://doi.org/10.1016/j.powtec.2020.09.011
+ 89. Ahmed R, Rangaiah GP, Mahadzir S, Mirjalili S, Hassan MH, Kamel S (2023) Memory, evolutionary operator, and local 
+search based improved Grey Wolf Optimizer with linear population size reduction technique. Knowledge-Based Syst 
+264:110297. https://doi.org/10.1016/j.knosys.2023.110297
+ 90. Pandey K, Kumar S, Malik A, Kuriqi A (2020) Artificial neural network optimized with a genetic algorithm for seasonal 
+groundwater table depth prediction in Uttar Pradesh, India. Sustainability 12:8932. https://doi.org/10.3390/su12218932
+ 91. Houck MKCR, Joines J (1995) A genetic algorithm for function optimization: a Matlab implementation. Ncsu-Ie Tr 95:1
+ 92. Zhang Y , Pan G, Chen B, Han J, Zhao Y , Zhang C (2020) Short-term wind speed prediction model based on GA-ANN 
+improved by VMD. Renew Energy 156:1373–1388. https://doi.org/10.1016/j.renene.2019.12.047
+ 93. Holland J, Alghorithm G (1992) Sci Am 267:66–73
+ 94. Whitley D (1994) A genetic algorithm tutorial. Stat Comput 4:65–85
+ 95. Zamany MS, Abad ATK (2024) Statistical analysis and accurate prediction of thermophysical properties of ZnO-
+MWCNT/EG-water hybrid nanofluid using several artificial intelligence methods. Arab J Sci Eng 50:4167–4176.  h t t p s : / 
+/ d o i . o r g / 1 0 . 1 0 0 7 / s 1 3 3 6 9 - 0 2 4 - 0 9 5 6 5 - 7       
+ 96. Hasan MM, Rahman MM, Rahman MA, Bakar SA, Islam MS, Khalifa T (2024) Artificial intelligent model to enhance 
+thermal glycol-based hybrid nanofluid for automotive radiator. IEEE Access 21:179164–179189.  h t t p s : / / d o i . o r g / 1 0 . 1 1 0 9 
+/ A C C E S S . 2 0 2 4 . 3 4 9 6 7 8 6       
+
+===== PDF PAGE 40 =====
+1 3
+40716 Page 40 of 40
+Neural Computing and Applications (2026) 38:716
+https://doi.org/10.1007/s00521-026-12438-9
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional 
+affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under a publishing agree-
+ment with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is 
+solely governed by the terms of such publishing agreement and applicable law.
+Authors and Affiliations
+Md. Munirul Hasan1 · Md Mustafizur Rahman2  · Suraya Abu Bakar1 · 
+Devarajan Ramasany2
+ Md Mustafizur Rahman
+mustafizur@umpsa.edu.my
+1 Faculty of Computing, Universiti Malaysia Pahang Al-Sultan Abdullah, 26600 Pekan, Pahang, Malaysia
+2 Faculty of Mechanical and Automotive Engineering Technology, Universiti Malaysia Pahang Al-Sultan Abdullah, 
+26600 Pekan, Pahang, Malaysia

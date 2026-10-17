@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-17",
+  "checks": {
+    "parent_database_unchanged": true,
+    "parent_modeling_files_unchanged": true,
+    "137_original_source_files_unchanged": true,
+    "candidate_input_snapshots_unchanged": true,
+    "integrity": true,
+    "foreign_keys": true,
+    "ready_view_still_empty": true,
+    "no_research_run_directory": true,
+    "raw_records_unchanged": true,
+    "papers_unchanged": true,
+    "source_files_unchanged": true,
+    "ingestion_sources_unchanged": true,
+    "materials_unchanged": true,
+    "cycling_endpoints_unchanged": true,
+    "field_evidence_unchanged": true,
+    "issues_old_rows_preserved": true,
+    "material_observations_old_rows_preserved": true,
+    "all_curated_changes_have_old_new_and_reason": true,
+    "review_evidence_hashes_match": true,
+    "python_syntax": true,
+    "shared_runtime_still_has_no_sklearn_or_xgboost": true,
+    "final_synthetic_interface_suite_passed": true,
+    "known_secondary_reuse_group_unchanged": true
+  },
+  "all_passed": true,
+  "counts": {
+    "papers": 126,
+    "source_files": 137,
+    "materials": 67,
+    "cycling_tests": 83,
+    "cycling_endpoints": 89,
+    "material_observations": 75,
+    "field_evidence": 2492,
+    "issues": 238,
+    "admissions": 89,
+    "review_events": 80,
+    "revision_changes": 69,
+    "training_ready": 0
+  },
+  "all_candidates": {
+    "endpoints": 89,
+    "provisional_materials": 67,
+    "papers": 51,
+    "study_groups": 51
+  },
+  "tiers": {
+    "screening_queue_not_admission": {
+      "endpoints": 12,
+      "provisional_materials": 10,
+      "papers": 10,
+      "study_groups": 10
+    },
+    "all_required_conditions_paired": {
+      "endpoints": 10,
+      "provisional_materials": 8,
+      "papers": 8,
+      "study_groups": 8
+    },
+    "plus_BET_paired": {
+      "endpoints": 10,
+      "provisional_materials": 8,
+      "papers": 8,
+      "study_groups": 8
+    },
+    "plus_BET_and_pore_paired": {
+      "endpoints": 7,
+      "provisional_materials": 5,
+      "papers": 5,
+      "study_groups": 5
+    }
+  },
+  "review_outcomes": {
+    "conditional_hold": 8,
+    "frozen_pending_clarification": 4
+  },
+  "feature_coverage_pairing_not_final_admission": {
+    "cycle_count": {
+      "paired_endpoints": 12,
+      "queue_endpoints": 12,
+      "paired_materials": 10,
+      "paired_papers": 10,
+      "explicit_batch1_verified_endpoints": 0
+    },
+    "current_density_A_g": {
+      "paired_endpoints": 11,
+      "queue_endpoints": 12,
+      "paired_materials": 9,
+      "paired_papers": 9,
+      "explicit_batch1_verified_endpoints": 2
+    },
+    "electrolyte": {
+      "paired_endpoints": 12,
+      "queue_endpoints": 12,
+      "paired_materials": 10,
+      "paired_papers": 10,
+      "explicit_batch1_verified_endpoints": 1
+    },
+    "concentration_value": {
+      "paired_endpoints": 12,
+      "queue_endpoints": 12,
+      "paired_materials": 10,
+      "paired_papers": 10,
+      "explicit_batch1_verified_endpoints": 1
+    },
+    "concentration_unit": {
+      "paired_endpoints": 12,
+      "queue_endpoints": 12,
+      "paired_materials": 10,
+      "paired_papers": 10,
+      "explicit_batch1_verified_endpoints": 1
+    },
+    "voltage_lower_V": {
+      "paired_endpoints": 11,
+      "queue_endpoints": 12,
+      "paired_materials": 9,
+      "paired_papers": 9,
+      "explicit_batch1_verified_endpoints": 1
+    },
+    "voltage_upper_V": {
+      "paired_endpoints": 11,
+      "queue_endpoints": 12,
+      "paired_materials": 9,
+      "paired_papers": 9,
+      "explicit_batch1_verified_endpoints": 1
+    },
+    "BET_m2_g": {
+      "paired_endpoints": 12,
+      "queue_endpoints": 12,
+      "paired_materials": 10,
+      "paired_papers": 10,
+      "explicit_batch1_verified_endpoints": 4
+    },
+    "total_pore_volume_cm3_g": {
+      "paired_endpoints": 8,
+      "queue_endpoints": 12,
+      "paired_materials": 6,
+      "paired_papers": 6,
+      "explicit_batch1_verified_endpoints": 3
+    },
+    "N_at_pct": {
+      "paired_endpoints": 4,
+      "queue_endpoints": 12,
+      "paired_materials": 3,
+      "paired_papers": 3,
+      "explicit_batch1_verified_endpoints": 3
+    },
+    "O_at_pct": {
+      "paired_endpoints": 5,
+      "queue_endpoints": 12,
+      "paired_materials": 4,
+      "paired_papers": 4,
+      "explicit_batch1_verified_endpoints": 3
+    }
+  },
+  "synthetic_checks": {
+    "injected_failure": {
+      "status": "failed",
+      "synthetic": true,
+      "exception": "RuntimeError",
+      "message": "synthetic_injected_failure",
+      "fit_calls": 0
+    },
+    "nested_a": {
+      "status": "completed",
+      "synthetic": true,
+      "research_training_performed": false,
+      "fit_calls": 42,
+      "convergence_warnings": 0
+    },
+    "nested_b": {
+      "status": "completed",
+      "synthetic": true,
+      "research_training_performed": false,
+      "fit_calls": 42,
+      "convergence_warnings": 0
+    },
+    "tiny_constant_empty_BET": {
+      "status": "completed",
+      "synthetic": true,
+      "research_training_performed": false,
+      "fit_calls": 10,
+      "convergence_warnings": 0
+    }
+  },
+  "database_sha256": "35d4bbf895501ec306ea215b40f865cc5d1da4e7959173d73e279dd3eaaa22fa",
+  "research_training_performed": false,
+  "limitations": [
+    "Paired coverage is not final verified training coverage.",
+    "Twelve endpoints are ten provisional materials and ten papers.",
+    "No cross-paper independence clearance; no universal silicon threshold or sample adequacy threshold.",
+    "No longitudinal experiment history is available for a temporal drift assessment.",
+    "No research model comparison or winner is available."
+  ]
+}

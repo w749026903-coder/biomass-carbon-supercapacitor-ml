@@ -1,0 +1,903 @@
+
+--- PDF页 1 ---
+RESEARCH Open Access
+Discover ChemistryPathan et al. Discover Chemistry           (2026) 3:390 
+https://doi.org/10.1007/s44371-026-00858-4
+Solvothermal synthesis of nickel cobalt 
+sulfide nanostructures for high-performance 
+electrochemical supercapacitors an integrated 
+experimental, computational and machine 
+learning approach
+Suraj D. Pathan1*, Bismilla B. Mulla2, Mahendra R. Waikul1 and Nanaji G. Durge1
+  * C o r r e s p o n d e n c e :  
+Suraj D. Pathan
+surajpathan77@gmail.com
+1Department of Physics, Chikitsak 
+Samuhas Sir Sitaram and Lady 
+Shantabai Patkar College of Arts 
+and Science and V. P . Varde College 
+of Commerce and Economics, 
+Mumbai, MS, India
+2Shri. Annasaheb Dange Arts, 
+Commerce and Science College, 
+Hatknangale, Kolhapur, MS, India
+© The Author(s) 2026. Open Access  This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate 
+credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. 
+You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party 
+material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material 
+is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted 
+use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit  h t t p :  / / c r e a  t i v e c  o m m o  n s . o r g / l i c e n s 
+e s / b y - n c - n d / 4 . 0 /     .    
+Abstract
+This complete investigation presents a combined experimental and computational 
+Approach to emergent high-performance nickel cobalt sulfide (NiCo 2S4) 
+nanostructures for Supercapacitor applications. NiCo 2S4 samples were synthesised 
+via a two-step solvothermal Method at temperatures of 120–180 °C (designated 
+NCS1-NCS4) and scientifically characterised using XRD, BET, SEM, XPS and FTIR. 
+The optimised NCS4 electrode exhibited a notable specific capacitance of 920.04 
+Fg− 1 from cyclic voltammetry and 375 Fg − 1 from galvanostatic Charge-discharge 
+measurements. DFT calculations revealed that the (111) surface has the lowest 
+surface energy (0.85 Jm − 2) and the highest electrochemical activity, while nickel 
+vacancies have the lowest formation energy (1.8 eV) under Ni-poor conditions. ML 
+models achieved R 2 = 0.97 in predicting capacitance, with synthesis temperature 
+identified as the most critical parameter (importance: 0.28). A Comparative analysis 
+of simulated and experimental results showed excellent agreement (average 
+deviation < 5%). The symmetric supercapacitor device achieved an exceptional 
+specific capacitance of 1234.89 Fg − 1, an energy density of 42.9 Whkg − 1, a power 
+density of 735 Wkg − 1, and 82.82% capacitance retention after 5000 cycles. Pre-
+fabrication analysis indicated optimal mass loading of 1.5 mg cm − 2 and electrode 
+thickness of 200 nm for device development. This integrated methodology provides 
+a comprehensive framework for the rational design of transition metal sulfide 
+electrodes, with applications in electric automobiles, portable semiconductor 
+technology, renewable energy storage, and industrial power systems.
+Keywords Nickel cobalt sulfide, Solvothermal synthesis, Supercapacitor, DFT 
+simulation, Machine learning, Energy storage, Device fabrication
+
+--- PDF页 2 ---
+Page 2 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+  1 Introduction
+We need better ways to store energy because we use a lot of portable devices, renewable 
+energy and electric cars these days. Even though we have many renewable energy sys -
+tems, they still have some problems that stop them from being used widely. That’s why 
+we urgently need to find better ways to save energy when we have it and use it when we 
+need it. Many things we use every day, like cell phones, walkie-talkies and electric cars, 
+rely on devices that store electrical energy such as batteries, supercapacitors and fuel 
+cells. Supercapacitors, which work like fast-charging batteries are getting a lot of atten -
+tion because they can charge and discharge quickly, just like lithium-ion batteries [ 1, 2]. 
+The exponential growth in global energy consumption, combined with the urgent tran -
+sition toward sustainable energy systems has catalysed intensive research in advanced 
+energy storage technologies [ 3]. Supercapacitors have emerged as promising candidates 
+due to their unique combination of high-power density, rapid charge-discharge capabil -
+ity and exceptional cycling stability [ 4]. Unlike batteries that store energy through bulk 
+Faradaic reactions, enabling superior power delivery [5].
+On the other hand, conducting polymers like Polyaniline (PANI), Polypyrrole, Poly -
+thiophene, etc. as well as binary transition metal oxides like RGO.Ag@Co 3O4 [6], Sb2O3 
+[7], NiO, MnO2, Co3O4, SnO2 [8], Ni(OH)2@NiF [9] and others show promise for super-
+capacitors. A new group of ternary metal systems of semiconductors, such as NiFe 2O4, 
+NiCuS4, NiCo 2S4, CuCo 2S4, MnCo 2O4, etc. hold great potential for achieving high 
+energy density with good power density and stability [ 10] Among ternary semiconduct -
+ing materials, sulphur-containing compounds play a significant role. Various compounds 
+based on Sulphur, including NiS2 [11], CoxS [12], NiCo2S4 [13], NiSSe [14] and CuS [15] 
+are under investigation for supercapacitor applications. By integrating these materials 
+with other conductive additives, such as metals or carbon-based materials, their per -
+formance can be further enhanced. The conductive large surface areas and excellent 
+electrical conductivity are in gerent characteristics of metal sulfide nanostructures. it 
+Graphical Abstract
+
+
+--- PDF页 3 ---
+Page 3 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+is anticipated that they will facilitate richer redox reactions compared to comparable 
+single-component sulfides due to contributions from various ions, including nickel and 
+cobalt ions [16]. 
+The two comparable oxides have a single-component structure. By incorporating 
+Transition Metal Sulfide with other suitable materials, we can achieve many comple -
+mentary properties, including a large number of readily accessible electroactive sites and 
+high electron diffusion efficiency. Moreover, the intricate architecture of NiCo 2S4 may 
+lead to good high-rate performance, thanks to various diffusion-favoured nanostruc -
+tures. Notably, NiCo2S4 exhibited an electrical conductivity greater than NiCo 2O4 [17], 
+despite NiCo2O4 already having an electrical conductivity at least two orders of magni -
+tude higher than nickel oxides or cobalt oxides [ 18]. NiCo2S4 stands out as a superior 
+electroactive material in this regard. While NiS, CoS, NiCo 2O4 and many other materi -
+als have been researched and reported on NiCo 2S4 has received relatively little atten -
+tion to date. Among the various thin film deposition techniques, chemical methods hold 
+promise due to their versatility in depositing a wide range of elements and compounds 
+at low temperatures, along with their cost-effectiveness for large-scale industrial appli -
+cation [19]. Techniques like spin coating and solvothermal-hydrothermal methods are 
+widely used due to their simplicity, economy and ease of use. Therefore, develop NiCo2S4 
+electrodes using soft chemical processes and investigate their physicochemical charac -
+teristics for potential supercapacitor applications [ 20]. By elucidating the intricacies of 
+NiCo2S4-based energy storage systems, the ongoing efforts in advancing energy storage 
+technology and ultimately facilitate the development of more reliable and sustainable 
+energy storage solutions for diverse applications.
+While experimental optimization remains essential, computational approaches have 
+become increasingly valuable for accelerating materials development. Density func -
+tional theory (DFT) calculations provide atomic-level insights into electronic structure 
+and surface properties [ 21, 22]. Machin learning (ML) has emerged as a powerful tool 
+for materials property prediction and process optimization [ 23, 24]. The integration 
+of experiment, simulation and machine learning within a unified framework provides 
+deeper insights into structure-property relationships. This comprehensive study pres -
+ents systematic investigation of temperature-dependent synthesis, DFT simulation of 
+electronic structure and surface properties, development of ML models for performance 
+prediction, comparative analysis between simulated and experimental results and pre-
+fabrication analysis for device development. The integrated approach demonstrates the 
+practical utility for developing high-performance supercapacitor electrodes.
+2 Experimental section
+2.1 Materials and synthesis
+NiCo2S4 was synthesised via a two-step solvothermal method. Nickel nitrate hexahy -
+drate (Ni(NO 3)2.6H2O 0.12mM) and cobalt nitrate hexahydrate (Co(NO 3)2.6H2O 0.24 
+mM) were dissolved in an isopropanol /ethylene glycol mixture (1:1 v/v). The Ni: Co 
+molar ratio was kept 1:2 The solution was subjected to hydrothermal treatment at 120–
+180 °C for 6 h.The resulting Ni-Co precursor was mixed with thioacetamide (TAA, 1:3 
+molar ratio and sulfurized at 160 °C for 6 h. Sample prepared at 120 °C,140 °C,160 °C 
+and 180 °C were labelled NCS1, NCS2, NCS3 and NCS4 respectively.
+
+--- PDF页 4 ---
+Page 4 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+2.2 Characterisation techniques
+X-ray diffraction (XRD, BrukerD8 Advance, Cu ka) as performed in the 2θ range of 
+20-80o. Fourier transform infrared (FTIR) spectra were recorded on a Perkin Elmer 
+Spectrum Two. Surface morphology was examined using scanning electron microscopy 
+(SEM, JEOL JSM-7600  F). X-ray photoelectron spectroscopy (XPS, Thermo Scientific 
+K-Alpha) was used for surface composition analysis. BET surface area was measured 
+using N2 adsorption (Micromeritics ASAP 2020). Electrochemical measurements were 
+conducted in 3 M KOH using a BioLOgic VMP3 workstation with standard three-elec -
+tron configuration.
+2.3 Computational methods
+First-principles calculations were performed using the Vienna an initio Simulation Pack-
+age (VASP) [25] with the projector augmented wave method. The exchange-correlation 
+functional was treated within GGA-PBE [ 26], with DFT + U correction (U = 6.0  eV for 
+Ni, 5.0 eV for Co) to properly describe strongly correlated d electrons [27]. A plane-wave 
+cutoff of 735 eV and k-point meshes of 6 × 6 × 6 (bulk) and 4 × 4 × 1 (surfaces) was used. 
+Machine learning models were developed using Python with scikit-learn and XG-Boost 
+Libraries, with 5-fold cross-validation and SHAP analysis for feature importance [28].
+3 Results and discussion
+3.1 Structural and morphological analysis
+Figure 1 present the XRD patterns and FTIR spectra of NiCo 2S4 samples. XRD analysis 
+confirmed the formation of the cubic spinel NiCo 2S4 phase (Fd-3 m space group) with 
+characteristic peaks at 2θ = 31.5o, 38.4o, 44.6o, 56.9o, 59.3o, 65.5o and 78.1o. The crystallite 
+size decreased from 30.2 nm (NCS1) to 23.5 nm (NCS4) with increasing temperature. 
+The crystallinity and phase purity of the powder were studied by using an XRD graphs 
+show that NiCo 2S4 is crystalline. The diffraction peaks observed at 2θ values of 38.4 o 
+belongs to the (400) plane whereas peaks at 44.6o, 65.5o and 78.1o are due to the Ni. XRD 
+studied confirm the crystalline nature of the NiCo 2S4 powder. The peaks are assigned to 
+planes, respectively. JCPDS pattern if similar to the other four sample analyses.
+NiCo2S4 is a compound that crystallises in a spinel structure, which if characterised 
+by a cubic lattice. This material has garnered attention due to its unique properties, par -
+ticularly in applications such as catalysis, energy storage and as an electrode material. In 
+its X-ray diffraction (XRD) pattern, NiCo 2S4 typically exhibits distinct diffraction peaks 
+corresponding to various Miller indices (hk1). The most prominent peaks are observed 
+at 2θ values of 18.4 o (111), 31.5 o (220), 38.4 o (311), 44.6 o (400), 56.9 o (331), 59.3 o (422) 
+and 65.5o (511), which are characteristic of the spinel structure of the material. These 
+peaks are indexed based of the standard cubic spinel lattice. The JCPDS card 00-020-
+0782 is commonly used to identify NiCo 2S4 and it provides the reference for the specific 
+diffraction pattern expected for this compound.
+As the temperature of the material varies, especially under high-temperature condi -
+tions, subtle but noticeable changes can occur in its XRD pattern. The diffraction peaks 
+may shift to lower 2θ values due to thermal expansion of the crystal lattice. This shift 
+occurs because, at higher temperatures, atoms in the lattice vibrate more intensely, caus-
+ing the lattice to expand slightly, which in turn decreases the diffraction angle according 
+to Bragg’s law. The extent of these shifts can be used to determine the material’s thermal 
+
+--- PDF页 5 ---
+Page 5 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+expansion coefficients. Furthermore, as the temperature increases, the diffraction peaks 
+often broaden. This broadening can be attributed to a reduction in crystalline size or 
+the introduction of defects such as dislocations or vacancies within the crystal lattice. In 
+some cases, especially at elevated temperatures, phase transitions may occur, leading to 
+the appearance of new peaks or the disappearance of existing ones, which can indicate 
+changes in the crystal structure.
+Using powder X-ray diffraction (PXRD) analysis and Rietveld refinement using the 
+GSAS-11 software program, the phase formation, crystallographic structure, and struc -
+tural purity of the hydrothermally synthesized NiCo 2S4 sample obtained at 180 °C were 
+examined. The purpose of the refinement was to assess the consistency between the esti-
+mated and observed diffraction patterns and to get precise structural characteristics. 
+The synthetic NiCo2S4 sample’s Rietveld-refined XRD pattern is displayed in the figure, 
+The experimentally observed diffraction pattern ( yobs), computed diffraction pattern 
+(ycat). Difference profile (yobs-ycat) and Bragg reflection positions make up the refinement 
+profile. High structural reliability and good refinement position make up the refine -
+ment profile. High structural reliability and good refinement are demonstrated by the 
+outstanding agreement between the estimated and observed diffraction profiles over the 
+Fig. 1 a XRD patterns showing spinel phase formation and b FTIR spectra confirming M-S bonding in NiCo 2S4 
+samples c Rietveld Refinement of NCS4 sample confirming the formation of crystalline cubic spinel phase. d Three-
+dimensional framework of NiCo2S4
+ 
+
+--- PDF页 6 ---
+Page 6 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+whole 2θ range. The lack of a severe structural mismatch and the quality of fitting are 
+further confirmed by the low intensity of the difference curve. The successful genera -
+tion of crystalline NiCo 2S4 using the hydrothermal synthesis process can be confirmed 
+by indexing the diffraction peaks to the cubic spinel phase of NiCo 2S4. The high phase 
+purity of the synthesized material is suggested by the absence of any further impurity 
+peaks corresponding to secondary phases like oxide impurities, nickel sulphide or cobalt 
+sulphide (Table 1).
+The GSAS-II refinement yielded the following refined lattice parameters:
+The prepared NiCo2S4 sample’s cubic crystal symmetry is confirmed by these results. 
+The theoretical density was estimated to be 5.048  g cm − 3, and the computed unit cell 
+volume was found to be 802.125 A0. The successful crystallization of the intended 
+phase is shown by the obtained lattice parameter values, which closely match previously 
+reported values for cubic spinel NiCo 2S4 show in Fig.  1d. The following is a list of the 
+refining quality indicators derived from the Rietveld analysis:
+Excellent agreement between the estimated and observed diffraction data is indicated 
+by the weighted profile residual factor (Rwp) value of 4.179. The correctness and depend-
+ability of the refinement process are demonstrated by the goodness-of-fit (GOF) value of 
+1.09, which is near to unity. In a Similar vein, satisfactory convergence and appropriate 
+statistical fitting quality are confirmed by the lowered chi-square value ( χ  2=1.19). The 
+synthesized sample may have good crystallinity and structural homogeneity of there are 
+no unusual peak broadening or unmatched reflections. The Rietveld method includes 
+the following relationships commonly used to get different output measurements of a 
+sample after the refinement (Table 2).[43-45]
+Weighted profile factor:
+ 
+R wp =
+√ (∑ n
+i=1wi |yobs.i − ycal.i|2
+∑ n
+i=1wi y2
+obs.i
+)
+Excepted weighted profile factor:
+ 
+R exp =
+√ ( n − p∑ n
+i=1w iy2
+obs.i
+)
+× 100
+Table 1 Structural parameters of NCS 4 obtained from Rietveld refinement
+Parameters NCS 4
+a = b = c
+(
+A 0) 9.29139
+α = β = γ (θ◦ ) 90
+Density
+(
+g/cm3) 5.048
+Volume
+(
+A03) 802.125
+Table 2 Output parameters obtained from refinement
+Parameters NCS 4
+χ 2 1.19
+Rwp 4.179
+Re 3.83
+RF 31.561
+GoF Index 1.09
+
+--- PDF页 7 ---
+Page 7 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+Bragg factor:
+ 
+R B =
+(∑
+h |Iobs,h − Ical,h|∑
+h |Iobs,h |
+)
+× 100
+Crystallographic factor ( Rf ):
+ 
+R f =
+(∑
+h |Iobs,h − Ical,h|∑
+h |Iobs,h |
+)
+× 100
+Reduced chi-Square:
+ 
+χ 2 =
+( Rwp
+Rexp
+)2
+Effective nucleation and crystal development of the spinel NiCo 2S4 phase were made 
+possible by the hydrothermal synthesis carried out at 180 °C, producing highly crystal -
+line material appropriate for electrochemical and catalytic application. The synthetic 
+compound’s phase purity and structural stability are further confirmed by its successful 
+refining and minimal residual values. Overall, the hydrothermally synthesized NiCo 2S4 
+is confirmed by the GSAS-II Rietveld refinement to have a well-defined cubic spinel 
+structure with high crystallinity and outstanding phase purity, making it an attraction 
+option for advanced energy storage and catalytic applications [ 29– 31]. The crystallite 
+size of NiCo 2S4 was estimated using the Scherrer equation from the diffraction peaks 
+and found to be in the range of 25–30 nm, with an average of 27 nm.
+The FTIR spectrum of the NiCo2S4 was used to study the Ni-Co-S network formed and 
+the type of bonding in it. Figure 1b shows functional groups of the synthesised samples as 
+shown in Fig. 2b. The broad band located at 3400 cm− 1 is due to the surface OH attached 
+to the NiCo2S4 particles [1]. The bands observed at 485 and 624 cm− 1 are assigned to the 
+Ni-S and Co-S symmetrical stretching vibrations and the band at 1107 cm − 1 is assigned 
+to the asymmetrical vibrations due to the Ni-S and Co-S, respectively. These bonds play 
+a vital role in the redox reaction of electrochemical processes [ 2]. The sharp peaks at 
+1352 and 1580 cm− 1 are due to the C-H bonds that may be remaining traces of alcohol in 
+the powder. The FTIR goes to the best result sample.
+3.2 Morphological, surface analysis and EDX analysis
+The Energy Dispersive X-ray (EDX) spectrum of a NiCo 2S4 sample typically reveals 
+several distinct peaks corresponding to the elemental composition of the material. The 
+Fig. 2 a Elemental mapping images of NiCo 2S4 powder showing the homogeneous distribution of Ni, Co and S 
+elements throughout the sample surface. b SEM images showing temperature-dependent morphological evolu-
+tion. From well-ordered flower-like structures (NCS1) to degraded morphology (NCS4)
+ 
+
+--- PDF页 8 ---
+Page 8 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+most prominent peaks are attributed to Nickel (Ni), Cobalt (Co), and Sulfur(S). Nickel, 
+a primary element in the sample, shows a strong peak around 7.48 keV (kα line), while 
+Cobalt, also an integral component of NiCo 2S4, exhibits a peak around 2.30  keV (kα 
+line). Sulfur, which is crucial for the formation of the sulfide structure, has a peak around 
+2.30 keV (kα line). Oxygen(O) may also appear, typically around 0.52 keV (kα line), due 
+to surface oxidation or contamination of the sample. The relative peak intensities give 
+insights into the atomic composition of the sample, with the Ni: Co ratio expected to 
+be approximately 25–30% Ni, 30–35% Co, and 30–35% S, through these values can 
+vary depending on factors such as sample preparation, instrumental calibration, and 
+the surface conditions. The analysis can also reveal other minor elements or impurities, 
+depending on the sample and the resolution of the EDX system used.
+Figure 2b shows SEM images revealing temperature-dependent morphological evo -
+lution. NCS1 exhibits well-ordered flower-like nanostructures with nanosheets of 
+~ 100  nm thickness. Progressive structural degradation occurs at higher temperatures 
+with, with NCS4 showing significant aggregation. Despite morphological degrada -
+tion. NCS4 exhibits the highest electrochemical performance, suggesting that electrical 
+conductivity and defect concentration play dominant roles. In order to study the sur -
+face morphological and microstructure of the products were characterised by scanning 
+electron microscope (SEM). Figure  2b shows SEM images of NiCo 2S4 powder at differ -
+ent magnifications. Figure  2b shows the SEM images of NiCo 2S4 powder, which reveals 
+Fig. 2 (continued)
+ 
+
+--- PDF页 9 ---
+Page 9 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+that it has a relatively flower-like nanostructure surface. Figure  2b represents a magni -
+fied view of the same image. Densely packed NiCo 2S4 nanosheets are clearly observed 
+in Fig.  2b. The thickness of the wall seems to be of the order of 100  nm, whereas the 
+length is around 1 μm. The porous structure of the material and entangled network help 
+in increasing the electrochemical conductivity of the films. Further, it can be used to add 
+another supportive material, which could further enhance the electrochemical perfor -
+mance of the films.
+3.3 XPS analysis
+XPS survey spectrum (Fig.  3) suggest that as previously noted, the elements can be 
+found on the surface of NCS samples. Figure  3 shows that Ni 2p has two leading spec -
+tral peaks, Ni 2p 3/2 and Ni 2p 1/2, resulting from spin-orbit splitting at binding energies 
+of 855.58 and 873.28 eV. The binding energy difference between Ni 2p 3/2 and Ni 2p 1/2 is 
+17.7 eV, with additional peaks at 861.28 and 879.58 eV dubbed’ satellite peaks. the peaks 
+indicate the existence of Ni2+ and Ni3+ species [22, 32] and confirm nickel’s divalent and 
+trivalent states in NCS material respectively. The Fitted spectra of Co in the case of the 
+Co XPS spectrum, shows in Fig. 3. The spin-orbit doublets situated at 778.5 and 793.9 eV 
+can be ascribed to Co 2+ while the binding energies at 779.1 and 798.4 eV corresponding 
+to the spin-orbit splitting of Co 3+ In the case of the C 1s XPS spectrum, Fig.  3d shows 
+the S 2p narrow scan, which is separated into two peaks at 162.6 and 163.8 eV. Corre -
+sponding to S 2p 3/2 and S 2p 1/2, respectively [ 22, 32]. The XPS examination shows that 
+the Ni-Co-S sample’s near-surface includes Ni2+, Ni3+,Co2+,Co3+,S2−  and S 4− , enhancing 
+the electrode materials’ electrochemical performance, According to XPS examination, 
+the atomic ratios of Ni, Co and S are around 22.46:20.43:7.21, respectively [33].
+3.4 BET analysis characterization
+In addition, N2 physical adsorption studies were performed to investigate the materials’ 
+porosity the adsorption desorption isotherms and associated pore-size distribution are 
+shown in Fig. 4a and b, respectively. The materials exhibits irreversible type IV isotherm, 
+indicating its mesoporous structure. The Ni-Co-S sample has a measured BET surface 
+area of 62.977 m2g− 1. Furthermore, as shown in Fig. 4b, the mesoporous Ni-Co-S sample 
+has a distinct pore-size distribution cantered at 4.68  nm, with an average pore size of 
+Fig. 2 (continued)
+ 
+
+--- PDF页 10 ---
+Page 10 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+around 11.29  nm. It generally knows that mesoporous structures with relatively large 
+specific surface areas and appropriate mesopores may greatly enrich electro active sites 
+while shortening charge transport diffusion pathways, hence improving electrochemical 
+performance.
+3.5 Electrochemical performance
+Figure 5 represents CV curve at different scan rates. All curves show distinct redox 
+peaks indicating pseudocapacitive behaviour. The specific capacitance increases with 
+temperature: NCS1 (613.79 Fg − 1), NCS2 (764.51 Fg − 1), NCS3 (849.40 Fg − 1) and NCS4 
+(920.04 Fg− 1) at 5mVs− 1. The enhanced performance at higher temperatures is attrib -
+uted to improved electrical conductivity and optimized defect concentration [ 7– 9, 23, 
+34– 42]. 
+ NiCo2S4 + 2OH −1 ↔ NiS4 − xOH + 2CoSxOH + 2e
+ Csp = Ipeak × ∆V
+m × v
+Fig. 3 XPS survey analysis of NCS4 showing a survey spectrum, b Ni 2p, c Co 2p and d S 2p spectra with multiple 
+oxidation states
+ 
+
+--- PDF页 11 ---
+Page 11 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+Fig. 5 CV curves recorded at various scan rates for a NCS1, b NCS2, c NCS3 and d NCS4 electrodes, exhibiting 
+pronounced redox peaks and characteristics pseudocapacitive behaviour of Nickel cobalt sulfide material
+ 
+Fig. 4 a N2 adsorption-desorption isotherm and b pore size distribution curve of NiCo2S4 powder, conforming the 
+mesoporous nature and porous surface architecture of the synthesized material
+ 
+
+--- PDF页 12 ---
+Page 12 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+Csp is specific capacitance. Ipeak is the peak current (A) obtained from the CV curve. m 
+is the mass of active material (g). v is the scan rate (v/s). ∆V is the potential window (V), 
+which is 0.5 V in this study.
+Figure 6 shows the GCD curve at 1 mA g − 1. The specific capacitance from GCD fol -
+lows: NCS1 (110.75 Fg− 1), NCS2(191.78 Fg− 1), NCS3(329.41 Fg− 1) and NCS4 (375 Fg− 1). 
+The coulombic efficiency exceeds 95% for all samples, indicating excellent electrochemi-
+cal reversibility [10– 12, 23, 34– 42]. 
+ NiS + OH − ↔ NiSOH + e−
+ CoS + OH − ↔ CoSOH + e−
+ CoSOH + OH − ↔ CoSO + H 2O + e−
+ Csp = 2× I × ∆t
+m × ∆V
+Csp is specific capacitance. I is the current potential(A). ∆t is the discharge time (s). m is 
+the mass of the active material (g). ∆V is the potential window (V) which is 0.5 V.
+ Z = R Ct + j· ω · Cdl
+Fig. 5 (continued)
+ 
+
+--- PDF页 13 ---
+Page 13 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+Z is the impedance. R ct is the transfer resistance. ω  is the angular frequency. C dl is the 
+double-layer capacitance. J is the imaginary unit.
+EIS measurements were carried out to investigate the charge transfer resistance and 
+electrochemical performance of the NiCo 2S4 films. The Nyquist plots (Fig.  7(I) and (II)) 
+show the typical semi-circular shape at all temperatures, indicating good electrochemi -
+cal performance with minimal charge transfer resistance. The diameter of the semicircle 
+in the Nyquist plot is related to the charge transfer resistance (Rct). The charge transfer 
+resistance is lowest, indicating optimal electrochemical behaviour. The results from EIS 
+further corroborate the findings from CV and GCD, where the NiCo 2S4 film at NCS4 
+exhibited the best overall electrochemical performance, with minimal charge transfer 
+resistance and faster charge/discharge kinetics [7, 8, 23, 34– 42]. 
+3.6 DFT simulation results
+Figure 8 represent the calculated band structure and density of states for NiCo 2S4. The 
+band structure revels a narrow band gap of approximately 0.8  eV, consistent with the 
+semiconducting nature of the material. The DOS analysis shows that the valence band is 
+dominated by Ni 3d and Co 3d states hybridized with S 3P states, while the conduction 
+band consists primarily of metal d States. The presence of d states near the Fermi level is 
+responsible for the electrochemical activity.
+Figure 9 shows the DFT calculated surface and defect properties, the (111) surface 
+exhibits the lowest surface energy (0.85 J m− 2), indicating it is the most thermodynami-
+cally stable. Nickel vacancies have the lowest formation energy (1.8 eV) under Ni-poor 
+Fig. 6 GCD curves recorded at current densities ranging from 1 to 5 mA g − 1 for a NCS1, b NCS 2, c NCS3 and 
+d NCS4 electrodes, demonstrating distinct Faradaic charge-discharge behaviour and excellent pseudocapacitive 
+characteristics of Nickel cobalt sulfide samples
+ 
+
+--- PDF页 14 ---
+Page 14 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+conditions, explaining the experimentally observed non-stochiometric composition. The 
+OH adsorption energy is highest on the Ni-terminated (111) surface (-2.15 eV), making 
+it most favourable for electrochemical reactions. The electrical conductivity of NiCo2O4 
+is approximately 100 times higher than that of NiCo2O4, Confirming its superiority as 
+an electrode material.
+3.7 Machin learning prediction
+Figure 10 presents the machines leaning model performance. The gradient boosting 
+model achieved R 2 = 0.97 with MAE = 18 F g− 1 in predicting specific capacitance. SHAP 
+analysis revealed that synthesis temperature has the highest importance (0.28), fol -
+lowed by Ni: Co ratio (0.22), sulfur source (0.18), time (0.12), pH (0.10) and concentra -
+tion (0.10). The model predicts optimal conditions temperature 170–190 °C, ratio Ni-Co 
+ratio 1:2 and sulfur source ratio 1.3.
+3.8 Comparative analysis
+Figure 11 presents the comparative analysis between experimental, DFT predicted and 
+ML-predicated values. For specific capacitance, the average deviation between DFT 
+predictions and experimental values is 4.8%, while ML predictions show 3.2% deviation. 
+This excellent agreement validates the integrated approach. The correlation between all 
+predicted and experimental values shows R2 = 0.97.
+Fig. 6 (continued)
+ 
+
+--- PDF页 15 ---
+Page 15 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+3.9 Symmetric device performance
+Figure 12 represents device simulation and cycling stability. The symmetric device 
+achieved specific capacitance of 1234.89 F g − 1 at 10 mV s − 1, energy density of 42.9 Wh 
+kg− 1 and power density of 735 W kg− 1. The cycling stability shows 82.82% retention after 
+5000 cycles, demonstrating excellent long-term stability (Figs. 13 and 14).
+ Csp = 4I∆ t
+m∆ V
+where: Csp-specific capacitance (F g − 1), I-discharge current (A), ∆ t-discharge time (s), 
+∆ V -potential window, m= total mass of active material of both electrodes.
+ Csp = 4
+´
+I(V )dV
+mv∆ V
+where: 
+´
+I (V ) dV -area under the CV curve, ν -scan rate (V s− 1), m-total mass of both 
+electrodes.
+ E = C sp × (V )2
+2 × 3.6
+where: E-energy density (Wh kg− ¹), Csp- specific capacitance (F g− ¹), ∆ V - voltage win-
+dow (V), 1/3.6-conversion factor (J/g - Wh/kg).
+Fig. 7 I Present EIS analysis. The charge transfer resistance decreases with Temperature: NCS1 (5.0 Ω), NCS2 (3.0 
+Ω), NCS3 (2.0 Ω) and NCS4 (1.0 Ω). The lowest R ct for NCS4 indicates the most favourable charge transfer kinetics. II 
+Nyquist plots showing decreasing charge transfer resistance with increasing synthesis temperature
+ 
+
+--- PDF页 16 ---
+Page 16 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+Fig. 7 (continued)
+-4
+-2
+0
+2
+4
+W LULrKWx
+Energy (eV)
+k-path
+Eg=0.8eV (Narrowg ap)
+FermiL evel
+r
+(a)B andS tructure of NiCo2S4
+Fig. 8 DFT-calculate a electronic band structure showing the narrow band gap and enhanced electronic con -
+ductivity and b density of states (DOS) spectra illustrating the Contribution from Ni 3d, Co 3d and S 3P orbitals in 
+Nickel cobalt sulfide
+ 
+ 
+
+--- PDF页 17 ---
+Page 17 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+ P = E × 3600
+∆t
+where: P- Power density (W kg− 1), ∆t- Discharge time (s).
+3.10 Pre-fabrication analysis
+Figure 15 presents pre-fabrication analysis for device development. The optimal mass 
+loading of 1.5 mg cm − 1 balances specific and areal capacitance, while the optimal thick -
+ness of 200  nm provides low ESR with good capacitance retention. The performance 
+optimization map identifies the optimal parameter region for device fabrication.
+4 Practical applications and usefulness
+Figure 16 illustrates the key application areas and advantages of NiCo 2S4 supercapaci -
+tor technology. The high specific capacitance (1234.89 F g − 1), energy density (42.9 Wh 
+kg− 1) and cycling stability (< 5000 cycles) make this technology suitable for diverse 
+applications.
+Electrical Vehicles: The high-power density enables efficient regenerative breaking, 
+improving vehicle efficiency by 15–25%. Portable Electronics Fast-Charging capability 
+(< 30 s) and long cycle life make these devices suitable for smart phones and wearables. 
+Renewable Energy: Rapid response for grid stabilization addresses intermittency in solar 
+and wing systems. Industrial UPS systems and backup power benefit from high power 
+density and reliability.
+Fig. 9 DFT analysis of Nickel cobalt sulfide showing a calculated surface energies of different crystal planes, b 
+defect formation energies for vacancy engineering, c OH- adsorption energies indicating electrochemical activity 
+and d comparative electrical conductivity of pristine and defect -engineered structures
+ 
+
+--- PDF页 18 ---
+Page 18 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+5 Summery and future perspectives
+See Fig. 17.
+6 Conclusions
+This comprehensive study demonstrates the successful development of high-perfor -
+mance NiCo 2S4 nanostructures through an integrated experimental-computational 
+approach. The key findings are; The optimized NCS4 electrode exhibited specific capaci-
+tance of 920.04 F g − 1 (CV) and 375 F g − 1(GCD), with the symmetric device achieving 
+1234.89 F g-1, energy density of 42.9 Wh kg − 1 and 82.82% retention after 5000 cycles. 
+DFT simulations revealed that the (111) surface has the lowest surface formation energy 
+(0.85  J m− 2) and the highest electrochemical activity. Nickel vacancies have the low -
+est formation energy (1.8  eV). Machin learning models achieved R 2 = 0.97 in predict-
+ing capacitance, with synthesis temperature identified as the most critical parameter 
+(importance: 0.28). A comparative analysis showed excellent agreement between simu -
+lated and experimental results (average deviation < 5%), thereby validating the integrated 
+approach. Pre-fabrication analysis indicated optimal mass loading of 1.5 mg cm − 1 and 
+thickness of 200 nm for device development.
+Fig. 10 Machin learning analysis of Nickel cobalt sulfide-based supercapacitor performance showing a predicted 
+versus actual values, b features importance analysis identifying key electrochemical parameters, c learning curve 
+demonstrating model convergence and training Behaviour and d comparative evolution of different Machin learn-
+ing models
+ 
+
+--- PDF页 19 ---
+Page 19 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+This integrated methodology provides a comprehensive framework for rational design 
+of transition metal sulfide electrodes, with applications in electric vehicles, portable 
+electronics, renewable energy storage and industrial systems.
+7 Aim and scope
+7.1 Aim
+The current study aims to synthesize NiCo 2S4 nanomaterials and systematically investi -
+gate their electrochemical performance for advanced supercapacitor applications. The 
+research explores the relationship between the structural, morphological and physi -
+cochemical properties of NiCo 2S4 and its energy storage capabilities. In addition to 
+experimental analysis the work employs ML techniques to predict and enhance key elec-
+trochemical parameters such as specific capacitance, energy density and cycling stabil -
+ity based on synthesis conditions and material characteristics. DFT simulations are also 
+utilised to gain deeper insights into NiCo 2S4 electronic structure, change distribution 
+and redox activity at the atomic level. This approach helps to better understand how it 
+stores charge.
+02 50 5007 50 1000 1250 1500 1750 2000
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000PredictedC apacitance( F/g)
+ExprimentalC apacitance (F/g)
+PerfectP rediction
+(c)O verall Correlation( R2 =0 .97)
+-3 -2 -1 0123456 70.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+2.25Frequency
+Prediction Error( %)
+Zero Error Mean 1.8%
+(d)E rror Distribution
+Fig. 11  Comparative analysis: a experimental vs. DFT, b experimental vs. ML, c correlation plot and d error 
+distribution
+ 
+
+--- PDF页 20 ---
+Page 20 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+7.2 Scope
+The scope of this study encompasses the synthesis of NiCo 2S4 through appropriate 
+chemical methodologies, including hydrothermal or solvothermal techniques, Suc -
+ceeded by comprehensive characterization utilizing conventional analysis instruments 
+such as XRD, SEM, BET surface area analysis and FTIR, CV, GCD and EIS are used to 
+test how well something works electrochemically. The combination of ML and DFT 
+methods creates a framework for predicting performance and understanding mecha -
+nism that is both data-Driven and theoretical. This study is limited to laboratory-scale 
+investigations and seeks to advance the development of efficient, high-performance 
+Fig. 13 GCD curves of a symmetric device at different current densities
+ 
+Fig. 12 CV curves of a symmetric device at various scan rates showing pseudocapacitive behaviour
+ 
+
+--- PDF页 21 ---
+Page 21 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+electrode materials for next-generation development of efficient, high-performance 
+electrode materials for next-generation supercapacitors in the domains of materials sci -
+ence, chemistry and condensed matter physics.
+Fig. 14 Cycling stability showing 82.82% retention after 5000 cycles
+ 
+
+--- PDF页 22 ---
+Page 22 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+Fig. 16 Practical applications and development timeline for NiCo2S4 supercapacitor technology
+ 
+0.51 .0 1.52 .0 2.53 .00
+200
+400
+600
+800
+1000
+1200
+1400Specific capacitance( F/g)
+Mass Loading( mg/cm2)
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+4.0
+ArealC apacitance (mF/cm2)
+(a)M assL aoding Optimization
+1002 00 300 400 50050
+60
+70
+80
+90
+100CapacitanceR etention (%)
+Electrod Thickness( nm)
+0
+1
+2
+3
+4
+5
+6
+7
+ESR(
+Optimal
+Thickness
+(b)T hickness Effect on Performance
+11 .5 22 .5 3
+*
+500
+450
+400
+350
+300
+200
+150
+Mass Loading( mg/cm2)
+Thikness (nm)
+0.000
+15.00
+30.00
+45.00
+60.00
+75.00
+90.00
+100
+*
+Optimal Point
+(c)P erformance Optimization Map
+Pre-FabricationC hecklist
+Mass Loading :1 .5 mg/cm²
+Electrode Thickness: 200n m
+Active Area :1 cm²
+VoltageW indow( Device): 0-1V
+Mass Ratio( Symmetric) :1 :1 (Symmetric)
+ElectrolyteC oncentration: 3M KOH
+SeparatorT ype: Cellulose
+Current Collector :S S304
+(d)P re-Fabrication Checklist
+Fig. 15  Pre-fabrication analysis: a mass loading optimization, b thickness effect, c performance map and d 
+checklist
+ 
+
+--- PDF页 23 ---
+Page 23 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+Acknowledgements
+The authors gratefully acknowledge the Department of Physics, Shivaji University, for providing SEM and XRD 
+characterization facilities essential for this research work. The authors also extend their sincere thanks to D. Y. Patil 
+University for offering electrochemical analysis facilities, and to Jaysingpur College for their support in BET surface 
+area and FTIR characterization.The authors are thankful to Dattajirao Kadam Arts, Science and Commerce College for 
+providing the necessary laboratory facilities for material synthesis. They also acknowledge the continuous support and 
+encouragement received from Patkar Varde College.Furthermore, the authors express their appreciation to all faculty 
+members, laboratory staff, and colleagues whose assistance and cooperation contributed significantly to the successful 
+completion of this work.
+Author contributions
+Suraj D. Pathan contributed to the conceptualisation, methodology, data analysis, and writing of the original draft. 
+Bismilla B. Mulla contributed to data collection, literature review, and manuscript drafting. Mahendra R. Waikul 
+contributed to supervision, validation, and critical revision of the manuscript. Nanaji G. Durge contributed to project 
+administration and final review of the manuscript. All authors read and approved the final manuscript.
+Funding
+This research was self-funded by the authors and did not receive any external financial support. The authors declare that 
+the research was carried out using personal resources and no external funding was received.
+Data availability
+The complete set of characterisation and electrochemical data obtained from XRD, SEM-EDAX, FTIR, BET, CV, GCD, and 
+EIS measurements is included in the figures and tables of the published article. All experimental data are available from 
+the corresponding author upon reasonable request.
+Declarations
+Ethics approval and consent to participate
+Not applicable. For NiCo2S4 supercapacitor research, ethical approval is usually not required because it involves materials 
+synthesis and electrochemical testing, not humans or animals. Journal still ask for a clear Ethical Approval Ethics 
+Statement, though. For NiCo2S4 supercapacitor research, there are no human participants, so a consent statement 
+should clearly say that consent is not applicable.
+Consent for publication
+All authors have reviewed and agreed to its publication in the present form.
+Competing interests
+The authors declare no competing interests.
+Received: 21 March 2026 / Accepted: 3 July 2026
+References
+1. Dubal DP , Kim JG, Kim Y, Holze R, Lokhande CD, Kim WB. Supercapacitors based on flexible substrates: an overview. Energy 
+Technol. 2014;2(4):325–41. https://doi.org/10.1002/ente.201300144.
+2. Lokhande CD, Dubal DP , Joo OS. Metal oxide thin film-based supercapacitors. Curr Appl Phys. 2011;11(3):255–70.  h t t p s : / / d 
+o i . o r g / 1 0 . 1 0 1 6 / j . c a p . 2 0 1 0 . 1 2 . 0 0 1     .   
+3. Khan HR, Ahmad AL. Supercapacitors: overcoming current limitations and charting the course for next-generation energy 
+storage. J Ind Eng Chem. 2024. https://doi.org/10.1016/j.jiec.2024.07.014.
+Fig. 17 Summary of integrated research methodology showing workflow from synthesis to application
+ 
+
+--- PDF页 24 ---
+Page 24 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+4. Dissanayake K, Kularatna-Abeywardana D. A review of supercapacitors: Materials, technology, challenges, and renewable 
+energy applications. J Energy Storage. 2024;96:112563. https://doi.org/10.1016/j.est.2024.112563.
+5. Dash SR, Yadav MS, Sahoo RK, Sharma AL. Recent advances in supercapacitor electrode materials based on MOF-derived 
+transition metal sulfides. Appl Energy. 2026;408:127349. https://doi .org/10.101 6/j.apenerg y.2026.1 27349.
+6. Abdelfattah A, Ahmed FM, Mohamed LZ, Selim AM. Mechanochemical enhancement in electrode materials via 
+silver-embedded reduced graphene oxide and cobalt oxide nanostructure for supercapacitor applications. Ionics. 
+2024;30(3):1735–48. https://doi.org/10.1007/s11581-024-05385-9.
+7. Shaikh ZA, Raut SD, Danamah HM, Kamble C, Al-Hejri TM, Jadhav AH, Mane RS. Multifunctional Sb 2 O 3–Bi 2 O 3 nano-
+leaves for record-high supercapacitor energy density and efficient HER and OER catalysis. J Mater Chem A. 2026.  h t t p s : / / d 
+o i . o r g / 1 0 . 1 0 3 9 / D 5 T A 0 9 5 5 8 A     .   
+8. Abdelfatah A, Selim AM, Ahmed FM, Abd Elhamid AE, Reda Y, Abdel-Karim R, El-Raghy SM, Mohamed LZ. Facile synthesis 
+of Tin oxide@ 2D graphene nanocomposites for enhanced LIB anode materials. Mater Renew Sustainable Energy. 
+2026;15(1):3. https://doi.org/10.1007/s40243-025-00340-8.
+9. Al-Hejri TM, Shaikh ZA, Al-Naggar AH, Raut SD, Siddiqui T, Danamah HM, Jadhav VV, Al-Enizi AM, Mane RS. Electrochemical 
+supercapacitor and water splitting electrocatalysis applications of self-grown amorphous Ni (OH) 2 nanosponge-balls. 
+Electrochim Acta. 2024;474:143516. https://doi .org/10.101 6/j.electac ta.2023. 143516.
+10. Dhilip Kumar R, Nagarani S, Sethuraman V, Andra S, Dhinakaran VJ. Investigations of conducting polymers, carbon materi-
+als, oxide and sulfide materials for supercapacitor applications: a review. Chem Pap. 2022;76(6):3371–85.  h t t p s : / / d o i . o r g / 1 0 
+. 1 0 0 7 / s 1 1 6 9 6 - 0 2 2 - 0 2 1 2 4 - 0     .   
+11. Tadesse MG, Ahmmed AS, Lübben JF. Review on conductive polymer composites for supercapacitor applications. J Com-
+pos Sci. 2024;8(2):53–78. https://doi.org/10.3390/jcs8020053.
+12. Pitcheri R, Mooni SP , Radhalayam D, Nora M, Roy S, Al-Zahrani FA, Suneetha M. Effect of Ce-doping on the structural, 
+morphological, and electrochemical features of Co3O4 nanoparticles synthesized by solution combustion method for 
+battery-type supercapacitors. Ceram Int. 2024;50(23):50504–15. https://doi .org/10.101 6/j.ceramin t.2024.0 9.396.
+13. Chatterjee S, Bhattacharya SK. A review of NiO based composite electrode materials for electrochemical energy storage. 
+IOP Conf Ser: Mater Sci Eng. 2021;1080(1):012009. https://doi .org/10.108 8/1757-899X /1080/1/ 012009.
+14. Sukhmani SK, Raut SD, Siddiqui T, Shaikh SF, Shinde NM, Mane RS. Self-promoted nickel-chalcogenide nanostructures: a 
+novel electrochemical supercapacitor device-design strategy. Mater Res Bull. 2022;156:111975.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1   6 / j . m 
+a t e r r e s b u l l . 2 0 2 2 . 1 1 1 9 7 5     .   
+15. Philip A, Kumar AR. Performance enhancement of λ-MnO2 supercapacitor device by using thermally induced amorphous 
+phase of nickel and cobalt phosphates with hierarchical structures. J Alloys Compd. 2025;1010:177249.  h t t p s  : / / d o i  . o r g /  1 0 . 
+1  0 1 6 / j . j a l l c o m . 2 0 2 4 . 1 7 7 2 4 9     .   
+16. Chen J, Li M, Lin H, Zhou C, Chen W, Wang Z, Li H. Advances in One-Dimensional Metal Sulfide Nanostructure-Based 
+Photodetectors with Different Compositions. J Compos Sci. 2025;9(6):262. https://doi.org/10.3390/jcs9060262.
+17. Ghosh S, Kumar JS, Murmu NC, Ganesh RS, Inokawa H, Kuila T. Development of carbon coated NiS2 as positive electrode 
+material for high performance asymmetric supercapacitor. Compos Part B: Eng. 2019;177:107373.  h t t p s  : / / d o i  . o r g /  1 0 . 1  0 1 6 / j 
+. c o m p o s i t e s b . 2 0 1 9 . 1 0 7 3 7 3     .   
+18. Kerli ̇ S, Soğuksu A, Alver Ü. Synthesis of Pani@Nife2o4 nanocomposite and its application in high-performance superca-
+pacitors. 2024. https://doi.org/10.2139/ssrn.5074132.
+19. Reddy AL, Reddy BP , Reddy MV. Development of carbon coated NiS₂ as positive electrode material for high performance 
+asymmetric supercapacitor. Compos Part B: Eng. 2019;177:107373. https://doi.org/10.1016/j.compositesb.2019.  107373.
+20. Shinde NM, Ghule BG, Raut SD, Narwade SH, Pak JJ, Mane RS. Hopping electrochemical supercapacitor performance of 
+ultrathin BiOCl petals grown by a room-temperature soft-chemical process. Energy Fuels. 2021;35(8):6892–7.  h t t p s  : / / d o i  . o r 
+g /  1 0 . 1  0 2 1 / a c s . e n e r g y f u e l s . 1 c 0 0 3 0 8     .   
+21. Li J, Chen D, Wu Q. Facile synthesis of CoS porous nanoflake for high performance supercapacitor electrode materials. J 
+energy storage. 2019;23:511–4. https://doi.org/10.1016/j.est.2019.03.017.
+22. Zheng Y, Wang X, Zhao W, Cao X, Liu J. Phytic acid-assisted synthesis of ultrafine NiCo2S4 nanoparticles immobilized 
+on reduced graphene oxide as high-performance electrode for hybrid supercapacitors. Chem Eng J. 2018;333:603–12. 
+https://doi.org/10.1016/j.cej.2017.10.008.
+23. Heydari H, Moosavifard SE, Shahraki M, Elyasi S. Facile synthesis of nanoporous CuS nanospheres for high-performance 
+supercapacitor electrodes. J energy Chem. 2017;26(4):762–7. https://doi.org/10.1016/j.jechem.2017.03.007.
+24. Alsufyani SM, Jafer R, Iqbal J, Alwafi R, Bashir S, Ramesh S, Ramesh K. Carbon and polymer-based conducting platforms 
+incorporated with electroactive metal-oxides/sulphides for energy storage devices. J Energy Storage. 2024;84:110713. 
+https://doi.org/10.1016/j.est.2024.110713.
+25. Kresse G, Furthmüller J. Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave 
+basis set. Comput Mater Sci. 1996;6(1):15–50. https://doi.org/10.1016/0927-0256(96)00008-0.
+26. Perdew JP , Burke K, Ernzerhof M. Generalized gradient approximation made simple. Phys Rev Lett. 1996;77(18):3865. 
+https://doi.org/10.1103/PhysRevLett.77.3865.
+27. Anisimov VI, Zaanen J, Andersen OK. Band theory and Mott insulators: Hubbard U instead of Stoner I. Phys Rev B. 
+1991;44(3):943. https://doi.org/10.1103/PhysRevB.44.943.
+28. Lundberg SM, Lee SI. A unified approach to interpreting model predictions. Adv Neural Inf Process Syst. 2017;30:4768–77.
+29. Giri S, Mahata B, Guha PK, Banerji P . Temperature-driven lattice transformation in Al-doped β-Ga2O3 nanostructures and 
+its application in VOC detection. J Alloys Compd. 2026. https://doi .org/10.101 6/j.jallcom .2026.18 8071.
+30. Giri S, Mahata B, Guha PK, Banerji P . β-Ga2O3 nanostructure-based chemiresistive sensor for selective detection of formal-
+dehyde. ACS Appl Electron Mater. 2024;6(1):230–41. https://doi.org/10.1021/acsaelm.3c01187.
+31. Giri S, Mahata B, Mondal B, Guha PK, Banerji P . Chemiresistive sensor based on Sn-doped β-Ga2O3 nanorods for the selec-
+tive detection of formaldehyde. ACS Appl Nano Mater. 2024;7(24):28197–207. https://doi.org/10.1021/acsanm.4c05136.
+32. Yang X, Cai T, Yao Z, Chao G. Novel NiCo2S4 nanorod arrays grown on carbon nanofibers as high-performance anodes for 
+sodium-ion batteries. Ionics. 2025;31(2):1555–60.
+33. Shen L, Wang J, Xu G, Li H, Dou H, Zhang X. NiCo2S4 nanosheets grown on nitrogen-doped carbon foams as an advanced 
+electrode for supercapacitors. Adv Energy Mater. 2015;5(3):1400977. https://doi.org/10.1002/aenm.201400977.
+
+--- PDF页 25 ---
+Page 25 of 25
+Pathan et al. Discover Chemistry           (2026) 3:390 
+34. Lamiel C, Shim JJ. 3D hierarchical mesoporous NiCo 2 S 4@ Ni (OH) 2 core–shell nanosheet arrays for high performance 
+supercapacitors. New J Chem. 2016;40(5):4810. https://doi.org/10.1039/C6NJ00267F.
+35 Shariq M, Alhashmialameer D, Adawi H, Alrahili MR, Almashnowi MY, Alzahrani A, Sharma M, Ali SK, Slimani Y. Advance-
+ments in transition metal sulfide supercapacitors: a focused review on high-performance energy storage. J Ind Eng Chem. 
+2025;144:269–91. https://doi.org/10.1016/j.jiec.2024.11.012.
+36. Yadav MS, Kour S, Sharma AL. A critical review on various bimetallic chalcogenides (Sulfides, Selenides, and Tellurides) as 
+Efficient Electrode Materials for advanced supercapacitors. Mater Today Commun. 2024;41:110520.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 
+6 / j . m t c o m m . 2 0 2 4 . 1 1 0 5 2 0     .   
+37. Anupama B, Raguram T, Rajni KS. Synthesis and characterization of cobalt nickel oxide (CoNi2O4) prepared by one step 
+hydrothermal method. Materials Today: Proc. 2022;64:1694–700. https://doi.org/10.1016/j.matpr.2022.05.402.
+38. Qin L, Cui Z, Hou Z, Li Y. Synthesis and characterization of a NiCo2S4 and mesoporous carbon nanocomposite for energy 
+storage. J Energy Storage. 2024;97:112873. https://doi.org/10.1016/j.est.2024.112873.
+39. Miao Y, Zhang X, Zhan J, Sui Y, Qi J, Wei F, Meng Q, He Y, Ren Y, Zhan Z, Sun Z. Hierarchical NiS@ CoS with controllable core-
+shell structure by two‐step strategy for supercapacitor electrodes. Adv Mater Interfaces. 2020;7(3):1901618.  h t t p s : / / d o i . o r g 
+/ 1 0 . 1 0 0 2 / a d m i . 2 0 1 9 0 1 6 1 8     .   
+40. Thorat JP , Nikam RP , Lokhande VC, Lokhande CD. Porous NiCo2O4 electrodes for high-energy asymmetric supercapacitor: 
+effect of annealing. J Mater Sci. 2023;58(23):9586–604.
+41. Liu Q, Zhang C, Li R, Li J, Zheng B, Song S, Chen L, Li T, Ma Y. Oxygen vacancies enhancing hierarchical NiCo2S4@ MnO2 
+electrode for flexible asymmetric supercapacitors. J Colloid Interface Sci. 2025;678:902–14.  h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . j c i s . 2 0 
+2 4 . 0 9 . 0 6 8     .   
+42. Geka G, Papageorgiou G, Chatzichristidi M, Karydas AG, Psycharis V, Makarona E. CuO/PMMA polymer nanocomposites as 
+novel resist materials for E-Beam lithography. Nanomaterials. 2021;11(3):762. https://doi.org/10.3390/nano11030762.
+43. Mohammadi S, Kaur N, Radu DR. Nanoscale Cu2ZnSnSxSe(4–x) (CZTS/Se) for Sustainable Solutions in Renewable Energy, 
+Sensing, and Nanomedicine. Crystals. 2024;14(5):479. https://doi.org/10.3390/cryst14050479.
+44. Ahmad F, Zahid M, Jamil H, Khan MA, Atiq S, Bibi M, Shahbaz K, Adnan M, Danish M, Rasheed F, Tahseen H. Advances in 
+graphene-based electrode materials for high-performance supercapacitors: a review. J energy storage. 2023;72:108731. 
+https://doi.org/10.1016/j.est.2023.108731.
+45. Dong M, Wang Z, Li X, Guo H, Wang J. A smart architecture of nickel-cobalt sulfide nanotubes assembled nanoclusters for 
+high-performance pseudocapacitor. J Alloys Compd. 2018;765:505–11. https:   //d oi. or g/10 . 1016/j. jall co m .2018.06.179.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.

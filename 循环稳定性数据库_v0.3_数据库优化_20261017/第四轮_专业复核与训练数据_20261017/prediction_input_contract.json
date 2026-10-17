@@ -1,0 +1,141 @@
+{
+  "schema_version": "retention-input-contract-r4-reported-current",
+  "decision_status": "explicit_literature_reported_protocol_estimand",
+  "output": "capacitance_retention_pct_at_requested_cycle_count_and_protocol",
+  "prediction_moment": "After material fabrication and pre-cycle characterization, before the requested long cycling test.",
+  "scope": {
+    "system": "2E_symmetric",
+    "cycling_method": "GCD",
+    "electrolyte_phase": "aqueous_liquid",
+    "material": "biomass carbon main; residue-inclusive sensitivity separately declared",
+    "mass_balance": "matched_or_justified_equal_active_masses",
+    "not_a_feature": "Scope predicates and evidence gates are not one-hot shortcuts for mixing incompatible systems."
+  },
+  "required_physical_inputs": [
+    {
+      "name": "cycle_count",
+      "label": "计划预测的循环次数",
+      "unit": "cycles",
+      "transform": "log10",
+      "reason": "Defines the prediction horizon; not an observed failure cycle or achieved test length at inference."
+    },
+    {
+      "name": "reported_current_A_g",
+      "label": "作者报告的循环电流（质量口径不齐）",
+      "unit": "A/g",
+      "normalization_metadata_required": "Keep unknown denominator explicit; literal reported descriptor, not calibrated physical stress.",
+      "canonical_mass_basis": null
+    },
+    {
+      "name": "electrolyte",
+      "label": "电解液种类",
+      "unit": "categorical chemical identity",
+      "transform": "one-hot fitted on training groups only"
+    },
+    {
+      "name": "concentration_value",
+      "label": "电解液摩尔浓度",
+      "unit": "mol/L",
+      "normalization_metadata_required": "concentration_unit; M=mol/L. No automatic mol/kg→mol/L."
+    },
+    {
+      "name": "voltage_lower_V",
+      "label": "器件循环电压下限",
+      "unit": "V",
+      "reference": "full-device terminals, not reference-electrode potentials"
+    },
+    {
+      "name": "voltage_upper_V",
+      "label": "器件循环电压上限",
+      "unit": "V",
+      "reference": "full-device terminals"
+    },
+    {
+      "name": "BET_m2_g",
+      "label": "循环前成品BET比表面积",
+      "unit": "m2/g",
+      "method": "N2-BET; CO2-DFT or unqualified surface area not substituted"
+    }
+  ],
+  "optional_physical_inputs": [
+    {
+      "name": "total_pore_volume_cm3_g",
+      "label": "循环前成品总孔体积",
+      "unit": "cm3/g",
+      "policy": "Only plus_BET_pore. Missing allowed with fold-only imputation/indicator. Micropore volume is not total volume; ambiguous printed unit remains missing."
+    }
+  ],
+  "input_counts": {
+    "main_required_physical_inputs": 7,
+    "extended_physical_inputs": 8,
+    "protocol_comparator_physical_inputs": 6,
+    "one_hot_and_missing_indicator_expand_model_columns": true
+  },
+  "not_yet_primary_features": [
+    "XPS_N_at_pct",
+    "XPS_O_at_pct",
+    "Raman_ID_IG_with_definition",
+    "active_mass_loading_mg_cm2",
+    "micropore_volume_cm3_g",
+    "carbonization_temperature_C",
+    "carbonization_duration_h",
+    "activation_temperature_C",
+    "activation_duration_h",
+    "activator_identity",
+    "activator_to_char_or_biomass_ratio_with_denominator",
+    "precursor_class"
+  ],
+  "metadata_not_predictors": [
+    "paper_id",
+    "DOI",
+    "material_id",
+    "test_id",
+    "study_group",
+    "source_location",
+    "concentration_unit",
+    "current_mass_basis",
+    "baseline_definition",
+    "scope_review",
+    "freeze_state",
+    "precycling_stage",
+    "measurement_method",
+    "electrode_mass_balance",
+    "test_temperature_if_reported"
+  ],
+  "prohibited_predictors": [
+    "retention_pct",
+    "final_capacitance",
+    "capacitance_loss_from_same_target",
+    "post_cycle_EIS",
+    "post_cycle_XPS",
+    "post_cycle_SEM",
+    "discharge_time_used_in_target_calculation",
+    "observed_failure_cycle",
+    "paper_id",
+    "doi",
+    "study_group"
+  ],
+  "process_only_route": "A separate future route can use feedstock/activation/carbonization parameters plus requested test conditions. It may not require measured BET. No process-only model is currently claimed ready; evidence must support stage and ratio definitions.",
+  "training_authorized": false,
+  "no_model_performance_claims": true,
+  "definition_change_from_v03": [
+    "Drop concentration unit from categorical predictors after exact unit canonicalization.",
+    "Require actual BET for the primary material prediction and keep a same-cohort protocol comparator.",
+    "Fix seven core plus one optional input instead of leaving an unexplained list of alternatives.",
+    "r4 distinguishes reported-current empirical model from calibrated-current model; old canonical admission not overwritten."
+  ],
+  "current_unit_policy": "Unknown is retained. Never infer, convert or impute the current denominator. Canonical-current view is separate.",
+  "training_view": "training_ready",
+  "optional_pore_view": "training_ready_pore",
+  "admission_policy": "Strict canonical current basis; field-scoped optional issues masked before use; missing definitions remain blocked.",
+  "scientific_admission_count": 0,
+  "r3_clarifications": [
+    "Core7 does not require optional pore volume. Uncertain values are masked, not silently repaired.",
+    "The optional pore variant uses the same admitted cohort; missing values remain allowed for later fold-only imputation.",
+    "Baseline may be the author plotted start normalized to100pct, with exact cycle index retained as unknown.",
+    "Independence_checked denotes a bounded source and grouping review, not statistical independence of same-paper endpoints.",
+    "Freeze clearance addresses explicit record scope/conflict holds; missing current or window is still blocked by its own gate.",
+    "Eligibility never follows merely from the existence of seven numeric/categorical inputs."
+  ],
+  "default_profile": "literature_core7_exact"
+}

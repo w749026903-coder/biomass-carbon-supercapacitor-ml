@@ -1,0 +1,3537 @@
+
+--- PDF页 1 ---
+Vol.:(0123456789)
+https://doi.org/10.1007/s10854-025-16551-8
+J Mater Sci: Mater Electron  (2026) 37:143
+Review
+Biomass‑derived activated carbon: a review 
+on process parameters, material properties, 
+and machine learning approaches for supercapacitor
+Pranay Singh1 and Himanshu Sekhar Panda1,*
+1 Department of Metallurgical and Materials Engineering, Defence Institute of Advanced Technology, Girinagar, Pune 411025, India
+ABSTRACT
+Carbon-based electrode materials are widely recognized for their outstanding 
+electrical conductivity, large specific surface area, and robust chemical stabil-
+ity, thereby rendering them highly suitable for electric double-layer capacitors 
+(EDLCs) that rely on electrostatic charge storage. Among these materials, bio-
+mass-derived activated carbon (AC)—especially from agroforestry waste—has 
+gained prominence as a potential candidate due to its cost-effectiveness, abundant 
+availability, and simple synthesis processes. Numerous experimental investiga-
+tions have explored the synthesis of AC from diverse biomass sources. Also, the 
+research is now increasingly shifting toward predictive modeling to understand 
+and optimize AC properties for supercapacitor applications. Recent efforts focus 
+on forecasting key performance metrics such as yield, heteroatom content, and 
+specific capacitance based on structural and compositional parameters, including 
+pore architecture, chemical constituents, graphitization level, testing conditions, 
+and electrolyte choice. This review presents a detailed analysis of AC fabrication 
+techniques, the influence of processing variables on material performance, and 
+the growing role of machine learning (ML) in predicting electrochemical behav-
+ior. Particular emphasis is placed on linking synthesis conditions with structural 
+characteristics and their impact on specific capacitance.
+1 Introduction
+The depletion of natural resources, driven by 
+rapid urbanization, industrialization, and popula-
+tion growth, has intensified the requirement for 
+energy storage technologies that are both efficient 
+and environmentally sustainable. Supercapaci-
+tors (SC) offer efficient energy storage with rapid 
+charge–discharge capability and long operational life 
+[1–6]. Consequently, research efforts have focused 
+on the development of advanced electrode materials 
+designed to enhance the electrochemical performance 
+of SC, which exhibit high specific capacitance  (Csp), 
+superior power density  (DP), and exceptional long-
+term stability, effectively bridging the performance 
+disparity in energy storage characteristics between 
+traditional capacitors and batteries. In terms of classi-
+fication, SC fall into three main types: EDLCs, pseudo-
+capacitors, and hybrid capacitors. EDLCs store charge 
+electrostatically, much like traditional capacitors, 
+Received: 22 October 2025 
+Accepted: 29 December 2025 
+Published online: 
+6 January 2026 
+© The Author(s), under 
+exclusive licence to Springer 
+Science+Business Media, LLC, 
+part of Springer Nature, 2026
+Address correspondence to E-mail: himanshusp@diat.ac.in
+
+--- PDF页 2 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 2 of 49
+while pseudocapacitors rely on fast, reversible redox 
+reactions to store charge. Hybrid capacitors combine 
+the advantages of both systems [7].
+Pseudocapacitors offer high  Csp and energy den-
+sity  (DE), but they suffer from low cyclic stability and 
+ DP [8]. Materials like transition metal oxides, nitrides, 
+and sulfides are commonly used as electrode materi-
+als in this system, with spinel-structured compounds 
+such as cobaltite and layered double hydroxides 
+demonstrating pronounced pseudocapacitive behav-
+iour [9 –13]. In contrast, EDLCs are typically based 
+on carbon-based materials, which provide excellent 
+cyclic stability and high  DP. These materials exhibit 
+excellent electrical conductivity and are more resistant 
+to degradation compared to those used in pseudoca-
+pacitors [14, 15]. Common carbon materials used in 
+EDLCs include graphene, carbon aerogels, reduced 
+graphene oxide (rGO), carbon nanotubes (CNTs), and 
+AC. Among these, AC stands out for being low-cost, 
+highly porous, environmentally friendly, and easy to 
+synthesize, making it more scalable than other carbon 
+materials. Analysis of Scopus data reveals a steady 
+growth in the number of publications on “Biomass-
+derived AC for Supercapacitors” over the past decade 
+(Fig. 1). This trend highlights the increasing impor -
+tance of biomass-derived carbon materials and under-
+scores the expanding research focus on their synthesis, 
+structural optimization, and application in high-per-
+formance supercapacitors.
+AC offers a wide variety of applications across 
+numerous domains, including environmental reme-
+diation (e.g., air and water purification), medical and 
+pharmaceutical uses (such as the treatment of poi-
+soning and drug overdoses, and filtration in medical 
+devices), the food and beverage industry, and several 
+industrial processes beyond energy storage systems 
+[16–18]. Among these, water purification is identified 
+as a prominent application due to AC’s high, large sur-
+face area, high adsorption capacity, and the presence 
+of surface functional groups, which enhance its ability 
+to remove chemical pollutants from wastewater [19]. 
+These same properties also make it effective for air 
+purification, where gaseous pollutants are adsorbed 
+onto the porous carbon surface.
+The synthesis of AC is achieved through physical 
+or chemical activation techniques, with processing 
+conditions strongly influencing its surface area, pore 
+structure, and functionality. These factors directly 
+affect  Csp, as confirmed by various studies. In the pre-
+sent research landscape, a substantial volume of data 
+is available in technical literature, which can be effec-
+tively utilized for ML-driven applications. Within the 
+experimental framework of SC, ML plays a vital role 
+in reducing the dependency on extensive experimental 
+trials to attain optimal outcomes for specific proper-
+ties. By employing prior domain knowledge, relevant 
+input parameters correlated with the desired output 
+can be systematically selected to enhance predictive 
+accuracy. ML not only streamlines the research pro-
+cess by minimizing time and effort but also facilitates 
+the determination of optimal predicted values based 
+on specific parameters, thereby improving efficiency 
+and reliability in experimental studies.
+Yogesh et al. implemented an ML-based predic-
+tive model to estimate the  Csp of graphene oxide 
+nano-ring-based electrodes. The study involved data 
+extraction from 64 research articles, utilizing potential 
+window, current density, electrolyte, and its respec-
+tive concentration as input parameters, with  Csp as 
+the target variable. Among the various ML models 
+employed, the Support Vector Machine (SVM) exhib-
+ited the highest predictive accuracy, achieving a root 
+mean square error (RMSE) of 52.71, outperforming the 
+Regression Tree (55.98), Neural Network (NN) (59.02), 
+and Linear Regression (LR) (59.41) models. The  Csp 
+predicted by the SVM model was 221.6 F/g, whereas 
+the experimentally obtained value was 110 F/g [20].
+Mendhe et al. predict the electrochemical perfor-
+mance of PANI-Ni/Co Hydroxide composites using 
+Fig. 1  Trends in the number of publications on biomass-derived 
+AC for supercapacitors, based on Scopus data
+
+--- PDF页 3 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 3 of 49 143
+data from published literature and key input param-
+eters, including surface area, potential window, elec-
+trolyte, material composition, current collector, and 
+current density, and validate it experimentally. Mate-
+rial composition was categorized into six types: gra-
+phene, carbon, polymer, ternary composites, metallic 
+compounds, and others. Multilayer Perceptron (MLP) 
+and Random Forest (RF) were employed for  Csp pre-
+diction, with performance assessed using correlation 
+coefficient (r) and mean absolute error (MAE). RF out-
+performed MLP, achieving an r value of 0.88 and an 
+MAE of 190.75, compared to MLP’s r value of 0.72 and 
+MAE of 271.38. RF predictions for  Csp at varying PANI 
+concentrations closely matched experimental results, 
+demonstrating its reliability [21].
+Integrating ML into AC-based SC research can be 
+highly beneficial, as it enables mostly accurate predic-
+tion of material properties and helps identify optimal 
+processing parameters for achieving the best  Csp. ML 
+also uncovers complex relationships between input 
+variables, allowing for efficient material screening and 
+process optimization—ultimately maximizing perfor-
+mance with minimal experimental effort.
+Numerous review studies have investigated AC 
+derived from a variety of biomass precursors, each 
+highlighting different facets of its development. Some 
+reviews focus on the selection of raw biomass materi-
+als and how these precursors influence the resulting 
+electrochemical properties, alongside the synthesis 
+strategies employed. Others concentrate specifically 
+on activation techniques or the effects of heteroatom 
+doping in modifying the structure and performance of 
+AC. For instance, Shanmuga Priya et al. [22] reviewed 
+the physicochemical characterization and electrochem-
+ical behavior of biomass-derived AC. Rashidi et al.[23] 
+place special emphasis on the ideal properties of AC 
+along with its characterization. Bedia et al. [24] dis-
+cussed the production of AC through  FeCl3-mediated 
+chemical activation. Das et al. [25] reviewed bamboo-
+based AC and its suitability for energy storage devices. 
+Similarly, Tomy et al.[26] highlighted advancements 
+in generating AC from coconut biomass for improved 
+energy storage performance. Distinct from previously 
+published reviews, this work offers a thorough and 
+cohesive examination of AC produced from agro-
+forestry biomass. It systematically covers synthesis 
+routes, the impact of crucial processing variables on 
+structural and functional properties, the role of differ-
+ent activating agents, and the resulting electrochemi-
+cal behavior supported by detailed physicochemical 
+characterization. Furthermore, it underscores the sig-
+nificance of heteroatom incorporation in enhancing 
+electrochemical performance.
+A major contribution of this review lies in its in-
+depth focus on ML-driven prediction frameworks—an 
+emerging yet underexplored dimension in activated 
+carbon research. With the growing shift toward data-
+centric methodologies for forecasting key performance 
+indicators of supercapacitors, particularly  Csp, as well 
+as secondary performance-supporting attributes such 
+as SSA and yield that are essential for commercial 
+viability. This article critically evaluates the selection 
+of input parameters used in ML models and their 
+physical significance in predicting  Csp. Accordingly, 
+the review is organized as follows. Section 2 provides 
+a comprehensive overview of biomass resources and 
+their key characteristics. Section 3 outlines the syn-
+thesis strategies for AC, with particular emphasis on 
+commonly employed activating agents. Section 4 sys-
+tematically evaluates the effects of synthesis param-
+eters, precursor selection, proximate analysis, and het-
+eroatom doping on the  Csp of AC materials. Section 5 
+focuses on the structural and morphological charac -
+terization of AC. Finally, Sects. 6 and 7 present super-
+vised ML frameworks for supercapacitors, detailing 
+the prediction of key electrochemical properties using 
+ML approaches, and conclude with future prospects, 
+critical challenges, and concluding remarks.
+2  Biomass
+Biomass refers to organic matter derived from plant 
+and animal sources that can be utilized as an energy 
+resource. Due to its low price value, abundant avail-
+ability, and environmental compatibility, biomass 
+plays a significant role in energy storage applications, 
+making it a promising alternative for sustainable 
+energy production. Among the various categoriza-
+tion schemes proposed, Roberts et  al. classified bio-
+mass into two fundamental categories: plant-derived 
+and animal-derived sources. Within the plant-derived 
+group, biomass is further divided into natural vegeta-
+tion, energy crops, and residual biomass. The residual 
+fraction includes by-products generated from agricul-
+tural practices, forestry operations, industrial activi-
+ties, and urban solid waste (Fig. 2) [27]. Agroforestry 
+activities generate substantial quantities of biomass 
+residues, which are often left to decompose in the field, 
+utilized as fuel for domestic combustion, or disposed 
+
+--- PDF页 4 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 4 of 49
+of in landfills. These conventional practices contribute 
+significantly to environmental concerns, such as air 
+and land degradation and greenhouse gas emissions 
+[28]. However, such lignocellulosic wastes hold prom-
+ise as sustainable carbon precursors for the prepara-
+tion of AC, particularly for SC applications. Various 
+agricultural and forestry-derived biomass residues 
+commonly used for this purpose are outlined below.
+2.1  Forest residue
+Due to their extensive availability, low price, and high 
+content of carbon and heteroatoms, forestry residues 
+represent promising precursor materials for the fab-
+rication of SC electrodes. Additionally, their inherent 
+porous structures facilitate efficient ion transport, fur-
+ther improving electrochemical performance. Typical 
+tree-derived biomass sources encompass wood, leaves, 
+bark, and sawdust. Soybean straw, derived from agri-
+cultural biomass, is considered a viable precursor used 
+for AC synthesis due to its prominent nitrogen and 
+carbon content. AC was synthesized by impregnating 
+carbonized soybean straw powder with KOH (1:2) 
+and carbonizing it at 700 ºC, followed by HCl and DI 
+water washing. The material exhibited an specific sur-
+face area (SSA) of 2012.62  m2/g and a  Csp of 380.5 F/g 
+at 0.5 A/g, with 73.97% capacitive retention at 10 A/g 
+after 10,000 cycles [29]. Ayinla et al. synthesized AC 
+using pine wood and utilized it to fabricate a sym-
+metrical solid-state SC. The AC material was derived 
+from pine wood, carbonized at 1000 ºC with a phos-
+phoric acid (H₃ PO₄) impregnation ratio of 1.5. The 
+resulting SC demonstrated a  DP of 1156.04 W/kg at a 
+ DE of 14.75 Wh/kg, with  Cu2⁺-CNF hydrogel serving 
+as the electrode material [ 30]. Paul et al. synthesized 
+AC from birch sawdust using a two-step KOH acti-
+vation process. The raw material was carbonized at 
+500 °C under an Inert  N2 atmosphere for one hour, 
+impregnated with KOH (biochar: KOH = 1:8 wt%), 
+and pyrolyzed at 900 ºC in nitrogen. The product was 
+washed until pH stabilization. The AC exhibited small 
+and elongated particle morphology and a Type I iso-
+therm, indicating microporosity. It had a high SSA 
+(3029  m2/g) and an  ID/IG ratio of 1.4, suggesting sig -
+nificant structural defects. Electrochemical analysis of 
+birch-based electrodes in symmetric SC showed a  Csp 
+of 143 F/g at 0.1 A/g [31]. Table 1 provides an overview 
+of various AC materials synthesized from tree-derived 
+biomass wastes, along with their respective  Csp values. 
+An overview of typical forestry-derived byproducts is 
+provided below.
+2.1.1  Mulberrytree
+Mulberry tree waste, with its high lignocellulosic con-
+tent, is a suitable precursor for AC, yielding a porous 
+structure ideal for energy storage applications. Mul-
+berry branches possess substantial amounts of pro-
+tein, cellulose, and lignin, with cellulose and lignin 
+accounting for 54.3% and 28.9% of the composition, 
+respectively [37]. Ma et al. employed a two-step 
+pyrolysis strategy integrated with chemical activa -
+tion to preserve the hierarchical porous architecture 
+of mulberry wood-derived carbon. Among the acti-
+vating agents tested (KOH, ZnCl₂ , and H₃PO₄), KOH 
+proved most effective, yielding a material with a high 
+SSA of 424  m2/g, a microporosity of 59.1%, and a  Csp 
+of 98 F/g at 5 mA/cm2 [38].
+Liu et al. synthesized AC electrode material from 
+mulberry tree leaves via hydrothermal carboniza-
+tion, followed by chemical activation using NaOH. 
+Different char-to-NaOH ratios were investigated, 
+with the optimal performance observed at a 1:3 ratio, 
+resulting in a high SSA of 2662  m2/g and a total pore 
+volume (TPV) of 1.79  cm3/g. Electrochemical evalu-
+ation in a symmetric two-electrode system with the 
+electrolytic concentration of 6 M KOH demonstrated 
+a   Csp of 330 F/g at 0.1 A/g. The CV and GCD plots for 
+all the samples fabricated with different biochar-to-
+NaOH ratios are shown in Fig. 3(1a, 1b). The elec-
+trode material also exhibited excellent rate capabil-
+ity, retaining 76% of its capacitance at a high specific 
+Fig. 2  Origin-wise classification of biomass
+
+--- PDF页 5 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 5 of 49 143
+current of 30 A/g, corresponding to a  Csp of 251 F/g. 
+Figure  3(1d) illustrates the Nyquist plots corre -
+sponding to all samples, which indicates that higher 
+NaOH impregnation ratios lead to reduced solution 
+resistance. Moreover, as the NaOH concentration 
+increases, the semicircle in the high-frequency region 
+becomes less prominent, suggesting a lower charge 
+transfer resistance for the sample with the highest 
+biochar-to-NaOH ratio [39].
+2.1.2  Mangotree
+Mango tree waste, such as fallen leaves, pruned 
+branches, and dead twigs, can be effectively used 
+Table 1  AC produced through the conversion of Tree Waste Biomass
+S.No Biomass used Chemical modification SSA
+(m2/g)
+Electrolyte Csp (F/g)@A/g Ref
+1 White birch Fast pyrolysis
+KOH activation
+1700 2 M  H2SO4 350@1 [32]
+2 Camphorwood wastes H2O2 etching
+KOH activation
+175.81 1 M  H2SO4 245@0.5 [33]
+3 Willow Wood Carbonization (600  ºC)
+Activation KOH (900 °C)
+2793 6 M KOH 394@1 [34]
+4 Acacia auriculiformis tree KOH activation (1:1)
+Carbonization
+(700  ºC)
+619.5 1 M  Na2SO4 191@1 [35]
+5 Olive tree Carbonization
+(500 °C)
+KOH activation
+(IR 4 g/g, 800 °C for 82 min)
+2980 1 M KOH 410@0.5 [36]
+Fig. 3  1a CV curves acquired at 2 mV/s1b GCD measurements 
+performed at 0.1 A/g, 1c rate performance, 1d Nyquist plots of 
+SY-H-n samples, which represent electrode materials derived 
+from mulberry leaves with different NaOH-to-char ratios. Sam-
+ples synthesized at NaOH to char ratios of 1:1, 2:1, and 3:1 are 
+labeled SY-H-1, SY-H-2, and SY-H-3, respectively. Reprinted 
+with permission from [39].  Copyright 2019, Springer  Nature. 
+2. FESEM images of 2a carbonized Mangifera indica leaves and 
+ACs prepared at 2b 525 ºC, 2c 625 ºC, and 2d 725 ºC; EDX spec-
+tra of (2.2e) carbonized leaves and 2.2 f–h ACs at corresponding 
+temperature. Reproduced with permission from Creative Com-
+mons Attribution (CC BY) license [40]
+
+--- PDF页 6 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 6 of 49
+as AC feedstock. The material’s rich composition of 
+carbon and ready accessibility contribute to its sus-
+tainability and low cost. Hegde et al. synthesized AC 
+from Mangifera indica leaves via a two-step process. 
+Initially,  FeCl3-impregnated dried leaves were carbon-
+ized at 400 ºC under argon. The resulting carbon was 
+then activated with KOH and pyrolyzed at varying 
+temperatures (525–725 ºC). SEM micrographs of the 
+samples subjected to pyrolysis at 525 ºC, 625 ºC, and 
+725 ºC are shown in Fig. 3(2b–2d). The sample treated 
+at 725 ºC exhibited the highest SSA (1232.63  m2/g) and 
+the lowest  ID/IG ratio. Electrochemical testing in 6 M 
+KOH showed superior capacitive performance, with a 
+ Csp of 521.65 F/g at 0.5 A/g, attributed to improved gra-
+phitization, pore structure, and high SSA [40]. Wick-
+ramarachchi et al. synthesized AC from Mango seed 
+husk using a two-step process: carbonization followed 
+by activation at varying activation temperatures. The 
+sample activated at 1100 ºC exhibited the highest  Csp 
+of 135 F/g at 5 mA/cm2. This superior electrochemical 
+performance is attributed to the high carbon content, 
+apart from the large surface area and well-developed 
+pore structure [41]. He et al. prepared boron, nitro-
+gen, and oxygen co-doped AC derived from mango 
+branches, employing ammonium pentaborate tetrahy-
+drate as both a dopant and a tempering agent. The 
+highest electrochemical performance was obtained by 
+mixing 3 g of dried, pulverized mango branch with 
+3 g of ammonium pentaborate tetrahydrate. The blend 
+was then heated at 400 °C for 1 h in a nitrogen atmos-
+phere. Subsequently, 1 g of this mixture was blended 
+with  KHCO3 and underwent pyrolysis at 700 ºC for 1 h 
+under a  N2 atmosphere. The resulting material exhib-
+ited an SSA of 1621  m2/g and delivered a  Csp of 322 F/g 
+at a specific current of 1 A/g [42].
+2.1.3  Bamboo
+The cellulose, hemicellulose, and lignin content of 
+bamboo are 47.7, 21.9, and 24.5%, respectively, and it 
+exhibits a high carbon yield because of its significant 
+lignin fraction. Its well-developed porous structure 
+and high carbon content facilitate efficient ion diffu-
+sion, highlighting its potential as a sustainable pre-
+cursor for SC applications [43]. Qiu et al. studied the 
+impact of cellulose, hemicellulose, and lignin derived 
+from bamboo on the electrochemical properties of the 
+resulting AC. A  CO2-catalyzed  K2CO3 activation tech-
+nique was employed to produce hierarchical porous 
+carbon. The results indicate that the presence of lignin 
+promotes the development of numerous micropores 
+alongside a large fraction of mesopores in the bamboo-
+based hierarchical porous carbon, while cellulose and 
+hemicellulose support micropore formation. Lignin 
+enhances  Csp and rate performance due to its high sur-
+face area and the micro- and mesopore-associated pore 
+volumes, whereas cellulose provides excellent cycling 
+stability by forming a stable carbon framework and 
+excellent conductivity [44].
+Zhang et al. produced AC from bamboo via a 
+straightforward carbonization process, succeeded 
+by chemical activation using KOH at various activa-
+tion temperatures. The ratio of carbonized material to 
+KOH was maintained at 1:3. Among the samples, the 
+one activated at 900 ºC exhibited the highest  Csp of 
+293 F/g at 0.5 A/g in a 3 M KOH solution. This supe-
+rior capacitance is attributed to the synergistic effect of 
+its mesoporous structure and large SSA (2221.1  m2/g) 
+[45]. Gunasekaran et al. developed nitrogen-doped 
+AC material from bamboo through a one-step pyroly-
+sis and activation process using a urea-to-KOH ratio 
+of 3:1, exhibiting a wrinkled nanosheet morphology 
+with porous structure, as confirmed by FESEM analy-
+sis. Electrochemical characterization in a 6 M KOH 
+electrolyte using a tri-electrode set-up yielded a high 
+ Csp of 475 F/g at 10 mV/s, highlighting the enhanced 
+performance due to nitrogen doping [46].
+2.2  Agricultural waste
+Agricultural waste primarily consists of biomass 
+residues derived from crop and tree cultivation, and 
+agro-industrial processes. These residues include 
+sugarcane bagasse, peanut shells, wax gourd peels, 
+garlic peels, mango peels, corncobs, onion peels, and 
+paddy straw, among others. It can be biocompatible 
+or non-biodegradable, hazardous or non-hazardous. 
+A range of agricultural waste materials employed for 
+AC generation is summarized in Table 2. The follow-
+ing agricultural residues are commonly employed as 
+precursors to produce AC.
+2.2.1  Sugarcanebagasse
+Sugarcane bagasse, a lignocellulosic byproduct 
+(composed of 20–25% lignin, 25–30% hemicellulose, 
+and ~ 40–50% cellulose) from agro-industries, serves 
+as a cost-effective precursor for AC. Its utilization 
+
+--- PDF页 7 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 7 of 49 143
+reduces waste-related pollution while yielding porous 
+carbon materials [ 57]. Phakkhawan et al. demon -
+strated the production of AC from sugarcane bagasse 
+via a sequential carbonization and activation process. 
+Various activating agents were used, including basic 
+(KOH, NaOH) and acidic  (HNO3,   H2SO4) types. SEM 
+images reveal that samples synthesized without acti-
+vation display a smooth and dense surface, whereas 
+those treated with activating agents show a higher 
+density of macropores due to the etching effect of the 
+different agents (Fig. 4). The use of alkaline activa-
+tors resulted in significantly enhanced SSA, increased 
+TPV, and superior surface wettability relative to acidic 
+activators. Among the activating agents tested, KOH 
+yielded the best performance, providing an SSA 
+of 1058.53  m2/g and a  Csp of 138.61 F/g at 0.5 A/g in 
+a three-electrode system [58]. Wei et al. developed 
+AC from sugarcane tips through a dual-step process 
+involving carbonization and chemical activation using 
+KOH. Initially, the sugarcane tips were washed, dried, 
+and ground into a fine powder, which was carbonized 
+at 500 ºC for 2 h. The carbonized product was then 
+mixed with KOH at different ratios and calcined at 
+600 ºC for 2 h under vacuum conditions. After cooling 
+to room temperature, the material was acid-treated 
+with 2 M HCl and washed to neutral pH. The optimal 
+activation was obtained with a 1:2 weight ratio of pre-
+carbonized biomass to KOH, resulting in a  Csp of 259 
+F/g at 0.5 A/g. This superior performance is attributed 
+to the relatively high effective surface area, which pro-
+vides abundant ion-exposed adsorption sites [59].
+Further, Sarkar et al. synthesized AC from sugar-
+cane bagasse by pre-treating it with various alkaline 
+activating agents such as KOH,  K2CO3, and NaOH. 
+The raw bagasse was thoroughly washed, dried, and 
+chopped into small pieces before Thereafter, 30 g of 
+dried bagasse was combined with 150 g of an aque-
+ous solution containing 80 wt% of the corresponding 
+activating agent and allowed to impregnate for 24 h. 
+After pretreatment, the material was dried for 12 h at 
+120 ºC in a hot air oven, followed by carbonization at 
+650 ºC for 2 h in a muffle furnace. This was followed 
+by thorough washing until a neutral pH was achieved. 
+Among the activating agents tested,  K2CO3 demon-
+strated the most favorable electrochemical perfor-
+mance, yielding a  Csp of 265 F/g at 0.2 A/g [60].
+2.2.2  Corncob
+Corn and its various derivatives represent promis -
+ing biomass precursors for the development of SC 
+active materials. In this context, Reddygunta et al. 
+synthesized AC from multiple corn-based by-prod -
+ucts, including husk, cob, grain, and fiber, through a 
+straightforward carbonization process, followed by 
+activation using potassium bicarbonate. They exam-
+ined the physicochemical and electrochemical charac-
+teristics of the prepared ACs. The elemental composi-
+tion analysis indicated that corn husk and fiber were 
+enriched in nitrogen with relatively lower oxygen 
+content, whereas corn cob and grain displayed higher 
+oxygen concentrations accompanied by reduced 
+nitrogen levels. The carbon content across all samples 
+ranged from 44.7 to 47%. The total SSA of AC derived 
+from husk, cob, fiber, and grain was found to be 1508, 
+1770, 1749, and 1804  m2/g, respectively.  N2 physisorp-
+tion isotherms and corresponding pore diameter 
+distribution curves of the AC samples synthesized 
+Table 2  Activated carbon derived from Plant Waste Biomass
+S.No Biomass used Chemical modification Surface area
+(m2/g)
+Electrolyte Csp (F/g)@A/g Ref
+1 Pomegranate peels ZnO@N-doped PPAC 21.25 1 M  H2SO4 265.2@0.1 [47]
+2 Macadamia nut shells Ammonia modified 1182.0 290.4@0.5 [48]
+3 Bamboo N-doped 1469.17 6 M KOH 376.25@0.5 [49]
+4 Rice straw 468.3 6 M KOH 256.3@0.5 [50]
+5 Corn bract N, P co-doped 286.5 6 M KOH 160.1@1 [51]
+6 Litchi peel N/O co-doped 996.05 6 M KOH 320@0.5 [52]
+7 Jackfruit waste 1468 2 M  Na2SO4 80.14@0.2 [53]
+8 Durian peels Fe-modified 2100.5 6 M KOH 267@1 [54]
+9 Corncob 1914 6 M KOH 255.4@0.5 [55]
+10 Sorghum 10% w/v NaOH treated 78 98@0.2 [56]
+
+--- PDF页 8 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 8 of 49
+from distinct corn-derived precursors are illustrated 
+in Fig. 5. Electrochemical testing in a three-electrode 
+setup with 1 M  Na2SO4 revealed that AC grain exhib-
+ited the highest Cₛₚ  of 385 F/g at 0.25 A/g while AC 
+derived from fiber, cob, and husk were 346.2, 324.6, 
+and 279.6 F/g, respectively, at the same specific current 
+[61]. Among husk, cob, grain, and fiber, grain serves 
+as the primary agricultural product, whereas the oth-
+ers are considered by-products or waste materials, 
+with corncob being generated in the greatest quantity 
+among them and is extensively studied. Baskar et  al. 
+investigated the synthesis of AC from corncob using 
+H₃PO₄ and a sequential combination of  H3PO4 and 
+KOH as activating agents. Initially, corncob powder 
+was impregnated with  H3PO4 in a 1:1 weight ratio, 
+then filtered, dried, and carbonized at 500 ºC for 1 h 
+in a muffle furnace to obtain  H3PO4-AC. For dual acti-
+vation, the  H3PO4-treated carbon underwent further 
+impregnation with KOH at a 1:3 ratio, followed by a 
+second carbonization step. BET analysis revealed that 
+Fig. 4  SEM images of a non-AC and b–e ACs treated with  HNO3,  H2SO4, NaOH, and KOH, respectively. Reprinted with permission 
+from [58]. Copyright 2022, Springer Nature
+
+--- PDF页 9 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 9 of 49 143
+the SSA increased from 11  m2/g for the  H3PO4-only 
+sample to 165  m2/g for the dual-AC, which also exhib-
+ited a broader pore size distribution. Electrochemical 
+measurements conducted in 1 M  Na2SO4 revealed a 
+substantial improvement in  Csp for the sample acti-
+vated sequentially with  H3PO4 and KOH, attaining 
+138.82 F/g at 1 A/g. This value markedly exceeds that 
+of the sample activated solely with  H3PO4, which 
+exhibited a capacitance of 30.45 F/g [62]. Ortiz-Oli-
+vares et al. produced AC from corncob powder via 
+chemical activation using  K2CO3. The precursor was 
+impregnated with  K2CO3 at varying weight ratios for 
+4 h, followed by drying and thermal treatment under 
+a nitrogen atmosphere at different activation tempera-
+tures. After activation, samples were washed with acid 
+and DI water to attain neutral pH. The optimal sample, 
+activated at 650 ºC with a 1:3 biomass-to-K 2CO3 wt% 
+ratio, demonstrated a high SSA of 884  m2/g with a pre-
+dominantly microporous structure, yielding a  Csp of 
+325 F/g at 5 mV/s in a half-cell setup with 0.5 M  H2SO4 
+as the electrolyte [63].
+2.2.3  Garlicpeels
+Garlic, a widely consumed commodity, generates 
+significant amounts of waste, particularly garlic 
+peels, which account for approximately 16–20% of 
+its total mass, equating to nearly 3 million tons annu-
+ally [64]. Due to their ability to yield high surface 
+area AC through simple processing, garlic-derived 
+wastes have attracted interest as potential electrode 
+materials for SC applications. Teng et al. synthesized 
+AC from garlic peel. First, garlic peels were collected, 
+washed, and dried. Following that, the dried peels 
+were carbonized for two hours at 600 ºC. For activa-
+tion, KOH was mixed with the resulting char at a 4:1 
+mass ratio and subjected to ultrasonic impregnation 
+for varying durations using an ultrasonic disperser. 
+The total impregnation time (ultrasonic plus static) 
+was kept constant, and the entire process was con-
+ducted at 65 ºC. The impregnated mixture was then 
+transferred to a furnace and activated at 800 ºC for 
+2 h. Following activation, the samples were rinsed 
+with acid and distilled water until a neutral pH was 
+achieved. The sample subjected to 6 min of ultra-
+sonic impregnation showed the highest SSA of 
+3887  m2/g along with the lowest  ID/IG ratio, indicat-
+ing a higher degree of graphitization. The sample 
+tested in a full-cell electrochemical setup using 6 M 
+KOH as the electrolyte achieved a  Csp of 426 F/g at 1 
+A/g [65]. Zhang et al. synthesized AC via chemical 
+activation using garlic skin as the carbon precursor 
+material and KOH as the activating agent. EDS and 
+XRD analyses confirmed the presence of calcium car-
+bonate, which was subsequently removed through 
+acid etching. This treatment enhanced the electro-
+chemical performance by generating additional 
+pores and eliminating the non-conductive calcium 
+carbonate. At 0.5 A/g, a  Csp of 427 F/g was achieved, 
+attributed to the interconnected pore network and 
+large SSA [66]. In another study, Ji et al. highlighted 
+the significance of acid pretreatment for the effective 
+Fig. 5  a  N2 physisorption isotherms and b Pore diameter distribution profiles of AC samples prepared from different corn components: 
+grain, fiber, cob, and husk. The figure was obtained from [61] under the CC BY 4.0 license
+
+--- PDF页 10 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 10 of 49
+removal of inherent mineral content when utilizing 
+garlic peel as a carbon precursor in AC synthesis. 
+Hydrochloric acid was employed to eliminate the 
+embedded mineral impurities. It was observed that 
+HCl pretreatment enhanced both the stability and 
+mesoporous structure, causing improved electro-
+chemical performance [67].
+The fundamental physicochemical properties of 
+different biomass precursors play a decisive role in 
+determining the structure and electrochemical behav-
+ior of the AC produced from them. Consequently, 
+these properties serve as crucial input parameters for 
+ML-based material prediction and optimization. As 
+presented in Table 3, proximate and ultimate analy -
+ses of diverse biomass feedstocks reveal considerable 
+differences in parameters such as carbon content, 
+volatile matter, fixed carbon, ash concentration, and 
+elemental composition. These compositional varia-
+tions significantly influence the thermal degradation 
+pathways during carbonization and determine the 
+formation of micro- and mesoporous architectures 
+during activation. High volatile matter indicates the 
+presence of significant thermally decomposable com-
+ponents, which are advantageous for the development 
+of a porous structure. Low moisture content indicates 
+good initial stability and reduced drying requirements 
+[68]. A high ash fraction can hinder pore development 
+and reduce the effective SSA, while also increasing the 
+electrical resistance of biochar, ultimately deteriorat-
+ing supercapacitor performance. However, a low ash 
+content combined with a high SSA does not necessar-
+ily guarantee improved  Csp, as electrochemical per-
+formance also depends on the presence of a functional 
+group. In some cases, the ash may contain transition 
+metal oxides (e.g.,  MnO2,  Fe2O3), which can contribute 
+to pseudocapacitive behavior and enhance charge stor-
+age capabilities [69]. Biomass often contains naturally 
+occurring heteroatoms that can be partially preserved 
+during the carbonization process, leading to in situ het-
+eroatom doping within the AC framework. This incor-
+poration of functional elements significantly enhances 
+pseudocapacitive behavior and improves surface wet-
+tability in aqueous electrolytes, thereby contributing 
+to superior electrochemical performance. Moreover, 
+Table 3  Proximate and ultimate analysis of various biomass samples
+Proximate analysis (wt%) Ultimate analysis (wt%) Reference
+Biomass Ash Volatiles Fixed carbon MC C H N S O
+Bamboo 0.9 84.0 15.1 - 48.44 5.47 5.47 0 45.03 [49]
+Corncob 2.58 69.58 15.40 12.44 39.88 6.56 0.94 [71]
+Raw sugarcane bagasse 4.2 83.5 12.5 49 43.06 5.51 0.05 0.10 51.28 [72]
+Mango branch 3.83 79.84 16.33 - 44.7 5.76 0.35 0.64 44.72 [42]
+Coconut shell 25.3 50.4 17.8 6.5 [73]
+Pine cone 6.1 59.8 8.5 25.6 [73]
+Rice husk 32.4 47.0 12.4 8.2 [73]
+Rice husk 30.31 55.78 5.20 8.71 28.65 4.12 1.07 0.24 35.61 [74]
+Peanut shell 0.45 60.32 31.70 7.53 47.31 6.15 1.25 0.11 44.73 [74]
+Raw Calotropis procera fruit 2.31 75.12 19.03 3.54 49.31 6.49 2.14 0.35 39.47 [68]
+Coffee husks 6.85 68.47 21.55 45.9 6.09 2.76 0.4 37.9 [75]
+Macadamia nut shells 0.66 70.76 26.43 52.6 6.04 0.47 - 40.3 [75]
+Orange peel 2.8 74.85 12.47 45.1 8.78 0.46 42.3 [76]
+Palm shell 1.1 72.47 73.09 7.96 50.01 6.85 1.90 41.15 [77]
+Coconut shell 0.1 73.09 18.6 8.21 48.63 6.51 0.14 0.08 44.64 [77]
+Bamboo 4.50 80.30 15.20 15.20 48.39 5.86 2.04 39.21 [78]
+Gulmohar 5.50 81.25 13.25 13.25 44.43 6.16 1.65 41.90 [78]
+Neem 5.60 81.75 12.65 12.65 45.10 6.00 1.70 41.50 [78]
+Dimaru 5.80 82.00 12.20 12.20 44.85 5.98 1.65 41.84 [78]
+Sisham 4.60 80.00 15.40 15.40 45.85 5.80 1.60 40.25 [78]
+Tea seed shell 2.37 75.56 22.07 47.66 5.95 0.46 0.39 42.90 [79]
+Rice husk 18.11 63.45 7.91 10.53 25.6 4.5 0.5 0.4 69 [80]
+
+--- PDF页 11 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 11 of 49 143
+biomass-derived precursors naturally feature hierar-
+chical architectures and intrinsic pores, which can be 
+preserved or strategically tuned through carbonization 
+and activation to produce well-developed micro- to 
+macroporous networks. Such pore structures enhance 
+ion accessibility and facilitate efficient charge storage, 
+making them highly advantageous for supercapaci-
+tor applications [70]. A comparative overview of AC 
+derived from various biomass sources is presented 
+in Table 4, highlighting their SSA and corresponding 
+ Csp. Given the complex and nonlinear relationships 
+between precursor chemistry and performance metrics 
+such as  Csp, rate performance, and cycling stability, 
+integrating proximate and ultimate analysis data into 
+ML frameworks provides a powerful means to predict 
+and screen promising biomass-derived AC.
+Biomass obtained from agroforestry sources consti-
+tutes an abundant and carbon-rich class of precursors 
+for AC production. Nevertheless, the physicochemical 
+properties of the resulting ACs, including SSA, pore 
+size distribution, pore volume, and elemental compo-
+sition, are strongly governed by the preparation and 
+activation techniques employed. These methods and 
+their influence on material properties are discussed in 
+the subsequent section.
+3  Methods for the synthesis of activated 
+carbon
+AC is prepared from a carbonaceous precursor either 
+through a two-stage procedure: carbonization fol-
+lowed by activation, or just carbonization.
+3.1  Carbonization
+Carbonization refers to the thermal breakdown of bio-
+mass under oxygen-restricted atmosphere to generate 
+char. During this process, volatile components of the 
+precursor are released, leading to the formation of a 
+porous carbon structure. Carbonization can be carried 
+out using various methods, with hydrothermal car-
+bonization and pyrolysis being the predominant and 
+widely used techniques.
+3.1.1  Pyrolysis
+Pyrolysis is an irreversible thermochemical mecha-
+nism in which organic material undergoes thermal 
+degradation at high temperatures in an inert atmos -
+phere, producing carbon-rich solids, gases, and liquid 
+byproducts. Zhang et al. studied the impact of varying 
+pyrolysis temperatures on AC derived from reed resi-
+due waste. The precursor material was pyrolyzed at 
+different temperatures ranging from 500 to 800 ºC, fol-
+lowed by chemical activation using KOH at a weight 
+ratio of 1:5 (AC: KOH). Among the tested conditions, 
+600 ºC was identified as the optimal pyrolysis temper-
+ature, yielding the SSA of 2074.72  m2/g. Increasing the 
+pyrolysis temperature beyond 600 ºC led to a reduc -
+tion in micropore volume, likely due to structural 
+collapse or merging of micropores. Electrochemical 
+Table 4  Specific surface area and capacitance of activated car -
+bons from various biomass sources
+Biomass SSA  (m2/g) Specific 
+capacitance(F/g)
+Ref
+garlic peels 1993.73 303.38 [81]
+garlic peels 436.2 174 [82]
+Corncob 800 390 [83]
+Corncob 884 325 [63]
+Corncob 1722 382.6 [84]
+Sugarcane bagasse 1914.76 462.3 [85]
+Sugarcane bagasse 1788 300 [86]
+Sugarcane bagasse 725 265 [60]
+Bamboo 3392 501.6 [87]
+Bamboo 3061 258 [88]
+Bamboo 1137.86 174 [89]
+Sword bean shells 2282 264 [90]
+Lemon peel 744.78 152.14 [91]
+Pinecone 1169.31 185 [92]
+Cashew nut shell 898.3 214 [93]
+Peanut shells 702.314 247 [94]
+Pine-cone 882.2 106 [95]
+Pine-needle 477.9 78 [95]
+Willow catkins 645 340 [96]
+Hibiscus flowers 1699.96 216 [97]
+Rubber seed shell 148 123 [98]
+Durian Shell 180 178 [98]
+Palm petiole 436 177 [98]
+Rice Straw 1007 332 [99]
+Broad bean husk 2078.4 386.5 [100]
+Calotropis procera fruit 2953.13 341 [68]
+Watermelon rind 1958 333.42 [101]
+Soybean Pods 2245 321.1 [102]
+Loofah sponge 2718 309.6 [103]
+Soybean 1749 243.2 [104]
+
+--- PDF页 12 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 12 of 49
+performance evaluation revealed that the precursor 
+treated at 600 ºC showed the highest  Csp of 307.5 F/g 
+at 0.25 A/g, attributed to its well-developed hierar-
+chical porous architecture. Additionally, after 8000 
+charge–discharge cycles, this sample showed out-
+standing cycling stability, holding onto 98% of its 
+capacitance [105].
+3.1.2  Hydrothermalcarbonization
+Hydrothermal carbonization is a thermochemical 
+process in which biomass is treated in an aqueous 
+environment at temperatures between 180 and 300 ºC 
+to produce hydrochar[106]. A primary advantage 
+of using this process is its potential to convert wet 
+biomass into carbonaceous material without requir -
+ing a prior drying step [107]. Researchers employed 
+hydrothermal carbonization in combination with an 
+activation step for the production of AC. Sandeep 
+et al. synthesized AC from corncob through a two-
+step process involving hydrothermal carbonization 
+at 200 ºC for 7 h, followed by carbonization at 400 ºC 
+for 3 h in a muffle furnace. The corncob powder, acti-
+vating agent (KOH,  ZnCl2, or  H3PO4), and distilled 
+water were combined in a specific ratio within a 
+Teflon-lined autoclave, and the resulting hydrochar 
+was subsequently carbonized. Among the activating 
+agents,  H3PO4 produced the most effective AC, exhib-
+iting a surface area of 68.54  m2/g, which is the highest 
+among them and delivering superior electrochemi-
+cal performance, with a  Csp of 41 F/g at 1 A/g in 1 M 
+ H2SO4. In contrast, the ACs activated with  ZnCl2 and 
+KOH displayed lower surface areas of 54.12  m2/g and 
+34.58  m2/g, and correspondingly lower capacitances of 
+9.5 F/g and 2.5 F/g, respectively. The  H3PO4-activated 
+sample demonstrated favorable energy storage char-
+acteristics, achieving a  DE of 5.7 Wh/kg and a  DP of 
+500.4 W/kg in a three-electrode configuration [108].
+3.2  Activation process
+Activation improves the surface area and pore volume 
+of the material through the formation of additional 
+pores and the expansion of pre-existing pores. In addi-
+tion, activation alters AC’s surface chemical nature, 
+giving it unique characteristics [109]. Activation may 
+be carried out using a single-step approach, where 
+carbonization and activation take place concurrently, 
+or a two-step process, in which the carbonaceous 
+intermediate, typically derived from pyrolysis or 
+hydrothermal carbonization, is subsequently activated 
+through chemical treatment. AC can be achieved using 
+physical, chemical, or a combination of both methods.
+3.2.1  Physicalactivation
+Physical activation is a two-step process consisting of 
+carbonization followed by activation. During carboni-
+zation, the raw material is heated in an inert atmos-
+phere (like argon or nitrogen) at temperatures ranging 
+from 400 to 700  ºC. Subsequently, the resulting car-
+bonized material is subjected to oxidizing gases, such 
+as carbon dioxide or steam, at elevated temperatures 
+of 800 ºC to 1000 ºC to create porosity and enhance 
+its surface area. During the activation process, gasifi-
+cation reactions between the oxidizing gases and the 
+carbonized material promote the removal of carbon 
+atoms as gaseous products such as CO, leading to the 
+development of a well-defined porous structure in the 
+AC according to the following reaction (Eq. 1-2) [110, 
+111].
+CO2 is generally preferred due to its high purity 
+and ease of flow control [112]. AC produced using  CO2 
+as the oxidizing agent exhibits significantly enhanced 
+microporosity, along with higher BET surface area 
+and micropore volume, compared to AC derived from 
+steam activation, which often results in insufficient 
+micropore development [113].
+3.2.2  Chemicalactivation
+Chemical activation is done using a chemical agent for 
+the treatment of carbonaceous material to produce AC. 
+It can be a one-step process influenced by the degree of 
+impregnation and the chemical agent-to-dry precursor 
+ratio. Compared to physical activation, chemical acti-
+vation presents several advantages, including higher 
+carbon yield, shorter activation time, and reduced 
+processing cost. Additionally, it produces AC with a 
+more developed and well-defined porous structure 
+[109, 111]. However, a drawback of this approach is 
+the extensive and repetitive washing required for the 
+AC, as well as its severe corrosiveness [109]. A detailed 
+(1)C + H2O → CO + H2
+(2)C + CO2 → 2CO
+
+--- PDF页 13 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 13 of 49 143
+overview of the merits and drawbacks linked to physi-
+cal and chemical routes for activated-carbon synthesis 
+is presented in Table 5, along with a schematic illus -
+tration of the chemical and physical activation pro-
+cesses for AC synthesis, which is provided in Fig. 6. 
+Several chemical agents, including  H3PO4,   H2SO4, 
+ ZnCl2, KOH, NaOH,  K2CO3, ammonium bicarbonate 
+ (NH4HCO3), and FeCl₃, have been extensively utilized 
+for the activation of precursors in the synthesis of AC. 
+Of these,  ZnCl2 and  H3PO4 are the most frequently 
+Table 5  Comparison of physical and chemical activated-carbon synthesis
+Ref
+Physical
+activation
+Advantage
+• A major advantage of physical activation is that it eliminates the risk of impurities introduced by 
+chemical activating agents
+• In terms of environmental safety, physical activation is preferable because it avoids the use of chemi-
+cal reagents
+[114, 115]
+Disadvantage
+• Operates at comparatively higher temperatures than chemical activation
+• Offers limited tunability and control over the resulting pore structure
+• This activation technique typically results in a relatively low carbon yield
+[116]
+Chemical activation Advantage
+• The synthesized material demonstrates a well-developed porous architecture with controllable pore 
+dimensions
+• Alkali activation increases oxygen functionalities, thereby enhancing wettability
+• The procedure enables the formation of carbon materials possessing a notably high SSA
+• The resulting carbon yield is comparatively high
+• The method requires a relatively low pyrolysis temperature
+[117–119]
+Disadvantage
+• Chemical activation is disadvantageous due to its corrosiveness and the required extensive washing
+• Long processing time(3-10 h)
+[118, 120]
+Fig. 6  Schematic diagram of AC production via chemical and physical activation methods
+
+--- PDF页 14 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 14 of 49
+employed acidic activating agents, while KOH and 
+ K2CO3 are commonly preferred for basic activation. A 
+comparative overview of these agents is summarized 
+below.
+3.2.2.1 Phosphoric acid  (H3PO4) H₃PO₄ is widely 
+acknowledged as a highly efficient chemical activa-
+tion agent in the synthesis of AC. It is recognized for 
+its dual functionality, serving as an acid catalyst that 
+facilitates bond cleavage reactions and as a reactive 
+agent contributing to the development of crosslinked 
+networks via mechanisms such as cyclization and 
+condensation [121]. It facilitates the pyrolytic break-
+down of the precursor material and contributes to the 
+formation of a cross-linked structure in the resulting 
+carbonaceous materials. According to prior studies, 
+ H3PO4-assisted activation proceeds through an initial 
+depolymerization of cellulose, subsequent dehydra-
+tion of biopolymers, development of aromatic struc-
+tures, and concludes with the elimination of residual 
+phosphate species [122]. The activation process occurs 
+in three stages: 1) Decomposition of organic matter 
+into lower molar mass products, releasing volatile 
+gases; 2) Formation of intermediate compounds, lead-
+ing to tar and coal fractions as the acid decomposes; 
+3) Reaction of char with  P2O5, causing pore expansion 
+[122, 123]. Equations (3–8) represent the transforma-
+tions that  H3PO4 undergoes within specific tempera-
+ture ranges.
+At a temperature range of 100–400 °C
+At a temperature range of 400–700 °C.
+At a temperature range of 700–800 °C
+3.2.2.2 Zinc chloride (ZnCl2) Zinc chloride, another 
+widely used acid chemical activating agent, which 
+acts as a Lewis acid and a dehydrating agent, selec-
+(3)2H3PO4 → H4P2O7 + H2O
+(4)3H3PO4 → H5P3O10 + 2H2O
+(5)nH3PO4 → Hn+2 PnO3n+1 + (n− 1)H2O
+(6)Hn+2PnO3n+1 → P4O10 + H2O
+(7)P4O10 + 2C → P4O6 + 2 CO2
+(8)P4O10/P4O6 + CHx → PH3 + CO2/CO
+tively removes hydrogen and oxygen from biomass 
+to suppress tar formation and promote the develop-
+ment of a porous carbon structure with a high sur-
+face area [124]. The activation mechanism of  ZnCl2 is 
+considered unique, primarily due to its strong dehy-
+drating properties. According to Ma (2017), AC was 
+synthesized from wheat straw using  ZnCl2 as the 
+activating agent. During the heat treatment,  ZnCl2 
+interacts with the biopolymer, facilitating the cleav-
+age of glycosidic bonds and the removal of hydroxyl 
+and carbonyl groups. This results in the formation of 
+shorter polymer chains with reduced intermolecu-
+lar interactions, leading to a carbonaceous thermo-
+plastic phase where molecular mobility is enhanced. 
+At around 290 ºC,  ZnCl2 melts and blends with this 
+thermoplastic phase, subsequently reacting with the 
+water released from biomass decomposition to form 
+zinc oxychloride hydrate  (Zn2OCl2·2H2O). Upon fur-
+ther heating,  Zn2OCl2·2H2O decomposes, releasing 
+ ZnCl2 in the gaseous state, which contributes to pore 
+formation in the final carbon structure. Equations 9–
+10 illustrate the reactions involved in this transforma-
+tion [125]. The mechanism of activation using  ZnCl2 is 
+depicted in Fig. 7.
+3.2.2.3 Potassiumhydroxide(KOH) KOH ranks as the 
+most extensively employed alkaline activating agent 
+due to its effectiveness in developing highly porous 
+AC structures. During activation with KOH, the car-
+bon precursor reacts to generate gases, facilitating the 
+development of porosity, particularly micropores and 
+mesopores. The reaction involves the oxidation of car-
+bon, leading to the formation of carbon dioxide  (CO2), 
+hydrogen  (H2), metallic potassium (K), and  K2CO3 
+[80]. Within the temperature range of 400–600 ºC, the 
+reaction between KOH and carbon results in the for-
+mation of K,  K2CO3, and H₂. When the temperature 
+exceeds 700 ºC,  K2CO3 decomposes into potassium 
+oxide  (K2O) and  CO2. At higher temperatures,  K2O, 
+ K2CO3, and  CO2 interact with carbon, facilitating its 
+reduction and producing metallic K along with car-
+bon monoxide (CO). Redox reactions and the release 
+of gaseous carbon species drive the pore network for-
+(9)
+Lignocellulose
+/parenleft.s2
+CxHyOz
+/parenright.s2
++ 2ZnCl2
+▵
+⟶ CxHy−6Oz−3
++ Zn2OCl2.2H2O + 2HCl + Tar
+(10)Zn2OCl2. 2H2OZnCl2 + ZnO + 2H2O
+
+--- PDF页 15 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 15 of 49 143
+mation [126]. Equations 11–13 represent the chemical 
+processes associated with KOH activation of carbon, 
+and the corresponding activation mechanism is illus-
+trated in Fig. 7 [127].
+3.2.2.4 Potassiumcarbonate(K2CO3) K2CO3 is another 
+alkaline activating agent frequently employed in AC 
+production, primarily owing to its lower price and 
+milder corrosive nature compared to KOH. The use 
+of  K2CO3 as an activating agent increases the SSA, 
+which further expands with an increase in tempera-
+ture. During this process,  K2CO3 is reduced to form 
+ C O2, K, K2O , and CO. At high temperatures, potas-
+sium carbonate reacts with the carbon matrix, pro-
+ducing gases like potassium vapor and carbon mon-
+oxide, which drive pore formation and expansion. 
+The decomposition of  K2CO3 further interacts with 
+carbon, enhancing the porous structure. Potassium 
+vapor, due to its small size, penetrates the micropo-
+rous carbon structure, promoting the formation of 
+micro- and mesopores, thus increasing the material’s 
+SSA [128]. Zhu et al. prepared AC by impregnating 
+corn straw with  K2CO3 at 450 ºC, 600 ºC, and 750 ºC, 
+finding that both the SSA and TPV increased with 
+(11)2KOH → K2O + H2O
+(12)K2O + CO2 → K2CO3
+(13)4KOH + C → K2CO3 + K2O + 2H2
+temperature. The SSA at 450 ºC was 57.80  m2/g, rising 
+to 814.89  m2/g at 750 °C, while the TPV increased from 
+0.081 mL/g to 0.478 mL/g. As temperature increases, 
+the gasification reaction becomes more complete, 
+enhancing pore density. Their findings also showed 
+that for  K2CO3 activation, lower pyrolysis tempera-
+tures increased meso- and macropores, while higher 
+temperatures increased micropores [129]. The reac-
+tions involved in the activation process by  K2CO3 are 
+described in Eqs. 14–16 [128].
+Table 6 summarizes the impact of different activa -
+tion agents on the structural and surface characteris-
+tics of AC.
+3.2.3  Physicochemicalactivation
+The physicochemical method integrates both chemical 
+and physical activation steps, wherein the raw precur-
+sor or char is first impregnated with a chemical acti-
+vating agent and subsequently subjected to thermal 
+treatment under an oxidizing atmosphere [137]. The 
+physicochemical method for preparing AC offers an 
+(14)K2CO3 + 2C → 2K + 3CO
+(15)K2CO3 → K2O + CO2
+(16)K2O + 2C → 2K + CO
+Fig. 7  Activation mecha-
+nism of KOH and  ZnCl2. 
+Reprinted with permission 
+from [125].  Copyright 2017, 
+Springer Nature
+
+
+--- PDF页 16 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 16 of 49
+enhanced BET surface area compared to purely chemi-
+cal or physical activation. In the study by Patel et al., 
+AC was synthesized from pine sawdust using both 
+individual (KOH or  CO2) and combined (KOH +  CO2) 
+activation methods. The results demonstrated that the 
+combined activation yielded the highest BET surface 
+area, followed by chemical activation, with physical 
+activation producing the lowest surface area [138].
+4  Factors influencing the properties of AC
+During synthesis, certain processing parameters have 
+a significant impact on the physicochemical character-
+istics of AC. These include the impregnation ratio, acti-
+vation temperature, and activation period. A detailed 
+examination of the influence of these parameters is 
+presented below.
+4.1  Activation temperature
+Activation temperature strongly impacts the devel-
+opment of AC, as it significantly affects key proper-
+ties such as SSA, pore size distribution, and overall 
+porosity. In many cases, increasing the carbonization 
+temperature enhances the surface area, reduces vola-
+tile content, refines the pore structure, and improves 
+the mechanical strength of the material. However, 
+when the temperature exceeds an optimal threshold, 
+these benefits may decline due to pore collapse or 
+structural degradation. The quality and effective-
+ness of the AC may also be adversely affected by 
+extremely high temperatures, which can result in a 
+decrease in total carbon yield and an increase in ash 
+content.
+He et al. systematically examined the influence 
+of carbonization temperature, ranging from 500 to 
+700 ºC, on the textural and electrochemical properties 
+of AC. An increase in activation temperature, while 
+keeping other parameters constant, leads to a signifi-
+cant enhancement in both SSA and TPV. At 500 ºC, 
+the activated sample exhibits an SSA of 720.02  m2/g 
+and a TPV of 0.38  cm3/g. As the activation tempera-
+ture rises to 700 ºC, these values increase substan-
+tially, with the SSA reaching 2559.92  m2/g and the 
+TPV expanding to 1.40  cm3/g. Notably, the highest 
+ Csp of 217 F/g was achieved at 600 ºC, despite the 
+corresponding sample exhibiting a lower SSA com-
+pared to those carbonized at 650 and 700 ºC. This 
+decline in electrochemical performance at elevated 
+temperatures is ascribed to the thermal degradation 
+of functional groups, which adversely affects charge 
+storage capacity [139].
+Zeng et al. synthesized AC from plant seeds 
+through thermal activation at temperatures ranging 
+from 600 to 900 ºC. As the activation temperature 
+increased, both the SSA and TPV showed substantial 
+Table 6  Effects of different activating agents on AC properties
+Activating agent Effects on activated carbon properties
+KOH • Produces high surface area and well-developed microporosity
+• May leave potassium residues if not thoroughly washed
+• Need lower activation temperature than NaOH
+[80, 130]
+NaOH • Similar to KOH but generally results in slightly lower surface area
+• More economical, but less aggressive activation
+• Also develops microporous structure
+[58, 131]
+H₃PO₄ • Promotes the development of both micropores and mesopores
+• Lower environmental impact and higher yield compared to other
+• Lower activation temperature compared to alkalis
+[122, 132]
+ZnCl₂ • Develops a high surface area and good porosity
+• Acts as a dehydrating agent, helping to stabilize pore structure
+• Environmental concern due to zinc residues—requires proper disposal
+[125, 133, 134]
+CO₂ (Carbon Dioxide) and
+Steam (H₂O vapor)
+• Physical activation  (CO2) is safer, cheaper, and greener than alkali activation, 
+but forms fewer micropores and shows lower  Csp.
+• Yield is lower as compared to chemical activation
+• Requires high temperatures (> 800 ºC)
+• Yields high-purity activated carbon without chemical residues
+[110, 135, 136]
+
+--- PDF页 17 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 17 of 49 143
+enhancement, rising from 389.10 to 1153.41  m2/g and 
+from 0.20 to 0.67  cm3/g, respectively. The average 
+pore size initially increased from 2.87 nm at 600 ºC 
+to 3.07  nm at 700  ºC, but then decreased to 1.94  nm 
+at 900 ºC, likely due to pore collapse caused by 
+excessive thermal energy. Among all samples, the 
+one activated at 700 ºC exhibited the highest  Csp, 
+reaching 187.05 F/g at a specific current of 0.5 A/g. 
+However, better capacitance retention at higher spe-
+cific current was observed for samples activated at 
+800 ºC and 900 ºC, with retention values of 82.35% 
+and 86.29%, respectively, compared to 75% for the 
+700 ºC sample. The enhanced retention observed at 
+carbonization temperatures of 800 ºC and 900 ºC can 
+be attributed to improved ion transport dynamics, 
+resulting from the increased SSA, which reduced 
+diffusion distances and promoted more efficient ion 
+mobility during high-rate charge discharge cycles 
+[140]. Table 7 presents SSAs and  Csp responses to the 
+activation temperature of various biomass-derived 
+carbons. A consistent increase in SSA with rising 
+temperature is observed, indicating enhanced pore 
+formation at higher temperatures.
+4.2  Activation time
+Activation time is a key process variable in the syn-
+thesis of AC, as it governs the extent of pore develop-
+ment and surface characteristics. Inadequate activation 
+durations often result in underdeveloped porosity and 
+reduced SSA, while excessively prolonged activation 
+can lead to undesirable effects such as pore widening 
+or collapse, degradation of surface functional groups, 
+and a reduction in yield. Consequently, determining 
+an optimal activation time is essential to ensure a well-
+developed porous structure and favorable physico-
+chemical properties. In the study by Serafin et al., AC 
+was produced from Amazonian andiroba shells via 
+Table 7  Effect of activation temperature on SSA and  Csp of biomass-derived AC
+Carbon precursor Impregnation 
+ratio(activator /precur-
+sor)
+Activation 
+temperature
+(ºC)
+SSA  (m2/g) Csp (F/g)@electrolyte@currentdensity Ref
+Tree bark 1:1@KOH 600
+700
+800
+422.9
+619.5
+1017.9
+151@Na2SO4@1A/g
+191
+148
+[35]
+corncob 3:1@  K2CO3 500
+650
+800
+793
+884
+489
+[63]
+corncob 3:1@KOH 600
+650
+700
+750
+1209
+2998
+2379
+2110
+188@6 M KOH@0.5A/g
+258
+230
+202
+[141]
+Tectona grandis leaf KOH and  CO2 750
+800
+900
+51
+486
+514
+135 @1  MH 2SO4
+168
+99
+[142]
+FeCl3-treated Dead Man-
+gifera indica leaves
+KOH 525
+625
+725
+534.74
+945.97
+1232.63
+440.82@ 6 M KOH @0.5A/g
+444.90
+521.65
+[40]
+Plane tree seed Static air activation 600
+700
+800
+900
+389.10
+631.21
+974.85
+1153.41
+123.85@0.5A/g
+187.05
+165.15
+157.6
+[140]
+corn stalk K2CO3 450
+600
+750
+57.80
+541.91
+814.89
+[129]
+corncob KOH (0.3) 600
+700
+800
+120.72
+796.96
+926.07
+[143]
+
+--- PDF页 18 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 18 of 49
+physical activation using  CO2. The precursor biochar 
+was obtained through hydrothermal carbonization, 
+followed by activation at 880 ºC under a continuous 
+ C O2 flow for varying durations of 1, 5, and 10 h. The 
+results demonstrated that increasing the activation 
+time enhanced the SSA, TPV, and micropore volume 
+of the AC. Specifically, the surface area increased from 
+616 to 1937  m2/g and the TPV from 0.30 to 0.93  cm3/g, 
+as activation time increased from 1 to 10 h. However, 
+the yield decreased correspondingly from 38 to 14% 
+[144]. Zhang et al. systematically studied the influ-
+ence of activation time on the physicochemical and 
+electrochemical properties of AC derived from corn-
+cob, using a 1:3 mass ratio of biochar to KOH. Activa-
+tion was carried out for durations of 0.5, 1, and 2  h. 
+At the shortest duration (0.5 h), insufficient activation 
+time led to underdeveloped porosity and low SSA of 
+1912  m2/g, as reflected by a relatively  Csp. The sample 
+activated for 1 h exhibited the most favorable charac-
+teristics, achieving the highest SSA of 2998  m2/g, fol-
+lowed by a slight decrease to 2090  m2/g at 2 h, likely 
+due to pore collapse or structural degradation. This 
+optimized sample also demonstrated a  Csp of 258 F/g 
+in 6 M KOH electrolyte (three-electrode system at 0.5 
+A/g). These findings underscore the importance of 
+optimizing activation duration to balance pore devel-
+opment and structural integrity, thereby enhancing 
+the electrochemical behavior of biomass-derived car-
+bon materials [141].
+4.3  Impregnation ratio (IR)
+In chemical activation, the IR is described as the 
+mass ratio of the carbonaceous precursor to the 
+activating agent (e.g., KOH, NaOH,  K2CO3,  ZnCl2, 
+or  H3PO4) and is a critical parameter. Chaisit et al. 
+investigated the effect of increasing the IR of AC 
+to KOH from 1:1 to 1:5 wt%. An increase in the IR 
+resulted in an enhancement of the textural proper-
+ties, evidenced by an increase in SSA from 1049 to 
+1350  m2/g, an expansion in average pore diameter 
+from 1.89 to 2.15 nm, and a growth in TPV from 0.49 
+to 0.72  cm3/g. However, the  Csp values at IRs of 1:1, 
+1:3, and 1:5 were recorded as 175, 153, and 152 F/g, 
+respectively. The higher capacitance observed at a 
+1:1 ratio is attributed to the pore size being more 
+closely matched to the solvated ion size, facilitating 
+efficient electrolyte diffusion into the micropores 
+[145]. Huarote-Garcia et al. produced AC from Pur-
+ple Corncob using varying KOH concentrations (5%, 
+10%, 20%, 30%). The porous structure improved 
+with increasing KOH concentration up to 20%, but 
+collapsed at 30% due to burning during activa-
+tion, as evident from the SEM images presented in 
+Fig. 8(1a–1f). The nitrogen adsorption–desorption 
+isotherms for different KOH IRs (Fig.  8(2)) reveal 
+that the samples containing 5% and 10% KOH 
+exhibit a steep rise in nitrogen uptake at relative 
+pressures (P/P₀  < 0.1), suggesting the existence of 
+micropores. The hysteresis observed at higher rela-
+tive pressures (P/P₀  > 0.5) results from nitrogen con-
+densation within mesopores. Based on the IUPAC 
+classification, all the samples demonstrate Type IV 
+isotherms. The SSA increased from 499.5  m2/g at 
+5% to 965.1  m2/g at 20%, then dropped to 231  m2/g 
+at 30%. The highest  Csp was observed at 10 wt%, 
+linked to the highest micropore area and volume 
+[146]. Generally, an increase in the activator-to-
+precursor ratio leads to a higher SSA up to an opti-
+mal point, beyond which the SSA may plateau or 
+slightly decrease due to pore collapse or excessive. 
+Table 8 illustrates the influence of IR on the SSA of 
+AC derived from various biomass sources. Table 9 
+outlines the effects of essential process parameters, 
+namely carbonization time, temperature, and IR, on 
+the structural and functional characteristics of AC.
+4.4  Effect of doping
+AC SC electrodes exhibit inherently low  DE due to 
+their charge storage mechanism, which primarily 
+relies on electrostatic interactions at the electrode/
+electrolyte interface rather than within the bulk mate-
+rial. As a result, charge accumulation is constrained, 
+as only the accessible surface area actively participates 
+in capacitance generation. To overcome this limitation, 
+heteroatom doping has been employed to modify 
+the carbon matrix. The introduction of heteroatoms 
+enhances pseudocapacitive behavior by facilitating 
+Faradaic redox reactions, thereby supplementing 
+the conventional charge storage of electric double-
+layer capacitors. Furthermore, heteroatom incorpora-
+tion increases the packing density of AC, leading to 
+improved hydrophilicity and enhanced ion diffusion 
+kinetics, ultimately increasing volumetric capacitance. 
+In addition, heteroatom doping induces lattice distor-
+tions and alters the electronic structure of AC. The 
+disparity in electronegativity between the dopant and 
+carbon atoms induces charge redistribution, resulting 
+
+--- PDF页 19 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 19 of 49 143
+in increased surface polarity. These modifications col-
+lectively enhance ion adsorption and charge storage 
+capabilities, thereby significantly improving the over-
+all electrochemical performance of EDLCs [152].
+4.4.1  Nitrogen
+The incorporation of nitrogen heteroatoms into 
+the carbon matrix significantly enhances the elec-
+trochemical behavior of AC, resulting in improved 
+specific capacity retention and enhanced long-term 
+Fig. 8  1.  a Image of raw precursor material used to produce AC, 
+i.e., purple corncob powder. SEM images of ACs prepared with 
+varying KOH concentrations: b 0%, c 5%, d 10%, e 20%, and f 
+30%. 2.  N2 adsorption–desorption isotherms of ACs activated at 
+700 ºC with varying KOH concentrations: a 5%, b 10%, c 20%. d 
+SSA (black), micropore area (blue), and micropore volume (red) 
+for each sample. The figure was obtained from [146] by CC-BY-
+NC-ND 4.0
+
+--- PDF页 20 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 20 of 49
+cyclic stability [153]. Guan et  al. investigated the 
+effect of nitrogen doping on AC derived from pine 
+nut shells, with KOH as the activating agent and 
+melamine introduced at varying mass ratios (1:3:0, 
+1:3:0.5, 1:3:1, and 1:3:2).  N2 sorption isotherms of the 
+prepared sample and their respective pore size dis-
+tributions distribution is given in Fig. 9(1a) shows 
+that all the adsorption isotherms are characteristic of 
+Type I, indicating the presence of abundant micropo-
+res. The pore size distribution in Fig. 9(1b) reveals 
+that the majority of pores fall within the 0.5–1 nm 
+range, while a smaller fraction exhibits diameters 
+greater than 2 nm. Increasing nitrogen content led 
+to a decrease in BET surface area, from 2093  m2/g at 
+1:3:0.5 to 1167  m2/g at 1:3:2. Electrochemical perfor-
+mance measured using a two-electrode setup in 6 M 
+KOH revealed  Csp of 169, 207, 324, and 264 F/g at 
+0.05 A/g, corresponding to the respective doping lev-
+els. The superior performance at the 1:3:1 ratio was 
+attributed to ultrathin carbon layers, well-developed 
+porosity, and a high concentration of electroactive 
+nitrogen species [ 154]. Selvaraj et al. reported that 
+nitrogen-doped AC derived from beetroot exhib-
+its a high surface area of  2200m 2/g. Nitrogen dop-
+ing improved hydrophilicity, enhancing electrode 
+wettability and reducing contact resistance. The 
+doped carbon achieved a  Csp of 492 F/g in 1 M 
+ N a2SO4, outperforming undoped and non-activated 
+samples [155].
+4.4.2  Sulfur
+Doping AC with sulfur enhances its surface wetta-
+bility and electrical conductivity, while simultane-
+ously imparting pseudocapacitive behavior within 
+EDLC systems, thereby contributing to improved 
+electrochemical performance [156]. Desa et al. syn-
+thesized sulfur-doped AC from durian peels using 
+sodium sulfite  (Na2SO3) as both the activating and 
+sulfur-doping agent. The process involved varying 
+the activation temperature between 500 and 900 ºC to 
+optimize material properties. Results indicated that 
+increasing activation temperature led to a reduction 
+in sulfur content. Additionally, a higher sulfur content 
+was associated with a notable decrease in surface area, 
+likely due to sulfur-induced pore expansion or struc-
+tural collapse within the carbon matrix. Interestingly, 
+the sample activated at 900 ºC, despite exhibiting the 
+highest surface area (1499  m2/g), displayed a lower  Csp 
+Table 8  Impregnation ratios’ impact on SSA of biomass-derived AC
+Carbon precursor IR(activator /precursor) Activation 
+temperature(ºC)
+SSA  (m2/g) Csp (F/g)@electrolyte@currentdensity Ref
+Tree bark 1:1@KOH
+2:1
+3:1
+600 422.9
+362.6
+367.8
+151@Na2SO4@1A/g(F/g)
+95
+127
+[35]
+Hibiscus flower petals 2:1@KOH
+3:1
+4:1
+800 1577.42
+1699.96
+1726.19
+177@6 M KOH@1A/g
+216
+184
+[97]
+Butnea monosperma pollens 0:1@  ZnCl2
+0.5:1
+1:1
+1.5:1
+2:1
+2.5:1
+3:1
+800 8.25
+711.43
+848.37
+1279.04
+1422.66
+1314.32
+1035.59
+[147]
+altemanthera philoxeroides 2:1@KOH
+3:1
+4:1
+0:1
+800 2895
+2893
+2696
+542
+275@6MKOH@0.5A/g [148]
+apricot pits 1:1@KOH
+2:1
+3:1
+4:1
+1232
+1341
+1024
+1556
+[149]
+
+--- PDF页 21 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 21 of 49 143
+(166 F/g) compared to the sample activated at 700 ºC 
+(183 F/g). This discrepancy is attributed to the pseudo-
+capacitive contribution of sulfur-containing functional 
+groups, which enhance charge storage despite the 
+lower surface area [157]. Yardım et al. investigated the 
+effect of sulfur doping on AC derived from chestnut 
+shells and observed a significant increase in  Csp from 
+51 to 137 F/g in 1 M KCl at a specific current of 2 A/g 
+compared to the undoped sample. Figure 9(2) displays 
+the GCD profiles of the samples with and without sul-
+fur atom introduction at different current densities. 
+This enhancement in capacitance is attributed to sulfur 
+doping, which introduces additional active sites on the 
+electrode material, facilitating Faradaic charge trans-
+fer. However, sulfur doping resulted in a decrease in 
+BET surface area from 1119 to 890  m2/g, likely due 
+Table 9  Impact of key process parameters (carbonization time, temperature, and IR) on the characteristics of AC
+1. Carbonization temperature
+Low Temperature • Higher moisture content, lower fixed carbon
+• Less ordered (amorphous) carbon structure
+• Incomplete carbonization, pyrolysis
+• Reduced thermal and mechanical strength
+[40, 134, 141]
+Moderate to High Temperature • Increased SSA
+• Enhanced porosity
+• Aromaticity increases
+• Decreased carbon yield
+[40, 41]
+Very High Temperature • Pore collapse or enlargement
+• Higher carbon content
+• Reduction or loss of surface functional groups/heteroatom
+• Further decrease in yield
+• Increased ash content
+• Higher degree of graphitization
+[40, 41, 136]
+[42, 55, 139]
+[150]
+2. Carbonization time
+Short Activation Time • Incomplete development of pore structure
+• Lower specific surface area
+• Limited porosity and adsorption capacity
+• Higher yield
+[141, 144]
+Optimal Activation Time • Well-developed pore network
+• High SSA and porosity
+• Balanced yield and performance
+• Improved adsorption capacity
+[141, 144]
+Excessive Activation Time • Pore widening or collapse
+• Decrease in microporosity
+• Loss of surface functional groups
+• Reduced carbon yield
+[141, 151]
+3. Precursor-to-Activator Ratio
+Low Activator Ratio • Insufficient activation
+• Poor pore development
+• Lower surface area and porosity
+• Higher residual carbon and volatile matter
+[136, 141]
+Optimal Ratio • Balanced pore structure formation
+• High surface area and well-developed porosity
+• Efficient activation with controlled burn-off
+[146]
+High Activator Ratio • Over-activation may cause pore widening or collapse
+• Decreased microporosity
+• Excessive burn-off leading to lower carbon yield
+• Possible increase in ash or unwanted residue
+[136, 141, 146]
+
+--- PDF页 22 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 22 of 49
+Fig. 9  (1) a.  N2 adsorption–
+desorption isotherms and b 
+pore size distribution curves 
+of porous carbon nanosheets 
+(PCNs) derived from pine 
+nut shells. Reprinted with 
+permission from [154].  
+Copyright 2019, Ameri-
+can Chemical Society. (2). 
+Galvanostatic charge–dis-
+charge (GCD) profiles of AC/
+CS modified glassy carbon 
+electrode and sulfonated AC/
+CS@GCE recorded current 
+densities of 2, 4, 6, 8, 10 A/g, 
+corresponding to colors pur-
+ple, blue, green, orange, and 
+red. Reprinted with permis-
+sion from [158].Copyright 
+2025, Elsevier. (3). SEM 
+images of LPC-derived AC: 
+a LPC-800; b–d NO-LPCs 
+with dicyandiamide mass 
+ratios of 0.5, 1, and 2 for N/O 
+co-doping. LPC = litchi peel 
+AC; NO = dicyandiamide 
+doping; y = mass ratio of 
+dicyandiamide to LPC. e–g 
+Elemental mapping of the 
+NO-LPC-1 sample. Reprinted 
+with permission from [52]. 
+Copyright 2025, Elsevier
+
+
+--- PDF页 23 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 23 of 49 143
+to pore filling by acidic species. Additionally, the  ID/
+IG ratio of doped and undoped AC was found to be 
+1.01 and 0.84, respectively, indicating that sulfur dop-
+ing induces a higher degree of disorder and structural 
+defects [158].
+4.4.3  Co‑doped
+Co-doping in AC refers to the concurrent introduc -
+tion of multiple heteroatoms into the carbon frame -
+work to improve its structural, surface, and electro-
+chemical characteristics synergistically. In a study by 
+Wang et al., litchi peel was used as a precursor for AC 
+production. It was then combined with varying mass 
+ratios of dicyandiamide (0.5, 1, and 2) for nitrogen 
+doping, while oxygen was self-doped to produce N/O 
+co-doped AC. SEM images of all samples are shown 
+in Fig. 9(3a–3d), revealing a well-developed porous 
+structure, highlighting the pore-forming effectiveness 
+of  ZnCl2. Notably, the undoped sample exhibits the 
+most pronounced pore development compared to the 
+doped counterparts. Figure 9(3e–3g) presents the ele-
+mental mapping of the co-doped sample synthesized 
+with an LC/ZnCl2/dicyandiamide ratio of 1:4:1, which 
+confirms the presence of nitrogen along with carbon 
+and oxygen. The sample with a 1:1 mass ratio of dicy-
+andiamide exhibited the highest  Csp of 320 F/g in a 
+6 M KOH electrolyte, compared to 246.2 F/g for the 
+undoped sample. These results suggest that dicyandi-
+amide, as a nitrogen dopant, significantly enhances the 
+capacitor’s performance. However, increasing the dop-
+ing concentration led to a reduction in SSA, micropore 
+volume, and total volume, likely due to the infiltration 
+of the dopant into the micro- and mesopores, causing 
+subsequent pore blockage [52].
+Zheng et al. converted corn bracts into AC and 
+enhanced their properties through doping with nitro-
+gen, phosphorus, and a combination of both elements. 
+Among the samples, the co-doped variant exhibited 
+the highest  Csp, which correlated with its superior 
+SSA of 286.5  m2/g and a TPV of 0.14  cm3/g [51]. In a 
+separate study by Birundha et al., doping with nitro-
+gen and sulfur increased the surface area but reduced 
+ Csp, which was attributed to disrupting graphitic layer 
+stacking and changes in surface functionality [159].
+Several comparative studies have examined the 
+electrochemical performance of materials with indi-
+vidual dopants, such as sulfur or nitrogen, and com-
+pared them with co-doped nitrogen–sulfur systems, 
+specifically for supercapacitor applications [160–163]. 
+Saravanan et al. investigated nitrogen- and sulfur-
+doped AC derived from Gossypium hirsutum L. 
+stalks, using urea as the nitrogen source and thiourea 
+as the sulfur source. The SSA of undoped, N-doped, 
+and S-doped AC were reported as 60.2, 365, and 382 
+ m2/g, respectively. Electrochemical performance meas-
+ured in 1 M  Na2SO4 at 1 A/g showed  Csp of 256, 326, 
+and 424 F/g [161]. Notably, thiourea contains both 
+nitrogen and sulfur, suggesting partial co-doping 
+effects. Similarly, Nath et al. compared N-doped, 
+S-doped, and N,S co-doped AC synthesized from 
+seaweed biomass via pyrolysis using urea, elemental 
+sulfur, and thiourea as dopants. The undoped sam-
+ple exhibited an SSA of 362.5  m2/g, while N-doped 
+and S-doped samples showed 498.7 and 435.4  m2/g, 
+respectively; the co-doped sample displayed the high-
+est SSA of 612.3  m2/g. Electrochemical testing in 3 M 
+KOH revealed that the N,S co-doped sample showed 
+the longest discharge time in GCD, followed by the 
+N-doped, S-doped, and the undoped sample. The co-
+doped carbon also delivered the highest  Csp of 890 F/g 
+at 1 A/g, attributed to the synergistic effect of N–S dual 
+doping [162]. Nazir et al. also examined the influence 
+of N-, S-, and co-doping using banana-peel-derived 
+biochar, with melamine, sodium thiosulfate, and their 
+combination as dopants. The co-doped AC showed the 
+highest SSA (2452  m2/g) and the highest  Csp of 175 
+F/g at 1 A/g in a three-electrode system, compared to 
+sulfur- and nitrogen-doped samples (123 and 115 F/g, 
+respectively) [163]. Overall, while the relative perfor-
+mance of single N- or S-doped carbons varies, multiple 
+studies consistently demonstrate that N,S co-doping 
+achieves superior  Csp due to synergistic heteroatom 
+interactions. A comparative summary of the electro -
+chemical performance of AC prepared under various 
+doping environments is provided in Table 10.
+4.5  Raw materials
+The majority of plant-derived biomass is composed 
+of cellulose, hemicellulose, and lignin. The cellulose 
+component significantly enhances the SSA and con-
+tributes to the development of a mesoporous struc-
+ture. Rodriguez Correa et al. investigated the effects 
+of pore formation and SSA on biomass derived from 
+alpha-cellulose, xylan from beech wood, and alkali 
+kraft lignin. Their findings revealed that AC derived 
+from cellulose and lignin achieved the highest SSA 
+2221 and 2093  m2/g, surpassing that of xylan. This 
+
+--- PDF页 24 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 24 of 49
+result is attributed to cellulose and lignin’s superior 
+thermal stability, which enables them to retain their 
+structure during pyrolysis at temperatures below 
+600 ºC. This stability facilitates a more efficient 
+activation process and promotes pore formation, 
+resulting in a significantly enhanced surface area 
+for the AC produced from them [ 176]. Afzal et al. 
+examined the influence of chemical refinement—
+comprising alkali delignification and bleaching—on 
+the lignocellulosic composition of sorghum biomass 
+using three distinct treatments beyond simple water 
+washing: 2DL (2 wt/vol% NaOH treatment), 10DL 
+(10 wt/vol% NaOH treatment), and 2DL + BL (2 wt/
+vol% NaOH treatment followed by bleaching).In the 
+water-washed sample, cellulose, hemicellulose, and 
+extractive content were 24%, 15%, and 37%, respec-
+tively. Treatment with 2 wt% NaOH increased cel-
+lulose to 55% and hemicellulose to 25%, while 
+extractives were reduced to 0.5%, indicating the dis-
+solution of non-cellulosic components. Further treat-
+ment with 10wt% NaOH raised cellulose content to 
+76% but decreased hemicellulose to 5.4%, suggesting 
+that higher alkali concentrations effectively remove 
+hemicellulose. Notably, alkali treatment significantly 
+altered the cellulose, hemicellulose, and lignin com-
+position of sorghum biomass. The sample with the 
+highest cellulose content exhibited superior  Csp, rein-
+forcing that enhanced electrochemical performance 
+correlates with the removal of non-cellulosic com -
+ponents [56].
+4.6  Proximate analysis
+The proximate analysis of AC reveals key components 
+such as ash content, moisture content, volatile matter 
+and fixed carbon percentage, all of which can influ-
+ence the electrochemical performance of a SC. High 
+moisture content decreases the material’s conductivity 
+and may lead to pore blockage. A high level of vola -
+tile matter suggests incomplete carbonization, which 
+can impede the formation of micropores. Ash content 
+introduces non-conductive impurities, while a higher 
+fixed carbon percentage typically indicates better con-
+ductivity and a higher surface area. The subsequent 
+table will summarize the effect of proximate analysis 
+on the properties of AC (Table 11).
+5  Characterization of AC for SC
+5.1  X‑ray diffraction (XRD)
+X-ray diffraction (XRD) is widely employed to assess 
+the crystalline and amorphous features of AC. Across 
+numerous studies, AC typically exhibits two broad 
+diffraction bands located in the regions of 22–25º and 
+43–46º [119, 185]. The  peak near 22º is commonly 
+Table 10  Comparison of supercapacitor performance for AC doped under different environments
+Biomass Dopant source AC or biomass or bio-
+char/ Dopant ratio
+Undoped AC 
+ Csp (F/g)
+Doped AC 
+ Csp (F/g)
+Electrolyte@A/g Ref
+Tea seed shell Melamine 1:4 81 168 1 M KOH@0.5 [79]
+chestnut shells Ammonia - 126 625 1 M  H2SO4@1 [164]
+Rosehip wood Ammonia 23 121 1 M KCl@0.2 [165]
+Job’s tears straw Melamine 1:1 105.9 349.3 6 M KOH@0.5 [166]
+Pomegranate peel Ammonia 164 338 1 M KCl@0.4 [167]
+Waste tea Sodium thiosulfate 
+pentahydrate
+1:1 89.3 144.7 6 M KOH@1 [168]
+Borassus flabellifer flower Thiourea 275 1 M  H2SO4@1 [169]
+Jute sticks Elemental sulfur 133 230 1 [170]
+apricot shell MgSO4 1:1.5 304.6 1 M  H2SO4@0.1 [171]
+sugarcane bagasse Sulfur powder 1:1 282.25 6 M KOH@0.1 [152]
+palmwaste Thiourea 1:3 103.20 135.12 6 M KOH [172]
+Walnut shell thioacetamide 1:4 271.4 3 M KOH@0.5 [160]
+Bamboo fiber Thiourea 284 328 1 M  H2SO4@1 [173]
+Pomelo peel Urea, sodium sulfide 329.2 6 M KOH@1 [174]
+Soybean straw Thiourea 220 1 M KOH@0.5 [175]
+
+--- PDF页 25 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 25 of 49 143
+associated with the (002) plane, whereas the broader 
+signal around 43º arises from (100) reflection that are 
+characteristic of turbostratic, graphitic-like hexagonal 
+carbon structures [186].The broadening of the (002) 
+peak is frequently interpreted as evidence of a pre-
+dominantly amorphous framework and the presence 
+of structural defects. Literature consistently high-
+lights that this structural disorder plays a crucial role 
+in determining the electrochemical behavior of AC. 
+An increase in the disorder, reflected by a wider (002) 
+peak, is generally linked to a larger interlayer spac -
+ing, which may improve ion accessibility and facilitate 
+ion intercalation and deintercalation. Such features are 
+considered beneficial for enhancing charge-storage 
+performance [187, 188].
+5.2  Raman analysis
+Raman spectra of the AC exhibit prominent D- and 
+G-band features at approximately 1346 cm⁻1 and 
+1587 cm⁻1, respectively. The D-band signifies lattice 
+disorder, edge-induced defects, and structural asym-
+metry within the carbon matrix, whereas the G-band 
+arises from the  sp2 C = C stretching vibration charac -
+teristic of graphitic domains [189].The degree of gra-
+phitization (R) is calculated using the equation
+Where ID and IG correspond to the respective intensi-
+ties of the D and G bands located at 1346 cm⁻1 and 
+1587 cm⁻1. R is indicative of the structural disorder 
+and crystallinity of the carbon material. A lower R 
+ratio indicates a higher degree of graphitization. An 
+increased level of graphitization promotes supe-
+rior electrical conductivity [190]. AC with superior 
+R = ID
+IG
+electrical conductivity can deliver rapid charge–dis-
+charge capability and enhanced power output. On 
+the other hand, poorly graphitized amorphous carbon 
+generally restricts ion diffusion and increases inter-
+nal resistance. Even so, the structural disorder in such 
+carbon materials introduces abundant heteroatoms, 
+functional groups, and surface defects, which act as 
+Faradaic-active sites and contribute significantly to 
+pseudocapacitive charge storage [191]. A large num-
+ber of structural defects can enhance ion transport in 
+the electrolyte, and these defects may also positively 
+influence electrical conductivity, ultimately leading to 
+improved electrochemical performance [165].
+Process parameters during synthesis, as well as 
+doping, influence the R values of AC, which in turn 
+affect its electrochemical behavior. However, the rela-
+tionship between R and capacitance is not straightfor-
+ward, as it is also modulated by other factors, includ-
+ing the SSA, heteroatom content, pore size, and pore 
+volume of the material. For instance, increasing the 
+carbonization temperature from 600 to 800 ºC, the R 
+value (  ID∕IG ) rises from 0.79 to 0.84, indicating that 
+higher temperatures introduce more structural disor-
+der in the carbon material. The electrochemical perfor-
+mance shows a similar trend, with the sample treated 
+at 600 ºC exhibiting the highest  Csp (around 340 F/g), 
+followed by 309 F/g at 700 ºC and 253 F/g at 800 ºC. 
+The lower R value at 600 ºC corresponds to a greater 
+extent of graphitization, which enhances the electri-
+cal conductivity of the material. When combined with 
+the beneficial contributions of ultramicropores and 
+an abundant heteroatom content, these factors collec-
+tively account for the superior electrochemical behav-
+ior of the sample carbonized at 600 ºC [96]. Similar 
+observations were reported by Zhang et al., where an 
+increase in activation temperature led to a rise in the R 
+Table 11  The effect of proximate analysis on the properties of AC
+Effect on AC property
+Ash content • Excessive ash content may obstruct pores, causing a decline in specific surface area [177, 178]
+• Carbon content in AC is limited by a higher ash content [179]
+Volatile matter • Higher pyrolysis temperatures reduce biochar yield due to volatile loss [180]
+• Release of volatile components during activation at higher temperatures can cause structural degradation 
+in carbon [181]
+• After the elimination of volatile materials, AC should show a greater carbon content [150]
+Fixed carbon • A higher carbon content in biomass is advantageous for producing high-quality and ideal AC yields [182]
+• Elevated fixed carbon content enhances the catalytic performance of AC [183]
+• As fixed carbon% increases, electrical conductivity also increases [184]
+
+--- PDF页 26 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 26 of 49
+value, but the  Csp did not follow the same trend [45]. 
+In contrast, Chaiammart et al. found that when the 
+activation temperature was varied from 650 to 850 ºC 
+during AC synthesis, the R value decreased from 1.01 
+to 0.92, yet the  Csp again did not mirror the trend of 
+the R value [192]. Additionally, Wang et al. reported 
+that increasing the activation temperature results in a 
+higher degree of graphitization [193]. Apart from tem-
+perature, the impregnation ratio also plays a critical 
+role in determining the R value of AC. Rajesh et al. 
+reported that increasing the precursor-to-KOH ratio 
+from 1:2 to 1:4 raised the R value from 0.936 to 0.967, 
+indicating more defect formation at higher activa-
+tor concentrations [92]. Yan et al. observed a similar 
+increase in R with higher KOH concentration [97]. 
+Conversely, Yang et al. observed that the R value of 
+AC initially increased with the hydrothermal biochar-
+to-K2CO3 ratio, rising from 1.008 to 1.013 as the ratio 
+changed from 1:1 to 1:2, and then slightly decreased 
+to 1.010 at a ratio of 1:3. The  Csp was found to follow 
+a similar trend [100]. Similarly, doping introduces 
+additional defects into the carbon matrix, which cre-
+ate more active sites for ion accumulation, thereby 
+enhancing the electrochemical performance [160, 
+167]. However, certain experimental findings reported 
+a decrease in R values with doping, although the R 
+value remained above 1 [164, 165].
+5.3  SEM
+SEM analysis reveals the surface morphology and pore 
+structure of AC, providing insights into its textural 
+characteristics and activation efficiency. AC can exhibit 
+various morphologies, but the one ideal for superca-
+pacitors is an interconnected porous structure with a 
+high surface area. An interconnected porous network 
+facilitates efficient electrolyte transport and is indica-
+tive of a high SSA [187]. The porous architecture of 
+AC not only enhances electrolyte penetration but also 
+increases the number of accessible electroactive sites 
+[194]. The honeycomb-like architecture, especially 
+the structure of the macropore walls, further reveals 
+interconnected pathways extending into the deeper 
+interior of the material [195]. The morphology of 
+AC is strongly influenced by processing parameters, 
+including carbonization time, temperature, activating 
+Fig. 10  (1) Scanning electron micrographs of AC after pyrolysis 
+at a 600 ºC, b 700 ºC, c 800 ºC, and d 900 ºC. Reprinted with 
+permission from [196]. Copyright 2025, Springer  Nature. (2) 
+SEM images of AC synthesized with carbonation times of 1 h a, 
+b and 4 h c, d. Reprinted with permission from [197]. Copyright 
+2021, Elsevier. (3) SEM micrographs comparing a, b activated 
+carbon and c, d nitrogen-doped AC. Reprinted with permission 
+from [198]. Copyright 2017, Springer Nature
+
+--- PDF页 27 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 27 of 49 143
+agent-to-precursor ratio, and doping. Baraneedharan 
+et al. examined the effect of pyrolysis temperature 
+(600–900 ºC) on the morphological properties of 
+AC. As shown in Fig. 10(1a–1d), lower temperatures 
+(600–700 ºC) produce particles with disordered struc-
+tures, irregular and smaller pores, and significant 
+agglomeration, which restrict access to active sites 
+and reduce SSA. In contrast, higher temperatures 
+facilitate the development of well-defined micro- and 
+mesopores, yielding more uniform particles with 
+enhanced pore interconnectivity. Excessive heating at 
+900 ºC, however, results in particle shrinkage or sinter-
+ing [196]. Figure 10(2) shows the effect of carboniza-
+tion time on AC morphology. AC carbonized for 1 h 
+(Figures (2a) and (2b)) contains more irregular particle 
+deposits, while AC carbonized for 4 h (Figures(2c) and 
+(2d)) exhibits a more developed, open porous structure 
+[197]. Figure 10(3) demonstrates the morphological 
+changes in AC resulting from melamine doping. The 
+undoped samples shown in micrographs (3a) and (3b) 
+possess a comparatively smooth and less porous sur-
+face texture. Conversely, the doped samples depicted 
+in (3c) and (3d) exhibit numerous cavities [198].
+5.4  Transmission electron microscopy (TEM)
+TEM offers detailed insights into the internal morphol-
+ogy of AC. By complementing SEM observations, TEM 
+enables clearer interpretation of pore structures and 
+contributes to assessing the uniformity and structural 
+integrity of the carbon matrix [199]. Figure 11b and c 
+presents TEM images of AC produced from Mango 
+seeds. The images indicate that the material features 
+a layered stacking arrangement, where the pores are 
+uniformly distributed across the carbon framework. 
+As seen in image (Fig. 11c), the carbon sheets incor-
+porate a considerable number of micropores within 
+their structure [200]. Figure 11e and f displays the 
+Fig. 11  TEM/HRTEM images of b, c AC derived from mango 
+seeds. Reprinted with permission from [200].  Copyright 2022, 
+Elsevier. e, f AC obtained from corncob. Reprinted with permis-
+sion from [83]. Copyright 2017, Elsevier. and h, i AC produced 
+from bamboo waste. Reprinted with permission from [87]. Copy -
+right 2022, American Chemical Society
+
+--- PDF页 28 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 28 of 49
+HRTEM images of AC obtained from corncob, where 
+both microporous and mesoporous features are dis-
+tinctly visible within the carbon structure [83]. Fig-
+ure 11h–i presents AC from bamboo waste, showing 
+a puffy surface indicative of abundant porosity. The 
+bright spots in the HRTEM image (i) further confirm 
+its rich microporous structure [87].
+5.5  Brunauer–Emmett–Teller analysis
+BET analysis is a widely used technique for determin-
+ing the SSA of porous materials through gas adsorp-
+tion measurements, offering critical insights into their 
+textural characteristics, including pore size distribu-
+tion, pore types, pore volume, and overall pore struc-
+ture. The surface area is known to have a direct impact 
+on the performance of supercapacitors. An increase 
+in SSA enhances the availability of active sites for ion 
+adsorption, thereby improving electric double-layer 
+capacitance. Additionally, a larger mesoporous vol-
+ume facilitates efficient electrolyte ion penetration. 
+These mesopores act as transport pathways, ena-
+bling ions to more easily reach the micropores where 
+double-layer charge storage predominantly occurs, 
+resulting in improved overall electrochemical perfor-
+mance [201]. To further interpret BET results, adsorp-
+tion–desorption isotherms play a critical role in iden-
+tifying pore characteristics. Type I isotherm follows 
+the Langmuir model and reflects monolayer adsorp-
+tion in microporous materials with pore sizes < 2 nm. 
+Type II and Type III isotherms are observed in non-
+porous or macroporous materials. Type II isotherms 
+represent multilayer adsorption on the adsorbent 
+surface, with the knee at point B indicating complete 
+monolayer coverage. In Type III isotherms, there is no 
+point B, reflecting the absence of monolayer formation. 
+The adsorbent–adsorbate interactions are relatively 
+weak, and the adsorbate molecules tend to cluster on 
+the most favorable sites. Type IV isotherm indicates 
+mesoporosity, where multilayer adsorption followed 
+by capillary condensation occurs within mesopores. 
+Type V isotherms, commonly observed in mesoporous 
+adsorbents, are indicative of weak adsorbent–adsorb-
+ate interactions. The initial region of these isotherms 
+closely resembles that of Type III, while the subse-
+quent pore-filling process governs their overall profile. 
+Finally, the Type VI isotherm shows stepwise multi-
+layer adsorption on highly uniform and nonporous 
+surfaces [202] [203]. The classification of physisorption 
+isotherms is shown in Fig. 12.
+In addition to isotherm types, adsorption hysteresis 
+loops provide essential information on pore geome-
+try. According to the IUPAC classification, adsorption 
+hysteresis is generally categorized into H1, H2, H3, 
+and H4 types, which serve as diagnostic indicators of 
+pore structure and adsorption behavior. H1 hysteresis 
+is typically associated with a narrow distribution of 
+uniform mesopores. In comparison, H2(a) hysteresis 
+loops are generally attributed to pore-blocking or per-
+colation effects occurring within a narrow distribution 
+of pore necks, or to cavitation-induced evaporation. 
+At the same time, H2(b) loops are also linked to pore 
+blocking but involve a much broader distribution 
+of pore neck sizes. H3 hysteresis loops, on the other 
+hand, are characterized by an adsorption branch simi-
+lar to that of a Type II isotherm, with the desorption 
+branch generally terminating at the relative pressure 
+corresponding to cavitation. Finally, H4 hysteresis 
+displays combined features of Type I and Type II 
+isotherms, reflecting the coexistence of microporous 
+regions with mesoporous frameworks [202].
+Several studies have demonstrated how isotherm 
+behavior reflects the underlying pore structures of AC. 
+Wang et al. prepared AC from bamboo waste by vary-
+ing the activation temperature during the synthesis 
+process. N₂ adsorption and desorption measurements 
+were performed to determine the pore configuration 
+and volume characteristics of the material. All samples 
+exhibited Type I isotherms, as no significant hysteresis 
+loop was observed, indicated by the complete overlap 
+of the adsorption and desorption branches (Fig. 13a). 
+In the extremely low relative pressure region, the 
+curve remains approximately linear, suggesting a 
+high content of micropores within the material [204]. 
+Liu et al. used garlic shoots as a carbon precursor for 
+AC synthesis. The precursor was pre-carbonized at 
+400 ºC for 2 h, after which KOH was mixed with the 
+pre-carbonized material at mass ratios of 1, 2, 3, 4, and 
+5. As shown in Fig. 13b, the  N2 adsorption–desorption 
+isotherms reveal that the unactivated sample exhibits 
+a Type II isotherm. The sample activated with a mass 
+ratio of 1 exhibits a Type IV isotherm with the emer-
+gence of an H1 hysteresis loop in the mid-to-high pres-
+sure region (P/P₀ = 0.5–1), confirming the development 
+of mesopores. Additionally, the pronounced adsorp-
+tion capacity in the low-pressure range (P/P₀ = 0.0–0.1) 
+indicates the presence of microporosity. The sample 
+with a mass ratio of 2 also exhibits a Type IV isotherm 
+accompanied by an H1 hysteresis loop in the medium-
+pressure region, while its strong adsorption uptake at 
+
+--- PDF页 29 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 29 of 49 143
+low pressure further indicates the coexistence of both 
+micropores and mesopores. All remaining samples 
+primarily exhibit Type I isotherms [205].
+The properties of AC are strongly influenced 
+by synthesis parameters, including activation 
+temperature, activation duration, impregnation 
+ratio, and heteroatom doping. When combined with 
+the intrinsic characteristics of the biomass precur-
+sor, these factors critically determine surface chem-
+istry, pore development, electrical conductivity, 
+Fig. 12  Types of phys-
+isorption isotherms [202].  
+Copyright 2015, IUPAC and 
+De Gruyter
+
+
+--- PDF页 30 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 30 of 49
+and defect formation, making them essential input 
+features for ML models aimed at predicting key 
+electrochemical properties. Activation temperature 
+governs the decomposition of organic constituents 
+and the development of micro–mesoporous struc -
+tures, with higher temperatures generally enhanc-
+ing surface area, while excessive heat can collapse 
+pores or reduce functional groups [45, 96, 142, 206]. 
+Activation time strongly influences SSA and pore 
+volume. Insufficient activation results in underdevel-
+oped porosity and low surface area, while excessive 
+activation causes over-etching, structural collapse, 
+and reduced yield. Therefore, optimizing activation 
+duration is essential for balanced pore development 
+and material stability. The IR controls pore initiation 
+and growth, where insufficient ratios limit poros -
+ity and excessive ratios may over-etch the carbon 
+matrix [119]. SSA sometimes can directly influence 
+the  Csp, while the  ID/IG ratio, indicative of the degree 
+of graphitization, also has a significant impact; both 
+parameters serve as important inputs for machine 
+learning models predicting  Csp. Heteroatom dop-
+ing, whether intrinsic or chemically introduced, 
+regulates pseudocapacitance, wettability, and charge 
+transfer, with the type and concentration of dopants 
+strongly affecting electrochemical properties. These 
+processing variables interact with raw material 
+characteristics such as lignocellulosic composition, 
+ash content, and natural microstructure, producing 
+complex, interdependent effects on performance. 
+ML approaches can integrate these multivariate 
+features—including proximate and ultimate analy-
+sis data—to establish predictive models, optimiza-
+tion of activation protocols, and accelerated design 
+of high-performance, cost-effective supercapacitor 
+materials. With substantial experimental efforts 
+already devoted to correlating the properties of bio-
+char and AC with their synthesis parameters, cur-
+rent research is increasingly focusing on predictive 
+modeling using ML. When labeled data are avail-
+able, supervised learning offers a robust and efficient 
+methodology for predicting essential material prop-
+erties. The subsequent section details the supervised 
+learning framework implemented to estimate criti-
+cal properties of AC, including SSA, yield, nitrogen 
+content, and  Csp.
+6  Supervised ML framework 
+for supercapacitors
+In a supervised ML framework, the workflow initiates 
+with dataset construction through the aggregation of 
+data from diverse literature sources. Subsequently, 
+input feature selection is performed based on the 
+target variable, leveraging statistical methodologies 
+and domain expertise. The collected dataset under-
+goes preprocessing, which includes dataset cleaning, 
+which involves the removal of outliers, addressing 
+missing values, and feature scaling to enhance model 
+performance. Following preprocessing, an appropri-
+ate ML model is selected and trained on the refined 
+Fig. 13  Adsorption–desorption isotherms of a AC derived 
+from bamboo fiber waste at different activation temperatures. 
+Reprinted with permission from [204].  Copyright 2025, Elsevier. 
+and b AC prepared from garlic shoots at varying KOH-to-precar -
+bonized material mass ratios. Reprinted with permission from 
+[205]. Copyright 2025, Elsevier
+
+--- PDF页 31 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 31 of 49 143
+dataset [207]. The trained model is then subjected 
+to evaluation and validation using established per-
+formance metrics and cross-validation techniques to 
+ensure robustness and generalizability. Ultimately, the 
+validated model is deployed to predict key SC perfor-
+mance parameters, thereby facilitating material opti-
+mization and enhancing device performance.
+6.1  Dataset preprocessing
+In order to prepare labeled datasets for supervised ML 
+applications, data preprocessing is an essential step. 
+Guided by domain-specific knowledge, this process 
+plays a crucial role in improving data quality as well 
+as ensuring the robustness of predictive models. Typi-
+cal preprocessing tasks include data cleaning, trans-
+formation, dimensionality reduction, integration, and 
+appropriate storage for subsequent analysis. A sche-
+matic depiction of the data preprocessing workflow is 
+shown in Fig. 14.
+6.1.1  Datasetcollection
+A clearly defined problem statement is essential for 
+constructing a relevant dataset in ML. It guides the 
+selection of meaningful input features directly linked 
+to the target variable. For instance, predicting SC 
+capacitance requires the inclusion of measurement 
+conditions and material properties, while fiber diam-
+eter prediction demands process parameters such as 
+applied voltage, feed rate, and collector speed. Feature 
+selection must be based on domain knowledge, and 
+data should be collected from reliable peer-reviewed 
+sources with strict unit consistency. When data is 
+presented graphically, digitization tools should be 
+used for accurate extraction, and efforts should be 
+made to maintain low missing-value ratios to improve 
+model reliability. For small and imbalanced datasets, 
+resampling can enhance model performance by effec-
+tively expanding the available data. This involves 
+generating additional instances or subsets from the 
+original dataset. In a study conducted by our research 
+group, a resampling-based filtering method was 
+applied within the ML workflow to predict the  Csp of 
+nickel cobalt phosphate. At a 300% resampling level, 
+the gap between training and testing accuracies was 
+minimized, indicating improved model generaliza-
+tion. However, increasing the resampling ratio to 400% 
+resulted in a wider accuracy gap, suggesting poten-
+tial overfitting [208].These observations demonstrate 
+that resampling, when optimized, can improve model 
+accuracy and strengthen predictive reliability.
+6.1.2  Datasetcleaning
+Handling missing values and outliers presents sig-
+nificant challenges in dataset cleaning. Additionally, 
+the removal of duplicate values is also performed 
+during this step. Various imputation techniques are 
+employed to address missing data. Ideally, data reten-
+tion is prioritized for rows with minimal or no missing 
+values; however, technical and practical limitations 
+often make this infeasible. Commonly used imputa-
+tion methods include mean, median, mode, forward 
+fill, backward fill, and k-nearest neighbors. It is essen-
+tial to ensure that the imputed values align with the 
+dataset’s inherent distribution and characteristics to 
+uphold the reliability of predictions and classifications 
+Fig. 14  Schematic represen-
+tation of the data preprocess-
+ing steps
+
+
+--- PDF页 32 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 32 of 49
+for the target variable. Therefore, careful considera-
+tion should be given when selecting the appropriate 
+imputation technique. Analyzing the patterns of miss-
+ing data can improve the effectiveness of imputation 
+methods, thereby enhancing data quality, which can 
+ultimately improve the accuracy of machine learning-
+based decision-making [209]. Outliers in a dataset 
+can be detected and removed using the Interquartile 
+Range (IQR) method and the Z-score method [210]. 
+The IQR method calculates the range between the 75th 
+percentile  (Q3) and the 25th percentile  (Q1) as:
+Data points are considered outliers if they fall out-
+side the lower and upper bounds:
+Outliers outside these thresholds are typically 
+removed or treated. The Z-score method standardizes 
+the dataset by measuring how far a data point deviates 
+from the mean in terms of standard deviations:
+Where Xi, μ, and σ represent the data point, mean, and 
+standard deviation of the dataset, respectively.
+6.1.3  Datatransformation
+Data transformation serves as an essential component 
+of the data preprocessing process that involves trans-
+forming unprocessed data into an appropriate format 
+for ML applications, with a primary focus on feature 
+scaling. Without appropriate scaling, algorithms may 
+disproportionately weight features with larger mag-
+nitudes, irrespective of their units. This process also 
+encompasses the cleaning and structural organiza-
+tion of data to ensure consistency and accessibility. 
+Commonly employed scaling techniques include 
+standardization, normalization, absolute maximum 
+scaling, and robust scaling. Of these, normalization 
+and standardization are most widely adopted, as both 
+facilitate the alignment of feature values to a common 
+scale. Normalization typically maps data to a bounded 
+interval, such as [0, 1], while standardization stand-
+ardizes features to a distribution with zero mean and 
+unit variance. Furthermore, data transformation may 
+IQR = Q3 − Q1
+Lowerbond = Q1 − 1∕2 ∗ IQR
+Upperbond = Q3 + 1∕2 ∗ IQR
+Z_score =( Xi − /u1D707)∕/u1D70E
+incorporate feature engineering, wherein new varia-
+bles are derived from existing ones to improve model 
+efficacy.
+6.1.4  Datasetreduction
+Dataset reduction is performed to eliminate redundant 
+or irrelevant information while preserving the essen-
+tial structure and patterns in the data. It offers sev-
+eral advantages, including improved computational 
+efficiency, faster processing, reduced storage require-
+ments, enhanced data analysis, and better model per-
+formance by helping to prevent overfitting. Dataset 
+reduction techniques typically include feature selec-
+tion and sampling. Feature selection comprises labe-
+ling and preserving a subset of relevant and important 
+attributes from the complete set of variables. Sampling, 
+on the other hand, involves selecting a representative 
+subset of the entire dataset, either randomly or based 
+on specific criteria, depending on the practical applica-
+tion and analysis goals.
+6.1.5  Dataintegrationandstorage
+Data integration is the process of combining datasets 
+from different sources into one unified dataset. The 
+first step is data harmonization, which involves nor-
+malizing and aligning data to make it consistent across 
+all sources. After these steps, the integrated dataset 
+is stored and prepared for use in model training and 
+prediction.
+6.1.6  Modelselectionandtraining
+The process of selecting an appropriate ML model 
+depends on the problem’s characteristics, such as 
+whether it calls for regression or classification, as well 
+as the complexity of the dataset. The dataset is gener-
+ally split into training and testing subsets, with com-
+mon split ratios of 80:20 or 70:30 to ensure a balanced 
+evaluation. The training dataset serves as input to the 
+chosen model, enabling it to discover hidden patterns 
+in the data. Following training, model performance is 
+assessed using the test dataset to estimate its accuracy 
+and generalization capability. Additionally, hyperpa-
+rameter tuning is conducted to optimize model perfor-
+mance by adjusting parameters that are not inherently 
+learned from the data during training.
+
+--- PDF页 33 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 33 of 49 143
+6.2  Evaluation of model performance
+The evaluation of an ML model is based on test-train 
+splitting and cross-validation, with K-fold cross-
+validation being the most commonly used method. 
+Metrics like MSE, MAE, and R2 (coefficient of deter-
+mination) are used to evaluate the effectiveness of 
+regression models. For classification models, evalu -
+ation metrics include precision, accuracy, F1-score, 
+recall, AUC-ROC, and the confusion matrix, each pro-
+viding unique insights into model performance and 
+predictive capabilities. Figure 15 outlines the funda-
+mental performance evaluation criteria applied in the 
+assessment of regression and binary classification ML 
+algorithms.
+6.3  Machine learning models
+A variety of ML models, including Artificial Neural 
+Networks, Decision Trees, RF, and Extreme Gradient 
+Boosting, have been utilized to predict the  Csp of AC 
+and its related physicochemical properties. A sum-
+mary of some of these models is provided below.
+6.3.1 Artificialneuralnetworking
+An ANN is composed of a multitude of extensively 
+interconnected computational units, termed neurons, 
+which function in parallel to perform designated 
+problem-solving tasks. Each neuron is connected 
+to others through weighted links, with each weight 
+determining the strength of the transmitted signal 
+[211]. The network’s ability to learn and make deci-
+sions arises from adjusting these weights during the 
+training process. ANN feature three fundamental 
+layers: the input layer, the hidden layers, and the 
+output layer. The input layer receives raw data, with 
+each node representing a feature in the dataset. Hid-
+den layers process the input through weighted con-
+nections and activation functions, extracting relevant 
+features and learning hierarchical patterns [212]. 
+Each hidden node integrates inputs from the previ-
+ous layer and passes the transformed values to the 
+next. The output layer consolidates the processed 
+information to generate the final prediction or deci-
+sion [211, 213]. Figure 16 presents a schematic dia-
+gram of the ANN-based model.
+Fig. 15  Fundamental evalu-
+ation criteria utilized in the 
+performance assessment of 
+regression and binary clas-
+sification models
+
+
+--- PDF页 34 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 34 of 49
+6.3.2 Decisiontree
+A decision tree is another supervised ML model, con-
+sisting primarily of a root node, internal nodes, and 
+leaf nodes. At each node, data is split based on fea-
+ture values, selecting the optimal split using impu-
+rity measures (e.g., Gini index and entropy for clas -
+sification, SSE for regression). The process recursively 
+repeats until a stopping criterion (e.g., maximum 
+depth) is met. Pruning mitigates overfitting by remov-
+ing unnecessary branches. For predictions, input data 
+traverse the tree to a leaf node, yielding the final clas-
+sification or regression output [214, 215].
+6.3.3 Randomforest
+RF is a bagging-based ensemble learning method, 
+designed for both classification and regression tasks. 
+It constructs multiple decision trees by generating 
+bootstrap samples from the original dataset, where 
+sampling is performed with replacement. A distinct 
+subset drawn from the entire dataset is utilized to 
+train each individual tree, incorporating randomness 
+in both sample selection and feature selection at each 
+node. In regression, the output is derived by averaging 
+the predictions over all trees, while in classification, 
+the final outcome is decided by majority voting among 
+the different trees [216, 217]. This approach enhances 
+model robustness, reduces overfitting, and improves 
+generalization performance. Figure 17 presents a sche-
+matic diagram of the RF-based model.
+6.3.4 XGBoost
+XGBoost employs gradient boosting decision trees 
+to perform classification and regression. It integrates 
+L1 and L2 regularization to control overfitting and 
+enhance model generalization [210, 218]. Engineered 
+for efficiency, XGBoost effectively processes large 
+datasets. Moreover, it has a built-in capability to man-
+age missing values [219]. XGBoost employs gradient-
+based optimization to iteratively refine predictions, 
+applying first-order (gradient) and second-order (Hes-
+sian) derivatives of the loss function to adjust model 
+parameters [220]. Figure 18 shows a schematic repre-
+sentation of the XGBoost concept.
+6.3.5 Ada‑boost
+AdaBoost is a boosting ensemble ML algorithm that 
+combines multiple weak base learners for regression 
+or classification tasks. In AdaBoost, training is per-
+formed iteratively by focusing on the errors of previ-
+ously trained models. Initially, weights are assigned 
+to all data points. If a model predicts incorrectly, the 
+weight of the misclassified samples is increased. A 
+Fig. 16  Schematic repre-
+sentation of the ANN-based 
+regression model
+
+
+--- PDF页 35 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 35 of 49 143
+re-weighted existing dataset is then used in the next 
+iteration, increasing the probability of misclassified 
+samples being focused on by the next learner. This 
+process continues iteratively. For classification, the 
+final decision is made using a weighted majority vote, 
+where more accurate weak learners (those with lower 
+errors) are assigned higher weights and have greater 
+influence[222, 223]. Figure 19 presents the schematic 
+representation of the AdaBoost regression framework.
+7  Prediction of key properties 
+of biomass‑derived carbon
+AC exhibits several critical properties, including yield, 
+chemical composition, and SSA, which are fundamen-
+tal to its functional performance. In SC applications, 
+particular emphasis is placed on  Csp, a key electro-
+chemical parameter extensively studied and predicted 
+across the literature. The yield, chemical component, 
+and SSA of AC or biochar are strongly influenced by 
+structural parameters such as pore architecture, ele-
+mental composition, and the degree of graphitization, 
+along with process parameters. For AC derived from 
+agro-forest biomass, the relative proportions of lignin, 
+hemicellulose, and cellulose have been identified as 
+important determinants of these characteristics, as 
+discussed in detail in the raw material section. In 
+addition, the evaluation of  Csp typically involves 
+both intrinsic material properties and experimental 
+parameters, including current density, scan rate, and 
+electrolyte composition. These properties are used 
+by researchers as input features in ML frameworks 
+for predicting various properties of AC. An overview 
+of key parameters frequently used in predicting AC 
+properties for SC performance using agro-plant-based 
+biomass is provided in Fig. 20.
+7.1  Chemical composition
+Chemical composition describes the specific ele-
+ments that constitute a substance or compound 
+and their relative proportions. Both AC and bio -
+char are predominantly composed of carbon, along 
+with varying amounts of heteroatoms such as nitro-
+gen, sulfur, oxygen, and hydrogen. In this context, 
+Fig. 17  Schematic representation of the RF regression model adopted from [221].  Copyright 2025, Elsevier
+
+--- PDF页 36 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 36 of 49
+heteroatoms, defined as elements other than carbon 
+and hydrogen, act as a primary governing factor in 
+tailoring the surface chemistry of carbon materials. 
+Their presence enhances electrode wettability and 
+contributes to pseudocapacitance via faradaic reac-
+tions, enhancing the electrochemical performance 
+overall. The retention of these heteroatoms in the 
+final product is largely governed by activation 
+parameters such as pyrolysis or activation tempera-
+ture, its duration, the choice of activation agent, and 
+its concentration. Among the elemental components, 
+carbon and nitrogen content (wt%) are particularly 
+Fig. 18  Schematic representation of the XGBoost regression model, adapted from [221].  Copyright 2025, Elsevier
+Fig. 19  Schematic representation of the AdaBoost regression framework
+
+--- PDF页 37 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 37 of 49 143
+influential in determining the electrochemical behav-
+ior of AC, affecting properties such as  Csp, conduc-
+tivity, and charge transfer kinetics. In certain cases, 
+increasing carbonization temperatures can similarly 
+reduce heteroatom levels [139, 157]. Recent stud-
+ies have employed ML approaches to predict these 
+properties. Li et al. employed a gradient-boosted 
+decision tree model to predict nitrogen content, cat-
+egorizing input variables into five distinct property 
+sets. Among these, the ‘chemical’ category, which 
+included the ratio of activating agents to biocarbon 
+precursors and the nitrogen doping ratio, emerged 
+as the most influential, contributing approximately 
+40.21% to the model’s prediction. This was followed 
+by process conditions (29.37%), ultimate analysis 
+(14.65%), proximate analysis (12.01%), and biochemi-
+cal composition (3.76%) [224]. In a separate study by 
+Leng et al., nitrogen and ash content were identified 
+as the most important features for predicting N-con-
+taining functional groups of biochar [225].
+Zhu et al. utilized an RF model to estimate car-
+bon content based on feedstock characteristics and 
+pyrolysis conditions, achieving an R2 of 0.848 and 
+an RMSE of 5.8123. The prediction of carbon con-
+tent without using relative lignocellulosic content 
+achieved an R2 of 0.8319 and an RMSE of 6.2211. 
+Higher treatment temperature and heating rate 
+were identified as the most influential variables in 
+this prediction, as indicated by both the relative fea-
+ture importance in the RF model and the Pearson 
+correlation coefficient. Overall, pyrolysis conditions 
+accounted for approximately 53% of the total con-
+tribution to the prediction of carbon content in the 
+char [226].
+7.2  Yield, specific surface area, and total pore 
+volume
+The yield of AC and biochar is a critical factor for eco-
+nomic sustainability, as higher yields reduce produc-
+tion costs and improve material efficiency. Meanwhile, 
+SSA and TPV enhance the electrochemical perfor-
+mance of SC by providing abundant adsorption sites 
+and facilitating efficient electrolyte transport.
+Figure 21 illustrates the range of input parameters 
+used by various researchers in ML regression-based 
+models for predicting AC properties. Hai et al. devel-
+oped an ML-based framework to predict the yield and 
+SSA of biochar derived from agricultural biomass. The 
+study incorporated features related to biomass compo-
+sition and pyrolysis parameters. Initially, 14 features 
+were extracted from multiple literature sources for 
+yield and SSA estimation; however, feature selection 
+techniques refined the dataset to nine key attributes 
+based on their importance scores. For yield prediction, 
+hemicellulose content, carbon content, and pyrolysis 
+temperature were identified as the most influential 
+parameters. In contrast, for SSA prediction, tempera-
+ture, particle size, and nitrogen content exhibited the 
+highest feature significance. Performance evaluation 
+Fig. 20  Key parameters used to predict AC properties for SC s from agro-biomass
+
+--- PDF页 38 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 38 of 49
+of the RF model yielded R2 values of 0.855 and 0.804 
+for yield and SSA predictions, respectively, with cor-
+responding RMSE values of 3.119 and 4.322. The RF 
+model demonstrated superior predictive accuracy 
+compared to multiple linear regression (MLR), deci-
+sion tree, and SVM models [229].
+In a study by Zou et al., three distinct datasets were 
+prepared: one for one-step chemical activation, one 
+for two-step chemical activation, and a combined 
+dataset incorporating both. Each dataset was uti-
+lized separately to predict the yield, SSA, and TPV 
+of AC. The combined dataset has increased the num-
+ber of data points and diversity, enhancing predictive 
+performance. Further to optimize the combined data-
+set, one-step activation was treated as a simplified 
+version of two-step activation, omitting the pyrolysis 
+step. Consequently, pyrolysis-related features such as 
+temperature, time, and heating rate were set to zero 
+in the combined dataset. RF and Gradient Boosting 
+Regression were employed for prediction, with GBR 
+consistently demonstrating superior performance 
+across all datasets. Notably, GBR achieved the highest 
+test R2 value of 0.91 for Yield, underscoring its strong 
+predictive capability in the combined dataset. Among 
+the targets, Yield exhibited the highest predictability, 
+whereas SSA and TPV yielded comparatively lower 
+Fig. 21  a Features reported in the literature for predicting yield and SSA[227] [228] [225, 229]; b Parameters employed for predicting 
+yield and surface area in one-step chemical activation, two-step activation, and the combined dataset[181]
+
+--- PDF页 39 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 39 of 49 143
+R2 values, particularly in the two-step activation data-
+set, indicating greater complexity and modeling chal-
+lenges [181].
+Wang et al. constructed a Random decision tree 
+model to estimate the yield and BET surface area of AC 
+based on biomass composition and processing condi-
+tions across different physical and chemical activation 
+methods. Biomass composition data included ulti-
+mate, proximate, and chemical analyses. In physical 
+activation,  CO2 and steam were utilized as activating 
+agents, whereas chemical activation involved KOH, 
+ H3PO4, and  ZnCl2. Pearson correlation analysis identi-
+fied key relationships between process variables and 
+activation methods. Under  CO2 and steam activation, 
+hemicellulose and carbonization time showed strong 
+negative correlations with yield, whereas volatile mat-
+ter had a positive influence on the BET surface area. 
+For  H3PO4 activation, carbonization and activation 
+times reduced yield, and oxygen content negatively 
+affected the BET area. In KOH activation, yield cor-
+related highly with volatile matter with a Pearson cor-
+relation coefficient of 0.8, while BET area was linked 
+positively to mass ratio (0.44) and carbonization time 
+(0.46). Under  ZnCl2 activation, yield correlated posi-
+tively with mass ratio, whereas activation temperature 
+and nitrogen content had negative effects. A compari-
+son between actual and predicted values of AC yield 
+and BET surface area under varying input variables is 
+presented in Fig. 22 [230].
+Xie et al. implemented an ML framework to predict 
+SSA, TPV, and microporosity of lignin derived porous 
+carbon produced via catalytic pyrolysis. Key input 
+features were extracted from elemental and proxi-
+mate compositions, pyrolysis conditions, and chemi-
+cal activation parameters. To address missing data, a 
+model-based imputation strategy was employed: an 
+RF interpolation model was trained on a complete sub-
+set of the data (without missing values) to estimate the 
+missing entries, thereby enabling the construction of a 
+clean dataset for final model training.
+A GBR was then utilized as the final predictive 
+model, and its performance was evaluated against 
+standalone RF and GBR models. The hybrid RF-based 
+GBR model demonstrated superior predictive accu-
+racy, achieving the highest R2 and lowest RMSE for 
+SSA (0.82, 238.93  m2/g), TPV (0.86, 0.17  cm3/g), and MP 
+(0.81, 8.44%). Feature importance analysis indicated 
+that chemical activators, particularly KOH and  H3PO4, 
+were the most influential variables in pore develop-
+ment—KOH predominantly affected SSA and TPV 
+through etching mechanisms, while  H3PO4 primar-
+ily contributed to MP. Furthermore, temperature and 
+the activator-to-sample (A/S) ratio were identified 
+as major factors for SSA and TPV, whereas MP was 
+mainly influenced by the A/S ratio, followed by tem-
+perature under the catalytic pyrolysis of KOH/H3PO4 
+[231].
+7.3  Electrochemical performance
+7.3.1  Specificcapacitance
+As discussed in several prior machine learning stud -
+ies, properties such as SSA and TPV, which indirectly 
+influence  Csp, have been successfully predicted using 
+similar input features. For biomass-derived AC, the 
+prediction of  Csp typically relies on nearly the same 
+input parameters as SSA, with the addition of meas-
+urement-specific conditions relevant to SC perfor-
+mance. The  Csp of carbon-based SC materials was pre-
+dicted by Zhu et al. using an ANN model. The model 
+incorporated five key input features: voltage window, 
+nitrogen doping level, calculated pore size,  ID/IG ratio, 
+and SSA. Using these parameters, the model achieved 
+a high predictive accuracy, with an R2 of 0.91. Fig-
+ure 23a presents a comparison between the predicted 
+and experimentally measured  Csp values. To assess the 
+robustness and generalizability of the ANN model, it 
+was further validated using external data comprising 
+diverse carbon materials not included in the training 
+set. These samples exhibited significant variability in 
+their structural and compositional parameters. For 
+comparative analysis, Linear Regression and Lasso 
+models were additionally employed for the same 
+external dataset. The ANN model outperformed the 
+comparative models, demonstrating the lowest pre-
+diction error and highlighting its superior capability 
+in capturing complex, non-linear relationships in elec-
+trochemical performance data (Fig. 23b)[232].
+Yang et al. build a predictive ML model for estimat-
+ing the  Csp of biomass-derived AC based on nine input 
+parameters related to the activation process, precursor 
+composition, and electrochemical testing conditions. 
+Pearson correlation analysis (Fig. 24a) revealed that 
+activation time was negatively correlated with capaci-
+tance, while SSA and activator ratio were positively 
+correlated. Among the evaluated models, the XGBoost 
+regression algorithm demonstrated the highest pre-
+dictive accuracy. For the training dataset, the model 
+achieved an RMSE of 6.325, an MAE of 1.035, and 
+
+--- PDF页 40 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 40 of 49
+Fig. 22  Comparison between 
+actual and predicted values 
+for a yield and b BET surface 
+area of AC, evaluated across 
+different input variables and 
+preparation methods. Labels 
+A–E correspond to the five 
+activation conditions:  CO2, 
+steam,  H3PO4, KOH, and 
+ ZnCl2 (top to bottom). From 
+left to right, input combi-
+nations include complete 
+biomass composition data, 
+elemental composition 
+(C–H–O–N), cellulose–hemi-
+cellulose–lignin (Cel–Hem–
+Lig), and proximate analysis 
+parameters (VM–FC–ash). 
+Blue lines represent linear 
+regression of actual values; 
+red lines indicate the ideal 
+predicted = actual reference 
+line. Reprinted with permis-
+sion from [230].  Copyright 
+2023, American Chemical 
+Society
+
+
+--- PDF页 41 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 41 of 49 143
+an R2 value of 0.996. When applied to the test data-
+set, the corresponding values were RMSE = 12.373, 
+MAE = 3.402, and R2 = 0.983. The close agreement 
+between the training and testing R2 values indicates 
+strong generalization capability According to the fea-
+ture importance evaluation (Fig. 24b) performed using 
+the XGB model, activator ratio (38.9%), activation 
+time (17.2%), and SSA (12.8%) were identified as the 
+primary contributors influencing the  Csp of biomass-
+derived AC [233].
+In a study conducted by Zhao et al., the  Csp of 
+carbon-based SC was predicted without relying on 
+intermediate variables such as SSA or pore volume 
+of biochar. Instead, the model utilized fundamental 
+properties of biomass precursors, including activation 
+conditions, structural composition, elemental analysis, 
+current density, and industrial analysis, as input fea-
+tures. To develop the predictive framework, Light-
+GBM and deep neural network (DNN) algorithms 
+were employed. The study further explored model 
+performance using various combinations of input fea-
+tures. Results indicated that the comprehensive com-
+bination of all feature types—representing multiple 
+facets of biomass characteristics—yielded the high-
+est prediction accuracy for both models. Moreover, 
+feature importance analysis revealed that structural 
+composition and industrial analysis contributed more 
+significantly to prediction performance than elemen-
+tal analysis. In terms of performance, the LightGBM 
+model outperformed the DNN, achieving superior 
+performance metrics with an R2 of 0.951, MAE of 
+11.090, and RMSE of 14.756 [234].
+Fig. 23  a Predicted vs. 
+literature-reported  Csp values. 
+b Evaluation of model perfor-
+mance by comparing experi-
+mental capacitance values 
+with predictions from three 
+different models. Reprinted 
+with permission from [232].  
+Copyright 2018, Elsevier
+Fig. 24  a Pearson correlation heatmap illustrating relationships between input features. b Relative influence of inputs on capacitance 
+prediction via XGBoost. Reprinted with permission from [233].  Copyright 2023, Elsevier
+
+--- PDF页 42 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 42 of 49
+7.3.2  Energyandpowerdensity
+DE quantifies the stored energy relative to the 
+device’s mass or volume, while  DP defines the rate at 
+which energy can be delivered per unit mass or vol-
+ume. Both metrics are critical performance indicators 
+for supercapacitors and are directly correlated with 
+their  Csp. The development of ML models for pre-
+dicting these properties is still in its early stage, and 
+significantly more work is required compared to pre-
+diction studies on the  Csp of AC. Oladipo developed 
+a three-layer ANN architecture using five input vari-
+ables—sulfur doping (at%), nitrogen doping (at%), 
+electrolyte concentration, electrolyte type, and S/N 
+co-doping (at%)—to predict the  DE of nitrogen–sul-
+fur co-doped chicken-bone-derived biocarbon. The 
+predicted results of the model closely aligned with 
+the experimental values, exhibiting a desirability of 
+0.96 and an R2 of 0.964. Furthermore, an RF algo-
+rithm and Garson equation analysis were employed 
+to evaluate the contribution of each input variable. 
+Electrolyte concentration and electrolyte type had 
+the most significant influence in the ANN prediction 
+model[235]. Zhou et al. predicted the  DP of AC using 
+mesopore surface area, micropore surface area, and 
+scan rate as input features. Four ML models were 
+employed—linear regression, SVR, RF, and ANN. 
+Among them, the ANN model outperformed the oth-
+ers, exhibiting the highest R2 and the lowest RMSE 
+values [236]. Lu et al. employed ML approaches to 
+systematically predict the  DE and  DE of superca-
+pacitors. The dataset used in this study comprised 
+multiple input parameters, including the elemental 
+composition of biomass precursors, industrial (prox-
+imate) analysis, activation conditions, and applied 
+current density, while  DE and  DE served as the target 
+outputs. Several predictive models, namely Light-
+GBM, XGBoost, and deep neural networks, were 
+developed and evaluated. Among these, the Light-
+GBM model demonstrated superior performance in 
+estimating  DE, achieving a training R2 value of 0.922 
+and a test R2 value of 0.916. In contrast, the XGBoost 
+model exhibited the highest predictive accuracy for 
+ DP, with a training R2 of 0.984 and a test R2 of 0.921. 
+Furthermore, SHAP-based interpretability analysis 
+revealed that residence time was the most influen-
+tial parameter governing  DE, whereas volatile matter 
+content exerted the strongest influence on  DP [237].
+8  Prospects and challenges
+Despite substantial progress in the synthesis of AC 
+and an improved understanding of its effects on  Csp, 
+graphitization, and SSA, several critical challenges 
+persist. Enhancing the energy density of AC-based 
+supercapacitors remains difficult, and issues related 
+to the selection of raw materials further limit per-
+formance consistency and large-scale application. 
+In parallel, although ML has emerged as a promis -
+ing tool for predicting key electrochemical proper-
+ties, its integration is still limited by data scarcity and 
+incomplete feature–property correlations. As shown 
+in Fig. 25, key limitations and future perspectives for 
+AC-based supercapacitors remain. The detailed chal-
+lenges described below highlight the need for contin-
+ued systematic experimental studies to improve  DE, 
+ensure reliable raw-material utilization, and advance 
+the scalability of AC materials, alongside the develop-
+ment of more robust ML models supported by com-
+prehensive and high-quality datasets.
+1. The electrochemical performance of AC is influ-
+enced not only by synthesis parameters but also criti-
+cally by the choice of precursor material. A key advan-
+tage of AC production lies in the broad availability 
+of potential carbon sources, highlighting the need for 
+careful precursor selection. An ideal precursor should 
+have high carbon content, low levels of inorganic ash-
+forming components, high activation potential, mini-
+mal degradation during storage, appropriate density 
+with sufficient volatile matter, a stable regional sup-
+ply, and cost-effectiveness [238]. Certain biomass pre-
+cursors are rich in heteroatoms such as nitrogen and 
+oxygen, which can be retained during carbonization. 
+These heteroatoms induce pseudocapacitive behavior 
+in the resulting EDLC behavior of AC, thereby enhanc-
+ing Csp. Conversely, some biomass contains inorganic 
+salts that require acid pre-treatment to remove, ensur-
+ing that the precursor composition positively contrib-
+utes to electrode performance without compromis-
+ing the intrinsic properties of the AC. Therefore, the 
+precursor must be selected carefully, as its intrinsic 
+properties directly influence the quality and perfor-
+mance of the resulting AC. The resulting AC materials 
+can be effectively characterized using techniques such 
+as XRD, SEM, TEM, and BET surface area analysis to 
+understand their intrinsic characteristics when derived 
+from various biomass sources.
+2. Chemical activation typically yields a higher 
+amount of AC than physical activation, largely due 
+
+--- PDF页 43 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 43 of 49 143
+to enhanced oxidation of the carbonaceous precursor 
+during the carbonization and activation stages of the 
+physical activation route. In addition, chemical acti-
+vating agents inhibit the formation of tar and volatile 
+matter, thereby improving the yield of AC [239]. Yield 
+is a key parameter in assessing the commercial feasi-
+bility of AC production. In chemical activation, appro-
+priate optimization of process conditions can signifi-
+cantly increase productivity, whereas suboptimal 
+conditions may compromise both material yield and 
+chemical properties. In batch-scale AC production, 
+variations in porosity, specific SSA, and yield remain 
+a major limitation for consistent characterization. Such 
+inconsistencies directly influence the electrochemical 
+performance, particularly the capacitance of superca-
+pacitors, underscoring the need for uniformity across 
+production batches to enable reliable performance 
+scaling.
+3. Advance the development of innovative, 
+resource-efficient synthesis strategies for activated 
+carbon that significantly reduce chemical waste, max-
+imize product yield, achieve high surface area with 
+finely optimized pore architecture, and minimize 
+the need for complex machinery and labor-intensive 
+washing steps.
+4. A major drawback of carbon-based electrodes 
+is their inherently low Cₛₚ, which in turn limits the 
+achievable energy density of the device. To overcome 
+these performance constraints, several enhancement 
+strategies have been investigated. These include 
+heteroatom doping to modify surface chemistry, the 
+development of composites incorporating transition 
+metal oxides to introduce pseudocapacitive behav-
+ior, and the integration of conducting polymers to 
+improve charge storage capability. New classes of 
+materials can also be integrated with AC to enhance 
+its electrochemical performance. The incorporation 
+of heteroatoms such as O, N, and S improves wetta -
+bility, increases conductivity, and enhances charge-
+transport sites, thereby improving the  Csp of super-
+capacitors. Similarly, compositing AC with transition 
+metal oxides can further increase capacitance through 
+synergistic effects.
+5. Systematic comparative studies examining dif-
+ferent sources of the same dopant for AC doping in 
+supercapacitor applications are currently scarce. 
+Consequently, the influence of these variations on 
+key material properties such as morphology, degree 
+of graphitization, surface characteristics, and electro-
+chemical performance remains poorly understood. 
+Addressing this knowledge gap through detailed 
+investigations is crucial to establishing clear cor -
+relations between dopant source and AC behavior, 
+thereby guiding the rational design of high-perfor-
+mance supercapacitor electrodes.
+6. A limited dataset restricts the model’s generali-
+zation capability, thereby reducing its effectiveness 
+in accurately learning the underlying relationships 
+among input variables. To address this limitation, 
+efforts should focus on expanding the dataset while 
+Fig. 25  Limitations and future perspectives for AC-based supercapacitors
+
+--- PDF页 44 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 44 of 49
+ensuring high data quality. Additionally, approaches 
+for generating synthetic data—such as data aug-
+mentation and transfer learning can be employed 
+to effectively enrich the dataset and enhance model 
+robustness.
+7. Dataset collection in a supervised ML framework 
+is a critical and time-intensive task. Different prepa-
+ration methods impart distinct properties to AC, and 
+variations in these processes significantly influence its 
+physical and chemical characteristics. Physical activa-
+tion yields materials with specific features, whereas 
+chemical activation produces different characteris-
+tics. In chemical activation, whether performed as a 
+one-step or two-step process, the initial carbonization 
+step, carried out through pyrolysis or hydrothermal 
+treatment, is particularly crucial. While collecting such 
+data, these variations must be carefully addressed, as 
+they make dataset compilation challenging. Insuffi-
+cient or non-representative data can ultimately limit 
+the ability of ML models to accurately predict AC 
+properties.
+8. Existing studies predominantly focus on ML-
+based prediction of the  Csp of AC, while other criti-
+cal performance metrics, such as  DE,   DP, and cycling 
+stability, receive limited attention. Furthermore, the 
+scarcity of experimental validation using realistic and 
+representative datasets constrains the practical appli-
+cability and broader adoption of these ML models.
+9  Conclusion
+Agroforestry residues are promising sustainable pre-
+cursors for AC in supercapacitors. Their electrochem-
+ical performance depends on the interplay between 
+precursor chemistry and processing conditions, which 
+govern pore structure and surface properties. Based on 
+an extensive review of the literature, the key findings 
+highlighted in this review are as follows:
+1. When selecting a precursor material, a high heter-
+oatom content is desirable, as these heteroatoms 
+can function as intrinsic dopants, facilitate the 
+formation of redox-active sites, induce pseudoca-
+pacitance, and enhance surface wettability, thereby 
+significantly improving the  Csp.
+2. AC properties are strongly influenced by synthesis 
+conditions. Higher activation temperatures boost 
+surface area but can lower heteroatom content and 
+yield, while harsh carbonization may damage the 
+structure. Impregnation ratio and carbonization 
+time also affect performance, requiring careful 
+optimization for balanced properties.
+3. In the context of doping, activated carbon co-
+doped with multiple heteroatoms generally dem-
+onstrates higher  Csp compared to materials doped 
+with a single heteroatom, as the synergistic effects 
+of multiple dopants enhance charge storage and 
+electrochemical performance in most cases.
+ML techniques like RF, ANN, and XGBoost can accel-
+erate the design of AC by predicting key properties from 
+synthesis parameters. Limitations such as small datasets 
+and inconsistent protocols highlight the need for sys-
+tematic data and experimental validation. Integrating 
+ML with conventional synthesis enables tailored AC 
+properties, while future work should focus on stand -
+ardized methods, high-quality data, and combined 
+computational–experimental strategies for scalable, 
+high-performance supercapacitors.
+Acknowledgements 
+The authors would like to DIAT (DU), Pune, for the 
+support.
+Author contributions 
+P. Singh: data curation, investigation, visualization, 
+writing—original draft.  H. S. Panda: writing—review 
+& editing, conceptualization, supervision.
+Funding 
+The authors declare that no funds, grants, or other 
+support were received during the preparation of this 
+manuscript.
+Data availability 
+No datasets were generated or analysed during the 
+current study.
+
+--- PDF页 45 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 45 of 49 143
+Declarations 
+Conflict of interest The authors declare no compet-
+ing interests.
+References
+ 1. A.S. Raikwar, H.S. Panda, Discov. Electron. 2, 94 (2025)
+ 2. S. Mandal, A.B. Mendhe, H.M. Rakhade, N.S. Barse, M. Roy, 
+P. Rosaiah, T. Park, H.-S. Lee, A.C. Mendhe, D. Kim, Chem. 
+Eng. J. Adv. 21, 100690 (2025)
+ 3. R. Mohanty, A. Nashim, K. Parida, K. Parida, Langmuir 40, 
+14197 (2024)
+ 4. R. Mohanty, A. Nashim, and K. Parida, in Low-Carbon Super-
+capacitors (Royal Society of Chemistry, 2023), pp. 326–351.
+ 5. R. Mohanty, U.A. Mohanty, K. Parida, Energy Fuels 38, 13585 
+(2024)
+ 6. R. Mohanty, S. Mansingh, K. Parida, K. Parida, Mater. Horiz. 
+9, 1332 (2022)
+ 7. K.K. Kar (ed.), Handbook of Nanocomposite Supercapacitor 
+Materials I (Springer International Publishing, Cham, 2020)
+ 8. S. Mahala, K. Khosravinia, A. Kiani, J. Energy Storage 67, 
+107558 (2023)
+ 9. R. Mohanty, K. Parida, Electrochim. Acta 491, 144327 (2024)
+ 10. R. Mohanty, G. Swain, K. Parida, K. Parida, J. Alloys Compd. 
+919, 165753 (2022)
+ 11. R. Mohanty, K. Parida, K. Parida, Nanoscale Adv. 5 , 4521 
+(2023)
+ 12. U.A. Mohanty, R. Mohanty, K. Parida, Adv. Sustain. Syst. 
+(2025). https:// doi. org/ 10. 1002/ adsu. 20240 0858
+ 13. R. Mohanty, A. Nashim, K. Parida, Small (2025). https:// doi.  
+org/ 10. 1002/ smll. 20250 8024
+ 14. Z. Zhai, L. Zhang, T. Du, B. Ren, Y. Xu, S. Wang, J. Miao, Z. 
+Liu, Mater. Des. 221, 111017 (2022)
+ 15. A. Mendhe, H.S. Panda, Discov. Mater. 3, 29 (2023)
+ 16. N. Mohamad Nor, L.C. Lau, K.T. Lee, A.R. Mohamed, J. Envi-
+ron. Chem. Eng. 1, 658 (2013)
+ 17. B. Dasht Bozorg, W. Fowler, A. Korey, C. Anderson, A.K. 
+Banga, Sci. Rep. 10, 2968 (2020)
+ 18. M. Sajid, in Activated Carbon (The Royal Society of Chemistry, 
+2023), pp. 23–41.
+ 19. B. Zieliński, P. Miądlicki, J. Przepiórski, Sci. Rep. 12, 20869 
+(2022)
+ 20. G.K. Yogesh, D. Nandi, R. Yeetsorn, W. Wanchan, C. Devi, R.P. 
+Singh, A. Vasistha, M. Kumar, P. Koinkar, K. Yadav, Energy 
+Adv. 4, 119 (2025)
+ 21. A. Mendhe, H.S. Panda, ACS Sustainable Chem. Eng. 11 , 
+17262 (2023)
+ 22. M. Shanmuga Priya, P. Divya, R. Rajalakshmi, Sustain. Chem. 
+Pharm. 16, 100243 (2020)
+ 23. N.A. Rashidi, Y.H. Chai, I.S. Ismail, M.F.H. Othman, S. Yusup, 
+Biomass Convers. Biorefinery 15, 29597 (2025)
+ 24. J. Bedia, M. Peñas-Garzón, A. Gómez-Avilés, J.J. Rodriguez, 
+C. Belver, C 6, 21 (2020)
+ 25. A. Das, A.K. Sarma, BioEnergy Res. 18, 77 (2025)
+ 26. M. Tomy, A.M. Aravind, X.T. Suryabai, Biomass Convers. 
+Biorefinery 15, 14675 (2025)
+ 27. J.J. Roberts, A.M. Cassula, P. Osvaldo Prado, R.A. Dias, J.A.P. 
+Balestieri, Renew. Sustain. Energy Rev. 41, 568 (2015)
+ 28. C. Zhou, Y. Wang, Sci. Technol. Adv. Mater. 21, 787 (2020)
+ 29. S. Jiao, L. Zhang, C. Li, H. Zhang, J. Zhang, P. Li, Y. Tao, X. 
+Zhao, H. Chen, J. Jiang, Ind. Crops Prod. 183, 114906 (2022)
+ 30. R.T. Ayinla, I. Elsayed, E.B. Hassan, J. Energy Storage 108, 
+115025 (2025)
+ 31. M. Paul, A. Grimm, G. Simões Dos Reis, G. Manavalan, S.E. 
+S, M. Thyrel, S. Petnikota, ChemElectroChem (2025). https://  
+doi. org/ 10. 1002/ celc. 20240 0549
+ 32. F.L. Braghiroli, A. Cuña, E.L. da Silva, G. Amaral-Labat, 
+G.F.B. Lenz e Silva, H. Bouafif, A. Koubaa, J. Porous Mater. 
+27, 537 (2020)
+ 33. C. Ding, X. Yan, J. Lan, S. Ryu, Y. Yu, X. Yang, Carbon Lett. 
+29, 213 (2019)
+ 34. J. Phiri, J. Dou, T. Vuorinen, P.A.C. Gane, T.C. Maloney, ACS 
+Omega 4, 18108 (2019)
+ 35. D. Momodu, M. Madito, F. Barzegar, A. Bello, A. Khaleed, 
+O. Olaniyan, J. Dangbegnon, N. Manyala, J. Solid State Elec-
+trochem. 21, 859 (2017)
+ 36. M.F. Ponce, A. Mamani, F. Jerez, J. Castilla, P.B. Ramos, 
+G.G. Acosta, M.F. Sardella, M.A. Bavio, Energy 260, 125092 
+(2022)
+ 37. D.L. Wu, W. Wang, J.H. Zhang, H. Fu, X.S. Lv, X.H. Xu, 
+Water Environ. Res. 84, 2060 (2012)
+ 38. Y. Ma, J. Yin, H. Liang, D. Yao, Y. Xia, K. Zuo, Y.-P. Zeng, 
+J. Clean. Prod. 279, 123786 (2021)
+ 39. J. Liu, Q. Wu, Q. Zhu, Y. Guan, B. Xu, Ionics 25, 4935 (2019)
+ 40. S.S. Hegde, B.R. Bhat, RSC Adv. 14, 8028 (2024)
+ 41. W.A.M.K.P. Wickramaarachchi, M. Minakshi, X. Gao, R. 
+Dabare, K.W. Wong, Chem. Eng. J. Adv. 8, 100158 (2021)
+ 42. T. He, Z. Yu, W. Yue, X. Zhang, Y. Zhang, X. Ma, J. Anal. 
+Appl. Pyrolysis 178, 106411 (2024)
+ 43. S.M.X. Goh, B.L.F. Chin, M.M. Huang, C.L. Yiin, J.C. Kur -
+nia, S.S. Lam, Y.H. Tan, Y.H. Chai, N.A. Rashidi, J. Energy 
+Storage 105, 114613 (2025)
+ 44. G. Qiu, Z. Miao, Y. Guo, J. Xu, W. Jia, Y. Zhang, F. Guo, J. Wu, 
+Colloids Surf A Physicochem Eng Asp 650, 129575 (2022)
+ 45. G. Zhang, Y. Chen, Y. Chen, H. Guo, Mater. Res. Bull. 102, 
+391 (2018)
+ 46. S.S. Gunasekaran, A. Gopalakrishnan, R. Subashchandrabose, 
+S. Badhulika, J. Energy Storage 42, 103048 (2021)
+ 47. C. Saka, A. Levent, Int. J. Hydrogen Energy 90, 1070 (2024)
+ 48. C. Wu, J. Liu, W. Wu, Y. Wang, Y. Zhao, G. Li, Y. Zhang, G. 
+Zhang, Sep. Purif. Technol. 353, 128525 (2025)
+ 49. W. Yue, Z. Yu, X. Zhang, H. Liu, Y. Hu, Z. You, X. Ma, J. 
+Energy Storage 105, 114616 (2025)
+ 50. Y. Sun, S. Peng, M. Guo, X. Xiong, Y. Lu, B. Chai, C. Wang, 
+M. Zhang, D. Ding, J. Yan, Int. J. Biol. Macromol. 285, 
+138241 (2025)
+ 51. J. Zheng, T. Cao, B. Ding, X. Zhang, H. Wu, X. Li, J. Energy 
+Storage 110, 115297 (2025)
+ 52. Y. Wang, X. Dong, Y. Xia, W. Wang, X. Wang, Y. Liu, P. Qiao, 
+G. Zhang, S. Liu, J. Phys. Chem. Solids 198, 112472 (2025)
+ 53. Q. Chu, Z. Chen, C. Cui, C. Xie, Z. Wei, X. Li, Y. Xu, Y. Li, 
+Y. Cui, S. Pei, J. Power. Sources 629, 235931 (2025)
+ 54. L. Wang, X. Ma, Z. Ma, P. Li, W. Li, New J. Chem. 49, 61 
+(2025)
+ 55. P. Zhang, Y. Chen, X. Song, H. Zhang, J. Cui, B. Wang, 
+Chem. Eng. J. 503, 157703 (2025)
+ 56. R.A. Afzal, P.K. Annamalai, M. Tebyetekerwa, P.P. Burey, 
+J. Bell, A.K. Nanjundan, D.J. Martin, RSC Sustainability 3 , 
+1691 (2025)
+ 57. F. Mohamed, M. Shaban, S.K. Zaki, M.S. Abd-Elsamie, R. 
+Sayed, M. Zayed, N. Khalid, S. Saad, S. Omar, A.M. Ahmed, 
+A. Gerges, H.R.A. El-Mageed, N.K. Soliman, Sci. Rep. 12, 
+18031 (2022)
+
+--- PDF页 46 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 46 of 49
+ 58. A. Phakkhawan, M. Horprathum, N. Chanlek, H. Nakajima, 
+S. Nijpanich, P. Kumnorkaew, S. Pimanpang, P. Klangtakai, 
+V. Amornkitbamrung, J. Mater. Sci. Mater. Electron. 33, 663 
+(2022)
+ 59. B. Wei, T. Wei, C. Xie, K. Li, F. Hang, RSC Adv. 11, 28138 
+(2021)
+ 60. S. Sarkar, A. Arya, U.K. Gaur, A. Gaur, Biomass Bioenergy 
+142, 105730 (2020)
+ 61. K.K.R. Reddygunta, R. Beresford, L. Šiller, L. Berlouis, A. 
+Ivaturi, Energy Fuels 37, 19248 (2023)
+ 62. G. Baskar, S. Marimuthu, J. Electron. Mater. 54, 3898 (2025)
+ 63. R.D. Ortiz-Olivares, D.R. Lobato-Peralta, D.M. Arias, J.A. 
+Okolie, A.K. Cuentas-Gallegos, P.J. Sebastian, A.R. Mayer, 
+P.U. Okoye, J. Energy Storage 55, 105447 (2022)
+ 64. E.P. Raaj, K. Bhuvaneshwari, R. Lakshmipathy, V.V. Devi, 
+I.L.R. Rico, Adsorpt. Sci. Technol. (2022). https:// doi. org/  
+10. 1155/ 2022/ 69048 42
+ 65. Z. Teng, K. Han, J. Li, Y. Gao, M. Li, T. Ji, Ultrason. Sono-
+chem. 60, 104756 (2020)
+ 66. Q. Zhang, K. Han, S. Li, M. Li, J. Li, K. Ren, Nanoscale 10, 
+2427 (2018)
+ 67. T. Ji, K. Han, Z. Teng, J. Li, M. Wang, J. Zhang, Y. Cao, J. 
+Qi, Int. J. Electrochem. Sci. 16, 150653 (2021)
+ 68. E.H. Benaddi, M.R. Laamari, A. Boutouil, J. Indian Chem. 
+Soc. 102, 101927 (2025)
+ 69. J. Sun, A. Jayakumar, C.G. Díaz-Maroto, I. Moreno, J. Fer -
+moso, O. Mašek, Biomass Bioenergy 184, 107180 (2024)
+ 70. G. Li, T. Yu, X. Lei, Energy Technol. (2025). https:// doi. org/  
+10. 1002/ ente. 20250 0410
+ 71. A. Gani, Adisalamun, M. R. Arkan D, Suhendrayatna, M. 
+Reza, Erdiwansyah, Saiful, and H. Desvita, (2023). Case Stud-
+ies in Chemical and Environmental Engineering 8, 100525.
+ 72. M.A. Kalifa, N.G. Habtu, A.L. Jembere, M.B. Genet, Curr. 
+Res. Green Sustain. Chem. 8, 100395 (2024)
+ 73. D. Momodu, C. Okafor, N. Manyala, A. Bello, M.G. Zebaze-
+Kana, E. Ntsoenzok, Waste Biomass Valoriz. 10, 1741 (2019)
+ 74. Y. Hu, J. Zhang, Q. Guo, X. Wang, G. Yang, and L. Jiao, 
+(2025). Waste Biomass Valorization
+ 75. W. Vercruysse, F. Derison, B. Joos, A. Hardy, H. Hamed, S. 
+Schreurs, M. Safari, W. Marchal, D. Vandamme, ACS Sustain. 
+Resour. Manag. 1, 124 (2024)
+ 76. H. Ullah, L. Lun, L. Riaz, F. Naseem, A. Shahab, A. Rashid, 
+Biomass Convers. Biorefin. 13, 7993 (2023)
+ 77. W. Daud, Bioresour. Technol. 93, 63 (2004)
+ 78. P.P. Dutta, V. Pandey, A.R. Das, S. Sen, D.C. Baruah, Energy 
+Procedia 54, 21 (2014)
+ 79. C. Quan, X. Jia, N. Gao, Int. J. Energy Res. 44, 1218 (2020)
+ 80. R. Nandi, M.K. Jha, S.K. Guchhait, D. Sutradhar, S. Yadav, 
+ACS Omega 8, 4802 (2023)
+ 81. S. Liu, K. Dong, F. Guo, Q. Qiao, L. Xu, J. Wang, L. Kong, 
+Y. Zhang, J. Chang, W. Yan, J. Anal. Appl. Pyrolysis 173, 
+106063 (2023)
+ 82. V.S. Bhat, P. Kanagavalli, G. Sriram, R.P. B, N.S. John, M. 
+Veerapandian, M. Kurkuri, G. Hegde, J. Energy Storage 32, 
+101829 (2020)
+ 83. M. Karnan, K. Subramani, P.K. Srividhya, M. Sathish, Elec-
+trochim. Acta 228, 586 (2017)
+ 84. Y. Song, W. Qu, Y. He, H. Yang, M. Du, A. Wang, Q. Yang, 
+Y. Chen, J. Energy Storage 32, 101877 (2020)
+ 85. J. Singh, S.S. Hossain, A. Choudhury, D.-J. Yang, S.S. Ali, 
+M.E. Ali Mohsin, J. Ind. Eng. Chem. 147, 793 (2025)
+ 86. T.E. Rufford, D. Hulicova-Jurcakova, K. Khosla, Z. Zhu, G.Q. 
+Lu, J. Power. Sources 195, 912 (2010)
+ 87. G. Qiu, Y. Guo, Y. Zhang, X. Zhao, J. Xu, S. Guo, F. Guo, J. 
+Wu, Ind. Eng. Chem. Res. 61, 16034 (2022)
+ 88. C.-S. Yang, Y.S. Jang, H.K. Jeong, Curr. Appl. Phys. 14, 1616 
+(2014)
+ 89. R. Farma, A. Putri, E. Taer, A. Awitdrus, A. Apriwandi, J. 
+Mater. Sci. Mater. Electron. 32, 7681 (2021)
+ 90. T. Chen, L. Luo, L. Luo, J. Deng, X. Wu, M. Fan, G. Du, W. 
+Zhao, Renew. Energy 175, 760 (2021)
+ 91. K. Surya, M.S. Michael, Biomass Bioenergy 152, 106175 
+(2021)
+ 92. M. Rajesh, R. Manikandan, S. Park, B.C. Kim, W. Cho, K.H. 
+Yu, C.J. Raj, Int. J. Energy Res. 44, 8591 (2020)
+ 93. P. Merin, P. Jimmy Joy, M.N. Muralidharan, E. Veena Gopalan, 
+A. Seema, Chem. Eng. Technol. 44, 844 (2021)
+ 94. T. Manimekala, R. Sivasubramanian, S. Karthikeyan, G. Dhar-
+malingam, J. Porous Mater. 30, 289 (2023)
+ 95. T. Yumak, Colloids Surf A Physicochem Eng Asp 625, 126982 
+(2021)
+ 96. K. Wang, N. Zhao, S. Lei, R. Yan, X. Tian, J. Wang, Y. Song, 
+D. Xu, Q. Guo, L. Liu, Electrochim. Acta 166, 1 (2015)
+ 97. D. Yan, L. Liu, X. Wang, K. Xu, J. Zhong, Chem. Eng. Technol. 
+45, 649 (2022)
+ 98. K. Kanjana, P. Harding, T. Kwamman, W. Kingkam, T. Chuti-
+masakul, Biomass Bioenergy 153, 106206 (2021)
+ 99. N. Sudhan, K. Subramani, M. Karnan, N. Ilayaraja, M. Sathish, 
+Energy Fuels 31, 977 (2017)
+ 100. T. Yang, T. Ma, P. Yuan, J. Xiang, H. Zheng, L. Yang, J. Wei, H. 
+Xue, K. Cheng, Z. Fang, J. Ye, Diam. Relat. Mater. 160, 113000 
+(2025)
+ 101. R.-J. Mo, Y. Zhao, M. Wu, H.-M. Xiao, S. Kuga, Y. Huang, J.-P. 
+Li, S.-Y. Fu, RSC Adv. 6, 59333 (2016)
+ 102. Z. Liu, Z. Zhu, J. Dai, Y. Yan, ChemistrySelect 3, 5726 (2018)
+ 103. X.-L. Su, J.-R. Chen, G.-P. Zheng, J.-H. Yang, X.-X. Guan, P. 
+Liu, X.-C. Zheng, Appl. Surf. Sci. 436, 327 (2018)
+ 104. G. Lin, R. Ma, Y. Zhou, Q. Liu, X. Dong, J. Wang, Electrochim. 
+Acta 261, 49 (2018)
+ 105. D. Zhang, Y. Zhang, H. Liu, Y. Xu, J. Wu, P. Li, J. Phys. Chem. 
+Solids 178, 111318 (2023)
+ 106. A.L. Pauline, K. Joseph, Fuel 279, 118472 (2020)
+ 107. T. Wang, Y. Zhai, Y. Zhu, C. Li, G. Zeng, Renew. Sustain. 
+Energy Rev. 90, 223 (2018)
+ 108. A. Sandeep, P. T, A.V. Ravindra, Mater. Res. Bull. 179, 112991 
+(2024)
+ 109. Y. Gao, Q. Yue, B. Gao, A. Li, Sci. Total. Environ. 746, 141094 
+(2020)
+ 110. S.K. Shahcheragh, M.M. Bagheri Mohagheghi, A. Shirpay, SN 
+Appl. Sci. 5, 313 (2023)
+ 111. N. Samghouli, I. Bencheikh, K. Azoulay, S. Jansson, S. El Haj-
+jaji, Environ. Monit. Assess. 197, 259 (2025)
+ 112. S.Z. Naji, C.T. Tye, Energy Conversion and Management: X 13, 
+100152 (2022)
+ 113. J. Pallarés, A. González-Cencerrado, I. Arauzo, Biomass Bio-
+energy 115, 64 (2018)
+ 114. Ö. Şahin, C. Saka, Bioresour. Technol. 136, 163 (2013)
+ 115. J. Zhou, A. Luo, Y. Zhao, J. Air Waste Manage. Assoc. 68, 1269 
+(2018)
+ 116. S. Saini, P. Chand, A. Joshi, J. Energy Storage 39, 102646 
+(2021)
+ 117. P. Manasa, S. Sambasivam, F. Ran, J. Energy Storage 54, 
+105290 (2022)
+ 118. V. Jiménez, J.A. Díaz, P. Sánchez, J.L. Valverde, A. Romero, 
+Chem. Eng. J. 155, 931 (2009)
+ 119. D. Nframah Ampong, W. Lin, F.M. de Souza, V.K. Bharti, F. 
+Ofori Agyemang, A. Andrews, K. Mensah-Darkwa, A. Dhakal, 
+
+--- PDF页 47 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 47 of 49 143
+S.R. Mishra, F. Perez, R.K. Gupta, Bioresour. Technol. 406 , 
+131039 (2024)
+ 120. K. Kishibayev, B. Dziejarski, R. Tokpayev, T. Khavaza, Z. Ibrai-
+mov, M. Yergeshov, M. Nauryzbayev, J.S. Nazzal, J. Serafin, 
+Fuel 404, 136266 (2026)
+ 121. Y. Li, X. Zhang, R. Yang, G. Li, C. Hu, RSC Adv. 5 , 32626 
+(2015)
+ 122. I. Neme, G. Gonfa, C. Masi, Heliyon 8, e11940 (2022)
+ 123. M. Zięzio, B. Charmas, K. Jedynak, M. Hawryluk, K. Kucio, 
+Appl. Nanosci. 10, 4703 (2020)
+ 124. H. Zhao, H. Zhong, Y. Jiang, H. Li, P. Tang, D. Li, Y. Feng, 
+Materials 15, 895 (2022)
+ 125. Y. Ma, Waste Biomass Valoriz. 8, 549 (2017)
+ 126. T. Yumak, G.A. Yakaboylu, O. Oginni, K. Singh, E. Ciftyurek, 
+E.M. Sabolsky, Colloids Surf A Physicochem Eng Asp 586, 
+124150 (2020)
+ 127. N. Chalmpes, I. Tantis, A.W. Alsmaeil, B.S. Aldakkan, A. Dimi-
+trakou, M.A. Karakassides, C.E. Salmas, E.P. Giannelis, Energy 
+Fuels 39, 1305 (2025)
+ 128. F. Márquez-Montesino, N. Torres-Figueredo, A. Lemus-San-
+tana, F. Trejo, Chem. Eng. Technol. 43, 1716 (2020)
+ 129. L. Zhu, N. Zhao, L. Tong, Y. Lv, RSC Adv. 8, 21012 (2018)
+ 130. A. Elmouwahidi, J. Castelo-Quibén, J.F. Vivo-Vilches, A.F. 
+Pérez-Cadenas, F.J. Maldonado-Hódar, F. Carrasco-Marín, 
+Chem. Eng. J. 334, 1835 (2018)
+ 131. A.L. Cazetta, A.M.M. Vargas, E.M. Nogami, M.H. Kunita, 
+M.R. Guilherme, A.C. Martins, T.L. Silva, J.C.G. Moraes, V.C. 
+Almeida, Chem. Eng. J. 174, 117 (2011)
+ 132. Z. Yang, R. Gleisner, D.H. Mann, J. Xu, J. Jiang, J.Y. Zhu, 
+Polymers (Basel) 12, 2829 (2020)
+ 133. L.Z. Lee, M.A. Ahmad Zaini, Desalin. Water Treat. 57, 16078 
+(2016)
+ 134. B. Li, J. Hu, H. Xiong, Y. Xiao, ACS Omega 5, 9398 (2020)
+ 135. A. Taurbekov, A. Abdisattar, M. Atamanov, M. Yeleuov, C. 
+Daulbayev, K. Askaruly, B. Kaidar, Z. Mansurov, J. Castro-
+Gutierrez, A. Celzard, V. Fierro, T. Atamanova, J. Compos. 
+Sci. 7, 444 (2023)
+ 136. J.B. Njewa, E. Vunain, T. Biswick, J. Chem. 2022, 1 (2022)
+ 137. K.K. Kong, P.N.Y. Yek, H.S. Sii, M.D. Lee, R.K. Liew, S.S. 
+Lam, Waste Dispos. Sustain. Energy 4, 323 (2022)
+ 138. H. Patel, H. Weldekidan, A. Mohanty, M. Misra, Carbon Cap-
+ture Sci. Technol. 8, 100128 (2023)
+ 139. G. He, X. Yuan, Y. Wang, M. Yilmaz, J. Li, S. Yuan, Sep. Purif. 
+Technol. 354, 128826 (2025)
+ 140. F. Zeng, Q. Lv, Y. Zhang, L. Lu, and B. Xu, (2025). Waste 
+Biomass Valorization 
+ 141. Y. Zhang, Y.-P. Zhao, L.-L. Qiu, J. Xiao, F.-P. Wu, J.-P. Cao, 
+Y.-H. Bai, F.-J. Liu, Diamond Relat. Mater. 129, 109331 (2022)
+ 142. E. Taer, M. Melisa, A. Agustino, R. Taslim, W. Sinta Mustika, 
+A. Apriwandi, Energy Sour. Part A: Recovery, Utilization, Envi-
+ron. Effects 47, 9490 (2025)
+ 143. X. Wang, W. Zeng, C. Xin, X. Kong, X. Hu, Q. Guo, RSC Adv. 
+12, 33069 (2022)
+ 144. J. Serafin, M. Ouzzine, C. Xing, H. ElOuahabi, A. Kamińska, 
+J. Sreńscek-Nazzal, J. CO2 Utilization 62, 102071 (2022)
+ 145. S. Chaisit, N. Chanlek, J. Khajonrit, T. Sichumsaeng, S. Maen-
+siri, Mater. Res. Express 7, 105605 (2020)
+ 146. E. Huarote-Garcia, A.A. Cardenas-Riojas, I.E. Monje, E.O. 
+López, O.M. Arias-Pinedo, G.A. Planes, A.M. Baena-Moncada, 
+ACS Environ. Au 4, 80 (2024)
+ 147. S. Ahmed, A. Ahmed, M. Rafat, J. Energy Storage 26, 100988 
+(2019)
+ 148. J. Li, Q. Wu, Chem. Phys. Lett. 691, 238 (2018)
+ 149. T. Boichuk, A. Boichuk, V. Vashchynskyi, M.E. Changarath, M. 
+Krečmarová, R. Abargues, J.P. Martínez-Pastor, J.F. Sánchez-
+Royo, J. Power. Sources 622, 235356 (2024)
+ 150. E.H. Al-Ghurabi, M.M. Boumaza, W. Al-Masry, M. Asif, Sci. 
+Rep. 15, 17132 (2025)
+ 151. O. Üner, Y. Bayrak, Microporous Mesoporous Mater. 268, 225 
+(2018)
+ 152. J. Singh, B. Dey, A. Syed, H.A. AL-Shwaiman, M. Subrama -
+niam, M.W. Ahmad, A. Choudhury, Diam. Relat. Mater. 149, 
+111640 (2024)
+ 153. J. Chen, Y. Lin, J. Liu, D. Wu, X. Bai, D. Chen, H. Li, J. Energy 
+Storage 39, 102640 (2021)
+ 154. L. Guan, L. Pan, T. Peng, C. Gao, W. Zhao, Z. Yang, H. Hu, M. 
+Wu, ACS Sustain. Chem. Eng. 7, 8405 (2019)
+ 155. M. Selvaraj, E. Balamoorthy, T.G. Manivasagam, J. Energy 
+Storage 72, 108543 (2023)
+ 156. S. Shaheen Shah, S.M. Abu Nayem, N. Sultana, A.J. Saleh 
+Ahammad, Md. Abdul Aziz, Chemsuschem (2022). https:// doi. 
+org/ 10. 1002/ cssc. 20210 1282
+ 157. S.S. Desa, T. Ishii, K. Nueangnoraj, ACS Omega 6 , 24902 
+(2021)
+ 158. Y. Yardım, İ Genel, C. Saka, Int. J. Hydrogen Energy 99, 383 
+(2025)
+ 159. R. Birundha, L. Neelakantan, Y. Vidyalakshmi, J. Mater. Sci. 
+Mater. Electron. 36, 144 (2025)
+ 160. S. Anand, M.W. Ahmad, A. Syed, A.H. Bahkali, M. Verma, B. 
+Hye Kim, A. Choudhury, J. Ind. Eng. Chem. 129, 309 (2024)
+ 161. M. Saravanan, K. Ramesh, M. Kiruthiga, C. Pratheep, Appl. 
+Phys. A Mater. Sci. Process. 130, 764 (2024)
+ 162. S.S. Nath, K. Chanthirasekaran, S.S. Priya, N. Bharathiraja, D. 
+Gupta, S. Kumaran, Diamond Relat. Mater. 159, 112850 (2025)
+ 163. G. Nazir, A. Rehman, S. Hussain, M. Ikram, S. Park, Int. J. 
+Energy Res. 46, 15602 (2022)
+ 164. İ Genel, Y. Yardım, C. Saka, Biomass Bioenergy 197, 107818 
+(2025)
+ 165. İ Genel, Y. Yardım, C. Saka, Diamond Relat. Mater. 152, 
+111912 (2025)
+ 166. Z. Chen, X. Weng, Q. Zeng, Y. Xie, Y. Liu, Y. Lv, M. Liu, J. 
+Power. Sources 636, 236387 (2025)
+ 167. C. Saka, Y. Yardım, İ Genel, J. Electroanal. Chem. 996, 119427 
+(2025)
+ 168. S. Yaglikci, Y. Gokce, E. Yagmur, Z. Aktas, Environ. Technol. 
+41, 36 (2020)
+ 169. F.R.M.S. Raj, N.V. Jaya, G. Boopathi, D. Kalpana, A. Panduran-
+gan, Mater. Chem. Phys. 240, 122151 (2020)
+ 170. S.S. Shah, M.A. Aziz, E. Cevik, M. Ali, S.T. Gunday, A. Boz-
+kurt, Z.H. Yamani, J. Energy Storage 56, 105944 (2022)
+ 171. H. Xu, S. Zhou, N. Liang, J. Zang, J. Wang, Mater. Sci. Eng. B 
+Solid-State Mater. Adv. Technol. 320, 118428 (2025)
+ 172. H. Rustamaji, T. Prakoso, H. Devianto, P. Widiatmoko, P. Febri-
+yanto, M. Eviani, Sustain. Chem. Environ. 7, 100132 (2024)
+ 173. L. Ji, B. Wang, Y. Yu, N. Wang, J. Zhao, Electrochim. Acta 331, 
+135348 (2020)
+ 174. H. Xu, S. Zhong, C. Yuan, X. Zheng, S. Wang, Diam. Relat. 
+Mater. 150, 111768 (2024)
+ 175. S. Jiao, Y. Yao, J. Zhang, L. Zhang, C. Li, H. Zhang, X. Zhao, 
+H. Chen, J. Jiang, Appl. Surf. Sci. 615, 156365 (2023)
+ 176. C.R. Correa, T. Otto, A. Kruse, Biomass Bioenergy 97, 53 
+(2017)
+ 177. Y. Mochizuki, J. Bud, E. Byambajav, N. Tsubouchi, Carbon 
+Resour. Convers. 8, 100237 (2025)
+ 178. S. Maulina, M. Iriansyah, IOP Conf. Ser. Mater. Sci. Eng. 309, 
+012072 (2018)
+
+--- PDF页 48 ---
+ J Mater Sci: Mater Electron (2026) 37:143143 Page 48 of 49
+ 179. W. Spencer, G. Senanayake, M. Altarawneh, D. Ibana, A.N. 
+Nikoloski, Miner. Eng. 212, 108712 (2024)
+ 180. K. Sathyabama, S. Firdous, ACS Omega 10, 37013 (2025)
+ 181. R. Zou, Z. Yang, J. Zhang, R. Lei, W. Zhang, F. Fnu, D.C.W. 
+Tsang, J. Heyne, X. Zhang, R. Ruan, H. Lei, Bioresour. Tech-
+nol. 399, 130624 (2024)
+ 182. I. Neme, G. Gonfa, C. Masi, Result Mater. 15, 100304 (2022)
+ 183. G. Fu, Z. Wang, Y. Zhang, Z. Huang, J. Liu, J. Zhou, K. Cen, 
+Int. J. Hydrogen Energy 41, 7854 (2016)
+ 184. E. Kasaw, A. Haile, M. Getnet, Coatings 10, 579 (2020)
+ 185. S. Ghosh, R. Santhosh, S. Jeniffer, V. Raghavan, G. Jacob, K. 
+Nanaji, P. Kollu, S.K. Jeong, A.N. Grace, Sci. Rep. 9 , 16315 
+(2019)
+ 186. Y. Xu, R. Tan, J. Wu, J. Huang, Mater. Adv. 3, 6878 (2022)
+ 187. N. Duraisamy, K. Shenniangirivalasu Kandasamy, E. Dhan-
+dapani, K. Kandiah, S. J. Panchu, and H. C. Swart, (2025). J 
+Inorg Organomet Polym Mater
+ 188. N.M. Keppetipola, M. Dissanayake, P. Dissanayake, B. 
+Karunarathne, M.A. Dourges, D. Talaga, L. Servant, C. 
+Olivier, T. Toupance, S. Uchida, K. Tennakone, G.R.A. 
+Kumara, L. Cojocaru, RSC Adv. 11, 2854 (2021)
+ 189. G.K. Gupta, P. Sagar, S.K. Pandey, M. Srivastava, A.K. 
+Singh, J. Singh, A. Srivastava, S.K. Srivastava, A. Srivastava, 
+Nanoscale Res. Lett. 16, 85 (2021)
+ 190. Y. Gong, D. Li, C. Luo, Q. Fu, C. Pan, Green Chem. 19, 4132 
+(2017)
+ 191. D. Balasubramanian, H. Varadharajan, I.P. Venugopal, Bio-
+mass Bioenergy 201, 108104 (2025)
+ 192. N. Chaiammart, V. Vignesh, M.M. Thu, A. Eiad-ua, T. Mai-
+yalagan, G. Panomsuwan, Carbon Resour. Convers. 8 , 100267 
+(2025)
+ 193. C. Wang, L. Bai, F. Zhao, L. Bai, Carbon Lett. 32, 907 (2022)
+ 194. M. Diantoro, N.I.M. Aturroifah, I. Luthfiyah, J. Utomo, I. 
+Hamidah, B. Yuliarto, A. Rusydi, S. Maensiri, W. Meevasana, 
+Carbon Resour. Convers. 8, 100313 (2025)
+ 195. N.A. Saputra, G. Pari, W. Syafii, D.S. Nawawi, A. Maddu, N. 
+Chitraningrum, S. Priyono, Mater. Chem. Phys. 329, 130104 
+(2025)
+ 196. P. Baraneedharan, M. Silambarasan, D. Shankari, P. Mounika, 
+S. Venkatesh, N. Sharma, P. Swaminathan, J. Electron. Mater. 
+54, 6443 (2025)
+ 197. E. da Leal Silva, M. Torres, P. Portugau, A. Cuña, J. Energy 
+Storage 44, 103494 (2021)
+ 198. Z. Li, Q. Liang, C. Yang, L. Zhang, B. Li, D. Li, J. Mater. Sci. 
+Mater. Electron. 28, 13880 (2017)
+ 199. T. Manimekala, R. Sivasubramanian, M.A. Dar, G. Dharma-
+lingam, RSC Adv. 15, 2490 (2025)
+ 200. S. Lu, W. Yang, M. Zhou, L. Qiu, B. Tao, Q. Zhao, X. Wang, 
+L. Zhang, Q. Xie, Y. Ruan, J. Colloid Interface Sci. 610, 1088 
+(2022)
+ 201. E.Y.L. Teo, L. Muniandy, E.-P. Ng, F. Adam, A.R. Mohamed, 
+R. Jose, K.F. Chong, Electrochim. Acta 192, 110 (2016)
+ 202. M. Thommes, K. Kaneko, A.V. Neimark, J.P. Olivier, F. Rod -
+riguez-Reinoso, J. Rouquerol, K.S.W. Sing, Pure Appl. Chem. 
+87, 1051 (2015)
+ 203. C. Weidenthaler, Nanoscale 3, 792 (2011)
+ 204. F. Wang, Z. Jia, Y. Zhu, T. Zhang, J. Cheng, X. Zhao, Biomass 
+Bioenergy 202, 108253 (2025)
+ 205. F. Liu, J. Liu, J. He, J. Niu, P. Feng, X. Chuan, J. Energy Stor -
+age 134, 118210 (2025)
+ 206. C. Quan, R. Su, N. Gao, Int. J. Energy Res. 44, 4335 (2020)
+ 207. P. Singh, S. Sapkal, A. Mendhe, A. Subash, H.S. Panda, J. 
+Mater. Sci. Mater. Electron. 35, 1072 (2024)
+ 208. A.B. Mendhe, B. Panigrahy, H.S. Panda, Electrochim. Acta 
+512, 145482 (2025)
+ 209. M. Afkanpour, E. Hosseinzadeh, H. Tabesh, BMC Med. Res. 
+Methodol. 24, 188 (2024)
+ 210. M. Alam, S. Husain, Appl. Phys. A 131, 67 (2025)
+ 211. Y. Wu, J. Feng, Wirel. Pers. Commun. 102, 1645 (2018)
+ 212. M. Maleki, A. Akbari, Y. Kazemzadeh, A. Ranjbar, Sci. Rep. 
+15, 31487 (2025)
+ 213. O.A. Montesinos López, A. Montesinos López, J. Crossa, In 
+multivariate statistical machine learning methods for genomic 
+prediction (Springer International Publishing, Cham, 2022), 
+pp.379–425
+ 214. A. Choudhury, A. Mondal, S. Sarkar, Eur. Phys. J. Spec. Top. 
+233, 2425 (2024)
+ 215. J.S. Kushwah, A. Kumar, S. Patel, R. Soni, A. Gawande, S. 
+Gupta, Mater. Today Proc. 56, 3571 (2022)
+ 216. J.H. Kim, D.H. Lee, J.A. Mendoza, M.-Y. Lee, Environ. Res. 
+248, 118300 (2024)
+ 217. B. Mohammed, C. Hamza, Mining, Metallurgy & Exploration 
+42, 1609 (2025)
+ 218. M. Liu, X. Lan, C. Bian, Z. Ma, S. Ma, G. Huang, Def. Tech-
+nol. (2025). https:// doi. org/ 10. 1016/j. dt. 2025. 07. 012
+ 219. M. Wiens, A. Verone ‐Boyle, N. Henscheid, J.T. Podichetty, 
+J. Burton, Clin. Transl. Sci. (2025). https:// doi. org/ 10. 1111/  
+cts. 70172
+ 220. P.-A.-H. Pham, N.-D. Hoang, Results Eng. 24, 103125 (2024)
+ 221. A.B. Mendhe, H.S. Panda, Next Res. 2, 100119 (2025)
+ 222. M. Alanazi, J. Alanazi, T.N. Alharby, B. Huwaimel, Sci. Rep. 
+15, 4725 (2025)
+ 223. D. Zhao, Y. Wang, Q. Wang, X. Wang, Comput. Methods 
+Programs Biomed. 175, 53 (2019)
+ 224. X. Li, Z. Huang, S. Shao, Y. Cai, Fuel 356, 129623 (2024)
+ 225. L. Leng, L. Yang, X. Lei, W. Zhang, Z. Ai, Z. Yang, H. Zhan, 
+J. Yang, X. Yuan, H. Peng, H. Li, Biochar 4, 63 (2022)
+ 226. X. Zhu, Y. Li, X. Wang, Bioresour. Technol. 288, 121527 
+(2019)
+ 227. X. Zhou, X. Liu, L. Sun, X. Jia, F. Tian, Y. Liu, Z. Wu, C 10, 
+10 (2024)
+ 228. H. Li, Z. Ai, L. Yang, W. Zhang, Z. Yang, H. Peng, L. Leng, 
+Bioresour. Technol. 369, 128417 (2023)
+ 229. A. Hai, G. Bharath, M.F.A. Patah, W.M.A.W. Daud, R. K., P. 
+Show, F. Banat, Environ. Technol. Innov. 30, 103071 (2023)
+ 230. C. Wang, W. Jiang, G. Jiang, T. Zhang, K. He, L. Mu, J. Zhu, 
+D. Huang, H. Qian, X. Lu, Ind. Eng. Chem. Res. 62, 11016 
+(2023)
+ 231. Z. Xie, Y. Cao, Z. Luo, Green Chem. 27, 2046 (2025)
+ 232. S. Zhu, J. Li, L. Ma, C. He, E. Liu, F. He, C. Shi, N. Zhao, 
+Mater. Lett. 233, 294 (2018)
+ 233. X. Yang, C. Yuan, S. He, D. Jiang, B. Cao, S. Wang, Fuel 331, 
+125718 (2023)
+ 234. C. Zhao, X. Lu, H. Tu, Y. Yang, S. Wang, A. Chen, H. Zhang, 
+J. Energy Storage 97, 112974 (2024)
+ 235. A.A. Oladipo, Mater. Chem. Phys. 260, 124129 (2021)
+ 236. M. Zhou, A. Gallegos, K. Liu, S. Dai, J. Wu, Carbon N. Y. 
+157, 147 (2020)
+ 237. X. Lu, C. Zhao, H. Tu, S. Wang, A. Chen, H. Zhang, Sustain. 
+Mater. Technol. 44, e01309 (2025)
+ 238. D. Bergna, T. Varila, H. Romar, U. Lassi, C (Basel) 4 , 41 
+(2018)
+ 239. A.M.S. Ngueabouo, R.F.T. Tagne, D.R.T. Tchuifon, C.G. Fot-
+sop, A.K. Tamo, S.G. Anagho, Mater. Adv. 3, 8361 (2022)
+
+--- PDF页 49 ---
+J Mater Sci: Mater Electron (2026) 37:143 Page 49 of 49 143
+Publisher’s Note Springer Nature remains neutral with 
+regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) 
+holds exclusive rights to this article under a publishing 
+agreement with the author(s) or other rightsholder(s); 
+author self-archiving of the accepted manuscript version of 
+this article is solely governed by the terms of such publishing 
+agreement and applicable law.

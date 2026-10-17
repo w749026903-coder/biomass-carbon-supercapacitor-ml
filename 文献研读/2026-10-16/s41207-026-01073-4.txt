@@ -1,0 +1,1131 @@
+
+--- PDF页 1 ---
+ORIGINAL PAPER
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+https://doi.org/10.1007/s41207-026-01073-4
+ν	 	Poisson’s	ratio
+LR	 	Linear	Regression
+RF	 	Random	Forest
+MSE	 	Mean	Squared	Error
+R2	 	Coefficient	of	determination
+Introduction
+Perovskite	 materials,	 including	 Li2T iO3,	 have	 attracted	
+significant	research	attention	due	to	their	remarkable	elec-
+trical,	optical,	and	mechanical	characteristics.	These	prop-
+erties	make	them	 attractive	candidates	for	 next-generation	
+energy	 systems	 and	 functional	 ceramics.	 Understanding	
+their	mechanical	behavior	is	therefore	essential	for	ensuring	
+structural	stability	and	long-term	performance	under	opera-
+tional	conditions	(Aldaghfag	et	al.	2024;	Zhang	et	al.	2023;	
+Abreu	 et	 al.	 2024).	 These	 include	 perovskite	 ( Li2T iO3)	
+which	is	considered	a	promising	breeding	material,	exhibit-
+ing	three	distinct	modifications:	α,	β,	and	γ.	Lithium	meta	
+titanate	represents	an	innovative	material	for	thin	films	with	
+Abbreviations
+L T 	 	L i2TiO3
+A	 	Elastic	anisotropy
+G_VRH	 	Shear	modulus
+K_VRH	 	Bulk	modulus
+Responsible	Editor:	Ridha	Djellabi.
+	 Mohammed	Tanasehte
+tanasehte@gmail.com
+1	 Bio-Geosciences	and	Materials	Engineering	Laboratory	
+(LBGIM),	Higher	Normal	School	of	Casablanca	(Ecole	
+Normale	Supérieure	de	Casablanca),	University	of	Hassan	II,	
+Casablanca,	Morocco
+2	 Condensed	Matter	Physics	Laboratory	(LPMC),	Faculty	of	
+Sciences	Ben	M’sik,	University	of	Hasan	II,	Casablanca,	
+Morocco
+3	 Centre	régional	des	métiers	de	l’éducation	et	de	la	formation	
+Casablanca-Settat,	Annexe	Settat,	Settat,	Morocco
+4	 Centre	régional	des	métiers	de	l’éducation	et	de	la	formation	
+Drâa-Tafilalet,	Errachidia,	Morocco
+Abstract
+Lithium	titanate	( Li2T iO3,	LT)	has	emerged	as	a	promising	material	owing	to	several	favorable	characteristics,	includ-
+ing	 superior	 performance,	 structural	 stability,	affordability,	and	 low	 toxicity.	As	 a	 result,	 it	 is	 an	 excellent	 candidate	 for	
+use	 in	 energy	storage	 and	 conversion	 applications.	The	 mechanical	 properties,	 including	elastic	 anisotropy,	shear	 modu-
+lus,	 bulk	 modulus,	 and	 Poisson’s	ratio,	 are	 critical	 for	 assessing	 the	 material’s	structural	 integrity	 and	 durability	 under	
+operating	 conditions,	 particularly	 in	 demanding	 applications	 such	 as	 lithium-ion	 batteries	 and	 fusion	 reactors.	 Here,	 we	
+benchmark	three	supervised	learning	models	(linear	regression,	random	forest,	and	XGBoost)	to	predict	these	properties	
+from	 simple	 structural	 descriptors,	 including	 unit-cell	 volume	 and	 the	 number	 of	 sites.	 Despite	 the	 limited	 dataset	 size,	
+the	 models	 achieve	 strong	 predictive	 accuracy,	highlighting	 the	 potential	 of	 machine	 learning	 to	 accelerate	 mechanical-
+property	screening	and	support	materials	optimization.
+Keywords	 Perovskite	·	Machine	learning	·	Linear	regression	(LR)	·	Random	forest	(RF)	·	XGBoost	·	Correlation	
+matrix	·	Poisson’s	ratio	·	Affordable	and	clean	energy;	industry	·	Innovation	and	infrastructure
+Received: 6 May 2025 / Accepted: 21 January 2026 / Published online: 17 February 2026
+© Springer Nature Switzerland AG 2026
+Predicting the mechanical properties of Li2T iO3 using machine 
+learning process: linear regression, random forests and XGBoost 
+models
+Housna Dari1 · Achraf Chahbi2 · Fatima Zahra Krimech1 · Ahmed Hader1,3 · Ilias Tarras1 · Rachida Moultif2 · 
+Mohammed Tanasehte1,4  · Yahia Boughaleb1
+1 3
+
+--- PDF页 2 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+significant	potential	for	use	in	batteries	based	on	lithium-ion	
+(LIB)	due	to	its	great	capacity	to	store	energy	(Tripathi	et	
+al.	2021).	Thin	films	of	 Li2T iO3 	have	been	employed	in	
+Li	micro	batteries	like	electrodes	or	supercapacitors	(Y e	et	
+al.	2024).	 Li2T iO3	has	widely	been	regarded	as	a	promis-
+ing	candidate	for	fusion	reactor	applications	and	is	recog-
+nized	as	one	of	the	best	solid	tritium	breeder	materials	under	
+study,	with	unique	physicochemical	properties,	such	as	high	
+Li	 atomic	 density,	low	 activation	 energy,	strong	 chemical	
+stability,	and	efficient	tritium	release	at	low	temperatures.	To	
+fully	harness	the	potential	of	 Li2T iO3,	a	comprehensive	
+characterization	of	its	mechanical	properties	is	required	(Hu	
+et	al.	2024;	Xu	et	al.	2022;	Goswami	and	Murphy	2020).
+The	technology	and	application	of	artificial	intelligence	
+have	reached	a	high	level	of	maturity,	with	many	scholars	
+introducing	 experimental	 data	 and	 artificial	 intelligence	
+modelling	 theory	 into	 rolling	 process	 optimization	 and	
+mechanical	property	prediction	(Kibrete	et	al.	2023;	Amal-
+lah	et	al.	2020;	Tanasehte	et	al.	2020;	El	Hana	et	al.	2024).	
+This	has	led	to	the	emergence	of	new	data-driven	methods	
+based	 on	 big	 data,	 such	 as	 machine	 learning	 (ML),	 in	 the	
+field	of	materials	science	(Elkhal	et	al.	2021,	2022;	Hader	et	
+al.	2020;	Tanasehte	et	al.	2022).	The	application	of	machine	
+learning	 reduces	 overall	 computational	 costs	 and	 shortens	
+the	development	cycle	(Huang	et	al.	2023),	and	its	use	has	
+been	 prevalent	 across	 diverse	 domains	 such	 as	 computer	
+vision,	data	analytics,	and	bioinformatics	(Iqbal	and	Kumar	
+2023;	 Nafea	 et	 al.	 2024).	 It	 has	 also	 played	 a	 key	 role	 in	
+material	 characterization,	 enabling	 the	 discovery	 of	 novel	
+material	 structures	 and	 facilitating	 the	 accurate	 prediction	
+of	material	and	molecular	properties	(Akinpelu	et	al.	2024;	
+Fedik	 et	 al.	 2022).	 Tawfik	et	 al.	 (2020)	 applied	 ML	 algo-
+rithms	to	predict	the	thermal	properties	of	crystals,	demon-
+strating	the	potential	of	data-driven	approaches	for	property	
+estimation	in	complex	materials	(Tawfik	et	al.	2020).	And	
+several	studies	have	successfully	applied	ML	to	predict	the	
+mechanical	properties	of	metals,	composites,	and	ceramics,	
+as	 shown	 by	 Kibrete	 et	 al.	 (2023).	 Similarly,	Gogineni	 et	
+al.	(2024)	demonstrated	that	ML-based	models	can	reliably	
+correlate	structural	descriptors	with	macroscopic	mechani-
+cal	performance	(Manhas	et	al.	2025).
+Furthermore,	 the	 integration	 of	 machine	 learning	 has	
+enabled	 the	 development	 of	 models	 that	 predict	 both	 the	
+functional	 relationship	 describing	 a	 material’s	response	 to	
+an	 electric	 field	 and	 its	 electronic	 properties,	 such	 as	 the	
+band	 gap	 (Sudha	 et	 al.	 2022).	 Similar	 approaches	 have	
+been	 proposed	 as	 an	 alternative	 route	 for	 predicting	 the	
+mechanical	 strength	 of	 concrete.	As	 a	 branch	 of	 artificial	
+intelligence,	machine	learning	leverages	large	datasets	and	
+statistical	learning	algorithms	to	construct	predictive	mod-
+els	with	improved	accuracy	and	reduced	computational	cost	
+(Ben	Chaabene	et	al.	2020).
+Three	 machine	 learning	 models	 were	 employed	 in	 an	
+approach	 to	 supervised	 learning	 (Liu	 Duanyang	 2023).	
+The	 predictive	 models	 of	 linear	 regression	 (LR),	 random	
+forest	(RF),	and	XGBoost	were	employed	to	forecast	spe-
+cific	 mechanical	 properties	 of	 Li2T iO3,	 including	 elas-
+tic	 anisotropy	 (A),	 the	 shear	 modulus	 (G_VRH),	 the	 bulk	
+modulus	(K_VRH)	using	the	VRH	approximation,	and	the	
+Poisson’s	ratio	(ν)	(Ji	et	al.	2018).
+While	 machine	 learning	 has	 seen	 increasing	 adoption	
+in	 materials	 science,	 its	 application	 to	 specific,	 under-
+represented	 systems	 such	 as	 lithium	 titanate	 ( Li2T iO3,)	
+remains	 limited.	 This	 study	 addresses	 that	 gap	 by	 devel-
+oping	 predictive	 models	 for	 the	 mechanical	 properties	 of	
+Li2T iO3,	a	perovskite	compound	with	promising	applica-
+tions	in	energy	storage	and	nuclear	fusion	(Sengodan	et	al.	
+2022;	Stepišnik	et	al.	2021).
+To	this	 end,	 we	 construct	 and	 benchmark	 three	 super-
+vised	 learning	 models:	 Linear	 Regression	 (LR),	 Random	
+Forest	 (RF),	 and	 XGBoost	 using	 physically	 interpretable	
+descriptors	 derived	 from	 density	 functional	 theory	 (DFT)	
+calculations,	 including	 volume,	 nsites,	 space	 group,	 and	
+kpoint_density,	obtained	 via	 the	 Matminer	 framework.	 In	
+this	work,	we	combine	DFT	derived	data	with	explicit	fea-
+ture	engineering	on	structural	descriptors	to	construct	a	com-
+pact,	 physically	 interpretable	 input	 space	 for	 the	 machine	
+learning	models.	The	combination	of	domain	relevant	fea-
+tures	 and	 systematic	 model	 comparison	 distinguishes	 this	
+work	from	broader,	less	material-specific	studies	and	con-
+tributes	to	the	growing	body	of	ML-assisted	materials	prop-
+erty	prediction.
+This	 work	 contributes	 to	 Sustainable	 Development	
+Goals	 related	 to	 clean	 energy	 technologies	 and	 industrial	
+innovation	 by	 accelerating	 the	 prediction	 and	 optimiza-
+tion	of	energy-relevant	ceramic	materials	using	data-driven	
+machine	learning	approaches.
+Methodology
+Dataset
+The	 machine	 learning	 models	 were	 trained	 using	 DFT	
+derived	 physical	 descriptors	 obtained	 from	 the	 Matminer	
+library	(Ward	et	al.	2018),	including	elastic	constants,	struc-
+tural	features,	and	compositional	attributes.	These	descrip-
+tors	served	as	the	input	variables.	The	outputs	were	the	target	
+mechanical	 properties	 of	 Li2T iO3,	 namely	 the	 elastic	
+anisotropy	(A),	shear	modulus	(G_VRH),	bulk	modulus	(K_
+VRH),	and	Poisson’s	ratio	(ν).	Prior	to	training,	the	dataset	
+was	standardized	using	a	Scikit	Learn	scaler,	and	the	mod-
+els	were	evaluated	using	a	5-fold	cross-validation	scheme	to	
+ensure	robustness	and	reduce	overfitting.	Linear	Regression	
+1 3
+111 Page 2 of 14
+
+--- PDF页 3 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+(LR),	Random	Forest	(RF),	and	XGBoost	regressors	were	
+implemented	and	optimized	using	their	default	parameters	
+unless	otherwise	stated.
+Machine learning models
+Linear regression model
+LR	 is	 mostly	 the	 straightforward	 approach	 to	 supervised	
+learning,	used	for	quantitative	answers.	In	the	present	case,	
+we	employed	a	multiple	linear	regression	(MLR)	model	to	
+predict	the	results	based	on	the	influence	of	various	explana-
+tory	 variables.	 The	 objective	 of	 multiple	 linear	 regression	
+(MLR)	 is	 established	 to	 represent	 the	 linear	 relationship	
+of	a	target	(Y)	and	the	various	predictors	(X).	In	a	dataset	
+comprising	 yi,	 x i1,... , x ip 	 for	n	 statistical	units,	linear	
+regression	 posits	 that	 the	 relationship	 between	 the	 depen-
+dent	variable	 yi 	and	the	p-vector	of	regressors	 xi 	is	linear	
+(Zhang	et	al.	2019;	Moushi	et	al.	2023).
+Thus,	 the	 model	 takes	 the	 following	 form	 (Dorbane	 et	
+al.	2025):
+yi = β 1x i1, ... . ,βp x ip + ϵi i = 1;... ... .;n 	 (1)
+For	n	equations
+β · X + ϵ
+With
+y =
+
+
+y1
+...
+yn
+
+ ,X =
+
+
+x11 ... x 1p
+... . . . ...
+xn1 ... x np
+
+ ,
+β =
+
+
+β1
+...
+βp
+
+ ,ϵ =
+
+
+ϵ1
+...
+ϵn
+
+
+β	represents	a	parameter	vector	of	dimension	p,	comprising	
+elements	that	are	also	referred	to	as	regression	coefficients.	ϵ	
+is	used	error	term—also	referred	to	the	disturbance	or	noise.
+Random forest model
+The	RF’s	algorithm	builds	upon	the	principles	of	decision	
+trees,	yet	introduces	a	fundamental	distinction.	In	contrast	
+to	 the	 standard	 decision	 tree	 algorithm,	 which	 employs	 a	
+single	 decision	 tree	 to	 derive	 predictions,	 random	 forests	
+utilise	 an	 ensemble	 of	 trees	 to	 form	 a	 ‘forest’,	 thereby	
+enhancing	 both	 the	 predictive	 accuracy	 and	 robustness	 of	
+the	resulting	model.	Random	forest	algorithms	are	classified	
+into	two	principal	categories:	regression	and	classification.	
+The	 regression	 variant	 produces	 outputs	 in	 numerical	 or	
+continuous	formats,	whereas	the	classification	variant	gen-
+erates	outputs	in	discrete	or	categorical	forms.	In	the	context	
+of	continuous	target	parameters,	the	random	forest	regres-
+sor	is	the	appropriate	choice	for	this	particular	application	
+(Y ang	et	al.	2023;	Zhang	et	al.	2022)	(Fig.	1).
+XGBoost
+XGBoost	(Extreme	Gradient	Boosting)	is	a	learning	model	
+based	 on	 Boosting	 Tree	 models.	 It	 introduces	 several	
+enhancements,	 including	 support	 for	 linear	 classifiers	and	
+the	 use	 of	 Taylor	 expansion’s	 second-order	 cost	 function	
+(Sinha	et	al.	2025).	The	incorporation	of	the	second	deriva-
+tive	facilitates	enhanced	accuracy	of	the	results.
+The	 key	 principles	 of	 XGBoost	 include	 its	 additive	
+training	approach,	the	optimization	process	is	based	on	the	
+results	 of	 the	 previous	 step.	 The	 objective	 function	 at	 the	
+t-th	step	can	be	expressed	as	follows	(AlHosni	et	al.	2022):
+obj(t) =
+n∑
+i=1
+l(yi, ˆyi
+t−1 + ft (xi)) + Ω(ft)+ constant 	 (2)
+where	 l	represents	the	loss	term	of	the	t-th	round,	constant	
+represents	a	constant	term,	and	 Ω 	is	the	regularization	term	
+of	the	model,	shown	as
+Fig. 1	 Flowchart	for	random	forest	regression
+	
+1 3
+Page 3 of 14 111
+
+--- PDF页 4 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+Bulk	Modulus:
+KV RH = KV + KR
+2 	 (9)
+Shear	Modulus:
+GV RH = GV + GR
+2 	 (10)
+Where	 KV 	and	 GV 	are	the	V oigt	estimates,	while	 KR	
+and	 GR 	are	the	Reuss	estimates	for	bulk	and	shear	modu-
+lus,	respectively.
+Model evaluation
+Model	performance	was	quantified	using	the	coefficient	of	
+determination	R²;	the	root	mean	squared	error,	RMSE;	and	
+the	mean	absolute	error,	MAE.	R²	gives	the	proportion	of	
+variability	of	the	target	mechanical	properties	explained	by	
+the	 model.	 RMSE	 is	 a	 measure	 of	 the	 typical	 size	 of	 the	
+prediction	error	in	the	same	physical	units	as	the	target,	such	
+as	GPa,	with	larger	deviations	being	penalized	more	heav-
+ily.	 Complementing	 RMSE,	 MAE	 represents	 the	 average	
+absolute	deviation	between	predictions	and	references	and	
+is	 less	 sensitive	 to	 outliers.	This	 set	 of	 metrics	 provides	 a	
+good	balance	between	goodness	of	fit	and	absolute	predic-
+tive	accuracy	(Gogineni	et	al.	2024).
+Mean squared error
+The	MSE	function	computes	the	Mean	Squared	Error	(Raja-
+mani	and	Iyer	2023).	It	represents	the	discrepancy	between	
+the	 original	 and	 predicted	 values,	 calculated	 by	 squaring	
+the	mean	difference	across	the	dataset	(Tohka	and	van	Gils	
+2021).
+If	 ˆyi 	is	the	predicted	value	of	the	i-th	sample,	and	 yi	is	
+the	corresponding	true	value,	then	the	mean	squared	error	
+(MSE)	estimated	over	n_samples	is	defined	as	follows	(Tsae	
+et	al.	2023):
+MSE (y,ˆy)= 1
+nsamples
+n samples∑
+i=1
+(yi − ˆyi)2
+	 (11)
+Coefficient of determination
+The	coefficient	of	determination	(R²)	quantifies	the	propor-
+tion	of	variance	in	the	target	variable	that	is	explained	by	the	
+model.	It	is	computed	using	the	r2_score	function	in	Scikit	
+Learn	and	is	defined	as	(Gao	2024):
+Ω( ft)= γ · Tt + λ 1
+2
+T∑
+j=1
+w j
+2	 (3)
+Both	γ	and	λ	are	customization	parameters.	Since	the	tree	
+structure	 becomes	 simple	 when	 these	 two	 parameters	 are	
+large,	 and	 that	 this	 approach	 effectively	 solves	 the	 prob-
+lems	of	overfitting.	Taylor	expansion’s	second-order	on	(1)	
+should	 be	 performed	 to	 gain	 further	 insight	 (Zhang	 et	 al.	
+2022):
+obj(t) =
+n∑
+i=1
+[
+l(yi, ˆyi
+t−1)+g ift (xi)+ 1
+2 h ift
+2 (xi)
+]
++ Ω(f t)+constant
+	 (4)
+where	g	is	the	first	derivative,	and	h	is	the	second	derivative:
+gi = ∂ ˆy i
+t−1 l (yi, ˆyi
+t−1)	 (5)
+h i = ∂ ˆy i
+t−1
+2
+l
+(yi, ˆyi
+t−1)	 (6)
+We	replace	(3),	(5),	(6)	into	(4)	and	take	the	derivative.	then	
+we	obtain	the	two	expressions	(7)	and	(8):
+w j
+∗ = −
+∑ gi∑ hi + λ 	 (7)
+obj∗ = − 1
+2
+T∑
+j=1
+(∑gi)2
+∑hi + λ + γ ·T 	 (8)
+obj∗	represents	the	score	of	the	loss	function,	the	structure	
+is	better	when	this	score	is	low.	 wj ∗ 	refers	to	the	solution	
+of	weights.
+Elastic moduli averaging (VRH)
+V oigt-Reuss-Hill	(VRH)	 scheme	 is	 a	 widely	 used	 scheme	
+for	 homogenization	 that	 provides	 useful	 approximations	
+for	effective	elastic	moduli	of	polycrystalline	aggregates	by	
+averaging	 the	 upper	 bound	 V oigt	estimate	 (uniform	 strain	
+assumption)	and	the	lower	bound	Reuss	estimate	(uniform	
+stress	 assumption),	 and	 thus	 provides	 a	 computationally	
+tractable	 way	 to	 estimate	 macroscopic	 elastic	 properties	
+such	 as	 bulk	 modulus,	 shear	 modulus,	 and	Y oung’s	mod-
+ulus	 from	 single	 crystal	 elastic	 constants,	 and	 are	 particu-
+larly	 valuable	 for	 materials	 science	 applications	 ranging	
+from	 geological	 rock	 physics	 models	 to	 design	 for	 highly	
+advanced	engineering	materials	(Li	et	al.	2020).
+For	a	polycrystalline	solid,	the	VRH	approach	estimates	
+effective	elastic	moduli	as	follows:
+1 3
+111 Page 4 of 14
+
+--- PDF页 5 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+Results and discussion
+Feature engineering and descriptor analysis
+The	 input	 dataset	 consists	 of	 various	 perovskite	 compo-
+sitions	 along	 with	 structural	 and	 mechanical	 properties	
+derived	 through	 DFT.	Therefore,	 each	 entry	 includes	 the	
+number	 of	 atomic	 sites	 (nsites),	 the	 space	 group	 number	
+(space_group),	the	cell	volume,	the	kpoint_density,	and	four	
+target	quantities:	elastic	anisotropy,	G_VRH,	K_VRH,	and	
+Poisson’s	ratio.
+Explicit	feature	engineering	for	a	richer	input	space	was	
+performed	 with	 the	 help	 of	 Matminer.	First,	 the	 chemical	
+formula	was	converted	into	a	Composition	object	through	
+the	StrToComposition	featurizer;	then,	the	Magpie	Element-
+Property	preset	was	applied,	generating	a	high	dimensional	
+set	of	composition-based	descriptors:	averages,	ranges,	and	
+moments	 of	 elemental	 properties	 such	 as	 atomic	 number,	
+atomic	 weight,	 electronegativity,	valence	 electron	 counts,	
+etc.	These	features	at	the	composition	level	were	combined	
+with	the	simple	structural	descriptors	(nsites,	space_group,	
+volume,	 kpoint_density)	 as	 the	 final	 feature	 matrix	 for	
+model	training.
+Figure	 2	 summarizes	 the	 linear	 relationships	 between	
+structural	 descriptors	 and	 target	 properties.	 As	 one	 might	
+expect,	 volume	 and	 nsites	 are	 highly	 correlated	 (r	≈	0.94),	
+since	 both	 reflect	 the	 overall	 size	 and	 atomic	 packing	 of	
+the	unit	cell.	The	space	group	number	has	only	a	weak	cor-
+relation	 with	 the	 mechanical	 properties,	 reflecting	the	 fact	
+that	it	is	a	discrete	symmetry	label	rather	than	a	continuous	
+structural	parameter.	kpoint_density	shows	weak	linear	cor-
+relations	with	most	target	properties,	but	exhibits	a	moder-
+ate	positive	correlation	with	Poisson’s	ratio	(r	≈	0.32).	This	
+pattern	is	consistent	with	kpoint	sampling	acting	primarily	
+as	a	numerical	convergence	control	rather	than	an	intrinsic	
+structural	 descriptor.	The	 shear	 and	 bulk	 moduli	 are	 well	
+correlated	 with	 each	 other	 (r	≈	0.82),	 while	 elastic	 anisot-
+ropy	 is	 related	 to	 the	 other	 variables	 only	 via	 weak	 linear	
+trends.
+In	the	interest	of	clarity,	Fig.	2	only	includes	these	physi-
+cally	 transparent	 structural	 descriptors;	 the	 high	 dimen-
+sional	set	of	Magpie	composition	features	is	not	represented	
+directly,	but	their	effective	contribution	to	the	predictions	is	
+considered	in	section	“SHAP	based	feature	importance	and	
+physical	interpretation”	by	means	of	SHAP	values.	In	a	gen-
+eral	sense,	the	correlation	map	in	Fig.	2	shows	that	already	
+simple	 structural	 descriptors	 encode	 meaningful	 trends	 in	
+stiffness	and	Poisson’s	ratio	but	also	that	many	relations	are	
+weak	or	nonlinear,	which	is	a	motivation	to	use	flexible	ML	
+models	and	a	dedicated	interpretability	analysis.
+These	 correlation	 patterns	 are	 consistent	 with	 prior	 lit-
+erature	 on	 perovskites,	 where	 crystallographic	 symmetry	
+For	the	i-th	sample,	we	have:	 ˆyi:	the	predicted	value,	 yi:	
+the	real	value.	Then	for	n	samples,	R²	is	defined	as:
+R 2 (y,ˆy)=1 −
+∑n
+i=1 (yi − ˆyi)2
+∑n
+i=1 (yi−
+−
+y)
+2 	 (12)
+Where	
+−
+y = 1
+n
+∑n
+i=1yi.
+The	 r2_score	 configuration	 consists	 of	 assigning	 1	 in	
+cases	 of	 optimal	 predictions	 and	 0	 in	 cases	 of	 insufficient	
+predictions.
+An	R²	value	close	to	1	indicates	that	the	model	explains	
+most	 of	 the	 variance	 in	 the	 data,	 whereas	 negative	 values	
+indicate	performance	worse	than	a	constant	mean	predictor.	
+R²	becomes	undefined	when	the	target	variable	is	constant,	
+in	which	case	r2_score	returns	NaN.	Because	R²	measures	
+explained	variance	rather	than	predictive	accuracy	outside	
+the	 training	 distribution,	 all	 reported	 values	 in	 this	 study	
+correspond	to	5-fold	cross-validation	to	ensure	a	robust	and	
+unbiased	evaluation	(Avdeef	2021).
+Model training and validation
+In	 this	 study,	 three	 supervised	 learning	 algorithms	 were	
+selected	 for	 predicting	 the	 mechanical	 properties	 of	
+Li2T iO3:	Linear	Regression	(LR),	Random	Forest	(RF),	
+and	XGBoost.
+LR	was	chosen	as	a	simple	and	fully	interpretable	base-
+line,	 providing	 a	 reference	 for	 how	 much	 of	 the	 variance	
+in	 the	 target	 properties	 can	 be	 captured	 by	 purely	 linear	
+relationships	between	the	DFT	derived	descriptors	and	the	
+mechanical	response.	RF	was	included	as	a	non-parametric	
+ensemble	 method	 that	 can	 model	 non-linear	 interactions	
+between	 physically	 meaningful	 features	 (such	 as	 volume,	
+nsites,	 space	 group,	 and	 kpoint_density)	 and	 is	 known	 to	
+perform	reliably	on	small-	to	medium-sized	tabular	datasets.	
+XGBoost,	a	gradient-boosting	algorithm,	was	selected	due	
+to	its	strong	performance	on	structured	data	and	its	ability	to	
+capture	complex	feature	interactions	while	remaining	com-
+patible	with	SHAP-based	interpretability.
+Together,	these	three	models	span	a	progression	from	a	
+simple	linear	baseline	to	more	expressive	tree-based	ensem-
+bles,	 allowing	 us	 to	 systematically	 assess	 the	 benefits	 of	
+increasing	 model	 complexity	 for	 Li2T iO3	 property	 pre-
+diction	while	retaining	physically	interpretable	descriptors.
+1 3
+Page 5 of 14 111
+
+--- PDF页 6 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+error	across	all	targets,	with	MSE	values	~	1.9–3.4×	higher	
+than	those	of	Random	Forest	(Table	1),	indicating	that	the	
+dependence	of	the	mechanical	properties	on	the	engineered	
+descriptors	is	strongly	nonlinear.	In	contrast,	Random	For-
+est	 achieves	 R²	 values	 above	 ~	0.94	 for	 all	 targets,	 while	
+XGBoost	 exceeds	 0.94	 for	 the	 elastic	 moduli	 (G_VRH	
+and	K_VRH)	but	shows	lower	R²	for	elastic	anisotropy	and	
+Poisson’s	ratio	(Table	1).
+Between	the	two	ensemble	models,	Random	Forest	pro-
+vides	 the	 lowest	 MSE	 for	 all	 four	 properties,	 correspond-
+ing	to	the	smallest	typical	prediction	error,	while	XGBoost	
+attains	marginally	higher	R²	for	the	shear	and	bulk	moduli	
+G_VRH	and	K_VRH	.	For	elastic	anisotropy	and	Poisson’s	
+ratio,	 RF	 offers	the	 best	 overall	 trade-off,	combining	 low	
+MSE	 with	 high	 R².	 This	 balance	 of	 accuracy	 and	 robust-
+ness	motivates	the	choice	of	RF	as	the	reference	model	for	
+the	subsequent	SHAP-based	interpretability	analysis,	where	
+the	 influence	 of	 individual	 structural	 and	 compositional	
+descriptors	on	the	predicted	mechanical	response	is	exam-
+ined	in	more	detail.
+places	strong	constraints	on	the	elastic	stiffness	tensor	and	
+therefore	on	elastic	anisotropy	(Wen	et	al.	2024).	In	addi-
+tion,	octahedral	tilting	and	related	distortions	provide	a	key	
+structural	 mechanism	 by	 which	 perovskites	 accommodate	
+composition	 or	 pressure	 changes,	 and	 such	 tilt	 evolution	
+can	 modify	 compressibility	 and	 the	 mechanical	 response	
+in	 a	 nonlinear	 manner	 (Ardit	 et	 al.	 2023).	 These	 estab-
+lished	structure–property	links	help	rationalize	why	simple	
+descriptors	(e.g.,	space	group	and	volume)	may	show	only	
+weak	to	moderate	linear	correlations	with	elastic	anisotropy,	
+motivating	 the	 use	 of	 nonlinear	 ML	 models	 for	 accurate	
+prediction.
+Model performance
+The	cross-validated	performance	of	the	three	models	for	the	
+four	target	properties:	elastic	anisotropy,	G_VRH	,	K_VRH	,	
+and	Poisson’s	ratio,	is	summarized	in	Table	1,	which	reports	
+the	mean	squared	error	(MSE)	and	the	coefficient	of	deter-
+mination	(R²)	for	each	case.
+Overall,	 the	 tree-based	 ensemble	 methods	 clearly	 out-
+perform	 the	 linear	 baseline.	 Linear	 Regression	 explains	
+approximately	67–88%	of	the	variance	and	exhibits	larger	
+LR RF XGBoost
+Elastic	anisotropy MSE 8.691 4.542 8.838
+R2 0.74 0.945 0.789
+G_VRH MSE 26.285 8.662 11.383
+R2 0.72 0.96 0.975
+K_VRH MSE 29.396 8.547 10.04
+R2 0.88 0.986 0.996
+Poisson’s	ratio MSE 0.046 0.022 0.027
+R2 0.671 0.947 0.865
+Table 1	 Cross-validated	per-
+formance	of	the	three	machine	
+learning	models	for	predicting	
+the	mechanical	properties	of	
+the	perovskite	dataset.	Metrics	
+reported	are	mean	squared	error	
+(MSE)	and	coefficient	of	determi-
+nation	(R²)
+	
+Fig. 2	 Correlation	matrix	illus-
+trating	relationships	between	
+input	features	and	target	
+mechanical	properties
+	
+1 3
+111 Page 6 of 14
+
+--- PDF页 7 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+and	 K_VRH	 in	 Figs.	 4b–c	 and	 5b–c,	 respectively,	 most	
+compositions	fall	close	to	y	=	x,	indicating	that	the	ensem-
+ble	methods	have	learned	the	dominant	dependence	of	the	
+stiffness	on	structural	and	compositional	descriptors	across	
+the	 perovskite	 set.	 The	 rest	 of	 the	 outliers,	 falling	 notice-
+ably	 from	 the	 ideal	 line,	 are	 likely	 systems	 where	 certain	
+local	 features	 such	 as	 particular	 tilt	 patterns,	 cation	 order-
+ing,	 or	 defect-mediated	 relaxations	 are	 not	 explicitly	 cap-
+tured	by	the	global	descriptors	used	here.	The	residual	error	
+then	indicates	some	missing	fine	scale	physics,	rather	than	
+some	fundamental	failure	of	the	machine	learning	approach.	
+Elastic	anisotropy	and	Poisson’s	ratio,	illustrated	in	Figs.	3	
+and	 6,	 remain	 more	 challenging	 targets,	 even	 for	 RF	 and	
+XGBoost.	 Both	 quantities	 depend	 sensitively	 on	 the	 full	
+elastic	tensor	and	on	the	balance	between	shear	and	volu-
+metric	response,	so	modest	changes	in	bonding	geometry	or	
+symmetry	can	induce	relatively	large	shifts	in	anisotropy	or	
+ν.	Because	such	effects	are	only	indirectly	encoded	through	
+space	 group	 labels,	 average	 volumes,	 and	 composition-
+based	features,	the	ensemble	models	reproduce	the	overall	
+Predicted–actual trends and error patterns
+For	Linear	Regression	(panels	(a)	in	Figs.	3,	4,	5	and	6,	data	
+points	 are	 indeed	 widely	 scattered	 around	 the	 y	=	x	 line,	
+with	the	largest	deviations	occurring	at	the	extremes	of	each	
+property	range:	see	Fig.	3a	for	highly	anisotropic	composi-
+tions	 that	 are	 strongly	 mis	 predicted	 and	 Figs.	 4a	 and	 5a	
+for	the	stiffest	and	softest	perovskites	in	terms	of	G_VRH	
+and	 K_VRH	 being	 systematically	 underestimated.	 These	
+instances	correspond,	almost	without	exception,	to	compo-
+sitions	featuring	pronounced	octahedral	distortions,	uncon-
+ventional	cation	chemistry,	or	mixed	valence	configurations	
+in	which	the	elastic	response	varies	in	strongly	non-linear	
+fashions.	A	strictly	linear	model	cannot	accommodate	this	
+behavior,	and	hence	LR	fails	to	reproduce	the	extreme	mod-
+uli	and	anisotropies:	this	is	a	sign	that	part	of	the	underlying	
+physics	encoded	in	the	descriptors	is	not	captured.
+In	 contrast,	 the	 Random	 Forest	 and	 XGBoost	 mod-
+els	(panels	(b)	and	(c)	in	Figs.	3,	4,	5	and	6)	exhibit	much	
+tighter	clustering	of	points	about	the	diagonal.	For	G_VRH	
+Fig. 4	 Predicted	versus	DFT	reference	values	of	G_VRH	for	the	three	machine	learning	models:	(a)	Linear	Regression,	(b)	Random	Forest,	and	
+(c)	XGBoost.	Blue	points	correspond	to	individual	perovskite	compositions,	and	the	red	line	indicates	the	ideal	relationship	y	=	x
+	
+Fig. 3	 Predicted	versus	DFT	reference	values	of	elastic	anisotropy	for	the	three	machine	learning	models:	(a)	Linear	Regression,	(b)	Random	For-
+est,	and	(c)	XGBoost.	Blue	points	correspond	to	individual	perovskite	compositions,	and	the	red	line	indicates	the	ideal	relationship	y	=	x
+	
+1 3
+Page 7 of 14 111
+
+--- PDF页 8 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+Comparison with experimental data for Li2T iO3
+Table	2	compares	the	mechanical	properties	of	 Li2T iO3	
+predicted	by	the	three	models	with	the	corresponding	exper-
+imental	values	reported	in	reference	(Jain	et	al.	2013).	This	
+provides	 an	 external	 validation	 of	 the	 models	 beyond	 the	
+DFT	reference	data	used	for	training.
+For	 most	 quantities,	 the	 Random	 Forest	 (RF)	 model	
+yields	predictions	that	are	closest	to	the	experiment.	In	par-
+ticular,	RF	reproduces	the	experimental	shear	and	bulk	mod-
+uli	(G_VRH	and	K_VRH)	with	only	small	deviations,	while	
+Linear	Regression	(LR)	systematically	underestimates	both	
+moduli	and	XGBoost	tends	to	overestimate	them.	A	similar	
+trend	is	observed	for	Poisson’s	ratio,	where	RF	matches	the	
+experimental	 value	 (0.23)	 more	 closely	 than	 LR	 (0.21)	 or	
+XGBoost	(0.26).	For	the	elastic	anisotropy,	all	three	mod-
+els	remain	reasonably	close	to	the	experimental	reference,	
+with	RF	and	XGBoost	slightly	closer	than	LR.	These	dif-
+ferences	 are	 consistent	 with	 the	 global	 performance	 met-
+rics	reported	in	Table	1	and	confirm	that	RF,	and	to	a	lesser	
+trends	with	a	clear	improvement	over	LR	but	do	not	fully	
+resolve	 all	 fine-scale	 variations.	 Taken	 together,	 Figs.	 3,	
+4,	5	and	6	therefore	reinforce	the	conclusions	drawn	from	
+Table	1	 tree-based	 ensemble	 models	 provide	 a	 physically	
+meaningful	interpolation	of	the	DFT	data	in	regions	of	com-
+position	space	that	are	well	sampled,	whereas	compositions	
+with	 extreme	 stiffness	or	 anisotropy	 would	 require	 richer	
+descriptors	or	more	detailed	structural	information	to	fully	
+capture	the	underlying	mechanical	response.
+Table 2	 Mechanical	 properties	 of	 Li2T iO3 predicted	 by	 the	 three	
+ML	models	and	compared	with	the	experiment
+Elastic	anisotropy LR	
+predicted
+RF	
+predicted
+XGBoost	
+predicted
+Experi-
+mental	
+value
+Elastic	anisotropy 1.43 1.23 1.18 1.27
+G_VRH 48.98 72.23 76.92 72
+K_VRH 66.86 116.07 127.58 110
+Poisson’s	ratio 0.21 0.23 0.26 0.23
+Fig. 6	 Predicted	versus	DFT	reference	values	of	Poisson’s	ratio	(ν)	for	the	three	machine	learning	models:	(a)	Linear	Regression,	(b)	Random	
+Forest,	and	(c)	XGBoost.	Blue	points	correspond	to	individual	perovskite	compositions,	and	the	red	line	indicates	the	ideal	relationship	y	=	x
+	
+Fig. 5	 Predicted	versus	DFT	reference	values	of	K_VRH	for	the	three	machine	learning	models:	(a)	Linear	Regression,	(b)	Random	Forest,	and	
+(c)	XGBoost.	Blue	points	correspond	to	individual	perovskite	compositions,	and	the	red	line	indicates	the	ideal	relationship	y	=	x
+	
+1 3
+111 Page 8 of 14
+
+--- PDF页 9 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+for	 establishing	 the	 reliability	 and	 physical	 relevance	 of	
+the	predictions.	For	this	reason,	model	explainability	tools,	
+particularly	 SHAP	 (Shapley	Additive	 Explanations),	 were	
+used	to	assess	the	influence	of	each	feature	on	the	predicted	
+property.
+Global feature importance
+Figure	 7	 presents	 the	 global	 mean	 absolute	 SHAP	 values,	
+which	quantify	the	influence	of	each	descriptor	on	the	pre-
+dicted	 Elastic	 anisotropy.	 The	 analysis	 shows	 that	 three	
+descriptors	—the	maximum	number	of	d-valence	electrons,	
+the	crystallographic	space	group,	and	the	unit-cell	volume	
+—dominate	 the	 model’s	 decision-making	 process.	 The	
+strong	 contributions	 of	 these	 features	 are	 consistent	 with	
+well-established	 principles	 in	 solid-state	 physics	 and	 indi-
+cate	that	the	model	is	not	merely	fitting	statistical	patterns	
+but	is	instead	relying	on	physically	meaningful	information.
+The	 maximum	 d-valence	 electron	 count	 emerges	 as	 a	
+particularly	influential	descriptor.	This	feature	captures	the	
+presence	 of	 transition-metal	 cations	 with	 partially	 filled	
+d-orbitals,	 which	 are	 known	 to	 drive	 structural	 distortions	
+through	 their	 sensitivity	 to	 local	 bonding	 environments.	
+Interactions	between	transition-metal	d-orbitals	and	oxygen	
+p-orbitals	 can	 give	 rise	 to	 Jahn–Teller	 distortions,	 direc-
+tional	bonding,	and	anisotropic	stiffness	(Hou	et	al.	2024).	
+The	model’s	reliance	on	this	descriptor	suggests	that	it	has	
+extent	XGBoost,	provide	physically	realistic	predictions	for	
+Li2T iO3.
+This	 comparative	 analysis	 highlights	 that	 non-linear	
+ensemble	models	can	bridge,	to	a	good	approximation,	the	
+gap	between	DFT	level	predictions	and	experimental	mea-
+surements	 for	 a	 representative	 perovskite	 composition.	At	
+the	same	time,	the	remaining	discrepancies	—especially	the	
+systematic	underestimation	by	LR	and	the	modest	overesti-
+mation	by	XGBoost	for	the	moduli	—	indicate	that	model	
+choice	and	calibration	have	a	direct	impact	on	quantitative	
+accuracy.	More	 broadly,	the	 agreement	 obtained	 with	 RF	
+suggests	that	such	models	could	be	used	as	reliable	surro-
+gates	to	support	mechanical	property	estimation	and	screen-
+ing	 in	 Li2T iO3	 related	 systems,	 provided	 that	 they	 are	
+trained	and	validated	on	sufficiently	representative	datasets.
+SHAP based feature importance and physical 
+interpretation
+The	machine	learning	models	developed	in	this	study	Linear	
+Regression,	Random	Forest,	and	XGBoost	were	trained	to	
+predict	the	elastic	anisotropy	of	perovskite	structured	mate-
+rials	using	structurally	and	chemically	meaningful	descrip-
+tors	 derived	 from	 density	 functional	 theory	 (DFT)	 and	
+elemental	property	databases.	While	statistical	performance	
+metrics	 (R²,	 RMSE)	 provide	 a	 preliminary	 indication	 of	
+model	validity,	a	deeper	scientific	interpretation	is	essential	
+Fig. 7	 Global	SHAP	feature	importance	ranking	for	the	Random	Forest	model	trained	on	the	perovskite	dataset
+	
+1 3
+Page 9 of 14 111
+
+--- PDF页 10 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+variability	 tend	 to	 produce	 more	 direction-dependent	
+responses.	V olume-based	descriptors	thus	provide	an	impor-
+tant	link	between	local	geometry	and	macroscopic	mechani-
+cal	behavior.	Nonetheless,	volume	is	a	composite	measure	
+influenced	by	chemical	composition,	electronic	factors,	and	
+external	conditions	such	as	pressure.	This	means	that	vol-
+ume	and	anisotropy	relationships,	while	robust,	may	not	be	
+strictly	linear	across	all	chemical	families.
+Secondary	chemical	descriptors	such	as	elemental	melt-
+ing	 temperature,	 Mendeleev	 number,	 and	 atomic	 number	
+also	contribute,	albeit	to	a	lesser	extent.	These	descriptors	
+act	 as	 proxies	 for	 cohesive	 energy,	electronegativity	 con-
+trast,	and	bonding	character.	While	they	help	reveal	broad	
+chemical	 trends,	 they	 do	 not	 directly	 encode	 mechanistic	
+information	about	elastic	anisotropy	(Hylton-Farrington	and	
+Remsing	 2025).	 Their	 contributions	 highlight	 correlations	
+present	in	the	dataset	but	should	not	be	over	interpreted	as	
+causal	 relationships.	 These	 distinctions	 are	 important	 for	
+understanding	the	limitations	and	strengths	of	the	model’s	
+interpretability.
+Feature interactions and directionality
+Figure	 8	 illustrates	 how	 variations	 in	 individual	 descrip-
+tor	 values	 influence	 the	 predicted	 elastic	 anisotropy.	 The	
+trends	 observed	 in	 this	 visualization	 reinforce	 the	 global	
+importance	 analysis.	 Higher	 d-valence	 electron	 counts	
+consistently	lead	to	increased	predicted	anisotropy,	reflect-
+ing	 the	 role	 of	 electronic	 configuration	 in	 shaping	 bond	
+learned	the	fundamental	role	of	electronic	configuration	in	
+determining	 directional	 mechanical	 behavior.	 It	 is	 impor-
+tant	 to	 note,	 however,	 that	 the	 influence	of	 d-electrons	 is	
+mediated	by	orbital	hybridization,	electron	occupancy,	and	
+the	degree	of	covalency	in	the	metal–oxygen	bonds.	These	
+subtleties	mean	that	the	observed	relationship	is	not	univer-
+sally	 transferable	 without	 external	 validation,	 particularly	
+for	materials	whose	electronic	structures	differ	significantly	
+from	those	present	in	the	training	set.
+The	crystallographic	space	group	constitutes	the	second	
+major	 contributor.	 Elastic	 anisotropy	 is	 inherently	 tied	 to	
+symmetry:	cubic	perovskites	tend	to	display	nearly	isotro-
+pic	 elastic	 responses,	 whereas	 lower-symmetry	 structures	
+introduce	 directional	 variations	 in	 stiffness.	 The	 model’s	
+dependence	on	symmetry	information	aligns	with	this	phys-
+ical	understanding	(Bartel	et	al.	2019).	At	the	same	time,	the	
+space	 group	 alone	 does	 not	 capture	 all	 relevant	 structural	
+behavior.	V ariations	in	 the	 tolerance	 factor,	compositional	
+substitutions,	 and	 subtle	 octahedral	 tilting	 distortions	 can	
+influence	mechanical	properties	even	within	the	same	nomi-
+nal	symmetry.	Therefore,	while	the	space	group	serves	as	a	
+powerful	 descriptor	 of	 global	 symmetry,	it	 functions	 best	
+when	interpreted	alongside	other	structural	indicators.
+The	 third	 major	 contributor	 is	 the	 unit-cell	 volume.	
+Larger	volumes	reflect	expanded	bond	lengths	and	greater	
+geometric	flexibility,	which	can	facilitate	structural	distor-
+tions	and	enhance	anisotropy	(Adams	and	Churakov	2023).	
+This	 agrees	 with	 prior	 observations	 of	 perovskite	 frame-
+works,	where	increased	octahedral	tilting	and	bond-length	
+Fig. 8	 SHAP	beeswarm	plots	for	the	most	influential	descriptors,	illustrating	the	distribution	of	SHAP	values	as	a	function	of	feature	values	across	
+the	perovskite	dataset
+	
+1 3
+111 Page 10 of 14
+
+--- PDF页 11 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+illustrates	 how	 the	 model	 integrates	 electronic,	 structural,	
+and	 chemical	 information	 to	 arrive	 at	 a	 prediction.	 The	
+resulting	 explanation	 is	 transparent	 and	 intuitive,	 which	
+strengthens	confidence	in	the	model’s	internal	logic.
+Presentation of model strengths and limitations
+The	results	show	that	the	models	can	learn	meaningful	phys-
+ical	relationships	between	the	structure,	chemistry,	and	elas-
+tic	anisotropy	of	perovskite	materials.	This	is	supported	by	
+SHAP-based	 interpretability:	 the	 most	 influential	 features	
+such	 as	 symmetry,	volume,	 and	 the	 number	 of	 d-valence	
+electrons	are	consistent	with	well-established	principles	in	
+solid-state	physics.	As	a	result,	the	predictions	are	not	only	
+statistically	robust	but	also	physically	meaningful.
+At	the	same	time,	the	study	is	explicit	about	the	limita-
+tions,	 in	 line	 with	 transparent	 and	 responsible	 model	 use.	
+Although	the	dataset	is	sufficiently	large	for	ensemble	learn-
+ing,	it	is	still	small	compared	to	the	full	chemical	space	of	
+perovskites.	 Consequently,	the	 models	may	not	generalize	
+well	 to	 compositions	 or	 structures	 that	 lie	 far	 outside	 the	
+training	 domain.	 The	 work	 also	 notes	 that	 some	 features	
+are	derived	from	external	databases	or	from	DFT	calculated	
+quantities,	 so	 any	 uncertainties	 or	 biases	 in	 these	 sources	
+can	propagate	into	the	model	predictions.
+Another	 important	 point	 is	 that	 the	 models	 are	 inher-
+ently	statistical:	they	identify	correlations	rather	than	strict	
+causal	 mechanisms.	 While	 the	 analysis	 indicates	 that	 the	
+models	capture	trends	consistent	with	known	physical	laws,	
+directionality.	Lower-symmetry	space	groups	also	push	pre-
+dictions	 upward,	 consistent	 with	 the	 physical	 expectation	
+that	 reduced	 symmetry	 introduces	 mechanical	 directional-
+ity.	Similarly,	larger	unit-cell	and	per-atom	volumes	contrib-
+ute	positively	to	anisotropy,	reflecting	the	greater	geometric	
+freedom	available	in	expanded	frameworks.
+The	 coherence	 and	 smoothness	 of	 these	 SHAP	 dis-
+tributions	 are	 encouraging.	 They	 suggest	 that	 the	 model	
+has	 identified	 structured,	 meaningful	 relationships	 rather	
+than	noise-driven	correlations.	However,	it	is	important	to	
+emphasize	 that	 smooth	 SHAP	 patterns	 do	 not	 guarantee	
+physical	correctness.	Overfitted	or	biased	models	can	also	
+produce	 smooth	 curves,	 especially	 when	 trained	 on	 inter-
+nally	consistent	but	externally	narrow	datasets.	As	a	result,	
+while	 these	 observations	 provide	 evidence	 that	 the	 model	
+behaves	 sensibly	 within	 its	 training	 domain,	 they	 do	 not	
+alone	confirm	that	the	learned	relationships	extrapolate	cor-
+rectly	beyond	it.
+Local interpretability of predictions
+Figure	 9	 provides	 a	 decomposition	 of	 an	 individual	 pre-
+diction,	 showing	 how	 each	 feature	 contributes	 to	 the	 final	
+estimated	 anisotropy.	The	 dominant	 positive	 contributions	
+again	arise	from	the	maximum	d-valence	electron	count	and	
+the	crystallographic	space	group,	followed	by	volume-based	
+descriptors.	 Negative	 contributions	 from	 features	 such	 as	
+lower	elemental	melting	temperature	reflect	the	influence	of	
+weaker	bonding	environments.	This	additive	decomposition	
+Fig. 9	 SHAP	waterfall	plot	for	a	representative	perovskite	composition,	showing	the	decomposition	of	an	individual	model	prediction	into	contri-
+butions	from	the	most	influential	descriptors
+	
+1 3
+Page 11 of 14 111
+
+--- PDF页 12 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+that	 combine	 physically	 informed	 descriptors	 with	 more	
+flexible	 learning	 architectures	 when	 larger	 datasets	 are	
+available.
+Author contributions	 All	authors	are	identified	as	such	where	the	au-
+thor	criteria	apply.	All	authors	confirm	that	they	have	made	sufficient	
+contributions	to	the	work,	so	that	they	may	publicly	take	responsibil-
+ity	for	its	content,	in	terms	of	contributions	to	the	conception,	design,	
+analysis,	drafting	and/or	critical	revision	of	the	manuscript.	The	first	
+draft	 was	 written	 by	 H.	 Dari,	 who	 along	 with	 all	 authors,	 provided	
+feedback	on	previous	versions.	All	authors	have	read	and	approved	the	
+final	manuscript.	Additionally,	each	author	declares	that	this	report,	or	
+a	similar	report,	has	not	been	submitted	or	published	anywhere	prior	to	
+this	journal’s	publication.
+Data availability	 No	new	datasets	were	generated	or	analyzed	during	
+the	current	study	beyond	the	data	provided	in	the	manuscript.	All	rel-
+evant	data	is	included	in	the	supplementary	materials.
+Research data policy and data availability statement 	 We	confirm	that	
+the	data	supporting	the	findings	of	this	study	are	available	in	the	article	
+and	its	supplementary	information	materials.
+Data sharing	 Not	applicable.	The	data	that	support	the	findings	of	this	
+study	 are	 provided	 in	 the	 supplementary	 information	 section	 in	 the	
+associated	article.
+Declarations
+Conflict of interest	 The	authors	declare	no	conflicts	of	interest	related	
+to	this	work.
+References
+Abreu	DAd,	Fabrichnaya	O,	Abreu	DAd,	Fabrichnaya	O	(2024)	Criti-
+cal	experiments	and	thermodynamic	modeling	of	the	Li2O-SiO2	
+system.	Solids	5(2):303–20.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	3		3	9	0		/	s	o		l	i	d	s	5	0	2	0	0	
+2	0
+Adams	DJ,	Churakov	SV	(2023)	Classification	of	perovskite	structural	
+types	with	dynamical	octahedral	tilting.	IUCrJ	10(3):309–320.		h	t	
+t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		1	0	7		/	S	2		0	5	2	2	5	2	5	2	3	0	0	2	2	0	8
+Akinpelu	A,	 Bhullar	 M,	Y ao	Y	 (2024)	 Discovery	 of	 novel	 materials	
+through	machine	learning.	J	Phys	Condens	Matter	36(45):453001.		
+h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	8	8		/	1	3		6	1	-	6	4	8	X	/	a	d	6	b	d	b
+Aldaghfag	 I	 et	 al	 (2024)	 Investigation	 of	 AcXO3	 (X	=	Al,	 Ga)	
+perovskites	for	energy	harvesting	applications:	A	DFT	approach.	
+Digest	J	Nanomaterials	Biostructures	19(2):525–538.		h	t	t	p		s	:	/		/	d	o	i		.	
+o		r	g	/		1	0	.	1		5	2	5		1	/	D		J	N	B	.	2	0	2	4	.	1	9	2	.	5	2	5
+AlHosni	 N,	 Jovanovic	 L,	Antonijevic	 M	 et	 al	 (2022)	 The	 XGBoost	
+Model	 for	 Network	 Intrusion	 Detection	 Boosted	 by	 Enhanced	
+Sine	 Cosine	 Algorithm.	 In	 Third	 International	 Conference	 on	
+Image	 Processing	 and	 Capsule	 Networks,	 edited	 by	 Joy	 Iong-
+Zong	Chen,	João	Manuel	R.	S.	Tavares,	and	Fuqian	Shi.	Springer	
+International	Publishing.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	7		/	9	7		8	-	3	-	0	3	1	-	1	2	4	1	
+3	-	6	_	1	7
+Amallah	L,	Hader	A,	Tanasehte	M,	Hariti	Y ,	Sbiaai	H,	Boughaleb	Y	
+(2020)	Kinetic	and	scaling	behavior	of	collective	motion	in	bio-
+materials.	 Mater	 Today:	 Proc	 30(January):918–922.	 	h	t	t	p		s	:	/		/	d	o	i		
+.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		m	a	t	p	r	.	2	0	2	0	.	0	4	.	3	5	0.	 International	 Conference	 on	
+Renewable	Energy	and	Applications	(ICREA	19)
+they	 are	 not	 a	 substitute	 for	 tensor-based	 mechanical	 cal-
+culations.	Their	 predictions	 should	 therefore	 be	 used	 with	
+caution	when	investigating	highly	distorted,	defect-rich,	or	
+non-stoichiometric	systems.
+Despite	 these	 caveats,	 the	 overall	 strengths	 of	 the	
+approach	are	substantial.	The	models	offer	a	fast,	interpre-
+table	way	to	estimate	elastic	anisotropy	and	to	gain	insight	
+into	 how	 electronic	 configuration,	 symmetry,	 and	 atomic	
+structure	influence	mechanical	behavior.
+Finally,	we	note	that	all	models	developed	in	this	work	
+were	 trained	 and	 validated	 exclusively	 on	 Li2T iO3.	As	
+such,	 the	 learned	 relationships	 between	 the	 DFT	 derived	
+descriptors	 and	 the	 mechanical	 properties	 should	 be	
+regarded	as	material	specific	rather	than	universally	trans-
+ferable.	 Nevertheless,	 the	 modelling	 workflow	combining	
+DFT	 data,	 feature	 engineering	 on	 structural	 and	 composi-
+tional	descriptors,	tree-based	ensemble	models,	and	SHAP	
+analysis	is	general	and	can	be	applied	to	extended	datasets	
+including	 related	 titanate	 or	 perovskite	 breeder	 ceramics.	
+Extending	the	present	approach	to	larger	and	more	chemi-
+cally	diverse	datasets	will	be	an	important	next	step	to	assess	
+cross-material	generalizability.
+Conclusion
+In	 this	 study,	 we	 assessed	 three	 supervised	 learning	
+approaches:	 Linear	 Regression,	 Random	 Forest,	 and	
+XGBoost	 for	 predicting	 the	 mechanical	 properties	 of	
+Li2T iO3,	 namely	 elastic	 anisotropy,	 G_VRH,	 K_VRH,	
+and	Poisson’s	ratio.	The	results	consistently	show	that	the	
+descriptor–property	relationships	are	predominantly	nonlin-
+ear:	the	tree-based	ensemble	methods	substantially	reduce	
+prediction	 errors	 compared	 with	 the	 linear	 baseline.	 Ran-
+dom	Forest	delivers	the	most	reliable	overall	performance	
+across	 all	 targets,	 whereas	 XGBoost	 provides	 particularly	
+strong	 accuracy	 for	 the	 elastic	 moduli.	 The	 comparison	
+against	 available	 experimental	 data	 further	 supports	 the	
+realism	of	the	ensemble	predictions.
+Importantly,	the	 models	 are	 not	 only	 accurate	 but	 also	
+interpretable.	 The	 SHAP	 analysis	 highlights	 the	 dominant	
+role	of	chemically	and	structurally	meaningful	factors:	elec-
+tronic-configuration	 proxies,	 crystallographic	 symmetry,	
+and	 volume-related	 descriptors,	 linking	 the	 learned	 trends	
+to	 established	 structure–property	 arguments	in	 perovskite-
+like	 oxides.	 Nevertheless,	 the	 proposed	 models	 remain	
+data-driven	 surrogates	 trained	 on	 a	 limited	 compositional	
+domain;	therefore,	their	outputs	should	not	be	interpreted	as	
+causal,	and	extrapolation	beyond	the	training	space	should	
+be	treated	with	caution.	Future	work	will	aim	to	broaden	the	
+dataset	 to	 more	 diverse	 titanates/perovskites,	 incorporate	
+uncertainty	quantification,	and	investigate	hybrid	strategies	
+1 3
+111 Page 12 of 14
+
+--- PDF页 13 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+on	Machine	Learning	and	Data	Engineering,	vol.	218	(January):	
+1516–28.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		p	r	o	c	s	.	2	0	2	3	.	0	1	.	1	3	0
+Jain	A,	 Ong	 SP ,	Hautier	 G	 et	 al	 (2013)	 Commentary:	 the	 materials	
+project:	 a	 materials	 genome	 approach	 to	 accelerating	 materials	
+innovation.	APL	 Mater	 1(1):011002.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	6	3		/	1	.		4	
+8	1	2	3	2	3
+Ji	S,	Li	L,	Motra	HB	et	al	(2018)	Poisson’s	ratio	and	auxetic	properties	
+of	natural	rocks.	J	Geophys	Res	Solid	Earth	123(2):1161–85.		h	t	t	p		
+s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	2		/	2	0		1	7	J	B	0	1	4	6	0	6
+Kibrete	 F,	Trzepieciński	T,	Gebremedhen	 HS	 et	 al	 (2023)	Artificial	
+intelligence	 in	 predicting	 mechanical	 properties	 of	 composite	
+materials.	J	Compos	Sci.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	3		3	9	0		/	j	c		s	7	0	9	0	3	6	4
+Li	Y ,	Bass	JD,	Li	Y ,	Bass	JD	(2020)	Single	crystal	elastic	properties	of	
+hemimorphite,	a	novel	hydrous	silicate.	Minerals.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	
+/		1	0	.	3		3	9	0		/	m	i		n	1	0	0	5	0	4	2	5
+Liu	D,	Wei	Z	(2023)	Application	of	supervised	learning	algorithms	in	
+materials	science.	Frontiers	of	Data	and	Domputing	5(4):38–47.		h	
+t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		1	8	7		1	/	j		f	d	c		.	i	s		s	n	.	2		0	9		6	-	7	4	2	X	.	2	0	2	3	.	0	4	.	0	0	4
+Manhas	A,	Mehta	S,	Sharma	S	(2025)	Predictive	modeling	and	strength	
+optimization	of	sustainable	concrete	incorporating	glass	fiber	and	
+marble	dust	using	machine	learning	techniques.	Asian	J	Civ	Eng	
+26(7):2781–99.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	7		/	s	4		2	1	0	7	-	0	2	5	-	0	1	3	4	2	-	7
+Moushi	S,	Hader	A,	Ait	Lahcen	J	et	al	(2023)	Modeling	of	the	pres-
+sure	 drop	effect	using	membrane	 distillation	in	 the	 desalination	
+process.	Mod	Phys	Lett	B	37(22):2350083.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		1	4	
+2		/	S	0		2	1	7	9	8	4	9	2	3	5	0	0	8	3	5
+Nafea	AA,	Alameri	SA,	Majeed	RR,	Khalaf	MA,	AL-Ani	MM	(2024)	
+A	short	review	on	supervised	machine	learning	and	deep	learning	
+techniques	 in	 computer	 vision.	 Babylonian	 Journal	 of	 Machine	
+Learning	2024:48–55.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	5		8	4	9		6	/	B		J	M	L	/	2	0	2	4	/	0	0	4
+Rajamani	 SK,	 Iyer	 RS	 (2023)	 “Machine	 Learning-Based	 Mobile	
+Applications	 Using	 Python	 and	 Scikit-Learn.”	 Designing	 and	
+Developing	 Innovative	 Mobile	Applications.	 IGI	 Global	 Scien-
+tific	 Publishing.	 	h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	4		0	1	8		/	9	7		8	-	1		-	6	6		8	4	-	8		5	8		2	-	8	.	c	h	0	
+1	6
+Sengodan,	 Thangaprakash	 M,	 Murugappan,	 Misra	 S	 (eds)	 (2022)	
+Advances	in	Electrical	and	Computer	Technologies:	Select	Pro-
+ceedings	of	ICAECT	2021.	V ol.	881.	Lecture	Notes	in	Electrical	
+Engineering.	Springer	Nature.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	7		/	9	7		8	-	9	8	1	-	1	
+9	1	1	1	1	-	8
+Sinha	S,	Ma	X,	Rehman	K,	Armanfard	N,	Y ue	S	(2025)	An	interpre-
+table	 and	 reliable	 framework	 for	 alloy	 discovery	 in	 thermome-
+chanical	processing.	Mater	Today	Commun	45:112134.		h	t	t	p		s	:	/		/	d	o	
+i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		m	t	c	o	m	m	.	2	0	2	5	.	1	1	2	1	3	4
+Sudha	PG,	Mattur	MN,	Nagappan	N,	Rath	S,	Thomas	T	(2022)	Predic-
+tion	of	nature	of	band	gap	of	perovskite	oxides	(ABO3)	using	a	
+machine	learning	approach.	J	Materiomics	8(5):937–48.		h	t	t	p		s	:	/		/	d	
+o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		j	m	a	t	.	2	0	2	2	.	0	4	.	0	0	6
+Stepišnik	T,	Škrlj	B,	Wicker	J,	Kocev	D	(2021)	A	comprehensive	com-
+parison	of	molecular	feature	representations	for	use	in	predictive	
+modeling.	Comput	Biol	Med	130(March):104197.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	
+/		1	0	.	1		0	1	6		/	j	.		c	o	m		p	b	i		o	m	e	d		.	2		0	2	0	.	1	0	4	1	9	7
+Tanasehte	M,	 Hader	A,	 Elkhal	 M,	 Hariti	Y ,	Sbiaai	 H,	 Boughaleb	Y	
+(2020)	The	 study	 of	 elastic	 energy	in	 composite	 materials	 with	
+fiber	bundle	model.	Mater	Today:	Proc	30(January):923–927.		h	t	t	
+p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		m	a	t	p	r	.	2	0	2	0	.	0	4	.	3	5	1.	International		C	o	n	f	e	r	e	n	
+c	e	on	Renewable	Energy	and	Applications	(ICREA	19)
+Tanasehte	M,	Hader	A,	Hariti	Y	et	al	(2022)	Fibers	cluster	character-
+ization	 in	 failure	 process	 of	 composite	 materials.	 Mater	Today:	
+Proc	 4th	 International	 Conference	 on	 Advanced	 Materials	 for	
+Photonics,	 Sensing	 and	 Energy	 Conversion	 Energy	 Applica-
+tions(66	 January):229–237.	 	h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		m	a	t	p	r	.	2	0	2	2	
+.	0	4	.	6	4	6
+Tawfik	SA,	 Isayev	 O,	 Spencer	 MJS,	 Winkler	DA	 (2020)	 Predicting	
+thermal	properties	of	crystals	using	machine	learning.	Adv	The-
+ory	Simul	3(2):1900208.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	2		/	a	d		t	s	.	2	0	1	9	0	0	2	0	8
+Ardit	M,	Conte	S,	Belmonte	D	et	al	(2023)	Structure	evolution	of	Ge-
+doped	 CaTiO3	(CTG)	 at	 high	 pressure:	 search	 for	 the	 first	2:4	
+locked-tilt	perovskite	by	synchrotron	X-ray	diffraction	and	DFT	
+calculations.	Inorg	Chem	62(41):16943.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	2	1		/	
+a	c		s	.	i		n	o	r		g	c	h	e		m	.		3	c	0	2	6	4	5
+Avdeef	A	(2021)	Do	you	know	your	R2?	ADMET	DMPK	9(1):69–74.		
+h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	5		5	9	9		/	a	d		m	e	t	.	8	8	8
+Bartel	CJ,	Sutton	C,	Goldsmith	BR	et	al	(2019)	New	tolerance	factor	
+to	predict	the	stability	of	perovskite	oxides	and	halides.	Sci	Adv	
+5(2):eaav0693.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		1	2	6		/	s	c		i	a	d	v	.	a	a	v	0	6	9	3
+Ben	Chaabene	W,	Flah	M,	Nehdi	ML	(2020)	Machine	learning	predic-
+tion	of	mechanical	properties	of	concrete:	critical	review.	Constr	
+Build	Mater	260(November):119889.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		c	o	
+n		b	u	i		l	d	m	a		t	.		2	0	2	0	.	1	1	9	8	8	9
+Dorbane	 A,	 Harrou	 F,	Sun	 Y	 (2025)	 Enhancing	 defect	 detection	 in	
+steel	plate	manufacturing	with	explainable	machine	learning	and	
+SMOTE	for	imbalanced	data.	J	Mater	Eng	Perform	34(10):9212–
+33.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	7		/	s	1		1	6	6	5	-	0	2	5	-	1	1	1	3	6	-	2
+El	Hana	A,	Hader	A,	Tanasehte	M	et	al	(2024)	The	permeability	effect	
+on	 the	 diffusion	and	 correlation	 process	 of	 fluid	flow	in	 porous	
+media.	Int	J	Mod	Phys	B	38(08):2450116.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		1	4	
+2		/	S	0		2	1	7	9	7	9	2	2	4	5	0	1	1	6	9
+Elkhal	 M,	 Hakam	A,	 Ez-Zahraouy	 H,	 Hader	A,	 Tanasehte	M,	 Ziani	
+M	(2021)	Radial	variations	of	electrical	properties	of	date	palm	
+stem.	J	Indian	Acad	Wood	Sci	18(2):106–115.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	
+1		0	0	7		/	s	1		3	1	9	6	-	0	2	1	-	0	0	2	8	6	-	0
+Elkhal	 M,	 Hakam	A,	 Ez-Zahraouy	 H,	 Hader	A,	 Tanasehte	M,	 Ziani	
+M	 (2022)	 Mechanical	 and	 physical	 properties	 of	 the	 date	 palm	
+stem	 (Phoenix dactylifera 	 L.)	 in	 Morocco.	 Eur	 J	 Wood	 Prod	
+80(3):693–703.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	7		/	s	0		0	1	0	7	-	0	2	1	-	0	1	7	7	7	-	0
+Fedik	N,	Zubatyuk	R,	Kulichenko	M	et	al	(2022)	Extending	machine	
+learning	 beyond	 interatomic	 potentials	 for	 predicting	 molecular	
+properties.	Nat	Rev	Chem	6(9):653–72
+Gao	 J	 (2024)	 R-squared	 (R2)	 –	 how	 much	 variation	 is	 explained?	
+Research	Methods	in	Medicine	&	Health	Sciences	5(4):104–9.		h	t	
+t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		1	7	7		/	2	6		3	2	0	8	4	3	2	3	1	1	8	6	3	9	8
+Gogineni	A,	Panday	IK,	Kumar	P ,	Paswan	RK	(2024)	Predicting	com-
+pressive	 strength	 of	 concrete	 with	 fly	ash	 and	 admixture	 using	
+XGBoost:	a	comparative	study	of	machine	learning	algorithms.	
+Asian	J	Civ	Eng	25(1):685–98.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	7		/	s	4		2	1	0	7	-	0	
+2	3	-	0	0	8	0	4	-	0
+Goswami	KN,	Murphy	ST	(2020)	Influence	of	lithium	vacancy	defects	
+on	tritium	diffusion	in	β-Li2TiO3.	J	Phys	Chem	C	124(23):12286–
+12294.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	2	1		/	a	c		s	.	j	p	c	c	.	0	c	0	2	5	5	1
+Hader	A,	Sbiaai	H,	Tanasehte	M,	Bakir	R,	Boughaleb	Y	(2020)	Cor-
+relation	and	diffusion	breaking	in	the	failure	process	of	composite	
+materials.	IOP	Conf	Series:	Mater	Sci	Eng	948(1):012028.		h	t	t	p		s	:	
+/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	8	8		/	1	7		5	7	8		9	9	X		/	9	4	8		/	1		/	0	1	2	0	2	8
+Hou	 Z,	 Wang	J,	 Dai	 N	 et	 al	 (2024)	 Eliminating	 the	 Mn	 3d	 orbital	
+degeneracy	 to	 suppress	 the	 Jahn–Teller	 distortion	 for	 stable	
+MnO2	 cathode.	Adv	 Energy	Mater	 14(6):2302477.	 	h	t	t	p		s	:	/		/	d	o	i		.	o		
+r	g	/		1	0	.	1		0	0	2		/	a	e		n	m	.	2	0	2	3	0	2	4	7	7
+Hu	N,	Y ang	Y ,	Li	L	et	al	(2024)	A	facile	Li2TiO3	surface	modifica-
+tion	 to	 improve	 the	 structure	 stability	 and	 electrochemical	 per-
+formance	 of	 full	 concentration	 gradient	 Li-rich	 oxides.	 Energy	
+Environ	Mater	7(3):e12610.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	0	2		/	e	e		m	2	.	1	2	6	1	0
+Huang	G,	Guo	Y ,	Chen	Y	et	al	(2023)	Application	of	machine	learning	
+in	material	synthesis	and	property	prediction.	Materials.		h	t	t	p		s	:	/		/	d	
+o	i		.	o		r	g	/		1	0	.	3		3	9	0		/	m	a		1	6	1	7	5	9	7	7
+Hylton-Farrington	 CM,	 Remsing	 RC	 (2025)	 Octahedral	 tilting	 and	
+B-Site	 off-Centering	 in	 halide	 perovskites	 are	 not	 Coupled.	
+arxiv:2508.15607.	Preprint,	arxiv.	21.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	4		8	5	5		0	/	a		
+r	X	i	v	.	2	5	0	8	.	1	5	6	0	7
+Iqbal	 N,	 Pradeep	 K	 (2023).	 From	 Data	 Science	 to	 Bioscience:	
+Emerging	 Era	 of	 Bioinformatics	Applications,	 Tools	and	 Chal-
+lenges.	 Procedia	 Computer	 Science,	 International	 Conference	
+1 3
+Page 13 of 14 111
+
+--- PDF页 14 ---
+Euro-Mediterranean Journal for Environmental Integration (2026) 11:111
+Y e	J,	Y e	M,	Y e	W,	Feng	Z,	Xiong	D,	He	M	(2024)	Zr-doped	Li4Ti5O12	
+particles	coated	with	reduced	graphene	oxide	nanolayer	as	anode	
+for	high-rate	lithium-ion	batteries.	J	Energy	Storage	102(Novem-
+ber):114165.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		e	s	t	.	2	0	2	4	.	1	1	4	1	6	5
+Zhang	 Z,	 Li	Y ,	Li	 L,	 Li	 Z,	 Shan	 L	 (2019).	 Multiple	 Linear	 Regres-
+sion	for	High	Efficiency	Video	Intra	Coding.	ICASSP	2019–2019	
+IEEE	International	Conference	on	Acoustics,	Speech	and	Signal	
+Processing	(ICASSP),	May,	1832–36.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		1	0	9		/	I	C		
+A	S	S	P	.	2	0	1	9	.	8	6	8	2	3	5	8
+Zhang	X,	Zhang	K,	Sun	Y	et	al	(2022)	Combining	spectral	and	texture	
+features	of	UAS-based	multispectral	images	for	maize	leaf	area	
+index	 estimation.	 Remote	 Sens.	 	h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	3		3	9	0		/	r	s		1	4	0	2	0	
+3	3	1
+Zhang	X,	Zheng	X,	Xu	T	et	al	(2023)	Synthesis	of	high	specific	sur-
+face	lithium-ion	sieve	templated	by	bacterial	cellulose	for	selec-
+tive	adsorption	of	Li+.	Molecules.		h	t	t	p	s	:			/		/	d	o		i	.	o		r		g		/		1	0		.	3	3			9	0	/		m	o	l	e	c	
+u	l	e	s	2	8	0	7	3	1	9	1
+Springer	Nature	or	its	licensor	(e.g.	a	society	or	other	partner)	holds	
+exclusive	rights	to	this	article	under	a	publishing	agreement	with	the	
+author(s)	or	other	rightsholder(s);	author	self-archiving	of	the	accepted	
+manuscript	version	of	this	article	is	solely	governed	by	the	terms	of	
+such	publishing	agreement	and	applicable	law.
+Tohka	J,	van	Gils	M	(2021)	Evaluation	of	machine	learning	algorithms	
+for	health	and	wellness	applications:	a	tutorial.	Comput	Biol	Med	
+132(May):104324.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		c	o	m		p	b	i		o	m	e	d		.	2		0	2	1	.	1	
+0	4	3	2	4
+Tripathi	 BM,	 Sharma	 J,	 Tyagi	AK,	 Sinha	 A,	 Prakash	 D,	 Mahata	 T	
+(2021)	Anomalous	phase	transformation	of	Li2TiO3	during	sin-
+tering	 in	 oxygen	 atmosphere:	 a	 dilatometry	 study.	 Fusion	 Eng	
+Des	 173(December):112950.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		f	u	s		e	n	g		d	e	s	
+.		2	0		2	1	.	1	1	2	9	5	0
+Tsae	NB,	Adachi	T,	Kawamura	Y ,	Tsae	NB,	Adachi	T,	Kawamura	Y	
+(2023)	Application	of	artificial	neural	network	for	the	prediction	
+of	 copper	 ore	 grade.	 Minerals.	 	h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	3		3	9	0		/	m	i		n	1	3	0	5	
+0	6	5	8
+Ward	 L,	 Dunn	 A,	 Faghaninia	 A	 et	 al	 (2018)	 Comput	 Mater	 Sci	
+152:6069.	 	h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	1		0	1	6		/	j	.		c	o	m		m	a	t		s	c	i	.		2	0		1	8	.	0	5	.	0	1	8.	
+Matminer:	An	Open	Source	Toolkit	for	Materials	Data	Mining.
+Wen	M,	Horton	MK,	Munro	JM,	Huck	P ,	Persson	KA	(2024)	An	equi-
+variant	graph	neural	network	for	the	elasticity	tensors	of	all	seven	
+crystal	systems.	Digit	Discovery	3(5):869–882.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	
+.	1		0	3	9		/	D	3		D	D	0	0	2	3	3	K
+Xu	K,	Qi	C,	Wang	B,	Xu	K,	Qi	C,	Wang	B	(2022)	Recent	progress	
+in	research	of	solid	tritium	breeder	materials	Li2TiO3:	a	review.	
+Coatings.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	3		3	9	0		/	c	o		a	t	i	n	g	s	1	2	0	8	1	0	5	3
+Y ang	P ,	Y ong	W,	Li	C	et	al	(2023)	Hybrid	random	forest-based	models	
+for	 earth	 pressure	 balance	 tunneling-induced	 ground	 settlement	
+prediction.	Appl	Sci.		h	t	t	p		s	:	/		/	d	o	i		.	o		r	g	/		1	0	.	3		3	9	0		/	a	p		p	1	3	0	4	2	5	7	4
+1 3
+111 Page 14 of 14

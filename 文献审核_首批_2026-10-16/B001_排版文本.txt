@@ -1,0 +1,688 @@
+
+
+===== PDF PAGE 1 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+www.chempluschem.org
+—
+Machine Learning Guided Design of Biomass-Based
+Porous Carbon for Aqueous Symmetric Supercapacitors
+Manickam Minakshi,* Apsana Sharma, Ferdous Sohel, Almantas Pivrikas, Pragati A. Shinde,
+Katsuhiko Ariga, and Lok Kumar Shrestha*
+Biomass-derivedporouscarbonelectrodeshaveattractedsignifi- ML algorithms to uncover the interrelationships between bio-
+cantattentionforhigh-performancesupercapacitorapplications mass-derived carbon properties, synthesis conditions, and spe-
+duetotheirsustainability,cost-effectiveness,andtunableporos- cific capacitance. Herein, it is demonstrated that an optimal
+ity.Toacceleratethedesignandevaluationofthesematerials,itis combination of a carbonized honeydew peel to H PO ratio of
+3 4
+essentialtodevelopaccurateandefficientstrategiesforoptimiz- 1:4andanactivationtemperatureof500°Cyieldsahighlyporous
+ingtheirphysicochemicalandelectrochemicalproperties.Herein, carbon material. When used in a symmetric device with 1 M
+amachinelearning(ML)approachisemployedtoanalyzeexper- H SO electrolyte, this material, rich in oxygen and phosphorus
+2 4
+imentaldatafrompreviouslyreportedsources,enablingthepre- species,achievesahighspecificcapacitanceof611Fg(cid:1)1atacur-
+diction ofspecific capacitance (Fg(cid:1)1) basedon various material rentdensityof1.3Ag(cid:1)1.Correlationanalysisrevealsastrongsyn-
+characteristicsandprocessingconditions.ThetrainedMLmodel ergy between surface area and pore volume (correlation
+evaluatestheinfluenceoffactorssuchasbiomasstype,electro- coefficient=0.8473), and the ML-predicted capacitance closely
+lyte, activating agent, and key synthesis parameters, including aligns with experimental results. This ML-assisted framework
+activation and carbonization temperatures and durations, on offersvaluableinsightsintothecriticalphysicochemicalandelec-
+supercapacitor performance. Despite growing interest, compre- trochemicalparametersthatgovernsupercapacitorperformance,
+hensive studies that correlate these variables with performance providingapowerfultoolfortherationaldesignofnext-genera-
+metrics remain limited. This work addresses this gap by using tion energy storage materials.
+1. Introduction Althoughsupercapacitorshavebeenknownsincethe1950s,
+theirpotentialhasonlyrecentlybeenfullyrecognized.[2]Among
+Rechargeable battery technologies are well-established and varioustypes,aqueoussupercapacitorsareparticularlyattractive
+widely utilized in consumer electronics and electric vehicles. due to their low cost, environmental friendliness, and excellent
+However, they face several limitations, including substantial cycling stability, making them ideal for applications such as
+weight,largevolume,highinternalresistance,lowpowerdensity, regenerative braking systems in electric vehicles. The perfor-
+andlimitedtransientresponse.Incontrast,supercapacitors,also mance of supercapacitors is largely governed by the properties
+knownasultracapacitorsorelectrochemicaldouble-layercapaci- of theelectrode materials, whichdirectly influence capacitance,
+tors(EDLCs),haveemergedaspromisingalternativesforenergy energydensity,andoveralldeviceefficiency.Designingandopti-
+storage, owing to their rapid charge–discharge capability, high mizing electrode materials is, therefore, critical to advancing
+power density, low weight, compact size, and low internal supercapacitor technology.[3] Carbon-based materials are espe-
+resistance.[1] cially well-suited for this purpose, offering high electrical
+M.Minakshi,A.Sharma,F.Sohel,A.Pivrikas L.K.Shrestha
+CollegeofScience DepartmentofMaterialsScience
+Technology,Engineering&Mathematics InstituteofPureandAppliedSciences
+MurdochUniversity UniversityofTsukuba
+Murdoch6150,WesternAustralia,Australia 1–1Tennodai,Tsukuba305–8573,Ibaraki,Japan
+E-mail:minakshi@murdoch.edu.au SupportinginformationforthisarticleisavailableontheWWWunderhttps://
+M.Minakshi,P.A.Shinde,K.Ariga,L.K.Shrestha doi.org/10.1002/cplu.202500342
+ResearchCenterforMaterialsNanoarchitectonics(MANA) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH.Thisis
+NationalInstituteforMaterialsScience(NIMS) anopenaccessarticleunderthetermsoftheCreativeCommonsAttribution-
+Tsukuba3050044,Japan NonCommercial-NoDerivsLicense,whichpermitsuseanddistributioninany
+E-mail:shrestha.lokkumar@nims.go.jp medium, provided the original work is properly cited, the use is non-
+K.Ariga commercialandnomodificationsoradaptationsaremade.
+DepartmentofAdvancedMaterialsScience
+GraduateSchoolofFrontierSciences
+TheUniversityofTokyo
+5-1-5Kashiwanoha,Kashiwa277–8561,Chiba,Japan
+ChemPlusChem2025,90,e202500342(1of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 2 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+conductivity,chemicalstability,affordability,andlongcyclelife.[4] different biomass types and processing conditions influence
+Inparticular,porouscarbonmaterialsderivedfrombiomasshave the electrochemical behavior of activated biochar.[16]
+gainedattentionduetotheirsustainabilityandtunabletextural In this study, we perform a feature importance analysis to
+properties, which are essential for enhancing ion transport and identify the most influential parameters, such as biomass type,
+charge storage in aqueous electrolytes. activating agent ratio, and activation temperature, on specific
+Biochar,producedthroughthethermochemicalconversionof capacitance.WeextendourMLmodeltopredictthecapacitance
+biomass,providesasustainableandeco-friendlyplatformforsyn- of honeydew peel-derived porous carbon in acid-aqueous elec-
+thesizingawiderangeoffunctionalcarbonmaterials,including trolytes,buildingonourpreviouswork,[17]whichdemonstrateda
+porous carbon, heteroatom-doped biochar, carbon nanotubes, significant improvement in specific capacitance from 185 to
+graphene, and carbon quantum dots, for advanced applica-
+485Fg(cid:1)1insingle-electrodeconfigurations.Acomparativeanal-
+tions.[5] The use of biomass-derived carbon in energy storage ysis was conducted using four ML models, RF, Support Vector
+hasgainedsignificantattentionduetoitscost-effectiveness,ease Regression (SVR), Artificial Neural Network (ANN), and Multi-
+of production, and environmental sustainability. Meso- and Layer Perceptron (MLP), to predict the capacitance of biomass-
+microporouscarbonscanbereadilyobtainedfromdiverseagri- derivedcarbonsupercapacitors.Elevenfeatureswerecategorized
+culturalandbiologicalsourcessuchasplants,fruits,microorgan- into material properties (biomass type, surface area, pore size),
+isms, and animal residues.[6] Activated biochar-based electrode thermaltreatmentparameters(activation/carbonizationtemper-
+materials,preparedviapyrolysis,hydrothermaltreatment,chem- aturesanddurations),andelectrochemicalconditions(activating
+agent,electrolyte,voltagewindow,currentdensity).Thecapaci-
+icalactivation,andheteroatomdoping,haveemergedasprom-
+ising candidates for supercapacitor applications.[7] These tive contributions from pores and heteroatoms were evaluated
+based on activator dosage and synthesis conditions.
+materials exhibit favorable physical and chemical properties,
+Overall,MLtechniqueswereemployedtopredictandanalyze
+includingwell-developedporestructures,abundantsurfacefunc-
+the influence of biomass carbon properties and experimental
+tionalgroups,andexcellentenergystoragecapabilities.[8]Incon-
+parameters on supercapacitor performance. A comprehensive
+trast,biocharproducedthroughdirectcarbonizationoftensuffers
+dataset was compiled and validated using honeydew peel-
+fromlimitedelectrochemicalperformanceduetoitsunderdevel-
+derivedporouscarbon.Amongthemodelstested,SVRachieved
+oped porosity, low graphitization, and insufficient surface
+the highest coefficient of determination (R2=0.41398) with a
+functionality.[9]
+mean absolute error (MAE=0.11359). Both SVR and RF models
+Theenergystorageperformanceofactivatedbiocharisinflu-
+demonstrated strong predictive capabilities, achieving determi-
+encedbymultiplefactors,includingtheintrinsicpropertiesofthe
+nation coefficients (R2) of 0.41396 and 0.35689, MAEs of
+biomass precursor, activation conditions, pore architecture, and
+0.11359 and 0.11054, and root mean square errors (RMSE) of
+testingparameters.Thecomplexityoftheseinterdependentvar-
+0.14897 and 0.13734, respectively. The ML classification algo-
+iables makes it challenging to identify optimal synthesis path-
+rithms highlighted key contributors to supercapacitor perfor-
+ways through experimental methods alone.[10] For instance, Jia
+mance, with surface area and pore volume exhibiting strong
+et al.[11] conducted 20 carbonization experiments on different
+correlation ratios of 0.8473 each. The optimal combination of
+partsofcornstraw,revealingthatmoderatecarbonizationtem-
+honeydewpeelandactivatorratio,alongwithsuitablesynthesis
+peraturesandlowashcontentpositivelyaffectbiochar’senergy
+temperature,resultedinfunctionalizedcarbonsurfacesenriched
+storageperformance.Similarly,Koutcheikoetal.[12]demonstrated
+withphosphorusandoxygen,enhancingwettabilityandpseudo-
+that optimizing activation conditions can enhance capacitance,
+capacitance for high-performance aqueous supercapacitors.
+but the process remains labor-intensive and lacks standardized
+guidelines.
+Toaddressthesechallenges,data-drivenapproachessuchas
+2. Methodology
+machinelearning(ML)offerpowerfultoolsformodelingandpre-
+dictingtherelationshipsbetweensynthesisparametersandelec-
+2.1. ML Approach
+trochemical performance. ML techniques can simulate complex
+interactions between input variables and output metrics,
+2.1.1. Dataset Description
+enabling efficient optimization of material properties.[13] Leng
+etal.[14]appliedrandomforest(RF)andgradientboostingregres-
+To evaluate and predict the specific capacitance of biomass-
+sionmodelstopredictbiocharyieldandsurfacearea,identifying
+derived carbon-based supercapacitors, ML techniques were
+pyrolysis temperature as a key factor. Yang et al.[15] used ML to
+employed to analyze the influence of various material and pro-
+correlate activation conditions with specific capacitance, cessparameters.Featureimportancescoring,commonlyusedin
+highlightingtheimportanceofsurfaceareaandactivatordosage. regressionandclassificationmodels,wasappliedtorankthecon-
+Despite theseadvances,comprehensive optimization ofthefull tribution of each input variable to the target output (specific
+synthesischain,frombiomassselectiontoactivationanddoping, capacitance). This approach enables researchers to identify the
+remains elusive. Repeated experimentation to achieve desired most influential features and reduce the dimensionality of the
+material properties is time-consuming and inefficient. dataset without compromising model performance. To ensure
+Therefore, further investigation is needed to understand how model robustness and prevent overfitting, cross-validation was
+ChemPlusChem2025,90,e202500342(2of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 3 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+implemented.Thistechniquepartitionsthedatasetintomultiple
+Table 2. Variables are segregated into independent and dependent
+folds, training the model on a subset while validating it on the variables.
+remaining data. The process is repeated across different folds,
+IndependentVariable DependentVariable
+providing a more reliable estimate of model generalizability to
+Biomassmaterial; Capacitance
+unseen data.[18]
+Activatingagent;Electrolyte;
+Activationtemperature;
+2.1.2. Data Collection and Preprocessing
+Activationtime;
+Thedatasetwascuratedfrompreviouslyreportedliterature(see Carbonizationtemperature;
+Table S1, Supporting Information), with a focus on maintaining Carbonizationtime;
+consistency and reducing complexity. To ensure homogeneity, Porevolume;
+onlyaqueouselectrolytessuchasKOHandH 2 SO 4 wereincluded, Surfacearea;
+while organic electrolytes and ionic liquids (e.g., TEABF 4 ) were Currentdensity;and
+excluded.[19] Since specific capacitance varies with current den-
+Voltagewindow
+sity,normalizationwasappliedtoaccountfordifferencesacross
+studies (Table 1).
+capacitance. Data handling and preprocessing were conducted
+to import and structure the dataset efficiently. For regression
+2.1.3. Data Segregation
+modeling, the Support Vector Machine algorithm with a
+GaussiankernelwasimplementedusingMATLAB’sfitcsvmfunc-
+Variableswerecategorizedintocontinuousandcategoricaltypes
+tion,enablingnonlinearmappingofinputfeaturestothetarget
+to guide appropriate preprocessing and model selection.
+variable.Toenhanceinterpretabilityandreducedatasetcomplex-
+Continuousvariables(e.g.,surfacearea,poresize)werenormal-
+ity, Principal Component Analysis (PCA) was applied using
+izedorscaledtoensureuniformlearning,whilecategoricalvar-
+MATLAB’sPCAfunction.Thistechniquefacilitatedimprovedvisu-
+iables (e.g., biomass type, electrolyte) were encoded usingone-
+alizationoffeaturedistributionsandrelationships.Variousplots,
+hot or label encoding techniques.[20] The dataset was further
+including scatter plots, regression surfaces, and feature correla-
+structuredintoindependentvariables(features)andadependent
+tion matrices, were generated using MATLAB’s built-in plotting
+variable(specificcapacitance),assummarizedinTable2.Thisdis-
+toolstosupportexploratorydataanalysisandmodelinterpreta-
+tinctioniscriticalforsupervisedlearning,wherethemodellearns
+tomapinputfeaturestothetargetoutput.[21]Theelevenfeatures
+tion.[22]Featureimportancewasassessedusingpermutationfea-
+tureimportance,whichquantifiestheincreaseinpredictionerror
+used in the model were grouped into three categories:
+when individual features are randomly permuted. This method
+1)MaterialProperties:Biomasstype,surfacearea,andporesize;
+provides insights into the relative contribution of each feature
+2)Thermal Treatment Parameters: Activationtemperature,car-
+to model accuracy, helping identify the most influential param-
+bonizationtemperature,andactivationtime,carbonizationtime;
+etersaffectingspecificcapacitance.[23,24]Aschematicoverviewof
+3) Electrochemical Parameters: Activating agent, electrolyte
+type, voltage window, and current density. the ML workflow is presented in Figure 1.
+2.1.4. Data Processing 2.1.5. Data Cleaning
+In this study, MATLAB software was employed for all stages of Inthisstudy,datanormalizationwasemployedasacriticalproc-
+data handling, including preprocessing, model training, evalua- essingsteptoscalenumericalfeaturestoaconsistentrange,typi-
+tion,andfeatureimportanceanalysisaimedatpredictingspecific callybetween0and1.Thisensuresthatvariableswithdiffering
+Table1. Variablesaresegregatedintocategoricalandcontinuousvariables.
+Data
+Categoricalvariable Continuousvariable Set
+Biomassmaterial; Activationtemperature;
+Activatingagent;and Activationtime;
+Test
+Electrolyte Carbonizationtemperature; Train Machine Model
+Learning
+Carbonizationtime;
+Porevolume;
+Surfacearea; Prediction
+Model
+Currentdensity;
+Voltagewindow,and
+Figure1. SchematicrepresentationoftheMLworkflowinvolvedinmodel
+Specificcapacitance
+prediction.
+ChemPlusChem2025,90,e202500342(3of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 4 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+units or magnitudes do not disproportionately influence the cyclic voltammetry (CV) and galvanostatic charge–discharge
+learningprocessoftheMLmodel.Normalizationenhancesboth studies of the composites were carried out using SP-150, Bio-
+theperformanceandstabilityofMLalgorithmsbyenablinguni- LogicScienceinstrumentsin1MH SO electrolyteatroomtem-
+2 4
+formtreatmentofallinputfeatures.[25]Additionally,dataprepro- perature.ForHDP-AC,theworkingelectrodewascycledbetween
+cessingwas undertakento prepare raw dataforanalysis, which 0and1.1V.Thefrequencyrangeforelectrochemicalimpedance
+involved cleaning (handling missing values, removing noise), spectroscopy (EIS) was 10 40MHz with a 5mV bias voltage.
+transforming (normalizing and encoding categorical variables), The specific capacitance of the symmetric supercapacitor
+and organizing it for optimal model training. This step ensured device was computed from the following (Equation 1).
+that the data was clean, consistent, and adequately structured
+i(cid:4)Δt
+for effective learning by the ML model.[26] Continuous variables C ¼ ðFg(cid:1)1Þ (1)
+s Δv(cid:4)m
+suchassurfacearea,porevolume,andtemperaturewerenormal-
+ized to maintain a uniform scale across the dataset. Categorical whereC isthespecificcapacitancein(Fg(cid:1)1),iisthecurrentin
+s
+variableswereencodedusingappropriatetechniquestoensure (mA), Δt is the discharging time (s), m is the mass of the active
+compatibility with the ML models. material loaded (mg), and ΔV is the potential window (V). The
+To prioritize features with the highest predictive potential, energy and power density of the device were calculated using
+correlationanalysiswasperformed.Thishelpedidentifyvariables the formulas in (Equations 2) and (3).
+consistentlyreportedassignificantininfluencingspecificcapaci-
+tance, guiding feature selection and model refinement.[26] E¼ 1 C Δv2 ðWhkg(cid:1)1Þ (2)
+8 s 3.6
+2.2. Physical Characterization of Heteroatom-Doped E(cid:4)3600
+Honeydew Peel P¼ ðWkg(cid:1)1Þ (3)
+t
+The structural properties of the synthesized honeydew peel- where E and P denote the energy density (WhKg(cid:1)1) and
+derivedactivatedcarbon(HDP-AC),preparedatasynthesistem- powerdensity(WKg(cid:1)1)ofthedevice.Forthesymmetricdevice,
+perature of 500°C, were investigated using X-ray diffraction twoidenticalHDP-ACelectrodes(each2mg)wereassembledina
+(Rigaku,Japan)usingCuKαradiation.Toassessthenatureofcar- two-electrode configuration using 1 M H SO as the electrolyte.
+2 4
+bonbondingandsurfacestructure,Ramanspectroscopywasper-
+formedusinganNRS-3100(JASCO,Tokyo,Japan)instrumentwith
+a532.09nmneonlaserexcitationwavelength.Eachsamplewas 3. Results
+analyzedatadepthof3μmacrossatleastthreedifferentsurface
+locationstoensurerepresentativedata.Thesurfacemorphology
+3.1. ML
+and elemental composition of HDP-AC were examined using
+Field Emission Scanning Electron Microscopy (FE-SEM) (TESCAN
+MultipleMLmodelswereevaluatedusingthreekeyperformance
+CLARA). For high-resolution imaging of internal structures, metrics: RMSE, MAE, and the Coefficient of Determination (R2).
+Transmission Electron Microscopy (TEM) was conducted using
+Thesemetricsprovidedarobustframeworkforassessingthepre-
+aJEOL2200FSTEMoperatedat200kV.TEMspecimenswerepre-
+dictive accuracy of each model and its alignment with experi-
+pared by dispersing HDP-AC powder in ethanol, followed by
+mental values. The training dataset comprised electrochemical
+grinding in an agate mortar and pipetting onto a holey carbon
+performancedataofheteroatom-dopedHDP-ACelectrodes,syn-
+film supported on a copper mesh grid.
+thesized with varying activating agent ratios and tested in 1 M
+H SO electrolyte. This dataset enabled the models to learn
+2 4
+2.3. Electrochemical Characterization of Heteroatom-Doped the relationships between synthesis parameters and specific
+Honeydew Peel capacitance, facilitating reliable predictions and feature impor-
+tanceanalysis.TheproposedMLmodelwastrainedonadataset
+Electrochemical characterization of the HDP-AC was performed comprising 166 data points, as detailed in Table S1, Supporting
+usingboththree-electrodeandsymmetrictwo-electrodeconfig- Information.Toensurerobustmodeltrainingandvalidation,the
+urations.TheworkingelectrodewasfabricatedbymixingHDP-AC dataset was partitioned into training, validation, and test sets,
+(75wt%), carbon black (15wt%), and polyvinylidene difluoride each representing approximately 20% of the total data. RMSE
+(PVDF, 10wt%) in 0.4mL of N-Methyl-2-pyrrolidone (NMP) to is assessed, with lower values indicating better model fit.
+formahomogeneousslurry.Thisslurrywascoatedontoagraph- R-squared (R2) values are analyzed to determine how well the
+ite sheet with an active area of 1cm2, and the mass of active input features explain the variance in the output variable, with
+material loaded per electrode was (cid:3)2mg. In three-electrode higher values indicating stronger predictive performance.[27]
+tests, platinum wire of 10cm in length and 1mm in diameter MAEisalsoexamined,measuringtheaverageabsolutedifference
+dimension and mercury–mercuric oxide (Hg/HgO) served as betweenpredictedandactualvalues,providinginsightintoover-
+the counter and reference electrode, respectively. In single- allpredictionaccuracy.Tofurtherensuregeneralizability,fourfold
+electrode tests, HDP-AC served as the working electrode. The cross-validation was applied. This technique tests the model’s
+ChemPlusChem2025,90,e202500342(4of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 5 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+abilitytoperformonunseendatabyiterativelytrainingandvali- reflecting moderate predictive capability. In contrast, the MLP
+dating across different subsets of the dataset. Additionally, per- model,depictedinFigure2d,exhibitedthepoorestperformance,
+mutation feature importance was used to identify the most with an RMSE of 1.0518, an MAE of 0.70824, and an R2 of only
+influential input features. This method evaluates the increase 0.00975.Thescatterplotrevealsawidedispersionofdatapoints
+in prediction error when individual features are randomly per- aroundthetrendline,indicatingalackofpredictiveaccuracyand
+muted, offering insights into which synthesis parameters most poor model fit for specific capacitance prediction. Table S2,
+significantly impact specific capacitance predictions. Supporting Information, presents the evaluation metrics for
+TheSVRmodel,illustratedinFigure2a,achievesanRMSEof theMLmodels,highlightingthattheSVRmodelachievesamod-
+0.14897, an MAE of 0.11359, and an R2 of 0.41396, indicating a eratetobestfit.Itischaracterizedbyrelativelylowerrorvalues
+moderatefit between predicted and actualspecificcapacitance andthehighestR2scoreamongthemodels,indicatingitssupe-
+values.Thecorrespondingscatterplotshowsaclosealignmentof rior ability to explain variance in the data. The corresponding
+datapointswiththetrendline,suggestingreasonablepredictive scatter plot in Figure 2 further supports this, showing a strong
+accuracy.TheRFmodel,showninFigure2b,yieldedanRMSEof correlation between predicted and actual values. Figure S1,
+0.13734,anMAEof0.11054,andanR2of0.35689.WhileRFdem- Supporting Information, provides a comparative overview of
+onstrates slightly lower error metrics compared to SVR, its mar- modelperformance,witherrorbarsonRMSEillustratingthevari-
+ginallylowerR2suggeststhatitcapturesslightlylessvariancein ability in training outcomes across models.
+the data, despite effectively minimizing prediction errors. The TheNNCorANNmodelexhibitsmoderatelyhigherRMSEand
+neural network classifier (NNC), presented in Figure 2c, results MAE values, along with an R2 score that is lower than SVR but
+in an RMSE of 0.15673, an MAE of 0.12398, and an R2 of comparabletoRF.ThissuggeststhatwhileNNCcapturescertain
+0.35909.Althoughtheerrorvaluesareslightlyhigher,thescatter trends in specific capacitance, its predictive accuracy is limited
+plotindicatesagenerallyconsistentalignmentwithactualvalues, relative to SVR and RF. The observed pattern may reflect the
+Figure2. Comparisonoftheactualspecificcapacitancewithpredictedspecificcapacitancevaluesofvariousmodelsa)SVR;b)RF;c)NNC;andd)MLP.
+ChemPlusChem2025,90,e202500342(5of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 6 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+model’sinsufficientadaptabilitytothecomplexityofthedataset, collectivelyinfluencespecificcapacitance.Conversely,anotable
+indicating potential underfitting or the need for further hyper- negativecorrelationbetweenactivationtemperatureandactiva-
+parametertuning.Incontrast,theMLPmodelshowsasignificant tiontime(–0.6725)suggestsaninverserelationship,likelyreflect-
+deviation from the trend line, with the highest RMSE and MAE ing trade-offs in synthesis conditions. This inverse relationship
+values and an extremely low R2 score (as shown in Table S2, reflects an optimization balance in the material preparation,
+Supporting Information). This poor performance indicates that where higher activation temperatures are often offset by lower
+MLPfailstocapturetheunderlyingrelationshipsbetweeninput carbonization temperatures and vice versa. Such trade-offs are
+featuresandspecificcapacitance.Thewidespreadscatterofdata common in fabrication processes aimed at achieving desirable
+pointssuggestslimitationsinthemodel’scurrentconfiguration, porosity and surface functionality. Features such as activating
+possibly due to overfitting or inadequate training. agents, electrolytes, and voltage windows exhibit weaker
+correlationswithothervariables,suggestingthattheycontribute
+3.2. Analysis independentlytospecificcapacitancewithoutstronglinearrela-
+tionships. These weaker correlations enhance their predictive
+EachMLmodel’spredictiveaccuracyforspecificcapacitancewas value, as they capture unique aspects of capacitance variation
+evaluatedbasedonitsalignmentwiththeactualvaluesandkey without overlapping effects.
+performancemetrics(RMSE,MAE,andR2)asshowninFigure2. The scatter plots in Figure 4 illustrate the relationships
+Amongthemodels,SVRdemonstratedawell-balancedfit,char- betweenindividualfeaturesandspecificcapacitanceinsuperca-
+acterizedbyrelativelylowRMSEandMAEvaluesandamoderate pacitorperformance.Figure4ashowsaweak,scatteredcorrela-
+R2score.ThisindicatesthatSVReffectivelycapturestheunderly- tion between biomass materials reported in the literature and
+ingtrendinspecificcapacitanceandgeneralizeswelltothedata- specific capacitance, indicating minimal influence from intrinsic
+set without significant overfitting or underfitting. The RF model biomass properties. This suggests that most studies focus more
+alsoperformedstrongly,achievingthelowestRMSEandMAEval- onphysicochemicaland electrochemicalcharacteristics thanon
+ues,whichreflecthighpredictiveaccuracy.However,itsslightly the raw material itself.
+lower R2 compared to SVR suggests that RFexplains less ofthe Figure 4b reveals a high concentration of voltage windows
+overallvariance,despiteitseffectivenessinminimizingprediction data points within a narrow range, implying a limited impact
+errors. on capacitance. Figure 4c demonstrates that surface area has
+Tofurtherexplorefeaturerelationships,thePearsoncorrela- an insignificant effect, as the points are widely spread without
+tionmatrixinFigure3revealsdependenciesandpotentialmulti- adiscerniblepattern,whereasFigure4dindicatesamorenotice-
+collinearity within the dataset. A strong positive correlation able trend with current density, where higher current densities
+between surface area and pore volume (0.8473) indicates that appear to stabilize capacitance values, suggesting a moderate
+thesefeatures areclosely linked,with largerpore volumesgen- correlation. Figure 4e shows a scattered relationship with pore
+erallyassociatedwithincreasedsurfacearea,bothofwhichmay volume, indicating no strong influence on capacitance.
+Figure3. FeaturecorrelationcoefficientdiagrambySVRmodel.
+ChemPlusChem2025,90,e202500342(6of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 7 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+Figure4. Thecorrelationbetweenthespecificcapacitanceandmaterialsproperties,thermaltreatment,andelectrochemicalfactorofa)Biomassmaterial;
+b)Voltagewindows;c)Surfacearea;d)Currentdensity;e)Porevolume;f)Electrolyte;g)Activatingagent;h)Activationtemperature;i)carbonizationtime;
+andj)activationtime.
+Figure4frevealsthatthemajorityofelectrolytedatapointsclus- strongtrend.Finally,Figure4jindicatesaslightinfluenceofacti-
+ter at a single level, implying minimal effect. Figure 4g displays vation time, particularly at shorter durations, yet no clear linear
+thatvaryingactivatingagentlevelshavelittleinfluenceoncapac- trend is observed. Collectively, these observations suggest that
+itance, while Figure 4h shows that activation temperature specificcapacitanceisweaklycorrelatedwithmostindividualfea-
+remainslargelyuncorrelated,withdatapointsclusteringaround tures,withcurrentdensityshowingthemostconsistentrelation-
+zero.Figure4isuggeststhatshortercarbonizationtimemayallow ship. This highlights the importance of considering feature
+forabroaderrangeofcapacitancevalues,butdoesnotshowa interactions and nonlinear effects in predictive modeling.
+ChemPlusChem2025,90,e202500342(7of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 8 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+Figure5presentsthepermutationfeatureimportanceanaly- to evaluate how each responds to changes in input features.
+sisforthetwomosteffectiveMLmodelsinthisstudy,SVRandRF, This comparative analysis highlights the key factors influencing
+highlightingtherelativeinfluenceofeachinputfeatureonspe- capacitanceandprovidesvaluableinsightsforoptimizingsuper-
+cificcapacitancepredictions.IntheSVRmodel(Figure5a),“bio- capacitor design. According to model predictions, honeydew
+massmaterials”emergedasthemostinfluentialfeature,followed peel-derivedcarbonina1MH SO electrolyte,whendopedwith
+2 4
+by“porevolume(cm³/g)”and“voltagewindow(V)”.Theseresults phosphorus-rich heteroatoms, significantly enhances specific
+suggest that the intrinsic properties of the biomass precursor, capacitance,evenathighercurrentdensities.Thisimprovement
+along with porosity and operating voltage range, play a signifi- is attributed to increased electronic conductivity and enhanced
+cant role in determining specific capacitance. Features such as electrode surface wettability, underscoring the importance of
+“carbonization temperature” and “current density (Ag(cid:1)1),” material selection and surface chemistry in supercapacitor
+showed moderate importance, indicating their partial contribu- performance.
+tion to performance outcomes. In contrast, activation time and
+carbonizationtimewasamongtheleastimpactfulfeatures,sug-
+3.3. Synthesis and Activation of Heteroatom-Doped
+gesting limited influence on capacitance within the studied
+Honeydew Peel
+parameter range. Figure 5b presents the permutation feature
+importance rankings for the RF model, revealing notable differ- SeveralmethodshavebeeninvestigatedforsynthesizingACfrom
+encescomparedtotheSVRmodel.InRF,"CurrentDensity(A/g)," honeydewpeel,aswellasfrompeelsofrelatedfruitswithinthe
+"SurfaceArea(m2g(cid:1)1),"and"VoltageWindow(V)"emergeasthe
+same botanical family, which have shown promise as electrode
+mostinfluentialfeaturesinpredictingspecificcapacitance.While materialsforsupercapacitors.[17,28–32]Inthisstudy,weemployed
+"Biomass Materials" also shows considerable importance, their astraightforward synthesisapproach.Thepowderedhoneydew
+influence is slightly reduced compared to their dominant role peel was first subjected to carbonization in a muffle furnace at
+intheSVRmodel.ConsistentwithSVR,“activationtime"and"car- 300°C,withaheatingrateof2.5°Cmin(cid:1)1for4h.Theresulting
+bonizationtime"rankamongtheleastimpactfulfeaturesinthe carbonized material was then thoroughly mixed with an opti-
+RF model. These results suggest that features such as "current mizedconcentrationofphosphoricacid(H PO )astheactivating
+3 4
+density," "surface area," "pore volume," and "voltage window" agent.Theresultingslurrywasoven-driedandsubsequentlyacti-
+are critical to capacitance prediction, although their relative vatedinamufflefurnaceat500°C,maintainingthesameheating
+importance varies across models. This variation reflects the ratefor1h.After activation,thesamplewasallowedtocoolto
+underlying differences in model architecture: SVR is a kernel- roomtemperature.Phosphoricacidwasselectedduetoitsability
+based model that is sensitive to nonlinear relationships and to generate mesopores, thereby enhancing both pore diameter
+can extrapolate trends even in sparse data regions. In contrast, and volume. Additionally, its use simplifies the recovery of the
+RF is an ensemble of decision trees and excels at capturing carbon product, requiring only a water rinse. This efficiency is
+interactions and thresholds. All four models were trained to attributed to the relatively low reaction temperatures and the
+predict specific capacitance, and their trends were compared cross-linking interactions between H PO and the honeydew
+3 4
+Figure5. PermutationfeatureimportanceanalysisofSVRandRF.
+ChemPlusChem2025,90,e202500342(8of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 9 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+peel,whichinhibitthereleaseofvolatilesandtheformationoftar
+during pyrolysis.[33] The resulting heteroatom-doped honeydew
+peelcarbon,synthesizedatanoptimizedprecursor-to-activating
+agentratioof1:4,presentsapromisingpathwaytowardachiev-
+ingthetheoreticalcapacitancelimitsofporouscarbonmaterials.
+3.4. Physicochemical Properties of Heteroatom-Doped
+(oxygen and Phosphorous-Rich) Honeydew Peel Material
+Thehoneydewpeelsamplewasfinelygroundintoapowderto
+ensure a smooth and homogenous surface for X-ray diffraction
+analysis.TheX-raydiffractionpatternoftheACderivedfromhon-
+eydewpeel(Figure6a)exhibitedcharacteristicpeaksaround25°
+and44°correspondingtothe(002)planeofturbostraticcarbon
+(t-carbon)[29]andthe(101)planeofgraphitizedcarbon,[17]respec-
+tively.ComplementaryRamanspectroscopy(Figure6b)revealed
+distinct peaks at approximately 1350cm(cid:1)1 (D-band, indicating
+structural disorder), 1600 cm(cid:1)1 (G-band, representing graphitic
+domains), and around 2700cm(cid:1)1, confirming the formation of
+AC. The presence of these peaks reflects the intrinsic molecular
+structureofamorphouscarboninthehoneydewpeel.Theinten-
+sity ratio of the D to G bands (I /I ) was calculated to be 1.05,
+D G
+suggesting a high degree of defects in the graphitic structure,
+an advantageous feature for energy storage applications. The
+activation process begins with cellulose depolymerization, fol-
+lowedbydehydrationofbiopolymerstoformaromaticrings,ulti-
+matelyleadingtothedevelopmentofporouscarbon.[33,34]During
+thisprocess,water-solubleKCl,formedduringcarbonization,may
+reactwiththehoneydewpeelunderthermaltreatment.Chlorine
+isreleasedasagas,whilepotassiummeltsandintegratesintothe
+carbonmatrix,contributingtotheformationofporousgraphitic
+carbon. This structural transformation is further supported by
+SEM images (Figure 7a,b), which reveal a compact and porous
+architecture conducive to efficient ion transport.
+TheuseofH PO asanactivatingagentplaysacriticalrolein
+3 4 Figure7. a,b)FE-SEMimages,c,d)andthecorrespondingEDSspectracon-
+poredevelopmentduringtheearlystagesofactivation.[34,35]The firmingthepresenceofoxygenandphosphorusspecies,e,f)TEMimages
+macroporous open structure observed in Figure 7b, resulting ofthehoneydewpeel-derivedporouscarbon.
+Figure6. a)X-raydiffractionpatternandb)RamanspectraoftheHDP-AC.GdenotesgraphiticandDdenotesdefectbandsinthespectra.
+ChemPlusChem2025,90,e202500342(9of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 10 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+from intense cross-linking, is well-suited for high-rate capability Notably, the area under the CV curve in Figure 9a is signifi-
+and serves as a buffer zone for rapid ion diffusion. cantlylargerthanthatofthesingleelectrodeinFigure8a,reflect-
+Additionally, the cascaded crystal particles visible in Figure 7b ingahigherspecificcapacitance.Thesymmetricdeviceachieved
+are likely phosphorus deposits on the surface of the AC. aspecificcapacitanceof611Fg(cid:1)1atacurrentdensityof1.3Ag(cid:1)1
+Energy-dispersive X-ray spectroscopy (EDS) data (Figure 7c,d) (Figure 9b) and delivered a maximum energy density of
+confirm the presence of oxygen- and phosphorus-rich species, 35Whkg(cid:1)1 ata power density of 650Wkg(cid:1)1. This performance
+withtheO/Patomicratioindicatingco-dopingoftheseelements surpassesthatofmostreportedcarbon-basedsymmetriccapaci-
+intothecarbonmatrix.TEMimages(Figure7e,f)furthervalidate tors (see Table S1, Supporting Information), which typically rely
+theporousnatureandamorphousregionsofthesynthesizedcar- onmaterialswithhighsurfaceareaandporevolume.Incontrast,
+bon material. ourmaterial,phosphorusandoxygenco-dopedhoneydewpeel-
+derivedcarbon,exhibitsarelativelylowsurfaceareaof33m2g(cid:1)1.
+Across our study, the samples demonstrated a wide range of
+3.5. Electrochemical Properties of Heteroatom-Doped
+Brunauer-Emmett-Teller surface areas, from 224 down to
+Honeydew Peel Material
+3.0049m2g(cid:1)1, with corresponding pore volumes ranging from
+The electrochemical energy storage properties of heteroatom- 0.076 to 0.000867 cm3g(cid:1)1. These variations are attributed to
+doped honeydew peel-derived porous carbon were initially the differing concentrations of the activating agent used, from
+assessed using CV at scan rates ranging from 5 to 50mV/s, low to high levels. However, under these conditions, both the
+andgalvanostatic charge–discharge(CD)measurementsatvari- SVRandRFmodelspredictedrelativelylowspecificcapacitance
+ous current densities. These tests were conducted in a conven- values, 229 F g(cid:1)1 and 208 F g(cid:1)1, respectively. This discrepancy
+tionalthree-electrodesystemwith1MH SO astheelectrolyte. may be explainedby several contributing factors[36,37] 1) insuffi-
+2 4
+ThecorrespondingresultsarepresentedinFigure8a,b.Boththe cientsurfaceareaandporevolumeforeffectiveionadsorption.
+CV and CD curves exhibited nearly rectangular and triangular 2)Alimitedvoltagewindowrestrictingenergystorage.3)moder-
+shapes, respectively, characteristic of ideal EDLC behavior, indi- ate current density affecting ion transport.
+catingexcellentcapacitiveperformanceandhighspecificcapac- These predictions suggest that under suboptimal physical
+itance reaching up to 485Fg(cid:1)1. conditions, such as low surface area and pore volume, the ML
+Theenhancedspecificcapacitance is attributedto thepres- models estimate low to moderate specific capacitance values.
+enceofoxygen-andphosphorus-richspecies,whichfacilitatethe This is expected, as these features are strongly correlated with
+formationofP─O─Cstructuresthroughcross-linkingandoxida- ion accessibility and charge storage capacity. However, in real
+tionreactions.Thisstructuralevolution,combinedwiththepres- experimental settings, additional surface properties often play
+ervation of micropores as observed in microscopy images, a significant role inenhancing charge storage,leadingto much
+contributes to superior charge storage capability. Encouraged higher capacitance values, such as the observed 611 Fg(cid:1)1. The
+by the excellent performance within a 1 V voltage window, discrepancybetweenmodelpredictionsandexperimentalresults
+a symmetric supercapacitor device was fabricated using a two- maybeattributedtophosphorusandoxygenco-doping,which
+electrode configuration with 1 M H SO as the electrolyte. The cansignificantlyenhanceelectrochemicalperformancebyintro-
+2 4
+CVandCDprofilesofthesymmetricdevice(Figure9a,b)closely ducing pseudocapacitive behavior and improving conductivity.
+resemble those of the three-electrode setup, confirming EDLC Thishighlightsthecriticalimportanceofvalidatingmodelpredic-
+behavior driven by ion adsorption on the porous carbon tions with actual experimental data, especially when material-
+electrodes. level modifications are involved.
+Figure8. a)CV,andb)charge–discharge(CD)curvesfortheACsamplederivedfromthehoneydewpeeltestedinathree-electrodeconfigurationin1M
+HSO electrolyte.
+2 4
+ChemPlusChem2025,90,e202500342(10of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 11 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+Figure9. a)CV,b)charge–discharge(CD)curvesfortheACsamplederivedfromthehoneydewpeeltestedinatwo-electrodeconfigurationasasymmet-
+ricsupercapacitordevicein1MHSO electrolyte.c)cyclingstabilityofthedevicewiththeinsetshowingthecharge–dischargecurvessuperimposedforini-
+2 4
+tialandfinalcycles,andthecorrespondingd)Nyquistplotsshowingnovisiblechangesintheshapeofthecurve.
+The long-term cycling performance of the biomass-derived similar properties (e.g., cellulose content), is essential to reduce
+symmetric supercapacitor, shown in Figure 9c, demonstrates variations associated with diverse starting materials.[28]
+excellent stability, retaining 98.2% of its initial specific capaci- Additionally, outliers, especially those reporting unusually high
+tance after 15,000 charge–discharge cycles at a current density specific capacitance values, should be critically evaluated and
+of 1.3Ag(cid:1)1. EIS results, presented in Figure 9d, reveal that the potentially excluded if they demonstrate inconsistencies with
+Nyquist plot remains nearly unchanged after extended cycling, otherrelevantparameters.Whenavailable,poresizedistribution
+indicating consistent resistance behavior and robust electrode datashouldbeincorporated withcaution,ensuringconsistency
+integrity. inmeasurementtechniques,asporearchitectureplaysacritical
+Overall,theNyquistplotexhibitsfeaturescharacteristicofan roleindeterminingcapacitance.[29]Standardizingthesevariables
+ideal capacitor: a nearly vertical line at high frequencies, repre- enhances the reliability of comparative analyses and improves
+sentingcapacitivebehavior,anda45°slopeatmidfrequencies, thepredictiveaccuracyofMLmodelsappliedtosupercapacitor
+attributedtothedistributedresistancewithintheporouscarbon research.
+electrode.Theseexperimentalfindingsprovidevaluableinsights Itisessentialtodistinguishbetweencarbonizationandhydro-
+intotheelectrochemicalbehaviorofthematerialandsupportthe thermal carbonization (HTC) when collecting data for ML appli-
+predictive capabilities of ML models. The input variables that cations in supercapacitor research. These two processes yield
+most significantly influence performance include the nature of carbonmaterialswithdistinctphysicalandchemicalcharacteris-
+the biomass precursor, the optimized concentration of the acti- ticsthatsignificantlyinfluencekeyperformancemetricssuchas
+vating agent, and the choice of electrolyte. specific capacitance, surface area, and pore structure. For
+instance, honeydew peel-derived carbon produced via conven-
+tionalcarbonizationexhibitsnotabledifferencesinsurfacearea,
+3.6. Discussions and Limitations of the Current Study poresizedistribution,andsurfacefunctionalgroupscomparedto
+materials synthesized through HTC.[17,34]
+Thisstudy highlights theimportance ofnarrowingthescopeof Thesediscrepanciesdirectlyaffectthesuitabilityandperfor-
+datacollectiontominimizevariabilityintheanalysisofsuperca- manceoftheresultingmaterialsinenergystorageapplications.
+pacitorperformance.Focusingonspecifictypesofbiomassmate- Moreover,theoperationalconditions,suchastemperature,pres-
+rials, particularly those that are commonly utilized or possess sure, and reaction medium (dry vs. wet), differ substantially
+ChemPlusChem2025,90,e202500342(11of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 12 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+betweencarbonizationandHTC,leadingtouniquereactionpath- 4. Conclusions
+waysandendproducts.Thesevariationsinfluencecarbonyield,
+structuralintegrity,andpurity,allofwhichcontributetoelectro- ThisstudypresentsanML-guidedinvestigationintooxygenand
+chemical performance differences. phosphorus-rich heteroatom-doped carbon material derived
+Consequently, materials produced via HTC (hydrochar) may frombiomassforsupercapacitorapplications.Theaqueoussym-
+exhibitelectrochemicalbehaviorsthatdivergefromthoseofcon- metric supercapacitor demonstrated a strong correlation
+ventionallycarbonizedmaterials(biochar).ForMLapplications,it betweenspecificcapacitanceandthenatureofbiomassprecur-
+isthereforeimperativetotreatcarbonizationandHTCasdistinct sor,afindingthatstandsoutasparticularlynovel.Byintegratinga
+processes. By incorporating the synthesis method as a separate diverse dataset compiled from various published sources, the
+featureintheMLmodel,thealgorithmcanmoreaccuratelycap- research effectively highlights the complex interrelationships
+ture the influence of each process on performance outcomes, amongcriticalfeaturessuchasbiomasstype,surfacearea,pore
+such as specific capacitance.[30] volume, and experimental parameters, including activation and
+Thechoiceofactivatingagents,suchasKOH,CaCl ,K FeO , carbonization temperatures.
+2 2 4
+MgCl ,H PO ,andsteam,playsapivotalroleindeterminingthe TheperformanceevaluationoffourdistinctMLmodels,SVR,
+2 3 4
+physicochemical properties of the resulting carbon materials. RF,ANN,andMLP,demonstratedtheirpredictivecapabilitiesfor
+While all these agents serve to activate carbon, they operate supercapacitor performance. Among these, the SVR model
+through distinct mechanisms, leading to significant variations emergedasthemost effective,achieving acoefficient of deter-
+in surface area, pore architecture, and chemical composition. mination (R2) of 0.41398 and a MAE of 0.11359. These findings
+Therefore,treatingtheseagentsasequivalentduringdatacollec- underscore the potential of ML to enhance the understanding
+tion for ML applications is inappropriate and may compromise andoptimizationofbiomass-derivedcarbonmaterialsforenergy
+model accuracy. Chemical activation, involving agents like storage.
+KOH, H 3 PO 4 , CaCl 2 , and K 2 FeO 4 , induces specific reactions with Importantly,thestudyidentifiedsurfaceareaandporevol-
+the carbon precursor, influencing pore formation, surface area, umeaskeycontributorstospecificcapacitance.However,inthe
+andtheincorporationoffunctionalgroups.[31,34]Eachagentpro-
+caseofheteroatom-dopedhoneydewpeel-derivedcarbon,the
+ducesuniqueporesizedistributionsandchemicalfunctionalities.
+influence of biomass composition and dopant chemistry
+In contrast, physical activation, typically using steam or MgCl ,
+2 appearedtooutweightheeffectsofsurfaceareaandporosity.
+reliesongasificationandcontrolledcarbonburn-offatelevated
+This insight provides a valuable foundation for future research
+temperaturestoenhanceporosity.Someagents,suchasK FeO ,
+2 4 aimed at tailoring carbon material properties for enhanced
+may also exhibit catalytic effects, further modifying the carbon
+energy storage performance. The study also emphasizes
+structure and its electrochemical behavior.[32]
+the importance of focused data collection and rigorous
+The selected activating agent significantly affects perfor-
+consideration of material preparation methods. These recom-
+mance metrics such as specific capacitance, energy density,
+mendationsarecriticalforimprovingthereliabilityofMLmod-
+and cycling stability. For example, KOH-ACs are often favored
+els and advancing the field of supercapacitor research.
+for their high surface area and conductivity, while H PO -ACs
+3 4 Experimentally,thesymmetricsupercapacitorfabricatedinthis
+arevaluedfortheirstabilityinaqueouselectrolytes.ForMLappli-
+work achieved a specific capacitance of 611Fg(cid:1)1, with an
+cations,itisessentialtoencodeeachactivatingagentasadistinct
+energy density of 35Whkg(cid:1)1 and a power density of
+categoricalfeature.Thisenablesthemodeltolearntheindividual
+650Wkg(cid:1)1, performance metrics that surpass many reported
+andinteractiveeffectsofeachagentonmaterialpropertiesand
+carbon-basedsystems.Overall,thisworkcontributesmeaning-
+performance.Additionally,recordingprocessparameters,suchas
+fullytothegrowingbodyofknowledgeinenergystorage,advo-
+activation temperature, duration, and carbonization conditions,
+cating for the continued integration of ML techniques to
+alongside theactivating agent, ensures consistency and enhan-
+accelerate the development of high-performance, sustainable
+ces model reliability.
+supercapacitor materials.
+It is also important to acknowledge that the data used in
+this study were sourced from various research articles (listed in
+Table S1), each conducted under different environmental and
+experimental conditions. Suchdiversity may introduce inconsis- Acknowledgements
+tencies in ML outcomes. Furthermore, variations in terminology
+acrossstudiescanleadtomisinterpretationsandcompromisethe M.M. acknowledges the Winston Churchill Fellowship to learn
+integrityofthefinalanalysis.Thefailuretoaccountfordifferences globally and inspire locally. This work was partially supported
+incarbonizationmethods,biomasstypes,[37]andactivationtech- by the Japan Society for the Promotion of Science (JSPS)
+niques may have influenced the appropriateness of the study’s KAKENHI (grant Nos. JP20H00392 and JP23H05459).
+results. Therefore, future researchers are advised to exercise OpenaccesspublishingfacilitatedbyMurdochUniversity,as
+caution and rigor in data collection, ensuring that these critical partoftheWiley-MurdochUniversityagreementviatheCouncil
+factors are carefully considered and consistently documented. of Australian University Librarians.
+ChemPlusChem2025,90,e202500342(12of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH
+
+===== PDF PAGE 13 =====
+Research Article
+ChemPlusChem doi.org/10.1002/cplu.202500342
+Conflict of Interest
+[17] M.Minakshi,A.Samayamanthry,J.Whale,R.Aughterson,P.A.Shinde,
+K.Ariga,L.K.Shrestha,Chem.AsianJ.2024,19,e202400622.
+[18] A. Seraj, M. M. Khanaposhtan, R. Daneshfar, M. Naseri, M. Esmaeili,
+The authors declare no conflict of interest.
+A.Baghban,S.Habibzadeh,S.Eslamian,HandbookofHydroinformatics,
+Elsevier2023,pp.89–105.
+[19] A.Jamaluddin,D.Harjunowibowo,S.Budiawanti,N.A.Kurdhi,S.D.T.Lai,
+Data Availability Statement S.Ramesh,EnergyRep.2023,10,3125.
+[20] C.Rudin,C.Chen,Z.Chen,H.Huang,L.Semenova,C.Zhong,Statistic
+Surveys2022,16,1.
+Thedatathatsupportthefindingsofthisstudyareavailablefrom
+[21] I.Tsochantaridis,T.Hofmann,T.Joachims,Y.Altun,inProceedingsofthe
+the corresponding author upon reasonable request. twenty-firstint.conf.onMachinelearning2004,p.104.
+[22] I.Turk,PracticalMATLAB,Apress,Berkeley,CA2019.
+[23] Z.M.Omer,H.Shareef,Intell.Syst.Appl.2023,19,200261.
+Keywords: biomass · carbon · dopant · energy · machine [24] R.S.Abirami,G.S.Kumar,SNComput.Sci.2022,3,1.
+[25] A.E.Eldeen,M.A.Azim,M.Abdelsattar,A.AbdelMoety,J.EnergyStorage
+learning · storage
+2024,100,113556.
+[26] S.A.N.Alexandropoulos,A.S.B.Kotsiantis,M.N.Vrahatis,Knowl.Eng.Rev.
+2019,34,e1.
+[1] G.G.Prasad,N.Shetty,S.Thakur,Rakshitha,K.B.Bommegowda,inIOP [27] N.Redell,(Preprint)arXiv:1908.097182019,09718,https://arxiv.org/abs/
+Conf.Series:MaterialsScienceandEngineering,IOPPublishingLtd.,561, 1908.09718.
+2019,p.012105. [28] Z.Wang,P.Tammela,M.Strømme,L.Nyholm,Adv.EnergyMater.2017,7,
+[2] S.Butler,Supercapacitorsvs.Batteries:What’stheDifference?https://www. 1700130.
+howtogeek.com/786195/supercapacitors-vs-batteries-whats-the-difference/ [29] T. Wang, R. Pan, M. L. Martins, J. Cui, Z. Huang, B. P. Thapeliya,
+#:~:text=Supercapacitors%20have%20been%20around%20since%20the% C.-L. Do-Thanh, M. Zhou, J. Fan, Z. Yang, M. Chi, T. Kobayashi, J. Wu,
+201950s.2022,(accessed:July2025). E.Mamontov,S.Dai,Nat.Commun.2023,14,4607.
+[3] M. A. Dar, S. R. Majid, M. Satgunam, C. Siva, S. Ansari, P. Arularasan, [30] M.Aghaaminiha,R.Mehrani,S.Sharma,BiomassConvers.Biorefin.2023,
+S.R.Ahamed,Int.J.HydrogenEnergy2024,70,10. 13,9855.
+[4] L.Wang,X.Hu,Chem.AsianJ.2018,13,1518, [31] X. Pang, M. Cao, J. Qin, X. Li, X. Yang, J. Porous Mater. 2022,
+[5] S.Rawat,R.K.Mishra,T.Bhaskar,Chemosphere2022,286,131961. 29,559.
+[6] Y.Liu,J.Chen,B.Cui,P.Yin,C.Zhang,CJ.CarbonRes.2018,4,53. [32] D.M.Demir,M.Doguscu,ChemistrySelect2022,7,e202104295.
+[7] X.Yuebin,X.Liu,W.Xiong,H.Wang,X.Ji,F.Kong,G.Yang,J.Xu,Ind.Crops [33] M.A.Yahya,Z.Al-Qodah,C.W.Z.Ngah,RenewableSustainableEnergyRev.
+Prod.2021,174,114184. 2015,46,218.
+[8] J.Li,R.Xiao,M.Li,H.Zhang,S.Wu,C.Xia,FuelProces.Technol.2019,192, [34] M.Fan,Y.Shao,Y.Wang,J.Sun,H.He,Y.Guo,S.Zhang,S.Wang,B.Li,
+239. X.Hu,Renew.Energy2024,240,122151.
+[9] D.Zhang,P.Yang,Y.Zhang,H.Liu,Y.Xu,J.Wu,P.Li,J.EnergyStorage [35] T.Adinaveen,L.J.Kennedy,J.J.Vijaya,G.Sekaran,J.Mater,CyclesWaste
+2022,56,106134. Manag.2015,17,736.
+[10] V.Sawant,R.Deshmukh,C.Awati,J.EnergyChem.2023,77,438. [36] L.Zhu,H.Yin,L.Ju,B.Zhou,B.Hu,F.Hou,Y.Xie,J.-L.Zhan,W.Du,Ceram.
+[11] J.Jia,Z.Yao,L.Zhao,T.Xie,Y.Sun,L.Tian,L.Huo,Z.Liu,BiomassBioenergy Int.2024,50,48609.
+2023,175,106858. [37] W.Du,Z.Zhang,L.Du,X.Fan,Z.Shen,X.Ren,Y.Zhao,C.Wei,S.Wei,
+[12] S.Koutcheiko,V.Vorontsov,J.BiobasedMater.Bioenergy2013,7,733. J.AlloysCompd.2019,797,1031.
+[13] Z.Dong,X.Bai,D.Xu,W.Li,Bioresour.Technol.2023,367,128182.
+[14] L.Leng,L.Yang,X.Lei,W.Zhang,Z.Ai,Z.Yang,H.Zhan,J.Yang,X.Yuan,
+H.Peng,H.Li,Biochar2022,4,63.
+[15] X.Yang,C.Yuan,S.He,D.Jiang,B.Cao,S.Wang,Fuel2023,331,125718. Manuscriptreceived:May20,2025
+[16] Y.Sun,P.Sun,J.Jia,Z.Liu,L.Zhao,Y.Zhao,W.Niu,Z.Yao,Chem.Eng.J. Revisedmanuscriptreceived:July13,2025
+2024,485,149975. Versionofrecordonline:August29,2025
+ChemPlusChem2025,90,e202500342(13of13) ©2025TheAuthor(s).ChemPlusChempublishedbyWiley-VCHGmbH

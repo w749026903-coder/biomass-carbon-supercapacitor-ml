@@ -1,0 +1,356 @@
+
+===== PDF PAGE 1 =====
+Machine learning applied to the optimization of biomass char-based 
+supercapacitors: Effect of experimental parameters on 
+supercapacitor performance
+Jing Chen
+a , b
+, Zhaosheng Yu
+a , b , *
+, Jinxi Dong
+a , b
+, Wenchang Yue
+a , b
+, Xiaoqian Ma
+a , b
+a
+School of Electric Power, South China University of Technology, Guangzhou 510620, China
+b
+Guangdong Province Key Laboratory of Efficient and Clean Energy Utilization, Guangzhou 510620, China
+ARTICLE INFO
+Keywords:
+Interpretable machine learning
+Supercapacitor
+Experimental conditions
+Transformer regression
+Biomass char
+ABSTRACT
+To address the optimization issue of experimental parameters during the experimental preparation of biomass 
+char supercapacitors, this study applied six different regression models (four machine learning models and two 
+deep learning models) to predict the specific capacitance of biomass char supercapacitors. The results indicate 
+that the Transformer model performs best in terms of prediction accuracy, with an R
+2 
+(coefficient of determi -
+nation) of 0.9609, an MAE (mean absolute error) of 16.8599, and an RMSE (root mean square error) of 19.4569. 
+Furthermore, analysis indicates that among the experimental parameters, the activation temperature exerts the 
+most significant influence on the specific capacitance. The carbonization temperature and carbonization time 
+exhibit a strong coupled relationship with the specific capacitance: at low carbonization temperatures, 
+carbonization time shows a positive correlation with specific capacitance, whereas at high carbonization tem -
+peratures, carbonization time correlates negatively with specific capacitance. A high heating rate demonstrates a 
+strong negative correlation with specific capacitance. This study employs regression models to analyze experi -
+mental parameter data, thereby providing novel approaches for optimizing experiments aimed at designing 
+superior supercapacitors.
+1. Introduction
+As developed and developing nations progressively implement their 
+strategic objectives of carbon peaking and carbon neutrality, countries 
+are gradually reducing their reliance on fossil fuel energy sources, 
+decreasing the share of thermal power capacity, and pursuing greener, 
+lower-carbon methods of electricity generation [ 1 ], which has fostered 
+the continuous advancement of renewable energy, with particular 
+emphasis on enhancing the utilization of wind and solar power [ 2 ]. 
+However, unlike thermal and nuclear power these renewable energy 
+sources lack the stable power output and easy-to-implement power 
+regulation capabilities of generation methods. Their electricity output is 
+thus subject to fluctuations due to temporal and spatial factors [ 3 ]. 
+Consequently, the integration of green yet intermittent power genera -
+tion methods such as wind and solar energy into the grid gives rise to a 
+series of new grid challenges, including voltage fluctuations, frequency 
+instability, and diminished grid frequency regulation and peak load 
+management capabilities [ 4 ]. The construction of energy storage power 
+plants (such as supercapacitor energy storage, electrochemical energy 
+storage, pumped hydro storage, thermal energy storage, and.) is one of 
+the most effective methods for addressing these issues [ 5 ].Among these, 
+supercapacitor energy storage stands out as the most promising and 
+sought-after energy storage device for grid frequency regulation due to 
+its high power density, rapid charge-discharge capabilities, and 
+extended cycle life [ 6 ]. The preparation of supercapacitors typically 
+employs char-based materials. Biomass char, as a low-carbon-footprint, 
+environmentally friendly, and cost-effective carbon-rich material, ex -
+hibits favorable capacitive physicochemical properties, together with 
+the potential of abundant functional groups, and a tunable pore struc -
+ture. Consequently, it has been extensively explored for the fabrication 
+of high performance supercapacitors [ 7 ].
+However, biomass char derived from simple carbonization processes 
+often suffers from underdeveloped pore structures, limited functional 
+groups, and suboptimal surface morphologies. As a result, super -
+capacitors fabricated using such char materials show suboptimal energy 
+storage performance, which hinders their practical application in grid 
+* Corresponding author.
+E-mail address: zsyu@scut.edu.cn (Z. Yu). 
+Contents lists available at ScienceDirect
+Electrochimica Acta
+journal homep age: www.jou rnals.elsev ier.com/ele ctrochimica-a cta
+https://doi.org/10.1016/j.electacta.2026.148543
+Received 27 December 2025; Received in revised form 23 February 2026; Accepted 24 February 2026  
+Electrochimica Acta 558 (2026) 148543 
+Available online 24 February 2026 
+0013-4686/© 2026 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies. 
+
+
+===== PDF PAGE 2 =====
+frequency regulation [ 8 ]. Over the past decade, scientists have 
+employed a wide array of methods to prepare porous char materials with 
+enhanced performance characteristics. These approaches encompass 
+adjustments to carbonization temperature, time, and heating rates 
+during biomass carbonization; modifications to activation temperature, 
+time, heating rates, and activator ratios during the activation process; as 
+well as optimization of activators, heteroatoms doping, and metallic 
+elements modification [ 9 – 13 ], all these strategies are designed to 
+enhance the physicochemical properties of biomass char, thereby 
+fabricating high-performance supercapacitors. Xiaodi Han et al. utilized 
+chestnut shells as raw material to investigate the effect of varying acti -
+vator ratios on supercapacitor performance. Porous char produced with 
+an activator ratio of 4 exhibited a specific capacitance as high as 448 F/g 
+under test conditions of 0.5 A/g [ 14 ]; Sabin Aryal et al., investigated the 
+effect of different carbonization temperatures on the specific capaci -
+tance of supercapacitors using Prunus persica (peach) seed stones as raw 
+material. At a carbonization temperature of 800 
+◦
+C, they produced 
+activated porous char with the highest specific surface area (788.01 
+m
+2
+/g) and measured a specific capacitance of 299.2 F/g under test 
+conditions of 1 A/g [ 15 ]. T. Rajesh Kumar et al., conducted 26 sets of 
+experiments using waste American poplar fruit as feedstock to deter -
+mine optimal parameter combinations. They investigated the influence 
+of five experimental parameters — carbonization temperature, activation 
+temperature, activation time, carbonization time, and activator ratio -
+— on supercapacitor performance. The resulting biomass char based 
+supercapacitors exhibited an extraordinarily high specific capacitance of 
+423 F/g at 1 A/g [ 16 ]. Owing to the large number of variable experi -
+mental parameters, the substantial workload involved, and the coupled 
+effects between these parameters, it is challenging to investigate their 
+interrelationships through individual experiments alone. Consequently, 
+researchers have begun employing alternative methodologies to opti -
+mise the production process of biomass char based supercapacitors. 
+Machine learning regression algorithms represent one of the most 
+widely adopted approaches [ 17 ]. These algorithms can process large 
+volumes of complex data, analyse non-linear relationships between data 
+points, and generate models that reflect the intricate relationships be -
+tween input and output data. This enables us to analyse the coupled 
+relationships between factors influencing supercapacitor performance 
+through these models, thereby establishing more optimal experimental 
+methods for fabricating higher-performance supercapacitors. Ahmed 
+Emad-Eldeen et al. utilized a biomass char based supercapacitor dataset 
+comprising 130 samples (encompassing material physicochemical 
+properties and test conditions) to compare the training efficacy of seven 
+machine learning algorithms and eight deep learning algorithms on a 
+test set. The results indicated that machine learning algorithms are more 
+effective in the field of supercapacitor performance prediction [ 18 ]. 
+Peng Liu et al. compiled experimental data from 669 biomass char based 
+EDLCs published between 2017 and 2023, encompassing 14 input fea -
+tures including experimental parameters, pore structure, chemical 
+composition, and measurement conditions. They employed eight ma -
+chine learning models, including CatBoost, to predict specific capaci -
+tance, with a particular focus on exploring the influence of biomass 
+porous char microstructure on specific capacitance [ 19 ]. Yuxuan Sun 
+et al. collected data on 157 biomass porous char samples prepared using 
+potassium salt activators and nitrogen doping (including experimental 
+conditions, physicochemical properties, and testing conditions). 
+Employing three machine learning models for training, they revealed 
+that heating rate is the most critical factor influencing the specific 
+capacitance of biomass char, optimized the preparation process for 
+biomass porous char and designed experiments to experimentally vali -
+date the models [ 20 ]. Although these studies employing machine 
+learning regression algorithms to optimize supercapacitor performance 
+have achieved some progress, the input features in these studies include 
+both experimental variables and pore structure parameters. These two 
+features are not mutually independent(the experimental variables can 
+affect the pore structure); the coupling effects among parameters 
+inevitably influence the final model prediction outcomes, making it 
+challenging to independently reflect the impact of individual experi -
+mental parameters on supercapacitor performance [ 21 ].
+Therefore, in order to independently explore the influence of 
+experimental parameters on the performance of biomass char based 
+supercapacitors, this study selected only seven experimental parameters 
+derived from the carbonization and activation processes as input vari -
+ables. This limited set of input variables poses a significant challenge for 
+training a high-performance regression prediction model [ 19 ]. Never -
+theless, the specific capacitance prediction model trained on such a 
+dataset — with high feature independence — can more accurately reflect 
+the influence of each experimental parameter on supercapacitor per -
+formance. This facilitates analysis of the coupling relationships among 
+parameters and identification of optimal parameter. Finally, experi -
+ments were designed based on the optimized experimental parameters 
+obtained from the model to validate the model ’ s outputs and the con -
+clusions of the model analysis. Collectively, this work holds a great 
+significance for the fabrication of high-performance biomass char based 
+supercapacitors.
+2. Materials and methods
+The research content of this paper encompasses data collection, 
+database establishment, model selection, as well as model training, 
+analysis, and interpretation. This study selected six machine learning 
+regression models, covering two major technical directions: deep 
+learning and ensemble learning. Among them, deep learning models 
+included two neural network architectures: Transformer and Gate 
+Recurrent Unit (GRU). Ensemble learning-based models comprised four 
+regression models: XGBoost, Random Forest (RF), CatBoost, and 
+LightGBM. Three evaluation metrics were employed to assess the pre -
+dictive efficacy of these models for the specific capacitance of biomass 
+char based supercapacitors. The predictive performance of the six 
+models was compared to identify the optimal model. Finally, the optimal 
+model was analyzed via three model interpretability methods, exploring 
+the key factors influencing the specific capacitance of biomass char 
+based supercapacitors and their trends of influence. This provides 
+theoretical guidance for the experimental parameter optimisation of 
+higher-performance biomass char based supercapacitors.
+2.1. Data collection and processing
+Machine learning regression tasks require a dataset with sufficient 
+sample size and high-quality samples. A sufficiently reliable dataset can 
+significantly enhance the predictive performance and reliability of the 
+model [ 22 ]. In this study, all data were collected from relevant literature 
+on biomass char based supercapacitors published between 2021 and 
+2025, Keywords such as ‘pre-carbonization ’ , ‘KOH activation ’ , ‘super -
+capacitor ’ , and ‘porous char ’ were used to search relevant papers in 
+various literature search engines(e.g., Web of Science, X-MOL, ELSEV -
+IER). The specific capacitance of biomass char based supercapacitors is 
+influenced not only by the experimental preparation process but also by 
+factors such as the type of activator employed during activation and the 
+testing conditions applied during testing. Therefore, to ensure consis -
+tency and eliminate confounding variables, all selected samples were 
+porous char materials prepared using KOH activation. Testing was 
+conducted under a three-electrode configuration with 6 M KOH solution 
+as the test electrolyte. The selected data points were all specific capac -
+itances measured at a current density of 1 A/g. As most data related to 
+supercapacitor specific capacitance in the literature were presented as 
+images, the data were digitized and extracted using GetData Graph 
+Digitizer 2.22 software and the impact of Graphic digitization noise was 
+analyzed in S1. A total of 144 sample data points were collected from 36 
+papers concerning biomass char based supercapacitors(Table.S7). 
+Additionally, factors potentially affecting the specific capacitance of 
+biomass char based supercapacitors during preparation and testing(such 
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+2 
+
+
+===== PDF PAGE 3 =====
+as mass loading, binder/carbon black content, and potential window) 
+were analyzed in S2.
+Each sample in the dataset comprises eight features: seven input 
+features and one output feature. The input features include three pa -
+rameters from per-carbonization process — pre-carbonization temper -
+ature (PerCarT), carbonization heating rate (CarHS) and carbonization 
+time (CarTime) — and four parameters from the activation process: 
+activation temperature (ActT), activation heating rate (ActHS), activa -
+tion time (ActTime) and activator ratio (ActRatio). The output feature is 
+the specific capacitance, measured under test conditions comprising a 
+three-electrode system, 6 M KOH electrolyte solution, and a current 
+density of 1 A/g.
+2.2. ML model training
+Machine learning and deep learning models have progressively 
+gained greater influence in the field of supercapacitor performance 
+prediction in recent years. This study selected two deep learning algo -
+rithms (Transformer and GRU) alongside four ensemble learning algo -
+rithms (XGBoost, RF, CatBoost, and LightGBM) to establish relationship 
+models between various experimental parameters during the super -
+capacitor fabrication process and the resulting specific capacitance. For 
+the four ensemble learning models, the Particle Swarm Optimization 
+(PSO) algorithm was employed to optimize the model hyperparameters 
+[ 23 ]. For both neural network model, the Adam optimizer was used to 
+adjust the neuron parameter weights, enabling the neural network al -
+gorithms to gradually converge towards a high-performance state [ 24 ].
+Transformer is a deep learning model based on the self-attention 
+mechanism, proposed by Vaswani et al. in 2017 [ 25 ]. In regression 
+tasks, the Transformer model employs the self-attention mechanism 
+within its encoder to capture global dependencies among input features. 
+It extracts deep features and maps them to continuous target values, 
+optimizing parameters via a regression loss function (RMSE) and back -
+propagation. This ultimately yields the mapping rules between input 
+and continuous output. This approach entirely eliminates the reliance on 
+recurrent structures inherent in traditional sequence models (such as 
+Recurrent Neural Networks), demonstrating exceptional parallel pro -
+cessing capabilities and strong ability to capture global dependencies. 
+Consequently, it is frequently employed in tasks spanning natural lan -
+guage processing, machine translation, and computer vision [ 26 ]. Its 
+ability to model complex inter-parameter relationships makes it suitable 
+for optimizing experimental parameters.
+GRU is an enhanced variant of the recurrent neural network (RNN) 
+model, proposed by Cho et al. in 2014 [ 27 ] to address the issue of 
+gradient explosion in traditional RNN models. GRU efficiently captures 
+long-range dependencies within sequential data by dynamically 
+capturing key temporal information through two gating units (update 
+gate and reset gate). This generates hidden states containing global 
+temporal information, which are then processed through an output layer 
+to produce continuous predictions. Error is calculated via a regression 
+loss function, and neural parameters are updated through back -
+propagation of gradients using Backpropagation Through Time(BPTT), 
+enabling predictions to progressively approximate true values. This 
+model is particularly well-suited for sequence regression tasks involving 
+limited sample sizes [ 28 ].
+The four selected ensemble learning models are all based on decision 
+trees as their fundamental components. By integrating the predictions 
+from multiple trees, these models enhance their generalization capa -
+bilities and reduce overfitting. Among them, the RF model is an 
+ensemble method based on Bagging. This approach reduces variance by 
+training multiple independent trees in parallel, representing an 
+ensemble technique characterized by ‘unbiased estimation coupled with 
+high variance’ [ 29 ]. The other three are all gradient-boosted decision 
+tree (GBDT) ensemble algorithms, which sequentially train multiple 
+trees to progressively reduce prediction error. They belong to the cate -
+gory of ensemble methods that employ ‘iterative error correction’ [ 30 ].
+The RF regression model comprises multiple independent decision 
+trees. Each individual tree is trained using a subsample generated via 
+bootstrap sampling from the original dataset. Training ceases when each 
+tree reaches to a predefined depth or achieves optimal predictive per -
+formance, the final prediction of the RF model is the average of all de -
+cision tree predictions. This training method renders the predictions of 
+the RF model more stable and improves its generalization performance.
+XGBoost, CatBoost, and LightGBM are all optimized variants of the 
+Gradient Boosting Decision Tree (GBDT) algorithm. During training, 
+they construct multiple regression trees through serial iteration, opti -
+mising the loss function via splitting nodes. Each tree uses the residuals 
+from the previous tree's predictions as its training data. Upon comple -
+tion, each tree is assigned a weight, with the final prediction being the 
+weighted output of all trees. The primary distinction among these three 
+GBDT models lies in their differing decision tree splitting strategies. 
+XGBoost employs an exact greedy algorithm [ 31 ], which selects the 
+optimal split by traversing all possible split points. CatBoost employs an 
+ordered splitting strategy [ 32 ], After sorting the feature values, select 
+the splitting point to avoid the issue of model overfitting;LightGBM 
+employs a histogram algorithm [ 33 ], discretising continuous features 
+into histograms (reducing the number of split points), combined with 
+gradient one-sided sampling and feature bundling to reduce dimen -
+sionality, can significantly enhance the splitting efficiency of decision 
+trees.
+2.3. Hyperparameter optimization
+In the training of neural network models, optimizers serve as indis -
+pensable component. Their function lies in adjusting parameters such as 
+the weights and biases of neurons within the neural network, thereby 
+minimizing the model's loss function. This process ensures the model's 
+predicted outcomes approximate the sample values as closely as 
+possible. Traditional optimizers include Stochastic Gradient Descent 
+(SGD), momentum-based methods, and Root Mean Square Propagation 
+(RMSprop). These optimizers require manual adjustment of the learning 
+rate and suffer from issues such as slow convergence and poor optimi -
+zation performance. This study selected the Adaptive Moment Estima -
+tion (Adam) algorithm as the optimizer for both the Transformer and 
+GRU models. This optimizer combines the advantages of momentum and 
+RMSprop algorithms, offering benefits such as rapid convergence, strong 
+stability, and adaptive learning rates without requiring extensive 
+parameter tuning. It stands as one of the most widely employed opti -
+mizers in neural network model training. Additionally, parameters such 
+as the number of layers, heads, positional encoding, learning rate, batch 
+size, which pertain to model architecture and training, are difficult to 
+optimize using a single hyperparameter optimization algorithm to find 
+the optimal combination. Therefore, hyperparameter tuning for both the 
+Transformer and GRU neural network models is performed manually to 
+achieve a high level of fitting performance for these two models.
+During the training process of machine learning models, adjusting 
+hyperparameters significantly enhances predictive performance. This 
+study employs the Particle Swarm Optimization algorithm as the 
+hyperparameter optimization method for this task. PSO is an algorithm 
+originating from the collaborative behaviors of animal groups, such as 
+bird feeding and fish migration. Compared to the high computational 
+cost of traditional grid search, the PSO algorithm efficiently locates the 
+optimal combination of hyperparameters within the parameter space by 
+simulating group collaboration during the optimization process.
+Furthermore, to mitigate overfitting and ensure robust performance 
+evaluation, a five-fold cross-validation method was adopted to access 
+models performance [ 34 ].
+2.4. Evaluation of model performance
+The evaluation of a regression task model's predictive performance 
+primarily assesses the closeness or distance between the model's 
+J. Chen et al.                                                                                                                                                                                                                                     Electrochimica Acta 558 (2026) 148543 
+3 
+

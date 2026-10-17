@@ -1,0 +1,275 @@
+
+===== PDF PAGE 1 =====
+Physica Scripta
+              
+ACCEPTED MANUSCRIPT • OPEN ACCESS
+Source-aware materials informatics for biomass-derived carbon
+electrodes: Predicting supercapacitor capacitance from precursor and
+process descriptors
+To cite this article before publication: Ferhat Ucar et al 2026 Phys. Scr. in press https://doi.org/10.1088/1402-4896/ae999d
+Manuscript version: Accepted Manuscript
+Accepted Manuscript is “the version of the article accepted for publication including all changes made as a result of the peer review process,
+and which may also include the addition to the article by IOP Publishing of a header, an article ID, a cover sheet and/or an ‘Accepted
+Manuscript’ watermark, but excluding any other editing, typesetting or other changes made by IOP Publishing and/or its licensors”
+This Accepted Manuscript is © 2026 The Author(s). Published by IOP Publishing Ltd.
+ 
+ As the Version of Record of this article is going to be / has been published on a gold open access basis under a CC BY 4.0 licence, this Accepted
+Manuscript is available for reuse under a CC BY 4.0 licence immediately.
+Everyone is permitted to use all or part of the original content in this article, provided that they adhere to all the terms of the licence
+https://creativecommons.org/licences/by/4.0
+Although reasonable endeavours have been taken to obtain all necessary permissions from third parties to include their copyrighted content
+within this article, their full citation and copyright line may not be present in this Accepted Manuscript version. Before using any content from this
+article, please refer to the Version of Record on IOPscience once published for full citation and copyright details, as permissions may be required.
+All third party content is fully copyright protected and is not published on a gold open access basis under a CC BY licence, unless that is
+specifically stated in the figure caption in the Version of Record.
+View the article online for updates and enhancements.
+This content was downloaded from IP address 82.132.217.149 on 15/08/2026 at 02:31
+
+===== PDF PAGE 2 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+Physica Scripta
+PAPERCrossmark
+RECEIVED
+26 May 2026
+REVISED
+dd Month yyyy
+Source-Aware Materials Informatics for Biomass-Derived Carbon
+Electrodes: Predicting Supercapacitor Capacitance from
+Precursor and Process Descriptors
+Ferhat U¸ car1,∗
+ , Nida Katı 2
+ and Mohammed Abduljalil Saeed Ahmed 3
+1Department of Software Engineering, Firat University, Elazig, T¨ urkiye
+2Department of Metallurgical and Materials Engineering, Firat University, Elazig, T¨ urkiye
+3Graduate School of Natural and Applied Sciences, Firat University, Elazig, T¨ urkiye
+∗Author to whom any correspondence should be addressed.
+E-mail: fucar@firat.edu.tr
+Keywords: materials informatics, biomass-derived carbon electrodes, electrochemical energy storage, supercapacitors,
+source-aware validation
+Abstract
+Biomass-derived porous carbons are promising electrode materials for sustainable
+electrochemical energy storage, yet their capacitance depends on coupled precursor and
+process variables that are difficult to optimize experimentally. Here, we present a
+source-aware materials-informatics framework for predicting the specific capacitance of
+biomass-derived carbon electrodes directly from raw precursor descriptors and processing
+conditions. A literature-curated dataset comprising elemental composition, proximate
+analysis, lignocellulosic structure, and activation variables was evaluated with support
+vector regression (SVR), Random Forest (RF), a deep neural network (DNN), LightGBM,
+and XGBoost, together with an ensemble strategy, across seven feature combinations.
+XGBoost delivered the strongest test performance, reaching R2 = 0.948 for the most
+informative feature block. Beyond model ranking, the study emphasizes validation realism
+by contrasting conventional random splits with source-aware evaluation, showing that
+random partitions can substantially overestimate apparent generalization. Across models,
+current density, activation temperature, holding time, ash content, and volatile matter
+emerged as the most influential predictors. The resulting workflow provides practical
+guidance for precursor screening, process-window definition, and data-driven design of
+biomass-derived supercapacitor electrodes. The guidance applies within the precursor and
+process regime represented by the training corpus; experimental verification is
+recommended for excursions beyond it.
+1 Introduction
+The escalating global demand for efficient energy storage technologies, driven by the increasing
+emphasis on renewable energy and the urgent need to address climate change, has positioned super-
+capacitors as increasingly important devices in energy storage technologies. They are used in many
+areas such as electric vehicles, renewable energy storage systems and portable electronics due to
+their high power density, long cycle life and fast charge/discharge capabilities [1, 2]. One of the main
+parameters determining the performance of supercapacitors is capacitance, which is directly related
+to the surface area, porosity and chemical structure of the electrode materials. Traditionally, carbon-
+based materials such as activated carbon have been preferred as electrodes. However, in terms of
+sustainability and cost-effectiveness, the use of agricultural biomass waste as carbon electrode precur-
+sors is becoming increasingly popular [3–5]. Activated carbon produced from biomass is important
+both in terms of environmental benefits and contribution to the circular economy. These materials
+are obtained by converting agricultural wastes such as rice husk, coconut shell, apricot kernel shell
+and bamboo into high surface area carbons through carbonization and activation processes [6]. This
+approach both reduces costs and offers an innovative solution in waste management. However, the
+inherent variability and complex composition of biomass present challenges in consistently producing
+materials with predictable performance characteristics. In addition, the porous structure and chem-
+ical properties of biomass-derived activated carbons can be optimized to increase supercapacitors’
+1
+Page 1 of 33 AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript
+
+===== PDF PAGE 3 =====
+IOP Publishing Physica Scripta vv (yyyy) aaaaaa Ucar et al
+performance [7, 8]. Recent reviews further consolidate biomass-derived carbon as a strategic elec-
+trode family for advanced supercapacitor architectures, including metal-ion hybrid configurations
+that emphasise sustainability alongside electrochemical performance [9]. Factors affecting super-
+capacitor performance are related to biomass-derived carbon electrodes. Factors such as material
+composition, process parameters, electrolyte type, electrode design, and operating conditions affect
+performance [10,11]. In addition, industrial characteristics such as moisture, volatile matter, and ash
+content can also affect performance because they affect the purity and pore structure of the carbon
+material. Process parameters such as activation temperature, ramp rate, and current density affect
+performance by determining the pore structure and surface area of the carbon. For example, higher
+activation temperatures can result in better pore development, but excessive temperatures can lead
+to material degradation [ 12]. Optimizing these numerous interlinked variables through traditional
+experimental approaches can be a complex, time-consuming, and resource-intensive endeavor [13].
+The use of machine learning (ML) methods in materials science and especially to optimize the
+performance of biomass-based carbon electrodes in supercapacitors and generally in nanomaterials
+development has gained significant attention in recent years [6]. Jamaluddin et al. investigated
+the impact of surface area, pore volume, and experimental parameters (electrolyte concentration,
+voltage window, current density) on the capacitance of biomass-based carbon electrodes using ML
+models (LR, M5-Rules, RT, MLP), reporting that the MLP model achieved the highest performance
+(R=0.871, MAE=45.069 F g −1) and that surface area and pore volume had significant effects [14].
+Similarly, Liao et al. predicted the specific capacitance of N-doped biochar using Random Forest
+and XGBoost models, reporting strong predictive performance (test R2 values of approximately 0.95
+and 0.96, respectively). They further showed that the N-6 group contributed strongly to capaci-
+tance, reaching approximately 303 F g −1 under favorable pore and graphitization conditions [15].
+Lu et al. estimated the energy and power density of biomass-based carbon supercapacitors using
+XGBoost, LightGBM, and Deep Learning Neural Network (DNN) models, revealing that biomass
+feedstock composition and activation conditions significantly influence these parameters [16]. Shri-
+vas and Dubay employed Random Forest, Decision Tree, Linear Regression, and XGBoost models to
+optimize the performance of activated carbon electrodes, finding that Random Forest performed best
+and that surface area, nitrogen doping, and pore volume significantly affected capacitance [17]. Zhu
+et al. predicted the capacitance of carbon-based supercapacitors using linear regression, Lasso, and
+artificial neural network (ANN) methods [18]. Ghosh et al. combined ML with experimental valida-
+tion to predict and optimize the specific capacitance of porous carbon materials (PCMs), introducing
+a key eigenvalue drop-point screening approach that provides an innovative strategy for advancing
+energy storage materials technology [19]. Complementary contributions operating in the surface-
+area-driven regime have shown how heteroatom configuration and pore-size features can be linked to
+capacitance through data-driven models, using post-synthesis descriptors such as micro- and meso-
+pore surface areas [20]. These studies highlight the potential of ML to predict supercapacitor perfor-
+mance and accelerate material optimization. Broader synthesis efforts have catalogued the AI model
+landscape for supercapacitor performance prediction across MXenes, carbon-based materials, metal
+oxides, and metal–organic frameworks, and they emphasise the role of leakage-safe validation and
+harmonised electrochemical testing conditions when interpreting reported metrics [21]. Comparable
+benchmarking efforts in adjacent nanomaterial domains, such as the comparative evaluation of ML
+classifiers for the electrical conductivity behavior of carbon nanotube-doped polymer nanocompos-
+ite films, reinforce the importance of systematic cross-model assessment when predictive descriptors
+and process variables are coupled [22]. Recent contributions further show that performance gains
+continue to be driven by careful control of pore architecture, porous-carbon fabrication strategy,
+and device-level design choices, as illustrated by pore-engineered okra-derived activated carbons,
+template-fabricated porous carbons for high-performance electrodes, wood-inspired hydrogel elec-
+trolytes for flexible supercapacitors, and nitrogen-doped activated carbons derived from mangosteen-
+shell biomass for high-performance supercapacitor electrodes [23–26]. Related studies also support
+data-driven and optimization-focused pathways for biomass-derived carbon development, includ-
+ing sustainable biochar process design and machine-learning-assisted activated-carbon optimization
+from agricultural residues [27,28]. Comprehensive reviews further connect the biomass-composition–
+activation–porosity–capacitance chain and highlight the emerging role of ML tools alongside cost
+and life-cycle considerations for scalable biochar-derived electrode development [29].
+In the literature, many studies on optimizing the supercapacitor performance of biomass-based
+carbon electrodes with machine learning examine the effect of surface area, pore volume, and ex-
+perimental parameters on capacitance [30, 31]. These input features often represent intermediate,
+experimentally-derived characteristics of the processed carbon material. However, these studies have
+generally focused on limited combinations of properties or analyzed specific biomass types. In this
+2
+Page 2 of 33AUTHOR SUBMITTED MANUSCRIPT - PHYSSCR-153869.R2
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+Accepted Manuscript

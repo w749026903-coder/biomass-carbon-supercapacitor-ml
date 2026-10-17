@@ -1,0 +1,277 @@
+{
+  "mean_baseline": {
+    "study_macro_MAE_pp": 0.0,
+    "study_balanced_RMSE_pp": 0.0,
+    "pooled_R2": null,
+    "per_source": [
+      {
+        "study_group": "SYNTH_G0",
+        "rows": 1,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      },
+      {
+        "study_group": "SYNTH_G1",
+        "rows": 2,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      }
+    ],
+    "folds": [
+      {
+        "fold": 0,
+        "train_groups": [
+          "SYNTH_G0"
+        ],
+        "test_groups": [
+          "SYNTH_G1"
+        ],
+        "chosen_parameters": {},
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      },
+      {
+        "fold": 1,
+        "train_groups": [
+          "SYNTH_G1"
+        ],
+        "test_groups": [
+          "SYNTH_G0"
+        ],
+        "chosen_parameters": {},
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      }
+    ]
+  },
+  "ridge": {
+    "study_macro_MAE_pp": 0.0,
+    "study_balanced_RMSE_pp": 0.0,
+    "pooled_R2": null,
+    "per_source": [
+      {
+        "study_group": "SYNTH_G0",
+        "rows": 1,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      },
+      {
+        "study_group": "SYNTH_G1",
+        "rows": 2,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      }
+    ],
+    "folds": [
+      {
+        "fold": 0,
+        "train_groups": [
+          "SYNTH_G0"
+        ],
+        "test_groups": [
+          "SYNTH_G1"
+        ],
+        "chosen_parameters": {
+          "alpha": 1.0
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      },
+      {
+        "fold": 1,
+        "train_groups": [
+          "SYNTH_G1"
+        ],
+        "test_groups": [
+          "SYNTH_G0"
+        ],
+        "chosen_parameters": {
+          "alpha": 1.0
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      }
+    ]
+  },
+  "random_forest": {
+    "study_macro_MAE_pp": 0.0,
+    "study_balanced_RMSE_pp": 0.0,
+    "pooled_R2": null,
+    "per_source": [
+      {
+        "study_group": "SYNTH_G0",
+        "rows": 1,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      },
+      {
+        "study_group": "SYNTH_G1",
+        "rows": 2,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      }
+    ],
+    "folds": [
+      {
+        "fold": 0,
+        "train_groups": [
+          "SYNTH_G0"
+        ],
+        "test_groups": [
+          "SYNTH_G1"
+        ],
+        "chosen_parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 2,
+          "max_features": 1.0
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      },
+      {
+        "fold": 1,
+        "train_groups": [
+          "SYNTH_G1"
+        ],
+        "test_groups": [
+          "SYNTH_G0"
+        ],
+        "chosen_parameters": {
+          "max_depth": 3,
+          "min_samples_leaf": 2,
+          "max_features": 1.0
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      }
+    ]
+  },
+  "xgboost": {
+    "study_macro_MAE_pp": 0.0,
+    "study_balanced_RMSE_pp": 0.0,
+    "pooled_R2": null,
+    "per_source": [
+      {
+        "study_group": "SYNTH_G0",
+        "rows": 1,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      },
+      {
+        "study_group": "SYNTH_G1",
+        "rows": 2,
+        "MAE_pp": 0.0,
+        "MSE_pp2": 0.0
+      }
+    ],
+    "folds": [
+      {
+        "fold": 0,
+        "train_groups": [
+          "SYNTH_G0"
+        ],
+        "test_groups": [
+          "SYNTH_G1"
+        ],
+        "chosen_parameters": {
+          "max_depth": 2,
+          "n_estimators": 150,
+          "learning_rate": 0.03,
+          "min_child_weight": 5,
+          "subsample": 1.0,
+          "colsample_bytree": 1.0,
+          "reg_lambda": 10.0,
+          "reg_alpha": 0.0
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      },
+      {
+        "fold": 1,
+        "train_groups": [
+          "SYNTH_G1"
+        ],
+        "test_groups": [
+          "SYNTH_G0"
+        ],
+        "chosen_parameters": {
+          "max_depth": 2,
+          "n_estimators": 150,
+          "learning_rate": 0.03,
+          "min_child_weight": 5,
+          "subsample": 1.0,
+          "colsample_bytree": 1.0,
+          "reg_lambda": 10.0,
+          "reg_alpha": 0.0
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      }
+    ]
+  },
+  "mlp": {
+    "study_macro_MAE_pp": 5.154871947965489e-05,
+    "study_balanced_RMSE_pp": 5.686642239551088e-05,
+    "pooled_R2": null,
+    "per_source": [
+      {
+        "study_group": "SYNTH_G0",
+        "rows": 1,
+        "MAE_pp": 2.7537898674268035e-05,
+        "MSE_pp2": 7.583358633942532e-10
+      },
+      {
+        "study_group": "SYNTH_G1",
+        "rows": 2,
+        "MAE_pp": 7.555954028504175e-05,
+        "MSE_pp2": 5.70924412873507e-09
+      }
+    ],
+    "folds": [
+      {
+        "fold": 0,
+        "train_groups": [
+          "SYNTH_G0"
+        ],
+        "test_groups": [
+          "SYNTH_G1"
+        ],
+        "chosen_parameters": {
+          "hidden_layer_sizes": [
+            8
+          ],
+          "alpha": 0.1
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      },
+      {
+        "fold": 1,
+        "train_groups": [
+          "SYNTH_G1"
+        ],
+        "test_groups": [
+          "SYNTH_G0"
+        ],
+        "chosen_parameters": {
+          "hidden_layer_sizes": [
+            8
+          ],
+          "alpha": 0.1
+        },
+        "inner_search": [],
+        "selection_policy": "predeclared_default_insufficient_inner_groups",
+        "outer_test_used_for_tuning": false
+      }
+    ]
+  }
+}

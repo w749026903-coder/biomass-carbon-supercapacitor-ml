@@ -1,0 +1,1088 @@
+[
+  {
+    "node": 0,
+    "tag": "article-title",
+    "id": null,
+    "text": "Valorization of Macadamia Nut Shell Waste into Activated Carbons for Electrochemical Supercapacitor Electrodes"
+  },
+  {
+    "node": 1,
+    "tag": "p",
+    "id": null,
+    "text": "Supercapacitors are promising energy storage devices owing to their high power density and excellent cycling stability. The conversion of biomass waste into activated carbon with hierarchical pore structures has emerged as a sustainable strategy for developing high-performance supercapacitor electrodes. Herein, activated carbons were synthesized from macadamia nut shell (MNS) waste via a two-step process comprising carbonization at 600 °C and subsequent chemical activation with potassium hydroxide (KOH) at 800 °C, using weight ratios of carbonized MNS to KOH of 1:1, 1:2, and 1:3. The resulting activated carbons exhibited an amorphous structure with a predominant microporosity. KOH activation substantially increased the specific surface area from 325 to 1362 m 2 g –1 through gas evolution, etching, and potassium intercalation, thereby promoting the predominant micropore formation along with partial mesopore development. Increasing the KOH ratio induced greater structural disorder, widened micropores, increased the mesopore fraction, enriched C–O functionalities, and suppressed CO and O–CO groups. Electrochemical measurements in a 6 M KOH electrolyte using a three-electrode system revealed that the sample activated at a 1:3 ratio delivered a maximum specific capacitance of 170 F g –1 at 1 A g –1 and exhibited predominantly electric double-layer capacitor (EDLC) behavior with a minor pseudocapacitive contribution, as confirmed by power-law, Trasatti, and Dunn analyses. This performance is attributed to its large specific surface area, partially developed mesoporosity, and enhanced surface wettability. A symmetric coin-cell supercapacitor assembled using this material delivered an energy density of 5.4 W h kg –1 and a power density of 2500 W kg –1 , while maintaining excellent cycling stability over 10,000 charge–discharge cycles at 3 A g –1 . These results reveal the potential valorization of MNS-derived activated carbons as sustainable and efficient electrode materials for high-performance supercapacitors."
+  },
+  {
+    "node": 2,
+    "tag": "title",
+    "id": null,
+    "text": "Introduction"
+  },
+  {
+    "node": 3,
+    "tag": "p",
+    "id": null,
+    "text": "The global transition toward sustainable energy has escalated the demand for efficient, reliable, and environmentally friendly energy storage devices. In particular, the increasing adoption of renewable energy sources, such as solar and wind, introduces inherent intermittence, which poses challenges in maintaining a stable and continuous power supply. , To mitigate these power fluctuations, energy storage systems are essential for balancing energy generation and consumption, thereby ensuring uninterrupted power availability regardless of the time or environmental conditions. − Among various energy storage technologies, supercapacitors have attracted considerable attention owing to their high power density, rapid charge–discharge capability, and excellent cycling stability. , These advantages make supercapacitors ideal candidates for energy storage applications in renewable energy integration, grid stabilization, load leveling, uninterruptible power supplies (UPS), and portable power sources for consumer electronics and medical devices. ,"
+  },
+  {
+    "node": 4,
+    "tag": "p",
+    "id": null,
+    "text": "Supercapacitors are typically categorized into three types: electric double-layer capacitors (EDLCs), pseudocapacitors (PCs), and hybrid supercapacitors (HSCs). Although PCs and HSCs offer higher energy densities, EDLCs stand out for their long cycle life, excellent thermal and chemical stabilities, and safety. In EDLCs, the charge storage mechanism, based on electrostatic ion adsorption at the electrode–electrolyte interface, ensures minimal degradation and long-term stability, making them a particularly attractive choice for practical applications. , The electrochemical properties of EDLCs are strongly influenced by the physicochemical properties of the electrode materials. Ideal electrode materials require large surface areas, well-controlled and interconnected pore structures, high conductivity, and robust chemical and thermal stabilities. − Among various explored materials, activated carbons (ACs) have emerged as leading candidates because of their cost effectiveness, hierarchical pore structure, and suitability for large-scale production. − A large surface area provides more active sites for electrostatic ion adsorption, enhancing the charge storage capacity. Furthermore, a hierarchical pore structure, comprising micropores (<2 nm), mesopores (2–50 nm), and macropores (>50 nm), facilitates efficient electrolyte diffusion and ion transport. Micropores predominantly contribute to the capacitance by storing charges, while mesopores and macropores serve as ion-buffering reservoirs, facilitating rapid ion accessibility to microporous regions. This synergistic pore architecture is crucial for improving the rate capability and specific capacitance of supercapacitor systems. −"
+  },
+  {
+    "node": 5,
+    "tag": "p",
+    "id": null,
+    "text": "Recently, the development of sustainable and low-cost carbon sources has attracted considerable attention, particularly the use of biomass waste as renewable precursors for AC production. − Agricultural and agro-industrial processes generate large quantities of biomass residues, including husks, peels, shells, and other lignocellulosic byproducts. , Despite their high carbon content, these materials are often overlooked or discarded. Numerous studies have investigated various biomass wastes, such as rice, corn, and wheat husks; coconut, cashew nut, peanut, walnut, and hazelnut shells; and mangosteen, banana, pomelo, and orange peels, for their potential in producing ACs for supercapacitor applications. The carbon yield, porosity, and electrochemical properties of the resulting materials are influenced by intrinsic biomass properties, including lignin, cellulose, and hemicellulose contents, morphological structures, densities, and ash compositions. − Moreover, processing conditions, including the carbonization temperature and duration, activation method (physical or chemical), type and ratio of activating agents, and atmospheric conditions, play critical roles in determining the AC properties (e.g., morphology, porosity, surface chemistry, and conductivity). − Therefore, the optimization of both the biomass precursor and processing conditions is essential for designing high-performance carbon electrodes for EDLCs."
+  },
+  {
+    "node": 6,
+    "tag": "p",
+    "id": null,
+    "text": "Among various biomass wastes, macadamia nut shells (MNS) have recently attracted attention as a promising precursor for AC production because of their hard and dense structure, which indicates a high fixed-carbon content and superior structural stability compared with those of softer lignocellulosic residues. Therefore, MNS provide a robust carbon framework that can withstand high-temperature treatments, making them highly suitable for conversion to porous carbons through chemical activation. With the global expansion of macadamia cultivation, the generation of MNS waste is rapidly increasing. In 2022, the global macadamia nut production reached ∼298,914 t (equivalent to ∼90,000 tons of kernels), with shells comprising nearly 75% of the total nut weight. According to projections from the World Macadamia Organization and the International Nuts and Dried Fruits Council, the global supply of macadamia nuts is expected to double by 2027 and triple by 2030. Consequently, vast quantities of MNS waste are produced annually, creating an urgent need for sustainable waste management and valorization strategies. To date, MNS-derived carbons have been mainly studied for adsorption and environmental remediation, while their electrochemical performance at the EDLC device level has only been reported in a limited number of studies. Furthermore, the effects of activation conditions, particularly the activating agent-to-carbon ratio, on the pore hierarchy and charge storage mechanism have rarely been investigated. Addressing these gaps is essential for advancing MNS-derived ACs toward practical supercapacitor applications. Therefore, the valorization of MNS waste into ACs not only provides an environmentally responsible approach to managing agricultural waste but also enables the design of sustainable electrode materials aligned with circular economy principles in energy storage technologies."
+  },
+  {
+    "node": 7,
+    "tag": "p",
+    "id": null,
+    "text": "Herein, ACs derived from MNS waste (AC-MNS) were synthesized through a two-step process comprising carbonization at 600 °C followed by chemical activation with potassium hydroxide (KOH) at 800 °C. The carbonized MNS-to-KOH weight ratios of 1:1, 1:2, and 1:3 were employed to investigate the effect on activation conditions. The resulting AC-MNS samples were comprehensively characterized to evaluate their morphology, surface area, pore structure, phase structure, and surface chemistry. Mechanistically, KOH activation promotes the formation of micropore-dominant networks, while the mesopore fraction can be tuned, depending on the KOH ratio. The electrochemical properties of AC-MNS were examined using a three-electrode system by cyclic voltammetry (CV) and galvanostatic charge–discharge (GCD) in a 6 M KOH electrolyte. In addition, the relative contributions of EDLC and PC behaviors to the charge storage capacity were quantified using multiple methods. These insights provide a framework for understanding the structure-property relationships of AC-MNS and for rationalizing their electrochemical performance. The best-performing sample was prepared as an electrode and assembled into a symmetric coin-cell supercapacitor (two-electrode system) to demonstrate its practical potential for energy storage applications."
+  },
+  {
+    "node": 8,
+    "tag": "title",
+    "id": null,
+    "text": "Experimental Section"
+  },
+  {
+    "node": 9,
+    "tag": "title",
+    "id": null,
+    "text": "Materials and Reagents"
+  },
+  {
+    "node": 10,
+    "tag": "p",
+    "id": null,
+    "text": "The MNS waste was collected from Doi Tung under the Mae Fah Luang Foundation in Chaing Rai, Thailand. Potassium hydroxide (KOH), isopropanol (C 3 H 8 O, 99.8%), and N -methyl-2-pyrrolidone (C 5 H 9 NO, NMP, 99.5%) were purchased from LabScan. Hydrochloric acid (HCl, 37%) was purchased from QRëC. Polyvinylidene fluoride (PVDF, molecular weight ≈534,000 g mol –1 ) and Nafion DE 521 solution (5 wt % in a mixture of lower aliphatic alcohols and water) were supplied by Sigma-Aldrich. Potassium bromide (KBr, ≥99.0) was acquired from Thermo Scientific Chemicals. Acetylene black and graphite sheets were supplied from AME Energy, while a cellulose separator (30 μm thick) was sourced from the Nippon Kodoshi Corporation. All the chemicals were of analytical grade and used as received without further purification."
+  },
+  {
+    "node": 11,
+    "tag": "title",
+    "id": null,
+    "text": "Preparation of AC-MNS"
+  },
+  {
+    "node": 12,
+    "tag": "p",
+    "id": null,
+    "text": "The collected MNS waste was washed with tap water, sun-dried for 48 h, and subsequently carbonized under oxygen-limited conditions at 600 °C for 18 h using an industrial furnace, and then cooled to room temperature. The carbonized sample was ground into fine powders using a high-speed industrial grinder (Yun Bang YB-2500A) for 1 min and passed through a 150 μm sieve (100 mesh), yielding a sample referred to as C-MNS. Subsequently, C-MNS was impregnated in KOH solution at C-MNS:KOH weight ratios of 1:1, 1:2, and 1:3 in deionized water and continuously stirred at 500 rpm for 1 h to obtain a homogeneous slurry. Then, the slurry was transferred to an alumina boat and dried in an oven at 105 °C for 24 h. Samples were heated at 5 °C min –1 in a tube furnace and chemically activated at 800 °C for 1 h under argon flowing at 0.2 L min –1 . The activated products were washed thoroughly with 1 M HCl solution and deionized water until the filtrate reached a neutral pH. Finally, the samples were dried at 105 °C for 24 h and ground into fine powders. The samples prepared using C-MNS-to-KOH ratios of 1:1, 1:2, and 1:3 were denoted as AC-MNS-1, AC-MNS-2, and AC-MNS-3, respectively. The yields of AC-MNS-1, AC-MNS-2, and AC-MNS-3 relative to C-MNS were 74%, 66%, and 52%, respectively. The overall synthesis process of AC-MNS and assembly of the coin-cell supercapacitor are schematically shown in Figure a,b, respectively."
+  },
+  {
+    "node": 13,
+    "tag": "fig",
+    "id": "fig1",
+    "text": "1 Schematics of (a) synthesis of AC-MNS and (b) the assembly of a symmetric coin-cell supercapacitor."
+  },
+  {
+    "node": 14,
+    "tag": "p",
+    "id": null,
+    "text": "Schematics of (a) synthesis of AC-MNS and (b) the assembly of a symmetric coin-cell supercapacitor."
+  },
+  {
+    "node": 15,
+    "tag": "title",
+    "id": null,
+    "text": "Characterization"
+  },
+  {
+    "node": 16,
+    "tag": "p",
+    "id": null,
+    "text": "The phase structure was examined by X-ray diffraction (XRD) using a PANalytical Empyrean diffractometer with Cu K α radiation (λ = 1.5406 Å), operated at 40 kV and 30 mA. Raman spectra were recorded using a Thermo Fisher Scientific DXR SmartRaman spectrometer at a laser-excitation wavelength of 532 nm. The morphology and microstructure were analyzed using a Hitachi SU3500 scanning electron microscope at 5 kV and a JEOL JEM-3100F transmission electron microscope at 300 kV, respectively. Energy dispersive X-ray spectroscopy (EDS) mapping analysis was performed using an Oxford Instruments AZtecOne spectrometer attached to a scanning electron microscope. Thermogravimetric analysis (TGA) was carried out on a Mettler Toledo TGA 2 analyzer under airflow, over the temperature range of 50–900 °C, with a heating rate of 10 °C min –1 . The specific surface area and pore structure were evaluated using N 2 adsorption and desorption isotherms at −196 °C in a Micromeritics 3Flex analyzer. Prior to recording the isotherms, the samples were degassed at 150 °C for 12 h using a Smart VacPrep unit. Chemical functional groups were analyzed using a Bruker Alpha-E Fourier transform infrared (FTIR) spectrometer, operated in the absorption mode. The samples were mixed with potassium bromide (KBr) and pressed into a pellet for analysis. The elemental composition and chemical-bonding states were determined by X-ray photoelectron spectroscopy (XPS) using a JEOL JPS-9010MC spectrometer with Mg K α radiation (1253.6 eV), operated at 10 kV and 25 mA. The binding energies were calibrated using the C 1s peak at 284.5 eV. The surface wettability was evaluated using a Kyowa Interface Science DM-CE1 contact angle. A 5 μL droplet of deionized water was deposited onto the sample surface, and the image was recorded after 5 min. Contact angles were measured at five different positions, and the average value was reported."
+  },
+  {
+    "node": 17,
+    "tag": "title",
+    "id": null,
+    "text": "Electrochemical Measurements"
+  },
+  {
+    "node": 18,
+    "tag": "p",
+    "id": null,
+    "text": "For the three-electrode system, AC-MNS (5 mg) was dispersed in mixtures of 475, 475, and 50 μL of deionized water, isopropanol, and Nafion DE521, respectively, and sonicated for 1 h to form a homogeneous suspension. A glassy carbon (GC) electrode (3 mm in diameter, ALS Co., Ltd.) was polished on a polishing pad using 0.1 μm diamond and 0.05 μm alumina slurries, respectively. The polished GC electrode was rinsed with deionized water and air-dried. A 3 μL aliquot of the AC-MNS suspension was drop cast onto the GC electrode and air-dried for 3 h, producing a mass loading of 0.015 mg. To confirm reproducibility, three modified GC electrodes were prepared for each sample using the same procedure."
+  },
+  {
+    "node": 19,
+    "tag": "p",
+    "id": null,
+    "text": "Electrochemical properties were measured at room temperature in a three-electrode system using a 6 M KOH electrolyte. A platinum wire (ALS Co., Ltd.) and Hg/HgO in 1 M NaOH solution (ALS Co., Ltd.) were the counter and reference electrodes, respectively. The AC-MNS-modified GC electrodes were used as the working electrodes. A Biologic VSP potentiostat/galvanostat equipped with EC-Lab software was employed for CV and GCD measurements."
+  },
+  {
+    "node": 20,
+    "tag": "p",
+    "id": null,
+    "text": "The specific capacitance ( C s ) of the AC-MNS was calculated from the GCD discharge profiles using the following equation 1 C s = 2 I m ( V f − V i ) 2 ∫ V i V f V d t where I is the applied current, m is the mass of the AC-MNS, ∫ V d t is the integrated discharge area, and V i and V f are the initial and final potentials, respectively."
+  },
+  {
+    "node": 21,
+    "tag": "p",
+    "id": null,
+    "text": "The AC-MNS possessing the highest charge-storage performance was used as the active material in electrodes to assemble a symmetric coin-cell supercapacitor (CR2032) in a two-electrode system. The slurry was prepared by mixing AC-MNS, acetylene black, and PVDF at a ratio of 7:1:2, with NMP as the solvent. The slurry was coated on a graphite sheet using an automatic film applicator (KV-AFA-L280, Zhuhai Kaivo Optoelectronic Technology Co., Ltd.) and dried at 80 °C for 12 h. The cross-sectional image of the coated carbon materials on a graphite sheet is shown in Figure S1 . The thickness of the coated film was estimated at ∼30 μm. Electrodes and cellulose separators were cut to diameters of 16 and 19 mm, respectively, using a CP60 die cutter punching machine (Xiamen Tmax Battery Equipment Limited). The electrode’s mass loading was 3.40 ± 0.12 mg per side. Two identical electrodes were assembled face-to-face with a separator soaked in 6 M KOH electrolyte. The cell was sealed using an MSK-110 hydraulic crimping machine (Xiamen Tmax Battery Equipment Limited). To evaluate experimental reproducibility, three coin cells were fabricated using the same procedure."
+  },
+  {
+    "node": 22,
+    "tag": "p",
+    "id": null,
+    "text": "The specific capacitance of the cell ( C cell ) was calculated from the GCD discharge curves using the following equation 2 C c e l l = I × Δ t m × Δ V where I is the applied current, m is the total active material mass in both electrodes, Δ V is the potential window, and Δ t is the discharge time."
+  },
+  {
+    "node": 23,
+    "tag": "p",
+    "id": null,
+    "text": "The energy density ( E , W h kg –1 ) and power density ( P , W kg –1 ) were calculated using eqs and ( ), respectively 3 e n e r g y d e n s i t y : E = C c e l l × ( Δ V 2 ) 2 × 3.6 4 p o w e r d e n s i t y : P = E × 3600 Δ t"
+  },
+  {
+    "node": 24,
+    "tag": "p",
+    "id": null,
+    "text": "Electrochemical impedance spectroscopy (EIS) was conducted for both two- and three-electrode systems at 0 V over the frequency range from 100 kHz to 10 mHz, using a sinusoidal perturbation of 5 mV. For detailed analysis, raw EIS data were fitted using the ZFit module in EC-Lab software, and the equivalent circuit was constructed by selecting the minimum number of parameters necessary to accurately represent the electrochemical system. The equivalent circuit consisting of two constant phase elements (CPEs) was employed to account for the nonideal capacitive behavior arising from surface heterogeneity and porous electrode morphology. Specifically, CPE 1 represents the electric double-layer capacitance at the electrode–electrolyte interface, while CPE 2 reflects ion diffusion and charge accumulation within the porous carbon network, as evidenced by the Warburg element."
+  },
+  {
+    "node": 25,
+    "tag": "p",
+    "id": null,
+    "text": "The equivalent series resistance (ESR) of the coin-cell supercapacitor was estimated from the IR drop observed in the GCD curves. Its cycling stability was further assessed through 10,000 continuous GCD cycles at a current density of 3 A g –1 . In addition, the open-circuit voltage decay was also monitored over 24 h after charging to 1.0 V to assess its self-discharge behavior."
+  },
+  {
+    "node": 26,
+    "tag": "title",
+    "id": null,
+    "text": "Results and Discussion"
+  },
+  {
+    "node": 27,
+    "tag": "title",
+    "id": null,
+    "text": "Structural Properties"
+  },
+  {
+    "node": 28,
+    "tag": "p",
+    "id": null,
+    "text": "The structural properties of C-MNS and AC-MNS were examined by XRD and Raman spectroscopy, as presented in Figure a,b, respectively. The XRD pattern of C-MNS showed a broad diffraction peak centered at ∼23° and a weaker hump at ∼43°, corresponding to the (002) and (100)/(101) carbon planes, respectively, indicating amorphous carbon with a low degree of graphitization. When the AC-MNS samples were activated using KOH, the (002) diffraction peak progressively broadened and weakened with increasing KOH content, indicating a gradual decrease in graphitic order and the formation of increasingly disordered carbon structures because potassium intercalation and etching disrupted interlayer stacking. Additionally, in the low-angle region, the scattering intensity noticeably increased for AC-MNS-2 and AC-MNS-3, suggesting enhanced development of microporous structure. The absence of sharp crystalline peaks in the XRD patterns implies the high purity of all the samples and the effective removal of residual activating agents and impurities during washing."
+  },
+  {
+    "node": 29,
+    "tag": "fig",
+    "id": "fig2",
+    "text": "2 (a) XRD patterns and (b) Raman spectra of C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3."
+  },
+  {
+    "node": 30,
+    "tag": "p",
+    "id": null,
+    "text": "(a) XRD patterns and (b) Raman spectra of C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3."
+  },
+  {
+    "node": 31,
+    "tag": "p",
+    "id": null,
+    "text": "The Raman spectra of C-MNS and AC-MNS revealed two distinct peaks at 1350 cm –1 and 1595 cm –1 , corresponding to the D and G bands, respectively. The G band arises from the E 2g vibration mode of sp 2 -hybridized carbon atoms, representing the graphitic domains. In contrast, the D band is associated with structural defects and disordered carbon. The overlap between the D and G bands further supports the amorphous structure of these carbon materials. The calculated D-to-G band intensity ratios ( I D / I G ) for C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3 were 0.85, 0.92, 0.98, and 1.02, respectively. This increasing I D / I G ratio with increasing KOH content indicates increased structural disorder and reduced graphitization within the carbon lattice because the extensive development of micropores and mesopores during activation exposes a greater fraction of the amorphous carbon edge, which agrees with the XRD patterns."
+  },
+  {
+    "node": 32,
+    "tag": "title",
+    "id": null,
+    "text": "Morphology and Microstructure"
+  },
+  {
+    "node": 33,
+    "tag": "p",
+    "id": null,
+    "text": "The surface morphology of the C-MNS and AC-MNS samples was investigated by scanning electron microscopy (SEM), as shown in Figure a–d. C-MNS exhibited a relatively flat and compact surface with minimal porosity, which is characteristic of nonactivated biomass-derived carbon. By contrast, KOH activation induced substantial morphological transformation. The AC-MNS surface was rough, and pores began to develop. Moreover, the surface was textured, and a sponge-like, interconnected porous network developed. This morphological evolution indicates effective chemical etching by KOH activation. However, finer features such as micro- and mesopores could not be directly observed because of the resolution limits of SEM."
+  },
+  {
+    "node": 34,
+    "tag": "fig",
+    "id": "fig3",
+    "text": "3 SEM images of (a) C-MNS, (b) AC-MNS-1, (c) AC-MNS-2, and (d) AC-MNS-3. (e–g) low- and high-magnification TEM images of AC-MNS-3, and (h) the corresponding SAED pattern."
+  },
+  {
+    "node": 35,
+    "tag": "p",
+    "id": null,
+    "text": "SEM images of (a) C-MNS, (b) AC-MNS-1, (c) AC-MNS-2, and (d) AC-MNS-3. (e–g) low- and high-magnification TEM images of AC-MNS-3, and (h) the corresponding SAED pattern."
+  },
+  {
+    "node": 36,
+    "tag": "p",
+    "id": null,
+    "text": "To further examine the internal structure, the AC-MNS-3 microstructure was characterized by transmission electron microscopy (TEM). As shown in Figure e,f, low-magnification TEM images of AC-MNS-3 reveal irregularly shaped carbon fragments. A high-magnification TEM image ( Figure g) displays a highly disordered structure with short-range graphitic ordering. In addition, numerous holes smaller than 2 nm in diameter were randomly distributed, indicating micropores. The selected-area electron diffraction (SAED) pattern in Figure h shows diffuse, ring-like features rather than sharp diffraction spots. The broad and diffuse ring associated with the (002) plane of carbon further confirmed that AC-MNS-3 possessed a predominantly amorphous structure with a low degree of graphitization, which is consistent with the XRD patterns and Raman spectra."
+  },
+  {
+    "node": 37,
+    "tag": "title",
+    "id": null,
+    "text": "Carbon Purity"
+  },
+  {
+    "node": 38,
+    "tag": "p",
+    "id": null,
+    "text": "EDS mapping analysis was used to further verify the purity of the C-MNS and AC-MNS ( Figures S2 and S3 ). C-MNS contained mainly carbon (C) and oxygen (O), with a trace of potassium (K). By contrast, AC-MNS samples had no detectable residual K or any other inorganic compounds ( Table S1 ), indicating that acid washing and neutralization effectively removed residual K-containing species. The ash content was evaluated by thermogravimetric analysis (TGA) over the temperature range of 50–900 °C under airflow ( Figure S4 ). At 30–100 °C, a slight weight loss corresponded to the removal of adsorbed moisture, while the weight remained nearly constant up to 500 °C, indicating good thermal stability. Above 500 °C, a major single-step weight loss occurred because of carbon decomposition, leaving residual weights of <1 wt % at 800 °C. These results confirm that AC-MNS possessed high carbon purity, negligible residual potassium originating from the activation process, and minimal ash content. Such a low ash content is particularly important for electrochemical applications in alkaline electrolytes, as residual inorganic species may dissolve or participate in parasitic reactions, leading to increased internal resistance and degraded cycling stability."
+  },
+  {
+    "node": 39,
+    "tag": "title",
+    "id": null,
+    "text": "Surface Area and Porosity"
+  },
+  {
+    "node": 40,
+    "tag": "p",
+    "id": null,
+    "text": "The surface area and porosity of C-MNS and AC-MNS samples were evaluated using N 2 adsorption–desorption isotherms, as presented in Figure a. All the samples exhibited a type I isotherm, indicating microporosity. Upon KOH activation, N 2 uptake substantially increased, particularly at higher KOH contents, indicating a substantially large surface area. The specific surface areas ( S BET ), determined using the Brunauer–Emmett–Teller (BET) method, of C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3 were 325, 825, 1286, and 1362 m 2 g –1 , respectively. The pore volume ( V total ) showed a similar trend, increasing from 0.176 to 0.575 cm 3 g –1 ( Table ), highlighting the effectiveness of KOH activation in developing porous structures. Nonlocal density functional theory (NLDFT) pore size distribution profiles ( Figure b) revealed that all the AC-MNS samples were predominantly microporous, with pore sizes concentrated in the range of 0.5–2.0 nm. AC-MNS-1 exhibited sharp and intense peaks centered at ∼0.8 nm, indicating the dominance of uniform micropores and contributing to a high micropore fraction. By contrast, AC-MNS-2 displayed a broader pore size distribution, with a peak at ∼0.8 nm and an extended tail toward larger pores (∼1.0–1.5 nm). AC-MNS-3 showed a relatively broader pore size distribution, with wider distributions in larger micropores and small-mesopore regions. The NLDFT cumulative pore volume curves of AC-MNS samples are shown in Figure c. AC-MNS-1 exhibited the lowest pore volume, dominated by narrow micropores, while AC-MNS-2 and AC-MNS-3 showed substantially higher pore volumes, with extended distributions toward the larger micropore region. To further elucidate the micropore and mesopore contributions, t -plot analysis was employed to evaluate the micropore surface area ( S micro ) and volume ( V micro ). The results confirmed that across all samples, micropores dominated both surface area and pore volume, while mesopores contributed a smaller but increasing fraction, as shown in Figure d and Table . The mesopore contributions to S BET increased with increasing KOH content: 11.6%, 17.4%, and 26.5% for AC-MNS-1, AC-MNS-2, and AC-MNS-3, respectively. The mesopore volume followed a similar trend, rising from 15.2% to 21.0% and 30.1% for AC-MNS-1, AC-MNS-2, and AC-MNS-3, respectively. This progressive mesopore development revealed the effects of increasing the KOH ratio on pore widening and network evolution. By contrast, the micropore area and volume were slightly reduced in AC-MNS-3, indicating that the overall increase in S BET mainly originated from mesopore formation. Collectively, these results revealed that higher KOH contents enhanced the total surface area by widening micropores and generating additional mesopores, thereby improving the hierarchical porosity."
+  },
+  {
+    "node": 41,
+    "tag": "fig",
+    "id": "fig4",
+    "text": "4 (a) N 2 adsorption–desorption isotherms of C-MNS and AC-MNS. (b) NLDFT pore-size distribution and (c) cumulative pore volume curves of AC-MNS. (d) Specific surface areas separated into microporous ( S micro ) and mesoporous ( S meso ) contributions, with schematic representations of pore structure development. The increased KOH content promoted mesopore development and substantially larger total surface areas."
+  },
+  {
+    "node": 42,
+    "tag": "p",
+    "id": null,
+    "text": "(a) N 2 adsorption–desorption isotherms of C-MNS and AC-MNS. (b) NLDFT pore-size distribution and (c) cumulative pore volume curves of AC-MNS. (d) Specific surface areas separated into microporous ( S micro ) and mesoporous ( S meso ) contributions, with schematic representations of pore structure development. The increased KOH content promoted mesopore development and substantially larger total surface areas."
+  },
+  {
+    "node": 43,
+    "tag": "table-wrap",
+    "id": "tbl1",
+    "text": "1 Textural Parameters of the C-MNS and AC-MNS Samples Derived from N 2 Adsorption–Desorption Isotherms sample S BET (m 2 g –1 ) S micro (m 2 g –1 ) S meso (m 2 g –1 ) V total (cm 3 g –1 ) V micro (cm 3 g –1 ) V meso (cm 3 g –1 ) S micro /S meso V micro /V meso C-MNS 325 274 (84.3%) 51 (15.7%) 0.176 0.140 (79.5%) 0.36 (20.5%) 5.37 3.89 AC-MNS-1 825 729 (88.4%) 96 (11.6%) 0.329 0.279 (84.8%) 0.050 (15.2%) 7.59 5.58 AC-MNS-2 1286 1062 (82.6%) 224 (17.4%) 0.525 0.415 (79.0%) 0.110 (21.0%) 4.74 3.77 AC-MNS-3 1362 1001 (73.5%) 361 (26.5%) 0.575 0.402 (69.9%) 0.173 (30.1%) 2.77 2.32 a S BET is the specific surface area determined using the BET method. b S micro is the micropore specific surface area determined using the t -plot method. c S meso is the specific surface area contributed by mesopores ( S meso = S BET – S micro ). d V total is the total pore volume determined at a relative pressure ( P / P 0 ) of 0.998. e V micro is the micropore volume determined using the t -plot method. f V meso is the pore volume contributed by mesopores ( V meso = V total – V micro ). g Values in parentheses indicate the percentage contributions to the corresponding parameters."
+  },
+  {
+    "node": 44,
+    "tag": "title",
+    "id": null,
+    "text": "Textural Parameters of the C-MNS and AC-MNS Samples Derived from N 2 Adsorption–Desorption Isotherms"
+  },
+  {
+    "node": 45,
+    "tag": "p",
+    "id": null,
+    "text": "S BET is the specific surface area determined using the BET method."
+  },
+  {
+    "node": 46,
+    "tag": "p",
+    "id": null,
+    "text": "S micro is the micropore specific surface area determined using the t -plot method."
+  },
+  {
+    "node": 47,
+    "tag": "p",
+    "id": null,
+    "text": "S meso is the specific surface area contributed by mesopores ( S meso = S BET – S micro )."
+  },
+  {
+    "node": 48,
+    "tag": "p",
+    "id": null,
+    "text": "V total is the total pore volume determined at a relative pressure ( P / P 0 ) of 0.998."
+  },
+  {
+    "node": 49,
+    "tag": "p",
+    "id": null,
+    "text": "V micro is the micropore volume determined using the t -plot method."
+  },
+  {
+    "node": 50,
+    "tag": "p",
+    "id": null,
+    "text": "V meso is the pore volume contributed by mesopores ( V meso = V total – V micro )."
+  },
+  {
+    "node": 51,
+    "tag": "p",
+    "id": null,
+    "text": "Values in parentheses indicate the percentage contributions to the corresponding parameters."
+  },
+  {
+    "node": 52,
+    "tag": "p",
+    "id": null,
+    "text": "To further elucidate the porosity development in AC-MNS driven by chemical activation reactions between C-MNS and KOH, the etching and intercalation processes are described and discussed according to the following reactions 5 6 K O H + 2 C → 2 K + 3 H 2 + 2 K 2 C O 3 6 K 2 C O 3 + 2 C → K 2 O + 2 C O 7 K 2 C O 3 → K 2 O + C O 2 8 2 K + C O 2 → K 2 O + 2 C O"
+  },
+  {
+    "node": 53,
+    "tag": "p",
+    "id": null,
+    "text": "These reactions begin with the formation of potassium carbonate (K 2 CO 3 ) at ∼400 °C. As the temperature increases to ∼600 °C, KOH is almost entirely converted to K 2 CO 3 . Further heating to ∼700 °C decomposes K 2 CO 3 , generating potassium oxide (K 2 O), accompanied by the evolution of carbon monoxide (CO) and carbon dioxide (CO 2 ). Although traces of these gases are released at lower temperatures, their evolution intensifies above 800 °C, serving as activating agents for physical activation. At higher KOH contents, the activation process becomes more intensified. Initially, KOH promotes micropore formation through chemical etching and intercalation. However, with excess KOH, these micropores widen and coalesce because of intensified etching, gas evolution (CO, CO 2 , and H 2 ), and the penetration of metallic potassium into the carbon framework. As a result, many of the micropores merge into larger pores and small mesopores, thereby decreasing and increasing micro- and mesopore contributions, respectively. The combination of gas evolution, chemical etching, and intercalation between KOH and the carbon matrix promotes the formation of both micro- and mesopores, producing a hierarchical micromesoporous network with enhanced surface area in the AC-MNS samples. −"
+  },
+  {
+    "node": 54,
+    "tag": "title",
+    "id": null,
+    "text": "Chemical Functionalities"
+  },
+  {
+    "node": 55,
+    "tag": "p",
+    "id": null,
+    "text": "The chemical functionalities in C-MNS and AC-MNS were analyzed by FTIR spectroscopy, as shown in Figure a. The C-MNS spectrum showed weak absorption bands because of substantial degradation of the lignocellulosic framework at high temperatures. The weak absorption bands at 2920 and 2850 cm –1 were attributed to the C–H stretching vibrations of CH 3 and CH 2 groups, respectively, while bands in the 1500–1400 cm –1 region were assigned to CC stretching vibrations. Upon KOH activation, a broad absorption band at ∼3400 cm –1 , corresponding to the O–H stretching vibrations of the hydroxyl group or water molecules adsorbed on the surface, began to emerge. Additionally, a weak absorption band between 1300 and 900 cm –1 , associated with the C–O stretching vibrations in ether and hydroxyl groups, appeared. With increasing KOH content, the O–H and C–O absorption bands gradually intensified, consistent with previously reported results. , Notably, the low-intensity absorption bands in the C-MNS and AC-MNS spectra were attributed to the blackbody absorbance of carbon materials."
+  },
+  {
+    "node": 56,
+    "tag": "fig",
+    "id": "fig5",
+    "text": "5 (a) FTIR, (b) XPS survey, (c) high-resolution XPS C 1s, and (d) high-resolution O 1s spectra and peak deconvolutions for C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3. The inset of (d) shows the corresponding images of the contact angle of water."
+  },
+  {
+    "node": 57,
+    "tag": "p",
+    "id": null,
+    "text": "(a) FTIR, (b) XPS survey, (c) high-resolution XPS C 1s, and (d) high-resolution O 1s spectra and peak deconvolutions for C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3. The inset of (d) shows the corresponding images of the contact angle of water."
+  },
+  {
+    "node": 58,
+    "tag": "p",
+    "id": null,
+    "text": "To further elucidate the surface chemical compositions and bonding states, XPS measurement was conducted. The XPS survey spectra exhibited only C 1s and O 1s peaks, confirming the absence of residual activating agents and other impurities ( Figure b). The surface chemical compositions (C and O contents) obtained from the quantitative analysis are summarized in Table . The C-MNS contained C and O contents of 81.8 atom % and 18.2 atom %, respectively. Following KOH activation, both the O contents and corresponding O/C ratios of the AC-MNS samples gradually increased with increasing KOH contents, indicating the incorporation of additional oxygen-containing surface groups. The high-resolution C 1s XPS spectra of the C-MNS and AC-MNS samples ( Figure c) were deconvoluted into three distinct peaks: C I at 284.5 ± 0.2 eV (C–C/CC bonds), C II at 286.4 ± 0.2 eV (C–O bonds), and C III at 288.6 ± 0.2 eV (CO bonds). − The C I peak, corresponding to graphitic carbon, weakened with increasing KOH content, indicating increased oxygen-containing surface functional groups during activation. The high-resolution XPS O 1s spectra ( Figure d) were deconvoluted into three distinct peaks: O I at 530.6 ± 0.2 eV (CO bonds: carbonyl and quinone), O II at 532.4 ± 0.2 eV (C–O bonds: phenol, ether, and epoxide groups), and O III at 534.5 ± 0.1 eV (O–CO bonds, carboxylic groups). − Among these peaks, the O II peak (C–O bonds) was the most intense, revealing that C–O bonds were the predominant oxygen-containing functionality on the carbon surface, whereas the O I - and O III -peak–associated functionalities contributed to a lesser extent ( Table ). With increasing KOH content, the O II peak remained the most prominent, whereas the O I and O III peaks progressively weakened, indicating fewer carbonyl and carboxyl functionalities. This change can be attributed to the chemical reactivity during activation. KOH preferentially reacts with the carboxylic groups rather than hydroxyl groups because of the higher acidity of the former, decreasing the O–CO content with increasing KOH content. Additionally, at elevated temperatures, CO groups were converted to C–OH functionalities via hydrogenation, contributing to the increased number of C–O bonds. , These findings are consistent with the FTIR spectra, revealing the development of C–O absorption bands at higher KOH contents."
+  },
+  {
+    "node": 59,
+    "tag": "table-wrap",
+    "id": "tbl2",
+    "text": "2 Surface Chemical Compositions and the Relative Percentages of Carbon and Oxygen Species of C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3 relative percentage (%) samples C (atom %) O (atom %) O/C C I (C–C/CC) C II (C–O) C III (CO) O I (CO) O II (C–O) O III (O–CO) C–MNS 81.8 18.2 0.22 73.0 24.9 2.1 22.4 57.5 20.1 AC-MNS-1 81.3 18.7 0.23 67.7 24.9 7.4 18.7 67.0 14.3 AC-MNS-2 79.4 20.6 0.26 66.4 28.7 4.9 13.2 71.5 15.3 AC-MNS-3 78.2 21.8 0.28 64.9 32.8 2.3 10.4 76.9 12.7"
+  },
+  {
+    "node": 60,
+    "tag": "title",
+    "id": null,
+    "text": "Surface Chemical Compositions and the Relative Percentages of Carbon and Oxygen Species of C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3"
+  },
+  {
+    "node": 61,
+    "tag": "p",
+    "id": null,
+    "text": "Oxygen-containing functional groups directly influenced the surface wettability of the AC-MNS, as clearly confirmed by water contact angle measurements. AC-MNS-1 exhibited a high angle of 83.9° ± 5.2°, whereas AC-MNS-2 and AC-MNS-3 showed substantially lower angles of 58.6° ± 8.4° and 51.0° ± 8.3°, respectively. The reduced contact angle with increasing oxygen content highlights the enhanced hydrophilicity of AC-MNS-2 and AC-MNS-3 relative to that of AC-MNS-1. This finding reveals that oxygen functionalities play important roles in promoting water adsorption and hydrophilicity, as they increase surface polarity and facilitate hydrogen bonding with water molecules. In addition, in the carbon framework, increased mesopore development enhances wettability by facilitating electrolyte infiltration and distribution while promoting the exposure of oxygenated surface groups that further improve interfacial compatibility. , The enhanced wettability of AC-MNS-3 should improve electrolyte accessibility to its porous structure, thereby facilitating ion transport during electrochemical processes and ultimately improving charge storage performance."
+  },
+  {
+    "node": 62,
+    "tag": "title",
+    "id": null,
+    "text": "Electrochemical Properties (Three-Electrode System)"
+  },
+  {
+    "node": 63,
+    "tag": "p",
+    "id": null,
+    "text": "Electrochemical measurements were conducted using a three-electrode system in 6 M KOH electrolyte within a potential of −1.0–0 V to evaluate the charge storage behavior. The CV profiles of C-MNS and AC-MNS scanned at 50 mV s –1 are shown in Figure a. The CV profile of C-MNS exhibited a distorted CV shape and a low current response, indicating limited capacitance. By contrast, the CV profiles of all the AC-MNS samples displayed a quasi-rectangular feature with no redox reaction, which is characteristic of EDLC behavior. , According to the CV profiles, the current response increased in the following order: AC-MNS-3 > AC-MNS-2 > AC-MNS-1. AC-MNS-3 possessed the highest current response, suggesting its superior capacitive performance. The rate capabilities of the AC-MNS samples were further assessed by varying the scan rates from 10 to 100 mV s –1 ( Figures b and S5 ). Across all the scan rates, the CV profiles retained their quasi-rectangular shape with minimal distortion, indicating excellent ion-transport kinetics and low internal resistance. The GCD profiles at a current density of 1 A g –1 for all the samples are shown in Figure c. C-MNS showed a nonlinear triangular GCD profile, indicating poor charging and discharging. In contrast, the GCD profiles of the AC-MNS samples exhibited nearly symmetric, linear-triangular shapes, further confirming their EDLC behavior. Among them, AC-MNS-3 delivered the longest discharge time, in line with the current response determined from the CV profiles. For all the samples, further increasing current density from 1 to 20 A g –1 shortened the charge–discharge time ( Figures d and S6 ). Even at high current densities, the GCD profiles of AC-MNS retained a nearly linear-triangular shape with negligible IR drops ( Figure S7 ), indicating minimal internal resistance. The specific capacitance ( C s ) values, calculated from the GCD profiles, were 6, 153, 158, and 170 F g –1 for C-MNS, AC-MNS-1, AC-MNS-2, and AC-MNS-3, respectively, with an estimated error of ∼3–5%. With increasing current density from 1 to 20 A g –1 , the C s values of all the samples decreased because of insufficient time for electrolyte ions to fully access internal pores at high charge–discharge rates, thereby reducing the charge storage efficiency. At 20 A g –1 , the capacitance retentions, relative to the corresponding values at 1 A g –1 were ∼25% and ∼77% for C-MNS and all the AC-MNS samples, respectively. No significant difference in capacitance retention was observed among AC-MNS-1, AC-MNS-2, and AC-MNS-3."
+  },
+  {
+    "node": 64,
+    "tag": "fig",
+    "id": "fig6",
+    "text": "6 Electrochemical properties of C-MNS and AC-MNS measured using a three-electrode system in 6 M KOH electrolyte. (a) Comparison of CV profiles scanned at 50 mV s –1 for C-MNS and AC-MNS. (b) CV profiles scanned at various rates from 10 to 100 mV s –1 for AC-MNS-3. (c) Comparison of GCD profiles at 1 A g –1 for C-MNS and AC-MNS. (d) GCD profiles at various current densities from 1 to 10 A g –1 for AC-MNS-3. (e) Specific capacitance ( C s ) of C-MNS and AC-MNS plotted as a function of current density. The error bar was obtained by repeating the measurements three times. (f) Summary of the relationship between the specific capacitance ( C s ) and specific surface area ( S BET ) for AC-MNS-3 in this work and other biomass-derived ACs in the literature. −"
+  },
+  {
+    "node": 65,
+    "tag": "p",
+    "id": null,
+    "text": "Electrochemical properties of C-MNS and AC-MNS measured using a three-electrode system in 6 M KOH electrolyte. (a) Comparison of CV profiles scanned at 50 mV s –1 for C-MNS and AC-MNS. (b) CV profiles scanned at various rates from 10 to 100 mV s –1 for AC-MNS-3. (c) Comparison of GCD profiles at 1 A g –1 for C-MNS and AC-MNS. (d) GCD profiles at various current densities from 1 to 10 A g –1 for AC-MNS-3. (e) Specific capacitance ( C s ) of C-MNS and AC-MNS plotted as a function of current density. The error bar was obtained by repeating the measurements three times. (f) Summary of the relationship between the specific capacitance ( C s ) and specific surface area ( S BET ) for AC-MNS-3 in this work and other biomass-derived ACs in the literature. −"
+  },
+  {
+    "node": 66,
+    "tag": "p",
+    "id": null,
+    "text": "EIS measurements were conducted to further elucidate the impedance behavior of the AC-MNS electrodes, with the corresponding Nyquist plots shown in Figure S8 . The high-frequency intercepts indicate solution resistances ( R s ) of 6.07, 8.89, and 6.75 Ω for AC-MNS-1, AC-MNS-2, and AC-MNS-3, respectively, while the depressed semicircles in the midfrequency region correspond to charge-transfer resistance ( R ct ) values in the range of 0.83–1.87 Ω ( Table S2 ). In the low-frequency region, all samples exhibited nearly vertical lines with slight deviations, indicating dominant EDLC behavior with minor diffusion effect, which is commonly observed for porous carbon electrodes. Although AC-MNS-1 exhibited the lowest overall impedance, it delivered the lowest capacitance among the samples. This apparent discrepancy highlights that electrochemical performance is not solely governed by resistance but is strongly dependent on pore accessibility and surface chemistry. AC-MNS-1 was dominated by narrow micropores with limited pore widening and a relatively low concentration of oxygen-containing functional groups. While such a structure minimizes internal resistance and enables rapid ion transport along accessible surfaces, it restricts electrolyte penetration into the internal pore network. Consequently, a significant portion of the available surface area remains electrochemically inaccessible, resulting in limited effective charge storage despite low impedance. In contrast, AC-MNS-2 and AC-MNS-3 exhibited moderately higher impedance, likely due to increased structural disorder induced by more intensive KOH activation, which increases ion-transport tortuosity. However, this activation also promotes pore widening and the development of interconnected mesopores, significantly enhancing pore connectivity and electrolyte accessibility. In particular, AC-MNS-3 showed a reduced relative contribution from narrow micropores but achieved the highest capacitance, clearly demonstrating that accessible surface area and hierarchical pore architecture, rather than absolute microporosity, govern electrochemical performance. The interconnected mesopores act as ion-buffering pathways and transport channels, facilitating efficient ion diffusion toward adjacent micropores and improving utilization of the available surface area. − Moreover, the increased oxygen-containing functional groups in AC-MNS-3 enhance surface wettability, further promoting electrolyte infiltration and ion mobility throughout the porous carbon network. Although these structural features introduce moderately higher impedance, their positive effect on pore accessibility and ion transport outweighs the resistance increase, leading to superior capacitance performance. Notably, the slightly lower R s of AC-MNS-3 compared with AC-MNS-2 can be attributed to its more developed mesoporosity and improved wettability, which partially compensate for increased tortuosity."
+  },
+  {
+    "node": 67,
+    "tag": "p",
+    "id": null,
+    "text": "Overall, these results emphasize that low impedance alone does not guarantee high capacitance. Instead, optimal electrochemical performance arises from a balance between pore connectivity, accessible surface area, and surface wettability. The superior performance of AC-MNS-3 therefore originates from its hierarchical micro–mesoporous structure and favorable surface chemistry, which collectively maximize electrolyte accessibility and effective charge storage."
+  },
+  {
+    "node": 68,
+    "tag": "p",
+    "id": null,
+    "text": "The C s value achieved by AC-MNS-3 in our work (170 F g –1 ) was either superior or comparable to those of other biomass-derived ACs reported in the literature ( Table ), highlighting its potential as an alternative electrode material for supercapacitor applications. A plot of C s versus S BET for AC-MNS-3 and other biomass-derived ACs − is shown in Figure f. The performance of AC-MNS-3 is competitively positioned, showing a high C s value relative to its surface area. Notably, several reported ACs possessing higher S BET values delivered comparable or even lower C s values, likely because of excessive microporosity and poorly interconnected pore networks, which hinder electrolyte ion accessibility. − These observations highlight that, rather than the absolute S BET value, the accessible surface area and pore connectivity are critical factors in optimizing electrochemical properties. The results suggest that the hierarchical pore network of AC-MNS-3 was highly electrochemically accessible, effectively utilizing the available surface for charge storage."
+  },
+  {
+    "node": 69,
+    "tag": "table-wrap",
+    "id": "tbl3",
+    "text": "3 Comparison of the Specific Capacitance ( C s ) of AC-MNS-3 Obtained in This Work, as Measured Using a Three-Electrode System in a 6 M KOH Electrolyte at 1 A g –1 , with Those of Biomass-Derived ACs in the Literature Biomass activating agent activation temperature (°C) S BET (m 2 g –1 ) potential window (V) current density (A g –1 ) C s (F g –1 ) C s /S BET (F m –2 ) rate capability (%) refs. Cedrus deodara H 3 PO 4 400 1024 1.2 1 97 0.095 69 (20 A g –1 ) Terminalia tomentosa H 3 PO 4 400 1291 1.2 1 141 0.109 42 (20 A g –1 ) puffed rice KOH 800 1635 1.0 1 117 0.072 85 (10 A g –1 ) corn stalk KOH 700 2349 1.0 1 140 0.060 77 (5 A g –1 ) rice straw KOH 850 2651 1.0 1 152 0.057 78 (15 A g –1 ) soybean KOH 850 1034 1.0 1 143 0.138 75 (20 A g –1 ) walnut shell KOH 650 1016 1.0 1 160 0.157 90 (3 A g –1 ) walnut shell KOH 600 724 1.0 1 174 0.240 88 (3 A g –1 ) lotus calyx KOH 750 798 1.0 1 223 0.279 71 (20 A g –1 ) Rhizophora mucronata fruit KOH 900 3347 1.0 1 233 0.070 64 (20 A g –1 ) Gardenia jasminoides Ellis flower KOH 800 1637 1.0 1 235 0.144 74 (20 A g –1 ) macadamia shell KOH 800 1362 1.0 1 170 0.125 77 (20 A g –1 ) this work"
+  },
+  {
+    "node": 70,
+    "tag": "title",
+    "id": null,
+    "text": "Comparison of the Specific Capacitance ( C s ) of AC-MNS-3 Obtained in This Work, as Measured Using a Three-Electrode System in a 6 M KOH Electrolyte at 1 A g –1 , with Those of Biomass-Derived ACs in the Literature"
+  },
+  {
+    "node": 71,
+    "tag": "title",
+    "id": null,
+    "text": "Charge Storage Mechanism and Capacitance Contributions"
+  },
+  {
+    "node": 72,
+    "tag": "p",
+    "id": null,
+    "text": "To elucidate the charge storage mechanisms and distinguish the relative contributions of the EDLC and PC, the current responses obtained from the CV profiles scanned at different rates were analyzed using the power-law relationship, Trasatti’s method, and Dunn’s method. The detailed methodology of these approaches is provided in the Supporting Information . According to the power law ( I = av b ), the logarithmic plots between the currents and scan rates of all the samples ( Figure S9 ) yield slopes corresponding to b values. A b value of 1 indicates a surface-controlled process (EDLC), whereas b value of 0.5 indicates a diffusion-controlled process (PC). As shown in Figure a, the AC-MNS samples exhibited b values approaching 1 (∼0.98), indicating that charge storage is largely governed by EDLC mechanisms, with a minor PC contribution. In contrast, C-MNS possessed lower b values (0.51–0.78), suggesting a greater PC contribution."
+  },
+  {
+    "node": 73,
+    "tag": "fig",
+    "id": "fig7",
+    "text": "7 (a) Plot of b values, determined from the power-law relationship, versus potential. (b) Histograms comparing the percentage capacitance contributions from EDLC and PC determined using Trasatti’s method. (c) The CV profiles scanned at 50 mV s –1 for AC-MNS-3, with deconvoluted EDLC and PC contributions determined using Dunn’s method. (d) Histogram showing the proportions of EDLC and PC contributions versus the scan rate for AC-MNS-3. The shaded and hatched regions represent the contributions from EDLC and PC processes, respectively."
+  },
+  {
+    "node": 74,
+    "tag": "p",
+    "id": null,
+    "text": "(a) Plot of b values, determined from the power-law relationship, versus potential. (b) Histograms comparing the percentage capacitance contributions from EDLC and PC determined using Trasatti’s method. (c) The CV profiles scanned at 50 mV s –1 for AC-MNS-3, with deconvoluted EDLC and PC contributions determined using Dunn’s method. (d) Histogram showing the proportions of EDLC and PC contributions versus the scan rate for AC-MNS-3. The shaded and hatched regions represent the contributions from EDLC and PC processes, respectively."
+  },
+  {
+    "node": 75,
+    "tag": "p",
+    "id": null,
+    "text": "Trasatti’s method further supported these findings, revealing that AC-MNS samples were dominated by the EDLC effect, which contributed 87–89% of the total capacitance, with only 11%–13% arising from the PC effect ( Figures b and S11 ). Dunn’s method complementarily and quantitatively separated the current response into the EDLC and PC contributions at different scan rates ( Figure S12 ). At 50 mV s –1 , the shaded regions of the CV profiles ( Figures c and S13 ) clearly demonstrated the dominant EDLC contribution. As shown in Figures d and S13 , all the AC-MNS samples exhibited high EDLC contributions, with minor PC contributions, even at low scan rates, which further increased with increasing scan rates. The PC contributions among the AC-MNS samples showed minor variation, with values of 4.1%–12.6% for AC-MNS-1, 2.1%–6.9% for AC-MNS-2, and 3.5%–11.1% for AC-MNS-3. This variation is in good agreement with the trend revealed by the Trasatti analysis."
+  },
+  {
+    "node": 76,
+    "tag": "p",
+    "id": null,
+    "text": "Although the AC-MNS samples contained high levels of oxygen-containing functional groups, the Faradaic redox reactions in alkaline aqueous electrolytes are primarily associated with carboxylic groups through their interaction with hydroxyl ions (OH – ), while other oxygen functionalities, such as phenolic or quinone-like groups, contribute only weakly or indirectly to the overall electrochemical. , However, the variation in the PC contribution was not only correlated with the carboxyl group concentration but also influenced by both the surface wettability and pore architecture. For the AC-MNS-2 electrode, the lowest PC contribution can be attributed to its well-developed mesopores, which serve as ion-buffering pathways that facilitate electrolyte diffusion into micropores, thereby enhancing EDLC dominance. In contrast, the slightly increased PC contribution for AC-MNS-3 arises from the combined effects of additional mesopore formation and enhanced surface wettability, exposing more carboxylic groups while providing sufficient space for ion diffusion during redox reactions. Therefore, the hierarchical micro–mesoporous structure of AC-MNS, together with oxygenated functional groups, synergistically balances both EDLC and PC contributions, optimizing the electrochemical properties."
+  },
+  {
+    "node": 77,
+    "tag": "title",
+    "id": null,
+    "text": "Symmetric Coin-Cell Supercapacitor (Two-Electrode System)"
+  },
+  {
+    "node": 78,
+    "tag": "p",
+    "id": null,
+    "text": "To evaluate the applicability of AC-MNS-3 as an electrode material for practical supercapacitor devices, a symmetric coin-cell configuration was assembled in a two-electrode system. As shown in Figure a, the CV profiles scanned from 10 to 100 mV s –1 exhibited a quasi-rectangular shape without any redox peaks, confirming the predominant EDLC behavior. To prevent water decomposition and minimize the risk of gas evolution within the coin cell, the operating potential window was limited to 1.0 V. At high scan rates, negligible distortion indicates excellent rate capability and capacitive performance, suggesting efficient ion transport and low internal resistance within the electrode material. The GCD profiles recorded at current densities ranging from 0.1 to 5 A g –1 displayed a symmetric and linear-triangular shape ( Figure b), further confirming the ideal capacitive behavior and a high degree of reversibility of charging and discharging. At higher current densities, a small IR drop became more evident, as shown in Figure c. The ESR of the supercapacitor was determined using the relation: ESR = Δ V /2 I , where Δ V represents the IR drop. The calculated ESR was as low as 0.31 Ω, indicating very low internal and diffusion resistances. Such a low ESR contributes to the high power performance of the supercapacitor and minimizes energy loss as heat during electrochemical charging and discharging. The Nyquist plot of the coin-cell supercapacitor displayed a small high-frequency intercept ( R s ), a modestly depressed semicircle, and an almost vertical low-frequency rise ( Figure d). The limited arc diameter indicated low R ct , consistent with efficient ion access to the carbon pore network, while the near-vertical tail confirmed the ideal EDLC-dominant behavior, with only minor diffusion limitations. From the fitting with the equivalent circuit, R s and R ct were 0.24 and 0.08 Ω, respectively ( Table S4 ). The combination of low R s and R ct values indicated minimal ohmic and interfacial losses in the coin-cell configuration."
+  },
+  {
+    "node": 79,
+    "tag": "fig",
+    "id": "fig8",
+    "text": "8 Electrochemical properties measured for a symmetric coin-cell supercapacitor device (two-electrode system) fabricated using AC-MNS-3 as the active electrode material: (a) CV profiles scanned at various rates from 5 to 100 mV s –1 . (b) GCD profiles at various current densities from 0.1 to 5 A g –1 . (c) GCD profile magnified at the initial discharge region showing the IR drop at 5 A g –1 . (d) Nyquist plot and its equivalent circuit. The inset shows the Nyquist plot in the high-frequency region."
+  },
+  {
+    "node": 80,
+    "tag": "p",
+    "id": null,
+    "text": "Electrochemical properties measured for a symmetric coin-cell supercapacitor device (two-electrode system) fabricated using AC-MNS-3 as the active electrode material: (a) CV profiles scanned at various rates from 5 to 100 mV s –1 . (b) GCD profiles at various current densities from 0.1 to 5 A g –1 . (c) GCD profile magnified at the initial discharge region showing the IR drop at 5 A g –1 . (d) Nyquist plot and its equivalent circuit. The inset shows the Nyquist plot in the high-frequency region."
+  },
+  {
+    "node": 81,
+    "tag": "p",
+    "id": null,
+    "text": "The C s values of the device, calculated from the GCD profiles, are plotted against the current density in Figure a. The C s values gradually decreased with increasing current density because of insufficient ion diffusion at high rates. Notably, the device maintained the C s value of 32.0 F g –1 at 5 A g –1 , retaining ∼82% of the initial value at 0.1 A g –1 (38.7 F g –1 ), indicating reasonable rate capability. To enable practical benchmarking, the results were normalized to both electrode area and electrode volume. At 0.1 A g –1 , the device delivered areal and volumetric capacitances of 46.2 mF cm –2 and 15.4 F cm –3 , which decreased to 38.2 mF cm –2 and 12.7 F cm –3 , respectively, at 5 A g –1 ( Table ). The inset of Figure a shows a green light-emitting diode (LED) powered by two coin-cell supercapacitors, confirming the practical applicability of the device. A Ragone plot showing the energy and power densities of the device compared with those of other biomass-derived and commercial ACs is presented in Figure b. − The energy density ranged from 4.5 to 5.4 W h kg –1 , while the corresponding power density spanned from 50 to 2500 W kg –1 . These results position AC-MNS-3 as competitive among biomass-derived AC electrodes, underscoring its potential for energy storage applications. Furthermore, cycling stability evaluated over 10,000 charge–discharge cycles at 3 A g –1 demonstrated minimal change in capacitance ( Figure c), indicating excellent long-term electrochemical stability. The inset shows the first and last five GCD cycles, which maintained consistent profiles with negligible fading. The CV profile after 10,000 cycles showed negligible distortion compared to the initial profile ( Figure S14 ). Self-discharge is another important parameter that determines the practical applicability and reliability of supercapacitor devices, as it directly affects their ability to retain stored energy over time. Figure d shows the open-circuit voltage decay of the coin-cell supercapacitor measured over 24 h after being charged to 1.0 V. The cell voltage gradually decreased over time. After 24 h, the final retained voltage was ∼28% of the initial charged voltage. These results revealed that the coin-cell supercapacitor exhibited excellent stability and low self-discharge in practical operation. Overall, the electrochemical characterization confirmed that AC-MNS-3 exhibited favorable capacitive behavior, competitive high energy and power densities, and exceptional cycle life. These attributes make AC-MNS-3 a promising candidate for sustainable and high-performance supercapacitor applications, particularly those based on biomass-derived carbon materials."
+  },
+  {
+    "node": 82,
+    "tag": "fig",
+    "id": "fig9",
+    "text": "9 (a) Specific capacitance versus current density (the inset shows a green LED powered by two coin-cell supercapacitors), (b) Ragone plot (energy density versus power density) for the coin-cell supercapacitor in this work and those fabricated using biomass-derived AC-based electrodes, as reported in the literature. − Note that the error bars are smaller than the symbol size and are thus invisible. (c) Capacitance retention over 10,000 cycles at 3 A g –1 , and (d) self-discharge of the coin-cell supercapacitor."
+  },
+  {
+    "node": 83,
+    "tag": "p",
+    "id": null,
+    "text": "(a) Specific capacitance versus current density (the inset shows a green LED powered by two coin-cell supercapacitors), (b) Ragone plot (energy density versus power density) for the coin-cell supercapacitor in this work and those fabricated using biomass-derived AC-based electrodes, as reported in the literature. − Note that the error bars are smaller than the symbol size and are thus invisible. (c) Capacitance retention over 10,000 cycles at 3 A g –1 , and (d) self-discharge of the coin-cell supercapacitor."
+  },
+  {
+    "node": 84,
+    "tag": "table-wrap",
+    "id": "tbl4",
+    "text": "4 Specific Capacitance, Areal Capacitance, and Volumetric Capacitance of Coin-Cell Supercapacitor at Different Current Densities from 0.1 to 5 A g –1 current density (A g –1 ) specific capacitance (F g –1 ) areal capacitance (mF cm –2 ) volumetric capacitance (F cm –3 ) 0.1 38.7 46.2 15.4 0.5 36.3 43.4 14.5 1 35.1 41.9 14.0 3 33.2 39.6 13.2 5 32.0 38.2 12.7"
+  },
+  {
+    "node": 85,
+    "tag": "title",
+    "id": null,
+    "text": "Specific Capacitance, Areal Capacitance, and Volumetric Capacitance of Coin-Cell Supercapacitor at Different Current Densities from 0.1 to 5 A g –1"
+  },
+  {
+    "node": 86,
+    "tag": "title",
+    "id": null,
+    "text": "Conclusions"
+  },
+  {
+    "node": 87,
+    "tag": "p",
+    "id": null,
+    "text": "This study reveals the synthesis of ACs from MNS waste via the KOH activation at 800 °C. Increasing the KOH content produced a more disordered carbon structure and substantially enhanced the specific surface area through the progressive development of micro- and mesopores. Although AC-MNS samples were predominantly microporous, higher KOH contents promoted mesopore formation and micropore widening, thereby creating a hierarchical pore structure. With increasing KOH contents, the surface oxygen functionalities, particularly the C–O group, increased, improving surface wettability. The electrochemical evaluation of a three-electrode system revealed that AC-MNS-3 exhibited the highest capacitance, achieving a maximum C s value of 170 F g –1 at 1 A g –1 , with 77% capacitance retention at 20 A g –1 . This superior performance can be attributed to its largest specific surface area, well-developed hierarchical micro–mesoporosity, and favorable surface wettability. The charge storage behavior of AC-MNS was dominated by the EDLC, with a minor contribution from the PC. Variations in the PC contribution were closely linked to oxygen functionalities, surface wettability, and pore architecture. When assembled into a symmetric coin-cell supercapacitor, the device exhibited an energy density of 5.4 W h kg –1 and a power density of 2500 W kg –1 , with excellent cycling stability and low self-discharge. These findings highlight the critical role of the KOH content in tailoring pore structure and surface chemistry, while demonstrating the potential of AC-MNS as an efficient, sustainable, and cost-effective electrode material for supercapacitor applications. From an industrial perspective, the use of KOH activation with MNS waste further suggests that AC-MNS could be produced at a large scale through processes broadly compatible with existing carbon-processing infrastructure. Future studies will focus on heteroatom doping to introduce controlled PC contributions and the development of a scalable aqueous-electrolyte pouch cell to further validate their practical application feasibility."
+  },
+  {
+    "node": 88,
+    "tag": "title",
+    "id": null,
+    "text": "Supplementary Material"
+  },
+  {
+    "node": 89,
+    "tag": "supplementary-material",
+    "id": "sifile1",
+    "text": ""
+  },
+  {
+    "node": 90,
+    "tag": "article-title",
+    "id": null,
+    "text": "Renewable and sustainable energy challenges to face for the achievement of Sustainable Development Goals"
+  },
+  {
+    "node": 91,
+    "tag": "article-title",
+    "id": null,
+    "text": "A comprehensive study of renewable energy sources: Classifications, challenges and suggestions"
+  },
+  {
+    "node": 92,
+    "tag": "article-title",
+    "id": null,
+    "text": "An updated review of energy storage systems: Classification and applications in distributed generation power systems incorporating renewable energy resources"
+  },
+  {
+    "node": 93,
+    "tag": "article-title",
+    "id": null,
+    "text": "A comprehensive review of stationary energy storage devices for large scale renewable energy sources grid integration"
+  },
+  {
+    "node": 94,
+    "tag": "article-title",
+    "id": null,
+    "text": "Comprehensive review of energy storage systems technologies, objectives, challenges, and future trends"
+  },
+  {
+    "node": 95,
+    "tag": "article-title",
+    "id": null,
+    "text": "A comprehensive review on supercapacitors: Their promise to flexibility, high temperature, materials, design, and challenges"
+  },
+  {
+    "node": 96,
+    "tag": "article-title",
+    "id": null,
+    "text": "Recent advances and challenges in biomass-derived carbon materials for supercapacitors: A review"
+  },
+  {
+    "node": 97,
+    "tag": "article-title",
+    "id": null,
+    "text": "A review of supercapacitors: Materials, technology, challenges, and renewable energy applications"
+  },
+  {
+    "node": 98,
+    "tag": "article-title",
+    "id": null,
+    "text": "Recent advancement of supercapacitors: A current era of supercapacitor devices through the development of electrical double layer, pseudo and their hybrid supercapacitor electrodes"
+  },
+  {
+    "node": 99,
+    "tag": "article-title",
+    "id": null,
+    "text": "A Review on the Conventional Capacitors, Supercapacitors, and Emerging Hybrid Ion Capacitors: Past, Present, and Future"
+  },
+  {
+    "node": 100,
+    "tag": "article-title",
+    "id": null,
+    "text": "Supercapacitors: A promising solution for sustainable energy storage and diverse applications"
+  },
+  {
+    "node": 101,
+    "tag": "article-title",
+    "id": null,
+    "text": "Carbon properties and their role in supercapacitors"
+  },
+  {
+    "node": 102,
+    "tag": "article-title",
+    "id": null,
+    "text": "A review of carbon materials for supercapacitors"
+  },
+  {
+    "node": 103,
+    "tag": "article-title",
+    "id": null,
+    "text": "A review of electrode materials for electrochemical supercapacitors"
+  },
+  {
+    "node": 104,
+    "tag": "article-title",
+    "id": null,
+    "text": "Energy storage applications of activated carbons: supercapacitors and hydrogen storage"
+  },
+  {
+    "node": 105,
+    "tag": "article-title",
+    "id": null,
+    "text": "Recent advances in carbon-based supercapacitors"
+  },
+  {
+    "node": 106,
+    "tag": "article-title",
+    "id": null,
+    "text": "Activated Carbons and Their Evaluation in Electric Double Layer Capacitors"
+  },
+  {
+    "node": 107,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effect of the micro-meso- and macropores on the electrochemical performance of supercapacitors: A review"
+  },
+  {
+    "node": 108,
+    "tag": "article-title",
+    "id": null,
+    "text": "The critical role of nanostructured carbon pores in supercapacitors"
+  },
+  {
+    "node": 109,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effect of pore structure and doping species on charge storage mechanisms in porous carbon-based supercapacitors"
+  },
+  {
+    "node": 110,
+    "tag": "article-title",
+    "id": null,
+    "text": "A review on biomass-derived activated carbon as electrode materials for energy storage supercapacitors"
+  },
+  {
+    "node": 111,
+    "tag": "article-title",
+    "id": null,
+    "text": "Biomass-derived carbon applications in the field of supercapacitors: Progress and prospects"
+  },
+  {
+    "node": 112,
+    "tag": "article-title",
+    "id": null,
+    "text": "A Review on Biomass-Derived Activated Carbon for Next-Generation Supercapacitors: Cutting-Edge Advances and Future Prospects"
+  },
+  {
+    "node": 113,
+    "tag": "article-title",
+    "id": null,
+    "text": "Advances in bio-waste derived activated carbon for supercapacitors: Trends, challenges and prospective"
+  },
+  {
+    "node": 114,
+    "tag": "article-title",
+    "id": null,
+    "text": "Agricultural biomass-based activated carbons for efficient and sustainable supercapacitors"
+  },
+  {
+    "node": 115,
+    "tag": "article-title",
+    "id": null,
+    "text": "Agro-waste to sustainable energy: A green strategy of converting agricultural waste to nano-enabled energy applications"
+  },
+  {
+    "node": 116,
+    "tag": "article-title",
+    "id": null,
+    "text": "Rice husk-based hierarchical porous carbon for high performance supercapacitors: The structure-performance relationship"
+  },
+  {
+    "node": 117,
+    "tag": "article-title",
+    "id": null,
+    "text": "Corn husk-derived activated carbon with enhanced electrochemical performance for high-voltage supercapacitors"
+  },
+  {
+    "node": 118,
+    "tag": "article-title",
+    "id": null,
+    "text": "Conversion of wheat husk to high surface area activated carbon for energy storage in high-performance supercapacitors"
+  },
+  {
+    "node": 119,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effect of freezing pretreatment on the performance of activated carbon from coconut shell for supercapacitor application"
+  },
+  {
+    "node": 120,
+    "tag": "article-title",
+    "id": null,
+    "text": "Chemically activated carbons derived from cashew nut shells as potential electrode materials for electrochemical supercapacitors"
+  },
+  {
+    "node": 121,
+    "tag": "article-title",
+    "id": null,
+    "text": "Peanut shell waste-derived porous carbon for high-performance supercapacitors"
+  },
+  {
+    "node": 122,
+    "tag": "article-title",
+    "id": null,
+    "text": "Walnut shell-derived mesoporous activated carbon for high performance electrical double-layer capacitors"
+  },
+  {
+    "node": 123,
+    "tag": "article-title",
+    "id": null,
+    "text": "Activated carbons prepared from hazelnut shell waste by phosphoric acid activation for supercapacitor electrode applications and comprehensive electrochemical analysis"
+  },
+  {
+    "node": 124,
+    "tag": "article-title",
+    "id": null,
+    "text": "Facile and sustainable technique to produce low-cost high surface area mangosteen shell activated carbon for supercapacitors applications"
+  },
+  {
+    "node": 125,
+    "tag": "article-title",
+    "id": null,
+    "text": "Renewable banana-peel-derived activated carbon as an inexpensive and efficient electrode material showing fascinating supercapacitive performance"
+  },
+  {
+    "node": 126,
+    "tag": "article-title",
+    "id": null,
+    "text": "Utilizing waste pomelo peel to develop activated-doped porous biomass carbon as electrode materials: Study of activation mechanism, evaluation of electrochemical properties and assembly of symmetric supercapacitors"
+  },
+  {
+    "node": 127,
+    "tag": "article-title",
+    "id": null,
+    "text": "Orange peel derived activated carbon for supercapacitor electrode material"
+  },
+  {
+    "node": 128,
+    "tag": "article-title",
+    "id": null,
+    "text": "Recent Progress and Future Directions of Biomass-Derived Hierarchical Porous Carbon: Designing, Preparation, and Supercapacitor Applications"
+  },
+  {
+    "node": 129,
+    "tag": "article-title",
+    "id": null,
+    "text": "Biomass-derived porous carbon materials: synthesis, designing, and applications for supercapacitors"
+  },
+  {
+    "node": 130,
+    "tag": "article-title",
+    "id": null,
+    "text": "A state-of-the-art review on biomass-derived carbon materials for supercapacitor applications: From precursor selection to design optimization"
+  },
+  {
+    "node": 131,
+    "tag": "article-title",
+    "id": null,
+    "text": "Phenolic compounds from macadamia husk: An updated focused review of extraction methodologies and antioxidant activities"
+  },
+  {
+    "node": 132,
+    "tag": "article-title",
+    "id": null,
+    "text": "Macadamia biowaste-derived adsorbents for application in water treatment and gas sensing: the current status. Rapid review 2014 to 2024"
+  },
+  {
+    "node": 133,
+    "tag": "article-title",
+    "id": null,
+    "text": "Cascading use of macadamia nutshell for production of energy and adsorbents through biomass gasification"
+  },
+  {
+    "node": 134,
+    "tag": "article-title",
+    "id": null,
+    "text": "Microporosity and nanostructure of activated carbons: characterization by X-ray diffraction and scattering, Raman spectroscopy and transmission electron microscopy"
+  },
+  {
+    "node": 135,
+    "tag": "article-title",
+    "id": null,
+    "text": "Preparation and evaluation of activated carbon from low-rank coal via alkali activation and its fundamental CO 2 adsorption capacity at ambient temperature under pure pressurized CO 2"
+  },
+  {
+    "node": 136,
+    "tag": "article-title",
+    "id": null,
+    "text": "Raman spectroscopy analysis of disordered and amorphous carbon materials: A review of empirical correlations"
+  },
+  {
+    "node": 137,
+    "tag": "article-title",
+    "id": null,
+    "text": "Interpretation of Raman spectra of disordered and amorphous carbon"
+  },
+  {
+    "node": 138,
+    "tag": "article-title",
+    "id": null,
+    "text": "Highly ordered macroporous woody biochar with ultra-high carbon content as supercapacitor electrodes"
+  },
+  {
+    "node": 139,
+    "tag": "article-title",
+    "id": null,
+    "text": "Methods for preparation and activation of activated carbon: a review"
+  },
+  {
+    "node": 140,
+    "tag": "article-title",
+    "id": null,
+    "text": "Carbon activation with KOH as explored by temperature programmed techniques, and the effects of hydrogen"
+  },
+  {
+    "node": 141,
+    "tag": "article-title",
+    "id": null,
+    "text": "Understanding chemical reactions between carbons and NaOH and KOH: An insight into the chemical activation mechanism"
+  },
+  {
+    "node": 142,
+    "tag": "article-title",
+    "id": null,
+    "text": "KOH and NaOH activation mechanisms of multiwalled carbon nanotubes with different structural organization"
+  },
+  {
+    "node": 143,
+    "tag": "article-title",
+    "id": null,
+    "text": "Modification, Production, and Methods of KOH-Activated Carbon"
+  },
+  {
+    "node": 144,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effect of KOH Activation on the Formation of Oxygen Structure in Activated Carbons Synthesized from Polymeric Precursor"
+  },
+  {
+    "node": 145,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effect of Activating Agent on the Preparation of Bamboo-Based High Surface Area Activated Carbon by Microwave Heating"
+  },
+  {
+    "node": 146,
+    "tag": "article-title",
+    "id": null,
+    "text": "Surface modification of carbon black nanoparticles by dodecylamine: Thermal stability and phase transfer in brine medium"
+  },
+  {
+    "node": 147,
+    "tag": "article-title",
+    "id": null,
+    "text": "Activated carbons derived from sugarcane bagasse for high-capacitance electrical double layer capacitors"
+  },
+  {
+    "node": 148,
+    "tag": "article-title",
+    "id": null,
+    "text": "Coconut-based activated carbon fibers for efficient adsorption of various organic dyes"
+  },
+  {
+    "node": 149,
+    "tag": "article-title",
+    "id": null,
+    "text": "Convenient and large-scale synthesis of hollow graphene-like nanocages for electrochemical supercapacitor application"
+  },
+  {
+    "node": 150,
+    "tag": "article-title",
+    "id": null,
+    "text": "Introducing micropores into carbon nanoparticles synthesized via a solution plasma process by thermal treatment and their charge storage properties in supercapacitors"
+  },
+  {
+    "node": 151,
+    "tag": "article-title",
+    "id": null,
+    "text": "Post-engineering of solution plasma-derived carbons via thermal air treatment for supercapacitor electrodes with enhanced capacitive performance"
+  },
+  {
+    "node": 152,
+    "tag": "article-title",
+    "id": null,
+    "text": "A new approach of structural and chemical modification on graphene electrodes for high-performance supercapacitors"
+  },
+  {
+    "node": 153,
+    "tag": "article-title",
+    "id": null,
+    "text": "KOH Activation Mechanism in the Preparation of Brewer’s Spent Grain-Based Activated Carbons"
+  },
+  {
+    "node": 154,
+    "tag": "article-title",
+    "id": null,
+    "text": "Insight into KOH activation mechanism during biomass pyrolysis: Chemical reactions between O-containing groups and KOH"
+  },
+  {
+    "node": 155,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effect of the oxygen functional groups of activated carbon on its electrochemical performance for supercapacitors"
+  },
+  {
+    "node": 156,
+    "tag": "article-title",
+    "id": null,
+    "text": "Influence of structure and wettability of supercapacitor electrodes carbon materials on their electrochemical properties in water and organic solutions"
+  },
+  {
+    "node": 157,
+    "tag": "article-title",
+    "id": null,
+    "text": "Influence of mesopore volume and adsorbate size on adsorption capacities of activated carbons in aqueous solutions"
+  },
+  {
+    "node": 158,
+    "tag": "article-title",
+    "id": null,
+    "text": "Electrochemical impedance spectroscopy of porous electrodes: the effect of pore size distribution"
+  },
+  {
+    "node": 159,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effects of oxygen-containing functional groups on the electrochemical performance of activated carbon for EDLCs"
+  },
+  {
+    "node": 160,
+    "tag": "article-title",
+    "id": null,
+    "text": "Evaluation of physical and electrochemical performances of hardwood and softwood derived activated carbons for supercapacitor application"
+  },
+  {
+    "node": 161,
+    "tag": "article-title",
+    "id": null,
+    "text": "Efficient microwave absorber and supercapacitors derived from puffed-rice-based biomass carbon: Effects of activating temperature"
+  },
+  {
+    "node": 162,
+    "tag": "article-title",
+    "id": null,
+    "text": "High surface area carbon materials derived from corn stalk core as electrode for supercapacitor"
+  },
+  {
+    "node": 163,
+    "tag": "article-title",
+    "id": null,
+    "text": "Preparation of porous nitrogen-doped activated carbon derived from rice straw for high-performance supercapacitor application"
+  },
+  {
+    "node": 164,
+    "tag": "article-title",
+    "id": null,
+    "text": "Soybean protein-derived N, O co-doped porous carbon sheets for supercapacitor applications"
+  },
+  {
+    "node": 165,
+    "tag": "article-title",
+    "id": null,
+    "text": "Preparation and characterization of high value-added activated carbon derived from biowaste walnut shell by KOH activation for supercapacitor electrode"
+  },
+  {
+    "node": 166,
+    "tag": "article-title",
+    "id": null,
+    "text": "Activated porous carbon derived from walnut shells with promising material properties for supercapacitors"
+  },
+  {
+    "node": 167,
+    "tag": "article-title",
+    "id": null,
+    "text": "High-performance supercapacitors fabricated with activated carbon derived from lotus calyx biowaste"
+  },
+  {
+    "node": 168,
+    "tag": "article-title",
+    "id": null,
+    "text": "A spongy Rhizophora mucronata derived ultra-high surface area activated carbon for high charge density supercapacitor device"
+  },
+  {
+    "node": 169,
+    "tag": "article-title",
+    "id": null,
+    "text": "Hierarchical porous carbon derived from Gardenia jasminoides Ellis flowers for high performance supercapacitor"
+  },
+  {
+    "node": 170,
+    "tag": "article-title",
+    "id": null,
+    "text": "Li + Ion Insertion in TiO 2 (Anatase). 2. Voltammetry on nanoporous films"
+  },
+  {
+    "node": 171,
+    "tag": "article-title",
+    "id": null,
+    "text": "Inner” and “outer” active surface of RuO 2 electrodes"
+  },
+  {
+    "node": 172,
+    "tag": "article-title",
+    "id": null,
+    "text": "Pseudocapacitive contributions to electrochemical energy storage in TiO 2 (anatase) nanoparticles"
+  },
+  {
+    "node": 173,
+    "tag": "article-title",
+    "id": null,
+    "text": "Oxygen functional groups and electrochemical capacitive behavior of incompletely reduced graphene oxides as a thin-film electrode of supercapacitor"
+  },
+  {
+    "node": 174,
+    "tag": "article-title",
+    "id": null,
+    "text": "Contribution of surface oxygen groups to the measured capacitance of porous carbon supercapacitors"
+  },
+  {
+    "node": 175,
+    "tag": "article-title",
+    "id": null,
+    "text": "How to measure and calculate equivalent series resistance of electric double-layer capacitors"
+  },
+  {
+    "node": 176,
+    "tag": "article-title",
+    "id": null,
+    "text": "Chestnut-derived activated carbon as a prospective material for energy storage"
+  },
+  {
+    "node": 177,
+    "tag": "article-title",
+    "id": null,
+    "text": "Conversion of oil palm kernel shell biomass to activated carbon for supercapacitor electrode application"
+  },
+  {
+    "node": 178,
+    "tag": "article-title",
+    "id": null,
+    "text": "Effect of different pretreatment methods on sesame husk-based activated carbon for supercapacitors with aqueous and organic electrolytes"
+  },
+  {
+    "node": 179,
+    "tag": "article-title",
+    "id": null,
+    "text": "Groundnut shell–derived porous carbon-based supercapacitor with high areal mass loading using carbon cloth as current collector"
+  },
+  {
+    "node": 180,
+    "tag": "article-title",
+    "id": null,
+    "text": "A comparative study of activated carbon-based symmetric supercapacitors in Li 2 SO 4 and KOH aqueous electrolytes"
+  }
+]

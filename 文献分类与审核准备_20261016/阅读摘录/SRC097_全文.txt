@@ -1,0 +1,3209 @@
+
+===== PDF PAGE 1 =====
+Deep eutectic solvents: A green and efficient approach for biomass 
+fractionation and delignification with industrial potential
+Karo Almassi Tighi
+*
+, Rama Layek, Ikenna Anugwom
+Department of Separation Science, LUT University, Mukkulankatu 19, Lahti, 15210, Finland
+ARTICLE INFO
+Keywords:
+Deep eutectic solvent
+Biomass fractionation
+Delignification
+Mechanism
+Molecular dynamic
+Simulation
+Modelling
+Process optimization
+Sustainability
+Economic viability
+ABSTRACT
+Deep eutectic solvents (DESs) represent a new generation of environmentally friendly solvents that show great 
+promise for sustainable lignocellulosic biomass separation. The article presents an original assessment of DES 
+formulations through advanced computational modeling and molecular dynamics (MD) simulations, which 
+reveal essential mechanistic details that previous reviews have not fully explored. This work reviews MD sim -
+ulations, DFT, and ML methods to study detailed hydrogen-bonding systems and proton-catalytic and ionic in -
+teractions between DESs and biomass components, which leads to their high selectivity for lignin and 
+hemicellulose extraction. The review establishes a fundamental understanding of DESs by studying their 
+chemical makeup and physical characteristics, and experimental results when processing different biomass 
+materials. The review combines molecular-level findings with process optimization methods, economic assess -
+ments, and sustainability impact evaluations. The review establishes a complete understanding by connecting 
+atomic-scale interactions to industrial-scale applications through computational modeling, which enables the 
+creation of optimized DES-based biorefinery systems.
+1. Introduction
+Growing global demand for energy and materials, coupled with 
+climate concerns and fossil fuel depletion, drives the search for renew -
+able alternatives. Lignocellulosic biomass and microalgae offer prom -
+ising, sustainable raw materials used in producing energy sources, 
+chemical products, and industrial compounds, lessening the usage of oil, 
+along with limiting environmental outcomes.
+The environmental viability and process effectiveness of the different 
+methods of breaking down biomass face multiple essential barriers in 
+their conventional approaches. The NaOH/urea pretreatment from 
+agricultural residues of rice straw enhances plant-based polysaccharides 
+like cellulose and hemicellulose, achieving high yields but producing 
+excessive salts, which need costly removal procedures ( Dong et al., 
+2018 ). Application of organic liquids for hemicellulose and lignin 
+removal from poplar through organic acid/solvent blends proves effec -
+tive yet remains impractical because it requires substantial solvent 
+volumes and produces harmful compounds ( Yang et al., 2020 ). The 
+conventional methods experience three major drawbacks, which include 
+equipment corrosion, high operational costs, and complex chemical 
+recovery procedures, thus limiting their suitability for large-scale 
+sustainable biomass processing ( Rastogi and Shrivastava, 2017 ). 
+Organic solvents used in conventional processes face multiple draw -
+backs, including their volatile nature and corrosive effects on equipment 
+and toxic properties, which prevent their use in biomass processing 
+( Hong et al., 2020 ). Specific advantages associated with ionic liquids 
+(ILs) make them attractive for lignocellulosic biorefinery applications 
+because they are non-flammable, have low vapor pressure, and lack 
+volatility ( Wang et al., 2017 ). The extensive deployment of ILs is limited 
+by their expensive production costs and challenging preparation 
+methods.
+Deep eutectic solvents (DES) present an environmentally friendly 
+solution to traditional biomass pretreatment procedures through their 
+ability to overcome major challenges, including high energy re -
+quirements and corrosive or expensive chemical usage. The pretreat -
+ment process with DES produces better glucose yields and maintains 
+stable cellulase enzymes while decreasing both energy requirements and 
+environmental effects ( Liu et al., 2019; Tan et al., 2018; Sai and Lee, 
+2019 ). The DES method operates without requiring severe processing 
+conditions or expensive solvents that traditional methods need. The 
+fractionation of complex biomass microalgae through biomass process -
+ing using DES composed of lactic acid (LA) and choline chloride (ChCl) 
+* Corresponding author.
+E-mail address: karo.almassi.tighi@lut.fi (K. Almassi Tighi). 
+Contents lists available at ScienceDirect
+Industrial Crops & Products
+journal homepag e: www.else vier.com/loc ate/indcrop
+https://doi.org/10.1016/j.indcrop.2026.124341
+Received 20 November 2025; Received in revised form 14 May 2026; Accepted 6 September 2026  
+Industrial Crops & Products 252 (2026) 124341 
+Available online 9 September 2026 
+0926-6690/© 2026 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/ ). 
+
+
+===== PDF PAGE 2 =====
+achieved lipid extraction at 17.7%, which exceeded the extraction rate 
+of untreated biomass by more than double (7.7%) ( Yu et al., 2024a ). 
+Introduction of 0.5 aqueous molar equivalent to the solvent system 
+modified its polarity and increased its hydrogen bond acidity (from 1.37 
+to 1.42) and alkalinity (from 0.52 to 0.54), which led to 89.4% lipid 
+extraction and 84.2% protein dissolution. The research demonstrates 
+DES as a promising method for complete biomass processing that com -
+bines efficiency with environmental sustainability. Fig. 1 illustrates the 
+application of DESs in the fractionation of lignocellulosic biomass and 
+the subsequent utilization of cellulose, hemicellulose, and lignin as 
+renewable feedstocks for the production of value-added materials and 
+chemicals.
+DESs have the highest potential among other solvents to be consid -
+ered as green solvents, which stems from their distinctive characteris -
+tics. The solvents possess several key characteristics, which include 
+structural integrity, high dissolution efficiency, excellent biological 
+tolerance, affordable manufacturing expenses, and reduced evaporative 
+loss with straightforward preparation procedures. These solvents exhibit 
+distinctive features, which include low toxicity and tunability, thus 
+showing promise for pollution prevention and sustainability initiatives 
+( Ee et al., 2023 ).
+While the potential of DESs is widely acknowledged, this review aims 
+to provide an original assessment by leveraging advanced computa -
+tional modeling and molecular dynamics (MD) simulations to reveal 
+essential mechanistic details that previous reviews have not fully 
+explored. Our objective is to establish a fundamental, molecular-level 
+understanding of DES-biomass interactions and connect these atomic- 
+scale phenomena to industrial-scale applications and economic viability.
+The review follows this structure to achieve its purpose. It starts by 
+explaining how lignocellulosic biomass exists and why it needs efficient 
+fractionation methods. Thereafter, it explains what DESs consist of and 
+their industrial value and chemical properties. Our main contribution 
+appears in the following sections, which explain biomass fractionation 
+through DESs and provide detailed molecular dynamics and thermo -
+dynamic studies of DES systems. The study also examines simulation and 
+modeling approaches, including machine learning and kinetic models, 
+which serve as essential tools for DES performance prediction and 
+optimization beyond experimental data. Furthermore, it moves into 
+practical aspects, which include industrial process optimization, DES- 
+based process sustainability evaluation, economic feasibility assess -
+ment, and scalability issues. Finally, there is a summary of acquired 
+knowledge and proposed research paths for the field. This review unites 
+fundamental molecular studies with process optimization and economic 
+evaluations to create a complete system for building efficient, environ -
+mentally friendly, and cost-effective DES-based biorefineries.
+2. Lignocellulosic biomass: challenges and fractionation 
+requirements
+Biorefineries use lignocellulosic biomass (LCB) as their primary 
+feedstock because this renewable resource exists abundantly in quanti -
+ties reaching 200 gigatons per year. The development of sustainable bio- 
+based industries depends heavily on lignocellulosic biomass which 
+comes from agricultural and forest residues and energy crops including 
+both herbal and woody types and specialty crops ( Kumar et al., 2020; 
+Rai et al., 2022 ). The production of LCB through halophytes which are 
+salt-resistant plants growing on salt-damaged lands provides a 
+cost-effective sustainable solution that frees up arable land and fresh -
+water resources ( Fugol et al., 2023; Jankowski et al., 2020; Li et al., 
+2023a; Rajput and Sheikh, 2019 ).
+Lignocellulosic biomass (LCB) contains three primary biopolymers 
+which include cellulose as a linear crystalline glucose polymer and 
+hemicellulose as a branched amorphous heteropolysaccharide and 
+lignin as a complex aromatic polymer that together form more than 70% 
+of the biomass. Recent studies have identified proteins along with in -
+organics and resins and other compounds as minor constituents in 
+addition to the main three biopolymers ( Hallac and Ragauskas, 2011; 
+French, 2017 ). The chemical diversity of these components is demon -
+strated through their molecular structures which are shown in Fig. 2 .
+Cellulose contains a highly structured and resistant framework that 
+consists primarily of glucose units that bond through glycosidic linkages. 
+The biomass section contains high crystallinity because of its intra- and 
+intermolecular hydrogen bond connections. Different biomasses show 
+varying levels of polymerization. The degree of polymerization in agri -
+cultural residues reaches 900 units, but woody biomass contains be -
+tween 4000 and 5500 units ( Hallac and Ragauskas, 2011 ).
+Lignin, the second most abundant natural polymer, is a hydrophilic 
+phenolic substance present in the plant cell wall that provides greater 
+resistance to microbial attacks ( Sakakibara, 1980 ). Chemically, it is a 
+highly complex polymer with plant-specific compositions and linkage 
+motifs, lacking a defined primary structure; instead, it consists of 
+random phenylpropanoid (C9) polyphenols primarily linked by aryl -
+glycerol ether bonds between the phenolic units of para-coumaryl 
+alcohol (H-type), coniferyl alcohol (G-type), and sinapyl alcohol 
+(S-type). The majority of a plant's lignin (75 – 85%) is located within the 
+considerably larger volume of the secondary cell wall ( Holtman et al., 
+2003 ).
+LCB maintains its structural integrity because of the complex 
+bonding between its components, which creates a major processing 
+obstacle. The biopolymers maintain strong covalent bonds between 
+lignin-carbohydrate complexes (LCCs) and hydrogen bonds that create a 
+three-dimensional cross-linked matrix structure ( Sun et al., 2023 ). Fig. 3
+shows detailed lignin linkage types which demonstrate the complex 
+nature of the structure. The strong bonding network protects poly -
+saccharides from enzymatic and microbial breakdown while making it 
+difficult to separate individual components, and affects both biomass 
+physical characteristics and processing complexity. The strategic 
+Fig. 1. Biomass fractionation and valorization into industrial products 
+using DES.
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+2 
+
+
+===== PDF PAGE 3 =====
+placement of these components throughout plant cell walls, including 
+the intercellular layer and primary wall, and the secondary wall, de -
+termines lignification levels and overall structural rigidity ( Hou et al., 
+2021 ).
+The European Union has established lignocellulosic biomass as a 
+strategic primary source, which includes (1) forest biomass, (2) agri -
+cultural residues, (3) non-edible/non-energy crops, and (4) edible/non- 
+edible byproducts. The following tables present the composition dif -
+ferences between these sources, which determine their potential uses in 
+various biorefinery applications.
+The chemical composition of LCB shows significant variations based 
+on source material and depends on wood species, plant varieties, and 
+residue types. The lignin content in hardwoods, including Poplar, 
+Eucalyptus, and Beechwood, ranges between 18% and 25% but soft -
+woods such as Pine and Spruce, along with cork, contain higher lignin 
+levels (27 – 33%) with distinct cellulose crystallinity and cell wall density 
+that impact fractionation processes ( Soares et al., 2021; Suota et al., 
+2021 ). Leftover biomass from crops, including corn stalks, wheat straw, 
+rice straw, and Bagasse, contains lower lignin amounts (12 – 24%) along 
+with less rigid structures that simplify the separation process ( Arora 
+et al., 2020 ). Large amounts of industrial wastes and energy crops like 
+Spent Coffee Grounds, Oil Palm Empty Fruit Bunches (OPEFB), Mis -
+canthus, and Switchgrass are available yet contain high ash levels and 
+particular lignin types which need specific attention ( Jablonsky et al., 
+2019; Rahighi et al., 2021; Yen et al., 2022 ), thus demonstrating the 
+significance of compositional differences for process optimization.
+The complex network of LCB creates significant resistance to con -
+verting its valuable products directly. The process of fractionation 
+followed by pretreatment represents a vital step, which consumes 
+approximately 40% of the total process expense ( Haldar et al., 2018 ). 
+The pretreatment method destroys the lignin barrier and breaks LCCs 
+and reduces cellulose crystallinity, which results in increased biomass 
+porosity and accessibility for subsequent processing ( Sun et al., 2023; 
+Tuck et al., 2012 ). The structural modification required for efficient 
+biomass utilization becomes clear through this concept.
+The biorefinery utilizes fractionation to separate cellulose, hemi -
+cellulose, and lignin components from LCB, which then become valuable 
+products. Cellulose can be converted into glucose for fermentation, as 
+well as nanocellulose, regenerated fibers, and materials with improved 
+downstream yields because of its increased crystallinity ( Lim et al., 
+2021; Smirnov et al., 2020; Mnasri et al., 2022 ). Separation of hemi -
+cellulose from biomass yields oligosaccharides together with xylose and 
+furfural (2-F) and functional chemicals ( Roy et al., 2023; Gundupalli 
+et al., 2023 ) while the non-carbohydrate fraction of plant biomass can be 
+converted into aromatics, polymers, carbon materials, and binders 
+( Varilla-Mazaba et al., 2022 ). The sustainable biorefinery depends on 
+fractionation because this method creates various valuable streams 
+while extracting the full potential from each biomass component.
+3. Deep eutectic solvents: composition, properties, and 
+industrial relevance
+In 2012, DESs were initially applied to biomass pretreatment, 
+showcasing their strong effectiveness across different biomass types 
+( Francisco et al., 2012 ).
+Binary or ternary mixtures are created from HBAs and HBDs in 
+Fig. 2. Structural illustration of LCB.
+Fig. 3. The primary linkage type between structural units of lignin.
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+3 
+
+
+===== PDF PAGE 4 =====
+various molar ratios through the formation of hydrogen bonds. By 
+mixing an HBA and HBD in a precise molar ratio, an eutectic system is 
+formed that is usually in liquid state at ambient or moderately elevated 
+temperatures ( Jan ˇcíkov ´a and Jablonský, 2022; Xu et al., 2021 ). DESs 
+exhibit lower melting points than their individual constituents due to 
+charge delocalization resulting from hydrogen bonding between the 
+HBA and HBD. Their typical composition is denoted as Cat ⁺ X ⁻ ⋅ zY, where 
+Cat ⁺ is a cation like ammonium or sulfonium, X ⁻ is a Lewis base, Y is 
+either a Lewis or Br ø nsted acid, and z defines the number of acid mol -
+ecules interacting with the anion ( Smith et al., 2014 ).
+Therefore, the combination of multiple HBAs and HBDs in DESs 
+significantly lowers the melting point, allowing them to remain liquid 
+under ambient conditions ( Ee et al., 2023 ).
+DESs are considered promising substitutes for traditional organic 
+solvents, primarily because they can be prepared directly from naturally 
+abundant and readily available compounds. Their physicochemical 
+properties can be tailored by adjusting the type of individual constitu -
+ents, their molar ratios, operating temperature, and the presence of 
+water ( Liu et al., 2018 ).
+As shown in Table 1 , DESs are divided into five types according to the 
+nature of their complexing agents. Type I involves quaternary ammo -
+nium salts (e.g., ChCl) and metal halides like AlCl ₃ , but their use in 
+lignocellulosic biomass is restricted due to the high melting points of 
+non-hydrated metal halides. Type II comprises quaternary ammonium 
+salts paired with hydrated metal halides, such as AlCl ₃ ⋅ 6H ₂ O ( Bajpai, 
+2021 ).
+Due to their resistance to air and moisture, these chemicals are well- 
+suited for industrial use. Type III DESs, made from quaternary ammo -
+nium salts and hydrogen bond donors like carboxylic acids or amides, 
+are widely applied in biomass pretreatment thanks to their affordability 
+and ease of preparation ( He et al., 2023 ).
+Type IV DESs are formed from transition metal salts and HBDs like 
+urea, although ionization of the metal component is generally poor in 
+nonaqueous systems ( Liang et al., 2023; Kalyniukova et al., 2021; Yu 
+et al., 2019 ).
+A newer category, Type V DESs, consists exclusively of non-ionic 
+molecules and are usually hydrophobic under normal conditions. Iden -
+tifying distinct HBAs and HBDs in these mixtures is challenging. The 
+formation of these solvents is driven by the strong interaction due to the 
+acidity contrast between phenolic and aliphatic hydroxyl groups. 
+Typically, Type V solvents display hydrophobicity and relatively 
+increased volatility ( Abranches et al., 2019 ).
+Unlike the other four types, this class allows for the eutectic solvent 
+to be regenerated and recovered via evaporation, making it a promising 
+candidate for developing efficient recycling technologies ( Li et al., 
+2023b ).
+In DESs made from carbohydrates, sugars such as fructose, glucose, 
+and xylose act as hydrogen bond donors. A ChCl-fructose mixture can 
+dissolve about 0.065 g of rice straw biomass per gram, with fructose- 
+based solvents being more effective than those made from xylose, 
+mannose, glucose, or ribose ( Florindo et al., 2017 ). Carbohydrate-based 
+DESs can dissolve biomass, but they are less effective than other types of 
+DESs ( Pan et al., 2017 ) therefore, they have been mostly used in food 
+and pharmaceutical processing instead of lignocellulosic biomass 
+treatment ( Vannuchi et al., 2022; Mukhopadhyay et al., 2016; Marchel 
+et al., 2020 ).
+The formation of DESs occurs through the precise mixing of natural 
+compounds, which creates a strong hydrogen-bonding network. The 
+interactions between DESs allow them to break down plant fiber struc -
+tures effectively while releasing valuable lignocellulose components 
+( Rokade and Bhate, 2015 ). The use of DESs allows the sustainable 
+extraction of pure high-quality chemicals from biomass through envi -
+ronmentally friendly methods ( Francisco et al., 2012 ). The preparation 
+of DESs demands minimal energy input and uses accessible chemical 
+materials, which makes it ideal for sustainable large-scale plant fiber 
+pretreatment. The approach enables environmentally friendly biomass 
+processing through reduced energy requirements and simplified 
+manufacturing steps. DESs provide unique benefits for lignocellulose 
+separation through their ability to extract lignin nanoparticles and 
+improve cellulose glycosylation efficiency while preserving cellulose 
+crystallinity ( Liu et al., 2023; Ivanovi ´c et al., 2020 ). DESs can be used as 
+a versatile tool because they enable improved biomass-derived product 
+yields and quality while supporting sustainable processing techniques. 
+DES functions as an environmentally friendly pretreatment system for 
+plant fibers because it provides low toxicity and high efficiency while 
+producing minimal pollution ( Francisco et al., 2012 ). The sustainability 
+of DESs' biomass processing depends on the fact that DESs can be 
+recovered and purified for reuse while maintaining their functional 
+properties Table 2 .
+The DES system, composed of ChCl, ethylene glycol (EG), and glyc -
+erol, enhances the efficiency of lignin and cellulose extraction from 
+biomass. The combined components facilitated the fractionation pro -
+cess, which results in increased yields and superior quality of extracted 
+components ( Samarov et al., 2022 ). The DES system, which contains 
+amino acids, glucose, and other natural components, provides special -
+ized extraction and separation capabilities for biomass materials. The 
+natural composition of this system allows for precise separation of 
+valuable components from biomass materials ( Chatterjee et al., 2020 ). 
+The term Natural DESs (NADES) describes DES systems that derive their 
+components from natural products. The integration of DES systems in 
+real-world applications, according to expert analyses and summaries, 
+shows that DESs consist of three types, which are acidic, neutral, and 
+basic, based on the HBD properties used in their formulation ( Mohd 
+Fuad and Mohd Nadzir, 2022 ). The DES system's hydrogen-bonding 
+interactions make biomass components more accessible, which en -
+ables their dissolution and separation process. The functionality and 
+performance of the DES system can be substantially enhanced for spe -
+cific biomass processing through the identification and utilization of 
+unique HBD characteristics ( Guo et al., 2022a ).
+To underscore the current state-of-the-art in DES pretreatment for 
+lignocellulosic biomass, we compile representative binary DES and 
+TDES systems across surfactant-based, organic acid – based, polyol- 
+based, and alkaline (urea-based) families, including Lewis-acid -
+– assisted media, and summarize their feedstocks, operating conditions, 
+and performance metrics. These studies illustrate mild-to-moderate 
+temperatures (80 – 170 
+◦
+C), short residence times (30 – 90 min), and 
+tunable selectivity toward either materials ‑ grade cellulose or fermen -
+table ‑ sugar platforms, while demonstrating recyclability opportunities, 
+which is an important benchmark for industrialization Table 3 .
+New progress in DESs shows they can be finely adjusted to split apart 
+biomass structure, pull out lignin, while also creating useful byproducts. 
+Take the newer type made from BTEAC mixed with FA and polyethylene 
+glycol (400 molecular weight) - this combo reveals how certain salt 
+molecules team up with acids and polymers to strip away lignin fast yet 
+leave cellulose nearly untouched, even at just 130 
+̊
+C over an hour and a 
+half. What remains after treatment is clean cellulose, holding together 
+well thanks to long chains (degree of polymerization reaching 1611), 
+packed with pure α -cellulose (nearly 87 %), reacting easily when needed 
+- ideal traits for premium materials. At the same time, the solvent mix 
+Table 1 
+DES classification ( Marcus, 2019 ).
+Type Structure Example
+І Cat
++
+X
+ 
+zMCl
+x 
+M = Zn , Sn , Fe , … ..
+ChCl + ZnCl
+2
+ІІ Cat
++
+X
+ 
+zMCl
+x
+yH
+2
+O 
+M = Cr , Mg , Cu , …
+ChCl + CaCl
+2
+. 6 H
+2
+O
+ІІІ Cat
++
+X
+ 
+zRZ 
+Z = NH
+2
+CONH
+2
+ChCl + Urea
+І V MCl
+x
++ RZ 
+M = Zn , Al , Ce , …
+Urea + AlCl
+3
+V Composed only of molecular substances Citric acid + glucose
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+4 
+
+
+===== PDF PAGE 5 =====
+survives reuse without losing strength, pulling back over four-fifths of 
+the original lignin, pointing toward ways to run biorefineries that waste 
+little and loop resources again. One step further comes when systems 
+like dodecyltrimethylammonium bromide paired with levulinic acid 
+DES and γ -valerolactone enter the scene. Instead of just breaking down 
+biomass structure, they open doors to turning rice husks into useful 
+outputs fast - under heat, in half an hour. Furfural shows up alongside 
+xylooligosaccharides, plus sugar ready for enzymes, all at once. Because 
+of the added Lewis acid traits inside these solvents, more than one 
+valuable substance forms quickly. This shift means making better use of 
+raw plants without stretching costs or harming long-term balance.
+Besides TDES and catalytic DES setups, mixtures made of two com -
+ponents show strong promise for multiple kinds of plant matter, espe -
+cially when adjusted to tackle particular barriers in woody fibers. 
+Instead of working alone, cationic surfactant-based DES like Cetyl tri -
+methyl ammonium chloride paired with LA break apart stubborn links 
+between lignin and sugars, removing nearly 88 % of lignin, sweeping 
+away most xylan, making enzymes more effective during breakdown, 
+pushing cellulose exposure higher even as its ordered structure grows 
+tighter; data pulled from advanced NMR scans reveal how these liquids 
+snap both C – O and C – C bonds inside lignin networks. In parallel paths, 
+blends built around ChCl behave differently depending on setup, 
+showing shifts in efficiency when tested on sugarcane leaves or Napier 
+grass - examples like ChCl mixed with acetic acid pull out a notable 
+0.435 g of cellulose per gram of raw material without needing extreme 
+heat. Digging into results from Napier grass trials uncovers patterns 
+among groups - basic mixes using urea edge ahead, followed by LA, then 
+alcohol-linked versions relying on glycerol - each step bringing larger 
+amounts of usable sugar after processing, lifting alcohol output close to 
+15.9 g per liter. Still, issues like viscosity, low mass-transfer, and lower 
+performance after reuse are existed. Because of lower energy needs, less 
+wastewater output, fewer added inhibitors - unlike regular acid or alkali 
+prep methods - these setups show clear benefits. Step by step, research 
+builds a case: treatments using DESs stand out as flexible, workable, 
+greener paths forward for plants that turn tough plant matter into fuel or 
+chemicals. Behind the scenes, progress quietly enables better cleanup 
+methods, looped usage, and combination of reaction techniques 
+continue.
+Table 2 
+DES progress in biomass fractionation.
+Year Milestones Reference
+2003 First report of DES as designer green solvent. ( Abbott et al., 
+2003 )
+2012 - Initial application of DES for biomass 
+delignification.
+( Francisco et al., 
+2012 )
+2013 - NADESs as emerging eco-friendly alternatives for 
+sustainable and green technologies.
+( Dai et al., 2013 )
+2015 -DESs improve corncob biomass pretreatment and 
+sugar recovery.
+( Procentese et al., 
+2015 )
+​ - NADESs enable single-step rice straw pretreatment, 
+efficiently extracting high-purity lignin and 
+enhancing sugar production.
+( Kumar et al., 
+2016 )
+2017 - Microwave-assisted DES rapidly fractionates 
+lignocellulose, yielding high-purity lignin, sugars, 
+and usable crystalline cellulose.
+( Liu et al., 2017 )
+2018 - DFT-guided design of an AlCl
+3
+-modified ChCl/ 
+glycerol DES.
+( Xia et al., 2018 )
+2019 - NADES enabled efficient eucalyptus fractionation, 
+achieving 94% glucose yield and high-quality 
+lignin, with > 90% solvent recyclability.
+( Shen et al., 2019 )
+2020 - A two-step liquid hot water and DES pretreatment 
+yields cellulose with Kraft-comparable reactivity.
+( Tian et al., 2020 )
+​ - Mechanistic studies via computational modeling. ( da Costa Lopes 
+et al., 2020 )
+​ - Expansion of HBA/HBD combinations. ( Farooq et al., 
+2020 )
+2021 - Ternary DESs (TDES) stabilize lignocellulose 
+intermediates, prevent lignin condensation, and 
+enable high-quality lignin, glucose yields, and 
+recyclability.
+( Liu et al., 2021 )
+​ - Acidic DES efficiently fractionate bamboo lignin, 
+enhancing phenolic content, thermal stability, and 
+antioxidant activity, offering a cost-effective, du -
+rable pretreatment for biofuels, biochemicals, and 
+lignin-based material.
+( Li et al., 2021a )
+2022 - Diol-based DES pretreatment boosts bamboo 
+saccharification while preserving high-quality 
+lignin, enhancing sustainable lignocellulose 
+biorefining.
+( Cheng et al., 2022 )
+​ - DES and hot water presoaking removed 
+hemicellulose from wheat straw, but only DES 
+enhanced lignin extraction by cleaving lignin- 
+hemicellulose bonds; a two-stage DES process 
+yielded high-purity lignin.
+( Lou and Zhang, 
+2022 )
+​ - Acidic and alkaline DESs were compared for 
+bamboo fractionation: acidic DESs removed more 
+lignin, while alkaline DESs preserved more 
+polysaccharides and produced smaller lignin 
+nanospheres.
+( Guo et al., 2022a )
+2023 - Nanotechnology-enabled microwave-assisted DES 
+pretreatment enables a waste-free biorefinery that 
+fully valorizes bamboo biomass into multifunc -
+tional bio-based nanomaterials.
+( Xu et al., 2023a )
+​ - The dissolution of lignocellulosic components by 
+DESs is closely related to their Kamlet-Taft sol -
+vatochromic parameters, offering a basis for 
+rational solvent design.
+( Zhang et al., 
+2023a )
+​ - A novel TDES enables rapid, green pretreatment of 
+radiata pine to efficiently produce lignin- 
+containing cellulose nanofibrils with excellent 
+structural, mechanical, thermal, UV-blocking, and 
+barrier properties.
+( Xie et al., 2023 )
+2024 - DES-fractionated lignin was converted into high- 
+performance carbon for supercapacitors.
+( Xu et al., 2024 )
+​ - Lignin-based DESs efficiently pretreated corn 
+stover, enabling high biomass fractionation and 
+sustainable lignin reuse for a closed-loop 
+biorefinery.
+( Fu et al., 2024 )
+​ - DES pretreatment of Eucalyptus enables high 
+furfural, lignin, and sugar yields in one step.
+( Sun et al., 2024 )
+2025 - Machine learning used to optimize lignocellulosic 
+pretreatment.
+( Madadi et al., 
+2025 )
+​ - Spruce lignin was efficiently extracted with high 
+purity while maintaining its structure.
+( Xu et al., 2025 )
+Table 2 ( continued )
+Year Milestones Reference
+​ - Hansen mechanistic solubility analysis revealed 
+that hydrogen bonding preserved lignin while 
+enabling efficient sugar recovery.
+( Wang et al., 
+2025a )
+2025 - A green, ultrafast, recyclable DES pretreatment 
+efficiently produces uncondensed lignin and 
+digestible cellulose from biomass, enabling 
+sustainable biorefining.
+( Ma et al., 2025 )
+​ - A mild DES pretreatment, yielding original lignin 
+and digestible cellulose.
+( Wang et al., 
+2025a )
+​ - DES pretreatment yielded high-performance lignin 
+for nanoparticles with improves stability, radical 
+scavenging, and polyvinyl alcohol film 
+reinforcement.
+( Luo et al., 2025 )
+​ - A recyclable phenol-assisted DES, efficiently 
+removes lignin, enhancing cellulose hydrolysis, 
+and remained effective after five cycles.
+( Wang et al., 
+2025b )
+​ - NADES-assisted hydrolysis enhanced Rosa 
+damascene essential oil yield 1.7 times and 
+enabled recovery of phenolics-rich antioxidant 
+byproducts from distillation residues.
+( Anmol et al., 
+2025 )
+​ - NADES drives protein fractionation from 
+microalgae.
+( Pereira et al., 
+2025 )
+​ - Metal-salt DES upgrades bamboo pulp for high- 
+quality cellulose acetate.
+( Tian et al., 2025 )
+​ - DES removes heavy metals from biomass. ( Zhang et al., 
+2025a )
+​ - TDES enabled efficient poplar pretreatment for 
+cellulosic ethanol production.
+( Li et al., 2025 )
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+5 
+
+
+===== PDF PAGE 6 =====
+4. Mechanisms of biomass fractionation using deep eutectic 
+solvents
+The increasing adoption of DESs stems from their ability to selec -
+tively dissolve biomass while maintaining environmentally friendly 
+characteristics. The DES system exhibits greater solubility toward lignin 
+and hemicellulose instead of cellulose, thus enabling the selective 
+extraction of these components. The process uses hydrolysis to break 
+down hemicellulose and lignin extraction through LCC bond disruption, 
+along with the cleavage of lignin-hemicellulose ester and ether bonds. 
+The DESs use their selective action to extract valuable biomass com -
+pounds while maintaining the structural integrity of cellulose ( Yu et al., 
+2019; Bao et al., 2025 ).
+DESs demonstrate their effectiveness in biomass processing because 
+they possess the ability to cut specific chemical bonds. The compounds 
+focus their action on breaking ether and ester bonds linking lignin to 
+hemicellulose, as well as disrupting the hydrogen bonding between 
+lignin and cellulose. The DESs break down essential intra-lignin bonds, 
+which include aryl ether linkages (β-O-4, α -O-4, 4-O-5) and carbon- 
+carbon bonds (β-5, β-β, 5–5), which enable lignin depolymerization 
+and extraction ( Kumar et al., 2020; Sun et al., 2023; Scelsi et al., 2021 ). 
+The DESs achieve higher separation efficiency because they precisely 
+break complex biomass bonds.
+The potentially "green" solvent characteristics of DESs make them 
+valuable beyond their functional performance since they support sus -
+tainable processing goals. DESs show excellent performance in addition 
+to meeting key sustainability criteria, which include renewability and 
+low toxicity, together with biodegradability and recyclability, and 
+thermal stability. DESs presents a promising replacement for traditional 
+solvents because they maintain efficient biomass fractionation while 
+providing environmentally friendly properties ( Das et al., 2018 ).
+The three-dimensional aromatic polymer lignin constitutes a com -
+plex structure that acts as a resistant network in plant cell walls through 
+its main components of guaiacyl (G), syringyl (S), and p-hydroxyphenyl 
+(H) monolignol subunits. The majority of lignin links arise from β-O-4 
+aryl ether bonds and strong carbon-carbon (C-C) bonds, which make up 
+50–70% of lignin's total linkages. The complex arrangement within 
+lignin usually creates difficulties during biomass processing; however, 
+DESs represent essential solvents to overcome these difficulties associ -
+ated with lignin dissolution and fractionation ( Scelsi et al., 2021 ).
+The dissolution of lignin by DESs occurs through strong hydrogen 
+bonding forces. The hydrogen bond interactions between DES compo -
+nents such as HBDs, HBAs, and chloride anions (Cl⁻), and lignin hydroxyl 
+and phenolic groups determine the effectiveness of lignin dissolution. 
+Lignin internal hydrogen bonds break when DESs dissolve lignin frag -
+ments. The effectiveness of DESs dissolution power can be predicted 
+based on their depends on their Kamlet-Taft parameters. Since their 
+dissolution abilities are based on their hydrogen bond donation ( α ) and 
+acceptance (β) abilities to break lignin's structural framework ( Zhang 
+et al., 2023a; Chen et al., 2023a; Ji et al., 2021 ).
+In acidic DESs, the proton is the catalyst that drives the key mech -
+anism for lignin breakdown. As the H⁺ ions dissociate from acidic HBDs 
+such as carboxylic acids, they act as catalysts to aid the breakage of both 
+the ether and ester bonds through multiple chemical reactions. The first 
+step involves protonating the benzylic carbon (C α ), which creates a 
+benzylic carbocation through dehydration. The intermediate state al -
+lows β-O-4 bond cleavage through two pathways, which include the loss 
+of formaldehyde when Cβ is protonated or the formation of an enol ether 
+that hydrolyzes into a ketone and phenol after losing a CH
+₂
+OH group 
+from Cγ. These mechanisms improve the process of lignin depolymer -
+ization while also enabling its solubilization ( Schutyser et al., 2018; Bai 
+et al., 2022 ).
+Lignin dissolution benefits substantially from electrostatic and ionic 
+interactions, together with hydrogen bond interactions. The electro -
+negative anion Cl⁻ from ChCl interacts with lignin to break chemical 
+bonds while increasing its solubility. The electropositive nature of DESs 
+helps maintain stability of charged intermediates during bond destruc -
+tion processes, which enhances lignin solubilization. DESs demonstrate 
+Table 3 
+Summary of emerging DES-based pretreatment systems.
+Type Composition Biomass & Process 
+Condition
+Findings Reference
+TDES Benzyltriethylammonium chloride (BTEAC): formic acid 
+(FA): polyethylene glycol
+Eucalyptus biomass & 
+130 
+̊
+C, 90 min
+- α -cellulose content: 86.75%. 
+-Cellulose degree of polymerization: 1611. 
+-High cellulose reactivity with a Fock 
+80.82%. 
+-High water retention capacity with 214%. 
+-High lignin recovery with 82.79% and 
+low condensation. 
+-Good recyclability of TDES up to three 
+cycles.
+( Zhou et al., 
+2025 )
+TDES Dodecyltrimethylammonium bromide: LA: γ-valerolactone -Rice husk & 
+170 
+̊
+C, 25 min
+-Co-production of furfural and 
+xylooligosaccharides.
+( Koffi et al., 
+2025 )
+Cationic surfactant- 
+based DES
+Cetyl trimethyl ammonium chloride: LA -Wheat-stalk & 
+160 
+̊
+C, 60 min
+-Delignification: 88.3%. 
+-Xylan removal: 89%. 
+-Enzymolysis efficiency: 86.8%. 
+-Cellulose accessibility improved to: 
+668.2 mg/g. 
+- Cellulose crystallinity increased 57.6%.
+( Chen et al., 
+2025 )
+Acidic DES ChCl: Acetic acid -Sugarcane leaf & 
+121 
+̊
+C, 60 min, 1.5 bar
+-Cellulose 0.435 g/g ( Raina et al., 
+2025 )
+Polyol-based DES ChCl: Ethylene glycol -Sugarcane leaf & 
+121 
+̊
+C, 60 min
+-Cellulose 0.418 g/g ( Raina et al., 
+2025 )
+Polyol-based DES ChCl: Glycerol -Sugarcane leaf & 
+121 
+̊
+C, 60 min
+-Cellulose 0.396 g/g ( Raina et al., 
+2025 )
+Acidic DES ChCl: LA -Napier grass & 
+80–130 
+̊
+C, 0.5–5 h
+-Increased sugar yield up to 1.6-fold vs. 
+native biomass. 
+-Ethanol yield 13.18 g/L. 
+-Good recyclability up to three cycles.
+( Panakkal et al., 
+2025 )
+Polyol-based DES ChCl: Glycerol -Napier grass & 
+80–130 
+̊
+C, 0.5–5 h
+-Ethanol yield 14.03 g/L. 
+-Good recyclability up to three cycles.
+( Panakkal et al., 
+2025 )
+Alkaline DES ChCl: Urea -Napier grass & 
+80–130 
+̊
+C, 0.5–5 h
+-Ethanol yield 15.87 g/L. 
+-Good recyclability up to three cycles.
+( Panakkal et al., 
+2025 )
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+6 
+
+
+===== PDF PAGE 7 =====
+high effectiveness for lignin dissolution through the combined action of 
+hydrogen bonding, proton catalysis, and ionic interactions, which pro -
+vide a sustainable biomass processing method ( Ji et al., 2021; Zhang 
+et al., 2023b ).
+The efficacy of biomass fractionation through DESs strongly depends 
+on their composition because the selection of HBD affects their behavior 
+as solvents. Carboxylic acid-based HBDs, including LA, oxalic acid, and 
+acetic acid, show excellent proton-catalytic properties, which enhance 
+their efficiency. Low pKa values in these solvents create ideal conditions 
+for extensive β -O-4 bond cleavage, which leads to better delignification. 
+The application of acidic DESs leads to lignin condensation and acyla -
+tion reactions, which affect the extracted lignin quality according to ( Liu 
+et al., 2020; Provost et al., 2022; Zhu et al., 2023a ). Polyol-based HBDs 
+such as glycerol and EG perform lignin dissolution through hydrogen 
+bonding, which protects most β -O-4 bonds from cleavage. The efficiency 
+of these systems faces limitations from extended carbon chains and 
+increased viscosity, which necessitate elevated temperatures and longer 
+reaction times for effective fractionation according to ( Hou et al., 2018; 
+Zhao et al., 2023 ).
+Amine or amide-based HBDs such as urea and triethanolamine 
+(TEOA) produce average results during delignification processes. The 
+extensive hydrogen bonding in urea-based DESs results from their strong 
+HBA capability (high β Kamlet-Taft parameter), but they deliver less 
+delignification performance than acidic HBDs. Ethanolamine-based 
+DESs demonstrate superior performance to both urea and acetamide- 
+based systems because of their enhanced solvation properties ( Zhu 
+et al., 2023a; Zhao et al., 2018a ). The selection of HBA is critical for DES 
+applications because ChCl represents the most effective HBA. The 
+effectiveness of DESs decreases with increasing length of alkyl chains in 
+HBA cations or anions, while amino acid-based HBAs show promise for 
+developing more environmentally friendly DES systems ( Jablonsky 
+et al., 2019; Nawaz et al., 2022 ).
+The molar ratio of the HBA to HBD has an influence on the perfor -
+mance of DES as it controls the solution's viscosity and acidity/basicity 
+levels and overall fractionation efficiency. Lower viscosity ratios work 
+best for DES systems, while the optimal ratio selection depends on the 
+specific DES composition. The performance of DESs decreases when 
+using excess HBD because it increases viscosity and modifies the solvent 
+properties, which decreases their ability to dissolve lignin and hemi -
+cellulose effectively ( Zhou et al., 2024; Li et al., 2023c; Deng et al., 
+2023 ). The optimization of the HBA: HBD ratio serves to achieve equi -
+librium between solvent properties and fractionation results, which 
+depend on the specific biomass type and target products. Table 4 dem -
+onstrates how these properties ultimately influence how well a DES can 
+soak into biomass, dissolve lignin, or make the material more digestible 
+for enzymes. It may sound a little abstract, but comparing values such as 
+viscosity, surface tension, and the α , β , and π * parameters can reveal 
+clear trends. In a sense, that comparison offers a practical way to see 
+how tweaking the HBA: HBD ratio can shift pretreatment performance.
+The ratio of HBA to HBD in the DES also has a pivotal function in 
+regulating the physico-chemical properties, which determine the frac -
+tionation efficiency of the biomass. Generally, when the HBA/HBD ratio 
+is low, the strength of hydrogen bonding is increased, effectively dis -
+rupting the interconnected structures of lignin-cellulose. Enhanced 
+delignification of the lignocellulosic materials can thus be achieved. For 
+example, when the ratio of BTEAC:LA was maintained at 1:4, the best 
+interactions were established towards lignin structures, showing high 
+lignin removal efficiency as well as high glucose yield due to the high 
+hydrogen bonding strength of the system as well as the molecular dy -
+namics ( Ji et al., 2025 ). These results also show the potential of opti -
+mizing the ratio of the hydrophilic to hydrophobic compounds in 
+achieving high lignin extraction while maintaining the sustainability of 
+the ChCl:Malonic acid-based solvents ( Long et al., 2025 ).
+Viscosity and surface tension determine in more detail the efficiency 
+of mass transfer and DES penetration in biomass structures. Lower vis -
+cosity will facilitate diffusion, improving interactions between solvent 
+and substrate. Reduced surface tension will promote better wettability 
+and infiltration in the lignocellulosic matrix. Systems exhibiting low 
+surface tension and proper fluidity, the cetyltrimethylammonium bro -
+mide/LA/AlCl ₃ ternary DES has been reported to show a surface tension 
+of 29.3 mN/m-have been recently reported to act as effective catalysts 
+for complex biomass transformations at high conversion levels, such as a 
+71.6% furfural yield ( Fan et al., 2025 ). A correlation analysis showed 
+that DESs with lower surface tension and higher polarity parameters, α 
+and π *, present higher lignin removal and glucose recovery, confirming 
+again that interfacial properties critically mediate the accessibility of 
+solvents and fractionation efficiency ( Ji et al., 2025; Khanbabaeimoghri 
+et al., 2025 ).
+The Kamlet-Taft solvatochromic parameters( α , β , and π *) provide a 
+molecular-scale understanding of DES reactivity. A high α value en -
+hances DES – lignin hydrogen bonding, while an elevated π * supports 
+charge delocalization and disrupts aromatic stacking in lignin ( Ji et al., 
+2025 ). These parameters collectively contribute to selective dissolution 
+of lignin over cellulose, ensuring high-purity fractionation as seen in 
+ChCl:5-sulfosalicylic acid: γ -valerolactone systems yielding 98.77% pure 
+lignin ( Yao et al., 2024 ). Balancing these physicochemical features 
+(optimal HBA:HBD ratio, moderate viscosity, low surface tension, and 
+strong α and π *) defines the high efficiency and scalability of DESs in 
+sustainable biomass valorization.
+Biomass processing with DES depends heavily on reaction conditions 
+such as temperature and time duration, and water content levels. High 
+temperatures enhance delignification because they decrease DES vis -
+cosity which facilitates better mass transfer and accelerates bond 
+cleavage kinetics especially for β -O-4 bonds. Operating at temperatures 
+above 140
+◦
+C results in almost complete β -O-4 bond breakage, together 
+with unwanted lignin condensation and repolymerization, which 
+negatively affects lignin quality ( Provost et al., 2022; Zhao et al., 2023; 
+Wang et al., 2024a ). The length of the reaction period enables better 
+delignification, but extended processing time following depolymeriza -
+tion can cause lignin repolymerization, thus requiring proper duration 
+optimization ( Wang et al., 2024a ).
+The amount of water present in DESs serves as a vital operational 
+parameter. The dissolution power and acidity of acidic DESs increase 
+when water content reaches 10 – 20% wt, but this results in higher 
+Table 4 
+DES property overview ( Ji et al., 2025 ).
+DES HBA: HBD Viscosity 
+(mPa.s)
+Surface Tension 
+(mN/m)
+Kamlet-Taft
+25 
+̊
+C 150 
+̊
+C 25 
+̊
+C 150 
+̊
+C α β π
+∗
+ChCl:LA 1:2 163.1 9.19 47.70 29.20 0.98 0.54 1.10
+ChCl:LA 1:4 38.68 7.52 47.02 31.75 1.04 0.35 1.20
+ChCl:FA 1:2 23.39 7.17 69.26 53.21 1.30 0.19 1.06
+ChCl:FA 1:4 9.6 7.30 66.89 50.41 1.35 0.11 1.16
+BTEAC:LA 1:2 927.75 4.42 55.54 15.93 0.78 0.60 1.08
+BTEAC:LA 1:4 262.05 5.57 45.57 18.96 0.94 0.46 1.15
+BTEAC:FA 1:2 327.16 1.88 69.11 55.58 0.71 0.77 0.82
+BTEAC:FA 1:4 10.31 2.05 54.32 44.14 0.82 0.59 0.92
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+7 
+
+
+===== PDF PAGE 8 =====
+viscosity. Increasing water content in DES solutions results in reduced 
+proton solvation, which makes hemicellulose fragments more soluble 
+while preserving β -O-4 bonds, yet it leads to decreased lignin yield and 
+purity. The process of mass transfer during fractionation becomes more 
+effective because of water, while it also helps to improve the solubility of 
+hemicellulose fragments ( Lou et al., 2019; Chen et al., 2020 ). The 
+extraction yield and bond cleavage patterns of biomass depend on lignin 
+content as well as syringyl/guaiacyl/p-hydroxyphenyl (S/G/H) ratio 
+and structural complexity of the biomass. Furthermore, the difference in 
+lignin type also differs from biomass species, for instance, between 
+softwood and grass, which demands specific DES compositions and 
+conditions for optimal results ( Provost et al., 2022 ).
+The β -O-4 bond serves as a fundamental structural component in 
+lignin, which determines its potential for valuable use during DES 
+biomass fractionation processes. Certain conditions and DES composi -
+tions that use polyol-based DESs at lower reaction temperatures and 
+shorter processing times, with higher water content and diols for sta -
+bilizing reaction intermediates, help preserve this bond. The conditions 
+protect β -O-4 bonds from breaking, which helps maintain lignin struc -
+ture for applications requiring these linkages to remain intact. β -O-4 
+bond cleavage occurs predominantly in acidic DESs at elevated tem -
+peratures, which causes extensive depolymerization but reduces lignin 
+applicability for particular high-value uses ( Liu et al., 2021; Lou et al., 
+2019; Nie et al., 2023 ).
+During DES processing, lignin undergoes fundamental structural 
+changes that result in altered properties and multiple end-use possibil -
+ities. The initial depolymerization process of lignin leads to lower mo -
+lecular weight (Mw) values and greater polydispersity ( Đ ) because of the 
+breakdown of its complex network. The process of prolonged treatment 
+and harsh processing conditions results in repolymerization, which 
+generates new structures that are undesirable ( Wang et al., 2024a ). 
+During β -O-4 cleavage and demethoxylation reactions, lignin experi -
+ences an increase in phenolic hydroxyl (OH) content, which improves its 
+reactivity but creates distinct chemical changes ( Lyu et al., 2019 ). These 
+modifications enable scientists to customize lignin for industrial appli -
+cations such as biofuels and adhesives.
+The process of lignin modification through DESs leads to condensa -
+tion reactions that create carbon-carbon bonds ( β - β , β -5, 5 – 5), which 
+decreases the material's solubility and its ability to be converted into 
+value-added products. The formation of undesirable side reactions oc -
+curs frequently when acidic DESs are used in combination with high 
+temperatures and prolonged reaction times ( Hong et al., 2020; Wang 
+et al., 2024a ). Acylation represents another structural transformation, 
+which adds carboxylic acids (such as LA) to lignin primarily at the C γ 
+position, which modifies its functional properties ( Zhu et al., 2023a ). 
+Demethoxylation processes that eliminate methoxy (-OCH ₃ ) groups 
+produce additional modifications to lignin's chemical structure that may 
+affect its solubility characteristics and reactivity profile.
+The DES processing leads to variations in the syringyl/guaiacyl (S/G) 
+ratio because the S/G ratio increases when guaiacyl (G) units become 
+preferentially removed or modified. Lignin becomes more or less suit -
+able for particular applications based on the S/G ratio because this ratio 
+determines its physical and chemical characteristics ( Yan et al., 2023 ). 
+Selecting appropriate DES components together with optimized reaction 
+times and temperatures enables researchers to manage β -O-4 bond 
+preservation and structural transformations and S/G ratio alterations for 
+better lignin application in industry.
+Biomass fractionation through TDESs becomes more effective than 
+binary DESs when a third component like Lewis acids (FeCl ₃ , AlCl ₃ ), 
+diols (EG), or metal salts (K ₂ CO ₃ ) is added to the mixture. The acidity of 
+Lewis acids in solvents enables better bond cleavage and produces lignin 
+with both purity enhancement and lower molecular weight (Mw) ( Chen 
+et al., 2023b; Wang et al., 2020 ). Diols serve as essential components 
+that protect reactive carbocations while stopping unwanted lignin 
+condensation reactions, which helps maintain important β -O-4 bonds 
+useful for premium lignin applications ( Liu et al., 2021; Chen et al., 
+2023b ). The addition of K ₂ CO ₃ enables the solvent to undergo 
+alkaline-catalyzed depolymerization reactions that target phenolic 
+units, thus expanding its reactive properties ( Chen et al., 2023b ).
+The addition of a third component in TDESs enables users to control 
+reaction mechanisms with better acidity regulation and hydrogen 
+bonding properties, and reaction pathway management than binary 
+systems. The flexible nature of these processes allows for customized 
+fractionation methods to maximize lignin extraction and structural 
+characteristics needed for particular applications, including biofuels and 
+biopolymers ( Ee et al., 2023; Yan et al., 2023 ). The third component in 
+TDESs enables users to reach equilibrium between delignification effi -
+ciency and protection of essential lignin structures, which leads to 
+improved extracted product yields and quality while sustaining DES 
+sustainability advantages.
+Acidic DES containing carboxylic acid as HBDs demonstrate excep -
+tional biomass fractionation capabilities because their proton-catalyzed 
+action breaks ether and ester bonds as well as glycosidic bonds and LCC 
+bonds. The HBD's low pKa value, combined with its high H ⁺ concen -
+tration, enables the DESs to deliver high delignification outcomes but 
+results in extensive β -O-4 bond cleavage, which promotes lignin 
+condensation. Polyol-based DES performs moderately in delignification 
+of biomass yet maintains better β -O-4 bond integrity, although their 
+increased viscosity may decrease operational performance. The 
+delignification ability of amine or amide-based DESs varies based on 
+their strong hydrogen bond acceptance (high β ), while ethanolamines 
+show better performance than urea and create less bond breakage than 
+acidic DESs.
+The effectiveness of DES types increases through the addition of Cl ⁻ 
+as a halogen anion, which improves bond cleavage and hydrogen 
+bonding for efficient separation. The addition of universal enhancers, 
+including temperature control and optimal water content, enhances 
+performance by reducing viscosity, accelerating reaction kinetics, con -
+trolling acidity, and improving mass transfer to achieve specific lignin 
+extraction outcomes for yield-structure balance.
+5. Molecular dynamics and thermodynamics insights into DES 
+systems
+DESs form on the basis of the eutectic process, which leads to a 
+considerable lowering of the melting point compared to the components 
+taken individually. This is due to the creation of a strong network of 
+hydrogen bonds between HBAs and HBDs. Although the traditional DESs 
+have low melting points, the data relating to PEGylated DESs indicate 
+the short-term thermal stability, which is the initial point of degrada -
+tion, varies between 136.2
+◦
+C and 204.7 
+◦
+C ( Zhang et al., 2012; Ma et al., 
+2024 ). The exact adjustment of these components together with their 
+ratios enables specific solvent characteristics that enhance their effi -
+ciency in lignin dissolution applications.
+The expansion of eutectic systems happens through traditional 
+hydrogen-bonding interactions, while new DES designs introduce novel 
+systems. The eutectic system of "Inverted" DESs operates through cation- 
+driven interactions, while halogen-bonded DESs made from quaternary 
+ammonium salts and dihalogens create different intermolecular forces. 
+The addition of ions, molecules, or metals to low-melting mixtures en -
+ables the development of diverse DES formulations that enhance flexi -
+bility for particular applications ( Yu et al., 2019; Shi et al., 2022; Chen 
+and Yu, 2024 ). Modern DES design methods extend their functional 
+capabilities for sustainable biomass processing by utilizing multiple 
+thermodynamic interactions.
+The solvent characteristics of DESs can be effectively described 
+through the Kamlet-Taft (K-T) parameters, which consist of α (hydrogen 
+bond donation ability), β (hydrogen bond acceptance ability), and π * 
+(dipolarity/polarizability). The effectiveness of DESs in dissolving 
+lignocellulosic biomass depends heavily on these metrics because they 
+determine how DES interacts with lignin and cellulose, and hemicellu -
+lose. The disruption of hydrogen bonds in biomass components becomes 
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+8 
+
+
+===== PDF PAGE 9 =====
+better when α and β values increase, while π * values improve the sol -
+vation of aromatic lignin structures, thus making K-T parameters 
+fundamental for DES optimization in fractionation tasks ( Mishra et al., 
+2023 ).
+The K-T parameter changes indicate how DES composition affects 
+their solvent characteristics. Metal halide-based DESs show higher π * 
+values than ammonium salt-based systems, which results in better lignin 
+solvation because of their enhanced polarizability ( Zhang et al., 2012 ). 
+DES components with longer alkyl chains cause π * to decrease because 
+molecular interactions become weaker, yet β values increase as 
+cation-anion interactions become weaker, which enhances hydrogen 
+bond acceptance. The dissolution efficiency of DESs becomes reduced 
+when carboxyl groups exceed their optimal amounts in HBDs, as 
+observed in CTAB:LA: Fe³ ⁺ /Sn ⁴⁺ /Al³ ⁺ systems. These design trends help 
+create DESs that have optimal solvent properties for effective and se -
+lective biomass fractionation.
+The thermal stability of DESs stands as an essential factor for biomass 
+pretreatment because it affects both solvent effectiveness and recycla -
+bility at temperatures near 100
+◦
+C. DESs break apart into their HBA and 
+HBD components at high temperatures because thermal energy weakens 
+hydrogen bonds, which results in decomposition and reduced efficacy. 
+The solvent's eutectic properties become compromised when thermal 
+energy causes dissociation because this process negatively affects lignin 
+and hemicellulose dissolution during biomass fractionation ( Chen et al., 
+2022 ).
+The stability of DESs depends mainly on the characteristics of the 
+HBD component. DESs that use low-boiling-point HBDs such as ChCl 
+with malonic acid or EG tend to decompose at high temperatures 
+because they have lower thermal stability ( Marchel et al., 2022; 
+Delgado-Mellado et al., 2018 ). DESs that use high-boiling-point or 
+thermally stable HBDs such as glycerol or glucose demonstrate better 
+resistance to thermal breakdown because they preserve their structural 
+integrity during processing. The length of alkyl chains in HBDs de -
+termines thermal stability because longer chains create stronger inter -
+molecular bonds, which makes DESs suitable for high-temperature 
+biomass pretreatment applications ( Ghaedi et al., 2017 ).
+DES transport properties, including viscosity and conductivity, play 
+essential roles in biomass fractionation since they determine both mass 
+transfer rates and process performance. DESs maintain elevated vis -
+cosity at room temperature because their extensive hydrogen bonds and 
+large ions restrict molecular movement while making it difficult for 
+biomass to dissolve. DES viscosity lowers substantially when tempera -
+ture increases, thus enabling improved mass transfer alongside better 
+penetration of the solvent into biomass structures ( Chen et al., 2019 ). 
+The temperature rise increases conductivity because ions move better, 
+but large components like PEG: TBAC restrict this improvement 
+compared to PEG: ChCl, thereby reducing ionic transport ability.
+DES ionic properties and aggregation patterns derive from their 
+chemical composition. The length of alkyl chains in DES components 
+weakens ionic properties because they create barriers that slow down 
+ion disassociation and movement ( Wang et al., 2020 ). The presence of 
+highly mobile metal ions in metal-based DESs made with FeCl ₃ ⋅ 6H ₂ O 
+creates high conductivity that makes them suitable for applications 
+needing efficient charge transfer. DES properties affect biomass pre -
+treatment outcomes because they determine how well the solvent in -
+teracts with lignocellulosic components.
+Computational modeling and molecular dynamics simulations pro -
+vide critical atomic-scale insights into the design and function of DES for 
+biomass processing. As demonstrated in one study, ReaxFF molecular 
+dynamics simulations were used to investigate the pretreatment of a 
+lignin-carbohydrate complex, revealing that key bonds were cleaved at 
+an optimal temperature of 373 K in a ChCl/LA acid solvent. The simu -
+lations identified free protons as crucial for delignification and quanti -
+fied how solvent composition dictates efficiency, showing that a ChCl/ 
+glycerol DES achieved superior interaction energies with carbohydrate 
+and phenolic products ( Xu et al., 2021 ). This approach effectively maps 
+the hydrogen-bonding networks and energetic landscapes that govern 
+solvation and degradation mechanisms ( Jablonsky et al., 2019 ).
+The integration of multi-scale computational methods is equally 
+powerful for understanding polysaccharide dissolution. Another inves -
+tigation combined classical molecular dynamics with quantum me -
+chanical calculations to study cellulose dissolution in a 
+benzyltriethylammonium/urea DES. The molecular dynamics analysis 
+tracked the disruption of cellulose crystallinity through hydrogen-bond 
+density and radial distribution functions, while density functional the -
+ory (DFT) provided a deeper quantum topological analysis of the 
+interaction sites. By applying the Quantum Theory of Atoms in Mole -
+cules (AIM) and non-covalent interaction (NCI) analysis, the research 
+attributed the successful dissolution primarily to strong physical 
+hydrogen-bond interactions, offering a comprehensive atomic-level 
+rationale for the solvent's performance as a green medium ( Azougagh 
+et al., 2023 ).
+The atomistic mechanisms through which DES enhance biomass 
+processing are effectively elucidated using molecular dynamics simu -
+lations and complementary computational techniques. In one applica -
+tion focused on enzyme stabilization, simulations of β -glucosidase 
+revealed that DES components form specific interactions, primarily 
+through their hydrogen bond donor ends, with the enzyme structure 
+( Wang et al., 2024b ). These interactions induce a more compact 
+conformation by altering the secondary structure, increasing α -helix and 
+reducing β -sheet content, and crucially restricting amino acid movement 
+to stabilize the active site, explaining the experimental observation of 
+enhanced activity and prolonged half-life ( Wang et al., 2024b; Yan et al., 
+2023 ). In another study probing pretreatment mechanisms, ab initio and 
+classical molecular dynamics simulations tracked the dissociation of 
+lignin-carbohydrate complexes in a ChCl/oxalic acid DES ( Yu et al., 
+2024b ). These simulations identified the precise cleavage of the 
+guaiacyl-xylose ether bond by oxalic acid, a process not observed in 
+aqueous solution and subsequently modeled the resulting molecular 
+expansion of lignin ( Yu et al., 2024b ). This computational discovery of 
+lignin's structural rearrangement provides the fundamental explanation 
+for improved inter-particle binding and densification. Together, these 
+cases demonstrate how simulation moves beyond correlation to deliver 
+causal, mechanistic understanding of solvent-biomass interactions, 
+directly guiding the rational design of more effective systems.
+The interfacial characteristics of DESs are determined by their sur -
+face tension alongside their hygroscopic properties. The strength of 
+hydrogen bonds between HBD and HBA determines surface tension, 
+which results in lower values for DESs containing weak hydrogen 
+bonding, like ZnCl ₂ :LA, to improve their wetting properties during 
+biomass penetration ( Chen et al., 2019 ). The high hygroscopic nature of 
+ChCl: glucose DES arises from its hydrophilic groups, which lead to 
+increased water absorption that modifies solvent properties and impacts 
+fractionation efficiency. DES formulations can be optimized for efficient 
+and sustainable biomass processing through a combination of interface 
+characteristics and customized transport properties.
+Through Molecular Dynamics (MD) simulations, researchers gain a 
+thorough comprehension of DESs' chemical interactions with biomass 
+constituents when fractionating them. To model the molecular behavior 
+accurately, researchers implement MD simulations by using the 
+CHARMM36 force field and periodic boundary conditions, which start 
+with energy minimization and then move to NVT and NPT ensemble 
+equilibration ( Chen et al., 2025 ). The simulations demonstrate how 
+bromide ions (Br ⁻ ) in CTAB:LA: Fe³ ⁺ DESs break hydrogen bonds, which 
+improves the separation of lignin and hemicellulose from biomass ( Tang 
+et al., 2024 ). The aromatic structure of lignin enables its higher nonpolar 
+dissolution compared to cellulose through van der Waals forces, so DESs 
+can be designed for specific fractionation applications Table 5 .
+Density Functional Theory (DFT) provides DES-biomass interaction 
+analysis through its quantum-level observation methods. The AIM the -
+ory and Reduced Density Gradient (RDG) analysis, together with inter -
+action energy calculations within DFT studies, reveal hydrogen bonding 
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+9 
+
+
+===== PDF PAGE 10 =====
+as the primary force in DES-lignin interactions through blue RDG iso -
+surface visualization ( Sepali et al., 2024; Pan et al., 2024 ). DES dem -
+onstrates higher interaction energy with lignin (-31.25 kcal/mol) than 
+lignin-lignin interactions (-22.74 kcal/mol), which leads to efficient 
+lignin solvation and separation. The quantitative data enable re -
+searchers to precisely adjust DES formulations to reach maximum frac -
+tionation performance Table 6 .
+Quantum Mechanics/Molecular Mechanics (QM/MM) techniques 
+boost modeling accuracy through their ability to apply quantum-level 
+precision for important interactions while using classical mechanics 
+for bigger systems. These modeling techniques demonstrate exceptional 
+capability to model hydrogen-bonding patterns and electronic features 
+of DES-water systems, since these properties determine how solvents 
+behave in complex systems ( Sepali et al., 2024 ). QM/MM delivers a 
+complete assessment of DES-biomass interactions through its ability to 
+merge structural and electronic information for developing customized 
+solvents for different biomass materials.
+The computational framework for DES-biomass interaction analysis 
+includes MD, DFT, and QM/MM methods, which connect molecular 
+processes to macroscopic results. The models reveal the basic in -
+teractions that cause fractionation and enable process optimization 
+through predictions about DES composition, temperature effects, and 
+other parameters. The computational tools enable researchers to 
+develop sustainable DES-based biomass fractionation processes that 
+scale up for biofuel and biomaterial applications.
+Recent case studies show DESs display unique interaction patterns 
+when they interact with galactomannan polysaccharides. Type II DESs, 
+consisting of quaternary ammonium salts and metal hydrates, dissolve 
+galactomannan through anionic disruption of its hydrogen-bond net -
+works. Type III DESs composed of quaternary ammonium salts with 
+HBDs target glycosidic bonds to achieve controlled molecular weight 
+recovery of galactomannan through selective cleavage ( Guo et al., 
+2025 ). The customized DES interactions demonstrate their capability 
+to process polysaccharides through controlled dissolution and structural 
+modifications, which depend on the solvent composition.
+Advanced computational methods, including Electrostatic Potential 
+(ESP) and Independent Gradient Model (IGM) analysis, show that DESs 
+interact with lignin units through non-covalent forces, which affect G, S, 
+and H units ( Chen et al., 2025 ). The research demonstrates DES-lignin 
+binding mechanisms through hydrogen bonding and van der Waals 
+forces, which lead to lignin unit solvation. The analysis of non-covalent 
+interactions through these case studies helps researchers develop 
+improved DES formulations for better lignin extraction and fraction -
+ation in sustainable biomass processing.
+Among the most widely applied approaches, MD simulations have 
+demonstrated particular utility in elucidating the dissolution mecha -
+nism of lignocellulosic components. In a study, it was explored that the 
+molecular mechanism of cellulose solubility in oxaline versus reline, 
+revealing that oxalic acid more effectively weakens the interaction be -
+tween chloride anion and choline cation, synergistically promoting 
+cellulose dissolution, while urea cannot fulfill the same role in reline 
+( Akhlaghi Bagherjeri et al., 2026 ). A related MD study examined the 
+differential interactions of three ChCl-based DESs, with ethylene glycol, 
+formic acid, and lactic acid as HBDs, with both lignin and cellulose, 
+showing that the number and type of oxygen atoms in the HBD deter -
+mine the hydrogen-bonding network character and the degree to which 
+DES dissociates cellulose-lignin complexes ( Li et al., 2021b ). Despite 
+these capabilities, classical MD is constrained by the accuracy of its 
+underlying force fields and cannot capture polarization or 
+charge-transfer effects inherent in DES hydrogen-bonding networks, 
+limiting quantitative reliability without careful parameterization.
+DFT offers a complementary quantum mechanical perspective 
+particularly well suited for resolving the electronic origins of DES- 
+biomass interactions at the molecular cluster level. In a landmark 
+PNAS study, Lin et al. applied DFT calculations to characterize the 
+optimized interaction geometries between lignin phenolic model com -
+pounds (guaiacol, catechol, isoeugenol) and a lactic acid-pyrazole DES, 
+demonstrating that pyrazole forms multiple simultaneous hydrogen 
+bonds with lignin phenolics at distances of 1.54–1.96 Å, substantially 
+more than the one or two bonds formed by conventional ChCl-based 
+DES, providing a quantum mechanical basis for superior lignin affinity 
+and extraction yields up to 93.7% from wheat straw ( Lin et al., 2023 ). In 
+a combined study of DFT and MD, the lactic acid-based DES with 
+different HBAs for hemicellulose solubilization was investigated, 
+revealing that the delocalized π bond in the guanidine group of guani -
+dine hydrochloride confers stronger coordination ability to Cl
+-
+, making 
+guanidine hydrochloride: LA (1:1) the most effective system ( Zhu et al., 
+2023b ). Nevertheless, DFT is fundamentally limited to small cluster 
+models and short timescales, precluding the simulation of bulk diffusion 
+and long-range structural dynamics.
+ML has emerged as a transformative approach that increasingly 
+bridges the gap between the accuracy of quantum methods and the 
+scalability required for industrial-relevant DES screening. In a compre -
+hensive study published in Green Chemistry, an XGBoost-based ML 
+framework was developed integrating molecular descriptors, molecular 
+fingerprints, and operational parameters from a dataset of 467 DES 
+pretreatment conditions; the model achieved an R² of 0.8259 for lignin 
+removal efficiency prediction, with SHAP analysis identifying HBD-HBA 
+structural features and solvent-to-solid ratio as the dominant mecha -
+nistic drivers ( Zhong et al., 2025 ). ML models integrating gradient 
+boosting regression trained on 944 samples from 56 published studies 
+have further been applied to predict lignin yield, purity, and molecular 
+weight from DES pretreatment, with validation R² of 0.82–0.90 ( Zhang 
+et al., 2026 ). However, all ML models remain constrained by data vol -
+ume and quality, and may lack mechanistic interpretability without 
+pairing with explainability tools such as SHAP.
+One way to look at it starts with using tools in layers - like stacking 
+building blocks. Instead of mixing everything together, think of DFT 
+setting baselines for how particles stick or push apart, while checking if 
+Table 5 
+MD protocols ( Chen et al., 2025 ).
+Aspect Detail
+Objective Understanding interactions between WS lignin structural 
+units (S, G, H) and CTAC: LA solvent systems.
+Structural units Syringyl (S), Guaiacyl (G), p-Hydroxyphenyl (H) types.
+Analysis method Density Functional Theory (DFT) with Independent Gradient 
+Model (IGM).
+Interaction Type Non-covalent interactions between atoms or molecules.
+Visualization tool Visual Molecular Dynamics (VMD).
+Visualization 
+techniques
+Electrostatic Potential (ESP), Color Mapping Isosurfaces.
+Purpose of 
+visualization
+To reveal trajectory data and visualize molecular 
+interactions.
+Table 6 
+DFT protocols ( Guo et al., 2025 ).
+Aspect Detail
+Software Gromacs 2022.3
+Force Field CHARMM 36 (parameterized all studied molecules)
+System 
+composition
+186 ChCl molecules, 744 EG molecules, one 4M-1G(galacto -
+mannan model) models molecular chain
+Simulation Box Dimensions: 6 nm*6 nm*6 nm, Components ChCl and EG 
+added in a specific proportion
+Boundary 
+conditions
+Periodic Boundary Conditions (PBC) are applied in all three 
+directions
+Energy 
+Minimization
+Method: Steepest Descent, Steps: 50,000
+Equilibration 
+(NVT)
+Ensemble: NVT (constant number of particles, volume, 
+temperature), Duration: 100 ps, Temperature: 300 K
+Equilibration 
+(NPT)
+Ensemble: NPT (constant number of particles, pressure, 
+temperature), Duration: 100 ps, Purpose: Equilibrate solvents
+Production run Duration: 500 ns, Steps: 250 million, Conditions: Constant 
+temperature and pressure
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+10 
+
+
+===== PDF PAGE 11 =====
+simpler models behave correctly down at the electron stage. Moving 
+outward, standard molecular dynamics paints broad pictures of liquid 
+behavior, especially how solvents flow and pack around materials. At 
+another layer, machine learning speeds things up, sorting through op -
+tions quickly and adjusting processes based on patterns. Alone, these 
+pieces struggle. DFT drags slow when handling large groups of atoms. 
+Standard simulations rely too much on preset rules that might miss real- 
+world quirks. Machine learning needs tons of examples, sometimes 
+giving answers that make no physical sense. But threading them 
+together across different scales builds something sturdier, a clearer path 
+forward for designing DES used in breaking down lignocellulosic 
+structure efficiently. The table below summarizes representative studies 
+employing each method in the context of DES-based biomass fraction -
+ation, highlighting their scope and key findings Table 7 .
+6. Simulation and modelling techniques in biomass treatment 
+with DES
+The main goal of modeling a DES-based biomass fractionation pro -
+cess is to understand lignin and hemicellulose dissolution processes as 
+well as to predict the outcomes and optimize operational parameters to 
+achieve better efficiency and yield. These models help researchers to 
+understand how DES compositions and treatment conditions affect 
+fractionation by simulating hydrogen bonding along with proton catal -
+ysis and bond cleavage specifically targeting β -O-4 linkages. These tools 
+allow for exact adjustments of temperature, time, and moisture content 
+to achieve maximum delignification while maintaining valuable lignin 
+structures that can be used in high-value applications. Furthermore, 
+scale up the DES-based operations by predicting industrial performance 
+at larger production levels to establish economic viability and ensure 
+sustainable operation can be achieved.
+Biomass fractionation mechanisms using DES as solvent have been 
+studied using molecular-level simulations, including Ab Initio Molecular 
+Dynamics (AIMD) and Molecular Dynamics (MD). According to Yu et al. 
+(2024) , AIMD and MD simulations showed that the ChCl: OA DES system 
+breaks down LCCs through the cleavage of guaiacyl: xylose bonds, which 
+operates differently than water-based systems. The breaking process 
+generates lignin expansion, which researchers confirmed through 
+Scanning Electron Microscopy (SEM) and fluorescence microscopy 
+alongside Fourier-Transform Infrared Spectroscopy (FTIR) measure -
+ments. The simulations link molecular-level lignin expansion to biofuel 
+production improvements through densification at the macroscopic 
+level, according to ( Yu et al., 2024b ).
+These simulations are supported by experimental analysis, which 
+validates the predicted changes in biomass structure. The research by 
+Zhao et al. (2023) resulted in an increased cellulose degree of crystal -
+linity of their XRD analysis and FTIR results showing lignin and 
+hemicellulose peak at 1737, 1602, 1510, and 1245 cm ⁻ ¹ disappearance 
+and SEM results showing increased surface porosity, which confirms 
+dissolution, in line with model prediction regarding amorphous 
+component removal and ester bond cleavage. The integration between 
+theoretical simulations and experimental methods provides a bridge 
+between theoretical findings and real-world outcomes, which allows for 
+exact optimization of DES-based fractionation operations for better ef -
+ficiency and scalability ( Zhao et al., 2023 ).
+The development of ML as a prediction tool enables a better under -
+standing of fractionation efficiency while providing insights into DES 
+biomass processing mechanisms. The ML models developed by Xu et al. 
+(2023b) identified temperature as the primary influential factor for DES 
+fractionation efficiency, while biomass hemicellulose content and DES 
+hydrophilicity also impact lignin removal efficiency. The research 
+demonstrated that DES acidity, along with polarity, serves as an essen -
+tial determinant that affects the process efficiency ( Xu et al., 2023b ). Ge 
+et al. (2023a) employed ML predictions to determine both delignifica -
+tion efficiency and lignin structural parameters, including bond types, 
+molecular weight (Mw), syringyl/guaiacyl (S/G) ratio, as well as the 
+hydroxyl group content. The research model demonstrated that effective 
+lignin depolymerization requires optimal temperatures and HBD po -
+larity and Lewis acidity in TDESs through their analysis of HBD inter -
+molecular bonds and physico-chemical properties, which drive 
+fractionation results ( Ge et al., 2023a ).
+Advanced ML techniques, together with multivariate analysis 
+methods, improve the understanding of intricate DES systems. Ge et al. 
+(2023b) applied PCA and PLS regression and Spearman correlation 
+analysis together with advanced ML algorithms, including RF, XGBoost, 
+and DNN, to study lignin depolymerization and separation mechanisms 
+in Lewis acid-containing TDESs. The XGBoost model achieved the 
+highest performance through its feature importance metrics (F Score and 
+SHAP), which showed that intermolecular forces, along with HBD dipole 
+moment, surface tension, and Log P, acted as primary drivers of success. 
+PLS analysis demonstrated strong explanatory power (R²X = 0.959, 
+R²Y = 0.894, Q² = 0.743), which made it possible to accurately predict 
+specific bond cleavage, like β– O – 4 and lignin structural transformations. 
+The developed approaches offer a strong methodology to improve DES 
+formulations and reaction conditions for creating efficient biomass 
+fractionation systems at a large scale ( Ge et al., 2023b ).
+The delignification processes in DES biomass fractionation receive 
+essential analysis through kinetic modeling, which enables the Shrink -
+ing Core and Shrinking Layer Models to reveal the dominant reaction 
+mechanisms. The Shrinking Core Model, which Halder et al. (2021) used 
+to study oak dissolution in ChCl-based DES, revealed two phases: a 
+diffusion-controlled first phase with Ea = 24.2 kJ/mol followed by a 
+surface reaction-controlled phase with Ea = 40.3 kJ/mol. The model 
+determined diffusivity ranges and generated a mass transfer correlation 
+Table 7 
+Computational modeling studies in DES-based biomass fractionation.
+Method DES System Biomass Target Key Findings Reference
+MD ChCl:oxalic acid vs. 
+ChCl:urea
+Cellulose Oxalic acid weakens ChCl ion pairing and cooperates with Cl
+- 
+to dissolve 
+cellulose; urea cannot do the same reline.
+( Akhlaghi 
+Bagherjeri et al., 
+2026 )
+MD ChCl:EG, ChCl:FA, 
+ChCl:LA
+Lignin and 
+cellulose
+HBD identity controls H-bonding network; Cl
+- 
+and HBD have comparable 
+roles in lignin solvation; ChCl:LA and ChCl:LA reduce cellulose -lignin 
+association.
+( Li et al., 2021b )
+DFT LA: pyrazole Wheat straw Pyrazole forms 3 – 4 simultaneous H-bonds with lignin; extraction yield up to 
+93.7%; lignin structure controllable.
+( Lin et al., 2023 )
+DFT + MD + Multivariable 
+Analysis
+Guanidine 
+hydrochloride: LA
+Hemicellulose Guanidine hydrochloride: LA (1:1) best dissolves hemicellulose; delocalized 
+Π bond of guanidine strengthens Cl
+- 
+coordination; Cl
+-
+plays a dominant role.
+( Zhu et al., 2023b )
+ML ChCl-based DES Lignocellulosic 
+biomass
+Accurate prediction of lignin extraction (XGBoost R
+2
+≈ 0.83); SHAP analysis 
+identified hydrogen-bonding structure and solvent-to-solid ratio as key 
+drivers, supporting efficient and sustainable solvent optimization.
+( Zhong et al., 
+2025 )
+ML Multiple DES 
+systems
+Lignocellulosic 
+biomass
+Training R
+2
+= 0.95 – 0.98; validation R
+2
+= 0.82 – 0.9; temperature and 
+reaction time positively correlated with yield and purity. Lignin yield, 
+purity, M
+w
+, M
+n 
+prediction.
+( Zhang et al., 
+2026 )
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+11 
+
+
+===== PDF PAGE 12 =====
+that demonstrated the dynamic relationship between diffusion and re -
+action kinetics ( Halder et al., 2021 ). The Shrinking Layer Model used by 
+Zhao et al. (2018b) for sulfuric acid-catalyzed acetic acid (SA-cat AA) 
+delignification of bagasse demonstrated that internal diffusion played a 
+major role, but external diffusion was unimportant. The model demon -
+strated that the early process operated under mixed control (diffusion 
+and reaction) before shifting to reaction-controlled kinetics in the late 
+phase and provided quantitative data through diffusion coefficient cal -
+culations Fig. 4 ( Zhao et al., 2018b ).
+The Unreacted-Core Model, which Kawamata et al. (2019) used for 
+cedar delignification in 1-butanol, further developed the comprehension 
+of lignin transport behavior through biomass materials. The model 
+identified lignin diffusion through cellulose layers via mesopores as the 
+rate-controlling process with an extremely low effective diffusivity 
+(4.09 × 10 ⁻ ¹ ⁹ m²/s). The measured low diffusivity originated from the 
+mismatch between lignin particle dimensions and pore space sizes, 
+which created substantial obstacles to delignification success. The 
+collection of models provides a solid basis for studying the kinetic 
+constraints in DES-based delignification, which enables optimization of 
+temperature and solvent composition for industrial process efficiency 
+( Kawamata et al., 2019 ).
+Research into specific DES systems demonstrated customized 
+delignification mechanisms that respond to variations in solvent 
+composition, together with reaction parameters. The research by Chen 
+et al. (2023b) examined TDES mixtures of ChCl and Gly with K ₂ CO ₃ as 
+a metal salt to study delignification mechanisms in an alkaline DES 
+system. Their result showed a separate diffusion and reaction-controlled 
+kinetic patterns with Δ H = 17.1 kJ/mol and Ea = 20.3 kJ/mol. They 
+reported that high temperatures played an essential role during the 
+beginning stage to help break down diffusion obstacles. The delignifi -
+cation processes changed when acidic DESs containing Lewis acids such 
+as FeCl ₃ or AlCl ₃ were used, because the degradation of hemicellulose 
+and byproduct creation influenced the reaction pathways. The research 
+demonstrates how DES composition acts as a determining factor for 
+kinetic processes and results in improved lignin extraction ( Chen et al., 
+2023b ).
+The application of advanced kinetic models allows process optimi -
+zation through the inclusion of biomass structural data and operational 
+parameters. Zhang et al. (2024a) established a new kinetic model for 
+acidic DES delignification of eucalyptus using BTEAC/FA, which in -
+corporates cell wall structure limitations for internal diffusion. This 
+predictive model provided precise lignin extraction values alongside 
+accurate retention of carbohydrates and solid yield throughout the 
+process, which led to the identification of 44.4 wt% FA concentration 
+and 130
+◦
+C as the most suitable pulping parameters ( Zhang et al., 
+2024a ). Tang et al. (2024) applied an empirical Boltzmann model to 
+relate the Severity Factor, which combines temperature with time and 
+pH to lignin and hemicellulose removal efficiency in CTAB:LA: Fe³ ⁺ 
+pretreatment, with an R² value above 0.97. These predictive models 
+serve as strong tools for optimizing DES delignification processes that 
+lead to efficient and scalable biomass fractionation ( Tang et al., 2024; Li 
+et al., 2023d ).
+The industrial-scale modeling of integrated DES pretreatment and 
+fractionation processes relies heavily on process simulation through 
+software tools including Aspen Plus, Aspen HYSYS, and SuperPro 
+Designer. These tools let users perform comprehensive simulations of 
+unit operations together with mass and energy balance calculations and 
+process integration studies, which help assess the scalability and oper -
+ational viability of DES-based biomass fractionation. These platforms 
+perform a complete process simulation from pretreatment to lignin and 
+carbohydrate separation, which enables users to optimize temperature 
+settings, solvent compositions, and reaction durations for maximum 
+efficiency and reduced energy and resource utilization.
+The evaluation of economic viability through Techno-Economic 
+Analysis (TEA) provides additional value to process simulation by 
+examining DES-based fractionation. The economic feasibility and prof -
+itability assessment of scaled-up processes relies on four essential TEA 
+metrics that include Total Capital Cost, Operational Cost, Net Present 
+Value (NPV), Return on Investment (ROI), and Payback Period. Sensi -
+tivity Analysis plays a vital role in TEA to detect essential cost and profit 
+elements, such as raw material prices and energy consumption, and DES 
+recycling efficiency, and to locate operational barriers that could limit 
+cost-effectiveness and scalability. Process simulation and TEA analysis 
+together provide essential insights that support better decisions to boost 
+the economic and technical outcomes of industrial DES-based biomass 
+fractionation.
+Fig. 4. Schematic illustration of the shrinking-layer model and the corresponding rate-controlling steps during SA-catalyzed AA delignification of sugarcane bagasse 
+( Zhao et al., 2018b ).
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+12 
+
+
+===== PDF PAGE 13 =====
+7. Process optimization for industrial-scale biomass 
+fractionation using DES
+The main goals of DES biomass fractionation optimization focus on 
+maximizing both lignin and hemicellulose extraction and glucan pres -
+ervation and product quality while reducing energy requirements and 
+expenses. The achievement of these objectives demands the right 
+adjustment of fundamental trade-offs that include high temperature for 
+better delignification yet potential biomass degradation, and high vis -
+cosity that hinders mass transfer against lower viscosity for better sol -
+vent penetration and solvent loading that enhances efficiency but 
+creates economic and sustainability challenges.
+DES biomass fractionation depends heavily on temperature as a 
+critical factor because optimal ranges usually exist between 80 and 
+200
+◦
+C based on both biomass type and solvent selection. Lignin removal 
+becomes more efficient at higher temperatures because elevated tem -
+peratures both break chemical bonds and decrease solvent viscosity, 
+which leads to better mass transfer. The optimization of temperature 
+must be done precisely to achieve a proper balance between efficient 
+delignification and maintenance of valuable biomass components.
+The final outcomes of DES fractionation depend on both the time 
+needed for processing and the ratio of biomass to solvent. Poplar 
+treatment for 2 h resulted in 53.2% glucan retention with 73.2% lignin 
+removal, but extended processing time to 6 h led to 90.2% lignin 
+removal at the expense of glucan retention, which dropped to 42.8%. 
+The optimal ratio of wheat straw to solvent in biomass fractionation was 
+determined by Jan ˇcíkov ´a et al. (2023) ( Jan ˇcíkov ´a et al., 2023 ) as 1:27 
+(w/w), which produced 16.44% residual lignin. The fractionation effi -
+ciency improves with increased solvent load, but this results in higher 
+costs, so researchers must find the best ratio to maximize both perfor -
+mance and economic benefits.
+The molar ratio between HBA and HBD in DES determines the 
+maximum possible efficiency of biomass fractionation processes. The 
+best ratio for wheat stalk treatment with cetyltrimethylammonium 
+chloride (CTAC) and LA was determined to be 1:4, which resulted in 
+88.3% delignification and 89.0% xylan removal. The combination of 1:2 
+ChCl to LA proves effective for multiple biomass materials, including 
+Atriplex, which achieves 69.3% delignification. The specified ratios 
+create optimal solvent acidity and viscosity and solvation capacity to 
+break lignin-carbohydrate complexes effectively without compromising 
+process efficiency.
+DES performance receives additional enhancement through the 
+addition of water and salts as additives. The addition of 10 – 15% water to 
+ChCl: LA makes its viscosity lower, which promotes better mass transfer 
+and leads to an 84.6% delignification rate when using 10% water con -
+tent. The addition of water beyond 15% percentage causes DES dilution, 
+which reduces its ability to solvate and decreases the process efficiency. 
+The addition of 5 – 10 wt% CaCl ₂ ⋅ 6H ₂ O salt to ChCl:LA (1:2) produces 
+significant bamboo delignification up to 84.7% because ionic in -
+teractions between the components enhance bond cleavage. The addi -
+tives enable researchers to adjust DES properties which helps achieve 
+better fractionation results for various biomass samples.
+The development of surfactant-based and carboxylic acid-based DES 
+systems creates advanced methods for fractionation applications. The 
+delignification process reaches higher efficiency levels when using 
+CTAB/CTAC: LA as a surfactant-based DES because these compounds 
+successfully break C-O and C-C bonds in lignin ( Chen et al., 2025 ). The 
+carboxylic acid-based DES system ChCl: benzoic acid shows high spec -
+ificity by removing 67.8% of lignin from poplar at 140
+◦
+C for 3 h and 
+maintaining 95.8% of cellulose ( Li et al., 2024 ). The development of new 
+DES formulations increases their adaptability, which enables users to 
+design customized procedures that simultaneously remove lignin and 
+protect cellulose during sustainable biomass treatment processes.
+The optimal DES fractionation of wheat straw and canola requires 
+specific solvent blends and operating parameters that manage both 
+lignin extraction and glucan conservation. DES solutions made from 
+CTAB/LA and metal salts SnCl ₄ or CoCl ₂ achieve greater than 88% 
+glucan preservation, but AlCl ₃ diminishes glucan retention to 45.4% due 
+to its destructive effect on cellulose while providing 87.5% delignifica -
+tion. The solid-to-liquid ratio plays a vital role because a 1:10 ratio 
+produces the best results for canola fractionation by enabling effective 
+mass transfer and achieving high yields with reduced solvent 
+consumption.
+The combination of TDES solutions with appropriate additives de -
+livers superior results in fractionation processes for both poplar and pine 
+biomass. The TDES mixture of ChCl with citric acid and 1,4-butanediol 
+in a 3:1:2 ratio achieves 90.2% lignin removal from poplar wood when 
+processed at 120
+◦
+C for 6 h. The addition of 10% water to ChCl: LA in -
+creases pine delignification to 46.5% whereas water-free conditions 
+result in 41.7% delignification. The optimization of DES composition 
+and additives, together with process parameters, proves necessary to 
+maximize lignin extraction and protect valuable carbohydrates in 
+different biomass samples.
+DES biomass fractionation requires proper viscosity management 
+alongside efficient mass transfer to achieve maximum results, since 
+excessive viscosity creates obstacles for industrial pumping and mixing 
+operations. Temperature elevation produces a substantial viscosity 
+decrease that transforms CTAC: LA from 1223.1 cP at 1:2 ratio to 
+212.0 cP at 1:6 ratio, thus improving both solvent penetration and mass 
+transfer efficiency. Adding 15% water to ChCl: LA enhances lignin 
+removal efficiency because it reduces viscosity but preserves DES 
+effectiveness. The combination of CTAC: LA (1:4) at 160
+◦
+C for 60 min 
+reaches a severity factor of 3.54, which optimizes both fractionation 
+performance and process viscosity control for industrial-scale lignin and 
+hemicellulose extraction.
+The integrated process design of DES biomass fractionation depends 
+on mechanism-driven optimization to achieve better efficiency and 
+product quality. DESs made from ChCl and benzoic acid (BA) success -
+fully break β -O-4 linkages, which produce lignin with 53.01% β -O-4 
+content that has high value for subsequent uses. The surfactant-based 
+DESs that include cetyltrimethylammonium chloride (CTAC) and LA 
+break down lignin syringyl (S) and p-hydroxyphenyl (H) units and 
+simultaneously increase biomass porosity to enhance solvent penetra -
+tion and separation of components. The mechanistic understanding of 
+DES interactions with biomass enables the selection of optimal DES 
+compositions that optimize the fractionation process for large-scale 
+operations and sustainable practices.
+The design of integrated DES processes requires a careful approach to 
+managing multiple conflicting objectives. The removal of lignin at 
+90.2% from poplar requires sacrificing glucan retention which decreases 
+to 42.8% thus requiring optimization to protect valuable carbohydrates. 
+The DES treatment process boosts biomass crystallinity to 68.6% from 
+55.6% in poplar cellulose isolation structures (CIS), which improves 
+nanocellulose production for premium applications. The process re -
+quires adjusting parameters, including temperature and time, and DES 
+composition to achieve desired results while keeping costs affordable 
+and maximizing the useful output from fractionated biomass 
+components.
+The large-scale implementation of DES biomass fractionation faces 
+difficulties because of the need to control energy usage and recover 
+solvents. Operating DES biomass fractionation at temperatures between 
+120 and 140
+◦
+C using ChCl-based DESs reduces energy costs while pre -
+serving biomass quality and achieving effective delignification. The high 
+boiling points of DESs, including ChCl: LA, create difficulties for solvent 
+recycling because thermal separation methods require significant 
+amounts of energy. Water dilution serves as a practical method because 
+it enables phase separation and DES recovery, which improves sus -
+tainability and decreases operational expenses Table 8 .
+The economic sustainability of large-scale DES fractionation remains 
+a fundamental requirement. The combination of surfactants like cetyl -
+trimethylammonium bromide (CTAB) and cetyltrimethylammonium 
+chloride (CTAC) in DESs demonstrates potential because they effectively 
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+13 
+
+
+===== PDF PAGE 14 =====
+break down lignin structures and achieve high delignification rates. The 
+implementation of these surfactant-based DESs needs a detailed 
+assessment of raw material expenses because surfactants tend to be 
+expensive. The successful scalability and economic viability of DES- 
+based biomass fractionation for industrial applications depend on opti -
+mizing process conditions, implementing efficient solvent recycling 
+methods, and selecting cost-effective DES formulations.
+Beyond solvent selection and extraction efficiency, scale-dependent 
+transport and engineering constraints emerge as major challenges 
+when transitioning DES-based processes from laboratory to industrial 
+scale. Laboratory optimization is typically performed in small glass re -
+actors, whereas industrial implementation relies on large stainless-steel 
+equipment with fundamentally different heat transfer coefficients, 
+heating rates, and hydrodynamic behavior ( Rente et al., 2022 ). These 
+differences necessitate re-optimization of critical operating parameters 
+such as temperature, residence time, agitation intensity, and solid -
+– liquid ratios during scale-up. Such limitations are particularly pro -
+nounced in biomass fractionation processes, where feedstock 
+heterogeneity, variable particle size, and complex solid matrices further 
+exacerbate mass transfer resistance and diffusion limitations. In addi -
+tion, equipment compatibility becomes a non-negligible concern at 
+larger scales ( Rente et al., 2022 ). Certain DES formulations, especially 
+acid-based systems, have been reported to exhibit corrosive behavior 
+toward common construction materials such as carbon steel, potentially 
+requiring specialized alloys or protective coatings and thereby 
+increasing capital investment ( Amin et al., 2007 ). These issues are 
+especially critical for continuous or large-batch biomass processing fa -
+cilities, where long-term material stability and operational reliability are 
+essential.
+Downstream processing technology and techno-economic perfor -
+mance are also equally important and are largely determining factors for 
+the industrial practicability of DES-based biomass fractionation. As the 
+vapor pressure of DES is close to zero, any effective solvent recovery 
+technique such as evaporation cannot be conducted; hence, the exclu -
+sive focus on solvent recycle, product purification, and DES-based 
+extract usage can be point blanket considerations. The fact that the 
+bypass of the entire product purification process and the preparation of 
+pure DES extracts can significantly lower the downstream processing 
+complexities and costs, whereas the entire product purification process 
+will significantly enhance the sustainability and processing costs. At the 
+same time, it may be noted that the consideration of cost of the solvent, 
+energy for the transport and processing of viscous fluids, and the need 
+for pilot-plant validation are critical factors that generally receive little 
+emphatic attention during laboratory-scale investigations ( Rente et al., 
+2022 ).
+The future development of DES biomass fractionation requires all 
+laboratory, pilot, and large scale optimization for particular biomass 
+types and the combination of DES with enzymatic or mechanical pro -
+cesses to enhance efficiency and the implementation of circular econ -
+omy principles through lignin chemical production for maximum 
+resource utilization and sustainability.
+8. Sustainability and environmental impact of DES-based 
+fractionation
+Biomass fractionation using DES provides substantial sustainability 
+benefits compared to conventional approaches because these solvents 
+are non-toxic and biodegradable and sourced from renewable materials 
+Fig. 5 . The DES-based processes eliminate the need for dangerous 
+chemicals while extracting lignin, cellulose, and hemicellulose effi -
+ciently through environmentally friendly operations ( Ruengsrichaiya 
+et al., 2024 ).
+The main sustainability benefit of DESs as potentially green solvents 
+stems from their environmentally friendly chemical makeup. The pro -
+duction of DESs from bio-derived ChCl and LA compounds eliminates 
+petroleum-based reagent use, which decreases their environmental 
+impact ( Shen et al., 2019 ). The low volatility properties of DESs reduce 
+air pollution risks better than conventional volatile organic solvents do, 
+which results in safer workplaces and decreased atmospheric emissions 
+( van Osch et al., 2017 ). DESs that derive from lignin phenolics represent 
+fully renewable substances, which support circular economy principles 
+by using biomass-derived components to create their formulation, thus 
+completing the resource cycle ( Kim et al., 2018 ).
+The energy and resource efficiency of DES-based processes further 
+underscores their sustainability. The glucose yield from enzymatic hy -
+drolysis reaches 94.3% after DES pretreatment, but remains at 9.6% for 
+untreated biomass, thus enabling the highest possible conversion of 
+biomass into valuable products ( Shen et al., 2019 ). The integrated DES 
+processes simplify downstream operations by cutting the number of 
+bleaching stages in pulp production from 4 to 5 to one stage, which 
+decreases both chemical usage and energy needs. DESs show superior 
+recyclability because they recover more than 90% of their material in 
+consecutive cycles, which reduces waste output and decreases the 
+requirement for fresh solvent additions, thus enhancing process resource 
+efficiency ( Ruengsrichaiya et al., 2024 ).
+The DES fractionation method decreases environmental harm 
+Table 8 
+Key optimization strategies.
+Parameter Optimal 
+Range
+Impact Case study Ref
+Temperature 110 – 160
+̊ 
+C High 
+delignification, 
+high cellulose 
+degradation 
+> 160
+̊ 
+C
+Wheat straw 
+(111
+̊ 
+C), CTAC: 
+LA (160
+̊ 
+C)
+( Jan ˇcíkov ´a 
+et al., 
+2023 )
+Time 60 min-6 hr High 
+delignification, 
+low solid yield
+Poplar (6 hr: 
+90.2% lignin 
+removal)
+( Jan ˇcíkov ´a 
+et al., 
+2023 )
+Biomass:DES 
+Ratio
+1:15 – 1:30 
+(w/w)
+High efficiency 
+at higher ratio; 
+high solvent cost
+Wheat straw 
+(1:27)
+( Jan ˇcíkov ´a 
+et al., 
+2023 )
+DES Molar 
+ratio
+CTAC/ 
+CTAB:LA 
+(1:4)
+Maximum lignin 
+and xylan 
+removal
+Wheat stalk, 
+Canola straw
+( Chen 
+et al., 
+2025 )
+Water 
+addition
+10 – 15% 
+(w/w)
+Low viscosity, 
+high mass 
+transfer but 
+lower efficiency 
+> 20%
+Atriplex (15% 
+water: 89.7% 
+delignification)
+( Nawaz 
+et al., 
+2023 )
+Additives 5 – 10 wt% 
+CaCl
+2
+.6H
+2
+O
+84.7% lignin 
+removal
+Bamboo ( Zhang 
+et al., 
+2023c )
+Fig. 5. Life cycle of biomass fractionation using DES.
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+14 
+
+
+===== PDF PAGE 15 =====
+because it omits sulfur and harsh acids, which are standard components 
+of kraft or sulfite pulping processes that pollute water and soil ( van Osch 
+et al., 2017 ). The DES-based processing methods provide a 
+pollution-free solution for biomass treatment because they eliminate 
+harmful substances from the process. The DES fractionation method 
+produces lignin with high purity while removing only minimal amounts 
+of carbohydrates, which enables its conversion into valuable bio-based 
+materials instead of burning it for energy in traditional processes. The 
+overall environmental advantages of DES applications increase accord -
+ing to ( Shen et al., 2019 ).
+The environmental advantages of DES processes become quantifiable 
+through life cycle assessments (LCAs), which show a 35 – 50% reduction 
+in greenhouse gas (GHG) emissions compared to IL-based methods. The 
+substantial reduction stems from DESs requiring less energy while using 
+fewer chemicals and being more easily recycled. The implementation of 
+DES processes helps achieve global sustainability targets by lowering 
+biomass fractionation's carbon emissions while protecting the environ -
+ment. This makes DES processes a suitable method for decreasing in -
+dustrial biorefinery carbon emissions ( Bartling et al., 2021 ).
+The combination of advantages makes DESs a revolutionary tech -
+nology for sustainable biomass processing. DESs demonstrate strong 
+potential as sustainable solvent alternatives because they possess envi -
+ronmentally friendly characteristics and operate with high energy effi -
+ciency, minimal environmental impact, and positive LCA results. Future 
+research on DES formulation optimization and green technology inte -
+gration will enhance their sustainability advantages, which will drive 
+industrial biorefinery adoption.
+The implementation of DESs in biomass fractionation encounters 
+major obstacles, especially with solvent recycling, since this process 
+remains essential for maintaining sustainable and affordable operations. 
+The repeated use of recycled DES leads to hemicellulose degradation 
+product accumulation, which negatively affects delignification effi -
+ciency throughout multiple cycles. The combination of hydrothermal 
+pretreatment with DES application proves successful in maintaining 
+delignification performance at high levels throughout at least five cycles 
+because it reduces the negative effects of degradation byproducts. The 
+preprocessing technique preserves solvent solvation properties, which 
+results in steady fractionation outcomes ( Zhang et al., 2025b ).
+The purification of recycled DES is essential for enhancing its reus -
+ability and maintaining consistent performance in biomass processing. 
+Activated carbon treatment has been shown to effectively remove im -
+purities and degradation products from recycled DES, restoring its 
+original efficiency. This purification approach not only ensures the 
+consistent quality of lignin and cellulose across processing cycles but 
+also contributes to the operational reliability of DES in industrial ap -
+plications. In addition to activated carbon, ultrafiltration has emerged as 
+a promising method for DES purification. In one study, ultrafiltration 
+using regenerated cellulose membranes (RC70PP and Ultracel 5 kDa) 
+was employed to purify spent DES, a mixture of ChCl and LA (1:10), after 
+lignin extraction. The incorporation of ethanol as a cosolvent reduced 
+DES viscosity, facilitating membrane filtration. A two-pass ultrafiltra -
+tion process with 10 kDa and 5 kDa membranes removed approximately 
+95% of the dissolved polymeric compounds, including lignin and 
+hemicelluloses. Moreover, the membranes enabled the fractionation of 
+these polymers into high and low-molecular-weight fractions. Notably, 
+the 10 kDa cellulose-based membrane demonstrated strong chemical 
+stability over three weeks of continuous exposure to the DES-ethanol 
+solution, with only a 3% decrease in water permeability ( Ippolitov 
+et al., 2022 ). The development of such efficient and sustainable recy -
+cling methods is a critical step toward minimizing waste generation and 
+reducing operational costs, thereby reinforcing the suitability of 
+DES-based fractionation systems for large-scale biorefinery applications 
+( Zhang et al., 2025b ).
+The recovery of solvents faces substantial energy-related challenges 
+in DES processes. The common DES recycling method of distillation 
+requires 73% of process heat demand in certain systems, which 
+demonstrates the need for more efficient energy solutions. Scientists are 
+currently developing low-energy separation methods, including mem -
+brane filtration and phase separation with water dilution to decrease 
+thermal energy consumption. The implemented methods work to 
+decrease the total energy consumption of DES fractionation while sup -
+porting sustainability goals and enhancing economic viability ( Bartling 
+et al., 2021 ).
+The development of TDES systems, which combine ChCl with oxalic 
+acid and EG, presents a promising approach to decreasing the energy 
+requirements of depolymerization steps. These systems protect reactive 
+intermediates during lignin breakdown, which reduces the energy 
+needed to break bonds and process the material. TDESs achieve better 
+process efficiency through optimized reaction pathways, which also 
+protect valuable lignin structures, including β -O-4 linkages for high- 
+value applications, thus improving both energy efficiency and product 
+quality ( Liu et al., 2021 ).
+Industrial adoption of DES fractionation faces major challenges 
+because of its scalability and cost requirements. The production ex -
+penses of DESs amount to 30 – 50% less than ILs because they require 
+basic synthesis techniques and employ common bio-derived materials, 
+including ChCl and LA. DESs present an economically favorable solution 
+for extensive industrial operations because of their lower production 
+expenses. Techno-economic assessments show that optimized reactor 
+pressure and solvent loading can decrease capital expenses by 20 – 25% 
+thus improving the financial feasibility of DES-based processes 
+( Ruengsrichaiya et al., 2024; Bartling et al., 2021 ).
+The path to overcoming scalability challenges requires ongoing 
+innovation in reactor design and process integration methods. Better 
+mass transfer and heat distribution in advanced reactor designs enable 
+more efficient fractionation operations at increased production scales. 
+The combination of DES pretreatment with enzymatic hydrolysis or 
+lignin valorization downstream processes enables operational stream -
+lining, which reduces costs. The combination of solvent recycling with 
+energy optimization and cost reduction strategies makes DESs a trans -
+formative technology for sustainable biomass fractionation, which has 
+the potential to transform biorefinery operations.
+Research priorities include developing low-vapor-pressure DES to 
+simplify recycling ( Bartling et al., 2021 ), integrating AI for solvent 
+formulation optimization ( Ruengsrichaiya et al., 2024 ), and leveraging 
+lignin-derived DES to close the biomass valorization loop ( Magalh ˜aes 
+et al., 2022 ). These advances could position DES as a cornerstone of 
+sustainable biorefineries, aligning with global decarbonization goals 
+( Ruengsrichaiya et al., 2024 ).
+The Table 9 provides an overview of recent research on using DES 
+and NADES in processing varied biomass for bioenergy, biofuels, and 
+value-added chemicals. The table provides data on categorized research 
+related to types of biomass/produced chemicals, used DES/NADES, 
+processing techniques, computer simulation tools/techniques of LCA, 
+key results related to environmental/energy performance, and related 
+references. These findings are compiled to provide an insight into 
+research on varied methods of using DES/NADES for increasing product 
+yield/quality and decreasing varied environmental effects related to 
+greenhouse gas emissions, energy, and ecotoxicity.
+While DESs are frequently championed as "green" alternatives to 
+traditional organic solvents due to their biodegradability and low 
+toxicity, a LCA reveals a more differentiated reality. The environmental 
+profile of DES-based fractionation is heavily dictated by the "upstream" 
+impacts of solvent synthesis and the efficiency of solvent recovery. As 
+seen in the extraction of polyphenols from a tropical tree and microalgae 
+pretreatment, the initial production of DES components, often requiring 
+virgin raw materials like dimethyl hexanediol or energy-intensive syn -
+thesis, can outweigh the benefits gained during the extraction phase. In 
+fact, LCA data indicate that without high rates of solvent recycling, DES 
+systems can perform worse than conventional aqueous or ethanolic 
+systems in categories such as freshwater ecotoxicity and fossil resource 
+scarcity.
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+15 
+
+
+===== PDF PAGE 16 =====
+However, the industrial applicability of DES can be substantially 
+enhanced by integrating it into the circular bio-economy concept by 
+means of process intensification. For example, the application of 
+microwave-assisted extraction or single-step cleaner production tech -
+niques for the production of biodiesel can illustrate the ability of DES to 
+profoundly shorten reaction times and suppress GHG emissions by at 
+least two orders of magnitude compared to two-step acid-base catalysis. 
+The effectiveness of DES can also be recognized by its effectiveness in 
+biomass pellet densification, whereby DES-treated pellets can demon -
+strate an increase of as much as 90–97% in terms of durability and 
+heating values. At the end of the day, the successful transfer of the 
+laboratory effectiveness of DES into industrial-scale ecocompatibility is 
+reliant upon the optimization of two challenge bottlenecks, namely the 
+energy intensity of the synthesis step and the application of secure re -
+covery techniques such as membrane filtration and recrystallization to 
+guarantee the persisting sustainability of the life cycle of the DES itself.
+9. Economic viability and scale-up challenges of biomass 
+fractionation using DES
+The market has adopted DES as a new green biomass fractionation 
+approach that combines unique benefits from conventional pretreat -
+ment systems but faces major obstacles for industrial deployment 
+( Cheng et al., 2022 ). The economic feasibility of biomass processing 
+with DES depends heavily on three essential parameters, which include 
+solvent recovery performance, energy usage, and production scalability 
+( Bartling et al., 2021 ). The techno-economic evaluation shows that DES 
+pretreatment exhibits technical effectiveness through superior deligni -
+fication and improved enzymatic digestion, yet commercial adoption 
+requires significant improvements to process design and cost optimiza -
+tion ( Preethi and R Banu, 2023 ).
+Multiple economic factors impact the market competitiveness of 
+DES-based biomass fractionation systems when compared to traditional 
+pretreatment systems. Pretreatment processes consume more than 40% 
+of biomass processing expenses, so cost reduction remains vital for 
+establishing commercial operations. The techno-economic assessments 
+demonstrate that DES pretreatment costs between $28 and $33 per ton 
+of biomass, but the expenses differ based on processing intensity and 
+biomass feedstock properties ( Preethi and R Banu, 2023 ).
+The main elements that determine the cost profile of DES-based 
+systems include raw material procurement costs for solvent prepara -
+tion, together with heating requirements, separation needs, and solvent 
+recovery expenses ( Li et al., 2023b ). The economic challenges of 
+implementing DESs at scale exist despite their favorable raw material 
+costs because they are nature-derived materials. The renewable nature 
+of various DES components provides cost benefits, especially when they 
+originate from biomass-derived compounds in closed-loop biorefinery 
+systems ( Rachiero et al., 2022 ).
+Multiple economic assessments exist regarding DES pretreatment 
+compared to standard methods of pretreatment. DES pretreatment sys -
+tems require higher costs during processing than both dilute acid pre -
+treatment and ammonia fiber explosion (AFEX) pretreatment systems, 
+according to research ( Singh et al., 2015 ). DES systems generate lower 
+environmental effects than dichloromethane and ethyl acetate, but 
+create greater environmental impact than methanol and ethanol, ac -
+cording to LCA ( Zaib et al., 2022 ).
+The economic value of DES pretreatment increases because it gen -
+erates high-quality lignin co-products that increase total biorefinery 
+profits. DES-fractionated lignin contains valuable β-O-4 structures that 
+preserve between 31.82% and 59.06% of their structure, which makes 
+them suitable for high-value applications ( Cheng et al., 2022 ). The 
+economic viability of DES-based biorefineries strongly depends on suc -
+cessful co-product valorization strategies.
+DES-based biomass fractionation capital expenditure (CAPEX) costs 
+depend heavily on the process design, along with the facility size. A 
+recent assessment shows DES fractionation facilities operating at 
+220,000 tons per year require € 105–145 million in capital expenditures, 
+while kraft facilities need € 111 million. The main reason for high capital 
+expenditures lies in reactor systems, which need a special design to 
+manage DES viscosity and corrosion properties according to ( Bartling 
+et al., 2021 ).
+DES system performance depends largely on two key factors, which 
+are the efficiency of sugar yield production and the enhancement of 
+enzymatic hydrolysis. The enzymatic hydrolysis process following DES 
+pretreatment produces glucose yields between 90% and 99% while 
+untreated biomass yields remain significantly lower. Better sugar re -
+covery efficiency leads to improved economic outcomes because it en -
+ables higher production levels of bioethanol and biochemicals ( Kim 
+et al., 2020 ).
+The economic feasibility of DES fractionation depends heavily on the 
+successful implementation of continuous processing systems. Contin -
+uous operation of DES fractionation has been successfully demonstrated 
+in pilot-scale settings, although researchers continue to work on 
+enhancing liquid-to-solid ratios and residence times. The LigniSep pro -
+cess, along with other innovative separation technologies, demonstrates 
+potential for better economic performance through continuous lignin 
+precipitation ( Smit et al., 2022 ).
+Several basic technical hurdles must be overcome for the industrial 
+development of DES-based biomass fractionation systems. The viscosity 
+increase of DES during biomass dissolution poses the greatest technical 
+challenge since it negatively affects mass transfer rates and mixing ef -
+ficiency. Industrial-scale reactors need to handle rheological changes to 
+Table 9 
+LCA studies of DES/NADES-based biomass processing.
+Biomass/Product DES Process Software/ 
+Method
+Mail Findings Reference
+Microalgae/Biodiesel & 
+Biogas
+ChCl- 
+based
+DES-assisted hydrothermal 
+disintegration
+OpenLCA -Higher energy output with added energy use. 
+-Total GHG emission decreased by 0.05%.
+( Song et al., 2023 )
+Sewage sludge/ 
+Biodiesel
+ChCl- 
+based
+One-step production with DES vs. 
+two-step method(conventional)
+SimaPro 
+version 8.3
+-56% GHG emission reduction compared to the two- 
+step method. 
+-64% GHG emission reduction compared to 
+conventional diesel.
+( Moreno-Caballero 
+et al., 2025 )
+Empty fruit bunch date 
+palms/ Cellulose
+NADES NADES integrated with microwave- 
+assisted
+OpenLCA -Freshwater ecotoxicity is the most substantial 
+environmental impact. 
+-Reduced dependency on fossil resources.
+( Alanazi et al., 2024 )
+Darcyodes rostrata/ 
+Phenolic compounds
+- Solid-liquid extraction with DES vs. 
+with ethanol
+GaBi -Ethanol shows the least impact of environment. ( Murugan et al., 2021 )
+Atlantic codfish/ 
+Collagen
+ChCl- 
+based
+Three different HBD were tried. ReCiPe2008 -DES (urea: LA and urea: propionic acid) reduces 
+environmental impact 13–16% compared with acetic 
+acid.
+( Bisht et al., 2021 )
+Wheat straw/ Energy 
+pellets
+ChCl- 
+based
+DES treatment and then 
+pelletization.
+- -Global warming potential lower than wood pellets. ( Guo et al., 2022b )
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+16 
+
+
+===== PDF PAGE 17 =====
+maintain efficient heat and mass transfer operations ( Manafpour et al., 
+2024; Cooreman et al., 2020 ).
+Large-scale engineering operations for solvent recovery, along with 
+recycling, become challenging due to complex technical requirements. 
+Each method for solvent recovery, including rotary evaporation, mem -
+brane separation, and electrodialysis, shows its own benefits and re -
+strictions in industrial settings. The recovery rate from electrodialysis 
+systems reaches 97.6% at a cost of 10.4 kW.h/kg of DES recovered 
+through sophisticated equipment and process control systems ( Li et al., 
+2023b; Zhang et al., 2022 ).
+The industrial adoption of DES presents substantial opportunities for 
+sustainable processing because they offer environmentally friendly so -
+lutions. The transition process encounters various obstacles during its 
+implementation. The unique characteristics of DESs require industrial 
+equipment designers to create specific management systems for their 
+high viscosity and potential corrosive nature. The degradation of ChCl- 
+based DESs at elevated temperatures produces trimethylamine as a 
+harmful byproduct, which demonstrates the requirement for properly 
+designed safe systems. DESs gain popularity because they are inexpen -
+sive and non-toxic, and biodegradable, which makes them suitable for 
+green technology development despite existing safety concerns. The 
+technology demonstrates excellent capabilities for processing plant 
+biomass and for minimizing sulfur-based pollutants in fuel products. 
+Laboratory and pilot-scale research advancements indicate DESs will 
+become essential components for developing sustainable industrial 
+systems, which benefit human populations and environmental health 
+through continued safety and sustainability research.
+A sophisticated control system is necessary for implementing DES- 
+biomass interactions at the industrial level because of their complex 
+nature. The optimization of temperature, pressure, and residence time 
+becomes more difficult during larger-scale operations because of heat 
+transfer constraints and reaction kinetic differences. The diverse 
+composition of lignocellulosic biomass makes process control more 
+difficult because of its heterogeneous characteristics ( Logaru ˇsi ´c et al., 
+2024; Antunes et al., 2019 ).
+The deployment of DES technology into current biorefinery opera -
+tions requires handling both positive and negative aspects that arise 
+from integration efforts. The addition of DES pretreatment systems to 
+existing pulp mills becomes less capital-intensive but requires thorough 
+evaluation of process compatibility and material handling systems. The 
+high absorptivity of biomass materials generates difficulties in transport 
+because it leads to pipe erosion, as well as clogging and mechanical wear 
+( Antunes et al., 2019 ).
+The environmental trade-offs of DES-based biomass processing 
+become complicated when analyzed through LCA methods. The envi -
+ronmental sustainability of DES depends on its specific chemical 
+composition, together with the design of the processing system. The 
+environmental effects of DES systems based on ChCl and citric acid 
+become more significant because of elevated water usage and 
+fermentation-generated CO ₂ emissions ( Song et al., 2023; Zaib et al., 
+2022; Nejrotti et al., 2022; del Mar Contreras-G ´amez et al., 2023 ).
+The environmental benefits of DES pretreatment consist of minimal 
+vapor pressure, which reduces atmospheric contamination risks as well 
+as potential biodegradability. DES systems demonstrate environmental 
+risks because they generate LC ₅₀ (lethal concentration, causes 50% 
+mortality) values between 10²-10 ³ mg/L when exposed to aquatic or -
+ganisms. The evaluation of environmental impact must encompass both 
+the DES lifecycle stages, which include production and disposal 
+( Rachiero et al., 2022; Nejrotti et al., 2022; del Mar Contreras-G ´amez 
+et al., 2023 ).
+The integration of DES technology within sustainable biorefinery 
+frameworks needs to perform a complete sustainability assessment of 
+economic, environmental, and social elements. DES-based biorefineries 
+demonstrate improved efficiency and lower energy usage when 
+compared to traditional approaches based on techno-economic and LCA 
+studies ( del Mar Contreras-G ´amez et al., 2023 ).
+Many DES components derive from renewable sources, which follow 
+circular economy principles when biomass-derived compounds are used 
+for preparing DES for biomass processing. The closed-loop system en -
+ables improved economic and environmental results because it mini -
+mizes both external chemical inputs and waste generation. The overall 
+sustainability benefits rely on achieving successful scale-up along with 
+an optimized recovery process ( Rachiero et al., 2022; Kim et al., 2020; 
+del Mar Contreras-G ´amez et al., 2023 ).
+The development of efficient solvent recovery systems represents an 
+essential research priority for DES-based biomass fractionation, together 
+with the optimization of process integration methods and commercial- 
+scale facility economic modeling. Research on new DES formulations 
+with better thermal properties and decreased viscosity addresses major 
+scale-up obstacles, according to ( Li et al., 2023b; Bartling et al., 2021; 
+Logaru ˇsi ´c et al., 2024; del Mar Contreras-G ´amez et al., 2023 ).
+The validation of commercial viability and industrial partnership 
+attraction needs funding for pilot-scale demonstration facilities. The 
+400-liter reactor systems operated by Fraunhofer CBP serve as valuable 
+demonstration tools for scale-up, yet require further development for 
+commercial application, according to ( Smit et al., 2022 ).
+DES commercialization depends on step-by-step development by 
+joining existing biorefineries instead of building completely new facil -
+ities. The use of DES pretreatment for retrofitting current pulp mills and 
+bioethanol facilities presents affordable entry points for operational 
+experience development ( Antunes et al., 2019 ).
+The development of DES technology needs strategic collaborations 
+between research teams and experienced biomass processors to resolve 
+scaling issues and achieve industrial market readiness. Standardization 
+of process designs and equipment specifications helps speed up indus -
+trial adoption by reducing capital costs through scaled production.
+DESs show potential as an advanced biomass fractionation method 
+that promises better environmental results while improving the eco -
+nomic efficiency of biorefineries. Laboratory and pilot-scale demon -
+stration of DES technology does not guarantee commercial success 
+because substantial improvements are needed in process optimization, 
+equipment design, and economic performance ( Cheng et al., 2022; 
+Bartling et al., 2021; del Mar Contreras-G ´amez et al., 2023 ).
+DES-based biomass fractionation becomes economically viable when 
+the process optimizes solvent recovery and minimizes energy usage 
+while establishing profitable co-product markets. Techno-economic 
+studies demonstrate that DES systems have commercial potential 
+against traditional pretreatment methods only through extensive pro -
+cess improvements and scale optimization ( Li et al., 2023b; Bartling 
+et al., 2021; Preethi and R Banu, 2023; Zhang et al., 2022 ).
+The extensive scale-up challenges for DES technology demand 
+concentrated research with strategic industry partnerships and staged 
+commercial deployment strategies to overcome these barriers. DES- 
+based biomass fractionation can become a key technology for sustain -
+able biorefinery development through the successful resolution of these 
+challenges, according to ( del Mar Contreras-G ´amez et al., 2023 ).
+Table 10 highlights typical techno-economic analysis work on the 
+valorization of lignocellulosic biomass using DES. It reveals the diversity 
+of biomass feedstocks, DES compositions, and simulation practices used 
+to assess different bio-refinery scenarios. Additionally, it lists the prin -
+cipal products and their respective minimum selling price of the main 
+product values, thus presenting a comparative outlook of the economic 
+viability of different DES biomass conversion processes as presented in 
+literature.
+Results have shown that DES biorefining processes have strong 
+techno-economic viability regardless of the type of biomass used and the 
+desired products. High-solid loading DES pretreatment is identified as a 
+recurring theme of economic viability, as highlighted in multi-product 
+biorefineries and mono-product biofuel processes. In a scenario where 
+2,3-butanediol, furfural, and lignin are co-produced from switchgrass 
+biomass, higher solid loadings (20 – 27%) were found to achieve low 
+minimum production costs that were well below existing market prices, 
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+17 
+
+
+===== PDF PAGE 18 =====
+thereby emphasizing the importance of process intensification of 
+biomass to optimize equipment and operational costs. In a similar 
+manner, within a rice straw to bioethanol process chain, increased solid 
+loadings had a positive impact on cost optimization strategies. All of 
+these results emphasize that process intensification in DES biorefining is 
+an essential milestone that significantly helps optimize economic 
+viability in DES biorefining processes.
+Sensitivity analyses in the various studies have consistently picked 
+out solvent-related variables and conversion efficiencies as the major 
+determinants of economic uncertainty. The influence of the cost, con -
+sumption rate, and recycle ratios of the components of DES and auxiliary 
+solvents (acetone and LA) is found to have a substantial influence on the 
+minimum selling prices, often dominating the influence of the cost of the 
+feedstocks. This has been the case for bio-based fuel as well as bio-based 
+chemical conversion processes and hence reveals the importance of 
+solvent utilization as a major bottleneck in the commercialization route. 
+Additionally, the efficiency of enzymatic hydrolysis has been found to 
+have a substantial influence on the yields as well as economics, thereby 
+indicating the importance of the correlated influences of upstream 
+treatment efficacies and downstream conversion costs.
+The relevance of solvent recovery can also be validated by the cel -
+lulose nanocrystal production case study, in which the recovery of DES 
+had a significant impact on economic parameters. Although the TEA 
+calculation in this research, along with those done in the biorefinery 
+case studies, explicitly show the effectiveness of TEA in evaluating the 
+importance of economic viability in the context of DES-based applica -
+tions, the TEA calculations in this case only show the relevance of sol -
+vent recovery in economic viability ( Putranto et al., 2025 ). It thus 
+explicitly reveals the importance of solvent recovery not only in the 
+context of environmental sustainability but also in the context of eco -
+nomic viability in the context of DES-based applications. In combina -
+tion, the TEA calculations show the economic viability of DES-based 
+biomass conversion processes, in which high solid content processes and 
+the importance of solvent recovery would play important roles in 
+commercializing the technology.
+10. Conclusion
+The review evaluates DESs for biomass conversion through advanced 
+computational methods, which reveal their fundamental operational 
+mechanisms. Our research combines molecular dynamics simulations 
+with DFT calculations and machine learning models to study DES in -
+teractions through hydrogen bonding and van der Waals forces and 
+proton transfer mechanisms. The molecular-level analysis serves as the 
+essential framework to understand experimental results and forecast 
+solvent behavior while creating new DES formulations for specific 
+applications.
+The simulation results about bond cleavage kinetics, lignin-unit in -
+teractions, and solvent transport properties help solve the main chal -
+lenges of viscosity and mass transfer and selective fractionation at 
+industrial scales. The existing challenges in industrial deployment, 
+including solvent recycling and energy-intensive recovery and equip -
+ment design, can be solved through computational modeling tools. The 
+discovery of low-viscosity high-performance DESs depends on MD and 
+ML models to optimize process parameters virtually before experimental 
+testing.
+The complete realization of DES potential depends on implementing 
+multiscale modeling, which connects quantum mechanics to process 
+simulation. The review establishes a computational framework that both 
+summarizes current DES research and outlines essential steps for 
+developing sustainable biorefineries that will use DESs as transformative 
+agents.
+CRediT authorship contribution statement
+Karo Almassi Tighi: Writing – original draft, Visualization, Meth -
+odology, Investigation, Conceptualization. Rama Layek: Supervision. 
+Ikenna Anugwom: Supervision.
+Declaration of Generative AI and AI-assisted technologies in the 
+writing process
+During the preparation of this work the author used ChatGPT 
+(OpenAI) in order to improve language fluency and grammar. After 
+using this tool, the authors reviewed and edited the content as needed 
+and take full responsibility for the content of the published article.
+Declaration of Competing Interest
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+Data availability
+No data was used for the research described in the article.
+References
+Abbott, A.P., Capper, G., Davies, D.L., Rasheed, R.K., Tambyrajah, V., 2003. Novel 
+solvent properties of choline chloride/urea mixturesElectronic supplementary 
+information (ESI) available: spectroscopic data. See http://www.rsc.org/suppdata/ 
+cc/b2/b210714g/. Chem. Commun. 70 – 71. https://doi.org/10.1039/b210714g .
+Abranches, D.O., Martins, M.A.R., Silva, L.P., Schaeffer, N., Pinho, S.P., Coutinho, J.A.P., 
+2019. Phenolic hydrogen bond donors in the formation of non-ionic deep eutectic 
+solvents: the quest for type V DES. Chem. Commun. 55, 10253 – 10256. https://doi. 
+org/10.1039/C9CC04846D .
+Akhlaghi Bagherjeri, M., Rezaie, F., Mahdavifar, Z., Monhemi, H., Haque, A.N.M.A., 
+Naebe, M., 2026. Mechanistic insights into cellulose dissolution in deep eutectic 
+solvents from classical MD simulations. J. Phys. Chem. Solids 210, 113388. https:// 
+doi.org/10.1016/j.jpcs.2025.113388 .
+Alanazi, Y.M., Yin, C.-Y., Ragib, A.Al, El-Harbawi, M., Sivapragasam, M., 2024. Life cycle 
+assessment of extraction of cellulose from date palm biomass using natural deep 
+eutectic solvent (NaDES) via microwave-assisted process. Appl. Sci. 14, 9583. 
+https://doi.org/10.3390/app14209583 .
+Table 10 
+DES-based biorefinery techno-economics.
+Raw Material DES Process 
+Simulation
+Products Minimum Selling Price of the Main 
+Product ($.ton
+¡ 1
+)
+Reference
+-Switchgrass ChCl: EG Aspen Plus 2,3-butanediol 
+Furfural 
+Technical lignin
+1703 – 1736 ( Zang et al., 2020 )
+-Rice straw ChCl:urea Aspen Plus Bioethanol 
+Lignin
+3050 ( Peng et al., 2021 )
+-Rice straw ChCl:LA Aspen plus Bioethanol 
+Lignin
+2128 ( Peng et al., 2021 )
+-Oil palm empty fruit 
+bunch
+ChCl:LA Microsoft Excel Cellulose 
+nanocrystal
+3560 ( Putranto et al., 
+2025 )
+-Poplar EG:Dodecyl trimethyl ammonium 
+chloride
+Microsoft Excel Adhesive 1595 ( Zhang et al., 
+2024b )
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+18 
+
+
+===== PDF PAGE 19 =====
+Amin, M.A., Abd El-Rehim, S.S., El-Sherbini, E.E.F., Bayoumi, R.S., 2007. The inhibition 
+of low carbon steel corrosion in hydrochloric acid solutions by succinic acid. 
+Electrochim. Acta 52, 3588 – 3600. https://doi.org/10.1016/j.electacta.2006.10.019 .
+Anmol, G.Aggarwal, Shivani, M., Kumar Gupta, M., Sharma, U.Sharma, 2025. Natural 
+deep eutectic solvents-based concurrent approach for qualitative and quantitative 
+enhancement of Rosa damascena essential oil and recovery of phenolics from 
+distilled rose petals. Sep. Purif. Technol. 354, 128699. https://doi.org/10.1016/j. 
+seppur.2024.128699 .
+Antunes, F.A.F., Chandel, A.K., Ter ´an-Hilares, R., Ingle, A.P., Rai, M., dos Santos 
+Milessi, T.S., da Silva, S.S., dos Santos, J.C., 2019. Overcoming challenges in 
+lignocellulosic biomass pretreatment for second-generation (2G) sugar production: 
+emerging role of nano, biotechnological and promising approaches. 3 Biotech 9, 230. 
+https://doi.org/10.1007/s13205-019-1761-1 .
+Arora, S., Gupta, N., Singh, V., 2020. Choline based basic ionic liquid (BIL)/acidic DES 
+mediated cellulose rich fractionation of agricultural waste biomass and valorization 
+to 5-HMF. Waste Biomass-.-. Valoriz. 11, 3345 – 3354. https://doi.org/10.1007/ 
+s12649-019-00603-2 .
+Azougagh, O., Jilal, I., Jabir, L., El-Hammi, H., Essayeh, S., Mohammed, N., Achalhi, N., 
+El yousfi, R., El Idrissi, A., El Ouardi, Y., Laatikainen, K., Abou-Salama, M., El 
+Barkany, S., 2023. Dissolution mechanism of cellulose in a 
+benzyltriethylammonium/urea deep eutectic solvent (DES): DFT-quantum modeling, 
+molecular dynamics and experimental investigation. Phys. Chem. Chem. Phys. 25, 
+22870 – 22888. https://doi.org/10.1039/D3CP02335D .
+Bai, Y., Zhang, X.-F., Wang, Z., Zheng, T., Yao, J., 2022. Deep eutectic solvent with 
+bifunctional Br ø nsted-Lewis acids for highly efficient lignocellulose fractionation. 
+Bioresour. Technol. 347, 126723. https://doi.org/10.1016/j.biortech.2022.126723 .
+Bajpai, P., 2021. Deep Eutectic Solvents for Pretreatment of Lignocellulosic Biomass. 
+Springer Singapore, Singapore. https://doi.org/10.1007/978-981-16-4013-1 . 
+Bao, Y., Wang, Y., Yan, C., Xue, Z., 2025. Deep eutectic solvents for fractionation and 
+valorization of lignocellulose. Green. Chem. Eng. 6, 21 – 35. https://doi.org/ 
+10.1016/j.gce.2024.04.001 .
+Bartling, A.W., Stone, M.L., Hanes, R.J., Bhatt, A., Zhang, Y., Biddy, M.J., Davis, R., 
+Kruger, J.S., Thornburg, N.E., Luterbacher, J.S., Rinaldi, R., Samec, J.S.M., Sels, B.F., 
+Rom ´an-Leshkov, Y., Beckham, G.T., 2021. Techno-economic analysis and life cycle 
+assessment of a biorefinery utilizing reductive catalytic fractionation. Energy 
+Environ. Sci. 14, 4147 – 4168. https://doi.org/10.1039/D1EE01642C .
+Bisht, M., Martins, M., Dias, A.C.R.V., Ventura, S.P.M., Coutinho, J.A.P., 2021. 
+Uncovering the potential of aqueous solutions of deep eutectic solvents on the 
+extraction and purification of collagen type I from Atlantic codfish ( Gadus morhua ). 
+Green. Chem. 23, 8940 – 8948. https://doi.org/10.1039/D1GC01432C .
+Chatterjee, S., Haldar, T., Ghosh, D., Bagchi, S., 2020. Electrostatic manifestation of 
+micro-heterogeneous solvation structures in deep-eutectic solvents: a spectroscopic 
+approach. J. Phys. Chem. B 124, 3709 – 3715. https://doi.org/10.1021/acs. 
+jpcb.9b11352 .
+Chen, H., Sun, C., Hu, Y., Xia, C., Sun, F., Zhang, Z., 2023b. Reaction characteristics of 
+metal-salt coordinated deep eutectic solvents during lignocellulosic pretreatment. 
+J. Environ. Chem. Eng. 11, 109531. https://doi.org/10.1016/j.jece.2023.109531 .
+Chen, H., Wang, A., Yan, C., Liu, S., Li, L., Wu, Q., Liu, Y., Liu, Y., Nie, G., Nie, S., Yao, S., 
+Yu, H., 2023a. Study on the solubility of industrial lignin in choline chloride-based 
+deep eutectic solvents. Sustainability 15, 7118. https://doi.org/10.3390/ 
+su15097118 .
+Chen, W., Bai, X., Xue, Z., Mou, H., Chen, J., Liu, Z., Mu, T., 2019. The formation and 
+physicochemical properties of PEGylated deep eutectic solvents. New J. Chem. 43, 
+8804 – 8810. https://doi.org/10.1039/C9NJ02196E .
+Chen, Y., Tang, Z., Tang, W., Ma, C., He, Y.-C., 2025. Exploration of biomass 
+fractionation and lignin removal for enhancing enzymatic digestion of wheat-stalk 
+through deep eutectic solvent Cetyl trimethyl ammonium chloride:Lactic acid 
+treatment. Int. J. Biol. Macromol. 306, 141460. https://doi.org/10.1016/j. 
+ijbiomac.2025.141460 .
+Chen, Y., Yu, D., Liu, Z., Xue, Z., Mu, T., 2022. Thermal, chemical, electrochemical, 
+radiolytic and biological stability of ionic liquids and deep eutectic solvents. New J. 
+Chem. 46, 17640 – 17668. https://doi.org/10.1039/D2NJ03148E .
+Chen, Y., Yu, Z., 2024. Low-melting mixture solvents: extension of deep eutectic solvents 
+and ionic liquids for broadening green solvents and green chemistry. Green. Chem. 
+Eng. 5, 409 – 417. https://doi.org/10.1016/j.gce.2023.11.001 .
+Chen, Z., Bai, X., Zhang, L.A.H., Wan, C., 2020. Insights into structural changes of lignin 
+toward tailored properties during deep eutectic solvent pretreatment. ACS Sustain. 
+Chem. Eng. 8, 9783 – 9793. https://doi.org/10.1021/acssuschemeng.0c01361 .
+Cheng, J., Huang, C., Zhan, Y., Han, S., Wang, J., Meng, X., Yoo, C.G., Fang, G., 
+Ragauskas, A.J., 2022. Effective biomass fractionation and lignin stabilization using 
+a diol DES system. Chem. Eng. J. 443, 136395. https://doi.org/10.1016/j. 
+cej.2022.136395 .
+Cooreman, E., Vangeel, T., Van Aelst, K., Van Aelst, J., Lauwaert, J., Thybaut, J.W., Van 
+den Bosch, S., Sels, B.F., 2020. Perspective on overcoming scale-up hurdles for the 
+reductive catalytic fractionation of lignocellulose biomass. Ind. Eng. Chem. Res. 59, 
+17035 – 17045. https://doi.org/10.1021/acs.iecr.0c02294 .
+da Costa Lopes, A.M., Gomes, J.R.B., Coutinho, J.A.P., Silvestre, A.J.D., 2020. Novel 
+insights into biomass delignification with acidic deep eutectic solvents: a 
+mechanistic study of β -O-4 ether bond cleavage and the role of the halide counterion 
+in the catalytic performance. Green. Chem. 22, 2474 – 2487. https://doi.org/ 
+10.1039/C9GC02569C .
+Dai, Y., van Spronsen, J., Witkamp, G.-J., Verpoorte, R., Choi, Y.H., 2013. Natural deep 
+eutectic solvents as new potential media for green technology. Anal. Chim. Acta 766, 
+61 – 68. https://doi.org/10.1016/j.aca.2012.12.019 .
+Das, L., Li, M., Stevens, J., Li, W., Pu, Y., Ragauskas, A.J., Shi, J., 2018. Characterization 
+and catalytic transfer hydrogenolysis of deep eutectic solvent extracted sorghum 
+lignin to phenolic compounds. ACS Sustain. Chem. Eng. 6, 10408 – 10420. https:// 
+doi.org/10.1021/acssuschemeng.8b01763 .
+del Mar Contreras-G ´amez, M., Gal ´an-Martín, 
+´
+A., Seixas, N., da Costa Lopes, A.M., 
+Silvestre, A., Castro, E., 2023. Deep eutectic solvents for improved biomass 
+pretreatment: current status and future prospective towards sustainable processes. 
+Bioresour. Technol. 369, 128396. https://doi.org/10.1016/j.biortech.2022.128396 .
+Delgado-Mellado, N., Larriba, M., Navarro, P., Rigual, V., Ayuso, M., García, J., 
+Rodríguez, F., 2018. Thermal stability of choline chloride deep eutectic solvents by 
+TGA/FTIR-ATR analysis. J. Mol. Liq. 260, 37 – 43. https://doi.org/10.1016/j. 
+molliq.2018.03.076 .
+Deng, H.-Q., Lin, X.-H., Fan, J.-T., Fu, P.-Z., Guan, J.-J., Lei, H.-L., Liu, L.-H., Lai, L.-H., 
+Hou, X.-D., Lou, W.-Y., 2023. Glycolic acid-based deep eutectic solvents boosting co- 
+production of xylo-oligomers and fermentable sugars from corncob and the related 
+kinetic mechanism. Biotechnol. Biofuels Bioprod. 16, 126. https://doi.org/10.1186/ 
+s13068-023-02369-1 .
+Dong, L., Cao, G., Zhao, L., Liu, B., Ren, N., 2018. Alkali/urea pretreatment of rice straw 
+at low temperature for enhanced biological hydrogen production. Bioresour. 
+Technol. 267, 71 – 76. https://doi.org/10.1016/j.biortech.2018.05.055 .
+Ee, L.Y., Tan, Y.K., Miao, J., Chu, H.T., Li, S.F.Y., 2023. High-purity lignin from selective 
+biomass fractionation with ternary deep eutectic solvents. Green. Chem. 25, 
+3137 – 3151. https://doi.org/10.1039/D3GC00080J .
+Fan, B., Yang, B., Tang, Z., Wu, Z., He, Y.-C., Ma, C., 2025. Pretreatment with alkyl 
+trimethylammonium bromide-based deep eutectic solvent cetyltrimethyl ammonium 
+bromide/lactic acid/Al3 + benign system for the efficient production of furfural. 
+Ind. Crops Prod. 236, 122042. https://doi.org/10.1016/j.indcrop.2025.122042 .
+Farooq, M.Q., Odugbesi, G.A., Abbasi, N.M., Anderson, J.L., 2020. Elucidating the role of 
+hydrogen bond donor and acceptor on solvation in deep eutectic solvents formed by 
+ammonium/phosphonium salts and carboxylic acids. ACS Sustain. Chem. Eng. 8, 
+18286 – 18296. https://doi.org/10.1021/acssuschemeng.0c06926 .
+Florindo, C., Oliveira, M.M., Branco, L.C., Marrucho, I.M., 2017. Carbohydrates-based 
+deep eutectic solvents: thermophysical properties and rice straw dissolution. J. Mol. 
+Liq. 247, 441 – 447. https://doi.org/10.1016/j.molliq.2017.09.026 .
+Francisco, M., van den Bruinhorst, A., Kroon, M.C., 2012. New natural and renewable 
+low transition temperature mixtures (LTTMs): screening as solvents for 
+lignocellulosic biomass processing. Green. Chem. 14, 2153. https://doi.org/ 
+10.1039/c2gc35660k .
+French, A.D., 2017. Glucose, not cellobiose, is the repeating unit of cellulose and why 
+that is important. Cellulose 24, 4605 – 4609. https://doi.org/10.1007/s10570-017- 
+1450-3 .
+Fu, C., Wang, S., Song, G., 2024. Efficient fractionation of corn stover using deep eutectic 
+solvent from lignin-derived 3-phenylpropionic acid: towards a closed-loop 
+biorefinery. Ind. Crops Prod. 212, 118380. https://doi.org/10.1016/j. 
+indcrop.2024.118380 .
+Fugol, M., Prask, H., Szlachta, J., Dyjakon, A., Pas ł awska, M., Szufa, S., 2023. Improving 
+the energetic efficiency of biogas plants using enzymatic additives to anaerobic 
+digestion. Energies (Basel) 16, 1845. https://doi.org/10.3390/en16041845 .
+Ge, H., Liu, Y., Zhu, B., Xu, Y., Zhou, R., Xu, H., Li, B., 2023a. Machine learning 
+prediction of delignification and lignin structure regulation of deep eutectic solvents 
+pretreatment processes. Ind. Crops Prod. 203, 117138. https://doi.org/10.1016/j. 
+indcrop.2023.117138 .
+Ge, H., Liu, Y., Zhu, B., Xu, Y., Zhou, R., Xu, H., Li, B., 2023b. Machine learning 
+prediction of delignification and lignin structure regulation of deep eutectic solvents 
+pretreatment processes. Ind. Crops Prod. 203, 117138. https://doi.org/10.1016/j. 
+indcrop.2023.117138 .
+Ghaedi, H., Ayoub, M., Sufian, S., Lal, B., Uemura, Y., 2017. Thermal stability and FT-IR 
+analysis of Phosphonium-based deep eutectic solvents with different hydrogen bond 
+donors. J. Mol. Liq. 242, 395 – 403. https://doi.org/10.1016/j.molliq.2017.07.016 .
+Gundupalli, M.P., Cheenkachorn, K., Chuetor, S., Kirdponpattara, S., Gundupalli, S.P., 
+Show, P.-L., Sriariyanun, M., 2023. Assessment of pure, mixed and diluted deep 
+eutectic solvents on Napier grass (Cenchrus purpureus): compositional and 
+characterization studies of cellulose, hemicellulose and lignin. Carbohydr. Polym. 
+306, 120599. https://doi.org/10.1016/j.carbpol.2023.120599 .
+Guo, D., Han, J., Tang, H., Sun, Y., Li, L., Kong, W., Liang, J., Zhang, J., Wang, J., 2025. 
+The dissolution of galactomannans in type II/III deep eutectic solvents: effect of 
+polysaccharide structure and interaction mechanism. Food Hydrocoll. 158, 110552. 
+https://doi.org/10.1016/j.foodhyd.2024.110552 .
+Guo, T., Yu, Y., Wan, Z., Zargar, S., Wu, J., Bi, R., Sokhansanj, S., Tu, Q., Rojas, O.J., 
+2022b. Energy pellets from whole-wheat straw processed with a deep eutectic 
+solvent: a comprehensive thermal, molecular and environmental evaluation. Renew. 
+Energy 194, 902 – 911. https://doi.org/10.1016/j.renene.2022.05.143 .
+Guo, Y., Xu, L., Shen, F., Hu, J., Huang, M., He, J., Zhang, Y., Deng, S., Li, Q., Tian, D., 
+2022a. Insights into lignocellulosic waste fractionation for lignin nanospheres 
+fabrication using acidic/alkaline deep eutectic solvents. Chemosphere 286, 131798. 
+https://doi.org/10.1016/j.chemosphere.2021.131798 .
+Haldar, D., Sen, D., Gayen, K., 2018. Enzymatic hydrolysis of banana stems ( Musa 
+acuminata ): optimization of process parameters and inhibition characterization. Int. 
+J. Green. Energy 15, 406 – 413. https://doi.org/10.1080/15435075.2018.1467834 .
+Halder, P., Patel, S., Kundu, S., Gbolahan Hakeem, I., Hedayati Marzbali, M., 
+Pramanik, B., Shah, K., 2021. Dissolution reaction kinetics and mass transfer during 
+aqueous choline chloride pre-treatment of oak wood. Bioresour. Technol. 322, 
+124519. https://doi.org/10.1016/j.biortech.2020.124519 .
+Hallac, B.B., Ragauskas, A.J., 2011. Analyzing cellulose degree of polymerization and its 
+relevancy to cellulosic ethanol. Biofuels Bioprod. Bioref. 5, 215 – 225. https://doi. 
+org/10.1002/bbb.269 .
+He, L., Chen, L., Zheng, B., Zhou, H., Wang, H., Li, H., Zhang, H., Xu, C.C., Yang, S., 2023. 
+Deep eutectic solvents for catalytic biodiesel production from liquid biomass and 
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+19 
+
+
+===== PDF PAGE 20 =====
+upgrading of solid biomass into 5-hydroxymethylfurfural. Green. Chem. 25, 
+7410 – 7440. https://doi.org/10.1039/D3GC02816J .
+Holtman, K.M., Chang, H.-M., Jameel, H., Kadla, J.F., 2003. Elucidation of lignin 
+structure through degradative methods: comparison of modified DFRC and 
+thioacidolysis. J. Agric. Food Chem. 51, 3535 – 3540. https://doi.org/10.1021/ 
+jf0340411 .
+Hong, S., Shen, X.-J., Xue, Z., Sun, Z., Yuan, T.-Q., 2020. Structure – function relationships 
+of deep eutectic solvents for lignin extraction and chemical transformation. Green. 
+Chem. 22, 7219 – 7232. https://doi.org/10.1039/D0GC02439B .
+Hou, Q., Qi, X., Zhen, M., Qian, H., Nie, Y., Bai, C., Zhang, S., Bai, X., Ju, M., 2021. 
+Biorefinery roadmap based on catalytic production and upgrading 5- 
+hydroxymethylfurfural. Green. Chem. 23, 119 – 231. https://doi.org/10.1039/ 
+D0GC02770G .
+Hou, X.-D., Li, A.-L., Lin, K.-P., Wang, Y.-Y., Kuang, Z.-Y., Cao, S.-L., 2018. Insight into 
+the structure-function relationships of deep eutectic solvents during rice straw 
+pretreatment. Bioresour. Technol. 249, 261 – 267. https://doi.org/10.1016/j. 
+biortech.2017.10.019 .
+Ippolitov, V., Anugwom, I., van Deun, R., M ¨antt ¨ari, M., Kallioinen-M ¨antt ¨ari, M., 2022. 
+Cellulose membranes in the treatment of spent deep eutectic solvent used in the 
+recovery of lignin from lignocellulosic biomass. Membranes (Basel) 12, 86. https:// 
+doi.org/10.3390/membranes12010086 .
+Ivanovi ´c, M., Islam ˇcevi ´c Razbor ˇsek, M., Kolar, M., 2020. Innovative extraction 
+techniques using deep eutectic solvents and analytical methods for the isolation and 
+characterization of natural bioactive compounds from plant material. Plants 9, 1428. 
+https://doi.org/10.3390/plants9111428 .
+Jablonsky, M., Haz, A., Majova, V., 2019. Assessing the opportunities for applying deep 
+eutectic solvents for fractionation of beech wood and wheat straw. Cellulose 26, 
+7675 – 7684. https://doi.org/10.1007/s10570-019-02629-0 .
+Jan ˇcíkov ´a, V., Jablonský, M., 2022. Delignification of hemp stalk using a low transition 
+temperature mixture composed of choline chloride and lactic acid. Bioresources 17, 
+1232 – 1240. https://doi.org/10.15376/biores.17.1.1232-1240 .
+Jan ˇcíkov ´a, V., Jablonský, M., Volekov ´a, K., 2023. Delignification of wheat straw using 
+DES-like mixtures. Sustainability 15, 15343. https://doi.org/10.3390/su152115343 .
+Jankowski, K.J., Dubis, B., Sok ´olski, M.M., Za ł uski, D., B ´orawski, P., Szempli ´nski, W., 
+2020. Productivity and energy balance of maize and sorghum grown for biogas in a 
+large-area farm in Poland: an 11-year field experiment. Ind. Crops Prod. 148, 
+112326. https://doi.org/10.1016/j.indcrop.2020.112326 .
+Ji, C., Weng, R., Yu, C., Fan, Y., Ouyang, J., 2025. Insights into acidic deep eutectic 
+solvent-mediated softwood pretreatment for high fermentable sugar yield and 
+efficient lignin recovery. Ind. Crops Prod. 227, 120779. https://doi.org/10.1016/j. 
+indcrop.2025.120779 .
+Ji, Q., Yu, X., Yagoub, A.E.-G.A., Chen, L., Fakayode, O.A., Zhou, C., 2021. Synergism of 
+sweeping frequency ultrasound and deep eutectic solvents pretreatment for 
+fractionation of sugarcane bagasse and enhancing enzymatic hydrolysis. Ultrason. 
+Sonochem. 73, 105470. https://doi.org/10.1016/j.ultsonch.2021.105470 .
+Kalyniukova, A., Holu ˇsa, J., Musiolek, D., Sedlakova-Kadukova, J., P ł otka-Wasylka, J., 
+Andruch, V., 2021. Application of deep eutectic solvents for separation and 
+determination of bioactive compounds in medicinal plants. Ind. Crops Prod. 172, 
+114047. https://doi.org/10.1016/j.indcrop.2021.114047 .
+Kawamata, Y., Yoshikawa, T., Aoki, H., Koyama, Y., Nakasaka, Y., Yoshida, M., 
+Masuda, T., 2019. Kinetic analysis of delignification of cedar wood during 
+organosolv treatment with a two-phase solvent using the unreacted-core model. 
+Chem. Eng. J. 368, 71 – 78. https://doi.org/10.1016/j.cej.2019.02.103 .
+Khanbabaeimoghri, N., Lashkarbolooki, M., Bakhshi, H., Farzam, S., 2025. Measurement 
+and thermodynamic modeling of the surface tension of binary mixtures containing 
+deep eutectic solvent. Chem. Eng. Commun. 212, 1013 – 1030. https://doi.org/ 
+10.1080/00986445.2024.2445229 .
+Kim, K.H., Dutta, T., Sun, J., Simmons, B., Singh, S., 2018. Biomass pretreatment using 
+deep eutectic solvents from lignin derived phenols. Green. Chem. 20, 809 – 815. 
+https://doi.org/10.1039/C7GC03029K .
+Kim, K.H., Wang, Y., Takada, M., Eudes, A., Yoo, C.G., Kim, C.S., Saddler, J., 2020. Deep 
+eutectic solvent pretreatment of transgenic biomass with increased C6C1 lignin 
+monomers. Front. Plant. Sci. 10. https://doi.org/10.3389/fpls.2019.01774 .
+Koffi, P.A.Y., Uwase, B., Zhang, D., He, Y.-C., 2025. Co-production of furfural, reducing 
+sugars and xylooligosaccharides from biomass through the pretreatment with 
+mixture of deep eutectic solvent Dodecyltrimethylammonium bromide:Lactic acid 
+and γ -valerolactone. Sustain. Chem. Pharm. 48, 102258. https://doi.org/10.1016/j. 
+scp.2025.102258 .
+Kumar, A.K., Parikh, B.S., Pravakar, M., 2016. Natural deep eutectic solvent mediated 
+pretreatment of rice straw: bioanalytical characterization of lignin extract and 
+enzymatic hydrolysis of pretreated biomass residue. Environ. Sci. Pollut. Res. 23, 
+9265 – 9275. https://doi.org/10.1007/s11356-015-4780-4 .
+Kumar, B., Bhardwaj, N., Agrawal, K., Chaturvedi, V., Verma, P., 2020. Current 
+perspective on pretreatment technologies using lignocellulosic biomass: an emerging 
+biorefinery concept. Fuel Process. Technol. 199, 106244. https://doi.org/10.1016/j. 
+fuproc.2019.106244 .
+Li, B., Feng, S., Huang, J., Hu, Y., Chen, X., Fu, X., Lin, X., 2025. Facile fractionation of 
+poplar by a novel ternary deep eutectic solvent (DES) for cellulosic ethanol 
+production under mild pretreatment conditions. Ind. Crops Prod. 223, 120132. 
+https://doi.org/10.1016/j.indcrop.2024.120132 .
+Li, P., Dong, C., Pang, Z., Chen, X., 2024. Utilization of benzoic acid – based green deep 
+eutectic solvents for the fractionation of lignocellulosic biomass. Int. J. Biol. 
+Macromol. 282, 137062. https://doi.org/10.1016/j.ijbiomac.2024.137062 .
+Li, P., Zhang, Z., Zhang, X., Li, K., Jin, Y., Wu, W., 2023b. DES: their effect on lignin and 
+recycling performance. RSC Adv. 13, 3241 – 3254. https://doi.org/10.1039/ 
+D2RA06033G .
+Li, Q., Dong, Y., Hammond, K.D., Wan, C., 2021b. Revealing the role of hydrogen 
+bonding interactions and supramolecular complexes in lignin dissolution by deep 
+eutectic solvents. J. Mol. Liq. 344, 117779. https://doi.org/10.1016/j. 
+molliq.2021.117779 .
+Li, W., Chai, B., Lu, Y., Wang, M., 2023a. Anaerobic co-digestion of grass, alfalfa, and red 
+clover for methane production and the kinetic analysis. Bioresources 18, 1742 – 1756. 
+https://doi.org/10.15376/biores.18.1.1742-1756 .
+Li, W., Tan, X., Miao, C., Zhang, Z., Wang, Y., Ragauskas, A.J., Zhuang, X., 2023d. Mild 
+organosolv pretreatment of sugarcane bagasse with acetone/phenoxyethanol/water 
+for enhanced sugar production. Green. Chem. 25, 1169 – 1178. https://doi.org/ 
+10.1039/D2GC04404H .
+Li, W.-X., Xiao, W.-Z., Yang, Y.-Q., Wang, Q., Chen, X., Xiao, L.-P., Sun, R.-C., 2021a. 
+Insights into bamboo delignification with acidic deep eutectic solvents pretreatment 
+for enhanced lignin fractionation and valorization. Ind. Crops Prod. 170, 113692. 
+https://doi.org/10.1016/j.indcrop.2021.113692 .
+Li, X., Tang, W., He, Y.-C., 2023c. Integrated understanding of acidic deep eutectic 
+solvent choline chloride: oxalic acid pretreatment to enhance the enzymatic 
+hydrolysis of rape straw. Ind. Crops Prod. 206, 117691. https://doi.org/10.1016/j. 
+indcrop.2023.117691 .
+Liang, X., Zhang, J., Huang, Z., Guo, Y., 2023. Sustainable recovery and recycling of 
+natural deep eutectic solvent for biomass fractionation via industrial membrane- 
+based technique. Ind. Crops Prod. 194, 116351. https://doi.org/10.1016/j. 
+indcrop.2023.116351 .
+Lim, W.-L., Gunny, A.A.N., Kasim, F.H., Gopinath, S.C.B., Kamaludin, N.H.I., Arbain, D., 
+2021. Cellulose nanocrystals from bleached rice straw pulp: acidic deep eutectic 
+solvent versus sulphuric acid hydrolyses. Cellulose 28, 6183 – 6199. https://doi.org/ 
+10.1007/s10570-021-03914-7 .
+Lin, K.-T., Wang, C., Guo, M.F., Apr `a, E., Ma, R., Ragauskas, A.J., Zhang, X., 2023. Lignin 
+with controlled structural properties by N-heterocycle-based deep eutectic solvent 
+extraction. Proc. Natl. Acad. Sci. 120. https://doi.org/10.1073/pnas.2307323120 .
+Liu, M., Wang, S., Bi, W., Chen, D.D.Y., 2023. Plant polysaccharide itself as hydrogen 
+bond donor in a deep eutectic system-based mechanochemical extraction method. 
+Food Chem. 399, 133941. https://doi.org/10.1016/j.foodchem.2022.133941 .
+Liu, Y., Chen, W., Xia, Q., Guo, B., Wang, Q., Liu, S., Liu, Y., Li, J., Yu, H., 2017. Efficient 
+cleavage of lignin – carbohydrate complexes and ultrafast extraction of lignin 
+oligomers from wood biomass by microwave-assisted treatment with deep eutectic 
+solvent. ChemSusChem 10, 1692 – 1700. https://doi.org/10.1002/cssc.201601795 .
+Liu, Y., Deak, N., Wang, Z., Yu, H., Hameleers, L., Jurak, E., Deuss, P.J., Barta, K., 2021. 
+Tunable and functional deep eutectic solvents for lignocellulose valorization. Nat. 
+Commun. 12, 5424. https://doi.org/10.1038/s41467-021-25117-1 .
+Liu, Y., Friesen, J.B., McAlpine, J.B., Lankin, D.C., Chen, S.-N., Pauli, G.F., 2018. Natural 
+deep eutectic solvents: properties, applications, and perspectives. J. Nat. Prod. 81, 
+679 – 690. https://doi.org/10.1021/acs.jnatprod.7b00945 .
+Liu, Y., Zheng, J., Xiao, J., He, X., Zhang, K., Yuan, S., Peng, Z., Chen, Z., Lin, X., 2019. 
+Enhanced enzymatic hydrolysis and lignin extraction of wheat straw by 
+triethylbenzyl ammonium chloride/lactic acid-based deep eutectic solvent 
+pretreatment. ACS Omega 4, 19829 – 19839. https://doi.org/10.1021/ 
+acsomega.9b02709 .
+Liu, Z., Hou, Y., Hu, S., Li, Y., 2020. Possible dissolution mechanism of alkali lignin in 
+lactic acid-choline chloride under mild conditions. RSC Adv. 10, 40649 – 40657. 
+https://doi.org/10.1039/D0RA07808E .
+Logaru ˇsi ´c, M., 
+ˇ
+Subar, K., Nikoli ´c, M., Jurinjak Tu ˇsek, A., Damjanovi ´c, A., Radovi ´c, M., 
+Radoj ˇci ´c Redovnikovi ´c, I., 
+ˇ
+Znidar ˇsi ˇc-Plazl, P., Kroutil, W., Cvjetko Bubalo, M., 2024. 
+Harnessing the potential of deep eutectic solvents in biocatalysis: design strategies 
+using CO2 to formate reduction as a case study. Front. Chem. 12. https://doi.org/ 
+10.3389/fchem.2024.1467810 .
+Long, X., Yao, M., Wang, S., Ren, C., Zhao, X., Qin, C., Liang, C., Huang, C., Yao, S., 2025. 
+Efficient separation of poplar lignin using a new carboxylic acid-based deep eutectic 
+solvents – choline chloride/malonic acid. ChemSusChem 18. https://doi.org/ 
+10.1002/cssc.202402345 .
+Lou, R., Ma, R., Lin, K., Ahamed, A., Zhang, X., 2019. Facile extraction of wheat straw by 
+deep eutectic solvent (DES) to produce lignin nanoparticles. ACS Sustain. Chem. Eng. 
+7, 10248 – 10256. https://doi.org/10.1021/acssuschemeng.8b05816 .
+Lou, R., Zhang, X., 2022. Evaluation of pretreatment effect on lignin extraction from 
+wheat straw by deep eutectic solvent. Bioresour. Technol. 344, 126174. https://doi. 
+org/10.1016/j.biortech.2021.126174 .
+Luo, Y., Liang, L., Luo, H., Zeng, F., Qin, C., Liang, C., Liu, B., Huang, C., Yao, S., 2025. 
+Green extraction of polyphenolic lignin using FeCl 
+3 
+-mediated tartaric acid-DES and 
+its derived lignin nanoparticles for enhancing the application performance of PVA 
+film in green agriculture. Green. Chem. 27, 2538 – 2553. https://doi.org/10.1039/ 
+D4GC06405D .
+Lyu, G., Wu, Q., Li, T., Jiang, W., Ji, X., Yang, G., 2019. Thermochemical properties of 
+lignin extracted from willow by deep eutectic solvents (DES). Cellulose 26, 
+8501 – 8511. https://doi.org/10.1007/s10570-019-02489-8 .
+Ma, C.-Y., Sun, Q., Xu, L.-H., Zhang, H., Wen, J.-L., Li, Z., Yuan, T.-Q., 2025. Recyclable 
+and low-content deep eutectic solvent pretreatment at room temperature for 
+fractionating uncondensed lignin and enhancing enzymatic saccharification. Chem. 
+Eng. J. 507, 160491. https://doi.org/10.1016/j.cej.2025.160491 .
+Ma, Y., Yang, Y., Li, T., Hussain, S., Zhu, M., 2024. Deep eutectic solvents as an emerging 
+green platform for the synthesis of functional materials. Green. Chem. 26, 
+3627 – 3669. https://doi.org/10.1039/D3GC04289H .
+Madadi, M., Kargaran, E., Al Azad, S., Saleknezhad, M., Zhang, E., Sun, F., 2025. 
+Machine learning-driven optimization of biphasic pretreatment conditions for 
+enhanced lignocellulosic biomass fractionation. Energy 326, 136241. https://doi. 
+org/10.1016/j.energy.2025.136241 .
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+20 
+
+
+===== PDF PAGE 21 =====
+Magalh ˜aes, S., Moreira, A., Almeida, R., Cruz, P.F., Alves, L., Costa, C., Mendes, C., 
+Medronho, B., Romano, A., da, M., Carvalho, G., Gamelas, J.A.F., da, M., 
+Rasteiro, G., 2022. Acacia wood fractionation using deep eutectic solvents: 
+extraction, recovery, and characterization of the different fractions. ACS Omega 7, 
+26005 – 26014. https://doi.org/10.1021/acsomega.1c07380 .
+Manafpour, A.A., Feyzi, F., Rezaee, M., 2024. An environmentally friendly deep eutectic 
+solvent for CO2 capture. Sci. Rep. 14, 19744. https://doi.org/10.1038/s41598-024- 
+70761-4 .
+Marchel, M., Cie ´sli ´nski, H., Boczkaj, G., 2022. Thermal instability of choline chloride- 
+based deep eutectic solvents and its influence on their toxicity ─ important limitations 
+of DESs as sustainable materials. Ind. Eng. Chem. Res. 61, 11288 – 11300. https://doi. 
+org/10.1021/acs.iecr.2c01898 .
+Marchel, M., Coroadinha, A.S., Marrucho, I.M., 2020. Novel acidic deep eutectic solvent- 
+based aqueous biphasic systems for efficient extraction of pepsin. ACS Sustain. 
+Chem. Eng. 8, 12400 – 12408. https://doi.org/10.1021/acssuschemeng.0c02673 .
+Marcus, Y., 2019. The Variety of Deep Eutectic Solvents. Deep Eutectic Solvents. Springer 
+International Publishing, Cham, pp. 13 – 44. https://doi.org/10.1007/978-3-030- 
+00608-2_2 .
+Mishra, S., Pandey, A., Pant, K.K., Mishra, B., 2023. Investigating the effect of mono di 
+carboxylic acids as hydrogen bond donor on solvation of copper in choline chloride- 
+based deep eutectic solvents. J. Mol. Liq. 383, 122142. https://doi.org/10.1016/j. 
+molliq.2023.122142 .
+Mnasri, A., Dhaouadi, H., Khiari, R., Halila, S., Mauret, E., 2022. Effects of Deep Eutectic 
+Solvents on cellulosic fibres and paper properties: Green “ chemical ” refining. 
+Carbohydr. Polym. 292, 119606. https://doi.org/10.1016/j.carbpol.2022.119606 .
+Mohd Fuad, F., Mohd Nadzir, M., 2022. The formulation and physicochemical properties 
+of betaine-based natural deep eutectic solvent. J. Mol. Liq. 360, 119392. https://doi. 
+org/10.1016/j.molliq.2022.119392 .
+Moreno-Caballero, B.S., Rivas-García, P., Estrada-Baltazar, A., Paniagua-Martínez, J.P., 
+Leveque, J.-M., Cano-G ´omez, J.J., 2025. Exploring the potential for recycling sewage 
+sludge in biodiesel using deep eutectic solvents: a proposal of circular economy 
+based on life cycle assessment approach. Biomass Bioenergy 198, 107845. https:// 
+doi.org/10.1016/j.biombioe.2025.107845 .
+Mukhopadhyay, S., Mukherjee, S., Adnan, N.F., Hayyan, A., Hayyan, M., Hashim, M.A., 
+Sen Gupta, B., 2016. Ammonium-based deep eutectic solvents as novel soil washing 
+agent for lead removal. Chem. Eng. J. 294, 316 – 322. https://doi.org/10.1016/j. 
+cej.2016.02.030 .
+Murugan, M.D., Tee, L.H., Oh, K.S., 2021. Evaluation of the environment impact of 
+extraction of bioactive compounds from Darcyodes rostrata using Deep Eutectic 
+Solvent (DES) using Life Cycle Assessment (LCA). J. Phys. Conf. Ser. 2120, 012005. 
+https://doi.org/10.1088/1742-6596/2120/1/012005 .
+Nawaz, A., Chaudhary, R., Haq, I.U., Fu, X., Huang, R., Mukhtar, H., Jiang, K., 2023. 
+Delignification of halophyte atriplex crassifolia by green recyclable deep eutectic 
+solvents for enhanced production of biogas. Fermentation 9, 314. https://doi.org/ 
+10.3390/fermentation9030314 .
+Nawaz, A., Huang, R., Junaid, F., Feng, Y., Haq, I.U., Mukhtar, H., Jiang, K., 2022. 
+Sustainable production of bioethanol using levulinic acid pretreated sawdust. Front. 
+Bioeng. Biotechnol. 10. https://doi.org/10.3389/fbioe.2022.937838 .
+Nejrotti, S., Antenucci, A., Pontremoli, C., Gontrani, L., Barbero, N., Carbone, M., 
+Bonomo, M., 2022. Critical assessment of the sustainability of deep eutectic solvents: 
+a case study on six choline chloride-based mixtures. ACS Omega 7, 47449 – 47461. 
+https://doi.org/10.1021/acsomega.2c06140 .
+Nie, K., Li, B., Song, Y., Qiao, X., Zhao, T., Zhang, Y., Ben, H., Ragauskas, A., Wang, C., 
+Jiang, W., Hans, G., 2023. A promising degumming method to prepare kenaf fibers 
+by using recyclable deep eutectic solvents. Ind. Crops Prod. 191, 115990. https:// 
+doi.org/10.1016/j.indcrop.2022.115990 .
+Pan, M., Zhao, G., Ding, C., Wu, B., Lian, Z., Lian, H., 2017. Physicochemical 
+transformation of rice straw after pretreatment with a deep eutectic solvent of 
+choline chloride/urea. Carbohydr. Polym. 176, 307 – 314. https://doi.org/10.1016/j. 
+carbpol.2017.08.088 .
+Pan, Z., Liu, X., Ashori, A., Xu, F., Barta, K., Zhang, X., 2024. Fully upgrade lignocellulose 
+into high-valued nanomaterials and chemicals through one-pot treatment by bio- 
+acid tailored deep eutectic solvents. Chem. Eng. J. 496, 153952. https://doi.org/ 
+10.1016/j.cej.2024.153952 .
+Panakkal, E.J., Cheenkachorn, K., Chuetor, S., Dasari, S., Katam, K., Phusantisampan, T., 
+Cheng, Y.-S., Sriariyanun, M., 2025. A comparative study on effectiveness and 
+recyclability of three different deep eutectic solvents for biomass fractionation. 
+Biomass Convers. Biorefin. 15, 13393 – 13407. https://doi.org/10.1007/s13399-024- 
+06007-0 .
+Peng, J., Xu, H., Wang, W., Kong, Y., Su, Z., Li, B., 2021. Techno-economic analysis of 
+bioethanol preparation process via deep eutectic solvent pretreatment. Ind. Crops 
+Prod. 172, 114036. https://doi.org/10.1016/j.indcrop.2021.114036 .
+Pereira, B.A., Matos, C.T., Costa, L., Ferreira, L.M., Crespo, J.G., Brazinha, C., 2025. 
+Sustainable processing of microalgae protein: Design of biphasic partitioning 
+systems based on natural deep eutectic solvents for C-phycocyanin recovery from 
+model aqueous solutions. Sep. Purif. Technol. 353, 128510. https://doi.org/ 
+10.1016/j.seppur.2024.128510 .
+Preethi, G.M., R Banu, J., 2023. Indexing energy and cost of the pretreatment for 
+economically efficient bioenergy generation. Front. Energy Res. 10. https://doi.org/ 
+10.3389/fenrg.2022.1060599 .
+Procentese, A., Johnson, E., Orr, V., Garruto Campanile, A., Wood, J.A., 
+Marzocchella, A., Rehmann, L., 2015. Deep eutectic solvent pretreatment and 
+subsequent saccharification of corncob. Bioresour. Technol. 192, 31 – 36. https://doi. 
+org/10.1016/j.biortech.2015.05.053 .
+Provost, V., Dumarcay, S., Ziegler-Devin, I., Boltoeva, M., Tr ´ebouet, D., Villain- 
+Gambier, M., 2022. Deep eutectic solvent pretreatment of biomass: Influence of 
+hydrogen bond donor and temperature on lignin extraction with high β -O-4 content. 
+Bioresour. Technol. 349, 126837. https://doi.org/10.1016/j.biortech.2022.126837 .
+Putranto, A.W., Burhan, A.H.N., Masruchin, N., Nafi ’ ah, R.W., Wibisono, Y., Chua, A.S. 
+M., Ngoh, G.C., Suhartini, S., 2025. The role of deep eutectic solvent recycling on 
+crystalline nanocellulose production from oil palm empty fruit bunch: a techno- 
+economic viability and life cycle assessment study. Biomass Bioenergy 203, 108306. 
+https://doi.org/10.1016/j.biombioe.2025.108306 .
+Rachiero, G.P., Berton, P., Shamshina, J., 2022. Deep eutectic solvents: alternative 
+solvents for biomass-based waste valorization. Molecules 27, 6606. https://doi.org/ 
+10.3390/molecules27196606 .
+Rahighi, R., Akhavan, O., Zeraati, A.S., Sattari-Esfahlan, S.M., 2021. All-carbon negative 
+differential resistance nanodevice using a single flake of nanoporous graphene. ACS 
+Appl. Electron. Mater. 3, 3418 – 3427. https://doi.org/10.1021/acsaelm.1c00396 .
+Rai, A.K., Al Makishah, N.H., Wen, Z., Gupta, G., Pandit, S., Prasad, R., 2022. Recent 
+developments in lignocellulosic biofuels, a renewable source of bioenergy. 
+Fermentation 8, 161. https://doi.org/10.3390/fermentation8040161 .
+Raina, N., Sriariyanun, M., Assabumrungrat, S., Ngamcharussrivichai, C., Chuetor, S., 
+2025. Comparative evaluation of sugarcane leaf biomass pretreatment: conventional 
+alkali/acid vs. deep eutectic solvent approach for enhanced bioethanol production. 
+Biomass Bioenergy 202, 108206. https://doi.org/10.1016/j.biombioe.2025.108206 .
+Rajput, A.A., Sheikh, Z., 2019. Effect of inoculum type and organic loading on biogas 
+production of sunflower meal and wheat straw. Sustain. Environ. Res. 29, 4. https:// 
+doi.org/10.1186/s42834-019-0003-x .
+Rastogi, M., Shrivastava, S., 2017. Recent advances in second generation bioethanol 
+production: an insight to pretreatment, saccharification and fermentation processes. 
+Renew. Sustain. Energy Rev. 80, 330 – 340. https://doi.org/10.1016/j. 
+rser.2017.05.225 .
+Rente, D., Cvjetko Bubalo, M., Pani ´c, M., Paiva, A., Caprin, B., Radoj ˇci ´c Redovnikovi ´c, I., 
+Duarte, A.R.C., 2022. Review of deep eutectic systems from laboratory to industry, 
+taking the application in the cosmetics industry as an example. J. Clean. Prod. 380, 
+135147. https://doi.org/10.1016/j.jclepro.2022.135147 .
+Rokade, S.M., Bhate, P.M., 2015. One-pot synthesis of per-O-acetylated hemiacetals from 
+free sugars in a deep eutectic solvent. Carbohydr. Res. 416, 21 – 23. https://doi.org/ 
+10.1016/j.carres.2015.08.007 .
+Roy, Y., Top, R.W., de Vos, W.M., Schuur, B., 2023. Organic solvent reverse osmosis 
+(OSRO) for the recovery of hemicellulosic derivatives after wood-pulping with a 
+deep eutectic solvent. Chem. Eng. Sci. 267, 118367. https://doi.org/10.1016/j. 
+ces.2022.118367 .
+Ruengsrichaiya, B., Perez, C.L., Mussatto, S.I., 2024. Deep Eutectic Solvents and Their 
+Use for Sustainable Pretreatment of Lignocellulosic Biomass. Handbook of 
+Biorefinery Research and Technology. Springer Netherlands, Dordrecht, pp. 1 – 28. 
+https://doi.org/10.1007/978-94-007-6724-9_62-1 .
+Sai, Y.W., Lee, K.M., 2019. Enhanced cellulase accessibility using acid-based deep 
+eutectic solvent in pretreatment of empty fruit bunches. Cellulose 26, 9517 – 9528. 
+https://doi.org/10.1007/s10570-019-02770-w .
+Sakakibara, A., 1980. A structural model of softwood lignin. Wood Sci. Technol. 14, 
+89 – 100. https://doi.org/10.1007/BF00584038 .
+Samarov, A., Prikhodko, I., Liubichev, D., Toikka, M., 2022. Liquid – liquid equilibrium of 
+alcohol – ester systems with deep eutectic solvents based on choline chloride and 
+alkanediols (ethylene glycol or propylene glycol). J. Chem. Eng. Data 67, 707 – 716. 
+https://doi.org/10.1021/acs.jced.1c00913 .
+Scelsi, E., Angelini, A., Pastore, C., 2021. Deep eutectic solvents for the valorisation of 
+lignocellulosic biomasses towards fine chemicals. Biomass 1, 29 – 59. https://doi.org/ 
+10.3390/biomass1010003 .
+Schutyser, W., Renders, T., Van den Bosch, S., Koelewijn, S.-F., Beckham, G.T., Sels, B.F., 
+2018. Chemicals from lignin: an interplay of lignocellulose fractionation, 
+depolymerisation, and upgrading. Chem. Soc. Rev. 47, 852 – 908. https://doi.org/ 
+10.1039/C7CS00566K .
+Sepali, C., Skoko, S., Guglielmero, L., Giovannini, T., Mezzetta, A., D ’ Andrea, F., 
+Pomelli, C.S., Guazzelli, L., Cappelli, C., 2024. Deciphering the structure of deep 
+eutectic solvents: a computational study from the solute ’ s viewpoint. J. Mol. Liq. 
+399, 124326. https://doi.org/10.1016/j.molliq.2024.124326 .
+Shen, X.-J., Wen, J.-L., Mei, Q.-Q., Chen, X., Sun, D., Yuan, T.-Q., Sun, R.-C., 2019. Facile 
+fractionation of lignocelluloses by biomass-derived deep eutectic solvent (DES) 
+pretreatment for cellulose enzymatic hydrolysis and lignin valorization. Green. 
+Chem. 21, 275 – 283. https://doi.org/10.1039/C8GC03064B .
+Shi, R., Yu, D., Zhou, F., Yu, J., Mu, T., 2022. An emerging deep eutectic solvent based on 
+halogen-bonds. Chem. Commun. 58, 4607 – 4610. https://doi.org/10.1039/ 
+D2CC00528J .
+Singh, S., Cheng, G., Sathitsuksanoh, N., Wu, D., Varanasi, P., George, A., Balan, V., 
+Gao, X., Kumar, R., Dale, B.E., Wyman, C.E., Simmons, B.A., 2015. Comparison of 
+different biomass pretreatment techniques and their impact on chemistry and 
+structure. Front. Energy Res. 2. https://doi.org/10.3389/fenrg.2014.00062 .
+Smirnov, M.A., Sokolova, M.P., Tolmachev, D.A., Vorobiov, V.K., Kasatkin, I.A., 
+Smirnov, N.N., Klaving, A.V., Bobrova, N.V., Lukasheva, N.V., Yakimansky, A.V., 
+2020. Green method for preparation of cellulose nanocrystals using deep eutectic 
+solvent. Cellulose 27, 4305 – 4317. https://doi.org/10.1007/s10570-020-03100-1 .
+Smit, A.T., Verges, M., Schulze, P., van Zomeren, A., Lorenz, H., 2022. Laboratory- to 
+pilot-scale fractionation of lignocellulosic biomass using an acetone organosolv 
+process. ACS Sustain. Chem. Eng. 10, 10503 – 10513. https://doi.org/10.1021/ 
+acssuschemeng.2c01425 .
+Smith, E.L., Abbott, A.P., Ryder, K.S., 2014. Deep eutectic solvents (DESs) and their 
+applications. Chem. Rev. 114, 11060 – 11082. https://doi.org/10.1021/cr300162p .
+Soares, B., da Costa Lopes, A.M., Silvestre, A.J.D., Rodrigues Pinto, P.C., Freire, C.S.R., 
+Coutinho, J.A.P., 2021. Wood delignification with aqueous solutions of deep eutectic 
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+21 
+
+
+===== PDF PAGE 22 =====
+solvents. Ind. Crops Prod. 160, 113128. https://doi.org/10.1016/j. 
+indcrop.2020.113128 .
+Song, W., He, Y., Huang, R., Li, J., Yu, Y., Xia, P., 2023. Life cycle assessment of deep- 
+eutectic-solvent-assisted hydrothermal disintegration of microalgae for biodiesel and 
+biogas co-production. Appl. Energy 335, 120758. https://doi.org/10.1016/j. 
+apenergy.2023.120758 .
+Sun, L.-L., Sun, S.-N., Cao, X.-F., Yao, S.-Q., 2024. An integrated biorefinery strategy for 
+Eucalyptus fractionation and co-producing glucose, furfural, and lignin based on 
+deep eutectic solvent/cyclopentyl methyl ether system. Carbohydr. Polym. 343, 
+122420. https://doi.org/10.1016/j.carbpol.2024.122420 .
+Sun, S.-C., Xu, Y., Ma, C.-Y., Zhang, C., Zuo, C., Sun, D., Wen, J.-L., Yuan, T.-Q., 2023. 
+Green and efficient fractionation of bamboo biomass via synergistic hydrothermal- 
+alkaline deep eutectic solvents pretreatment: valorization of carbohydrates. Renew. 
+Energy 217, 119175. https://doi.org/10.1016/j.renene.2023.119175 .
+Suota, M.J., da Silva, T.A., Zawadzki, S.F., Sassaki, G.L., Hansel, F.A., Paleologou, M., 
+Ramos, L.P., 2021. Chemical and structural characterization of hardwood and 
+softwood LignoForce ™ lignins. Ind. Crops Prod. 173, 114138. https://doi.org/ 
+10.1016/j.indcrop.2021.114138 .
+Tan, Y.T., Ngoh, G.C., Chua, A.S.M., 2018. Evaluation of fractionation and delignification 
+efficiencies of deep eutectic solvents on oil palm empty fruit bunch. Ind. Crops Prod. 
+123, 271 – 277. https://doi.org/10.1016/j.indcrop.2018.06.091 .
+Tang, Z., Fan, B., Tang, W., He, Y.-C., Ma, C., 2024. Comprehensive understanding of co- 
+producing fermentable sugar, furfural, and xylo-oligosaccharides through the 
+pretreatment with CTAB-based deep eutectic solvent containing Br ø nsted and Lewis 
+acid. Chem. Eng. J. 488, 150637. https://doi.org/10.1016/j.cej.2024.150637 .
+Tian, C., Duan, C., Bie, Y., Liu, X., Zhou, B., Ma, R., Fan, Q., Xie, Z., Ni, Y., 2025. A deep 
+eutectic solvent with bifunctional acid sites treatment to upgrade a bamboo kraft 
+pulp into a cellulose-acetate grade dissolving pulp. Carbohydr. Polym. 348, 122942. 
+https://doi.org/10.1016/j.carbpol.2024.122942 .
+Tian, D., Guo, Y., Hu, J., Yang, G., Zhang, J., Luo, L., Xiao, Y., Deng, S., Deng, O., 
+Zhou, W., Shen, F., 2020. Acidic deep eutectic solvents pretreatment for selective 
+lignocellulosic biomass fractionation with enhanced cellulose reactivity. Int. J. Biol. 
+Macromol. 142, 288 – 297. https://doi.org/10.1016/j.ijbiomac.2019.09.100 .
+Tuck, C.O., P ´erez, E., Horv ´ath, I.T., Sheldon, R.A., Poliakoff, M., 2012. Valorization of 
+biomass: deriving more value from waste. Science 337 (1979), 695 – 699. https://doi. 
+org/10.1126/science.1218930 .
+van Osch, D.J.G.P., Kollau, L.J.B.M., van den Bruinhorst, A., Asikainen, S., Rocha, M.A. 
+A., Kroon, M.C., 2017. Ionic liquids and deep eutectic solvents for lignocellulosic 
+biomass fractionation. Phys. Chem. Chem. Phys. 19, 2636 – 2665. https://doi.org/ 
+10.1039/C6CP07499E .
+Vannuchi, N., Braga, A.R.C., De Rosso, V.V., 2022. High-performance extraction process 
+of anthocyanins from jussara (Euterpe edulis) using deep eutectic solvents. Processes 
+10, 615. https://doi.org/10.3390/pr10030615 .
+Varilla-Mazaba, A., Raggazo-S ´anchez, J.A., Calder ´on-Santoyo, M., G ´omez-Rodríguez, J., 
+Aguilar-Uscanga, M.G., 2022. Optimization of lignin extraction by response surface 
+methodology from sugarcane bagasse using deep eutectic solvents (DES). Ind. Crops 
+Prod. 184, 115040. https://doi.org/10.1016/j.indcrop.2022.115040 .
+Wang, B., Qin, L., Mu, T., Xue, Z., Gao, G., 2017. Are ionic liquids chemically stable? 
+Chem. Rev. 117, 7113 – 7131. https://doi.org/10.1021/acs.chemrev.6b00594 .
+Wang, D., Hong, S., Chen, Z., Sun, Q., Xie, C., Wang, J., Wei, A., Shao, L., Shen, X., 
+2025b. Sustainable recycling of phenol-assisted deep eutectic solvent for efficient 
+lignocellulose fractionation and enzymatic hydrolysis. Ind. Crops Prod. 223, 120173. 
+https://doi.org/10.1016/j.indcrop.2024.120173 .
+Wang, G., Huang, M., Li, F., Li, Q., Chen, F., Wang, S., Ling, Z., Ji, Z., 2024a. Insights into 
+the poplar cell wall deconstruction following deep eutectic solvent pretreatment for 
+enhanced enzymatic saccharification and lignin valorization. Int. J. Biol. Macromol. 
+254, 127673. https://doi.org/10.1016/j.ijbiomac.2023.127673 .
+Wang, H., Chen, J., Pei, Z., Fang, Z., Yang, S., Li, H., 2025a. Bio-based deep eutectic 
+solvent of enhanced lignin solubility for wheat straw fractionation and full- 
+component utilization. Ind. Crops Prod. 223, 120054. https://doi.org/10.1016/j. 
+indcrop.2024.120054 .
+Wang, Y., Chen, W., Zhao, Q., Jin, G., Xue, Z., Wang, Y., Mu, T., 2020. Ionicity of deep 
+eutectic solvents by Walden plot and pulsed field gradient nuclear magnetic 
+resonance (PFG NMR). Phys. Chem. Chem. Phys. 22, 25760 – 25768. https://doi.org/ 
+10.1039/D0CP01431A .
+Wang, Y., Liu, Q., Yan, C., Song, G., Price, W.S., Zheng, G., Torres, A.M., Xue, Z., 2025a. 
+Deep eutectic solvent-driven mild lignocellulose pretreatment: unlocking lignin 
+valorization and carbohydrate digestibility. Chem. Eng. J. 504, 158825. https://doi. 
+org/10.1016/j.cej.2024.158825 .
+Wang, Y., Wang, A., Liu, S., Li, L., Liu, Y., Liu, Y., Nie, G., Nie, S., Yao, S., Yu, H., 2024b. 
+The multiple enhancements of deep eutectic solvent on cellulase significantly 
+improve the saccharification efficiency of lignocellulosic biomass. Chem. Eng. J. 
+489, 151439. https://doi.org/10.1016/j.cej.2024.151439 .
+Xia, Q., Liu, Y., Meng, J., Cheng, W., Chen, W., Liu, S., Liu, Y., Li, J., Yu, H., 2018. 
+Multiple hydrogen bond coordination in three-constituent deep eutectic solvents 
+enhances lignin fractionation from biomass. Green. Chem. 20, 2711 – 2721. https:// 
+doi.org/10.1039/C8GC00900G .
+Xie, J., Xu, J., Zhang, Z., Wang, B., Zhu, S., Li, J., Chen, K., 2023. New ternary deep 
+eutectic solvents with cycle performance for efficient pretreated radiata pine forming 
+to lignin containing cellulose nanofibrils. Chem. Eng. J. 451, 138591. https://doi. 
+org/10.1016/j.cej.2022.138591 .
+Xu, H., Dong, C., Wang, W., Liu, Y., Li, B., Liu, F., 2023b. Machine learning prediction of 
+deep eutectic solvents pretreatment of lignocellulosic biomass. Ind. Crops Prod. 196, 
+116431. https://doi.org/10.1016/j.indcrop.2023.116431 .
+Xu, H., Kong, Y., Peng, J., Wang, W., Li, B., 2021. Mechanism of deep eutectic solvent 
+delignification: insights from molecular dynamics simulations. ACS Sustain. Chem. 
+Eng. 9, 7101 – 7111. https://doi.org/10.1021/acssuschemeng.1c01260 .
+Xu, J., Si, C., Dai, L., Hemming, J., Pranovich, A., Xu, C., 2025. Microwave-assisted deep 
+eutectic solvent extraction of lignin from spruce heartwood and sapwood, targeting 
+the comparison of different biorefinery concepts. Chem. Eng. J. 505, 159232. 
+https://doi.org/10.1016/j.cej.2025.159232 .
+Xu, M., Zhu, X., Lai, Y., Xia, A., Huang, Y., Zhu, X., Liao, Q., 2024. Production of 
+hierarchical porous bio-carbon based on deep eutectic solvent fractionated lignin 
+nanoparticles for high-performance supercapacitor. Appl. Energy 353, 122095. 
+https://doi.org/10.1016/j.apenergy.2023.122095 .
+Xu, Y., Sun, S.-C., Zhang, C., Ma, C.-Y., Wen, J.-L., Yuan, T.-Q., 2023a. Complete 
+valorization of bamboo biomass into multifunctional nanomaterials by reactive deep 
+eutectic solvent pretreatment: towards a waste-free biorefinery. Chem. Eng. J. 462, 
+142213. https://doi.org/10.1016/j.cej.2023.142213 .
+Yan, Z., Wang, Z., Chen, Y., Liu, C., Liu, Y., Li, R., Si, M., Shi, Y., 2023. Preparation of 
+lignin nanoparticles via ultra-fast microwave-assisted fractionation of lignocellulose 
+using ternary deep eutectic solvents. Biotechnol. Bioeng. 120, 1557 – 1568. https:// 
+doi.org/10.1002/bit.28373 .
+Yang, X., Song, Y., Ma, S., Zhang, X., Tan, T., 2020. Using γ -valerolactone and 
+toluenesulfonic acid to extract lignin efficiently with a combined hydrolysis factor 
+and structure characteristics analysis of lignin. Cellulose 27, 3581 – 3590. https://doi. 
+org/10.1007/s10570-020-03023-x .
+Yao, M., Liu, B., Qin, L., Du, Z., Wang, Z., Qin, C., Liang, C., Huang, C., Yao, S., 2024. 
+Preparation of homogeneous lignin nanoparticles by efficient extraction of lignin 
+and modification of its molecular structure using a functional deep eutectic solvent 
+containing γ -valerolactone. Green. Chem. 26, 4528 – 4543. https://doi.org/10.1039/ 
+D3GC04897G .
+Yen, P.-L., Hsu, C.-H., Huang, M.-L., Liao, V.H.-C., 2022. Removal of nano-sized 
+polystyrene plastic from aqueous solutions using untreated coffee grounds. 
+Chemosphere 286, 131863. https://doi.org/10.1016/j.chemosphere.2021.131863 .
+Yu, D., Luo, H., Tan, J., Yuan, J., Chen, J., Liu, X., Li, H., 2024a. Efficient fractionation of 
+microalgae biomass as a whole for biodiesel production enabled by deep eutectic 
+solvent and water. Fuel 363, 130892. https://doi.org/10.1016/j.fuel.2024.130892 .
+Yu, Q., Song, Z., Zhuang, X., Liu, L., Qiu, W., Shi, J., Wang, W., Li, Y., Wang, Z., Yuan, Z., 
+2019. Catalytic conversion of herbal residue carbohydrates to furanic derivatives in 
+a deep eutectic solvent accompanied by dissolution and recrystallisation of choline 
+chloride. Cellulose 26, 8263 – 8277. https://doi.org/10.1007/s10570-019-02372-6 .
+Yu, Y., Wan, Z., Parks, J.M., Sokhansanj, S., Rojas, O.J., Smith, J.C., 2024b. Molecular 
+origins of enhanced bioproduct properties by pretreatment of agricultural residues 
+with deep eutectic solvents. Green. Chem. 26, 9142 – 9155. https://doi.org/10.1039/ 
+D4GC01877J .
+Zaib, Q., Eckelman, M.J., Yang, Y., Kyung, D., 2022. Are deep eutectic solvents really 
+green? A life-cycle perspective. Green. Chem. 24, 7924 – 7930. https://doi.org/ 
+10.1039/D2GC01752K .
+Zang, G., Shah, A., Wan, C., 2020. Techno-economic analysis of co-production of 2,3- 
+butanediol, furfural, and technical lignin via biomass processing based on deep 
+eutectic solvent pretreatment. Biofuels Bioprod. Bioref. 14, 326 – 343. https://doi. 
+org/10.1002/bbb.2081 .
+Zhang, C., Liu, Q., He, H., Guo, X., Yang, S., Zhang, L., Wang, L., 2025a. Metal removal 
+from heavy metal-enriched plants by deep eutectic solvents and its mechanism 
+investigation. Sep. Purif. Technol. 357, 130189. https://doi.org/10.1016/j. 
+seppur.2024.130189 .
+Zhang, C., Wang, Y., Wang, P., He, H., Liu, Z., Deng, L., Zhang, L., Yang, S., Wang, L., 
+2024b. Conversion of waste phytoremediation biomass into adhesive using a novel 
+deep eutectic solvent. Cell. Rep. Phys. Sci. 5, 101918. https://doi.org/10.1016/j. 
+xcrp.2024.101918 .
+Zhang, J., Fu, Y., Dong, Y., Wang, D., Deng, J., Shi, Z., Yang, J., Yang, H., 2023c. 
+Pretreatment of bamboo with choline chloride-lactic acid integrated with calcium 
+chloride hydrates deep eutectic solvent to boost bioconversion for ethanol 
+production. Ind. Crops Prod. 200, 116879. https://doi.org/10.1016/j. 
+indcrop.2023.116879 .
+Zhang, L., Yu, H., Liu, S., Wang, Y., Mu, T., Xue, Z., 2023a. Kamlet – Taft parameters of 
+deep eutectic solvents and their relationship with dissolution of main lignocellulosic 
+components. Ind. Eng. Chem. Res. 62, 11723 – 11734. https://doi.org/10.1021/acs. 
+iecr.3c01309 .
+Zhang, M., Tian, R., Tang, S., Wu, K., Wang, B., Liu, Y., Zhu, Y., Lu, H., Liang, B., 2023a. 
+Multistage treatment of bamboo powder waste biomass: highly efficient and 
+selective isolation of lignin components. Waste Manag. 166, 35 – 45. https://doi.org/ 
+10.1016/j.wasman.2023.04.040 .
+Zhang, Q., De Oliveira Vigier, K., Royer, S., J ´er ˆome, F., 2012. Deep eutectic solvents: 
+syntheses, properties and applications. Chem. Soc. Rev. 41, 7108. https://doi.org/ 
+10.1039/c2cs35178a .
+Zhang, Q., Zhu, E., Zhang, C., Tian, Q., Zhang, L., Shen, J., Ni, Y., Wang, Z., 2025b. Deep 
+eutectic solvents recycling for efficient and sustainable lignocellulosic biomass 
+processing and the impact of recycling on resultant lignin and cellulose products. 
+ACS Sustain. Chem. Eng. 13, 14400 – 14410. https://doi.org/10.1021/ 
+acssuschemeng.5c04396 .
+Zhang, W., Cao, Z., Chen, Q., Leng, L., Li, H., 2026. Machine learning-assisted separation 
+of lignin from hydrothermal treatment of biomass by deep eutectic solvents. 
+Bioresour. Technol. 440, 133537. https://doi.org/10.1016/j.biortech.2025.133537 .
+Zhang, Y., Ren, H., Li, B., Udin, S.M., Maarof, H., Zhou, W., Cheng, F., Yang, J., Liu, Y., 
+Alias, H., Duan, E., 2023b. Mechanistic insights into the lignin dissolution behavior 
+in amino acid based deep eutectic solvents. Int. J. Biol. Macromol. 242, 124829. 
+https://doi.org/10.1016/j.ijbiomac.2023.124829 .
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+22 
+
+
+===== PDF PAGE 23 =====
+Zhang, Y., Zhang, Z., Guo, K., Liang, X., 2022. Controllable recovery and recycling of 
+carboxylic acid-polyalcohol deep eutectic solvent for biomass pretreatment with 
+electronically-controlled chemical methodology. Bioresour. Technol. 365, 128175. 
+https://doi.org/10.1016/j.biortech.2022.128175.
+Zhang, Z., Xu, J., Xie, J., Zhou, Z., Zhu, S., Li, J., Zhang, W., Chen, K., 2024a. Model- 
+based process intensification of deep eutectic solvent treatment of eucalyptus slabs 
+for lignin extraction and pulp production. Chem. Eng. J. 490, 151745. https://doi. 
+org/10.1016/j.cej.2024.151745.
+Zhao, X., Wu, R., Liu, D., 2018b. Evaluation of the mass transfer effects on delignification 
+kinetics of atmospheric acetic acid fractionation of sugarcane bagasse with a 
+shrinking-layer model. Bioresour. Technol. 261, 52–61. https://doi.org/10.1016/j. 
+biortech.2018.03.140.
+Zhao, X., Zhan, Y., Han, L., Sun, X., Zhang, T., Zhao, Z., 2023. Poplar wood pretreatment 
+using deep eutectic solvents for promoting enzymatic hydrolysis. Processes 11, 1293. 
+https://doi.org/10.3390/pr11041293.
+Zhao, Z., Chen, X., Ali, M.F., Abdeltawab, A.A., Yakout, S.M., Yu, G., 2018a. 
+Pretreatment of wheat straw using basic ethanolamine-based deep eutectic solvents 
+for improving enzymatic hydrolysis. Bioresour. Technol. 263, 325–333. https://doi. 
+org/10.1016/j.biortech.2018.05.016.
+Zhong, Z., Gorish, B.M.T., Bai, Y., Abdelmula, W.I.Y., Dang, W., Zhu, D., 2025. Predicting 
+lignin removal efficiency in deep eutectic solvent-based biomass fractionation: an 
+explainable machine learning approach. Green. Chem. 27, 11036–11054. https:// 
+doi.org/10.1039/D5GC02370J.
+Zhou, J., Wu, S., Liu, Y., 2024. Structural changes of poplar lignin during the ternary 
+deep eutectic solvent (DES) treatment and synergetic alkali-DES treatment. Ind. 
+Crops Prod. 208, 117782. https://doi.org/10.1016/j.indcrop.2023.117782.
+Zhou, S., Xu, J., Zhang, Z., Li, A., Li, J., Zhang, W., Chen, K., 2025. Efficient and 
+sustainable fractionation of eucalyptus biomass into high quality cellulose and lignin 
+using a novel ternary deep eutectic solvent. Chem. Eng. J. 518, 164829. https://doi. 
+org/10.1016/j.cej.2025.164829.
+Zhu, B., Xu, Y., Ge, H., Wang, S., Wang, W., Li, B., Xu, H., 2023b. Theoretical study of 
+lactic acid-based deep eutectic solvents dissociation of hemicellulose with different 
+hydrogen bonding acceptors. Int. J. Biol. Macromol. 244, 125342. https://doi.org/ 
+10.1016/j.ijbiomac.2023.125342.
+Zhu, Y., Yang, T.-X., Qi, B.-K., Li, H., Zhao, Q.-S., Zhao, B., 2023a. Acidic and alkaline 
+deep eutectic solvents (DESs) pretreatment of grapevine: component analysis, 
+characterization, lignin structural analysis, and antioxidant properties. Int. J. Biol. 
+Macromol. 236, 123977. https://doi.org/10.1016/j.ijbiomac.2023.123977.
+K. Almassi Tighi et al.                                                                                                                                                                                                                         Industrial Crops & Products 252 (2026) 124341 
+23 
+

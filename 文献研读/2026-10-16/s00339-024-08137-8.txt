@@ -1,0 +1,758 @@
+
+--- PDF页 1 ---
+Vol.:(0123456789)
+Applied Physics A (2025) 131:67 
+https://doi.org/10.1007/s00339-024-08137-8
+Hyperparameter tuned machine learning predictions of specific 
+capacitance of conducting polymers and their composites for high 
+performance advanced supercapacitors
+Mashqoor Alam1 · Samina Husain1 
+Received: 29 September 2024 / Accepted: 26 November 2024 / Published online: 29 December 2024 
+© The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature 2024
+Abstract
+This research investigates the use of machine learning (ML) to improve the performance of conducting polymer-based 
+electrodes in supercapacitors, which leverage both electric double-layer capacitance (EDLC) and pseudocapacitive charac-
+teristics. Six ML models—Support Vector Machine (SVM), Random Forest (RF), Multilayer Perceptron (MLP), Decision 
+Tree (DT), Extreme Gradient Boosting (XGBoost), and Artificial Neural Network (ANN)—are evaluated for their ability 
+to predict the specific capacitance of electrodes using an experimental dataset comprising Polyaniline (PANI), Polypyrrole 
+(Ppy), and Polythiophene (PTh). Performance metrics included Mean Absolute Error (MAE), Mean Squared Error (MSE), 
+and R-squared  (R2). Among the models, MLP demonstrates superior predictive accuracy, achieving the lowest MAE of 0.1452 
+and MSE of 0.0373, along with the highest  R2 of 0.9622. In contrast, Decision Tree and SVM exhibited higher error values, 
+with MAEs of 0.2107 and 0.2267 and  R2 values around 0.885. Although Random Forest and XGBoost achieved competitive 
+ R2 values of 0.9399 and 0.9354, their errors are comparatively higher than MLP. These results highlight the effectiveness of 
+advanced ML techniques in enhancing supercapacitor technology and indicate the potential of these models to predict and 
+optimize conducting polymer-based electrode materials for improved performance.
+Keywords Supercapacitors · Conducting Polymers · Machine Learning · Specific Capacitance · Polyaniline · Polypyrrole · 
+Polythiophene · Multilayer Perceptron
+1 Introduction
+Supercapacitors, often referred to as electrochemical capaci-
+tors or ultracapacitors, are devices used for storing energy. 
+They can store a large amount of power, have a long lifes -
+pan, and can charge and discharge quickly. These charac-
+teristics render them appropriate for a wide range of uses 
+such as portable electronic devices, electric cars, and renew-
+able energy systems. The performance of supercapacitors 
+is largely determined by the properties of the electrode 
+materials used. Conducting polymers and their composites 
+have emerged as promising electrode materials due to their 
+high electrical conductivity, pseudocapacitive behavior, and 
+ease of synthesis [1 ]. Pseudocapacitors, particularly those 
+utilizing conducting polymers, have garnered significant 
+attention recently because of their remarkable capacity 
+for storing energy with extended periods of maintenance-
+free durability, high cycle efficiency, and substantial power 
+density. Pseudocapacitors are poised to narrow the current 
+divide in energy storage between traditional capacitors and 
+electrochemical batteries, offering a balance of energy and 
+power density that is advantageous for various applications. 
+Conducting polymer-based pseudocapacitors are promising 
+due to their high specific capacitance, flexible structure, and 
+high-speed charging and discharging capabilities (Fig.  1). 
+These attributes make them suitable for use in industrial 
+sectors and consumer electronics, including electric vehi-
+cles, portable electronics, and backup power supplies [2 ].
+However, a critical challenge remains in enhancing their 
+energy density which continues to be a significant limiting 
+factor preventing more widespread adoption. Addressing this 
+issue is crucial for the advancement and integration of pseu-
+docapacitors in broader energy storage applications. Pseu-
+docapacitors utilize rapid and reversible redox processes 
+ * Samina Husain 
+ shusain3@jmi.ac.in
+1 Centre for Nanoscience and Nanotechnology, Jamia Millia 
+Islamia, New Delhi 110025, India
+
+--- PDF页 2 ---
+ M. Alam, S. Husain 
+67 Page 2 of 12
+occurring at the electrode surface to capture and store elec-
+trical energy, utilizing conducting polymers as a key material 
+due to their intrinsic electrochemical properties. Conductive 
+polymers, including Polyaniline (PANI), Polypyrrole (PPy), 
+and Polythiophene (PTh), offer high specific capacitance, 
+flexibility, and tunable properties, making them excellent 
+choices for energy storage applications. These materials 
+have been widely used in pseudocapacitors due to their high 
+conductivity, ease of synthesis, low cost, and environmental 
+friendliness. Despite extensive experimental and computa-
+tional studies, the quantitative relationships among the fea-
+tures of conducting polymers (e.g., polymer morphology, 
+doping level, and molecular weight) and the pseudocapaci-
+tor performance under practical conditions are not yet fully 
+established. A common understanding is that capacitance 
+of a polymer increases with its increasing electroactive sur-
+face area. However, achieving high performance involves 
+more than just increasing surface area. For instance, while 
+highly porous polymer structures provide more electroactive 
+sites, they can also suffer from reduced power density and 
+capacitance due to limited ion accessibility and increased 
+resistance. Microporous structures (< 2 nm) can lead to poor 
+power density because of ion diffusion resistance and may 
+contribute to lower capacitance due to the inaccessibility 
+of some pores. Additionally, the electrochemical stability 
+and cycling performance of conducting polymers can be 
+affected by factors such as the degree of polymerization and 
+the nature of the dopants used. An agreed-upon viewpoint is 
+that there exists a network of interconnecting mesopores and 
+macropores, combined with an optimized polymer structure, 
+can lead to both satisfactory capacitance and power density 
+by balancing ion transport and electroactive surface area. To 
+tailor conducting polymers for enhanced pseudocapacitance 
+performance, it is essential to establish quantitative corre-
+lations between their structural features and the resulting 
+power and energy densities under operational conditions. 
+Such correlations will aid in the design and synthesis of 
+next generation conducting polymer materials for high-per-
+formance pseudocapacitors [3 ]. Specific capacitance is an 
+essential criterion for evaluating performance of supercapac-
+itor electrode materials. It quantifies the quantity of electric 
+charge accumulated per unit mass or volume of the material.
+Accurate prediction of specific capacitance can significantly 
+assist in the design and optimization of high-performance 
+supercapacitors [4]. In recent years, machine learning (ML) 
+techniques have become increasingly popular in materials sci-
+ence for predicting material properties and optimizing their 
+performance [5–8]. ML methods can describe complex physi-
+cal processes exclusively based on the input data. ML meth-
+ods have emerged as an alternative that is robust to traditional 
+Fig. 1  Observed relationship between the specific capacitance, electrode materials and electrolytes
+
+--- PDF页 3 ---
+Hyperparameter tuned machine learning predictions of specific capacitance of conducting…
+Page 3 of 12 67
+approaches based on the principles and laws of physics [9 , 
+10]. Given sufficient and diverse training data. The methods 
+enable the establishment of useful correlations between mate-
+rials properties and their performance without the need for 
+detailed physical descriptions. Unlike physics-based modeling, 
+ML methods rely on computational algorithms to learn, and 
+extract quantify the links between input and output variables 
+based on available data. Although validating an ML algorithm 
+for practical applications often necessitates a deep understand-
+ing of physics and sometimes trial and error, once calibrated. 
+For supercapacitors utilizing conducting polymer-based elec-
+trode materials with both electric double-layer capacitance 
+(EDLC) and pseudocapacitive behavior, ML methods offer a 
+significant advantage [11]. PANI, Ppy and PTh are known for 
+their high specific capacitance, conductivity, and flexibility. 
+These materials exhibit a combination of EDLC and faradaic 
+(pseudocapacitive) processes complicating the modeling of 
+their performance using traditional approaches like equiva-
+lent circuit models (ECMs) and molecular models [12]. ML 
+models can provide deeper insights into the optimization of 
+conducting polymer-based electrodes, facilitating the design 
+of supercapacitors with enhanced energy and power densities 
+[13].
+This research paper presents a novel application of machine 
+learning (ML) to the design of conducting polymers and their 
+composites as electrode materials for supercapacitors, depart-
+ing from conventional physical design methods. This investi-
+gation comprehensively assessed six distinct ML models to 
+determine their efficacy. The models examined include sup-
+port vector machine (SVM), random forest (RF), multilayer 
+perceptron (MLP), decision tree (DT), XGBoost, and artificial 
+neural network (ANN), each offering unique characteristics 
+and advantages. The SVM is renowned for its ability to clas-
+sify data by identifying the optimal hyperplane. The RF model 
+enhances prediction accuracy and mitigates overfitting using 
+multiple decision trees. The MLP, a neural network variant, 
+excels in learning complex patterns via backpropagation. The 
+DT model simplifies decision-making by recursively splitting 
+data into branches. XGBoost, a sophisticated gradient boost-
+ing framework, is distinguished by its high speed and perfor-
+mance. Lastly, the ANN model emulates the human brain's 
+pattern recognition capabilities. Each of these models under-
+went rigorous evaluation to ascertain their suitability and per-
+formance in predicting the specific capacitance of conducting 
+polymer-based electrodes, offering new insights and advance-
+ments in the field of supercapacitor technology [14–17].
+2  Methods and models
+2.1  Methods
+2.1.1  Data collection and preprocessing
+The dataset utilized for this investigation comprises exper -
+imental data on the specific capacitance of various con-
+ducting polymers and their composites. Features include 
+electrode materials type, method of synthesis, electrolytes 
+used, specific energy and specific capacitance. The data is 
+preprocessed to handle missing values, standardize fea-
+ture scales, and divided into training (80%) and testing 
+sets (20%). Both the Decision Tree and Random Forest 
+models are utilized on a dataset that included a range of 
+features pertaining to supercapacitor materials and condi-
+tions. These features covered various material properties, 
+such as the type of electrode material (like Polythiophene, 
+Polyaniline, Polypyrrole etc.). They also included elec-
+trolyte properties like type and concentration, as well as 
+process or method of synthesis such as in-situ polymeriza-
+tion. Using the Decision Tree model, a clear visualization 
+of feature importance was obtained. This allowed for the 
+identification of crucial determinants that exert a substan-
+tial impact on specific capacitance. The interpretability 
+of the data was crucial in gaining a deeper understanding 
+of the complex connections between various features and 
+how they influenced performance.
+On the other hand, the Random Forest model, which 
+uses a collection of decision trees, showed better accuracy 
+and the ability to generalize. Through meticulous manage -
+ment of intricate feature interactions, it offered a strong 
+evaluation of feature significance. By analyzing the aggre-
+gated feature importance scores from the Random Forest 
+model, valuable insights into the key variables with the 
+most significant influence on specific capacitance can be 
+gained. This helps us to develop a thorough comprehen-
+sion of the fundamental processes.
+Overall, the combination of Decision Tree and Random 
+Forest models allowed for precise prediction of specific 
+capacitance and the identification of key influencing fea-
+tures as shown in Fig.  2. This showcases that the utiliza-
+tion of ML techniques has the potential to greatly enhance 
+the performance of supercapacitors.
+To preprocess the data so that the model learns effi-
+ciently rather get influenced by outliers and other devi-
+ations present in the dataset. By utilizing a pairplot as 
+shown in Fig.  3, we examine the relationship between 
+specific capacitance, electrode materials, method, electro-
+lytes, and specific energy across 64 sets of capacitances 
+for different conducting polymer-based electrodes. Using a 
+pairplot, we can examine the connections between various 
+
+--- PDF页 4 ---
+ M. Alam, S. Husain 
+67 Page 4 of 12
+variables all at once by displaying them in a grid of scat-
+terplots and histograms. There is a noticeable peak (Fig.  4) 
+in the histogram, indicating that there is a prominent value 
+or a limited range of values for specific energy throughout 
+the dataset. The histograms for electrode and method have 
+the same size, suggesting an even distribution of obser -
+vations across various categories of electrode materials 
+and fabrication methods. To detect and remove outliers in 
+the 'Specific energy (Wh kg ⁻1)' column, the interquartile 
+range (IQR) is calculated using the IQR method by first 
+determining the first quartile (Q1) and third quartile (Q3). 
+Outliers are identified (Fig.  4) as values below Q1 – 1.5 * 
+IQR or above Q3 + 1.5 * IQR and are replaced with NaN. 
+These NaN values with the column's mean are then filled.
+For this study, target encoding is employed to effectively 
+capture the correlation between the categorical features and 
+the specific capacitance. This is particularly suitable as the 
+specific capacitance is influenced by various factors includ-
+ing the type of electrode material, the fabrication method, 
+specific energy, and the electrolyte used. Target encoding 
+is a sophisticated preprocessing technique that transforms 
+categorical variables into numerical values by substitut-
+ing each category with the mean of the target variable for 
+that specific category. In this study, the target variable is 
+'Specific capacitance (F/g)', while the categorical features 
+include 'Electrode materials', 'Method', and 'Electrolyte'. The 
+target encoding process involves calculating the mean spe-
+cific capacitance for each category within these features and 
+then replacing the categorical values with these mean values. 
+The use of traditional encoding methods, such as one-hot 
+encoding, often leads to the creation of a feature space with 
+(1)IQR = Q3 − Q1
+a high number of dimensions, which can produce sparse 
+matrices and significantly increase computational complex-
+ity. Target encoding addresses this issue by preserving the 
+dataset's original dimensionality, thus making the data more 
+manageable and reducing the risk of overfitting. By directly 
+correlating the categorical features with the target variable, 
+target encoding captures the intrinsic relationship between 
+these variables. This approach allows the encoded values 
+to accurately reflect the influence of each category on spe-
+cific capacitance, thereby enhancing the predictive accuracy 
+of the models. Furthermore, since the encoded values are 
+directly tied to the target variable, they provide more intui-
+tive insights into how different categories impact specific 
+capacitance. This clarity aids in the interpretability of the 
+models, offering researchers a deeper understanding of the 
+factors influencing specific capacitance.
+To ensure that the features and the target variable are on 
+a comparable scale, the StandardScaler from the sklearn  
+library for normalization was carried out. The dataset 
+was initially divided into features and the target variable, 
+with the features comprising all columns except for the 
+'Specific capacitance (F/g)', and the target variable being 
+'Specific capacitance (F/g)' itself. The StandardScaler is 
+then initialized and applied to both the features and the 
+target variable. For the features, the scaler is fitted and 
+transformed, standardizing each feature to have a mean 
+of zero and a standard deviation one. The standardiza-
+tion process is essential for ensuring optimal performance 
+of many machine learning algorithms by mitigating the 
+impact of varying scales among the features. To effectively 
+evaluate the performance of machine learning models, 
+the train_test_split function is utilixed from the sklearn.
+model_selection module for the purpose of partitioning 
+the dataset. The division of the dataset into two subsets, 
+Fig. 2  Observed relationship between the Specific Capacitance and other features revealed by Decision Tree and Random Forest Models
+
+--- PDF页 5 ---
+Hyperparameter tuned machine learning predictions of specific capacitance of conducting…
+Page 5 of 12 67
+namely the training set and the testing set, is facilitated 
+by this method. The training set, typically comprising a 
+larger portion of the data, is utilized to train the model 
+on patterns and relationships within the data. Meanwhile, 
+the testing set, which remains unseen during the train-
+ing phase, serves as an independent dataset for assessing 
+the model's generalization ability. The data is randomly 
+divided into training and testing sets to ensure that the 
+model is evaluated on data it has not seen before. This 
+approach provides a more accurate estimation of the per -
+formance of the model on new and unseen samples. The 
+utilization of this approach allows for the evaluation of the 
+capacity of the model capacity to apply learned knowledge 
+to novel data, as well as the detection of possible problems 
+such as overfitting or underfitting.
+Fig. 3  Input data with different variables, 64 sets of capacitances for different conducting polymer-based electrodes: relationship between the 
+Specific Capacitance, Electrode Material, Methods, Electrolytes, and Specific Energy
+
+--- PDF页 6 ---
+ M. Alam, S. Husain 
+67 Page 6 of 12
+2.2  Models
+2.2.1  Artificial neural network (ANN) ML model
+ANNs are computational models inspired by the human 
+brain, capable of capturing complex patterns in data. The 
+model utilized in this study is composed of an input layer, 
+several hidden layers that employ nonlinear activation func-
+tions, and an output layer. The training of the model is per -
+formed using the back propagation algorithm to minimize 
+the mean squared error between the predicted and actual 
+specific capacitance values.
+2.2.1.1 Predictive model for  specific capacitance 
+through TensorFlow ML model To create a reliable predic-
+tive model for specific capacitance, TensorFlow ML model, 
+which is an open-source machine learning framework 
+(Fig.  5), in conjunction with the Keras API is employed. 
+First, the dataset is divided into training and testing sets 
+using the train_test_split function from the sklearn.model_
+selection module. This ensures that the model is evaluated 
+on data that it has not been trained on. Next, a Sequential 
+model is initialized, representing a linear stack of neural net-
+work layers. The model architecture consisted of an input 
+layer followed by two dense hidden layers, each utilizes 
+rectified linear unit (ReLU) activation functions to intro-
+duce non-linearity and improve the capacity of the model to 
+capture intricate patterns in the data. The output layer com-
+prises of a single neuron to predict the specific capacitance 
+value. The model is compiled using a popular optimizer 
+(Adam) and a commonly used loss function mean squared 
+error (MSE), which are commonly used for regression tasks. 
+Subsequently, the model underwent 100 epochs of training 
+using a batch size of 32. Throughout the process, its per -
+formance is closely monitored on a validation subset that 
+accounted for 20% of the training data. By understanding 
+the fundamental patterns in the data, the model can fine-
+tune its parameters and minimize the loss function. Follow-
+ing training, the performance of the model is evaluated on 
+the test set yielding MSE as a metric to assess its predic-
+tive accuracy. After training, the model is used in making 
+predictions on the test data. This gave us valuable insights 
+into the ability of the model to make accurate predictions on 
+unseen samples and effectively forecast specific capacitance 
+values.
+2.2.2  Decision Tree (DT) ML model
+Decision Trees (Fig.  6) are incredibly effective models that 
+can split data based on feature values to make accurate pre-
+dictions. They are a straightforward yet highly impactful 
+tool. Every node in the tree represents a feature, and each 
+branch represents a decision rule that leads to leaf nodes 
+that make predictions about specific capacitance. The tree 
+is pruned to avoid overfitting.
+2.2.3  Random Forest (RF) ML model
+Random Forests are ensemble models that combine multiple 
+Decision Trees to enhance prediction accuracy and robust-
+ness. Every tree in the forest is trained using a random subset 
+of the data, and the ultimate prediction is determined by 
+averaging the predictions of all the trees.
+2.2.4  Multi‑Layer Perceptron (MLP)
+The Multi-Layer Perceptron (MLP) regressor is a spe -
+cific type of artificial neural network designed for tackling 
+regression problems effectively. It comprises an input layer, 
+several hidden layers, and an output layer, with each layer 
+Fig. 4  Imputation of outliers in dataset
+
+--- PDF页 7 ---
+Hyperparameter tuned machine learning predictions of specific capacitance of conducting…
+Page 7 of 12 67
+Fig. 5  ANN Model indictive of a MAE, b MSE, c  R2, d Loss and e MAE with Number of Epochs
+Fig. 6  Decision Tree Model
+
+--- PDF页 8 ---
+ M. Alam, S. Husain 
+67 Page 8 of 12
+containing numerous neurons. MLP’s non-linear activation 
+functions enables them to capture and model complex data 
+relationships. During the training process, they utilize back-
+propagation to reduce the discrepancy between predicted 
+and actual outcomes by adjusting the weights of the net-
+work's connections. MLP regressors excel at identifying sub-
+tle patterns and interactions within datasets, making them 
+well-suited for various applications, such as forecasting 
+time series data, making financial predictions, and analyz-
+ing scientific data. Their inherent flexibility allows them to 
+address both linear and non-linear relationships, rendering 
+them a preferred option for tasks requiring high accuracy 
+in predictions. However, optimizing their performance may 
+necessitate careful tuning of hyperparameters, including the 
+number of hidden layers and neurons, to avoid overfitting 
+and ensure generalizability.
+• Input Layer: Features representing material properties.
+• Hidden Layers: Multiple layers with ReLU activation 
+functions.
+• Output Layer: Predicts specific capacitance.
+The MLP is trained using stochastic gradient descent to 
+minimize the loss function.
+2.2.5  Support Vector Machine (SVM)
+Support Vector Machines (SVMs) are highly effective 
+models for regression tasks, as they excel at identifying 
+the optimal hyperplane that accurately captures the data 
+in a multi-dimensional space. Using a kernel function, the 
+SVM model in this study transforms the input features 
+into a higher-dimensional space. In this space, a linear 
+regression model is fitted to predict specific capacitance. 
+The SVM regressor was trained using the radial basis 
+function (RBF) kernel, which is renowned for its capa-
+bility to handle non-linear relationships between features 
+and target variables. After completing the training, the 
+model is tested on the test set to evaluate its predictive 
+performance using standard regression metrics. Based on 
+our analysis, the SVM regression model obtained a  R2 
+score of 0.8850. This suggests that the model is capable 
+of accurately capturing and explaining the variations in 
+specific capacitance using the input features. A higher  R2 
+score indicates a stronger relationship between the features 
+and the target variable, implying that the model's predic-
+tions closely align with the actual observed values. Fur -
+thermore, the model is evaluated for accuracy using mean 
+absolute error (MAE) and MSE. For accurately assessing 
+the errors between predicted and actual values, MAE pro -
+vides insight into the average magnitude of errors, while 
+the MSE focuses on the average squared differences. The 
+SVM regression model yielded low values of MAE of 
+0.2267 and MSE of 0.1138 signifying accurate predic-
+tions and minimal errors.
+2.2.6  Extreme Gradient Boosting (XGBoost)
+XGBoost is a sophisticated implementation of gradient 
+boosting that constructs an ensemble of decision trees 
+in a sequential manner. Every tree learns from the mis -
+takes of those that came before it, and the model uses 
+their predictions to enhance its accuracy. XGBoost (Fig.  7) 
+includes regularization to reduce overfitting and enhance 
+generalization.
+Fig. 7  a XGB Model and SVM Model Fit Line with  R2 values
+
+--- PDF页 9 ---
+Hyperparameter tuned machine learning predictions of specific capacitance of conducting…
+Page 9 of 12 67
+3  Improving the predictive performance 
+of ML models through hyperparameter 
+tuning
+The process of hyperparameter tuning emphasizes the 
+significance of optimizing machine learning models to 
+improve their predictive performance. The SVM regres-
+sor is configured with a range of hyperparameters, includ-
+ing the kernel type (linear, rbf, and poly), regularization 
+parameter C (0.1, 1, 10), kernel coefficient gamma ( scale 
+and auto), and the epsilon parameter (epsilon) for the 
+epsilon-tube within which no penalty is associated in the 
+training loss function (0.1, 0.2, 0.5). The kernel type is 
+responsible for selecting the appropriate function to map 
+the input data into the feature space. Linear kernels are 
+used to represent linear relationships, while RBF (radial 
+basis function) and polynomial kernels can capture more 
+complex and non-linear interactions. The regularization 
+parameter C is responsible for balancing the objective of 
+minimizing the error on the training data with the goal 
+of reducing model complexity to avoid overfitting. The 
+gamma parameter determines the extent to which a single 
+training sample affects the model, with low values indi-
+cating a wider influence and high values indicating a nar -
+rower influence. The epsilon parameter defines the thresh-
+old within which forecasted values are deemed acceptable 
+without incurring any penalty. The scoring function is 
+defined using MSE. Lower MSE value of 0.050 indicates 
+a better model performance. To optimize model perfor -
+mance, Grid Search Cross-Validation (GridSearchCV) is 
+applied to the Random Forest and Decision Tree Regres-
+sors. For the Random Forest Regressor, the hyperparam-
+eter grid examined configurations including 100, 200, and 
+300 trees (`n_estimators`), three options for maximum 
+features (`max_features`): 'auto', 'sqrt', and 'log2', as well 
+as varying the maximum depth (`max_depth`) with val-
+ues of 10, 20, 30, and None. Additionally, the grid tested 
+`min_samples_split` values of 2, 5, and 10, and `min_sam-
+ples_leaf` values of 1, 2, and 4, along with bootstrap sam -
+pling options of True and False. For the Decision Tree 
+Regressor , the tuning focused on `max_depth` values of 
+3, 5, 10, and None, alongside `min_samples_split` and 
+`min_samples_leaf` with values of 2, 5, and 10, and 1, 
+2, and 4, respectively. Both models underwent a system-
+atic evaluation using fivefold cross-validation (`cv = 5`), 
+targeting negative mean squared error (`scoring = 'neg_
+mean_squared_error'`) as the performance metric. This 
+comprehensive grid search approach enabled the identifi-
+cation of optimal hyperparameter configurations, thereby 
+improving the accuracy and reliability of the models. The 
+process of hyperparameter tuning for the Multi-layer Per-
+ceptron Regressor (MLPRegressor) is conducted using 
+GridSearch cross validation (CV), a more robust method 
+for enhancing model performance. The MLP Regressor is 
+configured to allow a maximum of 1000 iterations with 
+a comprehensive parameter grid encompassing various 
+hyperparameters. These include different configurations 
+for hidden layer sizes, activation functions such as ReLU, 
+tanh, and logistic, optimization algorithms (Adam and 
+SGD), regularization strength (alpha), and learning rate 
+options. The tuning process employed fivefold cross-vali -
+dation across 720 different combinations of these parame-
+ters. A warning surfaced indicating that the target variable 
+y is input as a 2D column vector rather than a 1D array 
+suggesting that reshaping the target variable could resolve 
+this issue. The grid search reveales optimal hyperparam-
+eters notably a configuration with two hidden layers of 100 
+neurons each, the ReLU activation function, and the Adam 
+solver. This results in MSE of approximately 0.1507, an 
+ R2 score of around 0.962, and a MAE of roughly 0.1452. 
+The tuned XGBoost regression model achieves a signifi-
+cant performance enhancement through hyperparameter 
+optimization. The grid search reveals optimal parameters: 
+learning rate = 0.1, max depth = 3, n_estimators = 200, and 
+subsample = 0.8. These settings results in an  R2 score of 
+approximately 0.910, indicating that the model explains 
+over 91% of the variance in the target variable. The hyper -
+parameter tuning for the neural network model is con-
+ducted using Keras Tuner's RandomSearch method, with 
+the search focused on optimizing MAE on the validation 
+set. The model architecture included two hidden lay -
+ers, with the first having between 32 and 128 units and 
+the second between 16 and 64 units. The tuning process 
+involved a maximum of 5 trials and 2 executions per trial 
+over 50 epochs. The best hyperparameters identified were: 
+units_1 = 128, units_2 = 64, and optimizer = 'adam'. 
+The model achieved a training MAE that decreased from 
+0.7474  to 0.1750 and a validation MAE that improved 
+from 0.7077 to 0.1930 over 48 epochs.
+4  Results and discussion
+The evaluation of each model's performance was conducted 
+using various metrics viz., MAE, MSE, and the coefficient 
+of determination  (R2) (Fig.  8). The models underwent train-
+ing and testing using cross-validation to guarantee the dura-
+bility and applicability of the outcomes.
+4.1  Model performance and accuracy
+Multilayer Perceptron (MLP) demonstrate exceptional ability 
+in capturing non-linear relationships within complex data -
+sets such as the one derived from 62 research papers. The 
+MLP achieved an impressive accuracy of 95%, significantly 
+
+--- PDF页 10 ---
+ M. Alam, S. Husain 
+67 Page 10 of 12
+outperforming Support Vector Machine (SVM) and Extreme 
+Gradient Boosting (XGBoost), which recorded accuracies of 
+85% and 89%, respectively. Random Forest (RF) and Deci-
+sion Tree (DT) models also showed strong performance, 
+with accuracies of 92% and 87%. Furthermore, the MLP 
+recorded the lowest MAE of 0.1452 and MSE of 0.0373 
+while achieving the highest R-squared  (R2) value of 0.9622. 
+This indicates its effectiveness in understanding intricate 
+relationships among features such as Electrode Materials, 
+Method, Electrolyte, Specific Energy, and Specific Capaci-
+tance. MLPs learn feature interactions automatically, while 
+SVM, with an MAE of 0.2267 and MSE of 0.1138, can be 
+computationally intensive and sensitive to noise, requiring 
+specific kernel functions for optimal performance. Although 
+XGBoost effectively manages feature interactions with an 
+MAE of 0.1934 and MSE of 0.0639 it may not capture com-
+plex non-linear patterns as well as MLPs. The size of the 
+dataset enables MLPs to learn robustly, preventing overfit-
+ting, whereas SVM can struggle with noisy data affecting 
+decision boundaries. Additionally, MLPs excel in predicting 
+continuous values, yielding smooth outputs, while SVM's 
+Support Vector Regression (SVR) might be less adept at 
+capturing data complexity. Overall, MLPs exhibit strong 
+robustness to noise due to their layered architecture, pro-
+moting generalizable learning, while SVM can be influenced 
+by outliers. In comparison, while the ANN shows a higher 
+MAE of 0.2771 and MSE of 0.132, resulting in a lower  R2 
+value of 0.8851, it was less effective than the other models 
+tested. These factors collectively highlight the MLP's supe-
+riority in this application (Fig.  8).
+(2)MSE = 1
+n i=1
+n /uni2211.s1
+(yi − /uni0302.s1yi)2
+(3)MAE = 1
+n i=1
+n /uni2211.s1/uni007C.x/uni007C.xyi− /uni0302.s1yi/uni007C.x/uni007C.x
+(4)R2 = 1
+n
+i=1
+n ∑ (yi − /uni0302.s1yi)2
+i=1n ∑ (yi − yi)2
+Fig. 8  Actual Vs Predicted Specific Capacitance a ANN, b DT, c RF and d MLP models
+
+--- PDF页 11 ---
+Hyperparameter tuned machine learning predictions of specific capacitance of conducting…
+Page 11 of 12 67
+where n is the number of data points, yi is the actual value, 
+/uni0302.s1yi is the predicted value. yi is the mean of the actual values, 
+i=1
+n ∑ (yi − /uni0302.s1yi)2 is the sum of the squares of the residuals 
+i=1
+n ∑ (yi − yi)2 is the total sum of squares (Table  1).
+In this study, a rigorous approach is adopted to validate 
+the Multilayer Perceptron (MLP), Support Vector Machine 
+(SVM), XGBoost, Random Forest (RF), and Decision Tree 
+(DT) models, ensuring that the results are both reliable 
+and generalizable (Fig.  9). 9 K-fold cross-validation is 
+employed, dividing the dataset of 62 samples into 5 subsets. 
+Each model was trained on 80% of the data (approximately 
+50 samples) while the remaining 20% (about 12 samples) 
+served as the test set during each iteration. This method 
+allows each fold to function as the test set once providing 
+a robust estimate of model performance and reducing the 
+variance associated with a single train-test split.
+5  Conclusion
+This study showcases the efficacy of different machine 
+learning models in predicting the exact capacitance of con-
+ducting polymers and their composites as electrode mate -
+rials for supercapacitors. Data from various conducting 
+polymer-based supercapacitors is gathered and utilized as 
+input for different machine learning models. Although the 
+random forest model and XG Boost show higher  R2 and 
+lower RMSE values, their inaccuracies make the MLP the 
+best model for predicting the specific capacitance of the 
+electrodes. The performance of the Models is assessed uti-
+lizing measures such as Mean Absolute Error (MAE), Mean 
+Squared Error (MSE), and R-squared  (R2). The ranking of 
+the models is as follows: MLP > RF > XGB > DT > SVM > 
+ANN. Out of all the models, the MLP model stands out 
+with its exceptional performance, accurately pinpointing 
+the contribution of each variable to the specific capacitance. 
+The electrode material has a major impact on the specific 
+capacitance of conducting polymer-based supercapacitors. 
+MLPs demonstrate a strong ability to capture the non-linear 
+relationships in complex datasets, achieving a 95% accu -
+racy on a dataset of 62 entries from research papers. This 
+outperformed SVM and XGBoost, which achieved 85% and 
+89% accuracy, respectively. The features—Electrode Mate-
+rials, Method, Electrolyte, Specific Energy, and Specific 
+Capacitance—show complex interdependencies, making 
+MLPs especially effective as they learn feature interactions 
+automatically without manual engineering. Unlike SVM, 
+which requires specific kernels and can be sensitive to noise, 
+or XGBoost, which needs careful tuning, MLPs produce 
+smooth, continuous outputs ideal for predicting continuous 
+values like specific energy and capacitance. Their layered 
+structure also makes MLPs robust to noise, contributing to 
+more generalizable pattern learning. It is anticipated that this 
+approach will serve as a catalyst for additional endeavors 
+in utilizing machine learning in the fields of electrochem-
+istry and chemical engineering, specifically in the realm of 
+enhancing supercapacitor electrode materials. These find-
+ings indicate that utilizing advanced ML techniques can 
+greatly assist in the research and improvement of materi-
+als for energy storage purposes. Future research should 
+Table 1  Metrics Table of 6 Models
+Model MAE MSE R2
+Decision Tree 0.2107 0.1034 0.8956
+Random Forest 0.1673 0.0662 0.9399
+Extreme Gradient Boosting 0.1934 0.0639 0.93541
+Artificial Neural Network 0.2771 0.1320 0.88507
+Multi-Layer Perceptron 0.1452 0.0373 0.96224
+Support Vector Machine 0.2267 0.1138 0.88507
+Fig. 9  Comparison of Metrics of different ML Models
+
+--- PDF页 12 ---
+ M. Alam, S. Husain 
+67 Page 12 of 12
+prioritize expanding the dataset, fine-tuning the models, and 
+investigating additional features to improve the accuracy of 
+predictions.
+Author contribution Mashqoor Alam: Methodology, Investigation,, 
+Writing—Original Draft and Initial Draft and writing. Samina Husain: 
+Supervision, Writing—Review & Editing, Resources and Formal 
+analysis.
+Data availability The data will be made available on request.
+Declarations 
+Conflict of interest There are no conflicts to declare.
+References
+ 1. J. Doe, A., Smith, advances in supercapacitor technology: the role 
+of conducting polymers and their composites. J. Energy Storage 
+45(3), 123–145 (2023)
+ 2. G. Zubi, R. Dufo-López, M. Carvalho, G. Pasaoglu, The lithium-
+ion battery: State of the art and future perspectives. Renew. Sus-
+tain. Energy Rev. 89, 292–308 (2018). https:// doi. org/ 10. 1016/j. 
+rser. 2018. 03. 002
+ 3. M. Alam, S. Husain, Engineering 3D-interconnected graphene 
+nanoplatelets and polyaniline nanocomposite for high energy den-
+sity energy storage. J Energy Storage 80, 110304 (2024). https://  
+doi. org/ 10. 1016/j. est. 2023. 110304
+ 4. X. Chen, R. Paul, L. Dai, Carbon-based supercapacitors for effi-
+cient energy storage. Natl. Sci. Rev. 4 , 453–489 (2017). https://  
+doi. org/ 10. 1093/ nsr/ nwx009
+ 5. Y. Xia, C. Zhang, C. Wang, H. Liu, X. Sang, R. Liu, P. Zhao, G. 
+An, H. Fang, M. Shi, B. Li, Y. Yuan, B. Liu, Prediction of bending 
+strength of glass fiber reinforced methacrylate-based pipeline UV-
+CIPP rehabilitation materials based on machine learning. Tunn. 
+Undergr. Space Technol. 140, 105319 (2023). https:// doi. org/ 10. 
+1016/j. tust. 2023. 105319
+ 6. B. Liu, N. Vu-Bac, X. Zhuang, X. Fu, T. Rabczuk, Stochastic 
+full-range multiscale modeling of thermal conductivity of Poly -
+meric carbon nanotubes composites: a machine learning approach. 
+Compos. Struct. 289, 115393 (2022). https:// doi. org/ 10. 1016/j. 
+comps truct. 2022. 115393
+ 7. B. Liu, W. Lu, Surrogate models in machine learning for compu-
+tational stochastic multi-scale modelling in composite materials 
+design. Int. J. Hydromechatronics 5 , 336 (2022). https:// doi. org/ 
+10. 1504/ IJHM. 2022. 127037
+ 8. B. Liu, N. Vu-Bac, X. Zhuang, W. Lu, X. Fu, T. Rabczuk, Al-
+DeMat: a web-based expert system platform for computationally 
+expensive models in materials design. Adv. Eng. Softw. 176, 
+103398 (2023). https:// doi. org/ 10. 1016/j. adven gsoft. 2022. 103398
+ 9. B. Liu, N. Vu-Bac, T. Rabczuk, A stochastic multiscale method 
+for the prediction of the thermal conductivity of Polymer nano-
+composites through hybrid machine learning algorithms. Compos. 
+Struct. 273, 114269 (2021). https:// doi. org/ 10. 1016/j. comps truct. 
+2021. 114269
+ 10. B. Liu, N. Vu-Bac, X. Zhuang, X. Fu, T. Rabczuk, Stochastic 
+integrated machine learning based multiscale approach for the 
+prediction of the thermal conductivity in carbon nanotube rein-
+forced polymeric composites. Compos. Sci. Technol. 224, 109425 
+(2022). https:// doi. org/ 10. 1016/j. comps citech. 2022. 109425
+ 11. L. Joss, E.A. Müller, Machine learning for fluid property correla-
+tions: classroom examples with MATLAB. J. Chem. Educ. 96, 
+697–703 (2019). https:// doi. org/ 10. 1021/ acs. jchem ed. 8b006 92
+ 12. S. Ghosh, G.R. Rao, T. Thomas, Machine learning-based predic-
+tion of supercapacitor performance for a novel electrode material: 
+Cerium oxynitride. Energy Storage Mater. 40, 426–438 (2021). 
+https:// doi. org/ 10. 1016/j. ensm. 2021. 05. 024
+ 13. M. Zhou, A. Gallegos, K. Liu, S. Dai, J. Wu, Insights from 
+machine learning of carbon electrodes for electric double layer 
+capacitors. Carbon N Y 157, 147–152 (2020). https:// doi. org/ 10. 
+1016/j. carbon. 2019. 08. 090
+ 14. P. Probst, A.-L. Boulesteix, To Tune or Not to Tune the Number of 
+Trees in Random Forest, 2018. http:// jmlr. org/ papers/ v18/ 17- 269. 
+html.
+ 15. M.-H. Roy, D. Larocque, Robustness of random forests for regres-
+sion. J Nonparametr Stat 24, 993–1006 (2012). https:// doi. org/ 10. 
+1080/ 10485 252. 2012. 715161
+ 16. J.N. van Rijn, F. Hutter, Hyperparameter importance across data-
+sets, in: Proceedings of the 24th ACM SIGKDD International 
+Conference on Knowledge Discovery & Data Mining, ACM, New 
+York, NY, USA, 2018: pp. 2367–2376. https://  doi. org/ 10. 1145/ 
+32198 19. 32200 58.
+ 17. S. Piche, Robustness of feedforward neural networks, in: [Pro-
+ceedings 1992] IJCNN International Joint Conference on Neu -
+ral Networks, IEEE, n.d.: pp. 346–351. https:// doi. org/ 10. 1109/ 
+IJCNN. 1992. 226963.
+Publisher's Note Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds 
+exclusive rights to this article under a publishing agreement with the 
+author(s) or other rightsholder(s); author self-archiving of the accepted 
+manuscript version of this article is solely governed by the terms of 
+such publishing agreement and applicable law.

@@ -1,0 +1,1536 @@
+
+===== PDF PAGE 1 =====
+Vol.:(0123456789)
+https://doi.org/10.1007/s10853-026-13283-w
+J Mater Sci (2026) 61:24715–24733
+Computation & theory
+Machine learning‑assisted QnSPR study 
+of structurally diverse nanoporous carbon materials 
+and their capacitive behavior in dilute ionic liquid 
+electrolyte
+Maike Käärik1, Mati Arulepp2, Uko Maran1 , and Jaan Leis1,2,* 
+1 Institute of Chemistry, University of Tartu, Ravila 14a, Tartu, Estonia
+2 Skeleton Technologies, Sepise 7, Tallinn, Estonia
+ABSTRACT
+The growing global demand for efficient energy storage has highlighted the need 
+to discover and establish relationships and rules that link the electric double-layer 
+(EDL) capacitance to the structural properties of the materials used in electrodes. 
+Among these materials, nanoporous carbon stands out for its high microporos-
+ity and precisely adjustable pore size distribution, both of which play a crucial 
+role in influencing EDL performance. At the same time, machine learning (ML) 
+has emerged as a toolbox in materials science, enabling the prediction and opti-
+mization of various application-related properties based on experiment-derived 
+structure and surface characteristics. In this study, the ML method was applied 
+to 67 nanoporous carbon materials (carbide-derived carbons (CDCs)), with dif-
+ferent structures and textures. Their EDL capacitance was then modeled under 
+both positive and negative polarization in an electrolyte whose ions had an asym-
+metric, i.e., extremely non-spherical geometric structure. The structural and tex-
+tural properties of the materials in the dataset were described using experimental 
+descriptors of carbon materials derived from nitrogen and carbon dioxide adsorp-
+tion measurements. These descriptors were used as model inputs, while the target 
+property, EDL capacitance, was measured in three-electrode cells using 1.9 M 
+EMIm-TFSI in ACN as electrolyte. The ML modeling results demonstrate that 
+combining experimentally derived structural descriptors, such as specific surface 
+area, ion size-related volume fraction of pore size distribution, and bulk den-
+sity of CDC electrodes, in one quantitative nanostructure–property relationship 
+(QnSPR), enables accurate prediction of specific volumetric capacitance for both 
+volumetric cathodic capacitance  (R2 = 0.93) and volumetric anodic capacitance 
+ ( R2 = 0.94) using multiple linear regression. The textural descriptors in the models 
+indicate that the most effective pore size range for electrosorption is consistent 
+Received: 15 May 2026 
+Accepted: 29 June 2026 
+Published online: 
+10 July 2026 
+© The Author(s), under 
+exclusive licence to Springer 
+Science+Business Media, LLC, 
+part of Springer Nature, 2026
+Handling Editor: Narendra Nath Ghosh.
+Address correspondence to E-mail: jaan.leis@ut.ee
+
+===== PDF PAGE 2 =====
+ J Mater Sci (2026) 61:24715–24733
+with the smallest dimension of the ions, which is 0.4–0.5 nm to accommodate the 
+ EMIm+ cation, while for the slightly larger but highly asymmetric  TFSI− anion, 
+it is below 0.4 nm.
+GRAPHICAL ABSTRACT
+Introduction
+The global push for high-performance energy stor-
+age has driven the development of a variety of elec-
+trochemical solutions, including electrostatic, redox, 
+and hybrid storage. Electric double-layer capacitors 
+(EDLCs), or ultracapacitors, known for their long lifes-
+pan and environmental friendliness, use large surface 
+area carbon electrodes and can withstand thousands 
+of charge–discharge cycles [1 ]. Ultracapacitors store 
+energy by electrosorption of ions onto the carbon sur-
+face, making nanoporous carbon materials particu-
+larly attractive due to their large specific surface area 
+(SSA) and high bulk density. However, the large SSA 
+does not necessarily mean high capacitance [2 , 3]. It 
+is essential to have the proper pore size distribution 
+(PSD) in the carbon material, because the PSD signifi-
+cantly affects ion adsorption ability, or in other words, 
+the specific capacitance of the carbon electrodes [4–7].
+Previous studies [4 –7] have revealed that the spe-
+cific capacitance of carbon can be quantitatively esti-
+mated using porosity data obtained from gas adsorp-
+tion measurements. It has been shown that as pore 
+size increases, the capacitive performance gradually 
+becomes independent of both pore size and elec-
+trode potential, with larger pores exhibiting better 
+charging dynamics [5 ]. However, subnanometer-
+sized pores, which better match the size of electrolyte 
+ions, significantly increase the specific capacitance 
+and energy density of ultracapacitors [6 –11].
+Among the electrolytes used for supercapaci-
+tors, ionic liquids (ILs) are considered a promising 
+choice due to their environmental friendliness and 
+good electrochemical stability over a wide voltage 
+range exceeding 3.5–4 V [12]. The major disadvan-
+tage of ILs is their low ionic conductivity, especially 
+below room temperature [13, 14]. The conductivity 
+of IL ions can be improved by diluting them with 
+an organic solvent, albeit at the cost of a somewhat 
+poorer electrochemical stability. Nonaqueous elec-
+trolyte solutions containing organic salts commonly 
+exhibit an applicable voltage window of 2.6–2.9 V 
+[1, 13, 15, 16].
+The effect of carbon pore size on the perfor-
+mance of diluted IL, 1-ethyl-3-methylimidazolium 
+bis(trifluoromethylsulfonyl)imide/acetonitrile 
+(EMIm-TFSI/ACN) electrolyte was highlighted in 
+a study where ultracapacitors with microporous, 
+mesoporous, and micro-mesoporous carbon elec-
+trodes were compared [17]. This study concluded 
+that smaller pores are advantageous for the EMIm-
+TFSI/ACN ultracapacitor, whereas a wide pore size 
+24716
+
+===== PDF PAGE 3 =====
+J Mater Sci (2026) 61:24715–24733 
+distribution increases electrolyte usage, ultracapaci-
+tor weight, and cost, while reducing electrode den-
+sity and volumetric efficiency.
+Machine learning (ML) has become an important 
+toolbox in the advancement of materials science, 
+including energy materials, helping to optimize 
+and improve the properties and design methods of 
+(carbon) materials, as well as the quality of products 
+based on (carbon) materials, such as the performance 
+and efficiency of ultracapacitors [18– 21], fuel cells 
+[22, 23], and solar absorbers [24, 25]. The ML meth-
+ods are used to develop quantitative structure–prop-
+erty relationships (QSPR) [26, 27], which establish 
+mathematical links between electrochemical process 
+parameters and the structural properties of materi-
+als. Data-driven machine learning techniques can 
+be used to predict the specific capacitance of carbon 
+materials [6 , 7, 28–34], cycling stability [35, 36], and 
+power density of EDLC [37], as well as the produc-
+tion parameters of carbon materials used in energy 
+storage. In machine learning applications, typical 
+descriptors characterizing the material and process 
+conditions of ultracapacitors are textural proper-
+ties (SSA, pore volumes, pore sizes,  Id/Ig ratio from 
+Raman spectra, etc.), synthesis conditions of material 
+(temperature, activation, doping, etc. ), and electro-
+chemical operational properties (such as potential 
+window, current density, electrolyte type, and elec-
+trolyte concentration) [18, 19, 38].
+Main attention in data-driven modeling has been 
+given to predicting and describing capacitance, e.g., 
+ML algorithms have been used to determine the 
+effects of carbon material properties and test condi-
+tions on EDLC capacitance. For example, in a study 
+based on datasets of 167 biomass-derived carbon 
+materials collected from different research papers, 
+it was found that the multilayer perceptron (MLP) 
+algorithm yielded the best determination correla-
+tion coefficient of 0.817 based on the surface area 
+and pore volume distribution [34]. Another work 
+derived ML models from the capacitance data of 121 
+different carbon materials in aqueous electrolytes, 
+also collected from different research papers. In this 
+case, the best results were obtained with the regres-
+sion trees (RT) and MLP algorithm, with a model 
+root-mean-square error (RMSE) of ~ 68 for either 
+method. In both cases, the most important variables 
+were SSA, pore volume (PV), and average pore size 
+(PS), while potential window (PW) and  Id/Ig ratio 
+contributed to lower weight [28].
+Artificial neural networks (ANNs) have been shown 
+to be effective in identifying dependencies between 
+EDLC capacitance and parameters describing such 
+systems. For example, data from 178 carbon samples 
+collected from published papers were used to build a 
+model using the ANN method with five properties of 
+material (i.e., SSA, PS,  Id/Ig ratio, N-doping level, and 
+voltage window). When tested with real capacitance 
+data, the square of the correlation coefficient  (R2) of 
+the ANN model reached 0.91 [30]. Also, Zhou et al., in 
+a comparative study of several ML methods, demon-
+strated on a dataset comprising 70 data points that the 
+ANN model quite accurately replicates the relation-
+ship between capacitance and the SSA of micropores 
+and mesopores across various scan rates [37]. This ena-
+bled the creation of a Ragone plot, which predicts the 
+optimal characteristics of activated carbons for achiev-
+ing maximum energy and power density.
+Decision tree-based consensus methods have also 
+shown good results in identifying dependencies 
+between EDLC capacitance and parameters describ-
+ing such systems and material structure, compared 
+to other ML methods. For example, Asinari and cow-
+orkers [31] assembled a representative dataset with 
+4899 data records for carbon-based materials. They 
+found that of the five regression models applied, the 
+capacitive performance was best correlated with the 
+XGBoost model, where the most important descriptors 
+were specific surface area, the presence of nitrogen 
+doping, and the potential window. Another example 
+is given for the XGBoost method, which resulted in a 
+model with a good predictive specific capacitance for 
+80 porous carbon materials and was validated on 20 
+materials [39]. For this model, porous structure char-
+acteristics such as  SSAµ/SSA, SSA, and PS contributed 
+most to the performance of capacity among all porous 
+structure properties. Similarly, in a comparative study, 
+Yang et al. showed that XGBoost provides a reliable 
+method for predicting the electrochemical capacitance 
+of diverse biochars. In this study, it was found that, 
+besides activation conditions and SSA, biomass prop-
+erties like C/N and C/O ratios play a crucial role in 
+capacitance prediction [40].
+Another comparative study that is worth noting is 
+the work of Abdi et al., in which four ML techniques to 
+forecast the capacitance of carbon-based ultracapaci-
+tors were tested [41]. Out of these, the Super Learner 
+(SL) model emerged as the most effective, achieving 
+an  R2 of 0.9768 and an RMSE of 18.099. In the afore-
+mentioned study, it was also found that the specific 
+24717
+
+===== PDF PAGE 4 =====
+ J Mater Sci (2026) 61:24715–24733
+surface area (SSA) influences capacitance performance 
+significantly.
+As shown above, comparing machine learning 
+methods and searching for the best method are main-
+stream research in current scientific literature. The per-
+formance of models is usually evaluated using various 
+statistical metrics. However, a significant limitation of 
+many machine learning methods is the difficulty of 
+interpreting the results, especially when using com -
+plex models.
+The previous overview also shows that almost all 
+works, regardless of the ML method, confirm the 
+importance of SSA in describing capacitance. How-
+ever, using SSA alone does not provide sufficient pre-
+dictive accuracy. It is important to note that in all the 
+examples above, the datasets required for modeling 
+were compiled from different literature sources. Data-
+sets assembled from multiple literature sources can 
+be valuable for machine learning studies. However, 
+differences in experimental procedures and report-
+ing practices can introduce additional variability into 
+the data. Estimating and predicting energy storage 
+properties with ML methods always requires reliable 
+data series, as well as large and systematic variability 
+of (carbon) samples in these series. However, when 
+aggregating results from different research groups 
+into a single dataset, one must account for the signifi-
+cant variability in the data, which mainly stems from 
+different interpretations of incorrect formulas and key 
+terminology [42].
+A vast majority of ML studies considering relation-
+ships between structure and capacitive performance of 
+electrode materials are based on full-cell (2-electrode 
+cell) data, which limits the ability to investigate spe-
+cific interactions between electrolyte ions and elec-
+trode materials. The main reason for using full-cell 
+data is the abundance and availability of suitable data 
+from literature sources. Correct modeling of half-cell 
+data requires the availability of reliable and compa-
+rable (same experimental conditions, same method-
+ologies: potential ranges, measurement algorithms, 
+correctness of experimental performance, etc.) meas-
+urement results, which are usually not provided by 
+literature sources.
+Previous studies by the authors of this paper in 
+applying ML algorithms to describe the electrical dou-
+ble-layer (EDL) capacitance of carbon materials in dif-
+ferent electrolytes separately under anodic or cathodic 
+polarization have shown that systematic datasets 
+based on structure and computational models built on 
+them allow mechanistic insight into the physicochemi-
+cal processes of capacitance [6 , 7]. In these studies, it 
+was demonstrated that experiment-derived structural 
+descriptors derived from gas adsorption data can be 
+effectively used in multiple linear regression models 
+to accurately predict the EDL capacitance of nanopo-
+rous carbons in nonaqueous electrolytes under differ-
+ent polarization conditions. For example, using 100 
+carbide-derived carbon (CDC) samples, the predictive 
+QnSPR models were derived for EDL capacitance in 
+triethylmethylammonium tetrafluoroborate/propyl-
+ene carbonate (TEMA/PC) electrolyte [6 ]. In another 
+study, a three-parameter QnSPR model was developed 
+to estimate volumetric cathodic capacitance in spiro-
+(1,10)-bipyrrolidinium tetrafluoroborate/acetonitrile 
+(SBP-BF4/ACN) electrolyte [7]. Both studies emphasize 
+the importance of matching carbon pore size with elec-
+trolyte ion size to maximize capacitance performance 
+(see discussion of ion size comparisons).
+Previous QnSPR studies have not sufficiently 
+addressed the performance of the capacitance of 
+nanoporous carbon materials in IL-based electrolytes, 
+which mainly consist of large but asymmetric ions. 
+The aim of the current study was to address this gap 
+and demonstrate the role of subnanometric pores of 
+carbon material in IL electrolyte (1.9 M EMIm-TFSI/
+ACN) using machine learning model derivation meth-
+odology within the QnSPR approach. In addition, the 
+aim was to shed light on the electrosorption of asym-
+metrical ions in nanopores. Special attention was paid 
+to the reproducibility and consistency of experimen-
+tal measurements of the capacitive properties and 
+texture/porosity characteristics of carbon materials, 
+and based on this, to a reliable and physicochemi-
+cally interpretable model was developed that reveals 
+meaningful relationships between experimentally 
+determined material descriptors and EDL capacitance.
+Experimental
+Carbon materials
+For the study, 67 nanoporous carbon materials with 
+different structures and textures were selected, based 
+on prior knowledge of the relationships between the 
+structure of CDC materials and synthesis conditions. 
+CDCs, which are known as highly nanoporous mate-
+rials, were synthesized by chlorination under differ-
+ent reaction conditions from several metal carbides 
+24718
+
+===== PDF PAGE 5 =====
+J Mater Sci (2026) 61:24715–24733 
+(TiC, SiC,  B4C, NbC, ZrC,  Mo2C,  Al4C3,  TiC0.7N0.3). 
+Specifically, 21 CDCs were of TiC origin, 21 sam -
+ples were made from SiC, 6 samples from  Al4C3, 4 
+samples from NbC, 4 samples from ZrC, 2 samples 
+from  Mo2C, 3 samples from  B4C, 1 sample from 
+ TiC0.7N0.3 and 5 samples from non-stoichiometric 
+ TiCx<1.  (Summary data are presented in Sect. 3.1, 
+Table 1 and Table S1 in Supplementary Materials.) 
+The ash content of all CDC samples was below 2% to 
+minimize the possibility of unwanted side processes 
+in the EDLC that could affect the measured capaci-
+tance values.
+The texture properties of CDC materials were 
+determined by  N2 and  CO2 adsorption measure -
+ments at 77 K and 273 K, respectively, using a NOVA-
+touch LX2 (Quantachrome Instruments) with Touch-
+Win ver. 1.1 software. Total pore volume (V tot) was 
+determined from  N2 adsorption at a relative pressure 
+(P/P₀) of 0.97. Pore size distributions (PSD), specific 
+surface area values ( Sdft), and micropore volumes 
+(Vµ) were obtained from  N2 adsorption data using a 
+quenched solid density functional theory (QSDFT) 
+model for slit-shaped pores. For subnanometer 
+pores, PSD was derived from  CO2 adsorption data 
+using a non-local density functional theory (NLDFT) 
+model, also assuming slit-shaped geometry. Addi-
+tional experimental details are provided in the Sup-
+plementary Information (see explanations in Figs. S1 
+and S2).
+Electrochemical characterization
+Electrochemical characterization of carbon materials 
+was performed in three-electrode test cells. Working 
+electrodes with a diameter of 7 mm and a thickness 
+of 100 ± 10 µm were prepared by pressing a slurry of 
+90% CDC and 10% PTFE (Aldrich, 60% dispersion in 
+water) into a carbon sheet. All electrodes were made 
+under identical and carefully controlled conditions, 
+minimizing processing-related variability in carbon 
+structure descriptors and allowing the transforma-
+tion of carbon powder into an electrode to be con-
+sidered a uniform change across the entire material 
+set. The 1.9 M solution of 1-ethyl-3-methylimidazo-
+lium bis(trifluoromethylsulfonyl)imide (EMIm-TFSI, 
+Sigma-Aldrich, ≥ 98%) in acetonitrile (ACN, Sigma-
+Aldrich, anhydrous, 99.5%) was used as electrolyte. 
+The density of the electrolyte solution was 1.18 g  cm−3, 
+and the water content measured by Karl Fisher titra-
+tion was < 130 ppm. Carbon sheets with a high specific 
+surface area, coated with a 2 µm Al layer (PVD) to 
+improve electrical contact, were used as reference and 
+counter electrodes. Electrodes were separated by two 
+~ 1 mm SWP glass mat layers (Anpei). All components 
+were vacuum-dried (1 mbar, 110 °C) for one week, and 
+the assembled cell was further vacuumed overnight at 
+110 °C. The test cell was soaked with electrolyte for 24 
+h before measurement.
+The cyclic voltammetry (CV) curves were recorded 
+first in the negative potential region of 0 V to − 1.2 
+V, and then, the maximum voltage was gradually 
+increased to − 1.8 V by using 0.2 V steps and 2 cycles 
+in each range. The low voltage scan rate (v ) of 1 mV 
+ s−1 was used to avoid the effect of differences in dif -
+fusion rates due to different types of carbon and their 
+particle sizes used. A similar protocol was followed in 
+the positive potential region (up to + 1.6 V). All meas-
+urements were performed at room temperature. The 
+potentiostat–galvanostat 1286 Solartron was used for 
+all electrochemical measurements.
+The differential capacitance (Cd) values were calcu-
+lated from CV plots, using Eqs. 1, 2.
+Table 1  Summary of the 
+sample set of 67 CDC-type 
+carbon materials
+a  In  MCx, M designates Ti, Si, B, Nb, Zr, Mo, or Al
+Type of CDC a Quantity Sdft Vtot Vµ Del
+m2g−1 cm3g−1 cm3g−1 g  cm−3
+MCx-CDC [53–56] 39 493–1947 0.89–1.63 0.08–0.91 0.44–0.99
+H2O vapor activated 
+CDC (MCx-pt) [52]
+14 1404–1856 0.66–1.06 0.57–0.84 0.65–0.91
+Catalytically graphitized 
+CDC  (MCx-ct) [57]
+8 303–1114 0.29–0.63 0.11–0.42 0.70–0.92
+TiCx<1-CDC [7, 58] 5 1554–1905 0.95–1.76 0.43–0.88 0.40–0.65
+TiC1-xNx-CDC [59] 1 1501 1.14 0.6 0.59
+Overall 67 303–1947 0.29–1.76 0.08–0.91 0.40–0.99
+24719
+
+===== PDF PAGE 6 =====
+ J Mater Sci (2026) 61:24715–24733
+where C+
+d is the positively charged electrode capac-
+itance (anodic capacitance), I+ is a current at a 
+fixed + 0.7 V electrode potential, C−
+d is the negatively 
+charged electrode capacitance (cathodic capacitance), 
+and I− is a current at a fixed − 0.5 V electrode poten-
+tial. All current values were taken from the second CV 
+discharge cycle.
+The specific capacitance values of CDC, (F  g−1) and 
+(F  cm−3), were calculated as Cgr = Cd/m and Cvol = Cd/V, 
+where m is the weight of the CDC in a working elec -
+trode and V is the volume of the working electrode.
+Quantitative nanostructure–property 
+relationships
+The QnSPR study of the cathodic and anodic capaci-
+tances of carbon materials was conducted using 
+regression analysis, which is one of the simplest, 
+yet most widely used, machine learning algorithms. 
+Multi-linear regression (MLR) is particularly valued 
+for its excellent interpretability [43]. MLR performs 
+best with systematic datasets and high-quality input 
+data and assumes a linear relationship between input 
+and output variables [18, 27, 44], all of which are valid 
+for the present dataset. Therefore, there is no need to 
+implement more complex ML methods, which can 
+describe complex nonlinear relationships and interac-
+tions and potentially improve predictive performance, 
+but often have limited interpretability.
+In this study, we used experimentally measured 
+structural descriptors, such as various pore size frac-
+tions VCO2[x−y ] (where x and y are the lowest and high-
+est pore sizes of the fraction), SSA by DFT (S dft), total 
+pore volume (V t), micropore volumes by DFT (V µ), 
+mesopores volume by DFT (Vme), and the average pore 
+size (APS  = 2V t ∕S dft). In addition, the bulk density 
+of the electrode (D el) was included. This electrode-
+related descriptor − Del = Sel∙h
+m  , where Sel is the visible 
+surface area, h is the thickness, and m is the weight of 
+the electrode. This parameter takes into account the 
+structural changes that occur during electrode forma-
+tion and reflects the differences in packing, porosity 
+reduction and interparticle contact. In this study, the 
+electrode densities ranged from 0.40–0.99 g  cm−3. A 
+(1)C+
+d = I+
+/u1D717
+(2)C−
+d = I−
+/u1D717
+schematic overview of the workflow used in the study, 
+from dataset generation to model development and 
+evaluation, is provided in the Supplementary Mate-
+rial (Figure S3). MLR analysis was performed using R 
+statistical computing language [45, 46]. The model’s 
+significance level was chosen to be 0.05. With about 
+15 descriptors, the Bonferroni correction adjusted the 
+individual significance level to 0.003 for each coeffi-
+cient. This ensured the overall error rate across all tests 
+remained at 0.05 [47].
+Descriptors were selected stepwise by adding or 
+removing descriptors one by one based on the Akaike 
+information criterion (AIC). AIC evaluates model 
+performance by balancing goodness of fit and com-
+plexity. It considers two key factors: (1) the model’s 
+fit, measured by the maximized log-likelihood, and 
+(2) the number of parameters, which penalizes overly 
+complex models. A lower AIC value indicates a better 
+trade-off between accuracy and simplicity [48].
+Also, because several descriptors were strongly cor-
+related, the variance inflation factor (VIF) was calcu-
+lated and any descriptors with VIFs exceeding 5 were 
+omitted. In simpler terms, VIF measures how much 
+the variability in one descriptor is explained by all the 
+other descriptors in the model. When a descriptor’s 
+VIF is high, it indicates that its behavior is largely pre-
+dictable from the other descriptors, meaning it pro-
+vides little unique information. This redundancy can 
+adversely affect the model, so those descriptors were 
+removed to maintain a more stable and interpretable 
+model [49].
+For diagnostics, the outliers, high leverage points 
+and influential points, were also analyzed. Outliers are 
+quantified using the Studentized residuals of the 
+model: ri = yi− /uni0302.s1yi
+/uni0302.s1/u1D70E(−i)
+√ �1 − hii
+� , where yi is the observed 
+value of the response variable, /uni0302.s1yi is the model estimate 
+for the response variable, /uni0302.s1/u1D70E(− i) is the estimate of the 
+scale parameter of the model calculated without i-th 
+observation, and hii are the diagonal elements of the 
+hat matrix H = X(X TX) −1XT, where X is the design 
+matrix corresponding to the model. Observation i was 
+considered a moderate outlier if /uni007C.x/uni007C.xri/uni007C.x/uni007C.x> 2 and a strong 
+outlier if /uni007C.x/uni007C.xri/uni007C.x/uni007C.x> 3.
+Leverage of observations was measured by the 
+diagonal elements of the hat matrix ( hii ) and observa-
+tions having a hat value hii more than 3 times greater 
+than the mean value, hii > 3(k + 1)∕n , were considered 
+high leverage points. Here, k is the number of descrip-
+tors and n is the sample size (number of compounds).
+24720
+
+===== PDF PAGE 7 =====
+J Mater Sci (2026) 61:24715–24733 
+Influential points are observations that significantly 
+impact model parameters. Their influence is assessed 
+using Cook’s statistics, which measures how much 
+model predictions and parameters change when a 
+particular observation is omitted. Different criteria 
+exist for determining whether an observation exerts 
+excessive influence on the model. A common rule of 
+thumb is that observations with a Cook’s distance 
+greater than 1 should be carefully examined, as they 
+may disproportionately affect the model’s results [50].
+The final QnSPR models were uploaded to the 
+QsarDB repository (together with the data) and were 
+made available in accordance with the FAIR (findable, 
+accessible, interoperable, and reusable) principles [51].
+Results and discussion
+General parameters of the carbon materials 
+dataset
+A diverse selection of carbon materials with different 
+structures and pore sizes is required for systematic, 
+descriptive, and predictive QnSPR analysis. In this 
+study, a dataset comprising 67 CDC materials was 
+utilized (Table 1). The materials are ranked based 
+on increasing specific surface area and are labeled 
+sequentially as CDC-1 through CDC-67. The proper-
+ties of these materials are influenced by the different 
+chemical and structural compositions of the precur-
+sors—metal carbides—as well as by different synthesis 
+and post-processing conditions. CDC materials with a 
+narrow micropore size distribution were mainly syn-
+thesized from silicon or titanium carbide, while those 
+with a wider PSD were produced from molybdenum, 
+boron, niobium, or zirconium carbide. To increase the 
+variability of materials in the dataset, 14 of the CDCs 
+were treated with water vapor at high temperature, 
+which effectively edged the nanopores and expanded 
+the PSD [52].
+The general variability of the carbon samples is 
+characterized by the range of Sdft values from 303 to 
+1947  m2g−1, the total pore volume (V tot) from 0.29 to 
+1.76  cm3g−1, and the ratio of micropore volume to total 
+pore volume (V µ/Vtot) from 0.09 to 0.87. The average 
+pore size (APS) ranges from 0.86 to 3.62 nm. Figure 1 
+illustrates the variations in the carbon materials in this 
+study, with an example of the pore size distribution 
+calculated from  CO2 and  N2 adsorption measurements 
+for the three CDC materials (CDC-2, CDC-17, and 
+CDC-64). The adsorption isotherms and cumulative 
+pore size distributions of the three materials are pre-
+sented in Figs. S1 and S2 in the Supplementary Infor-
+mation. CDC-2 is a low-porosity, mainly mesoporous 
+carbon material synthesized from aluminum carbide, 
+with a micropore to total pore volumes ratio of 0.09. 
+Most of the carbon samples in this study are highly 
+microporous, such as CDC-17 (synthesized from SiC), 
+which contains pores around 0.5 and 0.8 nm, with a 
+micropore volume-to-total pore volume ratio of 0.87. 
+CDC-64 (synthesized from  Mo2C) represents a micro-
+mesoporous carbon that, in addition to subnanometric 
+pores, contains a significant amount of pores of about 
+1.7 and 3 nm in size and has a micropore volume to 
+total pore volume ratio of 0.40.
+EDL capacitance of studied materials
+The nanoporous carbon materials selected for this 
+study include a wide range of CDC materials, includ-
+ing those with a majority pore size below 1 nm and 
+those with a wide pore size distribution in both the 
+micropore (< 2 nm) and mesopore (2–50 nm) ranges. 
+Thus, it was necessary to establish a universal method 
+and identify a potential window for accurately meas-
+uring the specific capacitance values across all 67 car-
+bon materials. Figure 2 shows CV curves scanned over 
+the positive and negative electrode potential ranges 
+for three CDC materials (CDC-2, CDC-17, and CDC-
+64) with substantially different pore size distributions. 
+To illustrate the electrochemical stability of the mate-
+rials over a wide potential range, comparative CV 
+curves were measured at a lower potential from 0 V 
+to − 1.2 V or + 1.2 V and then the limits were increased 
+in steps of 0.2 V up to values of − 1.8 V and + 1.6 V, 
+respectively, for different polarizations. The results 
+show that all three materials are stable in the tested 
+potential ranges. The material with the lowest SSA and 
+porosity (i.e., CDC-2) exhibits the lowest capacitance. 
+For this material, the capacitance reaches values of 
+approximately 40 F  g−1 at both anodic and cathodic 
+potentials (Fig. 2a). Although there is a nearly expo-
+nential increase in the current when charging from 
+− 1.6V to − 1.8 V, this phenomenon is accompanied 
+by a higher discharge capacitance, indicating that the 
+capacitance remains mainly reversible even at − 1.8 V.
+It is assumed that when charging the material to 
+a higher potential, some conformational change of 
+the electrolyte ions occurs, resulting in compression 
+24721
+
+===== PDF PAGE 8 =====
+ J Mater Sci (2026) 61:24715–24733
+of the electric double layer. Consequently, a higher 
+concentration of the ions is achieved on the surface. 
+A comparison of the shapes of the CV curves shows 
+that the materials CDC-17 and CDC-64 behave very 
+similarly at negative potentials (Fig. 2b, c). Their 
+charge–discharge curves (i.e., 0 to − Umax and reverse) 
+overlap almost completely within different poten-
+tial ranges, demonstrating the materials’ almost ideal 
+EDL behavior within the chosen potential range. 
+Also, there is only a slight difference in capacitance 
+values at −1.6 V, with CDC-17 achieving 125  Fg−1 and 
+CDC-64 achieving 121  Fg−1. CDC-17 stands out from 
+the other materials in the positive potential range 
+because its capacitance is virtually independent 
+of voltage (see Fig. 2c). This phenomenon is likely 
+due to the very high microporosity of the material 
+(see Fig. 1), resulting in the TFSI⁻ ion electrosorp-
+tion reaching a steady state and maximum filling at 
+comparatively low electrode potentials.
+The impact of the potential window on the specific 
+capacitance was assessed for all 67 CDC materials (see 
+Supplementary Information, Figs. S4 and S5). To 
+achieve this, the capacitances (  C−
+gr and C+
+gr ) of all car-
+bon materials under investigation were calculated 
+from CV experiments conducted at fixed electrode 
+potentials (− 0.5 V and + 0.7 V, respectively), using 
+various potential windows (see Fig. 2). This study 
+reveals comparatively weak potential window effect 
+at negative potentials (see Fig. S4). Generally, as the 
+Figure 1  Differential pore size distribution of CDC-2 (blue), CDC-17 (red), and CDC-64 (black) according to  CO2 adsorption a and  N2 
+adsorption b.
+Figure 2  Cycling voltammetry curves (v = 1 mV  s−1 ) expressed as gravimetric capacitance ( Cgr ) for a CDC-2, b CDC-64, and c CDC-
+17. In bold, the cycles used to calculate the specific capacitance for QnSPR are shown.
+24722
+
+===== PDF PAGE 9 =====
+J Mater Sci (2026) 61:24715–24733 
+specific surface area of the material increases, so does 
+its capacitance dependency on electrode potential. 
+Some materials, such as those labeled CDC-28 and 
+CDC-61, exhibit a greater degree of dependence, likely 
+due to electrolyte interactions with surface groups 
+activated at higher electrode potentials (see Fig. S4). 
+At positive electrode potentials (see Fig. S5), the capac-
+itance dependency on potential is generally greater 
+than at negative potentials. The highest C+
+gr values 
+were obtained at + 1.6 V for almost all the materials 
+investigated. This is primarily due to the shape of the 
+CV curves (see Fig. 2), as carbon materials have a 
+slightly smaller ideal polarization region at positive 
+potentials, and the faradic capacitance increases at 
+higher potentials. At overpotential values, additional 
+parasitic processes may occur, affecting capacitance. 
+Factors which may influence capacitance-potential 
+dependence include surface oxygen groups (surface 
+chemistry),  sp2/sp3 hybridization on the carbon sur-
+face, and specific structural properties of the carbon 
+material, such as limited access to nanopores. Surface 
+oxygen groups influence surface hydrophilicity, ion 
+orientation and charge storage in nanoporous carbons, 
+thereby affecting capacitance. Also, their effect can be 
+either beneficial or harmful depending on the pore 
+structure, degree of oxidation, and operating condi-
+tions [60, 61].
+The dependence of gravimetric capacitance (Cgr) on 
+different porosity parameters of CDCs is presented in 
+Fig. 3. The results show that the capacitance at both 
+negative and positive potentials generally increases 
+with increasing SSA (see Fig. 3a), which is consistent 
+with the well-known relationship based on a parallel-
+plate capacitor [62]
+where ε is the dielectric constant of the medium 
+between the ion and the carbon surface, A is the sur-
+face area of the porous electrode accessible to ions, 
+and d is the distance between the center of the ion and 
+the carbon surface. However, when the SSA of car-
+bon exceeds ~ 1400  m2g−1, the relationship becomes 
+unclear, pointing out discrepancies between SSA and 
+accessible surface (Fig. 3a). A similar trend is observed 
+between capacitance and micropore volume (Fig. 3b). 
+The capacitance increases almost linearly with Vµ up 
+to ~ 0.6  cm3g−1, after which it reaches a kind of plateau 
+for both cathodic and anodic capacitance. The correla-
+tion between capacitance and micropore volume indi-
+cates that a significant portion of the capacitance arises 
+from ion interactions with the carbon surface in nar-
+row pores, where the ions are either fully or partially 
+released from their solvation shells. In subnanometer 
+pores, the distance between the ion and the carbon 
+surface is the smallest, and the effective charge of the 
+interacting ion is least affected by secondary interac-
+tions with the solvation shell and ions of opposite 
+sign [63]. In Fig. 3c, the relationship between capaci-
+tance and the average pore size (APS) shows that APS 
+does not directly affect capacitance, although there is 
+an indication that high APS generally results in low-
+capacitance values. From these dependencies, one can 
+conclude that the discrete values of pore sizes and size 
+distribution are important factors in determining spe-
+cific capacitance.
+Previously, we showed [6 , 7] that the difference in 
+capacitance at positive (anodic capacitance) and nega-
+tive (cathodic capacitance) potentials depends on the 
+(3)C = /u1D700
+4/u1D70Bd A
+Figure 3  Gravimetric capacitance of CDC materials at − 0.5 V ( C−
+gr , CV: 0 V to − 1.6 V) and + 0.7 V ( C+
+gr , CV: 0 V to + 1.4 V) versus 
+Sdft a, Vµ b, and APS c.
+24723
+
+===== PDF PAGE 10 =====
+ J Mater Sci (2026) 61:24715–24733
+size of the electrolyte ions. For example, in the case 
+of TEMA-BF4, where BF−
+4  is significantly smaller than 
+ TEMA+ (0.46 nm vs. 0.66 nm, respectively [64]), experi-
+mental results showed that the anodic capacitance is 
+always larger than the cathodic one, or that in the case 
+of SBP-BF4 with similar ion sizes (0.42 nm vs. 0.46 nm 
+for  SBP+ and BF−
+4  , respectively [65– 67]), the ratio of 
+cathodic to anodic capacitance is biased in one direc-
+tion or the other depending on the carbon material. In 
+the case of EMIm-TFSI, it appears that the capacitance 
+at negative potentials is predominantly larger than 
+that at positive potentials (see Fig. 4), although the 
+dimensions of the ions (0.43 nm vs. 0.29 nm, respec-
+tively [68–70]) suggest the opposite.
+To explain why the cathode capacitance C−
+gr exceeds 
+the anodic capacitance C+
+gr despite the larger size of the 
+EMIm⁺ ion, it is necessary to examine the charge dis-
+tribution in both ions. Bader charge analysis shows 
+[71] that EMIm⁺ carries 1.33 times higher effective 
+charge than TFSI⁻ (+ 1.08 e vs. − 0.81 e, respectively) 
+[72]. Thus, for each ion electrosorbed onto carbon, 
+EMIm⁺ contributes a greater amount of compensating 
+charge to the electrode surface. As a result, even 
+though EMIm⁺ is slightly larger, its higher effective 
+charge density leads to a stronger electrostatic interac-
+tion with the negatively charged pore walls and thus 
+to a higher cathodic capacitance at comparable pore 
+filling.
+Another factor that may facilitate favorable charge 
+accumulation by  EMIm+ electrosorption is the nature 
+of the interactions between the ion and the carbon sur-
+face. Forse et al. have shown in their work that the 
+positive charge of  EMIm+ and its planar aromatic ring 
+promote interaction with the  sp2 structure of nano-
+tubes through π − π interactions [73]. This suggests 
+that similar interactions may also promote  EMIm+ 
+adsorption onto the surface of nanoporous CDC, 
+which mostly consists of curved  sp2 carbon layers [74].
+On the other hand, the pore size undoubtedly 
+affects the ratio of anodic and cathodic capacitance. 
+The calculated geometric volumes of  EMIm + and 
+ TFSI− ions are 0.16  nm3 and 0.21  nm3, respectively, 
+with a ratio of 0.76 [75]. Thus,  EMIm+ ions should 
+theoretically cause an even higher capacitance in the 
+same volume, since more of them can fit into the pores. 
+However, for certain orientations of the ions (provid-
+ing the smallest distance between the charge center 
+and the carbon surface), it is possible that the surface 
+area occupied by the ions is the opposite of what has 
+been derived from the calculated volumes. In fact, 
+both ions are highly unsymmetric, and although the 
+smallest diameters of  EMIm+ and  TFSI− ions are quite 
+similar (0.43 vs. 0.29 nm, respectively), this still favors 
+the adsorption of anions in the smallest accessible 
+pores (see Fig. 5).
+In the case, the pores are accessible to both anions 
+and cations—the ratio C+
+gr/C−
+gr should be well below 1.0. 
+Figure 4  Capacitance ratio C+
+gr/C−
+gr for the tested CDC materials at − 0.5 V ( C−
+gr , CV: 0 V to − 1.6 V) and + 0.7 V ( C+
+gr , CV: 0 V to + 1.4 
+V).
+24724
+
+===== PDF PAGE 11 =====
+J Mater Sci (2026) 61:24715–24733 
+This holds until the pores are larger than ~ 0.5 nm. 
+When the pore size begins to limit the electrosorption 
+of cations, the capacitance ratio is shifted toward 1.0. 
+Figure 4 shows that the C+
+gr/C−
+gr ratio of 0.96–1.0 primar-
+ily includes the SiC-derived carbons, which have a 
+significant portion of sub-micropores too small for 
+ EMIm+ ions [57]. There is no simple explanation for 
+why the 5 materials stand out significantly from the 
+rest of the dataset, offering C+
+gr/C−
+gr ratios well above 
+1.0. Common features of these 5 materials are the rela-
+tively low content of subnanometer pores and the 
+highest APS values (above ~ 1.7 nm, cf. Figure 3c), 
+which in the case of these materials may indicate the 
+effect of a counterion or solvation layer due to smaller 
+volume constraints in the pores, which obviously 
+reduces the total charge of the ions interacting with the 
+carbon surface. This assumption is partly supported 
+by the fact that surface-related cathodic capacitance 
+( C−
+S  = C−
+gr/Sdft) of these five materials is approximately 
+2.5 µF  cm−2 lower than the average (i.e., 8.6 µF  cm−2) of 
+all other CDC materials used in the study.
+Texture descriptors of carbon materials
+The values of the descriptors used were determined 
+experimentally within the same research framework 
+and under comparable conditions, ensuring a high 
+level of data consistency. Numerous texture descrip-
+tors (Sdft, Vtot, Vµ, Vme (Vtot-Vµ), and APS) were derived 
+from nitrogen adsorption measurements of 67 carbon 
+materials. Pore size-related descriptors for character-
+izing subnanometer pores were calculated from cumu-
+lative PSD data using  CO2 adsorption. It is relevant to 
+note here that for a slit-shaped pore geometry, which 
+was used in this study, the surface area in the pore (S) 
+is proportional to the pore volume (V  = d/2 × S, where 
+d is the distance between the pore walls). Therefore, 
+both surface-related or volume-related pore size 
+distribution data could be used equally as a meas -
+ure of the quantity of pores in predefined pore size 
+intervals. In this study, the volumes of subnanometer 
+pore size fractions with 0.1 nm increments from 0.4 to 
+1.2 nm were derived from  CO2 cumulative PSD pat-
+terns. Respective texture descriptors were labeled as 
+VCO2[x− y] , where x and y represent the smallest and 
+largest pore sizes in the fraction. In the case of volu-
+metric capacitance, the electrode density (D el) was 
+also included in the descriptors. Del characterizes the 
+compressed state of carbon particles in the carbon elec-
+trode (i.e., self-standing carbon film) and accounts for 
+potential differences in particle sizes across different 
+samples.
+QnSPR models for volumetric capacitance
+MLR models were constructed using a step-
+wise approach from the pool of experimentally 
+derived structural descriptors. Given the increas-
+ing demand for accurately estimating the energy 
+Figure 5  Schematic view of 
+the penetration of ions in slit-
+type pores of negative and 
+positive charged electrodes.
+24725
+
+===== PDF PAGE 12 =====
+ J Mater Sci (2026) 61:24715–24733
+densities of storage devices, models describing the vol-
+umetric capacitance of nanoporous carbon electrodes 
+( C−
+volandC+
+vol ) were developed. Capacitance prediction 
+models were created for cathodic capacitance in the 1.6 
+V potential window and anodic capacitance in the 1.4 
+V potential window, based on the capacitances calcu-
+lated from CV curves (see justification in Chapter 3.2).
+The best model for cathodic volumetric capacitance 
+( C−
+vol ) is with a coefficient of determination  R2 = 0.93 
+and estimated model scale parameter /uni0302.s1/u1D70E = 7.88 (Eq. 4). 
+The correlation between predicted and experimentally 
+measured capacitance values is shown in Fig. 6a, and 
+a summary of the model is given in Table 2.
+As can be seen from Eq. 4, there is a positive cor-
+relation between volumetric capacitance and all 
+descriptors (Fig. S6 in Supplementary Information). 
+This means that as the SSA increases, so does the 
+capacitance. The same applies to the pore size fraction 
+VCO2[0.4− 0.5] and the bulk density of the carbon elec -
+trode (D el). The Sdft as SSA characteristic is a logical 
+descriptor in the model that according to the funda-
+mentals of a plate capacitor is expected to be propor-
+tional to capacitance. The volume of pore size frac-
+tion acts as a descriptor of ion-accessible surface area 
+of minimal pore size, leading to a strong correlation 
+with ion size despite EDL capacitance being intrinsi-
+cally surface-controlled. The model also confirms that 
+it is important to match the carbon pore size and the 
+(4)
+C−
+vol =− 90.8 + 0.0401 ⋅ Sdft + 569.8 ⋅ VCO2[0.4− 0.5] + 119.9 ⋅ Del
+electrolyte ion size. Considering the smallest size of 
+the  EMIm+ cation (0.43 nm [68–70]) and pore size frac-
+tion in the model ( VCO2[0.4− 0.5] ), the obtained model is 
+well consistent with the assumption that pores and 
+ions with similar dimensions result in the highest EDL 
+capacitance.
+Model diagnostics are summarized in Fig. 6b, 
+where the vertical axis shows Studentized residuals 
+and the horizontal axis shows leverage (hat values). 
+Two dashed vertical lines indicate double (  h∗
+2 ) and 
+triple ( h∗
+3 ) the mean leverage. The size and blue color 
+intensity of the circles represent Cook’s distance.
+Based on the influence plot (Fig. 6b), the model 
+appears stable, with no significant outliers. The 
+residual analysis (vertical axis) identifies four moder-
+ate outliers, while three materials exhibit higher hat 
+values (leverage). Cook’s distances for all materials 
+remain within acceptable limits. Two materials with 
+higher leverage values correspond to low-capacitance 
+mesoporous materials with a more graphitic structure, 
+synthesized at high temperatures from  Al4C3 (CDC-2) 
+Figure 6  Experimental values versus. predicted values a and diagnostic plot b corresponding to model (Eq. 4).
+Table 2  Summary of the C−
+vol model (Eq. 4)
+Descriptor Estimate of 
+the coefficient
+Std. Error t-statistic p value
+Intercept − 90.8 10.2 − 8.90  <  10−13
+Sdft 4.01 ×  10−2 4.57 ×  10−3 8.78  <  10−12
+VCO2[0.4− 0.5] 569.8 134.0 9.93  <  10−5
+Del 119.9 12.1 4.25  <  10−14
+24726
+
+===== PDF PAGE 13 =====
+J Mater Sci (2026) 61:24715–24733 
+and SiC (CDC-1). The moderate outliers (Fig. 6b) do 
+not form a clearly defined subgroup; however, they 
+all exhibit a broader pore size distribution. Two of 
+these materials were synthesized from  B4C (CDC-22) 
+and NbC (CDC-63), while two (CDC-61 and CDC-62) 
+received water vapor post-treatment, which alters the 
+material’s pore distribution and surface functionality. 
+In addition to the broader pore distribution, variations 
+in the purity of the carbon materials may also influ-
+ence the outcomes.
+Using the same MLR method, a model for estimat-
+ing gravimetric capacitance was also derived. The 
+model with a coefficient of determination  R2 = 0.88 
+and an estimated model scale parameter /uni0302.s1/u1D70E = 11.75 is 
+presented in the Supplementary Information (Model 
+S1). This result agrees with the model of volumetric 
+capacitance (Eq. 3), where the same pore size fraction 
+( VCO2[0.4− 0.5] ) appears among descriptors.
+The best model for anodic volumetric capacitance 
+( C+
+vol ) is with a coefficient of determination  R2 = 0.94 
+and estimated model scale parameter /uni0302.s1/u1D70E = 5.92 (Eq. 5). 
+The correlation between predicted and experimentally 
+measured capacitance values is shown in Fig. 7a, and 
+a summary of the model is given in Table 3.
+As can be seen from the model, the descrip-
+tor characterizing the best-fitting pore size dif-
+fers from that in the cathodic capacitance model 
+(5)
+C+
+vol =− 75.7 + 0.0403 ⋅ Sdft + 531.6⋅V CO2[<0.4] + 106.5 ⋅ Del
+( VCO2[<0.4]vs.VCO2[0.4− 0.5] ). The dependence of all three 
+descriptors on capacitance is presented in Fig. S7 in 
+Supplementary Information.
+These observations further underscore the impor-
+tance of matching pore size with the size of the elec-
+trolyte ions. The EMIm⁺ and  TFSI− ions are generally 
+comparable in their longest dimensions, measuring 
+approximately 0.76 nm and 0.79 nm [68], respec-
+tively. Despite this, both ions are highly asymmetric, 
+and in certain energetically favorable conformations, 
+the smallest dimension of the TFSI⁻ ion (see results of 
+TFSI⁻ conformational space analysis and conformer 
+dimensions, provided in Table S2 of the Supplemen-
+tary Information) is even smaller than EMIm⁺ (0.29 nm 
+vs. 0.43 nm) [68– 70]. This phenomenon is supported 
+by the anodic capacitance model, which suggests that 
+pores smaller than 0.4 nm have a positive impact for 
+efficient electrosorption of TFSI⁻ ions and thus contrib-
+ute to the increase in capacitance.
+The similarity of the C+
+vol and C−
+vol models is also vis-
+ible in the influence graph (Fig. 7b); the model of C+
+vol 
+Figure 7  Experimental values versus. predicted values a and diagnostic plot b corresponding to model (Eq. 5).
+Table 3  Summary of the C+
+vol model (Eq. 5)
+Descriptor Estimate of 
+the coefficient
+Std. Error t-statistic p value
+Intercept − 75.7 7.55 − 10.02  <  10−14
+Sdft 4.03 ×  10−2 2.52 ×  10−3 16.0  <  10−16
+VCO2[<0.4] 531.6 118.6 4.48  <  10−5
+Del 106.5 8.75 12.18  <  10−16
+24727
+
+===== PDF PAGE 14 =====
+ J Mater Sci (2026) 61:24715–24733
+appears stable without significant deviations. Residual 
+analysis (vertical axis) identifies four moderate outli-
+ers, while two materials have higher hat values (lev-
+erage). Cook’s distances for all materials are within 
+acceptable limits. The two moderate outliers (cf. Fig-
+ure 7b), synthesized from  B4C (CDC-22) and  Al4C3 
+(CDC-25), share a broader pore size distribution. The 
+two materials with the highest leverage values are the 
+same as those identified in the cathodic capacitance 
+model—low-capacitance, mesoporous carbons with a 
+more graphitic structure, synthesized at high tempera-
+tures from  Al4C3 (CDC-2) and SiC (CDC-1).
+The 2-parameter MLR model obtained for anodic 
+gravimetric capacitance is also consistent with the 
+volumetric capacitance model, where, besides the Sdft 
+descriptor, the same pore size descriptor (  VCO2[<0.4]) 
+appears. The anodic gravimetric capacitance model 
+has a coefficient of determination  R2 of 0.91 and esti-
+mated model scale parameter /uni0302.s1/u1D70E of = 8.104 (Model S2 in 
+Supplementary Information).
+External validation
+Three CDC materials exhibiting distinct surface areas 
+and pore size distributions (refer to Table 4), whose 
+texture properties have been characterized in detail 
+in a previous study [11], were used to externally vali-
+date the QnSPR models of volumetric capacitance 
+(Eqs. 3, 4). The differences between experimental 
+and predicted values are 0.6–6.4% and 1.3–4.5% for 
+cathodic and anodic capacitance, respectively, which 
+is in good agreement with the scale parameters of the 
+models (Table 4). External validation thus confirms 
+the suitability of the models for both materials with 
+a narrow pore size distribution (e.g., CDC-TiC) and 
+micro-mesoporous materials with a wide pore size 
+distribution (e.g., CDC-NbC and CDC-Mo 2C).
+Models for both anodic and cathodic capacitance 
+were also tested on four activated carbons: YP-50 
+(Kuraray Chemical Co., Ltd), HDLC 20B STUW (Hay-
+carb PLC), and V2 and P2 (both from EnerG2 Tech-
+nologies Inc.). The results presented demonstrate sat-
+isfactory predictions of cathodic capacitance and are 
+in good agreement with the scale parameters of the 
+model (Table 4). However, the anodic capacitance is 
+significantly underestimated in most cases (Table 4). 
+This could be attributed to the higher surface oxygen 
+content of the activated carbon, caused by oxygen-
+rich precursors or by deep activation with oxidizing 
+Table 4  Experimental and predicted capacitance values and selected descriptors for carbon materials used for external validation of statistical models (Eqs. 3 and 4)
+* ref.11
+Carbon Sdft VCO2[0.4− 0.5] VCO2[<0.4] Del C−
+vol (F  cm−3 ) C+
+vol (F  cm–3)
+(m2g−1 ) (cm3  g−1 ) (cm3  g−1 ) (g  cm−3 ) Exp Pred Exp Pred
+CDC-TiC* 1318 0.063 0.035 0.740 92.5 86.6 76.2 75.2
+CDC-NbC* 1893 0.043 0.008 0.689 87.5 92.1 74.8 78.2
+CDC-Mo2C* 1951 0.027 0.009 0.504 63.7 63.3 60.0 61.3
+V2 1573 0.047 0.023 0.897 101.9 106.7 93.9 95.6
+P2 1588 0.045 0.017 0.497 59.7 57.9 58.3 50.1
+HDLC 20B 1550 0.034 0.003 0.753 84.7 81.4 78.2 69.1
+YP-50 1531 0.046 0.011 0.497 88.1 89.9 83.3 74.8
+24728
+
+===== PDF PAGE 15 =====
+J Mater Sci (2026) 61:24715–24733 
+agents, which may affect the electrochemical response 
+specifically at the positive electrode, but which is not 
+considered in the QnSPR models of this study. For 
+example, oxygen-rich pore surfaces of carbon materi-
+als have been found to promote parallel alignment of 
+ TFSI− anions in confined pores and reduce the electro-
+lyte density in uncharged pores, resulting in porous 
+electrodes exhibiting a higher capacitance [ 60]. In 
+addition, chemically active oxygen functional groups 
+promote parasitic (redox) reactions that can contribute 
+to charge storage, but narrow the ideal polarization 
+window [1].
+Conclusions
+The relationships between the structure of nanoporous 
+carbon materials and their EDL capacitances under posi-
+tive and negative polarization in an ionic liquid electro-
+lyte with asymmetric ions were investigated using the 
+QnSPR approach based on the multiple linear regres-
+sion (MLR) method, applying experimentally derived 
+descriptors. The MLR was specifically used to capture 
+the key structure–property relationships in a transpar-
+ent and physically interpretable manner. A compre-
+hensive analysis was performed on 67 carbide-derived 
+carbon materials with varying textures and structures. 
+The CDC materials were chosen fit-for-purpose to mini-
+mize the potential impact of non-carbon atoms and sur-
+face functional groups commonly present in pyrolyti-
+cally prepared activated carbon materials on the EDL 
+capacitance. The structural and textural properties of 
+the materials in the dataset were described using exper-
+imentally determined descriptors of carbon materials 
+obtained from nitrogen and carbon dioxide adsorption 
+measurements. These descriptors were used as model 
+inputs, while the target property, EDL capacitance, was 
+measured in three-electrode cells using 1.9 M EMIm-
+TFSI in ACN as electrolyte.
+The results show that the cathodic capacitance in 
+the EMIm-TFSI electrolyte is generally higher than the 
+anodic capacitance, despite expectations based on ion 
+dimensions. However, considering the mechanisms of 
+ion interaction with the carbon surface, the volume, and 
+the Bader charge of ions, the ratio of anodic and cathodic 
+capacitance can be explained in favor of the cathodic 
+one.
+Two QnSPR models were developed to predict volu-
+metric EDL capacitance under positive and negative 
+polarization. The study demonstrates that the prediction 
+accuracy for specific volumetric capacitance is signifi-
+cantly improved by including texture descriptors such 
+as specific surface area, ion-accessible pore volume, 
+and electrode bulk density in the model. Both models 
+contain three descriptors: the volume of a desolvated 
+ion size-related pore fraction, the carbon SSA, and the 
+bulk density of CDC electrodes. The model for cathodic 
+volumetric capacitance has a coefficient of determina-
+tion  R2 = 0.93 and an estimated model scale parameter 
+/uni0302.s1/u1D70E = 7.88. The anodic volumetric capacitance model has a 
+slightly higher accuracy: a coefficient of determination 
+ R2 = 0.94 and an estimated model scale parameter /uni0302.s1/u1D70E = 
+5.92.
+The present study demonstrates that the effective 
+pore size range for the electrosorption of the EMIm-
+TFSI electrolyte follows the smallest dimension of the 
+desolvated ion. For EMIm⁺ cation, the preferred pores 
+are 0.4–0.5 nm. In contrast, the slightly larger but highly 
+asymmetric TFSI⁻ anions prefer even smaller pores 
+below 0.4 nm. In conclusion, carbon texture parameters 
+and the MLR methodology enabled the development of 
+robust QnSPR models that can reliably predict the volu-
+metric capacitance of large and structurally asymmetric 
+electrolyte ions based solely on material texture. A pos-
+sible development direction to improve the descriptive 
+and predictive capabilities of QnSPR models would be 
+to include additional texture descriptors to characterize 
+the properties of the carbon surface electronic structure, 
+and the nature and quantity of functional groups.
+Acknowledgements 
+The authors gratefully acknowledge Dr. Meelis Käärik 
+for the valuable and insightful discussions.
+Author contributions 
+The manuscript was written through equal contribu-
+tions of all authors. All authors have given approval 
+to the final version of the manuscript.
+Funding 
+This work was financially supported by the Minis-
+try of Education and Research, Republic of Estonia, 
+through the Estonian Research Council (grant number 
+PRG1509).
+24729
+
+===== PDF PAGE 16 =====
+ J Mater Sci (2026) 61:24715–24733
+Data availability 
+Models and data are available in the QsarDB.org 
+repository (DOI: 10.151512/QDB.275) . See literature 
+reference (#51) for complete citation of model and data 
+source.
+Declarations 
+Conflict of interest The authors declare no compet-
+ing financial interest.
+Supplementary Information  The online version 
+contains supplementary material available at https:// 
+doi. org/ 10. 1007/ s10853- 026- 13283-w.
+References
+[ 1] Béguin F, Presser V, Balducci A, Frackowiak E (2014) Car-
+bons and electrolytes for advanced supercapacitors. Adv 
+Mater 26:2219–2251. https:// doi. org/ 10. 1002/ adma. 20130 
+4137
+[ 2] Lobato B, Suárez L, Guardia L, Centeno TA (2017) Capaci-
+tance and surface of carbons in supercapacitors. Carbon 
+122:434–445. https:// doi. org/ 10. 1016/j. carbon. 2017. 06. 083
+[ 3] Barbieri O, Hahn M, Herzog A, Kötz R (2005) Capacitance 
+limits of high surface area activated carbons for double 
+layer capacitors. Carbon 43:1303–1310. https:// doi. org/ 10. 
+1016/j. carbon. 2005. 01. 001
+[ 4] Heimböckel R, Hoffmann F, Fröba M (2019) Insights into 
+the influence of the pore size and surface area of activated 
+carbons on the energy storage of electric double layer 
+capacitors with a new potentially universally applicable 
+capacitor model. Phys Chem Chem Phys 21:3122–3133. 
+https:// doi. org/ 10. 1039/ C8CP0 6443A
+[ 5] Bi S, Li Z, Xiao D, Li Z, Mo T, Feng G, Zhang X (2022) 
+Pore-size-dependent capacitance and charging dynamics of 
+nanoporous carbons in aqueous electrolytes. J Phys Chem 
+C 126:6854–6862. https:// doi. org/ 10. 1021/ acs. jpcc. 2c011 
+21
+[ 6] Käärik M, Maran U, Arulepp M, Perkson A, Leis J (2018) 
+Quantitative nano-structure–property relationships for the 
+nanoporous carbon: predicting the performance of energy 
+storage materials. ACS Appl Energy Mater 1:4016–4024. 
+https:// doi. org/ 10. 1021/ acsaem. 8b007 08
+[ 7] Käärik M, Arulepp M, Käärik M, Maran U, Leis J (2020) 
+Characterization and prediction of double-layer capacitance 
+of nanoporous carbon materials using the quantitative 
+nano-structure-property relationship approach based on 
+experimentally determined porosity descriptors. Carbon 
+158:494–504. https:// doi. org/ 10. 1016/j. carbon. 2019. 11. 017
+[ 8] Largeot C, Portet C, Chmiola J, Taberna P-L, Gogotsi Y, 
+Simon P (2008) Relation between the ion size and pore 
+size for an electric double-layer capacitor. J Am Chem Soc 
+130:2730–2731. https:// doi. org/ 10. 1021/ ja710 6178
+[ 9] Chmiola J, Yushin G, Gogotsi Y, Portet C, Simon P, 
+Taberna PL (2006) Anomalous increase in carbon 
+capacitance at pore sizes less than 1 nanometer. Science 
+313(5794):1760–1763. https:// doi. org/ 10. 1126/ scien ce. 
+11321 95
+[ 10] Jäckel N, Rodner M, Schreiber A, Jeongwook J, Zeiger M, 
+Aslan M, Weingarth D, Presser V (2016) Anomalous or 
+regular capacitance? The influence of pore size dispersity 
+on double-layer formation. J Power Sources 326:660–671. 
+https:// doi. org/ 10. 1016/j. jpows our. 2016. 03. 015
+[ 11] Käärik M, Arulepp M, Perkson A, Leis J (2023) Effect 
+of pore size distribution on energy storage of nanoporous 
+carbon materials in neat and dilute ionic liquid electro-
+lytes. Molecules 28:7191. https:// doi. org/ 10. 3390/ molec  
+ules2 82071 91
+[ 12] Salanne M (2017) Ionic liquids for supercapacitor applica-
+tions. Top Curr Chem (Z) 375:63. https:// doi. org/ 10. 1007/ 
+s41061- 017- 0150-7
+[ 13] Pal B, Yang S, Ramesh S, Thangadurai V, Jose R (2019) 
+Electrolyte selection for supercapacitive devices: a critical 
+review. Nanoscale Adv 1:3807–3835. https:// doi. org/ 10.  
+1039/ C9NA0 0374F
+[ 14] Brandt A, Pohlmann S, Varzi A, Balducci A, Passerini S 
+(2013) Ionic liquids in supercapacitors. MRS Bull 38:554–
+559. https:// doi. org/ 10. 1557/ mrs. 2013. 151
+[ 15] Zhong C, Deng Y, Hu W, Qiao J, Zhang L, Zhang J (2015) 
+A review of electrolyte materials and compositions for 
+electrochemical supercapacitors. Chem Soc Rev 44:7484–
+7539. https:// doi. org/ 10. 1039/ C5CS0 0303B
+[ 16] Saha M, Kumar A, Kanaoujiya R, Behera K, Trivedi S 
+(2024) A comprehensive review of novel emerging elec-
+trolytes for supercapacitors: aqueous and organic electro-
+lytes versus ionic liquid-based electrolytes. Energy Fuels 
+38:8528–8552. https:// doi. org/ 10. 1021/ acs. energ yfuels. 
+4c006 85
+[ 17] Suárez L, Barranco V, Centeno TA (2021) Impact of car -
+bon pores size on ionic liquid based-supercapacitor perfor -
+mance. J Colloid Interface Sci 588:705–712. https://  doi. 
+org/ 10. 1016/j. jcis. 2020. 11. 093
+[ 18] Jha S, Yen M, Salinas YS, Palmer E, Villafuerte J, Liang 
+H (2023) Machine learning-assisted materials development 
+and device management in batteries and supercapacitors: 
+24730
+
+===== PDF PAGE 17 =====
+J Mater Sci (2026) 61:24715–24733 
+performance comparison and challenges. J Mater Chem A 
+11:3904–3936. https:// doi. org/ 10. 1039/ D2TA0 7148G
+[ 19] Thakkar P, Khatri S, Dobariya D, Patel D, Dey B, Singh 
+AK (2024) Advances in materials and machine learning 
+techniques for energy storage devices: a comprehensive 
+review. J Energy Storage 81:110452. https:// doi. org/ 10.  
+1016/j. est. 2024. 110452
+[ 20] Raj V, Nair MR, Soaid NI, Saheed MSM (2026) Bench-
+marking classical machine learning and neural networks 
+for supercapacitor electrodes optimization. Diam Relat 
+Mater 161:113085. https:// doi. org/ 10. 1016/j. diamo nd.  
+2025. 113085
+[ 21] Shrivas S, Dubey A (2025) Prediction of specific capaci-
+tance of activated carbon electrode for energy storage 
+device by machine learning based approach. J Energy Stor -
+age 121:116632. https:// doi. org/ 10. 1016/j. est. 2025. 116632
+[ 22] Sun J, Lin P, Zeng L, Guo Z, Jiang Y, Xiao C, Jian Q, Ren 
+J, Pan L, Xu X, Li Z, Wei L, Zhao T (2025) Artificial-
+intelligence-guided design of ordered gas diffusion lay -
+ers for high-performing fuel cells via Bayesian machine 
+learning. Nat Commun 16:6528. https:// doi. org/ 10. 1038/  
+s41467- 025- 61794-y
+[ 23] Pan H, Zou Y, Sun X, Fu J (2025) An enhanced neural 
+network model for predicting the remaining useful life of 
+proton exchange membrane fuel cells. Sci Rep 15:37320. 
+https:// doi. org/ 10. 1038/ s41598- 025- 21247-4
+[ 24] Agravat R, Patel SK, Sharma Y, Baldania A, Al-Zahrani FA 
+(2026) A diverse machine learning optimized metamate-
+rial MXene-based solar thermal absorber design for next-
+generation solar thermal energy harvesting. Appl Therm 
+Eng 300:131324. https:// doi. org/ 10. 1016/j. applt herma leng. 
+2026. 131324
+[ 25] Almawgani AHM, Alshaabani A, Agravat R, Baldania 
+A, Alawad MA, Sharma Y, Patel SK (2026) Design and 
+thermal engineering optimization of ultra-stable metama-
+terial solar thermal absorbers through machine learning 
+for industrial heating applications. Case Stud Therm Eng 
+80:107905. https:// doi. org/ 10. 1016/j. csite. 2026. 107905
+[ 26] Karelson M (2000) Molecular descriptors in QSAR/QSPR. 
+Wiley-Interscience, New York, pp. 141-383
+[ 27] Roy K, Kar S, Das RN (2015) A primer on QSAR/QSPR 
+modeling. Springer Berlin Heidelberg, New York, pp. 2-36
+[ 28] Su H, Lin S, Deng S, Lian C, Shang Y, Liu H (2019) 
+Predicting the capacitance of carbon-based electric dou-
+ble layer capacitors by machine learning. Nanoscale Adv 
+1:2162–2166. https:// doi. org/ 10. 1039/ C9NA0 0105K
+[ 29] Reddy BS, Narayana PL, Maurya AK, Paturi UMR, Sung 
+J, Ahn H-J, Cho KK, Reddy NS (2023) Modeling capaci-
+tance of carbon-based supercapacitors by artificial neural 
+networks. J Energy Storage 72:108537. https:// doi. org/ 10.  
+1016/j. est. 2023. 108537
+[ 30] Zhu S, Li J, Ma L, He C, Liu E, He F, Shi C, Zhao N (2018) 
+Artificial neural network enabled capacitance prediction 
+for carbon-based supercapacitors. Mater Lett 233:294–297. 
+https:// doi. org/ 10. 1016/j. matlet. 2018. 09. 028
+[ 31] Mishra S, Srivastava R, Muhammad A, Amit A, Chiavazzo 
+E, Fasano M, Asinari P (2023) The impact of physicochem-
+ical features of carbon electrodes on the capacitive perfor -
+mance of supercapacitors: a machine learning approach. Sci 
+Rep 13:6494. https:// doi. org/ 10. 1038/ s41598- 023- 33524-1
+[ 32] Saad AG, Emad-Eldeen A, Tawfik WZ, El-Deen AG (2022) 
+Data-driven machine learning approach for predicting the 
+capacitance of graphene-based supercapacitor electrodes. 
+J Energy Storage 55:105411. https:// doi. org/ 10. 1016/j. est. 
+2022. 105411
+[ 33] Tawfik WZ, Mohammad SN, Rahouma KH, Tammam E, 
+Salama GM (2023) An artificial neural network model for 
+capacitance prediction of porous carbon-based superca-
+pacitor electrodes. J Energy Storage 73:108830. https://  
+doi. org/ 10. 1016/j. est. 2023. 108830
+[ 34] Jamaluddin A, Harjunowibowo D, Budiawanti S, Kurdhi 
+NA, Sutarsis LDTC, Ramesh S (2023) Applying machine 
+learning to understand the properties of biomass carbon 
+materials in supercapacitors. Energy Rep 10:3125–3132. 
+https:// doi. org/ 10. 1016/j. egyr. 2023. 09. 099
+[ 35] Nanda S, Ghosh S, Thomas T (2022) Machine learning 
+aided cyclic stability prediction for supercapacitors. J 
+Power Sources 546:231975. https:// doi. org/ 10. 1016/j. jpows 
+our. 2022. 231975
+[ 36] Zhou Y, Huang Y, Pang J, Wang K (2019) Remaining use-
+ful life prediction for supercapacitor based on long short-
+term memory neural network. J Power Sources 440:227149. 
+https:// doi. org/ 10. 1016/j. jpows our. 2019. 227149
+[ 37] Zhou M, Gallegos A, Liu K, Dai S, Wu J (2020) Insights 
+from machine learning of carbon electrodes for electric 
+double layer capacitors. Carbon 157:147–152. https:// doi.  
+org/ 10. 1016/j. carbon. 2019. 08. 090
+[ 38] Sawant V, Deshmukh R, Awati C (2023) Machine learn-
+ing techniques for prediction of capacitance and remain-
+ing useful life of supercapacitors: a comprehensive review. 
+J Energy Chem 77:438–451. https:// doi. org/ 10. 1016/j.  
+jechem. 2022. 11. 012
+[ 39] Liu P, Wen Y, Huang L, Zhu X, Wu R, Ai S, Xue T, Ge 
+Y (2021) An emerging machine learning strategy for the 
+assisted-design of high-performance supercapacitor mate-
+rials by mining the relationship between capacitance and 
+structural features of porous carbon. J Electroanal Chem 
+899:115684. https:// doi. org/ 10. 1016/j. jelec  hem. 2021. 
+115684
+24731
+
+===== PDF PAGE 18 =====
+ J Mater Sci (2026) 61:24715–24733
+[ 40] Yang X, Yuan C, He S, Jiang D, Cao B, Wang S (2023) 
+Machine learning prediction of specific capacitance in bio-
+mass derived carbon materials: effects of activation and 
+biochar characteristics. Fuel 331:125718. https:// doi. org/  
+10. 1016/j. fuel. 2022. 125718
+[ 41] Abdi J, Pirhoushyaran T, Hadavimoghaddam F, Madani SA, 
+Hemmati-Sarapardeh A, Esmaeili-Faraj SH (2023) Mod-
+eling of capacitance for carbon-based supercapacitors using 
+Super Learner algorithm. J Energy Storage 66:107376. 
+https:// doi. org/ 10. 1016/j. est. 2023. 107376
+[ 42] Gittins JW, Chen Y, Arnold S, Augustyn V, Balducci A, 
+Brousse T, Frackowiak E, Gómez-Romero P, Kanwade A, 
+Köps L, Jha PK, Lyu D, Meo M, Pandey D, Pang L, Presser 
+V, Rapisarda M, Rueda-García D, Saeed S, Shirage PM, 
+Ślesiński A, Soavi F, Thomas J, Titirici M-M, Wang H, 
+Xu Z, Yu A, Zhang M, Forse AC (2023) Interlaboratory 
+study assessing the analysis of supercapacitor electrochem-
+istry data. J Power Sources 585:233637. https:// doi. org/ 10. 
+1016/j. jpows our. 2023. 233637
+[ 43] Wang C, Cheng X, Luo KH, Nandakumar K, Wang Z, Ni 
+M, Bi X, Zhang J, Wang C (2025) A guided review of 
+machine learning in the design and application for pore 
+nanoarchitectonics of carbon materials. Mater Sci Eng 
+R Rep 165:101010. https:// doi. org/ 10. 1016/j. mser. 2025. 
+101010
+[ 44] Puthongkham P, Wirojsaengthong S, Suea-Ngam A (2021) 
+Machine learning and chemometrics for electrochemical 
+sensors: moving forward to the future of analytical chem-
+istry. Analyst 146:6351–6364. https:// doi. org/ 10. 1039/  
+D1AN0 1148K
+[ 45] R Core Team (2018) R: a language and environment for 
+statistical computing. R Foundation for Statistical Comput -
+ing, Vienna, Austria, https://www.R-project.org. Accessed 
+6 July 2026.
+[ 46] Fox J, Weisberg S (2019) An R companion to applied 
+regression, Third edition. Sage Publications, Inc, Thousand 
+Oaks, California, pp. 183-184
+[ 47] Miller RG (1981) Simultaneous statistical inference. 
+Springer New York, New York, NY, pp. 67-70
+[ 48] Akaike H (1969) Fitting autoregressive models for predic-
+tion. Ann Inst Stat Math 21:243–247. https://  doi. org/ 10. 
+1007/ BF025 32251
+[ 49] Fox J, Fox J (2016) Applied regression analysis and gener -
+alized linear models, Third Edition. SAGE, Los Angeles, 
+pp. 341-365
+[ 50] Cook RD, Weisberg S (1982) Residuals and influence in 
+regression. Chapman and Hall, New York, pp. 10-36
+[ 51] Käärik M, Arulepp M, Maran U, Leis J (2026) Data for: 
+machine learning-assisted QnSPR study of the capaci-
+tive behavior of nanoporous carbons in supercapacitors 
+with dilute ionic liquid electrolyte. QsarDB repository, 
+QDB.275. https:// doi. org/ 10. 15152/ QDB. 275
+[ 52] Käärik M, Arulepp M, Kook M, Mäeorg U, Kozlova J, 
+Sammelselg V, Perkson A, Leis J (2018) Characterisation 
+of steam-treated nanoporous carbide-derived carbon of 
+TiC origin: structure and enhanced electrochemical per -
+formance. J Porous Mater 25:1057–1070. https:// doi. org/  
+10. 1007/ s10934- 017- 0517-8
+[ 53] Leis J, Arulepp M, Käärik M, Perkson A (2010) The effect 
+of Mo2C derived carbon pore size on the electrical double-
+layer characteristics in propylene carbonate-based electro -
+lyte. Carbon N Y 48:4001–4008. https:// doi. org/ 10. 1016/j. 
+carbon. 2010. 07. 003
+[ 54] Leis J, Perkson A, Arulepp M, Nigu P, Svensson G (2002) 
+Catalytic effects of metals of the iron subgroup on the 
+chlorination of titanium carbide to form nanostructural 
+carbon. Carbon 40:1559–1564. https:// doi. org/ 10. 1016/  
+S0008- 6223(02) 00019-2
+[ 55] Perkson A, Leis J, Arulepp M, Käärik M, Urbonaite S, 
+Svensson G (2003) Barrel-like carbon nanoparticles from 
+carbide by catalyst assisted chlorination. Carbon 41:1729–
+1735. https:// doi. org/ 10. 1016/ S0008- 6223(03) 00118-0
+[ 56] Leis J, Perkson A, Arulepp M, Käärik M, Svensson G 
+(2001) Carbon nanostructures produced by chlorinating 
+aluminium carbide. Carbon 39:2043–2048. https:// doi. org/  
+10. 1016/ S0008- 6223(01) 00020-3
+[ 57] Käärik M, Arulepp M, Karelson M, Leis J (2008) The effect 
+of graphitization catalyst on the structure and porosity of 
+SiC derived carbons. Carbon 46:1579–1587. https:// doi.  
+org/ 10. 1016/j. carbon. 2008. 07. 003
+[ 58] Kukushkina JA, Sokolov VV, Tomkovich MV (2015) Effect 
+of nonstoichiometry of titanium carbide on porous struc-
+ture of nanoporous carbon produced from the carbide. Russ 
+J Appl Chem 88:27–30. https:// doi. org/ 10. 1134/ S1070  
+42721 50100 48
+[ 59] Leis J, Arulepp M, Käärik M, Perkson A (2013) Method 
+of synthesis of electrocatalytically active porous carbon 
+material for oxygen reduction in low-temperature fuel cells. 
+PCT patent WO2013011146.
+[ 60] Dyatkin B, Zhang Y, Mamontov E, Kolesnikov AI, Cheng 
+Y, Meyer HM, Cummings PT, Gogotsi Y (2016) Influence 
+of surface oxidation on ion dynamics and capacitance in 
+porous and nonporous carbon electrodes. J Phys Chem C 
+120:8730–8741. https:// doi. org/ 10. 1021/ acs. jpcc. 6b012 04
+[ 61] Pinkert K, Oschatz M, Borchardt L, Klose M, Zier M, 
+Nickel W, Giebeler L, Oswald S, Kaskel S, Eckert J (2014) 
+Role of surface functional groups in ordered mesoporous 
+carbide-derived carbon/ionic liquid electrolyte double-layer 
+capacitor interfaces. ACS Appl Mater Interfaces 6:2922–
+2928. https:// doi. org/ 10. 1021/ am405 5029
+24732
+
+===== PDF PAGE 19 =====
+J Mater Sci (2026) 61:24715–24733 
+[ 62] Viswanathan B (2017) Energy sources: fundamentals of 
+chemical conversion processes and applications. Elsevier, 
+Amsterdam, Boston, pp. 315-328
+[ 63] Chmiola J, Largeot C, Taberna P, Simon P, Gogotsi Y 
+(2008) Desolvation of ions in subnanometer pores and 
+its effect on capacitance and double-layer theory. Angew 
+Chem Int Ed 47:3392–3395. https:// doi. org/ 10. 1002/ anie. 
+20070 4894
+[ 64] Ue M (1994) Mobility and ionic association of lithium 
+and quaternary ammonium salts in propylene carbonate 
+and γ-butyrolactone. J Electrochem Soc 141:3336–3342. 
+https:// doi. org/ 10. 1149/1. 20593 36
+[ 65] Inagaki M, Konno H, Tanaike O (2010) Carbon materials 
+for electrochemical capacitors. J Power Sources 195:7880–
+7903. https:// doi. org/ 10. 1016/j. jpows our. 2010. 06. 036
+[ 66] Yu X, Ruan D, Wu C, Wang J, Shi Z (2014) Spiro-(1,1′ )-
+bipyrrolidinium tetrafluoroborate salt as high voltage elec -
+trolyte for electric double layer capacitors. J Power Sources 
+265:309–316. https:// doi. org/ 10. 1016/j. jpows our. 2014. 04. 
+144
+[ 67] Yang X, Li M, Guo N, Yan M, Yang R, Wang F (2016) 
+Functionalized porous carbon with appropriate pore size 
+distribution and open hole texture prepared by  H2O2 and 
+EDTA-2Na treatment of loofa sponge and its excellent 
+performance for supercapacitors. RSC Adv 6:4365–4376. 
+https:// doi. org/ 10. 1039/ C5RA2 4055G
+[ 68] Sun L, Zhuo K, Chen Y, Du Q, Zhang S, Wang J (2022) 
+Ionic liquid‐ based redox active electrolytes for superca-
+pacitors. Adv Funct Mater 32:2203611. https:// doi. org/ 10. 
+1002/ adfm. 20220 3611
+[ 69] Kwon H-N, Jang S-J, Kang YC, Roh KC (2019) The 
+effect of ILs as co-salts in electrolytes for high voltage 
+supercapacitors. Sci Rep 9:1180. https:// doi. org/ 10. 1038/  
+s41598- 018- 37322-y
+[ 70] Jäckel N, Krüner B, Van Aken KL, Alhabeb M, Anasori 
+B, Kaasik F, Gogotsi Y, Presser V (2016) Electrochemical 
+in situ tracking of volumetric changes in two-dimensional 
+metal carbides (MXenes) in ionic liquids. ACS Appl Mater 
+Interfaces 8:32089–32093. https:// doi. org/ 10. 1021/ acsami. 
+6b117 44
+[ 71] Bader RFW (1991) A quantum theory of molecular struc-
+ture and its applications. Chem Rev 91:893–928. https://  
+doi. org/ 10. 1021/ cr000 05a013
+[ 72] Ishisone K, Ori G, Boero M (2022) Structural, dynami-
+cal, and electronic properties of the ionic liquid 1-ethyl-
+3-methylimidazolium bis(trifluoromethylsulfonyl)imide. 
+Phys Chem Chem Phys 24:9597–9607. https:// doi. org/ 10. 
+1039/ D2CP0 0741J
+[ 73] Forse AC, Merlet C, Griffin JM, Grey CP (2016) New per -
+spectives on the charging mechanisms of supercapacitors. 
+J Am Chem Soc 138:5731–5744. https:// doi. org/ 10. 1021/ 
+jacs. 6b021 15
+[ 74] Urbonaite S, Wachtmeister S, Mirguet C, Coronel E, Zou 
+WY, Csillag S, Svensson G (2007) EELS studies of carbide 
+derived carbons. Carbon 45:2047–2053. https:// doi. org/ 10. 
+1016/j. carbon. 2007. 05. 022
+[ 75] Zhu P, Kang X, Latif U, Gong M, Zhao Y (2019) A reliable 
+database for ionic volume and surface: its application to 
+predict molar volume and density of ionic liquid. Ind Eng 
+Chem Res 58:10073–10083. https:// doi. org/ 10. 1021/ acs.  
+iecr. 9b007 20
+Publisher’s Note Springer Nature remains neutral with 
+regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) 
+holds exclusive rights to this article under a publishing 
+agreement with the author(s) or other rightsholder(s); 
+author self-archiving of the accepted manuscript version of 
+this article is solely governed by the terms of such publishing 
+agreement and applicable law.
+24733

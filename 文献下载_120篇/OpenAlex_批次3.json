@@ -1,0 +1,3907 @@
+{
+  "meta": {
+    "notice": "No API key, so this request shares one free daily budget ($0.10) with everyone on your network's IP address. Get a free key with its own $1/day at https://openalex.org/settings/api and add api_key=YOUR_KEY to your requests. An AI agent can get one for its user in one call: POST https://api.openalex.org/api-keys with {\"email\": \"<your user's email>\"}; we email them a link, and the key works once they click it. Docs for agents: https://help.openalex.org/llms.txt",
+    "count": 40,
+    "db_response_time_ms": 47,
+    "page": 1,
+    "per_page": 50,
+    "groups_count": null,
+    "x_query": {
+      "oql": "get works where DOI is (\n    https://doi.org/10.1002/ceat.202100585\n    or https://doi.org/10.1002/chem.201803836\n    or https://doi.org/10.1002/cnma.202100388 or https://doi.org/10.1002/er.4834\n    or https://doi.org/10.1002/jsfa.12846\n    or https://doi.org/10.1002/slct.201901632\n    or https://doi.org/10.1007/s10854-019-02303-y\n    or https://doi.org/10.1007/s10854-026-17094-2\n    or https://doi.org/10.1016/j.apsusc.2017.11.249\n    or https://doi.org/10.1016/j.biombioe.2025.108104\n    or https://doi.org/10.1016/j.cclet.2023.109301\n    or https://doi.org/10.1016/j.cej.2023.147662\n    or https://doi.org/10.1016/j.ces.2020.116053\n    or https://doi.org/10.1016/j.diamond.2021.108267\n    or https://doi.org/10.1016/j.diamond.2025.112473\n    or https://doi.org/10.1016/j.electacta.2025.145880\n    or https://doi.org/10.1016/j.est.2020.102185\n    or https://doi.org/10.1016/j.est.2024.112092\n    or https://doi.org/10.1016/j.est.2026.121558\n    or https://doi.org/10.1016/j.fuel.2021.121622\n    or https://doi.org/10.1016/j.ijhydene.2016.05.090\n    or https://doi.org/10.1016/j.jallcom.2018.01.108\n    or https://doi.org/10.1016/j.jelechem.2018.09.031\n    or https://doi.org/10.1016/j.jelechem.2018.10.050\n    or https://doi.org/10.1016/j.jssc.2018.08.041\n    or https://doi.org/10.1016/j.matdes.2017.05.035\n    or https://doi.org/10.1016/j.matlet.2024.136644\n    or https://doi.org/10.1016/j.nxmate.2026.101640\n    or https://doi.org/10.1016/j.renene.2021.08.008\n    or https://doi.org/10.1016/j.solidstatesciences.2025.108046\n    or https://doi.org/10.1021/acsami.8b19246\n    or https://doi.org/10.1149/ma2016-02/7/1002\n    or https://doi.org/10.1149/ma2017-01/38/1782\n    or https://doi.org/10.20964/2017.06.16\n    or https://doi.org/10.3389/fchem.2020.00226\n    or https://doi.org/10.3390/c9010024\n    or https://doi.org/10.3390/molecules28124633\n    or https://doi.org/10.3390/su17104530 or https://doi.org/10.5599/jese.1314\n    or https://doi.org/10.5796/electrochemistry.25-71119\n  )",
+      "x_new_oql": "get works where DOI is (https://doi.org/10.1002/ceat.202100585 or https://doi.org/10.1002/chem.201803836 or https://doi.org/10.1002/cnma.202100388 or https://doi.org/10.1002/er.4834 or https://doi.org/10.1002/jsfa.12846 or https://doi.org/10.1002/slct.201901632 or https://doi.org/10.1007/s10854-019-02303-y or https://doi.org/10.1007/s10854-026-17094-2 or https://doi.org/10.1016/j.apsusc.2017.11.249 or https://doi.org/10.1016/j.biombioe.2025.108104 or https://doi.org/10.1016/j.cclet.2023.109301 or https://doi.org/10.1016/j.cej.2023.147662 or https://doi.org/10.1016/j.ces.2020.116053 or https://doi.org/10.1016/j.diamond.2021.108267 or https://doi.org/10.1016/j.diamond.2025.112473 or https://doi.org/10.1016/j.electacta.2025.145880 or https://doi.org/10.1016/j.est.2020.102185 or https://doi.org/10.1016/j.est.2024.112092 or https://doi.org/10.1016/j.est.2026.121558 or https://doi.org/10.1016/j.fuel.2021.121622 or https://doi.org/10.1016/j.ijhydene.2016.05.090 or https://doi.org/10.1016/j.jallcom.2018.01.108 or https://doi.org/10.1016/j.jelechem.2018.09.031 or https://doi.org/10.1016/j.jelechem.2018.10.050 or https://doi.org/10.1016/j.jssc.2018.08.041 or https://doi.org/10.1016/j.matdes.2017.05.035 or https://doi.org/10.1016/j.matlet.2024.136644 or https://doi.org/10.1016/j.nxmate.2026.101640 or https://doi.org/10.1016/j.renene.2021.08.008 or https://doi.org/10.1016/j.solidstatesciences.2025.108046 or https://doi.org/10.1021/acsami.8b19246 or https://doi.org/10.1149/ma2016-02/7/1002 or https://doi.org/10.1149/ma2017-01/38/1782 or https://doi.org/10.20964/2017.06.16 or https://doi.org/10.3389/fchem.2020.00226 or https://doi.org/10.3390/c9010024 or https://doi.org/10.3390/molecules28124633 or https://doi.org/10.3390/su17104530 or https://doi.org/10.5599/jese.1314 or https://doi.org/10.5796/electrochemistry.25-71119)",
+      "oqo": {
+        "get_rows": "works",
+        "filter_rows": [
+          {
+            "join": "or",
+            "filters": [
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1002/ceat.202100585"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1002/chem.201803836"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1002/cnma.202100388"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1002/er.4834"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1002/jsfa.12846"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1002/slct.201901632"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1007/s10854-019-02303-y"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1007/s10854-026-17094-2"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.apsusc.2017.11.249"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.biombioe.2025.108104"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.cclet.2023.109301"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.cej.2023.147662"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.ces.2020.116053"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.diamond.2021.108267"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.diamond.2025.112473"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.electacta.2025.145880"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.est.2020.102185"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.est.2024.112092"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.est.2026.121558"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.fuel.2021.121622"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.ijhydene.2016.05.090"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.jallcom.2018.01.108"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.jelechem.2018.09.031"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.jelechem.2018.10.050"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.jssc.2018.08.041"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.matdes.2017.05.035"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.matlet.2024.136644"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.nxmate.2026.101640"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.renene.2021.08.008"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1016/j.solidstatesciences.2025.108046"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1021/acsami.8b19246"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1149/ma2016-02/7/1002"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.1149/ma2017-01/38/1782"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.20964/2017.06.16"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.3389/fchem.2020.00226"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.3390/c9010024"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.3390/molecules28124633"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.3390/su17104530"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.5599/jese.1314"
+              },
+              {
+                "column_id": "doi",
+                "value": "https://doi.org/10.5796/electrochemistry.25-71119"
+              }
+            ]
+          }
+        ]
+      },
+      "url": "/works?filter=doi:https:%2F%2Fdoi.org%2F10.1002%2Fceat.202100585|https:%2F%2Fdoi.org%2F10.1002%2Fchem.201803836|https:%2F%2Fdoi.org%2F10.1002%2Fcnma.202100388|https:%2F%2Fdoi.org%2F10.1002%2Fer.4834|https:%2F%2Fdoi.org%2F10.1002%2Fjsfa.12846|https:%2F%2Fdoi.org%2F10.1002%2Fslct.201901632|https:%2F%2Fdoi.org%2F10.1007%2Fs10854-019-02303-y|https:%2F%2Fdoi.org%2F10.1007%2Fs10854-026-17094-2|https:%2F%2Fdoi.org%2F10.1016%2Fj.apsusc.2017.11.249|https:%2F%2Fdoi.org%2F10.1016%2Fj.biombioe.2025.108104|https:%2F%2Fdoi.org%2F10.1016%2Fj.cclet.2023.109301|https:%2F%2Fdoi.org%2F10.1016%2Fj.cej.2023.147662|https:%2F%2Fdoi.org%2F10.1016%2Fj.ces.2020.116053|https:%2F%2Fdoi.org%2F10.1016%2Fj.diamond.2021.108267|https:%2F%2Fdoi.org%2F10.1016%2Fj.diamond.2025.112473|https:%2F%2Fdoi.org%2F10.1016%2Fj.electacta.2025.145880|https:%2F%2Fdoi.org%2F10.1016%2Fj.est.2020.102185|https:%2F%2Fdoi.org%2F10.1016%2Fj.est.2024.112092|https:%2F%2Fdoi.org%2F10.1016%2Fj.est.2026.121558|https:%2F%2Fdoi.org%2F10.1016%2Fj.fuel.2021.121622|https:%2F%2Fdoi.org%2F10.1016%2Fj.ijhydene.2016.05.090|https:%2F%2Fdoi.org%2F10.1016%2Fj.jallcom.2018.01.108|https:%2F%2Fdoi.org%2F10.1016%2Fj.jelechem.2018.09.031|https:%2F%2Fdoi.org%2F10.1016%2Fj.jelechem.2018.10.050|https:%2F%2Fdoi.org%2F10.1016%2Fj.jssc.2018.08.041|https:%2F%2Fdoi.org%2F10.1016%2Fj.matdes.2017.05.035|https:%2F%2Fdoi.org%2F10.1016%2Fj.matlet.2024.136644|https:%2F%2Fdoi.org%2F10.1016%2Fj.nxmate.2026.101640|https:%2F%2Fdoi.org%2F10.1016%2Fj.renene.2021.08.008|https:%2F%2Fdoi.org%2F10.1016%2Fj.solidstatesciences.2025.108046|https:%2F%2Fdoi.org%2F10.1021%2Facsami.8b19246|https:%2F%2Fdoi.org%2F10.1149%2Fma2016-02%2F7%2F1002|https:%2F%2Fdoi.org%2F10.1149%2Fma2017-01%2F38%2F1782|https:%2F%2Fdoi.org%2F10.20964%2F2017.06.16|https:%2F%2Fdoi.org%2F10.3389%2Ffchem.2020.00226|https:%2F%2Fdoi.org%2F10.3390%2Fc9010024|https:%2F%2Fdoi.org%2F10.3390%2Fmolecules28124633|https:%2F%2Fdoi.org%2F10.3390%2Fsu17104530|https:%2F%2Fdoi.org%2F10.5599%2Fjese.1314|https:%2F%2Fdoi.org%2F10.5796%2Felectrochemistry.25-71119&per_page=50"
+    },
+    "cost_usd": 0.0001
+  },
+  "results": [
+    {
+      "id": "https://openalex.org/W2774749033",
+      "doi": "https://doi.org/10.1016/j.apsusc.2017.11.249",
+      "title": "Three-dimensional porous activated carbon derived from loofah sponge biomass for supercapacitor applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.apsusc.2017.11.249",
+          "doi": "https://doi.org/10.1016/j.apsusc.2017.11.249",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.apsusc.2017.11.249",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S42323631",
+            "display_name": "Applied Surface Science",
+            "issn_l": "0169-4332",
+            "issn": [
+              "0169-4332",
+              "1873-5584"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-a",
+              "jufo-2",
+              "ki-jl-1",
+              "norway-1",
+              "poland-140",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Applied Surface Science",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:ira.lib.polyu.edu.hk:10397/74992",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "http://hdl.handle.net/10397/74992",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400205",
+            "display_name": "PolyU Institutional Research Archive (Hong Kong Polytechnic University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I14243506",
+            "host_organization_name": "Hong Kong Polytechnic University",
+            "host_organization_lineage": [
+              "https://openalex.org/I14243506"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "Journal/Magazine Article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2783571986",
+      "doi": "https://doi.org/10.1016/j.jallcom.2018.01.108",
+      "title": "MnO2 and biomass-derived 3D porous carbon composites electrodes for high performance supercapacitor applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.jallcom.2018.01.108",
+          "doi": "https://doi.org/10.1016/j.jallcom.2018.01.108",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.jallcom.2018.01.108",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S67716761",
+            "display_name": "Journal of Alloys and Compounds",
+            "issn_l": "0925-8388",
+            "issn": [
+              "0925-8388",
+              "1873-4669"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "ki-jl-1",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Alloys and Compounds",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2898226530",
+      "doi": "https://doi.org/10.1016/j.jelechem.2018.10.050",
+      "title": "High efficiency supercapacitor derived from biomass based carbon dots and reduced graphene oxide composite",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.jelechem.2018.10.050",
+          "doi": "https://doi.org/10.1016/j.jelechem.2018.10.050",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.jelechem.2018.10.050",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S143604795",
+            "display_name": "Journal of Electroanalytical Chemistry",
+            "issn_l": "1572-6657",
+            "issn": [
+              "1572-6657",
+              "1873-2569"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Electroanalytical Chemistry",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W3119947418",
+      "doi": "https://doi.org/10.1016/j.diamond.2021.108267",
+      "title": "Oxygen-rich hierarchical porous carbon derived from biomass waste-kapok flower for supercapacitor electrode",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.diamond.2021.108267",
+          "doi": "https://doi.org/10.1016/j.diamond.2021.108267",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.diamond.2021.108267",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S124577123",
+            "display_name": "Diamond and Related Materials",
+            "issn_l": "0925-9635",
+            "issn": [
+              "0925-9635",
+              "1879-0062"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-d",
+              "jufo-1",
+              "ki-jl-1",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Diamond and Related Materials",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2612815973",
+      "doi": "https://doi.org/10.1016/j.matdes.2017.05.035",
+      "title": "Biomass-derived flexible porous carbon materials and their applications in supercapacitor and gas adsorption",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.matdes.2017.05.035",
+          "doi": "https://doi.org/10.1016/j.matdes.2017.05.035",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.matdes.2017.05.035",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S8792693",
+            "display_name": "Materials & Design",
+            "issn_l": "0264-1275",
+            "issn": [
+              "0264-1275",
+              "1873-4197"
+            ],
+            "is_oa": false,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "doaj",
+              "dongbi-b",
+              "jufo-3",
+              "ki-jl-1",
+              "norway-1",
+              "poland-140",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Materials &amp; Design",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:132793f617154274b9495be7bc39c2a4",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://doaj.org/article/132793f617154274b9495be7bc39c2a4",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Materials &amp; Design, Vol 129, Iss , Pp 164-172 (2017)",
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2890697625",
+      "doi": "https://doi.org/10.1016/j.jelechem.2018.09.031",
+      "title": "Nitrogen-doped hierarchical porous carbon using biomass-derived activated carbon/carbonized polyaniline composites for supercapacitor electrodes",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.jelechem.2018.09.031",
+          "doi": "https://doi.org/10.1016/j.jelechem.2018.09.031",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.jelechem.2018.09.031",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S143604795",
+            "display_name": "Journal of Electroanalytical Chemistry",
+            "issn_l": "1572-6657",
+            "issn": [
+              "1572-6657",
+              "1873-2569"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Electroanalytical Chemistry",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W3122598171",
+      "doi": "https://doi.org/10.1016/j.est.2020.102185",
+      "title": "Biomass derived phosphorous containing porous carbon material for hydrogen storage and high-performance supercapacitor applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.est.2020.102185",
+          "doi": "https://doi.org/10.1016/j.est.2020.102185",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.est.2020.102185",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764865925",
+            "display_name": "Journal of Energy Storage",
+            "issn_l": "2352-152X",
+            "issn": [
+              "2352-152X",
+              "2352-1538"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-c",
+              "jufo-2",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Energy Storage",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2910666573",
+      "doi": "https://doi.org/10.1021/acsami.8b19246",
+      "title": "Influence of Multiwalled Carbon Nanotubes as Additives in Biomass-Derived Carbons for Supercapacitor Applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10261/414825",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "pmh:oai:digital.csic.es:10261/414825",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "http://hdl.handle.net/10261/414825",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4306400616",
+          "display_name": "DIGITAL.CSIC (Spanish National Research Council (CSIC))",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I134820265",
+          "host_organization_name": "Consejo Superior de Investigaciones Científicas",
+          "host_organization_lineage": [
+            "https://openalex.org/I134820265"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": "other-oa",
+        "license_id": "https://openalex.org/licenses/other-oa",
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "info:eu-repo/semantics/article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.1021/acsami.8b19246",
+          "doi": "https://doi.org/10.1021/acsami.8b19246",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1021/acsami.8b19246",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S164001016",
+            "display_name": "ACS Applied Materials & Interfaces",
+            "issn_l": "1944-8244",
+            "issn": [
+              "1944-8244",
+              "1944-8252"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-b",
+              "jufo-2",
+              "ki-jl-1",
+              "medline",
+              "norway-1",
+              "poland-200",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320006",
+            "host_organization_name": "American Chemical Society",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320006"
+            ],
+            "host_organization_lineage_names": [
+              "American Chemical Society"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "ACS Applied Materials &amp; Interfaces",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmid:30652469",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/30652469",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306525036",
+            "display_name": "PubMed",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "ACS applied materials & interfaces",
+          "raw_type": "Journal Article"
+        },
+        {
+          "id": "pmh:oai:digital.csic.es:10261/414825",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://hdl.handle.net/10261/414825",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400616",
+            "display_name": "DIGITAL.CSIC (Spanish National Research Council (CSIC))",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I134820265",
+            "host_organization_name": "Consejo Superior de Investigaciones Científicas",
+            "host_organization_lineage": [
+              "https://openalex.org/I134820265"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "other-oa",
+          "license_id": "https://openalex.org/licenses/other-oa",
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "info:eu-repo/semantics/article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W3189807209",
+      "doi": "https://doi.org/10.1016/j.renene.2021.08.008",
+      "title": "Hierarchical porous biomass-derived carbon framework with ultrahigh surface area for outstanding capacitance supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.renene.2021.08.008",
+          "doi": "https://doi.org/10.1016/j.renene.2021.08.008",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.renene.2021.08.008",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S815301",
+            "display_name": "Renewable Energy",
+            "issn_l": "0960-1481",
+            "issn": [
+              "0960-1481",
+              "1879-0682"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-class-a",
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-2",
+              "norway-1",
+              "poland-140",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Renewable Energy",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:RePEc:eee:renene:v:179:y:2021:i:c:p:1826-1835",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "http://www.sciencedirect.com/science/article/pii/S096014812101168X",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401271",
+            "display_name": "RePEc: Research Papers in Economics",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I77793887",
+            "host_organization_name": "Federal Reserve Bank of St. Louis",
+            "host_organization_lineage": [
+              "https://openalex.org/I77793887"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4206968584",
+      "doi": "https://doi.org/10.1002/ceat.202100585",
+      "title": "Biomass‐Derived Activated Carbon Nanoarchitectonics with Hibiscus Flowers for High‐Performance Supercapacitor Electrode Applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1002/ceat.202100585",
+          "doi": "https://doi.org/10.1002/ceat.202100585",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/ceat.202100585",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S154487680",
+            "display_name": "Chemical Engineering & Technology",
+            "issn_l": "0930-7516",
+            "issn": [
+              "0930-7516",
+              "1521-4125"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chemical Engineering &amp; Technology",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W3194609919",
+      "doi": "https://doi.org/10.1016/j.fuel.2021.121622",
+      "title": "Multi-walled carbon nanotubes/carbon foam nanocomposites derived from biomass for CO2 capture and supercapacitor applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.fuel.2021.121622",
+          "doi": "https://doi.org/10.1016/j.fuel.2021.121622",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.fuel.2021.121622",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S164770093",
+            "display_name": "Fuel",
+            "issn_l": "0016-2361",
+            "issn": [
+              "0016-2361",
+              "1873-7153"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-a",
+              "jufo-2",
+              "ki-jl-2",
+              "norway-2",
+              "poland-140",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Fuel",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W3017365286",
+      "doi": "https://doi.org/10.3389/fchem.2020.00226",
+      "title": "Biomass Juncus Derived Nitrogen-Doped Porous Carbon Materials for Supercapacitor and Oxygen Reduction Reaction",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fchem.2020.00226/pdf",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "doi:10.3389/fchem.2020.00226",
+        "doi": "https://doi.org/10.3389/fchem.2020.00226",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3389/fchem.2020.00226",
+        "pdf_url": "https://www.frontiersin.org/articles/10.3389/fchem.2020.00226/pdf",
+        "source": {
+          "id": "https://openalex.org/S2764970645",
+          "display_name": "Frontiers in Chemistry",
+          "issn_l": "2296-2646",
+          "issn": [
+            "2296-2646"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320527",
+          "host_organization_name": "Frontiers Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320527"
+          ],
+          "host_organization_lineage_names": [
+            "Frontiers Media"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Frontiers in Chemistry",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.3389/fchem.2020.00226",
+          "doi": "https://doi.org/10.3389/fchem.2020.00226",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3389/fchem.2020.00226",
+          "pdf_url": "https://www.frontiersin.org/articles/10.3389/fchem.2020.00226/pdf",
+          "source": {
+            "id": "https://openalex.org/S2764970645",
+            "display_name": "Frontiers in Chemistry",
+            "issn_l": "2296-2646",
+            "issn": [
+              "2296-2646"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320527",
+            "host_organization_name": "Frontiers Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320527"
+            ],
+            "host_organization_lineage_names": [
+              "Frontiers Media"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers in Chemistry",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmid:32351930",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/32351930",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306525036",
+            "display_name": "PubMed",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers in chemistry",
+          "raw_type": "Journal Article"
+        },
+        {
+          "id": "pmh:oai:pubmedcentral.nih.gov:7174754",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7174754",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764455111",
+            "display_name": "PubMed Central",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Front Chem",
+          "raw_type": "Text"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:71350df8140c408eb7eca17bd8ae279d",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://doaj.org/article/71350df8140c408eb7eca17bd8ae279d",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Frontiers in Chemistry, Vol 8 (2020)",
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W3058420696",
+      "doi": "https://doi.org/10.1016/j.ces.2020.116053",
+      "title": "Biomass-derived carbon hooks on Ni foam with free binder for high performance supercapacitor electrode",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.ces.2020.116053",
+          "doi": "https://doi.org/10.1016/j.ces.2020.116053",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.ces.2020.116053",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S33892871",
+            "display_name": "Chemical Engineering Science",
+            "issn_l": "0009-2509",
+            "issn": [
+              "0009-2509",
+              "1873-4405"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-3",
+              "ki-jl-1",
+              "norway-2",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chemical Engineering Science",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2889285926",
+      "doi": "https://doi.org/10.1016/j.jssc.2018.08.041",
+      "title": "Biomass-derived nitrogen and oxygen co-doped hierarchical porous carbon for high performance symmetric supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.jssc.2018.08.041",
+          "doi": "https://doi.org/10.1016/j.jssc.2018.08.041",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.jssc.2018.08.041",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S168898714",
+            "display_name": "Journal of Solid State Chemistry",
+            "issn_l": "0022-4596",
+            "issn": [
+              "0022-4596",
+              "1095-726X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Solid State Chemistry",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4389001292",
+      "doi": "https://doi.org/10.1016/j.cej.2023.147662",
+      "title": "Locally graphitized biomass-derived porous carbon nanosheets with encapsulated Fe3O4 nanoparticles for supercapacitor applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.cej.2023.147662",
+          "doi": "https://doi.org/10.1016/j.cej.2023.147662",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.cej.2023.147662",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S149937609",
+            "display_name": "Chemical Engineering Journal",
+            "issn_l": "1385-8947",
+            "issn": [
+              "1385-8947",
+              "1873-3212"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-a",
+              "jufo-3",
+              "ki-jl-1",
+              "norway-2",
+              "poland-200",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chemical Engineering Journal",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4380551822",
+      "doi": "https://doi.org/10.3390/molecules28124633",
+      "title": "Biomass Derived N-Doped Porous Carbon Made from Reed Straw for an Enhanced Supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1420-3049/28/12/4633/pdf?version=1686207260",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "doi:10.3390/molecules28124633",
+        "doi": "https://doi.org/10.3390/molecules28124633",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/molecules28124633",
+        "pdf_url": "https://www.mdpi.com/1420-3049/28/12/4633/pdf?version=1686207260",
+        "source": {
+          "id": "https://openalex.org/S108911230",
+          "display_name": "Molecules",
+          "issn_l": "1420-3049",
+          "issn": [
+            "1420-3049",
+            "1433-1373"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "medline",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Molecules",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.3390/molecules28124633",
+          "doi": "https://doi.org/10.3390/molecules28124633",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3390/molecules28124633",
+          "pdf_url": "https://www.mdpi.com/1420-3049/28/12/4633/pdf?version=1686207260",
+          "source": {
+            "id": "https://openalex.org/S108911230",
+            "display_name": "Molecules",
+            "issn_l": "1420-3049",
+            "issn": [
+              "1420-3049",
+              "1433-1373"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "doaj",
+              "medline",
+              "poland-140",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310310987",
+            "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310310987"
+            ],
+            "host_organization_lineage_names": [
+              "Multidisciplinary Digital Publishing Institute"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Molecules",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "doi:10.20944/preprints202305.1311.v1",
+          "doi": "https://doi.org/10.20944/preprints202305.1311.v1",
+          "is_oa": true,
+          "landing_page_url": "http://dx.doi.org/10.20944/preprints202305.1311.v1",
+          "pdf_url": "https://www.preprints.org/frontend/manuscript/f2ef043d4f3b187800e5ae264c2e74c8/download_pub",
+          "source": {
+            "id": "https://openalex.org/S6309402219",
+            "display_name": "Preprints.org",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [
+              "https://openalex.org/P4310310987"
+            ],
+            "host_organization_lineage_names": [
+              "Multidisciplinary Digital Publishing Institute"
+            ],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "posted-content"
+        },
+        {
+          "id": "pmid:37375187",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/37375187",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306525036",
+            "display_name": "PubMed",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Molecules (Basel, Switzerland)",
+          "raw_type": "Journal Article"
+        },
+        {
+          "id": "pmh:oai:pubmedcentral.nih.gov:10301256",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10301256",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764455111",
+            "display_name": "PubMed Central",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Molecules",
+          "raw_type": "Text"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:369c6e3b5f854f468360c8f0503a529e",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://doaj.org/article/369c6e3b5f854f468360c8f0503a529e",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Molecules, Vol 28, Iss 12, p 4633 (2023)",
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4411472609",
+      "doi": "https://doi.org/10.1016/j.biombioe.2025.108104",
+      "title": "Biomass-derived porous carbon from banana leaves for efficient supercapacitor applications – An experimental analysis",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.biombioe.2025.108104",
+          "doi": "https://doi.org/10.1016/j.biombioe.2025.108104",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.biombioe.2025.108104",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S171918450",
+            "display_name": "Biomass and Bioenergy",
+            "issn_l": "0961-9534",
+            "issn": [
+              "0961-9534",
+              "1873-2909"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-d",
+              "jufo-2",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Biomass and Bioenergy",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4397030306",
+      "doi": "https://doi.org/10.1016/j.est.2024.112092",
+      "title": "Nickel-molybdenum bimetallic sulfide decorated biomass derived carbon support for high performance asymmetric supercapacitor application",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.est.2024.112092",
+          "doi": "https://doi.org/10.1016/j.est.2024.112092",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.est.2024.112092",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764865925",
+            "display_name": "Journal of Energy Storage",
+            "issn_l": "2352-152X",
+            "issn": [
+              "2352-152X",
+              "2352-1538"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-c",
+              "jufo-2",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Energy Storage",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4408163684",
+      "doi": "https://doi.org/10.1016/j.electacta.2025.145880",
+      "title": "Fenton-like reaction enhanced activation of biomass-derived porous carbon for high-performance supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.electacta.2025.145880",
+          "doi": "https://doi.org/10.1016/j.electacta.2025.145880",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.electacta.2025.145880",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S198339081",
+            "display_name": "Electrochimica Acta",
+            "issn_l": "0013-4686",
+            "issn": [
+              "0013-4686",
+              "1873-3859"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-2",
+              "ki-jl-2",
+              "norway-2",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Electrochimica Acta",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4410643440",
+      "doi": "https://doi.org/10.1016/j.diamond.2025.112473",
+      "title": "Binder-free flexible supercapacitor utilizing Ni-doped biomass-derived activated carbon embraced with MWCNTs",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.diamond.2025.112473",
+          "doi": "https://doi.org/10.1016/j.diamond.2025.112473",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.diamond.2025.112473",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S124577123",
+            "display_name": "Diamond and Related Materials",
+            "issn_l": "0925-9635",
+            "issn": [
+              "0925-9635",
+              "1879-0062"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-d",
+              "jufo-1",
+              "ki-jl-1",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Diamond and Related Materials",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W7138952469",
+      "doi": "https://doi.org/10.1016/j.est.2026.121558",
+      "title": "From waste to power: Advances in biomass-derived carbon materials for sustainable supercapacitor electrodes",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.est.2026.121558",
+          "doi": "https://doi.org/10.1016/j.est.2026.121558",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.est.2026.121558",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764865925",
+            "display_name": "Journal of Energy Storage",
+            "issn_l": "2352-152X",
+            "issn": [
+              "2352-152X",
+              "2352-1538"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-c",
+              "jufo-2",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Energy Storage",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2954488872",
+      "doi": "https://doi.org/10.1002/slct.201901632",
+      "title": "Biomass‐Derived Porous Carbon Prepared from Egg White for High‐performance Supercapacitor Electrode Materials",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1002/slct.201901632",
+          "doi": "https://doi.org/10.1002/slct.201901632",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/slct.201901632",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210221416",
+            "display_name": "ChemistrySelect",
+            "issn_l": "2365-6549",
+            "issn": [
+              "2365-6549"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-1",
+              "ki-jl-1",
+              "norway-1",
+              "poland-40",
+              "russia-white-list-2",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "ChemistrySelect",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2894920047",
+      "doi": "https://doi.org/10.1002/chem.201803836",
+      "title": "Synthesis of Biomass‐Derived Carbon Induced by Cellular Respiration in Yeast for Supercapacitor Applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1002/chem.201803836",
+          "doi": "https://doi.org/10.1002/chem.201803836",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/chem.201803836",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S68911691",
+            "display_name": "Chemistry - A European Journal",
+            "issn_l": "0947-6539",
+            "issn": [
+              "0947-6539",
+              "1521-3765"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-c",
+              "jufo-2",
+              "ki-jl-2",
+              "medline",
+              "norway-2",
+              "poland-140",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chemistry – A European Journal",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmid:30280431",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/30280431",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306525036",
+            "display_name": "PubMed",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chemistry (Weinheim an der Bergstrasse, Germany)",
+          "raw_type": "Journal Article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2419326616",
+      "doi": "https://doi.org/10.1016/j.ijhydene.2016.05.090",
+      "title": "Pyrrole modified biomass derived hierarchical porous carbon as high performance symmetrical supercapacitor electrodes",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.1016/j.ijhydene.2016.05.090",
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": {
+        "id": "doi:10.1016/j.ijhydene.2016.05.090",
+        "doi": "https://doi.org/10.1016/j.ijhydene.2016.05.090",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.ijhydene.2016.05.090",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S48860480",
+          "display_name": "International Journal of Hydrogen Energy",
+          "issn_l": "0360-3199",
+          "issn": [
+            "0360-3199",
+            "1879-3487"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "dongbi-c",
+            "jufo-1",
+            "ki-jl-1",
+            "norway-1",
+            "poland-140",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": "International Journal of Hydrogen Energy",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.1016/j.ijhydene.2016.05.090",
+          "doi": "https://doi.org/10.1016/j.ijhydene.2016.05.090",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.ijhydene.2016.05.090",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S48860480",
+            "display_name": "International Journal of Hydrogen Energy",
+            "issn_l": "0360-3199",
+            "issn": [
+              "0360-3199",
+              "1879-3487"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-c",
+              "jufo-1",
+              "ki-jl-1",
+              "norway-1",
+              "poland-140",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": "International Journal of Hydrogen Energy",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:osti.gov:1359194",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://www.osti.gov/biblio/1359194",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306402487",
+            "display_name": "OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I139351228",
+            "host_organization_name": "Office of Scientific and Technical Information",
+            "host_organization_lineage": [
+              "https://openalex.org/I139351228"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": null
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2969693660",
+      "doi": "https://doi.org/10.1002/er.4834",
+      "title": "Enhanced hetero‐elements doping content in biomass waste‐derived carbon for high performance supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/er.4834",
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": {
+        "id": "doi:10.1002/er.4834",
+        "doi": "https://doi.org/10.1002/er.4834",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1002/er.4834",
+        "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/er.4834",
+        "source": {
+          "id": "https://openalex.org/S32776067",
+          "display_name": "International Journal of Energy Research",
+          "issn_l": "0363-907X",
+          "issn": [
+            "0363-907X",
+            "1099-114X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "anvur-scientific",
+            "cwts-core",
+            "doaj",
+            "dongbi-c",
+            "jufo-1",
+            "norway-1",
+            "poland-100",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Energy Research",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.1002/er.4834",
+          "doi": "https://doi.org/10.1002/er.4834",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1002/er.4834",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/er.4834",
+          "source": {
+            "id": "https://openalex.org/S32776067",
+            "display_name": "International Journal of Energy Research",
+            "issn_l": "0363-907X",
+            "issn": [
+              "0363-907X",
+              "1099-114X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "doaj",
+              "dongbi-c",
+              "jufo-1",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "International Journal of Energy Research",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2979525563",
+      "doi": "https://doi.org/10.1007/s10854-019-02303-y",
+      "title": "Biomass-derived 3D hierarchical porous carbon by two-step activation method for supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1007/s10854-019-02303-y",
+          "doi": "https://doi.org/10.1007/s10854-019-02303-y",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1007/s10854-019-02303-y",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S189509794",
+            "display_name": "Journal of Materials Science Materials in Electronics",
+            "issn_l": "0957-4522",
+            "issn": [
+              "0957-4522",
+              "1573-482X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-d",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Materials Science: Materials in Electronics",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4321374401",
+      "doi": "https://doi.org/10.3390/c9010024",
+      "title": "Biomass-Derived N-Doped Activated Carbon from Eucalyptus Leaves as an Efficient Supercapacitor Electrode Material",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2311-5629/9/1/24/pdf?version=1676643563",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "doi:10.3390/c9010024",
+        "doi": "https://doi.org/10.3390/c9010024",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/c9010024",
+        "pdf_url": "https://www.mdpi.com/2311-5629/9/1/24/pdf?version=1676643563",
+        "source": {
+          "id": "https://openalex.org/S4210233808",
+          "display_name": "C – Journal of Carbon Research",
+          "issn_l": "2311-5629",
+          "issn": [
+            "2311-5629"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "norway-1",
+            "poland-20",
+            "russia-white-list-1"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "C",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.3390/c9010024",
+          "doi": "https://doi.org/10.3390/c9010024",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3390/c9010024",
+          "pdf_url": "https://www.mdpi.com/2311-5629/9/1/24/pdf?version=1676643563",
+          "source": {
+            "id": "https://openalex.org/S4210233808",
+            "display_name": "C – Journal of Carbon Research",
+            "issn_l": "2311-5629",
+            "issn": [
+              "2311-5629"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "norway-1",
+              "poland-20",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310310987",
+            "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310310987"
+            ],
+            "host_organization_lineage_names": [
+              "Multidisciplinary Digital Publishing Institute"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "C",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:cecb86ef9c364967b7a779f1649534ff",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://doaj.org/article/cecb86ef9c364967b7a779f1649534ff",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "C, Vol 9, Iss 1, p 24 (2023)",
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4388714354",
+      "doi": "https://doi.org/10.1016/j.cclet.2023.109301",
+      "title": "Fe nanoclusters anchored in biomass waste-derived porous carbon nanosheets for high-performance supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://discovery.ucl.ac.uk/10192971/3/He_CCLET-D-23-02316%20Manuscript-CCL-Final.pdf",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "pmh:oai:eprints.ucl.ac.uk.OAI2:10192971",
+        "doi": null,
+        "is_oa": true,
+        "landing_page_url": "https://discovery.ucl.ac.uk/id/eprint/10192971/",
+        "pdf_url": "https://discovery.ucl.ac.uk/10192971/3/He_CCLET-D-23-02316%20Manuscript-CCL-Final.pdf",
+        "source": {
+          "id": "https://openalex.org/S4306400024",
+          "display_name": "UCL Discovery (University College London)",
+          "issn_l": null,
+          "issn": null,
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I45129253",
+          "host_organization_name": "University College London",
+          "host_organization_lineage": [
+            "https://openalex.org/I45129253"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "submittedVersion",
+        "is_accepted": false,
+        "is_published": false,
+        "raw_source_name": "Chinese Chemical Letters , 35 (8) , Article 109301. (2024)",
+        "raw_type": "Article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.1016/j.cclet.2023.109301",
+          "doi": "https://doi.org/10.1016/j.cclet.2023.109301",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.cclet.2023.109301",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S167919573",
+            "display_name": "Chinese Chemical Letters",
+            "issn_l": "1001-8417",
+            "issn": [
+              "1001-8417",
+              "1878-5964"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-b",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Chinese Chemical Letters",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:eprints.ucl.ac.uk.OAI2:10192971",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://discovery.ucl.ac.uk/id/eprint/10192971/",
+          "pdf_url": "https://discovery.ucl.ac.uk/10192971/3/He_CCLET-D-23-02316%20Manuscript-CCL-Final.pdf",
+          "source": {
+            "id": "https://openalex.org/S4306400024",
+            "display_name": "UCL Discovery (University College London)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I45129253",
+            "host_organization_name": "University College London",
+            "host_organization_lineage": [
+              "https://openalex.org/I45129253"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Chinese Chemical Letters , 35 (8) , Article 109301. (2024)",
+          "raw_type": "Article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4397033442",
+      "doi": "https://doi.org/10.1016/j.matlet.2024.136644",
+      "title": "Preparation of biomass-derived activated carbon from golden needle mushroom roots for supercapacitor electrodes",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.4726598",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "doi:10.2139/ssrn.4726598",
+        "doi": "https://doi.org/10.2139/ssrn.4726598",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.2139/ssrn.4726598",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4210172589",
+          "display_name": "SSRN Electronic Journal",
+          "issn_l": "1556-5068",
+          "issn": [
+            "1556-5068"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": false,
+          "listed_in": [],
+          "host_organization": "https://openalex.org/I1318003438",
+          "host_organization_name": "RELX Group (Netherlands)",
+          "host_organization_lineage": [
+            "https://openalex.org/I1318003438"
+          ],
+          "host_organization_lineage_names": [],
+          "type": "repository"
+        },
+        "license": null,
+        "license_id": null,
+        "version": "acceptedVersion",
+        "is_accepted": true,
+        "is_published": false,
+        "raw_source_name": null,
+        "raw_type": "posted-content"
+      },
+      "locations": [
+        {
+          "id": "doi:10.1016/j.matlet.2024.136644",
+          "doi": "https://doi.org/10.1016/j.matlet.2024.136644",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.matlet.2024.136644",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S55626769",
+            "display_name": "Materials Letters",
+            "issn_l": "0167-577X",
+            "issn": [
+              "0167-577X",
+              "1873-4979"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "ki-jl-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Materials Letters",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "doi:10.2139/ssrn.4726598",
+          "doi": "https://doi.org/10.2139/ssrn.4726598",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.2139/ssrn.4726598",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210172589",
+            "display_name": "SSRN Electronic Journal",
+            "issn_l": "1556-5068",
+            "issn": [
+              "1556-5068"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1318003438",
+            "host_organization_name": "RELX Group (Netherlands)",
+            "host_organization_lineage": [
+              "https://openalex.org/I1318003438"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "posted-content"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W7154213390",
+      "doi": "https://doi.org/10.1007/s10854-026-17094-2",
+      "title": "Elementally doped biomass-derived activated carbon (Sm-doped MS-AC) for enhanced supercapacitor performance",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1007/s10854-026-17094-2",
+          "doi": "https://doi.org/10.1007/s10854-026-17094-2",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1007/s10854-026-17094-2",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S189509794",
+            "display_name": "Journal of Materials Science Materials in Electronics",
+            "issn_l": "0957-4522",
+            "issn": [
+              "0957-4522",
+              "1573-482X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-d",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Materials Science: Materials in Electronics",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4413119405",
+      "doi": "https://doi.org/10.1016/j.solidstatesciences.2025.108046",
+      "title": "Ni(OH)2 composite coffee grounds-derived biomass carbon for supercapacitor electrode materials",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "doi": "https://doi.org/10.1016/j.solidstatesciences.2025.108046",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.solidstatesciences.2025.108046",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S40206742",
+            "display_name": "Solid State Sciences",
+            "issn_l": "1293-2558",
+            "issn": [
+              "1293-2558",
+              "1873-3085"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-c",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Solid State Sciences",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4414118432",
+      "doi": "https://doi.org/10.5796/electrochemistry.25-71119",
+      "title": "Preparation of Biomass-Derived Carbon Materials via Molten Salt Method and Their Supercapacitor Performance",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.jstage.jst.go.jp/article/electrochemistry/advpub/0/advpub_25-71119/_pdf",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "doi:10.5796/electrochemistry.25-71119",
+        "doi": "https://doi.org/10.5796/electrochemistry.25-71119",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.5796/electrochemistry.25-71119",
+        "pdf_url": "https://www.jstage.jst.go.jp/article/electrochemistry/advpub/0/advpub_25-71119/_pdf",
+        "source": {
+          "id": "https://openalex.org/S191655311",
+          "display_name": "Electrochemistry",
+          "issn_l": "1344-3542",
+          "issn": [
+            "1344-3542",
+            "2186-2451"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "norway-1",
+            "poland-40",
+            "russia-white-list-3"
+          ],
+          "host_organization": "https://openalex.org/P4323283665",
+          "host_organization_name": "The Electrochemical Society of Japan",
+          "host_organization_lineage": [
+            "https://openalex.org/P4323283665"
+          ],
+          "host_organization_lineage_names": [
+            "The Electrochemical Society of Japan"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Electrochemistry",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.5796/electrochemistry.25-71119",
+          "doi": "https://doi.org/10.5796/electrochemistry.25-71119",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.5796/electrochemistry.25-71119",
+          "pdf_url": "https://www.jstage.jst.go.jp/article/electrochemistry/advpub/0/advpub_25-71119/_pdf",
+          "source": {
+            "id": "https://openalex.org/S191655311",
+            "display_name": "Electrochemistry",
+            "issn_l": "1344-3542",
+            "issn": [
+              "1344-3542",
+              "2186-2451"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "dongbi-d",
+              "norway-1",
+              "poland-40",
+              "russia-white-list-3"
+            ],
+            "host_organization": "https://openalex.org/P4323283665",
+            "host_organization_name": "The Electrochemical Society of Japan",
+            "host_organization_lineage": [
+              "https://openalex.org/P4323283665"
+            ],
+            "host_organization_lineage_names": [
+              "The Electrochemical Society of Japan"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Electrochemistry",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:2d218d36e0ab414fbf40b01b4afc3295",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://doaj.org/article/2d218d36e0ab414fbf40b01b4afc3295",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Electrochemistry, Vol 93, Iss 10, Pp 103002-103002 (2025)",
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W3213917151",
+      "doi": "https://doi.org/10.1002/cnma.202100388",
+      "title": "Ultrahigh Capacitive Supercapacitor Derived from Self‐Oxygen Doped Biomass‐Based 3D Porous Carbon Sources",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1002/cnma.202100388",
+          "doi": "https://doi.org/10.1002/cnma.202100388",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/cnma.202100388",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210190284",
+            "display_name": "ChemNanoMat",
+            "issn_l": "2199-692X",
+            "issn": [
+              "2199-692X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-c",
+              "jufo-1",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "ChemNanoMat",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:repository.uin-suska.ac.id:71247",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "http://repository.uin-suska.ac.id/71247/1/18.%20Daun%20pisang%20chemnanomat22.pdf",
+          "pdf_url": "http://repository.uin-suska.ac.id/71247/1/18.%20Daun%20pisang%20chemnanomat22.pdf",
+          "source": {
+            "id": "https://openalex.org/S4306401398",
+            "display_name": "Analisis Harga Pokok Produksi Rumah Pada (UIN Syarif Hidayatullah Jakarta)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I3129486149",
+            "host_organization_name": "Universitas Jember",
+            "host_organization_lineage": [
+              "https://openalex.org/I3129486149"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "Article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4383873088",
+      "doi": "https://doi.org/10.1002/jsfa.12846",
+      "title": "Aromatic biomass (torch ginger) leaf‐derived three‐dimensional honeycomb‐like carbon to enhance gravimetric supercapacitor",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1002/jsfa.12846",
+          "doi": "https://doi.org/10.1002/jsfa.12846",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/jsfa.12846",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S206298197",
+            "display_name": "Journal of the Science of Food and Agriculture",
+            "issn_l": "0022-5142",
+            "issn": [
+              "0022-5142",
+              "1097-0010"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-c",
+              "jufo-1",
+              "ki-jl-1",
+              "medline",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of the Science of Food and Agriculture",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmid:37431642",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/37431642",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306525036",
+            "display_name": "PubMed",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of the science of food and agriculture",
+          "raw_type": "Journal Article"
+        },
+        {
+          "id": "pmh:oai:repository.uin-suska.ac.id:73102",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "http://repository.uin-suska.ac.id/73102/1/Aromatic%20Biomass%20%28Torch%20Ginger%29%20Leaves%E2%80%90derived%203D%20Honeycomb%E2%80%90Like%20Carbon%20to%20Enhance%20Gravimetric%20Supercapacitor%20-%20Kunci.pdf",
+          "pdf_url": "http://repository.uin-suska.ac.id/73102/1/Aromatic%20Biomass%20%28Torch%20Ginger%29%20Leaves%E2%80%90derived%203D%20Honeycomb%E2%80%90Like%20Carbon%20to%20Enhance%20Gravimetric%20Supercapacitor%20-%20Kunci.pdf",
+          "source": {
+            "id": "https://openalex.org/S4306401398",
+            "display_name": "Analisis Harga Pokok Produksi Rumah Pada (UIN Syarif Hidayatullah Jakarta)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I3129486149",
+            "host_organization_name": "Universitas Jember",
+            "host_organization_lineage": [
+              "https://openalex.org/I3129486149"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "Article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W7126033626",
+      "doi": "https://doi.org/10.1016/j.nxmate.2026.101640",
+      "title": "Biomass-derived activated carbon from empty fruit bunches for supercapacitor electrodes: Crystallinity and electrochemical analysis",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.nxmate.2026.101640",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "doi:10.1016/j.nxmate.2026.101640",
+        "doi": "https://doi.org/10.1016/j.nxmate.2026.101640",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1016/j.nxmate.2026.101640",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S4387287712",
+          "display_name": "Next Materials",
+          "issn_l": "2949-8228",
+          "issn": [
+            "2949-8228"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "jufo-1",
+            "norway-1"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Next Materials",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.1016/j.nxmate.2026.101640",
+          "doi": "https://doi.org/10.1016/j.nxmate.2026.101640",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.nxmate.2026.101640",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4387287712",
+            "display_name": "Next Materials",
+            "issn_l": "2949-8228",
+            "issn": [
+              "2949-8228"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Next Materials",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:00bfe76a81504a58bf7c0e5a8ef34ba5",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://doaj.org/article/00bfe76a81504a58bf7c0e5a8ef34ba5",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Next Materials, Vol 11, Iss , Pp 101640- (2026)",
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2619659332",
+      "doi": "https://doi.org/10.20964/2017.06.16",
+      "title": "Hierarchical Porous Carbon Microspheres Derived from Biomass-Corncob as Ultra-High Performance Supercapacitor Electrode",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.20964/2017.06.16",
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": {
+        "id": "doi:10.20964/2017.06.16",
+        "doi": "https://doi.org/10.20964/2017.06.16",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.20964/2017.06.16",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S48583931",
+          "display_name": "International Journal of Electrochemical Science",
+          "issn_l": "1452-3981",
+          "issn": [
+            "1452-3981"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "norway-1",
+            "poland-40",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310320990",
+          "host_organization_name": "Elsevier BV",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320990"
+          ],
+          "host_organization_lineage_names": [
+            "Elsevier BV"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by-nc-nd",
+        "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "International Journal of Electrochemical Science",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.20964/2017.06.16",
+          "doi": "https://doi.org/10.20964/2017.06.16",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.20964/2017.06.16",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S48583931",
+            "display_name": "International Journal of Electrochemical Science",
+            "issn_l": "1452-3981",
+            "issn": [
+              "1452-3981"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "dongbi-d",
+              "jufo-1",
+              "norway-1",
+              "poland-40",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "International Journal of Electrochemical Science",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:4b61fc8b58e147649956a0b93d965c2c",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://doaj.org/article/4b61fc8b58e147649956a0b93d965c2c",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "International Journal of Electrochemical Science, Vol 12, Iss 6, Pp 5604-5617 (2017)",
+          "raw_type": "article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4281565307",
+      "doi": "https://doi.org/10.5599/jese.1314",
+      "title": "Palmyra palm flower biomass-derived activated porous carbon and its application as a supercapacitor electrode",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://pub.iapchem.org/ojs/index.php/JESE/article/download/1314/1476",
+        "any_repository_has_fulltext": true
+      },
+      "best_oa_location": {
+        "id": "doi:10.5599/jese.1314",
+        "doi": "https://doi.org/10.5599/jese.1314",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.5599/jese.1314",
+        "pdf_url": "https://pub.iapchem.org/ojs/index.php/JESE/article/download/1314/1476",
+        "source": {
+          "id": "https://openalex.org/S2764557848",
+          "display_name": "Journal of Electrochemical Science and Engineering",
+          "issn_l": "1847-9286",
+          "issn": [
+            "1847-9286"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-d",
+            "jufo-1",
+            "poland-20",
+            "russia-white-list-3"
+          ],
+          "host_organization": "https://openalex.org/P4310314836",
+          "host_organization_name": "International Association of Physical Chemists (IAPC)",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310314836"
+          ],
+          "host_organization_lineage_names": [
+            "International Association of Physical Chemists (IAPC)"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Journal of Electrochemical Science and Engineering",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.5599/jese.1314",
+          "doi": "https://doi.org/10.5599/jese.1314",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.5599/jese.1314",
+          "pdf_url": "https://pub.iapchem.org/ojs/index.php/JESE/article/download/1314/1476",
+          "source": {
+            "id": "https://openalex.org/S2764557848",
+            "display_name": "Journal of Electrochemical Science and Engineering",
+            "issn_l": "1847-9286",
+            "issn": [
+              "1847-9286"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "dongbi-d",
+              "jufo-1",
+              "poland-20",
+              "russia-white-list-3"
+            ],
+            "host_organization": "https://openalex.org/P4310314836",
+            "host_organization_name": "International Association of Physical Chemists (IAPC)",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310314836"
+            ],
+            "host_organization_lineage_names": [
+              "International Association of Physical Chemists (IAPC)"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Electrochemical Science and Engineering",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:doaj.org/article:da91b5f5195148b1b62b24bf0f0fc5d1",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://doaj.org/article/da91b5f5195148b1b62b24bf0f0fc5d1",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401280",
+            "display_name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Journal of Electrochemical Science and Engineering (2022)",
+          "raw_type": "article"
+        },
+        {
+          "id": "pmh:oai:hrcak.srce.hr:279232",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://hrcak.srce.hr/279232",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400071",
+            "display_name": "University of Zagreb University Computing Centre (SRCE)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I181343428",
+            "host_organization_name": "University of Zagreb",
+            "host_organization_lineage": [
+              "https://openalex.org/I181343428"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "other-oa",
+          "license_id": "https://openalex.org/licenses/other-oa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Journal of Electrochemical Science and Engineering",
+          "raw_type": "info:eu-repo/semantics/article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W4410398179",
+      "doi": "https://doi.org/10.3390/su17104530",
+      "title": "Principal Component Analysis of Biomass-Derived Carbon Aerogels: Unveiling Key Performance Factors for Supercapacitor Applications",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/17/10/4530/pdf?version=1747378616",
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": {
+        "id": "doi:10.3390/su17104530",
+        "doi": "https://doi.org/10.3390/su17104530",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.3390/su17104530",
+        "pdf_url": "https://www.mdpi.com/2071-1050/17/10/4530/pdf?version=1747378616",
+        "source": {
+          "id": "https://openalex.org/S10134376",
+          "display_name": "Sustainability",
+          "issn_l": "2071-1050",
+          "issn": [
+            "2071-1050"
+          ],
+          "is_oa": true,
+          "is_in_doaj": false,
+          "is_core": true,
+          "listed_in": [
+            "anvur-class-a",
+            "anvur-scientific",
+            "cwts-core",
+            "poland-100",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310310987",
+          "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310310987"
+          ],
+          "host_organization_lineage_names": [
+            "Multidisciplinary Digital Publishing Institute"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Sustainability",
+        "raw_type": "journal-article"
+      },
+      "locations": [
+        {
+          "id": "doi:10.3390/su17104530",
+          "doi": "https://doi.org/10.3390/su17104530",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3390/su17104530",
+          "pdf_url": "https://www.mdpi.com/2071-1050/17/10/4530/pdf?version=1747378616",
+          "source": {
+            "id": "https://openalex.org/S10134376",
+            "display_name": "Sustainability",
+            "issn_l": "2071-1050",
+            "issn": [
+              "2071-1050"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-class-a",
+              "anvur-scientific",
+              "cwts-core",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310310987",
+            "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310310987"
+            ],
+            "host_organization_lineage_names": [
+              "Multidisciplinary Digital Publishing Institute"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Sustainability",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "pmh:oai:HAL:hal-05197497v1",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://hal.science/hal-05197497",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306402512",
+            "display_name": "HAL (Le Centre pour la Communication Scientifique Directe)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1294671590",
+            "host_organization_name": "Centre National de la Recherche Scientifique",
+            "host_organization_lineage": [
+              "https://openalex.org/I1294671590"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Sustainability, 2025, 17 (10), pp.4530. &#x27E8;10.3390/su17104530&#x27E9;",
+          "raw_type": "info:eu-repo/semantics/article"
+        },
+        {
+          "id": "pmh:oai:RePEc:gam:jsusta:v:17:y:2025:i:10:p:4530-:d:1656859",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://www.mdpi.com/2071-1050/17/10/4530/",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401271",
+            "display_name": "RePEc: Research Papers in Economics",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I77793887",
+            "host_organization_name": "Federal Reserve Bank of St. Louis",
+            "host_organization_lineage": [
+              "https://openalex.org/I77793887"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "article"
+        },
+        {
+          "id": "pmh:oai:lilloa.univ-lille.fr:20.500.12210/130325",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://lilloa.univ-lille.fr/handle/20.500.12210/130325",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306402203",
+            "display_name": "LillOA (Université de Lille (University Of Lille))",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I4210123514",
+            "host_organization_name": "Centre d'Études en Civilisations, Langues et Lettres Étrangères",
+            "host_organization_lineage": [
+              "https://openalex.org/I4210123514"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "info:eu-repo/semantics/article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2516533848",
+      "doi": "https://doi.org/10.1149/ma2016-02/7/1002",
+      "title": "Polyoxometalate Modified Biomass Carbon Composites for Supercapacitor Electrodes",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1149/ma2016-02/7/1002",
+          "doi": "https://doi.org/10.1149/ma2016-02/7/1002",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1149/ma2016-02/7/1002",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210168594",
+            "display_name": "ECS Meeting Abstracts",
+            "issn_l": "1091-8213",
+            "issn": [
+              "1091-8213",
+              "2151-2035",
+              "2151-2043",
+              "2152-8365"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/P4310311669",
+            "host_organization_name": "Institute of Physics",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311669"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "ECS Meeting Abstracts",
+          "raw_type": "journal-article"
+        }
+      ]
+    },
+    {
+      "id": "https://openalex.org/W2666029697",
+      "doi": "https://doi.org/10.1149/ma2017-01/38/1782",
+      "title": "(Invited) Polyoxometalate Modified Biomass Carbon for Supercapacitor Electrodes",
+      "is_retracted": false,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "best_oa_location": null,
+      "locations": [
+        {
+          "id": "doi:10.1149/ma2017-01/38/1782",
+          "doi": "https://doi.org/10.1149/ma2017-01/38/1782",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1149/ma2017-01/38/1782",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210168594",
+            "display_name": "ECS Meeting Abstracts",
+            "issn_l": "1091-8213",
+            "issn": [
+              "1091-8213",
+              "2151-2035",
+              "2151-2043",
+              "2152-8365"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/P4310311669",
+            "host_organization_name": "Institute of Physics",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311669"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "ECS Meeting Abstracts",
+          "raw_type": "journal-article"
+        }
+      ]
+    }
+  ],
+  "group_by": []
+}

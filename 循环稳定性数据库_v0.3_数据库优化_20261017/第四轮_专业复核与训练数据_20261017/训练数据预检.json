@@ -1,0 +1,45 @@
+{
+  "status": "data_ready_for_exploratory_reported_protocol_regression",
+  "default_profile": "literature_core7_exact",
+  "profiles_nested_not_additive": {
+    "literature_core7_exact": {
+      "endpoints": 8,
+      "papers": 8,
+      "materials": 8,
+      "tests": 8,
+      "source_groups": 8,
+      "unknown_current_denominator": 8,
+      "approximate_labels": 0,
+      "missing_optional_pore": 2
+    },
+    "literature_residue_sensitivity": {
+      "endpoints": 10,
+      "papers": 9,
+      "materials": 9,
+      "tests": 9,
+      "source_groups": 9,
+      "unknown_current_denominator": 10,
+      "approximate_labels": 0,
+      "missing_optional_pore": 2
+    },
+    "literature_approx_sensitivity": {
+      "endpoints": 11,
+      "papers": 10,
+      "materials": 10,
+      "tests": 10,
+      "source_groups": 10,
+      "unknown_current_denominator": 11,
+      "approximate_labels": 1,
+      "missing_optional_pore": 3
+    }
+  },
+  "canonical_current_ready": 0,
+  "dependencies": {
+    "numpy": true,
+    "sklearn": true,
+    "xgboost": true
+  },
+  "research_training_performed": false,
+  "small_sample_accuracy_claim_supported": false,
+  "limitation": "Current is an uncalibrated literature descriptor; source grouping cannot remove physical denominator uncertainty."
+}

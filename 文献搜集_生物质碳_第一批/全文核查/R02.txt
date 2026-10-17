@@ -1,0 +1,2198 @@
+
+--- PDF页 1 ---
+Journal of Power Sources 451 (2020) 227794
+Available online 12 February 2020
+0378-7753/© 2020 Elsevier B.V. All rights reserved.
+Review article 
+Recent progress of biomass-derived carbon materials for supercapacitors 
+Jiashuai Wang
+a
+, Xiao Zhang
+a
+, Zhe Li
+a
+, Yanqing Ma
+a , b , *
+, Lei Ma
+a , ** 
+a
+Tianjin International Center for Nanoparticles and Nanosystems, Tianjin University, 300072, PR China 
+b
+State Laboratory of Precision Measuring Technology and Instruments, Tianjin University, 300072, PR China   
+HIGHLIGHTS GRAPHICAL ABSTRACT 
+� Synthesis of carbon materials from 
+different biomass precursors. 
+� Relationship between biochar structure 
+and capacitive performance. 
+� Prediction the electrochemical proper -
+ties by machine learning method. 
+� Current challenges and new trends on 
+the biomass-based materials in 
+supercapacitors.  
+ARTICLE INFO  
+Keywords: 
+Biomass 
+Supercapacitors 
+Structure-performance relationship 
+Theoretical prediction 
+ABSTRACT  
+The carbon material based biomass in energy storage has attracted much interest due to their environmental 
+friendly, natural abundance and special porous structures. In this paper, the relationship between the species of 
+biomass-based electrode and properties of supercapacitors are systematically discussed. On the one hand, the 
+influence of the specific morphologies, heteroatom-introducing and graphitization degree of active carbon on the 
+electrochemical properties are analyzed in detail, which give a promising direction for biomass-based carbon in 
+clean energy field. On the other hand, machine learning, especially artificial neural network model, has been 
+widely used as data mining technology to predict the electrochemical properties of electrode materials. It makes 
+the structure-performance relationship for biomass-based supercapacitors more specifically. Current develop -
+ment in synthesis of active carbon from biomass combined with theoretical prediction is summarized, which 
+provides a meaningful guidance into the application of energy storage supercapacitors. Current challenges and 
+new trends on the biomass-based carbon materials in supercapacitors have also been proposed.   
+1. Introduction 
+With the exhausting energy and polluting environment, energy is 
+becoming an important factor to restrict development of economy [ 1 ]. 
+However, recent energy consumption is mostly dependent on irre -
+placeable fossil fuels [ 2 ]. In order to provide a green energy source, 
+some researchers are devoted to develop clean and renewable energy 
+like wind, solar, and tide [ 3 ]. The problem that power acquisition is 
+mainly intermittent need to be settled [ 4 ]. In addition to the increasing 
+of portable and miniaturized electronic equipment, means efficient 
+electrical energy storage materials and technology should be come out 
+[ 5 ]. To date, among various devices for energy storage, lithium-ion 
+* Corresponding author. Tianjin International Center for Nanoparticles and Nanosystems, Tianjin University, 300072, PR China. 
+** Corresponding author. 
+E-mail addresses: mayanqing@tju.edu.cn (Y. Ma), lei.ma@tju.edu.cn (L. Ma).  
+Contents lists available at ScienceDirect 
+Journal of Power Sources 
+journal homep age: www.elsevi er.com/locate /jpowsou r 
+https://doi.org/10.1016/j.jpowsour.2020.227794 
+Received 15 October 2019; Received in revised form 21 January 2020; Accepted 22 January 2020   
+
+--- PDF页 2 ---
+Journal of Power Sources 451 (2020) 227794
+2
+batteries (LIBs) are aroused attention on account of their high gravi -
+metric energy density. Yet, LIBs still suffer from low power density and 
+slow energy delivery [ 6 ]. Consequently, other applicable devices in 
+energy storage market should be evolved. For this matter, super -
+capacitors (SCs) have attained much interest on account of their quick 
+charge/discharge rate, long cycle life, and more adaptable to severe 
+condition than that of LIBs [ 7 ]. Importantly, with the growing devel -
+opment of the electric vehicles, endowed supercapcitors become to be 
+the potential electrochemical capacitors. In principle, SCs can provide 
+high power density and rate response in need [ 8 ]. However, the low 
+energy density is one weakness limits widespread in SCs [ 9 , 10 ]. Hence, 
+scientific researchers make efforts to improve the energy density ability 
+through developing new energy storage materials, optimizing electro -
+lytes with a high operation potential [ 11 ]. 
+Brie fl y, supercapacitors are generally classified into two types based 
+on their storage mechanism: the electrochemical double layer capacitors 
+(EDLCs) and pseudocapacitors. EDLCs store charges via reversible ion 
+adsorption at the electrode – electrolyte interface, while pseudocapaci -
+tors store charges via redox reaction [ 6 ]. The electrode materials for the 
+former are mainly carbon-based materials including activated carbon, 
+carbon nanotubes, and graphene. While for the latter they can be metal 
+oxides and conducting polymers. Generally, pseudocapacitive materials 
+exhibit a higher specific capacitance than EDLCs electrodes. However, 
+carbon-based materials tend to have a better cycle stability and rate 
+capability. Therefore, porous materials have been the focus on searching 
+for advanced electrode materials for SCs [ 13 , 14 ]. Reasonable designs of 
+electrode materials, including the specific surface area, surface 
+morphology and graphitization degree, are significant factors to achieve 
+excellent performance [ 6 ]. In the range of the employed energy storage 
+materials, carbon-based materials have aroused much attention on ac -
+count of their high specific surface area, hierarchical porous frameworks 
+and good structural stability [ 7 ]. So SCs can achieve high specific 
+capacitance, high charge/discharge rates and a long lifetime. Re -
+searchers have successfully synthesized nanostructured carbon mate -
+rials from 0D to 3D for electrodes of SCs [ 8,9 ]. Graphene or carbon 
+nanotube, being popular carbon materials, shows superior framework as 
+well as competitive chemical performance [ 10,11 ]. Although such suc -
+cessful application, there are still a lot of problems related to energy 
+storage materials. For instance, graphene is usually synthesized from 
+fossil fuel by chemical vapor deposition method, which is faced chal -
+lenge of environmental degradation and unsustainability [ 20 ]. Graphite 
+and petroleum coke-derived active carbon are nonrenewable and 
+contaminative. Moreover, nanostructured carbons from them are often 
+obtained under very harsh conditions [ 12 ]. Biomass including renew -
+able crops or animals can be regarded as an environment-friendly pre -
+cursor which brings less pollution to the atmosphere. Biomass with 
+naturally hierarchical structures as precursor could be a realistic alter -
+native among energy storage materials. Giving biomass is derived from 
+renewable crops or animal, so that show cheaper than other kinds of 
+nanostructure materials. There has also been a lot of research currently 
+regarding with preparation of electrode from extensively renewable 
+biomass. On the one hand, biomass is the most available carbon pre -
+cursor from plant, animal or marine organism. These resources on earth 
+are abundant and cheap. On the basis of a survey, the yield of crops 
+reaches around 146 billion tons every year [ 13 ]. On the other hand, the 
+living waste or animal husbandry is produced about 100 billion tons 
+according to statistics [ 14 ]. This can result in a waste and an urgent 
+environmental issue. So the usage of biomass in the production of acti -
+vated carbon for supercapacitors electrodes is considered as an effective 
+way of settling disposal problem from the agricultural or living wastes 
+[ 15 ]. Biomass-based active electrode materials can inherit or form 
+particular porous and layered structures by simple method [ 25 ]. These 
+days, the use of biomass to formation activated electrode materials for 
+electrochemical energy storage field has attract much interest [ 16,17 ]. 
+Lots of biomass-based active electrode materials have been prepared 
+through hydrothermal carbonization, chemical or physical activation. 
+For example, Jiang et al. provided a summary of recent progress on the 
+well-design of biomass-derived carbon materials, focusing on morphol -
+ogies, surface chemistry and synthesis method for their applications in 
+supercapacitors, lithium- and sodium-ion batteries [ 18 ]. Bi et al. 
+reviewed recent developments of biomass-derived porous carbon ma -
+terials with different dimensions and their applications as carbon-based 
+electrode materials for supercapacitors [ 19 ]. Yang et al. summarized the 
+application of hierarchical porous carbons derived from biomass 
+including lignin, alginate, starch, chitin, gelatin, emphasizing on the 
+relationship between the pore structure and electrochemical efficiency 
+[ 20 ]. Lu et al. mainly discussed cellulose-, lignin- and 
+hemicellulose-derived carbon electrode materials for supercapacitor 
+applications [ 21 ]. However, there is no review on the structure and 
+composition of biomass from precursor perspective. Natural biomass 
+with an interconnected channels and a diverse of microstructures are 
+necessary to product porous materials, so affect the specific surface area 
+of carbonized materials. Thus, it was thought useful to critically discuss 
+the potential precursor selection from diverse biomass. This review is to 
+highlight the recent advances in the synthesis of carbon materials from 
+different biomass precursors. The effects of the pore structure, surface 
+properties, and graphitic degree on the electrochemical performance are 
+discussed in detail, which will guide further rational design of the 
+biomass-derived carbon materials for supercapacitors. In addition, we 
+provide a summary about combination of data science and experiments 
+to establish high-level connections between structure features and the 
+electrochemical properties, which unravel the most significant factors 
+on the capacitance and power density of supercapacitors. Finally, the 
+current challenge and new outlook in biomass-based active electrode 
+materials development have also been discussed. 
+2. Precursors in biomass-derived materials 
+Biomass obtained from terrestrial plant, marine organism, and daily 
+waste may be applied to prepare active carbon in electrode materials. In 
+recent years, biomass-based materials or byproducts have been utilized 
+as a sustainable precursors to prepare carbon nanomaterials for energy 
+storage, including algae, [ 22 ], catkins [ 23 ], rice [ 24 ], orange peel [ 25 ], 
+sugar cane bagasse [ 26 ], camellia pollen [ 27 ], rice stem [ 28 ], coconut 
+shell [ 29 ], sunflower stalk [ 30 ], tamarind seed coat [ 31 ], almonds [ 32 ], 
+Jujun grass [ 33 ], etc. Their intrinsic microstructural characteristic and 
+chemical composition vary from one species to another. Biomass can be 
+used as a precursor of functional carbon attributing to two main aspects. 
+From element perspective, the synthesized functional materials mainly 
+composed of carbon element, and biomass is a carbon-rich material. 
+Besides, other element such as H, O, N and S can be removal by thermal 
+conversion to some extent [ 34 ]. Apart from C, O, H, S and N, biomass is 
+also traceable some mineral substance such as, Ca, K, Mg, Na and Si 
+[ 35 ]. For example, biomass which lives in saline-alkali land is rich in 
+mineral element. What ’ s more, the ratio of mineral elements in biomass 
+is different depended on the biomass species or organs. These trace 
+minerals can also play an irreplaceable role in the energy storage of 
+biomass [ 35 ]. From another structure perspective, biomass possesses a 
+comparatively stable three-dimensional framework, thus, its structure 
+inherits original one after thermal pyrolysis for the removal of degrad -
+able composition [ 36 ]. The synthesis of activated electrode materials 
+usually composes of carbonization and activation which can be 
+completed in either two-phase or a single phase. The carbonization of a 
+kind of biomass usually happens at temperature between 400 
+�
+C and 
+900 
+�
+C using nitrogen as protective gas. Activation is a process of 
+transforming biochar into functional materials by pyrolysis at relative 
+high temperature in a tube furnace or a microwave. Physical and 
+chemical activation are the most common used to adjust pore structure 
+and graphitization degree. Physical activation is consisted of two stages 
+which carbonization at low temperature in a protective gas and acti -
+vation at high temperature with using CO
+2 
+or steam as activating agents. 
+During a special activation phase, the biomass reacts with gas at high 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 3 ---
+Journal of Power Sources 451 (2020) 227794
+3
+temperature to form porous texture. Porous texture with hierarchical 
+micro/meso/macro-pores can reduce the diffusion distance for electro -
+lyte ions and decrease the electrical resistance of active biochar mate -
+rials. Yoshizawa et al. prepared porous active carbon by physical 
+activation means using coconut-shell [ 37 ]. In a conventional process, 
+the coconut-shell was firstly carbonized under a nitrogen atmosphere 
+and then the biochar was immersed in hydrofluoric acid and hydro -
+chloric acid solution before being washed by deionized water. Subse -
+quently, physical activation was taken place in carbon dioxide 
+atmosphere at 900 
+�
+C. In spite of the physical activation method being 
+fast, the pore formation by this means is not appropriate exactly and the 
+specific surface area of active electrode material is not high enough. 
+Furthermore, the physical activation consumed energy is quite more 
+than that of the chemical activation. For chemical activation, it usually 
+includes three stages: Firstly, the natural precursor is pyrolyzed at low 
+temperature, then immersed in a chemical activating agents solution 
+such as NaOH, KOH, ZnCl
+2
+, H
+3
+PO
+4
+, heated in a protective atmosphere 
+(e.g. N
+2
+) at temperature that commonly ranging from 500 to 800 
+�
+C 
+[ 38 ]. As a result, lots of channels and pores are formed in the carbon 
+skeleton, which enable electrolyte ions transfer quickly and store effi -
+ciently [ 39 ]. Among chemical activating agents, KOH is the most 
+generally applied in chemical activation. Wang et al. prepared celtuce 
+leaves-based active carbon by KOH activated method [ 40 ]. The celtuce 
+leaves were pyrolyzed at 600 
+�
+C for 1 h and mixed with KOH solution 
+with optimized mass ratio. Then the product was activated in a furnace 
+at high temperature and followed by washing with diluted HCl and 
+deionized water. The activated carbon demonstrated a large specific 
+surface area (3000 m
+2 
+g
+  1
+) than original celtuce leaves. When used 
+celtuce leaves-based active carbon as electrode active material, it 
+exhibited quite good electrochemical capacitance (421 F g
+  1 
+at 0.50 A 
+g
+  1
+). It is important that some species such as bagasse or corn stalk, can 
+be directly pyrolysis into hierarchical porous materials without further 
+activation, because the Ca, K, Na, and Mg salts naturally exist in these 
+feedstock and can be used as activating agents. Generally, biomass can 
+be classified into three main categories, the plant, microorganism, and 
+animal remains. In below sections, we discuss biochar with excellent 
+performance based on these three biomass species in detail. 
+2.1. Plant-based biomass 
+In general, plant or plant-based biomass is usually involved ligno -
+cellulose. It is mainly consisted of carbohydrate polymers such as cel -
+lulose, hemicellulose, and lignin [ 41 ]. However, the chemical 
+compositions content is different from various plants organs. For 
+example, seed teguments of arecaceae (coconut, areca-nut, etc.) contain 
+percent of carbohydrate polymers as high as 65% [ 42 ], the bast plant 
+(jute, hemp) normally have more proportion of cellulose ( > 50%) [ 43 ], 
+wheat straw contains relative low cellulose ratio (31 – 44%) [ 44 ]. 
+Cellulose, either direct utilization of commercial cellulose or 
+extraction from biomass, can be employed to synthesize cellulose-based 
+carbons for SCs electrodes [ 45 , 46 ]. Gleb et al. choose cellulose as carbon 
+source to fabricate functional electrode materials, the as-prepared 
+electrode demonstrated a specific capacitance of 236 F g
+  1 
+under 
+sweep speed of 1 mV s
+  1 
+as well as high rate property [ 47 ]. A novel 
+method recently has been widely applied that dissolving cellulose in 
+alkaline solutions. Ma ’ s group dispersed cellulose in the solution of 
+NaOH/urea/H
+2
+O with a certain proportion under stirring for 4 h at   8 
+�
+C. Micro/mesoporous carbon was successfully obtained by carboniza -
+tion method without any activation for supercapacitors. During this 
+process, the structure transformation from hard carbon to open inter -
+connected pores is due to the pyrolysis of cellulose. The obtained elec -
+trode exhibited specific capacitances of 160 F g
+  1 
+at 0.2 A g
+  1 
+in 1 M 
+H
+2
+SO
+4 
+solution. Symmetry supercapacitor has the very excellent cycle 
+stability [ 48 ]. 
+Lignin is also an alternative precursor for the electrode material in 
+SCs [ 49 ]. In a typical biomass, lignin links between cellulose and 
+hemicellulose. It mainly consists of 3 essential alcohol types: p-cou -
+maryl, coniferyl, and sinapyl [ 50 ]. Part of heteroatom doping in the 
+electrode material can enhance its wettability and pseudocapacitance. 
+Lin et al. prepared lignin-based hierarchical porous carbon (LHPC) by a 
+simple chemical activation method [ 51 ]. First, lignin was mixed with 
+KOH solution and solidified. Then the mixture composites were 
+calcined. The obtained LHPC consisted of a 3D network decorating with 
+the hierarchical mesopores and micropores on carbon walls. Further -
+more, LHPC had a good capacitance performance (165 F g
+  1 
+at 0.05 A 
+g
+  1
+) and outstanding cycling stability (97% over 5000s) when investi -
+gated as supercapacitor electrode. Hemicellulose is a major constituent 
+in the cell wall of plant-based biomass. It is polysaccharide and mainly 
+composed of glucose, arabinose, galactose and relative lower degree of 
+polymerization compared with that of cellulose [ 52 ]. Wang et al. 
+extracted hemicellulose from hemp stem by soaking in NaOH solution 
+and filtrating with ethanol [ 53 ]. The extracted hemicellulose was 
+treated hydrothermal reaction following chemical activation. The 
+finally obtained hemicellulose-derived carbon samples exhibited excel -
+lent electrochemical performance, which is attributed to abundant mi -
+cropores and oxygen functionalities. 
+2.1.1. Straw/stem of plant 
+Straw or stem of plant with long bundles shape conveys photosyn -
+thesis organics from leaves to all organs and assimilates water/salts from 
+root. So the ion content is higher in straw or stem. To make straw or stem 
+active carbon, carbonizing at high temperature is commonly employed 
+[ 54 – 58 ]. Salt as additive agents can also play a crucial role in functional 
+carbon forming. Jiang et al. prepared from low-cost, renewable biomass 
+cornstalk under an air atmosphere ( Fig. 1 a). During the activation pro -
+cess, neutral salts (NaCl, KCl) were reacted as activate reagents [ 59 ]. 
+Molten salt not only could prevent the cornstalk from burning, but also 
+provide high concentration of Cl
+ 
+ions to etch the tissue and form micro- 
+and meso-porous structures. The as-prepared materials exhibited 
+ultra-thin sheets (thickness ~4.6 mm), large specific surface area (1588 
+m
+2 
+g
+  1
+), three dimensional layered framework. The electrochemical 
+performance showed that cornstalk-based active carbon had excellent 
+specific capacitance with 407 F g
+  1 
+and superior cycling life with 92.6% 
+capacitance retention over 20000 cycles. Another alternative one is 
+wheat straw [ 60 ]. This long fiber plant can be turned into 
+nitrogen-doped three-dimensional network porous carbon by high 
+temperature heating using melamine as nitrogen precursor. Nitrogen 
+can modify the electron/donor property and decrease electrical resis -
+tance. The synthesized doped carbon material demonstrated compara -
+tively superior specific capacitance of 275 F g
+  1
+. Such outstanding 
+electrochemical properties mainly are contributed to its three dimen -
+sional porous structure. 
+2.1.2. Leaf of plant 
+A leaf is mainly consisted of mesophyll tissues which provide 
+nutrient substance for other organs through photosynthesis, so the 
+percent of saccharides and protein in leaf are higher than that in other 
+organs. The leaf includes a great deal of intrinsically oxide or nitrogen in 
+a form of surface functional groups, which can embed of the leaves 
+during pyrolysis and form porous structure in the active electrode ma -
+terial [ 61 – 65 ]. S/N-codoped hierarchically porous carbons was syn -
+thesized through ammonium nitrate (AN) activation of ginkgo leaf 
+( Fig. 1 b) [ 66 ], The relatively higher content of N and S compared to that 
+in other biomass ensures that the ginkgo-derived porous carbons can be 
+self-doped with N and S heteroatoms. It is believed that the use of AN 
+generated large amounts of mesopores and micropores through chemi -
+cal etching of the carbon skeletons, which promoted the formation of 
+hierarchical pores. Consequently, assembled symmetric supercapacitor 
+shows a high specific capacitance of 330.5 F g
+  1 
+at a current density of 
+0.5 A g
+  1 
+and an excellent capacitance retention of 85.8% after 10 000. 
+Other leaf-based carbon can also be interconnected to fabricate a three 
+dimensional structure. As an example, Liu et al. prepared microporous 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 4 ---
+Journal of Power Sources 451 (2020) 227794
+4
+Fig. 1. (a) Schematic illustration of the 
+macro/mesopores structure from corn -
+stalk under an air atmosphere. Repro -
+duced with permission from Ref. [59] 
+copyright 2018, Royal Society of 
+Chemistry. (b) Scheme illustrating the 
+synthesis of ginkgo leaf-derived hierar -
+chically porous carbon. Reprinted with 
+permission from Ref. [66], Copyright 
+2019, American Chemical Society. (c) 
+Schematic illustration of the synthesis 
+porous carbon from pine needles. (d) 
+Photo of raw pine needles. SEM images 
+of activation at (e) 600 
+�
+C. (f) 900 
+�
+C. 
+Reprinted with permission from 
+Ref. [67], Copyright 2017, Royal Soci -
+ety of Chemistry.   
+Fig. 2. (a) Schematic illustration of the perforated graphene from bougainvillea flowers. Reprinted with permission from Ref. [74], Copyright 2018, Royal society of 
+chemistry. (b) Schematic illustration of the synthesis and supercapacitor applications derived from calyces of ground cherry (GCC). (c) SEM images of the GCC by 
+direct carbonization process. (d) (e) SEM and TEM image of GCC after activation process. Reprinted with permission from Ref. [75], Copyright 2018, Wiley. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 5 ---
+Journal of Power Sources 451 (2020) 227794
+5
+functional material through carbonization and KOH activation using 
+pine needles as precursor ( Fig. 1 c) [ 67 ]. The resulted carbon has 
+considerably interconnected pores with the size between 0.5 nm and 2 
+nm, high specific surface area of about 2433 m
+2 
+g
+  1 
+( Fig. 1 d, e, f). 
+What ’ s more, the leaf-based active electrode materials by KOH 
+activation can also be synthesized based on lotus leaves [ 68 ], celtuce 
+leaves [ 40 ], indicalamus leaves [ 69 ], mulberry leaves [ 70 ], corn leaves 
+[ 71 ] and so on. 
+2.1.3. Flower of plant 
+The dry flowers mainly possess saccharides, protein, glucosides, 
+vitamin in petal [ 72 , 73 ]. In addition to organic components, calcium 
+and magnesium are existed in some flowers. These metal salts can be 
+used as template to produce pores of activated electrode material. An 
+example for bougainvillea flowers, Kale et al. prepared perforated gra -
+phene through carbonization without additional activating reagents 
+( Fig. 2 a) [ 74 ]. The fabricated active carbon demonstrates specific sur -
+face area of 850 m
+2 
+g
+  1
+. The assembled supercapacitor displays a high 
+electrochemical capability of 458 F g
+  1
+, long cycle life over 10 thousand 
+cycles, and high energy density of 64 Wh kg
+  1 
+at power density of about 
+273 Wh kg
+  1 
+in alkaline aqueous electrolyte. The part of covering 
+flowers are lantern-like calyces which major ingredients of cellulose and 
+proteins. Interestingly, there are distinctive microtubes of thin sheets. As 
+reported by Yu, a three dimensional structure with carbon nanosheets 
+has been fabricated from ground cherry calyces successfully, which 
+consisting transparent sheet with a number of hollow vascular structures 
+( Fig. 2 b, c, d, e) [ 75 ]. 
+2.1.4. Seed of plant 
+There is a kind of plant in the natural world whose seeds are floc -
+culent and can be spread to distant places with assistance of wind, such 
+as catkins, poplars and dandelions. The morphology of these seeds is 
+hollow and thin-walled tubes, which can be used as an ideal precursor of 
+active porous materials [ 76 – 81 ]. Carbon tube covered with hierarchical 
+pores is successfully prepared using dandelion fl uff as precursor [ 82 ]. 
+The porous framework lead to quick charge convey aside the tube wall 
+or electrolyte ion transmit inside tubes ( Fig. 3 a and b). Benefiting from 
+hollow bundles, the electrode shows quite superior energy density of 12 
+Wh L
+  1 
+at power density of 700 W L
+  1
+. Adding heteroatoms with active 
+carbon is important to optimize its electron-donor properties and 
+improve wettability consequently improve performance of their surface. 
+Yan et al. used Thiourea (CN
+2
+H
+4
+S) as both the N and S source to prepare 
+willow catkin-derived hierarchical porous nanosheets ( Fig. 3 c and d) 
+[ 79 ]. The EIS measurement showed relaxation time of dual-doped 
+sample decreased 2.13 s compared with control sample. Therefore, the 
+enhanced ion diffusion is favorable for rate performance at higher 
+charge-discharge rates. 
+2.1.5. Fruit of plant 
+The fruit possibly is different from the chemical compositions in 
+regard to the variety and parts. Nevertheless, it also has a part of the 
+same components such as moisture, protein and lipids. The protein and 
+lipid included in the fruit pulp are account for 6% – 43% [ 83 ]. Such high 
+percentage of protein and lipid offers relative low contribution to the 
+carbon in the pyrolysis process, because these organics decompose at 
+temperature below 300 
+�
+C, letting out volatile substances such as CO
+2
+, 
+H
+2
+O, NH
+3
+, etc. So hydrothermal carbonization (HTC) is common to 
+convert pulp into coal-like materials under mild conditions [ 84 ]. 
+Compared to physical or chemical activation, HTC is completed at 
+relative low temperature (100 – 250 
+�
+C). It is inspired by coaling process 
+that coal is transformed from biological materials through thousands or 
+millions of years. However, the HTC-based biochars show less pores and 
+low surface area, which don ’ t meet the need for the energy storage field. 
+Additives or templates can increase the channel and surface area of 
+HTC-based active energy materials. For example, a kind of porous car -
+bon has been prepared derived from waxberry through hydrothermal 
+reaction and pyrolysis [ 85 ]. During the HTC process, Fe
+2
+(SO
+4
+)
+3 
+does not 
+only provide S element but also in fl uence the morphology of the solid 
+Fig. 3. (a) Photographs of the dandelion. (b) SEM images of the resulted hollow microstructures. Reprinted with permission from Ref. [82], Copyright 2017, Royal 
+Society of chemistry. (c) The SEM image of willow catkin. (d) The SEM images of N, S-PCNs1-1. Reprinted with permission from Ref. [79], Copyright 2016, Elsevier. 
+(e) Schematic illustration of the preparation of apple pomace derived carbon materials. Reprinted with permission from Ref. [87], Copyright 2018, American 
+Chemical Society. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 6 ---
+Journal of Power Sources 451 (2020) 227794
+6
+products (from nanosheet to microsphere). The electrochemical mea -
+surement result exhibits outstanding capacitive performance (1320.4 F 
+cm
+  3 
+at 0.1 A g
+  1
+), good cycle stability ( > 50 000 cycles), and superior 
+energy density (101 W h kg
+  1 
+at 222 W h L
+  1
+). Edward et al. obtained 
+activated carbons produced from two different fruit dehydration wastes 
+(blueberry and cherry) through hydrothermal carbonization and 
+chemical activation method [ 86 ]. Shen et al. used apple pomace as a 
+feedstock to prepare active carbon materials through a hydrothermal 
+and activation means [ 87 ]. The achieved samples demonstrate a 3D 
+flatty porous framework with the diameters about 500 nm ( Fig. 3 e). The 
+porous frameworks can simultaneously offer effective route and acces -
+sible surface to electrolyte ions. 
+Fruit peels are known as the by-product, most of them are straightly 
+discarded or burned, which give rise to resource waste as well as result 
+to environmental contamination. The fruit peel is composed of fiber and 
+saccharides, which can be considered as the feedback to synthesize 
+activate carbon materials [ 88 – 93 ]. This is a clean and renewable method 
+to deal with the abandoned waste. Many kinds of fruit peel such as ba -
+nana peel [ 94 ], pomelo peel [ 95 ], peanut shell [ 96 ], garlic skin [ 97 ] and 
+lotus seed shell [ 98 ] have been successfully turned into active carbons 
+by chemical activation method. For example, Li et al. reported 
+honeycomb-like structure carbonaceous materials by the combination 
+hydrothermal carbonization with chemical activation using pomelo peel 
+[ 99 ]. Such carbon material showed high level of graphitization, rela -
+tively small quantity of micropores/macropores and a specific capaci -
+tance of 374 F g
+  1
+. Han et al. activated longan shell to be idea electrode 
+material with large surface area of 3260 m
+2 
+g
+  1 
+and superior electro -
+chemical capacitance of 322 F g
+  1
+. 
+2.2. Microorganism-based biomass 
+Besides plants, biomass-based active carbon can also be prepared 
+using microorganisms as precursor, such as bacterial cellulose. In their 
+growth process, the hyphae of microorganism interconnect to form a 3D 
+network, which makes tissue transform shape into a honeycomb-like 
+structure and provides an effective way for the development of unique 
+hierarchical structure [ 100 ]. The chemical compositions of microor -
+ganisms include carbohydrates, proteins, fibers, fat, and ash [ 101 ]. The 
+carbohydrates of the microorganism are mainly chitins, which are 
+interconnected and can acted as a major carbon source in high tem -
+perature carbonization [ 102 ]. Fungus, a kind of widespread eukaryotic 
+organisms, can use as an alternative carbon source. In 2014, Long et al. 
+used fungus to prepare nanosheet active carbon by hydrothermal 
+method and subsequent carbonization process for the first time [ 103 ]. In 
+the process of hydrothermal, KOH is added and acted as template that 
+preventing cell walls from agglomeration. In the meantime, KOH can 
+serve as activating reagent for the fabrication of porous structure. As a 
+result, the as-prepared active carbon shows superior electrochemical 
+capacitance of 360 F cm
+  3 
+and a good cycle life (99% capacitance 
+retention over 10000 cycles). Mushrooms are also a kind of promising 
+source to prepare active carbons in the variety of microorganism-based 
+biomass. Ogale et al. have found plenty of cross-linked carbon nano -
+sheets with curtain-like frameworks synthesized from mushroom via 
+hydrothermal and activation method [ 104 ]. The fluffy plicate and 
+laminate carbon nanosheets formed a cage-like structure, which can 
+serve as ion-buffering reservoirs to improve ion diffusion in the char -
+ge/discharge process. Tremella is also a type of general and priceless 
+fungus. Han et al. used it as a precursor to achieve the transforming of its 
+wire-like compounds into 3D layered porous active material via facile 
+hydrothermal and chemical activation method ( Fig. 4 a) [ 105 ]. Bra -
+dyrhizobium japonicum is a kind of microorganism which has symbiosis 
+relationship with soybean roots. Significantly, it includes sufficient ni -
+trogen (about 6 – 10 wt%), which can be considered as an available 
+resource in preparing N-doped active energy materials [ 106 ]. Sun et al. 
+prepared N-doped three dimensional structure active carbon based on 
+Bradyrhizobium japonicum in energy storage field by carbonization and 
+subsequent ZnCl
+2 
+activation ( Fig. 4 b) [ 107 ]. The obtained active elec -
+trode materials exhibit large specific surface area (1275 m
+2 
+g
+  1
+), 
+Fig. 4. (a) Schematic illustration of the preparation of tremella-based sheet-stacking flatty porous carbon. Reprinted with permission from Ref. [105], Copyright 
+2018, Elsevier. (b) Schemetic of the preparation of porous structure carbon derived from Bradyrhizobium japonicum. Reprinted with permission from Ref. [107], 
+Copyright 2018, American Chemical Society. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 7 ---
+Journal of Power Sources 451 (2020) 227794
+7
+hierarchical porosity structure and outstanding electrical conductivity. 
+2.3. Animal remains-based biomass 
+A great deal of animal and their metabolin, such as insects, mollusks, 
+and crustaceans can be acted as the original resources in the production 
+of biomass-derived carbon [108–113]. Chitin, as one of the most 
+abundant polysaccharides, is mutual chemical composition in form of 
+chitin nanofiber [39]. Importantly, large proteins and aliphatic acids 
+constituent also facilitate the considerably active carbons incorporated 
+with doping element. Xu et al. reported egg yolk-derived active carbons 
+with loose spongy structure using C
+3
+N
+3
+Na
+3
+S
+3 
+and KOH as dual activators 
+(Fig. 5a and b) [114]. Based on a series of electrode samples, they found 
+structural parameters have an impact on electrochemical properties. The 
+percent of micropore area (S
+micro
+/S
+BET
+) can coincidently influence all 
+performances including specific capacitance, power density, energy 
+density and rate capability with the same tendency. So that S
+micro
+/S
+BET 
+is 
+expected to be one composite performance indicator to reflect the 
+Fig. 5. (a) Schematic illustration of the production processes for the 3D flatty porous carbons from egg yolk. (b) SEM image of egg yolk-derived active carbons. 
+Reprinted with permission from Ref. [114], Copyright 2018, Elsevier. (c) Schematic illustration of the preparation of thin layered carbon doped by O, N and S 
+element from fish scales. (d) AFM image of fish scales-derived active carbon. Reprinted with permission from Ref. [115], Copyright 2018, Elsevier. (e) Schematic 
+illustration of N/O-coped porous carbon derived from pigskin. Reprinted with permission from Ref. [116], Copyright 2018, Elsevier. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 8 ---
+Journal of Power Sources 451 (2020) 227794
+8
+structure – function relationship. Wang and cooperator employed fish 
+scale as precursor to synthesize multiple heteroatom (N, O, S) doped thin 
+layered carbon [ 115 ]. It has porous nanosheet framework (thickness of 
+3 – 5 nm), large micropore ratio, rich surface heteroatoms, empowering 
+the electrodes with excellent electrochemical properties ( Fig. 5 c and d). 
+Dunmin et al. have prepared a pigskin-based hierarchical active energy 
+material with effective active sites by a simple high-temperature py -
+rolysis process. The achieved samples possess three dimensional porous 
+frameworks with large mesopore volume and heteroatom incorporated 
+with nitrogen and oxygen, that result to high specific capacitance 
+( Fig. 5 e) [ 116 ]. Other animal-derived active electrode materials can also 
+be fabricated from shrimp shell [ 117 ], human hair [ 118 ] and gelatin 
+[ 119 ]. 
+In summary, plant, microorganisms and animal remains can be 
+considered as potential carbon precursors for SC electrode materials 
+( Table 1 ). Selection of the biomass precursor for high-value activated 
+carbons depends on several criteria such as intrinsic microstructure and 
+composition. Recently, our group have used cotton stalk [ 120 ], cellulose 
+[ 48 ], saussurea involucrata stalk, algae [ 121 ] and other long fiber pre -
+cursors to obtain good surface morphology activated carbon for super -
+capacitor application. From structure perspective, long fiber biomass is 
+featured with branch-like structures and stable three-dimensional 
+interconnection networks, thus, it can subject to chemical or thermo -
+chemical treatment for the removal of its readily degradable 
+constituents (all hemicellulose and most cellulose as well as partial 
+lignin) [ 122 ]. As a result of the removal of those readily degradable 
+constituents, many channels and uniform pores are formed in the active 
+carbon material after simple chemical activation method. Based on its 
+abundant channels and pore structure, long fiber biomass-based carbon 
+provides more entrance pathways for electrolyte ions and assists the 
+expansion of active mass volume during cycling, which is considered to 
+be an ideal sample for energy storage applications. For instance, Ma 
+et al. reported flute shape micropores electrode material based on cotton 
+stalk in supercapacitors [ 120 ]. The as-prepared carbon with many mi -
+cropores showed large specific surface area (1964 m
+2 
+g
+  1
+), opened 
+pores, 3D interconnected network, appropriate graphitization degree, 
+which could not only decrease transfer distance for ion or electron but 
+also increase the effective specific surface area. From composition 
+perspective, long fiber biomass has principal component of lignocellu -
+loses, and small amounts of simple sugar, protein, starches and lipids. 
+Lignocellulose can be easily altered into nano-sized fiber owing to the 
+presence of elemental fibril (diameter of 2 – 5 nm) of the cellulose linked 
+by covalent linkages and hydrogen bond [ 123 ]. To date, several tech -
+niques (pyrolysis, hydrothermal treatment) have been employed to 
+remove the linkages in order to create carbon nanofiber with different 
+surface morphologies. Therefore, producing activated carbon from long 
+fiber biomass displays many advantages such as hydrophilicity, high 
+surface and aspect ratios, excellent mechanics and flexibility, which 
+make it appropriate electrode with superior electrochemical properties. 
+3. Structure of biochar and electrochemical performance 
+It is widely believed that the carbon materials mainly relied on 
+electrical double layer capacitors to achieve energy conversion. Which 
+depend on the electrostatic adsorption/desorption of ions in the energy 
+storage materials. Hierarchical porous materials can improve energy 
+storage capacity [ 131 – 133 ]. So far, various biomass, have been exten -
+sively employed as feedstock to fabricate hierarchical active carbons by 
+carbonization and further activation method. On the one hand, porous 
+frameworks are inherited from the frameworks of the plant which is 
+beneficial for obtaining necessary water and ions in surroundings. These 
+pores of raw biomass may be maintained in fabrications of active energy 
+storage materials. On the other hand, raw biomass is generally consisted 
+of organic substances like saccharides, vitamin, fatty acids. In the pro -
+cess of thermally pyrolysis or carbonation, a great deal of organic sub -
+stances will be decomposed into H
+2
+O and CO
+2
+, and finally come out to 
+leave pores [ 134 ]. More importantly, biomass-based active carbon can 
+also be prepared through mixing some activating agents [ 135 ]. To 
+achieve high-performance supercapacitors, researchers have make ef -
+forts to optimize the pore structure, modify the surface property and 
+adjust graphitization degree. 
+3.1. Pore structure 
+Biomass materials generally show very multiple dimensions for 
+macrostructures. Biomass-derived active carbon can be perfectively 
+maintained or formed unique frameworks, such as spherical, tubular, 
+honeycomb or graphene-like carbon. The electrochemical performance 
+of supercapacitors probably increases with specific surface area, but the 
+function is diversified. Pore framework (porosity and size distribution) is 
+another important factor on energy storage power of active energy 
+materials in supercapacitors. Macropores ( > 50 nm) can act as ion 
+buffering reservoirs, decreasing convey distances from electrolyte to 
+electrode. Mesopores (2 – 50 nm) can offer channels for the charge 
+transfer. Micropores ensure high specific surface erea and contribute 
+electrical double layer capacitance. Currently, efforts have paid to 
+fabricate hierarchical porous carbon with different dimension through 
+adjusting experimental parameters such as activation reagent amount 
+[ 114 , 136 – 138 ], activation temperature [ 29 , 139 – 142 ], activation re -
+agent type [ 143 – 148 ]. Ma ’ s group reported a highly ordered micropores 
+Table 1 
+The electrochemical properties and relevant structural factors of biomass-based 
+carbon derived from plant-, microorganism- and animal remains-based raw 
+material.  
+Precursor Activation SSA 
+(m
+2 
+g
+-1
+) 
+C (F g
+- 
+1
+) 
+Current 
+density (A g
+- 
+1
+) 
+Rate 
+performance 
+Lotus stem 
+[ 124 ]  
+1610 174 0.5 80% at 20 A 
+g
+  1 
+Wheat Straw 
+[ 60 ] 
+CaCl
+2 
+892 275 0.2 81% at 8 A g
+  1 
+Cornstalk [ 59 ] NaCl, 
+KCl 
+1588 407 1 60% at 20 A 
+g
+  1 
+Rice straw 
+[ 125 ] 
+KOH 1122 337 1 83% at 20 A 
+g
+  1 
+Cotton stalk 
+[ 120 ] 
+KOH 1964 254 0.2 87% at 20 A 
+g
+  1 
+lotus 
+receptacle 
+[ 126 ]  
+1015 340 0.5 67% at 20 A 
+g
+  1 
+Bougainvillea 
+flowers [ 90 ]  
+850 458 2.28 22% at 5.8 Ag
+- 
+1 
+Rose [ 127 ] KOH 1911 208 0.5 52% at 20 A 
+g
+  1 
+Perilla 
+frutescens 
+[ 128 ]  
+655 270 0.5 75% at 20 A 
+g
+  1 
+lotus leaf [ 68 ] KOH 2488 379 1 79% at 20 A 
+g
+  1 
+Celtuce 
+Leaves [ 40 ] 
+KOH 3404 421 0.5 62% at 10 A 
+g
+  1 
+Macadamia 
+Nut Shell 
+[ 129 ] 
+KOH 2806 231 1 39% at 10 A 
+g
+  1 
+Rice husk 
+[ 130 ] 
+KOH 3120 315 0.1 60% at 50 A 
+g
+  1 
+Coconut shells 
+[ 29 ] 
+K
+2
+CO
+3 
+1506 91.15 0.2 89% at 2 A g
+  1 
+Tremella 
+[ 105 ] 
+KOH 1097 299 0.5 84% at 20 A 
+g
+  1 
+fish scale 
+[ 115 ] 
+KOH 962 306 1 78% at 200 
+Ag
+1 
+Chinese 
+human hair 
+fibers [ 118 ] 
+KOH 1306 340 1 67% at 10 A 
+g
+  1 
+egg yolk [ 114 ] KOH  549 1 52% at 30 A 
+g
+  1  
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 9 ---
+Journal of Power Sources 451 (2020) 227794
+9
+activated carbon can be observed from cotton stalk [ 120 ]. By altering 
+the proportion of KOH/C, highly ordered micropores activated carbon 
+(HOMAC) materials was obtained when KOH/C is equal to 4. This active 
+carbon shows a high capacitance (322 F g
+  1
+) and energy density (33.91 
+W h kg
+  1
+) in the diluted H
+2
+SO
+4 
+solution. Cui and cooperators developed 
+a three dimension porous carbon aerogel using prolifera-green-tide by 
+pyrolysis and subsequently chemical activation [ 149 ]. By changing 
+activation temperature, the ratio of macro/meso/micropores can be 
+regulate correspondingly. Under optimized conditions, the active elec -
+trode material possesses large accessible surface area of 2200 m
+2 
+g
+  1
+. It 
+shows electrochemical capacitance of 260.6 F g
+  1 
+and good structure 
+stability (92% capacitance retention over 10 thousand cycles) in two 
+electrode system using aqueous electrolyte. Apart from activating raw 
+biomass by using KOH, some other activating agents, such as CaCl
+2
+, 
+NaCl, ZnCl
+2
+, KCl, K
+2
+FeO
+4 
+and H
+3
+PO
+4 
+were also used for the activation 
+process. Lee and cooperators explored the relationship between elec -
+trochemical properties and structure of active carbon designed by 
+different activating reagents (KOH, ZnCl
+2 
+and H
+3
+PO
+4
+) [ 150 ]. The results 
+show the distribution of pores on the surfaces was strongly influenced by 
+the activation agent. The pores on the surface of sample activated by 
+KOH are mostly large, open and hierarchical. The pores on the surface of 
+sample activated by ZnCl
+2 
+are not clearly visible. Samples which the 
+surface of sample activated by H
+3
+PO
+4 
+show large cavities in which small 
+pores are embedded. 
+The pore framework of carbon can be demonstrated as zero dimen -
+sion (0D) to three dimension (3D) to facilitate ion diffusion. Active 
+material with various pore size in 0D, 1D, 2D and 3D is benifitial for 
+supercapacitors because of its minimizing ion transport distance. 
+Recently, a diverse structures of carbon materials have been developed, 
+such as 0D nanospheres or hollow structure; 1D nanofibers or nano -
+tubes; 2D nanosheets and 3D porous framework. 
+3.1.1. 0D nanospheres activated carbon 
+0D activated carbon nanospheres (ACNs) are a kind of popular car -
+bon electrodes on account of its large accessible area, low cost and high 
+charge capacity. The diameter of the biomass-based spheres is ranging 
+between 50 and 500 nm and 1 – 5 μ m. Yan and cooperators found that 
+carbon sphere was successfully prepared using oatmeal as precursor by 
+hydrothermal and followed carbonization method, showing glossy sur -
+face of spheres with about 2 μ m diameter [ 151 ]. Gaddam and co -
+operators discovered that carbon sphere within small size was prepared 
+using coconut oil through fire deposition [ 152 ]. The as-prepared carbon 
+spheres exhibited diameter size ranging from 40 nm to 50 nm, relative 
+low accessible surface area of 56 m
+2 
+g
+  1
+, which is applied in field of 
+energy storage. Rufford et al. fabricated active carbon with a greater 
+surface area (2871 cm
+2 
+g
+  1
+) and pore volume (0.81 cm
+3 
+g
+  1
+) by 
+Fig. 6. SEM image (a) and TEM image (b) of porous carbon spheres derived from fermented rice. Reprinted with permission from Ref. [154], Copyright 2014, Royal 
+Society of Chemistry. (c) SEM image of tubular structure of dandelion-based active carbon. Reprinted with permission from Ref. [156], Copyright 2017, Wiley. (d) 
+TEM images of porous graphene-like nanosheets derived from coconut shell. Reprinted with permission from Ref. [91], Copyright 2013, Royal Society of Chemistry. 
+The SEM image of cotton stalk (e), cotton stalk after carbonization (i), cotton stalk after activation (m). Reprinted with permission from Ref. [120], Copyright 2017, 
+Elsevier. The SEM image of saussurea involucrata stalk (f), saussurea involucrata stalk after carbonization (j), saussurea involucrata stalk after activation (n). The 
+SEM image of coconut shell (g), coconut shell after carbonization (k), coconut shell after activation (o). The SEM image of algae (h), algae after carbonization (l), 
+algae after activation (p). Reprinted with permission from Ref. [121], Copyright 2019, Royal Society of Chemistry. Fig. 6 f, g, n, j, k, o are all our group works, 
+not published. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 10 ---
+Journal of Power Sources 451 (2020) 227794
+10
+activation sugarcane bagasse using ZnCl
+2 
+activator. It shows specific 
+mass capacitance of 109 F g
+  1 
+and retains of 77% over 10 thousand 
+cycles [ 153 ]. However, solid spheres are not beneficial to the transport 
+of charge and the diffusion of electrolyte ions during electrochemical 
+behavior. As a result, hollow carbon spheres have been attained much 
+interest. Gao et al. prepared hollow carbon spheres with large SSA 
+(2106.0 m
+2 
+g
+  1
+) as well as large pore volume (1.1 cm
+3 
+g
+  1
+) using fer -
+mented rice as precursor [ 154 ]. That specially opened framework in 
+carbon spheres is related to chemical activating reagent ZnCl
+2
+, which 
+largely quicken transfer rate for ion from electrolyte into electrode 
+( Fig. 6 a and b). This electrode material presents excellent electro -
+chemical properties in supercapacitors that capacitance of 219 F g
+  1 
+at a 
+high current density of 15 A g
+  1 
+and superior cycling stability for after 
+4000 cycles. In generally, the interlinked hollow carbon spherical 
+framework can provide an open and continuous ion diffusion and large 
+effective surface area to ensure sufficient active sites for charge/di -
+scharge process. 
+3.1.2. 1D nanostructure carbon 
+Differing from 0D structures, 1D structures possess a relative higher 
+aspect ratio that benefic for increasing surface area. Recently, carbon 
+nanofibers and nanotubes were commonly employed in various elec -
+trode materials. Electrospinning is a simply method to design carbon 
+nanofiber within small size ( < 100 nm). Some researchers utilize lignin 
+as precursor to prepare biomass-derived carbon nanofibers via electro -
+spinning technique. In general, electrospinning is composed of capillary 
+tube, power supply and collector device. With regard to fabrication of 
+biomass-based carbon nanofiber, the raw biomass is immersed by re -
+agents to design fiber, then mixing the fiber with polymer solution 
+uniformity in capillary tube. The size of carbon nanofiber can be 
+adjusted by the operating potential, flow velocity, solution volume and 
+length from nozzle to collector device. There are plenty of researches 
+about together biomass with polymers in synthesis of carbon nanofiber 
+with cross-linked porous framework. The polymers improve the vis -
+cosity of fiber solution during electrospinning process. Cross-linked 
+porous framework can be applied as an open path during ion diffusion 
+that can increase electrochemical performance. Tao et al. reported that 
+walnut shell has been liquefied by phenol for 1 h, then polyvinyl alcohol 
+was added into the colliquative solution previous to electrospinning 
+process [ 155 ]. Polyvinyl alcohol had performed an effect of increasing 
+fluid performance of the colliquative solution, generating carbon 
+nanofiber with small diameter about 280 nm. Hence, it was clearly 
+showed that the property of active carbon using electrospinning method 
+can be improved by mixing with polymer solution. As a result, a superior 
+specific capacitance of 380 mA h g
+  1 
+at 0.03 A g
+  1 
+as well as outstanding 
+cycling life (above 280 mA h g
+  1 
+specific capacity over 200 cycles at 0.1 
+A g
+  1
+) had been obtained from walnut shell/PVA carbon nanofiber. 
+Carbonization can be employed to prepare interconnected carbon 
+nanofiber. Liu et al. fabricated porous nanofibers with a diameter of tens 
+of nanometers using renewable lotus seedpods as precursor via 
+carbonization and activation process [ 131 ]. The assembled super -
+capacitor in two electrode system exhibited a prominent energy density 
+of 13 Wh kg
+  1 
+at power density of 260 W kg
+  1
+. Furthermore, tubular 
+active energy materials can offer a continuous and open charge trans -
+portation pathway. A good deal of biomass source has hollow frame -
+work, such as dandelion, willow catkins, and cotton. Which be employed 
+as feedback to fabricate conductive carbon nanotubes. Based on the 
+reported paper, cotton fibers could well reserve porous hollow carbon 
+nanotubes during heat temperature pyrolysis and chemical activation. 
+The tubular active energy materials within few millimeters of length 
+provide short-distance ionic pathway. At the same time, a great number 
+of nanopores on the tube walls facilitate ion diffusion traversing the 
+walls as well as increase accessible area for charge accumulation. In 
+addition, poplar and willow catkins present porous tubes after pyrolysis. 
+The raw dandelion is tubular [ 156 ]. The tubular framework of dandelion 
+can be perfectively retained after carbonation, which effectively 
+increase contact area with ions in the electrolyte ( Fig. 6 c). The hollow 
+carbon tubes with porous structure are arriving at length ranging from 
+20 to 50 μ m, and these hollow carbon tubes are interconnected. All in 
+all, either 1D nanofibers or tubular framework offers a route for trans -
+ferring charges and minimizing the ion diffusion path during electro -
+active process. 
+3.1.3. 2D graphene-like carbons 
+High temperature decomposing biomass into 2D graphene frame -
+work has currently considered as an effective route to promote elec -
+trochemical properties. The unique structure guarantees short ion 
+transport, enabling biomass-based 2D graphene-like carbons as prom -
+ising energy storage materials ( Fig. 6 d). Long et al. achieved ultrathin 
+graphene-like active materials using auricularia by a hydrothermal 
+method and a following pyrolysis process [ 103 ]. The specific surface 
+area of graphene-like active carbon was 1103 m
+2 
+g
+  1 
+and mass density 
+was around 0.96 g cm
+  3
+. That designed material displayed high 
+capacitance of 360 F cm
+  3 
+as well as kept 99% of original one over ten 
+thousand cycles. What ’ s more, the assembled energy storage device 
+based on same as-prepared electrodes showed an energy density of 22 W 
+h kg
+  1
+, cycle stability with 96% capacitance over 10 000 cycles, and a 
+volumetric energy density of 21 W h L
+  1
+. Layer stacked active carbon 
+was prepared from cornstalk biomass via a K
+4
+[Fe(CN)
+6
+] catalyzed py -
+rolysis method [ 157 ]. Wang et al. has currently designed graphene-like 
+carbons using hemp bast fibers as precursor. They possess multi-level 
+lamellar framework containing of cellulose and lignin. The diameter 
+of hemp bast fibers are between 10 nm and 30 mm. The wall is made up 
+of three layers. The hemp has the inherent feature of being quite inter -
+connected in two dimensions, endowing the chance of extracting large 
+thin carbon flake, which can be further linked in carbonization and 
+activation. Zheng et al. fabricated 2D ultrathin carbon materials with a 
+good electrochemical properties using glucose as a precursor [ 158 ]. In 
+the course of chemical activation, potassium hydroxide used as an 
+activating agent as well as a template to synthesis the 2D thin layered 
+structure. The as-prepared carbon material showed an electrochemical 
+capacitance of 257 F g
+  1 
+at 0.5 A g
+  1 
+as well as remained 72% capaci -
+tance at high current density of 100 A g
+  1
+. Such high percent of mi -
+cropores and low mesopores lead to large accessible surface area of 
+around 2600 m
+2 
+g
+  1
+, which highly increase electrochemical capaci -
+tance. That interconnected thin layered frameworks quicken ion diffu -
+sion, so providing comparatively high rate capacity. 
+3.1.4. 3D hierarchical porous carbon 
+It is believed that the supercapacitors are achieved charge accumu -
+lation on the contact surface between the electrode and electrolyte, so 
+they commonly own high power density and superior cycling life. The 
+general disadvantage is their inferior in term of energy density. Hier -
+archical carbon has been seen as an ideal energy storage material on 
+account of its outstanding conductivity, chemical stability, green 
+initiative, and low cost. Nevertheless, the power capability of ordinary 
+porous carbon materials is degraded by their unbefitting and blocked 
+pore structure. Which result in poor availability for electrolyte ions 
+under high current density. 3D flatty porous materials with large 
+accessible surface area and appropriate porosity can effectively improve 
+electrochemical behaviors in supercapacitors. Feng and cooperators 
+developed a straightforward technique for preparation of polyporous 
+structural active energy materials through hydrothermal method and 
+subsequently chemical activation utilizing bagasse wastes as source. The 
+obtained bagasse-based porous carbon displayed connected network 
+and appropriate porosity, owning a accessible surface area of 2296 m
+2 
+g
+  1
+. The assembled supercapacitor demonstrated a specific capacitance 
+of 320 F g
+  1 
+at 0.5 A g
+  1 
+and 71% capacitance retention at 50 A g
+  1
+. Hao 
+and cooperators synthesized 3D flatty active energy materials employ -
+ing bagasse as raw precursor [ 159 ]. Solid state supercapacitor was 
+designed in and because of characteristics of open porous framework, 
+quite outstanding specific capacitance of 142 F g
+  1 
+at 0.5 A g
+  1 
+was 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 11 ---
+Journal of Power Sources 451 (2020) 227794
+11
+reached. Furthermore, as-prepared solid state supercapacitor showed 
+high rate capability and capacitance retention of 94% after 5000 cycles. 
+Fan et al. synthesized 3D flatty honeycomb-like active material via a 
+simple pyrolysis of KOH immersed wheat flour [ 135 ]. Such hierarchical 
+porous framework, large surface area (1313 m
+2 
+g
+  1
+) ensure the active 
+energy materials to display a superior specific capacitance of 473 F g
+  1 
+at 0.5 A g
+  1 
+using 6 M KOH as electrolyte. Recently, we analyze acti -
+vated carbon derived from four kinds of long fiber biomass. The pre -
+cursor is cotton stalk, saussurea involucrata stalk, coconut shell, algae, 
+respectively. Their structure at different pyrolysis stage is compared 
+systematically. Fig. 6 e – h shows the initial structure of the cotton stalk, 
+saussurea involucrata stalk, coconut shell and algae. There are many 
+pores with a diameter of about 2 μ m in the cotton stalk. Saussurea 
+involucrata is a fibrous structure with a high aspect ratio. The coconut 
+shell exhibits a long fiber with dense particles distributed on its surface. 
+The surface of algae is flaky and rough. After carbonization, the struc -
+ture of these four materials was shown in Fig. 6i-6l . The morphology of 
+cotton straw and saussurea involucrata stalk did not change signifi -
+cantly. This is due to the high carbon content and stable structure of long 
+fiber plants. Fig. 6 k shows the cross section of the coconut shell fiber. It 
+is hollow cavities with diameter ranging from 5 to 10 μ m. The wall of 
+algae become thinner [ 121 ]. After chemical activation, the SEM images 
+of four samples are depicted in Fig. 6m – p. From Fig. 6 m, the vacancies in 
+cotton stalk are more visible [ 120 ]. The biochar of saussurea involucrata 
+stalk shows a distinct hierarchical porous carbon structure. In Fig. 6o, it 
+can be seen that the coconut shell also retains the original long fiber 
+structure. The small particles on the coconut shell are disappeared and 
+leaved holes with a diameter of about 8 μ m. This is because KOH cor -
+rodes the silicates at high temperatures. Fig. 6 p shows that the algae 
+after activated by KOH is flaky and porous [ 121 ]. 
+The structural analysis above shows that long fiber plants can 
+maintain the original structural framework after the KOH activation. 
+This special structure accelerates electrolyte ions to transport at active 
+electrode surface, resulting excellent electrochemical performance. 
+Cotton stalk-based active carbon shows electrochemical capacitance of 
+254 F g
+  1 
+at current density of 0.2 A g
+  1
+. Hierarchical porous saussure 
+involucrata stalk – based carbon possesses a superior specific capacitance 
+of 322 F g
+  1 
+at a current density of 0.2 A g
+  1
+. Active carbon derived from 
+coconut shell displays a electrochemical capacitance of 157 F g
+  1 
+at a 
+current density of 0.2 A g
+  1
+. Because of well-developed transmission 
+channel, it shows an excellent cycling life of 100% specific capacitance 
+retention over 10000 cycles at a current density of 1 A g
+  1
+. That hier -
+archical and flaky structure of algae-based carbon is beneficial for ions 
+diffusion and charge storage. So it shows electrochemical capacitance of 
+283 F g
+  1 
+at a current density of 0.2 A g
+  1
+. All results above indicate the 
+long fiber biomass have advantages in the synthesis of active materials 
+for energy conversion application. 
+It is easy to discover that the frameworks of the long fiber-based 
+carbons are clearly associated to the intrinsic one of the raw material. 
+For example, the porous layer active carbon based on cotton stalk 
+Fig. 7. (a) A schemetic of the preparation process of microcrystalline cellulose-derived porous carbon. (b) CV curves at scan rates 5 – 500 mV s
+  1 
+of the as-prepared 
+sample. Reprinted with permission from Ref. [168], Copyright 2019, Royal Society of Chemistry. (c) Schematic illustration of sustainable synthesis and assembly of 
+O/N co-doped 3D carbon nanosheet. Reprinted with permission from Ref. [169], Copyright 2019, Elsevier. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 12 ---
+Journal of Power Sources 451 (2020) 227794
+12
+exhibited similar morphology trait to the original one of cotton stalk, 
+which composed of relatively ordered flute pores on the surface, as 
+shown in Fig. 6 e and 6 m [ 120 ]. The hierarchical porous carbon based on 
+coconut shell also indicates similar long fiber-like texture to coconut 
+shell, as shown in Fig. 6 g and 6 o. The algae based active carbon shows 
+similar hierarchical porous texture to the algae, which further generate a 
+number of cross-linked meso/microporous frameworks after activation, 
+as shown in Fig. 6 h and 6 p. The cross-linked meso/microporous 
+frameworks offer good electrochemical performance. Mesoporous car -
+bon materials commonly possess wormhole morphology with cylindri -
+cal surface. By supposing that the mesopores are cylindrical, electrolyte 
+ions transport through pores to develop electric double-cylinder ca -
+pacitors. The double cylinder capacitance is calculated by Eqn. (1) 
+[ 160 ]: 
+C
+=
+S ¼
+ε
+r
+ε
+0
+bln ð
+b
+b   d
+Þ
+(1)  
+where C is the capacitance, S is the surface area of the cylinder, ε
+r 
+is the 
+dielectric constants of the electrolyte and ε
+0 
+is permittivity of the vac -
+uum. b is radius of the outer cylinder, and d is separation distance of the 
+outside and inside cylinders. With regard to micropores, the electrolyte 
+ions will form an electric wire-in-cylinder capacitor (EWCC) because of 
+the very small pore size. The capacitance of the EWCC can be calculated 
+by eqn. (2) : 
+C
+=
+S ¼
+ε
+r
+ε
+0
+b
+0
+ln ð
+b
+0
+a
+0
+Þ
+(2)  
+which b
+0 
+represents radius of the micropore, a
+0 
+represents real size for 
+the electrolyte ions. That radius of the micropore may as well similar to 
+the real size for the electrolyte ions so that achieve better electro -
+chemical performance [ 161 ]. The transport behavior of electrolyte ions 
+during charging and discharge process is importantly depend on pore 
+size, pore distribution and curvature [ 162 ]. The ion diffusion time (t) is 
+evaluated through relational expression t ¼ r
+2 
+/d, which r represents ion 
+diffusion length and d represents ion diffusion factor. Active electrode 
+materials within hierarchically pores in 0D, 1D, 2D and 3D endows 
+electrolyte ions in electrode decrease short diffusion distances, so 
+minimizing the diffusion time. 
+3.2. Graphitization degree 
+Graphitization degree is also crucial with respect to electrochemical 
+performances of biomass-based carbon materials, such as internal 
+resistance, rate capability, power delivery, and energy efficiency. 
+Improving the graphitization of active carbon promote surface hydro -
+phily for the electrode in aqueous electrolyte, which can accelerate 
+electrolyte ion diffusion as well as charge transport, so benefiting for the 
+supercapacitor performance [ 91 ]. As we known, a high electrical con -
+ductivity is usually associated with a high graphitization degree. How -
+ever, it will result in a small specific surface area (SSA) and an 
+undeveloped pore structure. Therefore, there is a compromise between 
+the graphitization degree and pore structure in order to maximize the 
+electrochemical performance. Thermally pyrolysis can increase the 
+graphitization but it consumes much more energy. In addition, it can 
+also reduce accessible surface area as well as pore volume for the active 
+electrode materials. Catalytic graphitization using transition metal is an 
+efficient route to prepare active carbons with a certain graphitization 
+degree. Considering proper activation and catalytic graphitization into 
+consideration can perfectively fabricate hierarchical carbons with high 
+accessible surface area so that outstanding electrochemical perfor -
+mance. Sun et al. synthesized porous 2D nanosheets with a high acces -
+sible surface area by a chemical activation and catalytic graphitization 
+method employing coconut shell as raw material [ 91 ]. FeCl
+3 
+and ZnCl
+2
+, 
+acting as a graphitic catalyst and activating reagent respectively, were 
+incorporated with the texture of the coconut shell via adjusting salt ions 
+mass and the heteroatoms type on the coconut shell, so making simul -
+taneous activation as well as graphitization. The obtained 2D nanosheets 
+had excellent electrical conductivity because of a high graphitization 
+degree, accessible surface area of 1874 m
+2 
+g
+  1 
+and total pore volume of 
+1.21 cm
+3 
+g
+  1
+. Without mixing conductive agents, it demonstrated a high 
+capacitance of 268 F g
+  1 
+at 1 A g
+  1 
+in KOH electrolyte. What ’ s more, it 
+also exhibited a capacitance of 196 F g
+  1 
+at 1 A g
+  1 
+in an organic 
+electrolyte. An energy density of 54.7 Wh kg
+  1 
+was achieved at a power 
+density of 10 kW kg
+  1
+. Zhang et al. synthesized hierarchically active 
+carbon microtubes through the chemical activation and graphitization 
+method using K
+4
+Fe(CN)
+6
+, thus offering high conductivity and short ion 
+diffusion route [ 77 ]. As-prepared graphitic carbon microtubes also act 
+as a considerable support for loading manganese dioxide. The hybrid 
+electrode showed good electrochemical behaviors, for instance a quite 
+increased specific capacitance (550.8 F g
+  1 
+at a current density of 2 A 
+g
+  1
+), a high capacitance retention of 62% at a high current density of 50 
+A g
+  1
+, and long cycle life of 90% capacitance retention after 5000 cycles. 
+Jiang and co-workers reported a facile method to synthesize 
+catalyst-free, flexible, and highly graphitized carbon aerogels based on 
+bacterial cellulose [ 163 ]. Because of their unique nanostructure and 
+large mesopore proportion, the carbon materials exhibit an area 
+capacitance of 62.2 mF cm
+2
+, which is higher than most of the reported 
+values in the literature. Owing to the excellent conductivity, the highly 
+graphitized carbon aerogels can facilitate electron transport, and they 
+show excellent electrochemical capacitances in 6 M KOH electrolyte. 
+4. Surface properties 
+Exactly as the specific surface area and pores distribution, the surface 
+information of biomass-based active electrode materials act a significant 
+factor on the supercapacitor performance. Whereas the pore frameworks 
+of active materials can be adjusted through appropriate option of acti -
+vation method and process that make fabrication of activated carbon 
+with different percent of micro, meso and macropores in various di -
+mensions; the variety and content of surface functional group could be 
+optimized via proper thermal and chemical post-treatments. Adjustment 
+of surface functional groups for carbon commonly bring about changes 
+in the physical and chemical properties such as wettability, electrical 
+conductivity, capacitance of the biomass-based carbon material. 
+Recent study proved that the functional groups or doped elements 
+like nitrogen (N), oxygen (O), phosphorus (P), Sulphur (S), boron (B), 
+can significantly increase available surface properties like wettability, 
+electrical resistance or adding pseudocapacitance of the carbon elec -
+trodes. A number of researchers synthesized heteroatom doped biomass- 
+based active material via blending raw source with some heteroatom- 
+rich precursors and a series of activation method. 
+O incorporating into carbon structure is beneficial for improving the 
+wettability, widening working voltage window and increasing energy 
+density of supercapacitors in aqueous electrolytes. In general, O-doping 
+is achieved through pyrolysis of O-containing biomass source or KOH 
+chemical activation [ 164 ]. Zhang and cooperators synthesized a 
+O-containing carbon materials with stacked layer texture employing 
+gelatin as the source [ 165 ]. The as-prepared O-containing carbon 
+demonstrated electrochemical capacitance of 276.6 F g
+  1 
+at a current 
+density of 1 A g
+  1 
+in a two-electrode system and still retained 72.3% of 
+capacitance retention at 100 A g
+  1
+. Large proportion of O (16.22 wt%) 
+can improve pseudocapacitance and rate performance. 
+N is another extensive researched heteroatom during the preparation 
+for active electrode materials. It is believed that doping N can increase 
+conductivity of carbon materials so that add pseudocapacitance, 
+resulting into a significant increase in the capacitance. In the carbon 
+materials, N element usually is categorized into 3 varieties: pyridinic- 
+type nitrogen, pyrrolic-type nitrogen and quaternary-type nitrogen, 
+pyridinic-type N and pyrrolic-type N, are believed to play pseudocapa -
+citance role, while quaternary-type N can improve charge transfer 
+through the carbon electrode. Generally, N functional groups are doped 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 13 ---
+Journal of Power Sources 451 (2020) 227794
+13
+into active carbon structure via simple pyrolysis of N-rich carbon pre -
+cursors or adding N-containing source. Hou et al. developed N-con -
+taining hierarchical ultrathin carbon layers through activation and 
+graphitization process employing raw silk. The as prepared active 
+electrode material showed excellent property in SCs [ 166 ]. Zhou and 
+cooperators synthesized special N-rich well-organized mesoporous car -
+bon, which has a large accessible surface area of 1030 m
+2 
+g
+  1
+, same size 
+of mesopores about 15.0 nm diameters and a large nitrogen percentage 
+of 7 wt%. These special structural features ensure active material a good 
+capacitance of 264 F g
+  1 
+in supercapacitors [ 167 ]. Lu et al. prepared 
+porous carbon materials with intrinsic defects and nitrogen doping using 
+microcrystalline cellulose as the precursor ( Fig. 7 a and b) [ 168 ]. 
+Because the continuous hierarchical porous structure and high N content 
+can more fully utilize for charge storage via electrical double-layer and 
+pseudocapacitive mechanisms, respectively, the obtained materials 
+displayed an exceptional specific capacitance of 426 F g
+  1
+, an excellent 
+rate capability and superior cycling stability. Currently, Liu et al. 
+fabricated a mass of three dimensional O/N co-doped carbon nanosheet 
+from woody precursor via sequential alkaline oxidation, bio-swelling 
+and low-temperature carbonization. ( Fig. 7 c) [ 169 ]. During the micro -
+morphological regulation, KOH solution hydrolyse hemicellulose, while 
+H
+2
+O
+2 
+continuously oxidizes lignin. Urea is used N precursor in order to 
+incorporated N in resulted material. The doped carbon nanosheets 
+deliver an impressive superior capacitance of 508 F g
+  1 
+at 1 A g
+  1 
+and 
+long lifetime over 12 thousand cycles with 95% capacitance retention. 
+Similar to N-doping, other heteroatoms like P, S and B, can also 
+improve the electrical conductivity, enhance the effective specific sur -
+face area and add pseudocapacitance, making carbon with a good 
+electrochemical performance. Currently, Qiu et al. fabricated a mass of 
+flexible B/N co-doped carbon via hard template and subsequent 
+annealing method [ 119 ]. Boric acid is used template as well as boron 
+precursor in order to incorporate B in resulted material. The doped 
+carbon nanosheets deliver an impressive superior capacitance of 268 F 
+g
+  1 
+at 0.1 A g
+  1 
+and long lifetime over 15 thousand cycles with 110% 
+capacitance retention. Another example for N, B containing hierar -
+chically porous carbon nanotube is obtained using dandelion fl uff [ 82 ]. 
+The bundled and porous framework leads to quick charge transfer and 
+ion diffusion. Thanks to N and B heteroatoms doping, the electrode 
+demonstrates very stable framework, long cycle life and an outstanding 
+energy density of 12.2 Wh L
+  1 
+at the power density of 699.8 W L
+  1
+. 
+Huang et al. fabricated P-containging porous carbon via H
+3
+PO
+4 
+chemical 
+activation of discarded coffee grounds [ 170 ]. The resulted active ma -
+terial displayed superior specific capacitances using 6 M KOH as elec -
+trolytes. It was observed that prepared supercapacitors could operate at 
+a high working voltage due to P-containing groups on the carbon sur -
+face. A superior energy density of 15 W h kg
+  1 
+can be reached at a power 
+density of 75 W kg
+  1
+. Xu et al. fabricated S and N co-doped hierar -
+chically porous active carbon employing broad bean shells rich in amino 
+acids and vitamins as raw material [ 171 ]. 
+Broad bean was high temperature pyrolyzed at 800 
+�
+C for 2 h and 
+subsequently activated by chemical reagent at high temperature for 1 h 
+with N
+2 
+gas atmosphere with a heating rate of 3 
+�
+C min
+  1
+. The incor -
+porated S element enhanced space utilization through unique electro -
+sorption of electroactive ions. That doped N elevated both the electrical 
+conductivity and the wettability of the electrode. Furthermore, elements 
+S and N containing functional groups introduced the pseudocapacitance. 
+So obtained carbon material displayed a specific capacitance of 202 F 
+g
+  1 
+at a current density of 0.5 A g
+  1 
+in 6 M KOH electrolyte and 
+remained 64% capacitance at 10 A g
+  1 
+despite the medium specific 
+surface area (655 m
+2 
+g
+  1
+) of the carbon. 
+These heteroatoms are either derived from the precursor and form 
+part of the active carbon structure or introduced by an effective acti -
+vation method. In a word, heteroatoms mixed into carbon have been 
+verified to be efficient in enhancing the electrochemical properties of 
+carbon materials. 
+5. Prediction by machine learning 
+In the topic of energy conversion, researchers used various methods 
+to adjust the microstructure, surface area as well as porosity of active 
+electrode materials. The macroscopic and microcosmic structure fea -
+tures of electrode materials affect electrochemical performance. How -
+ever, the widely accepted structure-performance relationship is still 
+unclear. Traditional EDLCs theory and models only give a mathematical 
+equation for EDLCs ’ surface. There is a big challenge to obtain the re -
+lations between the microscopic structures and the macroscopic per -
+formances for predicting the capacitance of carbon-based 
+supercapacitors. With the development in computational technology 
+and computer science, the application of machine learning (ML) tech -
+nology for the material synthesis has become the general trend [ 172 ]. 
+ML is a data-based method, which is often treated as a black box, and the 
+outputs are difficult to explain. It provides powerful tools that can take 
+advantage of previously generated data to better understand the re -
+lationships between structure of origin materials and properties & per -
+formance of EDLCs. To be specific, in the past we could only analyze the 
+function between the structure and performance of materials from a few 
+samples, but now we can analyze this complex relationship from 
+available databases including great numbers of known structure and 
+performance with the help of ML technology. For example, Daniel et al. 
+integrated ML approach to find materials for clean energy, which pro -
+vides a vision for the next generation of autonomous materials discov -
+ery, so decreasing the time to application of novel materials by an order 
+of magnitude [ 173 ]. Jos �e Darío et al. used a combination of ML driven 
+electronic structure calculations to forecast Flory – Huggins coefficient of 
+new photovoltaics materials [ 174 ]. 
+Current research in supercapacitors has obtained much attention on 
+a variety of biomass-based carbon electrode materials. Given the nature 
+structure of various materials, the ML modeled by structur -
+e – performance relationship can provide good guideline for electrode 
+materials selection. To predict the EDLCs capacitance, a sequential 
+procedure is used. The first step is to collect the experimental data 
+including the physical and chemical properties of porous carbon elec -
+trode materials or the test potential windows. Then, the experimental 
+data are applied to predict the EDLCs capacitance using different ML 
+models such as linear regression (LR), support vector regression (SVR) 
+and artificial neural network (ANN) models [ 175 ]. LR has predictors 
+that are linear in the model parameters, which is easy to interpret, and 
+fast in making predictions. However, the limit of LR models is its low 
+predictive accuracy. SVR is a regression technique with excellent per -
+formances in regression and time series prediction application, allowing 
+categorising the input data using separating lines or planes. ANN model 
+generally includes input layers, hidden layers and output layers, and 
+each layer consists of nodes connected with a certain weight to all nodes 
+in the next layer. Except for the input nodes, each node is a processing 
+element with a nonlinear activation function such as a sigmoid function 
+that enables the network to compute complex nonlinear problems. ANN 
+utilizes the ‘back propagation ’ technique to train the network, which 
+means to change connection weights while passing through the nodes in 
+order to minimize the error. The training process stops improving, which 
+means that no further decrease occurs in the errors of cross-validation 
+samples. The algorithms of ML models were conducted in the machine 
+learning open source package WEKA. Each method includes its own 
+parameters that must be specified. Specifically, the datasets were evenly 
+split into several folds. Some folds were used for training while the 
+remaining fold was used for testing. The calculation process was 
+repeated using a different fold for testing in each cycle. The performance 
+of each model was given by the average of the accuracies of all the folds. 
+The correlation coefficient (R
+2
+), root mean square error (RMSE) were 
+used to evaluate the accuracies of different ML models in predicting 
+EDLCs capacitance [ 176 ]. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 14 ---
+Journal of Power Sources 451 (2020) 227794
+14
+R
+2
+¼ 1  
+P
+n
+i ¼ 1
+ð y
+i
+  u
+i
+Þ
+2
+P
+n
+i ¼ 1
+ð y
+i
+  u Þ
+2
+(3)  
+RMSE ¼
+ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+P
+n
+i ¼ 1
+ð y
+i
+  u
+i
+Þ
+2
+n
+s
+(4)  
+where n, y
+i
+, u
+i 
+and u are, the number of data points, the value calculated 
+from the ML, the experimental value, and the average of all experi -
+mental data. 
+ANN has been widely employed for energy harvesting and produc -
+tion [ 177 , 178 ]. Farsi et al. used ANN to predict the electrochemical 
+behaviors based on a supercapacitor model. Crystal size, surface lattice 
+length, exchange current density of the active electrode material and the 
+discharge current were inputs, energy density and power density were 
+the outputs. A neural network including two hidden layers (6 nodes and 
+15 nodes) was discovered to have high power of modeling the electro -
+chemical behaviors with the convergence [ 179 ]. Dongale at el. modeled 
+cyclic voltammetery using ANN. Fig. 8 a demonstrates the model struc -
+ture for supercapacitor, which include one input layer, one output layer 
+and one hidden layer. In their programming process, the Lev -
+enberg – Marquart back propagation algorithm with the sigmoid 
+nonlinear function was employed to optimize the predicting power of 
+ANNs. The neural model demonstrated the superior behavior with the 
+error rate 1.24%, 1.03%, 0.87%, 1.17%, and 1.28% for samples which 
+electrodeposited different mass of MnO
+2 
+[ 180 ]. Weigert predicted the 
+state-of-charge of batteries and battery – supercapacitor hybrid systems. 
+The prediction shows good performance with a correlation coefficient 
+above 0.95 ( Fig. 8 b) [ 181 ]. In 2018, Zhu et al. complied over 10,000 
+data points for the capacitance of carbon-based supercapacitors from 
+more than 1000 publications. The authors studied the impact of five 
+variables (specific surface area, calculated pore size, I
+D
+/ I
+G 
+ratio, 
+N-doping level and voltage window) on capacitance by the ANN 
+method. It is demonstrated that the ANN method is more accurate with a 
+higher correlation coefficient (R
+2 
+¼ 0.91) through comparing the ANN 
+method with two different machine learning models (linear regression 
+and Lasso) [ 182 ]. The superiority of ANN is attributed its ability in 
+prediction of regression value with multi-factor control. Recently, Ma ’ s 
+group resorted ANN model to predict energy storage for supercapacitors 
+( Fig. 8 c – d). A data set comprising 200 biomass-based active carbon was 
+divided into training subset and test subset by cross-validation. As 
+shown in Fig. 8 c, the specific capacitance is simulated by many kinds of 
+input features such as aspect ratio (r
+L/D
+), cellulose ratio (CL (%)), spe -
+cific surface area (S
+BET
+), pore volume (V
+tot
+), internal resistance (R
+s
+) and 
+so on. Levenberg – Marquart back propagation algorithm with sigmoid 
+and ReLu non-linear function is applied to train the model. The model 
+yielded accurate predictions of specific capacitance with mean square 
+error to be as low as 4.39. The random forest algorithm was used to 
+calculate the relative contribution of each input (structural features) to 
+the output (specific capacitance). The machine learning used in this 
+paper is able to predict the function between the structure and perfor -
+mance from currently available databases, which include great numbers 
+of known structure of biomass materials. The result indicates the specific 
+surface area, resistance, and total pore volume are the three most 
+important variables, with a weight of 30.1%, 19.4% and 18.7%, 
+respectively. This pointed out promising direction of electrode synthesis 
+[ 121 ]. 
+Fig. 8. (a) Multilayer structure of a supercapacitor model. Reprinted with permission from Ref. [180], Copyright 2015, Elsevier. (b) Predicted cycle life at a 
+discharge current of 2.0 A. Reprinted with permission from Ref. [181], Copyright 2011, Elsevier. (c) Artificial neural network model for supercapacitor. (d) The 
+relative importance of inputs to output. Reprinted with permission from Ref. [121], Copyright 2019, Royal Society of Chemistry. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 15 ---
+Journal of Power Sources 451 (2020) 227794
+15
+6. Challenges and perspectives 
+Biomass is one of the most abundant materials on the earth. There -
+fore, biomass-derived carbon materials have become an effective solu -
+tion toward coping with severe environmental issues and energy crises. 
+Biomass based carbon materials with good electrochemical performance 
+have been fabricated via various methods. However, it is still confronted 
+with several challenges. For example, biomass generally has irregular 
+morphologies, so that pore properties like shape and structure are 
+difficult to tune precisely, which limits the rate performance and power 
+density. What’s more, the effects of pore size, surface area and surface 
+chemistry on the electrochemical performance of biomass-derived en -
+ergy storage devices are unknown to a large extent. It is still a big 
+challenge for us to investigate the diffusion process of ions in hierar -
+chical pore structure. To address the aforementioned issues, some 
+important research directions in the area of material synthesis and 
+structural design for supercapacitor electrodes are proposed as follows. 
+(1) Considering the diversity of biomass resources, fundamental studies 
+are necessary to understand and control the properties of biomass 
+derived carbon materials that are prepared using different biomass 
+precursors and methods. In situ technologies, such as X-ray absorption, 
+X-ray diffraction and nuclear magnetic resonance, may be powerful 
+tools for understanding these fundamental issues. (2) Giving deep 
+insight into machine learning (ML) for energy storage applications. In 
+this regard, developing proper theoretical models is beneficial to predict 
+the capacitive properties of biomass precursor and active carbon mate -
+rials, which might be acted as a sophisticated criterion for selecting 
+precursor with optimized performance. (3) More researches should be 
+carried out in the relationship between heteroatom rich in the biomass 
+and proprieties of supercapacitors. It is an effective way as it can adjust 
+the surface morphology as well as provide extra functions. Recently, our 
+group use coconut silk enriched heteroatoms to prepare composite 
+carbon. Heteroatom (N, S, SiO
+2
+) in coconut silk may be beneficial to 
+pore-forming, which shortens the ion/charge transportation distance 
+(not published). Last but not least, with regard to some specific appli -
+cations such as flexible and miniaturized devices [183,184], a flexible 
+electrode having the desired mechanical and electrochemical properties 
+is demanded. Biomass offers opportunities for making flexible elec -
+trodes. This will open up a new research area. With continual research 
+on this research topic, there could be great opportunities to achieve 
+practical applications of biochar materials in the fields of renewable 
+energy conversion and storage. 
+7. Summary 
+In summary, the applications of plentiful biomass in fabricate 
+biomass-based materials with excellent electrochemical behaviors for 
+supercapacitor is sustainable and low cost. The electrochemical perfor -
+mance is strongly dependent on the chemical composition, pore struc -
+ture of the biomass source and experimental conditions. Therefore, it 
+needs proper design in the selection of source material, appropriate 
+pyrolysis or activation method so as to attain well-quality biomass-based 
+product. Considering the diversity of biomass resources, this review is 
+completed a detailed research on the electrocapacitive properties from 
+biomass species and organs. It is a good practice to analyze precursor in 
+term of plant, microorganism and animal remains, and summarized 
+different promising features specially so as to optimize the of electro -
+chemical property of biomass-based active carbon. They are different 
+from structure and compositional design, such as preparing 0D-3D 
+interconnected porous frameworks; heteroatom doping and graphitiza -
+tion degree, which can enhance the energy density and power density. 
+The successful transformation from biomass to nanostructure carbon 
+develops a novel route to use naturally available frameworks. In spite of 
+the advanced study about the biomass-based material for super -
+capacitors has demonstrated comparably high electrochemical perfor -
+mance, high-rate capability and cycling ability, a number of critical 
+challenges and prospects are pointed out in the progress of biomass- 
+based carbon in supercapacitors at end of this review. This review can 
+provide a general guideline for the preparation of next-generation en -
+ergy storage devices. 
+Declaration of competing interest 
+The co-authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper. 
+Acknowledgements 
+This work was financially supported by the National Natural Science 
+Foundation of China (No. 11774255) and the Key Project of Natural 
+Science Foundation of Tianjin City, China (No. 17JCZDJ30100). 
+References 
+[1] Y. Zhang, X. Liu, S. Wang, L. Li, S. Dou, Adv. Energy Mater. 7 (21) (2017) 
+1700592. 
+[2] S. Hatfield-Dodds, H. Schandl, D. Newth, M. Obersteiner, Y. Cai, T. Baynes, 
+J. West, P. Havlik, J. Clean. Prod. 144 (2017) 403–414. 
+[3] X. Chen, C. Li, M. Gratzel, R. Kostecki, S. Mao, Chem. Soc. Rev. 41 (23) (2012) 
+7909–7937. 
+[4] S. Chu, A. Majumdar, Nature 488 (7411) (2012) 294–303. 
+[5] H. Wang, Y. Yang, L. Guo, Adv. Energy Mater. 7 (23) (2017), 1700663. 
+[6] Z. Yu, L. Tetard, L. Zhai, J. Thomas, Energy Environ. Sci. 8 (3) (2015) 702–730. 
+[7] Z. Wang, D. Shen, C. Wu, S. Gu, Green Chem. 20 (22) (2018) 5031–5057. 
+[8] J. Jiang, Y. Zhang, P. Nie, G. Xu, M. Shi, J. Wang, Y. Wu, R. Fu, H. Dou, X. Zhang, 
+Adv. Sustainable Syst. 2 (1) (2018), 1700110. 
+[9] Q. Wang, J. Yan, Z. Fan, Energy Environ. Sci. 9 (3) (2016) 729–762. 
+[10] Y. Bai, B. Shen, S. Zhang, Z. Zhu, S. Sun, J. Gao, B. Li, Y. Wang, R. Zhang, F. Wei, 
+Adv. Mater. 31 (9) (2018), 1800680. 
+[11] V. Strauss, K. Marsh, M.D. Kowal, M. El-Kady, R.B. Kaner, Adv. Mater. 30 (8) 
+(2018), 1704449. 
+[12] K.S. Kim, Y. Zhao, H. Jang, S.Y. Lee, J.M. Kim, K.S. Kim, J.H. Ahn, P. Kim, J. 
+Y. Choi, B.H. Hong, Nature 457 (7230) (2009) 706–710. 
+[13] F. Abnisa, W.M.A.W. Daud, Energy Convers. Manag. 87 (2014) 71–85. 
+[14] S. Gillet, M. Aguedo, L. Petitjean, A.R.C. Morais, A.M. da Costa Lopes, R. 
+M. Łukasikd, P.T. Anastas, Green Chem. 19 (18) (2017) 4200–4233. 
+[15] Q. Niu, K. Gao, Q. Tang, L. Wang, L. Han, Carbon 123 (2017) 290–298. 
+[16] S. Zhou, L. Zhou, Y. Zhang, J. Sun, J. Wen, Y. Yuan, J. Mater. Chem. 7 (9) (2019) 
+4217–4229. 
+[17] J. Wang, P. Nie, B. Ding, S. Dong, X. Hao, H. Dou, X. Zhang, J. Mater. Chem. 5 (6) 
+(2017) 2411–2428. 
+[18] L. Jiang, L. Sheng, Z. Fan, Sci. China Mater. 61 (2) (2018) 133–158. 
+[19] Z. Bi, Q. Kong, Y. Cao, G. Sun, F. Su, X. Wei, X. Li, A. Ahmad, L. Xie, C. Chen, 
+J. Mater. Chem. 7 (27) (2019) 16028–16045. 
+[20] H. Yang, S. Ye, J. Zhou, T. Liang, Frontiers. Chem. 7 (2019) 274. 
+[21] H. Lu, X. Zhao, Sustain. Energy. Fuels. 1 (6) (2017) 1265–1281. 
+[22] S.E.M. Pourhosseini, O. Norouzi, P. Salimi, H.R. Naderi, ACS Sustain. Chem. Eng. 
+6 (4) (2018) 4746–4758. 
+[23] S. Gao, X. Li, L. Li, X. Wei, Nano Energy 33 (2017) 334–342. 
+[24] Y. Zhong, X. Xia, S. Deng, J. Zhan, R. Fang, Y. Xia, X. Wang, Q. Zhang, J. Tu, Adv. 
+Energy Mater. 8 (1) (2018), 1701110. 
+[25] C.K. Ranaweera, P.K. Kahol, M. Ghimire, S.R. Mishra, K.G. Ram, J. Carbon Res. 3 
+(3) (2017) 25. 
+[26] K. Zou, Y. Deng, J. Chen, Y. Qian, Y. Yang, Y. Li, G. Chen, J. Power Sources 378 
+(2018) 579–588. 
+[27] C. Lu, Y. Huang, Y. Wu, J. Li, J. Cheng, J. Power Sources 394 (2018) 9–16. 
+[28] Q. Tian, X. Wang, X. Xu, M. Zhang, L. Wang, X. Zhao, Z. An, H. Yao, J. Gao, Mater. 
+Chem. Phys. 213 (2018) 267–276. 
+[29] J. Xia, N. Zhang, S. Chong, D. Li, Y. Chen, C. Sun, Green Chem. 20 (3) (2018) 
+694–700. 
+[30] X. Wang, S. Yun, W. Fang, C. Zhang, X. Liang, Z. Lei, Z. Liu, ACS Sustain. Chem. 
+Eng. 6 (9) (2018) 11397–11407. 
+[31] T. Ramesh, N. Rajalakshmi, K.S. Dhathathreyan, L.R.G. Reddy, ACS Omega 3 (10) 
+(2018) 12832–12840. 
+[32] F. Zeng, Z. Li, X. Li, J. Wang, Z. Kong, Y. Sun, Z. Liu, H. Feng, Appl. Surf. Sci. 467 
+(2019) 229–235. 
+[33] Y. Liu, B. Huang, X. Lin, Z. Xie, J. Mater. Chem. 5 (25) (2017) 13009–13018. 
+[34] Z. Wang, H. Guo, F. Shen, G. Yang, Y. Zhang, Y. Zeng, L. Wang, H. Xiao, S. Deng, 
+Chemosphere 119 (2015) 646–653. 
+[35] D. Kang, Q. Liu, J. Gu, Y. Su, W. Zhang, D. Zhang, ACS Nano 9 (11) (2015) 
+11225–11233. 
+[36] X. Zheng, J. Luo, W. Lv, D.W. Wang, Q.H. Yang, Adv. Mater. 27 (36) (2015) 
+5388–5395. 
+[37] N. Yoshizawa, K. Maruyama, Y. Yamada, M. Zielinska-Blajat, Fuel 79 (2000) 
+1461–1466. 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 16 ---
+Journal of Power Sources 451 (2020) 227794
+16
+[38] K.R. Thines, E.C. Abdullah, N.M. Mubarak, M. Ruthiraan, Renew. Sustain. Energy 
+Rev. 67 (2017) 257 – 276 . 
+[39] B. Duan, X. Gao, X. Yao, Y. Fang, L. Huang, J. Zhou, L. Zhang, Nano Energy 27 
+(2016) 482 – 491 . 
+[40] R. Wang, P. Wang, X. Yan, J. Lang, C. Peng, Q. Xue, ACS Appl. Mater. Interfaces 4 
+(11) (2012) 5800 – 5806 . 
+[41] S. Laurichesse, L. Av �erous, Prog. Polym. Sci. 39 (7) (2014) 1266 – 1290 . 
+[42] M.-A. Ars
+~
+Ane, K. Bilba, H. Savastano Junior, K. Ghavami, Mater. Res. 16 (4) 
+(2013) 903 – 923 . 
+[43] A.R. Reed, P.T. Williams, Int. J. Energy Res. 28 (2) (2004) 131 – 145 . 
+[44] R. Biswas, H. Uellendahl, B.K. Ahring, BioEnergy Res 8 (3) (2015) 1101 – 1116 . 
+[45] G. Zu, J. Shen, L. Zou, F. Wang, X. Wang, Y. Zhang, X. Yao, Carbon 99 (2016) 
+203 – 211 . 
+[46] D. Shan, J. Yang, W. Liu, J. Yan, Z. Fan, J. Mater. Chem. 4 (35) (2016) 
+13589 – 13602 . 
+[47] L. Wei, M. Sevilla, A.B. Fuertes, R. Mokaya, G. Yushin, Adv. Energy Mater. 1 (3) 
+(2011) 356 – 361 . 
+[48] X. Tian, S. Zhu, J. Peng, Y. Zuo, G. Wang, X. Guo, N. Zhao, Y. Ma, L. Ma, 
+Electrochim. Acta 241 (2017) 170 – 178 . 
+[49] J. Tian, Z. Liu, Z. Li, W. Wang, H. Zhang, RSC Adv. 7 (20) (2017) 12089 – 12097 . 
+[50] W.-J. Liu, H. Jiang, H.-Q. Yu, Green Chem. 17 (11) (2015) 4888 – 4907 . 
+[51] W. Zhang, H. Lin, Z. Lin, J. Yin, H. Lu, D. Liu, M. Zhao, ChemSusChem 8 (12) 
+(2015) 2114 – 2122 . 
+[52] H. Peng, N. Wang, Z. Hu, Z. Yu, Y. Liu, J. Zhang, R. Ruan, Ind. Crop. Prod. 37 (1) 
+(2012) 41 – 50 . 
+[53] Y. Wang, R. Yang, M. Li, Z. Zhao, Ind. Crop. Prod. 65 (2015) 216 – 226 . 
+[54] Y. Cai, Y. Luo, H. Dong, X. Zhao, Y. Xiao, Y. Liang, H. Hu, Y. Liu, M. Zheng, 
+J. Power Sources 353 (2017) 260 – 269 . 
+[55] H. Jin, J. Hu, S. Wu, X. Wang, H. Zhang, H. Xu, K. Lian, J. Power Sources 384 
+(2018) 270 – 277 . 
+[56] N. Sudhan, K. Subramani, M. Karnan, N. Ilayaraja, M. Sathish, Energy Fuels 31 (1) 
+(2016) 977 – 985 . 
+[57] H. Yu, W. Zhang, T. Li, L. Zhi, L. Dang, Z. Liu, Z. Lei, RSC Adv. 7 (2) (2017) 
+1067 – 1074 . 
+[58] A. Gopalakrishnan, C. Kong, S. Badhulika, New J. Chem. 43 (3) (2019) 
+1186 – 1194 . 
+[59] C. Wang, D. Wu, H. Wang, Z. Gao, F. Xu, K. Jiang, J. Mater. Chem. 6 (3) (2018) 
+1244 – 1254 . 
+[60] W. Liu, J. Mei, G. Liu, Q. Kou, T. Yi, S. Xiao, ACS Sustain. Chem. Eng. 6 (2018) 
+11595 – 11605 . 
+[61] X. Zhu, S. Yu, K. Xu, Y. Zhang, L. Zhang, G. Lou, Y. Wu, E. Zhu, H. Chen, Z. Shen, 
+B. Bao, S. Fu, Chem. Eng. Sci. 181 (2018) 36 – 45 . 
+[62] Q. Wang, Y. Zhang, J. Xiao, H. Jiang, T. Hu, C. Meng, J. Alloys Compd. 782 
+(2019) 1103 – 1113 . 
+[63] K. Wu, B. Gao, J. Su, X. Peng, X. Zhang, J. Fu, S. Peng, P.K. Chu, RSC Adv. 6 (36) 
+(2016) 29996 – 30003 . 
+[64] X. Wei, H. Zou, S. Gao, J. Mater. Chem. 5 (1) (2017) 181 – 188 . 
+[65] E. Hao, W. Liu, S. Liu, Y. Zhang, H. Wang, S. Chen, F. Cheng, S. Zhao, H. Yang, 
+J. Mater. Chem. 5 (5) (2017) 2204 – 2214 . 
+[66] L. Zheng, S. Wang, Y. Yang, X. Fu, T. Jiang, J. Yang, ACS Omega 4 (3) (2019) 
+5904 – 5914 . 
+[67] G. Zhu, L. Ma, H. Lv, Y. Hu, T. Chen, R. Chen, J. Liang, X. Wang, Y. Wang, C. Yan, 
+Z. Tie, Z. Jin, J. Liu, Nanoscale 9 (3) (2017) 1237 – 1243 . 
+[68] S. Qu, J. Wan, C. Dai, T. Jin, F. Ma, J. Alloys Compd. 751 (2018) 107 – 116 . 
+[69] J. Huang, L. Chen, H. Dong, Y. Zeng, H. Hu, M. Zheng, Y. Liu, Y. Xiao, Y. Liang, 
+Electrochim. Acta 258 (2017) 504 – 511 . 
+[70] D. He, W. Zhao, P. Li, S. Sun, Q. Tan, K. Han, L. Liu, L. Liu, X. Qu, J. Alloys 
+Compd. 773 (2019) 11 – 20 . 
+[71] X. Yang, C. Li, Y. Chen, J. Phys. D Appl. Phys. 50 (5) (2017), 055501 . 
+[72] J. Chang, Z. Gao, X. Wang, D. Wu, F. Xu, X. Wang, Y. Guo, K. Jiang, Electrochim. 
+Acta 157 (2015) 290 – 298 . 
+[73] T. Wei, X. Wei, L. Yang, H. Xiao, Y. Gao, H. Li, J. Power Sources 331 (2016) 
+373 – 381 . 
+[74] R.P. Panmand, P. Patil, Y. Sethi, S.R. Kadam, M.V. Kulkarni, S.W. Gosavi, N. 
+R. Munirathnama, B.B. Kale, Nanoscale 9 (14) (2017) 4801 – 4809 . 
+[75] D. Yu, C. Chen, G. Zhao, L. Sun, B. Du, H. Zhang, Z. Li, Y. Sun, F. Besenbacher, 
+M. Yu, ChemSusChem 11 (10) (2018) 1678 – 1685 . 
+[76] K. Wang, R. Yan, N. Zhao, X. Tian, X. Li, S. Lei, Y. Song, Q. Guo, L. Liu, Mater. 
+Lett. 174 (2016) 249 – 252 . 
+[77] X. Zhang, K. Zhang, H. Li, Q. Cao, L. Jin, P. Li, J. Power Sources 344 (2017) 
+176 – 184 . 
+[78] X.-L. Su, M.-Y. Cheng, L. Fu, J.-H. Yang, X.-C. Zheng, X.-X. Guan, J. Power Sources 
+362 (2017) 27 – 38 . 
+[79] Y. Li, G. Wang, T. Wei, Z. Fan, P. Yan, Nano Energy 19 (2016) 165 – 175 . 
+[80] L. Xie, G. Sun, F. Su, X. Guo, Q. Kong, X. Li, X. Huang, L. Wan, W. Song, K. Li, 
+C. Lv, C. Chen, J. Mater. Chem. 4 (5) (2016) 1637 – 1646 . 
+[81] Y. Wei, Chem. Lett. 43 (2) (2014) 216 – 218 . 
+[82] J. Zhao, Y. Li, G. Wang, T. Wei, Z. Liu, K. Cheng, K. Ye, K. Zhu, D. Cao, Z. Fan, 
+J. Mater. Chem. 5 (44) (2017) 23085 – 23093 . 
+[83] D.R. Feumba, R.P. Ashwini, European J. Food Sci Techn. 4 (2016) 12 – 21 . 
+[84] Y. Lin, Z. Chen, C. Yu, W. Zhong, ACS Sustain. Chem. Eng. 7 (3) (2019) 
+3389 – 3403 . 
+[85] X. Dong, H. Jin, R. Wang, J. Zhang, X. Feng, C. Yan, S. Chen, S. Wang, J. Wang, 
+J. Lu, Adv. Energy Mater. 8 (11) (2018), 1702695 . 
+[86] E. Ciftyurek, D. Bragg, O. Oginni, R. Levelle, K. Singh, Environ. Prog. Sustain. 
+Energy 38 (3) (2019) . 
+[87] H. Fu, Z. Xu, R. Li, W. Guan, K. Yao, J. Huang, J. Yang, X. Shen, ACS Sustain. 
+Chem. Eng. 6 (2018) 14751 – 14758 . 
+[88] M. Song, Y. Zhou, X. Ren, J. Wan, Y. Du, G. Wu, F. Ma, J. Colloid Interface Sci. 
+535 (2019) 276 – 286 . 
+[89] A.A. Mohammed, C. Chen, Z. Zhu, J. Power Sources 417 (2019) 1 – 13 . 
+[90] A. Jain, C. Xu, S. Jayaraman, R. Balasubramanian, J.Y. Lee, M.P. Srinivasan, 
+Microporous Mesoporous Mater. 218 (2015) 55 – 61 . 
+[91] L. Sun, C. Tian, M. Li, X. Meng, L. Wang, R. Wang, J. Yin, H. Fu, J. Mater. Chem. 1 
+(21) (2013) 6462 – 6470 . 
+[92] X. Qiu, L. Wang, H. Zhu, Y. Guan, Q. Zhang, Nanoscale 9 (22) (2017) 7408 – 7418 . 
+[93] J. Xu, Q. Gao, Y. Zhang, Y. Tan, W. Tian, L. Zhu, L. Jiang, Sci. Rep. 4 (2014) 5545 . 
+[94] G. Yang, S. Park, J. Alloys Compd. 741 (2018) 360 – 367 . 
+[95] F. Sun, L. Wang, Y. Peng, J. Gao, X. Pi, Z. Qu, G. Zhao, Y. Qin, Appl. Surf. Sci. 436 
+(2018) 486 – 494 . 
+[96] Z. Xiao, W. Chen, K. Liu, P. Cui, D. Zhan, Int. J. Electrochem. Sci. 13 (2018) 
+5370 – 5381 . 
+[97] Q. Zhang, K. Han, S. Li, M. Li, J. Li, K. Ren, Nanoscale 10 (5) (2018) 2427 – 2437 . 
+[98] L. Hu, Q. Zhu, Q. Wu, D. Li, Z. An, B. Xu, ACS Sustain. Chem. Eng. 6 (11) (2018) 
+13949 – 13959 . 
+[99] J. Liu, H. Li, H. Zhang, Q. Liu, R. Li, B. Li, J. Wang, J. Solid State Electrochem. 257 
+(2017) 64 – 71 . 
+[100] Y.H. Jung, T.H. Chang, H. Zhang, C. Yao, Q. Zheng, V.W. Yang, H. Mi, M. Kim, S. 
+J. Cho, D.W. Park, H. Jiang, J. Lee, Y. Qiu, W. Zhou, Z. Cai, S. Gong, Z. Ma, Nat. 
+Commun. 6 (2015) 7170 . 
+[101] G. Liu, H. Wang, B. Zhou, X. Guo, X. Hu, J. Med. Plants Res. 4 (12) (2010) 
+1222 – 1227 . 
+[102] J. Arroyo, V. Farkas, A.B. Sanz, E. Cabib, Cell Microbiol. 18 (9) (2016) 
+1239 – 1250 . 
+[103] C. Long, X. Chen, L. Jiang, L. Zhi, Z. Fan, Nano Energy 12 (2015) 141 – 151 . 
+[104] P. Yadav, A. Basu, A. Suryawanshi, O. Game, S. Ogale, Adv. Mater. Interfaces 3 
+(2016), 1600057 . 
+[105] D. Chen, L. Li, Y. Xi, J. Li, M. Lu, J. Cao, W. Han, Electrochim. Acta 286 (2018) 
+264 – 270 . 
+[106] N. Guo, M. Li, Y. Wang, X. Sun, F. Wang, R. Yang, ACS Appl. Mater. Interfaces 8 
+(49) (2016) 33626 – 33634 . 
+[107] Q. Yao, H. Wang, C. Wang, C. Jin, Q. Sun, ACS Sustain. Chem. Eng. 6 (4) (2018) 
+4695 – 4704 . 
+[108] D. Wang, Z. Xu, Y. Lian, C. Ban, H. Zhang, J. Colloid Interface Sci. 542 (2019) 
+400 – 409 . 
+[109] M. Fu, W. Chen, J. Ding, X. Zhu, Q. Liu, J. Alloys Compd. 782 (2019) 952 – 960 . 
+[110] Z. Xu, Y. Li, D. Li, D. Wang, J. Zhao, Z. Wang, M.N. Banis, Y. Hu, H. Zhang, Appl. 
+Surf. Sci. 444 (2018) 661 – 671 . 
+[111] S. Lei, L. Chen, W. Zhou, P. Deng, Y. Liu, L. Fei, W. Lu, Y. Xiao, B. Cheng, J. Power 
+Sources 379 (2018) 74 – 83 . 
+[112] J. Niu, R. Shao, J. Liang, M. Dou, Z. Li, Y. Huang, F. Wang, Nano Energy 36 
+(2017) 322 – 330 . 
+[113] L. Tang, Y. Zhou, X. Zhou, Y. Chai, Q. Zheng, D. Lin, J. Mater. Sci. 10 (2018) 1 – 10 . 
+[114] H. Xu, C. Wu, X. Wei, S. Gao, J. Mater. Chem. 5 (31) (2018) 15340 – 15347 . 
+[115] M. Liu, J. Niu, Z. Zhang, M. Dou, F. Wang, Nano Energy 51 (2018) 366 – 372 . 
+[116] Y. Zhou, J. Ren, Y. Yang, Q. Zheng, J. Liao, F. Xie, W. Jie, D. Lin, J. Solid State 
+Chem. 268 (2018) 149 – 158 . 
+[117] A. Mondal, K. Kretschmer, Y. Zhao, H. Liu, H. Fan, G. Wang, Microporous 
+Mesoporous Mater. 246 (2017) 72 – 80 . 
+[118] W. Qian, F. Sun, Y. Xu, L. Qiu, C. Liu, Energy Environ. Sci. 7 (1) (2014) 379 – 386 . 
+[119] Z. Ling, Z. Wang, M. Zhang, C. Yu, G. Wang, Y. Dong, S. Liu, Y. Wang, J. Qiu, Adv. 
+Funct. Mater. 26 (1) (2016) 111 – 119 . 
+[120] X. Tian, H. Ma, Z. Li, S. Yan, L. Ma, F. Yu, G. Wang, X. Guo, Y. Ma, C. Wong, 
+J. Power Sources 359 (2017) 88 – 96 . 
+[121] J. Wang, Z. Li, S. Yan, X. Yu, Y. Ma, L. Ma, RSC Adv. 9 (2019) 14797 – 14808 . 
+[122] R. Saidur, E.A. Abdelaziz, A. Demirbas, M.S. Hossain, S. Mekhilef, Renew. Sustain. 
+Energy Rev. 15 (5) (2011) 2262 – 2289 . 
+[123] J. Xie, C.Y. Hse, C.F. De Hoop, T. Hu, J. Qi, T.F. Shupe, Carbohydr. Polym. 151 
+(2016) 725 – 734 . 
+[124] Y. Zhang, S. Liu, X. Zheng, X. Wang, Y. Xu, H. Tang, F. Kang, Q. Yang, J. Luo, Adv. 
+Funct. Mater. 27 (3) (2017), 1604687 . 
+[125] S. Liu, Y. Zhao, B. Zhang, H. Xia, J. Zhou, W. Xie, H. Li, J. Power Sources 381 
+(2018) 116 – 126 . 
+[126] S. Lu, M. Jin, Y. Zhang, Y. Niu, J. Gao, C. Li, Adv. Energy Mater. 8 (11) (2018), 
+1702545 . 
+[127] C. Zhao, Y. Huang, C. Zhao, X. Shao, Z. Zhu, Electrochim. Acta 291 (2018) 
+287 – 296 . 
+[128] B. Liu, Y. Liu, H. Chen, M. Yang, H. Li, J. Power Sources 341 (2017) 309 – 317 . 
+[129] X. Yan, Y. Jia, L. Zhuang, L. Zhang, K. Wang, X. Yao, ChemElectroChem 5 (14) 
+(2018) 1874 – 1879 . 
+[130] S. Dong, X. He, H. Zhang, X. Xie, M. Yu, C. Yu, N. Xiao, J. Qiu, J. Mater. Chem. 6 
+(33) (2018) 15954 – 15960 . 
+[131] B. Liu, X. Zhou, H. Chen, Y. Liu, H. Li, Electrochim. Acta 208 (2016) 55 – 63 . 
+[132] M. Genovese, K. Lian, J. Mater. Chem. 5 (8) (2017) 3939 – 3947 . 
+[133] D. Yang, H. Jing, Z. Wang, J. Li, M. Hu, R. Lv, R. Zhang, D. Chen, J. Colloid 
+Interface Sci. 528 (2018) 208 – 224 . 
+[134] B. Hu, K. Wang, L. Wu, S.H. Yu, M. Antonietti, M.M. Titirici, Adv. Mater. 22 (7) 
+(2010) 813 – 828 . 
+[135] X. Wu, L. Jiang, C. Long, Z. Fan, Nano Energy 13 (2015) 527 – 536 . 
+[136] H. Chen, F. Yu, G. Wang, L. Chen, B. Dai, S. Peng, ACS Omega 3 (4) (2018) 
+4724 – 4732 . 
+[137] X. Lin, Q. Lü, Q. Li, M. Wu, R. Liu, ACS Omega 3 (10) (2018) 13283 – 13289 . 
+J. Wang et al.                                                                                                                                                                                                                                    
+
+--- PDF页 17 ---
+Journal of Power Sources 451 (2020) 227794
+17
+[138] Y. Zhang, L. Liu, P. Zhang, J. Wang, M. Xu, Q. Deng, Chem. Eng. J. 355 (2019) 
+309–319. 
+[139] M. Karnan, K. Subramani, N. Sudhan, N. Ilayaraja, M. Sathish, ACS Appl. Mater. 
+Interfaces 8 (51) (2016) 35191–35202. 
+[140] C. Wang, Y. Xiong, H. Wang, C. Jin, Q. Sun, J. Mater. Chem. 5 (30) (2017) 
+15759–15770. 
+[141] O. Norouzi, S. Jafarian, F. Safari, A. Tavasoli, B. Nejati, Bioresour. Technol. 219 
+(2016) 643–651. 
+[142] Y. Huang, Y. Liu, G. Zhao, J.Y. Chen, J. Mater. Sci. 52 (2017) 478–488. 
+[143] M. Zhou, J. Gomez, B. Li, Y. Jiang, S. Deng, Applied. Mater. Today 7 (2017) 
+47–54. 
+[144] C. Wang, D. Wu, H. Wang, Z. Gao, F. Xu, K. Jiang, J. Power Sources 363 (2017) 
+375–383. 
+[145] Y. Gong, D. Li, C. Luo, Q. Fu, C. Pan, Green Chem. 19 (17) (2017) 4132–4140. 
+[146] M. Zhang, Y. Li, H. Si, B. Wang, T. Song, Int. J. Electrochem. Sci. 12 (2017) 
+7844–7852. 
+[147] G. Ma, W. Tang, K. Sun, Z. Zhang, E. Feng, Z. Lei, Nano 12 (8) (2017), 1750103. 
+[148] A.K. Mondal, K. Kretschmer, Y. Zhao, H. Liu, C. Wang, B. Sun, G. Wang, 
+Chemistry 23 (15) (2017) 3683–3690. 
+[149] J. Cui, Y. Xi, S. Chen, D. Li, X. She, J. Sun, W. Han, D. Yang, S. Guo, Adv. Funct. 
+Mater. 26 (46) (2016) 8487–8495. 
+[150] R. Thangavel, K. Kaliyappan, H.V. Ramasamy, X. Sun, Y.S. Lee, ChemSusChem 10 
+(13) (2017) 2805–2815. 
+[151] D. Yan, C. Yu, X. Zhang, W. Qin, T. Lu, B. Hu, H. Li, L. Pan, Electrochim. Acta 191 
+(2016) 385–391. 
+[152] R. Gaddam, D. Yang, R. Narayan, K. Raju, N. Kumar, X. Zhao, Nano Energy 26 
+(2016) 346–352. 
+[153] T. Rufford, D. Hulicova-Jurcakova, K. Khosla, Z. Zhu, G. Lu, J. Power Sources 195 
+(2010) 912–918. 
+[154] S. Gao, Y. Chen, Y. Fan, X. Wei, C. Hu, H. Luo, L. Qu, J. Mater. Chem. 2 (10) 
+(2014) 3317. 
+[155] L. Tao, Y. Huang, Y. Zheng, X. Yang, C. Liu, M. Di, S. Larpkiattaworn, M. Nimlos, 
+Z. Zheng, J. Taiwan. Inst. Chem. Eng. 95 (2019) 217–226. 
+[156] C. Wang, J. Huang, H. Qi, L. Cao, Z. Xu, Y. Cheng, X. Zhao, J. Li, J. Power Sources 
+358 (2017) 85–92. 
+[157] L. Wang, G. Mu, C. Tian, L. Sun, W. Zhou, P. Yu, J. Yin, H. Fu, ChemSusChem 6 
+(5) (2013) 880–889. 
+[158] X. Zheng, W. Lv, Y. Tao, J. Shao, C. Zhang, D. Liu, J. Luo, D. Wang, Q. Yang, 
+Chem. Mater. 26 (23) (2014) 6896–6903. 
+[159] P. Hao, Z. Zhao, J. Tian, H. Li, Y. Sang, G. Yu, H. Cai, H. Liu, C. Wong, A. Umar, 
+Nanoscale 6 (20) (2014) 12120–12129. 
+[160] J. Huang, B.G. Sumpter, V. Meunier, Chemistry 14 (22) (2008) 6614–6626. 
+[161] E. Frackowiak, Phys. Chem. Chem. Phys. 9 (15) (2007) 1774–1785. 
+[162] D. Wang, F. Li, M. Liu, G. Lu, H. Cheng, J. Phys. Chem. C 112 (2008) 9950–9955. 
+[163] X. Xu, J. Zhou, D.H. Nagaraju, L. Jiang, Val R. Marinov, G. Lubineau, Husam 
+N. Alshareef, M. Oh, Adv. Funct. Mater. 25 (21) (2015) 3193–3202. 
+[164] J. Wang, S. Kaskel, J. Mater. Chem. 22 (45) (2012) 23710. 
+[165] L.L. Zhang, H.H. Li, Y.H. Shi, C.Y. Fan, X.L. Wu, H.F. Wang, H.Z. Sun, J.P. Zhang, 
+ACS Appl. Mater. Interfaces 8 (6) (2016) 4233–4241. 
+[166] J. Hao, C. Cao, F. Idrees, X. Ma, ACS Nano 9 (3) (2015) 2556–2564. 
+[167] D. Zhou, W. Li, X. Dong, Y. Wang, C. Wang, Y. Xia, J. Mater. Chem. 1 (29) (2013) 
+8488. 
+[168] H. Lu, L. Zhuang, R. Gaddam, X. Sun, C. Xiao, T. Duignan, Z. Zhu, X. Zhao, 
+J. Mater. Chem. 7 (39) (2019) 22579–22587. 
+[169] M. Liu, K. Zhang, M. Si, H. Wang, L. Chai, Y. Shi, Carbon 153 (2019) 707–716. 
+[170] C. Huang, T. Sun, D. Hulicova-Jurcakova, ChemSusChem 6 (12) (2013) 
+2330–2339. 
+[171] G. Xu, J. Han, B. Ding, P. Nie, J. Pan, H. Dou, H. Li, X. Zhang, Green Chem. 17 (3) 
+(2015) 1668–1674. 
+[172] J. Jimenez, M. Skalic, G. Martinez-Rosell, G. De Fabritiis, J. Chem. Inf. Model. 58 
+(2) (2018) 287–296. 
+[173] D.P. Tabor, L.M. Roch, S.K. Saikin, C. Kreisbeck, D. Sheberla, J.H. Montoya, 
+S. Dwaraknath, M. Aykol, C. Ortiz, H. Tribukait, C. Amador-Bedolla, C.J. Brabec, 
+B. Maruyama, K.A. Persson, A. Aspuru-Guzik, Nat. Reviews Mater. 3 (5) (2018) 
+5–20. 
+[174] J.D. Perea, S. Langner, M. Salvador, B. Sanchez-Lengeling, N. Li, C. Zhang, 
+G. Jarvas, J. Kontos, A. Dallos, A. Aspuru-Guzik, C.J. Brabec, J. Phys. Chem. C 121 
+(33) (2017) 18153–18161. 
+[175] H. Su, C. Lian, J. Liu, H. Liu, Chem. Eng. Sci. 202 (2019) 186–193. 
+[176] M. Zhou, A. Gallegos, K. Liu, S. Dai, J. Wu, Carbon 157 (2020) 147–152. 
+[177] H. Chaoui, C.C. Ibe-Ekeocha, H. Gualous, Elec. Power Syst. Res. 146 (2017) 
+189–197. 
+[178] J. Mozaryn, A. Chmielewski, IFAC PapersOnLine 51 (2018) 23–30. 
+[179] H. Farsi, F. Gobal, Comput. Mater. Sci. 39 (3) (2007) 678–683. 
+[180] T.D. Dongale, P.R. Jadhav, G.J. Navathe, J.H. Kim, M.M. Karanjkar, P.S. Patil, 
+Mater. Sci. Semicond. Process. 36 (2015) 43–48. 
+[181] T. Weigert, Q. Tian, K. Lian, J. Power Sources 196 (2011) 4061–4066. 
+[182] S. Zhu, J. Li, L. Ma, C. He, E. Liu, F. He, C. Shi, N. Zhao, Mater. Lett. 233 (2018) 
+294–297. 
+[183] J. Wang, F. Li, F. Zhu, O. Schmidt, Small Methods (2018) 1800367. 
+[184] S. Herou, P. Schlee, A.B. Jorge, M. Titirici, Curr. Opin. Green Sustain. Chem. 9 
+(2018) 18–24. 
+J. Wang et al.                                                                                                                                                                                                                                    

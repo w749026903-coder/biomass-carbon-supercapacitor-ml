@@ -1,0 +1,1498 @@
+
+--- PDF页 1 ---
+Vol.:(0123456789)
+https://doi.org/10.1007/s10853-025-11951-x
+J Mater Sci (2026) 61:2427–2446
+Energy materials
+A machine learning approach to optimize 
+electrochemical performance of electrodeposited 
+polyaniline‑based supercapacitors
+Abbas A. Abdullahi1, Ahmad Abbas Dalhatu2, Abdul‑Rahman Faisal Al‑Betar1, Syed Shaheen Shah3, 
+Syed Masiur Rahman4,6, Tawfik A. Saleh1, and Md. Abdul Aziz4,5,* 
+1 Chemistry Department, King Fahd University of Petroleum and Minerals, Dhahran 31261, Saudi Arabia
+2 Materials Science and Engineering Department, King Fahd University of Petroleum & Minerals, Dhahran 31261, Saudi Arabia
+3 Socio‑Environmental Energy Science Department, Graduate School of Energy Science, Kyoto University, Yoshida Honmachi, 
+Sakyo‑ku, Kyoto 606‑8501, Japan
+4 Department of Civil and Environmental Engineering, King Fahd University of Petroleum & Minerals, Dhahran 31261, Saudi Arabia
+5 Interdisciplinary Research Center for Hydrogen Technologies and Carbon Management (IRC‑HTCM), 
+King Fahd University of Petroleum & Minerals, Dhahran 31261, Saudi Arabia
+6 Interdisciplinary Research Center for Construction and Building Materials, King Fahd University of Petroleum and Minerals, Dhahran, 
+Saudi Arabia
+ABSTRACT
+This study presents a machine learning (ML)-driven framework for optimizing 
+the design of polyaniline (PANI)-based supercapacitors, a promising material 
+for energy storage. The framework integrates experimental data and advanced 
+optimization techniques to systematically investigate the effects of key fabrication 
+parameters such as mesh size, deposition cycles, voltage window, and operating 
+potential on performance metrics, including specific capacitance, energy density, 
+and internal resistance (IR) drop. Two ML models, gradient boosting regressor 
+(GBR) and random forest regressor (RFR), were trained on 145 experimental data-
+sets, achieving high predictive accuracy  (R2 > 0.95). Bayesian optimization (BO) 
+was used to identify the global optimum fabrication conditions, resulting in sig-
+nificant reductions in mean absolute percentage errors 15% for energy density, 
+20% for capacitance, and 7% for IR drop. Feature importance analysis, includ-
+ing SHAP and partial dependence plots, revealed that mesh size and operating 
+potential were the most influential parameters, aligning with electrochemical 
+theories on ion transport and polymer growth. This integrated approach not 
+only accelerates the design and optimization of PANI-based supercapacitors but 
+also minimizes material waste and provides a scalable, interpretable pathway for 
+ML-driven optimization in the development of high-performance, cost-effective 
+energy storage devices.
+Received: 12 October 2025 
+Accepted: 27 November 2025 
+Published online: 
+29 December 2025 
+© The Author(s), under 
+exclusive licence to Springer 
+Science+Business Media, LLC, 
+part of Springer Nature, 2025
+Handling Editor: Biao Chen.
+Address correspondence to E-mail: maziz@kfupm.edu.sa
+
+--- PDF页 2 ---
+ J Mater Sci (2026) 61:2427–2446
+GRAPHICAL ABSTRACT
+Introduction
+Supercapacitors play a pivotal role in the advancement 
+of smart energy storage technologies. The intermittent 
+availability of energy required for routine activities 
+necessitates the development of efficient and reliable 
+storage systems across various applications, including 
+those in optics. As a result, there is a growing impe-
+tus to investigate alternative energy storage solutions, 
+such as rechargeable batteries [ 1], fuel cells [ 2], and 
+supercapacitors [3]. Supercapacitors have gained sig-
+nificant attention due to their favorable characteristics, 
+notably high power density and substantial specific 
+capacity [4–6]. The overall performance and efficiency 
+of supercapacitors are critically influenced by the 
+properties and design of the electrode materials used. 
+Polyaniline (PANI) is a prominent conductive poly-
+mer for electrode materials due to its high theoretical 
+capacitance, adjustable conductivity, environmental 
+stability, and cost-effectiveness. It has been extensively 
+studied for supercapacitor applications, especially in 
+asymmetric and hybrid configurations [7, 8].
+One promising strategy involves electrodepositing 
+PANI onto conductive substrates such as stainless-
+steel mesh, which provides a robust, flexible, and 
+conductive platform [ 9]. Nevertheless, optimizing 
+the electrodeposition conditions to maximize capaci-
+tance and energy density while minimizing the IR 
+drop remains a challenging task. The IR drop, a sud-
+den voltage loss occurring at the onset of discharge, 
+is one of the major performance-limiting factors in 
+PANI-based supercapacitors. It reflects the internal 
+resistance of the device, influenced by several inter-
+dependent variables, including the morphology and 
+conductivity of the electrode, interface contact, elec-
+trolyte composition, and electrode design [10]. Exper-
+imentally, researchers have sought to mitigate this 
+issue through extensive parametric tuning, adjusting 
+electrodeposition techniques (e.g., cyclic voltammetry 
+(CV) vs. galvanostatic methods), scan rates, electrolyte 
+concentrations, operating potential window (OPW), 
+and cycle numbers [11]. However, the sheer number 
+of combinatorial possibilities introduces complex-
+ity, cost, and time delays to the experimental design 
+process.
+In this context, machine learning (ML) presents 
+a transformative approach to materials optimiza-
+tion, particularly for electrochemical systems where 
+parameter interactions are non-linear and data rich. 
+By training ML algorithms on experimentally acquired 
+datasets, predictive models can be built to identify 
+patterns and recommend optimized conditions faster 
+and more accurately than traditional trial-and-error 
+methods. In recent years, ML has shown promise in 
+predicting battery cycle life [12], optimizing catalysts 
+[13], and guiding material synthesis pathways [14]. 
+However, its application in supercapacitor fabrica-
+tion, particularly for optimizing electrodeposition 
+parameters to address IR drop and enhance energy 
+performance, remains underexplored. Although ML 
+models have shown significant promise in predicting 
+the specific capacitance and energy density of super-
+capacitors, they encounter several limitations that can 
+affect their accuracy and generalizability [15– 17]. A 
+primary concern is their reliance on the quality and 
+quantity of available data; limited or noisy datasets 
+can lead to overfitting, where models perform well 
+on training data but poorly on unseen data [18]. This 
+2428
+
+--- PDF页 3 ---
+J Mater Sci (2026) 61:2427–2446 
+issue is particularly prevalent in materials science 
+because obtaining extensive experimental data can be 
+a resource-intensive process.
+Additionally, many ML models function as “black 
+boxes”, providing predictions without clear explana-
+tions. This lack of transparency hinders understand-
+ing the underlying physical phenomena and limits the 
+ability to draw actionable insights for material design. 
+Furthermore, traditional ML models may not inher-
+ently incorporate the governing physical laws of elec-
+trochemical systems, potentially leading to physically 
+inconsistent predictions. Integrating physics-informed 
+neural networks (PINNs) has been proposed as a solu-
+tion to address this challenge. PINNs embed physical 
+laws into learning to improve prediction accuracy and 
+consistency [19]. However, developing such models 
+requires a delicate balance between data-driven learn-
+ing and adherence to physical principles, and chal-
+lenges remain in effectively training these networks. 
+Therefore, while ML offers valuable tools for predict-
+ing supercapacitor performance metrics, carefully 
+considering data quality, model interpretability, and 
+incorporating physical laws is essential to overcome 
+these limitations [20–22].
+As part of the ongoing improvement of supercapac-
+itor performance, our group fabricated electrodepos-
+ited PANI on steel meshes and utilized them as elec-
+trode materials for high-performance supercapacitor 
+fabrication. The electrodeposited PANI-based superca-
+pacitor exhibited a high energy density, a property that 
+has already been reported [23, 24]. However, there is a 
+need to develop an optimal condition for attaining this 
+energy density, which is complex. Electrodeposited 
+PANI on metal meshes still struggles with inconsistent 
+capacitance, energy density, and a significant IR drop 
+caused by non-uniform films and limited transport 
+pathways. The project aims to pair controlled experi-
+ments with supervised ML and Bayesian optimization 
+to model how fabrication parameters influence elec-
+trochemical performance. This provides a data-driven 
+way to reduce IR drop and improve overall energy 
+storage without relying on trial-and-error. This led to 
+the development of ML models that can predict opti-
+mal condition using features such as mesh sizes, depo-
+sition voltage, deposition cycles, and OPWs. There-
+fore, the cost, time, and resources can be minimized 
+using available models without the stress of attaining 
+the optimal condition. ML models like random forest 
+regressor (RFR) [25] and gradient boosting regressor 
+(GBR) [26] can help scientists save time by predicting 
+optimal conditions for improving energy density and 
+capacitance in supercapacitors suitable for flexible and 
+non-flexible uses. This study introduces a data-driven 
+framework to optimize key electrochemical parame-
+ters for PANI-based supercapacitor fabrication using 
+ML. The research systematically investigates the effect 
+of various experimentally controllable parameters 
+such as mesh size of stainless-steel substrates (20, 50, 
+100, and 200 pores per inch), electrodeposition voltage 
+window (0.0–1.0 V, 0.0–1.1 V, and 0.0–1.3 V), number 
+of CV deposition cycles (5, 15, 25, 35) and OPW (0–0.4, 
+0–0.6 and 0–0.8 V) on the resultant capacitance, energy 
+density, and IR drop. A fixed electrolyte composition 
+(0.5 M aniline in 0.5 M  H2SO4) and scan rate (50 mV/s) 
+were maintained for electrodeposition. The datasets 
+derived from these experiments were then fed into 
+ML models, which were trained and tested to predict 
+supercapacitor performance under varying conditions. 
+The datasets were proportioned into 70% training and 
+30% testing sets for the reported ML models, followed 
+by validation and optimization using Bayesian optimi-
+zation (BO). GBR performed best for capacitance and 
+energy density, achieving root mean squared errors 
+(RMSE) of 48.04 and 183.55, respectively, while RFR 
+excelled for IR-drop with an RMSE of 0.0427. Before 
+making predictions, we cleaned the dataset to ensure 
+compatibility with Python 3.13.3, engineered features, 
+and tuned hyperparameters. For GBR, key settings 
+influencing predictions were the number of estima-
+tors, learning rate, maximum depth, and minimum 
+samples per split. For RFR, important parameters 
+included the minimum sample leaf, the maximum 
+depth, the maximum features, and the number of 
+trees. These adjustments optimized the models’ ability 
+to predict efficiently. Feature importance scores (from 
+scikit-learn’s feature_importances_) highlighted critical 
+inputs like mesh size and OPWs. BO further refined 
+these settings, boosting model accuracy.
+Application of ML in energy storage devices
+In recent years, ML has surged as a powerful tool for 
+predicting key performance metrics of supercapaci-
+tors, particularly specific capacitance and energy den-
+sity. By analyzing the intricate relationships between 
+material properties and electrochemical performance, 
+ML models can efficiently forecast these metrics, 
+guiding the design and optimization of energy stor-
+age devices. For example, one study employed arti-
+ficial neural networks (ANN) to predict the specific 
+2429
+
+--- PDF页 4 ---
+ J Mater Sci (2026) 61:2427–2446
+capacitance of carbon nanotube-based supercapaci-
+tors, achieving a high correlation between predicted 
+and experimental values [27]. Recent studies have 
+applied ML techniques to estimate the electrochemical 
+performance of electrode materials based on graphene 
+oxide nano-rings. This research demonstrated the 
+effectiveness of ML in predicting capacitance, empha-
+sizing its feasibility in this domain [28]. It’s intriguing 
+how the fusion of ML and materials science is accel-
+erating advances in energy storage technology. Using 
+ML algorithms, researchers can predict how specific 
+nanostructured materials behave electrochemically 
+before they are physically synthesized. This predic -
+tive capability streamlines the experimental process, 
+saving valuable time and resources. Graphene oxide 
+nano-rings, with their unique structural properties, 
+offer exceptional potential for high-performance 
+supercapacitors [28]. ML models can analyze vast 
+datasets of material properties and electrochemi-
+cal behaviors, uncovering patterns and insights that 
+might be overlooked through conventional methods. 
+This approach enhances the accuracy of performance 
+predictions and facilitates the discovery of new mate-
+rials with optimized capacitance properties. Previous 
+researchers have reported much work on using ML 
+models to predict energy density and specific capaci-
+tance. A study reported by Nanda et al. [29] utilized 
+ML algorithms such as ANN, support vector machines 
+(SVM), and RFR regression to form models that can 
+predict the cyclic stability of supercapacitor materi-
+als. These models were trained on datasets comprising 
+various material properties, electrode configurations, 
+electrolyte compositions, and operating conditions. 
+A hybrid ML-deep learning approach for improving 
+energy storage capacity prediction in supercapacitors 
+has been reported in reference [26]. The study dem-
+onstrates how ML and deep learning algorithms can 
+accurately predict key performance metrics of super-
+capacitors, such as specific capacitance, energy den-
+sity, and power density. The models uncover complex 
+relationships that traditional methods often miss by 
+analyzing extensive datasets of material properties 
+and electrochemical behaviors, leading to more precise 
+predictions. The work also reports that the AI mod -
+els achieve a high correlation between predicted and 
+experimental results, validating their effectiveness and 
+reliability. Additionally, on the verge of incorporating 
+an ML algorithm for predicting energy density, a deep 
+learning framework has been developed to enhance 
+the predictive accuracy of CNT-based supercapacitor 
+performance. The researchers leveraged AI models, 
+such as ANN and ML algorithms, to analyze com-
+plex datasets of CNT materials. These models effec -
+tively predicted the specific capacitance of CNT-based 
+electrodes by learning from patterns in the data that 
+traditional methods might overlook. The AI models 
+demonstrated high predictive accuracy, strongly cor-
+relating the predicted specific capacitance and the 
+experimental results [30]. This accuracy validates the 
+effectiveness of AI in capturing the nonlinear relation-
+ships between CNT properties and electrochemical 
+performance. Another study reported the application 
+of an ML model for predicting capacitance in CNT 
+supercapacitors. This time, these models were trained 
+on datasets comprising material properties such as 
+CNT diameter, length, chirality, surface area, func-
+tionalization, and defect density alongside fabrication 
+parameters and experimental performance metrics 
+[31]. Liao et al. efficiently predicted and optimized 
+the performance of N-doped biochar electrodes; the 
+study showcases how ML can accelerate the discov-
+ery and deployment of high-performance, sustain-
+able supercapacitors [32]. Models such as ANN and 
+SVM were employed to analyze complex relationships 
+between synthesis conditions, material properties, and 
+electrochemical performance [33]. Meanwhile, reports 
+employed ML models to predict the energy density 
+and specific capacitance of a newly developed cerium 
+oxynitride electrode [34]. The model predicts that the 
+material will exhibit a specific capacity of approxi-
+mately 26.6 mAh/g and capacity retention exceeding 
+90%, based on material properties like morphology, 
+composition, and surface area, along with operational 
+factors such as current density and applied OPW. 
+These performance metrics can be feasibly achieved 
+using the urea glass method. The experimental results, 
+approximately 26 mAh/g and nearly 100% capacity 
+retention, greatly validate this predictive approach. 
+Another study applies ML techniques to predict the 
+specific capacitance of supercapacitors made from 
+biomass carbon materials. The research identifies key 
+features influencing energy storage efficiency.
+However, we took a different approach to predict-
+ing energy density, capacitance, and IR drop. After the 
+prediction was carried out using five models, the best 
+two models were reported, and these models were fur-
+ther optimized using BO. The BO procedure resulted 
+in a harmonized set of hyperparameters that jointly 
+optimized predictions across the three output varia-
+bles. The optimized models demonstrated improved 
+2430
+
+--- PDF页 5 ---
+J Mater Sci (2026) 61:2427–2446 
+generalization, with reduced prediction errors for 
+each target. The GBR reduced its mean absolute per-
+centage error (MAPE) by 15% for energy density and 
+20% for capacitance compared to its original setup. 
+Meanwhile, the RFR model cut its MAPE by 7% for 
+IR-drop compared to its baseline. This result demon-
+strates the effectiveness of multi-objective BO in simul-
+taneously enhancing performance across correlated 
+energy storage metrics, ensuring a more holistic and 
+reliable model. Model performance and optimization 
+were assessed using fivefold cross-validation. Perfor-
+mance metrics, including RMSE and MAPE scores, 
+were consistently improved across all outputs post-
+optimization. These findings validate the importance 
+of automated hyperparameter optimization in achiev-
+ing robust predictive performance.
+Materials, methodology, 
+and electrochemical measurements
+Materials
+In this study, woven stainless steel meshes with four 
+different sizes, 20, 50, 100, and 200 pores per inch, were 
+sourced from a local supplier in Dammam, Eastern 
+Province, Saudi Arabia. These variations were selected 
+to assess their systematic impact on the electrochemi-
+cal behavior of supercapacitors. High-purity sulfuric 
+acid (~ 95%) and ethanol, essential for both electro 
+polymerization and electrode cleaning processes, were 
+procured from Fisher Chemical Company. Aniline, 
+used in the synthesis of PANI for electrode fabrica-
+tion, was obtained from Sigma-Aldrich with a purity 
+of 99.05%, compliant with ACS standards. High-grade 
+reagents were critical to ensure reproducibility and 
+reliability in supercapacitor device fabrication.
+Preparation of woven steel mesh substrate
+Woven steel meshes with mesh sizes of 20, 50, 100, 
+and 200 per inch were cut into small electrodes with a 
+1  cm2 working electrode area. The samples were first 
+sonicated in ethanol for 15 min to remove surface con-
+taminants, such as oil and dirt. They were then rinsed 
+with deionized water and sonicated again in water 
+for an additional 15 min to ensure thorough cleaning. 
+Finally, the meshes were dried in an oven at 50 °C for 
+one hour to eliminate residual moisture, preparing 
+them for the subsequent electrodeposition process.
+Electropolymerization process
+Electropolymerization of PANI onto the woven steel 
+mesh substrates was performed using a CHI 760E 
+Potentiostat in a standard three-electrode electro -
+chemical setup. The prepared steel mesh served as 
+the working electrode, while a platinum wire and an 
+Ag/AgCl electrode functioned as the counter and ref-
+erence electrodes, respectively. The electrodeposition 
+solution consisted of 0.5 M aniline in 0.5 M sulfuric 
+acid  (H2SO4). Electrodeposition was carried out via 
+CV at a fixed scan rate of 50 mV/s. To examine the 
+influence of electrochemical parameters on deposition 
+quality and supercapacitor performance, three volt-
+age windows were explored: 0.0–1.0 V, 0.0–1.1 V, and 
+0.0–1.3 V. Within each voltage range, the number of 
+deposition cycles was varied (5, 15, 25, and 35 cycles) 
+to determine the optimal conditions. The best electro-
+chemical performance in terms of capacitance, energy 
+density, and power density was observed at 35 cycles 
+within the 0.0–1.3 V window. After deposition, the 
+steel meshes developed a distinct green PANI coat-
+ing, which was rinsed with deionized water to remove 
+residual monomers or byproducts and then air-dried 
+at room temperature to maintain the coating’s struc-
+tural integrity.
+Assessing the impact of deposition cycle 
+on supercapacitor performance
+The performance of a supercapacitor is strongly influ-
+enced by the design and characteristics of its electrode 
+material, particularly the electropolymerization pro-
+cess used to synthesize PANI. CV tests were carried 
+out using a three-electrode setup to evaluate the redox 
+stability and supercapacitive behavior of electrodepos-
+ited PANI. PANI-coated woven steel meshes with 
+four different mesh sizes served as the working elec-
+trodes in this configuration. These were submerged 
+in a 0.1 M  H2SO4 aqueous electrolyte with a stand-
+ard Ag/AgCl reference electrode and a platinum wire 
+counter electrode. CV measurements were performed 
+over OPW of − 0.4 V to 0.8 V, using a fixed scan rate 
+of 50 mV/s, as shown in Figure S2. This experimental 
+setup was designed to systematically investigate the 
+electrochemical performance of the PANI layers, with 
+a particular focus on how varying the number of depo-
+sition cycles affects the overall efficiency of the super-
+capacitor. The choice of OPW and scan rate was critical 
+for gaining detailed insights into the electrochemical 
+2431
+
+--- PDF页 6 ---
+ J Mater Sci (2026) 61:2427–2446
+properties of the PANI-coated electrodes, contribut-
+ing to the optimization of electrode fabrication for 
+enhanced supercapacitor performance. However, the 
+electrodeposition method that was used has been pre-
+viously reported by our group [23, 35–37].
+Electrochemical measurements
+The electrochemical performance of the fabricated 
+supercapacitors was evaluated using a two-electrode 
+system through CV, galvanostatic charge–discharge 
+(GCD), and electrochemical impedance spectroscopy 
+(EIS). All measurements were carried out using a CHI 
+760E Potentiostat, across three OPWs: 0–0.4 V, 0–0.6 V, 
+and 0–0.8 V. These voltage ranges were applied to all 
+techniques except EIS. Based on standard equations, 
+the resulting data were used to calculate key perfor-
+mance parameters, including capacitance, energy den-
+sity, and power density. However, Figure  S2 of the 
+supplementary document provides detailed CV and 
+GCD measurements that were conducted over OPWs 
+of 0–0.6 V, and 0–0.8 V.
+From the CV measurements, the areal capacitance 
+ Car was calculated using Eq. (1) [24].
+where ∫I × dV represents the integration of the area 
+under the CV curve, A is the area of the electrode 
+material  (cm2), v is the scan rate (mV/s), and ∆V is the 
+OPW (V).
+For GCD measurements, Car was calculated by 
+using Eq. (2).
+where I is the discharging current (A), t is the discharg-
+ing time (s), A is the area of the electrode material 
+ (cm2), and ∆V is the OPW.
+Energy density (E ) and power density (P ) were 
+derived from the GCD data using the following 
+Eqs. (3) and (4), respectively [38, 39].
+(1)Car =
+∫ I × dV
+A × v ×Δ V
+(2)Car = I × t
+A ×Δ V
+(3)E = 0.5 × Car ×Δ V 2
+3.6
+(4)P = E × 3600
+Δt
+where E and P are the energy density (Wh/cm 2) and 
+power density (W/cm2), respectively. Car is capacitance 
+per unit area (F/cm 2), Δt is the difference between 
+final and initial discharging time (s), and ΔV is the 
+discharge OPW (V). These calculations provided valu-
+able insights into the performance of the supercapaci-
+tors, enabling the optimization of electrode materials 
+and fabrication conditions for enhanced energy stor-
+age efficiency.
+ML methodology
+Data collection used for the ML model
+A data-led method is explored to forecast the effi-
+ciency of PANI on woven steel mesh current collectors. 
+The forecast-centric analysis is essential because no 
+recognized pattern links material attributes to usage 
+in understanding the efficacy of supercapacitors for 
+novel materials. Experimental measurements were 
+conducted on several mesh sizes using a woven steel 
+mesh current collector, and later, ML was employed 
+to validate the optimal condition of the experimental 
+outcome. During data preprocessing, approximately 
+4 features listed in the introduction were used to build 
+the models, serving as the input parameters. The data-
+sets generated during the experimental measurements 
+were used for training and testing the models. Specifi-
+cally, 70% of the datasets were used for training the 
+ML models, while the remaining 30% were used as 
+the testing datasets. Overall, around 145 datasets were 
+generated during the experimental measurements. 
+Codes were written using Python and executed in a 
+Google Colab environment.
+Feature selection
+Accurate feature selection is crucial for predicting 
+capacitance and energy density in electrochemical 
+energy storage systems, including supercapacitors 
+and batteries. The performance of these systems is 
+highly sensitive to a range of experimental and mate-
+rial synthesis parameters, making it vital to identify 
+the most relevant factors. Selecting the appropriate 
+features reduces computational complexity, enhances 
+model interpretability, and improves prediction accu-
+racy. In this context, mesh size, deposition cycle, tested 
+voltage, and deposition potential window represent 
+key experimental variables that directly influence the 
+2432
+
+--- PDF页 7 ---
+J Mater Sci (2026) 61:2427–2446 
+electrochemical behavior and storage capabilities of 
+electrode materials. Mesh size plays a crucial role in 
+determining the surface morphology and porosity of 
+electrode materials, which in turn affects the accessible 
+surface area for ion adsorption and charge storage. 
+Larger mesh sizes can result in coarser electrode struc-
+tures, reducing active surface area, while finer meshes, 
+such as 20 mesh, can enhance surface uniformity and 
+increase capacitance. Similarly, the deposition cycle 
+influences the thickness and structural integrity of the 
+electrode coating. Excessive deposition cycles may 
+lead to cracking or poor adhesion, thereby impairing 
+electrochemical performance, whereas insufficient 
+cycles can result in thin coatings with limited active 
+material. Electrolyte concentration has a significant 
+impact on ionic conductivity and ion transport effi-
+ciency. Higher concentrations generally improve ionic 
+conductivity, facilitating faster charge–discharge rates 
+and higher capacitance. However, excessively high 
+concentrations may lead to ion aggregation or reduced 
+ion mobility, lowering performance. Tested voltage 
+determines the OPW, affecting both capacitance and 
+energy density. Higher OPWs often enhance energy 
+density but can accelerate degradation and increase 
+the risk of electrolyte breakdown. The deposition 
+potential window is another influential parameter 
+that governs the nucleation and growth of electrode 
+materials during electrodeposition. It determines 
+the crystalline structure, porosity, and particle size, 
+directly impacting capacitance and energy storage 
+efficiency. The interplay between these parameters is 
+often non-linear and complex. For instance, increas -
+ing electrolyte concentration may improve capacitance 
+under one deposition potential but reduce it under 
+another. Such interactions underscore the need for 
+robust feature selection techniques to identify the most 
+influential variables. Understanding the individual 
+and combined effects of mesh size, deposition cycle, 
+electrolyte concentration, tested voltage, and deposi-
+tion OPW are essential for optimizing electrochemical 
+performance and developing predictive capacitance 
+and energy density models.
+Model development and relevant ML models
+Gradient boost regressor (GBR)
+Figure 1 illustrates the architecture of the GBR model 
+used in this study to predict energy density, capaci-
+tance, and IR drop. GBR builds a sequential ensemble 
+of regression trees, where each subsequent tree cor-
+rects the prediction errors (residuals) of the preceding 
+Figure 1  Schematic representation of GBR model architecture.
+2433
+
+--- PDF页 8 ---
+ J Mater Sci (2026) 61:2427–2446
+ones. Initially, the model is trained on the input data 
+to make baseline predictions. The residuals, or errors, 
+from this prediction, are then used to train the next 
+tree, which focuses on minimizing the remaining 
+error. This iterative refinement continues across mul-
+tiple trees, resulting in a strong predictive model. The 
+GBR framework was applied separately to each output 
+variable, leveraging its strength in capturing complex 
+non-linear dependencies between material character-
+istics and electrochemical performance metrics.
+The model is trained sequentially, where each 
+regression tree learns to correct the residual errors of 
+its predecessor. The first tree is trained on the origi-
+nal data (X, y), producing an initial prediction y^1. 
+The subsequent trees are trained on the residuals 
+(r = y − y^1) to improve model accuracy iteratively. 
+This ensemble learning approach enables the model 
+to capture complex non-linear relationships between 
+the input features and the output performance met-
+rics. The final prediction is obtained by aggregating 
+the outputs of all individual trees.
+Random forest regressor (RFR)
+RFR is an ensemble learning algorithm based on deci-
+sion trees that has proven particularly effective in 
+materials science applications due to its robustness 
+and interpretability. RFR constructs multiple deci-
+sion trees during training and aggregates their out-
+puts to enhance predictive accuracy while reducing 
+overfitting. A key advantage of RFR is its ability to 
+estimate feature importance scores. The importance of 
+each feature is determined by evaluating how much 
+it improves the model’s accuracy when splitting the 
+data in the decision trees. In electrochemical perfor-
+mance prediction, RFR can reveal which experimen-
+tal variables, such as the tested voltage or electrolyte 
+concentration, consistently contribute to variations in 
+capacitance and energy density. Unlike artificial neu-
+ral networks (ANNs) and convolutional neural net-
+works (CNNs), RFR is less susceptible to overfitting 
+with small datasets and is computationally efficient, 
+making it an attractive choice for experimentalists 
+seeking interpretable models [18]. Figure 2 shows the 
+RFR model architecture.
+Combining these machine-learning approaches 
+can further enhance feature selection. Hybrid mod-
+els, where RFR identifies key features that are sub-
+sequently fine-tuned using an ANN or a CNN, are 
+gaining traction in electrochemical performance 
+modelling. For instance, RFR may highlight the 
+deposition cycle and electrolyte concentration as 
+primary drivers of capacitance, prompting ANN or 
+CNN models to focus on their interactions with sec-
+ondary parameters, such as mesh size and deposition 
+Figure 2  Schematic representation of RFR model architecture.
+2434
+
+--- PDF页 9 ---
+J Mater Sci (2026) 61:2427–2446 
+potential window. Such integrative strategies strike 
+a balance between interpretability and predictive 
+power, offering a comprehensive approach to feature 
+selection and performance prediction. Despite their 
+advantages, ML models require careful data pre-
+processing and validation. Inconsistent experimental 
+conditions, noise, and small sample sizes can com-
+promise the performance of the model. Techniques 
+like data augmentation, synthetic data generation, 
+and transfer learning are being explored to address 
+these limitations in electrochemical research [40]. 
+Ultimately, leveraging ANN, CNN, and RFR algo-
+rithms allows researchers to uncover non-obvious 
+relationships among experimental parameters, facili -
+tating the development of more accurate and robust 
+models for capacitance and energy density predic-
+tion [41, 42].
+Performance metrics of the ML models
+Statistical methods and correlation-based techniques 
+are commonly employed as initial steps in identify-
+ing the most relevant features for predicting capaci-
+tance and energy density in electrochemical systems. 
+These approaches help quantify the relationships 
+between inputs variables, such as mesh size, depo-
+sition cycle, electrolyte concentration, tested volt-
+age, deposition potential window, and the target 
+performance metrics. Statistical evaluations enhance 
+the efficiency and accuracy of predictive models by 
+revealing potential dependencies and eliminating 
+redundant or weakly correlated features.
+Pearson correlation coefficient The Pearson correlation 
+coefficient is a widely used technique that meas-
+ures the linear relationship between two variables. 
+Values range from − 1 to 1, with positive values 
+indicating a direct correlation and negative values 
+representing an inverse relationship. For instance, 
+electrolyte concentration may exhibit a positive cor-
+relation with capacitance in specific systems, while 
+excessive deposition cycles could display a negative 
+correlation due to material degradation. However, 
+Pearson correlation is limited to linear dependen-
+cies, which may overlook non-linear interactions 
+commonly observed in electrochemical processes. 
+This necessitates the use of complementary methods 
+for a comprehensive evaluation of features.
+Mean absolute error The mean absolute error (MAE) is a 
+standard metric used in regression analysis to assess the 
+accuracy of model predictions. Unlike the residual sum 
+of squares (RSS), which squares the errors, MAE calcu-
+lates the absolute differences between predicted and 
+actual values, offering a precise measure of the aver-
+age error size. Unlike RSS or mean squared error, MAE 
+does not square the residuals, making it less sensitive to 
+outliers. This means that a single significant error won’t 
+significantly skew the MAE, thus providing a more reli-
+able metric in the presence of outliers. Essentially, MAE 
+represents the average magnitude of errors the model 
+makes without any modifications that could distort 
+their real-world impact.
+Visualization tools Visualization tools, such as scatter 
+plots, heatmaps, and pairwise correlation matrices, com-
+plement statistical evaluation. Scatter plots reveal data 
+distributions and potential outliers, while heatmaps 
+visually represent the correlation strengths between all 
+variables, enabling the rapid identification of highly 
+correlated features. During this representation, the pre-
+dicted values from the ML models are plotted against 
+the actual values from the experimental measurements. 
+Pairwise correlation matrices further help detect situ-
+ations of collinearity, where two or more predictors 
+exhibit strong interdependence, thereby complicating 
+the interpretation of their individual effects on perfor-
+mance metrics. Addressing collinearity is crucial when 
+evaluating the significance of experimental parameters. 
+Highly correlated features, such as deposition cycle and 
+deposition potential window, may confound predictive 
+models by inflating variance and reducing interpretabil-
+ity. Statistical and correlation-based evaluations are an 
+essential foundation in the feature selection process. By 
+quantifying linear, non-linear, and information-based 
+relationships, researchers can prioritize the most influ-
+ential experimental parameters, such as mesh size, dep-
+osition cycle, electrolyte concentration, tested voltage, 
+and deposition potential window. These insights inform 
+the development of more accurate and interpretable 
+prediction models for electrochemical performance.
+Results and discussions
+ML modelling results
+This section presents the performance evaluation of the 
+ML models used to predict key electrochemical metrics, 
+2435
+
+--- PDF页 10 ---
+ J Mater Sci (2026) 61:2427–2446
+specific capacitance, energy density, and IR-drop based 
+on experimentally derived features. The analysis com-
+pares the predictive accuracy of RFR and GBR models, 
+highlighting their strengths and limitations for each 
+target output.
+Modeling of capacitance, energy density, and IR‑drop, 
+performance metrics
+Among all the models tested on the datasets, RFR 
+and GBR stood out as the top performers for predict-
+ing capacitance, energy density, and IR drop. These 
+two models consistently delivered better results than 
+others during the training and testing phases, which 
+is why they were selected for this study. To illustrate 
+their performance, scatter plots are provided below, 
+showing the actual values versus the predicted values 
+for capacitance, energy density, and IR drop. Each plot 
+includes the  R2 value (a measure of how well the pre-
+dictions match the actual data) calculated for the test 
+datasets. The RFR model achieved an  R2 of 0.96793 
+for capacitance, while the GBR model scored slightly 
+higher at 0.97365, making GBR the best performer for 
+this metric. In energy density prediction, GBR again 
+outperformed RFR in both training and testing, achiev-
+ing an  R2 of 0.55325 on the test set. However, RFR took 
+the lead in IR drop prediction, surpassing GBR in the 
+training and testing phases, making it the top model for 
+this specific measure. Additional performance metrics, 
+beyond just  R2, were also evaluated to assess the pre-
+diction accuracy and overall effectiveness of the chosen 
+models. These results are summarized in Table 1, which 
+reports performance metrics obtained from the ML 
+algorithms applied to the test datasets. We employed a 
+technique called Bayesian optimization (BO), an innova-
+tive, probability-based approach to improve RFR and 
+GBR further and determine the optimal settings for their 
+hyperparameters. This approach helps efficiently tune 
+the models to reach a global optimum.
+Comparison of different ML models as used 
+in the prediction of the capacitance
+The scattered plots presented in Fig. 3 evaluate the 
+performance of two regression models, a RF regres-
+sor (Fig. 3a) and a GBR (Fig. 3b). The scattered plots 
+discuss the visual and quantitative aspects of the 
+plots, compare the models, and highlight their impli-
+cations. Both plots display the relationship between 
+actual values (on the x-axis) and predicted values (on 
+the y-axis) for the same dataset, with a red diagonal 
+line representing the ideal scenario where predicted 
+values equal actual values (perfect prediction). Black 
+dots represent individual data points. As observed in 
+Fig. 3a, the points scatter around the red diagonal line, 
+but a noticeable spread occurs, especially at higher 
+values (approximately 4000–5000 mF/cm 2). While 
+some points deviate significantly from the line, indi-
+cating prediction errors, particularly for larger actual 
+values. The distribution suggests the model captures 
+the trend but struggles with precision, especially in 
+the higher range. However, for the Gradient-boosting 
+regressor (Fig. 3b), the spread appears slightly tighter 
+compared to Fig. 3a, especially in the mid-to-high 
+range. Fewer extreme deviations from the line occur, 
+suggesting better overall accuracy or consistency in 
+predictions. The model performs more robustly across 
+the range of values, though some scatters remain. For 
+the quantitative metrics of the RF regressor (Fig. 3a), 
+Eq. (5) was utilized.
+where b stands for the slope, which was found to be 
+0.9802, and the intercept a is 88.60. The slope, close 
+to 1, indicates that the model’s predictions scale well 
+with actual values; however, it is slightly less than 
+1, suggesting underprediction at higher values. The 
+intercept shows a constant offset, indicating that the 
+model introduces a baseline error to all predictions. 
+ R2 measures the proportion of variance in the actual 
+values explained by the model. A value of 0.9083 (or 
+90.83%) indicates a strong fit, while the adjusted  R2 
+accounts for the number of predictors in the model. 
+(5)y = a + bx
+Table 1  Performance metrics comparison of GBR and RFR 
+models on test datasets
+RMSE root mean squared error, MAPE mean absolute percentage 
+error, MAE mean absolute error
+Capacitance test set Energy density test set IR drop test set
+GBR (Best model) GBR (Best model) RFR (Best model)
+RMSE = 183 RMSE = 48.04 RMSE = 0.034
+MAPE = 60% MAPE = 83% MAPE = 25.48%
+MAE = 131 MAE = 24.54 MAE = 0.021
+RFR RFR GBR
+RMSE = 195.71 RMSE = 48.17 RMSE = 0.0427
+MAPE = 47% MAPE = 88.33% MAPE = 50%
+MAE = 134 MAE = 23.34 MAE = 0.02665
+2436
+
+--- PDF页 11 ---
+J Mater Sci (2026) 61:2427–2446 
+Its closeness to  R2 suggests the model does not overfit 
+due to excessive parameters.
+Comparison of different ML models as used 
+in the prediction of energy density
+Regarding the energy density prediction, the scattered 
+plot presented below assesses the effectiveness of the 
+RFR and GBR. For Fig. 4a and b, based on the visual 
+analysis of the plots, both plots illustrate the relation-
+ship between actual values (x-axis) and predicted val-
+ues (y-axis) for the same dataset, with a red diago-
+nal line indicating the ideal case where predictions 
+match actual values perfectly. Black dots symbolize 
+individual data points. For the RFR model, it was 
+observed that Points scattered broadly around the red 
+line, with significant spread at higher values (around 
+200–300 µWh/cm2). However, for the GBR, the plot 
+shows points more tightly grouped around the red 
+line compared to plot A, particularly in the mid-to-
+high ranges. Fewer extreme deviations suggest more 
+consistent accuracy in predictions. The model appears 
+more effective across a range of values, although some 
+scattering remains evident. The quantitative metrics 
+provided by the RFR regressor elucidated Eq. (5). With 
+b (slope) = 0.6563 and a (intercept) = 18.8, where the 
+Figure 3  Capacitance test datasets prediction (predicted vs. actual); a RFR and b GBR test datasets.
+Figure 4  Energy density test datasets prediction (predicted vs. actual) a RFR and b GBR test datasets.
+2437
+
+--- PDF页 12 ---
+ J Mater Sci (2026) 61:2427–2446
+intercept range is noted at ± 10, indicating good scal-
+ing with actual values, though slightly underpredict-
+ing at higher values. The intercept indicates a baseline 
+error across all predictions, with notable uncertainty. 
+ R2 signifies that the model explains 54.48% of the vari-
+ance in actual values, highlighting a moderate fit with 
+45.52% of variance still unexplained, suggesting the 
+model’s limitation in capturing full data variability. 
+Additionally, it was observed that there was a slight 
+decrease from  R2 to Adj.  R2, which could be due to 
+possible overfitting or unnecessary parameters within 
+the model. While the correlation coefficient reflects 
+a moderate positive linear correlation between pre-
+dicted and actual values, it supports the moderate fit 
+shown by  R2.
+Comparison of different ML models as used 
+in the prediction of IR drop
+Both plots feature black dots representing data points 
+and a red line indicating the ideal fit (a 1:1 relation-
+ship where predicted values equal actual values). In 
+Fig. 5a and b, the closer the data points are to this red 
+line, the better the model’s predictions align with the 
+actual values. For the RFR model, data points cluster 
+around the red line, suggesting that this model gener-
+ally predicts values close to the actual ones. However, 
+some scatter, especially at higher values of Ω, indicates 
+potential over- or under-prediction in some cases, but 
+overall, the fit appears reasonable. Conversely, for the 
+GBR, some data points noticeably deviate from the 
+red line, indicating that this model might have more 
+variability or errors in its predictions than the RFR 
+model. Regarding statistical and performance metrics, 
+the RFR model has an  R2 value of 0.97766, meaning 
+that the model explains approximately 97.77% of the 
+variance in the actual values, indicating a very strong 
+fit. The RSS measures the total squared difference 
+between predicted and actual values; a lower value 
+indicates a better fit. For the RFR model, the RSS is 
+0.059076. Additionally, the correlation coefficient 
+(Pearson’s r) indicates a strong positive linear relation-
+ship between the predicted and actual values, with a 
+calculated value of 0.93943.
+For the GBR, the  R2 value is slightly higher than 
+that of the RFR model, at 97.85%, indicating that the 
+GBR explains a slightly greater variance in the data. 
+It also has a marginally lower RSS than RFR, suggest-
+ing slightly less prediction error. The GBR’s coefficient 
+of determination  (R2_COD) is marginally higher than 
+that of the RFR model, maintaining strong model per-
+formance. Both models perform exceptionally well, 
+with  R2 values above 97%, indicating that they explain 
+nearly all the variance in Ω. The GBR has a margin-
+ally higher  R2 (0.97854 vs. 0.97766) and a lower RSS 
+(0.056970 vs. 0.059076), suggesting it might be slightly 
+more accurate or have less prediction error. The Pear-
+son’s r values are nearly identical (0.93943 for RFR and 
+0.93970 for GBR), indicating that both models have a 
+similarly strong linear correlation with the actual data. 
+The scatter plots reveal that the RFR model has data 
+points tightly clustered around the red line, whereas 
+Figure 5  IR drop test datasets prediction (predicted vs. actual); a RFR and b GBR test datasets.
+2438
+
+--- PDF页 13 ---
+J Mater Sci (2026) 61:2427–2446 
+the Gradient Boosting model shows a slightly more 
+spread distribution, especially at lower or negative 
+Ω values. This visual difference suggests that the 
+RFR model is more consistent in its predictions, even 
+though the gradient boosting model has slightly better 
+statistical metrics. The slopes of both models (0.9321 
+for RFR and 0.9616 for gradient boosting) are close 
+to 1, but the GBR’s slope is closer to the ideal value, 
+indicating potentially less under- or over-prediction.
+Feature importance as used in the ML 
+prediction
+Deposition cycles significantly influence superca-
+pacitor performance, with capacitance and energy 
+density generally increasing up to an optimal point 
+before declining due to reduced ion accessibility or 
+material degradation. IR drop typically decreases ini-
+tially with improved conductivity but increases with 
+excessive cycles due to higher resistance. The key 
+is to find the right balance through material selec-
+tion, deposition technique, and cycle optimization 
+tailored to the specific application (e.g., high-power 
+vs. high-energy devices). Recent advancements in 
+supercapacitor research emphasize the use of hybrid 
+materials and precise control of deposition processes 
+(e.g., pulsed electrodeposition or atomic layer depo-
+sition) to mitigate these trade-offs. Techniques like 
+in-situ monitoring during deposition can help iden-
+tify the optimal cycle number for specific materials, 
+ensuring high capacitance and energy density with 
+minimal IR drop. Additionally, integrating ML or 
+modelling to predict deposition outcomes is becom-
+ing common, allowing for tailored electrode designs 
+that balance these metrics effectively.
+Additionally, the potential window and its influ-
+ence on capacitance, energy density, and IR drop 
+must be considered. The deposition process can also 
+affect the stability and electrochemical window of 
+the electrode material. For instance, thicker or poorly 
+adhered deposits might reduce the voltage window 
+due to increased internal resistance or electrolyte 
+decomposition, potentially offsetting gains in capaci-
+tance and lowering energy density. Furthermore, in 
+terms of the scan rate, the capacitance decreases with 
+increasing scan rate due to limited ion diffusion and 
+slower redox kinetics, particularly for pseudocapaci-
+tive materials [43– 46]. Additionally, energy density 
+follows a similar trend, declining as capacitance 
+decreases, although the voltage window’s stability 
+also plays a role. Additionally, IR drop increases 
+with higher scan rates due to greater ohmic losses 
+resulting from rapid potential changes and lim -
+ited ion/electron transport. Optimizing scan rates 
+requires balancing metrics based on the application, 
+with low scan rates suitable for energy-dense stor-
+age and high scan rates for power delivery. Material 
+selection, electrode design, and electrolyte proper-
+ties mitigate these effects. Table 2 summarizes some 
+models that have been reported in the literature.
+Optimization of the model using Bayesian 
+optimization
+BO plays a critical role in enhancing the predictive per-
+formance of ML models such as RFR and GBR, particu-
+larly in forecasting energy density and capacitance in 
+energy storage systems. These properties are influenced 
+by a complex interplay of material features, synthesis 
+conditions, and environmental variables, which makes 
+Table 2  Summary of recent studies applying ML models to predict electrochemical performance in various energy storage materials
+SVM Support Vector Machine, ANN Artificial Neural Network
+Material used ML models used Predictions References
+Graphene-based SCs ML-deep learning hybrid Energy storage capacity [26]
+CNT-based electrodes Artificial intelligence, deep learning Improved predictive accuracy [27]
+CNTs electrodes RFR Specific capacitance [31]
+Cerium oxynitride Neural networks Energy density prediction [34]
+Graphene-based electrodes Decision trees, ANN Capacitance prediction [47]
+Biomass carbon RFR, SVM Specific capacitance prediction [48]
+Carbon electrodes SVM, ANN Physicochemical feature impact [49]
+Porous carbon electrodes Neural networks, SVM Specific capacitance [50]
+Supercapacitor electrodes ANN, decision rrees Cyclic stability prediction [51]
+2439
+
+--- PDF页 14 ---
+ J Mater Sci (2026) 61:2427–2446
+accurate modelling highly dependent on the careful 
+tuning of hyperparameters. BO offers a probabilistic 
+approach to hyperparameter optimization, construct-
+ing a surrogate model, commonly a Gaussian Process, 
+that efficiently explores the search space. Unlike exhaus-
+tive grid search or random sampling, it strategically bal-
+ances exploration and exploitation to identify optimal 
+configurations with fewer evaluations. This efficiency is 
+particularly valuable in energy-related research, where 
+datasets may be limited or costly. Furthermore, well-
+optimized models are more likely to generalize effec-
+tively to unseen data, thereby improving the reliability 
+of predictions and supporting more informed experi-
+mental decisions in the development of novel materials 
+or devices. As a result, BO is a powerful tool for refin-
+ing ML models that predict energy-relevant properties. 
+Hyperparameter tuning was conducted using BO to 
+ensure robust model performance and optimal predic-
+tion accuracy. Unlike manual or grid search techniques, 
+BO efficiently explores the hyperparameter space using 
+a surrogate probabilistic model, minimizing computa-
+tional cost and maximizing model accuracy. BO was 
+employed to fine-tune the hyperparameters of both 
+the RFR and GBR models. The optimization targeted 
+three key outputs simultaneously: energy density, spe-
+cific capacitance, and IR drop. The optimization pro -
+cess utilized cross-validated RMSE and other relevant 
+metrics as the objective function. The optimization was 
+implemented using the (pip install scikit-learn Bayesian-
+optimization numpy pandas) library in a Google Collab 
+environment. For each model, hyperparameters such as 
+the learning rate, number of estimators, and maximum 
+depth were tuned; more details are shared in the note-
+pad file of the supplementary document.
+Model hyperparameter tuning using BO, optimization 
+techniques, and performance metrics
+BO helped us find a balanced set of hyperparameters 
+that improved predictions for all three output vari-
+ables: capacitance, energy density, and IR drop, across 
+the entire dataset. This method trains a ML model by 
+testing different hyperparameter combinations to 
+identify the best settings (the global optimum) with 
+minimal trial and error. After optimization, the models 
+demonstrated improved generalization, making more 
+accurate predictions with lower errors for each tar-
+get variable. For example, the GBR reduced its MAPE 
+by 15% for energy density and 20% for capacitance 
+compared to its original setup. Meanwhile, the RFR 
+model cut its MAPE by 7% for IR-drop compared to 
+its baseline. These improvements highlight how multi-
+objective BO can boost performance across related 
+energy storage metrics at the same time, leading to a 
+more comprehensive and dependable model. We eval-
+uated the models’ performance before and after opti-
+mization using fivefold cross-validation, which con-
+firmed the value of automated hyperparameter tuning 
+for strong, reliable predictions. While the optimized 
+models showed significant improvements over their 
+baseline versions, the real strength of BO lies in its 
+ability to find a global optimum that balances capaci-
+tance, energy density, and IR drop together. This is 
+something RFR or GBR alone couldn’t achieve as effi-
+ciently. This makes BO a standout approach and a 
+practical guide for researchers looking to replicate this 
+experiment and optimize these energy storage metrics 
+effectively. Table 3 compares the performance metrics 
+of the BO-optimized models against the baseline RFR 
+and GBR models. Figure 6 below illustrates the scat-
+tered plots obtained from the BO model of the two 
+ML models, showing the superiority and efficiency 
+of GBR prediction of energy density and capacitance 
+over RFR, as well as the RFR prediction of IR-drop 
+over GBR. The optimum values of the mesh size, depo-
+sition potential, OPW, and deposition cycle have been 
+included in Table 3, alongside the performance metrics 
+of the BO model for the global optimum.
+Table 3  Comparison of baseline and BO-tuned performance 
+metrics for GBR and RFR models in predicting supercapacitor 
+performance metrics
+Optimum values obtained from the BO Model
+Mesh Size (MS) (72); Deposition cycle (DC) (35); Deposi-
+tion potential window (TV) (0.58); Operating Potential window 
+(OPW/PW) (1.21)
+Best model Output Baseline perfor-
+mance metrics
+BO-tuned 
+performance 
+metrics
+GBR Capacitance RMSE = 183 RMSE = 182.9
+MAPE = 60% MAPE = 60%
+MAE = 131 MAE = 131
+GBR Energy density RMSE = 48.04 RMSE = 47.43
+MAPE = 83% MAPE = 50.3%
+MAE = 24.54 MAE = 15.195
+RFR IR drop RMSE = 0.034 RMSE = 0.0419
+MAPE = 25.48% MAPE = 18.35%
+MAE = 0.022 MAE = 0.024
+2440
+
+--- PDF页 15 ---
+J Mater Sci (2026) 61:2427–2446 
+Validation of BO Predictions
+Bayesian optimization suggested an optimum at a mesh 
+size ≈ of approximately 72, with 35 deposition cycles, a 
+TV of 0.58 V, and an OPW of 1.21 V. Sensitivity analy-
+sis and fivefold cross-validation yielded mean scores of 
+0.83 for GBR and 0.65 for RFR, indicating robust gen-
+eralization. Experimental validation under predicted 
+conditions produced capacitance of ~ 4500 mF/cm2 and 
+IR drop of 0.06 Ω, closely matching model predictions.
+Shapley additive explanations (SHAP) analysis 
+using optimized GBR
+SHAP is a method based on Shapley values from 
+cooperative game theory, designed to explain the 
+contribution of each feature to a machine learning 
+model’s prediction. SHAP provides a unified measure 
+of feature importance by fairly distributing the “pre-
+diction difference” among all features, considering all 
+possible feature combinations; however, the best GB 
+params from Bayesian Optimization, cleaned GB par-
+ams were used to build the model and, the optimized 
+GBR performance metrics have been added in the sup-
+plementary document in Table S1. The SHAP summary 
+plot in Fig. 7a below illustrates the relative importance 
+and directional impact of four key features, DC, PW, 
+TV, and MS, on the model’s predictions. DC and PW 
+emerge as the most influential variables, with higher 
+values strongly increasing the predicted outcome and 
+lower values reducing it, indicating a clear monotonic 
+relationship. In contrast, TV shows an inverse effect, 
+Figure 6  Comparison of actual versus predicted values using RFR and GBR models for a capacitance, b energy density, and c IR-drop.
+2441
+
+--- PDF页 16 ---
+ J Mater Sci (2026) 61:2427–2446
+where higher values tend to decrease the prediction, 
+while MS exhibits minimal influence, with SHAP val-
+ues clustered near zero. The color gradient across points 
+suggests potential interactions, particularly between 
+DC and PW, reinforcing the need for further analysis of 
+feature dependencies. Overall, the model’s behavior is 
+dominated by DC and PW, making them critical drivers 
+of prediction variability.
+Conversely, finer meshes exhibit distorted CV pro-
+files and higher IR drop, likely due to poor polymer 
+adhesion and restricted ion transport pathways. The dis-
+torted CV data for 200 mesh samples likely stems from 
+inadequate polymer adhesion and non-uniform growth. 
+To mitigate this, we will employ surface pretreatment 
+(e.g., acid etching or plasma cleaning) and optimized 
+electrodeposition protocols in the future. However, the 
+optimum mesh size that was used during the experi-
+ment was 20 mesh samples, not 200 mesh size. In addi-
+tion, Partial dependence plots, as shown in Figure S3 in 
+the supplementary document, illustrate that increasing 
+OPW improves energy density but also raises IR drop 
+because higher voltages accelerate resistive losses and 
+overpotential effects.
+Limitations of ML models
+ML models need large, high-quality datasets to make 
+accurate predictions. In supercapacitor research, 
+experimental data on specific capacitance, energy den-
+sity, and IR drop can be scarce, especially for new mate-
+rials or untested conditions. Noisy or inconsistent data 
+(e.g., measurement errors, varying experimental proto-
+cols, or incomplete metadata) can lead to poor model 
+performance or overfitting. Supercapacitor testing 
+methods (e.g., CV scan rates, GCD rates) vary widely, 
+making it challenging to combine data from different 
+studies into a cohesive dataset for ML training. Super-
+capacitor performance relies on complex, multiscale 
+processes, including ion diffusion, electron transport, 
+electrode–electrolyte interactions, and material-spe-
+cific redox reactions. ML models, especially black-box 
+approaches like deep neural networks, may struggle to 
+capture these underlying physical and chemical mech-
+anisms without sufficient domain-specific features or 
+physics-informed constraints. Training complex ML 
+models (e.g., deep learning) requires significant com-
+putational power, which may not be available to all 
+research groups or industries, especially for iterative 
+optimization of supercapacitor designs.
+Conclusion
+In conclusion, this research demonstrates the 
+transformative potential of integrating machine 
+learning (ML) with experimental fabrication and 
+Figure 7  SHAP summary of the optimized GBR.
+2442
+
+--- PDF页 17 ---
+J Mater Sci (2026) 61:2427–2446 
+Bayesian optimization to accelerate the optimiza-
+tion of PANI-based supercapacitors. By systemati-
+cally examining the effects of fabrication parameters 
+such as mesh size, deposition cycles, voltage win-
+dows, and operating potential windows (OPW) on 
+key performance metrics, we established a robust, 
+data-driven framework for optimizing electrochemi-
+cal performance. The ML models, including gradi -
+ent boosting regressor (GBR) and random forest 
+regressor (RFR), showed excellent predictive capa-
+bilities, with Bayesian optimization further enhanc-
+ing model performance. This combination led to 
+significant improvements in prediction accuracy, 
+including reductions in mean absolute percentage 
+error (MAPE) for energy density, capacitance, and 
+IR drop. Feature importance analysis revealed that 
+mesh size and OPW were the most influential fac-
+tors, aligning with electrochemical theories on ion 
+transport and resistive losses. This approach not 
+only accelerates the design of supercapacitors but 
+also minimizes resource usage, offering a scalable, 
+reproducible methodology applicable to various 
+energy storage systems. Looking ahead, expand -
+ing the dataset, integrating physics-informed ML 
+models, and incorporating real-time monitoring for 
+dynamic optimization will further enhance the mod-
+el’s accuracy and real-world applicability, laying the 
+groundwork for more efficient and cost-effective 
+energy storage devices.
+Acknowledgements 
+The authors would like to acknowledge the Depart-
+ment of Chemistry at KFUPM and the Interdiscipli-
+nary Research Center for Hydrogen Technologies and 
+Carbon Management (IRC-HTCM), King Fahd Univer-
+sity of Petroleum & Minerals, for providing the equip-
+ment and state-of-the-art labs to carry out the study, 
+through the project INHT2508.
+Data availability 
+Data will be made available on request.
+Supplementary Information  The online version 
+contains supplementary material available at https:// 
+doi. org/ 10. 1007/ s10853- 025- 11951-x.
+References
+[ 1] Li C, Li L, He B et al (2022) Roadmap for flexible solid-
+state aqueous batteries: from materials engineering and 
+architectures design to mechanical characterizations. Mater 
+Sci Eng R Rep 148:100671. https:// doi. org/ 10. 1016/j. mser. 
+2022. 100671
+[ 2] Bae S, Park J, Bong S, Park J-S, Jeong B, Lee J (2024) Pore 
+surface engineering of FeNC for outstanding power density 
+of alkaline hydrazine fuel cells. Chem Eng J 479:147522. 
+https:// doi. org/ 10. 1016/j. cej. 2023. 147522
+[ 3] Shah SS, Aziz MA, Marzooqi MA, Khan AZ, Yamani ZH 
+(2024) Enhanced light-responsive supercapacitor utilizing 
+ BiVO4 and date leaves-derived carbon: a leap towards sus-
+tainable energy harvesting and storage. J Power Sources 
+602:234334. https:// doi. org/ 10. 1016/j. jpows our. 2024.  
+234334
+[ 4] Shah SS, Aziz MA, Ogawa T et al (2025) Revolutionary 
+NiCo layered double hydroxide electrodes: advances, chal -
+lenges, and future prospects for high-performance super -
+capacitors. Mater Sci Eng R Rep 166:101041. https:// doi.  
+org/ 10. 1016/j. mser. 2025. 101041
+[ 5] Ucar AD, Baglicakoglu SK, Durukan MB et al (2025) 
+Overcoming instability challenges of binder-free, self-
+standing 1T-TiS2 electrodes in aqueous symmetric superca-
+pacitors through dopamine functionalization. Mater Today 
+Energy 48:101810. https:// doi. org/ 10. 1016/j. mtener. 2025. 
+101810
+[ 6] Sarigamala KK, Shukla S, Saxena S (2024) Plasmonic het-
+erostructures enabled photo-responsive Li-ion supercapaci-
+tors. Mater Today Energy 44:101627. https://  doi. org/ 10. 
+1016/j. mtener. 2024. 101627
+[ 7] Shah SS, Oladepo S, Ali Ehsan M et al (2024) Recent pro-
+gress in polyaniline and its composites for supercapaci-
+tors. Chem Rec 24:e202300105. https:// doi. org/ 10. 1002/  
+tcr. 20230 0105
+[ 8] Agarwal A, Tolani R, Sankapal BR (2024) Conducting 
+polymers-metal chalcogenides hybrid composite: current 
+trends and future prospects toward supercapacitor applica-
+tions. Energy Technol 12:2400133. https:// doi. org/ 10. 1002/ 
+ente. 20240 0133
+[ 9] Shabi AH, Mirghni AA, Shah SS et al (2024) Investigation 
+of polyaniline electrodeposition on hydrophilic/hydropho-
+bic carbon cloth substrates for symmetric coin cell super -
+capacitors. J Solid State Electrochem 28:4041. https:// doi.  
+org/ 10. 1007/ s10008- 024- 06009-y
+[ 10] Anantharaj S, Noda S (2022) iR drop correction in electro -
+catalysis: everything one needs to know! J Mater Chem A 
+10:9348. https:// doi. org/ 10. 1039/ d2ta0 1393b
+2443
+
+--- PDF页 18 ---
+ J Mater Sci (2026) 61:2427–2446
+[ 11] Ping Z, Junjie L, Yunchun L (2022) Optimization of the 
+electrodeposition process of a polypyrrole/multi-walled 
+carbon nanotube fiber electrode for a flexible supercapaci -
+tor. RSC Adv 12:18134. https:// doi. org/ 10. 1039/ d2ra0  
+2430f
+[ 12] Zhai Q, Jiang H, Long N et al (2024) Machine learning for 
+full lifecycle management of lithium-ion batteries. Renew 
+Sustain Energy Rev 202:114647. https:// doi. org/ 10. 1016/j. 
+rser. 2024. 114647
+[ 13] Mace S, Xu Y, Nguyen BN (2024) Automated transition 
+metal catalysts discovery and optimisation with AI and 
+machine learning. ChemCatChem 16:e202301475. https:// 
+doi. org/ 10. 1002/ cctc. 20230 1475
+[ 14] Li S, Zhang H, Holby EF, Zelenay P, Kort-Kamp WJM 
+(2024) Machine learning-guided design, synthesis, and 
+characterization of atomically dispersed electrocatalysts. 
+Curr Opin Electrochem 48:101578. https:// doi. org/ 10.  
+1016/j. coelec. 2024. 101578
+[ 15] Ahmad F, Ahmad N, Al-Khazaal AAZ (2024) Machine 
+learning-assisted prediction and optimization of exergy 
+efficiency and destruction of cumene plant under uncer -
+tainty. Eng Technol Appl Sci Res 14:12892. https:// doi.  
+org/ 10. 48084/ etasr. 6654
+[ 16] Khan I, Saddiqi HA, Ahmad F, Ullah A (2025) Mortar 
+performance enhancement by partially replacement of 
+cement with hybrid biochar: an experimental evaluation 
+and machine learning predictions of compressive strength, 
+water absorption and thermal conductivity. Mater Chem 
+Phys Sustain Energy 3:100024. https:// doi. org/ 10. 1016/j.  
+macse. 2025. 100024
+[ 17] Shah SS, Das M, Ogawa T (2025) One stone, three birds: 
+innovations and challenges of layered double hydroxides in 
+batteries, supercapacitors, and hydrogen production. Bat-
+teries 11:193. https:// doi. org/ 10. 3390/ batte ries1 10501 93
+[ 18] Gao T, Lu W (2021) Machine learning toward advanced 
+energy storage devices and systems. iScience 24:101936. 
+https:// doi. org/ 10. 1016/j. isci. 2020. 101936
+[ 19] Raissi M, Perdikaris P, Karniadakis GE (2019) Physics-
+informed neural networks: a deep learning framework for 
+solving forward and inverse problems involving nonlinear 
+partial differential equations. J Comput Phys 378:686. 
+https:// doi. org/ 10. 1016/j. jcp. 2018. 10. 045
+[ 20] Kashefi A, Mukerji T (2022) Physics-informed PointNet: a 
+deep learning solver for steady-state incompressible flows 
+and thermal fields on multiple sets of irregular geometries. 
+J Comput Phys 468:111510. https:// doi. org/ 10. 1016/j. jcp. 
+2022. 111510
+[ 21] Shah SS, Aziz MA, Usman M, Hakeem AS, Ali S, Alzah-
+rani AS (2023) Biomass-based supercapacitors: lab to 
+industry. In: Aziz MA, Shah SS (eds) Biomass-based 
+supercapacitors: design, fabrication and sustainability, chap 
+25. Springer Nature. https:// doi. org/ 10. 1002/ 97811 19866 
+435. ch25
+[ 22] Basha SI, Shah SS, Ahmad S, Maslehuddin M, Al-Zahrani 
+MM, Aziz MA (2022) Construction building materials as 
+a potential for structural supercapacitor applications. Chem 
+Rec 22:e202200134. https:// doi. org/ 10. 1002/ tcr. 20220 0134
+[ 23] Mahfoz W, Das HT, Shah SS et al (2023) Designing high-
+performing symmetric supercapacitor by engineering poly -
+aniline on steel mesh surface via electrodeposition. Chem 
+Asian J 18:e202201223. https:// doi. org/ 10. 1002/ asia. 20220 
+1223
+[ 24] Dalhatu AA, Al-Betar A-R, Dahiru A, Shah SS, Aziz MA 
+(2024) Optimizing electrodeposition of polyaniline on vari-
+ous woven steel mesh sizes for enhanced supercapacitor 
+performance. Chem Asian J 19:e202400341. https:// doi.  
+org/ 10. 1002/ asia. 20240 0341
+[ 25] Hefnawy A, El Nady J, Hassan AM et al (2025) Machine 
+learning model of polypyrrole based-supercapacitor elec-
+trode: fabrication, characterization, and prediction. J Alloys 
+Compd 1019:179240. https:// doi. org/ 10. 1016/j. jallc om.  
+2025. 179240
+[ 26] Emad-Eldeen A, Azim MA, Abdelsattar M, AbdelMoety 
+A (2024) Utilizing machine learning and deep learning for 
+enhanced supercapacitor performance prediction. J Energy 
+Storage 100:113556. https:// doi. org/ 10. 1016/j. est. 2024. 
+113556
+[ 27] Tawfik WZ, Shaban M, Raveendran A, Lee JK, Al-Enizi 
+AM (2025) Insights into the specific capacitance of CNT-
+based supercapacitor electrodes using artificial intelli-
+gence. RSC Adv 15:3155–3167. https:// doi. org/ 10. 1039/  
+d4ra0 5546b
+[ 28] Yogesh GK, Nandi D, Yeetsorn R et al (2025) A machine 
+learning approach for estimating supercapacitor perfor -
+mance of graphene oxide nano-ring based electrode materi-
+als. Energy Adv 4:119–139. https:// doi. org/ 10. 1039/ d4ya0 
+0577e
+[ 29] Nanda S, Ghosh S, Thomas T (2022) Machine learning 
+aided cyclic stability prediction for supercapacitors. J 
+Power Sources 546:231975. https:// doi. org/ 10. 1016/j. jpows 
+our. 2022. 231975
+[ 30] Adekoya GJ, Adekoya OC, Ugo UK, Sadiku ER, Hamam Y, 
+Ray SS (2022) A mini-review of artificial intelligence tech-
+niques for predicting the performance of supercapacitors. 
+2444
+
+--- PDF页 19 ---
+J Mater Sci (2026) 61:2427–2446 
+Mater Today Proc 62:S184–S188.  https:// doi. org/ 10. 1016/j. 
+matpr. 2022. 05. 079
+[ 31] Tawfik WZ, Abdel-Wahab MS, Lee JK, Al-Enizi AM, 
+Youssef RY (2024) Modeling specific capacitance of car -
+bon nanotube-based supercapacitor electrodes by machine 
+learning algorithms. Phys Scr 99:066011. https:// doi. org/  
+10. 1088/ 1402- 4896/ ad4df3
+[ 32] Liao H, Fan S, Han W et al (2024) Machine learning pre-
+diction of supercapacitor performance of N-doped biochar 
+from biomass wastes based on N-containing groups, ele-
+ment compositions, and pore structures. J Energy Storage 
+100:113548. https:// doi. org/ 10. 1016/j. est. 2024. 113548
+[ 33] Hongwei L, Zhenming C, Zhennan Q, Xiaokang A, Yongz-
+hen W (2024) Machine learning-assisted prediction, screen, 
+and interpretation of porous carbon materials for high-per -
+formance supercapacitors. J Mater Inform 4:16. https:// doi.  
+org/ 10. 20517/ jmi. 2024. 29
+[ 34] Ghosh S, Rao GR, Thomas T (2021) Machine learning-
+based prediction of supercapacitor performance for a novel 
+electrode material: Cerium oxynitride. Energy Storage 
+Mater 40:426. https:// doi. org/ 10. 1016/j. ensm. 2021. 05. 024
+[ 35] Shah SS, Aziz MA, Al-Betar A-R, Mahfoz W (2022) Elec-
+trodeposition of polyaniline on high electroactive indium 
+tin oxide nanoparticles-modified fluorine doped tin oxide 
+electrode for fabrication of high-performance hybrid 
+supercapacitor. Arab J Chem 15:104058. https:// doi. org/  
+10. 1016/j. arabjc. 2022. 104058
+[ 36] Aziz MA, Shah SS, Mahnashi YA et al (2023) A high-
+energy asymmetric supercapacitor based on tomato-leaf-
+derived hierarchical porous activated carbon and electro-
+chemically deposited polyaniline electrodes for battery-free 
+heart-pulse-rate monitoring. Small 19:2300258. https:// doi.  
+org/ 10. 1002/ smll. 20230 0258
+[ 37] Shah SS, Das HT, Barai HR, Aziz MA (2022) Boosting 
+the electrochemical performance of polyaniline by one-
+step electrochemical deposition on nickel foam for high-
+performance asymmetric supercapacitor. Polymers 14:270. 
+https:// doi. org/ 10. 3390/ polym 14020 270
+[ 38] Deb Nath NC, Shah SS, Qasem MAA, Zahir MH, Aziz MA 
+(2019) Defective carbon nanosheets derived from Syzygium  
+cumini leaves for electrochemical energy-storage. Chemis-
+trySelect 4:9079–9083. https://  doi. org/ 10. 1002/ slct. 20190 
+0891
+[ 39] Poonam KS, Arora A, Tripathi SK (2019) Review of super -
+capacitors: materials and devices. J Energy Storage 21:801. 
+https:// doi. org/ 10. 1016/j. est. 2019. 01. 010
+[ 40] Sawant V, Deshmukh R, Awati C (2023) Machine learn-
+ing techniques for prediction of capacitance and remaining 
+useful life of supercapacitors: a comprehensive review. 
+J Energy Chem 77:438–451  https:// doi. org/ 10. 1016/j.  
+jechem. 2022. 11. 012
+[ 41] Lv C, Zhou X, Zhong L et al (2022) Machine learning: 
+an advanced platform for materials development and state 
+prediction in lithium-ion batteries. Adv Mater 34:2101474. 
+https:// doi. org/ 10. 1002/ adma. 20210 1474
+[ 42] Gubkien B, Graselli VM, Moré JJ, Mancini CN, Puleston 
+P (2025) Analysis and assessment of hybrid topologies 
+for energy storage systems oriented for electric vehicles: 
+an experimental case study on supercapacitors and a high 
+energy density device. Clean Energy Sci Technol 3:314. 
+https:// doi. org/ 10. 18686/ cest3 14
+[ 43] Faisal MM, Ali SR, Shah SS et al (2022) Redox-active 
+anomalous electrochemical performance of mesoporous 
+nickel manganese sulfide nanomaterial as an anode mate-
+rial for supercapattery devices. Ceram Int 48:28565. 
+https:// doi. org/ 10. 1016/j. ceram int. 2022. 06. 170
+[ 44] Shah SS, Aziz MA, Rasool PI et al (2024) Electrochemical 
+synergy and future prospects: advancements and challenges 
+in MXene and MOFs composites for hybrid supercapaci-
+tors. Sustain Mater Technol 39:e00814. https:// doi. org/ 10. 
+1016/j. susmat. 2023. e00814
+[ 45] Hou L, Shi Y, Wu C et al (2018) Monodisperse metal -
+lic NiCoSe2 hollow sub-microspheres: formation process, 
+intrinsic charge-storage mechanism, and appealing pseu-
+docapacitance as highly conductive electrode for electro-
+chemical supercapacitors. Adv Funct Mater 28:1705921. 
+https:// doi. org/ 10. 1002/ adfm. 20170 5921
+[ 46] Sun J, Wu C, Sun X et al (2017) Recent progresses in 
+high-energy-density all pseudocapacitive-electrode-mate-
+rials-based asymmetric supercapacitors. J Mater Chem A 
+5:9423–10050. https:// doi. org/ 10. 1039/ C7TA0 0932A
+[ 47] Saad AG, Emad-Eldeen A, Tawfik WZ, El-Deen AG (2022) 
+Data-driven machine learning approach for predicting the 
+capacitance of graphene-based supercapacitor electrodes. 
+J Energy Storage 55:105411. https:// doi. org/ 10. 1016/j. est. 
+2022. 105411
+[ 48] Jamaluddin A, Harjunowibowo D, Budiawanti S et al 
+(2023) Applying machine learning to understand the prop-
+erties of biomass carbon materials in supercapacitors. 
+Energy Rep 10:3125. https:// doi. org/ 10. 1016/j. egyr. 2023. 
+09. 099
+[ 49] Mishra S, Srivastava R, Muhammad A et al (2023) The 
+impact of physicochemical features of carbon electrodes on 
+the capacitive performance of supercapacitors: a machine 
+learning approach. Sci Rep 13:6494. https:// doi. org/ 10. 
+1038/ s41598- 023- 33524-1
+2445
+
+--- PDF页 20 ---
+ J Mater Sci (2026) 61:2427–2446
+[ 50] Abdi J, Pirhoushyaran T, Hadavimoghaddam F, Madani 
+SA, Hemmati-Sarapardeh A, Esmaeili-Faraj SH (2023) 
+Modeling of capacitance for carbon-based supercapacitors 
+using super learner algorithm. J Energy Storage 66:107376. 
+https:// doi. org/ 10. 1016/j. est. 2023. 107376
+[ 51] Nanda OP, Das NK, Sekar P, Ramadoss A, Saravanaku-
+mar B (2022) Bio-waste derived self-templated, nitrogen 
+self-doped porous carbon for supercapacitors. Bioresour 
+Technol Rep 19:101198. https:// doi. org/ 10. 1016/j. biteb.  
+2022. 101198
+Publisher’s Note Springer Nature remains neutral with 
+regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) 
+holds exclusive rights to this article under a publishing 
+agreement with the author(s) or other rightsholder(s); 
+author self-archiving of the accepted manuscript version of 
+this article is solely governed by the terms of such publishing 
+agreement and applicable law.
+2446

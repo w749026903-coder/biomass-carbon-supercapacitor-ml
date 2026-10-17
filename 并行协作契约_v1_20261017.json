@@ -1,0 +1,109 @@
+{
+  "schema_version": "parallel-preparation-v1",
+  "date": "2026-10-17",
+  "project_root": "D:\\机器学习-超级电容器",
+  "baseline": {
+    "database": "D:\\机器学习-超级电容器\\循环稳定性数据库_v0.2_20261017\\cycling_v0_2.sqlite",
+    "database_sha256": "35d4bbf895501ec306ea215b40f865cc5d1da4e7959173d73e279dd3eaaa22fa",
+    "model_contract": "D:\\机器学习-超级电容器\\循环稳定性数据库_v0.2_20261017\\modeling\\model_contract.json",
+    "model_contract_sha256": "63db1238c429d6a26b2467e529e9ebc589e70487e1def3d5108803cbc5e3ade5"
+  },
+  "scope": {
+    "target": "capacitance_retention_at_specified_cycles_and_conditions",
+    "primary_system": "2E_symmetric",
+    "primary_method": "GCD",
+    "min_cycles_screening_convention": 1000,
+    "min_cycles_is_universal_rule": false,
+    "initial_training_authorized": false,
+    "raw_documents_immutable": true,
+    "primary_source_publication_year_min": 2023,
+    "primary_source_publication_date_max": "2026-10-17",
+    "older_prior_work_policy": "May be read solely for overlap/provenance checks; never count as a new eligible training source."
+  },
+  "workspaces": {
+    "database": "D:\\机器学习-超级电容器\\循环稳定性数据库_v0.3_数据库优化_20261017",
+    "literature": "D:\\机器学习-超级电容器\\同体系文献补充_第二批_20261017",
+    "merged_release": "D:\\机器学习-超级电容器\\循环稳定性数据库_v0.3_合并版_20261017"
+  },
+  "ownership": {
+    "database": "Own local database revision, modeling preparation, review increments; never edit literature task outputs.",
+    "literature": "Own candidate acquisition/review only; never edit SQLite, official paper IDs, modeling code, or original library.",
+    "merge": "This originating chat owns reconciliation and the merged release after both manifests are ready."
+  },
+  "shared_rules": [
+    "Normalize DOI by trimming, lowercase, and stripping DOI URL/prefix; preserve original DOI string.",
+    "Literature task uses temporary B2_001-style IDs; no new SRC/R official IDs.",
+    "Count papers, provisional materials, tests, endpoints, and admitted rows separately.",
+    "Same material/curve/source and documented reused underlying sources must stay in one validation group.",
+    "Unknown, not located, not reported, conflicting, and inherited evidence are distinct states.",
+    "Current mass normalization is separate from capacitance formula mass.",
+    "Do not use post-cycling characterization or target-derived features for pre-cycling prediction.",
+    "No scientific conflict is resolved merely by newest edit or a more favorable performance value.",
+    "No original file moves/deletes/overwrites, uploads, system/global/shared runtime changes, or research training.",
+    "New literature remains staged pending archive decision; merge candidate evidence without silently archiving or admitting it."
+  ],
+  "manifest": {
+    "filename": "merge_manifest.json",
+    "required_keys": [
+      "schema_version",
+      "task_role",
+      "baseline_database_sha256",
+      "ready_for_merge",
+      "outputs",
+      "checks",
+      "unresolved_issues",
+      "proposed_contract_changes"
+    ],
+    "outputs_item_keys": [
+      "path",
+      "sha256",
+      "role"
+    ],
+    "ready_rule": "Set ready_for_merge=true only after task deliverables, checks, and limitations are saved; no claim that all candidates have been admitted is required."
+  },
+  "merge_gate": [
+    "Both tasks completed and both manifests ready_for_merge=true.",
+    "Both baseline fingerprints match this contract.",
+    "Verify every delivered file hash; existing v0.2 and original library remain unchanged.",
+    "Review proposed schema/definition changes together before applying.",
+    "Reconcile duplicate DOI/material/curve and field evidence; retain unresolved conflicts with blocked admission.",
+    "Primary new training sources must fall within 2023 through the current project date; earlier prior work is provenance evidence only, not newly admitted data.",
+    "Create merged output in its own new directory; never overwrite either task output.",
+    "Preserve database task history; ingest literature as clearly staged candidates unless all separate admission/archive requirements are satisfied.",
+    "Validate integrity, foreign keys, identity/grouping, original values, evidence, coverage counts, admission rules, and model preflight without research fitting.",
+    "Save unified release README, conflict decisions, changelog, verified counts and final merge report."
+  ],
+  "planning_targets_not_scientific_thresholds": {
+    "exploratory": {
+      "usable_papers": [
+        20,
+        30
+      ],
+      "deduplicated_materials": [
+        30,
+        50
+      ]
+    },
+    "first_controlled_research_run_preparation": {
+      "usable_papers": [
+        30,
+        50
+      ],
+      "deduplicated_materials": [
+        50,
+        100
+      ]
+    },
+    "more_extensive_comparison": {
+      "usable_papers": [
+        60,
+        100
+      ],
+      "deduplicated_materials": [
+        150,
+        300
+      ]
+    },
+    "caveat": "Engineering planning estimates, not proven adequacy/minimums; same-paper materials are correlated and validation is grouped by source. Data quality, coverage and grouped learning curves control readiness."
+  }
+}

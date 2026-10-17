@@ -1,0 +1,175 @@
+{
+  "status": "preparation_only_no_training_authorized_or_executed",
+  "target": "capacitance_retention_pct_at_specified_cycle_count_and_conditions",
+  "database_view": "training_ready",
+  "primary_system": "2E_symmetric",
+  "method": "GCD",
+  "label_relation": "eq",
+  "screening_min_cycles": 1000,
+  "screening_boundary_is_universal_quality_rule": false,
+  "required_conditions": [
+    "cycle_count",
+    "reported_current_A_g",
+    "electrolyte",
+    "concentration_value",
+    "voltage_lower_V",
+    "voltage_upper_V"
+  ],
+  "categorical_features": [
+    "electrolyte"
+  ],
+  "optional_sensitivity_feature": "total_pore_volume_cm3_g",
+  "forbidden_features": [
+    "record_id",
+    "paper_id",
+    "doi",
+    "material_id",
+    "study_group",
+    "retention_pct",
+    "post_cycle_EIS",
+    "post_cycle_XPS",
+    "discharge_time",
+    "final_capacitance",
+    "retention_sd_pct",
+    "concentration_unit",
+    "reported_concentration_value",
+    "reported_concentration_unit",
+    "positive_negative_mass_ratio",
+    "retention_relation",
+    "year",
+    "source_category",
+    "current_density_A_g",
+    "canonical_current_A_g",
+    "current_denominator_status",
+    "source_weight",
+    "profile"
+  ],
+  "excluded_from_primary": [
+    "CV",
+    "3E",
+    "gel",
+    "mass_unbalanced",
+    "Li_half_cell",
+    "Zn_hybrid",
+    "metal_composites",
+    "scope_pending",
+    "approximate_or_lower_bound_labels",
+    "frozen_fields"
+  ],
+  "missing_target_policy": "never_impute",
+  "missing_feature_policy": "Core seven inputs are not imputed. Optional pore only: fold-trained median plus missing indicator. Missing material characterization cannot be hidden by inventing BET.",
+  "retention_above_100_policy": "preserve_reported_values_no_clipping",
+  "split": {
+    "group": "study_group",
+    "method": "GroupKFold",
+    "folds_up_to": 126,
+    "random_state": 20261017,
+    "shuffle": false,
+    "tuning": "Leave one available source out; fixed defaults initially. Any expanded tuning must use inner source-group folds.",
+    "independence_final_audit_required": true
+  },
+  "training_weight": "equal_total_weight_per_source_study",
+  "models": [
+    "mean_baseline",
+    "ridge",
+    "random_forest",
+    "xgboost",
+    "mlp"
+  ],
+  "evaluation": [
+    "study_macro_MAE_percentage_points",
+    "study_balanced_RMSE_percentage_points",
+    "pooled_R2_when_defined",
+    "per_source_errors",
+    "protocol_only_vs_plus_BET_sensitivity",
+    "same_cohort_without_current_sensitivity",
+    "nested_profile_sensitivity_not_posthoc_selection"
+  ],
+  "readiness": "profile-specific evidence closure for exploratory reported-protocol model; not calibrated-current admission",
+  "user_model_clarification": "2026-10-17: user explicitly clarified mgl as MLP",
+  "tuning": {
+    "inner_group_folds_up_to": 3,
+    "candidate_budget_per_model": 1,
+    "selection_metric": "study_macro_MAE_percentage_points",
+    "search_space": "model_spaces.json",
+    "single_inner_group_policy": "use predeclared defaults, never select using outer test group",
+    "budget_by_model": {}
+  },
+  "mlp_policy": {
+    "small_networks": [
+      [
+        8
+      ],
+      [
+        16
+      ],
+      [
+        16,
+        8
+      ]
+    ],
+    "feature_scaling": "inside each training fold",
+    "target_scaling": "inside each training fold via TransformedTargetRegressor",
+    "solver": "lbfgs",
+    "early_stopping": false,
+    "reason": "avoid MLP internal random validation splitting correlated observations"
+  },
+  "database_file": "cycling_v0_3r4.sqlite",
+  "feature_sets": {
+    "protocol_only": [
+      "log10_cycle_count",
+      "reported_current_A_g",
+      "concentration_value",
+      "voltage_lower_V",
+      "voltage_upper_V"
+    ],
+    "plus_BET": [
+      "log10_cycle_count",
+      "reported_current_A_g",
+      "concentration_value",
+      "voltage_lower_V",
+      "voltage_upper_V",
+      "BET_m2_g"
+    ],
+    "plus_BET_pore": [
+      "log10_cycle_count",
+      "reported_current_A_g",
+      "concentration_value",
+      "voltage_lower_V",
+      "voltage_upper_V",
+      "BET_m2_g",
+      "total_pore_volume_cm3_g"
+    ],
+    "without_current": [
+      "log10_cycle_count",
+      "concentration_value",
+      "voltage_lower_V",
+      "voltage_upper_V",
+      "BET_m2_g"
+    ]
+  },
+  "comparison_policy": "Fixed core7 main; same-cohort no-current, no-BET and optional-pore sensitivities. Profile expansions reported separately. No accuracy claim before grouped validation.",
+  "normalization_reference_policy": "author_initial_reference_may_be_recorded_without_guessing_a_cycle_index; admission requires final harmonization review",
+  "primary_required_material_features": [
+    "BET_m2_g"
+  ],
+  "common_cohort_policy": "All three primary comparisons use the same admitted cohort with directly available BET; optional pore values may be missing. Protocol-only on a larger cohort is a separate diagnostic, not a fair material-feature comparison.",
+  "normalization_policy": "Concentration canonicalized to mol/L; M and mol/L synonymous, mM divided by1000. mol/kg and mass fraction never converted without solvent-density/composition evidence. Units remain provenance, not predictors.",
+  "research_training_authorized": false,
+  "canonical_current_mass_basis": null,
+  "default_profile": "literature_core7_exact",
+  "current_input": "reported_current_A_g",
+  "label_relations_by_profile": {
+    "literature_core7_exact": [
+      "eq"
+    ],
+    "literature_residue_sensitivity": [
+      "eq"
+    ],
+    "literature_approx_sensitivity": [
+      "eq",
+      "approx"
+    ]
+  },
+  "current_denominator_policy": "Unknown is retained. Never infer, convert or impute the current denominator. Canonical-current view is separate."
+}
