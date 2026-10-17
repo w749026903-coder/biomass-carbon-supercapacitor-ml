@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">2967</journal-id><journal-id journal-id-type="pmc-domain">acscentsci</journal-id><journal-title-group><journal-title>ACS Central Science</journal-title><abbrev-journal-title>ACS Cent Sci</abbrev-journal-title></journal-title-group><publisher><publisher-name>American Chemical Society</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC6891853</article-id><article-id pub-id-type="pmcaid">6891853</article-id><article-id pub-id-type="pmcaiid">6891853</article-id><article-id pub-id-type="pmid">31807683</article-id><article-id pub-id-type="doi">10.1021/acscentsci.9b00800</article-id><title-group><article-title>Carbons with
+Regular Pore Geometry Yield Fundamental
+Insights into Supercapacitor Charge Storage</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Liu</surname><given-names initials="YM">Yifei
+Michelle</given-names></name><xref ref-type="aff" rid="aff1">†</xref><xref ref-type="aff" rid="aff2">‡</xref></contrib><contrib><name name-style="western"><surname>Merlet</surname><given-names initials="C">Céline</given-names></name><xref ref-type="aff" rid="aff3">¶</xref><xref ref-type="aff" rid="aff4">§</xref></contrib><contrib><name name-style="western"><surname>Smit</surname><given-names initials="B">Berend</given-names></name><xref ref-type="aff" rid="aff2">‡</xref><xref ref-type="aff" rid="aff1">†</xref><xref rid="cor1" ref-type="author-notes">*</xref></contrib></contrib-group><aff id="aff1"><label>†</label>Department
+of Chemical and Biomolecular Engineering, University of California, Berkeley, California 94720, United States</aff><aff id="aff2"><label>‡</label>Laboratory
+of Molecular Simulation (LSMO), Institut des Sciences et Ingénierie
+Chimiques, École polytechnique fédérale
+de Lausanne (EPFL), Rue
+de l’Industrie 17, CH-1951 Sion, Switzerland</aff><aff id="aff3"><label>¶</label>CIRIMAT, Université
+de Toulouse, CNRS, Bât. CIRIMAT, 118, route de Narbonne, 31062 Toulouse cedex 9, France</aff><aff id="aff4"><label>§</label>Réseau
+sur le Stockage Électrochimique de l’Énergie
+(RS2E), Fédération de Recherche CNRS 3459, HUB de l’Énergie, Rue Baudelocque, 80039 Amiens, France</aff><author-notes><fn id="cor1"><label>*</label><p>E-mail: <email>berend.smit@epfl.ch</email>.</p></fn></author-notes><pub-date><day>15</day><month>11</month><year>2019</year></pub-date><volume>5</volume><issue>11</issue><fpage>1813</fpage><page-range>1813–1823</page-range><pub-history><event event-type="pmc-release"><date><day>5</day><month>12</month><year>2019</year></date></event></pub-history><permissions><copyright-statement>Copyright © 2019 American Chemical Society</copyright-statement><license><license-p>This is an open access article published under an ACS AuthorChoice <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/page/policy/authorchoice_termsofuse.html" ext-link-type="uri">License</ext-link>, which permits copying and redistribution of the article or any adaptations for non-commercial purposes.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="oc9b00800.pdf" content-type="pmc-pdf"><?cloudpmc-path 58fd/6891853/787c03455109/oc9b00800.pdf?><?cloudpmc-bucket app?><?size 10683827?></self-uri><abstract id="abstract1"><title>Abstract</title><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="ab-tgr1" xlink:href="oc9b00800_0011.jpg"><?cloudpmc-path blobs/58fd/6891853/c8c857385406/oc9b00800_0011.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 432?><?original-width 1000?><?scaled-height 288?><?scaled-width 666?></graphic><p>We conduct molecular dynamics simulations of electrical
+double-layer
+capacitors (EDLCs) using a library of ordered, porous carbon electrode
+materials called zeolite templated carbons (ZTCs). The well-defined
+pore shapes of the ZTCs enable us to determine the influence of pore
+geometry on both charging dynamics and charge storage mechanisms in
+EDLCs, also referred to as supercapacitors. We show that charging
+dynamics are negatively correlated with the pore-limiting diameter
+of the electrode material and display signatures of both progressive
+charging and ion trapping. However, the equilibrium capacitance, unlike
+charging dynamics, is not strongly correlated to commonly used, purely
+geometric descriptors such as pore size. Instead, we find a strong
+correlation of capacitance to the charge compensation per carbon (CCpC),
+a descriptor we define in this work as the average charge of the electrode
+atoms within the coordination shell of a counterion. A high CCpC indicates
+efficient charge storage, as the strong partial charges of the electrode
+are able to screen counterion charge, enabling higher ion loading
+and thus more charge storage within the electrode at a fixed applied
+voltage. We determine that adsorption sites with a high CCpC tend
+to be found within pockets with a smaller radius of curvature, where
+the counterions are able to minimize their distance with multiple
+points on the electrode surface, and therefore induce stronger local
+partial charges.</p></abstract><abstract id="abstract2" abstract-type="short"><title>Short abstract</title><p>Molecular simulations of supercapacitors
+based on a library
+of templated porous carbons with regular structures yield new insights
+into the influence of pore geometry on the charge storage efficiency.</p></abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Received 2019 Aug 8; Issue date 2019 Nov 27.</p></sec></notes></front><body><sec id="sec1" disp-level="1"><title>Introduction</title><p>Energy storage is becoming ever more important
+as society moves
+away from fossil fuels toward a cleaner energy paradigm. Storage technologies
+are often compared using the high-level metrics of energy density
+and power density. Batteries have relatively high energy density and
+low power density, while traditional capacitors have high power density
+and low energy density.<sup><xref rid="ref1" ref-type="bibr">1</xref>,<xref rid="ref2" ref-type="bibr">2</xref></sup> One advantage of capacitors is
+that, since they store energy through electric charge, they do not
+degrade as easily as batteries, which store energy through a chemical
+reaction. Capacitors are thus able to provide millions of charge–discharge
+cycles, versus several thousand cycles for the best-performing batteries.<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> Motivation to increase the energy density of
+capacitors has spurred the development in the past few decades of
+a new type of capacitor, called the electrical double layer capacitor
+(EDLC), or supercapacitor. EDLCs are differentiated from traditional
+capacitors by having a liquid electrolyte in place of a solid dielectric.
+Under an applied voltage, the accumulation of positive and negative
+ions at the anode and cathode, respectively, leads to the creation
+of a double layer at each electrode.</p><p>The energy density of a
+capacitor is proportional to the capacitance,
+defined as the amount of charge, <italic>Q</italic>, stored by a capacitor
+at a given voltage, <italic>V</italic>(<xref rid="ref3" ref-type="bibr">3</xref>)</p><disp-formula id="eq1"><label>1</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="oc9b00800_m001.jpg"><?cloudpmc-path blobs/58fd/6891853/c88a50960042/oc9b00800_m001.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 29?><?original-width 37?><?scaled-height 29?><?scaled-width 37?></graphic></disp-formula><p>For an idealized parallel
+plate capacitor consisting of metallic electrodes enclosing a dielectric
+medium of uniform dielectric constant, ε, the capacitance can
+be derived exactly as</p><disp-formula id="eq2"><label>2</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="oc9b00800_m002.jpg"><?cloudpmc-path blobs/58fd/6891853/e527f4b06ae4/oc9b00800_m002.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 13?><?original-width 51?><?scaled-height 13?><?scaled-width 51?></graphic></disp-formula><p>where <italic>A</italic> is
+the cross-sectional area of the capacitor and <italic>d</italic> is
+the separation distance between the electrodes. If we transpose this
+expression to an EDLC, <italic>A</italic> would be the surface area
+of the electrode which is accessible to electrolyte ions, and <italic>d</italic> the characteristic thickness of the electrode–electrolyte
+interface. <xref rid="eq2" ref-type="disp-formula">Equation <xref rid="eq2" ref-type="disp-formula">2</xref></xref> provides some intuition for why EDLCs have increased capacitance
+over their traditional counterparts: First, the charge separation
+distance is smaller in an EDLC than in a traditional capacitor, since
+ions can approach within less than 0.5 nm of the electrode surface,
+while in a traditional capacitor <italic>d</italic> is a few nanometers
+or higher.<sup><xref rid="ref3" ref-type="bibr">3</xref>,<xref rid="ref4" ref-type="bibr">4</xref></sup> Second, the accessible surface area of an
+EDLC can be increased by several orders of magnitude using rough or
+porous electrode.</p><p>Multiple theories have arisen to describe
+the electrochemical double
+layer, beginning with the classical theory of Helmoltz,<sup><xref rid="ref5" ref-type="bibr">5</xref>,<xref rid="ref6" ref-type="bibr">6</xref></sup> which was subsequently improved by Gouy,<sup><xref rid="ref7" ref-type="bibr">7</xref></sup> Chapman,<sup><xref rid="ref8" ref-type="bibr">8</xref></sup> and Stern<sup><xref rid="ref9" ref-type="bibr">9</xref></sup> to consider discrete ions and complex double layer structures.
+These theories can accurately predict capacitances of EDLCs whose
+pores are macroscopic. However, when the pores become comparable in
+size to the electrolyte ions, so-called “anomalously”
+high capacitances have been observed that break with both existing
+theories and empirical trends.<sup><xref rid="ref10" ref-type="bibr">10</xref>,<xref rid="ref11" ref-type="bibr">11</xref></sup> Reports of materials
+with such impressive capacitances have led to considerable growth
+in the field of microporous materials for EDLCs, to better understand
+the mechanisms behind capacitance in small pores.<sup><xref rid="ref12" ref-type="bibr">12</xref>−<xref rid="ref18" ref-type="bibr">18</xref></sup></p><p>A popular choice of material for EDLC electrodes is porous
+carbon,
+due to its stability, ease of synthesis, and low cost. Porous carbons
+used in EDLCs include activated carbons,<sup><xref rid="ref11" ref-type="bibr">11</xref></sup> carbide-derived carbons,<sup><xref rid="ref10" ref-type="bibr">10</xref>,<xref rid="ref19" ref-type="bibr">19</xref></sup> carbon onions and nanotubes,<sup><xref rid="ref20" ref-type="bibr">20</xref></sup> carbonized precursors such as metal–organic
+frameworks,<sup><xref rid="ref21" ref-type="bibr">21</xref></sup> and graphene-based composites.<sup><xref rid="ref22" ref-type="bibr">22</xref>,<xref rid="ref23" ref-type="bibr">23</xref></sup> Experiments and simulations have shed some light on the charge-storage
+mechanisms in such materials;<sup><xref rid="ref14" ref-type="bibr">14</xref>−<xref rid="ref16" ref-type="bibr">16</xref>,<xref rid="ref24" ref-type="bibr">24</xref>,<xref rid="ref25" ref-type="bibr">25</xref></sup> however, a major challenge is that most
+microporous carbon materials have neither a narrow pore size distribution
+nor a regular structure with long-range order, making it difficult
+to draw conclusions between structure and performance.</p><p>A new
+class of materials called zeolite-templated carbons (ZTCs),
+which are synthesized using a sacrificial zeolite scaffold,<sup><xref rid="ref26" ref-type="bibr">26</xref>−<xref rid="ref28" ref-type="bibr">28</xref></sup> has been demonstrated as a promising EDLC material.<sup><xref rid="ref29" ref-type="bibr">29</xref>−<xref rid="ref32" ref-type="bibr">32</xref></sup> Thus far, ZTCs have been synthesized from just three zeolites (FAU,
+EMT, and beta) of the 245 frameworks recognized by the IZA Structure
+Commission.<sup><xref rid="ref33" ref-type="bibr">33</xref>−<xref rid="ref35" ref-type="bibr">35</xref></sup> Recently, Braun and co-workers reported a method
+to computationally synthesize ZTCs from a given zeolite structure,
+and then predict whether the ZTCs are experimentally synthesizable
+based on stability during finite-temperature molecular dynamics simulations.<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> Their predicted ZTCs are composed of sp<sup>2</sup>-hybridized carbons that tile a surface that is dual to the
+zeolite. Templating on a crystalline framework confers well-defined
+pore geometries that could yield insights into the structure–property
+relationships of electrode materials, motivating further study of
+ZTCs for energy storage applications.</p><p>In this work, we use molecular
+dynamics (MD) simulations to screen
+the ZTC materials of Braun et al. as electrode materials in EDLC cells.
+We show that the charging time scale of the ZTCs is negatively correlated
+with pore limiting diameter, and that there is evidence of both progressive
+charge penetration and kinetic trapping within the ZTCs during charging.
+We then study the equilibrium capacitance of the ZTCs to investigate
+the correlation between geometric descriptors, local electrolyte configurations,
+and charge storage mechanisms within the electrode. Introducing the
+concept of charge compensation per carbon (CCpC), we find that charge
+storage is more efficient at ion adsorption sites with high CCpC,
+which are more likely within pores with a lower radius of curvature.
+Conversely, charge storage is diminished at high-radius-of-curvature
+sites and within sites with a mismatch of local pore diameter and
+ion size.</p></sec><sec id="sec2" disp-level="1"><title>Results and Discussion</title><p>As demonstrated in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">Supporting Information</ext-link>, we determined suitable
+protocols for building an EDLC simulation
+cell and tested different MD equilibration schemes. Here we present
+the results of our simulations using the constant-potential method
+for charge equilibration, discussing first the dynamics of charging
+and then equilibrium capacitances.</p><sec id="sec2.1" disp-level="2"><title>Charging Dynamics</title><p>An EDLC cell can be represented macroscopically
+with an equivalent circuit model,<sup><xref rid="ref3" ref-type="bibr">3</xref></sup> which
+can range in complexity from an RC circuit, consisting of a capacitor
+in series with a resistor (representing the electrode capacitance
+and solution resistance, respectively), to more detailed representations
+such as a transmission line model, which assumes that the properties
+of the circuit are distributed continuously throughout the material
+and thus models the EDLC as a series of individual circuit elements,
+or electrode “slices.”<sup><xref rid="ref37" ref-type="bibr">37</xref></sup> These
+more complex models, such as the transmission line model used by multiple
+groups,<sup><xref rid="ref38" ref-type="bibr">38</xref>,<xref rid="ref39" ref-type="bibr">39</xref></sup> are especially useful when extrapolating
+macroscopic charging dynamics from microscopic simulations. Since
+we only want estimates of the relative charging dynamics among different
+ZTC materials, we use here the simplest RC equivalent circuit (effectively
+a one-slice model) to model the ZTC EDLCs.</p><p>Under an applied
+constant potential, the accumulated charge in an RC circuit exponentially
+approaches its equilibrium value.<sup><xref rid="ref40" ref-type="bibr">40</xref></sup> We
+therefore fit the transient charge per atom <italic>q</italic>(<italic>t</italic>) of the EDLCs to the exponential function</p><disp-formula id="eq3"><label>3</label><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" xlink:href="oc9b00800_m003.jpg"><?cloudpmc-path blobs/58fd/6891853/c3686898077f/oc9b00800_m003.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 20?><?original-width 109?><?scaled-height 20?><?scaled-width 109?></graphic></disp-formula><p>where <italic>q</italic><sub>∞</sub> is the infinitely equilibrated charge per atom of
+the capacitor and τ is the time constant of the exponential,
+which for an RC circuit is <italic>R</italic> × <italic>C</italic> (the product of the resistance and the capacitance of the circuit).
+The circuit is considered to be equilibrated after 5τ, at which
+point the charge is within 1% of the infinitely equilibrated charge.</p><p>Examples of the exponential fits for the charging of FAU_1, BEA,
+and EMT are shown in <xref rid="fig1" ref-type="fig">Figure <xref rid="fig1" ref-type="fig">1</xref></xref>. For all of the structures, the electrode atom charges are
+underestimated by the exponential fit during the first 1 to 2 ns of
+constant-potential charging (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">SI Figure S10</ext-link>). Defining an “average residual” ε<sub>1τ</sub> to be the relative root-mean-square error (RMSE) between the exponential
+fit and the charging profile over the first characteristic time, we
+plot the characteristic time τ against the pore limiting diameter
+(PLD) of the material, with the points colored to show ε<sub>1τ</sub>, in <xref rid="fig2" ref-type="fig">Figure <xref rid="fig2" ref-type="fig">2</xref></xref>. We observe that τ is negatively correlated with PLD,
+consistent with work from Vasilyev et al.,<sup><xref rid="ref41" ref-type="bibr">41</xref></sup> on CDCs, indicating that it takes longer for charge to equilibrate
+in materials with smaller PLD, likely due to larger diffusive barriers.
+Similarly, ε<sub>1τ</sub> also increases with smaller
+PLD. Since ε<sub>1τ</sub> reflects the quality of the
+exponential fit of the accumulated charge (higher ε<sub>1τ</sub> indicates worse fit), the data show that the exponential fit at
+early times is more severely underestimated when PLD decreases. This
+underestimation of the initial charging profile by the exponential
+fit suggests the existence of multiple time scales in EDLC charging,
+due to both progressive charging of the electrodes from the bulk electrolyte
+inward (consistent with a transmission line model), as well as “overfilling”
+and ion trapping analogous to that observed by Kondrat et al.<sup><xref rid="ref17" ref-type="bibr">17</xref>,<xref rid="ref42" ref-type="bibr">42</xref></sup> Both phenomena, as well as further details regarding equilibrium
+convergence, are discussed further in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">Supporting Information</ext-link>.</p><fig id="fig1" position="float"><?disp-level 3?><label>Figure 1</label><caption><p>Evolution of average absolute charge per atom for FAU_1,
+BEA, and
+EMT, with a constant potential drop of 1 V applied to the cell starting
+at <italic>t</italic> = 0 ps. Exponential fit is shown in the red
+dashed line and fit parameters are provided in the label.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr1" xlink:href="oc9b00800_0001.jpg"><?cloudpmc-path blobs/58fd/6891853/b0a5346f838e/oc9b00800_0001.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 693?><?original-width 2400?><?scaled-height 233?><?scaled-width 805?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0001.gif"><?cloudpmc-path blobs/58fd/6891853/b4473b72add7/oc9b00800_0001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><fig id="fig2" position="float"><?disp-level 3?><label>Figure 2</label><caption><p>Characteristic time scale τ of EDLCs during charging
+at ΔΨ
+= 1 V, colored with the normalized ε<sub>1τ</sub> of the
+exponential fit during the first characteristic time scale.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr2" xlink:href="oc9b00800_0002.jpg"><?cloudpmc-path blobs/58fd/6891853/7d728a71df2f/oc9b00800_0002.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1526?><?original-width 2400?><?scaled-height 500?><?scaled-width 786?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0002.gif"><?cloudpmc-path blobs/58fd/6891853/c25928f89c80/oc9b00800_0002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="sec2.2" disp-level="2"><title>Capacitance Screening</title><p>The capacitance under a constant
+applied potential is plotted against various geometric descriptors
+(top row) and average local interfacial properties (bottom row) in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>. While it would
+be interesting to compare the values obtained in this work with previous
+results obtained for disordered porous structures, we limit ourselves
+to the systems simulated here since the design of the model supercapacitors
+and the equilibration process seem to affect the simulated capacitances.
+Indeed, previous simulations done with constant charge or constant
+potential equilibrations and with slightly different starting densities
+have shown a difference of 36% between calculated capacitances.<sup><xref rid="ref14" ref-type="bibr">14</xref>,<xref rid="ref38" ref-type="bibr">38</xref></sup> Geometric descriptors, in particular, average pore size and pore
+size distributions, are often used to rationalize structure–capacitance
+relationships in EDLCs.<sup><xref rid="ref43" ref-type="bibr">43</xref>,<xref rid="ref44" ref-type="bibr">44</xref></sup> For example, In Käärik
+et al., the authors trained a regression model to link capacitance
+to three experimental descriptors: surface area, pore size fraction,
+and density. While they showed overall statistical agreement of their
+model with most of the 100 amorphous carbons they studied, their regression
+model has the highest relative error (roughly 20%) for the highest-capacitance
+materials, suggesting that these geometric descriptors lack a fundamental
+correlation to the anomalous increases in capacitance achievable with
+subnanometer pores.<sup><xref rid="ref45" ref-type="bibr">45</xref></sup> Other theoretical
+studies on slit nanopores even suggest that the capacitance could
+follow an oscillatory behavior with the average pore size for carbons
+with well-defined pore sizes.<sup><xref rid="ref46" ref-type="bibr">46</xref>−<xref rid="ref48" ref-type="bibr">48</xref></sup> However, in our materials we
+do not see a definite correlation with any of the geometric descriptors
+alone. Indeed, for all purely geometric descriptors the Pearson correlation
+coefficient (Pearson’s <italic>r</italic>) with gravimetric
+capacitance is less than 0.5 (<xref rid="tbl1" ref-type="table">Table <xref rid="tbl1" ref-type="table">1</xref></xref>).</p><fig id="fig3" position="float"><?disp-level 3?><label>Figure 3</label><caption><p>Gravimetric capacitance as a function of geometric descriptors
+in the top row: density, void fraction, average pore size, and PLD;
+and local properties in the bottom row: average distance between counterions
+and electrode (⟨<italic>d̅</italic><sub>sep</sub>⟩),
+the surface area to charge separation ratio (A/⟨<italic>d̅</italic><sub>sep</sub>⟩), the average degree of confinement (⟨DoC⟩),
+and the average charge compensation per carbon (⟨CCpC⟩).
+The inset plots the gravimetric capacitance against total charge compensation
+in the coordination shell, where the <italic>x</italic>-axis range
+goes from 0.15 <italic>e</italic> to 0.23 <italic>e</italic>.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr3" xlink:href="oc9b00800_0003.jpg"><?cloudpmc-path blobs/58fd/6891853/f06f450da8ad/oc9b00800_0003.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1306?><?original-width 2400?><?scaled-height 416?><?scaled-width 765?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0003.gif"><?cloudpmc-path blobs/58fd/6891853/f751fa2ea40d/oc9b00800_0003.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><table-wrap id="tbl1" position="float"><?disp-level 3?><label>Table 1</label><caption><title>Pearson Correlation Coefficients Computed
+between Gravimetric Capacitance and Descriptors Shown in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref></title></caption><table frame="hsides" rules="groups" border="0"><colgroup span="1"><col align="left" span="1"/><col align="char" char="." span="1"/></colgroup><thead><tr><th style="border:none;" align="center" colspan="1" rowspan="1">descriptor</th><th style="border:none;" align="center" colspan="1" rowspan="1">Pearson’s <italic>r</italic></th></tr></thead><tbody><tr><td colspan="2" style="border:none;" align="center" rowspan="1">Geometric Properties</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">density</td><td style="border:none;" align="center" colspan="1" rowspan="1">–0.385</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">void fraction</td><td style="border:none;" align="center" colspan="1" rowspan="1">0.461</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1"><italic>d</italic><sub>pore</sub></td><td style="border:none;" align="center" colspan="1" rowspan="1">–0.005</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">PLD</td><td style="border:none;" align="center" colspan="1" rowspan="1">0.039</td></tr><tr><td colspan="2" style="border:none;" align="center" rowspan="1">Local Interfacial
+Properties</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">⟨<italic>d̅</italic><sub>sep</sub>⟩</td><td style="border:none;" align="center" colspan="1" rowspan="1">–0.206</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">A/⟨<italic>d̅</italic><sub>sep</sub>⟩</td><td style="border:none;" align="center" colspan="1" rowspan="1">0.751</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">⟨DoC⟩</td><td style="border:none;" align="center" colspan="1" rowspan="1">–0.387</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">⟨CCpC⟩</td><td style="border:none;" align="center" colspan="1" rowspan="1">0.934</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">total charge compensation</td><td style="border:none;" align="center" colspan="1" rowspan="1">0.252</td></tr></tbody></table></table-wrap><p>This suggests that while particular geometric descriptors
+might
+be a useful indicator of capacitance within particular families of
+materials, a clear relationship between capacitance and, for example,
+pore size is not the rule, but rather the exception for materials
+that are otherwise geometrically similar. ZTCs, due to their regular
+templated structures, exhibit a diversity of topologies, pore geometries,
+and local curvatures, which are not well captured by traditional geometric
+descriptors, but are known to influence charge storage.<sup><xref rid="ref15" ref-type="bibr">15</xref></sup> Thus, the insights we can glean from local interfacial
+properties in ZTCs might be better translated to microporous carbon
+materials in general.</p><p>The bottom row of <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref> plots capacitance versus quantities related
+to the electrolyte–electrode
+interfacial configuration, which are computed for an ion in relation
+to the electrode atoms within its coordination shell. The charge separation
+(⟨<italic>d̅</italic><sub>sep</sub>⟩) is the average
+distance between the counterion and the carbons within its coordination
+shell. The degree of confinement (DoC) is defined as the fraction
+of the maximum solid angle around a counterion that is occupied by
+carbon atoms within the coordination shell cutoff (set to the first
+minimum in the ion-carbon radial distribution function).<sup><xref rid="ref15" ref-type="bibr">15</xref></sup> And finally, the charge compensation per carbon
+(CCpC), a quantity introduced in this work, is defined as the magnitude
+of the net charge of the coordination shell divided by the number
+of atoms within the coordination cutoff. Since the coordination shell
+represents the “sphere of influence” of an ion, a high
+CCpC indicates that a relatively large amount of the ionic charge
+is being compensated by a relatively small number of electrode atoms.
+For all quantities, the angle brackets ⟨⟩ denote averaging
+over all counterions in an electrode.</p><p>A positive correlation
+can be observed between the capacitance
+and A/⟨<italic>d̅</italic><sub>sep</sub>⟩ (<italic>r</italic> = 0.751), reminiscent of classical theories of capacitance
+as expressed by <xref rid="eq2" ref-type="disp-formula">eq <xref rid="eq2" ref-type="disp-formula">2</xref></xref>.
+This suggests that we can view capacitance in the ZTCs as arising
+from an “ideal” contribution from a reference electrode
+with the same A/⟨<italic>d̅</italic><sub>sep</sub>⟩,
+and a “non-ideal” contribution responsible for the deviations
+from classical double layer theory, arising from the microporosity.
+One measure of how micropores influence charge storage is the DoC.
+Here, we note that we are plotting in <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref> the average degree of confinement, ⟨DoC⟩,
+which obscures differences in the range and distribution of confinement
+values within a material. We do not observe a strong correlation with
+capacitance when ⟨DoC⟩ is below 0.25, and when ⟨DoC⟩
+is above 0.25 the capacitance seems to be slightly negatively correlated
+with confinement. This finding adds nuance to the conclusions from
+previous studies that more confinement generally has a positive influence
+on charge storage efficiency, i.e., that ions in highly confined sites
+generate a higher counter-charge on the electrode.<sup><xref rid="ref15" ref-type="bibr">15</xref>,<xref rid="ref18" ref-type="bibr">18</xref></sup> We discuss confinement effects further in a later section, where
+we examine charge storage mechanisms in individual pores.</p><p>Finally,
+the local descriptor that appears to have the best correlation
+with capacitance is ⟨CCpC⟩, for which we observe a positive
+and nearly linear relationship (<italic>r</italic> = 0.934) with even
+less scatter than for A/⟨<italic>d̅</italic><sub>sep</sub>⟩. Capacitance and ⟨CCpC⟩ both aggregate information
+about the charge stored by the electrode atoms; however, their strong
+correlation is not trivial because only about 30–45% of the
+electrode atoms are within the coordination shell of a counterion
+at a given time step. These coordination shell carbons have a slightly
+larger-than-proportional share of charge, carrying between 35% and
+50% of the net charge in the electrode (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">SI Figure S13</ext-link>). Perhaps surprisingly, the capacitance does not correlate
+with the total charge compensation within the coordination shell (inset
+of <xref rid="fig3" ref-type="fig">Figure <xref rid="fig3" ref-type="fig">3</xref></xref>). The observation
+that per-carbon (rather than total) charge compensation correlates
+so strongly with the capacitance indicates that electrodes store charge
+most efficiently when the local environment of an ion can compensate
+a large fraction of its charge while using relatively little electrode
+“real estate”.</p><p>One complication with comparing
+materials using local properties
+is that they are computed with a definition of the coordination shell
+that uses a cutoff radius, <italic>r</italic><sub>cut</sub> around
+the ion. <italic>r</italic><sub>cut</sub> radius was chosen following
+the literature<sup><xref rid="ref15" ref-type="bibr">15</xref></sup> as the first minimum in
+the ion-carbon RDF. However, we found in our materials that the first
+minima were not all at the same location in all materials, and some
+of them did not have a clear “minimum” at all. Therefore,
+we opted to use the same <italic>r</italic><sub>cut</sub> of 6.3 Å
+for all materials, as this was the location of most of the RDF first
+minima and also was consistent with the literature. Further work is
+needed to determine how to better define a coordination shell and
+compute local interfacial properties. However, since we were able
+to observe quite a strong correlation of capacitance with ⟨CCpC⟩
+with the existing coordination shell definition, we leave this complication
+for a future study.</p><p>Having investigated geometric descriptors
+and local interfacial
+properties of EDLCs, averaged over the entire electrode, we find that
+almost all of them other than ⟨CCpC⟩ lack a clear correlation
+with capacitance or, in the case of A/⟨<italic>d̅</italic><sub>sep</sub>⟩, are correlated but exhibit significant scatter.
+In the following sections we turn our attention to the relationship
+between pore geometry, local electrolyte properties, and charge storage
+within individual pores of selected materials. We then move toward
+a more general framework for rationalizing differences in capacitance
+among ZTC materials. Due to the structural diversity of the ZTC frameworks,
+we believe insights drawn from ZTCs are also relevant general design
+rules for porous carbon EDLC electrodes.</p></sec><sec id="sec2.3" disp-level="2"><title>Charge Storage Mechanism in Selected Materials</title><p>We begin
+our examination of individual materials by considering BEA and BEA_beta,
+which are templated on different polymorphs of the same zeolite (known
+as zeolite beta) as shown in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>a.<sup><xref rid="ref49" ref-type="bibr">49</xref></sup> Naturally occurring
+zeolite beta consists of a mixture of polymorphs A and B, both of
+which contain layers of the same tertiary building unit which are
+rotated by 90° with respect to each other. In polymorph A (corresponding
+to BEA_beta ZTC), the layers are stacked in a chiral fashion, while
+in polymorph B (corresponding to BEA ZTC), the rotation of the layers
+alternates. As a result, the pore size distributions of BEA and BEA_beta
+differ, with slightly larger pore sizes for BEA_beta as shown in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>b.</p><fig id="fig4" position="float"><?disp-level 3?><label>Figure 4</label><caption><p>(a) BEA and BEA_beta
+ZTC unit cells. (b) pore size distributions.
+(c) scatterplot showing joint distribution of CCpC and DoC for counterion
+adsorption sites, with probability distributions on the corresponding
+axes. (d) conditional expectation of CCpC for a given DoC, denoted
+⟨CCpC⟩<sub>DoC</sub>.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr4" xlink:href="oc9b00800_0004.jpg"><?cloudpmc-path blobs/58fd/6891853/9529af8dd42d/oc9b00800_0004.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1025?><?original-width 1000?><?scaled-height 683?><?scaled-width 666?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0004.gif"><?cloudpmc-path blobs/58fd/6891853/b1353b83d937/oc9b00800_0004.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>The capacitances of these ZTCs differ widely, with
+34.0 F g<sup>–1</sup> (45.8 F g<sup>–1</sup>) gravimetric
+and 2.33
+μF cm<sup>–2</sup> (2.65 μF cm<sup>–2</sup>) areal capacitances computed for BEA (BEA_beta). The ions within
+the pores also have different degrees of confinement, possibly arising
+from the slight differences in the most probable pore sizes. As seen
+in <xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>c, the anions
+in the anode of BEA_beta have a single peak in their DoC histogram
+around 0.33, while the anions in the BEA have on average higher DoCs,
+with one peak at 0.35 and another at 0.42. We might suppose from this
+that BEA should have the higher charge storage efficiency, since Merlet
+et al. showed that highly confined ions are able to store more charge
+in supercapacitors;<sup><xref rid="ref15" ref-type="bibr">15</xref></sup> however, in this
+case the opposite is true: ⟨CCpC⟩<sub>DoC</sub> is higher
+in BEA_beta than in BEA for all DoC values (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>d). In the cathode, as well, the average
+charge compensation is lower for BEA than for BEA_beta (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">SI Figure S14</ext-link>).</p><p>One noteworthy feature
+in the charge compensation distribution
+of the BEA anode is a minimum in ⟨CCpC⟩<sub>DoC</sub> at 0.43 DoC (<xref rid="fig4" ref-type="fig">Figure <xref rid="fig4" ref-type="fig">4</xref></xref>d), the location of the higher peak in the DoC histogram. This drop
+is significant as it does not appear in BEA_beta, showing that sites
+with the same DoC can have drastically different contributions to
+capacitance. The source of this low-CCpC region becomes clear when
+examining representative configurations of the most highly confined
+anions of BEA and BEA_beta in <xref rid="fig5" ref-type="fig">Figure <xref rid="fig5" ref-type="fig">5</xref></xref>. In BEA, the anion is located in a cylindrical, nanotube-like
+structure, with a coordination shell of electrode atoms encircling
+the anion on all sides, while the anion in BEA_beta is only confined
+on two out of four sides by the electrode. The cylindrical pore of
+BEA is too small to fit another anion or even solvent molecule, but
+too large to snugly fit BF<sub>4</sub><sup>–</sup>, causing
+it to be stuck in the middle of the pore where it is not close enough
+to induce a strong compensating charge on any of the atoms within
+its coordination shell. As a result, the coordination shell atoms
+in BEA have a total charge of −0.0263 <italic>e</italic>, while
+the coordination shell in BEA_beta has a total charge of 0.223 <italic>e</italic>. This effect has also been observed in the literature;
+for example, Kondrat et al. showed a local minimum in capacitance
+when the pore-to-ion-diameter ratio <italic>L</italic>/<italic>d</italic> was around 1.5, and increased capacitance when <italic>L</italic>/<italic>d</italic> was near 1 and 2.<sup><xref rid="ref13" ref-type="bibr">13</xref></sup></p><fig id="fig5" position="float"><?disp-level 3?><label>Figure 5</label><caption><p>Snapshots
+of the coordination shells of highly coordinated anions
+in the positive electrodes of (a) BEA and (b) BEA_beta. Carbon atoms
+are colored according to their charge, with blue indicating negative
+and red indicating positive charge, scaled from −0.01 <italic>e</italic> to 0.01 <italic>e</italic>. The green color corresponds
+to the anions, BF<sub>4</sub><sup>–</sup>, and the orange color
+to the cations, BMI<sup>+</sup>; the transparent linear molecules
+are the solvent.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr5" xlink:href="oc9b00800_0005.jpg"><?cloudpmc-path blobs/58fd/6891853/0fdbde22c855/oc9b00800_0005.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 1291?><?original-width 1860?><?scaled-height 516?><?scaled-width 744?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0005.gif"><?cloudpmc-path blobs/58fd/6891853/33302e93ebc0/oc9b00800_0005.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>The charge storage efficiency also depends on the
+ion size in relation
+to the pore size: In the electrolyte studied here, the cation is larger
+than the anion and its charge is distributed on three sites. As such,
+when a cation is at the center of the nanotube-like pore, the partial
+charges of its coarse-grained sites are able to approach more closely
+to the electrode surface, making the equivalent pore in the cathode
+more efficient at storing charge. This explains why there is no drop
+in ⟨CCpC⟩<sub>DoC</sub> in the BEA cathode (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">SI Figure S14</ext-link>). These observations highlight
+one important role of pore geometry in determining charge storage
+efficiency, by influencing local ion density and electrolyte coordination
+environment.</p><p>We next examine another pair of ZTCs, BEC, and
+ISV, to test our
+hypothesis that differences in microporosity leads to deviations from
+the classical capacitance relation, <xref rid="eq2" ref-type="disp-formula">eq <xref rid="eq2" ref-type="disp-formula">2</xref></xref>. We chose these two structures because they have virtually
+the same A/⟨<italic>d̅</italic><sub>sep</sub>⟩
+(3.5 × 10<sup>12</sup> mg<sup>–1</sup>), but different
+capacitances of 50 F g<sup>–1</sup> and 43 F g<sup>–1</sup> for BEC and ISV, respectively, putting them at high and low ends
+of the capacitance range for the given A/⟨<italic>d̅</italic><sub>sep</sub>⟩ value, as seen in the plot of <italic>C</italic><sub>sim</sub> – <italic>C</italic><sub>fit</sub> in (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>). Analyzing these
+structures in a similar fashion as for the BEA polymorphs, we find
+that BEC has more highly confined sites than ISV and a higher ⟨CCpC⟩<sub>DoC</sub> for all values of DoC (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">SI Figure S15</ext-link>).</p><fig id="fig6" position="float"><?disp-level 3?><label>Figure 6</label><caption><p>Deviation of gravimetric capacitance from the linear least-squares
+fit of capacitance vs A/⟨<italic>d̅</italic><sub>sep</sub>⟩. Structures mentioned in the text are labeled. The inset
+shows the simulated gravimetric capacitance with the fitted line and
+the color bar indicates the pore diameter.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr6" xlink:href="oc9b00800_0006.jpg"><?cloudpmc-path blobs/58fd/6891853/c8ffc2084c37/oc9b00800_0006.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 433?><?original-width 674?><?scaled-height 433?><?scaled-width 674?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0006.gif"><?cloudpmc-path blobs/58fd/6891853/7e0ffcdbfbf6/oc9b00800_0006.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>We visualize in <xref rid="fig7" ref-type="fig">Figure <xref rid="fig7" ref-type="fig">7</xref></xref> the instantaneous CCpC and <italic>d̅</italic><sub>sep</sub> of each counterion at snapshots taken every 0.5 ps
+during
+the production run, along with probability distributions for CCpC
+and <italic>d̅</italic><sub>sep</sub> along the corresponding
+axes. The joint distributions for the two materials are largely overlapping,
+but the adsorption sites in BEC have their highest probability density
+at slightly lower <italic>d̅</italic><sub>sep</sub> than the
+sites in ISV, corresponding to more efficient charge storage (as seen
+by the higher CCpC distribution) and higher overall capacitance of
+BEC.</p><fig id="fig7" position="float"><?disp-level 3?><label>Figure 7</label><caption><p>Scatterplot of CCpC and <italic>d̅</italic><sub>sep</sub> of
+each counterion adsorption site during production run, with probability
+distributions, for BEC and ISV.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr7" xlink:href="oc9b00800_0007.jpg"><?cloudpmc-path blobs/58fd/6891853/7960195015a8/oc9b00800_0007.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 603?><?original-width 672?><?scaled-height 603?><?scaled-width 672?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0007.gif"><?cloudpmc-path blobs/58fd/6891853/2bf3e2301194/oc9b00800_0007.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>By examining individual pairs of structures, and
+comparing properties
+of the individual pores inside those structures, we start to obtain
+insights into how charge storage mechanisms are related to pore geometries.
+We generalize this approach in the following section, looking at many
+structures to extract structure–property trends.</p></sec><sec id="sec2.4" disp-level="2"><title>Effect of Pore Geometry on Charge Storage Efficiency</title><p>We show in <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref> the structures of the materials with highest and lowest <italic>C</italic><sub>sim</sub> – <italic>C</italic><sub>fit</sub>, indicating the average charge of each crystallographically unique
+electrode carbon atom during the equilibrated constant potential run,
+along with the probability density isosurfaces of counterion locations
+within the electrodes. Isosurfaces for adsorption sites with more
+than 0.1 <italic>e</italic> total charge compensation are shown in
+purple, while sites with less than 0.1 <italic>e</italic> charge compensation
+are shown in green. This allows us to visually associate geometry
+with average contribution to capacitance for an individual pore and
+see that the adsorption site isosurfaces that have more than 0.1 <italic>e</italic> coordination-shell charge compensation are close to the
+surface of the frameworks, while the isosurfaces associated with less
+than 0.1 <italic>e</italic> charge compensation tend to be in the
+middle of the pores.</p><fig id="fig8" position="float"><?disp-level 3?><label>Figure 8</label><caption><p>Average electrode atom charges and isosurfaces of ion
+probability
+density, computed for anions within the anode (a–e), probability
+density of average charges in the anode of materials discussed in
+the text, colored by deviation of gravimetric capacitance from the
+linear fit (f). Electrode atoms are colored on a scale from 0 (white)
+to 0.01 <italic>e</italic> (red). Purple isosurfaces indicate total
+charge compensation within the coordination shell cutoff radius greater
+than 0.1 <italic>e</italic>, while green isosurfaces indicate total
+charge compensation less than 0.1 <italic>e</italic>.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr8" xlink:href="oc9b00800_0008.jpg"><?cloudpmc-path blobs/58fd/6891853/adac4b7b05db/oc9b00800_0008.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 2011?><?original-width 1503?><?scaled-height 1005?><?scaled-width 751?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0008.gif"><?cloudpmc-path blobs/58fd/6891853/bff31fc5ac07/oc9b00800_0008.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>Inspecting the average atomic charges of BEC and
+h91 visually (<xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>a and b) as well
+as quantitatively (<xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>f), we find that these two materials have more individual
+carbon atoms with high charge, corresponding to high CCpC. As seen
+in <xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>, BEC and
+h91 are also the two materials with the highest enhancement in capacitance
+compared to materials of similar A/⟨<italic>d̅</italic><sub>sep</sub>⟩. Comparing these two frameworks also illustrates
+the diversity of factors contributing to overall capacitance: h91
+appears to have more atoms with a low average charge than BEC, but
+from <xref rid="tbl2" ref-type="table">Table <xref rid="tbl2" ref-type="table">2</xref></xref> one can
+also see that h91 has a larger fraction of atoms with an average charge
+of greater than 0.008 <italic>e</italic>, and from the charge distribution
+in <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>f, it is
+apparent that h91 even has a peak in the charge distribution around
+0.017 <italic>e</italic>, whereas BEC has no atoms with such a high
+average charge.</p><table-wrap id="tbl2" position="float"><?disp-level 3?><label>Table 2</label><caption><title>Fraction of Atoms with Large Positive
+or Negative Average Charge in Selected ZTCs</title></caption><table frame="hsides" rules="groups" border="0"><colgroup span="1"><col align="left" span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/></colgroup><thead><tr><th style="border:none;" align="center" colspan="1" rowspan="1"> </th><th colspan="2" align="center" rowspan="1">percentage
+(%) of atoms with average charge<hr/></th></tr><tr><th style="border:none;" align="center" colspan="1" rowspan="1">material</th><th style="border:none;" align="center" colspan="1" rowspan="1">&gt;0.008 in anode</th><th style="border:none;" align="center" colspan="1" rowspan="1">&lt;−0.008 <italic>e</italic> in cathode</th></tr></thead><tbody><tr><td style="border:none;" align="left" colspan="1" rowspan="1">h91</td><td style="border:none;" align="right" colspan="1" rowspan="1">12</td><td style="border:none;" align="right" colspan="1" rowspan="1">18</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">BEC</td><td style="border:none;" align="right" colspan="1" rowspan="1">12</td><td style="border:none;" align="right" colspan="1" rowspan="1">6.5</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">BEA_beta</td><td style="border:none;" align="right" colspan="1" rowspan="1">15</td><td style="border:none;" align="right" colspan="1" rowspan="1">14</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">ISV</td><td style="border:none;" align="right" colspan="1" rowspan="1">3.5</td><td style="border:none;" align="right" colspan="1" rowspan="1">5.0</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">h49</td><td style="border:none;" align="right" colspan="1" rowspan="1">3.5</td><td style="border:none;" align="right" colspan="1" rowspan="1">4.0</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">h18</td><td style="border:none;" align="right" colspan="1" rowspan="1">3.5</td><td style="border:none;" align="right" colspan="1" rowspan="1">4.0</td></tr><tr><td style="border:none;" align="left" colspan="1" rowspan="1">BEA</td><td style="border:none;" align="right" colspan="1" rowspan="1">0.5</td><td style="border:none;" align="right" colspan="1" rowspan="1">5.5</td></tr></tbody></table></table-wrap><p>In contrast, h18, h49, and ISV, which have A/⟨<italic>d̅</italic><sub>sep</sub>⟩ similar or greater than that
+of BEC, but lower
+capacitance, have fewer highly charged atoms (<xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>c–f). <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>f and <xref rid="tbl2" ref-type="table">Table <xref rid="tbl2" ref-type="table">2</xref></xref> provide further quantitative evidence of the correlation
+between the probability of highly charged atoms and <italic>C</italic><sub>sim</sub> – <italic>C</italic><sub>fit</sub>: structures
+with a higher probability density of average atomic charge magnitude
+around 0.1 <italic>e</italic> or higher tend to have a higher <italic>C</italic><sub>sim</sub> – <italic>C</italic><sub>fit</sub>.</p><p>In order to rationalize the differences in charge storage
+between
+these materials, we focus on the local radius of curvature of the
+materials, as this roughly determines the distribution of ion–electrode
+distances at a particular adsorption site. In BEC, which has square-shaped
+windows with right-angle “corners”, we see electrode
+atoms with large average partial charges at two locations for each
+adsorption isosurface, corresponding to the positions at which an
+adsorbed ion can be in close proximity with two “walls”
+of the framework simultaneously. In h91, cylindrical pores adjoining
+with rounded beams create small radius of curvature sites where ions
+can again approach the electrode surface closely at multiple sites,
+leading to more electrode atoms with large partial charges.</p><p>In contrast, adsorption sites that are near large radius of curvature
+sites, such as in h18, h49, and ISV (<xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>c, d, and e), tend to be associated with
+materials with lower capacitances relative to their respective A/⟨<italic>d̅</italic><sub>sep</sub>⟩. In adsorption sites with
+a large radius of curvature, an ion is not able to induce as many
+favorable Coulombic interactions with the electrode surface, leading
+to lower charge compensation for ions within those materials. ISV
+merits particular mention, as it does contain some adsorption sites
+with low radius of curvature and high charge compensation (dashed
+circles in <xref rid="fig8" ref-type="fig">Figure <xref rid="fig8" ref-type="fig">8</xref></xref>e), but also has high radius of curvature/low charge compensation
+sites (solid circles); ISV still has a relatively low capacitance
+considering its high A/⟨<italic>d̅</italic><sub>sep</sub>⟩ (<xref rid="fig6" ref-type="fig">Figure <xref rid="fig6" ref-type="fig">6</xref></xref>).</p><p>Overall, our results demonstrate that pore geometries that
+are
+capacitance-enhancing tend to facilitate the close approach of counterions
+to multiple carbons within the electrode via low radius of curvature
+adsorption sites, so that the compensating charge from the electrodes
+can be localized and large in magnitude to most efficiently screen
+countercharges and allow for higher counterion loading (and thus a
+large magnitude of charge storage) in the pores. Conversely, capacitance-diminishing
+properties include pores with high radius of curvature and cylindrical
+and ill-fitting pores (whose diameters are not commensurate with the
+ion diameters), as these types of sites have inefficient charge storage
+and therefore decrease the overall capacitance of the material.</p></sec></sec><sec id="sec3" disp-level="1"><title>Conclusions</title><p>In summary, we investigated both the charging
+dynamics and equilibrium
+capacitance in zeolite-templated carbon electrodes. We found that
+the equilibration time at constant potential varied depending on the
+material, from as little as 3 ns to over 10 ns, increasing as the
+pore size decreased. This indicated that the limiting process in EDLC
+charge convergence is solvent diffusion and reorganization, which
+becomes slower as the PLD decreases. We also found evidence of ion
+trapping and progressive charging of the electrode, which leads to
+an underestimation of the initial charging profile by a single-exponential
+fit.</p><p>We observed that the equilibrium capacitance of the ZTCs
+was not
+correlated with geometric pore descriptors such as PLD, and only weakly
+correlated with most “globally” averaged local properties
+such as ⟨DoC⟩. Instead, we found that capacitance was
+correlated strongly with ⟨CCpC⟩, a measure of how much
+of the ionic charge is compensated per electrode atom in the coordination
+shell. Turning our focus next to microscopic properties, we identified
+subtle geometric differences between otherwise similar ZTC structures
+that give rise to large differences in capacitance. By comparing probability
+distributions for charge compensation, degree of confinement, and
+charge separation distances, we determined specific pore geometries
+that corresponded to enhanced or diminished charge storage efficiency.
+For example, we illustrate how a pore with a diameter that is not
+commensurate with the ion size barely compensates the ionic charge
+at all, while a slightly smaller pore in a similar material responds
+to a local ion with a strong compensating charge. Finally, by leveraging
+local CCpC to characterize ion adsorption sites within the electrode,
+and analyzing the average charge distribution around low- and high-charge-compensation
+sites, we observed that the capacitance is higher in materials that
+have pockets with sharp angles or a low radius of curvature, compared
+to pockets with rounded corners or a larger radius of curvature. Low
+radius of curvature pockets allow ions to approach close to the pore
+at multiple points, inducing strong opposing charges in the electrode
+which efficiently screen the ion charge.</p><p>Our work contributes
+clear molecular insights into the effect of
+local pore geometry on the charge storage mechanisms within EDLCs.
+The efficient charge storage of “pockets” versus “hollow”
+or “surface” adsorption sites has been previously reported,
+but our work shows that not all pockets are equivalent; those with
+diameters that match the ion size, or with sharper corners, are able
+to compensate substantially more of an adsorbed ion’s charge.
+The relevance of our results rests on the well-defined and yet diverse
+pore shapes within the ZTC materials that we study, which allow us
+to reach conclusions that are not dependent on synthesis conditions
+or other material-specific factors in amorphous carbons. One promising
+experimental application of our conclusions is in salt-soft templating,<sup><xref rid="ref50" ref-type="bibr">50</xref></sup> where commensurate ion pore diameters can be
+engineered by templating a porous carbon with the same salt used in
+the electrolyte. Our work also signals the potential for improvement
+in the computational study of EDLC electrodes, in order to develop
+more sophisticated methods for geometric characterization of pore
+shapes so that potential electrode materials may be screened with
+less computational expense, enabling high-throughput screening. Some
+options for geometric analysis include using Voronoi tessellation
+or mesh-based approaches to characterize pore curvature, or applying
+a method such as the Smooth Overlap of Atomic Positions (SOAP),<sup><xref rid="ref51" ref-type="bibr">51</xref></sup> a descriptor of local atomic geometry. Further
+research into more efficient molecular simulation protocols would
+also be interesting, either to shorten the equilibration time needed
+or to determine whether a descriptor such as the CCpC calculated at
+a constant zero potential is relevant to capacitance at a nonzero
+potential. These experimental and computational research directions
+can build upon the insights we present in this work, to advance our
+fundamental understanding of and design capabilities for improved
+supercapacitors.</p></sec><sec id="sec4" disp-level="1"><title>Methods</title><sec id="sec4.1" disp-level="2"><title>Model and Force Field</title><p>In our simulations we used an
+organic electrolyte composed of a mixture of 1-butyl-3-methylimidazolium
+tetrafluoroborate ([BMI<sup>+</sup>][BF<sub>4</sub><sup>–</sup>]) and acetonitrile (ACN) with the concentration of ions equal to
+1 M. We modeled the organic electrolyte using a coarse-grained description
+consisting of a three-site model for BMI<sup>+</sup> and ACN, and
+a single-site model for BF<sub>4</sub><sup>–</sup>, as shown
+in <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">SI Figure S1</ext-link>. Nonbonded interactions
+were described by a pairwise Lennard-Jones potential with Lorentz–Berthelot
+mixing rules, and electrostatic interactions by a Coulombic potential.
+Long-range electrostatic interactions were computed using the Ewald
+summation for systems with slab geometry.<sup><xref rid="ref52" ref-type="bibr">52</xref></sup></p><p>For the nonbonded parameters of BMI<sup>+</sup> we used those
+developed by Roy and Maroncelli.<sup><xref rid="ref53" ref-type="bibr">53</xref></sup> The
+nonbonded parameters for BF<sub>4</sub><sup>–</sup> and ACN
+were taken from Merlet et al.<sup><xref rid="ref14" ref-type="bibr">14</xref></sup> and from
+Edwards et al.,<sup><xref rid="ref54" ref-type="bibr">54</xref></sup> respectively. Bonds and
+angles of BMI<sup>+</sup>, and bonds of ACN, were kept rigid using
+the SHAKE algorithm.<sup><xref rid="ref55" ref-type="bibr">55</xref>,<xref rid="ref56" ref-type="bibr">56</xref></sup> For the angles of ACN we used
+a harmonic potential with a stiff spring constant of 400 kcal<sup>2</sup> rad<sup>–1</sup> mol<sup>–1</sup> to keep the
+molecule close to linear. The carbon atoms of the electrodes were
+modeled as rigid. During the constant applied potential simulations,
+the charges of the electrode atoms were computed at each time step
+according to the constant-potential method.<sup><xref rid="ref57" ref-type="bibr">57</xref>,<xref rid="ref58" ref-type="bibr">58</xref></sup> All force field parameters and further details regarding the constant-potential
+method are provided in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">Supporting Information</ext-link>.</p><p>ZTC materials were synthesized <italic>in silico</italic> as described
+in Braun et al.<sup><xref rid="ref36" ref-type="bibr">36</xref></sup> Carbide-derived carbon
+(CDC) materials, which are studied in depth computationally by Merlet
+and co-workers,<sup><xref rid="ref14" ref-type="bibr">14</xref>,<xref rid="ref59" ref-type="bibr">59</xref></sup> are used here as a reference
+material. CDC structures were taken from Palmer et al.,<sup><xref rid="ref60" ref-type="bibr">60</xref></sup> who generated them using Quench Molecular Dynamics.
+In this work, we consider 27 ZTC and 2 CDC materials for the constant-charge
+simulations and a subset of 19 of the ZTCs for constant-potential
+simulations (CDCs were not simulated at constant potential due to
+computational expense arising from their large unit cell sizes). CDCs
+are named as in the original article by Palmer et al. ZTCs are referred
+to using the name of the templating zeolite. We indicate hypothetical
+zeolites using the prefix “h” and the last 2 digits
+of their 7-digit identifier (e.g., h37 for h8326837). Complete names
+for all the zeolites referenced in the text can be found in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">Supporting Information</ext-link>, along with information
+on framework properties (pore size, void fraction, accessible surface
+area).</p><p>We used a semiautomated protocol to build two-electrode
+EDLC cells
+using the Zeo++ software suite<sup><xref rid="ref61" ref-type="bibr">61</xref></sup> and the
+VMD script interface with the TopoTools package.<sup><xref rid="ref62" ref-type="bibr">62</xref>,<xref rid="ref63" ref-type="bibr">63</xref></sup> Further details are provided in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">Supporting Information</ext-link>. This protocol was designed to fill the EDLC cell
+with an amount of electrolyte such that when the capacitor is equilibrated
+at either constant charge or constant voltage, the electrolyte density
+and composition in the bulk region matches the experimental values.
+An example of the simulation setup for FAU_1 ZTC is provided in <xref rid="fig9" ref-type="fig">Figure <xref rid="fig9" ref-type="fig">9</xref></xref>.</p><fig id="fig9" position="float"><?disp-level 3?><label>Figure 9</label><caption><p>Example of simulation
+setup for FAU_1, with box lengths <italic>a</italic> = 34.4 Å, <italic>b</italic> = 30.7 Å, and <italic>c</italic> = 194.2 Å.
+BMI<sup>+</sup> ions are in red, BF<sub>4</sub><sup>–</sup> ions in blue, and ACN molecules in tan
+and translucent. The ZTC electrode and graphene caps are in gray.
+The length of the electrodes in the <italic>z</italic> direction is
+43.4 Å and they are separated by 106.6 Å. Graphene sheets
+cap the electrodes on both sides of the capacitor cell. The electrolyte
+consists of 144 [BMI<sup>+</sup>][BF<sub>4</sub><sup>–</sup>] ion pairs and 1344 ACN molecules. In total, the system contains
+9072 atoms.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="gr9" xlink:href="oc9b00800_0009.jpg"><?cloudpmc-path blobs/58fd/6891853/48767cfb493d/oc9b00800_0009.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 663?><?original-width 1845?><?scaled-height 265?><?scaled-width 738?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="oc9b00800_0009.gif"><?cloudpmc-path blobs/58fd/6891853/c97ffb714985/oc9b00800_0009.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig></sec><sec id="sec4.2" disp-level="2"><title>Molecular Dynamics Simulations</title><p>MD simulations were
+done using the LAMMPS simulation package<sup><xref rid="ref64" ref-type="bibr">64</xref></sup> with Velocity-Verlet time integration using a time step of 1 fs,
+and a Nosé–Hoover thermostat<sup><xref rid="ref65" ref-type="bibr">65</xref></sup> to maintain a temperature of 300 K. The initial EDLC cell was equilibrated
+with a constant charge of 0 <italic>e</italic> on each carbon atom
+for 4 ns. Final configurations from the zero-charge simulations were
+used to initialize all further simulation steps.</p><p>Molecular simulation
+is a powerful tool to study EDLCs, as it allows for precise determination
+of the microscopic properties, such as the structure of the electrolyte
+within the pores, which can be difficult to access experimentally
+but which play an important role in determining the capacitance of
+the material.<sup><xref rid="ref13" ref-type="bibr">13</xref>,<xref rid="ref14" ref-type="bibr">14</xref></sup> At the same time, simulation
+of EDLCs presents technical challenges due to long equilibration times<sup><xref rid="ref38" ref-type="bibr">38</xref></sup> and the need to compute the fluctuating charges
+in the electrode in response to a constant applied potential. The
+constant potential approach is more accurate but also much more computationally
+expensive than simulating an EDLC with constant charges on the electrode
+atoms.<sup><xref rid="ref66" ref-type="bibr">66</xref>,<xref rid="ref67" ref-type="bibr">67</xref></sup></p><p>We tested multiple protocols for equilibrating
+the simulation cells,
+one with a constant-charge equilibration followed by a short constant-potential
+equilibration step,<sup><xref rid="ref14" ref-type="bibr">14</xref></sup> and the other with
+a long constant-potential equilibration. In the constant-charge equilibration
+method, partial charges of ±0.01 <italic>e</italic> were applied
+to all the electrode atoms, positive charges for anode atoms, and
+negative charges for cathode atoms. The EDLC cell was equilibrated
+with these fixed charges for 8 ns. Then, the effective potential across
+the cell was calculated using either the 1-D Poisson equation or the
+averaged local potentials at each electrode atom, and this potential
+was applied for the constant-potential equilibration and production
+runs.</p><p>In the constant-potential equilibration, a constant potential
+difference
+of 1 V was applied across the EDLC cell (±0.5 V for each electrode),
+and the constant potential simulation was run for at least 10 ns.
+During the constant-potential run, the average absolute charge on
+the electrodes was monitored and fit to an exponential. The equilibration
+step was considered completed when the simulation was at least as
+long as 5τ, where τ is the time constant of the exponential.
+This equilibration process was found to be the best following a number
+of tests which are described in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">Supporting Information</ext-link> section, “Development of Computational Protocol”.</p><p>Production runs for simulation of capacitance were carried out
+after equilibration at constant potential. The length of production
+runs was at least 2 ns. Capacitance was computed using <xref rid="eq1" ref-type="disp-formula">eq <xref rid="eq1" ref-type="disp-formula">1</xref></xref>, where <italic>V</italic> = ΔΨ
+is the voltage drop applied across the cell, and <italic>Q</italic> is the average absolute value of the charge stored on a single electrode.
+From the production run we also computed local properties of interest
+using an in-house software package developed for this study,<sup><xref rid="ref68" ref-type="bibr">68</xref></sup> such as the degree of confinement (DoC)<sup><xref rid="ref15" ref-type="bibr">15</xref></sup> and the charge compensation per carbon (CCpC),
+in order to understand the mechanisms of charge storage and gain physical
+insights into differences in capacitances between the materials. The
+definitions of these local properties, as well as further details
+regarding the probability density isosurfaces for charge-compensated
+ion adsorption sites, are provided in the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">Supporting Information</ext-link>.</p></sec></sec><sec id="ack1" sec-type="ack" disp-level="1"><title>Acknowledgments</title><p>This research used resources of the National Energy
+Research Scientific Computing Center, a DOE Office of Science User
+Facility supported by the Office of Science of the U.S. Department
+of Energy under Contract No DE-AC02-05CH11231. The authors gratefully
+acknowledge the Gauss Centre for Supercomputing e.V. for funding this
+project by providing computing time on the GCS Supercomputer SuperMUC
+at Leibniz Supercomputing Centre. This project has received funding
+from the European Research Council (ERC) under the European Union’s
+Horizon 2020 research and innovation programme (grant agreement no.
+714581). Y.M.L. acknowledges support from an NSF Graduate Research
+Fellowship.</p></sec><sec id="notes1" disp-level="1"><title>Supporting Information Available</title><p>The Supporting
+Information is
+available free of charge on the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org" ext-link-type="uri">ACS Publications website</ext-link> at DOI: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/abs/10.1021/acscentsci.9b00800" ext-link-type="uri">10.1021/acscentsci.9b00800</ext-link>.</p><list list-type="simple" id="silist"><list-item><p>Model and force field parameters, ZTC structures and
+pore properties, EDLC simulation cells, equilibration and simulation
+protocol, computation of local interfacial properties, charging dynamics,
+additional charge storage and interfacial properties data (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://pubs.acs.org/doi/suppl/10.1021/acscentsci.9b00800/suppl_file/oc9b00800_si_001.pdf" ext-link-type="uri">PDF</ext-link>)</p></list-item></list></sec><sec id="NOTES-d7e1427-autogenerated" disp-level="1"><p>The
+authors declare no
+competing financial interest.</p></sec><sec id="sec11" disp-level="1"><title>Supplementary Material</title><supplementary-material id="sifile1" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="oc9b00800_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 58fd/6891853/a0cbf75e92f6/oc9b00800_si_001.pdf?><?cloudpmc-bucket app?><?size 1801791?><caption><p>oc9b00800_si_001.pdf</p></caption></media></supplementary-material></sec><sec id="ref-list1" sec-type="ref-list" disp-level="1"><title>References</title><sec id="ref-list1_sec2" disp-level="2"><ref-list><ref id="ref1"><mixed-citation id="cit1"><named-content content-type="citation-string">Ragone D. V.
+Review
+of Battery Systems for Electrically Powered Vehicles. SAE Tech. Pap. Ser.
+1968, 1. 10.4271/680453.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.4271/680453"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=SAE Tech. Pap. Ser.&amp;title=Review of Battery Systems for Electrically Powered Vehicles&amp;author=D. V. Ragone&amp;publication_year=1968&amp;pages=1&amp;doi=10.4271/680453&amp;"/></mixed-citation></ref><ref id="ref2"><mixed-citation id="cit2"><named-content content-type="citation-string">Christen T.; Carlen M. W.
+Theory of Ragone
+plots. J. Power
+Sources
+2000, 91, 210–216. 10.1016/S0378-7753(00)00474-2.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/S0378-7753(00)00474-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Power Sources&amp;title=Theory of Ragone plots&amp;author=T. Christen&amp;author=M. W. Carlen&amp;volume=91&amp;publication_year=2000&amp;pages=210-216&amp;doi=10.1016/S0378-7753(00)00474-2&amp;"/></mixed-citation></ref><ref id="ref3"><mixed-citation id="cit3"><named-content content-type="citation-string">Conway B. E.Electrochemical Supercapacitors.
+Scientific Fundamentals and Technological Applications; Springer
+Science Media; Springer US: Boston, MA, 2013; 10.1007/978-1-4757-3058-6.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/978-1-4757-3058-6"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Electrochemical Supercapacitors. Scientific Fundamentals and Technological Applications&amp;publication_year=2013&amp;"/></mixed-citation></ref><ref id="ref4"><mixed-citation id="cit4"><named-content content-type="citation-string">General Description of Aluminum Electrolytic Capacitors;
+Technical Notes Cat. 8101E, Nichicon Corp; pp 1–27.</named-content></mixed-citation></ref><ref id="ref5"><mixed-citation id="cit5"><named-content content-type="citation-string">Helmholtz H.
+Ueber einige
+Gesetze der Vertheilung elektrischer Ströme in körperlichen
+Leitern mit Anwendung auf die thierisch-elektrischen Versuche. Ann. Phys.
+1853, 165, 211–233. 10.1002/andp.18531650603.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/andp.18531650603"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Ann. Phys.&amp;title=Ueber einige Gesetze der Vertheilung elektrischer Ströme in körperlichen Leitern mit Anwendung auf die thierisch-elektrischen Versuche&amp;author=H. Helmholtz&amp;volume=165&amp;publication_year=1853&amp;pages=211-233&amp;doi=10.1002/andp.18531650603&amp;"/></mixed-citation></ref><ref id="ref6"><mixed-citation id="cit6"><named-content content-type="citation-string">Helmholtz H.
+Studien über
+electrische Grenzschichten. Ann. Phys.
+1879, 243, 337–382. 10.1002/andp.18792430702.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/andp.18792430702"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Ann. Phys.&amp;title=Studien über electrische Grenzschichten&amp;author=H. Helmholtz&amp;volume=243&amp;publication_year=1879&amp;pages=337-382&amp;doi=10.1002/andp.18792430702&amp;"/></mixed-citation></ref><ref id="ref7"><mixed-citation id="cit7"><named-content content-type="citation-string">Gouy M.
+Sur la constitution
+de la charge électrique à la surface d’un électrolyte. J. Phys. Theor. Appl.
+1910, 9, 457–468. 10.1051/jphystap:019100090045700.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1051/jphystap:019100090045700"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Theor. Appl.&amp;title=Sur la constitution de la charge électrique à la surface d’un électrolyte&amp;author=M. Gouy&amp;volume=9&amp;publication_year=1910&amp;pages=457-468&amp;doi=10.1051/jphystap:019100090045700&amp;"/></mixed-citation></ref><ref id="ref8"><mixed-citation id="cit8"><named-content content-type="citation-string">Chapman D. L.
+LI. A contribution
+to the theory of electrocapillarity. London,
+Edinburgh, Dublin Philos. Mag. J. Sci.
+1913, 25, 475–481. 10.1080/14786440408634187.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1080/14786440408634187"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=London, Edinburgh, Dublin Philos. Mag. J. Sci.&amp;title=LI. A contribution to the theory of electrocapillarity&amp;author=D. L. Chapman&amp;volume=25&amp;publication_year=1913&amp;pages=475-481&amp;doi=10.1080/14786440408634187&amp;"/></mixed-citation></ref><ref id="ref9"><mixed-citation id="cit9"><named-content content-type="citation-string">Stern O.
+Zur theorie
+der elektrolytischen doppelschicht. Zeitschrift
+für Elektrochemie Angew. Phys. Chemie
+1924, 1. 10.1002/bbpc.192400182.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/bbpc.192400182"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Zeitschrift für Elektrochemie Angew. Phys. Chemie&amp;title=Zur theorie der elektrolytischen doppelschicht&amp;author=O. Stern&amp;publication_year=1924&amp;pages=1&amp;doi=10.1002/bbpc.192400182&amp;"/></mixed-citation></ref><ref id="ref10"><mixed-citation id="cit10"><named-content content-type="citation-string">Chmiola J.
+Anomalous
+Increase in Carbon Capacitance at Pore Sizes Less Than 1 Nanometer. Science
+2006, 313, 1760–1763. 10.1126/science.1132195.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/science.1132195"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16917025"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Science&amp;title=Anomalous Increase in Carbon Capacitance at Pore Sizes Less Than 1 Nanometer&amp;author=J. Chmiola&amp;volume=313&amp;publication_year=2006&amp;pages=1760-1763&amp;pmid=16917025&amp;doi=10.1126/science.1132195&amp;"/></mixed-citation></ref><ref id="ref11"><mixed-citation id="cit11"><named-content content-type="citation-string">Raymundo-Piñero E.; Kierzek K.; Machnikowski J.; Béguin F.
+Relationship
+between the nanoporous texture of activated carbons and their capacitance
+properties in different electrolytes. Carbon
+2006, 44, 2498–2507. 10.1016/j.carbon.2006.05.022.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.carbon.2006.05.022"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Carbon&amp;title=Relationship between the nanoporous texture of activated carbons and their capacitance properties in different electrolytes&amp;author=E. Raymundo-Piñero&amp;author=K. Kierzek&amp;author=J. Machnikowski&amp;author=F. Béguin&amp;volume=44&amp;publication_year=2006&amp;pages=2498-2507&amp;doi=10.1016/j.carbon.2006.05.022&amp;"/></mixed-citation></ref><ref id="ref12"><mixed-citation id="cit12"><named-content content-type="citation-string">Huang J.; Sumpter B. G.; Meunier V.
+A Universal
+Model for Nanoporous
+Carbon Supercapacitors Applicable to Diverse Pore Regimes, Carbon
+Materials, and Electrolytes. Chem. - Eur. J.
+2008, 14, 6614–6626. 10.1002/chem.200800639.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/chem.200800639"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18576455"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. - Eur. J.&amp;title=A Universal Model for Nanoporous Carbon Supercapacitors Applicable to Diverse Pore Regimes, Carbon Materials, and Electrolytes&amp;author=J. Huang&amp;author=B. G. Sumpter&amp;author=V. Meunier&amp;volume=14&amp;publication_year=2008&amp;pages=6614-6626&amp;pmid=18576455&amp;doi=10.1002/chem.200800639&amp;"/></mixed-citation></ref><ref id="ref13"><mixed-citation id="cit13"><named-content content-type="citation-string">Kondrat S.; Georgi N.; Fedorov M. V.; Kornyshev A. A.
+A superionic
+state in nanoporous double-layer capacitors: insights from Monte Carlo
+simulations. Phys. Chem. Chem. Phys.
+2011, 13, 11359–11366. 10.1039/c1cp20798a.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/c1cp20798a"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21566824"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Chem. Chem. Phys.&amp;title=A superionic state in nanoporous double-layer capacitors: insights from Monte Carlo simulations&amp;author=S. Kondrat&amp;author=N. Georgi&amp;author=M. V. Fedorov&amp;author=A. A. Kornyshev&amp;volume=13&amp;publication_year=2011&amp;pages=11359-11366&amp;pmid=21566824&amp;doi=10.1039/c1cp20798a&amp;"/></mixed-citation></ref><ref id="ref14"><mixed-citation id="cit14"><named-content content-type="citation-string">Merlet C.; Rotenberg B.; Madden P. A.; Taberna P.-L.; Simon P.; Gogotsi Y.; Salanne M.
+On the molecular origin of supercapacitance
+in nanoporous carbon electrodes. Nat. Mater.
+2012, 11, 306–310. 10.1038/nmat3260.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nmat3260"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22388172"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Mater.&amp;title=On the molecular origin of supercapacitance in nanoporous carbon electrodes&amp;author=C. Merlet&amp;author=B. Rotenberg&amp;author=P. A. Madden&amp;author=P.-L. Taberna&amp;author=P. Simon&amp;volume=11&amp;publication_year=2012&amp;pages=306-310&amp;pmid=22388172&amp;doi=10.1038/nmat3260&amp;"/></mixed-citation></ref><ref id="ref15"><mixed-citation id="cit15"><named-content content-type="citation-string">Merlet C.; Péan C.; Rotenberg B.; Madden P. A.; Daffos B.; Taberna P.-L.; Simon P.; Salanne M.
+Highly confined ions
+store charge more efficiently in supercapacitors. Nat. Commun.
+2013, 4, 2701. 10.1038/ncomms3701.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/ncomms3701"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24165568"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Commun.&amp;title=Highly confined ions store charge more efficiently in supercapacitors&amp;author=C. Merlet&amp;author=C. Péan&amp;author=B. Rotenberg&amp;author=P. A. Madden&amp;author=B. Daffos&amp;volume=4&amp;publication_year=2013&amp;pages=2701&amp;pmid=24165568&amp;doi=10.1038/ncomms3701&amp;"/></mixed-citation></ref><ref id="ref16"><mixed-citation id="cit16"><named-content content-type="citation-string">Feng G.; Li S.; Presser V.; Cummings P. T.
+Molecular Insights into Carbon Supercapacitors
+Based on Room-Temperature Ionic Liquids. J.
+Phys. Chem. Lett.
+2013, 4, 3367–3376. 10.1021/jz4014163.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jz4014163"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. Lett.&amp;title=Molecular Insights into Carbon Supercapacitors Based on Room-Temperature Ionic Liquids&amp;author=G. Feng&amp;author=S. Li&amp;author=V. Presser&amp;author=P. T. Cummings&amp;volume=4&amp;publication_year=2013&amp;pages=3367-3376&amp;doi=10.1021/jz4014163&amp;"/></mixed-citation></ref><ref id="ref17"><mixed-citation id="cit17"><named-content content-type="citation-string">Kondrat S.; Wu P.; Qiao R.; Kornyshev A. A.
+Accelerating charging dynamics in
+subnanometre pores. Nat. Mater.
+2014, 13, 387–393. 10.1038/nmat3916.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nmat3916"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24651430"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Mater.&amp;title=Accelerating charging dynamics in subnanometre pores&amp;author=S. Kondrat&amp;author=P. Wu&amp;author=R. Qiao&amp;author=A. A. Kornyshev&amp;volume=13&amp;publication_year=2014&amp;pages=387-393&amp;pmid=24651430&amp;doi=10.1038/nmat3916&amp;"/></mixed-citation></ref><ref id="ref18"><mixed-citation id="cit18"><named-content content-type="citation-string">Prehal C.; Koczwara C.; Jäckel N.; Schreiber A.; Burian M.; Amenitsch H.; Hartmann M. A.; Presser V.; Paris O.
+Quantification of ion
+confinement and desolvation in nanoporous carbon
+supercapacitors with modelling and in situ X-ray scattering. Nat. Energy
+2017, 2, 16215. 10.1038/nenergy.2016.215.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nenergy.2016.215"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Energy&amp;title=Quantification of ion confinement and desolvation in nanoporous carbon supercapacitors with modelling and in situ X-ray scattering&amp;author=C. Prehal&amp;author=C. Koczwara&amp;author=N. Jäckel&amp;author=A. Schreiber&amp;author=M. Burian&amp;volume=2&amp;publication_year=2017&amp;pages=16215&amp;doi=10.1038/nenergy.2016.215&amp;"/></mixed-citation></ref><ref id="ref19"><mixed-citation id="cit19"><named-content content-type="citation-string">Gogotsi Y.; Nikitin A.; Ye H.; Zhou W.; Fischer J. E.; Yi B.; Foley H. C.; Barsoum M. W.
+Nanoporous carbide-derived carbon
+with tunable pore size. Nat. Mater.
+2003, 2, 591–594. 10.1038/nmat957.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nmat957"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="12907942"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Mater.&amp;title=Nanoporous carbide-derived carbon with tunable pore size&amp;author=Y. Gogotsi&amp;author=A. Nikitin&amp;author=H. Ye&amp;author=W. Zhou&amp;author=J. E. Fischer&amp;volume=2&amp;publication_year=2003&amp;pages=591-594&amp;pmid=12907942&amp;doi=10.1038/nmat957&amp;"/></mixed-citation></ref><ref id="ref20"><mixed-citation id="cit20"><named-content content-type="citation-string">Pech D.; Brunet M.; Durou H.; Huang P.; Mochalin V.; Gogotsi Y.; Taberna P. L.; Simon P.
+Ultrahigh-power micrometre-sized
+supercapacitors based on onion-like carbon. Nat. Nanotechnol.
+2010, 5, 651–654. 10.1038/nnano.2010.162.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nnano.2010.162"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20711179"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Nanotechnol.&amp;title=Ultrahigh-power micrometre-sized supercapacitors based on onion-like carbon&amp;author=D. Pech&amp;author=M. Brunet&amp;author=H. Durou&amp;author=P. Huang&amp;author=V. Mochalin&amp;volume=5&amp;publication_year=2010&amp;pages=651-654&amp;pmid=20711179&amp;doi=10.1038/nnano.2010.162&amp;"/></mixed-citation></ref><ref id="ref21"><mixed-citation id="cit21"><named-content content-type="citation-string">Salunkhe R. R.; Kaneti Y. V.; Kim J.; Kim J. H.; Yamauchi Y.
+Nanoarchitectures
+for Metal-Organic Framework-Derived Nanoporous Carbons toward Supercapacitor
+Applications. Acc. Chem. Res.
+2016, 49, 2796–2806. 10.1021/acs.accounts.6b00460.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acs.accounts.6b00460"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27993000"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Acc. Chem. Res.&amp;title=Nanoarchitectures for Metal-Organic Framework-Derived Nanoporous Carbons toward Supercapacitor Applications&amp;author=R. R. Salunkhe&amp;author=Y. V. Kaneti&amp;author=J. Kim&amp;author=J. H. Kim&amp;author=Y. Yamauchi&amp;volume=49&amp;publication_year=2016&amp;pages=2796-2806&amp;pmid=27993000&amp;doi=10.1021/acs.accounts.6b00460&amp;"/></mixed-citation></ref><ref id="ref22"><mixed-citation id="cit22"><named-content content-type="citation-string">Noked M.; Okashy S.; Zimrin T.; Aurbach D.
+Composite Carbon Nanotube/Carbon
+Electrodes for Electrical Double-Layer Super Capacitors. Angew. Chem., Int. Ed.
+2012, 51, 1568–1571. 10.1002/anie.201104334.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/anie.201104334"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22241701"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Angew. Chem., Int. Ed.&amp;title=Composite Carbon Nanotube/Carbon Electrodes for Electrical Double-Layer Super Capacitors&amp;author=M. Noked&amp;author=S. Okashy&amp;author=T. Zimrin&amp;author=D. Aurbach&amp;volume=51&amp;publication_year=2012&amp;pages=1568-1571&amp;pmid=22241701&amp;doi=10.1002/anie.201104334&amp;"/></mixed-citation></ref><ref id="ref23"><mixed-citation id="cit23"><named-content content-type="citation-string">Salunkhe R. R.; Lee Y.-H.; Chang K.-H.; Li J.-M.; Simon P.; Tang J.; Torad N. L.; Hu C.-C.; Yamauchi Y.
+Nanoarchitectured
+Graphene-Based Supercapacitors for Next Generation Energy-Storage
+Applications. Chem. - Eur. J.
+2014, 20, 13838–13852. 10.1002/chem.201403649.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/chem.201403649"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25251360"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. - Eur. J.&amp;title=Nanoarchitectured Graphene-Based Supercapacitors for Next Generation Energy-Storage Applications&amp;author=R. R. Salunkhe&amp;author=Y.-H. Lee&amp;author=K.-H. Chang&amp;author=J.-M. Li&amp;author=P. Simon&amp;volume=20&amp;publication_year=2014&amp;pages=13838-13852&amp;pmid=25251360&amp;doi=10.1002/chem.201403649&amp;"/></mixed-citation></ref><ref id="ref24"><mixed-citation id="cit24"><named-content content-type="citation-string">Salanne M.; Rotenberg B.; Naoi K.; Kaneko K.; Taberna P.-L.; Grey C. P.; Dunn B.; Simon P.
+Efficient storage mechanisms
+for building better supercapacitors. Nat. Energy
+2016, 1, 16070. 10.1038/nenergy.2016.70.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nenergy.2016.70"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nat. Energy&amp;title=Efficient storage mechanisms for building better supercapacitors&amp;author=M. Salanne&amp;author=B. Rotenberg&amp;author=K. Naoi&amp;author=K. Kaneko&amp;author=P.-L. Taberna&amp;volume=1&amp;publication_year=2016&amp;pages=16070&amp;doi=10.1038/nenergy.2016.70&amp;"/></mixed-citation></ref><ref id="ref25"><mixed-citation id="cit25"><named-content content-type="citation-string">Forse A. C.; Merlet C.; Griffin J. M.; Grey C. P.
+New perspectives
+on the charging mechanisms of supercapacitors. J. Am. Chem. Soc.
+2016, 138, 5731–5744. 10.1021/jacs.6b02115.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jacs.6b02115"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4865825"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27031622"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=New perspectives on the charging mechanisms of supercapacitors&amp;author=A. C. Forse&amp;author=C. Merlet&amp;author=J. M. Griffin&amp;author=C. P. Grey&amp;volume=138&amp;publication_year=2016&amp;pages=5731-5744&amp;pmid=27031622&amp;doi=10.1021/jacs.6b02115&amp;"/></mixed-citation></ref><ref id="ref26"><mixed-citation id="cit26"><named-content content-type="citation-string">Nishihara H.; Kyotani T.. Zeolite-templated
+carbon–its unique characteristics and applications. In Novel Carbon Adsorbents; Tascón J. M. D.Elsevier, 2012; pp 295–322. 10.1016/B978-0-08-097744-7.00010-7</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/B978-0-08-097744-7.00010-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Novel Carbon Adsorbents&amp;publication_year=2012&amp;"/></mixed-citation></ref><ref id="ref27"><mixed-citation id="cit27"><named-content content-type="citation-string">Nishihara H.; Kyotani T.
+Templated Nanocarbons
+for Energy Storage. Adv. Mater.
+2012, 24, 4473–4498. 10.1002/adma.201201715.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/adma.201201715"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22806880"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Adv. Mater.&amp;title=Templated Nanocarbons for Energy Storage&amp;author=H. Nishihara&amp;author=T. Kyotani&amp;volume=24&amp;publication_year=2012&amp;pages=4473-4498&amp;pmid=22806880&amp;doi=10.1002/adma.201201715&amp;"/></mixed-citation></ref><ref id="ref28"><mixed-citation id="cit28"><named-content content-type="citation-string">Nishihara H.; Kyotani T.
+Zeolite-templated carbons
+– three-dimensional
+microporous graphene frameworks. Chem. Commun.
+2018, 54, 5648–5673. 10.1039/C8CC01932K.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/C8CC01932K"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29691533"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Commun.&amp;title=Zeolite-templated carbons – three-dimensional microporous graphene frameworks&amp;author=H. Nishihara&amp;author=T. Kyotani&amp;volume=54&amp;publication_year=2018&amp;pages=5648-5673&amp;pmid=29691533&amp;doi=10.1039/C8CC01932K&amp;"/></mixed-citation></ref><ref id="ref29"><mixed-citation id="cit29"><named-content content-type="citation-string">Nishihara H.; Itoi H.; Kogure T.; Hou P.-X.; Touhara H.; Okino F.; Kyotani T.
+Investigation
+of the Ion Storage/Transfer
+Behavior in an Electrical Double-Layer Capacitor by Using Ordered
+Microporous Carbons as Model Materials. Chem.
+- Eur. J.
+2009, 15, 5355–5363. 10.1002/chem.200802406.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1002/chem.200802406"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19338036"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. - Eur. J.&amp;title=Investigation of the Ion Storage/Transfer Behavior in an Electrical Double-Layer Capacitor by Using Ordered Microporous Carbons as Model Materials&amp;author=H. Nishihara&amp;author=H. Itoi&amp;author=T. Kogure&amp;author=P.-X. Hou&amp;author=H. Touhara&amp;volume=15&amp;publication_year=2009&amp;pages=5355-5363&amp;pmid=19338036&amp;doi=10.1002/chem.200802406&amp;"/></mixed-citation></ref><ref id="ref30"><mixed-citation id="cit30"><named-content content-type="citation-string">Itoi H.; Nishihara H.; Kogure T.; Kyotani T.
+Three-dimensionally
+arrayed and mutually connected 1.2-nm nanopores for high-performance
+electric double layer capacitor. J. Am. Chem.
+Soc.
+2011, 133, 1165–1167. 10.1021/ja108315p.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ja108315p"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="21207996"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=Three-dimensionally arrayed and mutually connected 1.2-nm nanopores for high-performance electric double layer capacitor&amp;author=H. Itoi&amp;author=H. Nishihara&amp;author=T. Kogure&amp;author=T. Kyotani&amp;volume=133&amp;publication_year=2011&amp;pages=1165-1167&amp;pmid=21207996&amp;doi=10.1021/ja108315p&amp;"/></mixed-citation></ref><ref id="ref31"><mixed-citation id="cit31"><named-content content-type="citation-string">Moon J. S.; Kim H.; Lee D.-C.; Lee J. T.; Yushin G.
+Increasing Capacitance
+of Zeolite-Templated Carbons in Electric Double Layer Capacitors. J. Electrochem. Soc.
+2015, 162, A5070–A5076. 10.1149/2.0131505jes.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1149/2.0131505jes"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Electrochem. Soc.&amp;title=Increasing Capacitance of Zeolite-Templated Carbons in Electric Double Layer Capacitors&amp;author=J. S. Moon&amp;author=H. Kim&amp;author=D.-C. Lee&amp;author=J. T. Lee&amp;author=G. Yushin&amp;volume=162&amp;publication_year=2015&amp;pages=A5070-A5076&amp;doi=10.1149/2.0131505jes&amp;"/></mixed-citation></ref><ref id="ref32"><mixed-citation id="cit32"><named-content content-type="citation-string">Mostazo-López M. J.; Ruiz-Rosas R.; Castro-Muñiz A.; Nishihara H.; Kyotani T.; Morallón E.; Cazorla-Amorós D.
+Ultraporousnitrogen-dopedzeolite-templatedcarbon
+for high power density aqueous-based supercapacitors. Carbon
+2018, 129, 510–519. 10.1016/j.carbon.2017.12.050.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.carbon.2017.12.050"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Carbon&amp;title=Ultraporousnitrogen-dopedzeolite-templatedcarbon for high power density aqueous-based supercapacitors&amp;author=M. J. Mostazo-López&amp;author=R. Ruiz-Rosas&amp;author=A. Castro-Muñiz&amp;author=H. Nishihara&amp;author=T. Kyotani&amp;volume=129&amp;publication_year=2018&amp;pages=510-519&amp;doi=10.1016/j.carbon.2017.12.050&amp;"/></mixed-citation></ref><ref id="ref33"><mixed-citation id="cit33"><named-content content-type="citation-string">Kim K.; Lee T.; Kwon Y.; Seo Y.; Song J.; Park J. K.; Lee H.; Park J. Y.; Ihee H.; Cho S. J.; Ryoo R.
+Lanthanum-catalysed
+synthesis of microporous 3D graphene-like carbons in a zeolite template. Nature
+2016, 535, 131–135. 10.1038/nature18284.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/nature18284"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27362224"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Lanthanum-catalysed synthesis of microporous 3D graphene-like carbons in a zeolite template&amp;author=K. Kim&amp;author=T. Lee&amp;author=Y. Kwon&amp;author=Y. Seo&amp;author=J. Song&amp;volume=535&amp;publication_year=2016&amp;pages=131-135&amp;pmid=27362224&amp;doi=10.1038/nature18284&amp;"/></mixed-citation></ref><ref id="ref34"><mixed-citation id="cit34"><named-content content-type="citation-string">Gaslain F. O. M.; Parmentier J.; Valtchev V. P.; Patarin J.
+First zeolite carbon
+replica with a well resolved X-ray diffraction pattern. Chem. Commun.
+2006, 991. 10.1039/b512002k.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1039/b512002k"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="16491186"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Chem. Commun.&amp;title=First zeolite carbon replica with a well resolved X-ray diffraction pattern&amp;author=F. O. M. Gaslain&amp;author=J. Parmentier&amp;author=V. P. Valtchev&amp;author=J. Patarin&amp;publication_year=2006&amp;pages=991&amp;pmid=16491186&amp;doi=10.1039/b512002k&amp;"/></mixed-citation></ref><ref id="ref35"><mixed-citation id="cit35"><named-content content-type="citation-string">Baerlocher C.; McCusker L. B.. Database
+of Zeolite Structures, 2007; <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.iza-structure.org/databases/" ext-link-type="uri">http://www.iza-structure.org/databases/</ext-link>, Accessed October 6, 2019.</named-content></mixed-citation></ref><ref id="ref36"><mixed-citation id="cit36"><named-content content-type="citation-string">Braun E.; Lee Y.; Moosavi S. M.; Barthel S.; Mercado R.; Baburin I. A.; Proserpio D. M.; Smit B.
+Generating carbon schwarzites via
+zeolite-templating. Proc. Natl. Acad. Sci. U.
+S. A.
+2018, 115, E8116. 10.1073/pnas.1805062115.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1073/pnas.1805062115"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6126744"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30108146"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proc. Natl. Acad. Sci. U. S. A.&amp;title=Generating carbon schwarzites via zeolite-templating&amp;author=E. Braun&amp;author=Y. Lee&amp;author=S. M. Moosavi&amp;author=S. Barthel&amp;author=R. Mercado&amp;volume=115&amp;publication_year=2018&amp;pages=E8116&amp;pmid=30108146&amp;doi=10.1073/pnas.1805062115&amp;"/></mixed-citation></ref><ref id="ref37"><mixed-citation id="cit37"><named-content content-type="citation-string">Conway B.; Birss V.; Wojtowicz J.
+The role and
+utilization of pseudocapacitance
+for energy storage by supercapacitors. J. Power
+Sources
+1997, 66, 1–14. 10.1016/S0378-7753(96)02474-3.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/S0378-7753(96)02474-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Power Sources&amp;title=The role and utilization of pseudocapacitance for energy storage by supercapacitors&amp;author=B. Conway&amp;author=V. Birss&amp;author=J. Wojtowicz&amp;volume=66&amp;publication_year=1997&amp;pages=1-14&amp;doi=10.1016/S0378-7753(96)02474-3&amp;"/></mixed-citation></ref><ref id="ref38"><mixed-citation id="cit38"><named-content content-type="citation-string">Péan C.; Merlet C.; Rotenberg B.; Madden P. A.; Taberna P.-L.; Daffos B.; Salanne M.; Simon P.
+On the dynamics of
+charging in nanoporous carbon-based supercapacitors. ACS Nano
+2014, 8, 1576–1583. 10.1021/nn4058243.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/nn4058243"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24417256"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Nano&amp;title=On the dynamics of charging in nanoporous carbon-based supercapacitors&amp;author=C. Péan&amp;author=C. Merlet&amp;author=B. Rotenberg&amp;author=P. A. Madden&amp;author=P.-L. Taberna&amp;volume=8&amp;publication_year=2014&amp;pages=1576-1583&amp;pmid=24417256&amp;doi=10.1021/nn4058243&amp;"/></mixed-citation></ref><ref id="ref39"><mixed-citation id="cit39"><named-content content-type="citation-string">Bi S.; Chen M.; Wang R.; Feng J.; Dinca M.; Kornyshev A. A.; Feng G.
+Molecular understanding of charge
+storage and charging dynamics in supercapacitors with MOF electrodes
+and ionic liquid electrolytes. arXiv [cond-mat.mtrl-sci]
+2019, 1–19.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41563-019-0598-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32015536"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=arXiv [cond-mat.mtrl-sci]&amp;title=Molecular understanding of charge storage and charging dynamics in supercapacitors with MOF electrodes and ionic liquid electrolytes&amp;author=S. Bi&amp;author=M. Chen&amp;author=R. Wang&amp;author=J. Feng&amp;author=M. Dinca&amp;publication_year=2019&amp;pages=1-19&amp;pmid=32015536&amp;doi=10.1038/s41563-019-0598-7&amp;"/></mixed-citation></ref><ref id="ref40"><mixed-citation id="cit40"><named-content content-type="citation-string">Serway R. A.; Jewett J. W.. Physics for Scientists
+and Engineers with Modern Physics, 9th
+ed.; Brooks/Cole Cengage Learning: Boston, MA, 2013.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Physics for Scientists and Engineers with Modern Physics&amp;publication_year=2013&amp;"/></mixed-citation></ref><ref id="ref41"><mixed-citation id="cit41"><named-content content-type="citation-string">Vasilyev O. A.; Kornyshev A. A.; Kondrat S.
+Connections Matter:
+On the Importance
+of Pore Percolation for Nanoporous Supercapacitors. ACS Applied Energy Materials
+2019, 2, 5386–5390. 10.1021/acsaem.9b01069.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acsaem.9b01069"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Applied Energy Materials&amp;title=Connections Matter: On the Importance of Pore Percolation for Nanoporous Supercapacitors&amp;author=O. A. Vasilyev&amp;author=A. A. Kornyshev&amp;author=S. Kondrat&amp;volume=2&amp;publication_year=2019&amp;pages=5386-5390&amp;doi=10.1021/acsaem.9b01069&amp;"/></mixed-citation></ref><ref id="ref42"><mixed-citation id="cit42"><named-content content-type="citation-string">Breitsprecher K.; Holm C.; Kondrat S.
+Charge Me
+Slowly, I Am in a Hurry:
+Optimizing Charge–Discharge Cycles in Nanoporous Supercapacitors. ACS Nano
+2018, 12, 9733–9741. 10.1021/acsnano.8b04785.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acsnano.8b04785"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30088913"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Nano&amp;title=Charge Me Slowly, I Am in a Hurry: Optimizing Charge–Discharge Cycles in Nanoporous Supercapacitors&amp;author=K. Breitsprecher&amp;author=C. Holm&amp;author=S. Kondrat&amp;volume=12&amp;publication_year=2018&amp;pages=9733-9741&amp;pmid=30088913&amp;doi=10.1021/acsnano.8b04785&amp;"/></mixed-citation></ref><ref id="ref43"><mixed-citation id="cit43"><named-content content-type="citation-string">Largeot C.; Portet C.; Chmiola J.; Taberna P.-L.; Gogotsi Y.; Simon P.
+Relation between the Ion Size and Pore Size for an Electric Double-Layer
+Capacitor. J. Am. Chem. Soc.
+2008, 130, 2730–2731. 10.1021/ja7106178.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/ja7106178"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18257568"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Am. Chem. Soc.&amp;title=Relation between the Ion Size and Pore Size for an Electric Double-Layer Capacitor&amp;author=C. Largeot&amp;author=C. Portet&amp;author=J. Chmiola&amp;author=P.-L. Taberna&amp;author=Y. Gogotsi&amp;volume=130&amp;publication_year=2008&amp;pages=2730-2731&amp;pmid=18257568&amp;doi=10.1021/ja7106178&amp;"/></mixed-citation></ref><ref id="ref44"><mixed-citation id="cit44"><named-content content-type="citation-string">Jäckel N.; Rodner M.; Schreiber A.; Jeongwook J.; Zeiger M.; Aslan M.; Weingarth D.; Presser V.
+Anomalous or regular capacitance? The influence of
+pore size dispersity on double-layer formation. J. Power Sources
+2016, 326, 660–671. 10.1016/j.jpowsour.2016.03.015.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.jpowsour.2016.03.015"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Power Sources&amp;title=Anomalous or regular capacitance? The influence of pore size dispersity on double-layer formation&amp;author=N. Jäckel&amp;author=M. Rodner&amp;author=A. Schreiber&amp;author=J. Jeongwook&amp;author=M. Zeiger&amp;volume=326&amp;publication_year=2016&amp;pages=660-671&amp;doi=10.1016/j.jpowsour.2016.03.015&amp;"/></mixed-citation></ref><ref id="ref45"><mixed-citation id="cit45"><named-content content-type="citation-string">Käärik M.; Maran U.; Arulepp M.; Perkson A.; Leis J.
+Quantitative
+Nano-Structure Property Relationships for the Nanoporous Carbon: Predicting
+the Performance of Energy Storage Materials. ACS Applied Energy Materials
+2018, 1, 4016–4024. 10.1021/acsaem.8b00708.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/acsaem.8b00708"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Applied Energy Materials&amp;title=Quantitative Nano-Structure Property Relationships for the Nanoporous Carbon: Predicting the Performance of Energy Storage Materials&amp;author=M. Käärik&amp;author=U. Maran&amp;author=M. Arulepp&amp;author=A. Perkson&amp;author=J. Leis&amp;volume=1&amp;publication_year=2018&amp;pages=4016-4024&amp;doi=10.1021/acsaem.8b00708&amp;"/></mixed-citation></ref><ref id="ref46"><mixed-citation id="cit46"><named-content content-type="citation-string">Jiang D.; Jin Z.; Wu J.
+Oscillation of capacitance inside nanopores. Nano Lett.
+2011, 11, 5373–5377. 10.1021/nl202952d.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/nl202952d"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22029395"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nano Lett.&amp;title=Oscillation of capacitance inside nanopores&amp;author=D. Jiang&amp;author=Z. Jin&amp;author=J. Wu&amp;volume=11&amp;publication_year=2011&amp;pages=5373-5377&amp;pmid=22029395&amp;doi=10.1021/nl202952d&amp;"/></mixed-citation></ref><ref id="ref47"><mixed-citation id="cit47"><named-content content-type="citation-string">Wu P.; Huang J.; Meunier V.; Sumpter B. G.; Qiao R.
+Complex Capacitance
+Scaling in Ionic Liquids-Filled Nanopores. ACS
+Nano
+2011, 5, 9044–9051. 10.1021/nn203260w.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/nn203260w"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="22017626"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=ACS Nano&amp;title=Complex Capacitance Scaling in Ionic Liquids-Filled Nanopores&amp;author=P. Wu&amp;author=J. Huang&amp;author=V. Meunier&amp;author=B. G. Sumpter&amp;author=R. Qiao&amp;volume=5&amp;publication_year=2011&amp;pages=9044-9051&amp;pmid=22017626&amp;doi=10.1021/nn203260w&amp;"/></mixed-citation></ref><ref id="ref48"><mixed-citation id="cit48"><named-content content-type="citation-string">Feng G.; Cummings P. T.
+Supercapacitor capacitance
+exhibits oscillatory behavior
+as a function of nanopore size. J. Phys. Chem.
+Lett.
+2011, 2, 2859–2864. 10.1021/jz201312e.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jz201312e"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. Lett.&amp;title=Supercapacitor capacitance exhibits oscillatory behavior as a function of nanopore size&amp;author=G. Feng&amp;author=P. T. Cummings&amp;volume=2&amp;publication_year=2011&amp;pages=2859-2864&amp;doi=10.1021/jz201312e&amp;"/></mixed-citation></ref><ref id="ref49"><mixed-citation id="cit49"><named-content content-type="citation-string">Newsam J.
+M.; Treacy M. M. J.; Koetsier W. T.; Gruyter C. B. D.
+Structural Characterization
+of Zeolite Beta. Proc. R. Soc. London, Ser.
+A
+1988, 420, 375–405. 10.1098/rspa.1988.0131.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1098/rspa.1988.0131"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Proc. R. Soc. London, Ser. A&amp;title=Structural Characterization of Zeolite Beta&amp;author=J. M. Newsam&amp;author=M. M. J. Treacy&amp;author=W. T. Koetsier&amp;author=C. B. D. Gruyter&amp;volume=420&amp;publication_year=1988&amp;pages=375-405&amp;doi=10.1098/rspa.1988.0131&amp;"/></mixed-citation></ref><ref id="ref50"><mixed-citation id="cit50"><named-content content-type="citation-string">Nita C.; Bensafia M.; Vaulot C.; Delmotte L.; Ghimbeu C. M.
+Insights
+on the synthesis mechanism of green phenolic resin derived porous
+carbons via a salt-soft templating approach. Carbon
+2016, 109, 227–238. 10.1016/j.carbon.2016.08.011.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.carbon.2016.08.011"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Carbon&amp;title=Insights on the synthesis mechanism of green phenolic resin derived porous carbons via a salt-soft templating approach&amp;author=C. Nita&amp;author=M. Bensafia&amp;author=C. Vaulot&amp;author=L. Delmotte&amp;author=C. M. Ghimbeu&amp;volume=109&amp;publication_year=2016&amp;pages=227-238&amp;doi=10.1016/j.carbon.2016.08.011&amp;"/></mixed-citation></ref><ref id="ref51"><mixed-citation id="cit51"><named-content content-type="citation-string">Bartók A. P.; Kondor R.; Csányi G.
+On representing chemical environments. Phys. Rev. B: Condens. Matter Mater. Phys.
+2013, 87, 184115. 10.1103/PhysRevB.87.184115.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1103/PhysRevB.87.184115"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phys. Rev. B: Condens. Matter Mater. Phys.&amp;title=On representing chemical environments&amp;author=A. P. Bartók&amp;author=R. Kondor&amp;author=G. Csányi&amp;volume=87&amp;publication_year=2013&amp;pages=184115&amp;doi=10.1103/PhysRevB.87.184115&amp;"/></mixed-citation></ref><ref id="ref52"><mixed-citation id="cit52"><named-content content-type="citation-string">Yeh I.-C.; Berkowitz M. L.
+Ewald summation for systems with
+slab geometry. J. Chem. Phys.
+1999, 111, 3155. 10.1063/1.479595.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.479595"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Ewald summation for systems with slab geometry&amp;author=I.-C. Yeh&amp;author=M. L. Berkowitz&amp;volume=111&amp;publication_year=1999&amp;pages=3155&amp;doi=10.1063/1.479595&amp;"/></mixed-citation></ref><ref id="ref53"><mixed-citation id="cit53"><named-content content-type="citation-string">Roy D.; Maroncelli M.
+An Improved
+Four-Site Ionic Liquid Model. J. Phys. Chem.
+B
+2010, 114, 12629–12631. 10.1021/jp108179n.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jp108179n"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="20839817"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. B&amp;title=An Improved Four-Site Ionic Liquid Model&amp;author=D. Roy&amp;author=M. Maroncelli&amp;volume=114&amp;publication_year=2010&amp;pages=12629-12631&amp;pmid=20839817&amp;doi=10.1021/jp108179n&amp;"/></mixed-citation></ref><ref id="ref54"><mixed-citation id="cit54"><named-content content-type="citation-string">Edwards D.
+M.; Madden P. A.; McDonald I. R.
+A computer simulation study of the
+dielectric properties of a model of methyl cyanide. Mol. Phys.
+1984, 51, 1141–1161. 10.1080/00268978400100731.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1080/00268978400100731"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Mol. Phys.&amp;title=A computer simulation study of the dielectric properties of a model of methyl cyanide&amp;author=D. M. Edwards&amp;author=P. A. Madden&amp;author=I. R. McDonald&amp;volume=51&amp;publication_year=1984&amp;pages=1141-1161&amp;doi=10.1080/00268978400100731&amp;"/></mixed-citation></ref><ref id="ref55"><mixed-citation id="cit55"><named-content content-type="citation-string">Ryckaert J.-P.; Ciccotti G.; Berendsen H. J.
+Numerical
+integration of the cartesian
+equations of motion of a system with constraints: molecular dynamics
+of n-alkanes. J. Comput. Phys.
+1977, 23, 327–341. 10.1016/0021-9991(77)90098-5.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/0021-9991(77)90098-5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Comput. Phys.&amp;title=Numerical integration of the cartesian equations of motion of a system with constraints: molecular dynamics of n-alkanes&amp;author=J.-P. Ryckaert&amp;author=G. Ciccotti&amp;author=H. J. Berendsen&amp;volume=23&amp;publication_year=1977&amp;pages=327-341&amp;doi=10.1016/0021-9991(77)90098-5&amp;"/></mixed-citation></ref><ref id="ref56"><mixed-citation id="cit56"><named-content content-type="citation-string">Andersen H. C.
+Rattle:
+A “velocity” version of the shake algorithm for molecular
+dynamics calculations. J. Comput. Phys.
+1983, 52, 24–34. 10.1016/0021-9991(83)90014-1.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/0021-9991(83)90014-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Comput. Phys.&amp;title=Rattle: A “velocity” version of the shake algorithm for molecular dynamics calculations&amp;author=H. C. Andersen&amp;volume=52&amp;publication_year=1983&amp;pages=24-34&amp;doi=10.1016/0021-9991(83)90014-1&amp;"/></mixed-citation></ref><ref id="ref57"><mixed-citation id="cit57"><named-content content-type="citation-string">Siepmann J. I.; Sprik M.
+Influence of surface
+topology and electrostatic potential on water/electrode
+systems. J. Chem. Phys.
+1995, 102, 511–524. 10.1063/1.469429.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.469429"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Influence of surface topology and electrostatic potential on water/electrode systems&amp;author=J. I. Siepmann&amp;author=M. Sprik&amp;volume=102&amp;publication_year=1995&amp;pages=511-524&amp;doi=10.1063/1.469429&amp;"/></mixed-citation></ref><ref id="ref58"><mixed-citation id="cit58"><named-content content-type="citation-string">Reed S. K.; Lanning O. J.; Madden P. A.
+Electrochemical
+interface between
+an ionic liquid and a model metallic electrode. J. Chem. Phys.
+2007, 126, 084704 10.1063/1.2464084.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.2464084"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17343466"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Electrochemical interface between an ionic liquid and a model metallic electrode&amp;author=S. K. Reed&amp;author=O. J. Lanning&amp;author=P. A. Madden&amp;volume=126&amp;publication_year=2007&amp;pages=084704&amp;pmid=17343466&amp;doi=10.1063/1.2464084&amp;"/></mixed-citation></ref><ref id="ref59"><mixed-citation id="cit59"><named-content content-type="citation-string">Merlet C.; Salanne M.; Rotenberg B.; Madden P. A.
+Influence of solvation
+on the structural and capacitive properties of electrical double layer
+capacitors. Electrochim. Acta
+2013, 101, 262–271. 10.1016/j.electacta.2012.12.107.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.electacta.2012.12.107"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Electrochim. Acta&amp;title=Influence of solvation on the structural and capacitive properties of electrical double layer capacitors&amp;author=C. Merlet&amp;author=M. Salanne&amp;author=B. Rotenberg&amp;author=P. A. Madden&amp;volume=101&amp;publication_year=2013&amp;pages=262-271&amp;doi=10.1016/j.electacta.2012.12.107&amp;"/></mixed-citation></ref><ref id="ref60"><mixed-citation id="cit60"><named-content content-type="citation-string">Palmer J. C.; Llobet A.; Yeon S. H.; Fischer J. E.; Shi Y.; Gogotsi Y.; Gubbins K. E.
+Modeling
+the structural evolution
+of carbide-derived carbons using quenched molecular dynamics. Carbon
+2010, 48, 1116–1123. 10.1016/j.carbon.2009.11.033.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.carbon.2009.11.033"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Carbon&amp;title=Modeling the structural evolution of carbide-derived carbons using quenched molecular dynamics&amp;author=J. C. Palmer&amp;author=A. Llobet&amp;author=S. H. Yeon&amp;author=J. E. Fischer&amp;author=Y. Shi&amp;volume=48&amp;publication_year=2010&amp;pages=1116-1123&amp;doi=10.1016/j.carbon.2009.11.033&amp;"/></mixed-citation></ref><ref id="ref61"><mixed-citation id="cit61"><named-content content-type="citation-string">Willems T. F.; Rycroft C. H.; Kazi M.; Meza J. C.; Haranczyk M.
+Algorithms
+and tools for high-throughput geometry-based analysis of crystalline
+porous materials. Microporous Mesoporous Mater.
+2012, 149, 134–141. 10.1016/j.micromeso.2011.08.020.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.micromeso.2011.08.020"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Microporous Mesoporous Mater.&amp;title=Algorithms and tools for high-throughput geometry-based analysis of crystalline porous materials&amp;author=T. F. Willems&amp;author=C. H. Rycroft&amp;author=M. Kazi&amp;author=J. C. Meza&amp;author=M. Haranczyk&amp;volume=149&amp;publication_year=2012&amp;pages=134-141&amp;doi=10.1016/j.micromeso.2011.08.020&amp;"/></mixed-citation></ref><ref id="ref62"><mixed-citation id="cit62"><named-content content-type="citation-string">Humphrey W.; Dalke A.; Schulten K.
+VMD: Visual
+molecular dynamics. J. Mol. Graphics
+1996, 14, 33–38. 10.1016/0263-7855(96)00018-5.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/0263-7855(96)00018-5"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="8744570"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Mol. Graphics&amp;title=VMD: Visual molecular dynamics&amp;author=W. Humphrey&amp;author=A. Dalke&amp;author=K. Schulten&amp;volume=14&amp;publication_year=1996&amp;pages=33-38&amp;pmid=8744570&amp;doi=10.1016/0263-7855(96)00018-5&amp;"/></mixed-citation></ref><ref id="ref63"><mixed-citation id="cit63"><named-content content-type="citation-string">Kohlmeyer A.; Vermaas J.. Akohlmey/topotools, Release 1.7.; 2017 10.5281/zenodo.545655.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.5281/zenodo.545655"/></mixed-citation></ref><ref id="ref64"><mixed-citation id="cit64"><named-content content-type="citation-string">Plimpton S.
+Fast Parallel
+Algorithms for Short-Range Molecular Dynamics. J. Comput. Phys.
+1995, 117, 1–19. 10.1006/jcph.1995.1039.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1006/jcph.1995.1039"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Comput. Phys.&amp;title=Fast Parallel Algorithms for Short-Range Molecular Dynamics&amp;author=S. Plimpton&amp;volume=117&amp;publication_year=1995&amp;pages=1-19&amp;doi=10.1006/jcph.1995.1039&amp;"/></mixed-citation></ref><ref id="ref65"><mixed-citation id="cit65"><named-content content-type="citation-string">Martyna G. J.; Klein M. L.; Tuckerman M.
+Nosé–Hoover chains:
+The canonical ensemble via continuous dynamics. J. Chem. Phys.
+1992, 97, 2635–2643. 10.1063/1.463940.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.463940"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Nosé–Hoover chains: The canonical ensemble via continuous dynamics&amp;author=G. J. Martyna&amp;author=M. L. Klein&amp;author=M. Tuckerman&amp;volume=97&amp;publication_year=1992&amp;pages=2635-2643&amp;doi=10.1063/1.463940&amp;"/></mixed-citation></ref><ref id="ref66"><mixed-citation id="cit66"><named-content content-type="citation-string">Merlet C.; Péan C.; Rotenberg B.; Madden P. A.; Simon P.; Salanne M.
+Simulating Supercapacitors: Can We Model Electrodes
+As Constant Charge Surfaces?. J. Phys. Chem.
+Lett.
+2013, 4, 264–268. 10.1021/jz3019226.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1021/jz3019226"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26283432"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Phys. Chem. Lett.&amp;title=Simulating Supercapacitors: Can We Model Electrodes As Constant Charge Surfaces?&amp;author=C. Merlet&amp;author=C. Péan&amp;author=B. Rotenberg&amp;author=P. A. Madden&amp;author=P. Simon&amp;volume=4&amp;publication_year=2013&amp;pages=264-268&amp;pmid=26283432&amp;doi=10.1021/jz3019226&amp;"/></mixed-citation></ref><ref id="ref67"><mixed-citation id="cit67"><named-content content-type="citation-string">Wang Z.; Yang Y.; Olmsted D. L.; Asta M.; Laird B. B.
+Evaluation
+of the constant potential method in simulating electric double-layer
+capacitors. J. Chem. Phys.
+2014, 141, 184102. 10.1063/1.4899176.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1063/1.4899176"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25399127"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=J. Chem. Phys.&amp;title=Evaluation of the constant potential method in simulating electric double-layer capacitors&amp;author=Z. Wang&amp;author=Y. Yang&amp;author=D. L. Olmsted&amp;author=M. Asta&amp;author=B. B. Laird&amp;volume=141&amp;publication_year=2014&amp;pages=184102&amp;pmid=25399127&amp;doi=10.1063/1.4899176&amp;"/></mixed-citation></ref><ref id="ref68"><mixed-citation id="cit68"><named-content content-type="citation-string">Liu Y. M.ASTrA:
+Atomistic Supercapacitor Trajectory Analysis, 2019; <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://zenodo.org/record/3247357" ext-link-type="uri">https://zenodo.org/record/3247357</ext-link>, Accessed October 6, 2019.</named-content></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="oc9b00800_si_001.pdf" mimetype="application" mime-subtype="pdf"><?cloudpmc-path 58fd/6891853/a0cbf75e92f6/oc9b00800_si_001.pdf?><?cloudpmc-bucket app?><?size 1801791?><caption><p>oc9b00800_si_001.pdf</p></caption></media></supplementary-material></sec></sec></body></article>
