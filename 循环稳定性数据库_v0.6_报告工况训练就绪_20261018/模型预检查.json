@@ -1,0 +1,45 @@
+{
+  "environment": "existing_v02_project_venv",
+  "versions": {
+    "numpy": "2.3.4",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "xgboost": "3.1.1"
+  },
+  "checks": [
+    {
+      "profile": "reported_3e",
+      "scale_numeric": false,
+      "constructed_unfitted": true
+    },
+    {
+      "profile": "reported_3e",
+      "scale_numeric": true,
+      "constructed_unfitted": true
+    },
+    {
+      "profile": "reported_2e",
+      "scale_numeric": false,
+      "constructed_unfitted": true
+    },
+    {
+      "profile": "reported_2e",
+      "scale_numeric": true,
+      "constructed_unfitted": true
+    },
+    {
+      "estimator": "RandomForestRegressor",
+      "constructed_unfitted": true
+    },
+    {
+      "estimator": "MLPRegressor",
+      "constructed_unfitted": true
+    },
+    {
+      "estimator": "XGBRegressor",
+      "constructed_unfitted": true
+    }
+  ],
+  "estimator_fits": 0,
+  "new_packages_installed": false
+}

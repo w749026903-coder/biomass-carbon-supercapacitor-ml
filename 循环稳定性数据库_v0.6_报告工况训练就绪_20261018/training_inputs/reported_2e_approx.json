@@ -1,0 +1,941 @@
+{
+  "profile": "reported_2e_approx",
+  "dataset_fingerprint": "8d15182d05f7faa144ee726c8355dd8abc1b92f6a7c197a1aabf13a06e614f00",
+  "matrix": {
+    "X": [
+      [
+        5000,
+        3.0,
+        "Li2SO4",
+        0.5,
+        0.0,
+        1.8,
+        1098.07
+      ],
+      [
+        2000,
+        1.0,
+        "KOH",
+        6.0,
+        0.0,
+        1.0,
+        2768.0
+      ],
+      [
+        5000,
+        6.0,
+        "H2SO4",
+        1.0,
+        0.0,
+        1.0,
+        2538.31
+      ],
+      [
+        10000,
+        6.0,
+        "H2SO4",
+        1.0,
+        0.0,
+        1.0,
+        2538.31
+      ],
+      [
+        10000,
+        5.0,
+        "Na2SO4",
+        1.0,
+        0.0,
+        2.0,
+        938.6
+      ],
+      [
+        10000,
+        5.0,
+        "KOH",
+        6.0,
+        0.0,
+        1.0,
+        3006.0
+      ],
+      [
+        20000,
+        10.0,
+        "sodium_acetate",
+        1.0,
+        0.0,
+        1.5,
+        1198.0
+      ],
+      [
+        50000,
+        10.0,
+        "KOH",
+        6.0,
+        0.0,
+        1.0,
+        501.0
+      ],
+      [
+        10000,
+        5.0,
+        "KOH",
+        6.0,
+        0.0,
+        1.2,
+        2035.6
+      ],
+      [
+        5000,
+        3.0,
+        "KNO3",
+        1.0,
+        0.0,
+        1.0,
+        1081.0
+      ],
+      [
+        10000,
+        20.0,
+        "KOH",
+        6.0,
+        0.0,
+        1.0,
+        2285.0
+      ],
+      [
+        5000,
+        5,
+        "H2SO4",
+        1,
+        0,
+        1,
+        1691
+      ],
+      [
+        20000,
+        10,
+        "KOH",
+        6,
+        0,
+        1,
+        1184.88
+      ],
+      [
+        2000,
+        1,
+        "KOH",
+        6,
+        0,
+        0.9,
+        2333
+      ]
+    ],
+    "y": [
+      73.0,
+      89.44,
+      90.77,
+      74.4,
+      100.0,
+      95.5,
+      98.4,
+      92.0,
+      108.8,
+      89.0,
+      96.1,
+      99.46,
+      99.3,
+      100
+    ],
+    "groups": [
+      "10.1007/s11664-023-10223-1",
+      "10.1016/j.biombioe.2025.108253",
+      "10.1016/j.diamond.2024.111703",
+      "10.1016/j.diamond.2024.111703",
+      "10.1016/j.jallcom.2025.182201",
+      "10.1016/j.ultsonch.2024.107213",
+      "10.1021/acsomega.3c09438",
+      "10.1039/d5ra08165c",
+      "10.3390/coatings13071236",
+      "10.3390/ma19061257",
+      "10.3390/molecules30010089",
+      "doi:10.1039/d5ra01262g",
+      "doi:10.1088/1402-4896/ae73bc",
+      "doi:10.3390/nano14080686"
+    ],
+    "sample_weight": [
+      1.0,
+      1.0,
+      0.5,
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "feature_names": [
+      "cycle_count",
+      "reported_current_A_g",
+      "electrolyte",
+      "concentration_mol_L",
+      "cycle_voltage_lower_V",
+      "cycle_voltage_upper_V",
+      "BET_m2_g"
+    ],
+    "training_authorized": false,
+    "current_semantics": "author_reported_protocol_descriptor"
+  },
+  "rows": [
+    {
+      "endpoint_id": "legacy:R091_CY01",
+      "identity_key": "doi:10.1007/s11664-023-10223-1",
+      "source_group": "10.1007/s11664-023-10223-1",
+      "source_year": 2023,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 73.0,
+      "source_weight": 1.0,
+      "cycle_count": 5000,
+      "reported_current_A_g": 3.0,
+      "electrolyte": "Li2SO4",
+      "concentration_mol_L": 0.5,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.8,
+      "BET_m2_g": 1098.07,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": null,
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R091_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\", \"optional_total_pore_missing_or_masked\"]"
+    },
+    {
+      "endpoint_id": "legacy:R111_CY01",
+      "identity_key": "doi:10.1016/j.biombioe.2025.108253",
+      "source_group": "10.1016/j.biombioe.2025.108253",
+      "source_year": 2025,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 89.44,
+      "source_weight": 1.0,
+      "cycle_count": 2000,
+      "reported_current_A_g": 1.0,
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.0,
+      "BET_m2_g": 2768.0,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"definition\": \"author_plotted_start_normalized_to_100pct\", \"cycle_index\": null, \"cycle_index_status\": \"not_explicitly_reported\", \"source_locator\": \"PDF p9 Fig5F; main p8\"}",
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R111_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\"]"
+    },
+    {
+      "endpoint_id": "legacy:R112_CY02",
+      "identity_key": "doi:10.1016/j.diamond.2024.111703",
+      "source_group": "10.1016/j.diamond.2024.111703",
+      "source_year": 2024,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 90.77,
+      "source_weight": 0.5,
+      "cycle_count": 5000,
+      "reported_current_A_g": 6.0,
+      "electrolyte": "H2SO4",
+      "concentration_mol_L": 1.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.0,
+      "BET_m2_g": 2538.31,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": null,
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R112_CY02",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\", \"reported_Si1.7_percent_basis_unspecified\", \"shared_curve_two_endpoints\"]"
+    },
+    {
+      "endpoint_id": "legacy:R112_CY03",
+      "identity_key": "doi:10.1016/j.diamond.2024.111703",
+      "source_group": "10.1016/j.diamond.2024.111703",
+      "source_year": 2024,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 74.4,
+      "source_weight": 0.5,
+      "cycle_count": 10000,
+      "reported_current_A_g": 6.0,
+      "electrolyte": "H2SO4",
+      "concentration_mol_L": 1.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.0,
+      "BET_m2_g": 2538.31,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": null,
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R112_CY03",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\", \"reported_Si1.7_percent_basis_unspecified\", \"shared_curve_two_endpoints\"]"
+    },
+    {
+      "endpoint_id": "legacy:SRC035_CY01",
+      "identity_key": "doi:10.1016/j.jallcom.2025.182201",
+      "source_group": "10.1016/j.jallcom.2025.182201",
+      "source_year": 2025,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 100.0,
+      "source_weight": 1.0,
+      "cycle_count": 10000,
+      "reported_current_A_g": 5.0,
+      "electrolyte": "Na2SO4",
+      "concentration_mol_L": 1.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 2.0,
+      "BET_m2_g": 938.6,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"definition\": \"author_plotted_start_normalized_to_100pct\", \"cycle_index\": null, \"cycle_index_status\": \"not_explicitly_reported\", \"source_locator\": \"PDF p8 Fig8g\"}",
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "SRC035_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\"]"
+    },
+    {
+      "endpoint_id": "legacy:R107_CY01",
+      "identity_key": "doi:10.1016/j.ultsonch.2024.107213",
+      "source_group": "10.1016/j.ultsonch.2024.107213",
+      "source_year": 2025,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 95.5,
+      "source_weight": 1.0,
+      "cycle_count": 10000,
+      "reported_current_A_g": 5.0,
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.0,
+      "BET_m2_g": 3006.0,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": null,
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R107_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\"]"
+    },
+    {
+      "endpoint_id": "legacy:R104_CY01",
+      "identity_key": "doi:10.1021/acsomega.3c09438",
+      "source_group": "10.1021/acsomega.3c09438",
+      "source_year": 2024,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 98.4,
+      "source_weight": 1.0,
+      "cycle_count": 20000,
+      "reported_current_A_g": 10.0,
+      "electrolyte": "sodium_acetate",
+      "concentration_mol_L": 1.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.5,
+      "BET_m2_g": 1198.0,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"definition\": \"author_plotted_start_normalized_to_100pct\", \"cycle_index\": null, \"cycle_index_status\": \"not_explicitly_reported\", \"source_locator\": \"PDF p11 Fig10a\"}",
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R104_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\"]"
+    },
+    {
+      "endpoint_id": "legacy:SRC124_CY01",
+      "identity_key": "doi:10.1039/d5ra08165c",
+      "source_group": "10.1039/d5ra08165c",
+      "source_year": 2026,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 92.0,
+      "source_weight": 1.0,
+      "cycle_count": 50000,
+      "reported_current_A_g": 10.0,
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.0,
+      "BET_m2_g": 501.0,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"normalization_reference\": \"initial_Cg216_Fg_reported\"}",
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "SRC124_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\"]"
+    },
+    {
+      "endpoint_id": "legacy:R093_CY01",
+      "identity_key": "doi:10.3390/coatings13071236",
+      "source_group": "10.3390/coatings13071236",
+      "source_year": 2023,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 108.8,
+      "source_weight": 1.0,
+      "cycle_count": 10000,
+      "reported_current_A_g": 5.0,
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.2,
+      "BET_m2_g": 2035.6,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"definition\": \"author_plotted_start_normalized_to_100pct\", \"cycle_index\": null, \"cycle_index_status\": \"not_explicitly_reported\", \"source_locator\": \"PDF p11 Fig8e; main p10 describes 1st/2500th/5000th/10000th cycles\"}",
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R093_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\"]"
+    },
+    {
+      "endpoint_id": "legacy:R020_CY01",
+      "identity_key": "doi:10.3390/ma19061257",
+      "source_group": "10.3390/ma19061257",
+      "source_year": 2026,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "approx",
+      "retention_pct": 89.0,
+      "source_weight": 1.0,
+      "cycle_count": 5000,
+      "reported_current_A_g": 3.0,
+      "electrolyte": "KNO3",
+      "concentration_mol_L": 1.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.0,
+      "BET_m2_g": 1081.0,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": null,
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R020_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\", \"approximate89_percent_no_error_bound_given\", \"optional_total_pore_missing_or_masked\"]"
+    },
+    {
+      "endpoint_id": "legacy:R103_CY01",
+      "identity_key": "doi:10.3390/molecules30010089",
+      "source_group": "10.3390/molecules30010089",
+      "source_year": 2024,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 96.1,
+      "source_weight": 1.0,
+      "cycle_count": 10000,
+      "reported_current_A_g": 20.0,
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6.0,
+      "cycle_voltage_lower_V": 0.0,
+      "cycle_voltage_upper_V": 1.0,
+      "BET_m2_g": 2285.0,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"definition\": \"author_plotted_start_normalized_to_100pct\", \"cycle_index\": null, \"cycle_index_status\": \"not_explicitly_reported\", \"source_locator\": \"PDF p8 Fig7c\"}",
+      "profile_review": {
+        "reason": "Restore the previously approved empirical use; do not reinterpret unknown current mass as a new failure.",
+        "evidence": {
+          "table": "training_rows_r4",
+          "profile": "literature_approx_sensitivity",
+          "record_id": "R103_CY01",
+          "source": "Fourthround scientific reviews retained unchanged."
+        }
+      },
+      "caveats_json": "[\"author_reported_current_denominator_unresolved\", \"unmodeled_temperature_and_loading\", \"small_source_count\", \"optional_total_pore_missing_or_masked\"]"
+    },
+    {
+      "endpoint_id": "candidate:V05:014",
+      "identity_key": "doi:10.1039/d5ra01262g",
+      "source_group": "doi:10.1039/d5ra01262g",
+      "source_year": 2025,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 99.46,
+      "source_weight": 1.0,
+      "cycle_count": 5000,
+      "reported_current_A_g": 5,
+      "electrolyte": "H2SO4",
+      "concentration_mol_L": 1,
+      "cycle_voltage_lower_V": 0,
+      "cycle_voltage_upper_V": 1,
+      "BET_m2_g": 1691,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"reference\":\"author_initial_or_plotted_start_normalized_to_100pct\",\"cycle_index\":null,\"basis\":\"Actual cycling graph/prose and original retention label; no invented conditioning/first-cycle number.\",\"source_segments\":[5007,5025,5027],\"figure\":\"同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA011/figures/d5ra01262g-f8.jpg\"}",
+      "profile_review": {
+        "reason": "Primary sample/protocol/label and bounded source-group review completed for the reported-current empirical use. Currentmassunknownretained; no physical conversion.",
+        "evidence": {
+          "alias": "V05_014",
+          "namespace": "V05",
+          "endpoint_id": "candidate:V05:014",
+          "identity_key": "doi:10.1039/d5ra01262g",
+          "system": "2E_symmetric",
+          "window": [
+            0,
+            1
+          ],
+          "segments": [
+            5007,
+            5025,
+            5027
+          ],
+          "window_evidence_kind": "same_reported_symmetric_device_GCD_programme",
+          "scope_review": "Green-pea-peel NSGP co-doped carbon; samegraphite-disc area andreported1mg/cm2commoncoating give nominal matched symmetricpair. Measuredpairmassdifference not reported.",
+          "source_group_review": "Own paper and sample/protocol evidence checked; no additional reuse link identified in this bounded review. Existing unified_source_groups and known historical reuse relationships retained. This is not proof of statistical independence.",
+          "figure": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA011/figures/d5ra01262g-f8.jpg",
+          "caveats": [
+            "Massbalanceisnominalsamegeometry/loadingjustification, not measuredperfectequality. Fig8cratelegendNS-APSBcopyerrornotused; owncyclingpanel8fisNSGP."
+          ]
+        }
+      },
+      "caveats_json": null
+    },
+    {
+      "endpoint_id": "candidate:V05:015",
+      "identity_key": "doi:10.1088/1402-4896/ae73bc",
+      "source_group": "doi:10.1088/1402-4896/ae73bc",
+      "source_year": 2026,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 99.3,
+      "source_weight": 1.0,
+      "cycle_count": 20000,
+      "reported_current_A_g": 10,
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6,
+      "cycle_voltage_lower_V": 0,
+      "cycle_voltage_upper_V": 1,
+      "BET_m2_g": 1184.88,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"reference\":\"author_initial_or_plotted_start_normalized_to_100pct\",\"cycle_index\":null,\"basis\":\"Actual cycling graph/prose and original retention label; no invented conditioning/first-cycle number.\",\"source_segments\":[5981,5988,5989],\"figure\":\"循环稳定性数据库_v0.6_报告工况训练就绪_20261018/evidence_images/PPC_p12.png\"}",
+      "profile_review": {
+        "reason": "Primary sample/protocol/label and bounded source-group review completed for the reported-current empirical use. Currentmassunknownretained; no physical conversion.",
+        "evidence": {
+          "alias": "V05_015",
+          "namespace": "V05",
+          "endpoint_id": "candidate:V05:015",
+          "identity_key": "doi:10.1088/1402-4896/ae73bc",
+          "system": "2E_symmetric",
+          "window": [
+            0,
+            1
+          ],
+          "segments": [
+            5981,
+            5988,
+            5989
+          ],
+          "window_evidence_kind": "own_device_GCD_programme_and_cycle_figure",
+          "scope_review": "Peanut-shellPPC-500-1-1h; matched electrodes less0.1mgdifference,6MKOH. Own BET1184.88.",
+          "source_group_review": "Own paper and sample/protocol evidence checked; no additional reuse link identified in this bounded review. Existing unified_source_groups and known historical reuse relationships retained. This is not proof of statistical independence.",
+          "figure": "循环稳定性数据库_v0.6_报告工况训练就绪_20261018/evidence_images/PPC_p12.png",
+          "caveats": []
+        }
+      },
+      "caveats_json": null
+    },
+    {
+      "endpoint_id": "candidate:V05:019",
+      "identity_key": "doi:10.3390/nano14080686",
+      "source_group": "doi:10.3390/nano14080686",
+      "source_year": 2024,
+      "system": "2E_symmetric",
+      "method": "GCD",
+      "retention_relation": "eq",
+      "retention_pct": 100,
+      "source_weight": 1.0,
+      "cycle_count": 2000,
+      "reported_current_A_g": 1,
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6,
+      "cycle_voltage_lower_V": 0,
+      "cycle_voltage_upper_V": 0.9,
+      "BET_m2_g": 2333,
+      "current_denominator_status": "not_uniquely_defined",
+      "physical_current_harmonized": false,
+      "baseline_reference": "{\"reference\":\"author_initial_or_plotted_start_normalized_to_100pct\",\"cycle_index\":null,\"basis\":\"Actual cycling graph/prose and original retention label; no invented conditioning/first-cycle number.\",\"source_segments\":[5589,5566,5595],\"figure\":null}",
+      "profile_review": {
+        "reason": "Primary sample/protocol/label and bounded source-group review completed for the reported-current empirical use. Currentmassunknownretained; no physical conversion.",
+        "evidence": {
+          "alias": "V05_019",
+          "namespace": "V05",
+          "endpoint_id": "candidate:V05:019",
+          "identity_key": "doi:10.3390/nano14080686",
+          "system": "2E_symmetric",
+          "window": [
+            0,
+            0.9
+          ],
+          "segments": [
+            5589,
+            5566,
+            5595
+          ],
+          "window_evidence_kind": "explicit_cycling_paragraph",
+          "scope_review": "Cucumber-peel carbon ACP800; two identical electrodes explicitly stated; commonmethod0–1Vnot substituted for explicit0–.9cycling.",
+          "source_group_review": "Own paper and sample/protocol evidence checked; no additional reuse link identified in this bounded review. Existing unified_source_groups and known historical reuse relationships retained. This is not proof of statistical independence.",
+          "figure": null,
+          "caveats": [
+            "CapacitanceformulaIunitinconsistency retainedasphysicalnormalizationcaveat; authorreported1A/gand100%are not recalculated."
+          ]
+        }
+      },
+      "caveats_json": null
+    }
+  ],
+  "leave_one_source_out": [
+    {
+      "train": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        0
+      ]
+    },
+    {
+      "train": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        1
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        2,
+        3
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        4
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        5
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        6
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        7
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        8
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        9
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "test": [
+        10
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13
+      ],
+      "test": [
+        11
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "test": [
+        12
+      ]
+    },
+    {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "test": [
+        13
+      ]
+    }
+  ],
+  "research_training_performed": false
+}

@@ -1,0 +1,21 @@
+{
+  "numeric": [
+    "cycle_count",
+    "reported_current_A_g",
+    "concentration_mol_L",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V",
+    "BET_m2_g"
+  ],
+  "categorical": [
+    "electrolyte",
+    "reference_electrode"
+  ],
+  "reference_electrode": "3E only; never represent missing 2E reference as a numeric zero",
+  "protocol": "Split by unified source group first. Fit encoders/scalers only on the training fold. Transform held-out sources with that fitted training-fold preprocessing. Hyperparameter selection, if later authorized, needs nested group splits.",
+  "unseen_category": "One-hot handle_unknown=ignore; log unknown-category/domain-shift rates per held-out fold.",
+  "optional_pores": "Not included in core matrices. Printed-unit ambiguity and missing values stay masked; any future imputation must be trained inside a training fold.",
+  "sample_weight": "Each source has total weight 1 within the profile; all endpoints from a source stay in one fold.",
+  "sensitivity": "2E core is a subset of residue, which is a subset of approximate. These datasets must not be concatenated or counted as independent samples.",
+  "no_fits_executed": true
+}

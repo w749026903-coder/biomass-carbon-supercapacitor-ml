@@ -67,3 +67,11 @@
 - 验证：20618项封版技术核验及20666项只读复核通过；3165个保护文件哈希不变；6876个门槛单元；稳定API、45文档链接和7脚本语法验证；另继续核读2张优先原图与方法；严格2E和3E均0，真实拟合0
 - 下一步/未决：继续电流真实质量分母、循环基线、材料范围、前作与原图SI终审；56条已有失败项，112条仍待证据，23条其它系统单列；AO-PC及ACP-800方法疑点另存跟进，不放宽准入
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-18T20:41:25+08:00：完成v0.6报告工况训练输入与项目知识库：3E14条、2E11条，恢复既有经验模型用途
+
+- 结果：完成v0.6报告工况训练输入与项目知识库：3E14条、2E11条，恢复既有经验模型用途
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/knowledge, data/current_database.json, data/pointer_history/current_database_v05_20261018.json, tools/build_reported_training_v06_20261018.py, tools/prepare_training_inputs_v06.py, tools/precheck_model_inputs_v06.py, tools/verify_training_ready_v06_20261018.py, tools/seal_reported_training_v06_20261018.py, 循环稳定性数据库_v0.6_报告工况训练就绪_20261018
+- 验证：3663项封版及3693项载荷复核通过；3214保护文件不变；57本地链接、脚本语法、稳定API与7项未拟合模型接口通过；未安装新包、真实拟合0
+- 下一步/未决：按逐记录用途状态补真实缺口并扩充独立三电极来源；当前可开发小样本基线，未授权正式拟合，不能声称191条全部准入或支持大模型训练
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
