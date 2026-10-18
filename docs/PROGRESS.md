@@ -51,3 +51,11 @@
 - 验证：3190项最终技术核验通过；2702项交付哈希、3025个保护文件、SQLite外键完整性与原表一致；严格准入0，真实拟合0
 - 下一步/未决：优先逐条审查3E窗口、电流分母、基线及独立性，另定3E合同；8/10/11报告工况提议保留；一次性合并自动化已停用
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-18T15:16:08+08:00：完成首轮已有文献提取与v0.4数据库调用版：156条记录，53条3E优先复核
+
+- 结果：完成首轮已有文献提取与v0.4数据库调用版：156条记录，53条3E优先复核
+- 文件：循环稳定性数据库_v0.4_提取与调用_20261018, data/current_database.json, data/cycling_db.py, tools/index_existing_literature_20261018.py, tools/extract_training_database_20261018.py, tools/review_primary_fields_20261018.py, tools/review_supplementary_fields_20261018.py, tools/build_model_access_20261018.py, tools/preextract_native_claims_20261018.py, tools/finalize_extraction_access_20261018.py, tools/verify_extraction_access_20261018.py, README.md, docs/CURRENT_STATE.md
+- 验证：8516项技术核验；270主文SI、7164片段、179篇全文扫描；3E BET5至40、总孔3至22，49条报告电流；3118个保护文件、父库全表和原件未改；严格2E/3E均0、真实拟合0
+- 下一步/未决：138篇按逐记录队列复核；495自动线索隔离；13条优先BET与18个本轮问题待实证处理；不放宽电流分母、体系或独立性准入
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

@@ -1,0 +1,167 @@
+{
+  "fields": [
+    {
+      "name": "cycle_count",
+      "meaning": "规定循环次数",
+      "missing_value": "NULL",
+      "status_column": "cycle_count_status"
+    },
+    {
+      "name": "retention_pct",
+      "meaning": "电容保持率标签",
+      "missing_value": "NULL",
+      "status_column": "retention_pct_status"
+    },
+    {
+      "name": "retention_relation",
+      "meaning": "精确、近似、不等式或定性关系",
+      "missing_value": "NULL",
+      "status_column": "retention_relation_status"
+    },
+    {
+      "name": "value_kind",
+      "meaning": "原文点值、损失率换算等来源类型",
+      "missing_value": "NULL",
+      "status_column": "value_kind_status"
+    },
+    {
+      "name": "reported_current_A_g",
+      "meaning": "文献报告的质量电流描述；不代表分母已统一",
+      "missing_value": "NULL",
+      "status_column": "reported_current_A_g_status"
+    },
+    {
+      "name": "current_mA_cm2",
+      "meaning": "面积电流；不转换为质量电流",
+      "missing_value": "NULL",
+      "status_column": "current_mA_cm2_status"
+    },
+    {
+      "name": "canonical_current_A_g",
+      "meaning": "经质量分母证据确认的规范电流",
+      "missing_value": "NULL",
+      "status_column": "canonical_current_A_g_status"
+    },
+    {
+      "name": "current_mass_basis",
+      "meaning": "循环电流分母定义；不得从电容公式推断",
+      "missing_value": "NULL",
+      "status_column": "current_mass_basis_status"
+    },
+    {
+      "name": "electrolyte",
+      "meaning": "该测试的电解液种类",
+      "missing_value": "NULL",
+      "status_column": "electrolyte_status"
+    },
+    {
+      "name": "concentration_mol_L",
+      "meaning": "有直接单位依据的摩尔浓度",
+      "missing_value": "NULL",
+      "status_column": "concentration_mol_L_status"
+    },
+    {
+      "name": "cycle_voltage_lower_V",
+      "meaning": "该长循环测试的下限电位/电压",
+      "missing_value": "NULL",
+      "status_column": "cycle_voltage_lower_V_status"
+    },
+    {
+      "name": "cycle_voltage_upper_V",
+      "meaning": "该长循环测试的上限电位/电压",
+      "missing_value": "NULL",
+      "status_column": "cycle_voltage_upper_V_status"
+    },
+    {
+      "name": "characterization_voltage_lower_V",
+      "meaning": "方法/CV/GCD表征窗口下限，不自动继承给长循环",
+      "missing_value": "NULL",
+      "status_column": "characterization_voltage_lower_V_status"
+    },
+    {
+      "name": "characterization_voltage_upper_V",
+      "meaning": "方法/CV/GCD表征窗口上限",
+      "missing_value": "NULL",
+      "status_column": "characterization_voltage_upper_V_status"
+    },
+    {
+      "name": "reference_electrode",
+      "meaning": "三电极参比电极元信息",
+      "missing_value": "NULL",
+      "status_column": "reference_electrode_status"
+    },
+    {
+      "name": "BET_m2_g",
+      "meaning": "同一处理态成品的循环前BET面积",
+      "missing_value": "NULL",
+      "status_column": "BET_m2_g_status"
+    },
+    {
+      "name": "total_pore_volume_cm3_g",
+      "meaning": "明确为总孔体积的可选输入",
+      "missing_value": "NULL",
+      "status_column": "total_pore_volume_cm3_g_status"
+    },
+    {
+      "name": "raw_total_pore_volume_m3_g",
+      "meaning": "原印m³/g的争议值，不进入规范总孔输入",
+      "missing_value": "NULL",
+      "status_column": "raw_total_pore_volume_m3_g_status"
+    },
+    {
+      "name": "mass_loading_mg_cm2",
+      "meaning": "电极活性物质面积加载量",
+      "missing_value": "NULL",
+      "status_column": "mass_loading_mg_cm2_status"
+    },
+    {
+      "name": "baseline_reference",
+      "meaning": "原作者归一化参考与审查记录",
+      "missing_value": "NULL",
+      "status_column": "baseline_reference_status"
+    },
+    {
+      "name": "baseline_cycle",
+      "meaning": "只有明确报告时才填写的起始圈号",
+      "missing_value": "NULL",
+      "status_column": "baseline_cycle_status"
+    },
+    {
+      "name": "N_at_pct",
+      "meaning": "循环前N原子百分比，不与质量百分比混算",
+      "missing_value": "NULL",
+      "status_column": "N_at_pct_status"
+    },
+    {
+      "name": "O_at_pct",
+      "meaning": "循环前O原子百分比",
+      "missing_value": "NULL",
+      "status_column": "O_at_pct_status"
+    },
+    {
+      "name": "scope_flags",
+      "meaning": "材料范围、Si、单位、冲突及短测试标记",
+      "missing_value": "NULL",
+      "status_column": "scope_flags_status"
+    },
+    {
+      "name": "temperature_C",
+      "meaning": "测试温度元信息；不把同材料不同温度计作新材料",
+      "missing_value": "NULL",
+      "status_column": "temperature_C_status"
+    }
+  ],
+  "states": [
+    "not_yet_located_or_reviewed",
+    "inherited_review_limits",
+    "reported_direct_primary_passage",
+    "reported_direct_table",
+    "reported_direct_SI_visual",
+    "prior_candidate_protocol",
+    "conflict_unresolved",
+    "unit_conflict_table_vs_prose",
+    "printed_unit_conflict_canonical_withheld",
+    "qualitative_near100_no_exact_numeric_label"
+  ],
+  "all_states_keep_provenance": true
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "local-training-data-access-v1",
+  "database_file": "cycling_v0_4.sqlite",
+  "parent": "../循环稳定性数据库_v0.3_合并版_20261017/cycling_v0_3_merged.sqlite",
+  "target": "capacitance_retention_pct_at_requested_cycle_count_and_conditions",
+  "research_training_authorized": false,
+  "priority_system": "3E",
+  "read_only_api": true,
+  "core_features": [
+    "cycle_count",
+    "canonical_current_A_g",
+    "electrolyte",
+    "concentration_mol_L",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V",
+    "BET_m2_g"
+  ],
+  "optional_features": [
+    "total_pore_volume_cm3_g"
+  ],
+  "reported_protocol_current": "reported_current_A_g",
+  "forbidden_predictors": [
+    "endpoint_id",
+    "identity_key",
+    "material_id",
+    "test_id",
+    "source_group",
+    "source_year",
+    "sample_name",
+    "retention_pct",
+    "retention_relation",
+    "workflow_status",
+    "post_cycle_EIS",
+    "post_cycle_XPS"
+  ],
+  "profiles": {
+    "strict_2e": "training_ready_2e",
+    "strict_3e": "training_ready_3e",
+    "review_3e": "53 prioritized evidence records; pending admission",
+    "all_review": "mixed systems for review only",
+    "proposal_2e": "inherited exact reported-protocol8; unknown physical current denominator"
+  },
+  "missingness": "NULL remains unknown; field status distinguishes unreviewed, not located, conflicting, qualitative and derived",
+  "voltage_rule": "characterization windows are not substituted for cycle-specific windows",
+  "source_group_rule": "same-paper samples/currents/electrolytes/horizons stay together; known inherited cross-paper groups retained; new-source grouping not independence clearance",
+  "strict_admission": "No new approvals; records must pass own-source identity, material/scope, exact label, actual cycle conditions, current denominator, baseline and source-independence review. Existing freezes preserved.",
+  "strict_3e_contract_status": "preparation_gate_only; final scientific protocol and real-training authorization still required",
+  "machine_preextraction": "native_measurement_claims are isolated unreviewed leads and never training rows"
+}
