@@ -1,0 +1,1463 @@
+{
+  "all_checks_passed": true,
+  "parent_check_count": 3693,
+  "parent_protected_file_count": 3214,
+  "new_check_count": 356,
+  "cohorts": {
+    "reported_3e": {
+      "records": 21,
+      "source_groups": 13,
+      "features": 8,
+      "fingerprint": "abb23d43083f9568ba92d37d7eba2211a754a28bebd5e21db2ee3223cc3c4361"
+    },
+    "reported_2e": {
+      "records": 11,
+      "source_groups": 11,
+      "features": 7,
+      "fingerprint": "2d99bf9da1d381d7e75025fb4ba1c639caa713bf289335d0d44ca081a81ae4af"
+    },
+    "reported_2e_residue": {
+      "records": 13,
+      "source_groups": 12,
+      "features": 7,
+      "fingerprint": "7f51c6724b2f9ddb16d1950b8064cf6a015b3edea034729a56283e61ea032d91"
+    },
+    "reported_2e_approx": {
+      "records": 14,
+      "source_groups": 13,
+      "features": 7,
+      "fingerprint": "8d15182d05f7faa144ee726c8355dd8abc1b92f6a7c197a1aabf13a06e614f00"
+    }
+  },
+  "new_main_3e_records": 7,
+  "new_main_3e_source_groups": 4,
+  "new_candidate_identities": 13,
+  "all_candidates_admitted": false,
+  "research_fits": 0,
+  "checks": [
+    {
+      "check": "sqlite_integrity",
+      "passed": true
+    },
+    {
+      "check": "foreign_keys",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:metadata",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:papers",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_files",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:ingestion_sources",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:raw_records",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:materials",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:material_observations",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:cycling_tests",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:cycling_endpoints",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:endpoint_features",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:field_evidence",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:issues",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:admissions",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_relationships",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:review_events",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:revision_changes",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:record_blockers",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:endpoint_protocol_overrides",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:validation_links",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:review_batches",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:issue_resolutions",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:utilization_routes",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:paper_utilization",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:staged_recovery_endpoints",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_group_reviews",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:validation_group_assignments",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:blocker_scopes",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:mass_definition_audits",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:admission_decisions_r3",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:profile_admissions_r4",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:domain_reviews_r4",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:profile_definitions_r4",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:merge_contract",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:merge_input_files",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:literature_registry",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:literature_observations",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:literature_aliases",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:staged_cycling_evidence",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:merge_conflicts",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:current_field_evidence",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:current_baseline_evidence",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:profile_blocker_dispositions",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:unified_source_groups",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:literature_availability",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:candidate_review_holds",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:document_sources",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:document_locations",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:paper_documents",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_segments",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_search",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_search_data",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_search_idx",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_search_docsize",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:source_search_config",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:extraction_queue",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:extraction_leads",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:model_materials",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:model_tests",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:model_endpoints",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:endpoint_aliases",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:material_properties",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:extraction_issues",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:admission_reviews",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:candidate_measurement_claims",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:extraction_issue_resolutions",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:material_identity_aliases",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:native_measurement_claims",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:paper_source_reviews",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:native_claim_adjudications",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:bibliography_reviews",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:endpoint_metadata_changes",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:review_search_audit",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:record_admission_checks",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:admission_review_history",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:record_gate_outcomes",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:prior_admission_view_sql",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:gate_evidence_link_updates",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:reported_record_reviews_v06",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:reported_route_policy_v06",
+      "passed": true
+    },
+    {
+      "check": "inherited_table:reported_issue_dispositions_v06",
+      "passed": true
+    },
+    {
+      "check": "append_only:field_observations",
+      "passed": true
+    },
+    {
+      "check": "append_only:field_selection_history",
+      "passed": true
+    },
+    {
+      "check": "append_only:extraction_run",
+      "passed": true
+    },
+    {
+      "check": "append_only:reported_training_rows_v06",
+      "passed": true
+    },
+    {
+      "check": "append_only:source_visual_reviews_v06",
+      "passed": true
+    },
+    {
+      "check": "admission_change_chain:candidate:V05:018",
+      "passed": true
+    },
+    {
+      "check": "admission_change_chain:candidate:TE052",
+      "passed": true
+    },
+    {
+      "check": "admission_change_chain:candidate:V05:008",
+      "passed": true
+    },
+    {
+      "check": "admission_change_chain:candidate:V05:009",
+      "passed": true
+    },
+    {
+      "check": "admission_change_chain:candidate:V05:010",
+      "passed": true
+    },
+    {
+      "check": "admission_change_chain:candidate:V05:011",
+      "passed": true
+    },
+    {
+      "check": "admission_change_chain:legacy:SRC025_CY01",
+      "passed": true
+    },
+    {
+      "check": "seven_admission_changes_only",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:5999",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6000",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6001",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6002",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6003",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6004",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6005",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6006",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6007",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6008",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6009",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6010",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6011",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6012",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6013",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6014",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6015",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6016",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6017",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6018",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6019",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6020",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6021",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6022",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6023",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6024",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6025",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6026",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6027",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6028",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6029",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6030",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6031",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6032",
+      "passed": true
+    },
+    {
+      "check": "field_change_chain:6033",
+      "passed": true
+    },
+    {
+      "check": "selection_chain_final",
+      "passed": true
+    },
+    {
+      "check": "cache_matches_selection",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:shape",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:export",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:legacy:R078_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:legacy:SRC025_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE031",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:V05:008",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:V05:009",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:V05:010",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:V05:011",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE029",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE030",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE035",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE021",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE022",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE023",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE024",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE025",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE033",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE034",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE007",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE020",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:V05:018",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:group:candidate:TE052",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_weights",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:0",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:1",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:2",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:3",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:4",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:5",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:6",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:7",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:8",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:9",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:10",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:11",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:source_fold:12",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:held_once",
+      "passed": true
+    },
+    {
+      "check": "reported_3e:csv",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:shape",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:export",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:unchanged",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:R091_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:R111_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:SRC035_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:R107_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:R104_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:SRC124_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:R093_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:legacy:R103_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:candidate:V05:014",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:candidate:V05:015",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:group:candidate:V05:019",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_weights",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:0",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:1",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:2",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:3",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:4",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:5",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:6",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:7",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:8",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:9",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:source_fold:10",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:held_once",
+      "passed": true
+    },
+    {
+      "check": "reported_2e:csv",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:shape",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:export",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:unchanged",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R091_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R111_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R112_CY02",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R112_CY03",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:SRC035_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R107_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R104_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:SRC124_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R093_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:legacy:R103_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:candidate:V05:014",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:candidate:V05:015",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:group:candidate:V05:019",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_weights",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:0",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:1",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:2",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:3",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:4",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:5",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:6",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:7",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:8",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:9",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:10",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:source_fold:11",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:held_once",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_residue:csv",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:shape",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:export",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:unchanged",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R091_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R111_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R112_CY02",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R112_CY03",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:SRC035_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R107_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R104_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:SRC124_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R093_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R020_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:legacy:R103_CY01",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:candidate:V05:014",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:candidate:V05:015",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:group:candidate:V05:019",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_weights",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:0",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:1",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:2",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:3",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:4",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:5",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:6",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:7",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:8",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:9",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:10",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:11",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:source_fold:12",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:held_once",
+      "passed": true
+    },
+    {
+      "check": "reported_2e_approx:csv",
+      "passed": true
+    },
+    {
+      "check": "derived_label:TE036",
+      "passed": true
+    },
+    {
+      "check": "derived_label:TE037",
+      "passed": true
+    },
+    {
+      "check": "derived_label:TE038",
+      "passed": true
+    },
+    {
+      "check": "no_fake_concentration_correction:V05_008",
+      "passed": true
+    },
+    {
+      "check": "no_fake_concentration_correction:V05_009",
+      "passed": true
+    },
+    {
+      "check": "no_fake_concentration_correction:V05_010",
+      "passed": true
+    },
+    {
+      "check": "no_fake_concentration_correction:V05_011",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:V05:017",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:TE009",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:V05:022",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:TE032",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:legacy:SRC126_CY01",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:legacy:R045_CY01",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:TE010",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:TE036",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:TE037",
+      "passed": true
+    },
+    {
+      "check": "pending_not_admitted:candidate:TE038",
+      "passed": true
+    },
+    {
+      "check": "candidate_counts",
+      "passed": true
+    },
+    {
+      "check": "new_article_types",
+      "passed": true
+    },
+    {
+      "check": "candidate_fulltext_search",
+      "passed": true
+    },
+    {
+      "check": "unchanged_preprocessor",
+      "passed": true
+    },
+    {
+      "check": "no_research_training",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6029",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6030",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6031",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6032",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6033",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6034",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6035",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6036",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6037",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6038",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6039",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6040",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6041",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6042",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6043",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6044",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6045",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6046",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6047",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6048",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6049",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6050",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6051",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6052",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6053",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6054",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6055",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6056",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6057",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6058",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6059",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6060",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6061",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6062",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6063",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6064",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6065",
+      "passed": true
+    },
+    {
+      "check": "own_source_observation:6066",
+      "passed": true
+    },
+    {
+      "check": "visual:同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/figures/molecules-31-02329-g004.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA059/figures/nanomaterials-13-01654-g007.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:循环稳定性数据库_v0.6_报告工况训练就绪_20261018/evidence_images/U002_p16.png",
+      "passed": true
+    },
+    {
+      "check": "visual:循环稳定性数据库_v0.6_报告工况训练就绪_20261018/evidence_images/U013_p8.png",
+      "passed": true
+    },
+    {
+      "check": "visual:循环稳定性数据库_v0.6_报告工况训练就绪_20261018/evidence_images/U024_p9.png",
+      "passed": true
+    },
+    {
+      "check": "visual:三电极端点扩充_20261018/new_sources/PMC12794195/assets/d5ra08165c-f4.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:三电极端点扩充_20261018/new_sources/PMC10056672/assets/micromachines-14-00572-g008.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:三电极端点扩充_20261018/new_sources/PMC10759806/assets/d3ra07014j-f7.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:循环稳定性数据库_v0.6_报告工况训练就绪_20261018/evidence_images/B_R078_p6.png",
+      "passed": true
+    },
+    {
+      "check": "visual:循环稳定性数据库_v0.6_报告工况训练就绪_20261018/evidence_images/PPC_p12.png",
+      "passed": true
+    },
+    {
+      "check": "visual:同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA011/figures/d5ra01262g-f8.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/figures/polymers-15-04478-g007.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA043/figures/nanomaterials-13-02431-g006.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:三电极端点扩充_20261018/new_sources/PMC12158216/assets/polymers-17-01544-g006.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/figures/ao3c04692_0008.jpg",
+      "passed": true
+    },
+    {
+      "check": "visual:数据补充_v07_20261018/evidence_images/AC3_p7.png",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12232101",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12128159",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12750383",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC13182528",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC13527080",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC13227491",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12444587",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12251755",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC13516699",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC13363457",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12348096",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12388389",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12242611",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC13339986",
+      "passed": true
+    },
+    {
+      "check": "collected_xml:PMC12942665",
+      "passed": true
+    },
+    {
+      "check": "collected_asset_zip:PMC10342388",
+      "passed": true
+    },
+    {
+      "check": "collected_asset_zip:PMC12444587",
+      "passed": true
+    }
+  ]
+}
