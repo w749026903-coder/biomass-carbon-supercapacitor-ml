@@ -1,0 +1,42 @@
+{
+  "schema": "merged-preparation-v1",
+  "merged_at": "2026-10-18T14:30:53+08:00",
+  "directory_date_is_original_plan_date": true,
+  "database_file": "cycling_v0_3_merged.sqlite",
+  "target": "capacitance_retention_pct_at_specified_cycles_and_conditions",
+  "literature_search_priority": "3E",
+  "strict_model_scope": "2E_symmetric_GCD_canonical_current",
+  "public_training_view": "training_ready",
+  "reported_protocol_proposals": [
+    "literature_core7_exact",
+    "literature_residue_sensitivity",
+    "literature_approx_sensitivity"
+  ],
+  "reported_protocol_semantics": "author_reported_descriptor_not_calibrated_current",
+  "reported_protocol_profiles_are_nested": true,
+  "new_literature_lifecycle": "candidate_staging_only",
+  "research_training_authorized": false,
+  "research_fit_calls": 0,
+  "archive_changes_authorized": false,
+  "field_conflict_policy": "preserve_each_observation_and_provenance_hold_unresolved",
+  "current_denominator_policy": "never_infer_from_capacitance_equation",
+  "parent_database": "循环稳定性数据库_v0.3_数据库优化_20261017/第四轮_专业复核与训练数据_20261017/cycling_v0_3r4.sqlite",
+  "parent_sha256": "66c8555bcd9583ea7f30afec1c174ea780c2102eeed363ea9f428f9f95bc83ad",
+  "baseline_database_sha256": "35d4bbf895501ec306ea215b40f865cc5d1da4e7959173d73e279dd3eaaa22fa",
+  "baseline_model_contract_sha256": "63db1238c429d6a26b2467e529e9ebc589e70487e1def3d5108803cbc5e3ade5",
+  "physical_core_inputs": [
+    "cycle_count",
+    "current_density_A_g",
+    "electrolyte",
+    "concentration_value",
+    "voltage_lower_V",
+    "voltage_upper_V",
+    "BET_m2_g"
+  ],
+  "optional_input": "total_pore_volume_cm3_g",
+  "canonical_current_basis": "two_electrode_total_active_mass",
+  "concentration_unit": "mol/L",
+  "three_electrode_model_contract_status": "requires_separate_record_review_and_contract",
+  "proposal_training_view": "proposal_training_ready_r4",
+  "legacy_metadata_policy": "metadata table retained verbatim as history; merge_contract table is current release contract"
+}
