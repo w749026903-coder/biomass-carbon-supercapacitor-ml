@@ -59,3 +59,11 @@
 - 验证：8516项技术核验；270主文SI、7164片段、179篇全文扫描；3E BET5至40、总孔3至22，49条报告电流；3118个保护文件、父库全表和原件未改；严格2E/3E均0、真实拟合0
 - 下一步/未决：138篇按逐记录队列复核；495自动线索隔离；13条优先BET与18个本轮问题待实证处理；不放宽电流分母、体系或独立性准入
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-18T16:01:27+08:00：继续提取与逐条准入审查：新增35条，累计191条；全部准入目标尚未完成
+
+- 结果：继续提取与逐条准入审查：新增35条，累计191条；全部准入目标尚未完成
+- 文件：循环稳定性数据库_v0.5_逐条准入审查_20261018, tools/review_admission_v05_20261018.py, tools/append_own_endpoints_v05_20261018.py, tools/build_admission_gates_v05_20261018.py, tools/complete_reference_review_v05_20261018.py, tools/review_bibliographic_dates_v05_20261018.py, tools/finalize_admission_v05_20261018.py, data/current_database.json, data/pointer_history/current_database_v04_20261018.json, README.md, docs/CURRENT_STATE.md, docs/v05_followup_primary_evidence_20261018.md, docs/v05_followup_primary_figure_review_20261018.json
+- 验证：20618项封版技术核验及20666项只读复核通过；3165个保护文件哈希不变；6876个门槛单元；稳定API、45文档链接和7脚本语法验证；另继续核读2张优先原图与方法；严格2E和3E均0，真实拟合0
+- 下一步/未决：继续电流真实质量分母、循环基线、材料范围、前作与原图SI终审；56条已有失败项，112条仍待证据，23条其它系统单列；AO-PC及ACP-800方法疑点另存跟进，不放宽准入
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
