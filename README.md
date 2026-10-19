@@ -5,7 +5,7 @@
 ## Agent 接手顺序
 
 1. 阅读根目录 [AGENTS.md](AGENTS.md)。
-2. 阅读 [知识与经验](docs/KNOWLEDGE_BASE.md)、[当前状态与版本入口](docs/CURRENT_STATE.md)，再读 [任务进度](docs/PROGRESS.md)。
+2. 阅读 [工作区与接续记忆](docs/WORKSPACE_MEMORY.md)、[知识与经验](docs/KNOWLEDGE_BASE.md)、[当前状态与版本入口](docs/CURRENT_STATE.md)，再读 [任务进度](docs/PROGRESS.md)。
 3. 根据任务进入对应目录，先读该批次的README、交接和 `merge_manifest.json`。
 4. 旧的 `NEXT_CHAT_*` 和 `READ_ME_FIRST_FOR_NEXT_CHAT.md` 保留历史；遇到与新指令冲突的内容，以用户最新要求和 `docs/CURRENT_STATE.md` 的版本区分为准。
 
