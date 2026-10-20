@@ -99,3 +99,11 @@
 - 验证：逐文件核对授权范围、忽略规则和哈希；清理后3214原文件、v0.7及父版454加3693项、576文献封版载荷保护通过；81本地链接与敏感内容检查通过
 - 下一步/未决：按WORKSPACE_MEMORY稳步接续；补95项正文/SI后逐测试审查；外部文献库完整直接调用入口尚未实施；不训练、不删历史交付
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-20T23:24:07+08:00：本地完成80份新增原文分类、82条逐测试观察与18条准入；v0.8已核验
+
+- 结果：本地完成80份新增原文分类、82条逐测试观察与18条准入；v0.8已核验
+- 文件：README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_INDEX.md, docs/knowledge/新增原文逐测试审查经验_20261020.md, data/current_database.json, tools/intake_literature_batch.py, tools/inspect_literature_batch.py, tools/build_incoming_release_20261020.py, tools/verify_incoming_v08_20261020.py, 新增文献整理_20261020, 循环稳定性数据库_v0.8_新增文献整理_20261020
+- 验证：441项本轮检查及旧版4147项检查通过；98历史表、3214保护文件和33外部输入不变；原文/ZIP成员、SQLite外键、矩阵、去重与来源分组通过；拟合0
+- 下一步/未决：64条待核或范围外观察保留；继续补45正文与6SI组件任务，不自动放宽准入
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

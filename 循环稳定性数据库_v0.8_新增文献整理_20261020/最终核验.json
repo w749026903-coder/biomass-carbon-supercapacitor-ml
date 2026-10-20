@@ -1,0 +1,880 @@
+{
+  "all_technical_checks_passed": true,
+  "check_count": 441,
+  "inherited_v07_check_counts": {
+    "parent_check_count": 3693,
+    "parent_protected_file_count": 3214,
+    "new_check_count": 454
+  },
+  "external_input_files_unchanged": 33,
+  "original_PDF_contents_verified": 80,
+  "inherited_table_count": 98,
+  "historical_tables": {
+    "admission_decisions_r3": {
+      "rows": 89,
+      "sha256": "984e01d4a5d5abdb04fdbfb54b0d34e126b20bbf2455b77dcd0d004ace8b4c4e"
+    },
+    "admission_review_history": {
+      "rows": 792,
+      "sha256": "bacf44a1db90469107df50f60aec771bccf9ab611b460c6ca5b3dcec9c45b82f"
+    },
+    "admission_reviews": {
+      "rows": 382,
+      "sha256": "fe4cad449c856cb3f997bada3bb1119cee3be6c5ade75fa4531e0a7c6707bc86"
+    },
+    "admissions": {
+      "rows": 89,
+      "sha256": "67dbf149320422d8db8bd7c1f367073a97dadb1e0c51fe931f28b12165dde68b"
+    },
+    "bibliography_reviews": {
+      "rows": 12,
+      "sha256": "1b54e20f88d5f53eff159afb0c259b7c0e58d294bc0189c8a77ddac93525e00d"
+    },
+    "blocker_scopes": {
+      "rows": 624,
+      "sha256": "9ec5d102a1c9bb55f7fa3699fbcdb7de13ca35c8e31cfec76cc7631b325f2df3"
+    },
+    "candidate_measurement_claims": {
+      "rows": 70,
+      "sha256": "560bf6560baa7e4b2d36a54b08cd2c6903af62d6b6f9dfacdf6af1e594883037"
+    },
+    "candidate_review_holds": {
+      "rows": 366,
+      "sha256": "b8efe3659249c8d21ec0b692e551e273cb888b900a8b8fddb39cb2a0966203a6"
+    },
+    "candidate_search_v07": {
+      "rows": 902,
+      "sha256": "5da496f0d78fa7a72536ed9b42dcccb994373def91edf44a19a6cd55c5537b95"
+    },
+    "candidate_search_v07_config": {
+      "rows": 1,
+      "sha256": "3cffaf3719ec9fa128d45d7b940210ce29d8fb017cfd43ba5df8c0eb3648ace1"
+    },
+    "candidate_search_v07_data": {
+      "rows": 92,
+      "sha256": "2016193a866920aba8617189dcedd2eaa9e515374d20b303c5033c471eabc426"
+    },
+    "candidate_search_v07_docsize": {
+      "rows": 902,
+      "sha256": "e6584fbdcbba44a607b4aa90c282109ac268598ec49c8699445f5d471a564c42"
+    },
+    "candidate_search_v07_idx": {
+      "rows": 87,
+      "sha256": "30cba82f397e8e817ca492f74ef3b717d066154e97adffd78181e9e757927371"
+    },
+    "candidate_source_segments_v07": {
+      "rows": 902,
+      "sha256": "5a2e0606af190b0c6e4ff48e041d61a4339dc6313bf5965c9b479432cd3c9c62"
+    },
+    "candidate_sources_v07": {
+      "rows": 15,
+      "sha256": "9803185119d36075e23a63947699a41e1a9676e88dc9440c7e8e99a651d7a42b"
+    },
+    "current_baseline_evidence": {
+      "rows": 89,
+      "sha256": "aa369ec405d9e23584a226397120602d2fd47ad2054deb8ab6dab81cc258a838"
+    },
+    "current_field_evidence": {
+      "rows": 2492,
+      "sha256": "133e76dc57f81d405dcff7863c6371402978e02d789519af44733bcd40d2427e"
+    },
+    "cycling_endpoints": {
+      "rows": 89,
+      "sha256": "f20ad9918efd808327b999d8063f522c8b658e99aa3eab55b3105548e6f3f1f0"
+    },
+    "cycling_tests": {
+      "rows": 83,
+      "sha256": "c5622fca0a99331aa909f6e91b40baf6fb2c857ceb3e086bac6946a2fb441309"
+    },
+    "document_locations": {
+      "rows": 367,
+      "sha256": "05c05c47d534e377f36a5ea26533e2dd8572eb155196c7abd6b729d2f9970618"
+    },
+    "document_sources": {
+      "rows": 270,
+      "sha256": "6e16f0adb321245f2f33e8282782a8bb3d595b3a4c2c51e3943027c04908f6dc"
+    },
+    "domain_reviews_r4": {
+      "rows": 17,
+      "sha256": "c74b919cbd75fbd83a5a13adf288b0fc8ac14442405399c966e8863c63c47a6b"
+    },
+    "endpoint_aliases": {
+      "rows": 198,
+      "sha256": "705f17e55a2026382c043f404cbef3693f5fb44983894963992351ce0b943844"
+    },
+    "endpoint_features": {
+      "rows": 89,
+      "sha256": "fc52e59c6dad4e182bea6fe09b080447743e47d67dae30ff34160c9074309e38"
+    },
+    "endpoint_metadata_changes": {
+      "rows": 18,
+      "sha256": "5bff529f0c428f3430fdcef2bde218cfd9998142499c6b5b76840a7b08051a79"
+    },
+    "endpoint_protocol_overrides": {
+      "rows": 2,
+      "sha256": "e6ed05951b88eb84b7589b34ccec32942fe52f2c997debd55545c4b25c4ef305"
+    },
+    "extraction_issue_resolutions": {
+      "rows": 8,
+      "sha256": "bb73c0bf64ce69b84e8ca5b9b4ed9d1ca15b9866ddcd8581b1b18e4eaddb3878"
+    },
+    "extraction_issues": {
+      "rows": 27,
+      "sha256": "2e66934bf546523cc8238b3bf45c45a984e852bcdcb94a72bcdc736eb1228869"
+    },
+    "extraction_leads": {
+      "rows": 809,
+      "sha256": "ae91c5717cfb7ecd469ed7e01b30c2647d694a44fc0629ee8c247cc2db7a3235"
+    },
+    "extraction_queue": {
+      "rows": 226,
+      "sha256": "ad5d46ed7cd3679f56f8c603c6cfbdbb69465c3e20fd1e1ed57b4be1ca706e91"
+    },
+    "extraction_run": {
+      "rows": 17,
+      "sha256": "664eee1dfc804276c8aec11c90b1a49a71a57d8de9159f58d4bd281be7cd26cd"
+    },
+    "feature_cache_meta": {
+      "rows": 2,
+      "sha256": "16ce89186fe8a197ab1097a094b9a5e4b7800276ca3628a77a489990d9b5e093"
+    },
+    "field_evidence": {
+      "rows": 2492,
+      "sha256": "e2de2688c348b28a5639e645decad52c4d680eac7f413ad261e71affea78e1f6"
+    },
+    "field_observations": {
+      "rows": 6066,
+      "sha256": "24b416a995bd6a4c46d982a3ceb2ebb2a5d3bda7032b40623be2ce5714b1bfdf"
+    },
+    "field_selection": {
+      "rows": 4467,
+      "sha256": "0c4bd3d82ea00b5e6727bd9ca972dc04831b97cd9da8e5fe1e0cee12af19c715"
+    },
+    "field_selection_history": {
+      "rows": 6033,
+      "sha256": "35e050e9c8dacc000fe95935263bb6bd55259a9d6eeeeef0e260b8b62a2970a3"
+    },
+    "gate_evidence_link_updates": {
+      "rows": 44,
+      "sha256": "48cc5d3bdc34d836c4f9adcb0770441be165fb7c89720e8feb0d7e4cbccddc70"
+    },
+    "ingestion_sources": {
+      "rows": 2,
+      "sha256": "5802a0fb42b909938ae834d77cacd9527adf5b9d1593bc643aa845e6e04bcb16"
+    },
+    "issue_resolutions": {
+      "rows": 3,
+      "sha256": "36415bd555023474157ad974129825c8662ed8b74f16d2e09b53e59e84a593d8"
+    },
+    "issues": {
+      "rows": 245,
+      "sha256": "fa408c8fd8b90d45e136adfea3072693a29ef5124fe9723b08fb5a9961cee5c1"
+    },
+    "literature_aliases": {
+      "rows": 496,
+      "sha256": "498d7901fac54f561d8797ebb04f064bd7c1134a09d7ef2f45aac27e6e4654c3"
+    },
+    "literature_availability": {
+      "rows": 226,
+      "sha256": "3ca4089a7aabde6a730ca3b18002410d2b26f76a679394745328fdbdd55802bd"
+    },
+    "literature_observations": {
+      "rows": 492,
+      "sha256": "f0ecf9b107416eb7f7e98f66de783e77e39b8b4bb8da6f11871e9617e4ddf76a"
+    },
+    "literature_registry": {
+      "rows": 226,
+      "sha256": "14157b34bce05d4bb3ca72ab238ae68ee3e2d0665baadc8b07c963c8ce52948a"
+    },
+    "mass_definition_audits": {
+      "rows": 10,
+      "sha256": "2a95d67dfd0183fc119712283924c4d6972f1b159291e345a628561876fe140c"
+    },
+    "material_identity_aliases": {
+      "rows": 2,
+      "sha256": "d1cff8461b25d7b4ec8e615934f52c02bc44cd2e3306c6732abbd9cc6cb12013"
+    },
+    "material_observations": {
+      "rows": 134,
+      "sha256": "146da5bba9e0a961da695fdc811cdb71cd037058f3da063bb365505656c8c7d2"
+    },
+    "material_properties": {
+      "rows": 126,
+      "sha256": "257e4d82f6367def4ee1de595ec3b7cffa2873d0c5a5b5a50e58494ce66a8435"
+    },
+    "materials": {
+      "rows": 67,
+      "sha256": "c6a9ce84588697fabc2c16ea600de00e0f22b7dead57944ae2491734b52fb3ae"
+    },
+    "merge_conflicts": {
+      "rows": 63,
+      "sha256": "526a956bdf7f554d48dbc19a395cb811166c829da2932c425d7ec684630ee7b2"
+    },
+    "merge_contract": {
+      "rows": 28,
+      "sha256": "971e28b90d8b58854153bb4118a58b4719b71364918bd6d1b6083e4956bc691d"
+    },
+    "merge_input_files": {
+      "rows": 2702,
+      "sha256": "960e47c2f441467252003368697a627b209435885efc7b652b12b557b0ac8b71"
+    },
+    "metadata": {
+      "rows": 13,
+      "sha256": "eb70959852ddfb542e22a752e9c10f83275af93be9b62db7a3f53eb3e4a4e90a"
+    },
+    "model_endpoints": {
+      "rows": 191,
+      "sha256": "f293aea6a1c7b9922c9216d3ff6cb6051e78a18a4f807f7065e63a5fad8e73c2"
+    },
+    "model_feature_cache": {
+      "rows": 191,
+      "sha256": "9f032a6961bd5c75dcfa076e1788de37caa96d65541f6e6aa78c1502dcb1a5a8"
+    },
+    "model_materials": {
+      "rows": 214,
+      "sha256": "c5d12bf31914b2caa58acc43c7df0b0049d159ad9d908dcf79f59d51900b0c7d"
+    },
+    "model_tests": {
+      "rows": 185,
+      "sha256": "ea939cfe2dca11053a8f49f9878e0941ba024b63f48ea986b267e39a597a0dd4"
+    },
+    "native_claim_adjudications": {
+      "rows": 146,
+      "sha256": "f2b3c54d578e677fdaf6ffe36db045f52499f36bd4fdec6deb3eac0e04cf157a"
+    },
+    "native_measurement_claims": {
+      "rows": 495,
+      "sha256": "5c6d25ac50e9ddb4913f7a97dab97a59e52951154d4c3a16794f25d235c249d0"
+    },
+    "paper_documents": {
+      "rows": 280,
+      "sha256": "641e60b9339bda9be5302b2fedc04b76691c6fb05e423bce5eb95949076f1365"
+    },
+    "paper_source_reviews": {
+      "rows": 81,
+      "sha256": "bc4a29ac073008a325d3df025c417136e7a380608f2f2fcbef20b2bf71cb1790"
+    },
+    "paper_utilization": {
+      "rows": 126,
+      "sha256": "8e9f5386cf63deea8cef1bd01cc418cc906e131bece55ffa9a66fc875ceb6d2a"
+    },
+    "papers": {
+      "rows": 126,
+      "sha256": "d18d40507b089366ef03d173b991caa6eeb9712bdec9fffe655b660c4ded821c"
+    },
+    "prior_admission_view_sql": {
+      "rows": 2,
+      "sha256": "ad8f509d02a24aa98c93458c246a295acd3666314def6ecc7eb963ea0753380a"
+    },
+    "profile_admissions_r4": {
+      "rows": 267,
+      "sha256": "12dc9ab20d757be0358138f02152b93a7608e18f14188e3350daafca98c06070"
+    },
+    "profile_blocker_dispositions": {
+      "rows": 58,
+      "sha256": "5d1756da4d7f45411388d7440d37b909f5416477825025026b4eed471a55f1c4"
+    },
+    "profile_definitions_r4": {
+      "rows": 3,
+      "sha256": "6ce5436b715312679f403167b96994746ad8cfadc37c9828894be90a986f360a"
+    },
+    "raw_records": {
+      "rows": 89,
+      "sha256": "5057edadf84aa07c24fca6816625e963b96828bc7aa0b98406224a9317913dd8"
+    },
+    "record_admission_checks": {
+      "rows": 6876,
+      "sha256": "d6907717bf4165ce8e18c5a0c2c17fa7d0586aec37c432a50d1647074ca1bf6c"
+    },
+    "record_blockers": {
+      "rows": 624,
+      "sha256": "096c6e1884d0fd5e991a98b1a8f1f26e9792c77c6dd47807962497f1415a88a2"
+    },
+    "record_expansion_reviews_v07": {
+      "rows": 17,
+      "sha256": "fcb1315723489be706fd331579faa9d1ae96ca6f396e4cae0ba3529ef6b9c4fa"
+    },
+    "record_gate_outcomes": {
+      "rows": 382,
+      "sha256": "891ba914593a106775513e2c2f5e94c6a03c2f202b768a10e3d7dfec8567f114"
+    },
+    "reported_admission_history_v07": {
+      "rows": 7,
+      "sha256": "986f27ddf2c3a407acc8a04da2304cae79e8c1404bc2e13e6e481a3decc5428b"
+    },
+    "reported_issue_dispositions_v06": {
+      "rows": 2,
+      "sha256": "2f7dda94d77f6bc578b99d641b0e025fc40ca54824c6e4f73a6ff51ae427186e"
+    },
+    "reported_profile_admissions_v06": {
+      "rows": 218,
+      "sha256": "2a59f3279625391478a6c5b5d6a62f4551563189991b696cc2238b2a78e6f819"
+    },
+    "reported_record_reviews_v06": {
+      "rows": 19,
+      "sha256": "ca0e10ff40d331f4bf4c6ee381b2bc313c27c49ec4ecbecc68d503a7d4ffc062"
+    },
+    "reported_route_policy_v06": {
+      "rows": 9,
+      "sha256": "aa123cc2c1e1d8c2ff25a7d3d1ee44845aad1a77c54abc4094b9d9d24baf522f"
+    },
+    "reported_training_rows_v06": {
+      "rows": 59,
+      "sha256": "9c5acdaf10bbc501ebaad882f59995e7c8ace81a90d464819baa149b4e363ec2"
+    },
+    "review_batches": {
+      "rows": 3,
+      "sha256": "c5c3490f53bcd1b582054fb5ce4bc6725f4ddc39ac8439432fdc1111903efcdc"
+    },
+    "review_events": {
+      "rows": 231,
+      "sha256": "9a78adaa473cc62b69f8818bd6be44eb5f97800d4972f1ddc52a3fc948bb8be7"
+    },
+    "review_search_audit": {
+      "rows": 2,
+      "sha256": "ba94ac9ac6d5bcae6c0bb2921b71afd3ca83e7507e7ab1216293ad207b0aeb69"
+    },
+    "revision_changes": {
+      "rows": 285,
+      "sha256": "ae94400598dd5c6dfa2c2e399a98426fdb2b182a516ac6eadb1c11f7f9fb7cc2"
+    },
+    "source_files": {
+      "rows": 141,
+      "sha256": "a8d32bff2787f6cb82b83d3b2f880736c50c030bf10a76fbce1674554fdab6fb"
+    },
+    "source_group_reviews": {
+      "rows": 8,
+      "sha256": "f4b3e536f7ace3011ced2a8f3e70c68fd888570e75741788d32f4e7d4591e120"
+    },
+    "source_relationships": {
+      "rows": 3,
+      "sha256": "29aa7336ae26ee0afa69ac93cac6c5c2eb815802bd425cdf2281b4847cf0b9fb"
+    },
+    "source_search": {
+      "rows": 7164,
+      "sha256": "7e10e928d11105e8a683cbe3945961239a6bf13d5630e2d46705b7853f272726"
+    },
+    "source_search_config": {
+      "rows": 1,
+      "sha256": "3cffaf3719ec9fa128d45d7b940210ce29d8fb017cfd43ba5df8c0eb3648ace1"
+    },
+    "source_search_data": {
+      "rows": 1426,
+      "sha256": "8e5bd97470782641ffad3e4573461b7868cab109115ff31b75916cfce082478f"
+    },
+    "source_search_docsize": {
+      "rows": 7164,
+      "sha256": "1129564017cfe087a9715025c3fa255e3c8cd39566a55269441ed71b26bffe72"
+    },
+    "source_search_idx": {
+      "rows": 1316,
+      "sha256": "30944c5bcf1ca477f80cf2f8236b19d1f48179afda8b0f4b84a788c1e78a9748"
+    },
+    "source_segments": {
+      "rows": 7164,
+      "sha256": "b45440df75d3872fd266976c57be3f878edfdf7dfe507d0abe333c79d38bba3f"
+    },
+    "source_visual_reviews_v06": {
+      "rows": 16,
+      "sha256": "67313c0ddbfca38d1ee5fe5e4a79642abae029b9cd9eb15bdf9bafd680c14b26"
+    },
+    "staged_cycling_evidence": {
+      "rows": 53,
+      "sha256": "65dafa520a9b285d8b9de390e39ff2072aed1381cf360b16bea59b1d3343338d"
+    },
+    "staged_recovery_endpoints": {
+      "rows": 3,
+      "sha256": "75da5864a19729bff061b8c3265e3642cc6ea26e5bdcf0c665f7eb79085d06b0"
+    },
+    "unified_source_groups": {
+      "rows": 226,
+      "sha256": "4e8f692afd7aef58daef069cf38fe05a886b6af16fe85312f31e1c0b4c977590"
+    },
+    "utilization_routes": {
+      "rows": 89,
+      "sha256": "c629fdd04f8b7f148510baae08b6478dfb86b86aa341bcd98fb9d30d8fbbebb2"
+    },
+    "validation_group_assignments": {
+      "rows": 89,
+      "sha256": "6770a3f46ccf7ad56fa0bd52bcf5e47cf1a5ae53d5c6f7c801259f9786fb8780"
+    },
+    "validation_links": {
+      "rows": 5,
+      "sha256": "6f60f041cdc288d753aafd03535bd5df063c719745e80745dafa8a0d7d7e9594"
+    }
+  },
+  "cohorts": {
+    "reported_3e": {
+      "records": 30,
+      "source_groups": 22,
+      "features": 8,
+      "fingerprint": "b0eca34c4d29ca0ba7c076b6ff286f91a49e4f33a2488151a73d3bf124ce26d3"
+    },
+    "reported_2e": {
+      "records": 20,
+      "source_groups": 17,
+      "features": 7,
+      "fingerprint": "ad3100d809ab84f453243f96417145165892caa6a19a61d6fc669b587004599c"
+    },
+    "reported_2e_residue": {
+      "records": 22,
+      "source_groups": 18,
+      "features": 7,
+      "fingerprint": "4a7ea248cb559618d2e72e4983d2d0c9ccd0a58d180e055f488d78855681741d"
+    },
+    "reported_2e_approx": {
+      "records": 23,
+      "source_groups": 19,
+      "features": 7,
+      "fingerprint": "2a02e7c4a43a36d94d719a9a8e3644daab6111e991957eb3830e508d04db9734"
+    }
+  },
+  "new_explicit_approvals": 18,
+  "pending_or_outside_observations": 64,
+  "all_records_scientifically_admitted": false,
+  "research_training_runs": 0,
+  "scientific_limits": "Technical integrity does not resolve pending SI, scope, preprint or conflicting scientific claims. Provided-main bounded review only.",
+  "checks": [
+    "parent_database_hash",
+    "inherited_v07_verification",
+    "integrity",
+    "foreign_keys",
+    "inherited_table:admission_decisions_r3",
+    "inherited_table:admission_review_history",
+    "inherited_table:admission_reviews",
+    "inherited_table:admissions",
+    "inherited_table:bibliography_reviews",
+    "inherited_table:blocker_scopes",
+    "inherited_table:candidate_measurement_claims",
+    "inherited_table:candidate_review_holds",
+    "inherited_table:candidate_search_v07",
+    "inherited_table:candidate_search_v07_config",
+    "inherited_table:candidate_search_v07_data",
+    "inherited_table:candidate_search_v07_docsize",
+    "inherited_table:candidate_search_v07_idx",
+    "inherited_table:candidate_source_segments_v07",
+    "inherited_table:candidate_sources_v07",
+    "inherited_table:current_baseline_evidence",
+    "inherited_table:current_field_evidence",
+    "inherited_table:cycling_endpoints",
+    "inherited_table:cycling_tests",
+    "inherited_table:document_locations",
+    "inherited_table:document_sources",
+    "inherited_table:domain_reviews_r4",
+    "inherited_table:endpoint_aliases",
+    "inherited_table:endpoint_features",
+    "inherited_table:endpoint_metadata_changes",
+    "inherited_table:endpoint_protocol_overrides",
+    "inherited_table:extraction_issue_resolutions",
+    "inherited_table:extraction_issues",
+    "inherited_table:extraction_leads",
+    "inherited_table:extraction_queue",
+    "inherited_table:extraction_run",
+    "inherited_table:feature_cache_meta",
+    "inherited_table:field_evidence",
+    "inherited_table:field_observations",
+    "inherited_table:field_selection",
+    "inherited_table:field_selection_history",
+    "inherited_table:gate_evidence_link_updates",
+    "inherited_table:ingestion_sources",
+    "inherited_table:issue_resolutions",
+    "inherited_table:issues",
+    "inherited_table:literature_aliases",
+    "inherited_table:literature_availability",
+    "inherited_table:literature_observations",
+    "inherited_table:literature_registry",
+    "inherited_table:mass_definition_audits",
+    "inherited_table:material_identity_aliases",
+    "inherited_table:material_observations",
+    "inherited_table:material_properties",
+    "inherited_table:materials",
+    "inherited_table:merge_conflicts",
+    "inherited_table:merge_contract",
+    "inherited_table:merge_input_files",
+    "inherited_table:metadata",
+    "inherited_table:model_endpoints",
+    "inherited_table:model_feature_cache",
+    "inherited_table:model_materials",
+    "inherited_table:model_tests",
+    "inherited_table:native_claim_adjudications",
+    "inherited_table:native_measurement_claims",
+    "inherited_table:paper_documents",
+    "inherited_table:paper_source_reviews",
+    "inherited_table:paper_utilization",
+    "inherited_table:papers",
+    "inherited_table:prior_admission_view_sql",
+    "inherited_table:profile_admissions_r4",
+    "inherited_table:profile_blocker_dispositions",
+    "inherited_table:profile_definitions_r4",
+    "inherited_table:raw_records",
+    "inherited_table:record_admission_checks",
+    "inherited_table:record_blockers",
+    "inherited_table:record_expansion_reviews_v07",
+    "inherited_table:record_gate_outcomes",
+    "inherited_table:reported_admission_history_v07",
+    "inherited_table:reported_issue_dispositions_v06",
+    "inherited_table:reported_profile_admissions_v06",
+    "inherited_table:reported_record_reviews_v06",
+    "inherited_table:reported_route_policy_v06",
+    "inherited_table:reported_training_rows_v06",
+    "inherited_table:review_batches",
+    "inherited_table:review_events",
+    "inherited_table:review_search_audit",
+    "inherited_table:revision_changes",
+    "inherited_table:source_files",
+    "inherited_table:source_group_reviews",
+    "inherited_table:source_relationships",
+    "inherited_table:source_search",
+    "inherited_table:source_search_config",
+    "inherited_table:source_search_data",
+    "inherited_table:source_search_docsize",
+    "inherited_table:source_search_idx",
+    "inherited_table:source_segments",
+    "inherited_table:source_visual_reviews_v06",
+    "inherited_table:staged_cycling_evidence",
+    "inherited_table:staged_recovery_endpoints",
+    "inherited_table:unified_source_groups",
+    "inherited_table:utilization_routes",
+    "inherited_table:validation_group_assignments",
+    "inherited_table:validation_links",
+    "external_original:D:\\文献\\新增\\2.zip",
+    "external_original:D:\\文献\\新增\\Aromatic biomass (torch ginger) leaf‐derived three‐dimensional honeycomb‐like carbon to enhance gravimetric supercapacitor.pdf",
+    "external_original:D:\\文献\\新增\\Birch-Derived Carbon Electrodes with Tunable Pore Structure for Aqueous Supercapacitors.pdf",
+    "external_original:D:\\文献\\新增\\Collagen-maturation-inspired pre-curing association and thermal network development of a tannic acid-based adhesive for reed composites.pdf",
+    "external_original:D:\\文献\\新增\\Deoxygenated lignin carbon aerogel with enhanced electrochemical performance in organic systems for supercapacitor applications.pdf",
+    "external_original:D:\\文献\\新增\\Dual S-Scheme Charge Transfer Pathway in gC3N4 Quantum DotsHKUST-1TiO2 Ternary Heterojunctions for Photocatalytic Pollutant Degradation.pdf",
+    "external_original:D:\\文献\\新增\\Effects of dry and wet torrefaction pretreatment on the physicochemical structure of corn stover-derived porous carbon and its performance in supercapacitor ….pdf",
+    "external_original:D:\\文献\\新增\\Enhanced Performance in Supercapacitor Supported by Corn Silk-Derived Porous Carbon.pdf",
+    "external_original:D:\\文献\\新增\\Fabrication of high-performance supercapacitor using biomass (Aegle marmelos's fruit shell)-derived activated carbon for sustainable energy storage.pdf",
+    "external_original:D:\\文献\\新增\\Free-standing N, S co-doped graphene aerogels coupled with Eucalyptus wood tar-based activated carbon and cellulose nanofibers for high-performance ….pdf",
+    "external_original:D:\\文献\\新增\\Green Production of Hookah Tobacco Waste-Derived Porous Carbon and Its Capacitive Performance.pdf",
+    "external_original:D:\\文献\\新增\\High-efficiency binding of lignin with cesium acetate Constructing porous carbon with ultrahigh specific surface area for supercapacitor electrode materials.pdf",
+    "external_original:D:\\文献\\新增\\Honeycomb-like microporous carbon derived from soybean straw for high-performance supercapacitor.pdf",
+    "external_original:D:\\文献\\新增\\Improving the Biocompatibility and Energy Performance of a Microbial Bioanode with Black Phosphorus and Polypyrrole Nanocomposites.pdf",
+    "external_original:D:\\文献\\新增\\In Situ Polymerization of PANI to Uniformly Coat Lignin-Based Carbon Fibers for High-Performance Supercapacitors.pdf",
+    "external_original:D:\\文献\\新增\\Injectable Biochar-Reinforced Alginate Hydrogels for Hemostasis under Wet and Deformable Conditions.pdf",
+    "external_original:D:\\文献\\新增\\Lignin-derived hierarchical porous carbon prepared using cellulose nanofibrils as templates for high-performance supercapacitors.pdf",
+    "external_original:D:\\文献\\新增\\Morphology and structure control of lignin-derived hierarchical porous carbon for high-performance supercapacitors.pdf",
+    "external_original:D:\\文献\\新增\\N, O co-doped micro-mesoporous carbon obtained by sustainable conversion of biomass waste for supercapacitors.pdf",
+    "external_original:D:\\文献\\新增\\Novel hierarchical porous carbon derived from biomass Citrus limetta pulp for high-performance quasi-solid-state supercapacitor electrodes.pdf",
+    "external_original:D:\\文献\\新增\\Peanut Oil Cake Biomass‐Derived Hierarchical Porous Carbon by Dual Step Activation as Potential Electrodes for Fabrication of Prototype Symmetric Supercapacitor ….pdf",
+    "external_original:D:\\文献\\新增\\Phosphorus-induced tuning of hierarchically porous N-doped lignin carbon material for boosting high-power supercapacitor performance.pdf",
+    "external_original:D:\\文献\\新增\\Plant and Seed Shell Waste-derived Porous Carbon for Supercapacitor Electrode A Review.pdf",
+    "external_original:D:\\文献\\新增\\Polyacrylonitrile enhanced celluloselignin-based porous carbon nanofibers for high-performance supercapacitor.pdf",
+    "external_original:D:\\文献\\新增\\Polyatomic self-doping millet-derived porous carbon for supercapacitor.pdf",
+    "external_original:D:\\文献\\新增\\Preparation of high-performance supercapacitor from Au nanoparticles decorated porous carbon by ultrasound irradiation.pdf",
+    "external_original:D:\\文献\\新增\\Pyrolysis-derived phosphorus-doped porous carbon from chestnut shell waste for supercapacitor and hydrogen generation applications.pdf",
+    "external_original:D:\\文献\\新增\\Self-Supporting Carbon Cotton as a Dual-Function Electrode-Current Collector for Symmetric a Supercapacitors.pdf",
+    "external_original:D:\\文献\\新增\\Sustainable Biochar Nanosheets Derived from Sweet Sorghum Residues via Superbase Pretreatment.pdf",
+    "external_original:D:\\文献\\新增\\Sustainable Synthesis of Porous Activated Carbon from Kalakai (Stenochlaena palustris) as Promising Electrode for Supercapacitor Applications.pdf",
+    "external_original:D:\\文献\\新增\\Toluidine Blue Functionalized Macadamia Shell Derived Porous Carbon for Enhanced Supercapacitor Performance.pdf",
+    "external_original:D:\\文献\\新增\\Unveiling the Crosslinking Architecture Governed Carbon Yield in Phenolic Resin-Derived Porous Carbons for Cost-Effective Energy Storage.pdf",
+    "external_original:D:\\文献\\新增\\Upcycling Agro-Food Industrial Biomass Waste into Functional Activated Carbon for Selective CO 2 Capture and Supercapacitor Applications.pdf",
+    "canonical_pdf:ADD_001",
+    "canonical_pdf:ADD_002",
+    "canonical_pdf:ADD_003",
+    "canonical_pdf:ADD_004",
+    "canonical_pdf:ADD_005",
+    "canonical_pdf:ADD_006",
+    "canonical_pdf:ADD_007",
+    "canonical_pdf:ADD_008",
+    "canonical_pdf:ADD_009",
+    "canonical_pdf:ADD_010",
+    "canonical_pdf:ADD_011",
+    "canonical_pdf:ADD_012",
+    "canonical_pdf:ADD_013",
+    "canonical_pdf:ADD_014",
+    "canonical_pdf:ADD_015",
+    "canonical_pdf:ADD_016",
+    "canonical_pdf:ADD_017",
+    "canonical_pdf:ADD_018",
+    "canonical_pdf:ADD_019",
+    "canonical_pdf:ADD_020",
+    "canonical_pdf:ADD_021",
+    "canonical_pdf:ADD_022",
+    "canonical_pdf:ADD_023",
+    "canonical_pdf:ADD_024",
+    "canonical_pdf:ADD_025",
+    "canonical_pdf:ADD_026",
+    "canonical_pdf:ADD_027",
+    "canonical_pdf:ADD_028",
+    "canonical_pdf:ADD_029",
+    "canonical_pdf:ADD_030",
+    "canonical_pdf:ADD_031",
+    "canonical_pdf:ADD_032",
+    "canonical_pdf:ADD_033",
+    "canonical_pdf:ADD_034",
+    "canonical_pdf:ADD_035",
+    "canonical_pdf:ADD_036",
+    "canonical_pdf:ADD_037",
+    "canonical_pdf:ADD_038",
+    "canonical_pdf:ADD_039",
+    "canonical_pdf:ADD_040",
+    "canonical_pdf:ADD_041",
+    "canonical_pdf:ADD_042",
+    "canonical_pdf:ADD_043",
+    "canonical_pdf:ADD_044",
+    "canonical_pdf:ADD_045",
+    "canonical_pdf:ADD_046",
+    "canonical_pdf:ADD_047",
+    "canonical_pdf:ADD_048",
+    "canonical_pdf:ADD_049",
+    "canonical_pdf:ADD_050",
+    "canonical_pdf:ADD_051",
+    "canonical_pdf:ADD_052",
+    "canonical_pdf:ADD_053",
+    "canonical_pdf:ADD_054",
+    "canonical_pdf:ADD_055",
+    "canonical_pdf:ADD_056",
+    "canonical_pdf:ADD_057",
+    "canonical_pdf:ADD_058",
+    "canonical_pdf:ADD_059",
+    "canonical_pdf:ADD_060",
+    "canonical_pdf:ADD_061",
+    "canonical_pdf:ADD_062",
+    "canonical_pdf:ADD_063",
+    "canonical_pdf:ADD_064",
+    "canonical_pdf:ADD_065",
+    "canonical_pdf:ADD_066",
+    "canonical_pdf:ADD_067",
+    "canonical_pdf:ADD_068",
+    "canonical_pdf:ADD_069",
+    "canonical_pdf:ADD_070",
+    "canonical_pdf:ADD_071",
+    "canonical_pdf:ADD_072",
+    "canonical_pdf:ADD_073",
+    "canonical_pdf:ADD_074",
+    "canonical_pdf:ADD_075",
+    "canonical_pdf:ADD_076",
+    "canonical_pdf:ADD_077",
+    "canonical_pdf:ADD_078",
+    "canonical_pdf:ADD_079",
+    "canonical_pdf:ADD_080",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_001_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_002_p6.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_003_p6.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_003_p8.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_005_p7.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_006_p18.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_010_p10.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_017_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_019_p8.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_023_p12.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_024_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_025_p16.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_027_p7.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_027_p8.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_031_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_034_p6.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_037_p6.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_037_p7.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_039_p7.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_039_p8.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_040_p7.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_043_p7.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_043_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_054_p8.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_056_p11.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_056_p4.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_056_p7.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_059_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_064_p21.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_064_p23.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_065_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_066_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_068_p15.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_069_p16.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_069_p5.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_072_p8.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_074_p10.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_074_p9.png",
+    "retained_original_render:新增文献整理_20261020/evidence_images/ADD_078_p10.png",
+    "zip_member_count",
+    "zip_member_contents",
+    "scope_classified_all",
+    "own_test_count",
+    "candidate_archive_unchanged",
+    "source_group_integrity",
+    "pending_not_admitted",
+    "null_current_not_zero",
+    "configuration_conflict_frozen",
+    "ASC_current_conflict_frozen",
+    "nonexact_3E_not_main",
+    "003_3E_device_separated",
+    "027_positive_window",
+    "activated_retention_preserved",
+    "no_SSRN_invented_DOI",
+    "070_review_not_experiment",
+    "no_duplicate_old_3E_reintake",
+    "observation_document_binding",
+    "reported_3e:counts",
+    "reported_3e:inherited_row:legacy:R078_CY01",
+    "reported_3e:inherited_row:legacy:SRC025_CY01",
+    "reported_3e:inherited_row:candidate:TE031",
+    "reported_3e:inherited_row:candidate:V05:008",
+    "reported_3e:inherited_row:candidate:V05:009",
+    "reported_3e:inherited_row:candidate:V05:010",
+    "reported_3e:inherited_row:candidate:V05:011",
+    "reported_3e:inherited_row:candidate:TE029",
+    "reported_3e:inherited_row:candidate:TE030",
+    "reported_3e:inherited_row:candidate:TE035",
+    "reported_3e:inherited_row:candidate:TE021",
+    "reported_3e:inherited_row:candidate:TE022",
+    "reported_3e:inherited_row:candidate:TE023",
+    "reported_3e:inherited_row:candidate:TE024",
+    "reported_3e:inherited_row:candidate:TE025",
+    "reported_3e:inherited_row:candidate:TE033",
+    "reported_3e:inherited_row:candidate:TE034",
+    "reported_3e:inherited_row:candidate:TE007",
+    "reported_3e:inherited_row:candidate:TE020",
+    "reported_3e:inherited_row:candidate:V05:018",
+    "reported_3e:inherited_row:candidate:TE052",
+    "reported_3e:source_weights",
+    "reported_3e:no_duplicate_tests",
+    "reported_3e:source_fold:1",
+    "reported_3e:source_fold:2",
+    "reported_3e:source_fold:3",
+    "reported_3e:source_fold:4",
+    "reported_3e:source_fold:5",
+    "reported_3e:source_fold:6",
+    "reported_3e:source_fold:7",
+    "reported_3e:source_fold:8",
+    "reported_3e:source_fold:9",
+    "reported_3e:source_fold:10",
+    "reported_3e:source_fold:14",
+    "reported_3e:source_fold:16",
+    "reported_3e:source_fold:17",
+    "reported_3e:source_fold:18",
+    "reported_3e:source_fold:22",
+    "reported_3e:source_fold:23",
+    "reported_3e:source_fold:24",
+    "reported_3e:source_fold:26",
+    "reported_3e:source_fold:27",
+    "reported_3e:source_fold:28",
+    "reported_3e:source_fold:29",
+    "reported_3e:source_fold:30",
+    "reported_3e:each_held_once",
+    "reported_3e:no_fit",
+    "reported_3e:CSV_matches",
+    "reported_2e:counts",
+    "reported_2e:inherited_row:legacy:R091_CY01",
+    "reported_2e:inherited_row:legacy:R111_CY01",
+    "reported_2e:inherited_row:legacy:SRC035_CY01",
+    "reported_2e:inherited_row:legacy:R107_CY01",
+    "reported_2e:inherited_row:legacy:R104_CY01",
+    "reported_2e:inherited_row:legacy:SRC124_CY01",
+    "reported_2e:inherited_row:legacy:R093_CY01",
+    "reported_2e:inherited_row:legacy:R103_CY01",
+    "reported_2e:inherited_row:candidate:V05:014",
+    "reported_2e:inherited_row:candidate:V05:015",
+    "reported_2e:inherited_row:candidate:V05:019",
+    "reported_2e:source_weights",
+    "reported_2e:no_duplicate_tests",
+    "reported_2e:source_fold:1",
+    "reported_2e:source_fold:2",
+    "reported_2e:source_fold:3",
+    "reported_2e:source_fold:4",
+    "reported_2e:source_fold:5",
+    "reported_2e:source_fold:6",
+    "reported_2e:source_fold:7",
+    "reported_2e:source_fold:8",
+    "reported_2e:source_fold:9",
+    "reported_2e:source_fold:12",
+    "reported_2e:source_fold:14",
+    "reported_2e:source_fold:15",
+    "reported_2e:source_fold:16",
+    "reported_2e:source_fold:17",
+    "reported_2e:source_fold:18",
+    "reported_2e:source_fold:19",
+    "reported_2e:source_fold:20",
+    "reported_2e:each_held_once",
+    "reported_2e:no_fit",
+    "reported_2e:CSV_matches",
+    "reported_2e_residue:counts",
+    "reported_2e_residue:inherited_row:legacy:R091_CY01",
+    "reported_2e_residue:inherited_row:legacy:R111_CY01",
+    "reported_2e_residue:inherited_row:legacy:R112_CY02",
+    "reported_2e_residue:inherited_row:legacy:R112_CY03",
+    "reported_2e_residue:inherited_row:legacy:SRC035_CY01",
+    "reported_2e_residue:inherited_row:legacy:R107_CY01",
+    "reported_2e_residue:inherited_row:legacy:R104_CY01",
+    "reported_2e_residue:inherited_row:legacy:SRC124_CY01",
+    "reported_2e_residue:inherited_row:legacy:R093_CY01",
+    "reported_2e_residue:inherited_row:legacy:R103_CY01",
+    "reported_2e_residue:inherited_row:candidate:V05:014",
+    "reported_2e_residue:inherited_row:candidate:V05:015",
+    "reported_2e_residue:inherited_row:candidate:V05:019",
+    "reported_2e_residue:source_weights",
+    "reported_2e_residue:no_duplicate_tests",
+    "reported_2e_residue:source_fold:1",
+    "reported_2e_residue:source_fold:2",
+    "reported_2e_residue:source_fold:4",
+    "reported_2e_residue:source_fold:5",
+    "reported_2e_residue:source_fold:6",
+    "reported_2e_residue:source_fold:7",
+    "reported_2e_residue:source_fold:8",
+    "reported_2e_residue:source_fold:9",
+    "reported_2e_residue:source_fold:10",
+    "reported_2e_residue:source_fold:11",
+    "reported_2e_residue:source_fold:14",
+    "reported_2e_residue:source_fold:16",
+    "reported_2e_residue:source_fold:17",
+    "reported_2e_residue:source_fold:18",
+    "reported_2e_residue:source_fold:19",
+    "reported_2e_residue:source_fold:20",
+    "reported_2e_residue:source_fold:21",
+    "reported_2e_residue:source_fold:22",
+    "reported_2e_residue:each_held_once",
+    "reported_2e_residue:no_fit",
+    "reported_2e_residue:CSV_matches",
+    "reported_2e_approx:counts",
+    "reported_2e_approx:inherited_row:legacy:R091_CY01",
+    "reported_2e_approx:inherited_row:legacy:R111_CY01",
+    "reported_2e_approx:inherited_row:legacy:R112_CY02",
+    "reported_2e_approx:inherited_row:legacy:R112_CY03",
+    "reported_2e_approx:inherited_row:legacy:SRC035_CY01",
+    "reported_2e_approx:inherited_row:legacy:R107_CY01",
+    "reported_2e_approx:inherited_row:legacy:R104_CY01",
+    "reported_2e_approx:inherited_row:legacy:SRC124_CY01",
+    "reported_2e_approx:inherited_row:legacy:R093_CY01",
+    "reported_2e_approx:inherited_row:legacy:R020_CY01",
+    "reported_2e_approx:inherited_row:legacy:R103_CY01",
+    "reported_2e_approx:inherited_row:candidate:V05:014",
+    "reported_2e_approx:inherited_row:candidate:V05:015",
+    "reported_2e_approx:inherited_row:candidate:V05:019",
+    "reported_2e_approx:source_weights",
+    "reported_2e_approx:no_duplicate_tests",
+    "reported_2e_approx:source_fold:1",
+    "reported_2e_approx:source_fold:2",
+    "reported_2e_approx:source_fold:4",
+    "reported_2e_approx:source_fold:5",
+    "reported_2e_approx:source_fold:6",
+    "reported_2e_approx:source_fold:7",
+    "reported_2e_approx:source_fold:8",
+    "reported_2e_approx:source_fold:9",
+    "reported_2e_approx:source_fold:10",
+    "reported_2e_approx:source_fold:11",
+    "reported_2e_approx:source_fold:12",
+    "reported_2e_approx:source_fold:15",
+    "reported_2e_approx:source_fold:17",
+    "reported_2e_approx:source_fold:18",
+    "reported_2e_approx:source_fold:19",
+    "reported_2e_approx:source_fold:20",
+    "reported_2e_approx:source_fold:21",
+    "reported_2e_approx:source_fold:22",
+    "reported_2e_approx:source_fold:23",
+    "reported_2e_approx:each_held_once",
+    "reported_2e_approx:no_fit",
+    "reported_2e_approx:CSV_matches",
+    "incoming_review_excludes_training_matrix",
+    "review_matrix_rejected",
+    "invalid_matrix_rejected:metric_kind",
+    "invalid_matrix_rejected:system",
+    "invalid_matrix_rejected:BET_m2_g",
+    "invalid_matrix_rejected:reported_current_A_g",
+    "incoming_search",
+    "source_protection_3214_or_more",
+    "old_freezes_unchanged",
+    "catalog_all_direct_originals"
+  ]
+}
