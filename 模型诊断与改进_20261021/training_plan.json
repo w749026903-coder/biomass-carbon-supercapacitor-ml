@@ -1,0 +1,351 @@
+{
+  "authorization": {
+    "authorized": true,
+    "user_request": "可以看到当前模型是远远不足的，立刻找寻可能出现问题的地方并改进",
+    "scope": "Local bounded diagnostics, fold-only feature/scaler improvements and source-nested selection; no external dataset claims or deployment."
+  },
+  "run_id": "diagnostic-nested-v010-20261021",
+  "profile": "reported_3e",
+  "rows": 31,
+  "source_groups": 23,
+  "dataset_fingerprint": "a3c27d440df8f7e25d813e3d768eb2575f9c93b2d462bfab96ce3a5cf208aff3",
+  "data_pointer": {
+    "version_directory": "循环稳定性数据库_v0.10_原文精细补证_20261021",
+    "database_file": "cycling_v0_10.sqlite",
+    "sha256": "75d5da96e42fa34da4c7c987debb32d55a1346deb34929502b8fc91417c865d2",
+    "parent_database_file": "循环稳定性数据库_v0.9_训练质量准备_20261021/cycling_v0_9.sqlite",
+    "default_profile": "reported_3e",
+    "stage": "quality_verified_grouped_baseline_inputs",
+    "ready_for_training_inputs": true,
+    "research_training_authorized": false,
+    "all_records_admitted": false
+  },
+  "prior_run": "初步模型训练_20261021",
+  "candidates": [
+    {
+      "id": "mean",
+      "kind": "mean",
+      "transform": "raw",
+      "current": true,
+      "complexity": 0,
+      "params": {}
+    },
+    {
+      "id": "median",
+      "kind": "median",
+      "transform": "raw",
+      "current": true,
+      "complexity": 0,
+      "params": {}
+    },
+    {
+      "id": "ridge_raw_I_a1",
+      "kind": "ridge",
+      "transform": "raw",
+      "current": true,
+      "complexity": 1,
+      "params": {
+        "alpha": 1
+      }
+    },
+    {
+      "id": "ridge_raw_I_a10",
+      "kind": "ridge",
+      "transform": "raw",
+      "current": true,
+      "complexity": 1,
+      "params": {
+        "alpha": 10
+      }
+    },
+    {
+      "id": "ridge_raw_I_a100",
+      "kind": "ridge",
+      "transform": "raw",
+      "current": true,
+      "complexity": 1,
+      "params": {
+        "alpha": 100
+      }
+    },
+    {
+      "id": "ridge_log_I_a1",
+      "kind": "ridge",
+      "transform": "log",
+      "current": true,
+      "complexity": 1,
+      "params": {
+        "alpha": 1
+      }
+    },
+    {
+      "id": "ridge_log_I_a10",
+      "kind": "ridge",
+      "transform": "log",
+      "current": true,
+      "complexity": 1,
+      "params": {
+        "alpha": 10
+      }
+    },
+    {
+      "id": "ridge_log_I_a100",
+      "kind": "ridge",
+      "transform": "log",
+      "current": true,
+      "complexity": 1,
+      "params": {
+        "alpha": 100
+      }
+    },
+    {
+      "id": "ridge_log_noI_a1",
+      "kind": "ridge",
+      "transform": "log",
+      "current": false,
+      "complexity": 1,
+      "params": {
+        "alpha": 1
+      }
+    },
+    {
+      "id": "ridge_log_noI_a10",
+      "kind": "ridge",
+      "transform": "log",
+      "current": false,
+      "complexity": 1,
+      "params": {
+        "alpha": 10
+      }
+    },
+    {
+      "id": "ridge_log_noI_a100",
+      "kind": "ridge",
+      "transform": "log",
+      "current": false,
+      "complexity": 1,
+      "params": {
+        "alpha": 100
+      }
+    },
+    {
+      "id": "krr_log_I_a1",
+      "kind": "krr",
+      "transform": "log",
+      "current": true,
+      "complexity": 2,
+      "params": {
+        "alpha": 1,
+        "gamma": 0.1
+      }
+    },
+    {
+      "id": "krr_log_I_a10",
+      "kind": "krr",
+      "transform": "log",
+      "current": true,
+      "complexity": 2,
+      "params": {
+        "alpha": 10,
+        "gamma": 0.1
+      }
+    },
+    {
+      "id": "krr_log_noI_a1",
+      "kind": "krr",
+      "transform": "log",
+      "current": false,
+      "complexity": 2,
+      "params": {
+        "alpha": 1,
+        "gamma": 0.1
+      }
+    },
+    {
+      "id": "krr_log_noI_a10",
+      "kind": "krr",
+      "transform": "log",
+      "current": false,
+      "complexity": 2,
+      "params": {
+        "alpha": 10,
+        "gamma": 0.1
+      }
+    },
+    {
+      "id": "mlp_raw_I_a1",
+      "kind": "mlp",
+      "transform": "raw",
+      "current": true,
+      "complexity": 3,
+      "params": {
+        "alpha": 1,
+        "hidden_layer_sizes": [
+          8
+        ],
+        "solver": "lbfgs",
+        "activation": "tanh",
+        "max_iter": 2000,
+        "max_fun": 30000,
+        "tol": 1e-06,
+        "early_stopping": false,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "mlp_raw_noI_a1",
+      "kind": "mlp",
+      "transform": "raw",
+      "current": false,
+      "complexity": 3,
+      "params": {
+        "alpha": 1,
+        "hidden_layer_sizes": [
+          8
+        ],
+        "solver": "lbfgs",
+        "activation": "tanh",
+        "max_iter": 2000,
+        "max_fun": 30000,
+        "tol": 1e-06,
+        "early_stopping": false,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "mlp_log_noI_a1",
+      "kind": "mlp",
+      "transform": "log",
+      "current": false,
+      "complexity": 3,
+      "params": {
+        "alpha": 1,
+        "hidden_layer_sizes": [
+          8
+        ],
+        "solver": "lbfgs",
+        "activation": "tanh",
+        "max_iter": 2000,
+        "max_fun": 30000,
+        "tol": 1e-06,
+        "early_stopping": false,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "mlp_log_noI_a10",
+      "kind": "mlp",
+      "transform": "log",
+      "current": false,
+      "complexity": 3,
+      "params": {
+        "alpha": 10,
+        "hidden_layer_sizes": [
+          8
+        ],
+        "solver": "lbfgs",
+        "activation": "tanh",
+        "max_iter": 2000,
+        "max_fun": 30000,
+        "tol": 1e-06,
+        "early_stopping": false,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "rf_raw_I",
+      "kind": "rf",
+      "transform": "raw",
+      "current": true,
+      "complexity": 4,
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "min_samples_leaf": 2,
+        "max_features": 0.8,
+        "random_state": 42,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "rf_raw_noI",
+      "kind": "rf",
+      "transform": "raw",
+      "current": false,
+      "complexity": 4,
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "min_samples_leaf": 2,
+        "max_features": 0.8,
+        "random_state": 42,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "xgb_log_I",
+      "kind": "xgb",
+      "transform": "log",
+      "current": true,
+      "complexity": 4,
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 2,
+        "learning_rate": 0.03,
+        "min_child_weight": 2,
+        "reg_lambda": 10,
+        "reg_alpha": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "objective": "reg:squarederror",
+        "tree_method": "hist",
+        "random_state": 42,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "xgb_log_noI",
+      "kind": "xgb",
+      "transform": "log",
+      "current": false,
+      "complexity": 4,
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 2,
+        "learning_rate": 0.03,
+        "min_child_weight": 2,
+        "reg_lambda": 10,
+        "reg_alpha": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "objective": "reg:squarederror",
+        "tree_method": "hist",
+        "random_state": 42,
+        "n_jobs": 1
+      }
+    }
+  ],
+  "outer_cv": "Leave-one-source-out23 folds",
+  "inner_cv": "5 fixed source folds, shuffled source ids with seed42 independent of labels",
+  "selector": [
+    "nested_min: lowest mean source MAE; tie by complexity,id",
+    "nested_1se: source MAE within oneSE of inner best; minimum complexity then MAE,id",
+    "nested_linear: lowest inner source MAE among mean,median,ridge"
+  ],
+  "transforms": "Raw or log10 positive cycle_count,current,concentration,BET only; retain reference-relative potential bounds; no target monotonicity or clipping.",
+  "preprocessing": "Source-equal training-weighted numeric scaling and target scaling; one-hot categories trained within each fold, explicit UNKNOWN. No outer labels used for selection.",
+  "optional_pore_volume": "Not used:18/31 numeric coverage but mixed field-review states; no new imputed scientific values or unit assumptions.",
+  "outer_tasks": 23,
+  "inner_tasks": 2645,
+  "progress_tasks": 2714,
+  "no_post_outer_retuning": true,
+  "fresh_external_test": false,
+  "known_data_reuse": "Same corpus has been explored; nested evaluation controls current selection but is not an untouched external test.",
+  "seed": 42,
+  "threads": 1,
+  "created_at": "2026-10-21T11:52:54.950595+08:00",
+  "documentation": [
+    "https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.Ridge.html",
+    "https://scikit-learn.org/1.7/auto_examples/model_selection/plot_nested_cross_validation_iris.html"
+  ]
+}

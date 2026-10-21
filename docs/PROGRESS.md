@@ -131,3 +131,11 @@
 - 验证：1201项科学执行核验通过；来源隔离、指标独立重算、154任务断点前缀及旧数据保护通过；桌面和窄屏、真实预测筛选与离线链接通过，133本地链接和敏感扫描通过
 - 下一步/未决：本轮去电流MLP的MAE2.85百分点但改善区间跨零；补独立来源，调参需内外层分组，未选择部署模型
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-21T12:27:36+08:00：完成模型误差诊断和有限嵌套改进；新规则未超过旧MLP去电流，保留真实比较
+
+- 结果：完成模型误差诊断和有限嵌套改进；新规则未超过旧MLP去电流，保留真实比较
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/knowledge/训练输入质量与折内准备_20261021.md, tools/grouped_model_improvement.py, tools/check_grouped_model_improvement.py, tools/run_model_improvement.py, tools/verify_model_improvement.py, tools/check_improvement_dashboard.cjs, 模型诊断与改进_20261021
+- 验证：2451次拟合、5131项独立核验；面板桌面/窄屏/离线/实际筛选通过；旧实验277与v0.10载荷40项及原文SHA不变
+- 下一步/未决：补独立低保持率和长循环来源，审核材料成分/孔结构/缺陷后固定新实验；不按外层成绩继续追分或部署
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
