@@ -1,0 +1,176 @@
+{
+  "schema": "reported-retention-training-input-v1",
+  "database_file": "cycling_v0_11.sqlite",
+  "parent_database_sha256": "75d5da96e42fa34da4c7c987debb32d55a1346deb34929502b8fc91417c865d2",
+  "target": "capacitance_retention_pct_at_requested_cycle_count_and_reported_protocol",
+  "default_profile": "reported_3e",
+  "research_training_authorized": false,
+  "current_semantics": "author_reported_protocol_descriptor",
+  "core_features": [
+    "cycle_count",
+    "reported_current_A_g",
+    "electrolyte",
+    "concentration_mol_L",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V",
+    "BET_m2_g",
+    "reference_electrode"
+  ],
+  "canonical_core_features": [
+    "cycle_count",
+    "canonical_current_A_g",
+    "electrolyte",
+    "concentration_mol_L",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V",
+    "BET_m2_g"
+  ],
+  "profiles": {
+    "reported_3e": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g",
+        "reference_electrode"
+      ],
+      "system": "3E",
+      "relations": [
+        "eq"
+      ]
+    },
+    "reported_2e": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "system": "2E_symmetric",
+      "relations": [
+        "eq"
+      ]
+    },
+    "reported_2e_residue": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "system": "2E_symmetric",
+      "relations": [
+        "eq"
+      ]
+    },
+    "reported_2e_approx": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "system": "2E_symmetric",
+      "relations": [
+        "eq",
+        "approx"
+      ]
+    }
+  },
+  "optional_features": [
+    "total_pore_volume_cm3_g"
+  ],
+  "forbidden_predictors": [
+    "endpoint_id",
+    "identity_key",
+    "source_group",
+    "material_id",
+    "test_id",
+    "sample_name",
+    "retention_pct",
+    "post_cycle_EIS",
+    "post_cycle_XPS",
+    "final_capacitance"
+  ],
+  "review_only_profiles": [
+    "review_3e",
+    "review_3e_all",
+    "all_review",
+    "proposal_2e"
+  ],
+  "physical_current_warning": "No unknown denominator was imputed/converted. Main features are literature descriptors; do not claim calibrated equal physical stress.",
+  "3E_reference_policy": "Reference identity is a required categorical descriptor; raw reported potentials are not silently converted.",
+  "window_evidence_policy": "Own actual waveforms or an explicitly reviewed applicable GCD programme in same sample/configuration/electrolyte; evidence kind and caveats saved per record.",
+  "baseline_policy": "author initial/plotted reference allowed; exact cycle index remains unknown when unreported",
+  "split_policy": "Unified paper/reuse groups stay together; leave-one-source-out; equal total source weight; no preprocessing before group split.",
+  "version": "v0.11",
+  "expansion_rule": "Explicit own-test approvals only; old tables and all old freezes untouched; staged sources not globally archived.",
+  "new_test_review_only_profile": "incoming_review",
+  "storage_layout": "Immutable v0.10/v0.9/v0.8 chain plus reviewed material properties and compact current row snapshots",
+  "model_material_features": [
+    "total_pore_volume_cm3_g",
+    "micropore_volume_cm3_g",
+    "mesopore_volume_cm3_g",
+    "average_pore_diameter_nm",
+    "micropore_surface_area_m2_g",
+    "external_surface_area_m2_g",
+    "Raman_ID_IG",
+    "XRD_d002_nm",
+    "XPS_N_reported_pct",
+    "XPS_O_reported_pct",
+    "XPS_percentage_basis",
+    "mass_loading_mg_cm2",
+    "activation_temperature_C",
+    "activation_duration_h",
+    "heating_rate_C_min",
+    "material_density_g_cm3",
+    "bulk_N_wt_pct",
+    "bulk_O_wt_pct"
+  ],
+  "corpus_search_database": "全库复检与特征补提取_20261021/full_corpus_search_native.sqlite",
+  "corpus_search_database_sha256": "f2720c3e417904dad5857a6574cc72d5cf996f9b8716620d69594f11380c658c",
+  "material_feature_limits": [
+    "Sparse extra predictors retain None and evidence; raw-unit freezes are excluded from default material predictors.",
+    "Reported XPS percentage basis is retained; unspecified percentage is not silently made atomic percent.",
+    "Mass loading is a test/configuration property; the new standard3E loadings do not populate2E device tests.",
+    "Raman direction and derived reciprocal are retained; isolated source features need training-fold coverage.",
+    "This release performs no training and does not establish improved prediction error."
+  ],
+  "extra_material_feature_whitelist": [
+    "total_pore_volume_cm3_g",
+    "micropore_volume_cm3_g",
+    "mesopore_volume_cm3_g",
+    "average_pore_diameter_nm",
+    "micropore_surface_area_m2_g",
+    "external_surface_area_m2_g",
+    "Raman_ID_IG",
+    "XRD_d002_nm",
+    "XPS_N_reported_pct",
+    "XPS_O_reported_pct",
+    "XPS_percentage_basis",
+    "mass_loading_mg_cm2",
+    "activation_temperature_C",
+    "activation_duration_h",
+    "heating_rate_C_min",
+    "material_density_g_cm3",
+    "bulk_N_wt_pct",
+    "bulk_O_wt_pct",
+    "N_at_pct",
+    "O_at_pct",
+    "S_at_pct",
+    "P_at_pct",
+    "C_at_pct"
+  ]
+}

@@ -155,3 +155,11 @@
 - 验证：仅5份当前入口/用途文档更新，diff格式检查及范围/敏感内容检查通过；未修改封版数据、实验或审查载荷
 - 下一步/未决：沿既有多孔碳范围补候选证据及材料孔结构/成分/制备特征；纤维作为形貌子类，不重复澄清
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-21T23:20:18+08:00：完成全库复检及v0.11材料属性补提取：3E33条25来源，212项属性及186个训练视图补值
+
+- 结果：完成全库复检及v0.11材料属性补提取：3E33条25来源，212项属性及186个训练视图补值
+- 文件：README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/knowledge/全库复检与材料特征准入_20261021.md, data/current_database.json, 全库复检与特征补提取_20261021, 循环稳定性数据库_v0.11_全库复检与材料特征_20261021, tools/build_full_review_v011.py, tools/extract_raw_tables_v011.py, tools/finalize_corpus_search_v011.py, tools/material_feature_inputs_v011.py, tools/optimize_corpus_index_v011.py, tools/prepare_material_review_packets_v011.py, tools/reconcile_corpus_identity_v011.py, tools/report_corpus_review_v011.py, tools/search_full_corpus_v011.py, tools/verify_full_review_v011.py
+- 验证：4310项基础核验、53项稳定入口/代码/链接检查；598项旧载荷、889索引原件、559外部文件出现及112压缩包SHA；959表格候选保持未审；新拟合0
+- 下一步/未决：逐项补87条3E待核，优先3项已有论文SI；新实验预先规划来源留出及材料特征消融，保留原值与旧实验
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

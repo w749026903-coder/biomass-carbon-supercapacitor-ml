@@ -1,0 +1,319 @@
+{
+  "schema": "v011-own-source-agent-reviewed-materials-1",
+  "reviewed_materials": [
+    {
+      "doi": "10.1002/asia.70648",
+      "sample": "YZPC-3",
+      "path": "新增文献整理_20261020/originals/ADD_039.pdf",
+      "sha256": "6eb4a990036919291e121e4d719e79afb834631fcb0ece9b08544bcef221e255",
+      "locator": "PDF p5 Table1 atomic composition; p6 Raman paragraph",
+      "stage": "before_cycling",
+      "features": {
+        "total_pore_volume_cm3_g": 1.223,
+        "micropore_surface_area_m2_g": 2544.4,
+        "N_at_pct": 1.89,
+        "O_at_pct": 16.11,
+        "C_at_pct": 82.0,
+        "XPS_N_reported_pct": 1.89,
+        "XPS_O_reported_pct": 16.11,
+        "Raman_ID_IG": 0.97
+      },
+      "notes": [
+        "Table BET3358.574 vs rounded3359 is preserved as a precision detail; existing core BET retained."
+      ],
+      "unselected_features": {
+        "micropore_volume_cm3_g": {
+          "value": 0.63,
+          "reason": "Own Table1 gives Vmicro0.63,Vtotal1.223 andfraction0.37; ratio inconsistency not resolved. Preserve all values, do not select absolute micropore volume."
+        },
+        "micropore_volume_fraction_pct": {
+          "value": 37.0,
+          "reason": "Table1 printed ratio0.37 conflicts with0.63/1.223. No normalization repair."
+        }
+      },
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1007/s10854-026-18573-2",
+      "sample": "AMFS-derived activated carbon",
+      "path": "新增文献整理_20261020/originals/ADD_056.pdf",
+      "sha256": "a55407ad9048c61bc02f31cc3e1bb4c6503c55ed0d4f89ccb1a25187c9e18b4e",
+      "locator": "PDF p7 own Raman/porosity/XRD prose",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 0.94,
+        "average_pore_radius_nm": 1.82,
+        "total_pore_volume_cm3_g": 0.11,
+        "XRD_crystallite_size_nm": 2.0
+      },
+      "notes": [
+        "Author reports pore RADIUS1.82nm; not entered as pore diameter. Author Raman approximately0.94; preserve precision. XPS presence peaks alone give no selected oxygen percentage."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1016/j.biombioe.2026.109160",
+      "sample": "NCHU20",
+      "path": "新增文献整理_20261020/originals/ADD_005.pdf",
+      "sha256": "e816595a87e73941e422659720f156a9c6f525f6280a221224a0aebe3cce9583",
+      "locator": "PDF p4 section3.2; own quantitative TableS1/S3 referenced",
+      "stage": "before_cycling",
+      "features": {},
+      "notes": [
+        "Activated NCHU40 maximum6.2wt%N is not NCHU20. Native main text does not supply the per-sample EA/pore-table numbers needed here. Request own SI TableS1 andS3, preserve unknowns. No fabricated feature fill."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1016/j.biombioe.2026.109168",
+      "sample": "CCL-K2CO3-1-700",
+      "path": "新增文献整理_20261020/originals/ADD_027.pdf",
+      "sha256": "6c2150c236760d8da23e1be54c91899df5faf43311cdd818651ee0b4ee404b61",
+      "locator": "PDF p5 Raman/XPS survey prose; p6 peak-fraction discussion",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 0.99,
+        "XPS_N_reported_pct": 1.62,
+        "XPS_O_reported_pct": 12.33,
+        "micropore_fraction_reported_pct": 88.7,
+        "XPS_N_pyridinic_plus_pyrrolic_species_pct": 65.4,
+        "XPS_N_graphitic_species_pct": 26.76,
+        "XPS_O_quinone_species_pct": 30.06
+      },
+      "notes": [
+        "Surface relative N/O percentages are not silently atomic percent. O19.23wt% in conclusion describes precursor/bulk discussion and is not substituted for own XPSO12.33. Peak fractions are within an element envelope, not bulk elemental content. Microporosity fraction basis needs own SI TableS3."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1016/j.ijbiomac.2023.128794",
+      "sample": "RMAC-800",
+      "path": "新增文献整理_20261020/originals/ADD_025.pdf",
+      "sha256": "d927fc0054684cf30e19898dffa93c17ade61ac25086d7422079b558e0bf942f",
+      "locator": "PDF p12 Raman; p13 Table1; p15 Table2 explicit at.%",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 0.97,
+        "C_at_pct": 91.24,
+        "N_at_pct": 1.05,
+        "O_at_pct": 7.4,
+        "P_at_pct": 0.31,
+        "XPS_N_reported_pct": 1.05,
+        "XPS_O_reported_pct": 7.4,
+        "reported_pore_volume_le_216_632nm_cm3_g": 1.442,
+        "reported_pore_area_ge_0_465nm_m2_g": 1953.0
+      },
+      "notes": [
+        "Table1 pore area>=0.465nm is not a micropore-specific area. Volume<=216.632nm retains cutoff; do not relabel as a physically harmonized total without review. S dash is not zero."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1016/j.jaap.2026.107754",
+      "sample": "P-doped CSKOH",
+      "path": "新增文献整理_20261020/originals/ADD_074.pdf",
+      "sha256": "20a2a0870c7b42f43efbc918f4e4b7ceb96e314db2d7b19ebe3e11bc087b28d5",
+      "locator": "PDF p7 own Raman paragraph",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 0.95
+      },
+      "notes": [
+        "Undoped CSKOH1.15 belongs to the comparator sample; do not assign it to P-doped sample. Phosphoric acid85wt% is reagent concentration, not phosphorus content in carbon."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1016/j.jenvman.2025.125582",
+      "sample": "NPC-700-6",
+      "path": "新增文献整理_20261020/originals/ADD_037.pdf",
+      "sha256": "f230f6681e5f78f4e30e98f6ef47de2a2ed099afd08b727543c7c70d441d63ce",
+      "locator": "PDF p4 own NPC-700-6 pore discussion/TableS2 reference",
+      "stage": "before_cycling",
+      "features": {
+        "micropore_surface_area_m2_g": 1164.51,
+        "micropore_volume_fraction_pct": 58.65
+      },
+      "notes": [
+        "Raman0.96 and0.91 belong to600 and800degree samples; no interpolation to700. Approximately3.5mg absolute mass is not areal loading. Post50000cycle EIS andXPS excluded as predictors."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1016/j.jenvman.2026.129124",
+      "sample": "A-BC-0.2",
+      "path": "新增文献整理_20261020/originals/ADD_009.pdf",
+      "sha256": "55bc2ca0ac7c08b1158814755870906555769d01c766aae00dbf8082cada8770",
+      "locator": "PDF p3 Table1 EA; p5 Table2; p6 Raman sample order0,.2,.5,.7,1",
+      "stage": "before_cycling",
+      "features": {
+        "bulk_N_wt_pct": 2.77,
+        "bulk_O_wt_pct": 6.29,
+        "bulk_C_wt_pct": 87.12,
+        "bulk_S_wt_pct": 0.13,
+        "micropore_surface_area_m2_g": 1160.38,
+        "micropore_volume_cm3_g": 0.5,
+        "total_pore_volume_cm3_g": 1.12,
+        "average_pore_diameter_nm": 1.81,
+        "Raman_ID_IG": 1.188
+      },
+      "notes": [
+        "Unactivated BC-0.2 N1.46wt% is not activated A-BC-0.2 N2.77wt%. EAweight percentages remain separate from XPSatomic percentages."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1016/j.jpcs.2023.111318",
+      "sample": "C/600C",
+      "path": "三电极端点扩充_20261018/corpus/B_R078/main.pdf",
+      "sha256": "19fb3d36492a517b19c31050de6ba2db48f9bfa862fecff5667dc58d37418164",
+      "locator": "PDF p3 Raman; p4 Table1",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 1.65,
+        "micropore_surface_area_m2_g": 1846.77,
+        "micropore_volume_cm3_g": 0.773,
+        "total_pore_volume_cm3_g": 0.93,
+        "average_pore_diameter_nm": 1.79
+      },
+      "notes": [],
+      "unselected_features": {},
+      "methods": {
+        "micropore_volume_cm3_g": "t-plot",
+        "micropore_surface_area_m2_g": "t-plot",
+        "average_pore_diameter_nm": "author4V/A BET average"
+      },
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1021/acs.energyfuels.4c01398",
+      "sample": "AC3",
+      "path": "三电极端点扩充_20261018/corpus/B_SRC025/main.pdf",
+      "sha256": "7f37b2048560cf7499130e020ef67bc2d9d3cd3d0a387743eae7bdb0d20c04b9",
+      "locator": "PDF p5 Raman; p6 Table1",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 1.01,
+        "total_pore_volume_cm3_g": 2.625,
+        "average_pore_diameter_nm": 4.26
+      },
+      "notes": [
+        "Sample AC3 is KMnO4-activated carbon; other activating-agent samples have their own properties and are not copied."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1021/acssusresmgt.3c00028",
+      "sample": "ALPC-800",
+      "path": "三电极端点扩充_20261018/corpus/U024/main.pdf",
+      "sha256": "589d24498f5aa01b32daecc36fad0d2d69e1f78fa1b1de19d5c456eda710adf7",
+      "locator": "PDF p1 abstract explicitly atom%; p5 initial-material Raman discussion",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 0.97,
+        "N_at_pct": 11.23,
+        "O_at_pct": 8.54,
+        "XPS_N_reported_pct": 11.23,
+        "XPS_O_reported_pct": 8.54
+      },
+      "notes": [
+        "Pre-test material chemistry can join both own3E electrolytes; ORR70percent current retention is a different target and is excluded. Post-ORR XPS inFigS10 is excluded from predictors."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1039/d4cp01914h",
+      "sample": "AUACW",
+      "path": "新增文献整理_20261020/originals/ADD_003.pdf",
+      "sha256": "b02f18ddce719e9d5f5d6fc7c810de8701f2ad720d7245351803da6848679485",
+      "locator": "PDF p4 Raman; p5 Table1",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 1.0,
+        "micropore_surface_area_m2_g": 920.5,
+        "external_surface_area_m2_g": 400.8,
+        "total_pore_volume_cm3_g": 0.8235,
+        "average_pore_diameter_nm": 2.49
+      },
+      "notes": [
+        "Table Sext unitm2/g andS_BET-Smic formula support surface area; footnote calls it external pore volume, retained as a terminology inconsistency."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1039/d4ya00076e",
+      "sample": "SSC2-0.6",
+      "path": "三电极端点扩充_20261018/corpus/U013/main.pdf",
+      "sha256": "ad9837d0adb897323633c2877a48ff1406f5eb88fd0a428ad260ce756f3afc54",
+      "locator": "PDF p5 Table1; p6 Raman order0,.5,.6,.7; p7 explicit at% chemistry",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 1.44,
+        "micropore_volume_cm3_g": 0.55,
+        "pore_volume_ge_2nm_cm3_g": 0.29,
+        "total_pore_volume_cm3_g": 0.84,
+        "average_pore_diameter_nm": 2.02,
+        "N_at_pct": 2.35,
+        "O_at_pct": 16.77,
+        "XPS_N_reported_pct": 2.35,
+        "XPS_O_reported_pct": 16.77
+      },
+      "notes": [
+        "Volume>=2nm0.29 includes mesopores AND macropores; not renamed as mesopore-only volume."
+      ],
+      "unselected_features": {},
+      "methods": {
+        "micropore_volume_cm3_g": "DFT",
+        "average_pore_diameter_nm": "BET author average"
+      },
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    },
+    {
+      "doi": "10.1088/1361-6528/ace97a",
+      "sample": "SS-300",
+      "path": "新增文献整理_20261020/originals/ADD_031.pdf",
+      "sha256": "76467854b2ee1cf2a16ba4913c3eef4b1b0201611b9265a6f19c737643517c13",
+      "locator": "PDF p5 Raman; p7 explicit at% text; p8 Table1",
+      "stage": "before_cycling",
+      "features": {
+        "Raman_ID_IG": 1.086,
+        "micropore_surface_area_m2_g": 443.3,
+        "mesopore_surface_area_m2_g": 630.1,
+        "micropore_volume_cm3_g": 0.2,
+        "total_pore_volume_cm3_g": 0.47,
+        "C_at_pct": 74.55,
+        "N_at_pct": 7.52,
+        "O_at_pct": 17.65,
+        "XPS_N_reported_pct": 7.52,
+        "XPS_O_reported_pct": 17.65
+      },
+      "notes": [
+        "SS-0 andSS-600 remain separate samples; no chemistry propagation across preparation temperatures."
+      ],
+      "unselected_features": {},
+      "methods": {},
+      "reviewer": "Codex agent original PDF page/text review; no human review claimed"
+    }
+  ]
+}

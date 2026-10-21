@@ -1,0 +1,796 @@
+{
+  "version": "v0.11",
+  "parent_sha256": "75d5da96e42fa34da4c7c987debb32d55a1346deb34929502b8fc91417c865d2",
+  "model_fits": 0,
+  "all_literature_admitted": false,
+  "cohorts": {
+    "reported_3e": {
+      "status": "ready_for_exploratory_grouped_baseline_inputs",
+      "rows": 33,
+      "source_groups": 25,
+      "core_missing_cells": 0,
+      "target_min": 76.7,
+      "target_max": 109.2,
+      "target_mean": 94.88,
+      "retention_above_100_records": [
+        "incoming:ADD_027_T01",
+        "incoming:ADD_037_T01",
+        "candidate:TE035"
+      ],
+      "category_source_group_counts": {
+        "electrolyte": {
+          "H2SO4": 5,
+          "KOH": 19,
+          "Na2SO4": 1,
+          "NaOH": 1
+        },
+        "reference_electrode": {
+          "Ag/AgCl": 9,
+          "Hg/Hg2SO4 (saturated K2SO4)": 1,
+          "Hg/HgO": 13,
+          "SCE": 2
+        }
+      },
+      "singleton_categories": {
+        "electrolyte": [
+          "Na2SO4",
+          "NaOH"
+        ],
+        "reference_electrode": [
+          "Hg/Hg2SO4 (saturated K2SO4)"
+        ]
+      },
+      "model_fits": 0,
+      "research_training_authorized": false,
+      "quality_checks": [
+        "approved_core_matrix",
+        "no_forbidden_predictors",
+        "multiple_groups_for_validation",
+        "finite_fold_0",
+        "equal_source_weight_0",
+        "heldout_does_not_change_training_0",
+        "no_current_control_0",
+        "finite_fold_1",
+        "equal_source_weight_1",
+        "heldout_does_not_change_training_1",
+        "no_current_control_1",
+        "finite_fold_2",
+        "equal_source_weight_2",
+        "heldout_does_not_change_training_2",
+        "no_current_control_2",
+        "finite_fold_3",
+        "equal_source_weight_3",
+        "heldout_does_not_change_training_3",
+        "no_current_control_3",
+        "finite_fold_4",
+        "equal_source_weight_4",
+        "heldout_does_not_change_training_4",
+        "no_current_control_4",
+        "finite_fold_5",
+        "equal_source_weight_5",
+        "heldout_does_not_change_training_5",
+        "no_current_control_5",
+        "finite_fold_6",
+        "equal_source_weight_6",
+        "heldout_does_not_change_training_6",
+        "no_current_control_6",
+        "finite_fold_7",
+        "equal_source_weight_7",
+        "heldout_does_not_change_training_7",
+        "no_current_control_7",
+        "finite_fold_8",
+        "equal_source_weight_8",
+        "heldout_does_not_change_training_8",
+        "no_current_control_8",
+        "finite_fold_9",
+        "equal_source_weight_9",
+        "heldout_does_not_change_training_9",
+        "no_current_control_9",
+        "finite_fold_10",
+        "equal_source_weight_10",
+        "heldout_does_not_change_training_10",
+        "no_current_control_10",
+        "finite_fold_11",
+        "equal_source_weight_11",
+        "heldout_does_not_change_training_11",
+        "no_current_control_11",
+        "finite_fold_12",
+        "equal_source_weight_12",
+        "heldout_does_not_change_training_12",
+        "no_current_control_12",
+        "finite_fold_13",
+        "equal_source_weight_13",
+        "heldout_does_not_change_training_13",
+        "no_current_control_13",
+        "finite_fold_14",
+        "equal_source_weight_14",
+        "heldout_does_not_change_training_14",
+        "no_current_control_14",
+        "finite_fold_15",
+        "equal_source_weight_15",
+        "heldout_does_not_change_training_15",
+        "no_current_control_15",
+        "finite_fold_16",
+        "equal_source_weight_16",
+        "heldout_does_not_change_training_16",
+        "no_current_control_16",
+        "finite_fold_17",
+        "equal_source_weight_17",
+        "heldout_does_not_change_training_17",
+        "no_current_control_17",
+        "finite_fold_18",
+        "equal_source_weight_18",
+        "heldout_does_not_change_training_18",
+        "no_current_control_18",
+        "finite_fold_19",
+        "equal_source_weight_19",
+        "heldout_does_not_change_training_19",
+        "no_current_control_19",
+        "finite_fold_20",
+        "equal_source_weight_20",
+        "heldout_does_not_change_training_20",
+        "no_current_control_20",
+        "finite_fold_21",
+        "equal_source_weight_21",
+        "heldout_does_not_change_training_21",
+        "no_current_control_21",
+        "finite_fold_22",
+        "equal_source_weight_22",
+        "heldout_does_not_change_training_22",
+        "no_current_control_22",
+        "finite_fold_23",
+        "equal_source_weight_23",
+        "heldout_does_not_change_training_23",
+        "no_current_control_23",
+        "finite_fold_24",
+        "equal_source_weight_24",
+        "heldout_does_not_change_training_24",
+        "no_current_control_24",
+        "each_record_held_once",
+        "within_study_split_rejected"
+      ],
+      "scientific_limits": [
+        "Small study count; no reliable generalization or large-model sufficiency claim.",
+        "Reported A/g denominators may differ; no canonical current inferred.",
+        "Sparse electrolyte/reference categories cannot support broad categorical effect claims.",
+        "Shared publication/reuse groups must remain together in outer and inner validation."
+      ]
+    },
+    "reported_2e": {
+      "status": "ready_for_exploratory_grouped_baseline_inputs",
+      "rows": 26,
+      "source_groups": 21,
+      "core_missing_cells": 0,
+      "target_min": 73.0,
+      "target_max": 142.22,
+      "target_mean": 97.80884615384616,
+      "retention_above_100_records": [
+        "legacy:R093_CY01",
+        "incoming:ADD_054_T03",
+        "incoming:ADD_019_T01",
+        "incoming:ADD_019_T02"
+      ],
+      "category_source_group_counts": {
+        "electrolyte": {
+          "H2SO4": 3,
+          "KOH": 15,
+          "Li2SO4": 1,
+          "Na2SO4": 2,
+          "sodium_acetate": 1
+        }
+      },
+      "singleton_categories": {
+        "electrolyte": [
+          "Li2SO4",
+          "sodium_acetate"
+        ]
+      },
+      "model_fits": 0,
+      "research_training_authorized": false,
+      "quality_checks": [
+        "approved_core_matrix",
+        "no_forbidden_predictors",
+        "multiple_groups_for_validation",
+        "finite_fold_0",
+        "equal_source_weight_0",
+        "heldout_does_not_change_training_0",
+        "no_current_control_0",
+        "finite_fold_1",
+        "equal_source_weight_1",
+        "heldout_does_not_change_training_1",
+        "no_current_control_1",
+        "finite_fold_2",
+        "equal_source_weight_2",
+        "heldout_does_not_change_training_2",
+        "no_current_control_2",
+        "finite_fold_3",
+        "equal_source_weight_3",
+        "heldout_does_not_change_training_3",
+        "no_current_control_3",
+        "finite_fold_4",
+        "equal_source_weight_4",
+        "heldout_does_not_change_training_4",
+        "no_current_control_4",
+        "finite_fold_5",
+        "equal_source_weight_5",
+        "heldout_does_not_change_training_5",
+        "no_current_control_5",
+        "finite_fold_6",
+        "equal_source_weight_6",
+        "heldout_does_not_change_training_6",
+        "no_current_control_6",
+        "finite_fold_7",
+        "equal_source_weight_7",
+        "heldout_does_not_change_training_7",
+        "no_current_control_7",
+        "finite_fold_8",
+        "equal_source_weight_8",
+        "heldout_does_not_change_training_8",
+        "no_current_control_8",
+        "finite_fold_9",
+        "equal_source_weight_9",
+        "heldout_does_not_change_training_9",
+        "no_current_control_9",
+        "finite_fold_10",
+        "equal_source_weight_10",
+        "heldout_does_not_change_training_10",
+        "no_current_control_10",
+        "finite_fold_11",
+        "equal_source_weight_11",
+        "heldout_does_not_change_training_11",
+        "no_current_control_11",
+        "finite_fold_12",
+        "equal_source_weight_12",
+        "heldout_does_not_change_training_12",
+        "no_current_control_12",
+        "finite_fold_13",
+        "equal_source_weight_13",
+        "heldout_does_not_change_training_13",
+        "no_current_control_13",
+        "finite_fold_14",
+        "equal_source_weight_14",
+        "heldout_does_not_change_training_14",
+        "no_current_control_14",
+        "finite_fold_15",
+        "equal_source_weight_15",
+        "heldout_does_not_change_training_15",
+        "no_current_control_15",
+        "finite_fold_16",
+        "equal_source_weight_16",
+        "heldout_does_not_change_training_16",
+        "no_current_control_16",
+        "finite_fold_17",
+        "equal_source_weight_17",
+        "heldout_does_not_change_training_17",
+        "no_current_control_17",
+        "finite_fold_18",
+        "equal_source_weight_18",
+        "heldout_does_not_change_training_18",
+        "no_current_control_18",
+        "finite_fold_19",
+        "equal_source_weight_19",
+        "heldout_does_not_change_training_19",
+        "no_current_control_19",
+        "finite_fold_20",
+        "equal_source_weight_20",
+        "heldout_does_not_change_training_20",
+        "no_current_control_20",
+        "each_record_held_once",
+        "within_study_split_rejected"
+      ],
+      "scientific_limits": [
+        "Small study count; no reliable generalization or large-model sufficiency claim.",
+        "Reported A/g denominators may differ; no canonical current inferred.",
+        "Sparse electrolyte/reference categories cannot support broad categorical effect claims.",
+        "Shared publication/reuse groups must remain together in outer and inner validation."
+      ]
+    },
+    "reported_2e_residue": {
+      "status": "ready_for_exploratory_grouped_baseline_inputs",
+      "rows": 28,
+      "source_groups": 22,
+      "core_missing_cells": 0,
+      "target_min": 73.0,
+      "target_max": 142.22,
+      "target_mean": 96.72142857142856,
+      "retention_above_100_records": [
+        "legacy:R093_CY01",
+        "incoming:ADD_054_T03",
+        "incoming:ADD_019_T01",
+        "incoming:ADD_019_T02"
+      ],
+      "category_source_group_counts": {
+        "electrolyte": {
+          "H2SO4": 4,
+          "KOH": 15,
+          "Li2SO4": 1,
+          "Na2SO4": 2,
+          "sodium_acetate": 1
+        }
+      },
+      "singleton_categories": {
+        "electrolyte": [
+          "Li2SO4",
+          "sodium_acetate"
+        ]
+      },
+      "model_fits": 0,
+      "research_training_authorized": false,
+      "quality_checks": [
+        "approved_core_matrix",
+        "no_forbidden_predictors",
+        "multiple_groups_for_validation",
+        "finite_fold_0",
+        "equal_source_weight_0",
+        "heldout_does_not_change_training_0",
+        "no_current_control_0",
+        "finite_fold_1",
+        "equal_source_weight_1",
+        "heldout_does_not_change_training_1",
+        "no_current_control_1",
+        "finite_fold_2",
+        "equal_source_weight_2",
+        "heldout_does_not_change_training_2",
+        "no_current_control_2",
+        "finite_fold_3",
+        "equal_source_weight_3",
+        "heldout_does_not_change_training_3",
+        "no_current_control_3",
+        "finite_fold_4",
+        "equal_source_weight_4",
+        "heldout_does_not_change_training_4",
+        "no_current_control_4",
+        "finite_fold_5",
+        "equal_source_weight_5",
+        "heldout_does_not_change_training_5",
+        "no_current_control_5",
+        "finite_fold_6",
+        "equal_source_weight_6",
+        "heldout_does_not_change_training_6",
+        "no_current_control_6",
+        "finite_fold_7",
+        "equal_source_weight_7",
+        "heldout_does_not_change_training_7",
+        "no_current_control_7",
+        "finite_fold_8",
+        "equal_source_weight_8",
+        "heldout_does_not_change_training_8",
+        "no_current_control_8",
+        "finite_fold_9",
+        "equal_source_weight_9",
+        "heldout_does_not_change_training_9",
+        "no_current_control_9",
+        "finite_fold_10",
+        "equal_source_weight_10",
+        "heldout_does_not_change_training_10",
+        "no_current_control_10",
+        "finite_fold_11",
+        "equal_source_weight_11",
+        "heldout_does_not_change_training_11",
+        "no_current_control_11",
+        "finite_fold_12",
+        "equal_source_weight_12",
+        "heldout_does_not_change_training_12",
+        "no_current_control_12",
+        "finite_fold_13",
+        "equal_source_weight_13",
+        "heldout_does_not_change_training_13",
+        "no_current_control_13",
+        "finite_fold_14",
+        "equal_source_weight_14",
+        "heldout_does_not_change_training_14",
+        "no_current_control_14",
+        "finite_fold_15",
+        "equal_source_weight_15",
+        "heldout_does_not_change_training_15",
+        "no_current_control_15",
+        "finite_fold_16",
+        "equal_source_weight_16",
+        "heldout_does_not_change_training_16",
+        "no_current_control_16",
+        "finite_fold_17",
+        "equal_source_weight_17",
+        "heldout_does_not_change_training_17",
+        "no_current_control_17",
+        "finite_fold_18",
+        "equal_source_weight_18",
+        "heldout_does_not_change_training_18",
+        "no_current_control_18",
+        "finite_fold_19",
+        "equal_source_weight_19",
+        "heldout_does_not_change_training_19",
+        "no_current_control_19",
+        "finite_fold_20",
+        "equal_source_weight_20",
+        "heldout_does_not_change_training_20",
+        "no_current_control_20",
+        "finite_fold_21",
+        "equal_source_weight_21",
+        "heldout_does_not_change_training_21",
+        "no_current_control_21",
+        "each_record_held_once",
+        "within_study_split_rejected"
+      ],
+      "scientific_limits": [
+        "Small study count; no reliable generalization or large-model sufficiency claim.",
+        "Reported A/g denominators may differ; no canonical current inferred.",
+        "Sparse electrolyte/reference categories cannot support broad categorical effect claims.",
+        "Shared publication/reuse groups must remain together in outer and inner validation."
+      ]
+    },
+    "reported_2e_approx": {
+      "status": "ready_for_exploratory_grouped_baseline_inputs",
+      "rows": 30,
+      "source_groups": 24,
+      "core_missing_cells": 0,
+      "target_min": 73.0,
+      "target_max": 142.22,
+      "target_mean": 96.06,
+      "retention_above_100_records": [
+        "legacy:R093_CY01",
+        "incoming:ADD_054_T03",
+        "incoming:ADD_019_T01",
+        "incoming:ADD_019_T02"
+      ],
+      "category_source_group_counts": {
+        "electrolyte": {
+          "H2SO4": 4,
+          "KNO3": 1,
+          "KOH": 15,
+          "Li2SO4": 1,
+          "Na2SO4": 3,
+          "sodium_acetate": 1
+        }
+      },
+      "singleton_categories": {
+        "electrolyte": [
+          "KNO3",
+          "Li2SO4",
+          "sodium_acetate"
+        ]
+      },
+      "model_fits": 0,
+      "research_training_authorized": false,
+      "quality_checks": [
+        "approved_core_matrix",
+        "no_forbidden_predictors",
+        "multiple_groups_for_validation",
+        "finite_fold_0",
+        "equal_source_weight_0",
+        "heldout_does_not_change_training_0",
+        "no_current_control_0",
+        "finite_fold_1",
+        "equal_source_weight_1",
+        "heldout_does_not_change_training_1",
+        "no_current_control_1",
+        "finite_fold_2",
+        "equal_source_weight_2",
+        "heldout_does_not_change_training_2",
+        "no_current_control_2",
+        "finite_fold_3",
+        "equal_source_weight_3",
+        "heldout_does_not_change_training_3",
+        "no_current_control_3",
+        "finite_fold_4",
+        "equal_source_weight_4",
+        "heldout_does_not_change_training_4",
+        "no_current_control_4",
+        "finite_fold_5",
+        "equal_source_weight_5",
+        "heldout_does_not_change_training_5",
+        "no_current_control_5",
+        "finite_fold_6",
+        "equal_source_weight_6",
+        "heldout_does_not_change_training_6",
+        "no_current_control_6",
+        "finite_fold_7",
+        "equal_source_weight_7",
+        "heldout_does_not_change_training_7",
+        "no_current_control_7",
+        "finite_fold_8",
+        "equal_source_weight_8",
+        "heldout_does_not_change_training_8",
+        "no_current_control_8",
+        "finite_fold_9",
+        "equal_source_weight_9",
+        "heldout_does_not_change_training_9",
+        "no_current_control_9",
+        "finite_fold_10",
+        "equal_source_weight_10",
+        "heldout_does_not_change_training_10",
+        "no_current_control_10",
+        "finite_fold_11",
+        "equal_source_weight_11",
+        "heldout_does_not_change_training_11",
+        "no_current_control_11",
+        "finite_fold_12",
+        "equal_source_weight_12",
+        "heldout_does_not_change_training_12",
+        "no_current_control_12",
+        "finite_fold_13",
+        "equal_source_weight_13",
+        "heldout_does_not_change_training_13",
+        "no_current_control_13",
+        "finite_fold_14",
+        "equal_source_weight_14",
+        "heldout_does_not_change_training_14",
+        "no_current_control_14",
+        "finite_fold_15",
+        "equal_source_weight_15",
+        "heldout_does_not_change_training_15",
+        "no_current_control_15",
+        "finite_fold_16",
+        "equal_source_weight_16",
+        "heldout_does_not_change_training_16",
+        "no_current_control_16",
+        "finite_fold_17",
+        "equal_source_weight_17",
+        "heldout_does_not_change_training_17",
+        "no_current_control_17",
+        "finite_fold_18",
+        "equal_source_weight_18",
+        "heldout_does_not_change_training_18",
+        "no_current_control_18",
+        "finite_fold_19",
+        "equal_source_weight_19",
+        "heldout_does_not_change_training_19",
+        "no_current_control_19",
+        "finite_fold_20",
+        "equal_source_weight_20",
+        "heldout_does_not_change_training_20",
+        "no_current_control_20",
+        "finite_fold_21",
+        "equal_source_weight_21",
+        "heldout_does_not_change_training_21",
+        "no_current_control_21",
+        "finite_fold_22",
+        "equal_source_weight_22",
+        "heldout_does_not_change_training_22",
+        "no_current_control_22",
+        "finite_fold_23",
+        "equal_source_weight_23",
+        "heldout_does_not_change_training_23",
+        "no_current_control_23",
+        "each_record_held_once",
+        "within_study_split_rejected"
+      ],
+      "scientific_limits": [
+        "Small study count; no reliable generalization or large-model sufficiency claim.",
+        "Reported A/g denominators may differ; no canonical current inferred.",
+        "Sparse electrolyte/reference categories cannot support broad categorical effect claims.",
+        "Shared publication/reuse groups must remain together in outer and inner validation."
+      ]
+    }
+  },
+  "material_preparation": {
+    "raw_missing_values_retained": true,
+    "fold_count": 25,
+    "checks": [
+      {
+        "fold": 0,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 1,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 2,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 3,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 4,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 5,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 6,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 7,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 8,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 9,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 10,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 11,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 12,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 13,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 14,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 15,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 16,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 17,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 18,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 19,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 20,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 21,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 22,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 23,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      },
+      {
+        "fold": 24,
+        "source_groups_disjoint": true,
+        "heldout_mutation_does_not_change_training": true,
+        "finite_training_and_validation": true
+      }
+    ],
+    "coverage": {
+      "total_pore_volume_cm3_g": {
+        "records": 20,
+        "source_groups": 17
+      },
+      "micropore_volume_cm3_g": {
+        "records": 16,
+        "source_groups": 10
+      },
+      "mesopore_volume_cm3_g": {
+        "records": 7,
+        "source_groups": 4
+      },
+      "average_pore_diameter_nm": {
+        "records": 13,
+        "source_groups": 10
+      },
+      "micropore_surface_area_m2_g": {
+        "records": 17,
+        "source_groups": 13
+      },
+      "external_surface_area_m2_g": {
+        "records": 5,
+        "source_groups": 4
+      },
+      "Raman_ID_IG": {
+        "records": 25,
+        "source_groups": 18
+      },
+      "XRD_d002_nm": {
+        "records": 4,
+        "source_groups": 1
+      },
+      "XPS_N_reported_pct": {
+        "records": 13,
+        "source_groups": 12
+      },
+      "XPS_O_reported_pct": {
+        "records": 14,
+        "source_groups": 12
+      },
+      "XPS_percentage_basis": {
+        "records": 16,
+        "source_groups": 14
+      },
+      "mass_loading_mg_cm2": {
+        "records": 2,
+        "source_groups": 2
+      },
+      "activation_temperature_C": {
+        "records": 1,
+        "source_groups": 1
+      },
+      "activation_duration_h": {
+        "records": 1,
+        "source_groups": 1
+      },
+      "heating_rate_C_min": {
+        "records": 1,
+        "source_groups": 1
+      },
+      "material_density_g_cm3": {
+        "records": 1,
+        "source_groups": 1
+      },
+      "bulk_N_wt_pct": {
+        "records": 1,
+        "source_groups": 1
+      },
+      "bulk_O_wt_pct": {
+        "records": 1,
+        "source_groups": 1
+      }
+    },
+    "model_fits": 0
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "v011-own-source-agent-reviewed-delta-1",
+  "scope": "biomass-derived porous carbon; reported protocol use; no fit",
+  "reviewed_materials": [
+    {
+      "doi": "10.1007/s00339-023-07141-8", "sample": "OAC623",
+      "path": "三电极端点扩充_20261018/corpus/B_R087/main.pdf",
+      "sha256": "dd31e41f0058c58990b3ba58e3215228480a86f5c1b18f2717849eb34ad11c23",
+      "locator": "PDF p7 Table3; p3 methods", "stage": "before_cycling",
+      "features": {"micropore_volume_cm3_g": 0.3340, "mesopore_volume_cm3_g": 0.0163, "micropore_surface_area_m2_g": 708.0, "external_surface_area_m2_g": 7.1, "average_pore_diameter_nm": 1.96, "oxygen_groups_meq_g": 2.247},
+      "methods": {"micropore_volume_cm3_g": "author Table3; method not assigned beyond stated adsorption analysis", "oxygen_groups_meq_g": "Boehm titration; never atomic percent"},
+      "raw_excerpt": "OAC623: BET715; external7.1; micropore area708; total0.3503; micro0.3340; meso0.0163; average diameter1.96; oxygen groups2.247(meq/g).",
+      "notes": ["Precursor apricot stones; H3PO4 activation followed by O2 oxidation623K for4h. Total oxygen-functional-group percentage90.88 in Table2 is C1s fit grouping, not O atomic percent; do not use as O_at_pct."]
+    },
+    {
+      "doi": "10.1021/acsomega.4c11529", "sample": "EUAC1-60",
+      "path": "三电极端点扩充_20261018/corpus/B_R013/main.pdf",
+      "sha256": "f0b7781603de2b1e49d7e5c9ae0c2399a376788d5664755c034a9da9afc11329",
+      "locator": "PDF p5 Table2 and Fig3; p3 methods; p6 Fig5b", "stage": "before_cycling",
+      "features": {"micropore_volume_cm3_g": 0.28, "mesopore_volume_cm3_g": 0.54, "micropore_surface_area_m2_g": 522.8, "mesopore_surface_area_m2_g": 1066.2, "average_pore_diameter_nm": 2.51, "Raman_ID_IG": 0.92, "mass_loading_mg_cm2": 8.0, "XPS_O_reported_pct": 15.39, "XPS_C_reported_pct": 84.61},
+      "feature_locators": {"Raman_ID_IG": "PDF p5 Fig3a", "mass_loading_mg_cm2": "PDF p3 section2.4; approximately8.0mg/cm2", "XPS_O_reported_pct": "PDF p6 Fig5b XPS survey; p7 prose", "XPS_C_reported_pct": "PDF p6 Fig5b XPS survey"},
+      "methods": {"mass_loading_mg_cm2": "author approximate areal mass; preserve approximate precision", "XPS_O_reported_pct": "XPS survey reported relative content; atomic/weight basis not explicitly stated in inspected passage; O_at_pct stays null", "Raman_ID_IG": "D/G intensity ratio reported by author"},
+      "raw_excerpt": "EUAC1-60 Table2: S_BET1589.0, S_micro522.8, S_meso1066.2; V_total0.82,V_micro0.28,V_meso0.54; D_total2.51. Fig3a ID/IG0.92. Fig5b O15.39%, C84.61%.",
+      "notes": ["Microwave900W and60min are process power/time, not900degreesC. XPS15.39% not silently equated to EDS content. Total/micropore/mesopore values retain Table2 method/rounding."]
+    },
+    {
+      "doi": "10.1039/d4ta02115k", "sample": "OPC", "path": "三电极端点扩充_20261018/corpus/U002/main.pdf", "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e", "locator": "PDF p12 Table1 (author p11)", "stage": "before_cycling",
+      "features": {"XRD_d002_nm": 0.374, "Raman_ID_IG": 0.84, "micropore_volume_cm3_g": 0.003, "average_pore_diameter_nm": 19.54},
+      "methods": {"micropore_volume_cm3_g": "Horvath-Kawazoe(HK), Table1 footnote"},
+      "raw_excerpt": "OPC d0020.374,ID/IG0.84,S_BET10.9,V_total0.053,V_micro0.003,D_aver19.54.", "notes": ["Low BET and retention76.7 remain genuine own sample; no outlier deletion."]
+    },
+    {
+      "doi": "10.1039/d4ta02115k", "sample": "OPB", "path": "三电极端点扩充_20261018/corpus/U002/main.pdf", "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e", "locator": "PDF p12 Table1 (author p11)", "stage": "before_cycling",
+      "features": {"XRD_d002_nm": 0.378, "Raman_ID_IG": 0.87, "micropore_volume_cm3_g": 0.28, "average_pore_diameter_nm": 1.64},
+      "methods": {"micropore_volume_cm3_g": "Horvath-Kawazoe(HK), Table1 footnote"}, "raw_excerpt": "OPB d0020.378,ID/IG0.87,S_BET871.9,V_total0.36,V_micro0.28,D_aver1.64.", "notes": []
+    },
+    {
+      "doi": "10.1039/d4ta02115k", "sample": "OPNP", "path": "三电极端点扩充_20261018/corpus/U002/main.pdf", "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e", "locator": "PDF p12 Table1 (author p11)", "stage": "before_cycling",
+      "features": {"XRD_d002_nm": 0.384, "Raman_ID_IG": 0.93, "micropore_volume_cm3_g": 0.75, "average_pore_diameter_nm": 1.75},
+      "methods": {"micropore_volume_cm3_g": "Horvath-Kawazoe(HK), Table1 footnote"}, "raw_excerpt": "OPNP d0020.384,ID/IG0.93,S_BET1894.9,V_total0.83,V_micro0.75,D_aver1.75.", "notes": []
+    },
+    {
+      "doi": "10.1039/d4ta02115k", "sample": "OPBNP", "path": "三电极端点扩充_20261018/corpus/U002/main.pdf", "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e", "locator": "PDF p12 Table1; p14 own XPS text", "stage": "before_cycling",
+      "features": {"XRD_d002_nm": 0.392, "Raman_ID_IG": 0.99, "micropore_volume_cm3_g": 0.69, "average_pore_diameter_nm": 1.82, "XPS_C_reported_pct": 84.21, "XPS_O_reported_pct": 11.46, "XPS_N_reported_pct": 3.28, "XPS_B_reported_pct": 0.90, "XPS_P_reported_pct": 0.15},
+      "feature_locators": {"XPS_C_reported_pct": "PDF p14 own XPS relative elemental contents", "XPS_O_reported_pct": "PDF p14 own XPS relative elemental contents", "XPS_N_reported_pct": "PDF p14 own XPS relative elemental contents", "XPS_B_reported_pct": "PDF p14 own XPS relative elemental contents", "XPS_P_reported_pct": "PDF p14 own XPS relative elemental contents"},
+      "methods": {"micropore_volume_cm3_g": "Horvath-Kawazoe(HK), Table1 footnote", "XPS_N_reported_pct": "XPS relative elemental content; percentage basis not explicitly stated; N_at_pct stays null", "XPS_O_reported_pct": "XPS relative elemental content; percentage basis not explicitly stated; O_at_pct stays null"},
+      "raw_excerpt": "OPBNP d0020.392,ID/IG0.99,S_BET1774.8,V_total0.81,V_micro0.69,D_aver1.82. XPS C,O,N,B,P=84.21%,11.46%,3.28%,0.90%,0.15%.",
+      "notes": ["OPBNP//OPBNP paired electrodes may share pre-cycling material features only; the two-electrode retention97.61 remains a separate test from three-electrode93.6. No propagation of OPBNP chemistry to OPC/OPB/OPNP."]
+    }
+  ],
+  "admission_reviews": [
+    {
+      "endpoint_id": "legacy:R087_CY01", "approved_profiles": ["reported_3e"],
+      "changes": {"baseline_reference": {"reference": "author_original_capacitance", "cycle_index": null, "basis": "p9 explicit85.5percent of original capacitance; p10Fig12 own cycling"}},
+      "evidence": [{"path": "三电极端点扩充_20261018/corpus/B_R087/main.pdf", "sha256": "dd31e41f0058c58990b3ba58e3215228480a86f5c1b18f2717849eb34ad11c23", "locator": "PDF pp3,7,8,9,10", "fields": ["material_scope", "BET_m2_g", "electrolyte", "concentration_mol_L", "system", "reference_electrode", "method", "cycle_voltage_lower_V", "cycle_voltage_upper_V", "cycle_count", "reported_current_A_g", "retention_pct", "retention_relation", "baseline_reference"], "excerpt": "Apricot stones,H3PO4 activated/O2-functionalized carbon; closed3E/Pt/SCE(p3); Table3 OAC623715m2/g(p7); own Fig9b GCD0..1V/SCE in2MNaOH(p8);1000charge-discharge cycles0.1A/g,85.5percent of original(p9); Fig12 cycling0.1A/g and~85.5(p10)."}],
+      "gate_dispositions": {"baseline_checked": "Original capacitance is author reference; exact initial index remains null.", "material_checked": "Apricot-stone-derived porous carbon; no active metal composite found in own synthesis.", "protocol_checked": "Own GCD waveform0..1V/SCE,2MNaOH; cycling0.1A/g inp9 andFig12.", "source_checked": "Own abstract/prose andFig12, not Table4 comparison rows.", "independence_checked": "Same DOI/material/test one existing endpoint; no duplicate sample added.", "mass_basis_checked": "Author reported0.1A/g descriptor; denominator unreported and remains unharmonized.", "freeze_cleared": "No independent scientific conflict found; earlier pending gate preserved in parent. Local Fig10caption1A differs from specific0.1A/g prose/Fig12; saved as caption inconsistency, not used for cycling current."},
+      "caveats": ["Fig12 annotates approximately85.5 while abstract and main text give85.5 without approximation; retain main-text reported rounded value with figure precision caveat.", "Short1000cycle horizon is retained as input; no claim of10000cycle stability.", "24.8±3mg absolute working material mass is not areal mass loading and is not an A/g denominator proof."]
+    },
+    {
+      "endpoint_id": "legacy:R013_CY01", "approved_profiles": ["reported_3e"],
+      "changes": {"baseline_reference": {"reference": "author_plotted_initial_capacitance_normalized_reference", "cycle_index": null, "basis": "own Fig6d starts near100percent; p8 andTable3 report89.90percent at10000cycles"}},
+      "evidence": [{"path": "三电极端点扩充_20261018/corpus/B_R013/main.pdf", "sha256": "f0b7781603de2b1e49d7e5c9ae0c2399a376788d5664755c034a9da9afc11329", "locator": "PDF pp3,5,7,8", "fields": ["material_scope", "BET_m2_g", "electrolyte", "concentration_mol_L", "system", "reference_electrode", "method", "cycle_voltage_lower_V", "cycle_voltage_upper_V", "cycle_count", "reported_current_A_g", "retention_pct", "retention_relation", "baseline_reference"], "excerpt": "EUO wood meal, phosphoric acid/microwave activation(p3);3E1MKOH,Hg/HgO,Pt,-1.0..0.2V(p3);Table2 EUAC1-60 BET1589(p5);ownFig6b GCD/6d cycling10000(p7); p8 at1A/g89.90percent capacitance retention/Table3 this work."}],
+      "gate_dispositions": {"baseline_checked": "Own plotted retention reference, exact initial cycle index unreported remains null.", "material_checked": "EUO wood-derived activated porous carbon;3E carbon test separated from later zinc-ion hybrid device.", "protocol_checked": "Own3E methods and Fig6b GCD agree -1..0.2V/HgHgO in1MKOH; cycling1A/g/10000cycles explicitly bound toFig6d.", "source_checked": "OwnTable2 andFig6d/prose/Table3 this-work row.", "independence_checked": "Same DOI as pending legacy endpoint; no new independent paper invented; group stays single.", "mass_basis_checked": "Reported1A/g remains author descriptor; approximately8mg/cm2 loading does not prove current denominator.", "freeze_cleared": "No unresolved target/system conflict after own-source review; retain author Coulombic-efficiency anomaly as limitation."},
+      "caveats": ["Author reports117.21percent Coulombic efficiency separately; do not replace89.90percent capacitance retention with that number.", "Zinc-ion hybrid93.7percent belongs toFig7i and is not this3E target."]
+    }
+  ]
+}
