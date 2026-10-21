@@ -1,0 +1,122 @@
+{
+  "schema": "reported-retention-training-input-v1",
+  "database_file": "cycling_v0_10.sqlite",
+  "parent_database_sha256": "0f439a229b6c5e9e917abb1382b78587eeaea428f714c5b108fdc5b867a894aa",
+  "target": "capacitance_retention_pct_at_requested_cycle_count_and_reported_protocol",
+  "default_profile": "reported_3e",
+  "research_training_authorized": false,
+  "current_semantics": "author_reported_protocol_descriptor",
+  "core_features": [
+    "cycle_count",
+    "reported_current_A_g",
+    "electrolyte",
+    "concentration_mol_L",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V",
+    "BET_m2_g",
+    "reference_electrode"
+  ],
+  "canonical_core_features": [
+    "cycle_count",
+    "canonical_current_A_g",
+    "electrolyte",
+    "concentration_mol_L",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V",
+    "BET_m2_g"
+  ],
+  "profiles": {
+    "reported_3e": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g",
+        "reference_electrode"
+      ],
+      "system": "3E",
+      "relations": [
+        "eq"
+      ]
+    },
+    "reported_2e": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "system": "2E_symmetric",
+      "relations": [
+        "eq"
+      ]
+    },
+    "reported_2e_residue": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "system": "2E_symmetric",
+      "relations": [
+        "eq"
+      ]
+    },
+    "reported_2e_approx": {
+      "features": [
+        "cycle_count",
+        "reported_current_A_g",
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g"
+      ],
+      "system": "2E_symmetric",
+      "relations": [
+        "eq",
+        "approx"
+      ]
+    }
+  },
+  "optional_features": [
+    "total_pore_volume_cm3_g"
+  ],
+  "forbidden_predictors": [
+    "endpoint_id",
+    "identity_key",
+    "source_group",
+    "material_id",
+    "test_id",
+    "sample_name",
+    "retention_pct",
+    "post_cycle_EIS",
+    "post_cycle_XPS",
+    "final_capacitance"
+  ],
+  "review_only_profiles": [
+    "review_3e",
+    "review_3e_all",
+    "all_review",
+    "proposal_2e"
+  ],
+  "physical_current_warning": "No unknown denominator was imputed/converted. Main features are literature descriptors; do not claim calibrated equal physical stress.",
+  "3E_reference_policy": "Reference identity is a required categorical descriptor; raw reported potentials are not silently converted.",
+  "window_evidence_policy": "Own actual waveforms or an explicitly reviewed applicable GCD programme in same sample/configuration/electrolyte; evidence kind and caveats saved per record.",
+  "baseline_policy": "author initial/plotted reference allowed; exact cycle index remains unknown when unreported",
+  "split_policy": "Unified paper/reuse groups stay together; leave-one-source-out; equal total source weight; no preprocessing before group split.",
+  "version": "v0.10",
+  "expansion_rule": "Explicit own-test approvals only; old tables and all old freezes untouched; staged sources not globally archived.",
+  "new_test_review_only_profile": "incoming_review",
+  "storage_layout": "Read-only v0.9 and v0.8 chain plus compact v0.10 deltas/snapshots; retain whole repository."
+}
