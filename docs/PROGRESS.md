@@ -163,3 +163,11 @@
 - 验证：4310项基础核验、53项稳定入口/代码/链接检查；598项旧载荷、889索引原件、559外部文件出现及112压缩包SHA；959表格候选保持未审；新拟合0
 - 下一步/未决：逐项补87条3E待核，优先3项已有论文SI；新实验预先规划来源留出及材料特征消融，保留原值与旧实验
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-22T02:26:59+08:00：v0.12逐条复核87条待核，补5份SI及309项字段，3E主集38条/30来源组
+
+- 结果：v0.12逐条复核87条待核，补5份SI及309项字段，3E主集38条/30来源组
+- 文件：README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/knowledge/待补证精细复核与原图口径_20261022.md, data/current_database.json, 待补证原文复核_20261022, 循环稳定性数据库_v0.12_待补证精细复核_20261022, tools/build_pending_review_v012.py, tools/digitize_pending_curves_v012.py, tools/prepare_pending_review_v012.py, tools/render_pending_evidence_v012.py, tools/retrieve_evidence_supplements_v012.py, tools/verify_pending_review_v012.py
+- 验证：17378项技术/保护核验通过；旧33条核心/标签、2E集合、原件与父库哈希保留；来源分组与折内准备、负例拒绝及稳定API检查通过；真实拟合0次
+- 下一步/未决：现行用途45条仍需资料或争议处理（含年份待核）；近似/残留47条为敏感性集合；下一轮训练先冻结计划并保留独立来源评估，不按旧外层成绩追分
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
