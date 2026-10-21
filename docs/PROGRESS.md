@@ -123,3 +123,11 @@
 - 验证：895项本版、380项折内、445项v0.8与3693加454项旧版核验通过；40项v0.9载荷与117项本批保护文件未变；175本地链接、敏感扫描与稳定API通过，拟合0
 - 下一步/未决：按56条当前队列补独立3E及真实缺口；BLAC800不借BET，CCL和HPC-P8不借3E负载；真实拟合仍需用户授权
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-21T10:59:36+08:00：完成首轮31条23来源的真实分组基线训练：161任务138拟合，交付在线与离线可视化进度
+
+- 结果：完成首轮31条23来源的真实分组基线训练：161任务138拟合，交付在线与离线可视化进度
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/knowledge/建模用途决策.md, docs/knowledge/训练输入质量与折内准备_20261021.md, tools/train_initial_baselines.py, tools/verify_initial_training.py, tools/serve_training_progress.py, tools/check_training_dashboard.cjs, 初步模型训练_20261021
+- 验证：1201项科学执行核验通过；来源隔离、指标独立重算、154任务断点前缀及旧数据保护通过；桌面和窄屏、真实预测筛选与离线链接通过，133本地链接和敏感扫描通过
+- 下一步/未决：本轮去电流MLP的MAE2.85百分点但改善区间跨零；补独立来源，调参需内外层分组，未选择部署模型
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

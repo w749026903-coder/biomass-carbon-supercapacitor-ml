@@ -1,0 +1,34 @@
+{
+  "surface": "dashboard",
+  "title": "超级电容器 · 初步训练进度",
+  "generatedAt": "2026-10-21T10:21:09.730961+08:00",
+  "status": "reviewed",
+  "filters": [],
+  "queries": {
+    "training": {
+      "rows": [],
+      "source": {
+        "provider": "Local Python grouped model evaluation",
+        "files": [
+          "初步模型训练_20261021/training_plan.json",
+          "初步模型训练_20261021/data_snapshot.json",
+          "初步模型训练_20261021/progress.json"
+        ],
+        "description": "31三电极记录/23来源组，v0.10；实际执行日志与留出来源预测；空值表示尚未执行。",
+        "caveats": [
+          "小样本探索；每次仅整组留出，固定参数；未调参或发布模型。"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "Data and authorization",
+            "detail": "Read v0.10 via data.cycling_db; user explicitly authorized initial training on2026-10-21."
+          },
+          {
+            "title": "Live run",
+            "detail": "tools/train_initial_baselines.py writes progress.json atomically after each real fold. The local panel reads the same file."
+          }
+        ]
+      }
+    }
+  }
+}
