@@ -1,0 +1,102 @@
+{
+  "new_model_fits": 0,
+  "third_party_code_executed": false,
+  "reviewed_revisions": [
+    {
+      "repository": "Shan-Zhu/ML-Carbon_Supercapacitor",
+      "commit": "2e7ca3e8b3755819c038fde1402741ab708a719f",
+      "target": "specific_capacitance_F_g",
+      "data_rows": 681,
+      "raw_doi_count": 168,
+      "reviewed_file": "NN-train",
+      "split": "random rows;90/10",
+      "useful": "Microstructure, Raman and elemental columns alongside BET; source DOI present in data.",
+      "limits": [
+        "Carbon broadly, not exclusively biomass or fiber.",
+        "Source groups are not passed to the split in reviewed script.",
+        "Public files are not a verified permissive license."
+      ]
+    },
+    {
+      "repository": "Shan-Zhu/ML-SC_3DCN",
+      "commit": "f3094e00269513e97d64d45b6fd8c8f9c53b0e6a",
+      "target": "specific_capacitance_F_g",
+      "data_rows": 1321,
+      "raw_doi_count": 68,
+      "reviewed_file": "TPOT.py",
+      "split": "random rows;80/20",
+      "useful": "Adds multi-current measurements and composition/pore features; linked experimental paper.",
+      "limits": [
+        "Current-dependent rows repeat studies;1321 rows are not1321 independent sources.",
+        "TPOT.py expects a renamed Cap column, while inspected CSV has Capacitance (F/g); preprocessing is not fully specified in this script.",
+        "No direct retention model or verified reuse license."
+      ]
+    },
+    {
+      "repository": "khub-crystalparadigm/capacitance_pred",
+      "commit": "ca7fcfdb0f432d30312ccb87175fe17798f53030",
+      "target": "specific_capacitance_F_g",
+      "data_rows": 910,
+      "raw_doi_count": 52,
+      "reviewed_file": "Final_Model_Catboost.ipynb",
+      "useful": [
+        "DOI-grouped train/calibration/test design",
+        "Feature-group ablations",
+        "Separate external workbook",
+        "Missingness flags and process/structure columns"
+      ],
+      "saved_outputs_not_reproduced": {
+        "random_split_r2": 0.9297,
+        "doi_split_r2": 0.1497,
+        "external_r2": 0.2349,
+        "external_mae_F_g": 386.34,
+        "external_rows": 31
+      },
+      "code_findings": [
+        {
+          "cell_zero_based": 60,
+          "lines": "47-57",
+          "finding": "Grouped test is also the early-stopping/best-iteration eval_set, then scored. This test feedback means it is not an untouched final test."
+        },
+        {
+          "cell_zero_based": 77,
+          "lines": "48-88",
+          "finding": "Repeated grouped ablations similarly use the scored test for best-iteration selection."
+        }
+      ],
+      "limits": [
+        "Saved outputs are authored notebook outputs, not this audit reproductions.",
+        "DOI normalization and external-study independence not fully re-audited.",
+        "Mostly carbon composites; current pure-carbon cohort cannot absorb all rows.",
+        "No explicit license verified; no data redistribution or training import performed."
+      ],
+      "code_cells_present": 51,
+      "focused_full_cell_reads_zero_based": [
+        45,
+        49,
+        54,
+        60,
+        63
+      ],
+      "additional_selection_and_output_cells_inspected": [
+        59,
+        64,
+        77,
+        81
+      ]
+    },
+    {
+      "repository": "bhavya8823/AI-Based-Supercapacitor-Capacitance-Prediction",
+      "commit": "b5a87fae1d10b421ff559eddd484412a6693e5a6",
+      "review_scope": "Repository README only",
+      "useful": "Index to five datasets including CNF-related carbon materials.",
+      "limits": [
+        "README metrics not independently reproduced.",
+        "Carbon nanofiber group also mixes rGO/MWCNT/GQD.",
+        "Target is capacitance, not endpoint retention; not a verified biomass-fiber retention solution."
+      ]
+    }
+  ],
+  "interpretation": "These primary repositories provide transferable data organization and feature ideas; high random-split scores are not evidence that our grouped retention model should reach those values.",
+  "public_api_access": "Unauthenticated GitHub API rate-limited. Public repository pages, read-only Git HEAD lookup and revision-pinned raw text were used instead."
+}

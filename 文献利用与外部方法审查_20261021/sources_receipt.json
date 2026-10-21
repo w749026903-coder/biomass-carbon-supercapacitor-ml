@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "utilization",
+      "title": "已有文献数据有多少进入模型",
+      "queries": [
+        {
+          "id": "current-pools",
+          "source": {
+            "label": "当前数据库与审计",
+            "files": [
+              {
+                "label": "local_audit.json"
+              },
+              {
+                "label": "audit_companion.ipynb"
+              }
+            ],
+            "caveats": [
+              "目录身份、文档文件、实验记录和独立来源是不同单位，不能相加。",
+              "三电极审查池包括待审和范围问题记录，不等于全部可以训练。"
+            ]
+          },
+          "columns": [
+            "层次",
+            "测试记录",
+            "来源组"
+          ],
+          "rows": [
+            {
+              "层次": "全部结构观察",
+              "测试记录": 273,
+              "来源组": 178
+            },
+            {
+              "层次": "三电极审查池",
+              "测试记录": 116,
+              "来源组": 85
+            },
+            {
+              "层次": "实际三电极模型",
+              "测试记录": 31,
+              "来源组": 23
+            },
+            {
+              "层次": "独立双电极主集",
+              "测试记录": 26,
+              "来源组": 21
+            }
+          ],
+          "preview": {
+            "kind": "aggregate",
+            "note": "当前接口的分层汇总，各行不可相加。"
+          },
+          "methods": [
+            {
+              "language": "python",
+              "code": "with open_database() as db:\n    for sql in ['select count(*) from papers', 'select count(*) from literature_registry', 'select count(*) from document_sources', 'select count(*) from model_endpoints']:\n        print(sql, db.conn.execute(sql).fetchone()[0])\n    counts = {}\n    for name in ['all_review', 'review_3e_all', 'reported_3e', 'reported_2e']:\n        rows = db.fetch(name).rows\n        counts[name] = (len(rows), len({r['source_group'] for r in rows}))\n    assert counts == {'all_review':(273,178), 'review_3e_all':(116,85), 'reported_3e':(31,23), 'reported_2e':(26,21)}\n    print('Tests / source groups:', counts)\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "concentration",
+      "title": "来源权重均衡，低保持率覆盖和误差集中",
+      "queries": [
+        {
+          "id": "saved-mlp-errors",
+          "source": {
+            "label": "原去电流MLP留出预测",
+            "files": [
+              {
+                "label": "初步模型训练_20261021/predictions.json"
+              },
+              {
+                "label": "local_audit.json"
+              }
+            ],
+            "filters": [
+              "模型：原MLP/no_current，全部31条整来源留出预测。"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "来源权重",
+                "definition": "完整数据及汇总评估的23来源等权，每篇占1/23；每个外层训练折有22来源，参与训练的来源各占1/22。"
+              },
+              {
+                "label": "来源平方误差份额",
+                "definition": "先在每个来源内平均平方误差，再计算该来源占各来源平方误差总和的比例。"
+              }
+            ],
+            "caveats": [
+              "误差份额是描述性归因，不是因果重要性，也不支持删掉困难来源。"
+            ]
+          },
+          "columns": [
+            "来源",
+            "全体数据来源权重占比_pct",
+            "平方误差份额_pct",
+            "该来源MAE_百分点"
+          ],
+          "rows": [
+            {
+              "来源": "OPB系列论文",
+              "平方误差份额_pct": 45.61276269458593,
+              "该来源MAE_百分点": 10.642474986486452,
+              "全体数据来源权重占比_pct": 4.3478260869565215
+            }
+          ],
+          "methods": [
+            {
+              "language": "python",
+              "code": "pred = [r for r in read(ROOT / '初步模型训练_20261021/predictions.json') if r['variant'] == 'MLP/no_current']\nassert len(pred) == 31\ng = collections.defaultdict(list)\nfor r in pred: g[r['source_group']].append(r)\nmae_by_source = {s:statistics.fmean(abs(r['observed']-r['predicted']) for r in v) for s,v in g.items()}\nmse_by_source = {s:statistics.fmean((r['observed']-r['predicted'])**2 for r in v) for s,v in g.items()}\nsource = 'doi:10.1039/d4ta02115k'\nshare = mse_by_source[source] / sum(mse_by_source.values())\nold = saved['saved_prediction_error_concentration']['MLP/no_current']\nassert abs(statistics.fmean(mae_by_source.values())-old['mae'])<1e-12\nassert abs(share-next(r['sse_share'] for r in old['sources'] if r['source_group']==source))<1e-12\nprint('MAE:', statistics.fmean(mae_by_source.values()), 'OPB source MAE:', mae_by_source[source], 'OPB SSE share:', share)\nfor directory in ['初步模型训练_20261021','模型诊断与改进_20261021']:\n    manifest = read(ROOT / directory / 'run_manifest.json')\n    assert all(hashlib.sha256((ROOT / x['path']).read_bytes()).hexdigest()==x['sha256'] for x in manifest['outputs'])\n    print(directory, 'unchanged payloads', len(manifest['outputs']))\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "material-fields",
+      "title": "训练材料特征提取和利用不足",
+      "queries": [
+        {
+          "id": "training-coverage",
+          "source": {
+            "label": "31条训练记录字段",
+            "files": [
+              {
+                "label": "local_audit.json"
+              },
+              {
+                "label": "own_source_unused_features.json"
+              }
+            ],
+            "filters": [
+              "当前reported_3e的31条记录。"
+            ],
+            "caveats": [
+              "字段为空指当前结构化状态，不能推断原文没有测量或报告。",
+              "18条总孔容的审查状态不齐；非空不能直接作为已准入特征。"
+            ]
+          },
+          "columns": [
+            "字段",
+            "非空记录",
+            "进入当前核心模型"
+          ],
+          "rows": [
+            {
+              "字段": "BET_m2_g",
+              "非空记录": 31,
+              "进入当前核心模型": true
+            },
+            {
+              "字段": "total_pore_volume_cm3_g",
+              "非空记录": 18,
+              "进入当前核心模型": false
+            },
+            {
+              "字段": "N_at_pct",
+              "非空记录": 0,
+              "进入当前核心模型": false
+            },
+            {
+              "字段": "O_at_pct",
+              "非空记录": 0,
+              "进入当前核心模型": false
+            },
+            {
+              "字段": "mass_loading_mg_cm2",
+              "非空记录": 0,
+              "进入当前核心模型": false
+            }
+          ],
+          "methods": [
+            {
+              "language": "python",
+              "code": "with open_database() as db:\n    rows = db.fetch().rows\n    ids = {r['endpoint_id'] for r in rows}\n    pending = [r for r in db.fetch('review_3e_all').rows if r['endpoint_id'] not in ids]\n    assert len(pending) == 85\n    print('Pending with null cycle lower bound:', sum(r.get('cycle_voltage_lower_V') is None for r in pending))\n    coverage = {f:sum(r.get(f) is not None for r in rows) for f in ['BET_m2_g','total_pore_volume_cm3_g','N_at_pct','O_at_pct','mass_loading_mg_cm2','temperature_C']}\n    print('Training field coverage:', coverage)\n    assert all(coverage[f] == saved['inventory']['training_profiles']['reported_3e']['nonnull_fields'][f] for f in coverage)\n    assert coverage['total_pore_volume_cm3_g'] == 18\n    weights = collections.defaultdict(float)\n    for r in rows: weights[r['source_group']] += r['source_weight']\n    assert len(weights) == 23 and all(abs(w-1)<1e-12 for w in weights.values())\n    print('Source total weights:', sorted(set(weights.values())), 'each share:', 1/23)\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "external-comparison",
+      "title": "公开高随机分数与跨论文验证不可直接比较",
+      "queries": [
+        {
+          "id": "pinned-notebook",
+          "source": {
+            "label": "公开CatBoost项目",
+            "files": [
+              {
+                "label": "Final_Model_Catboost.ipynb @ca7fcfdb0f432d30312ccb87175fe17798f53030"
+              }
+            ],
+            "links": [
+              {
+                "label": "公开Notebook固定版本",
+                "href": "https://github.com/khub-crystalparadigm/capacitance_pred/blob/ca7fcfdb0f432d30312ccb87175fe17798f53030/Final_Model_Catboost.ipynb"
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "R²",
+                "definition": "作者Notebook保存的比电容预测分数；与本项目保持率回归目标不同。"
+              }
+            ],
+            "caveats": [
+              "本轮只读代码和保存输出，没有重新拟合或验证这些外部成绩。",
+              "所读代码把被评分测试集用于早停和最佳迭代选择，不是完全未触及的最终测试。",
+              "尚未验证外部工作簿来源独立性和再分发许可证。"
+            ]
+          },
+          "columns": [
+            "作者保存评估",
+            "R2"
+          ],
+          "rows": [
+            {
+              "作者保存评估": "随机拆行",
+              "R2": 0.9297
+            },
+            {
+              "作者保存评估": "DOI分组",
+              "R2": 0.1497
+            },
+            {
+              "作者保存评估": "外部工作簿",
+              "R2": 0.2349
+            }
+          ],
+          "methods": [
+            {
+              "language": "calculation",
+              "code": "读取固定版本Notebook第54、60、64单元保存输出；本轮没有复跑。\n对照第60单元第47–57行：同一test_pool_g参与最佳迭代选择，随后用于报告R²。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

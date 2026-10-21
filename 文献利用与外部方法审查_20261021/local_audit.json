@@ -1,0 +1,3171 @@
+{
+  "as_of": "2026-10-21",
+  "read_only": true,
+  "new_estimator_fits": 0,
+  "dataset_fingerprint": "a3c27d440df8f7e25d813e3d768eb2575f9c93b2d462bfab96ce3a5cf208aff3",
+  "pointer": {
+    "version_directory": "循环稳定性数据库_v0.10_原文精细补证_20261021",
+    "database_file": "cycling_v0_10.sqlite",
+    "sha256": "75d5da96e42fa34da4c7c987debb32d55a1346deb34929502b8fc91417c865d2",
+    "parent_database_file": "循环稳定性数据库_v0.9_训练质量准备_20261021/cycling_v0_9.sqlite",
+    "default_profile": "reported_3e",
+    "stage": "quality_verified_grouped_baseline_inputs",
+    "ready_for_training_inputs": true,
+    "research_training_authorized": false,
+    "all_records_admitted": false
+  },
+  "inventory": {
+    "unit_warning": "Catalog identities, archived papers, source files and test endpoints are different units; do not sum overlapping catalog counts.",
+    "tables": {
+      "papers": 126,
+      "literature_registry": 226,
+      "document_sources": 270,
+      "model_endpoints": 191,
+      "native_measurement_claims": 495,
+      "paper_source_reviews": 81,
+      "candidate_sources_v07": 15
+    },
+    "all_structured_tests": {
+      "records": 273,
+      "source_groups": 178,
+      "configuration": {
+        "2E_symmetric": 125,
+        "3E": 116,
+        "2E_same_carbon_mass_unbalanced": 2,
+        "configuration_unresolved": 5,
+        "2E_asymmetric": 10,
+        "system_pending": 2,
+        "2E_asymmetric_gel": 5,
+        "2E_as_reported": 1,
+        "2E_symmetric_gel": 2,
+        "Li_half_cell": 3,
+        "Zn_hybrid": 1,
+        "unresolved_2E_vs_3E": 1
+      },
+      "nonnull_fields": {
+        "cycle_count": 272,
+        "reported_current_A_g": 225,
+        "concentration_mol_L": 206,
+        "cycle_voltage_lower_V": 123,
+        "cycle_voltage_upper_V": 123,
+        "BET_m2_g": 149,
+        "electrolyte": 221,
+        "reference_electrode": 77,
+        "total_pore_volume_cm3_g": 80,
+        "N_at_pct": 7,
+        "O_at_pct": 10,
+        "mass_loading_mg_cm2": 10,
+        "temperature_C": 2
+      },
+      "field_statuses": {
+        "total_pore_volume_cm3_g": {
+          "inherited_review_linked": 18,
+          "reported_direct_primary_passage": 3,
+          "inherited_ledger_status:recorded_from_cited_source": 14,
+          "inherited_ledger_status:recorded_in_followup_with_evidence": 2,
+          "reported_direct_table": 10,
+          "status_not_in_flat_row": 24,
+          "reported_direct_visual_table": 6,
+          "reported_direct_SI_visual": 1,
+          "v06_own_source_reported_protocol_review": 1,
+          "own_primary_bound_candidate": 1
+        },
+        "N_at_pct": {
+          "inherited_ledger_status:recorded_in_followup_with_evidence": 1,
+          "inherited_ledger_status:recorded_from_cited_source": 3,
+          "inherited_review_linked": 3
+        },
+        "O_at_pct": {
+          "inherited_ledger_status:recorded_in_followup_with_evidence": 1,
+          "inherited_ledger_status:recorded_from_cited_source": 3,
+          "inherited_review_linked": 3,
+          "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit": 3
+        },
+        "mass_loading_mg_cm2": {
+          "inherited_review_linked": 1,
+          "inherited_ledger_status:recorded_in_followup_with_evidence": 2,
+          "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit": 1,
+          "own_primary_method_group_applicable_not_cycle_transfer": 6
+        },
+        "temperature_C": {
+          "prior_candidate_protocol": 2
+        }
+      },
+      "all_eight_core_nonnull": 36
+    },
+    "all_3e_review_tests": {
+      "records": 116,
+      "source_groups": 85,
+      "configuration": {
+        "3E": 116
+      },
+      "nonnull_fields": {
+        "cycle_count": 115,
+        "reported_current_A_g": 93,
+        "concentration_mol_L": 99,
+        "cycle_voltage_lower_V": 44,
+        "cycle_voltage_upper_V": 44,
+        "BET_m2_g": 73,
+        "electrolyte": 101,
+        "reference_electrode": 77,
+        "total_pore_volume_cm3_g": 35,
+        "N_at_pct": 1,
+        "O_at_pct": 1,
+        "mass_loading_mg_cm2": 7,
+        "temperature_C": 0
+      },
+      "field_statuses": {
+        "total_pore_volume_cm3_g": {
+          "inherited_review_linked": 3,
+          "reported_direct_primary_passage": 3,
+          "inherited_ledger_status:recorded_from_cited_source": 4,
+          "reported_direct_table": 10,
+          "status_not_in_flat_row": 7,
+          "reported_direct_visual_table": 6,
+          "reported_direct_SI_visual": 1,
+          "own_primary_bound_candidate": 1
+        },
+        "N_at_pct": {
+          "inherited_ledger_status:recorded_from_cited_source": 1
+        },
+        "O_at_pct": {
+          "inherited_ledger_status:recorded_from_cited_source": 1
+        },
+        "mass_loading_mg_cm2": {
+          "inherited_review_linked": 1,
+          "own_primary_method_group_applicable_not_cycle_transfer": 6
+        },
+        "temperature_C": {}
+      },
+      "all_eight_core_nonnull": 36
+    },
+    "training_profiles": {
+      "reported_3e": {
+        "records": 31,
+        "source_groups": 23,
+        "configuration": {
+          "3E": 31
+        },
+        "nonnull_fields": {
+          "cycle_count": 31,
+          "reported_current_A_g": 31,
+          "concentration_mol_L": 31,
+          "cycle_voltage_lower_V": 31,
+          "cycle_voltage_upper_V": 31,
+          "BET_m2_g": 31,
+          "electrolyte": 31,
+          "reference_electrode": 31,
+          "total_pore_volume_cm3_g": 18,
+          "N_at_pct": 0,
+          "O_at_pct": 0,
+          "mass_loading_mg_cm2": 0,
+          "temperature_C": 0
+        },
+        "field_statuses": {
+          "total_pore_volume_cm3_g": {
+            "inherited_review_linked": 1,
+            "inherited_ledger_status:recorded_from_cited_source": 1,
+            "reported_direct_table": 4,
+            "status_not_in_flat_row": 6,
+            "reported_direct_visual_table": 5,
+            "own_primary_bound_candidate": 1
+          },
+          "N_at_pct": {},
+          "O_at_pct": {},
+          "mass_loading_mg_cm2": {},
+          "temperature_C": {}
+        },
+        "all_eight_core_nonnull": 31
+      },
+      "reported_2e": {
+        "records": 26,
+        "source_groups": 21,
+        "configuration": {
+          "2E_symmetric": 26
+        },
+        "nonnull_fields": {
+          "cycle_count": 26,
+          "reported_current_A_g": 26,
+          "concentration_mol_L": 26,
+          "cycle_voltage_lower_V": 26,
+          "cycle_voltage_upper_V": 26,
+          "BET_m2_g": 26,
+          "electrolyte": 26,
+          "reference_electrode": 0,
+          "total_pore_volume_cm3_g": 15,
+          "N_at_pct": 4,
+          "O_at_pct": 4,
+          "mass_loading_mg_cm2": 1,
+          "temperature_C": 0
+        },
+        "field_statuses": {
+          "total_pore_volume_cm3_g": {
+            "status_not_in_flat_row": 14,
+            "v06_own_source_reported_protocol_review": 1
+          },
+          "N_at_pct": {
+            "status_not_in_flat_row": 4
+          },
+          "O_at_pct": {
+            "status_not_in_flat_row": 4
+          },
+          "mass_loading_mg_cm2": {
+            "status_not_in_flat_row": 1
+          },
+          "temperature_C": {}
+        },
+        "all_eight_core_nonnull": 0
+      },
+      "reported_2e_residue": {
+        "records": 28,
+        "source_groups": 22,
+        "configuration": {
+          "2E_symmetric": 28
+        },
+        "nonnull_fields": {
+          "cycle_count": 28,
+          "reported_current_A_g": 28,
+          "concentration_mol_L": 28,
+          "cycle_voltage_lower_V": 28,
+          "cycle_voltage_upper_V": 28,
+          "BET_m2_g": 28,
+          "electrolyte": 28,
+          "reference_electrode": 0,
+          "total_pore_volume_cm3_g": 17,
+          "N_at_pct": 4,
+          "O_at_pct": 4,
+          "mass_loading_mg_cm2": 1,
+          "temperature_C": 0
+        },
+        "field_statuses": {
+          "total_pore_volume_cm3_g": {
+            "status_not_in_flat_row": 16,
+            "v06_own_source_reported_protocol_review": 1
+          },
+          "N_at_pct": {
+            "status_not_in_flat_row": 4
+          },
+          "O_at_pct": {
+            "status_not_in_flat_row": 4
+          },
+          "mass_loading_mg_cm2": {
+            "status_not_in_flat_row": 1
+          },
+          "temperature_C": {}
+        },
+        "all_eight_core_nonnull": 0
+      },
+      "reported_2e_approx": {
+        "records": 30,
+        "source_groups": 24,
+        "configuration": {
+          "2E_symmetric": 30
+        },
+        "nonnull_fields": {
+          "cycle_count": 30,
+          "reported_current_A_g": 30,
+          "concentration_mol_L": 30,
+          "cycle_voltage_lower_V": 30,
+          "cycle_voltage_upper_V": 30,
+          "BET_m2_g": 30,
+          "electrolyte": 30,
+          "reference_electrode": 0,
+          "total_pore_volume_cm3_g": 17,
+          "N_at_pct": 4,
+          "O_at_pct": 4,
+          "mass_loading_mg_cm2": 1,
+          "temperature_C": 0
+        },
+        "field_statuses": {
+          "total_pore_volume_cm3_g": {
+            "status_not_in_flat_row": 16,
+            "v06_own_source_reported_protocol_review": 1
+          },
+          "N_at_pct": {
+            "status_not_in_flat_row": 4
+          },
+          "O_at_pct": {
+            "status_not_in_flat_row": 4
+          },
+          "mass_loading_mg_cm2": {
+            "status_not_in_flat_row": 1
+          },
+          "temperature_C": {}
+        },
+        "all_eight_core_nonnull": 0
+      }
+    },
+    "unique_admitted_endpoint_union_including_nested_sensitivity": 61,
+    "incoming": {
+      "documents": 80,
+      "test_records": 82,
+      "test_sources": 57,
+      "admitted_to_at_least_one_use": 26,
+      "pending_or_outside": 56,
+      "document_categories": {
+        "碳电极原创实验候选": 44,
+        "复合物或特殊体系原创实验": 13,
+        "非本项目研究主题": 12,
+        "预印本与出版身份待核": 6,
+        "综述方法与书章": 5
+      }
+    },
+    "three_e_review_not_in_model": 85,
+    "unadmitted_3e_missing_counts_overlapping": {
+      "cycle_voltage_lower_V": 72,
+      "cycle_voltage_upper_V": 72,
+      "reference_electrode": 39,
+      "reported_current_A_g": 23,
+      "BET_m2_g": 43,
+      "concentration_mol_L": 17,
+      "electrolyte": 15,
+      "cycle_count": 1
+    },
+    "unadmitted_3e_with_all_eight_fields_nonnull": [
+      {
+        "endpoint_id": "legacy:R087_CY01",
+        "sample_name": "OAC623",
+        "source_group": "10.1007/s00339-023-07141-8",
+        "holds": {
+          "legacy_blockers": [
+            {
+              "record_id": "R087_CY01",
+              "code": "baseline_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R087_CY01",
+              "code": "freeze_cleared",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R087_CY01",
+              "code": "independence_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R087_CY01",
+              "code": "mass_basis_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R087_CY01",
+              "code": "material_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R087_CY01",
+              "code": "protocol_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R087_CY01",
+              "code": "v03_specific_review_gap",
+              "status": "open",
+              "rationale": "方法段明确铂辅助/饱和甘汞参比的三电极体系；不再把system_pending当潜在两电极主来源。",
+              "review_id": 123,
+              "affects_core7": 1
+            }
+          ],
+          "current_open_issues": [],
+          "historical_canonical_admission": [
+            {
+              "endpoint_id": "legacy:R087_CY01",
+              "profile": "canonical_2e",
+              "status": "excluded",
+              "reason": "v0.5 explicit gates: 1 failed, 6 unresolved; see record_admission_checks. No approval."
+            },
+            {
+              "endpoint_id": "legacy:R087_CY01",
+              "profile": "canonical_3e",
+              "status": "pending",
+              "reason": "v0.5 explicit gates: 0 failed, 6 unresolved; see record_admission_checks. No approval."
+            }
+          ],
+          "reported_profile_admission": [
+            {
+              "profile": "reported_3e",
+              "endpoint_id": "legacy:R087_CY01",
+              "status": "pending_primary_review",
+              "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+              "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+            }
+          ],
+          "reported_issue_scope": []
+        },
+        "admission_checks": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:R087_CY01",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence": {
+              "failed_conditions": [],
+              "missing_fields": [],
+              "mass_denominator_unknown_alone_is_not_failure": true,
+              "baseline_cycle_index_unknown_alone_is_not_failure": true
+            }
+          }
+        ]
+      },
+      {
+        "endpoint_id": "legacy:R085_CY01",
+        "sample_name": "NPCA-600-0.5",
+        "source_group": "10.1016/j.seppur.2024.130569",
+        "holds": {
+          "legacy_blockers": [
+            {
+              "record_id": "R085_CY01",
+              "code": "baseline_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R085_CY01",
+              "code": "freeze_cleared",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R085_CY01",
+              "code": "independence_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R085_CY01",
+              "code": "mass_basis_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R085_CY01",
+              "code": "material_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R085_CY01",
+              "code": "protocol_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R085_CY01",
+              "code": "source_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            }
+          ],
+          "current_open_issues": [],
+          "historical_canonical_admission": [
+            {
+              "endpoint_id": "legacy:R085_CY01",
+              "profile": "canonical_2e",
+              "status": "excluded",
+              "reason": "v0.5 explicit gates: 2 failed, 6 unresolved; see record_admission_checks. No approval."
+            },
+            {
+              "endpoint_id": "legacy:R085_CY01",
+              "profile": "canonical_3e",
+              "status": "excluded",
+              "reason": "v0.5 explicit gates: 1 failed, 6 unresolved; see record_admission_checks. No approval."
+            }
+          ],
+          "reported_profile_admission": [
+            {
+              "profile": "reported_3e",
+              "endpoint_id": "legacy:R085_CY01",
+              "status": "excluded_from_main",
+              "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+              "evidence_json": "{\"failed_conditions\": [\"not_exact_reported_main_label\"], \"missing_fields\": [], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+            }
+          ],
+          "reported_issue_scope": []
+        },
+        "admission_checks": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:R085_CY01",
+            "status": "excluded_from_main",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence": {
+              "failed_conditions": [
+                "not_exact_reported_main_label"
+              ],
+              "missing_fields": [],
+              "mass_denominator_unknown_alone_is_not_failure": true,
+              "baseline_cycle_index_unknown_alone_is_not_failure": true
+            }
+          }
+        ]
+      },
+      {
+        "endpoint_id": "legacy:R013_CY01",
+        "sample_name": "EUAC1-60",
+        "source_group": "10.1021/acsomega.4c11529",
+        "holds": {
+          "legacy_blockers": [
+            {
+              "record_id": "R013_CY01",
+              "code": "baseline_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R013_CY01",
+              "code": "freeze_cleared",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R013_CY01",
+              "code": "independence_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R013_CY01",
+              "code": "mass_basis_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R013_CY01",
+              "code": "material_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R013_CY01",
+              "code": "protocol_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            },
+            {
+              "record_id": "R013_CY01",
+              "code": "source_checked",
+              "status": "open",
+              "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+              "review_id": null,
+              "affects_core7": 1
+            }
+          ],
+          "current_open_issues": [],
+          "historical_canonical_admission": [
+            {
+              "endpoint_id": "legacy:R013_CY01",
+              "profile": "canonical_2e",
+              "status": "excluded",
+              "reason": "v0.5 explicit gates: 1 failed, 6 unresolved; see record_admission_checks. No approval."
+            },
+            {
+              "endpoint_id": "legacy:R013_CY01",
+              "profile": "canonical_3e",
+              "status": "pending",
+              "reason": "v0.5 explicit gates: 0 failed, 6 unresolved; see record_admission_checks. No approval."
+            }
+          ],
+          "reported_profile_admission": [
+            {
+              "profile": "reported_3e",
+              "endpoint_id": "legacy:R013_CY01",
+              "status": "pending_primary_review",
+              "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+              "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+            }
+          ],
+          "reported_issue_scope": []
+        },
+        "admission_checks": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:R013_CY01",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence": {
+              "failed_conditions": [],
+              "missing_fields": [],
+              "mass_denominator_unknown_alone_is_not_failure": true,
+              "baseline_cycle_index_unknown_alone_is_not_failure": true
+            }
+          }
+        ]
+      },
+      {
+        "endpoint_id": "incoming:ADD_034_T01",
+        "sample_name": "NOPC-4",
+        "source_group": "doi:10.1002/slct.202401015",
+        "holds": {
+          "open_issues": [
+            "BET、参比、电解液及窗口待补"
+          ],
+          "remaining_evidence_work": [
+            "nonexact_label_relation:approx",
+            "manual_scientific_review_not_approved"
+          ],
+          "historical_issues": [
+            "BET、参比、电解液及窗口待补"
+          ],
+          "issue_dispositions": [],
+          "alternatives": []
+        },
+        "admission_checks": [
+          {
+            "profile": "reported_3e",
+            "record_id": "ADD_034_T01",
+            "status": "pending_or_outside",
+            "reasons_json": "[\"nonexact_label_relation:approx\", \"manual_scientific_review_not_approved\"]"
+          }
+        ]
+      },
+      {
+        "endpoint_id": "incoming:ADD_048_T01",
+        "sample_name": "K/F-doped PSAC",
+        "source_group": "doi:10.1016/j.jaap.2026.107634",
+        "holds": {
+          "open_issues": [
+            "样品专属BET及K/F残留化学相待核"
+          ],
+          "remaining_evidence_work": [
+            "material_or_electrolyte_scope_requires_review",
+            "manual_scientific_review_not_approved"
+          ],
+          "historical_issues": [
+            "样品专属BET及K/F残留化学相待核"
+          ],
+          "issue_dispositions": [],
+          "alternatives": []
+        },
+        "admission_checks": [
+          {
+            "profile": "reported_3e",
+            "record_id": "ADD_048_T01",
+            "status": "pending_or_outside",
+            "reasons_json": "[\"material_or_electrolyte_scope_requires_review\", \"manual_scientific_review_not_approved\"]"
+          }
+        ]
+      }
+    ],
+    "nonnull_not_scientific_admission": true,
+    "fiber_morphology_not_a_required_or_validated_core_field": true
+  },
+  "concentration": {
+    "record_group_counts": {
+      "10.1016/j.jpcs.2023.111318": 1,
+      "10.1021/acs.energyfuels.4c01398": 1,
+      "10.1039/d5ra08165c": 1,
+      "doi:10.1002/asia.70648": 1,
+      "doi:10.1007/s10854-026-18573-2": 1,
+      "doi:10.1016/j.biombioe.2026.109160": 1,
+      "doi:10.1016/j.biombioe.2026.109168": 1,
+      "doi:10.1016/j.ijbiomac.2023.128794": 1,
+      "doi:10.1016/j.jaap.2026.107754": 1,
+      "doi:10.1016/j.jenvman.2025.125582": 1,
+      "doi:10.1016/j.jenvman.2026.129124": 1,
+      "doi:10.1021/acsomega.3c04692": 4,
+      "doi:10.1021/acssusresmgt.3c00028": 2,
+      "doi:10.1039/d3ra07014j": 1,
+      "doi:10.1039/d4cp01914h": 1,
+      "doi:10.1039/d4ta02115k": 4,
+      "doi:10.1039/d4ya00076e": 1,
+      "doi:10.1088/1361-6528/ace97a": 1,
+      "doi:10.3390/mi14030572": 2,
+      "doi:10.3390/molecules31132329": 1,
+      "doi:10.3390/nano13101654": 1,
+      "doi:10.3390/nano13172431": 1,
+      "doi:10.3390/polym17111544": 1
+    },
+    "largest_row_share": 0.12903225806451613,
+    "source_equal_weight_share": 0.043478260869565216,
+    "independent_source_count": 23,
+    "distinct_source_sample_pairs": 30,
+    "records_missing_canonical_material_id": 10,
+    "label_quantiles": {
+      "0": 76.7,
+      "0.25": 93.39,
+      "0.5": 95.2,
+      "0.75": 98.19999999999999,
+      "1": 109.2
+    },
+    "below91_sources": [
+      "doi:10.1039/d4ta02115k"
+    ],
+    "core_material_descriptor_used": [
+      "BET_m2_g"
+    ],
+    "unused_optional_numeric_counts": {
+      "total_pore_volume_cm3_g": 18,
+      "N_at_pct": 0,
+      "O_at_pct": 0,
+      "mass_loading_mg_cm2": 0,
+      "temperature_C": 0
+    },
+    "each_source_total_dataset_weight": {
+      "10.1016/j.jpcs.2023.111318": 1.0,
+      "10.1021/acs.energyfuels.4c01398": 1.0,
+      "10.1039/d5ra08165c": 1.0,
+      "doi:10.1002/asia.70648": 1.0,
+      "doi:10.1007/s10854-026-18573-2": 1.0,
+      "doi:10.1016/j.biombioe.2026.109160": 1.0,
+      "doi:10.1016/j.biombioe.2026.109168": 1.0,
+      "doi:10.1016/j.ijbiomac.2023.128794": 1.0,
+      "doi:10.1016/j.jaap.2026.107754": 1.0,
+      "doi:10.1016/j.jenvman.2025.125582": 1.0,
+      "doi:10.1016/j.jenvman.2026.129124": 1.0,
+      "doi:10.1021/acsomega.3c04692": 1.0,
+      "doi:10.1021/acssusresmgt.3c00028": 1.0,
+      "doi:10.1039/d3ra07014j": 1.0,
+      "doi:10.1039/d4cp01914h": 1.0,
+      "doi:10.1039/d4ta02115k": 1.0,
+      "doi:10.1039/d4ya00076e": 1.0,
+      "doi:10.1088/1361-6528/ace97a": 1.0,
+      "doi:10.3390/mi14030572": 1.0,
+      "doi:10.3390/molecules31132329": 1.0,
+      "doi:10.3390/nano13101654": 1.0,
+      "doi:10.3390/nano13172431": 1.0,
+      "doi:10.3390/polym17111544": 1.0
+    },
+    "weight_interpretation": "1/23 refers to the full pooled dataset/evaluation; each outer training fold has22 equally weighted sources."
+  },
+  "saved_prediction_error_concentration": {
+    "mean/full": {
+      "mae": 4.00112648221344,
+      "rmse": 5.394403045025563,
+      "r2": -0.08623105050693125,
+      "target_weighted_mean": 96.36152173913044,
+      "sources": [
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109168",
+          "records": 1,
+          "source_mae": 13.42204545454544,
+          "source_mse": 180.15130418388392,
+          "source_target_ss": 164.8265240548204,
+          "sse_share": 0.26916760535776146,
+          "sae_share": 0.1458507238574115,
+          "target_ss_share": 0.2675067183240365
+        },
+        {
+          "source_group": "doi:10.1039/d4ta02115k",
+          "records": 4,
+          "source_mae": 11.198409090909088,
+          "source_mse": 164.86686616735528,
+          "source_target_ss": 154.19919796786397,
+          "sse_share": 0.24633082602504663,
+          "sae_share": 0.12168756822436362,
+          "target_ss_share": 0.25025900202119433
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2025.125582",
+          "records": 1,
+          "source_mae": 10.390227272727245,
+          "source_mse": 107.95682277892503,
+          "source_target_ss": 98.7733501417768,
+          "sse_share": 0.1613004113463144,
+          "sae_share": 0.11290545646729888,
+          "target_ss_share": 0.1603051141545018
+        },
+        {
+          "source_group": "10.1021/acs.energyfuels.4c01398",
+          "records": 1,
+          "source_mae": 5.6052272727272765,
+          "source_mse": 31.41857277892566,
+          "source_target_ss": 28.74591535916828,
+          "sse_share": 0.04694310727847902,
+          "sae_share": 0.06090923010812174,
+          "target_ss_share": 0.04665344687117265
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109160",
+          "records": 1,
+          "source_mae": 5.521590909090946,
+          "source_mse": 30.487966167355783,
+          "source_target_ss": 27.894471880907428,
+          "sse_share": 0.045552669644396256,
+          "sae_share": 0.060000395145636244,
+          "target_ss_share": 0.04527158887220029
+        },
+        {
+          "source_group": "doi:10.1039/d3ra07014j",
+          "records": 1,
+          "source_mae": 5.2152272727272475,
+          "source_mse": 27.198595506198085,
+          "source_target_ss": 24.88491535916815,
+          "sse_share": 0.04063795627049718,
+          "sae_share": 0.05667129316348627,
+          "target_ss_share": 0.04038720152400012
+        },
+        {
+          "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+          "records": 1,
+          "source_mae": 4.559772727272744,
+          "source_mse": 20.79152732438032,
+          "source_target_ss": 19.022871880907402,
+          "sse_share": 0.031065029737012376,
+          "sae_share": 0.049548793077048625,
+          "target_ss_share": 0.030873344318464436
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2026.129124",
+          "records": 1,
+          "source_mae": 3.83840909090911,
+          "source_mse": 14.7333843491737,
+          "source_target_ss": 13.480071880907415,
+          "sse_share": 0.022013439214598682,
+          "sae_share": 0.041710091525608096,
+          "target_ss_share": 0.021877606242756937
+        },
+        {
+          "source_group": "doi:10.1021/acssusresmgt.3c00028",
+          "records": 2,
+          "source_mae": 3.803863636363644,
+          "source_mse": 14.469378564049647,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.021618982980688196,
+          "sae_share": 0.04133470317153773,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "10.1039/d5ra08165c",
+          "records": 1,
+          "source_mae": 3.803863636363616,
+          "source_mse": 14.46937856404943,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.021618982980687873,
+          "sae_share": 0.041334703171537424,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1007/s10854-026-18573-2",
+          "records": 1,
+          "source_mae": 3.803863636363616,
+          "source_mse": 14.46937856404943,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.021618982980687873,
+          "sae_share": 0.041334703171537424,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1039/d4ya00076e",
+          "records": 1,
+          "source_mae": 3.3261363636363654,
+          "source_mse": 11.063183109504145,
+          "source_target_ss": 10.122080576559526,
+          "sse_share": 0.016529719386211682,
+          "sae_share": 0.03614347738038201,
+          "target_ss_share": 0.01642772346971496
+        },
+        {
+          "source_group": "doi:10.1039/d4cp01914h",
+          "records": 1,
+          "source_mae": 2.887045454545472,
+          "source_mse": 8.335031456611672,
+          "source_target_ss": 7.626002315690032,
+          "sse_share": 0.012453534366133556,
+          "sae_share": 0.031372093827331415,
+          "target_ss_share": 0.012376690372498837
+        },
+        {
+          "source_group": "doi:10.3390/polym17111544",
+          "records": 1,
+          "source_mae": 2.782499999999999,
+          "source_mse": 7.742306249999993,
+          "source_target_ss": 7.083697967863898,
+          "sse_share": 0.01156793198195097,
+          "sae_share": 0.030236050124223885,
+          "target_ss_share": 0.011496552559414964
+        },
+        {
+          "source_group": "doi:10.3390/nano13172431",
+          "records": 1,
+          "source_mae": 2.322500000000005,
+          "source_mse": 5.394006250000023,
+          "source_target_ss": 4.935158837429125,
+          "sse_share": 0.008059290784347202,
+          "sae_share": 0.02523745783055172,
+          "target_ss_share": 0.008009561280133803
+        },
+        {
+          "source_group": "doi:10.1088/1361-6528/ace97a",
+          "records": 1,
+          "source_mae": 2.026590909090899,
+          "source_mse": 4.107070712809877,
+          "source_target_ss": 3.7576979678638693,
+          "sse_share": 0.006136455097064597,
+          "sae_share": 0.022021960218712992,
+          "target_ss_share": 0.006098590367056685
+        },
+        {
+          "source_group": "10.1016/j.jpcs.2023.111318",
+          "records": 1,
+          "source_mae": 1.8174999999999812,
+          "source_mse": 3.303306249999932,
+          "source_target_ss": 3.022306663516036,
+          "sse_share": 0.004935534811162084,
+          "sae_share": 0.019749872812498244,
+          "target_ss_share": 0.00490508030768849
+        },
+        {
+          "source_group": "doi:10.1021/acsomega.3c04692",
+          "records": 4,
+          "source_mae": 1.677045454545457,
+          "source_mse": 3.300494008264475,
+          "source_target_ss": 3.218947967863909,
+          "sse_share": 0.004931332985496434,
+          "sae_share": 0.018223622793976026,
+          "target_ss_share": 0.005224221115363123
+        },
+        {
+          "source_group": "doi:10.3390/mi14030572",
+          "records": 2,
+          "source_mae": 1.6999999999999957,
+          "source_mse": 2.9647525309917055,
+          "source_target_ss": 2.9583936200377936,
+          "sse_share": 0.004429695043622056,
+          "sae_share": 0.018473058476614734,
+          "target_ss_share": 0.004801352047828568
+        },
+        {
+          "source_group": "doi:10.1016/j.jaap.2026.107754",
+          "records": 1,
+          "source_mae": 1.2143181818182143,
+          "source_mse": 1.4745686466942938,
+          "source_target_ss": 1.3491327504725916,
+          "sse_share": 0.002203182005061747,
+          "sae_share": 0.01319539457761436,
+          "target_ss_share": 0.0021895873660623343
+        },
+        {
+          "source_group": "doi:10.3390/nano13101654",
+          "records": 1,
+          "source_mae": 0.667500000000004,
+          "source_mse": 0.4455562500000053,
+          "source_target_ss": 0.40765448960302,
+          "sse_share": 0.0006657143527657805,
+          "sae_share": 0.007253392078317906,
+          "target_ss_share": 0.0006616065912273585
+        },
+        {
+          "source_group": "doi:10.1002/asia.70648",
+          "records": 1,
+          "source_mae": 0.3779545454545712,
+          "source_mse": 0.14284963842977152,
+          "source_target_ss": 0.13069796786389676,
+          "sse_share": 0.00021343445320338338,
+          "sae_share": 0.004107044952755678,
+          "target_ss_share": 0.0002121174651675785
+        },
+        {
+          "source_group": "doi:10.3390/molecules31132329",
+          "records": 1,
+          "source_mae": 0.06431818181818016,
+          "source_mse": 0.0041368285123964815,
+          "source_target_ss": 0.003784924385634064,
+          "sse_share": 6.180916810465609e-06,
+          "sae_share": 0.0006989138434334022,
+          "target_ss_share": 6.142777731385266e-06
+        }
+      ]
+    },
+    "RF/full": {
+      "mae": 3.894978172738942,
+      "rmse": 5.203237635194173,
+      "r2": -0.010608045262359589,
+      "target_weighted_mean": 96.36152173913044,
+      "sources": [
+        {
+          "source_group": "doi:10.1016/j.jenvman.2025.125582",
+          "records": 1,
+          "source_mae": 12.252482368054118,
+          "source_mse": 150.12332417947704,
+          "source_target_ss": 98.7733501417768,
+          "sse_share": 0.24108656806306308,
+          "sae_share": 0.13677011810399947,
+          "target_ss_share": 0.1603051141545018
+        },
+        {
+          "source_group": "doi:10.1039/d4ta02115k",
+          "records": 4,
+          "source_mae": 10.41617673556592,
+          "source_mse": 149.97178327917277,
+          "source_target_ss": 154.19919796786397,
+          "sse_share": 0.24084320497624612,
+          "sae_share": 0.11627208915883828,
+          "target_ss_share": 0.25025900202119433
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109168",
+          "records": 1,
+          "source_mae": 9.592997749730856,
+          "source_mse": 92.02560582634126,
+          "source_target_ss": 164.8265240548204,
+          "sse_share": 0.14778607923757825,
+          "sae_share": 0.10708323389413386,
+          "target_ss_share": 0.2675067183240365
+        },
+        {
+          "source_group": "10.1039/d5ra08165c",
+          "records": 1,
+          "source_mae": 6.971050396221102,
+          "source_mse": 48.59554362665438,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.07804072351943424,
+          "sae_share": 0.07781536486728378,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "10.1016/j.jpcs.2023.111318",
+          "records": 1,
+          "source_mae": 5.5711533360203305,
+          "source_mse": 31.03774949345046,
+          "source_target_ss": 3.022306663516036,
+          "sse_share": 0.04984425003026943,
+          "sae_share": 0.06218881014101009,
+          "target_ss_share": 0.00490508030768849
+        },
+        {
+          "source_group": "doi:10.1021/acsomega.3c04692",
+          "records": 4,
+          "source_mae": 4.76353921621579,
+          "source_mse": 23.612073849404503,
+          "source_target_ss": 3.218947967863909,
+          "sse_share": 0.03791918331357297,
+          "sae_share": 0.053173699959246416,
+          "target_ss_share": 0.005224221115363123
+        },
+        {
+          "source_group": "10.1021/acs.energyfuels.4c01398",
+          "records": 1,
+          "source_mae": 4.831930419847183,
+          "source_mse": 23.34755158224457,
+          "source_target_ss": 28.74591535916828,
+          "sse_share": 0.03749438079927741,
+          "sae_share": 0.05393712672591768,
+          "target_ss_share": 0.04665344687117265
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109160",
+          "records": 1,
+          "source_mae": 4.499461051804346,
+          "source_mse": 20.24514975670427,
+          "source_target_ss": 27.894471880907428,
+          "sse_share": 0.0325121609279808,
+          "sae_share": 0.05022588900549136,
+          "target_ss_share": 0.04527158887220029
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2026.129124",
+          "records": 1,
+          "source_mae": 3.9483827469749286,
+          "source_mse": 15.589726316609283,
+          "source_target_ss": 13.480071880907415,
+          "sse_share": 0.02503590721332802,
+          "sae_share": 0.04407439720391276,
+          "target_ss_share": 0.021877606242756937
+        },
+        {
+          "source_group": "doi:10.1007/s10854-026-18573-2",
+          "records": 1,
+          "source_mae": 3.5507633749025445,
+          "source_mse": 12.607920544549307,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.020247355373394494,
+          "sae_share": 0.0396359130792125,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1088/1361-6528/ace97a",
+          "records": 1,
+          "source_mae": 3.484716321856851,
+          "source_mse": 12.14324784381554,
+          "source_target_ss": 3.7576979678638693,
+          "sse_share": 0.019501126582466794,
+          "sae_share": 0.03889865323470679,
+          "target_ss_share": 0.006098590367056685
+        },
+        {
+          "source_group": "doi:10.1002/asia.70648",
+          "records": 1,
+          "source_mae": 3.0637885386559134,
+          "source_mse": 9.386800209599338,
+          "source_target_ss": 0.13069796786389676,
+          "sse_share": 0.01507448266280343,
+          "sae_share": 0.03419998557763265,
+          "target_ss_share": 0.0002121174651675785
+        },
+        {
+          "source_group": "doi:10.1039/d3ra07014j",
+          "records": 1,
+          "source_mae": 2.759693869803968,
+          "source_mse": 7.6159102550336,
+          "source_target_ss": 24.88491535916815,
+          "sse_share": 0.012230568941220833,
+          "sae_share": 0.03080548456760733,
+          "target_ss_share": 0.04038720152400012
+        },
+        {
+          "source_group": "doi:10.3390/polym17111544",
+          "records": 1,
+          "source_mae": 2.459383435353132,
+          "source_mse": 6.048566882089373,
+          "source_target_ss": 7.083697967863898,
+          "sse_share": 0.009713535450090837,
+          "sae_share": 0.02745322562497909,
+          "target_ss_share": 0.011496552559414964
+        },
+        {
+          "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+          "records": 1,
+          "source_mae": 2.4096443629114788,
+          "source_mse": 5.806385955711066,
+          "source_target_ss": 19.022871880907402,
+          "sse_share": 0.009324611419065008,
+          "sae_share": 0.02689800598802085,
+          "target_ss_share": 0.030873344318464436
+        },
+        {
+          "source_group": "doi:10.1039/d4cp01914h",
+          "records": 1,
+          "source_mae": 2.305280250155164,
+          "source_mse": 5.314317031755455,
+          "source_target_ss": 7.626002315690032,
+          "sse_share": 0.008534386390573663,
+          "sae_share": 0.025733026386440958,
+          "target_ss_share": 0.012376690372498837
+        },
+        {
+          "source_group": "doi:10.3390/mi14030572",
+          "records": 2,
+          "source_mae": 1.6197952074990027,
+          "source_mse": 2.983367393944302,
+          "source_target_ss": 2.9583936200377936,
+          "sse_share": 0.004791059685151862,
+          "sae_share": 0.01808119980744072,
+          "target_ss_share": 0.004801352047828568
+        },
+        {
+          "source_group": "doi:10.3390/molecules31132329",
+          "records": 1,
+          "source_mae": 1.3983348592632865,
+          "source_mse": 1.9553403786308752,
+          "source_target_ss": 0.003784924385634064,
+          "sse_share": 0.003140126984636094,
+          "sae_share": 0.015609116430889643,
+          "target_ss_share": 6.142777731385266e-06
+        },
+        {
+          "source_group": "doi:10.1039/d4ya00076e",
+          "records": 1,
+          "source_mae": 1.305698822744887,
+          "source_mse": 1.7048494157173837,
+          "source_target_ss": 10.122080576559526,
+          "sse_share": 0.0027378576709921492,
+          "sae_share": 0.014575053187644994,
+          "target_ss_share": 0.01642772346971496
+        },
+        {
+          "source_group": "doi:10.1021/acssusresmgt.3c00028",
+          "records": 2,
+          "source_mae": 0.992140027043348,
+          "source_mse": 1.640307405317746,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.0026342081423916734,
+          "sae_share": 0.011074907483908863,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.jaap.2026.107754",
+          "records": 1,
+          "source_mae": 0.7631610933511013,
+          "source_mse": 0.5824148544048483,
+          "source_target_ss": 1.3491327504725916,
+          "sse_share": 0.0009353136776371013,
+          "sae_share": 0.008518896802671691,
+          "target_ss_share": 0.0021895873660623343
+        },
+        {
+          "source_group": "doi:10.3390/nano13172431",
+          "records": 1,
+          "source_mae": 0.5966119246483572,
+          "source_mse": 0.35594578863261706,
+          "source_target_ss": 4.935158837429125,
+          "sse_share": 0.0005716216921452201,
+          "sae_share": 0.006659767461421728,
+          "target_ss_share": 0.008009561280133803
+        },
+        {
+          "source_group": "doi:10.3390/nano13101654",
+          "records": 1,
+          "source_mae": 0.028311864372057016,
+          "source_mse": 0.0008015616642217514,
+          "source_target_ss": 0.40765448960302,
+          "sse_share": 1.2872466805165343e-06,
+          "sae_share": 0.00031603530758849975,
+          "target_ss_share": 0.0006616065912273585
+        }
+      ]
+    },
+    "MLP/full": {
+      "mae": 3.7140427868523678,
+      "rmse": 4.996443388803412,
+      "r2": 0.06812562028221891,
+      "target_weighted_mean": 96.36152173913044,
+      "sources": [
+        {
+          "source_group": "doi:10.1039/d4ta02115k",
+          "records": 4,
+          "source_mae": 10.887048489341602,
+          "source_mse": 166.80977606322884,
+          "source_target_ss": 154.19919796786397,
+          "sse_share": 0.29051711394327906,
+          "sae_share": 0.12744870252837387,
+          "target_ss_share": 0.25025900202119433
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2025.125582",
+          "records": 1,
+          "source_mae": 12.732671340879222,
+          "source_mse": 162.12091947484708,
+          "source_target_ss": 98.7733501417768,
+          "sse_share": 0.28235096735463866,
+          "sae_share": 0.14905439648807922,
+          "target_ss_share": 0.1603051141545018
+        },
+        {
+          "source_group": "doi:10.1088/1361-6528/ace97a",
+          "records": 1,
+          "source_mae": 5.679263943000976,
+          "source_mse": 32.25403893427099,
+          "source_target_ss": 3.7576979678638693,
+          "sse_share": 0.056173867775272085,
+          "sae_share": 0.06648402655322645,
+          "target_ss_share": 0.006098590367056685
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2026.129124",
+          "records": 1,
+          "source_mae": 5.29272078751336,
+          "source_mse": 28.012893334576045,
+          "source_target_ss": 13.480071880907415,
+          "sse_share": 0.04878745788662396,
+          "sae_share": 0.06195897794282026,
+          "target_ss_share": 0.021877606242756937
+        },
+        {
+          "source_group": "doi:10.1039/d3ra07014j",
+          "records": 1,
+          "source_mae": 5.027704796821027,
+          "source_mse": 25.277815523977164,
+          "source_target_ss": 24.88491535916815,
+          "sse_share": 0.04402402656564249,
+          "sae_share": 0.05885658116410874,
+          "target_ss_share": 0.04038720152400012
+        },
+        {
+          "source_group": "10.1021/acs.energyfuels.4c01398",
+          "records": 1,
+          "source_mae": 4.998017056264985,
+          "source_mse": 24.9801744947157,
+          "source_target_ss": 28.74591535916828,
+          "sse_share": 0.04350565279371577,
+          "sae_share": 0.05850904307620817,
+          "target_ss_share": 0.04665344687117265
+        },
+        {
+          "source_group": "10.1039/d5ra08165c",
+          "records": 1,
+          "source_mae": 4.203312085415391,
+          "source_mse": 17.66783248739908,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.03077042500151135,
+          "sae_share": 0.04920586806722508,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "10.1016/j.jpcs.2023.111318",
+          "records": 1,
+          "source_mae": 4.002558436596004,
+          "source_mse": 16.02047403836585,
+          "source_target_ss": 3.022306663516036,
+          "sse_share": 0.027901373597343026,
+          "sae_share": 0.0468557552616363,
+          "target_ss_share": 0.00490508030768849
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109160",
+          "records": 1,
+          "source_mae": 3.6513808252094577,
+          "source_mse": 13.3325819307073,
+          "source_target_ss": 27.894471880907428,
+          "sse_share": 0.0232201212382973,
+          "sae_share": 0.042744711669606195,
+          "target_ss_share": 0.04527158887220029
+        },
+        {
+          "source_group": "doi:10.1002/asia.70648",
+          "records": 1,
+          "source_mae": 3.643818614501839,
+          "source_mse": 13.277414095390103,
+          "source_target_ss": 0.13069796786389676,
+          "sse_share": 0.023124040536811462,
+          "sae_share": 0.04265618501852388,
+          "target_ss_share": 0.0002121174651675785
+        },
+        {
+          "source_group": "doi:10.1021/acssusresmgt.3c00028",
+          "records": 2,
+          "source_mae": 3.618455218592622,
+          "source_mse": 13.132243942521757,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.022871211147327535,
+          "sae_share": 0.04235926966047181,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.jaap.2026.107754",
+          "records": 1,
+          "source_mae": 3.5851336789324932,
+          "source_mse": 12.853183495816033,
+          "source_target_ss": 1.3491327504725916,
+          "sse_share": 0.02238519745253102,
+          "sae_share": 0.041969192680463056,
+          "target_ss_share": 0.0021895873660623343
+        },
+        {
+          "source_group": "doi:10.1021/acsomega.3c04692",
+          "records": 4,
+          "source_mae": 3.2937430741188827,
+          "source_mse": 11.810955452245391,
+          "source_target_ss": 3.218947967863909,
+          "sse_share": 0.02057004554456297,
+          "sae_share": 0.03855804276698466,
+          "target_ss_share": 0.005224221115363123
+        },
+        {
+          "source_group": "doi:10.1007/s10854-026-18573-2",
+          "records": 1,
+          "source_mae": 3.0131128252328523,
+          "source_mse": 9.0788488975827,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.015811788984436293,
+          "sae_share": 0.0352728584357351,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.3390/nano13101654",
+          "records": 1,
+          "source_mae": 2.945029837051777,
+          "source_mse": 8.673200741125218,
+          "source_target_ss": 0.40765448960302,
+          "sse_share": 0.015105309217652303,
+          "sae_share": 0.034475848252816604,
+          "target_ss_share": 0.0006616065912273585
+        },
+        {
+          "source_group": "doi:10.3390/mi14030572",
+          "records": 2,
+          "source_mae": 2.27235171680384,
+          "source_mse": 8.191372969633058,
+          "source_target_ss": 2.9583936200377936,
+          "sse_share": 0.014266154481669891,
+          "sae_share": 0.026601174623066864,
+          "target_ss_share": 0.004801352047828568
+        },
+        {
+          "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+          "records": 1,
+          "source_mae": 2.6067170426711925,
+          "source_mse": 6.7949737405524475,
+          "source_target_ss": 19.022871880907402,
+          "sse_share": 0.011834175472290084,
+          "sae_share": 0.03051540601406236,
+          "target_ss_share": 0.030873344318464436
+        },
+        {
+          "source_group": "doi:10.1039/d4ya00076e",
+          "records": 1,
+          "source_mae": 1.53785174255367,
+          "source_mse": 2.364987982075359,
+          "source_target_ss": 10.122080576559526,
+          "sse_share": 0.004118880195622591,
+          "sae_share": 0.01800278647250859,
+          "target_ss_share": 0.01642772346971496
+        },
+        {
+          "source_group": "doi:10.3390/polym17111544",
+          "records": 1,
+          "source_mae": 0.894477993512595,
+          "source_mse": 0.800090880878318,
+          "source_target_ss": 7.083697967863898,
+          "sse_share": 0.001393444071988916,
+          "sae_share": 0.01047116303605787,
+          "target_ss_share": 0.011496552559414964
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109168",
+          "records": 1,
+          "source_mae": 0.5167890751911415,
+          "source_mse": 0.2670709482369153,
+          "source_target_ss": 164.8265240548204,
+          "sse_share": 0.00046513269744138795,
+          "sae_share": 0.006049766121500244,
+          "target_ss_share": 0.2675067183240365
+        },
+        {
+          "source_group": "doi:10.1039/d4cp01914h",
+          "records": 1,
+          "source_mae": 0.4884858119034874,
+          "source_mse": 0.23861838843100927,
+          "source_target_ss": 7.626002315690032,
+          "sse_share": 0.0004155795132444547,
+          "sae_share": 0.005718435349265517,
+          "target_ss_share": 0.012376690372498837
+        },
+        {
+          "source_group": "doi:10.3390/molecules31132329",
+          "records": 1,
+          "source_mae": 0.46755228159715045,
+          "source_mse": 0.21860513602670106,
+          "source_target_ss": 0.003784924385634064,
+          "sse_share": 0.00038072428793131625,
+          "sae_share": 0.005473377996991119,
+          "target_ss_share": 6.142777731385266e-06
+        },
+        {
+          "source_group": "doi:10.3390/nano13172431",
+          "records": 1,
+          "source_mae": 0.06478742389889192,
+          "source_mse": 0.004197410295454711,
+          "source_target_ss": 4.935158837429125,
+          "sse_share": 7.310240166074504e-06,
+          "sae_share": 0.0007584308202680638,
+          "target_ss_share": 0.008009561280133803
+        }
+      ]
+    },
+    "MLP/no_current": {
+      "mae": 2.850987411835315,
+      "rmse": 3.9205727302562616,
+      "r2": 0.4262344626853004,
+      "target_weighted_mean": 96.36152173913044,
+      "sources": [
+        {
+          "source_group": "doi:10.1039/d4ta02115k",
+          "records": 4,
+          "source_mae": 10.642474986486452,
+          "source_mse": 161.2550199282257,
+          "source_target_ss": 154.19919796786397,
+          "sse_share": 0.4561276269458593,
+          "sae_share": 0.16230036717784319,
+          "target_ss_share": 0.25025900202119433
+        },
+        {
+          "source_group": "doi:10.1088/1361-6528/ace97a",
+          "records": 1,
+          "source_mae": 4.975116172460318,
+          "source_mse": 24.751780929476205,
+          "source_target_ss": 3.7576979678638693,
+          "sse_share": 0.07001314503617252,
+          "sae_share": 0.07587174811949589,
+          "target_ss_share": 0.006098590367056685
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2026.129124",
+          "records": 1,
+          "source_mae": 4.751008220737887,
+          "source_mse": 22.572079113518985,
+          "source_target_ss": 13.480071880907415,
+          "sse_share": 0.06384761780356499,
+          "sae_share": 0.07245404660756279,
+          "target_ss_share": 0.021877606242756937
+        },
+        {
+          "source_group": "10.1021/acs.energyfuels.4c01398",
+          "records": 1,
+          "source_mae": 4.470556650024193,
+          "source_mse": 19.985876761075534,
+          "source_target_ss": 28.74591535916828,
+          "sse_share": 0.0565322589245243,
+          "sae_share": 0.06817709101591402,
+          "target_ss_share": 0.04665344687117265
+        },
+        {
+          "source_group": "10.1039/d5ra08165c",
+          "records": 1,
+          "source_mae": 4.267876643602463,
+          "source_mse": 18.214771045007424,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.05152249087079198,
+          "sae_share": 0.06508617095233636,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "10.1016/j.jpcs.2023.111318",
+          "records": 1,
+          "source_mae": 4.209388551460975,
+          "source_mse": 17.71895197717073,
+          "source_target_ss": 3.022306663516036,
+          "sse_share": 0.05012001189737755,
+          "sae_share": 0.06419421312841396,
+          "target_ss_share": 0.00490508030768849
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2025.125582",
+          "records": 1,
+          "source_mae": 4.208365932491233,
+          "source_mse": 17.710343821752808,
+          "source_target_ss": 98.7733501417768,
+          "sse_share": 0.0500956627794096,
+          "sae_share": 0.06417861793702447,
+          "target_ss_share": 0.1603051141545018
+        },
+        {
+          "source_group": "doi:10.1021/acssusresmgt.3c00028",
+          "records": 2,
+          "source_mae": 2.9665375308251427,
+          "source_mse": 9.409702431626242,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.026616382189619474,
+          "sae_share": 0.045240428670129056,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1002/asia.70648",
+          "records": 1,
+          "source_mae": 3.0560520864463854,
+          "source_mse": 9.339454355073306,
+          "source_target_ss": 0.13069796786389676,
+          "sse_share": 0.02641767774947328,
+          "sae_share": 0.04660554771091015,
+          "target_ss_share": 0.0002121174651675785
+        },
+        {
+          "source_group": "doi:10.1039/d3ra07014j",
+          "records": 1,
+          "source_mae": 2.8462806540280923,
+          "source_mse": 8.101313561494585,
+          "source_target_ss": 24.88491535916815,
+          "sse_share": 0.02291545982006374,
+          "sae_share": 0.04340648165267258,
+          "target_ss_share": 0.04038720152400012
+        },
+        {
+          "source_group": "doi:10.3390/nano13101654",
+          "records": 1,
+          "source_mae": 2.8086063508226005,
+          "source_mse": 7.888269633881044,
+          "source_target_ss": 0.40765448960302,
+          "sse_share": 0.022312841550066048,
+          "sae_share": 0.042831939241139094,
+          "target_ss_share": 0.0006616065912273585
+        },
+        {
+          "source_group": "doi:10.1007/s10854-026-18573-2",
+          "records": 1,
+          "source_mae": 2.7189371705424463,
+          "source_mse": 7.392619337357364,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.020910839964943393,
+          "sae_share": 0.041464462136190795,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.jaap.2026.107754",
+          "records": 1,
+          "source_mae": 2.6781426137689124,
+          "source_mse": 7.172447859684982,
+          "source_target_ss": 1.3491327504725916,
+          "sse_share": 0.02028806063269956,
+          "sae_share": 0.040842335088524806,
+          "target_ss_share": 0.0021895873660623343
+        },
+        {
+          "source_group": "doi:10.3390/mi14030572",
+          "records": 2,
+          "source_mae": 1.914627574184962,
+          "source_mse": 6.518815919656866,
+          "source_target_ss": 2.9583936200377936,
+          "sse_share": 0.018439190527237144,
+          "sae_share": 0.029198542509483786,
+          "target_ss_share": 0.004801352047828568
+        },
+        {
+          "source_group": "doi:10.1021/acsomega.3c04692",
+          "records": 4,
+          "source_mae": 1.8555161723776905,
+          "source_mse": 5.77672103454444,
+          "source_target_ss": 3.218947967863909,
+          "sse_share": 0.016340093215006787,
+          "sae_share": 0.028297079059496903,
+          "target_ss_share": 0.005224221115363123
+        },
+        {
+          "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+          "records": 1,
+          "source_mae": 2.201873552079846,
+          "source_mse": 4.848247139348717,
+          "source_target_ss": 19.022871880907402,
+          "sse_share": 0.013713802295906694,
+          "sae_share": 0.03357911448563551,
+          "target_ss_share": 0.030873344318464436
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109160",
+          "records": 1,
+          "source_mae": 1.4038061897493606,
+          "source_mse": 1.9706718183786176,
+          "source_target_ss": 27.894471880907428,
+          "sse_share": 0.0055742628068646115,
+          "sae_share": 0.02140839046670568,
+          "target_ss_share": 0.04527158887220029
+        },
+        {
+          "source_group": "doi:10.3390/polym17111544",
+          "records": 1,
+          "source_mae": 1.2673150094572492,
+          "source_mse": 1.6060873331956276,
+          "source_target_ss": 7.083697967863898,
+          "sse_share": 0.004542995339211118,
+          "sae_share": 0.01932686631879125,
+          "target_ss_share": 0.011496552559414964
+        },
+        {
+          "source_group": "doi:10.1039/d4ya00076e",
+          "records": 1,
+          "source_mae": 0.8050591334769877,
+          "source_mse": 0.6481202083947182,
+          "source_target_ss": 10.122080576559526,
+          "sse_share": 0.0018332795640242454,
+          "sae_share": 0.012277350252558914,
+          "target_ss_share": 0.01642772346971496
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109168",
+          "records": 1,
+          "source_mae": 0.5207077941619076,
+          "source_mse": 0.27113660690095953,
+          "source_target_ss": 164.8265240548204,
+          "sse_share": 0.0007669398269829587,
+          "sae_share": 0.007940922228349367,
+          "target_ss_share": 0.2675067183240365
+        },
+        {
+          "source_group": "doi:10.3390/molecules31132329",
+          "records": 1,
+          "source_mae": 0.4536660737070548,
+          "source_mse": 0.2058129064327749,
+          "source_target_ss": 0.003784924385634064,
+          "sse_share": 0.0005821645282596241,
+          "sae_share": 0.00691851946396672,
+          "target_ss_share": 6.142777731385266e-06
+        },
+        {
+          "source_group": "doi:10.3390/nano13172431",
+          "records": 1,
+          "source_mae": 0.3767652305403715,
+          "source_mse": 0.14195203894413927,
+          "source_target_ss": 4.935158837429125,
+          "sse_share": 0.0004015270141204644,
+          "sae_share": 0.005745762647710487,
+          "target_ss_share": 0.008009561280133803
+        },
+        {
+          "source_group": "doi:10.1039/d4cp01914h",
+          "records": 1,
+          "source_mae": 0.1740301787797165,
+          "source_mse": 0.030286503126100085,
+          "source_target_ss": 7.626002315690032,
+          "sse_share": 8.566871782066191e-05,
+          "sae_share": 0.0026540031291441774,
+          "target_ss_share": 0.012376690372498837
+        }
+      ]
+    },
+    "nested_min": {
+      "mae": 3.699537019143349,
+      "rmse": 5.135999970272415,
+      "r2": 0.015341907284528222,
+      "target_weighted_mean": 96.36152173913044,
+      "sources": [
+        {
+          "source_group": "doi:10.1039/d4ta02115k",
+          "records": 4,
+          "source_mae": 10.64623206737,
+          "source_mse": 161.20859777385365,
+          "source_target_ss": 154.19919796786397,
+          "sse_share": 0.2657114927843705,
+          "sae_share": 0.1251182655310275,
+          "target_ss_share": 0.25025900202119433
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109168",
+          "records": 1,
+          "source_mae": 11.81179874962909,
+          "source_mse": 139.51858970173936,
+          "source_target_ss": 164.8265240548204,
+          "sse_share": 0.22996101481401204,
+          "sae_share": 0.13881641532920655,
+          "target_ss_share": 0.2675067183240365
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2025.125582",
+          "records": 1,
+          "source_mae": 10.566278395175019,
+          "source_mse": 111.64623912434237,
+          "source_target_ss": 98.7733501417768,
+          "sse_share": 0.1840205129946318,
+          "sae_share": 0.12417862184069944,
+          "target_ss_share": 0.1603051141545018
+        },
+        {
+          "source_group": "10.1021/acs.energyfuels.4c01398",
+          "records": 1,
+          "source_mae": 7.034339506896629,
+          "source_mse": 49.48193229828671,
+          "source_target_ss": 28.74591535916828,
+          "sse_share": 0.08155841734494247,
+          "sae_share": 0.08267003318073561,
+          "target_ss_share": 0.04665344687117265
+        },
+        {
+          "source_group": "doi:10.1088/1361-6528/ace97a",
+          "records": 1,
+          "source_mae": 4.955555963906633,
+          "source_mse": 24.5575349114106,
+          "source_target_ss": 3.7576979678638693,
+          "sse_share": 0.04047686879312046,
+          "sae_share": 0.058239437485708194,
+          "target_ss_share": 0.006098590367056685
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2026.129124",
+          "records": 1,
+          "source_mae": 4.713019151196534,
+          "source_mse": 22.212549519545295,
+          "source_target_ss": 13.480071880907415,
+          "sse_share": 0.03661175503594881,
+          "sae_share": 0.05538905951708217,
+          "target_ss_share": 0.021877606242756937
+        },
+        {
+          "source_group": "10.1016/j.jpcs.2023.111318",
+          "records": 1,
+          "source_mae": 4.210418418248921,
+          "source_mse": 17.727623256729743,
+          "source_target_ss": 3.022306663516036,
+          "sse_share": 0.02921949141740235,
+          "sae_share": 0.04948231884459905,
+          "target_ss_share": 0.00490508030768849
+        },
+        {
+          "source_group": "10.1039/d5ra08165c",
+          "records": 1,
+          "source_mae": 3.5812061844330145,
+          "source_mse": 12.82503773542127,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.021138822424813446,
+          "sae_share": 0.042087595260915454,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1039/d3ra07014j",
+          "records": 1,
+          "source_mae": 3.0534144282200657,
+          "source_mse": 9.32333967046247,
+          "source_target_ss": 24.88491535916815,
+          "sse_share": 0.01536716115507407,
+          "sae_share": 0.03588480081861354,
+          "target_ss_share": 0.04038720152400012
+        },
+        {
+          "source_group": "doi:10.1016/j.jaap.2026.107754",
+          "records": 1,
+          "source_mae": 2.8238230543618386,
+          "source_mse": 7.9739766423454235,
+          "source_target_ss": 1.3491327504725916,
+          "sse_share": 0.013143078386163772,
+          "sae_share": 0.033186562202711996,
+          "target_ss_share": 0.0021895873660623343
+        },
+        {
+          "source_group": "doi:10.3390/nano13101654",
+          "records": 1,
+          "source_mae": 2.813168011857826,
+          "source_mse": 7.913914262940113,
+          "source_target_ss": 0.40765448960302,
+          "sse_share": 0.013044080784842569,
+          "sae_share": 0.03306134039382926,
+          "target_ss_share": 0.0006616065912273585
+        },
+        {
+          "source_group": "doi:10.1007/s10854-026-18573-2",
+          "records": 1,
+          "source_mae": 2.7561007990192365,
+          "source_mse": 7.596091614354474,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.012520230744816544,
+          "sae_share": 0.03239066642731501,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+          "records": 1,
+          "source_mae": 2.7537671308893863,
+          "source_mse": 7.583233411166763,
+          "source_target_ss": 19.022871880907402,
+          "sse_share": 0.012499037257554007,
+          "sae_share": 0.032363240338264515,
+          "target_ss_share": 0.030873344318464436
+        },
+        {
+          "source_group": "doi:10.3390/mi14030572",
+          "records": 2,
+          "source_mae": 1.941124292296422,
+          "source_mse": 6.622493833372714,
+          "source_target_ss": 2.9583936200377936,
+          "sse_share": 0.010915501696064953,
+          "sae_share": 0.022812775740315903,
+          "target_ss_share": 0.004801352047828568
+        },
+        {
+          "source_group": "doi:10.1021/acsomega.3c04692",
+          "records": 4,
+          "source_mae": 1.8426212644406483,
+          "source_mse": 5.692064660984412,
+          "source_target_ss": 3.218947967863909,
+          "sse_share": 0.009381925151517156,
+          "sae_share": 0.021655133494977035,
+          "target_ss_share": 0.005224221115363123
+        },
+        {
+          "source_group": "doi:10.1002/asia.70648",
+          "records": 1,
+          "source_mae": 2.1264287806415325,
+          "source_mse": 4.5216993591406345,
+          "source_target_ss": 0.13069796786389676,
+          "sse_share": 0.007452874742604175,
+          "sae_share": 0.02499053929366875,
+          "target_ss_share": 0.0002121174651675785
+        },
+        {
+          "source_group": "doi:10.1021/acssusresmgt.3c00028",
+          "records": 2,
+          "source_mae": 1.723732608318528,
+          "source_mse": 3.377285063011501,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.005566597985735281,
+          "sae_share": 0.020257912172805616,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109160",
+          "records": 1,
+          "source_mae": 1.7863020931948483,
+          "source_mse": 3.1908751681522967,
+          "source_target_ss": 27.894471880907428,
+          "sse_share": 0.005259348545464731,
+          "sae_share": 0.020993250776487678,
+          "target_ss_share": 0.04527158887220029
+        },
+        {
+          "source_group": "doi:10.3390/polym17111544",
+          "records": 1,
+          "source_mae": 1.2651978150622796,
+          "source_mse": 1.6007255112383663,
+          "source_target_ss": 7.083697967863898,
+          "sse_share": 0.0026383900797017864,
+          "sae_share": 0.014869049929825897,
+          "target_ss_share": 0.011496552559414964
+        },
+        {
+          "source_group": "doi:10.1039/d4cp01914h",
+          "records": 1,
+          "source_mae": 1.0612841842338412,
+          "source_mse": 1.1263241197048897,
+          "source_target_ss": 7.626002315690032,
+          "sse_share": 0.0018564596884941575,
+          "sae_share": 0.012472585185685564,
+          "target_ss_share": 0.012376690372498837
+        },
+        {
+          "source_group": "doi:10.1039/d4ya00076e",
+          "records": 1,
+          "source_mae": 0.8195746436027633,
+          "source_mse": 0.6717025964365966,
+          "source_target_ss": 10.122080576559526,
+          "sse_share": 0.001107131394174642,
+          "sae_share": 0.009631929609638854,
+          "target_ss_share": 0.01642772346971496
+        },
+        {
+          "source_group": "doi:10.3390/molecules31132329",
+          "records": 1,
+          "source_mae": 0.47406442903813684,
+          "source_mse": 0.22473708287925467,
+          "source_target_ss": 0.003784924385634064,
+          "sse_share": 0.0003704220903876427,
+          "sae_share": 0.005571371987372172,
+          "target_ss_share": 6.142777731385266e-06
+        },
+        {
+          "source_group": "doi:10.3390/nano13172431",
+          "records": 1,
+          "source_mae": 0.3298994682638323,
+          "source_mse": 0.10883365916075931,
+          "source_target_ss": 4.935158837429125,
+          "sse_share": 0.0001793846881625875,
+          "sae_share": 0.003877094638514273,
+          "target_ss_share": 0.008009561280133803
+        }
+      ]
+    },
+    "nested_1se": {
+      "mae": 3.2804220186050044,
+      "rmse": 4.78978721634124,
+      "r2": 0.14361732914228587,
+      "target_weighted_mean": 96.36152173913044,
+      "sources": [
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109168",
+          "records": 1,
+          "source_mae": 13.42204545454544,
+          "source_mse": 180.15130418388392,
+          "source_target_ss": 164.8265240548204,
+          "sse_share": 0.34141070420932684,
+          "sae_share": 0.17789393875732182,
+          "target_ss_share": 0.2675067183240365
+        },
+        {
+          "source_group": "doi:10.1039/d4ta02115k",
+          "records": 4,
+          "source_mae": 10.836343993282412,
+          "source_mse": 163.99804806427565,
+          "source_target_ss": 154.19919796786397,
+          "sse_share": 0.3107981334480299,
+          "sae_share": 0.14362340831154183,
+          "target_ss_share": 0.25025900202119433
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2025.125582",
+          "records": 1,
+          "source_mae": 6.377609919099186,
+          "source_mse": 40.67390828019232,
+          "source_target_ss": 98.7733501417768,
+          "sse_share": 0.07708247093627368,
+          "sae_share": 0.08452796201655702,
+          "target_ss_share": 0.1603051141545018
+        },
+        {
+          "source_group": "10.1021/acs.energyfuels.4c01398",
+          "records": 1,
+          "source_mae": 5.6052272727272765,
+          "source_mse": 31.41857277892566,
+          "source_target_ss": 28.74591535916828,
+          "sse_share": 0.059542378037719404,
+          "sae_share": 0.07429090897898362,
+          "target_ss_share": 0.04665344687117265
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2026.129124",
+          "records": 1,
+          "source_mae": 4.204755064872074,
+          "source_mse": 17.679965155567363,
+          "source_target_ss": 13.480071880907415,
+          "sse_share": 0.033505887628753554,
+          "sae_share": 0.055729243544364364,
+          "target_ss_share": 0.021877606242756937
+        },
+        {
+          "source_group": "doi:10.1088/1361-6528/ace97a",
+          "records": 1,
+          "source_mae": 3.8992309757549037,
+          "source_mse": 15.204002202286539,
+          "source_target_ss": 3.7576979678638693,
+          "sse_share": 0.028813608217814757,
+          "sae_share": 0.051679869417122805,
+          "target_ss_share": 0.006098590367056685
+        },
+        {
+          "source_group": "10.1039/d5ra08165c",
+          "records": 1,
+          "source_mae": 3.5812061844330145,
+          "source_mse": 12.82503773542127,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.02430515385163151,
+          "sae_share": 0.04746481270744918,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1039/d3ra07014j",
+          "records": 1,
+          "source_mae": 3.0534144282200657,
+          "source_mse": 9.32333967046247,
+          "source_target_ss": 24.88491535916815,
+          "sse_share": 0.01766896985228764,
+          "sae_share": 0.04046953358443227,
+          "target_ss_share": 0.04038720152400012
+        },
+        {
+          "source_group": "doi:10.1016/j.jaap.2026.107754",
+          "records": 1,
+          "source_mae": 2.8238230543618386,
+          "source_mse": 7.9739766423454235,
+          "source_target_ss": 1.3491327504725916,
+          "sse_share": 0.01511174727901535,
+          "sae_share": 0.03742656118960156,
+          "target_ss_share": 0.0021895873660623343
+        },
+        {
+          "source_group": "doi:10.1007/s10854-026-18573-2",
+          "records": 1,
+          "source_mae": 2.7561007990192365,
+          "source_mse": 7.596091614354474,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.01439560484473764,
+          "sae_share": 0.03652897976021185,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+          "records": 1,
+          "source_mae": 2.7537671308893863,
+          "source_mse": 7.583233411166763,
+          "source_target_ss": 19.022871880907402,
+          "sse_share": 0.014371236837938742,
+          "sae_share": 0.03649804964477025,
+          "target_ss_share": 0.030873344318464436
+        },
+        {
+          "source_group": "10.1016/j.jpcs.2023.111318",
+          "records": 1,
+          "source_mae": 2.6921299832849286,
+          "source_mse": 7.24756384690171,
+          "source_target_ss": 3.022306663516036,
+          "sse_share": 0.013735098327387667,
+          "sae_share": 0.03568111939384414,
+          "target_ss_share": 0.00490508030768849
+        },
+        {
+          "source_group": "doi:10.3390/mi14030572",
+          "records": 2,
+          "source_mae": 1.686991164853076,
+          "source_mse": 4.793039983401864,
+          "source_target_ss": 2.9583936200377936,
+          "sse_share": 0.009083448845679134,
+          "sae_share": 0.02235914816268812,
+          "target_ss_share": 0.004801352047828568
+        },
+        {
+          "source_group": "doi:10.1002/asia.70648",
+          "records": 1,
+          "source_mae": 2.1264287806415325,
+          "source_mse": 4.5216993591406345,
+          "source_target_ss": 0.13069796786389676,
+          "sse_share": 0.008569222240274895,
+          "sae_share": 0.02818339369780225,
+          "target_ss_share": 0.0002121174651675785
+        },
+        {
+          "source_group": "doi:10.3390/nano13101654",
+          "records": 1,
+          "source_mae": 2.1094136480795243,
+          "source_mse": 4.449625938704167,
+          "source_target_ss": 0.40765448960302,
+          "sse_share": 0.008432633513718285,
+          "sae_share": 0.027957877478222728,
+          "target_ss_share": 0.0006616065912273585
+        },
+        {
+          "source_group": "doi:10.1021/acsomega.3c04692",
+          "records": 4,
+          "source_mae": 1.484695541069808,
+          "source_mse": 3.8798153424962734,
+          "source_target_ss": 3.218947967863909,
+          "sse_share": 0.007352766577430646,
+          "sae_share": 0.019677949873645843,
+          "target_ss_share": 0.005224221115363123
+        },
+        {
+          "source_group": "doi:10.1021/acssusresmgt.3c00028",
+          "records": 2,
+          "source_mae": 1.723732608318528,
+          "source_mse": 3.377285063011501,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.006400404798077209,
+          "sae_share": 0.02284611418555204,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109160",
+          "records": 1,
+          "source_mae": 1.7863020931948483,
+          "source_mse": 3.1908751681522967,
+          "source_target_ss": 27.894471880907428,
+          "sse_share": 0.006047133231358455,
+          "sae_share": 0.023675401506054728,
+          "target_ss_share": 0.04527158887220029
+        },
+        {
+          "source_group": "doi:10.1039/d4cp01914h",
+          "records": 1,
+          "source_mae": 1.0612841842338412,
+          "source_mse": 1.1263241197048897,
+          "source_target_ss": 7.626002315690032,
+          "sse_share": 0.002134534149605101,
+          "sae_share": 0.014066114163715077,
+          "target_ss_share": 0.012376690372498837
+        },
+        {
+          "source_group": "doi:10.3390/molecules31132329",
+          "records": 1,
+          "source_mae": 0.6099602839240248,
+          "source_mse": 0.37205154796467693,
+          "source_target_ss": 0.003784924385634064,
+          "sse_share": 0.0007050872130414127,
+          "sae_share": 0.008084329453379422,
+          "target_ss_share": 6.142777731385266e-06
+        },
+        {
+          "source_group": "doi:10.1039/d4ya00076e",
+          "records": 1,
+          "source_mae": 0.3758672244808423,
+          "source_mse": 0.1412761704389319,
+          "source_target_ss": 10.122080576559526,
+          "sse_share": 0.0002677371504805764,
+          "sae_share": 0.004981692338855514,
+          "target_ss_share": 0.01642772346971496
+        },
+        {
+          "source_group": "doi:10.3390/nano13172431",
+          "records": 1,
+          "source_mae": 0.35255778012322025,
+          "source_mse": 0.12429698832541292,
+          "source_target_ss": 4.935158837429125,
+          "sse_share": 0.00023555934000878576,
+          "sae_share": 0.004672752179096351,
+          "target_ss_share": 0.008009561280133803
+        },
+        {
+          "source_group": "doi:10.3390/polym17111544",
+          "records": 1,
+          "source_mae": 0.1268188585060983,
+          "source_mse": 0.016083022872789784,
+          "source_target_ss": 7.083697967863898,
+          "sse_share": 3.0479469408720943e-05,
+          "sae_share": 0.0016808396547872782,
+          "target_ss_share": 0.011496552559414964
+        }
+      ]
+    },
+    "nested_linear": {
+      "mae": 3.2721844433763496,
+      "rmse": 4.685320980262989,
+      "r2": 0.1805657221803958,
+      "target_weighted_mean": 96.36152173913044,
+      "sources": [
+        {
+          "source_group": "doi:10.1039/d4ta02115k",
+          "records": 4,
+          "source_mae": 10.836343993282412,
+          "source_mse": 163.99804806427565,
+          "source_target_ss": 154.19919796786397,
+          "sse_share": 0.3248120597640057,
+          "sae_share": 0.14398497369730637,
+          "target_ss_share": 0.25025900202119433
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109168",
+          "records": 1,
+          "source_mae": 11.803468990117025,
+          "source_mse": 139.32188020065422,
+          "source_target_ss": 164.8265240548204,
+          "sse_share": 0.27593881398169073,
+          "sae_share": 0.15683538406795933,
+          "target_ss_share": 0.2675067183240365
+        },
+        {
+          "source_group": "10.1021/acs.energyfuels.4c01398",
+          "records": 1,
+          "source_mae": 7.034339506896629,
+          "source_mse": 49.48193229828671,
+          "source_target_ss": 28.74591535916828,
+          "sse_share": 0.09800316857802092,
+          "sae_share": 0.09346687309911038,
+          "target_ss_share": 0.04665344687117265
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2025.125582",
+          "records": 1,
+          "source_mae": 6.377609919099186,
+          "source_mse": 40.67390828019232,
+          "source_target_ss": 98.7733501417768,
+          "sse_share": 0.08055812909409499,
+          "sae_share": 0.08474075730914689,
+          "target_ss_share": 0.1603051141545018
+        },
+        {
+          "source_group": "doi:10.1016/j.jenvman.2026.129124",
+          "records": 1,
+          "source_mae": 4.204755064872074,
+          "source_mse": 17.679965155567363,
+          "source_target_ss": 13.480071880907415,
+          "sse_share": 0.03501667225017803,
+          "sae_share": 0.05586953937550616,
+          "target_ss_share": 0.021877606242756937
+        },
+        {
+          "source_group": "doi:10.1088/1361-6528/ace97a",
+          "records": 1,
+          "source_mae": 3.8992309757549037,
+          "source_mse": 15.204002202286539,
+          "source_target_ss": 3.7576979678638693,
+          "sse_share": 0.030112817379665688,
+          "sae_share": 0.05180997113342194,
+          "target_ss_share": 0.006098590367056685
+        },
+        {
+          "source_group": "10.1039/d5ra08165c",
+          "records": 1,
+          "source_mae": 3.5812061844330145,
+          "source_mse": 12.82503773542127,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.025401076247935653,
+          "sae_share": 0.04758430321055425,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1039/d3ra07014j",
+          "records": 1,
+          "source_mae": 3.0534144282200657,
+          "source_mse": 9.32333967046247,
+          "source_target_ss": 24.88491535916815,
+          "sse_share": 0.018465665890459185,
+          "sae_share": 0.0405714137911074,
+          "target_ss_share": 0.04038720152400012
+        },
+        {
+          "source_group": "doi:10.1016/j.jaap.2026.107754",
+          "records": 1,
+          "source_mae": 2.8238230543618386,
+          "source_mse": 7.9739766423454235,
+          "source_target_ss": 1.3491327504725916,
+          "sse_share": 0.015793137834757477,
+          "sae_share": 0.03752078085193547,
+          "target_ss_share": 0.0021895873660623343
+        },
+        {
+          "source_group": "doi:10.1007/s10854-026-18573-2",
+          "records": 1,
+          "source_mae": 2.7561007990192365,
+          "source_mse": 7.596091614354474,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.015044704449455153,
+          "sae_share": 0.03662093980219844,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+          "records": 1,
+          "source_mae": 2.7537671308893863,
+          "source_mse": 7.583233411166763,
+          "source_target_ss": 19.022871880907402,
+          "sse_share": 0.015019237686212775,
+          "sae_share": 0.03658993182160064,
+          "target_ss_share": 0.030873344318464436
+        },
+        {
+          "source_group": "10.1016/j.jpcs.2023.111318",
+          "records": 1,
+          "source_mae": 2.6921299832849286,
+          "source_mse": 7.24756384690171,
+          "source_target_ss": 3.022306663516036,
+          "sse_share": 0.014354415611462923,
+          "sae_share": 0.03577094498599387,
+          "target_ss_share": 0.00490508030768849
+        },
+        {
+          "source_group": "doi:10.3390/mi14030572",
+          "records": 2,
+          "source_mae": 1.686991164853076,
+          "source_mse": 4.793039983401864,
+          "source_target_ss": 2.9583936200377936,
+          "sse_share": 0.009493022678720084,
+          "sae_share": 0.02241543629932162,
+          "target_ss_share": 0.004801352047828568
+        },
+        {
+          "source_group": "doi:10.1002/asia.70648",
+          "records": 1,
+          "source_mae": 2.1264287806415325,
+          "source_mse": 4.5216993591406345,
+          "source_target_ss": 0.13069796786389676,
+          "sse_share": 0.008955609532013614,
+          "sae_share": 0.028254344107170034,
+          "target_ss_share": 0.0002121174651675785
+        },
+        {
+          "source_group": "doi:10.3390/nano13101654",
+          "records": 1,
+          "source_mae": 2.1094136480795243,
+          "source_mse": 4.449625938704167,
+          "source_target_ss": 0.40765448960302,
+          "sse_share": 0.008812862002866005,
+          "sae_share": 0.028028260160784087,
+          "target_ss_share": 0.0006616065912273585
+        },
+        {
+          "source_group": "doi:10.1021/acsomega.3c04692",
+          "records": 4,
+          "source_mae": 1.484695541069808,
+          "source_mse": 3.8798153424962734,
+          "source_target_ss": 3.218947967863909,
+          "sse_share": 0.007684303732726697,
+          "sae_share": 0.01972748821576405,
+          "target_ss_share": 0.005224221115363123
+        },
+        {
+          "source_group": "doi:10.1021/acssusresmgt.3c00028",
+          "records": 2,
+          "source_mae": 1.723732608318528,
+          "source_mse": 3.377285063011501,
+          "source_target_ss": 13.23852405482039,
+          "sse_share": 0.006688999842833712,
+          "sae_share": 0.022903628236957935,
+          "target_ss_share": 0.02148558398392829
+        },
+        {
+          "source_group": "doi:10.1016/j.biombioe.2026.109160",
+          "records": 1,
+          "source_mae": 1.7863020931948483,
+          "source_mse": 3.1908751681522967,
+          "source_target_ss": 27.894471880907428,
+          "sse_share": 0.006319799217434321,
+          "sae_share": 0.023735003250500864,
+          "target_ss_share": 0.04527158887220029
+        },
+        {
+          "source_group": "doi:10.1039/d4cp01914h",
+          "records": 1,
+          "source_mae": 1.0612841842338412,
+          "source_mse": 1.1263241197048897,
+          "source_target_ss": 7.626002315690032,
+          "sse_share": 0.0022307805586798254,
+          "sae_share": 0.014101524965154771,
+          "target_ss_share": 0.012376690372498837
+        },
+        {
+          "source_group": "doi:10.3390/molecules31132329",
+          "records": 1,
+          "source_mae": 0.6099602839240248,
+          "source_mse": 0.37205154796467693,
+          "source_target_ss": 0.003784924385634064,
+          "sse_share": 0.0007368796827717732,
+          "sae_share": 0.00810468138438999,
+          "target_ss_share": 6.142777731385266e-06
+        },
+        {
+          "source_group": "doi:10.1039/d4ya00076e",
+          "records": 1,
+          "source_mae": 0.3758672244808423,
+          "source_mse": 0.1412761704389319,
+          "source_target_ss": 10.122080576559526,
+          "sse_share": 0.0002798094517433236,
+          "sae_share": 0.0049942335223118455,
+          "target_ss_share": 0.01642772346971496
+        },
+        {
+          "source_group": "doi:10.3390/nano13172431",
+          "records": 1,
+          "source_mae": 0.35255778012322025,
+          "source_mse": 0.12429698832541292,
+          "source_target_ss": 4.935158837429125,
+          "sse_share": 0.0002461807398135404,
+          "sae_share": 0.004684515619778335,
+          "target_ss_share": 0.008009561280133803
+        },
+        {
+          "source_group": "doi:10.3390/polym17111544",
+          "records": 1,
+          "source_mae": 0.1268188585060983,
+          "source_mse": 0.016083022872789784,
+          "source_target_ss": 7.083697967863898,
+          "sse_share": 3.1853792457914144e-05,
+          "sae_share": 0.0016850710920253728,
+          "target_ss_share": 0.011496552559414964
+        }
+      ]
+    }
+  },
+  "diagnostic_subset_only_no_refitting_no_removal_recommendation": {
+    "mean/full": {
+      "all": {
+        "mae": 4.00112648221344,
+        "rmse": 5.394403045025563,
+        "r2": -0.08623105050693125,
+        "target_weighted_mean": 96.36152173913044
+      },
+      "without_OPB_study_saved_predictions_only": {
+        "mae": 3.673977272727274,
+        "rmse": 4.788355054014845,
+        "r2": -0.10439027596918171,
+        "target_weighted_mean": 96.84840909090909,
+        "sources": [
+          {
+            "source_group": "doi:10.1016/j.biombioe.2026.109168",
+            "records": 1,
+            "source_mae": 13.42204545454544,
+            "source_mse": 180.15130418388392,
+            "source_target_ss": 152.56179798553737,
+            "sse_share": 0.3571429144940811,
+            "sae_share": 0.16605790670929368,
+            "target_ss_share": 0.3340204065831208
+          },
+          {
+            "source_group": "doi:10.1016/j.jenvman.2025.125582",
+            "records": 1,
+            "source_mae": 10.390227272727245,
+            "source_mse": 107.95682277892503,
+            "source_target_ss": 89.33257071280994,
+            "sse_share": 0.2140201787683503,
+            "sae_share": 0.128548170767712,
+            "target_ss_share": 0.1955856707551182
+          },
+          {
+            "source_group": "10.1021/acs.energyfuels.4c01398",
+            "records": 1,
+            "source_mae": 5.6052272727272765,
+            "source_mse": 31.41857277892566,
+            "source_target_ss": 34.20388889462805,
+            "sse_share": 0.0622860916957698,
+            "sae_share": 0.06934802230339024,
+            "target_ss_share": 0.07488635442268847
+          },
+          {
+            "source_group": "doi:10.1016/j.biombioe.2026.109160",
+            "records": 1,
+            "source_mae": 5.521590909090946,
+            "source_mse": 30.487966167355783,
+            "source_target_ss": 33.27454344008262,
+            "sse_share": 0.060441200486077075,
+            "sae_share": 0.06831327096707117,
+            "target_ss_share": 0.07285163570094878
+          },
+          {
+            "source_group": "doi:10.1039/d3ra07014j",
+            "records": 1,
+            "source_mae": 5.2152272727272475,
+            "source_mse": 27.198595506198085,
+            "source_target_ss": 20.264320712809905,
+            "sse_share": 0.05392015180369803,
+            "sae_share": 0.06452293183294357,
+            "target_ss_share": 0.04436691709850708
+          },
+          {
+            "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+            "records": 1,
+            "source_mae": 4.559772727272744,
+            "source_mse": 20.79152732438032,
+            "source_target_ss": 23.507070712809877,
+            "sse_share": 0.04121838972552267,
+            "sae_share": 0.05641363059939677,
+            "target_ss_share": 0.051466628086116746
+          },
+          {
+            "source_group": "doi:10.1016/j.jenvman.2026.129124",
+            "records": 1,
+            "source_mae": 3.83840909090911,
+            "source_mse": 14.7333843491737,
+            "source_target_ss": 17.292366167355354,
+            "sse_share": 0.029208358222344192,
+            "sae_share": 0.04748890032364119,
+            "target_ss_share": 0.03786008852984149
+          },
+          {
+            "source_group": "doi:10.1021/acssusresmgt.3c00028",
+            "records": 2,
+            "source_mae": 3.803863636363644,
+            "source_mse": 14.469378564049647,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.028684977079089957,
+            "sae_share": 0.04706150303255257,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "10.1039/d5ra08165c",
+            "records": 1,
+            "source_mae": 3.803863636363616,
+            "source_mse": 14.46937856404943,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.028684977079089527,
+            "sae_share": 0.047061503032552215,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "doi:10.1007/s10854-026-18573-2",
+            "records": 1,
+            "source_mae": 3.803863636363616,
+            "source_mse": 14.46937856404943,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.028684977079089527,
+            "sae_share": 0.047061503032552215,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "doi:10.1039/d4ya00076e",
+            "records": 1,
+            "source_mae": 3.3261363636363654,
+            "source_mse": 11.063183109504145,
+            "source_target_ss": 13.457225258264382,
+            "sse_share": 0.021932327813053182,
+            "sae_share": 0.0411510483886841,
+            "target_ss_share": 0.029463390649553237
+          },
+          {
+            "source_group": "doi:10.1039/d4cp01914h",
+            "records": 1,
+            "source_mae": 2.887045454545472,
+            "source_mse": 8.335031456611672,
+            "source_target_ss": 10.552161621900837,
+            "sse_share": 0.016523873864247265,
+            "sae_share": 0.035718603873006974,
+            "target_ss_share": 0.023103013741436446
+          },
+          {
+            "source_group": "doi:10.3390/polym17111544",
+            "records": 1,
+            "source_mae": 2.782499999999999,
+            "source_mse": 7.742306249999993,
+            "source_target_ss": 9.912479803718965,
+            "sse_share": 0.01534881932471794,
+            "sae_share": 0.034425164702607376,
+            "target_ss_share": 0.02170248763454569
+          },
+          {
+            "source_group": "doi:10.3390/nano13172431",
+            "records": 1,
+            "source_mae": 2.322500000000005,
+            "source_mse": 5.394006250000023,
+            "source_target_ss": 7.335479803718982,
+            "sse_share": 0.010693406421071212,
+            "sae_share": 0.02873403235285026,
+            "target_ss_share": 0.01606037670552861
+          },
+          {
+            "source_group": "doi:10.1088/1361-6528/ace97a",
+            "records": 1,
+            "source_mae": 2.026590909090899,
+            "source_mse": 4.107070712809877,
+            "source_target_ss": 2.1071161673553758,
+            "sse_share": 0.008142107053019166,
+            "sae_share": 0.025073037135763178,
+            "target_ss_share": 0.004613342319186819
+          },
+          {
+            "source_group": "10.1016/j.jpcs.2023.111318",
+            "records": 1,
+            "source_mae": 1.8174999999999812,
+            "source_mse": 3.303306249999932,
+            "source_target_ss": 1.5664798037190046,
+            "sse_share": 0.006548675442212138,
+            "sae_share": 0.022486158794964343,
+            "target_ss_share": 0.0034296673731655366
+          },
+          {
+            "source_group": "doi:10.1021/acsomega.3c04692",
+            "records": 4,
+            "source_mae": 1.677045454545457,
+            "source_mse": 3.300494008264475,
+            "source_target_ss": 4.3679684400826435,
+            "sse_share": 0.006543100282963566,
+            "sae_share": 0.020748451387775896,
+            "target_ss_share": 0.009563276085910804
+          },
+          {
+            "source_group": "doi:10.3390/mi14030572",
+            "records": 2,
+            "source_mae": 1.6999999999999957,
+            "source_mse": 2.9647525309917055,
+            "source_target_ss": 3.450116167355349,
+            "sse_share": 0.005877505935740006,
+            "sae_share": 0.021032445640406978,
+            "target_ss_share": 0.00755372065743666
+          },
+          {
+            "source_group": "doi:10.1016/j.jaap.2026.107754",
+            "records": 1,
+            "source_mae": 1.2143181818182143,
+            "source_mse": 1.4745686466942938,
+            "source_target_ss": 2.717252530991712,
+            "sse_share": 0.002923274668966314,
+            "sae_share": 0.01502357714661735,
+            "target_ss_share": 0.0059491812968598245
+          },
+          {
+            "source_group": "doi:10.3390/nano13101654",
+            "records": 1,
+            "source_mae": 0.667500000000004,
+            "source_mse": 0.4455562500000053,
+            "source_target_ss": 0.02297980371900955,
+            "sse_share": 0.0008832978390965799,
+            "sae_share": 0.008258327920571634,
+            "target_ss_share": 5.031222417915872e-05
+          },
+          {
+            "source_group": "doi:10.1002/asia.70648",
+            "records": 1,
+            "source_mae": 0.3779545454545712,
+            "source_mse": 0.14284963842977152,
+            "source_target_ss": 0.7197979855371829,
+            "sse_share": 0.0002831938210736432,
+            "sae_share": 0.004676063783422363,
+            "target_ss_share": 0.001575933287110534
+          },
+          {
+            "source_group": "doi:10.3390/molecules31132329",
+            "records": 1,
+            "source_mae": 0.06431818181818016,
+            "source_mse": 0.0041368285123964815,
+            "source_target_ss": 0.300752530991734,
+            "sse_share": 8.20110072681707e-06,
+            "sae_share": 0.0007957462722239354,
+            "target_ss_share": 0.0006584707574846807
+          }
+        ]
+      }
+    },
+    "MLP/no_current": {
+      "all": {
+        "mae": 2.850987411835315,
+        "rmse": 3.9205727302562616,
+        "r2": 0.4262344626853004,
+        "target_weighted_mean": 96.36152173913044
+      },
+      "without_OPB_study_saved_predictions_only": {
+        "mae": 2.496828885714809,
+        "rmse": 2.956314215801049,
+        "r2": 0.5790300786076821,
+        "target_weighted_mean": 96.84840909090909,
+        "sources": [
+          {
+            "source_group": "doi:10.1088/1361-6528/ace97a",
+            "records": 1,
+            "source_mae": 4.975116172460318,
+            "source_mse": 24.751780929476205,
+            "source_target_ss": 2.1071161673553758,
+            "sse_share": 0.12873083558741996,
+            "sae_share": 0.09057154276633594,
+            "target_ss_share": 0.004613342319186819
+          },
+          {
+            "source_group": "doi:10.1016/j.jenvman.2026.129124",
+            "records": 1,
+            "source_mae": 4.751008220737887,
+            "source_mse": 22.572079113518985,
+            "source_target_ss": 17.292366167355354,
+            "sse_share": 0.11739448621930491,
+            "sae_share": 0.08649167764759515,
+            "target_ss_share": 0.03786008852984149
+          },
+          {
+            "source_group": "10.1021/acs.energyfuels.4c01398",
+            "records": 1,
+            "source_mae": 4.470556650024193,
+            "source_mse": 19.985876761075534,
+            "source_target_ss": 34.20388889462805,
+            "sse_share": 0.10394397973749751,
+            "sae_share": 0.08138608200916805,
+            "target_ss_share": 0.07488635442268847
+          },
+          {
+            "source_group": "10.1039/d5ra08165c",
+            "records": 1,
+            "source_mae": 4.267876643602463,
+            "source_mse": 18.214771045007424,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.09473268623935614,
+            "sae_share": 0.07769631070872646,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "10.1016/j.jpcs.2023.111318",
+            "records": 1,
+            "source_mae": 4.209388551460975,
+            "source_mse": 17.71895197717073,
+            "source_target_ss": 1.5664798037190046,
+            "sse_share": 0.09215399490863321,
+            "sae_share": 0.07663154024808122,
+            "target_ss_share": 0.0034296673731655366
+          },
+          {
+            "source_group": "doi:10.1016/j.jenvman.2025.125582",
+            "records": 1,
+            "source_mae": 4.208365932491233,
+            "source_mse": 17.710343821752808,
+            "source_target_ss": 89.33257071280994,
+            "sse_share": 0.09210922499720856,
+            "sae_share": 0.07661292356164798,
+            "target_ss_share": 0.1955856707551182
+          },
+          {
+            "source_group": "doi:10.1021/acssusresmgt.3c00028",
+            "records": 2,
+            "source_mae": 2.9665375308251427,
+            "source_mse": 9.409702431626242,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.048938654559991586,
+            "sae_share": 0.05400554912232315,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "doi:10.1002/asia.70648",
+            "records": 1,
+            "source_mae": 3.0560520864463854,
+            "source_mse": 9.339454355073306,
+            "source_target_ss": 0.7197979855371829,
+            "sse_share": 0.04857330333056554,
+            "sae_share": 0.05563515356202201,
+            "target_ss_share": 0.001575933287110534
+          },
+          {
+            "source_group": "doi:10.1039/d3ra07014j",
+            "records": 1,
+            "source_mae": 2.8462806540280923,
+            "source_mse": 8.101313561494585,
+            "source_target_ss": 20.264320712809905,
+            "sse_share": 0.042133891985321664,
+            "sae_share": 0.051816283488675896,
+            "target_ss_share": 0.04436691709850708
+          },
+          {
+            "source_group": "doi:10.3390/nano13101654",
+            "records": 1,
+            "source_mae": 2.8086063508226005,
+            "source_mse": 7.888269633881044,
+            "source_target_ss": 0.02297980371900955,
+            "sse_share": 0.041025877863159775,
+            "sae_share": 0.051130426184909525,
+            "target_ss_share": 5.031222417915872e-05
+          },
+          {
+            "source_group": "doi:10.1007/s10854-026-18573-2",
+            "records": 1,
+            "source_mae": 2.7189371705424463,
+            "source_mse": 7.392619337357364,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.03844806429037311,
+            "sae_share": 0.049498006817192526,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "doi:10.1016/j.jaap.2026.107754",
+            "records": 1,
+            "source_mae": 2.6781426137689124,
+            "source_mse": 7.172447859684982,
+            "source_target_ss": 2.717252530991712,
+            "sse_share": 0.03730298069521532,
+            "sae_share": 0.04875534557766198,
+            "target_ss_share": 0.0059491812968598245
+          },
+          {
+            "source_group": "doi:10.3390/mi14030572",
+            "records": 2,
+            "source_mae": 1.914627574184962,
+            "source_mse": 6.518815919656866,
+            "source_target_ss": 3.450116167355349,
+            "sse_share": 0.03390352487237218,
+            "sae_share": 0.034855622905212165,
+            "target_ss_share": 0.00755372065743666
+          },
+          {
+            "source_group": "doi:10.1021/acsomega.3c04692",
+            "records": 4,
+            "source_mae": 1.8555161723776905,
+            "source_mse": 5.77672103454444,
+            "source_target_ss": 4.3679684400826435,
+            "sse_share": 0.030043984626849547,
+            "sae_share": 0.03377950514812313,
+            "target_ss_share": 0.009563276085910804
+          },
+          {
+            "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+            "records": 1,
+            "source_mae": 2.201873552079846,
+            "source_mse": 4.848247139348717,
+            "source_target_ss": 23.507070712809877,
+            "sse_share": 0.025215111072651467,
+            "sae_share": 0.04008491011570533,
+            "target_ss_share": 0.051466628086116746
+          },
+          {
+            "source_group": "doi:10.1016/j.biombioe.2026.109160",
+            "records": 1,
+            "source_mae": 1.4038061897493606,
+            "source_mse": 1.9706718183786176,
+            "source_target_ss": 33.27454344008262,
+            "sse_share": 0.010249211180854947,
+            "sae_share": 0.025556165513147207,
+            "target_ss_share": 0.07285163570094878
+          },
+          {
+            "source_group": "doi:10.3390/polym17111544",
+            "records": 1,
+            "source_mae": 1.2673150094572492,
+            "source_mse": 1.6060873331956276,
+            "source_target_ss": 9.912479803718965,
+            "sse_share": 0.00835305406983575,
+            "sae_share": 0.023071355843478487,
+            "target_ss_share": 0.02170248763454569
+          },
+          {
+            "source_group": "doi:10.1039/d4ya00076e",
+            "records": 1,
+            "source_mae": 0.8050591334769877,
+            "source_mse": 0.6481202083947182,
+            "source_target_ss": 13.457225258264382,
+            "sse_share": 0.0033707900140788143,
+            "sae_share": 0.014656029167874054,
+            "target_ss_share": 0.029463390649553237
+          },
+          {
+            "source_group": "doi:10.1016/j.biombioe.2026.109168",
+            "records": 1,
+            "source_mae": 0.5207077941619076,
+            "source_mse": 0.27113660690095953,
+            "source_target_ss": 152.56179798553737,
+            "sse_share": 0.0014101466906218682,
+            "sae_share": 0.009479438592561997,
+            "target_ss_share": 0.3340204065831208
+          },
+          {
+            "source_group": "doi:10.3390/molecules31132329",
+            "records": 1,
+            "source_mae": 0.4536660737070548,
+            "source_mse": 0.2058129064327749,
+            "source_target_ss": 0.300752530991734,
+            "sse_share": 0.001070406509141937,
+            "sae_share": 0.00825895009725463,
+            "target_ss_share": 0.0006584707574846807
+          },
+          {
+            "source_group": "doi:10.3390/nano13172431",
+            "records": 1,
+            "source_mae": 0.3767652305403715,
+            "source_mse": 0.14195203894413927,
+            "source_target_ss": 7.335479803718982,
+            "sse_share": 0.0007382743342260072,
+            "sae_share": 0.006858977159096249,
+            "target_ss_share": 0.01606037670552861
+          },
+          {
+            "source_group": "doi:10.1039/d4cp01914h",
+            "records": 1,
+            "source_mae": 0.1740301787797165,
+            "source_mse": 0.030286503126100085,
+            "source_target_ss": 10.552161621900837,
+            "sse_share": 0.0001575162153201223,
+            "sae_share": 0.003168203763206879,
+            "target_ss_share": 0.023103013741436446
+          }
+        ]
+      }
+    },
+    "MLP/full": {
+      "all": {
+        "mae": 3.7140427868523678,
+        "rmse": 4.996443388803412,
+        "r2": 0.06812562028221891,
+        "target_weighted_mean": 96.36152173913044
+      },
+      "without_OPB_study_saved_predictions_only": {
+        "mae": 3.3879970731028575,
+        "rmse": 4.303130437144091,
+        "r2": 0.10809437242175779,
+        "target_weighted_mean": 96.84840909090909,
+        "sources": [
+          {
+            "source_group": "doi:10.1016/j.jenvman.2025.125582",
+            "records": 1,
+            "source_mae": 12.732671340879222,
+            "source_mse": 162.12091947484708,
+            "source_target_ss": 89.33257071280994,
+            "sse_share": 0.39796727011124217,
+            "sae_share": 0.17082594103062027,
+            "target_ss_share": 0.1955856707551182
+          },
+          {
+            "source_group": "doi:10.1088/1361-6528/ace97a",
+            "records": 1,
+            "source_mae": 5.679263943000976,
+            "source_mse": 32.25403893427099,
+            "source_target_ss": 2.1071161673553758,
+            "sse_share": 0.07917578969026909,
+            "sae_share": 0.0761949775857028,
+            "target_ss_share": 0.004613342319186819
+          },
+          {
+            "source_group": "doi:10.1016/j.jenvman.2026.129124",
+            "records": 1,
+            "source_mae": 5.29272078751336,
+            "source_mse": 28.012893334576045,
+            "source_target_ss": 17.292366167355354,
+            "sse_share": 0.06876481285938102,
+            "sae_share": 0.07100898035720937,
+            "target_ss_share": 0.03786008852984149
+          },
+          {
+            "source_group": "doi:10.1039/d3ra07014j",
+            "records": 1,
+            "source_mae": 5.027704796821027,
+            "source_mse": 25.277815523977164,
+            "source_target_ss": 20.264320712809905,
+            "sse_share": 0.06205086469432176,
+            "sae_share": 0.06745343378051953,
+            "target_ss_share": 0.04436691709850708
+          },
+          {
+            "source_group": "10.1021/acs.energyfuels.4c01398",
+            "records": 1,
+            "source_mae": 4.998017056264985,
+            "source_mse": 24.9801744947157,
+            "source_target_ss": 34.20388889462805,
+            "sse_share": 0.061320228646413934,
+            "sae_share": 0.06705513274205037,
+            "target_ss_share": 0.07488635442268847
+          },
+          {
+            "source_group": "10.1039/d5ra08165c",
+            "records": 1,
+            "source_mae": 4.203312085415391,
+            "source_mse": 17.66783248739908,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.04337021456927906,
+            "sae_share": 0.05639309483557918,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "10.1016/j.jpcs.2023.111318",
+            "records": 1,
+            "source_mae": 4.002558436596004,
+            "source_mse": 16.02047403836585,
+            "source_target_ss": 1.5664798037190046,
+            "sse_share": 0.039326351834105266,
+            "sae_share": 0.05369971415710372,
+            "target_ss_share": 0.0034296673731655366
+          },
+          {
+            "source_group": "doi:10.1016/j.biombioe.2026.109160",
+            "records": 1,
+            "source_mae": 3.6513808252094577,
+            "source_mse": 13.3325819307073,
+            "source_target_ss": 33.27454344008262,
+            "sse_share": 0.032728233047810154,
+            "sae_share": 0.048988193351458716,
+            "target_ss_share": 0.07285163570094878
+          },
+          {
+            "source_group": "doi:10.1002/asia.70648",
+            "records": 1,
+            "source_mae": 3.643818614501839,
+            "source_mse": 13.277414095390103,
+            "source_target_ss": 0.7197979855371829,
+            "sse_share": 0.03259280948316316,
+            "sae_share": 0.04888673610609236,
+            "target_ss_share": 0.001575933287110534
+          },
+          {
+            "source_group": "doi:10.1021/acssusresmgt.3c00028",
+            "records": 2,
+            "source_mae": 3.618455218592622,
+            "source_mse": 13.132243942521757,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.03223645220597901,
+            "sae_share": 0.04854645197733977,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "doi:10.1016/j.jaap.2026.107754",
+            "records": 1,
+            "source_mae": 3.5851336789324932,
+            "source_mse": 12.853183495816033,
+            "source_target_ss": 2.717252530991712,
+            "sse_share": 0.03155142695118004,
+            "sae_share": 0.04809939862799622,
+            "target_ss_share": 0.0059491812968598245
+          },
+          {
+            "source_group": "doi:10.1021/acsomega.3c04692",
+            "records": 4,
+            "source_mae": 3.2937430741188827,
+            "source_mse": 11.810955452245391,
+            "source_target_ss": 4.3679684400826435,
+            "sse_share": 0.028993011598758226,
+            "sae_share": 0.044190001067803686,
+            "target_ss_share": 0.009563276085910804
+          },
+          {
+            "source_group": "doi:10.1007/s10854-026-18573-2",
+            "records": 1,
+            "source_mae": 3.0131128252328523,
+            "source_mse": 9.0788488975827,
+            "source_target_ss": 9.932525258264489,
+            "sse_share": 0.022286357141491627,
+            "sae_share": 0.04042496818003082,
+            "target_ss_share": 0.021746375363753456
+          },
+          {
+            "source_group": "doi:10.3390/nano13101654",
+            "records": 1,
+            "source_mae": 2.945029837051777,
+            "source_mse": 8.673200741125218,
+            "source_target_ss": 0.02297980371900955,
+            "sse_share": 0.021290589969839922,
+            "sae_share": 0.039511543163956726,
+            "target_ss_share": 5.031222417915872e-05
+          },
+          {
+            "source_group": "doi:10.3390/mi14030572",
+            "records": 2,
+            "source_mae": 2.27235171680384,
+            "source_mse": 8.191372969633058,
+            "source_target_ss": 3.450116167355349,
+            "sse_share": 0.020107820445057722,
+            "sae_share": 0.030486659867618712,
+            "target_ss_share": 0.00755372065743666
+          },
+          {
+            "source_group": "doi:10.1016/j.ijbiomac.2023.128794",
+            "records": 1,
+            "source_mae": 2.6067170426711925,
+            "source_mse": 6.7949737405524475,
+            "source_target_ss": 23.507070712809877,
+            "sse_share": 0.016680001314850573,
+            "sae_share": 0.03497262121148203,
+            "target_ss_share": 0.051466628086116746
+          },
+          {
+            "source_group": "doi:10.1039/d4ya00076e",
+            "records": 1,
+            "source_mae": 1.53785174255367,
+            "source_mse": 2.364987982075359,
+            "source_target_ss": 13.457225258264382,
+            "sse_share": 0.00580546800574031,
+            "sae_share": 0.020632353105971984,
+            "target_ss_share": 0.029463390649553237
+          },
+          {
+            "source_group": "doi:10.3390/polym17111544",
+            "records": 1,
+            "source_mae": 0.894477993512595,
+            "source_mse": 0.800090880878318,
+            "source_target_ss": 9.912479803718965,
+            "sse_share": 0.0019640277438313213,
+            "sae_share": 0.012000627431762398,
+            "target_ss_share": 0.02170248763454569
+          },
+          {
+            "source_group": "doi:10.1016/j.biombioe.2026.109168",
+            "records": 1,
+            "source_mae": 0.5167890751911415,
+            "source_mse": 0.2670709482369153,
+            "source_target_ss": 152.56179798553737,
+            "sse_share": 0.0006555939636917501,
+            "sae_share": 0.0069334217243507915,
+            "target_ss_share": 0.3340204065831208
+          },
+          {
+            "source_group": "doi:10.1039/d4cp01914h",
+            "records": 1,
+            "source_mae": 0.4884858119034874,
+            "source_mse": 0.23861838843100927,
+            "source_target_ss": 10.552161621900837,
+            "sse_share": 0.0005857498770044052,
+            "sae_share": 0.006553695313772047,
+            "target_ss_share": 0.023103013741436446
+          },
+          {
+            "source_group": "doi:10.3390/molecules31132329",
+            "records": 1,
+            "source_mae": 0.46755228159715045,
+            "source_mse": 0.21860513602670106,
+            "source_target_ss": 0.300752530991734,
+            "sse_share": 0.0005366222292511768,
+            "sae_share": 0.006272843800532086,
+            "target_ss_share": 0.0006584707574846807
+          },
+          {
+            "source_group": "doi:10.3390/nano13172431",
+            "records": 1,
+            "source_mae": 0.06478742389889192,
+            "source_mse": 0.004197410295454711,
+            "source_target_ss": 7.335479803718982,
+            "sse_share": 1.0303617338403388e-05,
+            "sae_share": 0.0008692105810463557,
+            "target_ss_share": 0.01606037670552861
+          }
+        ]
+      }
+    }
+  },
+  "protected_previous_runs": [
+    {
+      "manifest": "初步模型训练_20261021/run_manifest.json",
+      "sha256": "dbcc02c31824b5305951715c8629e8a208e698b78e781f62b3ad26dd64c82b74",
+      "payloads_unchanged": 277
+    },
+    {
+      "manifest": "模型诊断与改进_20261021/run_manifest.json",
+      "sha256": "9ad13e4e8053109b9eac6dd6370f22172816bf60731b8ef5b810296e51ceb652",
+      "payloads_unchanged": 281
+    }
+  ],
+  "caveats": [
+    "Non-null optional fields need individual definition, method and source review before use.",
+    "The audit does not estimate causal feature importance or improvement from new features.",
+    "Recomputed subset metrics diagnose sensitivity only; they are not model scores after deleting a paper.",
+    "An unvalidated fiber keyword is not a morphology classification."
+  ]
+}
