@@ -1,0 +1,4287 @@
+[
+  {
+    "endpoint_id": "candidate:v11:AHPC2026:AC-850:3E:10000",
+    "changes": {
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed."
+    },
+    "reason": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。",
+    "approved_profiles": [
+      "reported_3e",
+      "reported_3e_residue_sensitivity",
+      "reported_3e_sensitivity"
+    ],
+    "open_issues": [],
+    "disposition": "approved_reported_protocol_table_metric",
+    "resolution": [
+      "unnecessary_individual_curve_requirement_removed"
+    ],
+    "evidence": [
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+        "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+        "locator": "XML electrochemical methods; Table7 own sample row; Fig4 caption",
+        "fields": [
+          "baseline_reference",
+          "baseline_evidence_kind_v13",
+          "baseline_reference_caveat_v13"
+        ],
+        "basis": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "own_cycling_reference_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "baseline_binding_pending",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "previous_holds": {
+        "open_issues": [
+          "Individual Table7 cycling normalization reference needs confirmation; optimized AHPC-850 Fig4d is not used as the other samples own baseline. Exact initial cycle index is not required."
+        ],
+        "approved_profiles": [],
+        "gate_dispositions": {},
+        "caveats": [
+          "Rate retention and cycling retention are separate columns. No extra independent source group and no automatic admission."
+        ],
+        "previous_holds": null,
+        "review_version": "v0.11"
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 382.0,
+      "N_at_pct": 4.85,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.02,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 4.85,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "candidate_pending_explicit_baseline_binding",
+      "baseline_cycle": null,
+      "baseline_reference": null,
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 0,
+      "endpoint_id": "candidate:v11:AHPC2026:AC-850:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:49d7026a4489a7f39b379b43",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 90.8,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AC-850",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AC-850:3E:10000",
+      "total_pore_volume_cm3_g": 0.36,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2
+    },
+    "after": {
+      "BET_m2_g": 382.0,
+      "N_at_pct": 4.85,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.02,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 4.85,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "approved_for_reported_protocol",
+      "baseline_cycle": null,
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 1,
+      "endpoint_id": "candidate:v11:AHPC2026:AC-850:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:49d7026a4489a7f39b379b43",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 90.8,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AC-850",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AC-850:3E:10000",
+      "total_pore_volume_cm3_g": 0.36,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2,
+      "baseline_reference_status": "v013_agent_original_source_adjudication",
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_evidence_kind_v13_status": "v013_agent_original_source_adjudication",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed.",
+      "baseline_reference_caveat_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "approved_reported_protocol_table_metric",
+      "review_reason_v13": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+    }
+  },
+  {
+    "endpoint_id": "candidate:v11:AHPC2026:AHPC-700:3E:10000",
+    "changes": {
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed."
+    },
+    "reason": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。",
+    "approved_profiles": [
+      "reported_3e",
+      "reported_3e_residue_sensitivity",
+      "reported_3e_sensitivity"
+    ],
+    "open_issues": [],
+    "disposition": "approved_reported_protocol_table_metric",
+    "resolution": [
+      "unnecessary_individual_curve_requirement_removed"
+    ],
+    "evidence": [
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+        "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+        "locator": "XML electrochemical methods; Table7 own sample row; Fig4 caption",
+        "fields": [
+          "baseline_reference",
+          "baseline_evidence_kind_v13",
+          "baseline_reference_caveat_v13"
+        ],
+        "basis": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "own_cycling_reference_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "baseline_binding_pending",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "previous_holds": {
+        "open_issues": [
+          "Individual Table7 cycling normalization reference needs confirmation; optimized AHPC-850 Fig4d is not used as the other samples own baseline. Exact initial cycle index is not required."
+        ],
+        "approved_profiles": [],
+        "gate_dispositions": {},
+        "caveats": [
+          "Rate retention and cycling retention are separate columns. No extra independent source group and no automatic admission."
+        ],
+        "previous_holds": null,
+        "review_version": "v0.11"
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 842.0,
+      "N_at_pct": 3.82,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.06,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 3.82,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "candidate_pending_explicit_baseline_binding",
+      "baseline_cycle": null,
+      "baseline_reference": null,
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 0,
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-700:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:df4061c67d13acbb27410bd3",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 92.7,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AHPC-700",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AHPC-700:3E:10000",
+      "total_pore_volume_cm3_g": 0.62,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2
+    },
+    "after": {
+      "BET_m2_g": 842.0,
+      "N_at_pct": 3.82,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.06,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 3.82,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "approved_for_reported_protocol",
+      "baseline_cycle": null,
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 1,
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-700:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:df4061c67d13acbb27410bd3",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 92.7,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AHPC-700",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AHPC-700:3E:10000",
+      "total_pore_volume_cm3_g": 0.62,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2,
+      "baseline_reference_status": "v013_agent_original_source_adjudication",
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_evidence_kind_v13_status": "v013_agent_original_source_adjudication",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed.",
+      "baseline_reference_caveat_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "approved_reported_protocol_table_metric",
+      "review_reason_v13": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+    }
+  },
+  {
+    "endpoint_id": "candidate:v11:AHPC2026:AHPC-800:3E:10000",
+    "changes": {
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed."
+    },
+    "reason": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。",
+    "approved_profiles": [
+      "reported_3e",
+      "reported_3e_residue_sensitivity",
+      "reported_3e_sensitivity"
+    ],
+    "open_issues": [],
+    "disposition": "approved_reported_protocol_table_metric",
+    "resolution": [
+      "unnecessary_individual_curve_requirement_removed"
+    ],
+    "evidence": [
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+        "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+        "locator": "XML electrochemical methods; Table7 own sample row; Fig4 caption",
+        "fields": [
+          "baseline_reference",
+          "baseline_evidence_kind_v13",
+          "baseline_reference_caveat_v13"
+        ],
+        "basis": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "own_cycling_reference_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "baseline_binding_pending",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "previous_holds": {
+        "open_issues": [
+          "Individual Table7 cycling normalization reference needs confirmation; optimized AHPC-850 Fig4d is not used as the other samples own baseline. Exact initial cycle index is not required."
+        ],
+        "approved_profiles": [],
+        "gate_dispositions": {},
+        "caveats": [
+          "Rate retention and cycling retention are separate columns. No extra independent source group and no automatic admission."
+        ],
+        "previous_holds": null,
+        "review_version": "v0.11"
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1218.0,
+      "N_at_pct": 3.34,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.1,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 3.34,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "candidate_pending_explicit_baseline_binding",
+      "baseline_cycle": null,
+      "baseline_reference": null,
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 0,
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-800:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:facd2e2255dcbc9e4967a8f7",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 94.6,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AHPC-800",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AHPC-800:3E:10000",
+      "total_pore_volume_cm3_g": 0.84,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2
+    },
+    "after": {
+      "BET_m2_g": 1218.0,
+      "N_at_pct": 3.34,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.1,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 3.34,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "approved_for_reported_protocol",
+      "baseline_cycle": null,
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 1,
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-800:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:facd2e2255dcbc9e4967a8f7",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 94.6,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AHPC-800",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AHPC-800:3E:10000",
+      "total_pore_volume_cm3_g": 0.84,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2,
+      "baseline_reference_status": "v013_agent_original_source_adjudication",
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_evidence_kind_v13_status": "v013_agent_original_source_adjudication",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed.",
+      "baseline_reference_caveat_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "approved_reported_protocol_table_metric",
+      "review_reason_v13": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+    }
+  },
+  {
+    "endpoint_id": "candidate:v11:AHPC2026:AHPC-900:3E:10000",
+    "changes": {
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed."
+    },
+    "reason": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。",
+    "approved_profiles": [
+      "reported_3e",
+      "reported_3e_residue_sensitivity",
+      "reported_3e_sensitivity"
+    ],
+    "open_issues": [],
+    "disposition": "approved_reported_protocol_table_metric",
+    "resolution": [
+      "unnecessary_individual_curve_requirement_removed"
+    ],
+    "evidence": [
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+        "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+        "locator": "XML electrochemical methods; Table7 own sample row; Fig4 caption",
+        "fields": [
+          "baseline_reference",
+          "baseline_evidence_kind_v13",
+          "baseline_reference_caveat_v13"
+        ],
+        "basis": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "own_cycling_reference_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "baseline_binding_pending",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "previous_holds": {
+        "open_issues": [
+          "Individual Table7 cycling normalization reference needs confirmation; optimized AHPC-850 Fig4d is not used as the other samples own baseline. Exact initial cycle index is not required."
+        ],
+        "approved_profiles": [],
+        "gate_dispositions": {},
+        "caveats": [
+          "Rate retention and cycling retention are separate columns. No extra independent source group and no automatic admission."
+        ],
+        "previous_holds": null,
+        "review_version": "v0.11"
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1364.0,
+      "N_at_pct": 2.28,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.17,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 2.28,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "candidate_pending_explicit_baseline_binding",
+      "baseline_cycle": null,
+      "baseline_reference": null,
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 0,
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-900:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:111a6984cef9613866afa83f",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 95.1,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AHPC-900",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AHPC-900:3E:10000",
+      "total_pore_volume_cm3_g": 0.89,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2
+    },
+    "after": {
+      "BET_m2_g": 1364.0,
+      "N_at_pct": 2.28,
+      "N_at_pct_status": "v011_selected_agent_original_source_review",
+      "Raman_ID_IG": 1.17,
+      "Raman_ID_IG_status": "v011_selected_agent_original_source_review",
+      "XPS_N_reported_pct": 2.28,
+      "XPS_N_reported_pct_status": "v011_selected_agent_original_source_review",
+      "XPS_percentage_basis": "atomic_explicit",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "approved_for_reported_protocol",
+      "baseline_cycle": null,
+      "baseline_reference": {
+        "reference": "author_table_reported_cycling_retention",
+        "cycle_index": null,
+        "normalization_capacitance_F_g": null,
+        "basis": "Own Table7 Cycling Retention (10000 Cycles, %) under the common cycling protocol; exact normalization/index unspecified."
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 6.0,
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycle_voltage_lower_V": -1.0,
+      "cycle_voltage_upper_V": 0.0,
+      "electrolyte": "KOH",
+      "eligible": 1,
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-900:3E:10000",
+      "identity_key": "doi:10.3390/molecules31132329",
+      "mass_loading_mg_cm2": 2.4,
+      "mass_loading_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "mass_loading_uncertainty_mg_cm2": 0.2,
+      "mass_loading_uncertainty_mg_cm2_status": "v011_selected_agent_original_source_review",
+      "material_id": null,
+      "material_key_v11": "v11m:111a6984cef9613866afa83f",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "reference_electrode": "Ag/AgCl",
+      "reported_current_A_g": 10.0,
+      "retention_pct": 95.1,
+      "retention_relation": "eq",
+      "review_disposition_v12": "baseline_binding_pending",
+      "review_reason_v12": "Table7给出各自身样品循环终点，但表注C20/C1定义的是倍率保持率列；Fig4d仅给优化AHPC850。不能把优化样品曲线的参照起点自动借给其它四个样品。未知精确循环下标本身不是拒绝原因。",
+      "sample_name": "AHPC-900",
+      "source_group": "doi:10.3390/molecules31132329",
+      "source_pdf": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+      "source_sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+      "source_year": 2026,
+      "system": "3E",
+      "test_id": "v11_test:AHPC2026:AHPC-900:3E:10000",
+      "total_pore_volume_cm3_g": 0.89,
+      "total_pore_volume_cm3_g_status": "v011_selected_agent_original_source_review",
+      "workflow_status": "own_table_extracted_candidate_v011",
+      "year_basis": "Primary XML front publication2026",
+      "source_weight": 0.2,
+      "baseline_reference_status": "v013_agent_original_source_adjudication",
+      "baseline_evidence_kind_v13": "own_table_metric_and_common_protocol",
+      "baseline_evidence_kind_v13_status": "v013_agent_original_source_adjudication",
+      "baseline_reference_caveat_v13": "No own normalized trace or exact baseline cycle supplied; no AHPC-850 curve borrowed.",
+      "baseline_reference_caveat_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "approved_reported_protocol_table_metric",
+      "review_reason_v13": "Table7分别列明各自身样品10000圈循环保持率、倍率保持率和CE；共同方法明确6 M KOH、Ag/AgCl、−1至0 V、GCD循环10 A/g。未提出另一种循环保持率分母。报告工况用途接受作者表格自身的循环保持率语义，参照精确循环下标/归一化原值保持未知，不借优化样品Fig4d曲线，也不增加每个样品必须单独曲线的门槛。纠正此前过严的审查；并不证明作者原始仪器记录。"
+    }
+  },
+  {
+    "endpoint_id": "legacy:R018_CY01",
+    "changes": {
+      "preferred_retention_derivation_v13": {
+        "value_pct": 26.32,
+        "relation": "derived_ratio",
+        "formula": "100 * 36.45 / 138.5",
+        "initial_capacitance_F_g": 138.5,
+        "final_capacitance_F_g": 36.45,
+        "endpoint_cycles": 5000,
+        "current_A_g": 2.5,
+        "status": "detailed_values_and_own_plot_corrobated_not_author_correction",
+        "competing_conclusion_pct": 40,
+        "training_admitted": false
+      }
+    },
+    "reason": "原Fig8b左轴为比电容、右轴红线为CE。蓝线初末约138.5/36.45 F/g，与正文详细端点相符，据此保存26.32%的可复算派生候选，不能用约100% CE作保持率。结论40%仍保留，原文还把约1000圈87.5写成100圈。这是图文详细端点优先的用途判读，不冒称作者勘误；自身BET仍缺，未获训练准入。",
+    "approved_profiles": [],
+    "open_issues": [
+      "own_BET_not_located",
+      "conclusion_40pct_not_author_corrected"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [
+      "CE_vs_retention_separated",
+      "preferred_ratio_derivation_recorded"
+    ],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/B_R018/main.pdf",
+        "sha256": "f08eadb564726b73890353c032e8d364a2d962f7d598592260d39b61c11db617",
+        "locator": "PDF p11 Fig8b and detailed endpoints; p13 conclusion",
+        "fields": [
+          "preferred_retention_derivation_v13"
+        ],
+        "basis": "原Fig8b左轴为比电容、右轴红线为CE。蓝线初末约138.5/36.45 F/g，与正文详细端点相符，据此保存26.32%的可复算派生候选，不能用约100% CE作保持率。结论40%仍保留，原文还把约1000圈87.5写成100圈。这是图文详细端点优先的用途判读，不冒称作者勘误；自身BET仍缺，未获训练准入。"
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "retention_values_disagree",
+        "own_BET_not_located"
+      ],
+      "approved_profiles": [],
+      "disposition": "target_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "自身p11初末电容比约26.3%，结论另称40%，摘要接近100%为库仑效率。保留冲突，不能用40%、26.3%或CE任选一个当正式标签。",
+      "previous_holds": {
+        "legacy_blockers": [
+          {
+            "record_id": "R018_CY01",
+            "code": "baseline_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R018_CY01",
+            "code": "freeze_cleared",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R018_CY01",
+            "code": "independence_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R018_CY01",
+            "code": "mass_basis_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R018_CY01",
+            "code": "material_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R018_CY01",
+            "code": "protocol_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R018_CY01",
+            "code": "source_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          }
+        ],
+        "current_open_issues": [],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "legacy:R018_CY01",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 11 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "legacy:R018_CY01",
+            "profile": "canonical_3e",
+            "status": "pending",
+            "reason": "v0.5 explicit gates: 0 failed, 12 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:R018_CY01",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [\"electrolyte\", \"concentration_mol_L\", \"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\", \"BET_m2_g\", \"reference_electrode\", \"retention_pct\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": null,
+      "BET_m2_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1,
+      "concentration_mol_L_status": "v012_agent_original_source_review",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R018::C-4::3E::None::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": null,
+      "cycle_voltage_lower_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "cycle_voltage_upper_V": null,
+      "cycle_voltage_upper_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "electrolyte": "KOH",
+      "electrolyte_status": "v012_agent_original_source_review",
+      "eligible": 0,
+      "endpoint_id": "legacy:R018_CY01",
+      "identity_key": "doi:10.1007/s13399-025-06799-9",
+      "legacy_record_id": "R018_CY01",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R018::C-4",
+      "material_key_v11": "v11m:230ed1b45c9da00af41179cd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "SCE",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": 2.5,
+      "reported_current_A_g_status": "inherited_ledger_status:recorded_from_cited_source",
+      "retention_conflict_v12": {
+        "calculated_ratio_pct": 26.32,
+        "conclusion_pct": 40,
+        "final_F_g": 36.45,
+        "initial_F_g": 138.5
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": null,
+      "retention_pct_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_conflict",
+      "review_reason_v12": "自身p11初末电容比约26.3%，结论另称40%，摘要接近100%为库仑效率。保留冲突，不能用40%、26.3%或CE任选一个当正式标签。",
+      "sample_name": "C-4",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.1007/s13399-025-06799-9",
+      "source_year": 2025,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R018::C-4::3E::None::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 1.0
+    },
+    "after": {
+      "BET_m2_g": null,
+      "BET_m2_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1,
+      "concentration_mol_L_status": "v012_agent_original_source_review",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R018::C-4::3E::None::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": null,
+      "cycle_voltage_lower_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "cycle_voltage_upper_V": null,
+      "cycle_voltage_upper_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "electrolyte": "KOH",
+      "electrolyte_status": "v012_agent_original_source_review",
+      "eligible": 0,
+      "endpoint_id": "legacy:R018_CY01",
+      "identity_key": "doi:10.1007/s13399-025-06799-9",
+      "legacy_record_id": "R018_CY01",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R018::C-4",
+      "material_key_v11": "v11m:230ed1b45c9da00af41179cd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "SCE",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": 2.5,
+      "reported_current_A_g_status": "inherited_ledger_status:recorded_from_cited_source",
+      "retention_conflict_v12": {
+        "calculated_ratio_pct": 26.32,
+        "conclusion_pct": 40,
+        "final_F_g": 36.45,
+        "initial_F_g": 138.5
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": null,
+      "retention_pct_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_conflict",
+      "review_reason_v12": "自身p11初末电容比约26.3%，结论另称40%，摘要接近100%为库仑效率。保留冲突，不能用40%、26.3%或CE任选一个当正式标签。",
+      "sample_name": "C-4",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.1007/s13399-025-06799-9",
+      "source_year": 2025,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R018::C-4::3E::None::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 1.0,
+      "preferred_retention_derivation_v13": {
+        "value_pct": 26.32,
+        "relation": "derived_ratio",
+        "formula": "100 * 36.45 / 138.5",
+        "initial_capacitance_F_g": 138.5,
+        "final_capacitance_F_g": 36.45,
+        "endpoint_cycles": 5000,
+        "current_A_g": 2.5,
+        "status": "detailed_values_and_own_plot_corrobated_not_author_correction",
+        "competing_conclusion_pct": 40,
+        "training_admitted": false
+      },
+      "preferred_retention_derivation_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "原Fig8b左轴为比电容、右轴红线为CE。蓝线初末约138.5/36.45 F/g，与正文详细端点相符，据此保存26.32%的可复算派生候选，不能用约100% CE作保持率。结论40%仍保留，原文还把约1000圈87.5写成100圈。这是图文详细端点优先的用途判读，不冒称作者勘误；自身BET仍缺，未获训练准入。"
+    }
+  },
+  {
+    "endpoint_id": "incoming:ADD_059_T01",
+    "changes": {
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6,
+      "reference_electrode": "Hg/HgO",
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_upper_V": 0,
+      "mass_loading_mg_cm2": null,
+      "loading_range_mg_cm2_v13": {
+        "lower": 1,
+        "upper": 2,
+        "area_cm2_approx": 1,
+        "basis": "approximately 1x1 cm carbon cloth; active mass 1-2 mg, not a single measured loading"
+      },
+      "total_pore_volume_cm3_g": 2.6842,
+      "micropore_volume_cm3_g": 2.4235,
+      "mesopore_volume_cm3_g": 0.2607,
+      "micropore_surface_area_m2_g": 3175.91,
+      "average_pore_diameter_nm": 3.13,
+      "Raman_ID_IG": 5.44,
+      "pore_surface_definition_v13": "SI Table S1 Smeso retained as reported mesopore area; NOT equated with t-plot external area",
+      "reported_mesopore_surface_area_m2_g_v13": 247.24,
+      "label_claims_v13": {
+        "body_and_Table8_pct": 89,
+        "conclusion_and_publisher_highlight_pct": 88,
+        "figure8d_endpoint_visual_pct_approx": 88,
+        "exact_choice_made": false
+      }
+    },
+    "reason": "补回原文p5明示的共同3E协议；新出版社SI TableS1补LCC-3自身孔结构。Fig8d末端约88%，结论/出版社亮点88%，正文/Table8为89%。保留差异，不用较高值覆盖；原图没有精确数值标签，未给精确训练标签。",
+    "approved_profiles": [],
+    "open_issues": [
+      "88_vs89pct_label_not_author_corrected"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [
+      "missing_protocol_extraction_corrected",
+      "own_SI_pore_structure_recovered"
+    ],
+    "evidence": [
+      {
+        "path": "新增文献整理_20261020/originals/ADD_059.pdf",
+        "sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+        "locator": "PDF p5 methods/Table4; p7 Raman; p9 Fig8d; p11 Fig10d; p12-13 endpoints/conclusion",
+        "fields": [
+          "electrolyte",
+          "concentration_mol_L",
+          "reference_electrode",
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V",
+          "mass_loading_mg_cm2",
+          "loading_range_mg_cm2_v13",
+          "total_pore_volume_cm3_g",
+          "average_pore_diameter_nm",
+          "Raman_ID_IG",
+          "pore_surface_definition_v13",
+          "label_claims_v13"
+        ],
+        "basis": "补回原文p5明示的共同3E协议；新出版社SI TableS1补LCC-3自身孔结构。Fig8d末端约88%，结论/出版社亮点88%，正文/Table8为89%。保留差异，不用较高值覆盖；原图没有精确数值标签，未给精确训练标签。"
+      },
+      {
+        "path": "冲突复核与来源充分性_20261022/new_supplements/LCC_LCNC_mmc1.docx",
+        "sha256": "d1393679abca3e3b87623d5b4c9f9b484cfe2c237f4441a3531aa7aa84bbc027",
+        "locator": "Publisher PII S0926669026010137; SI FigS6 and TableS1",
+        "fields": [
+          "micropore_volume_cm3_g",
+          "mesopore_volume_cm3_g",
+          "micropore_surface_area_m2_g",
+          "reported_mesopore_surface_area_m2_g_v13"
+        ],
+        "basis": "Official publisher PII attachment; sample/figure series and LCC3 TableS1 match main. No title/author front page in SI; identity established by publisher PII and content matching."
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "retention_or_sample_identity_conflict"
+      ],
+      "approved_profiles": [],
+      "disposition": "target_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "LCC3正文/表称89%而结论88%；LCNC3相关循环图注与正文出现LCNC1/LCNC3冲突。保留原值与各自出处，不能按性能更好选择。",
+      "previous_holds": {
+        "open_issues": [
+          "正文/自身Table8为89%，结论88%，需对照实际循环图",
+          "参比、电解液和窗口待核"
+        ],
+        "remaining_evidence_work": [
+          "missing_core_fields:electrolyte,concentration_mol_L,reference_electrode",
+          "manual_scientific_review_not_approved"
+        ],
+        "historical_issues": [
+          "正文/自身Table8为89%，结论88%，需对照实际循环图",
+          "参比、电解液和窗口待核"
+        ],
+        "issue_dispositions": [],
+        "alternatives": [
+          {
+            "field": "retention_pct",
+            "value": 88,
+            "pages": [
+              13
+            ],
+            "selected": false,
+            "status": "conflicting_conclusion"
+          }
+        ]
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 3423.15,
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "core_missing_fields": [
+        "electrolyte",
+        "concentration_mol_L",
+        "reference_electrode"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 5000,
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_upper_V": 0,
+      "document_id": "ADD_059",
+      "doi": "10.1016/j.indcrop.2026.123626",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_059_T01",
+      "evidence_pages": {
+        "label_protocol": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "extra_observations": [
+        {
+          "field": "retention_pct",
+          "pages": [
+            13
+          ],
+          "selected": false,
+          "status": "conflicting_conclusion",
+          "value": 88
+        }
+      ],
+      "field_evidence": {
+        "cycle_voltage_lower_V": {
+          "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+          "pages": [
+            9
+          ]
+        },
+        "cycle_voltage_upper_V": {
+          "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+          "pages": [
+            9
+          ]
+        }
+      },
+      "field_states": {
+        "BET_m2_g": "working_observation_not_training_approved",
+        "cycle_voltage_lower_V": "working_observation_not_training_approved",
+        "cycle_voltage_upper_V": "working_observation_not_training_approved",
+        "total_pore_volume_cm3_g": "working_observation_not_training_approved"
+      },
+      "fields": {
+        "BET_m2_g": 3423.15,
+        "cycle_voltage_lower_V": -1,
+        "cycle_voltage_upper_V": 0,
+        "total_pore_volume_cm3_g": 2.68
+      },
+      "identity_key": "doi:10.1016/j.indcrop.2026.123626",
+      "issues": [
+        "正文/自身Table8为89%，结论88%，需对照实际循环图",
+        "参比、电解液和窗口待核"
+      ],
+      "material_key_v11": "v11m:6e5347c526fa1e1aef2a0a22",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "正文/自身Table8为89%，结论88%，需对照实际循环图",
+        "参比、电解液和窗口待核"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {
+            "cycle_voltage_lower_V": {
+              "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+              "pages": [
+                9
+              ]
+            },
+            "cycle_voltage_upper_V": {
+              "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+              "pages": [
+                9
+              ]
+            }
+          },
+          "label_pages": {
+            "label_protocol": [
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          "notes": [
+            "Fig8d p9曲线平台约88%，p11正文89%与p13结论88%未能唯一裁定；保留原值与冲突，不以曲线粗读生成精确89或88准入。"
+          ],
+          "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_059_T01",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:electrolyte,concentration_mol_L,reference_electrode",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 89,
+      "retention_relation": "eq",
+      "review_disposition_v12": "target_conflict",
+      "review_notes": [
+        "Fig8d p9曲线平台约88%，p11正文89%与p13结论88%未能唯一裁定；保留原值与冲突，不以曲线粗读生成精确89或88准入。"
+      ],
+      "review_reason_v12": "LCC3正文/表称89%而结论88%；LCNC3相关循环图注与正文出现LCNC1/LCNC3冲突。保留原值与各自出处，不能按性能更好选择。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "LCC3",
+      "scope_status": "ordinary_carbon_candidate",
+      "source_group": "doi:10.1016/j.indcrop.2026.123626",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_059.pdf",
+      "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+      "source_year": 2026,
+      "system": "3E",
+      "total_pore_volume_cm3_g": 2.68,
+      "source_weight": 0.5
+    },
+    "after": {
+      "BET_m2_g": 3423.15,
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "core_missing_fields": [
+        "electrolyte",
+        "concentration_mol_L",
+        "reference_electrode"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 5000,
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_upper_V": 0,
+      "document_id": "ADD_059",
+      "doi": "10.1016/j.indcrop.2026.123626",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_059_T01",
+      "evidence_pages": {
+        "label_protocol": [
+          10,
+          11,
+          12,
+          13
+        ]
+      },
+      "extra_observations": [
+        {
+          "field": "retention_pct",
+          "pages": [
+            13
+          ],
+          "selected": false,
+          "status": "conflicting_conclusion",
+          "value": 88
+        }
+      ],
+      "field_evidence": {
+        "cycle_voltage_lower_V": {
+          "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+          "pages": [
+            9
+          ]
+        },
+        "cycle_voltage_upper_V": {
+          "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+          "pages": [
+            9
+          ]
+        }
+      },
+      "field_states": {
+        "BET_m2_g": "working_observation_not_training_approved",
+        "cycle_voltage_lower_V": "working_observation_not_training_approved",
+        "cycle_voltage_upper_V": "working_observation_not_training_approved",
+        "total_pore_volume_cm3_g": "working_observation_not_training_approved"
+      },
+      "fields": {
+        "BET_m2_g": 3423.15,
+        "cycle_voltage_lower_V": -1,
+        "cycle_voltage_upper_V": 0,
+        "total_pore_volume_cm3_g": 2.68
+      },
+      "identity_key": "doi:10.1016/j.indcrop.2026.123626",
+      "issues": [
+        "正文/自身Table8为89%，结论88%，需对照实际循环图",
+        "参比、电解液和窗口待核"
+      ],
+      "material_key_v11": "v11m:6e5347c526fa1e1aef2a0a22",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "正文/自身Table8为89%，结论88%，需对照实际循环图",
+        "参比、电解液和窗口待核"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {
+            "cycle_voltage_lower_V": {
+              "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+              "pages": [
+                9
+              ]
+            },
+            "cycle_voltage_upper_V": {
+              "basis": "own_source_explicit_method_table_or_reviewed_GCD_figure",
+              "pages": [
+                9
+              ]
+            }
+          },
+          "label_pages": {
+            "label_protocol": [
+              10,
+              11,
+              12,
+              13
+            ]
+          },
+          "notes": [
+            "Fig8d p9曲线平台约88%，p11正文89%与p13结论88%未能唯一裁定；保留原值与冲突，不以曲线粗读生成精确89或88准入。"
+          ],
+          "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_059_T01",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:electrolyte,concentration_mol_L,reference_electrode",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 89,
+      "retention_relation": "eq",
+      "review_disposition_v12": "target_conflict",
+      "review_notes": [
+        "Fig8d p9曲线平台约88%，p11正文89%与p13结论88%未能唯一裁定；保留原值与冲突，不以曲线粗读生成精确89或88准入。"
+      ],
+      "review_reason_v12": "LCC3正文/表称89%而结论88%；LCNC3相关循环图注与正文出现LCNC1/LCNC3冲突。保留原值与各自出处，不能按性能更好选择。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "LCC3",
+      "scope_status": "ordinary_carbon_candidate",
+      "source_group": "doi:10.1016/j.indcrop.2026.123626",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_059.pdf",
+      "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+      "source_year": 2026,
+      "system": "3E",
+      "total_pore_volume_cm3_g": 2.6842,
+      "source_weight": 0.5,
+      "electrolyte": "KOH",
+      "electrolyte_status": "v013_agent_original_source_adjudication",
+      "concentration_mol_L": 6,
+      "concentration_mol_L_status": "v013_agent_original_source_adjudication",
+      "reference_electrode": "Hg/HgO",
+      "reference_electrode_status": "v013_agent_original_source_adjudication",
+      "loading_range_mg_cm2_v13": {
+        "lower": 1,
+        "upper": 2,
+        "area_cm2_approx": 1,
+        "basis": "approximately 1x1 cm carbon cloth; active mass 1-2 mg, not a single measured loading"
+      },
+      "loading_range_mg_cm2_v13_status": "v013_agent_original_source_adjudication",
+      "total_pore_volume_cm3_g_status": "v013_agent_original_source_adjudication",
+      "micropore_volume_cm3_g": 2.4235,
+      "micropore_volume_cm3_g_status": "v013_agent_original_source_adjudication",
+      "mesopore_volume_cm3_g": 0.2607,
+      "mesopore_volume_cm3_g_status": "v013_agent_original_source_adjudication",
+      "micropore_surface_area_m2_g": 3175.91,
+      "micropore_surface_area_m2_g_status": "v013_agent_original_source_adjudication",
+      "average_pore_diameter_nm": 3.13,
+      "average_pore_diameter_nm_status": "v013_agent_original_source_adjudication",
+      "Raman_ID_IG": 5.44,
+      "Raman_ID_IG_status": "v013_agent_original_source_adjudication",
+      "pore_surface_definition_v13": "SI Table S1 Smeso retained as reported mesopore area; NOT equated with t-plot external area",
+      "pore_surface_definition_v13_status": "v013_agent_original_source_adjudication",
+      "reported_mesopore_surface_area_m2_g_v13": 247.24,
+      "reported_mesopore_surface_area_m2_g_v13_status": "v013_agent_original_source_adjudication",
+      "label_claims_v13": {
+        "body_and_Table8_pct": 89,
+        "conclusion_and_publisher_highlight_pct": 88,
+        "figure8d_endpoint_visual_pct_approx": 88,
+        "exact_choice_made": false
+      },
+      "label_claims_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "补回原文p5明示的共同3E协议；新出版社SI TableS1补LCC-3自身孔结构。Fig8d末端约88%，结论/出版社亮点88%，正文/Table8为89%。保留差异，不用较高值覆盖；原图没有精确数值标签，未给精确训练标签。"
+    }
+  },
+  {
+    "endpoint_id": "incoming:ADD_059_T02",
+    "changes": {
+      "electrolyte": "KOH",
+      "concentration_mol_L": 6,
+      "reference_electrode": "Hg/HgO",
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_upper_V": 0,
+      "mass_loading_mg_cm2": null,
+      "loading_range_mg_cm2_v13": {
+        "lower": 1,
+        "upper": 2,
+        "area_cm2_approx": 1,
+        "basis": "approximately 1x1 cm carbon cloth; active mass 1-2 mg, not a single measured loading"
+      },
+      "sample_identity_assessment_v13": {
+        "preferred_figure_sample": "LCNC-1",
+        "support": [
+          "Fig10d caption",
+          "same cycling discussion opening",
+          "SI FigS6 LCNC-1 and Table7 electrochemical ranking"
+        ],
+        "contradictory_sentence": "LCNC-3 at the end of cycling discussion",
+        "canonical_sample_renamed": false,
+        "unambiguous_author_correction": false
+      },
+      "label_claims_v13": {
+        "body_pct": 78.1,
+        "figure10d_endpoint_visual_pct_approx": 80,
+        "figure_caption_sample": "LCNC-1",
+        "body_last_sentence_sample": "LCNC-3",
+        "exact_choice_made": false
+      }
+    },
+    "reason": "共同3E协议已补回；Fig10d图注和同段开头均指LCNC-1，末句却写LCNC-3。SI FigS6也明确研究LCNC-1。优先样品归属记录为LCNC-1，但不静默改材料键或把LCNC-1 BET借给旧LCNC3记录。循环图最后一个点约80%，正文78.1%，不能把近末稳定段冒充最终5000圈。维持冻结。",
+    "approved_profiles": [],
+    "open_issues": [
+      "sample_identity_conflicting_sentence",
+      "78_1pct_vs_final_point_approx80pct"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [
+      "missing_protocol_extraction_corrected",
+      "preferred_sample_identity_with_competing_claim_preserved"
+    ],
+    "evidence": [
+      {
+        "path": "新增文献整理_20261020/originals/ADD_059.pdf",
+        "sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+        "locator": "PDF p5 methods/Table4; p7 Raman; p9 Fig8d; p11 Fig10d; p12-13 endpoints/conclusion",
+        "fields": [
+          "electrolyte",
+          "concentration_mol_L",
+          "reference_electrode",
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V",
+          "mass_loading_mg_cm2",
+          "loading_range_mg_cm2_v13",
+          "sample_identity_assessment_v13",
+          "label_claims_v13"
+        ],
+        "basis": "共同3E协议已补回；Fig10d图注和同段开头均指LCNC-1，末句却写LCNC-3。SI FigS6也明确研究LCNC-1。优先样品归属记录为LCNC-1，但不静默改材料键或把LCNC-1 BET借给旧LCNC3记录。循环图最后一个点约80%，正文78.1%，不能把近末稳定段冒充最终5000圈。维持冻结。"
+      },
+      {
+        "path": "冲突复核与来源充分性_20261022/new_supplements/LCC_LCNC_mmc1.docx",
+        "sha256": "d1393679abca3e3b87623d5b4c9f9b484cfe2c237f4441a3531aa7aa84bbc027",
+        "locator": "Publisher PII S0926669026010137; SI FigS6 and TableS1",
+        "fields": [
+          "sample_identity_assessment_v13"
+        ],
+        "basis": "Official publisher PII attachment; sample/figure series and LCC3 TableS1 match main. No title/author front page in SI; identity established by publisher PII and content matching."
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "retention_or_sample_identity_conflict"
+      ],
+      "approved_profiles": [],
+      "disposition": "target_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "LCC3正文/表称89%而结论88%；LCNC3相关循环图注与正文出现LCNC1/LCNC3冲突。保留原值与各自出处，不能按性能更好选择。",
+      "previous_holds": {
+        "open_issues": [
+          "Fig10d图注称LCNC1，正文称LCNC3，样品归属冲突；不能把LCNC1的BET移给此记录"
+        ],
+        "remaining_evidence_work": [
+          "missing_core_fields:electrolyte,concentration_mol_L,cycle_voltage_lower_V,cycle_voltage_upper_V,BET_m2_g,reference_electrode",
+          "manual_scientific_review_not_approved"
+        ],
+        "historical_issues": [
+          "Fig10d图注称LCNC1，正文称LCNC3，样品归属冲突；不能把LCNC1的BET移给此记录"
+        ],
+        "issue_dispositions": [],
+        "alternatives": [
+          {
+            "field": "sample_name",
+            "value": "LCNC1",
+            "pages": [
+              11
+            ],
+            "selected": false,
+            "status": "conflicting_figure_caption"
+          }
+        ]
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "core_missing_fields": [
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g",
+        "reference_electrode"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 5000,
+      "document_id": "ADD_059",
+      "doi": "10.1016/j.indcrop.2026.123626",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_059_T02",
+      "evidence_pages": {
+        "label_protocol": [
+          11,
+          12
+        ]
+      },
+      "extra_observations": [
+        {
+          "field": "sample_name",
+          "pages": [
+            11
+          ],
+          "selected": false,
+          "status": "conflicting_figure_caption",
+          "value": "LCNC1"
+        }
+      ],
+      "field_states": {},
+      "fields": {},
+      "identity_key": "doi:10.1016/j.indcrop.2026.123626",
+      "issues": [
+        "Fig10d图注称LCNC1，正文称LCNC3，样品归属冲突；不能把LCNC1的BET移给此记录"
+      ],
+      "material_key_v11": "v11m:7482f68b7477e17ce0e4fbf8",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "Fig10d图注称LCNC1，正文称LCNC3，样品归属冲突；不能把LCNC1的BET移给此记录"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {},
+          "label_pages": {
+            "label_protocol": [
+              11,
+              12
+            ]
+          },
+          "notes": [],
+          "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_059_T02",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:electrolyte,concentration_mol_L,cycle_voltage_lower_V,cycle_voltage_upper_V,BET_m2_g,reference_electrode",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 78.1,
+      "retention_relation": "eq",
+      "review_disposition_v12": "target_conflict",
+      "review_reason_v12": "LCC3正文/表称89%而结论88%；LCNC3相关循环图注与正文出现LCNC1/LCNC3冲突。保留原值与各自出处，不能按性能更好选择。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "LCNC3",
+      "scope_status": "ordinary_carbon_candidate",
+      "source_group": "doi:10.1016/j.indcrop.2026.123626",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_059.pdf",
+      "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+      "source_year": 2026,
+      "system": "3E",
+      "source_weight": 0.5
+    },
+    "after": {
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "core_missing_fields": [
+        "electrolyte",
+        "concentration_mol_L",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V",
+        "BET_m2_g",
+        "reference_electrode"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 5000,
+      "document_id": "ADD_059",
+      "doi": "10.1016/j.indcrop.2026.123626",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_059_T02",
+      "evidence_pages": {
+        "label_protocol": [
+          11,
+          12
+        ]
+      },
+      "extra_observations": [
+        {
+          "field": "sample_name",
+          "pages": [
+            11
+          ],
+          "selected": false,
+          "status": "conflicting_figure_caption",
+          "value": "LCNC1"
+        }
+      ],
+      "field_states": {},
+      "fields": {},
+      "identity_key": "doi:10.1016/j.indcrop.2026.123626",
+      "issues": [
+        "Fig10d图注称LCNC1，正文称LCNC3，样品归属冲突；不能把LCNC1的BET移给此记录"
+      ],
+      "material_key_v11": "v11m:7482f68b7477e17ce0e4fbf8",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "Fig10d图注称LCNC1，正文称LCNC3，样品归属冲突；不能把LCNC1的BET移给此记录"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {},
+          "label_pages": {
+            "label_protocol": [
+              11,
+              12
+            ]
+          },
+          "notes": [],
+          "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_059_T02",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:electrolyte,concentration_mol_L,cycle_voltage_lower_V,cycle_voltage_upper_V,BET_m2_g,reference_electrode",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 78.1,
+      "retention_relation": "eq",
+      "review_disposition_v12": "target_conflict",
+      "review_reason_v12": "LCC3正文/表称89%而结论88%；LCNC3相关循环图注与正文出现LCNC1/LCNC3冲突。保留原值与各自出处，不能按性能更好选择。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "LCNC3",
+      "scope_status": "ordinary_carbon_candidate",
+      "source_group": "doi:10.1016/j.indcrop.2026.123626",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_059.pdf",
+      "source_sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+      "source_year": 2026,
+      "system": "3E",
+      "source_weight": 0.5,
+      "electrolyte": "KOH",
+      "electrolyte_status": "v013_agent_original_source_adjudication",
+      "concentration_mol_L": 6,
+      "concentration_mol_L_status": "v013_agent_original_source_adjudication",
+      "reference_electrode": "Hg/HgO",
+      "reference_electrode_status": "v013_agent_original_source_adjudication",
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_lower_V_status": "v013_agent_original_source_adjudication",
+      "cycle_voltage_upper_V": 0,
+      "cycle_voltage_upper_V_status": "v013_agent_original_source_adjudication",
+      "loading_range_mg_cm2_v13": {
+        "lower": 1,
+        "upper": 2,
+        "area_cm2_approx": 1,
+        "basis": "approximately 1x1 cm carbon cloth; active mass 1-2 mg, not a single measured loading"
+      },
+      "loading_range_mg_cm2_v13_status": "v013_agent_original_source_adjudication",
+      "sample_identity_assessment_v13": {
+        "preferred_figure_sample": "LCNC-1",
+        "support": [
+          "Fig10d caption",
+          "same cycling discussion opening",
+          "SI FigS6 LCNC-1 and Table7 electrochemical ranking"
+        ],
+        "contradictory_sentence": "LCNC-3 at the end of cycling discussion",
+        "canonical_sample_renamed": false,
+        "unambiguous_author_correction": false
+      },
+      "sample_identity_assessment_v13_status": "v013_agent_original_source_adjudication",
+      "label_claims_v13": {
+        "body_pct": 78.1,
+        "figure10d_endpoint_visual_pct_approx": 80,
+        "figure_caption_sample": "LCNC-1",
+        "body_last_sentence_sample": "LCNC-3",
+        "exact_choice_made": false
+      },
+      "label_claims_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "共同3E协议已补回；Fig10d图注和同段开头均指LCNC-1，末句却写LCNC-3。SI FigS6也明确研究LCNC-1。优先样品归属记录为LCNC-1，但不静默改材料键或把LCNC-1 BET借给旧LCNC3记录。循环图最后一个点约80%，正文78.1%，不能把近末稳定段冒充最终5000圈。维持冻结。"
+    }
+  },
+  {
+    "endpoint_id": "candidate:TE010",
+    "changes": {},
+    "reason": "方法6 M与自身Fig4/结果1 M冲突，原文/PMC未消除。出版社版本说明本次403；不是不存在勘误的证明。",
+    "approved_profiles": [],
+    "open_issues": [
+      "1M_vs6M_KOH"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA031/main.xml",
+        "sha256": "42386be5f1ef05897802ce7dacbe8b1c867a2205f15d3ef3a84d1bbb150fcf3d",
+        "locator": "XML methods,results and Fig4",
+        "basis": "同一三电极试验在方法写6MKOH，在结果/自身Fig4写1MKOH。两处证据保留，不择更常见浓度，也不因电流分母已知而忽略该真实冲突。",
+        "fields": [
+          "concentration_conflict_v12",
+          "baseline_reference"
+        ]
+      },
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA031/figures/polymers-15-03976-g004.jpg",
+        "sha256": "dd61a4b7ce5d4c69ec1249567b741577a2f14de6ac8c6f3c293a64de97ef62ee",
+        "locator": "Original Fig4b/e GCD window; Fig4 electrolyte conflict",
+        "basis": "同一三电极试验在方法写6MKOH，在结果/自身Fig4写1MKOH。两处证据保留，不择更常见浓度，也不因电流分母已知而忽略该真实冲突。",
+        "fields": [
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "1M_vs6M_KOH"
+      ],
+      "approved_profiles": [],
+      "disposition": "protocol_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "同一三电极试验在方法写6MKOH，在结果/自身Fig4写1MKOH。两处证据保留，不择更常见浓度，也不因电流分母已知而忽略该真实冲突。",
+      "previous_holds": {
+        "legacy_blockers": [],
+        "current_open_issues": [
+          {
+            "issue_id": 3,
+            "endpoint_id": "candidate:TE010",
+            "identity_key": "doi:10.3390/polym15193976",
+            "field_name": "concentration_mol_L",
+            "code": "methods_vs_results_concentration",
+            "status": "open",
+            "evidence_json": "[{\"segment_id\": 4042, \"source_id\": \"42386be5f1ef05897802ce7dacbe8b1c867a2205f15d3ef3a84d1bbb150fcf3d\", \"locator\": \"XML p 9\", \"section_kind\": \"p\", \"text\": \"The electrochemical characteristics of FRPC, FRPCK, FRPC-Urea, and FRPCK-Urea were measured via a three-electrode system. The Pt electrode and Hg/HgO electrode were used for the counter electrode and reference electrode in a 6 mol L −1 KOH, respectively [ 19 ]. The mixture of PC samples, carbon black, and polyvinylidene fluoride (PVDF) binder with a mass ratio of 8:1:1 was prepared, and then the working electrode slurry can be obtained with N-methyl pyrrolidone (NMP) as the dispersant. Then, the working electrode would be obtained by coating the slurry onto nickel foams and oven-drying at 60 °C. Cyclic voltammetry (CV), galvanostatic charge-discharge (GCD), and electrochemical impedance spectroscopy (EIS) were evaluated on a CHI 660C electrochemical workstation. Meanwhile, the cyclability of the PC sample was also analyzed.\"}, {\"segment_id\": 4063, \"source_id\": \"42386be5f1ef05897802ce7dacbe8b1c867a2205f15d3ef3a84d1bbb150fcf3d\", \"locator\": \"XML p 30\", \"section_kind\": \"p\", \"text\": \"To investigate the capacitive capability of FRPC, FRPCK, FRPC-Urea, and FRPCK-Urea, the electrochemical characteristics were measured using the three-electrode system with 1 M KOH as an aqueous electrolyte. From Figure 4 a, the CV curves of FRPCK and FRPCK-Urea exhibited a proximate rectangular at 50 mV·s −1 , revealing a dominated double-layer capacitance behavior, while CV curves of FRPC and FRPC-Urea have big differences from rectangular because of the low SSA and poor porous properties. The area of the FRPCK-Urea CV curve was the largest, illustrating the highest specific capacitance of FRPCK-Urea, which is due to the high SSA (1850 m 2 g −1 ) and high N content (5.31%). When comparing FRPC with FRPC-Urea, it can be found that the CV curve areas of the two samples are similar. However, FRPC-Urea possessed a smaller SSA (120.7 m 2 g −1 ) than that of FRPC (274.9 m 2 g −1 ). Meanwhile, FRPC-Urea has a higher specific capacitance (77.11 F g −1 ) than that of FRPC (50.23 F g −1 ) calculated from GCD curves ( Figure 4 b). This indicated that a higher N content in FRPC-Urea (1.8%) than that of FRPC (1.09%) was a key factor influencing specific capacitance. For the GCD curves ( Figure 4 b), the approximately symmetric triangular shape at 0.5 A g −1 was presented for four PC samples, illustrating wonderful and reversible capacitive performances [ 33 , 34 ]. FRPCK-Urea has the longest discharge time, so FRPCK-Urea possessed a high specific capacitance of 222.7 F g −1 , obviously higher than those of FRPC (50.23 F g −1 ), FRPCK (147.6 F g −1 ), FRPC-Urea (77.11 F g −1 ). When both KOH and urea were added, the specific capacitance of the PC sample can be significantly improved because of the high SSA and high N content, indicating a synergistic effect between KOH and urea.\"}]",
+            "reason": "6 mol/L in methods versus1 M in3E results/caption; unresolved scientific contradiction."
+          }
+        ],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "candidate:TE010",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 8 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "candidate:TE010",
+            "profile": "canonical_3e",
+            "status": "pending",
+            "reason": "v0.5 explicit gates: 0 failed, 8 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "candidate:TE010",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [\"concentration_mol_L\", \"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1850.0,
+      "BET_m2_g_status": "reported_direct_table",
+      "N_at_pct": null,
+      "N_at_pct_status": "not_yet_located_or_reviewed",
+      "O_at_pct": null,
+      "O_at_pct_status": "not_yet_located_or_reviewed",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "not_yet_located_or_reviewed",
+      "baseline_reference": {
+        "basis": "自身5000圈保持率96.43%，未知精确初始循环下标保留。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_conflict_v12": [
+        {
+          "location": "methods",
+          "mol_L": 6
+        },
+        {
+          "location": "own results/Fig4",
+          "mol_L": 1
+        }
+      ],
+      "concentration_conflict_v12_status": "v012_agent_original_source_review",
+      "concentration_mol_L": null,
+      "concentration_mol_L_status": "conflict_unresolved",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": "not_finalized",
+      "current_mass_basis_status": "prior_curated_candidate_not_newly_admitted",
+      "curve_group": "test:3db793fc1ad758020b461317",
+      "cycle_count": 5000,
+      "cycle_count_status": "prior_curated_candidate_not_newly_admitted",
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "prior_curated_candidate_not_newly_admitted",
+      "eligible": 0,
+      "endpoint_id": "candidate:TE010",
+      "identity_key": "doi:10.3390/polym15193976",
+      "legacy_record_id": null,
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "not_yet_located_or_reviewed",
+      "material_id": "material:dd1c2e1df9ce8dc8f6ebb1a0",
+      "material_key_v11": "v11m:0da78c96dbd170ca12fa7b34",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Hg/HgO",
+      "reference_electrode_status": "own_primary_method_reference_review",
+      "reported_current_A_g": 20,
+      "reported_current_A_g_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_pct": 96.43,
+      "retention_pct_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_relation": "eq",
+      "retention_relation_status": "prior_curated_candidate_not_newly_admitted",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "同一三电极试验在方法写6MKOH，在结果/自身Fig4写1MKOH。两处证据保留，不择更常见浓度，也不因电流分母已知而忽略该真实冲突。",
+      "sample_name": "FRPCK-Urea",
+      "scope_flags": "[]",
+      "scope_flags_status": "prior_curated_candidate_not_newly_admitted",
+      "source_group": "doi:10.3390/polym15193976",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "test:3db793fc1ad758020b461317",
+      "total_pore_volume_cm3_g": 0.9973,
+      "total_pore_volume_cm3_g_status": "reported_direct_table",
+      "value_kind": "reported",
+      "value_kind_status": "prior_curated_candidate_not_newly_admitted",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "publisher_deposited_bibliographic_dates",
+      "source_weight": 1.0
+    },
+    "after": {
+      "BET_m2_g": 1850.0,
+      "BET_m2_g_status": "reported_direct_table",
+      "N_at_pct": null,
+      "N_at_pct_status": "not_yet_located_or_reviewed",
+      "O_at_pct": null,
+      "O_at_pct_status": "not_yet_located_or_reviewed",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "not_yet_located_or_reviewed",
+      "baseline_reference": {
+        "basis": "自身5000圈保持率96.43%，未知精确初始循环下标保留。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_conflict_v12": [
+        {
+          "location": "methods",
+          "mol_L": 6
+        },
+        {
+          "location": "own results/Fig4",
+          "mol_L": 1
+        }
+      ],
+      "concentration_conflict_v12_status": "v012_agent_original_source_review",
+      "concentration_mol_L": null,
+      "concentration_mol_L_status": "conflict_unresolved",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": "not_finalized",
+      "current_mass_basis_status": "prior_curated_candidate_not_newly_admitted",
+      "curve_group": "test:3db793fc1ad758020b461317",
+      "cycle_count": 5000,
+      "cycle_count_status": "prior_curated_candidate_not_newly_admitted",
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "prior_curated_candidate_not_newly_admitted",
+      "eligible": 0,
+      "endpoint_id": "candidate:TE010",
+      "identity_key": "doi:10.3390/polym15193976",
+      "legacy_record_id": null,
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "not_yet_located_or_reviewed",
+      "material_id": "material:dd1c2e1df9ce8dc8f6ebb1a0",
+      "material_key_v11": "v11m:0da78c96dbd170ca12fa7b34",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Hg/HgO",
+      "reference_electrode_status": "own_primary_method_reference_review",
+      "reported_current_A_g": 20,
+      "reported_current_A_g_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_pct": 96.43,
+      "retention_pct_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_relation": "eq",
+      "retention_relation_status": "prior_curated_candidate_not_newly_admitted",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "同一三电极试验在方法写6MKOH，在结果/自身Fig4写1MKOH。两处证据保留，不择更常见浓度，也不因电流分母已知而忽略该真实冲突。",
+      "sample_name": "FRPCK-Urea",
+      "scope_flags": "[]",
+      "scope_flags_status": "prior_curated_candidate_not_newly_admitted",
+      "source_group": "doi:10.3390/polym15193976",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "test:3db793fc1ad758020b461317",
+      "total_pore_volume_cm3_g": 0.9973,
+      "total_pore_volume_cm3_g_status": "reported_direct_table",
+      "value_kind": "reported",
+      "value_kind_status": "prior_curated_candidate_not_newly_admitted",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "publisher_deposited_bibliographic_dates",
+      "source_weight": 1.0,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "方法6 M与自身Fig4/结果1 M冲突，原文/PMC未消除。出版社版本说明本次403；不是不存在勘误的证明。"
+    }
+  },
+  {
+    "endpoint_id": "candidate:V05:017",
+    "changes": {},
+    "reason": "方法甘汞与原Fig3 Hg/HgO冲突。常见使用Hg/HgO不能证明本试验如此；版本说明403，未取得作者更正。",
+    "approved_profiles": [],
+    "open_issues": [
+      "calomel_vs_HgHgO_reference"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "同体系文献补充_第二批_20261017/sources/L20/fulltext.xml",
+        "sha256": "8a6b0f4f1a4691954a143741d00b7db5151234dcc57d3f26c1f0f5e500765e92",
+        "locator": "XML p6,p11; publisher original Fig3",
+        "basis": "已取得出版社原Fig3：正文方法写甘汞电极，Fig3a/b纵横轴写Hg/HgO。两种参比原值一并保留，不能仅为准入择一。",
+        "fields": [
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V",
+          "baseline_reference",
+          "reference_electrode_conflict_v12"
+        ]
+      },
+      {
+        "path": "待补证原文复核_20261022/new_supplements/NSOC800_Fig3.png",
+        "sha256": "103ef574db6568031143dce20a8c983e8763e7cd5b56b7a4d66a454e4978760b",
+        "locator": "Original Fig3 visual inspection",
+        "basis": "已取得出版社原Fig3：正文方法写甘汞电极，Fig3a/b纵横轴写Hg/HgO。两种参比原值一并保留，不能仅为准入择一。",
+        "fields": [
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V",
+          "baseline_reference",
+          "reference_electrode_conflict_v12"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "calomel_vs_HgHgO_reference"
+      ],
+      "approved_profiles": [],
+      "disposition": "protocol_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "已取得出版社原Fig3：正文方法写甘汞电极，Fig3a/b纵横轴写Hg/HgO。两种参比原值一并保留，不能仅为准入择一。",
+      "previous_holds": {
+        "legacy_blockers": [],
+        "current_open_issues": [],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "candidate:V05:017",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 7 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "candidate:V05:017",
+            "profile": "canonical_3e",
+            "status": "pending",
+            "reason": "v0.5 explicit gates: 0 failed, 7 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "candidate:V05:017",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [\"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\", \"BET_m2_g\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1267.913,
+      "BET_m2_g_status": "v07_primary_review_selected",
+      "N_at_pct": null,
+      "N_at_pct_status": "not_located_by_bounded_review",
+      "O_at_pct": null,
+      "O_at_pct_status": "not_located_by_bounded_review",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "not_located_by_bounded_review",
+      "baseline_reference": {
+        "basis": "Fig3d自身循环图由100%归一化至90.1%。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_located_by_bounded_review",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_located_by_bounded_review",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_located_by_bounded_review",
+      "concentration_mol_L": 6,
+      "concentration_mol_L_status": "own_primary_bound_candidate",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_located_by_bounded_review",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_located_by_bounded_review",
+      "curve_group": "test:5d7c2e9623e764d28b842ac3",
+      "cycle_count": 5000,
+      "cycle_count_status": "own_primary_bound_candidate",
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "own_primary_bound_candidate",
+      "eligible": 0,
+      "endpoint_id": "candidate:V05:017",
+      "identity_key": "doi:10.3390/ma16134577",
+      "legacy_record_id": null,
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "not_located_by_bounded_review",
+      "material_id": "material:7070b9b5c80ff9f4aa9084f1",
+      "material_key_v11": "v11m:d6535cb4a9c228659002b635",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": "not_located_by_bounded_review",
+      "reference_electrode": "calomel",
+      "reference_electrode_conflict_v12": [
+        "calomel in methods",
+        "Hg/HgO in Fig3a,b axes"
+      ],
+      "reference_electrode_conflict_v12_status": "v012_agent_original_source_review",
+      "reference_electrode_status": "own_primary_bound_candidate",
+      "reported_current_A_g": 1,
+      "reported_current_A_g_status": "own_primary_bound_candidate",
+      "retention_pct": 90.1,
+      "retention_pct_status": "own_primary_bound_candidate",
+      "retention_relation": "eq",
+      "retention_relation_status": "own_primary_bound_candidate",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "已取得出版社原Fig3：正文方法写甘汞电极，Fig3a/b纵横轴写Hg/HgO。两种参比原值一并保留，不能仅为准入择一。",
+      "sample_name": "NSOC-800",
+      "scope_flags": null,
+      "scope_flags_status": "not_located_by_bounded_review",
+      "source_group": "doi:10.3390/ma16134577",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": "not_located_by_bounded_review",
+      "test_id": "test:5d7c2e9623e764d28b842ac3",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "not_located_by_bounded_review",
+      "value_kind": "reported_exact",
+      "value_kind_status": "own_primary_bound_candidate",
+      "workflow_status": "own_label_candidate_not_admitted",
+      "year_basis": "inherited_bibliography_not_new_publication_review",
+      "source_weight": 1.0
+    },
+    "after": {
+      "BET_m2_g": 1267.913,
+      "BET_m2_g_status": "v07_primary_review_selected",
+      "N_at_pct": null,
+      "N_at_pct_status": "not_located_by_bounded_review",
+      "O_at_pct": null,
+      "O_at_pct_status": "not_located_by_bounded_review",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "not_located_by_bounded_review",
+      "baseline_reference": {
+        "basis": "Fig3d自身循环图由100%归一化至90.1%。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_located_by_bounded_review",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_located_by_bounded_review",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_located_by_bounded_review",
+      "concentration_mol_L": 6,
+      "concentration_mol_L_status": "own_primary_bound_candidate",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_located_by_bounded_review",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_located_by_bounded_review",
+      "curve_group": "test:5d7c2e9623e764d28b842ac3",
+      "cycle_count": 5000,
+      "cycle_count_status": "own_primary_bound_candidate",
+      "cycle_voltage_lower_V": -1,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "own_primary_bound_candidate",
+      "eligible": 0,
+      "endpoint_id": "candidate:V05:017",
+      "identity_key": "doi:10.3390/ma16134577",
+      "legacy_record_id": null,
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "not_located_by_bounded_review",
+      "material_id": "material:7070b9b5c80ff9f4aa9084f1",
+      "material_key_v11": "v11m:d6535cb4a9c228659002b635",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": "not_located_by_bounded_review",
+      "reference_electrode": "calomel",
+      "reference_electrode_conflict_v12": [
+        "calomel in methods",
+        "Hg/HgO in Fig3a,b axes"
+      ],
+      "reference_electrode_conflict_v12_status": "v012_agent_original_source_review",
+      "reference_electrode_status": "own_primary_bound_candidate",
+      "reported_current_A_g": 1,
+      "reported_current_A_g_status": "own_primary_bound_candidate",
+      "retention_pct": 90.1,
+      "retention_pct_status": "own_primary_bound_candidate",
+      "retention_relation": "eq",
+      "retention_relation_status": "own_primary_bound_candidate",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "已取得出版社原Fig3：正文方法写甘汞电极，Fig3a/b纵横轴写Hg/HgO。两种参比原值一并保留，不能仅为准入择一。",
+      "sample_name": "NSOC-800",
+      "scope_flags": null,
+      "scope_flags_status": "not_located_by_bounded_review",
+      "source_group": "doi:10.3390/ma16134577",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": "not_located_by_bounded_review",
+      "test_id": "test:5d7c2e9623e764d28b842ac3",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "not_located_by_bounded_review",
+      "value_kind": "reported_exact",
+      "value_kind_status": "own_primary_bound_candidate",
+      "workflow_status": "own_label_candidate_not_admitted",
+      "year_basis": "inherited_bibliography_not_new_publication_review",
+      "source_weight": 1.0,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "方法甘汞与原Fig3 Hg/HgO冲突。常见使用Hg/HgO不能证明本试验如此；版本说明403，未取得作者更正。"
+    }
+  },
+  {
+    "endpoint_id": "legacy:SRC121_CY01",
+    "changes": {
+      "potential_scale_metadata_v13": {
+        "hardware_reference": "Hg/HgO",
+        "plotted_reference": "RHE",
+        "author_offset_V": 0.924,
+        "electrolyte_concentration_mol_L": 1,
+        "author_CV_program_V_vs_HgHgO": [
+          -0.8,
+          0
+        ],
+        "GCD_window_selected": false,
+        "caveat": "Fig4b mV/RHE unit mismatch; CV range is not copied to cycling."
+      }
+    },
+    "reason": "已明确硬件Hg/HgO与作者换算RHE可同时记录；1 M转换+0.924 V。CV程序−0.8至0 V明确，GCD图轴mV却数值约0.1至0.9，循环插图也为RHE。无法凭CV程序强定GCD上下限，继续保留窗口待证。",
+    "approved_profiles": [],
+    "open_issues": [
+      "cycling_window_reference_scale_binding"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [
+      "hardware_and_reported_scale_separated"
+    ],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/B_SRC121/main.pdf",
+        "sha256": "647f99b755ceff64d9159b67ef003b957ed2f01f173d2e6355825b5a60321d84",
+        "locator": "PDF p3 explicit conversion and CV programme; p6 Fig4b; p9 Fig6a cycling inset",
+        "fields": [
+          "potential_scale_metadata_v13"
+        ],
+        "basis": "已明确硬件Hg/HgO与作者换算RHE可同时记录；1 M转换+0.924 V。CV程序−0.8至0 V明确，GCD图轴mV却数值约0.1至0.9，循环插图也为RHE。无法凭CV程序强定GCD上下限，继续保留窗口待证。"
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "cycling_window_reference_scale_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "potential_scale_pending",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "实际参比Hg/HgO，但作者将图轴换算至RHE，另有mV/V标注不一致；不能把RHE读数直接拼给Hg/HgO字段，当前不能确认精确循环电位程序。",
+      "previous_holds": {
+        "legacy_blockers": [
+          {
+            "record_id": "SRC121_CY01",
+            "code": "baseline_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "SRC121_CY01",
+            "code": "freeze_cleared",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "SRC121_CY01",
+            "code": "independence_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "SRC121_CY01",
+            "code": "mass_basis_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "SRC121_CY01",
+            "code": "material_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "SRC121_CY01",
+            "code": "protocol_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "SRC121_CY01",
+            "code": "source_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          }
+        ],
+        "current_open_issues": [],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "legacy:SRC121_CY01",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 7 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "legacy:SRC121_CY01",
+            "profile": "canonical_3e",
+            "status": "pending",
+            "reason": "v0.5 explicit gates: 0 failed, 7 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:SRC121_CY01",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [\"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1374.0,
+      "BET_m2_g_status": "reported_direct_primary_passage",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": {
+        "basis": "自身正文明确83.3% initial，Fig6a曲线对应2000圈。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:SRC121::DSAC::3E::KOH::default",
+      "cycle_count": 2000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": null,
+      "cycle_voltage_lower_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "cycle_voltage_upper_V": null,
+      "cycle_voltage_upper_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "electrolyte": "KOH",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:SRC121_CY01",
+      "identity_key": "doi:10.1038/s41598-026-63280-x",
+      "legacy_record_id": "SRC121_CY01",
+      "mass_loading_mg_cm2": 0.5,
+      "mass_loading_mg_cm2_status": "inherited_review_linked",
+      "material_id": "legacy_material:SRC121::DSAC",
+      "material_key_v11": "v11m:5c85165f35ecefea4e8ea5f8",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Hg/HgO; reported potentials converted to RHE",
+      "reference_electrode_status": "own_primary_method_reference_review",
+      "reported_current_A_g": 10.0,
+      "reported_current_A_g_status": "inherited_ledger_status:recorded_from_cited_source",
+      "retention_pct": 83.3,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "potential_scale_pending",
+      "review_reason_v12": "实际参比Hg/HgO，但作者将图轴换算至RHE，另有mV/V标注不一致；不能把RHE读数直接拼给Hg/HgO字段，当前不能确认精确循环电位程序。",
+      "sample_name": "DSAC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":0,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.1038/s41598-026-63280-x",
+      "source_year": 2026,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:SRC121::DSAC::3E::KOH::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 1.0
+    },
+    "after": {
+      "BET_m2_g": 1374.0,
+      "BET_m2_g_status": "reported_direct_primary_passage",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": {
+        "basis": "自身正文明确83.3% initial，Fig6a曲线对应2000圈。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:SRC121::DSAC::3E::KOH::default",
+      "cycle_count": 2000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": null,
+      "cycle_voltage_lower_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "cycle_voltage_upper_V": null,
+      "cycle_voltage_upper_V_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "electrolyte": "KOH",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:SRC121_CY01",
+      "identity_key": "doi:10.1038/s41598-026-63280-x",
+      "legacy_record_id": "SRC121_CY01",
+      "mass_loading_mg_cm2": 0.5,
+      "mass_loading_mg_cm2_status": "inherited_review_linked",
+      "material_id": "legacy_material:SRC121::DSAC",
+      "material_key_v11": "v11m:5c85165f35ecefea4e8ea5f8",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Hg/HgO; reported potentials converted to RHE",
+      "reference_electrode_status": "own_primary_method_reference_review",
+      "reported_current_A_g": 10.0,
+      "reported_current_A_g_status": "inherited_ledger_status:recorded_from_cited_source",
+      "retention_pct": 83.3,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "potential_scale_pending",
+      "review_reason_v12": "实际参比Hg/HgO，但作者将图轴换算至RHE，另有mV/V标注不一致；不能把RHE读数直接拼给Hg/HgO字段，当前不能确认精确循环电位程序。",
+      "sample_name": "DSAC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":0,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.1038/s41598-026-63280-x",
+      "source_year": 2026,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:SRC121::DSAC::3E::KOH::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 1.0,
+      "potential_scale_metadata_v13": {
+        "hardware_reference": "Hg/HgO",
+        "plotted_reference": "RHE",
+        "author_offset_V": 0.924,
+        "electrolyte_concentration_mol_L": 1,
+        "author_CV_program_V_vs_HgHgO": [
+          -0.8,
+          0
+        ],
+        "GCD_window_selected": false,
+        "caveat": "Fig4b mV/RHE unit mismatch; CV range is not copied to cycling."
+      },
+      "potential_scale_metadata_v13_status": "v013_agent_original_source_adjudication",
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "已明确硬件Hg/HgO与作者换算RHE可同时记录；1 M转换+0.924 V。CV程序−0.8至0 V明确，GCD图轴mV却数值约0.1至0.9，循环插图也为RHE。无法凭CV程序强定GCD上下限，继续保留窗口待证。"
+    }
+  },
+  {
+    "endpoint_id": "candidate:TE028",
+    "changes": {},
+    "reason": "原Fig7d 2000圈最后点约82%，文字约85%。两者均非精确仪器记录，当前不能用任意读图误差包住差异；保留双方，不选较高数。",
+    "approved_profiles": [],
+    "open_issues": [
+      "author_approximate_label_vs_figure_endpoint"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U021/main.pdf",
+        "sha256": "b4145283d62c92331418bf7dbd2d59fbc7a32c9c3f05862e4148cfef2c150ac9",
+        "locator": "PDF p6 own porosity,p8-p10 Fig5/Fig7d,p13 methods",
+        "basis": "已补ACA-US自身BET、孔容与GCD窗口。作者文字约85%，自身Fig7d末端约82—83%，未擅定近似误差范围或选择更高值；保留两处出处待核。",
+        "fields": [
+          "BET_m2_g",
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V",
+          "total_pore_volume_cm3_g",
+          "micropore_volume_cm3_g",
+          "baseline_reference",
+          "retention_figure_caveat_v12"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "author_approximate_label_vs_figure_endpoint"
+      ],
+      "approved_profiles": [],
+      "disposition": "target_figure_disagreement",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "已补ACA-US自身BET、孔容与GCD窗口。作者文字约85%，自身Fig7d末端约82—83%，未擅定近似误差范围或选择更高值；保留两处出处待核。",
+      "previous_holds": {
+        "legacy_blockers": [],
+        "current_open_issues": [
+          {
+            "issue_id": 16,
+            "endpoint_id": "candidate:TE028",
+            "identity_key": "doi:10.1002/slct.202506886",
+            "field_name": "BET_m2_g",
+            "code": "BET_unlocated_or_binding_unresolved",
+            "status": "open",
+            "evidence_json": "[]",
+            "reason": "No safe exact-sample BET selected from reviewed main/SI; no paper optimum or related material substituted."
+          }
+        ],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "candidate:TE028",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 2 failed, 8 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "candidate:TE028",
+            "profile": "canonical_3e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 8 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "candidate:TE028",
+            "status": "excluded_from_main",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [\"not_exact_reported_main_label\"], \"missing_fields\": [\"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\", \"BET_m2_g\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 2138,
+      "BET_m2_g_status": "v012_agent_original_source_review",
+      "N_at_pct": null,
+      "N_at_pct_status": "not_yet_located_or_reviewed",
+      "O_at_pct": null,
+      "O_at_pct_status": "not_yet_located_or_reviewed",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "not_yet_located_or_reviewed",
+      "baseline_reference": {
+        "basis": "正文initial capacitance及自身Fig7d。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": -1.2,
+      "characterization_voltage_lower_V_status": "reported_method_window_only",
+      "characterization_voltage_upper_V": -0.2,
+      "characterization_voltage_upper_V_status": "reported_method_window_only",
+      "concentration_mol_L": 3,
+      "concentration_mol_L_status": "prior_curated_candidate_not_newly_admitted",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": "not_finalized",
+      "current_mass_basis_status": "prior_curated_candidate_not_newly_admitted",
+      "curve_group": "test:9c64f2fde4abc5ade1bedc86",
+      "cycle_count": 2000,
+      "cycle_count_status": "prior_curated_candidate_not_newly_admitted",
+      "cycle_voltage_lower_V": -1.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": -0.2,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "prior_curated_candidate_not_newly_admitted",
+      "eligible": 0,
+      "endpoint_id": "candidate:TE028",
+      "identity_key": "doi:10.1002/slct.202506886",
+      "legacy_record_id": null,
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "not_yet_located_or_reviewed",
+      "material_id": "material:fb2ead2c90363df701db90e0",
+      "material_key_v11": "v11m:b3283fa1f38fec2691cf9e3c",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "micropore_volume_cm3_g": 0.31,
+      "micropore_volume_cm3_g_status": "v012_agent_original_source_review",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Hg/HgO",
+      "reference_electrode_status": "own_primary_method_reference_review",
+      "reported_current_A_g": 10,
+      "reported_current_A_g_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_figure_caveat_v12": "Author approximately85%; Fig7d endpoint visually around82-83%. No unreported precision inferred.",
+      "retention_figure_caveat_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 85,
+      "retention_pct_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_relation": "approx",
+      "retention_relation_status": "prior_curated_candidate_not_newly_admitted",
+      "review_disposition_v12": "target_figure_disagreement",
+      "review_reason_v12": "已补ACA-US自身BET、孔容与GCD窗口。作者文字约85%，自身Fig7d末端约82—83%，未擅定近似误差范围或选择更高值；保留两处出处待核。",
+      "sample_name": "ACA-US",
+      "scope_flags": "[]",
+      "scope_flags_status": "prior_curated_candidate_not_newly_admitted",
+      "source_group": "doi:10.1002/slct.202506886",
+      "source_year": 2026,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "test:9c64f2fde4abc5ade1bedc86",
+      "total_pore_volume_cm3_g": 2.21,
+      "total_pore_volume_cm3_g_status": "v012_agent_original_source_review",
+      "value_kind": "reported",
+      "value_kind_status": "prior_curated_candidate_not_newly_admitted",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "own_primary_publication_line:issue_year",
+      "source_weight": 1.0
+    },
+    "after": {
+      "BET_m2_g": 2138,
+      "BET_m2_g_status": "v012_agent_original_source_review",
+      "N_at_pct": null,
+      "N_at_pct_status": "not_yet_located_or_reviewed",
+      "O_at_pct": null,
+      "O_at_pct_status": "not_yet_located_or_reviewed",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "not_yet_located_or_reviewed",
+      "baseline_reference": {
+        "basis": "正文initial capacitance及自身Fig7d。",
+        "cycle_index": null,
+        "reference": "author_initial_or_own_normalized_reference"
+      },
+      "baseline_reference_status": "v012_agent_original_source_review",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": -1.2,
+      "characterization_voltage_lower_V_status": "reported_method_window_only",
+      "characterization_voltage_upper_V": -0.2,
+      "characterization_voltage_upper_V_status": "reported_method_window_only",
+      "concentration_mol_L": 3,
+      "concentration_mol_L_status": "prior_curated_candidate_not_newly_admitted",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": "not_finalized",
+      "current_mass_basis_status": "prior_curated_candidate_not_newly_admitted",
+      "curve_group": "test:9c64f2fde4abc5ade1bedc86",
+      "cycle_count": 2000,
+      "cycle_count_status": "prior_curated_candidate_not_newly_admitted",
+      "cycle_voltage_lower_V": -1.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": -0.2,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "prior_curated_candidate_not_newly_admitted",
+      "eligible": 0,
+      "endpoint_id": "candidate:TE028",
+      "identity_key": "doi:10.1002/slct.202506886",
+      "legacy_record_id": null,
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "not_yet_located_or_reviewed",
+      "material_id": "material:fb2ead2c90363df701db90e0",
+      "material_key_v11": "v11m:b3283fa1f38fec2691cf9e3c",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "micropore_volume_cm3_g": 0.31,
+      "micropore_volume_cm3_g_status": "v012_agent_original_source_review",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Hg/HgO",
+      "reference_electrode_status": "own_primary_method_reference_review",
+      "reported_current_A_g": 10,
+      "reported_current_A_g_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_figure_caveat_v12": "Author approximately85%; Fig7d endpoint visually around82-83%. No unreported precision inferred.",
+      "retention_figure_caveat_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 85,
+      "retention_pct_status": "prior_curated_candidate_not_newly_admitted",
+      "retention_relation": "approx",
+      "retention_relation_status": "prior_curated_candidate_not_newly_admitted",
+      "review_disposition_v12": "target_figure_disagreement",
+      "review_reason_v12": "已补ACA-US自身BET、孔容与GCD窗口。作者文字约85%，自身Fig7d末端约82—83%，未擅定近似误差范围或选择更高值；保留两处出处待核。",
+      "sample_name": "ACA-US",
+      "scope_flags": "[]",
+      "scope_flags_status": "prior_curated_candidate_not_newly_admitted",
+      "source_group": "doi:10.1002/slct.202506886",
+      "source_year": 2026,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "test:9c64f2fde4abc5ade1bedc86",
+      "total_pore_volume_cm3_g": 2.21,
+      "total_pore_volume_cm3_g_status": "v012_agent_original_source_review",
+      "value_kind": "reported",
+      "value_kind_status": "prior_curated_candidate_not_newly_admitted",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "own_primary_publication_line:issue_year",
+      "source_weight": 1.0,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "原Fig7d 2000圈最后点约82%，文字约85%。两者均非精确仪器记录，当前不能用任意读图误差包住差异；保留双方，不选较高数。"
+    }
+  },
+  {
+    "endpoint_id": "legacy:R069_CY01",
+    "changes": {},
+    "reason": "原Fig6a黑线KOH起末约137/129，正文/Table2均97.2%，与曲线比例不符；未报告循环A/g，不能借Fig5的1 A/g。酸/中性映射也冲突。",
+    "approved_profiles": [],
+    "open_issues": [
+      "cycling_current_A_g",
+      "text_table_curve_retention_binding"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/B_R069/main.pdf",
+        "sha256": "f5f66f6099254a032d338934e77a9fc02e3b7ce21920f99e47d624060e36d901",
+        "locator": "PDF p6 GCD,p7 text,p8 Fig6/Table2,p9 methods",
+        "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。",
+        "fields": [
+          "reference_electrode",
+          "retention_conflict_v12"
+        ]
+      },
+      {
+        "path": "待补证原文复核_20261022/evidence_images/legacy_R069_CY01_p6.png",
+        "sha256": "d1601be438790527f94bbcbbedf6a4eede01ca97888f809ca0d5d31ba24eb664",
+        "locator": "Original Fig5b and own GCD method",
+        "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+        "fields": [
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "target_protocol_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "previous_holds": {
+        "legacy_blockers": [
+          {
+            "record_id": "R069_CY01",
+            "code": "baseline_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY01",
+            "code": "freeze_cleared",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY01",
+            "code": "independence_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY01",
+            "code": "mass_basis_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY01",
+            "code": "material_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY01",
+            "code": "protocol_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY01",
+            "code": "source_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          }
+        ],
+        "current_open_issues": [],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "legacy:R069_CY01",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 8 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "legacy:R069_CY01",
+            "profile": "canonical_3e",
+            "status": "pending",
+            "reason": "v0.5 explicit gates: 0 failed, 9 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:R069_CY01",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [\"reported_current_A_g\", \"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\", \"reference_electrode\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1917.0,
+      "BET_m2_g_status": "inherited_review_linked",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 3.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R069::RCS-AC::3E::KOH::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": 0.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0.6,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:R069_CY01",
+      "identity_key": "doi:10.3390/catal13020286",
+      "legacy_record_id": "R069_CY01",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R069::RCS-AC",
+      "material_key_v11": "v11m:7f976542036aa7f16378f0dd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Ag/AgCl",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": null,
+      "reported_current_A_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "retention_conflict_v12": {
+        "figure6a": "Absolute capacitance trajectories also require reconciliation; not a new training label.",
+        "prose": {
+          "H2SO4": 84.8,
+          "KOH": 97.2,
+          "Na2SO4": 93.6
+        },
+        "table2": {
+          "H2SO4": 93.6,
+          "KOH": 97.2,
+          "Na2SO4": 84.8
+        }
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 97.2,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_protocol_conflict",
+      "review_reason_v12": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "sample_name": "RCS-AC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.3390/catal13020286",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R069::RCS-AC::3E::KOH::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 0.3333333333333333
+    },
+    "after": {
+      "BET_m2_g": 1917.0,
+      "BET_m2_g_status": "inherited_review_linked",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 3.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R069::RCS-AC::3E::KOH::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": 0.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0.6,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "KOH",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:R069_CY01",
+      "identity_key": "doi:10.3390/catal13020286",
+      "legacy_record_id": "R069_CY01",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R069::RCS-AC",
+      "material_key_v11": "v11m:7f976542036aa7f16378f0dd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Ag/AgCl",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": null,
+      "reported_current_A_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "retention_conflict_v12": {
+        "figure6a": "Absolute capacitance trajectories also require reconciliation; not a new training label.",
+        "prose": {
+          "H2SO4": 84.8,
+          "KOH": 97.2,
+          "Na2SO4": 93.6
+        },
+        "table2": {
+          "H2SO4": 93.6,
+          "KOH": 97.2,
+          "Na2SO4": 84.8
+        }
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 97.2,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_protocol_conflict",
+      "review_reason_v12": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "sample_name": "RCS-AC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.3390/catal13020286",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R069::RCS-AC::3E::KOH::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 0.3333333333333333,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "原Fig6a黑线KOH起末约137/129，正文/Table2均97.2%，与曲线比例不符；未报告循环A/g，不能借Fig5的1 A/g。酸/中性映射也冲突。"
+    }
+  },
+  {
+    "endpoint_id": "legacy:R069_CY02",
+    "changes": {},
+    "reason": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。",
+    "approved_profiles": [],
+    "open_issues": [
+      "cycling_current_A_g",
+      "text_table_curve_retention_binding"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/B_R069/main.pdf",
+        "sha256": "f5f66f6099254a032d338934e77a9fc02e3b7ce21920f99e47d624060e36d901",
+        "locator": "PDF p6 GCD,p7 text,p8 Fig6/Table2,p9 methods",
+        "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。",
+        "fields": [
+          "reference_electrode",
+          "retention_conflict_v12"
+        ]
+      },
+      {
+        "path": "待补证原文复核_20261022/evidence_images/legacy_R069_CY01_p6.png",
+        "sha256": "d1601be438790527f94bbcbbedf6a4eede01ca97888f809ca0d5d31ba24eb664",
+        "locator": "Original Fig5b and own GCD method",
+        "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+        "fields": [
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "target_protocol_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "previous_holds": {
+        "legacy_blockers": [
+          {
+            "record_id": "R069_CY02",
+            "code": "baseline_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY02",
+            "code": "freeze_cleared",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY02",
+            "code": "independence_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY02",
+            "code": "mass_basis_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY02",
+            "code": "material_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY02",
+            "code": "protocol_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY02",
+            "code": "r2_electrolyte_label_pairing",
+            "status": "open",
+            "rationale": "p7正文按KOH/Na2SO4/H2SO4列97.2/93.6/84.8%，p8 Table2按Na2SO4/H2SO4列84.8/93.6%；不自动交换现值，先冻结电解液-标签配对。",
+            "review_id": 160,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY02",
+            "code": "source_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          }
+        ],
+        "current_open_issues": [],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "legacy:R069_CY02",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 8 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "legacy:R069_CY02",
+            "profile": "canonical_3e",
+            "status": "pending",
+            "reason": "v0.5 explicit gates: 0 failed, 9 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:R069_CY02",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [\"reported_current_A_g\", \"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\", \"reference_electrode\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1917.0,
+      "BET_m2_g_status": "inherited_review_linked",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R069::RCS-AC::3E::Na2SO4::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": 0.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0.6,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "Na2SO4",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:R069_CY02",
+      "identity_key": "doi:10.3390/catal13020286",
+      "legacy_record_id": "R069_CY02",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R069::RCS-AC",
+      "material_key_v11": "v11m:7f976542036aa7f16378f0dd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Ag/AgCl",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": null,
+      "reported_current_A_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "retention_conflict_v12": {
+        "figure6a": "Absolute capacitance trajectories also require reconciliation; not a new training label.",
+        "prose": {
+          "H2SO4": 84.8,
+          "KOH": 97.2,
+          "Na2SO4": 93.6
+        },
+        "table2": {
+          "H2SO4": 93.6,
+          "KOH": 97.2,
+          "Na2SO4": 84.8
+        }
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 93.6,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_protocol_conflict",
+      "review_reason_v12": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "sample_name": "RCS-AC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.3390/catal13020286",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R069::RCS-AC::3E::Na2SO4::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 0.3333333333333333
+    },
+    "after": {
+      "BET_m2_g": 1917.0,
+      "BET_m2_g_status": "inherited_review_linked",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R069::RCS-AC::3E::Na2SO4::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": 0.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0.6,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "Na2SO4",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:R069_CY02",
+      "identity_key": "doi:10.3390/catal13020286",
+      "legacy_record_id": "R069_CY02",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R069::RCS-AC",
+      "material_key_v11": "v11m:7f976542036aa7f16378f0dd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Ag/AgCl",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": null,
+      "reported_current_A_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "retention_conflict_v12": {
+        "figure6a": "Absolute capacitance trajectories also require reconciliation; not a new training label.",
+        "prose": {
+          "H2SO4": 84.8,
+          "KOH": 97.2,
+          "Na2SO4": 93.6
+        },
+        "table2": {
+          "H2SO4": 93.6,
+          "KOH": 97.2,
+          "Na2SO4": 84.8
+        }
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 93.6,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_protocol_conflict",
+      "review_reason_v12": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "sample_name": "RCS-AC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.3390/catal13020286",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R069::RCS-AC::3E::Na2SO4::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 0.3333333333333333,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。"
+    }
+  },
+  {
+    "endpoint_id": "legacy:R069_CY03",
+    "changes": {},
+    "reason": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。",
+    "approved_profiles": [],
+    "open_issues": [
+      "cycling_current_A_g",
+      "text_table_curve_retention_binding"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/B_R069/main.pdf",
+        "sha256": "f5f66f6099254a032d338934e77a9fc02e3b7ce21920f99e47d624060e36d901",
+        "locator": "PDF p6 GCD,p7 text,p8 Fig6/Table2,p9 methods",
+        "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。",
+        "fields": [
+          "reference_electrode",
+          "retention_conflict_v12"
+        ]
+      },
+      {
+        "path": "待补证原文复核_20261022/evidence_images/legacy_R069_CY01_p6.png",
+        "sha256": "d1601be438790527f94bbcbbedf6a4eede01ca97888f809ca0d5d31ba24eb664",
+        "locator": "Original Fig5b and own GCD method",
+        "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+        "fields": [
+          "cycle_voltage_lower_V",
+          "cycle_voltage_upper_V"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "target_protocol_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "previous_holds": {
+        "legacy_blockers": [
+          {
+            "record_id": "R069_CY03",
+            "code": "baseline_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY03",
+            "code": "freeze_cleared",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY03",
+            "code": "independence_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY03",
+            "code": "mass_basis_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY03",
+            "code": "material_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY03",
+            "code": "protocol_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY03",
+            "code": "r2_electrolyte_label_pairing",
+            "status": "open",
+            "rationale": "p7正文按KOH/Na2SO4/H2SO4列97.2/93.6/84.8%，p8 Table2按Na2SO4/H2SO4列84.8/93.6%；不自动交换现值，先冻结电解液-标签配对。",
+            "review_id": 161,
+            "affects_core7": 1
+          },
+          {
+            "record_id": "R069_CY03",
+            "code": "source_checked",
+            "status": "open",
+            "rationale": "Inherited incomplete admission gate; a later evidence-backed review is required.",
+            "review_id": null,
+            "affects_core7": 1
+          }
+        ],
+        "current_open_issues": [],
+        "historical_canonical_admission": [
+          {
+            "endpoint_id": "legacy:R069_CY03",
+            "profile": "canonical_2e",
+            "status": "excluded",
+            "reason": "v0.5 explicit gates: 1 failed, 8 unresolved; see record_admission_checks. No approval."
+          },
+          {
+            "endpoint_id": "legacy:R069_CY03",
+            "profile": "canonical_3e",
+            "status": "pending",
+            "reason": "v0.5 explicit gates: 0 failed, 9 unresolved; see record_admission_checks. No approval."
+          }
+        ],
+        "reported_profile_admission": [
+          {
+            "profile": "reported_3e",
+            "endpoint_id": "legacy:R069_CY03",
+            "status": "pending_primary_review",
+            "reason": "Record has actual non-mass scope/label/missingness or unresolved source-review work.",
+            "evidence_json": "{\"failed_conditions\": [], \"missing_fields\": [\"reported_current_A_g\", \"cycle_voltage_lower_V\", \"cycle_voltage_upper_V\", \"reference_electrode\"], \"mass_denominator_unknown_alone_is_not_failure\": true, \"baseline_cycle_index_unknown_alone_is_not_failure\": true}"
+          }
+        ],
+        "reported_issue_scope": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 1917.0,
+      "BET_m2_g_status": "inherited_review_linked",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R069::RCS-AC::3E::H2SO4::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": 0.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0.6,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "H2SO4",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:R069_CY03",
+      "identity_key": "doi:10.3390/catal13020286",
+      "legacy_record_id": "R069_CY03",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R069::RCS-AC",
+      "material_key_v11": "v11m:7f976542036aa7f16378f0dd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Ag/AgCl",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": null,
+      "reported_current_A_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "retention_conflict_v12": {
+        "figure6a": "Absolute capacitance trajectories also require reconciliation; not a new training label.",
+        "prose": {
+          "H2SO4": 84.8,
+          "KOH": 97.2,
+          "Na2SO4": 93.6
+        },
+        "table2": {
+          "H2SO4": 93.6,
+          "KOH": 97.2,
+          "Na2SO4": 84.8
+        }
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 84.8,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_protocol_conflict",
+      "review_reason_v12": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "sample_name": "RCS-AC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.3390/catal13020286",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R069::RCS-AC::3E::H2SO4::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 0.3333333333333333
+    },
+    "after": {
+      "BET_m2_g": 1917.0,
+      "BET_m2_g_status": "inherited_review_linked",
+      "N_at_pct": null,
+      "N_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "O_at_pct": null,
+      "O_at_pct_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "baseline_cycle": null,
+      "baseline_cycle_status": "inherited_ledger_status:not_yet_paired_or_not_recorded_not_proven_absent",
+      "baseline_reference": null,
+      "baseline_reference_status": "not_yet_located_or_reviewed",
+      "canonical_current_A_g": null,
+      "canonical_current_A_g_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_lower_V": null,
+      "characterization_voltage_lower_V_status": "not_yet_located_or_reviewed",
+      "characterization_voltage_upper_V": null,
+      "characterization_voltage_upper_V_status": "not_yet_located_or_reviewed",
+      "concentration_mol_L": 1.0,
+      "concentration_mol_L_status": "inherited_ledger_status:recorded_from_cited_source",
+      "current_mA_cm2": null,
+      "current_mA_cm2_status": "not_yet_located_or_reviewed",
+      "current_mass_basis": null,
+      "current_mass_basis_status": "not_yet_located_or_reviewed",
+      "curve_group": "legacy_test:R069::RCS-AC::3E::H2SO4::default",
+      "cycle_count": 5000,
+      "cycle_count_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "cycle_voltage_lower_V": 0.2,
+      "cycle_voltage_lower_V_status": "v012_agent_original_source_review",
+      "cycle_voltage_upper_V": 0.6,
+      "cycle_voltage_upper_V_status": "v012_agent_original_source_review",
+      "electrolyte": "H2SO4",
+      "electrolyte_status": "inherited_ledger_status:recorded_from_cited_source",
+      "eligible": 0,
+      "endpoint_id": "legacy:R069_CY03",
+      "identity_key": "doi:10.3390/catal13020286",
+      "legacy_record_id": "R069_CY03",
+      "mass_loading_mg_cm2": null,
+      "mass_loading_mg_cm2_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "material_id": "legacy_material:R069::RCS-AC",
+      "material_key_v11": "v11m:7f976542036aa7f16378f0dd",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "raw_total_pore_volume_m3_g": null,
+      "raw_total_pore_volume_m3_g_status": null,
+      "reference_electrode": "Ag/AgCl",
+      "reference_electrode_status": "v012_agent_original_source_review",
+      "reported_current_A_g": null,
+      "reported_current_A_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "retention_conflict_v12": {
+        "figure6a": "Absolute capacitance trajectories also require reconciliation; not a new training label.",
+        "prose": {
+          "H2SO4": 84.8,
+          "KOH": 97.2,
+          "Na2SO4": 93.6
+        },
+        "table2": {
+          "H2SO4": 93.6,
+          "KOH": 97.2,
+          "Na2SO4": 84.8
+        }
+      },
+      "retention_conflict_v12_status": "v012_agent_original_source_review",
+      "retention_pct": 84.8,
+      "retention_pct_status": "inherited_ledger_status:recorded_from_candidate_evidence_pending_field_audit",
+      "retention_relation": "eq",
+      "retention_relation_status": "inherited_effective_value_original_review_limits_preserved",
+      "review_disposition_v12": "target_protocol_conflict",
+      "review_reason_v12": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+      "sample_name": "RCS-AC",
+      "scope_flags": "{\"material_scope\":\"carbon_candidate\",\"category\":\"A\",\"Si_residue_review_required\":0,\"pore_unit_review_required\":0,\"conflict\":1,\"short_test\":0}",
+      "scope_flags_status": "inherited_scope_and_freezes_retained",
+      "source_group": "10.3390/catal13020286",
+      "source_year": 2023,
+      "system": "3E",
+      "temperature_C": null,
+      "temperature_C_status": null,
+      "test_id": "legacy_test:R069::RCS-AC::3E::H2SO4::default",
+      "total_pore_volume_cm3_g": null,
+      "total_pore_volume_cm3_g_status": "inherited_ledger_status:not_yet_paired_or_not_found_in_local_evidence",
+      "value_kind": "reported",
+      "value_kind_status": "inherited_effective_value_original_review_limits_preserved",
+      "workflow_status": "extracted_candidate_not_admitted",
+      "year_basis": "existing_verified_bibliography:archived_126",
+      "source_weight": 0.3333333333333333,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。"
+    }
+  },
+  {
+    "endpoint_id": "incoming:ADD_002_T01",
+    "changes": {},
+    "reason": "AGC原循环图caption10 A/g与inset20 A/g冲突；没有更正或原始程序，不能把表征窗口/电流当循环工况。",
+    "approved_profiles": [],
+    "open_issues": [
+      "10_vs20_A_g",
+      "cycling_window_binding"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "新增文献整理_20261020/originals/ADD_002.pdf",
+        "sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+        "locator": "Own methods and cycling figure caption/inset",
+        "basis": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+        "fields": [
+          "cycling_current_conflict_v12"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "10_vs20_A_g",
+        "cycling_window_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "protocol_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+      "previous_holds": {
+        "open_issues": [
+          "正文/图注为10A/g，Fig5d循环GCD插图标20A/g；保留双方，电流未裁定",
+          "主GCD图-0.6至0.2V，循环插图下界看似不同，窗口待核"
+        ],
+        "remaining_evidence_work": [
+          "missing_core_fields:cycle_voltage_lower_V,cycle_voltage_upper_V",
+          "material_or_electrolyte_scope_requires_review",
+          "manual_scientific_review_not_approved"
+        ],
+        "historical_issues": [
+          "正文/图注为10A/g，Fig5d循环GCD插图标20A/g；保留双方，电流未裁定",
+          "主GCD图-0.6至0.2V，循环插图下界看似不同，窗口待核"
+        ],
+        "issue_dispositions": [],
+        "alternatives": [
+          {
+            "field": "reported_current_A_g",
+            "value": 20,
+            "pages": [
+              6
+            ],
+            "selected": false,
+            "status": "conflicting_primary_figure_annotation"
+          }
+        ]
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 2315,
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 2,
+      "core_missing_fields": [
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycling_current_conflict_v12": [
+        10,
+        20
+      ],
+      "cycling_current_conflict_v12_status": "v012_agent_original_source_review",
+      "document_id": "ADD_002",
+      "doi": "10.1088/1742-6596/3113/1/012002",
+      "electrolyte": "H2SO4",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_002_T01",
+      "evidence_pages": {
+        "label_protocol": [
+          3,
+          5,
+          6
+        ]
+      },
+      "extra_observations": [
+        {
+          "field": "reported_current_A_g",
+          "pages": [
+            6
+          ],
+          "selected": false,
+          "status": "conflicting_primary_figure_annotation",
+          "value": 20
+        }
+      ],
+      "field_states": {
+        "BET_m2_g": "working_observation_not_training_approved",
+        "concentration_mol_L": "working_observation_not_training_approved",
+        "electrolyte": "working_observation_not_training_approved",
+        "reference_electrode": "working_observation_not_training_approved"
+      },
+      "fields": {
+        "BET_m2_g": 2315,
+        "concentration_mol_L": 2,
+        "electrolyte": "H2SO4",
+        "reference_electrode": "Ag/AgCl"
+      },
+      "identity_key": "doi:10.1088/1742-6596/3113/1/012002",
+      "issues": [
+        "正文/图注为10A/g，Fig5d循环GCD插图标20A/g；保留双方，电流未裁定",
+        "主GCD图-0.6至0.2V，循环插图下界看似不同，窗口待核"
+      ],
+      "material_key_v11": "v11m:d0162d965d241bd654f7c331",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "正文/图注为10A/g，Fig5d循环GCD插图标20A/g；保留双方，电流未裁定",
+        "主GCD图-0.6至0.2V，循环插图下界看似不同，窗口待核"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {},
+          "label_pages": {
+            "label_protocol": [
+              3,
+              5,
+              6
+            ]
+          },
+          "notes": [],
+          "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_002_T01",
+      "reference_electrode": "Ag/AgCl",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:cycle_voltage_lower_V,cycle_voltage_upper_V",
+        "material_or_electrolyte_scope_requires_review",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 96.3,
+      "retention_relation": "eq",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "AGC-FK",
+      "scope_status": "metal_catalyst_residue_requires_review",
+      "source_group": "doi:10.1088/1742-6596/3113/1/012002",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_002.pdf",
+      "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+      "source_year": 2025,
+      "system": "3E",
+      "source_weight": 0.5
+    },
+    "after": {
+      "BET_m2_g": 2315,
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 2,
+      "core_missing_fields": [
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycling_current_conflict_v12": [
+        10,
+        20
+      ],
+      "cycling_current_conflict_v12_status": "v012_agent_original_source_review",
+      "document_id": "ADD_002",
+      "doi": "10.1088/1742-6596/3113/1/012002",
+      "electrolyte": "H2SO4",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_002_T01",
+      "evidence_pages": {
+        "label_protocol": [
+          3,
+          5,
+          6
+        ]
+      },
+      "extra_observations": [
+        {
+          "field": "reported_current_A_g",
+          "pages": [
+            6
+          ],
+          "selected": false,
+          "status": "conflicting_primary_figure_annotation",
+          "value": 20
+        }
+      ],
+      "field_states": {
+        "BET_m2_g": "working_observation_not_training_approved",
+        "concentration_mol_L": "working_observation_not_training_approved",
+        "electrolyte": "working_observation_not_training_approved",
+        "reference_electrode": "working_observation_not_training_approved"
+      },
+      "fields": {
+        "BET_m2_g": 2315,
+        "concentration_mol_L": 2,
+        "electrolyte": "H2SO4",
+        "reference_electrode": "Ag/AgCl"
+      },
+      "identity_key": "doi:10.1088/1742-6596/3113/1/012002",
+      "issues": [
+        "正文/图注为10A/g，Fig5d循环GCD插图标20A/g；保留双方，电流未裁定",
+        "主GCD图-0.6至0.2V，循环插图下界看似不同，窗口待核"
+      ],
+      "material_key_v11": "v11m:d0162d965d241bd654f7c331",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "正文/图注为10A/g，Fig5d循环GCD插图标20A/g；保留双方，电流未裁定",
+        "主GCD图-0.6至0.2V，循环插图下界看似不同，窗口待核"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {},
+          "label_pages": {
+            "label_protocol": [
+              3,
+              5,
+              6
+            ]
+          },
+          "notes": [],
+          "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_002_T01",
+      "reference_electrode": "Ag/AgCl",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:cycle_voltage_lower_V,cycle_voltage_upper_V",
+        "material_or_electrolyte_scope_requires_review",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 96.3,
+      "retention_relation": "eq",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "AGC-FK",
+      "scope_status": "metal_catalyst_residue_requires_review",
+      "source_group": "doi:10.1088/1742-6596/3113/1/012002",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_002.pdf",
+      "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+      "source_year": 2025,
+      "system": "3E",
+      "source_weight": 0.5,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "AGC原循环图caption10 A/g与inset20 A/g冲突；没有更正或原始程序，不能把表征窗口/电流当循环工况。"
+    }
+  },
+  {
+    "endpoint_id": "incoming:ADD_002_T02",
+    "changes": {},
+    "reason": "AGC-K同一循环caption10 A/g与inset20 A/g冲突，继续保持原始候选值及出处。",
+    "approved_profiles": [],
+    "open_issues": [
+      "10_vs20_A_g",
+      "cycling_window_binding"
+    ],
+    "disposition": "reviewed_conflict_remains",
+    "resolution": [],
+    "evidence": [
+      {
+        "path": "新增文献整理_20261020/originals/ADD_002.pdf",
+        "sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+        "locator": "Own methods and cycling figure caption/inset",
+        "basis": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+        "fields": [
+          "cycling_current_conflict_v12"
+        ]
+      }
+    ],
+    "reviewer": "Codex agent original-source review; not independent expert sign-off",
+    "previous_holds": {
+      "open_issues": [
+        "10_vs20_A_g",
+        "cycling_window_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "protocol_conflict",
+      "gate_dispositions": {},
+      "caveats": [],
+      "reason": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+      "previous_holds": {
+        "open_issues": [
+          "Fig5d蓝色AGC-K曲线显式94.1%；全图电流标注与插图存在冲突，暂不统一",
+          "循环电压窗口待核"
+        ],
+        "remaining_evidence_work": [
+          "missing_core_fields:cycle_voltage_lower_V,cycle_voltage_upper_V",
+          "manual_scientific_review_not_approved"
+        ],
+        "historical_issues": [
+          "Fig5d蓝色AGC-K曲线显式94.1%；全图电流标注与插图存在冲突，暂不统一",
+          "循环电压窗口待核"
+        ],
+        "issue_dispositions": [],
+        "alternatives": []
+      },
+      "review_version": "v0.12"
+    },
+    "before": {
+      "BET_m2_g": 2056,
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 2,
+      "core_missing_fields": [
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycling_current_conflict_v12": [
+        10,
+        20
+      ],
+      "cycling_current_conflict_v12_status": "v012_agent_original_source_review",
+      "document_id": "ADD_002",
+      "doi": "10.1088/1742-6596/3113/1/012002",
+      "electrolyte": "H2SO4",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_002_T02",
+      "evidence_pages": {
+        "label_protocol": [
+          4,
+          6
+        ]
+      },
+      "extra_observations": [],
+      "field_states": {
+        "BET_m2_g": "working_observation_not_training_approved",
+        "concentration_mol_L": "working_observation_not_training_approved",
+        "electrolyte": "working_observation_not_training_approved",
+        "reference_electrode": "working_observation_not_training_approved"
+      },
+      "fields": {
+        "BET_m2_g": 2056,
+        "concentration_mol_L": 2,
+        "electrolyte": "H2SO4",
+        "reference_electrode": "Ag/AgCl"
+      },
+      "identity_key": "doi:10.1088/1742-6596/3113/1/012002",
+      "issues": [
+        "Fig5d蓝色AGC-K曲线显式94.1%；全图电流标注与插图存在冲突，暂不统一",
+        "循环电压窗口待核"
+      ],
+      "material_key_v11": "v11m:4580ff8883cdfc5da1a736f7",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "Fig5d蓝色AGC-K曲线显式94.1%；全图电流标注与插图存在冲突，暂不统一",
+        "循环电压窗口待核"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {},
+          "label_pages": {
+            "label_protocol": [
+              4,
+              6
+            ]
+          },
+          "notes": [],
+          "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_002_T02",
+      "reference_electrode": "Ag/AgCl",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:cycle_voltage_lower_V,cycle_voltage_upper_V",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 94.1,
+      "retention_relation": "eq",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "AGC-K",
+      "scope_status": "ordinary_carbon_candidate",
+      "source_group": "doi:10.1088/1742-6596/3113/1/012002",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_002.pdf",
+      "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+      "source_year": 2025,
+      "system": "3E",
+      "source_weight": 0.5
+    },
+    "after": {
+      "BET_m2_g": 2056,
+      "admission_profiles_v11": [],
+      "admission_profiles_v12": [],
+      "admission_status": "pending_core_or_scope_review",
+      "baseline_reference": {
+        "cycle_index": null,
+        "reference": "author_initial_or_plotted_start"
+      },
+      "canonical_current_A_g": null,
+      "concentration_mol_L": 2,
+      "core_missing_fields": [
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V"
+      ],
+      "current_mass_basis": null,
+      "cycle_count": 10000,
+      "cycling_current_conflict_v12": [
+        10,
+        20
+      ],
+      "cycling_current_conflict_v12_status": "v012_agent_original_source_review",
+      "document_id": "ADD_002",
+      "doi": "10.1088/1742-6596/3113/1/012002",
+      "electrolyte": "H2SO4",
+      "eligible": 0,
+      "endpoint_id": "incoming:ADD_002_T02",
+      "evidence_pages": {
+        "label_protocol": [
+          4,
+          6
+        ]
+      },
+      "extra_observations": [],
+      "field_states": {
+        "BET_m2_g": "working_observation_not_training_approved",
+        "concentration_mol_L": "working_observation_not_training_approved",
+        "electrolyte": "working_observation_not_training_approved",
+        "reference_electrode": "working_observation_not_training_approved"
+      },
+      "fields": {
+        "BET_m2_g": 2056,
+        "concentration_mol_L": 2,
+        "electrolyte": "H2SO4",
+        "reference_electrode": "Ag/AgCl"
+      },
+      "identity_key": "doi:10.1088/1742-6596/3113/1/012002",
+      "issues": [
+        "Fig5d蓝色AGC-K曲线显式94.1%；全图电流标注与插图存在冲突，暂不统一",
+        "循环电压窗口待核"
+      ],
+      "material_key_v11": "v11m:4580ff8883cdfc5da1a736f7",
+      "method": "GCD",
+      "metric_kind": "capacitance_retention",
+      "open_issues": [
+        "Fig5d蓝色AGC-K曲线显式94.1%；全图电流标注与插图存在冲突，暂不统一",
+        "循环电压窗口待核"
+      ],
+      "physical_current_harmonized": false,
+      "profile_review": {
+        "evidence": {
+          "fields": {},
+          "label_pages": {
+            "label_protocol": [
+              4,
+              6
+            ]
+          },
+          "notes": [],
+          "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59"
+        },
+        "reason": "Explicit per-test own-source review in incoming batch."
+      },
+      "record_id": "ADD_002_T02",
+      "reference_electrode": "Ag/AgCl",
+      "related_existing_endpoints": [],
+      "remaining_evidence_work": [
+        "missing_core_fields:cycle_voltage_lower_V,cycle_voltage_upper_V",
+        "manual_scientific_review_not_approved"
+      ],
+      "reported_current_A_g": 10,
+      "research_training_authorized": false,
+      "retention_pct": 94.1,
+      "retention_relation": "eq",
+      "review_disposition_v12": "protocol_conflict",
+      "review_reason_v12": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+      "review_status": "pending_core_or_scope_review",
+      "sample_name": "AGC-K",
+      "scope_status": "ordinary_carbon_candidate",
+      "source_group": "doi:10.1088/1742-6596/3113/1/012002",
+      "source_pdf": "新增文献整理_20261020/originals/ADD_002.pdf",
+      "source_sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+      "source_year": 2025,
+      "system": "3E",
+      "source_weight": 0.5,
+      "review_disposition_v13": "reviewed_conflict_remains",
+      "review_reason_v13": "AGC-K同一循环caption10 A/g与inset20 A/g冲突，继续保持原始候选值及出处。"
+    }
+  }
+]
