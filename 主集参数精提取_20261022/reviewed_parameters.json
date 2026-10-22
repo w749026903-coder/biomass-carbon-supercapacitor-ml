@@ -1,0 +1,1695 @@
+{
+  "parent_version": "v0.13",
+  "reviewed_sources": 30,
+  "reviewed_main_tests": 42,
+  "qualification": "Primary methods and identified SI; numeric choices are explicit agent review, not regex output.",
+  "records": [
+    {
+      "endpoint_id": "legacy:R087_CY01",
+      "doi": "10.1007/s00339-023-07141-8",
+      "sample_name": "OAC623",
+      "material_key": "v11m:acf3ba8ad4d1a8e148b29a98",
+      "material_updates": {
+        "activation_temperature_C": 399.85,
+        "post_treatment_temperature_C": 349.85,
+        "post_treatment_duration_h": 4,
+        "post_treatment_heating_rate_C_min": 10,
+        "activation_agent_v14": "H3PO4",
+        "precursor_v14": "apricot stones"
+      },
+      "test_updates": {
+        "active_mass_mg_v14": 24.8,
+        "active_mass_uncertainty_mg_v14": 3
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R087/main.pdf",
+          "sha256": "dd31e41f0058c58990b3ba58e3215228480a86f5c1b18f2717849eb34ad11c23",
+          "locator": "PDF p3 sections2.2-2.3",
+          "fields": [
+            "activation_temperature_C",
+            "post_treatment_temperature_C",
+            "post_treatment_duration_h",
+            "post_treatment_heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "active_mass_mg_v14",
+            "active_mass_uncertainty_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 673 K converted to399.85 C;623 K oxidation converted to349.85 C. Oxidation ramp10 C/min is NOT activation ramp. 24.8±3 mg in Teflon tip is electrode mass; area not established, no mg/cm2."
+        }
+      ],
+      "notes": [
+        "673 K converted to399.85 C;623 K oxidation converted to349.85 C. Oxidation ramp10 C/min is NOT activation ramp.",
+        "24.8±3 mg in Teflon tip is electrode mass; area not established, no mg/cm2."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R078_CY01",
+      "doi": "10.1016/j.jpcs.2023.111318",
+      "sample_name": "C/600C",
+      "material_key": "v11m:5ad5a083fff46383f3c647f1",
+      "material_updates": {
+        "precarbonization_temperature_C": 600,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 10,
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 10,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "reed residue waste"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 2.4,
+        "loading_evidence_kind_v14": "nominal active mass2.4mg divided by explicitly coated1x1cm2"
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R078/main.pdf",
+          "sha256": "19fb3d36492a517b19c31050de6ba2db48f9bfa862fecff5667dc58d37418164",
+          "locator": "PDF p2 sections2.2/2.4",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_mg_cm2",
+            "loading_evidence_kind_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 600 C is the first carbonization; all carbonized samples subsequently activated at800 C."
+        }
+      ],
+      "notes": [
+        "600 C is the first carbonization; all carbonized samples subsequently activated at800 C."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:SRC025_CY01",
+      "doi": "10.1021/acs.energyfuels.4c01398",
+      "sample_name": "AC3",
+      "material_key": "v11m:3c738be2e6f23f0061032d60",
+      "material_updates": {
+        "precarbonization_temperature_C": 350,
+        "precarbonization_duration_h": 1,
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KMnO4",
+        "precursor_v14": "coconut tree husk"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 0.8
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_SRC025/main.pdf",
+          "sha256": "7f37b2048560cf7499130e020ef67bc2d9d3cd3d0a387743eae7bdb0d20c04b9",
+          "locator": "PDF p2-3 own synthesis and electrochemical measurements",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_mg_cm2"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. AC3 specifically uses KMnO4; common800 C/2h/5 Cmin programme applies. No KOH identity borrowed from AC2."
+        }
+      ],
+      "notes": [
+        "AC3 specifically uses KMnO4; common800 C/2h/5 Cmin programme applies. No KOH identity borrowed from AC2."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R013_CY01",
+      "doi": "10.1021/acsomega.4c11529",
+      "sample_name": "EUAC1-60",
+      "material_key": "v11m:227c0e354399740fb018e619",
+      "material_updates": {
+        "activation_duration_h": 1,
+        "activation_time_kind_v14": "total microwave exposure; not an isothermal furnace hold",
+        "microwave_power_W_v14": 900,
+        "activation_agent_v14": "H3PO4",
+        "precursor_v14": "Eucommia ulmoides wood"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R013/main.pdf",
+          "sha256": "f0b7781603de2b1e49d7e5c9ae0c2399a376788d5664755c034a9da9afc11329",
+          "locator": "PDF p2-3 section2.2 and electrochemistry",
+          "fields": [
+            "activation_duration_h",
+            "activation_time_kind_v14",
+            "microwave_power_W_v14",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Own60min microwave treatment; no actual thermal temperature or conventional ramp established.900W is power, not temperature."
+        }
+      ],
+      "notes": [
+        "Own60min microwave treatment; no actual thermal temperature or conventional ramp established.900W is power, not temperature."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE031",
+      "doi": "10.1039/d5ra08165c",
+      "sample_name": "MHDHPC-600",
+      "material_key": "v11m:fcad1793d6d2a2a27fdb4dc4",
+      "material_updates": {
+        "activation_temperature_C": 600,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "cotton pulp board"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 1.5
+      },
+      "evidence": [
+        {
+          "path": "循环稳定性文献补充_20261017/N002/公开全文.xml",
+          "sha256": "550748a1a9354730860b66d007ad007f112d9f4c8eabda5e9159d8de10fe2a57",
+          "locator": "XML experimental own MHDHPC-600 preparation",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Loading1.5mg/cm2 from SI p2 working-electrode procedure; not TGA10 Cmin ramp."
+        },
+        {
+          "path": "循环稳定性文献补充_20261017/N002/RA-016-D5RA08165C-s001.pdf",
+          "sha256": "51ec093db5e934d122f4ecd5f82c2741fbacbb8b5dd43d819327221079b21f23",
+          "locator": "SI p2 working electrode fabrication",
+          "fields": [
+            "mass_loading_mg_cm2"
+          ],
+          "basis": "Loading1.5mg/cm2 from SI p2 working-electrode procedure; not TGA10 Cmin ramp."
+        }
+      ],
+      "notes": [
+        "Loading1.5mg/cm2 from SI p2 working-electrode procedure; not TGA10 Cmin ramp."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "doi": "10.3390/molecules28124633",
+      "sample_name": "RSM-0.33-550",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "material_updates": {
+        "hydrothermal_temperature_C": 120,
+        "hydrothermal_duration_h": 2,
+        "activation_temperature_C": 550,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "reed straw with melamine"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p9 section3.2 own RSM-y-550",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 120 C partial hydrothermal carbonization is separate from550 C activation. No precise mass loading located in own methods."
+        }
+      ],
+      "notes": [
+        "120 C partial hydrothermal carbonization is separate from550 C activation. No precise mass loading located in own methods."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_039_T01",
+      "doi": "10.1002/asia.70648",
+      "sample_name": "YZPC-3",
+      "material_key": "v11m:6533f8062ba2a4253c617e2a",
+      "material_updates": {
+        "precarbonization_temperature_C": 400,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 10,
+        "activation_temperature_C": 700,
+        "activation_duration_h": 0.5,
+        "heating_rate_C_min": 10,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "mixed Chinese herbal medicine residues"
+      },
+      "test_updates": {
+        "mass_loading_range_mg_cm2_v14": {
+          "lower": 2,
+          "upper": 3,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_039.pdf",
+          "sha256": "6eb4a990036919291e121e4d719e79afb834631fcb0ece9b08544bcef221e255",
+          "locator": "PDF p2 synthesis and p3 working electrodes",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_range_mg_cm2_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 2–3 mg/cm2 kept as a range; no midpoint used."
+        }
+      ],
+      "notes": [
+        "2–3 mg/cm2 kept as a range; no midpoint used."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE026",
+      "doi": "10.1002/ente.202201281",
+      "sample_name": "KAC-5",
+      "material_key": "v11m:0c98ab22f3f980669b32c009",
+      "material_updates": {
+        "precarbonization_temperature_C": 800,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "activation_temperature_C": 600,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "Kochia"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U016/main.pdf",
+          "sha256": "e075eee33f575edb6d6e157ac85c538f9c719dc4d1037298ade8d69abbdf8074",
+          "locator": "PDF p8 Experimental Section",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Own methods explicitly carbonize800 C then activate600 C. Existing3mg/cm2 unchanged."
+        }
+      ],
+      "notes": [
+        "Own methods explicitly carbonize800 C then activate600 C. Existing3mg/cm2 unchanged."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_056_T01",
+      "doi": "10.1007/s10854-026-18573-2",
+      "sample_name": "AMFS-derived activated carbon",
+      "material_key": "v11m:b07660f9bc2d0fb2ca9af7fb",
+      "material_updates": {
+        "precarbonization_temperature_C": 500,
+        "precarbonization_duration_h": 1,
+        "precarbonization_heating_rate_C_min": 5,
+        "activation_temperature_C": 700,
+        "activation_duration_h": 1,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "AMFS biomass as named by authors"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_056.pdf",
+          "sha256": "a55407ad9048c61bc02f31cc3e1bb4c6503c55ed0d4f89ccb1a25187c9e18b4e",
+          "locator": "PDF p3 section2.2; p4 electrode fabrication",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Characterization TGA ramp10 Cmin and1000 C are not synthesis. No loading inferred from2x1cm collector."
+        }
+      ],
+      "notes": [
+        "Characterization TGA ramp10 Cmin and1000 C are not synthesis. No loading inferred from2x1cm collector."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_005_T01",
+      "doi": "10.1016/j.biombioe.2026.109160",
+      "sample_name": "NCHU20",
+      "material_key": "v11m:54ceae3ed0aefe07f40fcdf3",
+      "material_updates": {
+        "pretreatment_temperature_C": 200,
+        "pretreatment_duration_h": 0.3333333333333333,
+        "pretreatment_heating_rate_C_min": 10,
+        "activation_temperature_C": 700,
+        "activation_duration_h": 1.5,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "walnut shell and urea"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_005.pdf",
+          "sha256": "e816595a87e73941e422659720f156a9c6f525f6280a221224a0aebe3cce9583",
+          "locator": "PDF p2 section2.2",
+          "fields": [
+            "pretreatment_temperature_C",
+            "pretreatment_duration_h",
+            "pretreatment_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. NCHU20 own20min precursor treatment defined by t.10 Cmin applies to200 C treatment, not700 C activation."
+        }
+      ],
+      "notes": [
+        "NCHU20 own20min precursor treatment defined by t.10 Cmin applies to200 C treatment, not700 C activation."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_027_T01",
+      "doi": "10.1016/j.biombioe.2026.109168",
+      "sample_name": "CCL-K2CO3-1-700",
+      "material_key": "v11m:055f4a7dbb9ae69166b8b60e",
+      "material_updates": {
+        "precarbonization_temperature_C": 400,
+        "precarbonization_duration_h": 1,
+        "precarbonization_heating_rate_C_min": 10,
+        "activation_temperature_C": 700,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 10,
+        "activation_agent_v14": "K2CO3",
+        "precursor_v14": "CCL biomass as defined in main"
+      },
+      "test_updates": {
+        "active_mass_range_mg_v14": {
+          "lower": 2.5,
+          "upper": 3,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_027.pdf",
+          "sha256": "6c2150c236760d8da23e1be54c91899df5faf43311cdd818651ee0b4ee404b61",
+          "locator": "PDF p2 synthesis and electrode procedure",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "active_mass_range_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. No electrode area assumed;2.5–3mg is mass, not areal loading."
+        }
+      ],
+      "notes": [
+        "No electrode area assumed;2.5–3mg is mass, not areal loading."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_025_T01",
+      "doi": "10.1016/j.ijbiomac.2023.128794",
+      "sample_name": "RMAC-800",
+      "material_key": "v11m:49d8465044a76208fb06e65f",
+      "material_updates": {
+        "hydrothermal_temperature_C": 140,
+        "hydrothermal_duration_h": 8,
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "rapeseed meal"
+      },
+      "test_updates": {
+        "active_mass_range_mg_v14": {
+          "lower": 2,
+          "upper": 3,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_025.pdf",
+          "sha256": "d927fc0054684cf30e19898dffa93c17ade61ac25086d7422079b558e0bf942f",
+          "locator": "PDF p5-6 sections2.2/2.4",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14",
+            "precursor_v14",
+            "active_mass_range_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Own text gives Ni foam(1.0 cm), insufficient to establish coated area."
+        }
+      ],
+      "notes": [
+        "Own text gives Ni foam(1.0 cm), insufficient to establish coated area."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_074_T01",
+      "doi": "10.1016/j.jaap.2026.107754",
+      "sample_name": "P-doped CSKOH",
+      "material_key": "v11m:c173179890aa0c9256042c79",
+      "material_updates": {
+        "activation_temperature_C": 700,
+        "activation_duration_h": 2,
+        "post_treatment_temperature_C": 100,
+        "post_treatment_duration_h": 2,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "chestnut shells"
+      },
+      "test_updates": {
+        "ink_recipe_v14": {
+          "active_powder_mg": 18,
+          "binder_PVDF_mg": 2,
+          "solvent_mL": 2,
+          "delivered_mass_unknown": true
+        }
+      },
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_074.pdf",
+          "sha256": "20a2a0870c7b42f43efbc918f4e4b7ceb96e314db2d7b19ebe3e11bc087b28d5",
+          "locator": "PDF p3 section2.2",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "post_treatment_temperature_C",
+            "post_treatment_duration_h",
+            "activation_agent_v14",
+            "precursor_v14",
+            "ink_recipe_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. H3PO4 postfunctionalization100 C/2h is not700 C activation. Ink stock mass18mg is not deposited electrode mass."
+        }
+      ],
+      "notes": [
+        "H3PO4 postfunctionalization100 C/2h is not700 C activation. Ink stock mass18mg is not deposited electrode mass."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_037_T01",
+      "doi": "10.1016/j.jenvman.2025.125582",
+      "sample_name": "NPC-700-6",
+      "material_key": "v11m:f68897f434d1017e49806d9c",
+      "material_updates": {
+        "activation_temperature_C": 700,
+        "activation_duration_h": 1,
+        "activation_agent_v14": "NaOH/urea solvent during one-step carbonization/activation",
+        "precursor_v14": "cellulose and extracted sludge organic matter"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_037.pdf",
+          "sha256": "f230f6681e5f78f4e30e98f6ef47de2a2ed099afd08b727543c7c70d441d63ce",
+          "locator": "PDF p2 synthesis section",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. T in NPC-T-w explicitly defined as annealing temperature; own NPC7006 mapped with text and sample definition. No heating ramp inferred."
+        }
+      ],
+      "notes": [
+        "T in NPC-T-w explicitly defined as annealing temperature; own NPC7006 mapped with text and sample definition. No heating ramp inferred."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_009_T01",
+      "doi": "10.1016/j.jenvman.2026.129124",
+      "sample_name": "A-BC-0.2",
+      "material_key": "v11m:6eff92a13a295c0f140b603e",
+      "material_updates": {
+        "hydrothermal_temperature_C": 240,
+        "hydrothermal_duration_h": 1,
+        "activation_temperature_C": 800,
+        "heating_rate_C_min": 10,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "cellulose with sludge aqueous phase"
+      },
+      "test_updates": {
+        "active_mass_mg_v14": 2.5
+      },
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_009.pdf",
+          "sha256": "55bc2ca0ac7c08b1158814755870906555769d01c766aae00dbf8082cada8770",
+          "locator": "PDF p2 sections2.3 and p3 section2.5",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "active_mass_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Activation hold duration not found. Circular-sheet area unreported;2.5mg is not mg/cm2."
+        }
+      ],
+      "notes": [
+        "Activation hold duration not found. Circular-sheet area unreported;2.5mg is not mg/cm2."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:008",
+      "doi": "10.1021/acsomega.3c04692",
+      "sample_name": "QSC",
+      "material_key": "v11m:ce8c2795656e8d0900763a58",
+      "material_updates": {
+        "precarbonization_temperature_C": 600,
+        "precarbonization_duration_h": 2,
+        "precursor_v14": "quinoa straw",
+        "carbonization_temperature_C": 600,
+        "carbonization_duration_h": 2,
+        "activation_applicability_v14": "nonactivated carbonization control"
+      },
+      "test_updates": {
+        "active_mass_range_mg_v14": {
+          "lower": 2,
+          "upper": 3,
+          "kind": "author_reported_range",
+          "collector_cm2": 2
+        }
+      },
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML own QSC/QSC-x preparation and electrode procedure",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precursor_v14",
+            "carbonization_temperature_C",
+            "carbonization_duration_h",
+            "activation_applicability_v14",
+            "active_mass_range_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+        }
+      ],
+      "notes": [
+        "QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:009",
+      "doi": "10.1021/acsomega.3c04692",
+      "sample_name": "QSC-2",
+      "material_key": "v11m:665285820bdb63da25d83765",
+      "material_updates": {
+        "precarbonization_temperature_C": 600,
+        "precarbonization_duration_h": 2,
+        "precursor_v14": "quinoa straw",
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "K2CO3"
+      },
+      "test_updates": {
+        "active_mass_range_mg_v14": {
+          "lower": 2,
+          "upper": 3,
+          "kind": "author_reported_range",
+          "collector_cm2": 2
+        }
+      },
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML own QSC/QSC-x preparation and electrode procedure",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precursor_v14",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "active_mass_range_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+        }
+      ],
+      "notes": [
+        "QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:010",
+      "doi": "10.1021/acsomega.3c04692",
+      "sample_name": "QSC-3",
+      "material_key": "v11m:c4f0713afec0c653c46bb48a",
+      "material_updates": {
+        "precarbonization_temperature_C": 600,
+        "precarbonization_duration_h": 2,
+        "precursor_v14": "quinoa straw",
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "K2CO3"
+      },
+      "test_updates": {
+        "active_mass_range_mg_v14": {
+          "lower": 2,
+          "upper": 3,
+          "kind": "author_reported_range",
+          "collector_cm2": 2
+        }
+      },
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML own QSC/QSC-x preparation and electrode procedure",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precursor_v14",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "active_mass_range_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+        }
+      ],
+      "notes": [
+        "QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:011",
+      "doi": "10.1021/acsomega.3c04692",
+      "sample_name": "QSC-4",
+      "material_key": "v11m:4ba2347a2f79719b4f611ab7",
+      "material_updates": {
+        "precarbonization_temperature_C": 600,
+        "precarbonization_duration_h": 2,
+        "precursor_v14": "quinoa straw",
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "K2CO3"
+      },
+      "test_updates": {
+        "active_mass_range_mg_v14": {
+          "lower": 2,
+          "upper": 3,
+          "kind": "author_reported_range",
+          "collector_cm2": 2
+        }
+      },
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML own QSC/QSC-x preparation and electrode procedure",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precursor_v14",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "active_mass_range_mg_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+        }
+      ],
+      "notes": [
+        "QSC control not assigned800 C activation. Range2–3mg not replaced by midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "doi": "10.1021/acssusresmgt.3c00028",
+      "sample_name": "ALPC-800",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "material_updates": {
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KOH with NH4Cl",
+        "precursor_v14": "agarwood leaves"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 1.2,
+        "loading_evidence_kind_v14": "nominal1.2mg active material divided by coated1x1cm2 graphite"
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U024/main.pdf",
+          "sha256": "589d24498f5aa01b32daecc36fad0d2d69e1f78fa1b1de19d5c456eda710adf7",
+          "locator": "PDF p3 own synthesis and Supercapacitor subsection",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_mg_cm2",
+            "loading_evidence_kind_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. ORR ink5mg and symmetric total2mg not transferred to the3E cycling tests. Both own acid/neutral3E endpoints share recipe."
+        }
+      ],
+      "notes": [
+        "ORR ink5mg and symmetric total2mg not transferred to the3E cycling tests. Both own acid/neutral3E endpoints share recipe."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE030",
+      "doi": "10.1021/acssusresmgt.3c00028",
+      "sample_name": "ALPC-800",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "material_updates": {
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KOH with NH4Cl",
+        "precursor_v14": "agarwood leaves"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 1.2,
+        "loading_evidence_kind_v14": "nominal1.2mg active material divided by coated1x1cm2 graphite"
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U024/main.pdf",
+          "sha256": "589d24498f5aa01b32daecc36fad0d2d69e1f78fa1b1de19d5c456eda710adf7",
+          "locator": "PDF p3 own synthesis and Supercapacitor subsection",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_mg_cm2",
+            "loading_evidence_kind_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. ORR ink5mg and symmetric total2mg not transferred to the3E cycling tests. Both own acid/neutral3E endpoints share recipe."
+        }
+      ],
+      "notes": [
+        "ORR ink5mg and symmetric total2mg not transferred to the3E cycling tests. Both own acid/neutral3E endpoints share recipe."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE035",
+      "doi": "10.1039/d3ra07014j",
+      "sample_name": "CA-AA",
+      "material_key": "v11m:2c0e97651327a2bfc542365d",
+      "material_updates": {
+        "pretreatment_temperature_C": 200,
+        "pretreatment_duration_h": 2,
+        "pretreatment_heating_rate_C_min": 5,
+        "carbonization_temperature_C": 800,
+        "carbonization_duration_h": 2,
+        "carbonization_heating_rate_C_min": 5,
+        "activation_applicability_v14": "no separate activation step declared",
+        "precursor_v14": "regenerated cellulose aerogel; acetic-acid antisolvent"
+      },
+      "test_updates": {
+        "mass_loading_range_mg_cm2_v14": {
+          "lower": 7,
+          "upper": 9,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC10759806/main.xml",
+          "sha256": "9328a9fd1ebdcd28817be8d149d9e79263ae542ea094029c168b4d1c9e738b0c",
+          "locator": "XML own two-step carbonization and electrode preparation",
+          "fields": [
+            "pretreatment_temperature_C",
+            "pretreatment_duration_h",
+            "pretreatment_heating_rate_C_min",
+            "carbonization_temperature_C",
+            "carbonization_duration_h",
+            "carbonization_heating_rate_C_min",
+            "activation_applicability_v14",
+            "precursor_v14",
+            "mass_loading_range_mg_cm2_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Solvent/antisolvent processing not relabeled as thermal activation."
+        }
+      ],
+      "notes": [
+        "Solvent/antisolvent processing not relabeled as thermal activation."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_003_T01",
+      "doi": "10.1039/d4cp01914h",
+      "sample_name": "AUACW",
+      "material_key": "v11m:92657b6d76b3898f11d0aacf",
+      "material_updates": {
+        "activation_temperature_C": 700,
+        "activation_duration_h": 2,
+        "activation_agent_v14": "KOH/urea",
+        "precursor_v14": "sawdust; acid-modified UACW"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_003.pdf",
+          "sha256": "b02f18ddce719e9d5f5d6fc7c810de8701f2ad720d7245351803da6848679485",
+          "locator": "PDF p2 own CW/UACW/AUACW preparation",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. AUACW inherits the explicitly described UACW700 C/2h preparation followed by acid modification. Ramp/loading not located; official SI attempt404, main HTML403."
+        }
+      ],
+      "notes": [
+        "AUACW inherits the explicitly described UACW700 C/2h preparation followed by acid modification. Ramp/loading not located; official SI attempt404, main HTML403."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE021",
+      "doi": "10.1039/d4ta02115k",
+      "sample_name": "OPBNP",
+      "material_key": "v11m:effda504c77413d60636f59c",
+      "material_updates": {
+        "hydrothermal_temperature_C": 180,
+        "hydrothermal_duration_h": 12,
+        "activation_temperature_C": 600,
+        "activation_duration_h": 3,
+        "heating_rate_C_min": 3,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "onion peel; separately specified B/N/P addition"
+      },
+      "test_updates": {
+        "mass_loading_range_mg_cm2_v14": {
+          "lower": 1,
+          "upper": 2,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U002/main.pdf",
+          "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e",
+          "locator": "PDF p5-7 sections2.2-2.4",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_range_mg_cm2_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+        }
+      ],
+      "notes": [
+        "Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE022",
+      "doi": "10.1039/d4ta02115k",
+      "sample_name": "OPB",
+      "material_key": "v11m:9a8e5b271c56860e9833823f",
+      "material_updates": {
+        "hydrothermal_temperature_C": 180,
+        "hydrothermal_duration_h": 12,
+        "activation_temperature_C": 600,
+        "activation_duration_h": 3,
+        "heating_rate_C_min": 3,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "onion peel; separately specified B/N/P addition"
+      },
+      "test_updates": {
+        "mass_loading_range_mg_cm2_v14": {
+          "lower": 1,
+          "upper": 2,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U002/main.pdf",
+          "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e",
+          "locator": "PDF p5-7 sections2.2-2.4",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_range_mg_cm2_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+        }
+      ],
+      "notes": [
+        "Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE023",
+      "doi": "10.1039/d4ta02115k",
+      "sample_name": "OPNP",
+      "material_key": "v11m:dbc73d6527e3980ab1e75d95",
+      "material_updates": {
+        "hydrothermal_temperature_C": 180,
+        "hydrothermal_duration_h": 12,
+        "activation_temperature_C": 600,
+        "activation_duration_h": 3,
+        "heating_rate_C_min": 3,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "onion peel; separately specified B/N/P addition"
+      },
+      "test_updates": {
+        "mass_loading_range_mg_cm2_v14": {
+          "lower": 1,
+          "upper": 2,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U002/main.pdf",
+          "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e",
+          "locator": "PDF p5-7 sections2.2-2.4",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_range_mg_cm2_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+        }
+      ],
+      "notes": [
+        "Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE024",
+      "doi": "10.1039/d4ta02115k",
+      "sample_name": "OPC",
+      "material_key": "v11m:1c395f6afa2078e8b2f4cf31",
+      "material_updates": {
+        "hydrothermal_temperature_C": 180,
+        "hydrothermal_duration_h": 12,
+        "activation_temperature_C": 600,
+        "activation_duration_h": 3,
+        "heating_rate_C_min": 3,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "onion peel; separately specified B/N/P addition"
+      },
+      "test_updates": {
+        "mass_loading_range_mg_cm2_v14": {
+          "lower": 1,
+          "upper": 2,
+          "kind": "author_reported_range"
+        }
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U002/main.pdf",
+          "sha256": "91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e",
+          "locator": "PDF p5-7 sections2.2-2.4",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "mass_loading_range_mg_cm2_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+        }
+      ],
+      "notes": [
+        "Controls explicitly use similar method with only dopants omitted. Device about2mg/cm2 is not the3E range midpoint."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE025",
+      "doi": "10.1039/d4ya00076e",
+      "sample_name": "SSC2-0.6",
+      "material_key": "v11m:348ad42497798a4675114aaf",
+      "material_updates": {
+        "precarbonization_temperature_C": 600,
+        "precarbonization_duration_h": 3,
+        "activation_temperature_C": 800,
+        "activation_duration_h": 3,
+        "activation_agent_v14": "KOH/KNO3",
+        "precursor_v14": "soybean straw"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U013/main.pdf",
+          "sha256": "ad9837d0adb897323633c2877a48ff1406f5eb88fd0a428ad260ce756f3afc54",
+          "locator": "PDF p3 preparation and distinct3E/2E measurement sections",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 3E ink delivered volume unreported; device volumetric density703.5mg/cm3 not a3E areal loading."
+        }
+      ],
+      "notes": [
+        "3E ink delivered volume unreported; device volumetric density703.5mg/cm3 not a3E areal loading."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE039",
+      "doi": "10.1039/d6na00276e",
+      "sample_name": "AC_rice_straw",
+      "material_key": "v11m:d0dfb5c00cce5cd4b3f8a877",
+      "material_updates": {
+        "carbonization_temperature_C": 600,
+        "carbonization_duration_h": 6,
+        "activation_applicability_v14": "no separate activation stated for bare carbon control",
+        "precursor_v14": "rice straw"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC13400085/main.xml",
+          "sha256": "beb50260fc8a7f65a038fe56a2a8db259453884645501d48714de12daa73e707",
+          "locator": "XML bare rice-straw carbon synthesis and electrode method",
+          "fields": [
+            "carbonization_temperature_C",
+            "carbonization_duration_h",
+            "activation_applicability_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. ZnO composite hydrothermal180 C/24h does not apply to bare AC control. Existing2.2mg/cm2 unchanged."
+        }
+      ],
+      "notes": [
+        "ZnO composite hydrothermal180 C/24h does not apply to bare AC control. Existing2.2mg/cm2 unchanged."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_031_T01",
+      "doi": "10.1088/1361-6528/ace97a",
+      "sample_name": "SS-300",
+      "material_key": "v11m:1d4044697ab6a2184c10b28d",
+      "material_updates": {
+        "precarbonization_temperature_C": 300,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "activation_temperature_C": 600,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KNO3",
+        "precursor_v14": "sesame residue"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_031.pdf",
+          "sha256": "76467854b2ee1cf2a16ba4913c3eef4b1b0201611b9265a6f19c737643517c13",
+          "locator": "PDF p3 synthesis, p4 electrode methods",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. SS300 name refers to first-stage300 C; final activation600 C. Device2–3mg not transferred to3E."
+        }
+      ],
+      "notes": [
+        "SS300 name refers to first-stage300 C; final activation600 C. Device2–3mg not transferred to3E."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE033",
+      "doi": "10.3390/mi14030572",
+      "sample_name": "WET-1",
+      "material_key": "v11m:91c60cf57719d121b127a39a",
+      "material_updates": {
+        "activation_temperature_C": 600,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "ZnCl2",
+        "precursor_v14": "pine wood",
+        "impregnation_method_v14": "aqueous impregnation"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 10
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC10056672/main.xml",
+          "sha256": "6897e662757f0b1969e174caabf2866c795b805f4f2cfa2a488ba09c834d05da",
+          "locator": "XML own sample preparation and electrochemistry",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "impregnation_method_v14",
+            "mass_loading_mg_cm2"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 10mg/cm2 is explicit high nominal loading, not a typo to be clipped. TGA10 Cmin excluded."
+        }
+      ],
+      "notes": [
+        "10mg/cm2 is explicit high nominal loading, not a typo to be clipped. TGA10 Cmin excluded."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE034",
+      "doi": "10.3390/mi14030572",
+      "sample_name": "DRY-1",
+      "material_key": "v11m:99c2821a14957d8fa98c3715",
+      "material_updates": {
+        "activation_temperature_C": 600,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "ZnCl2",
+        "precursor_v14": "pine wood",
+        "impregnation_method_v14": "physical dry mixing"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 10
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC10056672/main.xml",
+          "sha256": "6897e662757f0b1969e174caabf2866c795b805f4f2cfa2a488ba09c834d05da",
+          "locator": "XML own sample preparation and electrochemistry",
+          "fields": [
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14",
+            "impregnation_method_v14",
+            "mass_loading_mg_cm2"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 10mg/cm2 is explicit high nominal loading, not a typo to be clipped. TGA10 Cmin excluded."
+        }
+      ],
+      "notes": [
+        "10mg/cm2 is explicit high nominal loading, not a typo to be clipped. TGA10 Cmin excluded."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE007",
+      "doi": "10.3390/molecules31132329",
+      "sample_name": "AHPC-850",
+      "material_key": "v11m:a5f6fc1398216bb06cec8891",
+      "material_updates": {
+        "precarbonization_temperature_C": 500,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "precursor_v14": "algae biomass",
+        "activation_temperature_C": 850,
+        "activation_duration_h": 1.5,
+        "activation_agent_v14": "KOH"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML own preparation paragraphs and Table1 sample definitions",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "precursor_v14",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+        }
+      ],
+      "notes": [
+        "Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AC-850:3E:10000",
+      "doi": "10.3390/molecules31132329",
+      "sample_name": "AC-850",
+      "material_key": "v11m:49d7026a4489a7f39b379b43",
+      "material_updates": {
+        "precarbonization_temperature_C": 500,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "precursor_v14": "algae biomass",
+        "carbonization_temperature_C": 850,
+        "activation_applicability_v14": "explicit nonactivated reheated-char control"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML own preparation paragraphs and Table1 sample definitions",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "precursor_v14",
+            "carbonization_temperature_C",
+            "activation_applicability_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+        }
+      ],
+      "notes": [
+        "Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-700:3E:10000",
+      "doi": "10.3390/molecules31132329",
+      "sample_name": "AHPC-700",
+      "material_key": "v11m:df4061c67d13acbb27410bd3",
+      "material_updates": {
+        "precarbonization_temperature_C": 500,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "precursor_v14": "algae biomass",
+        "activation_temperature_C": 700,
+        "activation_duration_h": 1.5,
+        "activation_agent_v14": "KOH"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML own preparation paragraphs and Table1 sample definitions",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "precursor_v14",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+        }
+      ],
+      "notes": [
+        "Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-800:3E:10000",
+      "doi": "10.3390/molecules31132329",
+      "sample_name": "AHPC-800",
+      "material_key": "v11m:facd2e2255dcbc9e4967a8f7",
+      "material_updates": {
+        "precarbonization_temperature_C": 500,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "precursor_v14": "algae biomass",
+        "activation_temperature_C": 800,
+        "activation_duration_h": 1.5,
+        "activation_agent_v14": "KOH"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML own preparation paragraphs and Table1 sample definitions",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "precursor_v14",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+        }
+      ],
+      "notes": [
+        "Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-900:3E:10000",
+      "doi": "10.3390/molecules31132329",
+      "sample_name": "AHPC-900",
+      "material_key": "v11m:111a6984cef9613866afa83f",
+      "material_updates": {
+        "precarbonization_temperature_C": 500,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "precursor_v14": "algae biomass",
+        "activation_temperature_C": 900,
+        "activation_duration_h": 1.5,
+        "activation_agent_v14": "KOH"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML own preparation paragraphs and Table1 sample definitions",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "precursor_v14",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "activation_agent_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+        }
+      ],
+      "notes": [
+        "Activation ramp not stated; do not borrow first-stage5 Cmin. AC850 final hold duration not assigned1.5h without explicit statement."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE020",
+      "doi": "10.3390/nano13101654",
+      "sample_name": "AO-PC",
+      "material_key": "v11m:bd2209e61ea501f24b050757",
+      "material_updates": {
+        "carbonization_temperature_C": 800,
+        "carbonization_duration_h": 3,
+        "activation_applicability_v14": "explicit direct pyrolysis without chemicals or template",
+        "precursor_v14": "Anacardium occidentale nut skin"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA059/main.xml",
+          "sha256": "ee9a505a4c2782bb7c41e6be213fef339f62cd8b5a5506688b5defe67e3593cd",
+          "locator": "XML own direct pyrolysis; existing SI p1-2",
+          "fields": [
+            "carbonization_temperature_C",
+            "carbonization_duration_h",
+            "activation_applicability_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. SI exists locally but source-to-DOI association was missing. SI gives1cm2 carbon cloth and95:5 powder/binder, but no deposited mass; loading remains unknown."
+        }
+      ],
+      "notes": [
+        "SI exists locally but source-to-DOI association was missing. SI gives1cm2 carbon cloth and95:5 powder/binder, but no deposited mass; loading remains unknown."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:018",
+      "doi": "10.3390/nano13172431",
+      "sample_name": "SNPB-800-4",
+      "material_key": "v11m:36d3e4d5f9cf61f3635705c7",
+      "material_updates": {
+        "precarbonization_temperature_C": 400,
+        "precarbonization_duration_h": 2,
+        "precarbonization_heating_rate_C_min": 5,
+        "activation_temperature_C": 800,
+        "activation_duration_h": 2,
+        "heating_rate_C_min": 5,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "Spirulina"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA043/main.xml",
+          "sha256": "57a8b1d417fe63644450c0094a4dc438b56555e5ee214a36bfb326c10b0a3894",
+          "locator": "XML own SNPB-X-Y synthesis",
+          "fields": [
+            "precarbonization_temperature_C",
+            "precarbonization_duration_h",
+            "precarbonization_heating_rate_C_min",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. 800 and ratio4 bound by explicit SNPB-X-Y definition and own preparation."
+        }
+      ],
+      "notes": [
+        "800 and ratio4 bound by explicit SNPB-X-Y definition and own preparation."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE011",
+      "doi": "10.3390/polym15234478",
+      "sample_name": "AHC-CL-TU",
+      "material_key": "v11m:b82e31af94eb7919e701929f",
+      "material_updates": {
+        "hydrothermal_temperature_C": 240,
+        "hydrothermal_duration_h": 1,
+        "activation_temperature_C": 800,
+        "activation_duration_h": 1,
+        "heating_rate_C_min": 10,
+        "activation_agent_v14": "KOH",
+        "precursor_v14": "cellulose and thiourea"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/main.xml",
+          "sha256": "5ecb3f40ec291b7de8a9c832505f05dfa7c1dfaa4fa9d3a359f7ddd5612083d8",
+          "locator": "XML own hydrothermal/activation and electrode procedure",
+          "fields": [
+            "hydrothermal_temperature_C",
+            "hydrothermal_duration_h",
+            "activation_temperature_C",
+            "activation_duration_h",
+            "heating_rate_C_min",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. No mass loading inferred from10mm disk diameter; precursor temperature240 C not activation800 C."
+        }
+      ],
+      "notes": [
+        "No mass loading inferred from10mm disk diameter; precursor temperature240 C not activation800 C."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE013",
+      "doi": "10.3390/polym17091198",
+      "sample_name": "CMC-ZnK-800",
+      "material_key": "v11m:e69780ec2d73816a69a5922a",
+      "material_updates": {
+        "activation_temperature_C": 800,
+        "activation_agent_v14": "potassium citrate/zinc acetate template-assisted pyrolysis",
+        "precursor_v14": "chitosan/melamine aerogel"
+      },
+      "test_updates": {},
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA057/main.xml",
+          "sha256": "cd469562486b27aecfc65f24ff348472eb8c7a282636c46c3ea3616b7de533f1",
+          "locator": "XML own hydrogel/aerogel thermal treatment and sample naming",
+          "fields": [
+            "activation_temperature_C",
+            "activation_agent_v14",
+            "precursor_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. Own dual activating/template agents pyrolysis800 C. No hold duration, ramp or loading point located; drying100 C/10h is not carbonization."
+        }
+      ],
+      "notes": [
+        "Own dual activating/template agents pyrolysis800 C. No hold duration, ramp or loading point located; drying100 C/10h is not carbonization."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE052",
+      "doi": "10.3390/polym17111544",
+      "sample_name": "SC-0.03",
+      "material_key": "v11m:d530da0c70c1c4e92b50ec81",
+      "material_updates": {
+        "carbonization_temperature_C": 800,
+        "carbonization_duration_h": 2,
+        "carbonization_heating_rate_C_min": 5,
+        "activation_applicability_v14": "no separate activation step declared",
+        "precursor_v14": "sodium alginate/nanocellulose aerogel"
+      },
+      "test_updates": {
+        "mass_loading_mg_cm2": 8,
+        "loading_evidence_kind_v14": "author8mg active mass on explicitly coated1cm2 nickel foam"
+      },
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC12158216/main.xml",
+          "sha256": "0a81dbf3beefb0fdb0c27c961a81ae8d787710cd86ddb0ee16eb9c59b88bb815",
+          "locator": "XML own synthesis and working-electrode preparation",
+          "fields": [
+            "carbonization_temperature_C",
+            "carbonization_duration_h",
+            "carbonization_heating_rate_C_min",
+            "activation_applicability_v14",
+            "precursor_v14",
+            "mass_loading_mg_cm2",
+            "loading_evidence_kind_v14"
+          ],
+          "basis": "Own-sample/common-protocol manual review; ordered thermal roles and controls checked. No independent chemical-activation stage invented. Binder/carbon black mass excluded by author active-substance8mg statement."
+        }
+      ],
+      "notes": [
+        "No independent chemical-activation stage invented. Binder/carbon black mass excluded by author active-substance8mg statement."
+      ],
+      "review_status": "agent_reviewed_own_methods",
+      "reviewer": "Codex agent; not independent expert sign-off"
+    }
+  ]
+}

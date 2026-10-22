@@ -179,3 +179,11 @@
 - 验证：19168项独立核验通过；父版80项封版载荷和100原件路径保护；SQLite/FK、原值冻结、来源分组、折内准备、稳定API与交付哈希通过；拟合0次
 - 下一步/未决：现行3E仍41条缺件/争议；独立低保持率和长循环来源不足，先完成已有方法/SI特征提取；新训练先冻结计划与独立来源检验
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-22T16:23:50+08:00：v0.14参数精提取：30来源42条主集审查，324补录，原18项覆盖27.25%到39.55%
+
+- 结果：v0.14参数精提取：30来源42条主集审查，324补录，原18项覆盖27.25%到39.55%
+- 文件：README.md, data/current_database.json, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/WORKSPACE_MEMORY.md, docs/knowledge/制备阶段与参数提取_20261022.md, 主集参数精提取_20261022, 循环稳定性数据库_v0.14_主集参数精提取_20261022, tools/prepare_parameter_review_v014.py, tools/retrieve_parameter_supplements_v014.py, tools/curate_parameters_v014.py, tools/build_parameter_enrichment_v014.py, tools/verify_parameter_enrichment_v014.py
+- 验证：20988项独立核验；旧核心/标签/准入/权重/冻结和非空值保持；父版106封版载荷及32原件保护；同材料复用、负载不跨测试、折内无泄漏和稳定API通过；拟合0次
+- 下一步/未决：继续孔结构/XPS表图补证；当前主集42条30来源及41条3E缺件/争议保持；新实验先固定特征与来源评估方案
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
