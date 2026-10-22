@@ -1,0 +1,160 @@
+{
+  "development": {
+    "rows": 35,
+    "sources": 23,
+    "source_equal_target_mean": 96.25717391304347,
+    "sources_with_target_below91": 2
+  },
+  "reserved": {
+    "rows": 7,
+    "sources": 7,
+    "source_equal_target_mean": 91.40142857142857,
+    "sources_with_target_below91": 4
+  },
+  "largest_errors": [
+    {
+      "index": 28,
+      "endpoint_id": "candidate:TE039",
+      "sample_name": "AC_rice_straw",
+      "source_group": "10.1039/d6na00276e",
+      "observed": 83.54,
+      "predicted": 101.23917325206921,
+      "warnings": [],
+      "variant": "selected",
+      "candidate": "ridge_core_noI_10"
+    },
+    {
+      "index": 0,
+      "endpoint_id": "legacy:R087_CY01",
+      "sample_name": "OAC623",
+      "source_group": "10.1007/s00339-023-07141-8",
+      "observed": 85.5,
+      "predicted": 98.5173635510379,
+      "warnings": [
+        "unseen_category:electrolyte=NaOH"
+      ],
+      "variant": "selected",
+      "candidate": "ridge_core_noI_10"
+    },
+    {
+      "index": 3,
+      "endpoint_id": "legacy:R013_CY01",
+      "sample_name": "EUAC1-60",
+      "source_group": "10.1021/acsomega.4c11529",
+      "observed": 89.9,
+      "predicted": 95.64263649028214,
+      "warnings": [],
+      "variant": "selected",
+      "candidate": "ridge_core_noI_10"
+    },
+    {
+      "index": 7,
+      "endpoint_id": "candidate:TE026",
+      "sample_name": "KAC-5",
+      "source_group": "10.1002/ente.202201281",
+      "observed": 90.31,
+      "predicted": 95.48617454016104,
+      "warnings": [],
+      "variant": "selected",
+      "candidate": "ridge_core_noI_10"
+    },
+    {
+      "index": 39,
+      "endpoint_id": "candidate:TE011",
+      "sample_name": "AHC-CL-TU",
+      "source_group": "10.3390/polym15234478",
+      "observed": 99.96,
+      "predicted": 96.3084801074252,
+      "warnings": [],
+      "variant": "selected",
+      "candidate": "ridge_core_noI_10"
+    },
+    {
+      "index": 5,
+      "endpoint_id": "legacy:R045_CY01",
+      "sample_name": "RSM-0.33-550",
+      "source_group": "10.3390/molecules28124633",
+      "observed": 96.3,
+      "predicted": 94.14899980643452,
+      "warnings": [],
+      "variant": "selected",
+      "candidate": "ridge_core_noI_10"
+    },
+    {
+      "index": 40,
+      "endpoint_id": "candidate:TE013",
+      "sample_name": "CMC-ZnK-800",
+      "source_group": "10.3390/polym17091198",
+      "observed": 94.3,
+      "predicted": 93.6055199534219,
+      "warnings": [],
+      "variant": "selected",
+      "candidate": "ridge_core_noI_10"
+    }
+  ],
+  "top2_squared_error_share": 0.8605638175771522,
+  "material_candidate_enabled_fields_in_development": {
+    "total_pore_volume_cm3_g": {
+      "minimum_source_support": 16,
+      "fold_candidate_uses": 253
+    },
+    "micropore_volume_cm3_g": {
+      "minimum_source_support": 9,
+      "fold_candidate_uses": 253
+    },
+    "average_pore_diameter_nm": {
+      "minimum_source_support": 8,
+      "fold_candidate_uses": 253
+    },
+    "micropore_surface_area_m2_g": {
+      "minimum_source_support": 11,
+      "fold_candidate_uses": 253
+    },
+    "Raman_ID_IG": {
+      "minimum_source_support": 16,
+      "fold_candidate_uses": 253
+    },
+    "N_at_pct": {
+      "minimum_source_support": 9,
+      "fold_candidate_uses": 253
+    },
+    "O_at_pct": {
+      "minimum_source_support": 8,
+      "fold_candidate_uses": 253
+    },
+    "mass_loading_mg_cm2": {
+      "minimum_source_support": 6,
+      "fold_candidate_uses": 253
+    },
+    "activation_temperature_C": {
+      "minimum_source_support": 19,
+      "fold_candidate_uses": 253
+    },
+    "activation_duration_h": {
+      "minimum_source_support": 18,
+      "fold_candidate_uses": 253
+    },
+    "heating_rate_C_min": {
+      "minimum_source_support": 12,
+      "fold_candidate_uses": 253
+    },
+    "carbonization_temperature_C": {
+      "minimum_source_support": 5,
+      "fold_candidate_uses": 198
+    },
+    "precarbonization_temperature_C": {
+      "minimum_source_support": 9,
+      "fold_candidate_uses": 253
+    },
+    "precarbonization_duration_h": {
+      "minimum_source_support": 9,
+      "fold_candidate_uses": 253
+    },
+    "precarbonization_heating_rate_C_min": {
+      "minimum_source_support": 6,
+      "fold_candidate_uses": 253
+    }
+  },
+  "material_feature_effect_ridge100_reserved_mae": -0.010359069186860026,
+  "interpretation": "Observed distribution shift, sparse low-retention source coverage, and unseen NaOH category; these are measured associations, not proof of a unique causal mechanism."
+}

@@ -187,3 +187,11 @@
 - 验证：20988项独立核验；旧核心/标签/准入/权重/冻结和非空值保持；父版106封版载荷及32原件保护；同材料复用、负载不跨测试、折内无泄漏和稳定API通过；拟合0次
 - 下一步/未决：继续孔结构/XPS表图补证；当前主集42条30来源及41条3E缺件/争议保持；新实验先固定特征与来源评估方案
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-22T19:49:43+08:00：v1.0研究模型：534次拟合与7新增来源检验，性能门槛未通过，权重/可视化/调用与知识已整理
+
+- 结果：v1.0研究模型：534次拟合与7新增来源检验，性能门槛未通过，权重/可视化/调用与知识已整理
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/WORKSPACE_MEMORY.md, docs/knowledge/建模用途决策.md, docs/knowledge/v1模型与新增来源检验_20261022.md, models/v1_0, 模型v1.0_来源留出训练_20261022, tools/build_model_v1_dashboard.py, tools/check_model_v1_dashboard.cjs, tools/finalize_model_v1.py, tools/predict_model_v1.py, tools/prepare_model_v1.py, tools/seal_model_v1.py, tools/train_model_v1.py, tools/verify_model_v1.py
+- 验证：52100项科学核验；607旧载荷与32原件保护；581任务/534拟合/0警告；模型调用、桌面/窄屏、3图、5筛选及离线快照通过
+- 下一步/未决：本轮7来源已检验不可再称全新；补独立低保持率来源及自身材料证据；全42条研究模型尚无独立检验，不围绕已看分数追加候选
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

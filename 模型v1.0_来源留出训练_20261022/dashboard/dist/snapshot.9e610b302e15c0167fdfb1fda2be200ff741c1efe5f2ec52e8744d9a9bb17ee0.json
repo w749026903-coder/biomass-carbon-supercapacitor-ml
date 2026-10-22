@@ -1,0 +1,4230 @@
+{
+  "surface": "dashboard",
+  "title": "循环保持率模型 v1.0",
+  "generatedAt": "2026-10-22T19:23:44+08:00",
+  "status": "reviewed",
+  "buildStatus": "complete",
+  "filters": [],
+  "queries": {
+    "status": {
+      "rows": [
+        {
+          "status": "complete",
+          "completed": 581,
+          "total": 581,
+          "percent": 100.0,
+          "actual_estimator_fits": 534,
+          "elapsed_seconds": 21.453,
+          "active": null,
+          "updated_at": "2026-10-22T19:23:44+08:00",
+          "started_at": "2026-10-22T19:23:22+08:00",
+          "plan_sha256": "4c5846fe901394602b639a21fc456c241dc7df42e1883561689a6e9d0363e99a",
+          "selected_id": "ridge_core_noI_10"
+        }
+      ],
+      "source": {
+        "provider": "Local reproducible Python / SQLite experiment",
+        "files": [
+          "模型v1.0_来源留出训练_20261022/training_plan.json",
+          "模型v1.0_来源留出训练_20261022/evaluation.sqlite",
+          "模型v1.0_来源留出训练_20261022/results.json",
+          "模型v1.0_来源留出训练_20261022/reserved_predictions.json",
+          "模型v1.0_来源留出训练_20261022/diagnosis.json"
+        ],
+        "description": "v0.14三电极报告工况：开发35条/23来源；预留7条/7新增来源检验；最终42条模型另存。 status",
+        "executedAt": "2026-10-22T19:23:44+08:00",
+        "caveats": [
+          "留出来源未参加旧模型拟合和评分，但原文审查已接触标签，并非前瞻盲测。",
+          "开发CV用于选型；留出MAE6.88高于均值参照5.93，性能门槛未通过。",
+          "留出分数属于35条训练模型；全42条重训模型没有独立检验。"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "输入冻结",
+            "detail": "training_plan.json及frozen_run_hashes.json保存数据、代码、候选与来源切分。"
+          },
+          {
+            "title": "实际训练",
+            "detail": "evaluation.sqlite保存581条任务，534次完成的估计器拟合；每个来源总权重1。"
+          },
+          {
+            "title": "独立复算",
+            "detail": "tools/verify_model_v1.py独立复算指标、来源bootstrap及逐折统计；不重新拟合。"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "来源等权MAE",
+            "definition": "先计算各来源内平均绝对误差，再对来源平均；单位为保持率百分点。"
+          },
+          {
+            "label": "95%描述性区间",
+            "definition": "7个检验来源5000次重采样；不包含重新拟合，不是单样品预测区间。"
+          }
+        ]
+      }
+    },
+    "progress": {
+      "rows": [
+        {
+          "seconds": 5.812,
+          "completed": 1,
+          "fits": 1
+        },
+        {
+          "seconds": 5.844,
+          "completed": 2,
+          "fits": 2
+        },
+        {
+          "seconds": 5.859,
+          "completed": 3,
+          "fits": 3
+        },
+        {
+          "seconds": 5.859,
+          "completed": 4,
+          "fits": 4
+        },
+        {
+          "seconds": 5.875,
+          "completed": 5,
+          "fits": 5
+        },
+        {
+          "seconds": 5.891,
+          "completed": 6,
+          "fits": 6
+        },
+        {
+          "seconds": 5.906,
+          "completed": 7,
+          "fits": 7
+        },
+        {
+          "seconds": 5.922,
+          "completed": 8,
+          "fits": 8
+        },
+        {
+          "seconds": 5.922,
+          "completed": 9,
+          "fits": 9
+        },
+        {
+          "seconds": 5.937,
+          "completed": 10,
+          "fits": 10
+        },
+        {
+          "seconds": 5.953,
+          "completed": 11,
+          "fits": 11
+        },
+        {
+          "seconds": 5.969,
+          "completed": 12,
+          "fits": 12
+        },
+        {
+          "seconds": 5.969,
+          "completed": 13,
+          "fits": 13
+        },
+        {
+          "seconds": 5.984,
+          "completed": 14,
+          "fits": 14
+        },
+        {
+          "seconds": 6.0,
+          "completed": 15,
+          "fits": 15
+        },
+        {
+          "seconds": 6.016,
+          "completed": 16,
+          "fits": 16
+        },
+        {
+          "seconds": 6.016,
+          "completed": 17,
+          "fits": 17
+        },
+        {
+          "seconds": 6.031,
+          "completed": 18,
+          "fits": 18
+        },
+        {
+          "seconds": 6.047,
+          "completed": 19,
+          "fits": 19
+        },
+        {
+          "seconds": 6.062,
+          "completed": 20,
+          "fits": 20
+        },
+        {
+          "seconds": 6.078,
+          "completed": 21,
+          "fits": 21
+        },
+        {
+          "seconds": 6.078,
+          "completed": 22,
+          "fits": 22
+        },
+        {
+          "seconds": 6.094,
+          "completed": 23,
+          "fits": 23
+        },
+        {
+          "seconds": 6.109,
+          "completed": 24,
+          "fits": 24
+        },
+        {
+          "seconds": 6.125,
+          "completed": 25,
+          "fits": 25
+        },
+        {
+          "seconds": 6.141,
+          "completed": 26,
+          "fits": 26
+        },
+        {
+          "seconds": 6.141,
+          "completed": 27,
+          "fits": 27
+        },
+        {
+          "seconds": 6.156,
+          "completed": 28,
+          "fits": 28
+        },
+        {
+          "seconds": 6.172,
+          "completed": 29,
+          "fits": 29
+        },
+        {
+          "seconds": 6.187,
+          "completed": 30,
+          "fits": 30
+        },
+        {
+          "seconds": 6.187,
+          "completed": 31,
+          "fits": 31
+        },
+        {
+          "seconds": 6.203,
+          "completed": 32,
+          "fits": 32
+        },
+        {
+          "seconds": 6.219,
+          "completed": 33,
+          "fits": 33
+        },
+        {
+          "seconds": 6.234,
+          "completed": 34,
+          "fits": 34
+        },
+        {
+          "seconds": 6.234,
+          "completed": 35,
+          "fits": 35
+        },
+        {
+          "seconds": 6.25,
+          "completed": 36,
+          "fits": 36
+        },
+        {
+          "seconds": 6.266,
+          "completed": 37,
+          "fits": 37
+        },
+        {
+          "seconds": 6.281,
+          "completed": 38,
+          "fits": 38
+        },
+        {
+          "seconds": 6.297,
+          "completed": 39,
+          "fits": 39
+        },
+        {
+          "seconds": 6.297,
+          "completed": 40,
+          "fits": 40
+        },
+        {
+          "seconds": 6.312,
+          "completed": 41,
+          "fits": 41
+        },
+        {
+          "seconds": 6.328,
+          "completed": 42,
+          "fits": 42
+        },
+        {
+          "seconds": 6.344,
+          "completed": 43,
+          "fits": 43
+        },
+        {
+          "seconds": 6.344,
+          "completed": 44,
+          "fits": 44
+        },
+        {
+          "seconds": 6.359,
+          "completed": 45,
+          "fits": 45
+        },
+        {
+          "seconds": 6.375,
+          "completed": 46,
+          "fits": 46
+        },
+        {
+          "seconds": 6.406,
+          "completed": 47,
+          "fits": 47
+        },
+        {
+          "seconds": 6.406,
+          "completed": 48,
+          "fits": 48
+        },
+        {
+          "seconds": 6.422,
+          "completed": 49,
+          "fits": 49
+        },
+        {
+          "seconds": 6.437,
+          "completed": 50,
+          "fits": 50
+        },
+        {
+          "seconds": 6.453,
+          "completed": 51,
+          "fits": 51
+        },
+        {
+          "seconds": 6.469,
+          "completed": 52,
+          "fits": 52
+        },
+        {
+          "seconds": 6.484,
+          "completed": 53,
+          "fits": 53
+        },
+        {
+          "seconds": 6.5,
+          "completed": 54,
+          "fits": 54
+        },
+        {
+          "seconds": 6.5,
+          "completed": 55,
+          "fits": 55
+        },
+        {
+          "seconds": 6.516,
+          "completed": 56,
+          "fits": 56
+        },
+        {
+          "seconds": 6.531,
+          "completed": 57,
+          "fits": 57
+        },
+        {
+          "seconds": 6.547,
+          "completed": 58,
+          "fits": 58
+        },
+        {
+          "seconds": 6.562,
+          "completed": 59,
+          "fits": 59
+        },
+        {
+          "seconds": 6.578,
+          "completed": 60,
+          "fits": 60
+        },
+        {
+          "seconds": 6.578,
+          "completed": 61,
+          "fits": 61
+        },
+        {
+          "seconds": 6.594,
+          "completed": 62,
+          "fits": 62
+        },
+        {
+          "seconds": 6.609,
+          "completed": 63,
+          "fits": 63
+        },
+        {
+          "seconds": 6.625,
+          "completed": 64,
+          "fits": 64
+        },
+        {
+          "seconds": 6.641,
+          "completed": 65,
+          "fits": 65
+        },
+        {
+          "seconds": 6.641,
+          "completed": 66,
+          "fits": 66
+        },
+        {
+          "seconds": 6.656,
+          "completed": 67,
+          "fits": 67
+        },
+        {
+          "seconds": 6.672,
+          "completed": 68,
+          "fits": 68
+        },
+        {
+          "seconds": 6.687,
+          "completed": 69,
+          "fits": 69
+        },
+        {
+          "seconds": 6.703,
+          "completed": 70,
+          "fits": 70
+        },
+        {
+          "seconds": 6.719,
+          "completed": 71,
+          "fits": 71
+        },
+        {
+          "seconds": 6.719,
+          "completed": 72,
+          "fits": 72
+        },
+        {
+          "seconds": 6.734,
+          "completed": 73,
+          "fits": 73
+        },
+        {
+          "seconds": 6.75,
+          "completed": 74,
+          "fits": 74
+        },
+        {
+          "seconds": 6.766,
+          "completed": 75,
+          "fits": 75
+        },
+        {
+          "seconds": 6.781,
+          "completed": 76,
+          "fits": 76
+        },
+        {
+          "seconds": 6.781,
+          "completed": 77,
+          "fits": 77
+        },
+        {
+          "seconds": 6.797,
+          "completed": 78,
+          "fits": 78
+        },
+        {
+          "seconds": 6.812,
+          "completed": 79,
+          "fits": 79
+        },
+        {
+          "seconds": 6.828,
+          "completed": 80,
+          "fits": 80
+        },
+        {
+          "seconds": 6.844,
+          "completed": 81,
+          "fits": 81
+        },
+        {
+          "seconds": 6.859,
+          "completed": 82,
+          "fits": 82
+        },
+        {
+          "seconds": 6.859,
+          "completed": 83,
+          "fits": 83
+        },
+        {
+          "seconds": 6.875,
+          "completed": 84,
+          "fits": 84
+        },
+        {
+          "seconds": 6.891,
+          "completed": 85,
+          "fits": 85
+        },
+        {
+          "seconds": 6.906,
+          "completed": 86,
+          "fits": 86
+        },
+        {
+          "seconds": 6.922,
+          "completed": 87,
+          "fits": 87
+        },
+        {
+          "seconds": 6.937,
+          "completed": 88,
+          "fits": 88
+        },
+        {
+          "seconds": 6.953,
+          "completed": 89,
+          "fits": 89
+        },
+        {
+          "seconds": 6.953,
+          "completed": 90,
+          "fits": 90
+        },
+        {
+          "seconds": 6.969,
+          "completed": 91,
+          "fits": 91
+        },
+        {
+          "seconds": 6.984,
+          "completed": 92,
+          "fits": 92
+        },
+        {
+          "seconds": 7.0,
+          "completed": 93,
+          "fits": 93
+        },
+        {
+          "seconds": 7.016,
+          "completed": 94,
+          "fits": 94
+        },
+        {
+          "seconds": 7.016,
+          "completed": 95,
+          "fits": 95
+        },
+        {
+          "seconds": 7.031,
+          "completed": 96,
+          "fits": 96
+        },
+        {
+          "seconds": 7.047,
+          "completed": 97,
+          "fits": 97
+        },
+        {
+          "seconds": 7.062,
+          "completed": 98,
+          "fits": 98
+        },
+        {
+          "seconds": 7.078,
+          "completed": 99,
+          "fits": 99
+        },
+        {
+          "seconds": 7.078,
+          "completed": 100,
+          "fits": 100
+        },
+        {
+          "seconds": 7.094,
+          "completed": 101,
+          "fits": 101
+        },
+        {
+          "seconds": 7.109,
+          "completed": 102,
+          "fits": 102
+        },
+        {
+          "seconds": 7.125,
+          "completed": 103,
+          "fits": 103
+        },
+        {
+          "seconds": 7.141,
+          "completed": 104,
+          "fits": 104
+        },
+        {
+          "seconds": 7.141,
+          "completed": 105,
+          "fits": 105
+        },
+        {
+          "seconds": 7.156,
+          "completed": 106,
+          "fits": 106
+        },
+        {
+          "seconds": 7.172,
+          "completed": 107,
+          "fits": 107
+        },
+        {
+          "seconds": 7.187,
+          "completed": 108,
+          "fits": 108
+        },
+        {
+          "seconds": 7.203,
+          "completed": 109,
+          "fits": 109
+        },
+        {
+          "seconds": 7.203,
+          "completed": 110,
+          "fits": 110
+        },
+        {
+          "seconds": 7.219,
+          "completed": 111,
+          "fits": 111
+        },
+        {
+          "seconds": 7.234,
+          "completed": 112,
+          "fits": 112
+        },
+        {
+          "seconds": 7.25,
+          "completed": 113,
+          "fits": 113
+        },
+        {
+          "seconds": 7.266,
+          "completed": 114,
+          "fits": 114
+        },
+        {
+          "seconds": 7.266,
+          "completed": 115,
+          "fits": 115
+        },
+        {
+          "seconds": 7.281,
+          "completed": 116,
+          "fits": 116
+        },
+        {
+          "seconds": 7.297,
+          "completed": 117,
+          "fits": 117
+        },
+        {
+          "seconds": 7.312,
+          "completed": 118,
+          "fits": 118
+        },
+        {
+          "seconds": 7.328,
+          "completed": 119,
+          "fits": 119
+        },
+        {
+          "seconds": 7.344,
+          "completed": 120,
+          "fits": 120
+        },
+        {
+          "seconds": 7.344,
+          "completed": 121,
+          "fits": 121
+        },
+        {
+          "seconds": 7.359,
+          "completed": 122,
+          "fits": 122
+        },
+        {
+          "seconds": 7.375,
+          "completed": 123,
+          "fits": 123
+        },
+        {
+          "seconds": 7.391,
+          "completed": 124,
+          "fits": 124
+        },
+        {
+          "seconds": 7.406,
+          "completed": 125,
+          "fits": 125
+        },
+        {
+          "seconds": 7.406,
+          "completed": 126,
+          "fits": 126
+        },
+        {
+          "seconds": 7.422,
+          "completed": 127,
+          "fits": 127
+        },
+        {
+          "seconds": 7.437,
+          "completed": 128,
+          "fits": 128
+        },
+        {
+          "seconds": 7.453,
+          "completed": 129,
+          "fits": 129
+        },
+        {
+          "seconds": 7.469,
+          "completed": 130,
+          "fits": 130
+        },
+        {
+          "seconds": 7.469,
+          "completed": 131,
+          "fits": 131
+        },
+        {
+          "seconds": 7.484,
+          "completed": 132,
+          "fits": 132
+        },
+        {
+          "seconds": 7.5,
+          "completed": 133,
+          "fits": 133
+        },
+        {
+          "seconds": 7.516,
+          "completed": 134,
+          "fits": 134
+        },
+        {
+          "seconds": 7.531,
+          "completed": 135,
+          "fits": 135
+        },
+        {
+          "seconds": 7.531,
+          "completed": 136,
+          "fits": 136
+        },
+        {
+          "seconds": 7.547,
+          "completed": 137,
+          "fits": 137
+        },
+        {
+          "seconds": 7.562,
+          "completed": 138,
+          "fits": 138
+        },
+        {
+          "seconds": 7.578,
+          "completed": 139,
+          "fits": 139
+        },
+        {
+          "seconds": 7.594,
+          "completed": 140,
+          "fits": 140
+        },
+        {
+          "seconds": 7.609,
+          "completed": 141,
+          "fits": 141
+        },
+        {
+          "seconds": 7.609,
+          "completed": 142,
+          "fits": 142
+        },
+        {
+          "seconds": 7.625,
+          "completed": 143,
+          "fits": 143
+        },
+        {
+          "seconds": 7.641,
+          "completed": 144,
+          "fits": 144
+        },
+        {
+          "seconds": 7.656,
+          "completed": 145,
+          "fits": 145
+        },
+        {
+          "seconds": 7.672,
+          "completed": 146,
+          "fits": 146
+        },
+        {
+          "seconds": 7.687,
+          "completed": 147,
+          "fits": 147
+        },
+        {
+          "seconds": 7.687,
+          "completed": 148,
+          "fits": 148
+        },
+        {
+          "seconds": 7.703,
+          "completed": 149,
+          "fits": 149
+        },
+        {
+          "seconds": 7.719,
+          "completed": 150,
+          "fits": 150
+        },
+        {
+          "seconds": 7.734,
+          "completed": 151,
+          "fits": 151
+        },
+        {
+          "seconds": 7.75,
+          "completed": 152,
+          "fits": 152
+        },
+        {
+          "seconds": 7.766,
+          "completed": 153,
+          "fits": 153
+        },
+        {
+          "seconds": 7.781,
+          "completed": 154,
+          "fits": 154
+        },
+        {
+          "seconds": 7.781,
+          "completed": 155,
+          "fits": 155
+        },
+        {
+          "seconds": 7.797,
+          "completed": 156,
+          "fits": 156
+        },
+        {
+          "seconds": 7.812,
+          "completed": 157,
+          "fits": 157
+        },
+        {
+          "seconds": 7.828,
+          "completed": 158,
+          "fits": 158
+        },
+        {
+          "seconds": 7.844,
+          "completed": 159,
+          "fits": 159
+        },
+        {
+          "seconds": 7.859,
+          "completed": 160,
+          "fits": 160
+        },
+        {
+          "seconds": 7.875,
+          "completed": 161,
+          "fits": 161
+        },
+        {
+          "seconds": 7.891,
+          "completed": 162,
+          "fits": 162
+        },
+        {
+          "seconds": 7.906,
+          "completed": 163,
+          "fits": 163
+        },
+        {
+          "seconds": 7.906,
+          "completed": 164,
+          "fits": 164
+        },
+        {
+          "seconds": 7.922,
+          "completed": 165,
+          "fits": 165
+        },
+        {
+          "seconds": 7.937,
+          "completed": 166,
+          "fits": 166
+        },
+        {
+          "seconds": 7.953,
+          "completed": 167,
+          "fits": 167
+        },
+        {
+          "seconds": 7.969,
+          "completed": 168,
+          "fits": 168
+        },
+        {
+          "seconds": 7.984,
+          "completed": 169,
+          "fits": 169
+        },
+        {
+          "seconds": 8.0,
+          "completed": 170,
+          "fits": 170
+        },
+        {
+          "seconds": 8.0,
+          "completed": 171,
+          "fits": 171
+        },
+        {
+          "seconds": 8.016,
+          "completed": 172,
+          "fits": 172
+        },
+        {
+          "seconds": 8.031,
+          "completed": 173,
+          "fits": 173
+        },
+        {
+          "seconds": 8.047,
+          "completed": 174,
+          "fits": 174
+        },
+        {
+          "seconds": 8.062,
+          "completed": 175,
+          "fits": 175
+        },
+        {
+          "seconds": 8.078,
+          "completed": 176,
+          "fits": 176
+        },
+        {
+          "seconds": 8.078,
+          "completed": 177,
+          "fits": 177
+        },
+        {
+          "seconds": 8.094,
+          "completed": 178,
+          "fits": 178
+        },
+        {
+          "seconds": 8.109,
+          "completed": 179,
+          "fits": 179
+        },
+        {
+          "seconds": 8.125,
+          "completed": 180,
+          "fits": 180
+        },
+        {
+          "seconds": 8.141,
+          "completed": 181,
+          "fits": 181
+        },
+        {
+          "seconds": 8.156,
+          "completed": 182,
+          "fits": 182
+        },
+        {
+          "seconds": 8.172,
+          "completed": 183,
+          "fits": 183
+        },
+        {
+          "seconds": 8.172,
+          "completed": 184,
+          "fits": 184
+        },
+        {
+          "seconds": 8.266,
+          "completed": 185,
+          "fits": 185
+        },
+        {
+          "seconds": 8.359,
+          "completed": 186,
+          "fits": 186
+        },
+        {
+          "seconds": 8.437,
+          "completed": 187,
+          "fits": 187
+        },
+        {
+          "seconds": 8.531,
+          "completed": 188,
+          "fits": 188
+        },
+        {
+          "seconds": 8.609,
+          "completed": 189,
+          "fits": 189
+        },
+        {
+          "seconds": 8.703,
+          "completed": 190,
+          "fits": 190
+        },
+        {
+          "seconds": 8.781,
+          "completed": 191,
+          "fits": 191
+        },
+        {
+          "seconds": 8.875,
+          "completed": 192,
+          "fits": 192
+        },
+        {
+          "seconds": 8.953,
+          "completed": 193,
+          "fits": 193
+        },
+        {
+          "seconds": 9.047,
+          "completed": 194,
+          "fits": 194
+        },
+        {
+          "seconds": 9.125,
+          "completed": 195,
+          "fits": 195
+        },
+        {
+          "seconds": 9.203,
+          "completed": 196,
+          "fits": 196
+        },
+        {
+          "seconds": 9.297,
+          "completed": 197,
+          "fits": 197
+        },
+        {
+          "seconds": 9.375,
+          "completed": 198,
+          "fits": 198
+        },
+        {
+          "seconds": 9.469,
+          "completed": 199,
+          "fits": 199
+        },
+        {
+          "seconds": 9.547,
+          "completed": 200,
+          "fits": 200
+        },
+        {
+          "seconds": 9.641,
+          "completed": 201,
+          "fits": 201
+        },
+        {
+          "seconds": 9.719,
+          "completed": 202,
+          "fits": 202
+        },
+        {
+          "seconds": 9.812,
+          "completed": 203,
+          "fits": 203
+        },
+        {
+          "seconds": 9.891,
+          "completed": 204,
+          "fits": 204
+        },
+        {
+          "seconds": 9.984,
+          "completed": 205,
+          "fits": 205
+        },
+        {
+          "seconds": 10.062,
+          "completed": 206,
+          "fits": 206
+        },
+        {
+          "seconds": 10.156,
+          "completed": 207,
+          "fits": 207
+        },
+        {
+          "seconds": 10.234,
+          "completed": 208,
+          "fits": 208
+        },
+        {
+          "seconds": 10.328,
+          "completed": 209,
+          "fits": 209
+        },
+        {
+          "seconds": 10.406,
+          "completed": 210,
+          "fits": 210
+        },
+        {
+          "seconds": 10.5,
+          "completed": 211,
+          "fits": 211
+        },
+        {
+          "seconds": 10.578,
+          "completed": 212,
+          "fits": 212
+        },
+        {
+          "seconds": 10.656,
+          "completed": 213,
+          "fits": 213
+        },
+        {
+          "seconds": 10.75,
+          "completed": 214,
+          "fits": 214
+        },
+        {
+          "seconds": 10.828,
+          "completed": 215,
+          "fits": 215
+        },
+        {
+          "seconds": 10.906,
+          "completed": 216,
+          "fits": 216
+        },
+        {
+          "seconds": 11.0,
+          "completed": 217,
+          "fits": 217
+        },
+        {
+          "seconds": 11.078,
+          "completed": 218,
+          "fits": 218
+        },
+        {
+          "seconds": 11.172,
+          "completed": 219,
+          "fits": 219
+        },
+        {
+          "seconds": 11.25,
+          "completed": 220,
+          "fits": 220
+        },
+        {
+          "seconds": 11.328,
+          "completed": 221,
+          "fits": 221
+        },
+        {
+          "seconds": 11.422,
+          "completed": 222,
+          "fits": 222
+        },
+        {
+          "seconds": 11.5,
+          "completed": 223,
+          "fits": 223
+        },
+        {
+          "seconds": 11.594,
+          "completed": 224,
+          "fits": 224
+        },
+        {
+          "seconds": 11.672,
+          "completed": 225,
+          "fits": 225
+        },
+        {
+          "seconds": 11.75,
+          "completed": 226,
+          "fits": 226
+        },
+        {
+          "seconds": 11.844,
+          "completed": 227,
+          "fits": 227
+        },
+        {
+          "seconds": 11.922,
+          "completed": 228,
+          "fits": 228
+        },
+        {
+          "seconds": 12.016,
+          "completed": 229,
+          "fits": 229
+        },
+        {
+          "seconds": 12.094,
+          "completed": 230,
+          "fits": 230
+        },
+        {
+          "seconds": 12.125,
+          "completed": 231,
+          "fits": 231
+        },
+        {
+          "seconds": 12.141,
+          "completed": 232,
+          "fits": 232
+        },
+        {
+          "seconds": 12.156,
+          "completed": 233,
+          "fits": 233
+        },
+        {
+          "seconds": 12.172,
+          "completed": 234,
+          "fits": 234
+        },
+        {
+          "seconds": 12.187,
+          "completed": 235,
+          "fits": 235
+        },
+        {
+          "seconds": 12.203,
+          "completed": 236,
+          "fits": 236
+        },
+        {
+          "seconds": 12.219,
+          "completed": 237,
+          "fits": 237
+        },
+        {
+          "seconds": 12.25,
+          "completed": 238,
+          "fits": 238
+        },
+        {
+          "seconds": 12.266,
+          "completed": 239,
+          "fits": 239
+        },
+        {
+          "seconds": 12.281,
+          "completed": 240,
+          "fits": 240
+        },
+        {
+          "seconds": 12.297,
+          "completed": 241,
+          "fits": 241
+        },
+        {
+          "seconds": 12.312,
+          "completed": 242,
+          "fits": 242
+        },
+        {
+          "seconds": 12.328,
+          "completed": 243,
+          "fits": 243
+        },
+        {
+          "seconds": 12.344,
+          "completed": 244,
+          "fits": 244
+        },
+        {
+          "seconds": 12.359,
+          "completed": 245,
+          "fits": 245
+        },
+        {
+          "seconds": 12.391,
+          "completed": 246,
+          "fits": 246
+        },
+        {
+          "seconds": 12.406,
+          "completed": 247,
+          "fits": 247
+        },
+        {
+          "seconds": 12.422,
+          "completed": 248,
+          "fits": 248
+        },
+        {
+          "seconds": 12.437,
+          "completed": 249,
+          "fits": 249
+        },
+        {
+          "seconds": 12.453,
+          "completed": 250,
+          "fits": 250
+        },
+        {
+          "seconds": 12.469,
+          "completed": 251,
+          "fits": 251
+        },
+        {
+          "seconds": 12.5,
+          "completed": 252,
+          "fits": 252
+        },
+        {
+          "seconds": 12.516,
+          "completed": 253,
+          "fits": 253
+        },
+        {
+          "seconds": 12.531,
+          "completed": 254,
+          "fits": 254
+        },
+        {
+          "seconds": 12.547,
+          "completed": 255,
+          "fits": 255
+        },
+        {
+          "seconds": 12.562,
+          "completed": 256,
+          "fits": 256
+        },
+        {
+          "seconds": 12.578,
+          "completed": 257,
+          "fits": 257
+        },
+        {
+          "seconds": 12.578,
+          "completed": 258,
+          "fits": 258
+        },
+        {
+          "seconds": 12.594,
+          "completed": 259,
+          "fits": 259
+        },
+        {
+          "seconds": 12.609,
+          "completed": 260,
+          "fits": 260
+        },
+        {
+          "seconds": 12.625,
+          "completed": 261,
+          "fits": 261
+        },
+        {
+          "seconds": 12.641,
+          "completed": 262,
+          "fits": 262
+        },
+        {
+          "seconds": 12.656,
+          "completed": 263,
+          "fits": 263
+        },
+        {
+          "seconds": 12.672,
+          "completed": 264,
+          "fits": 264
+        },
+        {
+          "seconds": 12.687,
+          "completed": 265,
+          "fits": 265
+        },
+        {
+          "seconds": 12.703,
+          "completed": 266,
+          "fits": 266
+        },
+        {
+          "seconds": 12.703,
+          "completed": 267,
+          "fits": 267
+        },
+        {
+          "seconds": 12.719,
+          "completed": 268,
+          "fits": 268
+        },
+        {
+          "seconds": 12.734,
+          "completed": 269,
+          "fits": 269
+        },
+        {
+          "seconds": 12.75,
+          "completed": 270,
+          "fits": 270
+        },
+        {
+          "seconds": 12.766,
+          "completed": 271,
+          "fits": 271
+        },
+        {
+          "seconds": 12.781,
+          "completed": 272,
+          "fits": 272
+        },
+        {
+          "seconds": 12.797,
+          "completed": 273,
+          "fits": 273
+        },
+        {
+          "seconds": 12.812,
+          "completed": 274,
+          "fits": 274
+        },
+        {
+          "seconds": 12.828,
+          "completed": 275,
+          "fits": 275
+        },
+        {
+          "seconds": 12.828,
+          "completed": 276,
+          "fits": 276
+        },
+        {
+          "seconds": 12.859,
+          "completed": 277,
+          "fits": 277
+        },
+        {
+          "seconds": 12.859,
+          "completed": 278,
+          "fits": 278
+        },
+        {
+          "seconds": 12.875,
+          "completed": 279,
+          "fits": 279
+        },
+        {
+          "seconds": 12.891,
+          "completed": 280,
+          "fits": 280
+        },
+        {
+          "seconds": 12.906,
+          "completed": 281,
+          "fits": 281
+        },
+        {
+          "seconds": 12.922,
+          "completed": 282,
+          "fits": 282
+        },
+        {
+          "seconds": 12.937,
+          "completed": 283,
+          "fits": 283
+        },
+        {
+          "seconds": 12.953,
+          "completed": 284,
+          "fits": 284
+        },
+        {
+          "seconds": 12.969,
+          "completed": 285,
+          "fits": 285
+        },
+        {
+          "seconds": 12.984,
+          "completed": 286,
+          "fits": 286
+        },
+        {
+          "seconds": 13.0,
+          "completed": 287,
+          "fits": 287
+        },
+        {
+          "seconds": 13.016,
+          "completed": 288,
+          "fits": 288
+        },
+        {
+          "seconds": 13.016,
+          "completed": 289,
+          "fits": 289
+        },
+        {
+          "seconds": 13.031,
+          "completed": 290,
+          "fits": 290
+        },
+        {
+          "seconds": 13.047,
+          "completed": 291,
+          "fits": 291
+        },
+        {
+          "seconds": 13.062,
+          "completed": 292,
+          "fits": 292
+        },
+        {
+          "seconds": 13.078,
+          "completed": 293,
+          "fits": 293
+        },
+        {
+          "seconds": 13.094,
+          "completed": 294,
+          "fits": 294
+        },
+        {
+          "seconds": 13.109,
+          "completed": 295,
+          "fits": 295
+        },
+        {
+          "seconds": 13.125,
+          "completed": 296,
+          "fits": 296
+        },
+        {
+          "seconds": 13.141,
+          "completed": 297,
+          "fits": 297
+        },
+        {
+          "seconds": 13.156,
+          "completed": 298,
+          "fits": 298
+        },
+        {
+          "seconds": 13.172,
+          "completed": 299,
+          "fits": 299
+        },
+        {
+          "seconds": 13.187,
+          "completed": 300,
+          "fits": 300
+        },
+        {
+          "seconds": 13.187,
+          "completed": 301,
+          "fits": 301
+        },
+        {
+          "seconds": 13.203,
+          "completed": 302,
+          "fits": 302
+        },
+        {
+          "seconds": 13.234,
+          "completed": 303,
+          "fits": 303
+        },
+        {
+          "seconds": 13.25,
+          "completed": 304,
+          "fits": 304
+        },
+        {
+          "seconds": 13.266,
+          "completed": 305,
+          "fits": 305
+        },
+        {
+          "seconds": 13.281,
+          "completed": 306,
+          "fits": 306
+        },
+        {
+          "seconds": 13.297,
+          "completed": 307,
+          "fits": 307
+        },
+        {
+          "seconds": 13.312,
+          "completed": 308,
+          "fits": 308
+        },
+        {
+          "seconds": 13.328,
+          "completed": 309,
+          "fits": 309
+        },
+        {
+          "seconds": 13.344,
+          "completed": 310,
+          "fits": 310
+        },
+        {
+          "seconds": 13.359,
+          "completed": 311,
+          "fits": 311
+        },
+        {
+          "seconds": 13.375,
+          "completed": 312,
+          "fits": 312
+        },
+        {
+          "seconds": 13.391,
+          "completed": 313,
+          "fits": 313
+        },
+        {
+          "seconds": 13.406,
+          "completed": 314,
+          "fits": 314
+        },
+        {
+          "seconds": 13.422,
+          "completed": 315,
+          "fits": 315
+        },
+        {
+          "seconds": 13.437,
+          "completed": 316,
+          "fits": 316
+        },
+        {
+          "seconds": 13.453,
+          "completed": 317,
+          "fits": 317
+        },
+        {
+          "seconds": 13.469,
+          "completed": 318,
+          "fits": 318
+        },
+        {
+          "seconds": 13.484,
+          "completed": 319,
+          "fits": 319
+        },
+        {
+          "seconds": 13.5,
+          "completed": 320,
+          "fits": 320
+        },
+        {
+          "seconds": 13.516,
+          "completed": 321,
+          "fits": 321
+        },
+        {
+          "seconds": 13.531,
+          "completed": 322,
+          "fits": 322
+        },
+        {
+          "seconds": 13.547,
+          "completed": 323,
+          "fits": 323
+        },
+        {
+          "seconds": 13.562,
+          "completed": 324,
+          "fits": 324
+        },
+        {
+          "seconds": 13.578,
+          "completed": 325,
+          "fits": 325
+        },
+        {
+          "seconds": 13.594,
+          "completed": 326,
+          "fits": 326
+        },
+        {
+          "seconds": 13.609,
+          "completed": 327,
+          "fits": 327
+        },
+        {
+          "seconds": 13.609,
+          "completed": 328,
+          "fits": 328
+        },
+        {
+          "seconds": 13.625,
+          "completed": 329,
+          "fits": 329
+        },
+        {
+          "seconds": 13.641,
+          "completed": 330,
+          "fits": 330
+        },
+        {
+          "seconds": 13.656,
+          "completed": 331,
+          "fits": 331
+        },
+        {
+          "seconds": 13.672,
+          "completed": 332,
+          "fits": 332
+        },
+        {
+          "seconds": 13.687,
+          "completed": 333,
+          "fits": 333
+        },
+        {
+          "seconds": 13.703,
+          "completed": 334,
+          "fits": 334
+        },
+        {
+          "seconds": 13.719,
+          "completed": 335,
+          "fits": 335
+        },
+        {
+          "seconds": 13.734,
+          "completed": 336,
+          "fits": 336
+        },
+        {
+          "seconds": 13.75,
+          "completed": 337,
+          "fits": 337
+        },
+        {
+          "seconds": 13.766,
+          "completed": 338,
+          "fits": 338
+        },
+        {
+          "seconds": 13.781,
+          "completed": 339,
+          "fits": 339
+        },
+        {
+          "seconds": 13.797,
+          "completed": 340,
+          "fits": 340
+        },
+        {
+          "seconds": 13.812,
+          "completed": 341,
+          "fits": 341
+        },
+        {
+          "seconds": 13.828,
+          "completed": 342,
+          "fits": 342
+        },
+        {
+          "seconds": 13.844,
+          "completed": 343,
+          "fits": 343
+        },
+        {
+          "seconds": 13.844,
+          "completed": 344,
+          "fits": 344
+        },
+        {
+          "seconds": 13.859,
+          "completed": 345,
+          "fits": 345
+        },
+        {
+          "seconds": 13.891,
+          "completed": 346,
+          "fits": 346
+        },
+        {
+          "seconds": 13.891,
+          "completed": 347,
+          "fits": 347
+        },
+        {
+          "seconds": 13.906,
+          "completed": 348,
+          "fits": 348
+        },
+        {
+          "seconds": 13.922,
+          "completed": 349,
+          "fits": 349
+        },
+        {
+          "seconds": 13.937,
+          "completed": 350,
+          "fits": 350
+        },
+        {
+          "seconds": 13.953,
+          "completed": 351,
+          "fits": 351
+        },
+        {
+          "seconds": 13.969,
+          "completed": 352,
+          "fits": 352
+        },
+        {
+          "seconds": 13.984,
+          "completed": 353,
+          "fits": 353
+        },
+        {
+          "seconds": 14.0,
+          "completed": 354,
+          "fits": 354
+        },
+        {
+          "seconds": 14.016,
+          "completed": 355,
+          "fits": 355
+        },
+        {
+          "seconds": 14.031,
+          "completed": 356,
+          "fits": 356
+        },
+        {
+          "seconds": 14.047,
+          "completed": 357,
+          "fits": 357
+        },
+        {
+          "seconds": 14.062,
+          "completed": 358,
+          "fits": 358
+        },
+        {
+          "seconds": 14.062,
+          "completed": 359,
+          "fits": 359
+        },
+        {
+          "seconds": 14.078,
+          "completed": 360,
+          "fits": 360
+        },
+        {
+          "seconds": 14.094,
+          "completed": 361,
+          "fits": 361
+        },
+        {
+          "seconds": 14.109,
+          "completed": 362,
+          "fits": 362
+        },
+        {
+          "seconds": 14.125,
+          "completed": 363,
+          "fits": 363
+        },
+        {
+          "seconds": 14.141,
+          "completed": 364,
+          "fits": 364
+        },
+        {
+          "seconds": 14.156,
+          "completed": 365,
+          "fits": 365
+        },
+        {
+          "seconds": 14.172,
+          "completed": 366,
+          "fits": 366
+        },
+        {
+          "seconds": 14.187,
+          "completed": 367,
+          "fits": 367
+        },
+        {
+          "seconds": 14.203,
+          "completed": 368,
+          "fits": 368
+        },
+        {
+          "seconds": 14.219,
+          "completed": 369,
+          "fits": 369
+        },
+        {
+          "seconds": 14.234,
+          "completed": 370,
+          "fits": 370
+        },
+        {
+          "seconds": 14.25,
+          "completed": 371,
+          "fits": 371
+        },
+        {
+          "seconds": 14.266,
+          "completed": 372,
+          "fits": 372
+        },
+        {
+          "seconds": 14.281,
+          "completed": 373,
+          "fits": 373
+        },
+        {
+          "seconds": 14.281,
+          "completed": 374,
+          "fits": 374
+        },
+        {
+          "seconds": 14.297,
+          "completed": 375,
+          "fits": 375
+        },
+        {
+          "seconds": 14.312,
+          "completed": 376,
+          "fits": 376
+        },
+        {
+          "seconds": 14.328,
+          "completed": 377,
+          "fits": 377
+        },
+        {
+          "seconds": 14.344,
+          "completed": 378,
+          "fits": 378
+        },
+        {
+          "seconds": 14.359,
+          "completed": 379,
+          "fits": 379
+        },
+        {
+          "seconds": 14.375,
+          "completed": 380,
+          "fits": 380
+        },
+        {
+          "seconds": 14.391,
+          "completed": 381,
+          "fits": 381
+        },
+        {
+          "seconds": 14.406,
+          "completed": 382,
+          "fits": 382
+        },
+        {
+          "seconds": 14.422,
+          "completed": 383,
+          "fits": 383
+        },
+        {
+          "seconds": 14.437,
+          "completed": 384,
+          "fits": 384
+        },
+        {
+          "seconds": 14.453,
+          "completed": 385,
+          "fits": 385
+        },
+        {
+          "seconds": 14.469,
+          "completed": 386,
+          "fits": 386
+        },
+        {
+          "seconds": 14.469,
+          "completed": 387,
+          "fits": 387
+        },
+        {
+          "seconds": 14.484,
+          "completed": 388,
+          "fits": 388
+        },
+        {
+          "seconds": 14.5,
+          "completed": 389,
+          "fits": 389
+        },
+        {
+          "seconds": 14.516,
+          "completed": 390,
+          "fits": 390
+        },
+        {
+          "seconds": 14.531,
+          "completed": 391,
+          "fits": 391
+        },
+        {
+          "seconds": 14.547,
+          "completed": 392,
+          "fits": 392
+        },
+        {
+          "seconds": 14.562,
+          "completed": 393,
+          "fits": 393
+        },
+        {
+          "seconds": 14.578,
+          "completed": 394,
+          "fits": 394
+        },
+        {
+          "seconds": 14.594,
+          "completed": 395,
+          "fits": 395
+        },
+        {
+          "seconds": 14.609,
+          "completed": 396,
+          "fits": 396
+        },
+        {
+          "seconds": 14.625,
+          "completed": 397,
+          "fits": 397
+        },
+        {
+          "seconds": 14.641,
+          "completed": 398,
+          "fits": 398
+        },
+        {
+          "seconds": 14.656,
+          "completed": 399,
+          "fits": 399
+        },
+        {
+          "seconds": 14.672,
+          "completed": 400,
+          "fits": 400
+        },
+        {
+          "seconds": 14.687,
+          "completed": 401,
+          "fits": 401
+        },
+        {
+          "seconds": 14.703,
+          "completed": 402,
+          "fits": 402
+        },
+        {
+          "seconds": 14.719,
+          "completed": 403,
+          "fits": 403
+        },
+        {
+          "seconds": 14.734,
+          "completed": 404,
+          "fits": 404
+        },
+        {
+          "seconds": 14.75,
+          "completed": 405,
+          "fits": 405
+        },
+        {
+          "seconds": 14.766,
+          "completed": 406,
+          "fits": 406
+        },
+        {
+          "seconds": 14.781,
+          "completed": 407,
+          "fits": 407
+        },
+        {
+          "seconds": 14.781,
+          "completed": 408,
+          "fits": 408
+        },
+        {
+          "seconds": 14.797,
+          "completed": 409,
+          "fits": 409
+        },
+        {
+          "seconds": 14.812,
+          "completed": 410,
+          "fits": 410
+        },
+        {
+          "seconds": 14.828,
+          "completed": 411,
+          "fits": 411
+        },
+        {
+          "seconds": 14.844,
+          "completed": 412,
+          "fits": 412
+        },
+        {
+          "seconds": 14.859,
+          "completed": 413,
+          "fits": 413
+        },
+        {
+          "seconds": 14.875,
+          "completed": 414,
+          "fits": 414
+        },
+        {
+          "seconds": 14.891,
+          "completed": 415,
+          "fits": 415
+        },
+        {
+          "seconds": 14.906,
+          "completed": 416,
+          "fits": 416
+        },
+        {
+          "seconds": 14.922,
+          "completed": 417,
+          "fits": 417
+        },
+        {
+          "seconds": 14.937,
+          "completed": 418,
+          "fits": 418
+        },
+        {
+          "seconds": 14.953,
+          "completed": 419,
+          "fits": 419
+        },
+        {
+          "seconds": 14.969,
+          "completed": 420,
+          "fits": 420
+        },
+        {
+          "seconds": 14.984,
+          "completed": 421,
+          "fits": 421
+        },
+        {
+          "seconds": 15.0,
+          "completed": 422,
+          "fits": 422
+        },
+        {
+          "seconds": 15.016,
+          "completed": 423,
+          "fits": 423
+        },
+        {
+          "seconds": 15.031,
+          "completed": 424,
+          "fits": 424
+        },
+        {
+          "seconds": 15.047,
+          "completed": 425,
+          "fits": 425
+        },
+        {
+          "seconds": 15.062,
+          "completed": 426,
+          "fits": 426
+        },
+        {
+          "seconds": 15.078,
+          "completed": 427,
+          "fits": 427
+        },
+        {
+          "seconds": 15.094,
+          "completed": 428,
+          "fits": 428
+        },
+        {
+          "seconds": 15.109,
+          "completed": 429,
+          "fits": 429
+        },
+        {
+          "seconds": 15.125,
+          "completed": 430,
+          "fits": 430
+        },
+        {
+          "seconds": 15.141,
+          "completed": 431,
+          "fits": 431
+        },
+        {
+          "seconds": 15.156,
+          "completed": 432,
+          "fits": 432
+        },
+        {
+          "seconds": 15.172,
+          "completed": 433,
+          "fits": 433
+        },
+        {
+          "seconds": 15.187,
+          "completed": 434,
+          "fits": 434
+        },
+        {
+          "seconds": 15.203,
+          "completed": 435,
+          "fits": 435
+        },
+        {
+          "seconds": 15.219,
+          "completed": 436,
+          "fits": 436
+        },
+        {
+          "seconds": 15.234,
+          "completed": 437,
+          "fits": 437
+        },
+        {
+          "seconds": 15.328,
+          "completed": 438,
+          "fits": 438
+        },
+        {
+          "seconds": 15.422,
+          "completed": 439,
+          "fits": 439
+        },
+        {
+          "seconds": 15.516,
+          "completed": 440,
+          "fits": 440
+        },
+        {
+          "seconds": 15.609,
+          "completed": 441,
+          "fits": 441
+        },
+        {
+          "seconds": 15.703,
+          "completed": 442,
+          "fits": 442
+        },
+        {
+          "seconds": 15.797,
+          "completed": 443,
+          "fits": 443
+        },
+        {
+          "seconds": 15.906,
+          "completed": 444,
+          "fits": 444
+        },
+        {
+          "seconds": 16.0,
+          "completed": 445,
+          "fits": 445
+        },
+        {
+          "seconds": 16.094,
+          "completed": 446,
+          "fits": 446
+        },
+        {
+          "seconds": 16.187,
+          "completed": 447,
+          "fits": 447
+        },
+        {
+          "seconds": 16.281,
+          "completed": 448,
+          "fits": 448
+        },
+        {
+          "seconds": 16.375,
+          "completed": 449,
+          "fits": 449
+        },
+        {
+          "seconds": 16.469,
+          "completed": 450,
+          "fits": 450
+        },
+        {
+          "seconds": 16.562,
+          "completed": 451,
+          "fits": 451
+        },
+        {
+          "seconds": 16.656,
+          "completed": 452,
+          "fits": 452
+        },
+        {
+          "seconds": 16.75,
+          "completed": 453,
+          "fits": 453
+        },
+        {
+          "seconds": 16.859,
+          "completed": 454,
+          "fits": 454
+        },
+        {
+          "seconds": 16.953,
+          "completed": 455,
+          "fits": 455
+        },
+        {
+          "seconds": 17.047,
+          "completed": 456,
+          "fits": 456
+        },
+        {
+          "seconds": 17.141,
+          "completed": 457,
+          "fits": 457
+        },
+        {
+          "seconds": 17.234,
+          "completed": 458,
+          "fits": 458
+        },
+        {
+          "seconds": 17.328,
+          "completed": 459,
+          "fits": 459
+        },
+        {
+          "seconds": 17.422,
+          "completed": 460,
+          "fits": 460
+        },
+        {
+          "seconds": 17.516,
+          "completed": 461,
+          "fits": 461
+        },
+        {
+          "seconds": 17.609,
+          "completed": 462,
+          "fits": 462
+        },
+        {
+          "seconds": 17.703,
+          "completed": 463,
+          "fits": 463
+        },
+        {
+          "seconds": 17.797,
+          "completed": 464,
+          "fits": 464
+        },
+        {
+          "seconds": 17.891,
+          "completed": 465,
+          "fits": 465
+        },
+        {
+          "seconds": 17.984,
+          "completed": 466,
+          "fits": 466
+        },
+        {
+          "seconds": 18.078,
+          "completed": 467,
+          "fits": 467
+        },
+        {
+          "seconds": 18.172,
+          "completed": 468,
+          "fits": 468
+        },
+        {
+          "seconds": 18.266,
+          "completed": 469,
+          "fits": 469
+        },
+        {
+          "seconds": 18.359,
+          "completed": 470,
+          "fits": 470
+        },
+        {
+          "seconds": 18.453,
+          "completed": 471,
+          "fits": 471
+        },
+        {
+          "seconds": 18.531,
+          "completed": 472,
+          "fits": 472
+        },
+        {
+          "seconds": 18.625,
+          "completed": 473,
+          "fits": 473
+        },
+        {
+          "seconds": 18.719,
+          "completed": 474,
+          "fits": 474
+        },
+        {
+          "seconds": 18.812,
+          "completed": 475,
+          "fits": 475
+        },
+        {
+          "seconds": 18.906,
+          "completed": 476,
+          "fits": 476
+        },
+        {
+          "seconds": 19.0,
+          "completed": 477,
+          "fits": 477
+        },
+        {
+          "seconds": 19.094,
+          "completed": 478,
+          "fits": 478
+        },
+        {
+          "seconds": 19.187,
+          "completed": 479,
+          "fits": 479
+        },
+        {
+          "seconds": 19.281,
+          "completed": 480,
+          "fits": 480
+        },
+        {
+          "seconds": 19.375,
+          "completed": 481,
+          "fits": 481
+        },
+        {
+          "seconds": 19.469,
+          "completed": 482,
+          "fits": 482
+        },
+        {
+          "seconds": 19.562,
+          "completed": 483,
+          "fits": 483
+        },
+        {
+          "seconds": 19.578,
+          "completed": 484,
+          "fits": 484
+        },
+        {
+          "seconds": 19.594,
+          "completed": 485,
+          "fits": 485
+        },
+        {
+          "seconds": 19.625,
+          "completed": 486,
+          "fits": 486
+        },
+        {
+          "seconds": 19.641,
+          "completed": 487,
+          "fits": 487
+        },
+        {
+          "seconds": 19.656,
+          "completed": 488,
+          "fits": 488
+        },
+        {
+          "seconds": 19.672,
+          "completed": 489,
+          "fits": 489
+        },
+        {
+          "seconds": 19.687,
+          "completed": 490,
+          "fits": 490
+        },
+        {
+          "seconds": 19.703,
+          "completed": 491,
+          "fits": 491
+        },
+        {
+          "seconds": 19.734,
+          "completed": 492,
+          "fits": 492
+        },
+        {
+          "seconds": 19.75,
+          "completed": 493,
+          "fits": 493
+        },
+        {
+          "seconds": 19.766,
+          "completed": 494,
+          "fits": 494
+        },
+        {
+          "seconds": 19.781,
+          "completed": 495,
+          "fits": 495
+        },
+        {
+          "seconds": 19.797,
+          "completed": 496,
+          "fits": 496
+        },
+        {
+          "seconds": 19.812,
+          "completed": 497,
+          "fits": 497
+        },
+        {
+          "seconds": 19.844,
+          "completed": 498,
+          "fits": 498
+        },
+        {
+          "seconds": 19.859,
+          "completed": 499,
+          "fits": 499
+        },
+        {
+          "seconds": 19.875,
+          "completed": 500,
+          "fits": 500
+        },
+        {
+          "seconds": 19.891,
+          "completed": 501,
+          "fits": 501
+        },
+        {
+          "seconds": 19.906,
+          "completed": 502,
+          "fits": 502
+        },
+        {
+          "seconds": 19.922,
+          "completed": 503,
+          "fits": 503
+        },
+        {
+          "seconds": 19.953,
+          "completed": 504,
+          "fits": 504
+        },
+        {
+          "seconds": 19.969,
+          "completed": 505,
+          "fits": 505
+        },
+        {
+          "seconds": 19.984,
+          "completed": 506,
+          "fits": 506
+        },
+        {
+          "seconds": 20.031,
+          "completed": 507,
+          "fits": 507
+        },
+        {
+          "seconds": 20.047,
+          "completed": 508,
+          "fits": 508
+        },
+        {
+          "seconds": 20.078,
+          "completed": 509,
+          "fits": 509
+        },
+        {
+          "seconds": 20.125,
+          "completed": 510,
+          "fits": 510
+        },
+        {
+          "seconds": 20.156,
+          "completed": 511,
+          "fits": 511
+        },
+        {
+          "seconds": 20.187,
+          "completed": 512,
+          "fits": 512
+        },
+        {
+          "seconds": 20.219,
+          "completed": 513,
+          "fits": 513
+        },
+        {
+          "seconds": 20.234,
+          "completed": 514,
+          "fits": 514
+        },
+        {
+          "seconds": 20.266,
+          "completed": 515,
+          "fits": 515
+        },
+        {
+          "seconds": 20.312,
+          "completed": 516,
+          "fits": 516
+        },
+        {
+          "seconds": 20.344,
+          "completed": 517,
+          "fits": 517
+        },
+        {
+          "seconds": 20.375,
+          "completed": 518,
+          "fits": 518
+        },
+        {
+          "seconds": 20.406,
+          "completed": 519,
+          "fits": 519
+        },
+        {
+          "seconds": 20.437,
+          "completed": 520,
+          "fits": 520
+        },
+        {
+          "seconds": 20.469,
+          "completed": 521,
+          "fits": 521
+        },
+        {
+          "seconds": 20.516,
+          "completed": 522,
+          "fits": 522
+        },
+        {
+          "seconds": 20.547,
+          "completed": 523,
+          "fits": 523
+        },
+        {
+          "seconds": 20.578,
+          "completed": 524,
+          "fits": 524
+        },
+        {
+          "seconds": 20.609,
+          "completed": 525,
+          "fits": 525
+        },
+        {
+          "seconds": 20.641,
+          "completed": 526,
+          "fits": 526
+        },
+        {
+          "seconds": 20.672,
+          "completed": 527,
+          "fits": 527
+        },
+        {
+          "seconds": 20.703,
+          "completed": 528,
+          "fits": 528
+        },
+        {
+          "seconds": 20.734,
+          "completed": 529,
+          "fits": 529
+        },
+        {
+          "seconds": 20.734,
+          "completed": 530,
+          "fits": 529
+        },
+        {
+          "seconds": 20.75,
+          "completed": 531,
+          "fits": 529
+        },
+        {
+          "seconds": 20.766,
+          "completed": 532,
+          "fits": 529
+        },
+        {
+          "seconds": 20.781,
+          "completed": 533,
+          "fits": 529
+        },
+        {
+          "seconds": 20.797,
+          "completed": 534,
+          "fits": 529
+        },
+        {
+          "seconds": 20.812,
+          "completed": 535,
+          "fits": 529
+        },
+        {
+          "seconds": 20.812,
+          "completed": 536,
+          "fits": 529
+        },
+        {
+          "seconds": 20.828,
+          "completed": 537,
+          "fits": 529
+        },
+        {
+          "seconds": 20.844,
+          "completed": 538,
+          "fits": 529
+        },
+        {
+          "seconds": 20.859,
+          "completed": 539,
+          "fits": 529
+        },
+        {
+          "seconds": 20.875,
+          "completed": 540,
+          "fits": 529
+        },
+        {
+          "seconds": 20.891,
+          "completed": 541,
+          "fits": 529
+        },
+        {
+          "seconds": 20.891,
+          "completed": 542,
+          "fits": 529
+        },
+        {
+          "seconds": 20.906,
+          "completed": 543,
+          "fits": 529
+        },
+        {
+          "seconds": 20.922,
+          "completed": 544,
+          "fits": 529
+        },
+        {
+          "seconds": 20.937,
+          "completed": 545,
+          "fits": 529
+        },
+        {
+          "seconds": 20.953,
+          "completed": 546,
+          "fits": 529
+        },
+        {
+          "seconds": 20.953,
+          "completed": 547,
+          "fits": 529
+        },
+        {
+          "seconds": 20.969,
+          "completed": 548,
+          "fits": 529
+        },
+        {
+          "seconds": 20.984,
+          "completed": 549,
+          "fits": 529
+        },
+        {
+          "seconds": 21.0,
+          "completed": 550,
+          "fits": 529
+        },
+        {
+          "seconds": 21.016,
+          "completed": 551,
+          "fits": 529
+        },
+        {
+          "seconds": 21.016,
+          "completed": 552,
+          "fits": 529
+        },
+        {
+          "seconds": 21.031,
+          "completed": 553,
+          "fits": 529
+        },
+        {
+          "seconds": 21.047,
+          "completed": 554,
+          "fits": 529
+        },
+        {
+          "seconds": 21.062,
+          "completed": 555,
+          "fits": 529
+        },
+        {
+          "seconds": 21.078,
+          "completed": 556,
+          "fits": 529
+        },
+        {
+          "seconds": 21.094,
+          "completed": 557,
+          "fits": 529
+        },
+        {
+          "seconds": 21.109,
+          "completed": 558,
+          "fits": 529
+        },
+        {
+          "seconds": 21.109,
+          "completed": 559,
+          "fits": 529
+        },
+        {
+          "seconds": 21.125,
+          "completed": 560,
+          "fits": 529
+        },
+        {
+          "seconds": 21.141,
+          "completed": 561,
+          "fits": 529
+        },
+        {
+          "seconds": 21.156,
+          "completed": 562,
+          "fits": 529
+        },
+        {
+          "seconds": 21.172,
+          "completed": 563,
+          "fits": 529
+        },
+        {
+          "seconds": 21.172,
+          "completed": 564,
+          "fits": 529
+        },
+        {
+          "seconds": 21.187,
+          "completed": 565,
+          "fits": 529
+        },
+        {
+          "seconds": 21.203,
+          "completed": 566,
+          "fits": 529
+        },
+        {
+          "seconds": 21.219,
+          "completed": 567,
+          "fits": 529
+        },
+        {
+          "seconds": 21.234,
+          "completed": 568,
+          "fits": 529
+        },
+        {
+          "seconds": 21.25,
+          "completed": 569,
+          "fits": 529
+        },
+        {
+          "seconds": 21.25,
+          "completed": 570,
+          "fits": 529
+        },
+        {
+          "seconds": 21.266,
+          "completed": 571,
+          "fits": 529
+        },
+        {
+          "seconds": 21.281,
+          "completed": 572,
+          "fits": 529
+        },
+        {
+          "seconds": 21.297,
+          "completed": 573,
+          "fits": 529
+        },
+        {
+          "seconds": 21.312,
+          "completed": 574,
+          "fits": 529
+        },
+        {
+          "seconds": 21.312,
+          "completed": 575,
+          "fits": 529
+        },
+        {
+          "seconds": 21.344,
+          "completed": 576,
+          "fits": 530
+        },
+        {
+          "seconds": 21.359,
+          "completed": 577,
+          "fits": 530
+        },
+        {
+          "seconds": 21.391,
+          "completed": 578,
+          "fits": 531
+        },
+        {
+          "seconds": 21.406,
+          "completed": 579,
+          "fits": 532
+        },
+        {
+          "seconds": 21.422,
+          "completed": 580,
+          "fits": 533
+        },
+        {
+          "seconds": 21.453,
+          "completed": 581,
+          "fits": 534
+        }
+      ],
+      "source": {
+        "provider": "Local reproducible Python / SQLite experiment",
+        "files": [
+          "模型v1.0_来源留出训练_20261022/training_plan.json",
+          "模型v1.0_来源留出训练_20261022/evaluation.sqlite",
+          "模型v1.0_来源留出训练_20261022/results.json",
+          "模型v1.0_来源留出训练_20261022/reserved_predictions.json",
+          "模型v1.0_来源留出训练_20261022/diagnosis.json"
+        ],
+        "description": "v0.14三电极报告工况：开发35条/23来源；预留7条/7新增来源检验；最终42条模型另存。 progress",
+        "executedAt": "2026-10-22T19:23:44+08:00",
+        "caveats": [
+          "留出来源未参加旧模型拟合和评分，但原文审查已接触标签，并非前瞻盲测。",
+          "开发CV用于选型；留出MAE6.88高于均值参照5.93，性能门槛未通过。",
+          "留出分数属于35条训练模型；全42条重训模型没有独立检验。"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "输入冻结",
+            "detail": "training_plan.json及frozen_run_hashes.json保存数据、代码、候选与来源切分。"
+          },
+          {
+            "title": "实际训练",
+            "detail": "evaluation.sqlite保存581条任务，534次完成的估计器拟合；每个来源总权重1。"
+          },
+          {
+            "title": "独立复算",
+            "detail": "tools/verify_model_v1.py独立复算指标、来源bootstrap及逐折统计；不重新拟合。"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "来源等权MAE",
+            "definition": "先计算各来源内平均绝对误差，再对来源平均；单位为保持率百分点。"
+          },
+          {
+            "label": "95%描述性区间",
+            "definition": "7个检验来源5000次重采样；不包含重新拟合，不是单样品预测区间。"
+          }
+        ]
+      }
+    },
+    "metrics": {
+      "rows": [
+        {
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "rows": 7,
+          "sources": 7,
+          "mae": 6.87604970946695,
+          "rmse": 8.951662624898768,
+          "r2": -1.7266300825530734,
+          "vs_mean": {
+            "mae_ci_low": 3.031268675293693,
+            "mae_ci_high": 11.312813915920042,
+            "delta_mae": 0.9501180324483219,
+            "delta_ci_low": -0.4235335644896005,
+            "delta_ci_high": 2.605457753697483,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "vs_legacy": {
+            "mae_ci_low": 3.031268675293693,
+            "mae_ci_high": 11.312813915920042,
+            "delta_mae": -0.05306481069719991,
+            "delta_ci_low": -1.2913404880045576,
+            "delta_ci_high": 1.0425127819324673,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "label": "v1.0选定模型",
+          "mae_low": 3.031268675293693,
+          "mae_high": 11.312813915920042
+        },
+        {
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "rows": 7,
+          "sources": 7,
+          "mae": 5.925931677018629,
+          "rmse": 7.2778443185228685,
+          "r2": -0.8022885876162045,
+          "vs_mean": {
+            "mae_ci_low": 2.9164534161490656,
+            "mae_ci_high": 9.05878881987577,
+            "delta_mae": 0.0,
+            "delta_ci_low": 0.0,
+            "delta_ci_high": 0.0,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "vs_legacy": {
+            "mae_ci_low": 2.9164534161490656,
+            "mae_ci_high": 9.05878881987577,
+            "delta_mae": -1.0031828431455219,
+            "delta_ci_low": -3.5162185619757054,
+            "delta_ci_high": 1.1300862634375943,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "label": "来源等权均值",
+          "mae_low": 2.9164534161490656,
+          "mae_high": 9.05878881987577
+        },
+        {
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "rows": 7,
+          "sources": 7,
+          "mae": 6.92911452016415,
+          "rmse": 9.876132920565695,
+          "r2": -2.318888504328254,
+          "vs_mean": {
+            "mae_ci_low": 2.1925991904672038,
+            "mae_ci_high": 12.478265200213238,
+            "delta_mae": 1.0031828431455219,
+            "delta_ci_low": -1.1300862634375943,
+            "delta_ci_high": 3.5162185619757054,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "vs_legacy": {
+            "mae_ci_low": 2.1925991904672038,
+            "mae_ci_high": 12.478265200213238,
+            "delta_mae": 0.0,
+            "delta_ci_low": 0.0,
+            "delta_ci_high": 0.0,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "label": "原去电流MLP",
+          "mae_low": 2.1925991904672038,
+          "mae_high": 12.478265200213238
+        },
+        {
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "rows": 7,
+          "sources": 7,
+          "mae": 6.226715365856031,
+          "rmse": 7.85886522353757,
+          "r2": -1.101544022102503,
+          "vs_mean": {
+            "mae_ci_low": 2.8766566042714072,
+            "mae_ci_high": 9.87860325757859,
+            "delta_mae": 0.30078368883740275,
+            "delta_ci_low": -0.2470801304226435,
+            "delta_ci_high": 0.9512429480708785,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "vs_legacy": {
+            "mae_ci_low": 2.8766566042714072,
+            "mae_ci_high": 9.87860325757859,
+            "delta_mae": -0.7023991543081191,
+            "delta_ci_low": -2.580966454863687,
+            "delta_ci_high": 0.9494593075242749,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "label": "Ridge100·核心参数",
+          "mae_low": 2.8766566042714072,
+          "mae_high": 9.87860325757859
+        },
+        {
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "rows": 7,
+          "sources": 7,
+          "mae": 6.216356296669171,
+          "rmse": 7.918890201360674,
+          "r2": -1.1337692530178507,
+          "vs_mean": {
+            "mae_ci_low": 2.7959746477146195,
+            "mae_ci_high": 9.961364452619744,
+            "delta_mae": 0.290424619650543,
+            "delta_ci_low": -0.336368252915683,
+            "delta_ci_high": 0.9700350822096705,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "vs_legacy": {
+            "mae_ci_low": 2.7959746477146195,
+            "mae_ci_high": 9.961364452619744,
+            "delta_mae": -0.7127582234949789,
+            "delta_ci_low": -2.619418581237808,
+            "delta_ci_high": 0.8988761712674054,
+            "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+          },
+          "label": "Ridge100·加入材料制备",
+          "mae_low": 2.7959746477146195,
+          "mae_high": 9.961364452619744
+        }
+      ],
+      "source": {
+        "provider": "Local reproducible Python / SQLite experiment",
+        "files": [
+          "模型v1.0_来源留出训练_20261022/training_plan.json",
+          "模型v1.0_来源留出训练_20261022/evaluation.sqlite",
+          "模型v1.0_来源留出训练_20261022/results.json",
+          "模型v1.0_来源留出训练_20261022/reserved_predictions.json",
+          "模型v1.0_来源留出训练_20261022/diagnosis.json"
+        ],
+        "description": "v0.14三电极报告工况：开发35条/23来源；预留7条/7新增来源检验；最终42条模型另存。 metrics",
+        "executedAt": "2026-10-22T19:23:44+08:00",
+        "caveats": [
+          "留出来源未参加旧模型拟合和评分，但原文审查已接触标签，并非前瞻盲测。",
+          "开发CV用于选型；留出MAE6.88高于均值参照5.93，性能门槛未通过。",
+          "留出分数属于35条训练模型；全42条重训模型没有独立检验。"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "输入冻结",
+            "detail": "training_plan.json及frozen_run_hashes.json保存数据、代码、候选与来源切分。"
+          },
+          {
+            "title": "实际训练",
+            "detail": "evaluation.sqlite保存581条任务，534次完成的估计器拟合；每个来源总权重1。"
+          },
+          {
+            "title": "独立复算",
+            "detail": "tools/verify_model_v1.py独立复算指标、来源bootstrap及逐折统计；不重新拟合。"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "来源等权MAE",
+            "definition": "先计算各来源内平均绝对误差，再对来源平均；单位为保持率百分点。"
+          },
+          {
+            "label": "95%描述性区间",
+            "definition": "7个检验来源5000次重采样；不包含重新拟合，不是单样品预测区间。"
+          }
+        ]
+      }
+    },
+    "predictions": {
+      "rows": [
+        {
+          "index": 0,
+          "endpoint_id": "legacy:R087_CY01",
+          "sample_name": "OAC623",
+          "source_group": "10.1007/s00339-023-07141-8",
+          "observed": 85.5,
+          "predicted": 98.5173635510379,
+          "warnings": [
+            "unseen_category:electrolyte=NaOH"
+          ],
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "absolute_error": 13.017363551037903
+        },
+        {
+          "index": 3,
+          "endpoint_id": "legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "source_group": "10.1021/acsomega.4c11529",
+          "observed": 89.9,
+          "predicted": 95.64263649028214,
+          "warnings": [],
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "absolute_error": 5.742636490282138
+        },
+        {
+          "index": 5,
+          "endpoint_id": "legacy:R045_CY01",
+          "sample_name": "RSM-0.33-550",
+          "source_group": "10.3390/molecules28124633",
+          "observed": 96.3,
+          "predicted": 94.14899980643452,
+          "warnings": [],
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "absolute_error": 2.15100019356548
+        },
+        {
+          "index": 7,
+          "endpoint_id": "candidate:TE026",
+          "sample_name": "KAC-5",
+          "source_group": "10.1002/ente.202201281",
+          "observed": 90.31,
+          "predicted": 95.48617454016104,
+          "warnings": [],
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "absolute_error": 5.176174540161043
+        },
+        {
+          "index": 28,
+          "endpoint_id": "candidate:TE039",
+          "sample_name": "AC_rice_straw",
+          "source_group": "10.1039/d6na00276e",
+          "observed": 83.54,
+          "predicted": 101.23917325206921,
+          "warnings": [],
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "absolute_error": 17.6991732520692
+        },
+        {
+          "index": 39,
+          "endpoint_id": "candidate:TE011",
+          "sample_name": "AHC-CL-TU",
+          "source_group": "10.3390/polym15234478",
+          "observed": 99.96,
+          "predicted": 96.3084801074252,
+          "warnings": [],
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "absolute_error": 3.6515198925747967
+        },
+        {
+          "index": 40,
+          "endpoint_id": "candidate:TE013",
+          "sample_name": "CMC-ZnK-800",
+          "source_group": "10.3390/polym17091198",
+          "observed": 94.3,
+          "predicted": 93.6055199534219,
+          "warnings": [],
+          "variant": "selected",
+          "candidate": "ridge_core_noI_10",
+          "absolute_error": 0.6944800465780929
+        },
+        {
+          "index": 0,
+          "endpoint_id": "legacy:R087_CY01",
+          "sample_name": "OAC623",
+          "source_group": "10.1007/s00339-023-07141-8",
+          "observed": 85.5,
+          "predicted": 96.25717391304347,
+          "warnings": [],
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "absolute_error": 10.757173913043474
+        },
+        {
+          "index": 3,
+          "endpoint_id": "legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "source_group": "10.1021/acsomega.4c11529",
+          "observed": 89.9,
+          "predicted": 96.25717391304347,
+          "warnings": [],
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "absolute_error": 6.357173913043468
+        },
+        {
+          "index": 5,
+          "endpoint_id": "legacy:R045_CY01",
+          "sample_name": "RSM-0.33-550",
+          "source_group": "10.3390/molecules28124633",
+          "observed": 96.3,
+          "predicted": 96.25717391304347,
+          "warnings": [],
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "absolute_error": 0.04282608695652357
+        },
+        {
+          "index": 7,
+          "endpoint_id": "candidate:TE026",
+          "sample_name": "KAC-5",
+          "source_group": "10.1002/ente.202201281",
+          "observed": 90.31,
+          "predicted": 96.25717391304347,
+          "warnings": [],
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "absolute_error": 5.947173913043471
+        },
+        {
+          "index": 28,
+          "endpoint_id": "candidate:TE039",
+          "sample_name": "AC_rice_straw",
+          "source_group": "10.1039/d6na00276e",
+          "observed": 83.54,
+          "predicted": 96.25717391304347,
+          "warnings": [],
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "absolute_error": 12.717173913043467
+        },
+        {
+          "index": 39,
+          "endpoint_id": "candidate:TE011",
+          "sample_name": "AHC-CL-TU",
+          "source_group": "10.3390/polym15234478",
+          "observed": 99.96,
+          "predicted": 96.25717391304347,
+          "warnings": [],
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "absolute_error": 3.70282608695652
+        },
+        {
+          "index": 40,
+          "endpoint_id": "candidate:TE013",
+          "sample_name": "CMC-ZnK-800",
+          "source_group": "10.3390/polym17091198",
+          "observed": 94.3,
+          "predicted": 96.25717391304347,
+          "warnings": [],
+          "variant": "source_mean",
+          "candidate": "source_mean",
+          "absolute_error": 1.9571739130434764
+        },
+        {
+          "index": 0,
+          "endpoint_id": "legacy:R087_CY01",
+          "sample_name": "OAC623",
+          "source_group": "10.1007/s00339-023-07141-8",
+          "observed": 85.5,
+          "predicted": 101.2454785272373,
+          "warnings": [
+            "unseen_category:electrolyte=NaOH"
+          ],
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "absolute_error": 15.745478527237296
+        },
+        {
+          "index": 3,
+          "endpoint_id": "legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "source_group": "10.1021/acsomega.4c11529",
+          "observed": 89.9,
+          "predicted": 94.98699637303535,
+          "warnings": [],
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "absolute_error": 5.086996373035348
+        },
+        {
+          "index": 5,
+          "endpoint_id": "legacy:R045_CY01",
+          "sample_name": "RSM-0.33-550",
+          "source_group": "10.3390/molecules28124633",
+          "observed": 96.3,
+          "predicted": 96.16191192526892,
+          "warnings": [],
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "absolute_error": 0.13808807473107265
+        },
+        {
+          "index": 7,
+          "endpoint_id": "candidate:TE026",
+          "sample_name": "KAC-5",
+          "source_group": "10.1002/ente.202201281",
+          "observed": 90.31,
+          "predicted": 94.24890400478162,
+          "warnings": [],
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "absolute_error": 3.9389040047816195
+        },
+        {
+          "index": 28,
+          "endpoint_id": "candidate:TE039",
+          "sample_name": "AC_rice_straw",
+          "source_group": "10.1039/d6na00276e",
+          "observed": 83.54,
+          "predicted": 103.10148388781245,
+          "warnings": [],
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "absolute_error": 19.561483887812443
+        },
+        {
+          "index": 39,
+          "endpoint_id": "candidate:TE011",
+          "sample_name": "AHC-CL-TU",
+          "source_group": "10.3390/polym15234478",
+          "observed": 99.96,
+          "predicted": 96.79232389063503,
+          "warnings": [],
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "absolute_error": 3.1676761093649617
+        },
+        {
+          "index": 40,
+          "endpoint_id": "candidate:TE013",
+          "sample_name": "CMC-ZnK-800",
+          "source_group": "10.3390/polym17091198",
+          "observed": 94.3,
+          "predicted": 93.43482533581368,
+          "warnings": [],
+          "variant": "legacy_mlp_noI",
+          "candidate": "legacy_mlp_noI",
+          "absolute_error": 0.8651746641863127
+        },
+        {
+          "index": 0,
+          "endpoint_id": "legacy:R087_CY01",
+          "sample_name": "OAC623",
+          "source_group": "10.1007/s00339-023-07141-8",
+          "observed": 85.5,
+          "predicted": 97.16179695810382,
+          "warnings": [
+            "unseen_category:electrolyte=NaOH"
+          ],
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "absolute_error": 11.661796958103821
+        },
+        {
+          "index": 3,
+          "endpoint_id": "legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "source_group": "10.1021/acsomega.4c11529",
+          "observed": 89.9,
+          "predicted": 96.00846391234107,
+          "warnings": [],
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "absolute_error": 6.108463912341065
+        },
+        {
+          "index": 5,
+          "endpoint_id": "legacy:R045_CY01",
+          "sample_name": "RSM-0.33-550",
+          "source_group": "10.3390/molecules28124633",
+          "observed": 96.3,
+          "predicted": 95.64447585132795,
+          "warnings": [],
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "absolute_error": 0.6555241486720433
+        },
+        {
+          "index": 7,
+          "endpoint_id": "candidate:TE026",
+          "sample_name": "KAC-5",
+          "source_group": "10.1002/ente.202201281",
+          "observed": 90.31,
+          "predicted": 95.893738037432,
+          "warnings": [],
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "absolute_error": 5.583738037431999
+        },
+        {
+          "index": 28,
+          "endpoint_id": "candidate:TE039",
+          "sample_name": "AC_rice_straw",
+          "source_group": "10.1039/d6na00276e",
+          "observed": 83.54,
+          "predicted": 98.07770738727325,
+          "warnings": [],
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "absolute_error": 14.537707387273244
+        },
+        {
+          "index": 39,
+          "endpoint_id": "candidate:TE011",
+          "sample_name": "AHC-CL-TU",
+          "source_group": "10.3390/polym15234478",
+          "observed": 99.96,
+          "predicted": 96.14222019054428,
+          "warnings": [],
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "absolute_error": 3.8177798094557147
+        },
+        {
+          "index": 40,
+          "endpoint_id": "candidate:TE013",
+          "sample_name": "CMC-ZnK-800",
+          "source_group": "10.3390/polym17091198",
+          "observed": 94.3,
+          "predicted": 95.52199730771433,
+          "warnings": [],
+          "variant": "ridge_core_noI_100",
+          "candidate": "ridge_core_noI_100",
+          "absolute_error": 1.2219973077143322
+        },
+        {
+          "index": 0,
+          "endpoint_id": "legacy:R087_CY01",
+          "sample_name": "OAC623",
+          "source_group": "10.1007/s00339-023-07141-8",
+          "observed": 85.5,
+          "predicted": 97.77324460286431,
+          "warnings": [
+            "unseen_category:electrolyte=NaOH",
+            "missing:Raman_ID_IG",
+            "missing:N_at_pct",
+            "missing:O_at_pct",
+            "missing:mass_loading_mg_cm2",
+            "outside_training_range:activation_temperature_C",
+            "missing:activation_duration_h",
+            "missing:heating_rate_C_min",
+            "missing:carbonization_temperature_C",
+            "missing:precarbonization_temperature_C",
+            "missing:precarbonization_duration_h",
+            "missing:precarbonization_heating_rate_C_min"
+          ],
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "absolute_error": 12.27324460286431
+        },
+        {
+          "index": 3,
+          "endpoint_id": "legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "source_group": "10.1021/acsomega.4c11529",
+          "observed": 89.9,
+          "predicted": 96.28555559781985,
+          "warnings": [
+            "missing:N_at_pct",
+            "missing:O_at_pct",
+            "missing:activation_temperature_C",
+            "missing:heating_rate_C_min",
+            "missing:carbonization_temperature_C",
+            "missing:precarbonization_temperature_C",
+            "missing:precarbonization_duration_h",
+            "missing:precarbonization_heating_rate_C_min"
+          ],
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "absolute_error": 6.385555597819845
+        },
+        {
+          "index": 5,
+          "endpoint_id": "legacy:R045_CY01",
+          "sample_name": "RSM-0.33-550",
+          "source_group": "10.3390/molecules28124633",
+          "observed": 96.3,
+          "predicted": 95.70445776249332,
+          "warnings": [
+            "missing:micropore_volume_cm3_g",
+            "missing:average_pore_diameter_nm",
+            "missing:micropore_surface_area_m2_g",
+            "missing:Raman_ID_IG",
+            "missing:N_at_pct",
+            "missing:O_at_pct",
+            "missing:mass_loading_mg_cm2",
+            "outside_training_range:activation_temperature_C",
+            "missing:carbonization_temperature_C",
+            "missing:precarbonization_temperature_C",
+            "missing:precarbonization_duration_h",
+            "missing:precarbonization_heating_rate_C_min"
+          ],
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "absolute_error": 0.5955422375066775
+        },
+        {
+          "index": 7,
+          "endpoint_id": "candidate:TE026",
+          "sample_name": "KAC-5",
+          "source_group": "10.1002/ente.202201281",
+          "observed": 90.31,
+          "predicted": 95.91925312529979,
+          "warnings": [
+            "missing:micropore_surface_area_m2_g",
+            "missing:Raman_ID_IG",
+            "missing:N_at_pct",
+            "missing:O_at_pct",
+            "missing:carbonization_temperature_C",
+            "outside_training_range:precarbonization_temperature_C"
+          ],
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "absolute_error": 5.609253125299787
+        },
+        {
+          "index": 28,
+          "endpoint_id": "candidate:TE039",
+          "sample_name": "AC_rice_straw",
+          "source_group": "10.1039/d6na00276e",
+          "observed": 83.54,
+          "predicted": 97.8246352034861,
+          "warnings": [
+            "missing:total_pore_volume_cm3_g",
+            "missing:micropore_volume_cm3_g",
+            "missing:average_pore_diameter_nm",
+            "missing:micropore_surface_area_m2_g",
+            "missing:Raman_ID_IG",
+            "missing:N_at_pct",
+            "missing:O_at_pct",
+            "missing:activation_temperature_C",
+            "missing:activation_duration_h",
+            "missing:heating_rate_C_min",
+            "missing:precarbonization_temperature_C",
+            "missing:precarbonization_duration_h",
+            "missing:precarbonization_heating_rate_C_min"
+          ],
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "absolute_error": 14.28463520348609
+        },
+        {
+          "index": 39,
+          "endpoint_id": "candidate:TE011",
+          "sample_name": "AHC-CL-TU",
+          "source_group": "10.3390/polym15234478",
+          "observed": 99.96,
+          "predicted": 96.739424599203,
+          "warnings": [
+            "missing:total_pore_volume_cm3_g",
+            "missing:micropore_volume_cm3_g",
+            "missing:average_pore_diameter_nm",
+            "missing:Raman_ID_IG",
+            "missing:N_at_pct",
+            "missing:O_at_pct",
+            "missing:mass_loading_mg_cm2",
+            "missing:carbonization_temperature_C",
+            "missing:precarbonization_temperature_C",
+            "missing:precarbonization_duration_h",
+            "missing:precarbonization_heating_rate_C_min"
+          ],
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "absolute_error": 3.2205754007969887
+        },
+        {
+          "index": 40,
+          "endpoint_id": "candidate:TE013",
+          "sample_name": "CMC-ZnK-800",
+          "source_group": "10.3390/polym17091198",
+          "observed": 94.3,
+          "predicted": 95.4456879089105,
+          "warnings": [
+            "missing:total_pore_volume_cm3_g",
+            "missing:micropore_volume_cm3_g",
+            "missing:average_pore_diameter_nm",
+            "missing:micropore_surface_area_m2_g",
+            "missing:mass_loading_mg_cm2",
+            "missing:activation_duration_h",
+            "missing:heating_rate_C_min",
+            "missing:carbonization_temperature_C",
+            "missing:precarbonization_temperature_C",
+            "missing:precarbonization_duration_h",
+            "missing:precarbonization_heating_rate_C_min"
+          ],
+          "variant": "ridge_material_noI_100",
+          "candidate": "ridge_material_noI_100",
+          "absolute_error": 1.145687908910503
+        }
+      ],
+      "source": {
+        "provider": "Local reproducible Python / SQLite experiment",
+        "files": [
+          "模型v1.0_来源留出训练_20261022/training_plan.json",
+          "模型v1.0_来源留出训练_20261022/evaluation.sqlite",
+          "模型v1.0_来源留出训练_20261022/results.json",
+          "模型v1.0_来源留出训练_20261022/reserved_predictions.json",
+          "模型v1.0_来源留出训练_20261022/diagnosis.json"
+        ],
+        "description": "v0.14三电极报告工况：开发35条/23来源；预留7条/7新增来源检验；最终42条模型另存。 predictions",
+        "executedAt": "2026-10-22T19:23:44+08:00",
+        "caveats": [
+          "留出来源未参加旧模型拟合和评分，但原文审查已接触标签，并非前瞻盲测。",
+          "开发CV用于选型；留出MAE6.88高于均值参照5.93，性能门槛未通过。",
+          "留出分数属于35条训练模型；全42条重训模型没有独立检验。"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "输入冻结",
+            "detail": "training_plan.json及frozen_run_hashes.json保存数据、代码、候选与来源切分。"
+          },
+          {
+            "title": "实际训练",
+            "detail": "evaluation.sqlite保存581条任务，534次完成的估计器拟合；每个来源总权重1。"
+          },
+          {
+            "title": "独立复算",
+            "detail": "tools/verify_model_v1.py独立复算指标、来源bootstrap及逐折统计；不重新拟合。"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "来源等权MAE",
+            "definition": "先计算各来源内平均绝对误差，再对来源平均；单位为保持率百分点。"
+          },
+          {
+            "label": "95%描述性区间",
+            "definition": "7个检验来源5000次重采样；不包含重新拟合，不是单样品预测区间。"
+          }
+        ]
+      }
+    },
+    "candidates": {
+      "rows": [
+        {
+          "candidate": "ridge_core_noI_10",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.265940979762908,
+          "rmse": 4.734465906972318,
+          "r2": 0.17605957040458975
+        },
+        {
+          "candidate": "ridge_material_noI_10",
+          "block": "material",
+          "current": false,
+          "eligible": true,
+          "mae": 3.3247144031367664,
+          "rmse": 4.881027847733712,
+          "r2": 0.12425755890985746
+        },
+        {
+          "candidate": "legacy_mlp_noI",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.332840049989961,
+          "rmse": 4.393473164454305,
+          "r2": 0.2904716013478661
+        },
+        {
+          "candidate": "ridge_core_I_10",
+          "block": "core",
+          "current": true,
+          "eligible": true,
+          "mae": 3.3683328499461647,
+          "rmse": 4.846799403748788,
+          "r2": 0.1364968660382584
+        },
+        {
+          "candidate": "ridge_material_I_10",
+          "block": "material",
+          "current": true,
+          "eligible": true,
+          "mae": 3.423533919290354,
+          "rmse": 4.965921328677001,
+          "r2": 0.09352987232193788
+        },
+        {
+          "candidate": "mlp_material_noI_4_alpha10",
+          "block": "material",
+          "current": false,
+          "eligible": true,
+          "mae": 3.4384396091327294,
+          "rmse": 4.9418469699573135,
+          "r2": 0.10229754636602928
+        },
+        {
+          "candidate": "krr_core_noI_1",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.6654457317953315,
+          "rmse": 5.092379037792787,
+          "r2": 0.046775337854733534
+        },
+        {
+          "candidate": "krr_material_noI_1",
+          "block": "material",
+          "current": false,
+          "eligible": true,
+          "mae": 3.687467012754581,
+          "rmse": 5.107047535989935,
+          "r2": 0.041275938806875856
+        },
+        {
+          "candidate": "krr_material_I_1",
+          "block": "material",
+          "current": true,
+          "eligible": true,
+          "mae": 3.763388095394783,
+          "rmse": 5.166861824593238,
+          "r2": 0.01868706920838914
+        },
+        {
+          "candidate": "ridge_material_noI_100",
+          "block": "material",
+          "current": false,
+          "eligible": true,
+          "mae": 3.7637968146377165,
+          "rmse": 5.165469884707025,
+          "r2": 0.019215724576651105
+        },
+        {
+          "candidate": "mlp_core_noI_4_alpha10",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.7653541691981043,
+          "rmse": 5.21478314750961,
+          "r2": 0.0003998025290159468
+        },
+        {
+          "candidate": "extra_trees_core_noI_leaf4",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.7903878349154287,
+          "rmse": 5.369948078604829,
+          "r2": -0.05997103961017247
+        },
+        {
+          "candidate": "ridge_material_I_100",
+          "block": "material",
+          "current": true,
+          "eligible": true,
+          "mae": 3.793180443717914,
+          "rmse": 5.194627235529671,
+          "r2": 0.008112075811373631
+        },
+        {
+          "candidate": "ridge_core_noI_100",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.802861786443532,
+          "rmse": 5.184646983779961,
+          "r2": 0.011919772173484389
+        },
+        {
+          "candidate": "extra_trees_core_noI_leaf2",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.8032867806117427,
+          "rmse": 5.210523458471969,
+          "r2": 0.002032179875320228
+        },
+        {
+          "candidate": "krr_core_I_1",
+          "block": "core",
+          "current": true,
+          "eligible": true,
+          "mae": 3.80770872285018,
+          "rmse": 5.156619954138734,
+          "r2": 0.022573574831715293
+        },
+        {
+          "candidate": "ridge_core_I_100",
+          "block": "core",
+          "current": true,
+          "eligible": true,
+          "mae": 3.8363823499787233,
+          "rmse": 5.216119339242519,
+          "r2": -0.0001125212248418439
+        },
+        {
+          "candidate": "extra_trees_material_noI_leaf4",
+          "block": "material",
+          "current": false,
+          "eligible": true,
+          "mae": 3.8878368758916046,
+          "rmse": 5.3453855718014704,
+          "r2": -0.05029645754158185
+        },
+        {
+          "candidate": "krr_core_noI_10",
+          "block": "core",
+          "current": false,
+          "eligible": true,
+          "mae": 3.912374904513926,
+          "rmse": 5.305767442122053,
+          "r2": -0.034785292475612684
+        },
+        {
+          "candidate": "krr_core_I_10",
+          "block": "core",
+          "current": true,
+          "eligible": true,
+          "mae": 3.9529274548786915,
+          "rmse": 5.333473385007958,
+          "r2": -0.045620504167607656
+        },
+        {
+          "candidate": "source_median",
+          "block": "core",
+          "current": false,
+          "eligible": false,
+          "mae": 3.9858695652173894,
+          "rmse": 5.397956537673185,
+          "r2": -0.07105702348209708
+        },
+        {
+          "candidate": "krr_material_noI_10",
+          "block": "material",
+          "current": false,
+          "eligible": true,
+          "mae": 3.9982134828334432,
+          "rmse": 5.3554151315066765,
+          "r2": -0.05424150262110561
+        },
+        {
+          "candidate": "krr_material_I_10",
+          "block": "material",
+          "current": true,
+          "eligible": true,
+          "mae": 4.014104098885734,
+          "rmse": 5.369461352324235,
+          "r2": -0.059778899063160695
+        },
+        {
+          "candidate": "extra_trees_material_noI_leaf2",
+          "block": "material",
+          "current": false,
+          "eligible": true,
+          "mae": 4.038516514164188,
+          "rmse": 5.328386091612972,
+          "r2": -0.043626741013182535
+        },
+        {
+          "candidate": "source_mean",
+          "block": "core",
+          "current": false,
+          "eligible": false,
+          "mae": 4.093616600790517,
+          "rmse": 5.434923364095365,
+          "r2": -0.08577709510708087
+        }
+      ],
+      "source": {
+        "provider": "Local reproducible Python / SQLite experiment",
+        "files": [
+          "模型v1.0_来源留出训练_20261022/training_plan.json",
+          "模型v1.0_来源留出训练_20261022/evaluation.sqlite",
+          "模型v1.0_来源留出训练_20261022/results.json",
+          "模型v1.0_来源留出训练_20261022/reserved_predictions.json",
+          "模型v1.0_来源留出训练_20261022/diagnosis.json"
+        ],
+        "description": "v0.14三电极报告工况：开发35条/23来源；预留7条/7新增来源检验；最终42条模型另存。 candidates",
+        "executedAt": "2026-10-22T19:23:44+08:00",
+        "caveats": [
+          "留出来源未参加旧模型拟合和评分，但原文审查已接触标签，并非前瞻盲测。",
+          "开发CV用于选型；留出MAE6.88高于均值参照5.93，性能门槛未通过。",
+          "留出分数属于35条训练模型；全42条重训模型没有独立检验。"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "输入冻结",
+            "detail": "training_plan.json及frozen_run_hashes.json保存数据、代码、候选与来源切分。"
+          },
+          {
+            "title": "实际训练",
+            "detail": "evaluation.sqlite保存581条任务，534次完成的估计器拟合；每个来源总权重1。"
+          },
+          {
+            "title": "独立复算",
+            "detail": "tools/verify_model_v1.py独立复算指标、来源bootstrap及逐折统计；不重新拟合。"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "来源等权MAE",
+            "definition": "先计算各来源内平均绝对误差，再对来源平均；单位为保持率百分点。"
+          },
+          {
+            "label": "95%描述性区间",
+            "definition": "7个检验来源5000次重采样；不包含重新拟合，不是单样品预测区间。"
+          }
+        ]
+      }
+    },
+    "diagnosis": {
+      "rows": [
+        {
+          "development": {
+            "rows": 35,
+            "sources": 23,
+            "source_equal_target_mean": 96.25717391304347,
+            "sources_with_target_below91": 2
+          },
+          "reserved": {
+            "rows": 7,
+            "sources": 7,
+            "source_equal_target_mean": 91.40142857142857,
+            "sources_with_target_below91": 4
+          },
+          "largest_errors": [
+            {
+              "index": 28,
+              "endpoint_id": "candidate:TE039",
+              "sample_name": "AC_rice_straw",
+              "source_group": "10.1039/d6na00276e",
+              "observed": 83.54,
+              "predicted": 101.23917325206921,
+              "warnings": [],
+              "variant": "selected",
+              "candidate": "ridge_core_noI_10"
+            },
+            {
+              "index": 0,
+              "endpoint_id": "legacy:R087_CY01",
+              "sample_name": "OAC623",
+              "source_group": "10.1007/s00339-023-07141-8",
+              "observed": 85.5,
+              "predicted": 98.5173635510379,
+              "warnings": [
+                "unseen_category:electrolyte=NaOH"
+              ],
+              "variant": "selected",
+              "candidate": "ridge_core_noI_10"
+            },
+            {
+              "index": 3,
+              "endpoint_id": "legacy:R013_CY01",
+              "sample_name": "EUAC1-60",
+              "source_group": "10.1021/acsomega.4c11529",
+              "observed": 89.9,
+              "predicted": 95.64263649028214,
+              "warnings": [],
+              "variant": "selected",
+              "candidate": "ridge_core_noI_10"
+            },
+            {
+              "index": 7,
+              "endpoint_id": "candidate:TE026",
+              "sample_name": "KAC-5",
+              "source_group": "10.1002/ente.202201281",
+              "observed": 90.31,
+              "predicted": 95.48617454016104,
+              "warnings": [],
+              "variant": "selected",
+              "candidate": "ridge_core_noI_10"
+            },
+            {
+              "index": 39,
+              "endpoint_id": "candidate:TE011",
+              "sample_name": "AHC-CL-TU",
+              "source_group": "10.3390/polym15234478",
+              "observed": 99.96,
+              "predicted": 96.3084801074252,
+              "warnings": [],
+              "variant": "selected",
+              "candidate": "ridge_core_noI_10"
+            },
+            {
+              "index": 5,
+              "endpoint_id": "legacy:R045_CY01",
+              "sample_name": "RSM-0.33-550",
+              "source_group": "10.3390/molecules28124633",
+              "observed": 96.3,
+              "predicted": 94.14899980643452,
+              "warnings": [],
+              "variant": "selected",
+              "candidate": "ridge_core_noI_10"
+            },
+            {
+              "index": 40,
+              "endpoint_id": "candidate:TE013",
+              "sample_name": "CMC-ZnK-800",
+              "source_group": "10.3390/polym17091198",
+              "observed": 94.3,
+              "predicted": 93.6055199534219,
+              "warnings": [],
+              "variant": "selected",
+              "candidate": "ridge_core_noI_10"
+            }
+          ],
+          "top2_squared_error_share": 0.8605638175771522,
+          "material_candidate_enabled_fields_in_development": {
+            "total_pore_volume_cm3_g": {
+              "minimum_source_support": 16,
+              "fold_candidate_uses": 253
+            },
+            "micropore_volume_cm3_g": {
+              "minimum_source_support": 9,
+              "fold_candidate_uses": 253
+            },
+            "average_pore_diameter_nm": {
+              "minimum_source_support": 8,
+              "fold_candidate_uses": 253
+            },
+            "micropore_surface_area_m2_g": {
+              "minimum_source_support": 11,
+              "fold_candidate_uses": 253
+            },
+            "Raman_ID_IG": {
+              "minimum_source_support": 16,
+              "fold_candidate_uses": 253
+            },
+            "N_at_pct": {
+              "minimum_source_support": 9,
+              "fold_candidate_uses": 253
+            },
+            "O_at_pct": {
+              "minimum_source_support": 8,
+              "fold_candidate_uses": 253
+            },
+            "mass_loading_mg_cm2": {
+              "minimum_source_support": 6,
+              "fold_candidate_uses": 253
+            },
+            "activation_temperature_C": {
+              "minimum_source_support": 19,
+              "fold_candidate_uses": 253
+            },
+            "activation_duration_h": {
+              "minimum_source_support": 18,
+              "fold_candidate_uses": 253
+            },
+            "heating_rate_C_min": {
+              "minimum_source_support": 12,
+              "fold_candidate_uses": 253
+            },
+            "carbonization_temperature_C": {
+              "minimum_source_support": 5,
+              "fold_candidate_uses": 198
+            },
+            "precarbonization_temperature_C": {
+              "minimum_source_support": 9,
+              "fold_candidate_uses": 253
+            },
+            "precarbonization_duration_h": {
+              "minimum_source_support": 9,
+              "fold_candidate_uses": 253
+            },
+            "precarbonization_heating_rate_C_min": {
+              "minimum_source_support": 6,
+              "fold_candidate_uses": 253
+            }
+          },
+          "material_feature_effect_ridge100_reserved_mae": -0.010359069186860026,
+          "interpretation": "Observed distribution shift, sparse low-retention source coverage, and unseen NaOH category; these are measured associations, not proof of a unique causal mechanism."
+        }
+      ],
+      "source": {
+        "provider": "Local reproducible Python / SQLite experiment",
+        "files": [
+          "模型v1.0_来源留出训练_20261022/training_plan.json",
+          "模型v1.0_来源留出训练_20261022/evaluation.sqlite",
+          "模型v1.0_来源留出训练_20261022/results.json",
+          "模型v1.0_来源留出训练_20261022/reserved_predictions.json",
+          "模型v1.0_来源留出训练_20261022/diagnosis.json"
+        ],
+        "description": "v0.14三电极报告工况：开发35条/23来源；预留7条/7新增来源检验；最终42条模型另存。 diagnosis",
+        "executedAt": "2026-10-22T19:23:44+08:00",
+        "caveats": [
+          "留出来源未参加旧模型拟合和评分，但原文审查已接触标签，并非前瞻盲测。",
+          "开发CV用于选型；留出MAE6.88高于均值参照5.93，性能门槛未通过。",
+          "留出分数属于35条训练模型；全42条重训模型没有独立检验。"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "输入冻结",
+            "detail": "training_plan.json及frozen_run_hashes.json保存数据、代码、候选与来源切分。"
+          },
+          {
+            "title": "实际训练",
+            "detail": "evaluation.sqlite保存581条任务，534次完成的估计器拟合；每个来源总权重1。"
+          },
+          {
+            "title": "独立复算",
+            "detail": "tools/verify_model_v1.py独立复算指标、来源bootstrap及逐折统计；不重新拟合。"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "来源等权MAE",
+            "definition": "先计算各来源内平均绝对误差，再对来源平均；单位为保持率百分点。"
+          },
+          {
+            "label": "95%描述性区间",
+            "definition": "7个检验来源5000次重采样；不包含重新拟合，不是单样品预测区间。"
+          }
+        ]
+      }
+    }
+  },
+  "id": "dashboard:0f075943-5c2a-4efe-b12e-913f1912069e"
+}

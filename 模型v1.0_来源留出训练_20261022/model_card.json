@@ -1,0 +1,73 @@
+{
+  "model_version": "1.0",
+  "run_id": "retention-v1.0-v014-20261022",
+  "status": "exploratory_performance_gate_failed",
+  "selected_specification": {
+    "id": "ridge_core_noI_10",
+    "kind": "ridge",
+    "block": "core",
+    "current": false,
+    "alpha": 10.0,
+    "eligible_for_selection": true
+  },
+  "scientific_reliability_approved": false,
+  "model_files": {
+    "model_v1_0.joblib": "b770044f81e77157ec929f524623366730d6c8192c662f64a6b5a6f34cf118fb",
+    "evaluated_development_model.joblib": "037fa15efff6cd269527b44e75f2c74e6814d129490ea669d684c91d3518a7cc"
+  },
+  "primary_target": "capacitance_retention_pct at specified cycle_count and reported protocol",
+  "material_scope": "biomass-derived porous carbon",
+  "system": "three electrode",
+  "method": "GCD",
+  "data_version": "0.14",
+  "data_fingerprint": "2019cb92b34c9aa5053ba4df62305dd0e65314890957840f3bc77c218b659cbe",
+  "evaluated_fit": {
+    "rows": 35,
+    "sources": 23,
+    "artifact": "evaluated_development_model.joblib"
+  },
+  "final_research_fit": {
+    "rows": 42,
+    "sources": 30,
+    "artifact": "model_v1_0.joblib",
+    "independent_test_available": false
+  },
+  "reserved_primary_metrics": {
+    "variant": "selected",
+    "candidate": "ridge_core_noI_10",
+    "rows": 7,
+    "sources": 7,
+    "mae": 6.87604970946695,
+    "rmse": 8.951662624898768,
+    "r2": -1.7266300825530734,
+    "vs_mean": {
+      "mae_ci_low": 3.031268675293693,
+      "mae_ci_high": 11.312813915920042,
+      "delta_mae": 0.9501180324483219,
+      "delta_ci_low": -0.4235335644896005,
+      "delta_ci_high": 2.605457753697483,
+      "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+    },
+    "vs_legacy": {
+      "mae_ci_low": 3.031268675293693,
+      "mae_ci_high": 11.312813915920042,
+      "delta_mae": -0.05306481069719991,
+      "delta_ci_low": -1.2913404880045576,
+      "delta_ci_high": 1.0425127819324673,
+      "method": "5000 paired source-bootstrap resamples; descriptive95%, no refit;7sources only"
+    }
+  },
+  "current_feature_used": false,
+  "optional_material_features_used_in_selected_model": false,
+  "optional_material_features_compared": true,
+  "labels_clipped": false,
+  "warning_policy": "Missing core inputs, wrong electrode system, wrong GCD method and <1000 cycles rejected; unseen categories/out-of-training numeric ranges flagged. In-range does not mean accurate.",
+  "uncertainty": "No calibrated individual prediction interval; bootstrap scores are conditional and based on7sources.",
+  "distribution": "Authorized project Git repository only; no inference service or public model hosting.",
+  "limitations": [
+    "Source-disjoint and unused in previous model fits/scores; literature review has seen these labels. Not prospective blinded or fully untouched external validation.",
+    "7-source test is small; bootstrap intervals are descriptive and conditional.",
+    "The42-row refit has no independent generalization test; scores above evaluate the35-row model.",
+    "No calibrated per-sample prediction intervals; no automatic extrapolation approval."
+  ]
+}
