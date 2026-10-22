@@ -195,3 +195,11 @@
 - 验证：52100项科学核验；607旧载荷与32原件保护；581任务/534拟合/0警告；模型调用、桌面/窄屏、3图、5筛选及离线快照通过
 - 下一步/未决：本轮7来源已检验不可再称全新；补独立低保持率来源及自身材料证据；全42条研究模型尚无独立检验，不围绕已看分数追加候选
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-22T23:28:59+08:00：v1.1逐项优化：单位/5样品/语义特征/正值目标/风险提示落地；1301拟合，同批评估未证实精度改善
+
+- 结果：v1.1逐项优化：单位/5样品/语义特征/正值目标/风险提示落地；1301拟合，同批评估未证实精度改善
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/WORKSPACE_MEMORY.md, docs/knowledge/建模用途决策.md, docs/knowledge/保持率单位与逐项优化_20261022.md, models/v1_1, 模型逐项优化_v1.1_20261022, tools/amend_model_v11_preflight.py, tools/build_model_v11_dashboard.py, tools/check_model_v11_dashboard.cjs, tools/finalize_model_v11.py, tools/predict_model_v11.py, tools/prepare_model_v11.py, tools/review_model_v11_outputs.py, tools/train_model_v11.py, tools/verify_model_v11.py
+- 验证：149159项独立核验；295旧v1.0载荷及32原件保护；1332任务/1301拟合/0警告；双单位、42条风险状态、3图/3筛选、桌面/窄屏/离线通过；301封版文件哈希一致
+- 下一步/未决：继续独立困难来源、剩余表图/SI及3个CA同源样品逐测试准入；前5项实现不代表精度达标，不把已用来源称新测试、不围绕外层成绩追加调参
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

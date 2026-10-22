@@ -1,0 +1,60 @@
+{
+  "model_version": "1.1",
+  "status": "exploratory_accuracy_gate_not_passed",
+  "scientific_reliability_approved": false,
+  "data_version": "v0.14",
+  "rows": 42,
+  "sources": 30,
+  "selected_specification": {
+    "id": "positive_core_noI_100",
+    "block": "core",
+    "current": false,
+    "alpha": 100.0
+  },
+  "output_units": {
+    "predicted_retention_pct": "percent",
+    "predicted_retention_ratio": "dimensionless pct/100"
+  },
+  "target_parameterization": "log(retention_pct/100), inverse100*exp; positive, no upper cap",
+  "upper_clipping": false,
+  "legitimate_main_observations_above100": [
+    101.35,
+    106.3,
+    109.2
+  ],
+  "primary_metrics": {
+    "variant": "v1_1_nested",
+    "rows": 42,
+    "sources": 30,
+    "mae": 4.751722837960098,
+    "rmse": 6.273060087075159,
+    "r2": -0.2323343883309157,
+    "vs_reference": {
+      "mae_low": 3.466275992046149,
+      "mae_high": 6.202927158579329,
+      "delta_mae": -0.02369144794376337,
+      "delta_low": -0.42493026108733767,
+      "delta_high": 0.38931869240015843,
+      "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+    },
+    "vs_mean": {
+      "mae_low": 3.466275992046149,
+      "mae_high": 6.202927158579329,
+      "delta_mae": 0.38157915979917756,
+      "delta_low": 0.031168317980544896,
+      "delta_high": 0.764348196775226,
+      "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+    }
+  },
+  "validation": "Exploratory nested source CV on already-used42rows/30sources; not independent external validation.",
+  "fresh_independent_validation_available": false,
+  "final_all_data_model_has_own_independent_test": false,
+  "material_semantic_candidates_selected_in_outer_folds": 17,
+  "total_outer_folds": 30,
+  "final_model_uses_material_semantic_block": false,
+  "reliable_design_value": null,
+  "calibrated_prediction_interval": null,
+  "model_sha256": "c47bad4f68cfb944e6fb194898d4cb2ec043b79746fd3fb0f7ab7e4ee568a0cf",
+  "source_mean_baseline_mae": 4.370143678160919,
+  "note": "All sources already used; small descriptive gain versus old recipe is not established. Correct units and positive numbers do not imply reliable prediction."
+}

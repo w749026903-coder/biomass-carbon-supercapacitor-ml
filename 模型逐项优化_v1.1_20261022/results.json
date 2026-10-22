@@ -1,0 +1,96 @@
+{
+  "run_id": "retention-v1.1-sequential-20261022",
+  "selected_id": "positive_core_noI_100",
+  "selected_specification": {
+    "id": "positive_core_noI_100",
+    "block": "core",
+    "current": false,
+    "alpha": 100.0
+  },
+  "evaluation": "Exploratory nested source CV on already-used42rows/30sources; not independent external validation.",
+  "metrics": [
+    {
+      "variant": "v1_1_nested",
+      "rows": 42,
+      "sources": 30,
+      "mae": 4.751722837960098,
+      "rmse": 6.273060087075159,
+      "r2": -0.2323343883309157,
+      "vs_reference": {
+        "mae_low": 3.466275992046149,
+        "mae_high": 6.202927158579329,
+        "delta_mae": -0.02369144794376337,
+        "delta_low": -0.42493026108733767,
+        "delta_high": 0.38931869240015843,
+        "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+      },
+      "vs_mean": {
+        "mae_low": 3.466275992046149,
+        "mae_high": 6.202927158579329,
+        "delta_mae": 0.38157915979917756,
+        "delta_low": 0.031168317980544896,
+        "delta_high": 0.764348196775226,
+        "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+      }
+    },
+    {
+      "variant": "v1_recipe_same_cohort",
+      "rows": 42,
+      "sources": 30,
+      "mae": 4.775414285903861,
+      "rmse": 6.203778136101053,
+      "r2": -0.20526400999346328,
+      "vs_reference": {
+        "mae_low": 3.52384590774647,
+        "mae_high": 6.218484009191115,
+        "delta_mae": 0.0,
+        "delta_low": 0.0,
+        "delta_high": 0.0,
+        "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+      },
+      "vs_mean": {
+        "mae_low": 3.52384590774647,
+        "mae_high": 6.218484009191115,
+        "delta_mae": 0.40527060774294094,
+        "delta_low": -0.21107160586504944,
+        "delta_high": 1.0446704910468605,
+        "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+      }
+    },
+    {
+      "variant": "source_mean",
+      "rows": 42,
+      "sources": 30,
+      "mae": 4.370143678160919,
+      "rmse": 5.836028201902786,
+      "r2": -0.06660701697133709,
+      "vs_reference": {
+        "mae_low": 3.159749281609195,
+        "mae_high": 5.732373563218389,
+        "delta_mae": -0.40527060774294094,
+        "delta_low": -1.0446704910468607,
+        "delta_high": 0.21107160586504922,
+        "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+      },
+      "vs_mean": {
+        "mae_low": 3.159749281609195,
+        "mae_high": 5.732373563218389,
+        "delta_mae": 0.0,
+        "delta_low": 0.0,
+        "delta_high": 0.0,
+        "method": "5000 paired source-bootstrap resamples, descriptive95%; reused development cohort, no independent prediction interval."
+      }
+    }
+  ],
+  "actual_estimator_fits": 1301,
+  "tasks": 1332,
+  "warnings": [],
+  "new_semantic_features_used_in_selected_model": false,
+  "positive_output_parameterization": true,
+  "upper_clipping": false,
+  "scientific_reliability_approved": false,
+  "fresh_independent_validation_available": false,
+  "no_model_reselection_from_outer_scores": true,
+  "model_sha256": "c47bad4f68cfb944e6fb194898d4cb2ec043b79746fd3fb0f7ab7e4ee568a0cf",
+  "elapsed_seconds": 23.016
+}

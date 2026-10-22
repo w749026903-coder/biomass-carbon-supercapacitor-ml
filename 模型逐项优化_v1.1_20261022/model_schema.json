@@ -1,0 +1,85 @@
+{
+  "numeric": [
+    {
+      "field": "cycle_count",
+      "kind": "numeric",
+      "enabled": true,
+      "source_support": 30,
+      "transform": "log1p",
+      "missing_indicator": false,
+      "mean": 8.896118842910804,
+      "scale": 0.9610758381490808,
+      "minimum": 1000,
+      "maximum": 50000
+    },
+    {
+      "field": "electrolyte",
+      "kind": "categorical",
+      "vocabulary": [
+        "H2SO4",
+        "KOH",
+        "Na2SO4",
+        "NaOH"
+      ]
+    },
+    {
+      "field": "concentration_mol_L",
+      "kind": "numeric",
+      "enabled": true,
+      "source_support": 30,
+      "transform": "raw",
+      "missing_indicator": false,
+      "mean": 3.9833333333333334,
+      "scale": 2.346924701722566,
+      "minimum": 0.5,
+      "maximum": 6.0
+    },
+    {
+      "field": "cycle_voltage_lower_V",
+      "kind": "numeric",
+      "enabled": true,
+      "source_support": 30,
+      "transform": "raw",
+      "missing_indicator": false,
+      "mean": -0.7516666666666666,
+      "scale": 0.39306134663970993,
+      "minimum": -1,
+      "maximum": 0.0
+    },
+    {
+      "field": "cycle_voltage_upper_V",
+      "kind": "numeric",
+      "enabled": true,
+      "source_support": 30,
+      "transform": "raw",
+      "missing_indicator": false,
+      "mean": 0.21833333333333332,
+      "scale": 0.35939377970255537,
+      "minimum": 0,
+      "maximum": 1.0
+    },
+    {
+      "field": "BET_m2_g",
+      "kind": "numeric",
+      "enabled": true,
+      "source_support": 30,
+      "transform": "log1p",
+      "missing_indicator": false,
+      "mean": 6.9844956691514195,
+      "scale": 0.829901615247444,
+      "minimum": 10.9,
+      "maximum": 3784.233
+    },
+    {
+      "field": "reference_electrode",
+      "kind": "categorical",
+      "vocabulary": [
+        "Ag/AgCl",
+        "Hg/Hg2SO4 (saturated K2SO4)",
+        "Hg/HgO",
+        "SCE"
+      ]
+    }
+  ],
+  "semantic": []
+}
