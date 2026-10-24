@@ -1,0 +1,99 @@
+{
+  "source_url": "https://data.mendeley.com/datasets/bundle.js?8533f74fd5ffa7f3d44f",
+  "source_bytes": 654883,
+  "purpose": "Read-only discovery of the public dataset file-list/download routes used by the observed landing page; no script execution",
+  "excerpts": [
+    {
+      "pattern": "public-api",
+      "excerpt": "ns,O=DateFnsLocale;var N=o(653);const I=(0,N.withTranslation)()((e=>{const{route:t}=e;return u(t.routes)})),M={apiBaseUrl:\"/api/datasets-v2\",publicApiBaseUrl:\"/public-api\",baseUrl:\"/datasets\",baseAssetsUrl:\"/datasets\",adobeAnalytics:{newPage:{page:{businessUnit:\"els:rp:st\",language:\"en\",productName:\"md\",environment:\"dev\",noTracking:\"false\",sectionName:\"md:data\",type:\"cp-ca\"},content:{type:\"md:datasets\",format:\"MIME-HTML\"}}}},P={environment:\"dev\","
+    },
+    {
+      "pattern": "public-api",
+      "excerpt": ",{onBlur:e=>!e.currentTarget.contains(e.relatedTarget)&&l(!1)},n().createElement(\"a\",{\"aria-describedby\":\"zip-details\",className:\"mdui-button secondary\",href:`/public-api/zip/${i.id}/download/${i.version}`,id:\"download-all\",onClick:async()=>{if(kp(i.doi),window.pageDataTracker){const e=function(e){return{content:[{id:`MD:MDDATA_DATASET:ID:${e.id}.${e.version}`,format:\"application/zip\",type:\"MD:MDDATA_DATASET\",detail:`MD:MDDATA_ITEM:${wp(e)}`}]}}("
+    },
+    {
+      "pattern": "/files",
+      "excerpt": "e,t,n,i,r=gp)=>async(a,o)=>{const{configClient:s,hostname:l}=o();let c=0,d=!0;for(;d&&!r.cancelled;)try{const o=`https://${l}${s.publicApiBaseUrl}/datasets/${t}/files?folder_id=${i}&version=${n}&$start=${c}&$limit=1000`,p=await e.makeCall(o,{allowAnonymous:!0,headers:{Accept:\"application/vnd.mendeley-public-dataset.1+json\"},rawUrl:!0,rawResponse:!0}),u=await p.json();if(r.cancelled)return;a(mp(u)),d=u.length===fp,c+=fp}catch(e){console.log(\"D"
+    },
+    {
+      "pattern": "/files",
+      "excerpt": "indow.pageDataTracker.trackEvent(\"buttonClick\",{buttonType:\"md:data:location=dataset_page:name=view_individual_file\"}),t.push(`${i.baseUrl}/${n.id}/${n.version}/files/${e.id}`)}}setToRoot(){this.setState({currentPath:[{contents:{folders:this.getFolders(\"root\"),files:this.getFiles(\"root\")},id:\"root\",label:\"Root\"}],loading:!1})}async setFolderPath(e){const{id:t,version:n}=e,i=this.startFilesFetch();await this.props.fetchFolders(this.context.cli"
+    },
+    {
+      "pattern": "/files",
+      "excerpt": ".useEffect)((()=>{n.current=t})),n.current}(i),u=(0,d.useHistory)();(0,e.useEffect)((()=>{(p&&p.id!==i.id||t?.id)&&(l(!0),u.push(`/datasets/${t.id}/${t.version}/files/${i.id}`))}),[t,i]);const{t:m}=(0,N.useTranslation)();if(t&&!t.id)return o(c.client,s.id,s.version),r&&n().createElement(B.A,null);let h=i.content_details.download_url;const f=new URL(h);h=h.replace(f.hostname,window.location.hostname);const g=a?a.name:\"Mendeley Data\";return n()"
+    },
+    {
+      "pattern": "/files",
+      "excerpt": "apshot,hostname:i}}),{getFile:(e,t,n)=>async(i,r)=>{try{const{configClient:a,hostname:o}=r(),s=await e.makeCall(`https://${o}${a.publicApiBaseUrl}/datasets/${t}/files/${n}`,{allowAnonymous:!0,rawUrl:!0});i(hp(s))}catch(e){console.log(`Datasets.js - Error fetching file ${n}`)}}})((0,N.withTranslation)()(Lh))};(0,T.setDefaultOptions)({locale:O.enGB});const jh=function(e){const t=j(e);return[{component:I,routes:[{...Dh,path:`${t.baseUrl}/:id/:ve"
+    },
+    {
+      "pattern": "/files",
+      "excerpt": "anslation)()(Lh))};(0,T.setDefaultOptions)({locale:O.enGB});const jh=function(e){const t=j(e);return[{component:I,routes:[{...Dh,path:`${t.baseUrl}/:id/:version/files/:fileId`},{...ch,path:`${t.baseUrl}/:id/:version`},{...ch,path:`${t.baseUrl}/:id`}]}]},$h={data:{status:\"PENDING\"},error:null,loading:!1},Fh={list:[],loading:!0},Bh={data:{},count:0,error:!1,loading:!0},qh={snapshot:{},contributors:[],doi:\"\",status:null,loading:!0},Hh={list:[],c"
+    },
+    {
+      "pattern": "/datasets/",
+      "excerpt": "efined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},o.p=\"/datasets/\",(()=>{if(\"undefined\"!=typeof document){var e=e=>new Promise(((t,n)=>{var i=o.miniCssF(e),r=o.p+i;if(((e,t)=>{for(var n=document.getElementsByTagName(\"link\"),i=0;i<n.length;i++){var r=(o=n[i]).getAttribute(\"data-href\")||o.getAttribute(\"href\");if(\"stylesheet\"===o.rel&&(r===e||r=="
+    },
+    {
+      "pattern": "/datasets/",
+      "excerpt": "yload:e}}const ce=function(e,t,n){return async(i,r)=>{i({type:H});try{const{configClient:a,hostname:o}=r(),s=await e.makeCall(`https://${o}${a.publicApiBaseUrl}/datasets/${t}/snapshot${n?`/${n}`:\"\"}`,{allowAnonymous:!0,rawUrl:!0});s.customer=await e.makeCall(`https://${o}${a.publicApiBaseUrl}/customers/${s.customer.id}`,{allowAnonymous:!0,rawUrl:!0}),i(le({data:s,status:200}))}catch(e){console.log(\"Datasets.js - Error fetching snapshot\");const t="
+    },
+    {
+      "pattern": "/datasets/",
+      "excerpt": " ue=e=>({type:G,payload:e}),me=(e,t,n)=>async(i,r)=>{const a={fields:\"repository.*\",version:n};try{const{configClient:n}=r(),o=await e.makeCall(`${n.apiBaseUrl}/datasets/${t}?${pe().stringify(a)}`,{allowAnonymous:!0,rawUrl:!0});i(ue(o.repository))}catch(e){i(ue(null)),console.log(\"Repository.js - Error fetching repository\",e)}},{replace:he}=\"\",fe=/[&<>'\"]/g,ge={\"&\":\"&amp;\",\"<\":\"&lt;\",\">\":\"&gt;\",\"'\":\"&#39;\",'\"':\"&quot;\"},ve=e=>ge[e],be=e=>he.call("
+    },
+    {
+      "pattern": "/datasets/",
+      "excerpt": "eturn{\"@context\":\"http://schema.org/\",\"@type\":\"Dataset\",name:be(e.name||\"\"),description:be(e.description||\"\"),url:`http://doi.org/${e.doi}`,sameAs:`https://${t}/datasets/${e.id}/${e.version}`,version:String(e.version),keywords:e.categories?e.categories.map((e=>e.label)).join(\", \"):\"\",publisher:n?{\"@type\":\"Organization\",name:n.name}:null,datePublished:e.publish_date||\"\",mainEntityOfPage:{\"@type\":\"WebPage\",\"@id\":`https://${t}/datasets/${e.id}/${e.v"
+    },
+    {
+      "pattern": "/datasets/",
+      "excerpt": "l)).join(\", \"):\"\",publisher:n?{\"@type\":\"Organization\",name:n.name}:null,datePublished:e.publish_date||\"\",mainEntityOfPage:{\"@type\":\"WebPage\",\"@id\":`https://${t}/datasets/${e.id}/${e.version}`},includedInDataCatalog:`https://${t}`,license:e.licence?.id?{\"@type\":\"CreativeWork\",url:e.licence.url,text:e.licence.short_name}:null,author:{\"@type\":\"Person\",name:be(`${i.first_name} ${i.last_name}`)},citation:{\"@type\":\"CreativeWork\",text:ye(e),headline:be("
+    },
+    {
+      "pattern": "/datasets/",
+      "excerpt": "ame:be(`${i.first_name} ${i.last_name}`)},citation:{\"@type\":\"CreativeWork\",text:ye(e),headline:be(e.name||\"\"),datePublished:e.publish_date||\"\",url:`https://${t}/datasets/${e.id}/${e.version}`}}};var xe,_e,Ce,Ee,Se=o(98),ke=o.n(Se),Re=o(115),Te=o.n(Re),Oe=o(228),Ne=o.n(Oe),Ie=\"bodyAttributes\",Me=\"htmlAttributes\",Pe=\"titleAttributes\",Ae={BASE:\"base\",BODY:\"body\",HEAD:\"head\",HTML:\"html\",LINK:\"link\",META:\"meta\",NOSCRIPT:\"noscript\",SCRIPT:\"script\",STYL"
+    },
+    {
+      "pattern": "/datasets/",
+      "excerpt": "elled:!1},vp=(e,t,n,i,r=gp)=>async(a,o)=>{const{configClient:s,hostname:l}=o();let c=0,d=!0;for(;d&&!r.cancelled;)try{const o=`https://${l}${s.publicApiBaseUrl}/datasets/${t}/files?folder_id=${i}&version=${n}&$start=${c}&$limit=1000`,p=await e.makeCall(o,{allowAnonymous:!0,headers:{Accept:\"application/vnd.mendeley-public-dataset.1+json\"},rawUrl:!0,rawResponse:!0}),u=await p.json();if(r.cancelled)return;a(mp(u)),d=u.length===fp,c+=fp}catch(e){cons"
+    },
+    {
+      "pattern": "download_url",
+      "excerpt": "ame:e.description?\"with-description\":null,id:e.id,label:e.filename||\"\",size:e.content_details.size,description:e.description,parent:e.folder_id,status:e.status,download_url:this.replaceHostname(e.content_details.download_url),view_url:this.replaceHostname(e.content_details.view_url),contentType:e.content_details.content_type})))}getFolders(e){const{folders:t}=this.props;let n;return n=\"root\"===e?t.filter((e=>!e.parent_id)):t.filter((t=>t.parent_id="
+    },
+    {
+      "pattern": "download_url",
+      "excerpt": "bel:e.filename||\"\",size:e.content_details.size,description:e.description,parent:e.folder_id,status:e.status,download_url:this.replaceHostname(e.content_details.download_url),view_url:this.replaceHostname(e.content_details.view_url),contentType:e.content_details.content_type})))}getFolders(e){const{folders:t}=this.props;let n;return n=\"root\"===e?t.filter((e=>!e.parent_id)):t.filter((t=>t.parent_id===e)),n.map((e=>({className:e.description?\"with-desc"
+    },
+    {
+      "pattern": "download_url",
+      "excerpt": "n(),folderControls:[{component:({item:e})=>this.renderDescription(e)}],fileControls:[{component:({innerRef:e,item:i,tabIndex:r})=>n().createElement(\"a\",{href:i.download_url,className:\"COMPLETED\"===i.status?\"file-enabled\":\"file-disabled\",\"aria-label\":\"Download file\",onClick:async()=>{if(kp(t.doi),window.pageDataTracker&&\"COMPLETED\"===i.status){const e=_p(t,i.id,i.contentType);window.pageDataTracker.trackEvent(\"contentDownload\",e)}},ref:e,tabIndex:r}"
+    },
+    {
+      "pattern": "download_url",
+      "excerpt": "ne: none;\n  cursor: pointer;\n  font-size: inherit;\n  :active {\n    border: none;\n  }\n`,ph=F().shape({content_type:F().string,created_date:F().string.isRequired,download_url:F().string.isRequired,download_expiry_time:F().string,id:F().string.isRequired,sha256_hash:F().string,sha1_hash:F().string,size:F().number.isRequired}),uh=F().shape({content_details:ph.isRequired,filename:F().string.isRequired,id:F().string.isRequired,description:F().string,stat"
+    },
+    {
+      "pattern": "download_url",
+      "excerpt": "iles/${i.id}`))}),[t,i]);const{t:m}=(0,N.useTranslation)();if(t&&!t.id)return o(c.client,s.id,s.version),r&&n().createElement(B.A,null);let h=i.content_details.download_url;const f=new URL(h);h=h.replace(f.hostname,window.location.hostname);const g=a?a.name:\"Mendeley Data\";return n().createElement(n().Fragment,null,r?n().createElement(n().Fragment,null,n().createElement(Tt,null,n().createElement(\"title\",null,`${i.filename} - ${g}`)),n().createEleme"
+    },
+    {
+      "pattern": "apiBase",
+      "excerpt": ",t);return i}}const R=n().createContext(),T=DateFns,O=DateFnsLocale;var N=o(653);const I=(0,N.withTranslation)()((e=>{const{route:t}=e;return u(t.routes)})),M={apiBaseUrl:\"/api/datasets-v2\",publicApiBaseUrl:\"/public-api\",baseUrl:\"/datasets\",baseAssetsUrl:\"/datasets\",adobeAnalytics:{newPage:{page:{businessUnit:\"els:rp:st\",language:\"en\",productName:\"md\",environment:\"dev\",noTracking:\"false\",sectionName:\"md:data\",type:\"cp-ca\"},content:{type:\"md:da"
+    },
+    {
+      "pattern": "apiBase",
+      "excerpt": "n(de);const ue=e=>({type:G,payload:e}),me=(e,t,n)=>async(i,r)=>{const a={fields:\"repository.*\",version:n};try{const{configClient:n}=r(),o=await e.makeCall(`${n.apiBaseUrl}/datasets/${t}?${pe().stringify(a)}`,{allowAnonymous:!0,rawUrl:!0});i(ue(o.repository))}catch(e){i(ue(null)),console.log(\"Repository.js - Error fetching repository\",e)}},{replace:he}=\"\",fe=/[&<>'\"]/g,ge={\"&\":\"&amp;\",\"<\":\"&lt;\",\">\":\"&gt;\",\"'\":\"&#39;\",'\"':\"&quot;\"},ve=e=>ge[e],"
+    },
+    {
+      "pattern": "apiBase",
+      "excerpt": "{archive:e.data,dataset:t.snapshot}}))(Xu),Yu=(e,t,n)=>async(i,r)=>{i({type:Y});try{const{configClient:a}=r();i((e=>({type:J,payload:e}))(await e.makeCall(`${a.apiBaseUrl}/datasets/${t}/zip?version=${n}`,{allowAnonymous:!0,rawUrl:!0})))}catch(e){console.log(\"Archive.js - Error fetching zip file\"),i((a=e.data.statusCode,{type:ee,payload:a}))}var a};class Ju extends n().Component{componentDidMount(){const{snapshot:e,getArchive:t}=this.props,{id:"
+    },
+    {
+      "pattern": "apiBase",
+      "excerpt": "lation)()(Bm),Hm=e=>({type:U,payload:e}),Um=(e,t,n)=>async(i,r)=>{const a={fields:\"articles.*\",version:n};try{const{configClient:n}=r(),o=await e.makeCall(`${n.apiBaseUrl}/datasets/${t}?${pe().stringify(a)}`,{allowAnonymous:!0,rawUrl:!0});i(Hm(o.articles))}catch(e){i(Hm([])),console.log(\"Articles.js - Error fetching articles\",e)}};class Gm extends e.Component{componentDidMount(){const{datasetId:e,datasetVersion:t,getArticles:n}=this.props;n(th"
+    }
+  ]
+}
