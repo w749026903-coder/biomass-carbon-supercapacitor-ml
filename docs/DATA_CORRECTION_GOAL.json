@@ -2,7 +2,7 @@
   "schema": "persistent_evidence_correction_goal_v1",
   "requested_on": "2026-10-24",
   "user_request": "设置目标全部补正完毕再停止运行",
-  "app_goal_status_last_confirmed": "active",
+  "app_goal_status_last_confirmed": "blocked",
   "fixed_baseline_directory": "循环稳定性数据库_v0.16_补证与口径复核_20261024",
   "fixed_baseline_sha256": "6f497e1e26e9fb8f14811f15be13d8d56e4c5f92504d44f766526a83825571f9",
   "fixed_record_count": 39,
@@ -35,6 +35,12 @@
   "consecutive_impasse_goal_turns": 3,
   "blocked_audit_passed": true,
   "audited_next_app_goal_status": "blocked",
-  "app_goal_status_transition_note": "Three-turn audit passed; scoped project closure/sync precedes update_goal(blocked). Query app goal for confirmed runtime state; no completion claimed.",
-  "external_evidence_required": "持续补正_v017_20261024/剩余补证资料清单.csv"
+  "app_goal_status_transition_note": "update_goal(blocked) succeeded after the third audit; get_goal confirmed blocked again on2026-10-25. User now confirms no new material. No resume or completion requested or claimed.",
+  "external_evidence_required": "持续补正_v017_20261024/剩余补证资料清单.csv",
+  "app_goal_status_confirmed_on": "2026-10-25",
+  "user_material_confirmation": {
+    "date": "2026-10-25",
+    "answer": "目前没有新增资料",
+    "new_path_provided": false
+  }
 }
