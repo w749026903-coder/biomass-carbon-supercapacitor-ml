@@ -1,10 +1,10 @@
 {
   "schema": "fixed_goal_completion_and_impasse_audit_v1",
-  "checked_at": "2026-10-25T00:19:09+08:00",
+  "checked_at": "2026-10-25T00:27:29+08:00",
   "condition_id": "required_primary_experimental_information_missing_or_conflicting_under_authorized_scope",
-  "previous_goal_turn_classification": "progress: v0.18 filled verified source metadata and measurement QA",
-  "this_goal_turn_classification": "no_progress: current completion audit verifies unchanged unresolved scientific state",
-  "consecutive_impasse_goal_turns": 1,
+  "previous_goal_turn_classification": "no_progress: completion audit/status synchronization did not resolve scientific evidence",
+  "this_goal_turn_classification": "no_progress: unchanged required primary evidence and unresolved conflicts revalidated",
+  "consecutive_impasse_goal_turns": 2,
   "application_goal_status": "active",
   "blocked_threshold_met": false,
   "fixed_original_records": 39,
@@ -511,5 +511,22 @@
       "evidence_status": "Required fields absent from reviewed material, unavailable formal method, or unresolved primary-source conflict; no final decision inferred.",
       "scientific_gate_passed": false
     }
-  ]
+  ],
+  "goal_turn_audits": [
+    {
+      "checked_at": "2026-10-25T00:19:09+08:00",
+      "consecutive_impasse_goal_turns": 1,
+      "classification": "no_progress",
+      "pending_records": 38
+    },
+    {
+      "checked_at": "2026-10-25T00:27:29+08:00",
+      "consecutive_impasse_goal_turns": 2,
+      "classification": "no_progress",
+      "pending_records": 38,
+      "evidence": "Current read-only database SHA validated; 38 current issue lists equal prior audit; fixed39 coverage retained; local intake metadata unchanged; no human response or confirmed live process."
+    }
+  ],
+  "verified_wait": false,
+  "live_process_confirmed": false
 }
