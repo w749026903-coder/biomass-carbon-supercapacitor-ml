@@ -1,0 +1,924 @@
+[
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "retention_relation",
+    "before": "gt",
+    "after": "eq",
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "retention_relation"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "retention_relation"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Own author-printed point label and two independent locations within the same article support the rounded reported point; never convert a bound by assumption or count these as independent sources."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "baseline_reference",
+    "before": {
+      "basis": "正文p6明确over96.7% of original；保留下限关系gt。",
+      "cycle_index": null,
+      "reference": "author_initial_or_own_normalized_reference"
+    },
+    "after": {
+      "reference": "author_initial_or_own_normalized_reference",
+      "cycle_index": null,
+      "basis": "Own Fig4(i) starts normalized100%; p6 states original value; author-printed96.7% at15000. Exact baseline cycle index remains unknown."
+    },
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "baseline_reference"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "baseline_reference"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Own author-printed point label and two independent locations within the same article support the rounded reported point; never convert a bound by assumption or count these as independent sources."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "baseline_evidence_kind_v13",
+    "before": null,
+    "after": "author_printed_numeric_label",
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "baseline_evidence_kind_v13"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "baseline_evidence_kind_v13"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "fill",
+    "reason": "Compatibility evidence descriptor; rounded author label, not pixel-derived approximation."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "eligible",
+    "before": 0,
+    "after": 1,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "eligible"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "eligible"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "eligible"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "eligible"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "admission_status",
+    "before": "pending_core_or_scope_review",
+    "after": "approved_for_reported_protocol",
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "admission_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "admission_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "admission_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "admission_status"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "review_status",
+    "before": "pending_core_or_scope_review",
+    "after": "approved_for_reported_protocol",
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "review_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "review_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "review_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "review_status"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "scope_status",
+    "before": "Co_or_CoO_material_scope_hold",
+    "after": "biomass_carbon_catalyst_removed_trace_bound_reported",
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "scope_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "scope_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "scope_status"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "scope_status"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "core_missing_fields",
+    "before": [
+      "cycle_voltage_lower_V",
+      "cycle_voltage_upper_V",
+      "BET_m2_g"
+    ],
+    "after": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "core_missing_fields"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "core_missing_fields"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "core_missing_fields"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "core_missing_fields"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "issues",
+    "before": [
+      "原文为over96.7%，不是精确等值",
+      "摘要10000圈与正文/图文15000圈不一致的历史冻结继续保留",
+      "Co/CoO相关组成和金属催化体系单列"
+    ],
+    "after": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "issues"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "issues"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "issues"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "issues"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "open_issues",
+    "before": [
+      "原文为over96.7%，不是精确等值",
+      "摘要10000圈与正文/图文15000圈不一致的历史冻结继续保留",
+      "Co/CoO相关组成和金属催化体系单列"
+    ],
+    "after": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "open_issues"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "open_issues"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "open_issues"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "open_issues"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "remaining_evidence_work",
+    "before": [
+      "missing_core_fields:cycle_voltage_lower_V,cycle_voltage_upper_V,BET_m2_g",
+      "nonexact_label_relation:gt",
+      "material_or_electrolyte_scope_requires_review",
+      "manual_scientific_review_not_approved"
+    ],
+    "after": [],
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "remaining_evidence_work"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "remaining_evidence_work"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "remaining_evidence_work"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "remaining_evidence_work"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "correct_with_history",
+    "reason": "Current reviewed projection replaces stale working flags; all original values and old holds remain in the immutable parent and field-change chain."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "cycle_count_source_caveat_v17",
+    "before": null,
+    "after": {
+      "selected_cycles": 15000,
+      "selected_basis": "own_Fig4i_terminal_plus_results_and_introduction",
+      "abstract_statement": {
+        "cycles": 10000,
+        "relation": "gt",
+        "retention_pct": 96.7
+      },
+      "author_correction_found": false,
+      "interpretation": "Abstract lower-bound statement at10000 is retained, not asserted to be a typographical error or an alternate exact endpoint."
+    },
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82",
+        "fields": [
+          "cycle_count_source_caveat_v17"
+        ]
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "cycle_count_source_caveat_v17"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "fill",
+    "reason": "Do not erase competing wording or pretend an author correction exists."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "metal_removal_evidence_v17",
+    "before": null,
+    "after": {
+      "catalyst": "Co/CoO during carbonization",
+      "acid_wash": true,
+      "final_ICP_MS_Co_wt_pct_bound": 0.05,
+      "relation": "lt",
+      "numeric_zero": false,
+      "SI_table_independently_read": false,
+      "source": "Explicit formal main p4 report; no intentionally retained metal composite established."
+    },
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "metal_removal_evidence_v17"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "fill",
+    "reason": "No invented universal residue threshold; own catalyst-removal and final-material evidence supports existing biomass-carbon scope."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "total_pore_volume_cm3_g",
+    "before": null,
+    "after": 1.081,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p4 Raman; p5 own CMC discussion; p6 initial vs cycled comparison",
+        "evidence_excerpt": "Initial CMC ID/IG1.175, total pore volume1.081cm3/g, BET1404.6m2/g. Cycled1296.3m2/g and O8.54at% excluded from predictors.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "total_pore_volume_cm3_g"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "material",
+    "operation": "fill",
+    "reason": "Own initial sample, not post-cycle0.965."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "Raman_ID_IG",
+    "before": null,
+    "after": 1.175,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p4 Raman; p5 own CMC discussion; p6 initial vs cycled comparison",
+        "evidence_excerpt": "Initial CMC ID/IG1.175, total pore volume1.081cm3/g, BET1404.6m2/g. Cycled1296.3m2/g and O8.54at% excluded from predictors.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "Raman_ID_IG"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "material",
+    "operation": "fill",
+    "reason": "Own initial CMC Raman ratio, not CHC/MC/HC."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "mass_loading_mg_cm2",
+    "before": null,
+    "after": 2.0,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "mass_loading_mg_cm2"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "test",
+    "operation": "fill",
+    "reason": "Baseline Fig4 three-electrode protocol;5mg/cm2 is a distinct supplementary high-loading test."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "activation_temperature_C",
+    "before": null,
+    "after": 700,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.1; p3 synthesis discussion",
+        "evidence_excerpt": "Microwave200W180C4h then KOH/Co(NO3)2 impregnation and activated carbonization700C underAr, ramp5C/min, acid wash. Hold duration at700C not reported here.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "activation_temperature_C"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "material",
+    "operation": "fill",
+    "reason": "Stage-qualified own material synthesis; KOH activated carbonization is one process, not two independent measurements."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "heating_rate_C_min",
+    "before": null,
+    "after": 5,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.1; p3 synthesis discussion",
+        "evidence_excerpt": "Microwave200W180C4h then KOH/Co(NO3)2 impregnation and activated carbonization700C underAr, ramp5C/min, acid wash. Hold duration at700C not reported here.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "heating_rate_C_min"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "material",
+    "operation": "fill",
+    "reason": "Stage-qualified own material synthesis; KOH activated carbonization is one process, not two independent measurements."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "carbonization_temperature_C",
+    "before": null,
+    "after": 700,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.1; p3 synthesis discussion",
+        "evidence_excerpt": "Microwave200W180C4h then KOH/Co(NO3)2 impregnation and activated carbonization700C underAr, ramp5C/min, acid wash. Hold duration at700C not reported here.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "carbonization_temperature_C"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "material",
+    "operation": "fill",
+    "reason": "Stage-qualified own material synthesis; KOH activated carbonization is one process, not two independent measurements."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "carbonization_heating_rate_C_min",
+    "before": null,
+    "after": 5,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.1; p3 synthesis discussion",
+        "evidence_excerpt": "Microwave200W180C4h then KOH/Co(NO3)2 impregnation and activated carbonization700C underAr, ramp5C/min, acid wash. Hold duration at700C not reported here.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "carbonization_heating_rate_C_min"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "material",
+    "operation": "fill",
+    "reason": "Stage-qualified own material synthesis; KOH activated carbonization is one process, not two independent measurements."
+  },
+  {
+    "endpoint_id": "incoming:ADD_035_T01",
+    "field_name": "microwave_power_W_v14",
+    "before": null,
+    "after": 200,
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.1; p3 synthesis discussion",
+        "evidence_excerpt": "Microwave200W180C4h then KOH/Co(NO3)2 impregnation and activated carbonization700C underAr, ramp5C/min, acid wash. Hold duration at700C not reported here.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record",
+        "fields": [
+          "microwave_power_W_v14"
+        ]
+      }
+    ],
+    "material_key": "v11m:917a30409cd0116a22d7f28e",
+    "scope": "material",
+    "operation": "fill",
+    "reason": "Stage-qualified own material synthesis; KOH activated carbonization is one process, not two independent measurements."
+  },
+  {
+    "endpoint_id": "legacy:SRC121_CY01",
+    "field_name": "BET_consistency_review_v17",
+    "before": null,
+    "after": {
+      "author_area_m2_g": 1374.73,
+      "author_C": -63.443,
+      "database_reported_area_retained": 1374,
+      "adsorption_points": 13,
+      "contiguous_intervals_checked": 78,
+      "all_criteria_pass": 0,
+      "independent_remeasurement": false,
+      "replacement_area_selected": false,
+      "status": "known_consistency_problem_not_resolved",
+      "minimum_supplied_relative_pressure": 0.0450331
+    },
+    "evidence": [
+      {
+        "path": "持续补正_v017_20261024/DSAC_BET_consistency_audit.json",
+        "sha256": "d5cbc4b6b65e6c1bc2c6e36a7a8716b94ca9697575335db59c0db59183915dbd",
+        "locator": "raw report reproduction and all contiguous adsorption intervals",
+        "evidence_excerpt": "13 supplied adsorption points;78 intervals including two-point diagnostics;0 pass all four checked criteria. Reported C-63.443 reproduced. No replacement area chosen.",
+        "evidence_kind": "raw_data_consistency_diagnostic",
+        "document_version": "derived_review_or_public_metadata",
+        "fields": [
+          "BET_consistency_review_v17"
+        ]
+      }
+    ],
+    "material_key": "v11m:5c85165f35ecefea4e8ea5f8",
+    "scope": "audit",
+    "operation": "fill",
+    "reason": "Author reported BET is retained with known quality problem; no alternative fit chosen to force admission."
+  },
+  {
+    "endpoint_id": "incoming:ADD_073_T01",
+    "field_name": "formal_version_candidate_v17",
+    "before": null,
+    "after": {
+      "doi": "10.1016/j.ultsonch.2026.108104",
+      "online_date": "2026-10-09",
+      "fulltext_obtained": false,
+      "own_AC700_numbers_formally_verified": false,
+      "same_study_not_new_source": true,
+      "canonical_source_group_unchanged": true
+    },
+    "evidence": [
+      {
+        "path": "持续补正_v017_20261024/retrieved/AC700_Crossref.json",
+        "sha256": "6e77eab82047a14ffe89fb21f903fe82798581c36dc843d9db203841c94a739f",
+        "locator": "formal article title/DOI/authors/published-online metadata",
+        "evidence_excerpt": "Formal DOI10.1016/j.ultsonch.2026.108104; same four authors and control-study identity; full text still not obtained.",
+        "evidence_kind": "bibliographic_identity_only",
+        "document_version": "derived_review_or_public_metadata",
+        "fields": [
+          "formal_version_candidate_v17"
+        ]
+      }
+    ],
+    "material_key": "v11m:66e1aee6f142c86a9a8474ad",
+    "scope": "audit",
+    "operation": "fill",
+    "reason": "Formal metadata association, not full-text substitution or new study/admission."
+  }
+]

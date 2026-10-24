@@ -227,3 +227,11 @@
 - 验证：98项证据检查通过；v0.16全部35封版输出、平台ZIP与解析成员SHA保持；25来源32文件检索；队列39条无伪报准入；未训练；无135MB解压副本，清理5590字节浏览器检查缓存
 - 下一步/未决：继续核对DSAC仪器列/发表曲线/归一化与BET质量，取得AC700正式正文逐值比对；剩余39条按目标队列处理，不把题录/下载/本提交当补正完毕
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-24T22:56:26+08:00：CMC正式原图标签补正并准入，主集43条31来源，固定目标剩38条24来源
+
+- 结果：CMC正式原图标签补正并准入，主集43条31来源，固定目标剩38条24来源
+- 文件：持续补正_v017_20261024, 循环稳定性数据库_v0.17_原图标签补正_20261024, tools/collect_correction_metadata_v017.py, tools/review_DSAC_BET_v017.py, tools/release_original_label_v017.py, tools/verify_original_label_release_v017.py, data/current_database.json, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/DATA_CORRECTION_GOAL.json, docs/knowledge/原图印字补正与测量质量_20261024.md
+- 验证：22719项核验，49项封版SHA，全部277观察和原值历史保留，模型拟合0
+- 下一步/未决：持续目标active，继续38条逐记录补证，不把题录或访问失败当科学解决
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

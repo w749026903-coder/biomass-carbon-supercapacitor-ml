@@ -1,0 +1,70 @@
+[
+  {
+    "access_scope": "existing local main/SI only; no new publisher or author contact",
+    "approved_profiles": [
+      "reported_3e",
+      "reported_3e_residue_sensitivity",
+      "reported_3e_sensitivity"
+    ],
+    "disposition": "approved_for_reported_protocol",
+    "endpoint_id": "incoming:ADD_035_T01",
+    "evidence": [
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p5 Fig4(i), own red CMC curve, author-printed annotation and inset",
+        "evidence_excerpt": "CMC: author label96.7%; terminal x15000; own waveform -0.3..0.9V. Caption cycle stability at10A/g.",
+        "evidence_kind": "reviewed_author_printed_figure_label",
+        "document_version": "version_of_record",
+        "derived_image": "持续补正_v017_20261024/evidence_images/CMC_Fig4i_author_label.png",
+        "derived_image_sha256": "54f31029278a88154fdc8afd40bad1253130a0016ebab604031bca7e1a44cc82"
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 introduction; p6 cycling/post-cycle paragraphs; p7 conclusion",
+        "evidence_excerpt": "p2 directly reports96.7% after15000 cycles; p6 says over96.7% of original after15000 and separately parenthetical96.7% capacitance retention; p7 over96% after15000 at10A/g.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record"
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 section2.3; p5 3E results and Fig4 caption/inset; p7 conclusion",
+        "evidence_excerpt": "3E working carbon, Pt counter, SCE reference,2M H2SO4. Fig4(i) CMC own10A/g cycling; inset -0.3..0.9V. p5 mass loading2mg/cm2. Distinct2E Fig5 not transferred.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record"
+      },
+      {
+        "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+        "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+        "locator": "PDF p2 synthesis; p3 removal paragraph; p4 XPS and ICP-MS paragraph",
+        "evidence_excerpt": "Expired-honey carbon; KOH and Co catalytic carbonization followed by0.1M HCl/water washing. Final XPS no Co observed; main text ICP-MS residualCo<0.05wt% referring TableS2. Intermediate Co/CoO is not the final tested composite. SI itself not obtained.",
+        "evidence_kind": "reviewed_native_text",
+        "document_version": "version_of_record"
+      }
+    ],
+    "open_issues": [],
+    "previous_open_issues": [
+      "lower_bound_target_not_point_label",
+      "abstract_vs_results_cycle_count"
+    ],
+    "previous_reason": "补齐CMC自身初始BET和GCD窗口，不将循环后1296.3m²/g或O8.54at%当初始特征。作者使用over96.7%且摘要10000/正文15000有异，不能当精确点标签训练。",
+    "reason": "直接核到自身Fig4(i)印字96.7%、15000圈和p2/p6点值；协议、初始BET、参比和酸洗去催化剂证据完整。gt旧值与摘要10000圈下限原话均留在历史，不把作者圆整标签说成数学精确测量。",
+    "resolution": [
+      "Own printed label96.7% at15000 confirmed; prior text-only lower-bound gate corrected.",
+      "Own3E10A/g2M H2SO4/SCE and -0.3..0.9V confirmed.",
+      "Initial material and catalyst-removal evidence checked; residualCo reported<0.05wt%, not0.",
+      "Unknown current mass basis and exact baseline cycle index remain unknown under the existing reported-protocol purpose."
+    ],
+    "reviewer": "Codex agent targeted original-source review; not independent expert sign-off",
+    "sample_name": "CMC",
+    "source_group": "doi:10.1039/d6nj00244g",
+    "review_version": "v0.17",
+    "caveats": [
+      "Same-source abstract over96.7% at10000 retained; no author corrigendum claimed.",
+      "Formal main refers to SI ICP-MS; actual SI not obtained. No claim of zero cobalt or measurement revalidation.",
+      "New inputs have not been trained or independently performance-tested."
+    ]
+  }
+]
