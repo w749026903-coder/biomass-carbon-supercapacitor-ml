@@ -1,0 +1,140 @@
+[
+  {
+    "endpoint_id": "incoming:ADD_073_T01",
+    "field_name": "source_year",
+    "before": null,
+    "after": 2026,
+    "operation": "fill_qualified_evidence",
+    "evidence": [
+      {
+        "path": "持续补正_v017_20261024/post_v017_figure_review/SSRN_bibliographic_review.json",
+        "sha256": "75a9d4cf3ae138a8bfb64cd7d43fa6a8d0c7b04c11cf5d9b82155939a94394b6",
+        "locator": "Primary SSRN bibliographic facts read2026-10-24",
+        "evidence_excerpt": "SSRN6799753 posted20May2026,52pages; own preprint DOI10.2139/ssrn.6799753. Not formal numerical verification.",
+        "primary_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6799753",
+        "reading_kind": "reviewed_primary_bibliographic_metadata",
+        "fields": [
+          "source_year"
+        ]
+      }
+    ],
+    "reason": "Own SSRN posting year explicitly verified; not file creation or formal numeric-data approval."
+  },
+  {
+    "endpoint_id": "incoming:ADD_073_T01",
+    "field_name": "doi",
+    "before": null,
+    "after": "10.2139/ssrn.6799753",
+    "operation": "fill_qualified_evidence",
+    "evidence": [
+      {
+        "path": "持续补正_v017_20261024/post_v017_figure_review/SSRN_bibliographic_review.json",
+        "sha256": "75a9d4cf3ae138a8bfb64cd7d43fa6a8d0c7b04c11cf5d9b82155939a94394b6",
+        "locator": "Primary SSRN bibliographic facts read2026-10-24",
+        "evidence_excerpt": "SSRN6799753 posted20May2026,52pages; own preprint DOI10.2139/ssrn.6799753. Not formal numerical verification.",
+        "primary_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6799753",
+        "reading_kind": "reviewed_primary_bibliographic_metadata",
+        "fields": [
+          "doi"
+        ]
+      }
+    ],
+    "reason": "Actual DOI displayed by the primary SSRN page; do not relabel preprint92.1% as formally checked data."
+  },
+  {
+    "endpoint_id": "incoming:ADD_073_T01",
+    "field_name": "source_document_version_v18",
+    "before": null,
+    "after": {
+      "kind": "SSRN_preprint",
+      "posted_date": "2026-05-20",
+      "year_basis": "preprint_posting",
+      "formal_candidate_doi": "10.1016/j.ultsonch.2026.108104",
+      "formal_own_control_numbers_verified": false,
+      "source_group_migrated": false
+    },
+    "operation": "fill_qualified_evidence",
+    "evidence": [
+      {
+        "path": "持续补正_v017_20261024/post_v017_figure_review/SSRN_bibliographic_review.json",
+        "sha256": "75a9d4cf3ae138a8bfb64cd7d43fa6a8d0c7b04c11cf5d9b82155939a94394b6",
+        "locator": "Primary SSRN bibliographic facts read2026-10-24",
+        "evidence_excerpt": "SSRN6799753 posted20May2026,52pages; own preprint DOI10.2139/ssrn.6799753. Not formal numerical verification.",
+        "primary_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6799753",
+        "reading_kind": "reviewed_primary_bibliographic_metadata",
+        "fields": [
+          "source_document_version_v18"
+        ]
+      }
+    ],
+    "reason": "Keep document source group and preprint/formal roles distinct; no additional independent source count."
+  },
+  {
+    "endpoint_id": "legacy:SRC121_CY01",
+    "field_name": "BET_unit_reproduction_v18",
+    "before": null,
+    "after": {
+      "reported_sample_mass_g": 0.0232,
+      "reported_N2_molecular_mass_g_mol": 28.013,
+      "reported_cross_section_nm2": 0.162,
+      "diagnostic_assumed_standard_molar_volume_cm3_mol": 22414.0,
+      "assumption_status": "Conventional0C/1atm STP used only for numerical reproduction, not asserted as a newly verified instrument setting.",
+      "recomputed_slope": 2.573229955893696,
+      "recomputed_intercept": -0.03993105818432257,
+      "recomputed_C": -63.44181729458846,
+      "recomputed_area_m2_g": 1374.7377596222757,
+      "replacement_BET_selected": false
+    },
+    "operation": "fill_qualified_evidence",
+    "evidence": [
+      {
+        "path": "持续补正_v017_20261024/post_v017_figure_review/DSAC_BET_unit_reproduction.json",
+        "sha256": "857f6271523c3281a87cced3e8f803f3e46afd47661efde874dea157330e4cf7",
+        "locator": "Raw7-point mass/volume ordinate transform and author report reproduction",
+        "evidence_excerpt": "Sample0.0232g,N2 MW28.013g/mol; conventional STP assumption22414cc/mol reproduces slope/intercept/area. No replacement selected.",
+        "fields": [
+          "BET_unit_reproduction_v18"
+        ]
+      }
+    ],
+    "reason": "Measurement QA only. Reproducing the report does not validate its fit or replace reported BET1374."
+  },
+  {
+    "endpoint_id": "legacy:SRC121_CY01",
+    "field_name": "BET_method_quality_v18",
+    "before": null,
+    "after": {
+      "author_reported_fit_positive_C_pass": false,
+      "IUPAC_2015_criteria": 3,
+      "passing_supplied_ranges_IUPAC3": 0,
+      "RSC_additional_pressure_criterion_separate": true,
+      "valid_reanalysis_obtained": false,
+      "measurement_quality_resolved": false,
+      "universal_C_reporting_gate": false
+    },
+    "operation": "fill_qualified_evidence",
+    "evidence": [
+      {
+        "path": "持续补正_v017_20261024/post_v017_figure_review/DSAC_BET_unit_reproduction.json",
+        "sha256": "857f6271523c3281a87cced3e8f803f3e46afd47661efde874dea157330e4cf7",
+        "locator": "Raw7-point mass/volume ordinate transform and author report reproduction",
+        "evidence_excerpt": "Sample0.0232g,N2 MW28.013g/mol; conventional STP assumption22414cc/mol reproduces slope/intercept/area. No replacement selected.",
+        "fields": [
+          "BET_method_quality_v18"
+        ]
+      },
+      {
+        "path": "持续补正_v017_20261024/post_v017_figure_review/IUPAC_primary_review.json",
+        "sha256": "5e513795710b78fe9ce5613ab2a7a4d65f529d3f858bd0d5c32fad9c6abfc5ca",
+        "locator": "IUPAC2015 section5.2.2, publisher search-rendered passage",
+        "evidence_excerpt": "IUPAC lists3 criteria; all78 supplied ranges fail the3-condition conjunction. RSC pressure20% condition is separate. Missing low-pressure data not reconstructed.",
+        "primary_url": "https://www.degruyterbrill.com/document/doi/10.1515/pac-2014-1117/html",
+        "reading_kind": "reviewed_primary_method_passage",
+        "fields": [
+          "BET_method_quality_v18"
+        ]
+      }
+    ],
+    "reason": "Known negativeC is now method-source corroborated; no claim that all microporous BET is geometric area, and no blanket C-reporting requirement."
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "v018",
+      "title": "来源题录与测量质量核查",
+      "queries": [
+        {
+          "id": "source_quality",
+          "source": {
+            "label": "v0.18审查及核验",
+            "files": [
+              {
+                "label": "field_changes_v018.json"
+              },
+              {
+                "label": "review_log.json"
+              },
+              {
+                "label": "release_statistics_v018.json"
+              }
+            ],
+            "filters": [
+              "固定39条目标中的待证记录"
+            ],
+            "caveats": [
+              "新增准入0；固定目标仍38条待证。",
+              "5项补空包含题录与质量信息，不是5个训练样本。",
+              "0个新数据集；DOI/题名无命中不能证明无数据。"
+            ]
+          },
+          "columns": [
+            {
+              "field": "item",
+              "label": "项目"
+            },
+            {
+              "field": "value",
+              "label": "数量"
+            }
+          ],
+          "rows": [
+            {
+              "item": "补空字段",
+              "value": 5
+            },
+            {
+              "item": "涉及待证记录",
+              "value": 2
+            },
+            {
+              "item": "当前主集记录",
+              "value": 43
+            },
+            {
+              "item": "仍待证记录",
+              "value": 38
+            },
+            {
+              "item": "新增准入",
+              "value": 0
+            },
+            {
+              "item": "模型拟合",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

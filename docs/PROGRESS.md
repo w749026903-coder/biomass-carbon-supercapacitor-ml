@@ -243,3 +243,11 @@
 - 验证：v0.17封版22719项复核、后续证据39项检查及38文件清单；Fe机构稿13页文本/像素同文、HTWB同SHA不重复保存；新增准入/拟合0
 - 下一步/未决：目标保持active，继续剩余循环条件、BET、冲突、正式版本与材料相态证据；不得把同文/题录当科学解决
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-25T00:10:12+08:00：v0.18补AC700预印本年份与DOI、DSAC单位与方法质量证据；26条限定审查，目标仍38条待证
+
+- 结果：v0.18补AC700预印本年份与DOI、DSAC单位与方法质量证据；26条限定审查，目标仍38条待证
+- 文件：README.md, 循环稳定性数据库_v0.18_来源题录与质量核查_20261024, 持续补正_v017_20261024/post_v017_figure_review, 持续补正_v017_20261024/README.md, 持续补正_v017_20261024/work_queue.json, tools/discover_related_data_v018.py, tools/release_source_quality_v018.py, data/current_database.json, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/DATA_CORRECTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/knowledge/原图印字补正与测量质量_20261024.md
+- 验证：20763项检查和77封版SHA；旧标签/成员/分组/模型保持，33份外部原件SHA相同；新增准入/真实拟合0；释放临时渲染1131394字节
+- 下一步/未决：持续目标active；补实际循环条件、自身BET、正式方法和冲突原始对应，不重复已定题录或无变化API路径
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
