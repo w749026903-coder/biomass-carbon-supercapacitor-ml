@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "feature-coverage",
+      "title": "已有材料特征补齐与方法纠错",
+      "queries": [
+        {
+          "id": "fixed-cohort",
+          "source": {
+            "label": "v0.15固定主集核验",
+            "files": [
+              {
+                "label": "coverage_and_dispositions.json"
+              },
+              {
+                "label": "field_changes.json"
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "可选字段覆盖率",
+                "definition": "覆盖率是在固定42条三电极记录的原18项可选字段中，非空单元占756个单元的比例。"
+              }
+            ],
+            "filters": [
+              "固定42条主集记录",
+              "原18项可选字段"
+            ],
+            "caveats": [
+              "额外候选与4处已有值纠错不计入21个新增非空单元。",
+              "本轮没有训练，不能据此宣称误差改善。"
+            ]
+          },
+          "columns": [
+            {
+              "field": "version",
+              "label": "版本"
+            },
+            {
+              "field": "nonmissing",
+              "label": "非空单元"
+            },
+            {
+              "field": "coverage_pct",
+              "label": "覆盖率（%）"
+            }
+          ],
+          "rows": [
+            {
+              "version": "v0.14",
+              "nonmissing": 299,
+              "coverage_pct": 39.55
+            },
+            {
+              "version": "v0.15",
+              "nonmissing": 320,
+              "coverage_pct": 42.33
+            }
+          ],
+          "methods": [
+            {
+              "language": "calculation",
+              "code": "299 / 756 * 100 = 39.5503%\n320 / 756 * 100 = 42.3280%\n新增非空单元 = 320 - 299 = 21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pending-review",
+      "title": "41条逐项处置及剩余缺证",
+      "queries": [
+        {
+          "id": "dispositions",
+          "source": {
+            "label": "逐测试复核台账",
+            "files": [
+              {
+                "label": "41条逐项处置.csv"
+              },
+              {
+                "label": "reviewed_curation.json"
+              }
+            ],
+            "filters": [
+              "固定41条原待补证记录"
+            ],
+            "caveats": [
+              "39条仍待证；本轮新增准入0条，主集仍42条/30来源。",
+              "范围外两条保留原文和原值，没有删除历史数据。"
+            ]
+          },
+          "columns": [
+            {
+              "field": "status",
+              "label": "处置结果"
+            },
+            {
+              "field": "records",
+              "label": "记录数"
+            }
+          ],
+          "rows": [
+            {
+              "status": "确认现行范围外",
+              "records": 2
+            },
+            {
+              "status": "已补部分缺项，仍待证",
+              "records": 2
+            },
+            {
+              "status": "关键缺证或冲突仍在",
+              "records": 37
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

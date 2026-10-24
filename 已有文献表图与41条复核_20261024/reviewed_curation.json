@@ -1,0 +1,2760 @@
+{
+  "parent_version": "v0.14",
+  "main_tests": 42,
+  "main_sources": 30,
+  "fixed_pending_tests": 41,
+  "fixed_pending_sources": 27,
+  "scientific_values_are_agent_reviewed": true,
+  "model_fits": 0,
+  "selection_count": 61,
+  "selections": [
+    {
+      "endpoint_id": "candidate:V05:008",
+      "material_key": "v11m:ce8c2795656e8d0900763a58",
+      "field_name": "total_pore_volume_cm3_g",
+      "before": null,
+      "after": 0.189,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML Table1 / tbl1 own rows",
+          "basis": "Vtotal is explicitly cm3/g; use the reported column, not Vmicro+Vmeso. Some rounded pore partitions are not additive.",
+          "fields": [
+            "total_pore_volume_cm3_g"
+          ]
+        }
+      ],
+      "reason": "补回自身Table1总孔容；不以分项加和覆盖作者报告列。"
+    },
+    {
+      "endpoint_id": "candidate:V05:009",
+      "material_key": "v11m:665285820bdb63da25d83765",
+      "field_name": "total_pore_volume_cm3_g",
+      "before": null,
+      "after": 0.342,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML Table1 / tbl1 own rows",
+          "basis": "Vtotal is explicitly cm3/g; use the reported column, not Vmicro+Vmeso. Some rounded pore partitions are not additive.",
+          "fields": [
+            "total_pore_volume_cm3_g"
+          ]
+        }
+      ],
+      "reason": "补回自身Table1总孔容；不以分项加和覆盖作者报告列。"
+    },
+    {
+      "endpoint_id": "candidate:V05:010",
+      "material_key": "v11m:c4f0713afec0c653c46bb48a",
+      "field_name": "total_pore_volume_cm3_g",
+      "before": null,
+      "after": 0.756,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML Table1 / tbl1 own rows",
+          "basis": "Vtotal is explicitly cm3/g; use the reported column, not Vmicro+Vmeso. Some rounded pore partitions are not additive.",
+          "fields": [
+            "total_pore_volume_cm3_g"
+          ]
+        }
+      ],
+      "reason": "补回自身Table1总孔容；不以分项加和覆盖作者报告列。"
+    },
+    {
+      "endpoint_id": "candidate:V05:011",
+      "material_key": "v11m:4ba2347a2f79719b4f611ab7",
+      "field_name": "total_pore_volume_cm3_g",
+      "before": null,
+      "after": 0.433,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA004/main.xml",
+          "sha256": "ad46844bf81d199cb68ee02269524b65d4bac51304f66a45f947a88be8159a7e",
+          "locator": "XML Table1 / tbl1 own rows",
+          "basis": "Vtotal is explicitly cm3/g; use the reported column, not Vmicro+Vmeso. Some rounded pore partitions are not additive.",
+          "fields": [
+            "total_pore_volume_cm3_g"
+          ]
+        }
+      ],
+      "reason": "补回自身Table1总孔容；不以分项加和覆盖作者报告列。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_005_T01",
+      "material_key": "v11m:54ceae3ed0aefe07f40fcdf3",
+      "field_name": "mesopore_volume_cm3_g",
+      "before": null,
+      "after": 0.994,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_005.pdf",
+          "sha256": "e816595a87e73941e422659720f156a9c6f525f6280a221224a0aebe3cce9583",
+          "locator": "PDF p3 Table1 NCHU20 row",
+          "basis": "Own Table1: Vtotal2.211, Vmeso0.994, Daver2.337, Dmeso3.387; no micropore subtraction assumed.",
+          "fields": [
+            "mesopore_volume_cm3_g"
+          ]
+        }
+      ],
+      "reason": "原文自身Table1补提介孔容与总孔/介孔平均孔径；不拿NCHU40最小值或TEPA负载后样品作特征。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_005_T01",
+      "material_key": "v11m:54ceae3ed0aefe07f40fcdf3",
+      "field_name": "average_pore_diameter_nm",
+      "before": null,
+      "after": 2.337,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_005.pdf",
+          "sha256": "e816595a87e73941e422659720f156a9c6f525f6280a221224a0aebe3cce9583",
+          "locator": "PDF p3 Table1 NCHU20 row",
+          "basis": "Own Table1: Vtotal2.211, Vmeso0.994, Daver2.337, Dmeso3.387; no micropore subtraction assumed.",
+          "fields": [
+            "average_pore_diameter_nm"
+          ]
+        }
+      ],
+      "reason": "原文自身Table1补提介孔容与总孔/介孔平均孔径；不拿NCHU40最小值或TEPA负载后样品作特征。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_005_T01",
+      "material_key": "v11m:54ceae3ed0aefe07f40fcdf3",
+      "field_name": "reported_mesopore_diameter_nm_v15",
+      "before": null,
+      "after": 3.387,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_005.pdf",
+          "sha256": "e816595a87e73941e422659720f156a9c6f525f6280a221224a0aebe3cce9583",
+          "locator": "PDF p3 Table1 NCHU20 row",
+          "basis": "Own Table1: Vtotal2.211, Vmeso0.994, Daver2.337, Dmeso3.387; no micropore subtraction assumed.",
+          "fields": [
+            "reported_mesopore_diameter_nm_v15"
+          ]
+        }
+      ],
+      "reason": "原文自身Table1补提介孔容与总孔/介孔平均孔径；不拿NCHU40最小值或TEPA负载后样品作特征。"
+    },
+    {
+      "endpoint_id": "candidate:TE011",
+      "material_key": "v11m:b82e31af94eb7919e701929f",
+      "field_name": "XPS_N_reported_pct",
+      "before": null,
+      "after": 3.2,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/main.xml",
+          "sha256": "5ecb3f40ec291b7de8a9c832505f05dfa7c1dfaa4fa9d3a359f7ddd5612083d8",
+          "locator": "XML Table2 / polymers-15-04478-t002 AHC-CL-TU",
+          "basis": "Table explicitly says XPS-derived elemental contents (wt%); separate from EA Table1.",
+          "fields": [
+            "XPS_N_reported_pct"
+          ]
+        }
+      ],
+      "reason": "XPS质量百分数按作者原口径保存，不改成原子百分数或本体EA。"
+    },
+    {
+      "endpoint_id": "candidate:TE011",
+      "material_key": "v11m:b82e31af94eb7919e701929f",
+      "field_name": "XPS_O_reported_pct",
+      "before": null,
+      "after": 24.16,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/main.xml",
+          "sha256": "5ecb3f40ec291b7de8a9c832505f05dfa7c1dfaa4fa9d3a359f7ddd5612083d8",
+          "locator": "XML Table2 / polymers-15-04478-t002 AHC-CL-TU",
+          "basis": "Table explicitly says XPS-derived elemental contents (wt%); separate from EA Table1.",
+          "fields": [
+            "XPS_O_reported_pct"
+          ]
+        }
+      ],
+      "reason": "XPS质量百分数按作者原口径保存，不改成原子百分数或本体EA。"
+    },
+    {
+      "endpoint_id": "candidate:TE011",
+      "material_key": "v11m:b82e31af94eb7919e701929f",
+      "field_name": "XPS_percentage_basis",
+      "before": null,
+      "after": "weight_explicit",
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/main.xml",
+          "sha256": "5ecb3f40ec291b7de8a9c832505f05dfa7c1dfaa4fa9d3a359f7ddd5612083d8",
+          "locator": "XML Table2 / polymers-15-04478-t002 AHC-CL-TU",
+          "basis": "Table explicitly says XPS-derived elemental contents (wt%); separate from EA Table1.",
+          "fields": [
+            "XPS_percentage_basis"
+          ]
+        }
+      ],
+      "reason": "XPS质量百分数按作者原口径保存，不改成原子百分数或本体EA。"
+    },
+    {
+      "endpoint_id": "candidate:TE011",
+      "material_key": "v11m:b82e31af94eb7919e701929f",
+      "field_name": "XPS_S_reported_pct_v15",
+      "before": null,
+      "after": 3.73,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/main.xml",
+          "sha256": "5ecb3f40ec291b7de8a9c832505f05dfa7c1dfaa4fa9d3a359f7ddd5612083d8",
+          "locator": "XML Table2 / polymers-15-04478-t002 AHC-CL-TU",
+          "basis": "Table explicitly says XPS-derived elemental contents (wt%); separate from EA Table1.",
+          "fields": [
+            "XPS_S_reported_pct_v15"
+          ]
+        }
+      ],
+      "reason": "XPS质量百分数按作者原口径保存，不改成原子百分数或本体EA。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_027_T01",
+      "material_key": "v11m:055f4a7dbb9ae69166b8b60e",
+      "field_name": "water_contact_angle_deg_v15",
+      "before": null,
+      "after": 17.6,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "待补证原文复核_20261022/new_supplements/CCL_mmc1.docx",
+          "sha256": "9333167314c4c74adf6b19fcd9ddb0e843512fce8d1364f13bccbccc37664400",
+          "locator": "SI TableS3 own row / TableS5 EA wt%",
+          "basis": "Own CCL-K2CO3-1-700; contact angle17.6deg; EA N1.39/O19.23 already in v0.14.",
+          "fields": [
+            "water_contact_angle_deg_v15"
+          ]
+        }
+      ],
+      "reason": "区分前驱体CCL、本体EA与XPS，补自身接触角。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_074_T01",
+      "material_key": "v11m:c173179890aa0c9256042c79",
+      "field_name": "total_pore_volume_cm3_g",
+      "before": null,
+      "after": 0.26,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_074.pdf",
+          "sha256": "20a2a0870c7b42f43efbc918f4e4b7ceb96e314db2d7b19ebe3e11bc087b28d5",
+          "locator": "PDF p6 pore characterization",
+          "basis": "CSKOH0.37 and P-doped CSKOH0.26 cm3/g, respectively.",
+          "fields": [
+            "total_pore_volume_cm3_g"
+          ]
+        }
+      ],
+      "reason": "补回P掺杂样品自身孔容，不借未掺杂0.37。"
+    },
+    {
+      "endpoint_id": "candidate:TE026",
+      "material_key": "v11m:0c98ab22f3f980669b32c009",
+      "field_name": "Raman_ID_IG",
+      "before": null,
+      "after": 0.99,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U016/main.pdf",
+          "sha256": "e075eee33f575edb6d6e157ac85c538f9c719dc4d1037298ade8d69abbdf8074",
+          "locator": "PDF p4 text and p5 Fig3b,c,f",
+          "basis": "Fig3b KAC-5 ID/IG0.99; Fig3c inset At% C91.75/O8.25; Fig3f contact angle58.25deg at70ms.",
+          "fields": [
+            "Raman_ID_IG"
+          ]
+        }
+      ],
+      "reason": "自身图中明确数字，与正文吻合；接触角时点70ms另记，不作为平衡接触角。"
+    },
+    {
+      "endpoint_id": "candidate:TE026",
+      "material_key": "v11m:0c98ab22f3f980669b32c009",
+      "field_name": "XPS_O_reported_pct",
+      "before": null,
+      "after": 8.25,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U016/main.pdf",
+          "sha256": "e075eee33f575edb6d6e157ac85c538f9c719dc4d1037298ade8d69abbdf8074",
+          "locator": "PDF p4 text and p5 Fig3b,c,f",
+          "basis": "Fig3b KAC-5 ID/IG0.99; Fig3c inset At% C91.75/O8.25; Fig3f contact angle58.25deg at70ms.",
+          "fields": [
+            "XPS_O_reported_pct"
+          ]
+        }
+      ],
+      "reason": "自身图中明确数字，与正文吻合；接触角时点70ms另记，不作为平衡接触角。"
+    },
+    {
+      "endpoint_id": "candidate:TE026",
+      "material_key": "v11m:0c98ab22f3f980669b32c009",
+      "field_name": "XPS_percentage_basis",
+      "before": null,
+      "after": "atomic_explicit",
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U016/main.pdf",
+          "sha256": "e075eee33f575edb6d6e157ac85c538f9c719dc4d1037298ade8d69abbdf8074",
+          "locator": "PDF p4 text and p5 Fig3b,c,f",
+          "basis": "Fig3b KAC-5 ID/IG0.99; Fig3c inset At% C91.75/O8.25; Fig3f contact angle58.25deg at70ms.",
+          "fields": [
+            "XPS_percentage_basis"
+          ]
+        }
+      ],
+      "reason": "自身图中明确数字，与正文吻合；接触角时点70ms另记，不作为平衡接触角。"
+    },
+    {
+      "endpoint_id": "candidate:TE026",
+      "material_key": "v11m:0c98ab22f3f980669b32c009",
+      "field_name": "water_contact_angle_deg_v15",
+      "before": null,
+      "after": 58.25,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U016/main.pdf",
+          "sha256": "e075eee33f575edb6d6e157ac85c538f9c719dc4d1037298ade8d69abbdf8074",
+          "locator": "PDF p4 text and p5 Fig3b,c,f",
+          "basis": "Fig3b KAC-5 ID/IG0.99; Fig3c inset At% C91.75/O8.25; Fig3f contact angle58.25deg at70ms.",
+          "fields": [
+            "water_contact_angle_deg_v15"
+          ]
+        }
+      ],
+      "reason": "自身图中明确数字，与正文吻合；接触角时点70ms另记，不作为平衡接触角。"
+    },
+    {
+      "endpoint_id": "candidate:TE026",
+      "material_key": "v11m:0c98ab22f3f980669b32c009",
+      "field_name": "contact_angle_time_ms_v15",
+      "before": null,
+      "after": 70,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U016/main.pdf",
+          "sha256": "e075eee33f575edb6d6e157ac85c538f9c719dc4d1037298ade8d69abbdf8074",
+          "locator": "PDF p5 Fig3f",
+          "basis": "58.25deg marked at70ms; full absorption within1s.",
+          "fields": [
+            "contact_angle_time_ms_v15"
+          ]
+        }
+      ],
+      "reason": "补测量时点。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "Raman_ID_IG",
+      "before": null,
+      "after": 0.773994,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "Raman_ID_IG"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "Raman_IG_ID_reported_v15",
+      "before": null,
+      "after": 1.292,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "Raman_IG_ID_reported_v15"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "Raman_conversion_v15",
+      "before": null,
+      "after": {
+        "formula": "1 / 1.292",
+        "relation": "derived_reciprocal",
+        "rounded_decimals": 6
+      },
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "Raman_conversion_v15"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "XPS_N_reported_pct",
+      "before": null,
+      "after": 6.1,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "XPS_N_reported_pct"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "XPS_O_reported_pct",
+      "before": null,
+      "after": 13.0,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "XPS_O_reported_pct"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "XPS_percentage_basis",
+      "before": null,
+      "after": "atomic_explicit",
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "XPS_percentage_basis"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "N_at_pct",
+      "before": null,
+      "after": 6.1,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "N_at_pct"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "O_at_pct",
+      "before": null,
+      "after": 13.0,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "O_at_pct"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "legacy:R045_CY01",
+      "material_key": "v11m:72afff9d1cba61203c80f6e1",
+      "field_name": "nitrogen_claims_v15",
+      "before": null,
+      "after": {
+        "abstract_pct": 6.02,
+        "body_and_own_Fig4d_XPS_at_pct": 6.1,
+        "abstract_basis_unspecified": true
+      },
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R045/main.pdf",
+          "sha256": "28b9e92434f180504accca72aad1d6cc87e73df98de7fb13a4d21328feeda006",
+          "locator": "PDF p4 Raman discussion; p5 Fig3b; p6 Fig4d atomic% inset; p1 abstract",
+          "basis": "Own RSM-0.33-550 IG/ID1.292, not RSM-1-5501.232. Fig4d XPS N6.1/O13.0 atomic%. Abstract6.02 retained separately.",
+          "fields": [
+            "nitrogen_claims_v15"
+          ]
+        }
+      ],
+      "reason": "从自身图数字补提，原IG/ID和倒数公式同时保存；XPS图标明atomic%，摘要不同口径主张保留。"
+    },
+    {
+      "endpoint_id": "candidate:TE025",
+      "material_key": "v11m:348ad42497798a4675114aaf",
+      "field_name": "XRD_d002_nm",
+      "before": null,
+      "after": 0.37,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U013/main.pdf",
+          "sha256": "ad9837d0adb897323633c2877a48ff1406f5eb88fd0a428ad260ce756f3afc54",
+          "locator": "PDF p6 Fig3b adjacent text",
+          "basis": "Explicit d002 for SSC2-0/.5/.6/.7 = .34/.36/.37/.39nm, respectively.",
+          "fields": [
+            "XRD_d002_nm"
+          ]
+        }
+      ],
+      "reason": "作者明确给出SSC2-0.6晶面间距，不从峰位重新猜算。"
+    },
+    {
+      "endpoint_id": "candidate:TE039",
+      "material_key": "v11m:d0dfb5c00cce5cd4b3f8a877",
+      "field_name": "XRD_d002_nm",
+      "before": null,
+      "after": 0.31,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC13400085/main.xml",
+          "sha256": "beb50260fc8a7f65a038fe56a2a8db259453884645501d48714de12daa73e707",
+          "locator": "XML Table1 / tab1 AC (002) row",
+          "basis": "Own AC d-spacing3.10 Angstrom, conversion0.310nm; other rows belong to ZnO/composite.",
+          "fields": [
+            "XRD_d002_nm"
+          ]
+        }
+      ],
+      "reason": "按作者自身AC表格换算Å至nm，保留报告性质，不借复合物行。"
+    },
+    {
+      "endpoint_id": "candidate:TE039",
+      "material_key": "v11m:d0dfb5c00cce5cd4b3f8a877",
+      "field_name": "XRD_d002_definition_v15",
+      "before": null,
+      "after": "author Table1 AC (002) d-spacing3.10 Angstrom; converted to nm; no ZnO/composite row used",
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC13400085/main.xml",
+          "sha256": "beb50260fc8a7f65a038fe56a2a8db259453884645501d48714de12daa73e707",
+          "locator": "XML Table1 / tab1 AC (002) row",
+          "basis": "Own AC d-spacing3.10 Angstrom, conversion0.310nm; other rows belong to ZnO/composite.",
+          "fields": [
+            "XRD_d002_definition_v15"
+          ]
+        }
+      ],
+      "reason": "按作者自身AC表格换算Å至nm，保留报告性质，不借复合物行。"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "field_name": "XPS_N_reported_pct",
+      "before": 11.23,
+      "after": 4.64,
+      "operation": "correct_measurement_method",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U024/main.pdf",
+          "sha256": "589d24498f5aa01b32daecc36fad0d2d69e1f78fa1b1de19d5c456eda710adf7",
+          "locator": "PDF p6 XPS section before ORR tests; SI FigS4",
+          "basis": "Initial ALPC-800 XPS explicitly N4.64atom%/O7.44atom%. SI TableS1 is FESEM-EDX, not XPS.",
+          "fields": [
+            "XPS_N_reported_pct"
+          ]
+        }
+      ],
+      "reason": "纠正把EDS原子组成填入XPS的提取方法错误；旧11.23/8.54及出处保留，未更改原论文本身。"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "field_name": "XPS_O_reported_pct",
+      "before": 8.54,
+      "after": 7.44,
+      "operation": "correct_measurement_method",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U024/main.pdf",
+          "sha256": "589d24498f5aa01b32daecc36fad0d2d69e1f78fa1b1de19d5c456eda710adf7",
+          "locator": "PDF p6 XPS section before ORR tests; SI FigS4",
+          "basis": "Initial ALPC-800 XPS explicitly N4.64atom%/O7.44atom%. SI TableS1 is FESEM-EDX, not XPS.",
+          "fields": [
+            "XPS_O_reported_pct"
+          ]
+        }
+      ],
+      "reason": "纠正把EDS原子组成填入XPS的提取方法错误；旧11.23/8.54及出处保留，未更改原论文本身。"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "field_name": "total_pore_volume_cm3_g",
+      "before": null,
+      "after": 0.35,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "文献扩充_大批补齐_20261018/sources/SUP_139/SI/rm3c00028_si_001.pdf",
+          "sha256": "574a66dac45dffa673cc22110f4e0e248c2cb74fa3ff830aff927874c71b3950",
+          "locator": "SI PDF p6 TableS1 visually inspected",
+          "basis": "FESEM-EDX N11.23/O8.54atomic%; Vtotal.35cc/g supported by main p6. Smicro757>BET718 and Vmicro.382>Vtotal.35 withheld.",
+          "fields": [
+            "total_pore_volume_cm3_g"
+          ]
+        }
+      ],
+      "reason": "总孔容由正文与SI双重支持；图像表内微孔数值冲突隔离；保留EDS原子组成及历史原子字段测量来源。"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "field_name": "EDS_N_at_pct_v15",
+      "before": null,
+      "after": 11.23,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "文献扩充_大批补齐_20261018/sources/SUP_139/SI/rm3c00028_si_001.pdf",
+          "sha256": "574a66dac45dffa673cc22110f4e0e248c2cb74fa3ff830aff927874c71b3950",
+          "locator": "SI PDF p6 TableS1 visually inspected",
+          "basis": "FESEM-EDX N11.23/O8.54atomic%; Vtotal.35cc/g supported by main p6. Smicro757>BET718 and Vmicro.382>Vtotal.35 withheld.",
+          "fields": [
+            "EDS_N_at_pct_v15"
+          ]
+        }
+      ],
+      "reason": "总孔容由正文与SI双重支持；图像表内微孔数值冲突隔离；保留EDS原子组成及历史原子字段测量来源。"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "field_name": "EDS_O_at_pct_v15",
+      "before": null,
+      "after": 8.54,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "文献扩充_大批补齐_20261018/sources/SUP_139/SI/rm3c00028_si_001.pdf",
+          "sha256": "574a66dac45dffa673cc22110f4e0e248c2cb74fa3ff830aff927874c71b3950",
+          "locator": "SI PDF p6 TableS1 visually inspected",
+          "basis": "FESEM-EDX N11.23/O8.54atomic%; Vtotal.35cc/g supported by main p6. Smicro757>BET718 and Vmicro.382>Vtotal.35 withheld.",
+          "fields": [
+            "EDS_O_at_pct_v15"
+          ]
+        }
+      ],
+      "reason": "总孔容由正文与SI双重支持；图像表内微孔数值冲突隔离；保留EDS原子组成及历史原子字段测量来源。"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "field_name": "legacy_atomic_percentage_method_v15",
+      "before": null,
+      "after": "N_at_pct/O_at_pct retain initial FESEM-EDX atomic percentages; use explicit XPS fields for XPS-only modeling",
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "文献扩充_大批补齐_20261018/sources/SUP_139/SI/rm3c00028_si_001.pdf",
+          "sha256": "574a66dac45dffa673cc22110f4e0e248c2cb74fa3ff830aff927874c71b3950",
+          "locator": "SI PDF p6 TableS1 visually inspected",
+          "basis": "FESEM-EDX N11.23/O8.54atomic%; Vtotal.35cc/g supported by main p6. Smicro757>BET718 and Vmicro.382>Vtotal.35 withheld.",
+          "fields": [
+            "legacy_atomic_percentage_method_v15"
+          ]
+        }
+      ],
+      "reason": "总孔容由正文与SI双重支持；图像表内微孔数值冲突隔离；保留EDS原子组成及历史原子字段测量来源。"
+    },
+    {
+      "endpoint_id": "candidate:TE029",
+      "material_key": "v11m:8b052afe369b0df9d67e7f9b",
+      "field_name": "pore_conflict_candidates_v15",
+      "before": null,
+      "after": {
+        "SI_micropore_area_m2_g": 757,
+        "SI_BET_m2_g": 718,
+        "SI_micropore_volume_cm3_g": 0.382,
+        "SI_total_pore_volume_cm3_g": 0.35,
+        "canonical_micropore_fields_withheld": true,
+        "reason": "micropore exceeds corresponding total; no silent swap or correction"
+      },
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "文献扩充_大批补齐_20261018/sources/SUP_139/SI/rm3c00028_si_001.pdf",
+          "sha256": "574a66dac45dffa673cc22110f4e0e248c2cb74fa3ff830aff927874c71b3950",
+          "locator": "SI PDF p6 TableS1 visually inspected",
+          "basis": "FESEM-EDX N11.23/O8.54atomic%; Vtotal.35cc/g supported by main p6. Smicro757>BET718 and Vmicro.382>Vtotal.35 withheld.",
+          "fields": [
+            "pore_conflict_candidates_v15"
+          ]
+        }
+      ],
+      "reason": "总孔容由正文与SI双重支持；图像表内微孔数值冲突隔离；保留EDS原子组成及历史原子字段测量来源。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AC-850:3E:10000",
+      "material_key": "v11m:49d7026a4489a7f39b379b43",
+      "field_name": "water_contact_angle_deg_v15",
+      "before": null,
+      "after": 91,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "water_contact_angle_deg_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AC-850:3E:10000",
+      "material_key": "v11m:49d7026a4489a7f39b379b43",
+      "field_name": "electrolyte_uptake_g_g_v15",
+      "before": null,
+      "after": 1.4,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "electrolyte_uptake_g_g_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AC-850:3E:10000",
+      "material_key": "v11m:49d7026a4489a7f39b379b43",
+      "field_name": "pellet_conductivity_S_m_v15",
+      "before": null,
+      "after": 38,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "pellet_conductivity_S_m_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-700:3E:10000",
+      "material_key": "v11m:df4061c67d13acbb27410bd3",
+      "field_name": "water_contact_angle_deg_v15",
+      "before": null,
+      "after": 63,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "water_contact_angle_deg_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-700:3E:10000",
+      "material_key": "v11m:df4061c67d13acbb27410bd3",
+      "field_name": "electrolyte_uptake_g_g_v15",
+      "before": null,
+      "after": 2.2,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "electrolyte_uptake_g_g_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-700:3E:10000",
+      "material_key": "v11m:df4061c67d13acbb27410bd3",
+      "field_name": "pellet_conductivity_S_m_v15",
+      "before": null,
+      "after": 54,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "pellet_conductivity_S_m_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-800:3E:10000",
+      "material_key": "v11m:facd2e2255dcbc9e4967a8f7",
+      "field_name": "water_contact_angle_deg_v15",
+      "before": null,
+      "after": 38,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "water_contact_angle_deg_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-800:3E:10000",
+      "material_key": "v11m:facd2e2255dcbc9e4967a8f7",
+      "field_name": "electrolyte_uptake_g_g_v15",
+      "before": null,
+      "after": 3.6,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "electrolyte_uptake_g_g_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-800:3E:10000",
+      "material_key": "v11m:facd2e2255dcbc9e4967a8f7",
+      "field_name": "pellet_conductivity_S_m_v15",
+      "before": null,
+      "after": 71,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "pellet_conductivity_S_m_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:TE007",
+      "material_key": "v11m:a5f6fc1398216bb06cec8891",
+      "field_name": "water_contact_angle_deg_v15",
+      "before": null,
+      "after": 24,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "water_contact_angle_deg_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:TE007",
+      "material_key": "v11m:a5f6fc1398216bb06cec8891",
+      "field_name": "electrolyte_uptake_g_g_v15",
+      "before": null,
+      "after": 4.5,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "electrolyte_uptake_g_g_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:TE007",
+      "material_key": "v11m:a5f6fc1398216bb06cec8891",
+      "field_name": "pellet_conductivity_S_m_v15",
+      "before": null,
+      "after": 86,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "pellet_conductivity_S_m_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-900:3E:10000",
+      "material_key": "v11m:111a6984cef9613866afa83f",
+      "field_name": "water_contact_angle_deg_v15",
+      "before": null,
+      "after": 31,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "water_contact_angle_deg_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-900:3E:10000",
+      "material_key": "v11m:111a6984cef9613866afa83f",
+      "field_name": "electrolyte_uptake_g_g_v15",
+      "before": null,
+      "after": 4.2,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "electrolyte_uptake_g_g_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "candidate:v11:AHPC2026:AHPC-900:3E:10000",
+      "material_key": "v11m:111a6984cef9613866afa83f",
+      "field_name": "pellet_conductivity_S_m_v15",
+      "before": null,
+      "after": 73,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA001/main.xml",
+          "sha256": "da88f13708ab3545567ea0db19692ce706ce27ef6bfe7a998e8b07ef77230a2e",
+          "locator": "XML Table6 / molecules-31-02329-t006 own sample row",
+          "basis": "Before cycling interfacial/transport properties; conductivity belongs to pellets, not electrochemical impedance.",
+          "fields": [
+            "pellet_conductivity_S_m_v15"
+          ]
+        }
+      ],
+      "reason": "保存循环前直接材料性质候选；不自动扩大原18字段或声称可独立提高预测。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_058_T01",
+      "material_key": "v11m:02b9a72e60e26720042fce3b",
+      "field_name": "BET_m2_g",
+      "before": null,
+      "after": 1018.74,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_058.pdf",
+          "sha256": "c885f9def15c71b44e176344611c7a8b931a883c672f1a7f278d16999d63a23d",
+          "locator": "Preprint PDF p3 abstract; p9 Table1; p17 cycling paragraph",
+          "basis": "Own HTWB-0.5-900 SBET1018.74, maximum pore volume.5238, average diameter3.25. Verbal no-loss statement is not exact100%.",
+          "fields": [
+            "BET_m2_g"
+          ]
+        }
+      ],
+      "reason": "补预印本自身BET与描述符，不把无明显损失伪造成100%精确标签，也不视作期刊发表。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_058_T01",
+      "material_key": "v11m:02b9a72e60e26720042fce3b",
+      "field_name": "average_pore_diameter_nm",
+      "before": null,
+      "after": 3.25,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_058.pdf",
+          "sha256": "c885f9def15c71b44e176344611c7a8b931a883c672f1a7f278d16999d63a23d",
+          "locator": "Preprint PDF p3 abstract; p9 Table1; p17 cycling paragraph",
+          "basis": "Own HTWB-0.5-900 SBET1018.74, maximum pore volume.5238, average diameter3.25. Verbal no-loss statement is not exact100%.",
+          "fields": [
+            "average_pore_diameter_nm"
+          ]
+        }
+      ],
+      "reason": "补预印本自身BET与描述符，不把无明显损失伪造成100%精确标签，也不视作期刊发表。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_058_T01",
+      "material_key": "v11m:02b9a72e60e26720042fce3b",
+      "field_name": "reported_maximum_pore_volume_cm3_g_v15",
+      "before": null,
+      "after": 0.5238,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_058.pdf",
+          "sha256": "c885f9def15c71b44e176344611c7a8b931a883c672f1a7f278d16999d63a23d",
+          "locator": "Preprint PDF p3 abstract; p9 Table1; p17 cycling paragraph",
+          "basis": "Own HTWB-0.5-900 SBET1018.74, maximum pore volume.5238, average diameter3.25. Verbal no-loss statement is not exact100%.",
+          "fields": [
+            "reported_maximum_pore_volume_cm3_g_v15"
+          ]
+        }
+      ],
+      "reason": "补预印本自身BET与描述符，不把无明显损失伪造成100%精确标签，也不视作期刊发表。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_058_T01",
+      "material_key": "v11m:02b9a72e60e26720042fce3b",
+      "field_name": "retention_verbal_claim_v15",
+      "before": null,
+      "after": "maintaining initial capacitance / no discernible loss after10000 cycles at10A/g; no exact numeric endpoint selected",
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_058.pdf",
+          "sha256": "c885f9def15c71b44e176344611c7a8b931a883c672f1a7f278d16999d63a23d",
+          "locator": "Preprint PDF p3 abstract; p9 Table1; p17 cycling paragraph",
+          "basis": "Own HTWB-0.5-900 SBET1018.74, maximum pore volume.5238, average diameter3.25. Verbal no-loss statement is not exact100%.",
+          "fields": [
+            "retention_verbal_claim_v15"
+          ]
+        }
+      ],
+      "reason": "补预印本自身BET与描述符，不把无明显损失伪造成100%精确标签，也不视作期刊发表。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_073_T01",
+      "material_key": "v11m:66e1aee6f142c86a9a8474ad",
+      "field_name": "BET_m2_g",
+      "before": null,
+      "after": 2142,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_073.pdf",
+          "sha256": "b1fe8f461ebdeaba2d59dfdd49820c802b113fc6035ff52e2d6147eca5db23f2",
+          "locator": "SSRN PDF p11 text/Table1 citation; p18 EA paragraph",
+          "basis": "Own Au-free AC700 BET2142, ID/IG.83; ultimate analysis N.7/O7.1wt% d.a.f.; Au-decorated2180 not borrowed.",
+          "fields": [
+            "BET_m2_g"
+          ]
+        }
+      ],
+      "reason": "补无Au自身对照，不从复合样品移借；期刊版本及年份身份仍未核实。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_073_T01",
+      "material_key": "v11m:66e1aee6f142c86a9a8474ad",
+      "field_name": "Raman_ID_IG",
+      "before": null,
+      "after": 0.83,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_073.pdf",
+          "sha256": "b1fe8f461ebdeaba2d59dfdd49820c802b113fc6035ff52e2d6147eca5db23f2",
+          "locator": "SSRN PDF p11 text/Table1 citation; p18 EA paragraph",
+          "basis": "Own Au-free AC700 BET2142, ID/IG.83; ultimate analysis N.7/O7.1wt% d.a.f.; Au-decorated2180 not borrowed.",
+          "fields": [
+            "Raman_ID_IG"
+          ]
+        }
+      ],
+      "reason": "补无Au自身对照，不从复合样品移借；期刊版本及年份身份仍未核实。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_073_T01",
+      "material_key": "v11m:66e1aee6f142c86a9a8474ad",
+      "field_name": "bulk_N_wt_pct",
+      "before": null,
+      "after": 0.7,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_073.pdf",
+          "sha256": "b1fe8f461ebdeaba2d59dfdd49820c802b113fc6035ff52e2d6147eca5db23f2",
+          "locator": "SSRN PDF p11 text/Table1 citation; p18 EA paragraph",
+          "basis": "Own Au-free AC700 BET2142, ID/IG.83; ultimate analysis N.7/O7.1wt% d.a.f.; Au-decorated2180 not borrowed.",
+          "fields": [
+            "bulk_N_wt_pct"
+          ]
+        }
+      ],
+      "reason": "补无Au自身对照，不从复合样品移借；期刊版本及年份身份仍未核实。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_073_T01",
+      "material_key": "v11m:66e1aee6f142c86a9a8474ad",
+      "field_name": "bulk_O_wt_pct",
+      "before": null,
+      "after": 7.1,
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_073.pdf",
+          "sha256": "b1fe8f461ebdeaba2d59dfdd49820c802b113fc6035ff52e2d6147eca5db23f2",
+          "locator": "SSRN PDF p11 text/Table1 citation; p18 EA paragraph",
+          "basis": "Own Au-free AC700 BET2142, ID/IG.83; ultimate analysis N.7/O7.1wt% d.a.f.; Au-decorated2180 not borrowed.",
+          "fields": [
+            "bulk_O_wt_pct"
+          ]
+        }
+      ],
+      "reason": "补无Au自身对照，不从复合样品移借；期刊版本及年份身份仍未核实。"
+    },
+    {
+      "endpoint_id": "incoming:ADD_073_T01",
+      "material_key": "v11m:66e1aee6f142c86a9a8474ad",
+      "field_name": "bulk_element_basis_v15",
+      "before": null,
+      "after": "dry ash-free (d.a.f.) as reported; not automatically interchangeable with other bulk bases",
+      "operation": "fill_missing",
+      "scope": "material",
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_073.pdf",
+          "sha256": "b1fe8f461ebdeaba2d59dfdd49820c802b113fc6035ff52e2d6147eca5db23f2",
+          "locator": "SSRN PDF p11 text/Table1 citation; p18 EA paragraph",
+          "basis": "Own Au-free AC700 BET2142, ID/IG.83; ultimate analysis N.7/O7.1wt% d.a.f.; Au-decorated2180 not borrowed.",
+          "fields": [
+            "bulk_element_basis_v15"
+          ]
+        }
+      ],
+      "reason": "补无Au自身对照，不从复合样品移借；期刊版本及年份身份仍未核实。"
+    }
+  ],
+  "agreements": [
+    {
+      "endpoint_id": "incoming:ADD_005_T01",
+      "field": "bulk_N_wt_pct",
+      "value": 5.69,
+      "evidence": [
+        {
+          "path": "待补证原文复核_20261022/new_supplements/NCHU20_mmc1.docx",
+          "sha256": "dab5022e05acec7fae0268d1c86902dea2f492af87824f4bb10af53794a42d85",
+          "locator": "SI TableS3; DOCX table8 NCHU20",
+          "basis": "EA wt%, O* calculated by difference; these fields already existed in v0.14."
+        }
+      ]
+    },
+    {
+      "endpoint_id": "incoming:ADD_005_T01",
+      "field": "bulk_O_wt_pct",
+      "value": 20.94,
+      "evidence": [
+        {
+          "path": "待补证原文复核_20261022/new_supplements/NCHU20_mmc1.docx",
+          "sha256": "dab5022e05acec7fae0268d1c86902dea2f492af87824f4bb10af53794a42d85",
+          "locator": "SI TableS3; DOCX table8 NCHU20",
+          "basis": "EA wt%, O* calculated by difference; these fields already existed in v0.14."
+        }
+      ]
+    },
+    {
+      "endpoint_id": "candidate:TE011",
+      "field": "bulk_N_wt_pct",
+      "value": 3.25,
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/main.xml",
+          "sha256": "5ecb3f40ec291b7de8a9c832505f05dfa7c1dfaa4fa9d3a359f7ddd5612083d8",
+          "locator": "XML Table1 AHC-CL-TU",
+          "basis": "EA wt% of activated AHC, not hydrochar HC."
+        }
+      ]
+    },
+    {
+      "endpoint_id": "candidate:TE011",
+      "field": "bulk_O_wt_pct",
+      "value": 12.46,
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA044/main.xml",
+          "sha256": "5ecb3f40ec291b7de8a9c832505f05dfa7c1dfaa4fa9d3a359f7ddd5612083d8",
+          "locator": "XML Table1 AHC-CL-TU",
+          "basis": "EA wt% of activated AHC, not hydrochar HC."
+        }
+      ]
+    },
+    {
+      "endpoint_id": "incoming:ADD_027_T01",
+      "field": "bulk_N_wt_pct",
+      "value": 1.39,
+      "evidence": [
+        {
+          "path": "待补证原文复核_20261022/new_supplements/CCL_mmc1.docx",
+          "sha256": "9333167314c4c74adf6b19fcd9ddb0e843512fce8d1364f13bccbccc37664400",
+          "locator": "SI TableS3 own row / TableS5 EA wt%",
+          "basis": "Own CCL-K2CO3-1-700; contact angle17.6deg; EA N1.39/O19.23 already in v0.14."
+        }
+      ]
+    },
+    {
+      "endpoint_id": "incoming:ADD_027_T01",
+      "field": "bulk_O_wt_pct",
+      "value": 19.23,
+      "evidence": [
+        {
+          "path": "待补证原文复核_20261022/new_supplements/CCL_mmc1.docx",
+          "sha256": "9333167314c4c74adf6b19fcd9ddb0e843512fce8d1364f13bccbccc37664400",
+          "locator": "SI TableS3 own row / TableS5 EA wt%",
+          "basis": "Own CCL-K2CO3-1-700; contact angle17.6deg; EA N1.39/O19.23 already in v0.14."
+        }
+      ]
+    }
+  ],
+  "unselected_alternatives": [],
+  "pending_reviews": [
+    {
+      "endpoint_id": "legacy:R033_CY01",
+      "sample_name": "aGCL-800",
+      "source_group": "10.1002/slct.202204616",
+      "previous_reason": "从主文p6补到自身SSA1409.728m²/g，从原Fig3a/b坐标补到Ag/AgCl。5000圈循环电流仍未标明，图3c的约0.1—1.1V表征GCD未替代明确循环程序。出版社SI返回403；另保留p6的86%/10000圈描述待核。",
+      "previous_open_issues": [
+        "cycling_current_A_g",
+        "precise_cycle_potential_programme",
+        "secondary_endpoint_context"
+      ],
+      "open_issues": [
+        "cycling_current_A_g",
+        "precise_cycle_potential_programme",
+        "secondary_endpoint_context"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "从主文p6补到自身SSA1409.728m²/g，从原Fig3a/b坐标补到Ag/AgCl。5000圈循环电流仍未标明，图3c的约0.1—1.1V表征GCD未替代明确循环程序。出版社SI返回403；另保留p6的86%/10000圈描述待核。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R033/main.pdf",
+          "sha256": "589ffe485857486c76d546921d0a02617ce5914ae99bfea0e3b964a7e0a25126",
+          "locator": "PDF p4 Fig3f,p6 own aGCL-800 SSA and experimental section",
+          "basis": "从主文p6补到自身SSA1409.728m²/g；参比和明确循环电流仍未闭合。已尝试出版社SI返回403，不能借器件20A/g或其它样品参比。p6另有86%/10000圈描述一并保留，待SI/原图协议核实。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/evidence_images/legacy_R033_CY01_p4.png",
+          "sha256": "31e69b9d9b7102643fcfdffd1120bfcbccb06534f1073ec52bf47beb3bf840fc",
+          "locator": "Original Fig3a/b reference; Fig3c/f inspect separately",
+          "basis": "从主文p6补到自身SSA1409.728m²/g，从原Fig3a/b坐标补到Ag/AgCl。5000圈循环电流仍未标明，图3c的约0.1—1.1V表征GCD未替代明确循环程序。出版社SI返回403；另保留p6的86%/10000圈描述待核。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R018_CY01",
+      "sample_name": "C-4",
+      "source_group": "10.1007/s13399-025-06799-9",
+      "previous_reason": "原Fig8b左轴为比电容、右轴红线为CE。蓝线初末约138.5/36.45 F/g，与正文详细端点相符，据此保存26.32%的可复算派生候选，不能用约100% CE作保持率。结论40%仍保留，原文还把约1000圈87.5写成100圈。这是图文详细端点优先的用途判读，不冒称作者勘误；自身BET仍缺，未获训练准入。",
+      "previous_open_issues": [
+        "own_BET_not_located",
+        "conclusion_40pct_not_author_corrected"
+      ],
+      "open_issues": [
+        "own_BET_not_located",
+        "conclusion_40pct_not_author_corrected"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "原Fig8b左轴为比电容、右轴红线为CE。蓝线初末约138.5/36.45 F/g，与正文详细端点相符，据此保存26.32%的可复算派生候选，不能用约100% CE作保持率。结论40%仍保留，原文还把约1000圈87.5写成100圈。这是图文详细端点优先的用途判读，不冒称作者勘误；自身BET仍缺，未获训练准入。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R018/main.pdf",
+          "sha256": "f08eadb564726b73890353c032e8d364a2d962f7d598592260d39b61c11db617",
+          "locator": "PDF p11 Fig8b and detailed endpoints; p13 conclusion",
+          "fields": [
+            "review_disposition_v15"
+          ],
+          "basis": "原Fig8b左轴为比电容、右轴红线为CE。蓝线初末约138.5/36.45 F/g，与正文详细端点相符，据此保存26.32%的可复算派生候选，不能用约100% CE作保持率。结论40%仍保留，原文还把约1000圈87.5写成100圈。这是图文详细端点优先的用途判读，不冒称作者勘误；自身BET仍缺，未获训练准入。"
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R042_CY01",
+      "sample_name": "CGBC",
+      "source_group": "10.1016/j.solidstatesciences.2025.108046",
+      "previous_reason": "CGBC是该论文无Ni(OH)2的生物质碳对照，不能随复合样品全部排除。自身64.8%/1000圈1A/g已定位，但数值BET未在所读主文定位，不借Ni复合物或其它咖啡碳。",
+      "previous_open_issues": [
+        "own_numeric_BET",
+        "own_cycle_potential_window_binding"
+      ],
+      "open_issues": [
+        "own_numeric_BET",
+        "own_cycle_potential_window_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "CGBC是该论文无Ni(OH)2的生物质碳对照，不能随复合样品全部排除。自身64.8%/1000圈1A/g已定位，但数值BET未在所读主文定位，不借Ni复合物或其它咖啡碳。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R042/main.pdf",
+          "sha256": "76621ae97c381191b3f27960bbae1d0216bb25c44ef39263d747f2fa7eb3affd",
+          "locator": "PDF p3 own CGBC XRD,p6 Fig7,p9 Fig11a",
+          "basis": "CGBC是该论文无Ni(OH)2的生物质碳对照，不能随复合样品全部排除。自身64.8%/1000圈1A/g已定位，但数值BET未在所读主文定位，不借Ni复合物或其它咖啡碳。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:SRC121_CY01",
+      "sample_name": "DSAC",
+      "source_group": "10.1038/s41598-026-63280-x",
+      "previous_reason": "已明确硬件Hg/HgO与作者换算RHE可同时记录；1 M转换+0.924 V。CV程序−0.8至0 V明确，GCD图轴mV却数值约0.1至0.9，循环插图也为RHE。无法凭CV程序强定GCD上下限，继续保留窗口待证。",
+      "previous_open_issues": [
+        "cycling_window_reference_scale_binding"
+      ],
+      "open_issues": [
+        "cycling_window_reference_scale_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "已明确硬件Hg/HgO与作者换算RHE可同时记录；1 M转换+0.924 V。CV程序−0.8至0 V明确，GCD图轴mV却数值约0.1至0.9，循环插图也为RHE。无法凭CV程序强定GCD上下限，继续保留窗口待证。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_SRC121/main.pdf",
+          "sha256": "647f99b755ceff64d9159b67ef003b957ed2f01f173d2e6355825b5a60321d84",
+          "locator": "PDF p3 explicit conversion and CV programme; p6 Fig4b; p9 Fig6a cycling inset",
+          "fields": [
+            "review_disposition_v15"
+          ],
+          "basis": "已明确硬件Hg/HgO与作者换算RHE可同时记录；1 M转换+0.924 V。CV程序−0.8至0 V明确，GCD图轴mV却数值约0.1至0.9，循环插图也为RHE。无法凭CV程序强定GCD上下限，继续保留窗口待证。"
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R081_CY01",
+      "sample_name": "Fe-SN6C@900",
+      "source_group": "10.1186/s42825-023-00122-w",
+      "previous_reason": "已补Fe-SN6C@900自身BET、5000圈、酸液、参比与GCD窗口。不能仅凭名称Fe判复合物；主文XRD给碳峰，但Fe参与配位/催化且成品Fe去向未闭合。补充材料两种出版社格式访问失败，保留这项具体范围问题。",
+      "previous_open_issues": [
+        "final_Fe_state_or_removal_evidence"
+      ],
+      "open_issues": [
+        "final_Fe_state_or_removal_evidence"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "已补Fe-SN6C@900自身BET、5000圈、酸液、参比与GCD窗口。不能仅凭名称Fe判复合物；主文XRD给碳峰，但Fe参与配位/催化且成品Fe去向未闭合。补充材料两种出版社格式访问失败，保留这项具体范围问题。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R081/main.pdf",
+          "sha256": "6a520d9cc3247227bf6bec904c6397500e946898c9ec8e6313d188ad3ec7121f",
+          "locator": "PDF p3 preparation,p4 electrochemistry,p7 BET/Raman/XRD,p9 Fig5,p10 durability",
+          "basis": "已补Fe-SN6C@900自身BET、5000圈、酸液、参比与GCD窗口。不能仅凭名称Fe判复合物；主文XRD给碳峰，但Fe参与配位/催化且成品Fe去向未闭合。补充材料两种出版社格式访问失败，保留这项具体范围问题。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_058_T01",
+      "sample_name": "HTWB-0.5-900",
+      "source_group": "10.21203/rs.3.rs-11058750/v1",
+      "previous_reason": "已核对2026-09-28 ResearchSquare预印本身份与Crossref标题；当前未核实正式同行评审版本。保留10A/g10000圈候选，不把预印本DOI当期刊发表证明。",
+      "previous_open_issues": [
+        "peer_reviewed_version",
+        "own_retention_and_BET"
+      ],
+      "open_issues": [
+        "peer_reviewed_version",
+        "own_numeric_retention_point_label"
+      ],
+      "approved_profiles": [],
+      "disposition": "partly_completed_version_and_target_pending",
+      "reason": "HTWB-0.5-900自身BET1018.74及孔径已补齐；正文仅称无明显损失，未选精确100%点标签；本地仍为ResearchSquare v1预印本，期刊身份未核实。",
+      "resolution": [
+        "own_BET_recovered"
+      ],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_058.pdf",
+          "sha256": "c885f9def15c71b44e176344611c7a8b931a883c672f1a7f278d16999d63a23d",
+          "locator": "Preprint PDF p3 abstract; p9 Table1; p17 cycling paragraph",
+          "basis": "Own HTWB-0.5-900 SBET1018.74, maximum pore volume.5238, average diameter3.25. Verbal no-loss statement is not exact100%.",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R069_CY01",
+      "sample_name": "RCS-AC",
+      "source_group": "10.3390/catal13020286",
+      "previous_reason": "原Fig6a黑线KOH起末约137/129，正文/Table2均97.2%，与曲线比例不符；未报告循环A/g，不能借Fig5的1 A/g。酸/中性映射也冲突。",
+      "previous_open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "原Fig6a黑线KOH起末约137/129，正文/Table2均97.2%，与曲线比例不符；未报告循环A/g，不能借Fig5的1 A/g。酸/中性映射也冲突。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R069/main.pdf",
+          "sha256": "f5f66f6099254a032d338934e77a9fc02e3b7ce21920f99e47d624060e36d901",
+          "locator": "PDF p6 GCD,p7 text,p8 Fig6/Table2,p9 methods",
+          "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/evidence_images/legacy_R069_CY01_p6.png",
+          "sha256": "d1601be438790527f94bbcbbedf6a4eede01ca97888f809ca0d5d31ba24eb664",
+          "locator": "Original Fig5b and own GCD method",
+          "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R069_CY02",
+      "sample_name": "RCS-AC",
+      "source_group": "10.3390/catal13020286",
+      "previous_reason": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。",
+      "previous_open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R069/main.pdf",
+          "sha256": "f5f66f6099254a032d338934e77a9fc02e3b7ce21920f99e47d624060e36d901",
+          "locator": "PDF p6 GCD,p7 text,p8 Fig6/Table2,p9 methods",
+          "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/evidence_images/legacy_R069_CY01_p6.png",
+          "sha256": "d1601be438790527f94bbcbbedf6a4eede01ca97888f809ca0d5d31ba24eb664",
+          "locator": "Original Fig5b and own GCD method",
+          "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:R069_CY03",
+      "sample_name": "RCS-AC",
+      "source_group": "10.3390/catal13020286",
+      "previous_reason": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。",
+      "previous_open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "open_issues": [
+        "cycling_current_A_g",
+        "text_table_curve_retention_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "正文与Table2对Na2SO4/H2SO4保持率互换；Fig6a自身曲线比例也不支持两种报告值。循环A/g缺失，保留冻结。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/B_R069/main.pdf",
+          "sha256": "f5f66f6099254a032d338934e77a9fc02e3b7ce21920f99e47d624060e36d901",
+          "locator": "PDF p6 GCD,p7 text,p8 Fig6/Table2,p9 methods",
+          "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/evidence_images/legacy_R069_CY01_p6.png",
+          "sha256": "d1601be438790527f94bbcbbedf6a4eede01ca97888f809ca0d5d31ba24eb664",
+          "locator": "Original Fig5b and own GCD method",
+          "basis": "已回看自身Fig6和Table2，Na2SO4与H2SO4保持率在正文/表格互换，图为绝对比电容轨迹且无明确循环电流。保留双方，不能按性能或表格优先直接择值。 原Fig5及正文一致为正0.2至0.6V，已据图补入，不误读为负0.2V。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "legacy:SRC126_CY01",
+      "sample_name": "M-3-25",
+      "source_group": "10.3390/molecules30010026",
+      "previous_reason": "原文明确产品含重金属并参与氧化还原；不能仅根据生物质前驱体将其等同于普通多孔碳。补齐参比但不解除成品范围冻结。",
+      "previous_open_issues": [
+        "metal_phase_and_material_scope"
+      ],
+      "open_issues": [],
+      "approved_profiles": [],
+      "disposition": "outside_material_scope",
+      "reason": "主文XRD明确识别Cu与Cu2O晶相，XPS Cu2p及作者讨论确认含铜活性体系；依既有普通多孔碳用途边界排除，保存其它研究用途。不是因为保持率高低排除。",
+      "resolution": [
+        "Cu_and_Cu2O_phases_explicitly_identified"
+      ],
+      "evidence": [
+        {
+          "path": "循环稳定性文献补充_20261017/N005/公开全文.xml",
+          "sha256": "7a388b43b23818f87b9ebb078e9cc6e7ab9eae2dc9b684d49679ef6c5cce6c09",
+          "locator": "XML p11 XRD; p12 XPS; p13 electrochemical discussion",
+          "basis": "Cu and Cu2O phases explicitly assigned, not inferred from sample name.",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:025",
+      "sample_name": "NaOH-activated bamboo carbon",
+      "source_group": "10.37933/jete/7.4.2025.2044",
+      "previous_reason": "纠正把BET/BJH范围当自身BET缺失的情况：主文明确BET865.26、BJH1147.09m²/g，不能混用。补齐三电极参比、窗口和孔结构；表征电流/估计放电时间未绑定循环电流，仍不能填A/g。",
+      "previous_open_issues": [
+        "explicit_cycling_current_A_g"
+      ],
+      "open_issues": [
+        "explicit_cycling_current_A_g"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "纠正把BET/BJH范围当自身BET缺失的情况：主文明确BET865.26、BJH1147.09m²/g，不能混用。补齐三电极参比、窗口和孔结构；表征电流/估计放电时间未绑定循环电流，仍不能填A/g。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "待补证原文复核_20261022/new_supplements/SRC110_main.pdf",
+          "sha256": "d341b3c7d9fa01b2204afe5263ea23525cbb63214f0ffd6b0388d77d54e2ad73",
+          "locator": "PDF p4-p6 methods/Table2/BET table,p15 Fig10",
+          "basis": "纠正把BET/BJH范围当自身BET缺失的情况：主文明确BET865.26、BJH1147.09m²/g，不能混用。补齐三电极参比、窗口和孔结构；表征电流/估计放电时间未绑定循环电流，仍不能填A/g。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_073_T01",
+      "sample_name": "AC700",
+      "source_group": "document:b1fe8f461ebdeaba2d59dfdd49820c802b113fc6035ff52e2d6147eca5db23f2",
+      "previous_reason": "AC700是同篇Au复合论文的无Au对照，不能随复合样品一并排除；但文件为SSRN预印本、年份未核定且自身BET未闭合，继续保留候选。",
+      "previous_open_issues": [
+        "peer_reviewed_version_and_year",
+        "own_BET"
+      ],
+      "open_issues": [
+        "peer_reviewed_version_and_year"
+      ],
+      "approved_profiles": [],
+      "disposition": "partly_completed_identity_pending",
+      "reason": "自身无Au AC700的BET2142、ID/IG0.83及EA质量组成已从原文补齐；仍为未同行评审SSRN文件，年份和对应正式版本未核实，不准入。",
+      "resolution": [
+        "own_BET_and_Raman_and_bulk_composition_recovered"
+      ],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_073.pdf",
+          "sha256": "b1fe8f461ebdeaba2d59dfdd49820c802b113fc6035ff52e2d6147eca5db23f2",
+          "locator": "SSRN PDF p11 text/Table1 citation; p18 EA paragraph",
+          "basis": "Own Au-free AC700 BET2142, ID/IG.83; ultimate analysis N.7/O7.1wt% d.a.f.; Au-decorated2180 not borrowed.",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:027",
+      "sample_name": "CEPAC 1:1",
+      "source_group": "doi:10.1002/est2.70057",
+      "previous_reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "previous_open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "用户补充文献核验_20261018/pdfs/missing_main_received/U007.pdf",
+          "sha256": "a35649579970c9eb1852f06a92dbd806e8c2d655252f9210adb3f9475408b271",
+          "locator": "PDF p3 methods,p8 Fig6c/f,p9 own surface areas",
+          "basis": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:028",
+      "sample_name": "CEPAC 1:1",
+      "source_group": "doi:10.1002/est2.70057",
+      "previous_reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "previous_open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "用户补充文献核验_20261018/pdfs/missing_main_received/U007.pdf",
+          "sha256": "a35649579970c9eb1852f06a92dbd806e8c2d655252f9210adb3f9475408b271",
+          "locator": "PDF p3 methods,p8 Fig6c/f,p9 own surface areas",
+          "basis": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:029",
+      "sample_name": "CEPAC 1:0.5",
+      "source_group": "doi:10.1002/est2.70057",
+      "previous_reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "previous_open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "用户补充文献核验_20261018/pdfs/missing_main_received/U007.pdf",
+          "sha256": "a35649579970c9eb1852f06a92dbd806e8c2d655252f9210adb3f9475408b271",
+          "locator": "PDF p3 methods,p8 Fig6c/f,p9 own surface areas",
+          "basis": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:030",
+      "sample_name": "CEPAC 1:0.5",
+      "source_group": "doi:10.1002/est2.70057",
+      "previous_reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "previous_open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "用户补充文献核验_20261018/pdfs/missing_main_received/U007.pdf",
+          "sha256": "a35649579970c9eb1852f06a92dbd806e8c2d655252f9210adb3f9475408b271",
+          "locator": "PDF p3 methods,p8 Fig6c/f,p9 own surface areas",
+          "basis": "自身CEPAC样品BET、三电极参比和−1.2至0V窗口已补齐；正文及Fig6未定位到明确的循环A/g，不能借用邻近比电容表征的1A/g。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE028",
+      "sample_name": "ACA-US",
+      "source_group": "doi:10.1002/slct.202506886",
+      "previous_reason": "原Fig7d 2000圈最后点约82%，文字约85%。两者均非精确仪器记录，当前不能用任意读图误差包住差异；保留双方，不选较高数。",
+      "previous_open_issues": [
+        "author_approximate_label_vs_figure_endpoint"
+      ],
+      "open_issues": [
+        "author_approximate_label_vs_figure_endpoint"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "原Fig7d 2000圈最后点约82%，文字约85%。两者均非精确仪器记录，当前不能用任意读图误差包住差异；保留双方，不选较高数。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U021/main.pdf",
+          "sha256": "b4145283d62c92331418bf7dbd2d59fbc7a32c9c3f05862e4148cfef2c150ac9",
+          "locator": "PDF p6 own porosity,p8-p10 Fig5/Fig7d,p13 methods",
+          "basis": "已补ACA-US自身BET、孔容与GCD窗口。作者文字约85%，自身Fig7d末端约82—83%，未擅定近似误差范围或选择更高值；保留两处出处待核。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_016_T01",
+      "sample_name": "K-LWCA3",
+      "source_group": "doi:10.1007/s00226-023-01515-0",
+      "previous_reason": "原文件明确是ResearchSquare预印本rs-2596680/v1，首页给出正式版DOI。已尝试期刊正式PDF，但响应不是真实PDF；Crossref本次429。不能未经版本比对就把预印本数值绑定正式版。",
+      "previous_open_issues": [
+        "published_version_identity_and_values"
+      ],
+      "open_issues": [
+        "published_version_identity_and_values"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "原文件明确是ResearchSquare预印本rs-2596680/v1，首页给出正式版DOI。已尝试期刊正式PDF，但响应不是真实PDF；Crossref本次429。不能未经版本比对就把预印本数值绑定正式版。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_016.pdf",
+          "sha256": "6df08390abea7d4e3d76cac91688a26da687e1457c7c4a933ee53658414f8f2c",
+          "locator": "PDF p1 Version of Record statement; publisher access receipt",
+          "basis": "原文件明确是ResearchSquare预印本rs-2596680/v1，首页给出正式版DOI。已尝试期刊正式PDF，但响应不是真实PDF；Crossref本次429。不能未经版本比对就把预印本数值绑定正式版。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_016_T02",
+      "sample_name": "H-LWCA",
+      "source_group": "doi:10.1007/s00226-023-01515-0",
+      "previous_reason": "原文件明确是ResearchSquare预印本rs-2596680/v1，首页给出正式版DOI。已尝试期刊正式PDF，但响应不是真实PDF；Crossref本次429。不能未经版本比对就把预印本数值绑定正式版。",
+      "previous_open_issues": [
+        "published_version_identity_and_values"
+      ],
+      "open_issues": [
+        "published_version_identity_and_values"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "原文件明确是ResearchSquare预印本rs-2596680/v1，首页给出正式版DOI。已尝试期刊正式PDF，但响应不是真实PDF；Crossref本次429。不能未经版本比对就把预印本数值绑定正式版。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_016.pdf",
+          "sha256": "6df08390abea7d4e3d76cac91688a26da687e1457c7c4a933ee53658414f8f2c",
+          "locator": "PDF p1 Version of Record statement; publisher access receipt",
+          "basis": "原文件明确是ResearchSquare预印本rs-2596680/v1，首页给出正式版DOI。已尝试期刊正式PDF，但响应不是真实PDF；Crossref本次429。不能未经版本比对就把预印本数值绑定正式版。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_060_T01",
+      "sample_name": "SSK0.5",
+      "source_group": "doi:10.1016/j.diamond.2026.113577",
+      "previous_reason": "新SI补到了SSK0.5自身5000圈曲线、20A/g及GCD窗口，并从黑色比电容曲线得到约91.6%（读图界限±1.5个百分点）。SI测量段主要描述2E器件；3E参比及电解液浓度仍未闭合，不能拿器件6MKOH或主文CE约95%补入。",
+      "previous_open_issues": [
+        "3E_reference_electrode",
+        "3E_electrolyte_and_concentration"
+      ],
+      "open_issues": [
+        "3E_reference_electrode",
+        "3E_electrolyte_and_concentration"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "新SI补到了SSK0.5自身5000圈曲线、20A/g及GCD窗口，并从黑色比电容曲线得到约91.6%（读图界限±1.5个百分点）。SI测量段主要描述2E器件；3E参比及电解液浓度仍未闭合，不能拿器件6MKOH或主文CE约95%补入。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_060.pdf",
+          "sha256": "107583e811fc3b74e2f11a85a57242f22788ccab12ea42b688b5947b78961a57",
+          "locator": "Main p3 Table1,p6 own3E5000 cycles; newSI FigS4a/b",
+          "basis": "新SI补到了SSK0.5自身5000圈曲线、20A/g及GCD窗口，并从黑色比电容曲线得到约91.6%（读图界限±1.5个百分点）。SI测量段主要描述2E器件；3E参比及电解液浓度仍未闭合，不能拿器件6MKOH或主文CE约95%补入。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/new_supplements/SSK05_mmc1.docx",
+          "sha256": "34b5c010b157aa6be6913d27af14b18cf6a69116dfd0fd3aac567a93f745ee76",
+          "locator": "Own titled/author-matched SI, FigS4 and TableS1/S2",
+          "basis": "新SI补到了SSK0.5自身5000圈曲线、20A/g及GCD窗口，并从黑色比电容曲线得到约91.6%（读图界限±1.5个百分点）。SI测量段主要描述2E器件；3E参比及电解液浓度仍未闭合，不能拿器件6MKOH或主文CE约95%补入。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/figure_digitization.json",
+          "sha256": "d2847f71a38587a29311d1ac4ce668576368ae638579d04ae468cf3ee7885229",
+          "locator": "Calibrated ratio and conservative reading bound",
+          "basis": "新SI补到了SSK0.5自身5000圈曲线、20A/g及GCD窗口，并从黑色比电容曲线得到约91.6%（读图界限±1.5个百分点）。SI测量段主要描述2E器件；3E参比及电解液浓度仍未闭合，不能拿器件6MKOH或主文CE约95%补入。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE036",
+      "sample_name": "AC-500C",
+      "source_group": "doi:10.1016/j.heliyon.2024.e25628",
+      "previous_reason": "只提取无MnO2的自身AC对照；保持率为作者明确损失率的100%减补数，保留derived_complement。AC500自身数值BET未定位，不借400/600/700样品；AC600/700保留较差的真实端点。",
+      "previous_open_issues": [
+        "own_numeric_BET"
+      ],
+      "open_issues": [
+        "own_numeric_BET"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "只提取无MnO2的自身AC对照；保持率为作者明确损失率的100%减补数，保留derived_complement。AC500自身数值BET未定位，不借400/600/700样品；AC600/700保留较差的真实端点。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "XML p0180,p0345-p0350,p0480-p0485; Fig9a/Fig10a",
+          "basis": "只提取无MnO2的自身AC对照；保持率为作者明确损失率的100%减补数，保留derived_complement。AC500自身数值BET未定位，不借400/600/700样品；AC600/700保留较差的真实端点。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/assets/gr9.jpg",
+          "sha256": "cc4b7c4ea741f574bc34c04b98524d4cb2270d773ac23da44e686080034af5e4",
+          "locator": "Own AC GCD compared separately with MnO2 hybrid",
+          "basis": "只提取无MnO2的自身AC对照；保持率为作者明确损失率的100%减补数，保留derived_complement。AC500自身数值BET未定位，不借400/600/700样品；AC600/700保留较差的真实端点。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_013_T01",
+      "sample_name": "LC-67%",
+      "source_group": "doi:10.1016/j.ijbiomac.2025.146743",
+      "previous_reason": "从完整循环段落补回此前漏提的作者精确76.16%，并核对自身LC67%图。主文未定位数值BET，不借其它木质素或纯PAN；碳化PAN共前驱体信息保留。",
+      "previous_open_issues": [
+        "own_numeric_BET"
+      ],
+      "open_issues": [
+        "own_numeric_BET"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "从完整循环段落补回此前漏提的作者精确76.16%，并核对自身LC67%图。主文未定位数值BET，不借其它木质素或纯PAN；碳化PAN共前驱体信息保留。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_013.pdf",
+          "sha256": "92281408e6cba53b986db07989f8f2287239205742edbc9f323bad1eda486701",
+          "locator": "PDF p3 methods,p5 Fig6b/d,p7 complete cycling paragraph",
+          "basis": "从完整循环段落补回此前漏提的作者精确76.16%，并核对自身LC67%图。主文未定位数值BET，不借其它木质素或纯PAN；碳化PAN共前驱体信息保留。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_059_T01",
+      "sample_name": "LCC3",
+      "source_group": "doi:10.1016/j.indcrop.2026.123626",
+      "previous_reason": "补回原文p5明示的共同3E协议；新出版社SI TableS1补LCC-3自身孔结构。Fig8d末端约88%，结论/出版社亮点88%，正文/Table8为89%。保留差异，不用较高值覆盖；原图没有精确数值标签，未给精确训练标签。",
+      "previous_open_issues": [
+        "88_vs89pct_label_not_author_corrected"
+      ],
+      "open_issues": [
+        "88_vs89pct_label_not_author_corrected"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补回原文p5明示的共同3E协议；新出版社SI TableS1补LCC-3自身孔结构。Fig8d末端约88%，结论/出版社亮点88%，正文/Table8为89%。保留差异，不用较高值覆盖；原图没有精确数值标签，未给精确训练标签。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_059.pdf",
+          "sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+          "locator": "PDF p5 methods/Table4; p7 Raman; p9 Fig8d; p11 Fig10d; p12-13 endpoints/conclusion",
+          "fields": [
+            "review_disposition_v15"
+          ],
+          "basis": "补回原文p5明示的共同3E协议；新出版社SI TableS1补LCC-3自身孔结构。Fig8d末端约88%，结论/出版社亮点88%，正文/Table8为89%。保留差异，不用较高值覆盖；原图没有精确数值标签，未给精确训练标签。"
+        },
+        {
+          "path": "冲突复核与来源充分性_20261022/new_supplements/LCC_LCNC_mmc1.docx",
+          "sha256": "d1393679abca3e3b87623d5b4c9f9b484cfe2c237f4441a3531aa7aa84bbc027",
+          "locator": "Publisher PII S0926669026010137; SI FigS6 and TableS1",
+          "fields": [
+            "review_disposition_v15"
+          ],
+          "basis": "Official publisher PII attachment; sample/figure series and LCC3 TableS1 match main. No title/author front page in SI; identity established by publisher PII and content matching."
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_059_T02",
+      "sample_name": "LCNC3",
+      "source_group": "doi:10.1016/j.indcrop.2026.123626",
+      "previous_reason": "共同3E协议已补回；Fig10d图注和同段开头均指LCNC-1，末句却写LCNC-3。SI FigS6也明确研究LCNC-1。优先样品归属记录为LCNC-1，但不静默改材料键或把LCNC-1 BET借给旧LCNC3记录。循环图最后一个点约80%，正文78.1%，不能把近末稳定段冒充最终5000圈。维持冻结。",
+      "previous_open_issues": [
+        "sample_identity_conflicting_sentence",
+        "78_1pct_vs_final_point_approx80pct"
+      ],
+      "open_issues": [
+        "sample_identity_conflicting_sentence",
+        "78_1pct_vs_final_point_approx80pct"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "共同3E协议已补回；Fig10d图注和同段开头均指LCNC-1，末句却写LCNC-3。SI FigS6也明确研究LCNC-1。优先样品归属记录为LCNC-1，但不静默改材料键或把LCNC-1 BET借给旧LCNC3记录。循环图最后一个点约80%，正文78.1%，不能把近末稳定段冒充最终5000圈。维持冻结。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_059.pdf",
+          "sha256": "2f8954706b72149f534f8c24df96888ee7fde84fbe1bbbf07a60ec366599dad1",
+          "locator": "PDF p5 methods/Table4; p7 Raman; p9 Fig8d; p11 Fig10d; p12-13 endpoints/conclusion",
+          "fields": [
+            "review_disposition_v15"
+          ],
+          "basis": "共同3E协议已补回；Fig10d图注和同段开头均指LCNC-1，末句却写LCNC-3。SI FigS6也明确研究LCNC-1。优先样品归属记录为LCNC-1，但不静默改材料键或把LCNC-1 BET借给旧LCNC3记录。循环图最后一个点约80%，正文78.1%，不能把近末稳定段冒充最终5000圈。维持冻结。"
+        },
+        {
+          "path": "冲突复核与来源充分性_20261022/new_supplements/LCC_LCNC_mmc1.docx",
+          "sha256": "d1393679abca3e3b87623d5b4c9f9b484cfe2c237f4441a3531aa7aa84bbc027",
+          "locator": "Publisher PII S0926669026010137; SI FigS6 and TableS1",
+          "fields": [
+            "review_disposition_v15"
+          ],
+          "basis": "Official publisher PII attachment; sample/figure series and LCC3 TableS1 match main. No title/author front page in SI; identity established by publisher PII and content matching."
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_048_T01",
+      "sample_name": "K/F-doped PSAC",
+      "source_group": "doi:10.1016/j.jaap.2026.107634",
+      "previous_reason": "已回查K/F处理与自身XRD。3.94nm是孔半径，不能直接填作孔直径；XRD未分出晶相不能替代K/F化学态或盐残留分析，原范围冻结保留。",
+      "previous_open_issues": [
+        "K_F_bonding_vs_remaining_salt_scope"
+      ],
+      "open_issues": [
+        "K_F_bonding_vs_remaining_salt_scope"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "已回查K/F处理与自身XRD。3.94nm是孔半径，不能直接填作孔直径；XRD未分出晶相不能替代K/F化学态或盐残留分析，原范围冻结保留。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_048.pdf",
+          "sha256": "066522de746945afcf1b70c74916be980ef75837bcb1555c445045da377e23ea",
+          "locator": "PDF p3-p5 preparation/XRD/porosity",
+          "basis": "已回查K/F处理与自身XRD。3.94nm是孔半径，不能直接填作孔直径；XRD未分出晶相不能替代K/F化学态或盐残留分析，原范围冻结保留。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE014",
+      "sample_name": "AF-MMTC0",
+      "source_group": "doi:10.1039/d4ra08818b",
+      "previous_reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "previous_open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA058/main.xml",
+          "sha256": "57c7c4a8e1c50002a36b5de7ef306bd1c33e7ddfb4fd46b0de1a41f67a7583c3",
+          "locator": "XML p6,p9,p17,p19; Fig3,Fig4e; SI3pages",
+          "basis": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE015",
+      "sample_name": "AF-MMTC1",
+      "source_group": "doi:10.1039/d4ra08818b",
+      "previous_reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "previous_open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA058/main.xml",
+          "sha256": "57c7c4a8e1c50002a36b5de7ef306bd1c33e7ddfb4fd46b0de1a41f67a7583c3",
+          "locator": "XML p6,p9,p17,p19; Fig3,Fig4e; SI3pages",
+          "basis": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE016",
+      "sample_name": "AF-MMTC3",
+      "source_group": "doi:10.1039/d4ra08818b",
+      "previous_reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "previous_open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA058/main.xml",
+          "sha256": "57c7c4a8e1c50002a36b5de7ef306bd1c33e7ddfb4fd46b0de1a41f67a7583c3",
+          "locator": "XML p6,p9,p17,p19; Fig3,Fig4e; SI3pages",
+          "basis": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE017",
+      "sample_name": "AF-MMTC5",
+      "source_group": "doi:10.1039/d4ra08818b",
+      "previous_reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "previous_open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA058/main.xml",
+          "sha256": "57c7c4a8e1c50002a36b5de7ef306bd1c33e7ddfb4fd46b0de1a41f67a7583c3",
+          "locator": "XML p6,p9,p17,p19; Fig3,Fig4e; SI3pages",
+          "basis": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE018",
+      "sample_name": "AF-MMTC7",
+      "source_group": "doi:10.1039/d4ra08818b",
+      "previous_reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "previous_open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA058/main.xml",
+          "sha256": "57c7c4a8e1c50002a36b5de7ef306bd1c33e7ddfb4fd46b0de1a41f67a7583c3",
+          "locator": "XML p6,p9,p17,p19; Fig3,Fig4e; SI3pages",
+          "basis": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE019",
+      "sample_name": "AF-MMTC9",
+      "source_group": "doi:10.1039/d4ra08818b",
+      "previous_reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "previous_open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "open_issues": [
+        "own_numeric_BET_not_reported_in_reviewed_main_and_SI"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA058/main.xml",
+          "sha256": "57c7c4a8e1c50002a36b5de7ef306bd1c33e7ddfb4fd46b0de1a41f67a7583c3",
+          "locator": "XML p6,p9,p17,p19; Fig3,Fig4e; SI3pages",
+          "basis": "补齐AF-MMTC自身三电极−0.8至0V及约1.8mg/cm²。主文仅有AF-MMTC5氮气等温线，3页SI无数值BET表；不把一个样品的等温线估值或他篇SSA借给六个样品。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE032",
+      "sample_name": "NAPC-650-4",
+      "source_group": "doi:10.1039/d5ra00450k",
+      "previous_reason": "原文实际分离并碳化尿布中的吸水聚合物颗粒，成分包含聚丙烯酸钠等合成聚合物；当前无法确认碳骨架符合生物质来源范围。不能因论文称其绿色材料而直接准入。",
+      "previous_open_issues": [
+        "biomass_carbon_precursor_binding"
+      ],
+      "open_issues": [],
+      "approved_profiles": [],
+      "disposition": "outside_material_scope",
+      "reason": "原文明确分离尿布吸水聚合物颗粒并碳化，主体SAP为聚丙烯酸钠；不是把整片含纤维素尿布直接作为前驱体。依既有生物质来源范围排除，保留原值及其它用途。",
+      "resolution": [
+        "isolated_synthetic_SAP_precursor_identified"
+      ],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/new_sources/PMC12175059/main.xml",
+          "sha256": "f6ebc2fe795b74aeb48ccac66a6a11ae62d2891618933eccee5612c06c2a9d4b",
+          "locator": "XML p6 SAP identity; p9 isolation; p10 pyrolysis",
+          "basis": "Isolated sodium-polyacrylate-rich SAP particles are pyrolyzed; cellulose elsewhere in diaper does not establish biomass-derived carbon skeleton.",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_035_T01",
+      "sample_name": "CMC",
+      "source_group": "doi:10.1039/d6nj00244g",
+      "previous_reason": "补齐CMC自身初始BET和GCD窗口，不将循环后1296.3m²/g或O8.54at%当初始特征。作者使用over96.7%且摘要10000/正文15000有异，不能当精确点标签训练。",
+      "previous_open_issues": [
+        "lower_bound_target_not_point_label",
+        "abstract_vs_results_cycle_count"
+      ],
+      "open_issues": [
+        "lower_bound_target_not_point_label",
+        "abstract_vs_results_cycle_count"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐CMC自身初始BET和GCD窗口，不将循环后1296.3m²/g或O8.54at%当初始特征。作者使用over96.7%且摘要10000/正文15000有异，不能当精确点标签训练。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "三电极端点扩充_20261018/corpus/U017/main.pdf",
+          "sha256": "33f0877e8bd901fbfea0e0728bea1ae6ee9d6a9254e62d43c222dccb9acf929f",
+          "locator": "PDF p1-p3 initial characterizations/methods,p6 cycling and post-cycle comparison",
+          "basis": "补齐CMC自身初始BET和GCD窗口，不将循环后1296.3m²/g或O8.54at%当初始特征。作者使用over96.7%且摘要10000/正文15000有异，不能当精确点标签训练。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_002_T01",
+      "sample_name": "AGC-FK",
+      "source_group": "doi:10.1088/1742-6596/3113/1/012002",
+      "previous_reason": "AGC原循环图caption10 A/g与inset20 A/g冲突；没有更正或原始程序，不能把表征窗口/电流当循环工况。",
+      "previous_open_issues": [
+        "10_vs20_A_g",
+        "cycling_window_binding"
+      ],
+      "open_issues": [
+        "10_vs20_A_g",
+        "cycling_window_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "AGC原循环图caption10 A/g与inset20 A/g冲突；没有更正或原始程序，不能把表征窗口/电流当循环工况。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_002.pdf",
+          "sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+          "locator": "Own methods and cycling figure caption/inset",
+          "basis": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "incoming:ADD_002_T02",
+      "sample_name": "AGC-K",
+      "source_group": "doi:10.1088/1742-6596/3113/1/012002",
+      "previous_reason": "AGC-K同一循环caption10 A/g与inset20 A/g冲突，继续保持原始候选值及出处。",
+      "previous_open_issues": [
+        "10_vs20_A_g",
+        "cycling_window_binding"
+      ],
+      "open_issues": [
+        "10_vs20_A_g",
+        "cycling_window_binding"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "AGC-K同一循环caption10 A/g与inset20 A/g冲突，继续保持原始候选值及出处。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "新增文献整理_20261020/originals/ADD_002.pdf",
+          "sha256": "f7d974029839a8c0c2170f14c9fc7b763d8be6c86f93590b58fc3520c33abd59",
+          "locator": "Own methods and cycling figure caption/inset",
+          "basis": "正文/图注明10A/g，循环图插图标20A/g；表征GCD与循环插图窗口亦不一致。保留双方及原标签，不用最新写入择值。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:017",
+      "sample_name": "NSOC-800",
+      "source_group": "doi:10.3390/ma16134577",
+      "previous_reason": "方法甘汞与原Fig3 Hg/HgO冲突。常见使用Hg/HgO不能证明本试验如此；版本说明403，未取得作者更正。",
+      "previous_open_issues": [
+        "calomel_vs_HgHgO_reference"
+      ],
+      "open_issues": [
+        "calomel_vs_HgHgO_reference"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "方法甘汞与原Fig3 Hg/HgO冲突。常见使用Hg/HgO不能证明本试验如此；版本说明403，未取得作者更正。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/sources/L20/fulltext.xml",
+          "sha256": "8a6b0f4f1a4691954a143741d00b7db5151234dcc57d3f26c1f0f5e500765e92",
+          "locator": "XML p6,p11; publisher original Fig3",
+          "basis": "已取得出版社原Fig3：正文方法写甘汞电极，Fig3a/b纵横轴写Hg/HgO。两种参比原值一并保留，不能仅为准入择一。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/new_supplements/NSOC800_Fig3.png",
+          "sha256": "103ef574db6568031143dce20a8c983e8763e7cd5b56b7a4d66a454e4978760b",
+          "locator": "Original Fig3 visual inspection",
+          "basis": "已取得出版社原Fig3：正文方法写甘汞电极，Fig3a/b纵横轴写Hg/HgO。两种参比原值一并保留，不能仅为准入择一。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE009",
+      "sample_name": "YPAC-1",
+      "source_group": "doi:10.3390/molecules28186543",
+      "previous_reason": "正文、自身Fig6和4页SI已核对；补齐自身孔结构及窗口。未定位循环电流，不从倍率测试0.5、1或20A/g中选一个补入。",
+      "previous_open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "open_issues": [
+        "cycling_current_A_g_not_located"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "正文、自身Fig6和4页SI已核对；补齐自身孔结构及窗口。未定位循环电流，不从倍率测试0.5、1或20A/g中选一个补入。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA007/main.xml",
+          "sha256": "40eb264737fcfd84211214ea784030f0808590d65ce27304ee46a77919fac391",
+          "locator": "XML Table1,Fig6b/d,SI p1-p4",
+          "basis": "正文、自身Fig6和4页SI已核对；补齐自身孔结构及窗口。未定位循环电流，不从倍率测试0.5、1或20A/g中选一个补入。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE008",
+      "sample_name": "FWCA-4",
+      "source_group": "doi:10.3390/nano15050387",
+      "previous_reason": "已补自身10A/g及GCD窗口。Table2明确cm³/g，结论误写m³/g，保留冲突并选原表单位；参比仅指向方法文献15，已取得该文SI但SI无参比，主文目前不可访问，不能猜Hg/HgO。",
+      "previous_open_issues": [
+        "reference_electrode_in_cited_main_article"
+      ],
+      "open_issues": [
+        "reference_electrode_in_cited_main_article"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "已补自身10A/g及GCD窗口。Table2明确cm³/g，结论误写m³/g，保留冲突并选原表单位；参比仅指向方法文献15，已取得该文SI但SI无参比，主文目前不可访问，不能猜Hg/HgO。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA003/main.xml",
+          "sha256": "6efa7f6aa3de39bd051055204654b523011bcd0d094acd664f442a142d96ffe8",
+          "locator": "XML method2.3,Table2,Fig7 and cited reference15",
+          "basis": "已补自身10A/g及GCD窗口。Table2明确cm³/g，结论误写m³/g，保留冲突并选原表单位；参比仅指向方法文献15，已取得该文SI但SI无参比，主文目前不可访问，不能猜Hg/HgO。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "待补证原文复核_20261022/new_supplements/FWCA_cited_method15_mmc1.docx",
+          "sha256": "79b31da1dc0f1c4545e99a148e3a8b10c5bdd46978c1faf6b98f788b5dd9320b",
+          "locator": "Cited method15 SI: no reference electrode reported",
+          "basis": "已补自身10A/g及GCD窗口。Table2明确cm³/g，结论误写m³/g，保留冲突并选原表单位；参比仅指向方法文献15，已取得该文SI但SI无参比，主文目前不可访问，不能猜Hg/HgO。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:022",
+      "sample_name": "EC-400",
+      "source_group": "doi:10.3390/polym15030663",
+      "previous_reason": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。 已回看原Fig7a/d/e，确认GCD本身为−0.8至0.4V；剩余循环A/g未定位。",
+      "previous_open_issues": [
+        "cycling_current_A_g"
+      ],
+      "open_issues": [
+        "cycling_current_A_g"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。 已回看原Fig7a/d/e，确认GCD本身为−0.8至0.4V；剩余循环A/g未定位。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA025/main.xml",
+          "sha256": "f44d758d98305ed742e1d13c5bce1b9986a647b5a2d8a22185a3c0b2cbe15095",
+          "locator": "XML method p6,Table2,p45; SI p3 FigS5",
+          "basis": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA025/polymers-2180113-supplementary.pdf",
+          "sha256": "0784637181d9c8804acbff406c9e82e14a3bb142fe14d6cb11d85ecc6573c81d",
+          "locator": "SI FigS5 and TableS2 reviewed",
+          "basis": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA025/figures/polymers-15-00663-g007.jpg",
+          "sha256": "3ac2a32a8ef769de72fb8649e7b284d599a17d286c536d01769880c42be4d448",
+          "locator": "Original own GCD waveforms",
+          "basis": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。 已回看原Fig7a/d/e，确认GCD本身为−0.8至0.4V；剩余循环A/g未定位。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:V05:023",
+      "sample_name": "EC-10%",
+      "source_group": "doi:10.3390/polym15030663",
+      "previous_reason": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。 已回看原Fig7a/d/e，确认GCD本身为−0.8至0.4V；剩余循环A/g未定位。",
+      "previous_open_issues": [
+        "cycling_current_A_g"
+      ],
+      "open_issues": [
+        "cycling_current_A_g"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。 已回看原Fig7a/d/e，确认GCD本身为−0.8至0.4V；剩余循环A/g未定位。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA025/main.xml",
+          "sha256": "f44d758d98305ed742e1d13c5bce1b9986a647b5a2d8a22185a3c0b2cbe15095",
+          "locator": "XML method p6,Table2,p45; SI p3 FigS5",
+          "basis": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA025/polymers-2180113-supplementary.pdf",
+          "sha256": "0784637181d9c8804acbff406c9e82e14a3bb142fe14d6cb11d85ecc6573c81d",
+          "locator": "SI FigS5 and TableS2 reviewed",
+          "basis": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA025/figures/polymers-15-00663-g007.jpg",
+          "sha256": "3ac2a32a8ef769de72fb8649e7b284d599a17d286c536d01769880c42be4d448",
+          "locator": "Original own GCD waveforms",
+          "basis": "补齐EC400与EC10%各自BET、孔容、Å到nm换算及汞/硫酸汞参比；SI FigS5无循环A/g，TableS2表征0.2A/g不等于循环电流。 已回看原Fig7a/d/e，确认GCD本身为−0.8至0.4V；剩余循环A/g未定位。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    },
+    {
+      "endpoint_id": "candidate:TE010",
+      "sample_name": "FRPCK-Urea",
+      "source_group": "doi:10.3390/polym15193976",
+      "previous_reason": "方法6 M与自身Fig4/结果1 M冲突，原文/PMC未消除。出版社版本说明本次403；不是不存在勘误的证明。",
+      "previous_open_issues": [
+        "1M_vs6M_KOH"
+      ],
+      "open_issues": [
+        "1M_vs6M_KOH"
+      ],
+      "approved_profiles": [],
+      "disposition": "pending_original_evidence",
+      "reason": "方法6 M与自身Fig4/结果1 M冲突，原文/PMC未消除。出版社版本说明本次403；不是不存在勘误的证明。",
+      "resolution": [],
+      "evidence": [
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA031/main.xml",
+          "sha256": "42386be5f1ef05897802ce7dacbe8b1c867a2205f15d3ef3a84d1bbb150fcf3d",
+          "locator": "XML methods,results and Fig4",
+          "basis": "同一三电极试验在方法写6MKOH，在结果/自身Fig4写1MKOH。两处证据保留，不择更常见浓度，也不因电流分母已知而忽略该真实冲突。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        },
+        {
+          "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA031/figures/polymers-15-03976-g004.jpg",
+          "sha256": "dd61a4b7ce5d4c69ec1249567b741577a2f14de6ac8c6f3c293a64de97ef62ee",
+          "locator": "Original Fig4b/e GCD window; Fig4 electrolyte conflict",
+          "basis": "同一三电极试验在方法写6MKOH，在结果/自身Fig4写1MKOH。两处证据保留，不择更常见浓度，也不因电流分母已知而忽略该真实冲突。",
+          "fields": [
+            "review_disposition_v15"
+          ]
+        }
+      ],
+      "access_scope": "existing local main/SI only; no new publisher or author contact",
+      "reviewer": "Codex agent targeted original-source review; not independent expert sign-off"
+    }
+  ],
+  "limits": [
+    "No new literature download or publisher-version check in this local batch.",
+    "No author correction or raw measurement files acquired.",
+    "No retraining; past v1.0/v1.1 metrics remain historical."
+  ]
+}

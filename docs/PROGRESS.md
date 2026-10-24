@@ -203,3 +203,11 @@
 - 验证：149159项独立核验；295旧v1.0载荷及32原件保护；1332任务/1301拟合/0警告；双单位、42条风险状态、3图/3筛选、桌面/窄屏/离线通过；301封版文件哈希一致
 - 下一步/未决：继续独立困难来源、剩余表图/SI及3个CA同源样品逐测试准入；前5项实现不代表精度达标，不把已用来源称新测试、不围绕外层成绩追加调参
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-24T17:39:14+08:00：已有表图与41条复核完成：70项变更，ALPC方法纠错，固定特征覆盖42.33%，39条仍待证
+
+- 结果：已有表图与41条复核完成：70项变更，ALPC方法纠错，固定特征覆盖42.33%，39条仍待证
+- 文件：README.md, data/current_database.json, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/WORKSPACE_MEMORY.md, docs/knowledge/表图提取与EDS_XPS区分_20261024.md, tools/inspect_existing_sources_v015.py, tools/curate_existing_sources_v015.py, tools/build_existing_sources_v015.py, tools/verify_existing_sources_v015.py, tools/finalize_existing_sources_v015.py, 已有文献表图与41条复核_20261024, 循环稳定性数据库_v0.15_表图与待补证复核_20261024
+- 验证：20535项核验；33封版输出SHA与稳定入口通过；旧父库/模型/原件、标签/成员/分组/权重保持；真实拟合0次
+- 下一步/未决：按39条/25来源补证清单获取实际缺失的原始资料、正式刊本或作者更正；新增准入0；下一轮训练另定计划，不把字段提升当精度提升
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
