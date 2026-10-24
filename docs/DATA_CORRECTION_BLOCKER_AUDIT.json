@@ -1,12 +1,11 @@
 {
   "schema": "fixed_goal_completion_and_impasse_audit_v1",
-  "checked_at": "2026-10-25T00:27:29+08:00",
+  "checked_at": "2026-10-25T00:30:06+08:00",
   "condition_id": "required_primary_experimental_information_missing_or_conflicting_under_authorized_scope",
-  "previous_goal_turn_classification": "no_progress: completion audit/status synchronization did not resolve scientific evidence",
-  "this_goal_turn_classification": "no_progress: unchanged required primary evidence and unresolved conflicts revalidated",
-  "consecutive_impasse_goal_turns": 2,
-  "application_goal_status": "active",
-  "blocked_threshold_met": false,
+  "previous_goal_turn_classification": "no_progress: second unchanged evidence audit and scoped synchronization did not resolve scientific evidence",
+  "this_goal_turn_classification": "no_progress: third consecutive audit confirms same required primary evidence unavailable or conflicting",
+  "consecutive_impasse_goal_turns": 3,
+  "blocked_threshold_met": true,
   "fixed_original_records": 39,
   "completed_case_ids": [
     "incoming:ADD_035_T01"
@@ -51,7 +50,7 @@
     {
       "requirement": "Project work synchronized to verified origin",
       "state": "prior_batch_proven",
-      "evidence": "Previous scoped sync verified4c19bf3dc1877deafd3f2c9185a282d8e381ee4f; this audit will have its own scoped sync."
+      "evidence": "Latest completed audit sync verified b939a54e22a9e8399104909c02007b11b8bfde68; this final audit is synchronized separately before goal-state transition."
     }
   ],
   "evidence_routes": {
@@ -76,7 +75,8 @@
   },
   "notification": {
     "first_impasse_notice_given": true,
-    "repeat_unchanged_notice": false
+    "repeat_unchanged_notice": false,
+    "third_audit_status_notice_given": true
   },
   "cases": [
     {
@@ -525,8 +525,25 @@
       "classification": "no_progress",
       "pending_records": 38,
       "evidence": "Current read-only database SHA validated; 38 current issue lists equal prior audit; fixed39 coverage retained; local intake metadata unchanged; no human response or confirmed live process."
+    },
+    {
+      "checked_at": "2026-10-25T00:30:06+08:00",
+      "consecutive_impasse_goal_turns": 3,
+      "classification": "no_progress",
+      "pending_records": 38,
+      "evidence": "Read-only current DB SHA validated; fixed39 endpoint coverage and all38 issue lists match prior audit; intake33 files unchanged; no human-provided new path and no confirmed live job."
     }
   ],
   "verified_wait": false,
-  "live_process_confirmed": false
+  "live_process_confirmed": false,
+  "application_goal_status_at_audit": "active",
+  "audited_next_goal_status": "blocked",
+  "impasse_audit_passed": true,
+  "impasse_reason": "No currently identified accessible unreviewed primary source resolves any remaining hold; actual own-test data, formal methods or original conflict clarification are required. Public index zero hits do not prove absence. No fabricated final disposition, author contact, access bypass or new training is authorized.",
+  "resume_requirements": {
+    "evidence_list": "持续补正_v017_20261024/剩余补证资料清单.csv",
+    "queue": "持续补正_v017_20261024/work_queue.json",
+    "minimum_action": "User provides local path to actual new SI/raw/formal evidence, or a verified new public primary source becomes accessible; review by endpoint under unchanged purpose.",
+    "fresh_blocked_audit_after_resume": true
+  }
 }
