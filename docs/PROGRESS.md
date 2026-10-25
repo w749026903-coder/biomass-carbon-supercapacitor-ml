@@ -283,3 +283,11 @@
 - 验证：get_goal返回blocked；两份JSON解析与39/1/38范围核对；diff检查通过；仅更新用户答复和状态入口，无数据库或模型修改
 - 下一步/未决：保留24来源补证清单，新的可验证原始证据到达后恢复；不重复询问现有答复，不将暂无资料写成资料不存在
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-25T15:48:18+08:00：按现有文献全量利用纠正范围：v0.19补46字段，4篇7表整理15材料88数值和6条分体系循环候选
+
+- 结果：按现有文献全量利用纠正范围：v0.19补46字段，4篇7表整理15材料88数值和6条分体系循环候选
+- 文件：README.md, data/current_database.json, data/current_literature.json, data/literature_db.py, docs/CURRENT_STATE.md, docs/DATA_CORRECTION_BLOCKER_AUDIT.json, docs/DATA_CORRECTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/WORKSPACE_MEMORY.md, docs/knowledge/文献全量利用与摘要漏项_20261025.md, tools/extract_literature_material_pool_v1.py, tools/release_abstract_corrections_v019.py, 循环稳定性数据库_v0.19_摘要与制备漏项补正_20261025, 持续补正_v017_20261024/resumed_20261025, 持续补正_v017_20261024/README.md, 持续补正_v017_20261024/work_queue.json, 持续补正_v017_20261024/剩余补证资料清单.csv, 文献全量利用复核_20261025
+- 验证：v0.19封版后23466项及16载荷SHA；文献事实库110项含88原XML单元和四原件/旧索引SHA；两层只读API已实查；diff检查；训练资格和旧模型未改，新增拟合0
+- 下一步/未决：继续按480身份和959表候选对账，952表仍待审；原39条仍38待证；先补现有原文再冻结模型，CV/3E/2E/有机/凝胶和所有来源分组保留
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
