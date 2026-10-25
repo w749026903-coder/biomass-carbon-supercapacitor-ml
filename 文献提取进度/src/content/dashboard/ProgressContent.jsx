@@ -18,7 +18,7 @@ export function DashboardContent(){
   <div className="extraction-cards">
    <MetricCard id="material-numbers" title="材料数值单元" queryId="overview" value={h.cumulative_numeric_material_facts} displayRows={rows} sourceRows={rows} description={`证据层累计${h.cumulative_materials}种材料，含对照与参考体系`}/>
    <MetricCard id="cap-numbers" title="比电容数值单元" queryId="overview" value={h.numeric_capacitance_values} displayRows={rows} sourceRows={rows} description={`${h.capacitance_records}条报告；复述、竞争和换算不当独立样本`}/>
-   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description="原39条中1条完成；本批新增正式准入0"/>
+   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description={`原39条中1条完成；另新增${h.new_formal_cycling_admissions}条循环准入`}/>
   </div>
   <Section id="corpus-overview-title" title="全库排查范围" columns={2}>
    <EvidenceChart id="identity-catalogue" queryId="identity_states" title="480个身份条目的匹配状态" rows={reviewedRows('identity_states')} sourceRows={reviewedRows('identity_states')} variant="card" spec={{type:'bar',x:'category',y:'count',showXAxisLabel:false,showYAxisLabel:false,valueDecimals:0}} height={245}/>
@@ -28,7 +28,7 @@ export function DashboardContent(){
    <div className="scope-note" data-reviewed-rows="true">
     <p><strong>{h.raw_table_candidates} 个原始表候选：</strong>本流程已处理指定范围 {h.raw_candidates_touched} 个，尚未进入处理 {h.raw_candidates_untouched} 个。已处理不代表整篇或全部参数完成。</p>
     <p>历史已有 <strong>{h.historical_selected_fact_references} 项材料属性</strong>另行对账，其中 {h.historical_fact_references_with_same_source_table_candidates} 项存在同源表线索；不能与本页新增层直接相加。目录、论文、材料、数值单元与训练样本分母不同。</p>
-    <p>正式循环主集仍 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源</strong>。下一步优先生物质自身多样品表、制备阶段和多工况曲线；协议冲突保留竞争证据。本轮真实拟合 {h.model_fits} 次。</p>
+    <p>正式三电极循环主集 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源</strong>；双电极普通水系循环集 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 来源</strong>。v0.20新增锦带花1条双电极端点，全部观察{h.cycling_observations}条；原固定38待证保持。本轮真实拟合 {h.model_fits} 次。</p>
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
    </div>
   </DataComponent>
@@ -40,7 +40,8 @@ export function DashboardContent(){
   <Section id="auxiliary-title" title="已核定的辅助比电容输入" filters={<Filters {...auxiliaryScope.filterProps}/>}><EvidenceTable id="auxiliary-gcd-table" title="四个辅助目标分别调用 · 同DOI整组隔离" queryId="auxiliary_inputs" scope={auxiliaryScope} columns={[f('doi','DOI'),f('sample_name','样品'),f('task','任务'),f('capacitance_F_g','比电容 F/g'),f('current_A_g','电流 A/g'),f('electrolyte','电解液'),f('BET_surface_area_m2_g','BET m²/g'),f('EDX_C_at_pct','EDX C原子%'),f('mesopore_volume_cm3_g','介孔容 cm³/g')]}/>
   </Section>
   <Section id="issues-title" title="争议与待办">
-   <EvidenceTable id="cycling-candidates-table" title="循环候选 · 不等于正式准入" queryId="cycling_candidates" columns={[f('doi','DOI'),f('sample','样品'),f('system','配置'),f('metric','响应指标'),f('electrolyte','电解液'),f('current_A_g','循环 A/g'),f('cycle_count','圈数'),f('retention_pct','保持率 %'),f('retention_uncertainty','作者±量'),f('status','准入阶段'),f('locator','证据位置')]}/>
+   <EvidenceTable id="formal-2e-table" title="正式双电极循环数据 · 分来源调用" queryId="formal_2e" columns={[f('sample_name','样品'),f('source_group','来源组'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('electrolyte','电解液'),f('concentration_mol_L','浓度 M'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('BET_m2_g','BET m²/g'),f('retention_pct','保持率 %')]}/>
+   <EvidenceTable id="cycling-candidates-table" title="循环候选与当前准入链接" queryId="cycling_candidates" columns={[f('doi','DOI'),f('sample','样品'),f('system','配置'),f('metric','响应指标'),f('electrolyte','电解液'),f('current_A_g','循环 A/g'),f('cycle_count','圈数'),f('retention_pct','保持率 %'),f('retention_uncertainty','作者±量'),f('status','准入阶段'),f('formal_endpoint_id','正式端点'),f('locator','证据位置')]}/>
    <EvidenceTable id="scientific-issues" title="科学争议原值与处理边界" queryId="issues" columns={[f('doi','DOI'),f('sample','样品'),f('issue','问题类型'),f('action','处置'),f('details','竞争证据')]}/>
    <EvidenceTable id="full-table-queue" title="959个表候选的处理队列" queryId="table_queue" columns={[f('table_id','候选ID'),f('caption','表题'),f('locator','原定位'),f('raw_rows','原始行数'),f('role','原始角色'),f('state','当前处理范围')]}/>
   </Section>

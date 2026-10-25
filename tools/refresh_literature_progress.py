@@ -34,6 +34,14 @@ def main():
           files=[{'name':pointer['database_file']},{'name':'summary.json'},{'name':'verification.json'}],
           metricDefinitions=[dict(field='count',label='计数口径',definition=definition)],caveats=list(caveats),
           evidenceFlow=['读取当前文献层指针并核验SQLite SHA256。','只读API/SQL生成所列完整快照行；不联网刷新原文，不写回数据库。','筛选与导出保留相同记录、单位和限定；工程核验不解除科学冻结。']))
+    cycle_pointer=json.loads((ROOT/'data/current_database.json').read_text('utf8'))
+    cycle_folder=ROOT/cycle_pointer['version_directory']
+    with open_database() as cycling:
+        main_rows=cycling.fetch('reported_3e').rows
+        two_rows=cycling.fetch('reported_2e').rows
+        links={r['candidate_id']:r for r in cycling.literature_links()} if hasattr(cycling,'literature_links') else {}
+        observation_count=len(cycling.fetch('all_review').rows)
+    cycle_summary=json.loads((cycle_folder/'summary.json').read_text('utf8')) if (cycle_folder/'summary.json').exists() else {}
     with open_literature_database() as db:
         facts=db.facts();caps=db.capacitances()
         auxiliary=[]
@@ -78,7 +86,7 @@ def main():
         issue_labels.update(abstract_original_figure_retention_conflict='摘要与循环原图冲突',prose_figure_rate_capacitance_difference='正文与倍率原图差别',reported_BET_fit_range_quality_qualification='BET拟合范围质量限定',electrode_mass_reports_different_scope='电极质量表述范围不同',same_current_capacitance_conflict='同电流比电容冲突',native_calcium_phosphate_material_purpose='天然钙磷残留材料用途',hybrid_capacitance_and_retention_competition='混合器件摘要正文竞争',reported_precision_and_transcription_variants='表图精度与转录差异',cycling_voltage_binding_unresolved='循环电压绑定待证',author_factor2_capacitance_separate_target='作者两倍系数独立目标',adsorption_and_EIS_responses_not_pretest_features='吸附及EIS响应分开')
         actions.update(LP4_TAK_retention='摘要98%与原图约93.81%（3像素约±0.60百分点）并存；不猜归一化，循环冻结。',LP4_TAK_rate='7A/g正文约160与读图约168.63并存；不选作精确标签。',LP4_TAK_BET='保留BET及作者0.05～0.8拟合区间注记，不新设一律要求C常数的门槛。',LP4_TAK_mass='质量范围分别保留，不推断每电极质量，不因此否定作者报告A/g用途。',LP4_HAC_cap='1A/g的360/240冻结；其余五种电流按天然矿物残留用途调用。',LP4_HAC_scope='天然CaP另列；SI碳元素图不能量化Ca/P或证明为零。',LP4_HAC_hybrid='HAC、EMD和HAC||EMD各自绑定，不转移混合器件冲突到碳单电极。',LP4_WPC_precision='BET用主表/SI共同3377.94；微孔容明确选SI0.4797，保留主表0.48取整值。',LP4_WPC_voltage='87.5%有原图支持；循环电压仍未知，不用CV或能量反算填补。',LP4_WPC_basis='六条作者两倍系数Csp独立目标，不混入器件总质量比电容。',LP4_WPC_outcomes='24条CO₂吸附和8条EIS独立响应，不作保持率或预实验材料特征。')
         issue_labels.update(cycling_SI_signed_voltage_vs_actual_own_cycle_insets='实际循环图与SI电压异文',own_body_table_capacitance_competition='正文与自身表倍率值竞争',synthesis_control_and_alias_not_assumed='活化剂用量与对照别名',XPS_envelope_dash_malformed_and_sum='XPS包络、横杠及原印数字',abstract_pore_volume_scope_not_assumed_total='摘要孔容范围不明',DES_and_mean_uncertainty_separate_purpose='DES与均值±量单独保存',cycling_current_not_bound_from_rate_test='循环电流仍缺数值',EIS_report_and_summary_competition='EIS表与总结竞争')
-        actions.update(LP5_WJ_voltage='实际首次/末次循环图与正文均0～1V，据此选择；保留SI−1～0V异文，正式增量准入尚未完成。',LP5_WJ_cap='NWJPC-1在1A/g的133/133.7冻结，其余四电流保留。',LP5_WJ_scope='对照KOH:前驱体3:1，掺杂组1:1；NWJPC组水热温度未明确绑定，未猜填180℃。',LP5_WJ_XPS='N1s横杠非0；总N0.9at%另存。原12.6.格式异常留空；99.64不归一化。',LP5_G_pore='明确微孔0.377、介孔0.520、总0.897；摘要0.38不当总孔容。',LP5_G_targets='12组DES保持率与作者±数保留；银丝伪参比、30℃及固态原型另列。',LP5_A_cycle='三浓度循环标签保留，电流未报数值；不借2A/g倍率工况补填。',LP5_A_EIS='保留42.96/42异文和4M最大Rct；EIS响应不作预实验材料特征。')
+        actions.update(LP5_WJ_voltage='实际首次/末次循环图与正文均0～1V，据此选择；保留SI−1～0V异文，已在v0.20准入双电极报告用途。',LP5_WJ_cap='NWJPC-1在1A/g的133/133.7冻结，其余四电流保留。',LP5_WJ_scope='对照KOH:前驱体3:1，掺杂组1:1；NWJPC组水热温度未明确绑定，未猜填180℃。',LP5_WJ_XPS='N1s横杠非0；总N0.9at%另存。原12.6.格式异常留空；99.64不归一化。',LP5_G_pore='明确微孔0.377、介孔0.520、总0.897；摘要0.38不当总孔容。',LP5_G_targets='12组DES保持率与作者±数保留；银丝伪参比、30℃及固态原型另列。',LP5_A_cycle='三浓度循环标签保留，电流未报数值；不借2A/g倍率工况补填。',LP5_A_EIS='保留42.96/42异文和4M最大Rct；EIS响应不作预实验材料特征。')
         issues=[dict(doi=r['doi'],sample=r['sample_name'],issue=issue_labels.get(r['issue'].get('kind'),r['issue'].get('kind')),action=actions.get(r['issue_id'],r['issue'].get('action')),details=json.dumps(r['issue'],ensure_ascii=False)) for r in db.issues()]
         query('issues',issues,['scientific_issues'],'SELECT * FROM scientific_issues;','每个争议/限定项，不是独立样本。',['保留双方原值与出处，不以性能或新版本择值。'])
         material_map={m['material_key']:m for m in db.materials()};candidates=[]
@@ -86,17 +94,29 @@ def main():
             record=item['record'];m=material_map[item['material_key']]
             kind='容量保持率（锌离子，独立任务）' if record.get('retention_metric')=='specific_capacity_mAh_g_not_capacitance' else '电容保持率候选'
             candidates.append(dict(candidate_id=item['candidate_id'],doi=m['doi'],sample=m['sample_name'],system=record.get('system'),electrolyte=record.get('electrolyte'),concentration_mol_L=record.get('concentration_mol_L'),current_A_g=record.get('reported_current_A_g'),cycle_count=record.get('cycle_count'),retention_pct=record.get('retention_pct'),retention_uncertainty=record.get('reported_retention_uncertainty'),metric=kind,status='已备主要证据，正式增量准入待做' if item['candidate_id']=='LP5_SSC' else '候选，尚非正式成员',source_path=record.get('evidence_source_path'),source_sha256=record.get('source_sha256'),locator=record.get('locator'),details=json.dumps(record,ensure_ascii=False)))
-        query('cycling_candidates',candidates,['test_candidates','materials'],
+        for candidate in candidates:
+            link=links.get(candidate['candidate_id'])
+            candidate['formal_endpoint_id']=link['endpoint_id'] if link else None
+            candidate['status']='已准入：双电极报告工况' if link else '候选，当前未建立准入链接'
+            candidate['metric']=candidate['metric'].replace('电容保持率候选','电容保持率（作者报告）')
+        query('cycling_candidates',candidates,['test_candidates','materials','literature_links_v20'],
           'SELECT t.*,m.doi,m.sample_name FROM test_candidates t JOIN materials m USING(material_key);',
-          '文献层逐体系候选，不包含当前循环库的全部277观察；不等于新增正式准入。',
+          '文献层逐体系候选与当前循环库准入链接；不包含当前循环库全部观察，不把候选和正式端点算两次实验。',
           ['锌离子容量、普通电容保持率和DES用途明确分开；作者±量不猜SD或SEM。','早期候选中未结构化到相同字段的值保持空，原record_json和定位完整可查。'])
-    with open_database() as cycling:main_rows=cycling.fetch('reported_3e').rows
     fixed=json.loads((ROOT/'docs/DATA_CORRECTION_GOAL.json').read_text('utf8'))
     active=json.loads((ROOT/'docs/LITERATURE_EXTRACTION_GOAL.json').read_text('utf8'))
-    overview=[dict(summary,goal_status=active['app_goal_status_last_confirmed'],formal_main_rows=len(main_rows),formal_main_sources=len({r['source_group'] for r in main_rows}),fixed_goal_records=fixed['fixed_record_count'],fixed_resolved=fixed['scientifically_resolved_in_goal'],fixed_pending=fixed['current_pending'])]
-    query('overview',overview,['summary.json','docs/LITERATURE_EXTRACTION_GOAL.json','cycling_v0_19.sqlite'],
+    overview=[dict(summary,goal_status=active['app_goal_status_last_confirmed'],formal_main_rows=len(main_rows),formal_main_sources=len({r['source_group'] for r in main_rows}),formal_2e_rows=len(two_rows),formal_2e_sources=len({r['source_group'] for r in two_rows}),new_formal_cycling_admissions=cycle_summary.get('new_endpoints',0),linked_candidates=len(links),cycling_observations=observation_count,fixed_goal_records=fixed['fixed_record_count'],fixed_resolved=fixed['scientifically_resolved_in_goal'],fixed_pending=fixed['current_pending'])]
+    query('overview',overview,['summary.json','docs/LITERATURE_EXTRACTION_GOAL.json',cycle_pointer['database_file']],
       'SELECT COUNT(*) FROM materials; SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; SELECT COUNT(*) FROM capacitance_observations WHERE value IS NOT NULL;',
       '材料数值与比电容报告按当前证据层汇总；循环主集和固定待证另计。',['历史725项与本页新增层重叠未完全对账，不能直接相加。'])
+    query('formal_2e',two_rows,['cycling_API.fetch(reported_2e)','profile_membership_v20','immutable_parent_chain'],
+      "db.fetch('reported_2e').rows -- versioned read-only API across the immutable parent chain",
+      '正式双电极普通水系循环端点；与三电极主集分开，同来源全部标签整体留出。',
+      ['新增NWJPC-2为99.8%/10000圈/5A/g；原26条保持。','标识和来源用于追溯及分组，不作为模型预测特征；未执行新拟合。'])
+    for key in ['overview','formal_2e','cycling_candidates']:
+        source=queries[key]['source'];source['label']='文献v5与当前循环v0.20只读接口'
+        source['files'].extend([{'name':cycle_pointer['database_file']},{'name':'data/current_database.json'}])
+        source['evidenceFlow'].append('候选当前状态通过literature_links_v20查询；不覆写文献v5的历史候选或将同次实验重复计数。')
     progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
     query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json'],
       'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 分别读取五个封版版本',

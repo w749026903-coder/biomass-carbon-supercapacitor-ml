@@ -19,8 +19,14 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('NWJPC-2');
   await expectCount(component('cycling-candidates-table'),2);
   assert.match(await component('cycling-candidates-table').innerText(),/容量保持率（锌离子，独立任务）/);
-  assert.match(await component('cycling-candidates-table').innerText(),/已备主要证据，正式增量准入待做/);
+  assert.match(await component('cycling-candidates-table').innerText(),/已准入：双电极报告工况/);
+  assert.match(await component('cycling-candidates-table').innerText(),/v20:WJ2026_NWJPC2_SSC_C10000/);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('');
+  await expectCount(component('formal-2e-table'),27);
+  await component('formal-2e-table').getByPlaceholder('Search data').fill('NWJPC-2');
+  await expectCount(component('formal-2e-table'),1);
+  assert.match(await component('formal-2e-table').innerText(),/99\.8/);
+  await component('formal-2e-table').getByPlaceholder('Search data').fill('');
   assert.doesNotMatch(await p.locator('body').innerText(),/Creating dashboard|Updating dashboard|reported_mesopore_surface_area/);
   const desktop=await p.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,charts:[...document.querySelectorAll('svg.recharts-surface')].map(e=>({width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))}));
   assert.ok(desktop.scrollWidth<=desktop.width);assert.ok(desktop.charts.every(x=>x.width>200&&x.height>150));
@@ -63,7 +69,7 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   assert.equal(errors.length,0);
   const result={passed:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:2,
    doi_scope_checked:[{doi:'10.1021/acsenvironau.3c00048',material_cells:53,capacitance_reports:40},{doi:'10.3390/nano16161035',material_cells:27,capacitance_reports:0}],
-   method_filter_GCD8_and_material_scope_unchanged:true,cycle_candidates30_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_103_5_5_6_all119_filters_checked:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
+   method_filter_GCD8_and_material_scope_unchanged:true,formal_2e_27_and_new_endpoint_link_checked:true,cycle_candidates30_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_103_5_5_6_all119_filters_checked:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
    empty_scope_and_search_checked:true,all_reset_reconciled:true,javascript_errors:errors,scientific_goal_complete:false};
   fs.writeFileSync(path.join(app,'dashboard_visual_verification.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
  }finally{await browser.close();}

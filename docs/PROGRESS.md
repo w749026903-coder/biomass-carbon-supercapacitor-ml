@@ -323,3 +323,11 @@
 - 验证：3161项、四CSV和封版哈希通过；原附件包/父库保护；桌面1440/窄屏390、循环候选30/两NWJPC指标、木苹果壳5/98/CV69、四用途103/5/5/6/All119、来源复制与空结果通过；真实拟合0
 - 下一步/未决：NWJPC-2实际循环图支持0～1V，保留SI异文；优先正式增量准入/API/旧记录关系审查。908旧表候选未处理、原38待证保留；全量目标未完成，应用目标usageLimited，本轮手动续行
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-25T23:08:52+08:00：v0.20正式新增NWJPC-2双电极循环端点；全库278/179来源，2E27/22，3E43/31及固定38待证保持
+
+- 结果：v0.20正式新增NWJPC-2双电极循环端点；全库278/179来源，2E27/22，3E43/31及固定38待证保持
+- 文件：data/current_database.json, 循环稳定性数据库_v0.20_新增来源准入_20261025, tools/release_new_source_v020.py, tools/verify_new_source_v020.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献提取进度, docs/CURRENT_STATE.md, docs/DATA_CORRECTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/knowledge/新增来源循环准入与追加接口_20261025.md
+- 验证：988科学/接口检查跨两独立进程通过；旧277行/holds/历史链与17材料绑定、原件/旧manifest保护；留出隔离同DOI29辅助行；正式27行和候选链接、桌面/窄屏、筛选/来源复制通过；新拟合0
+- 下一步/未决：继续锦带花SI自身NWJPC2.5与糖原DES实际循环窗口、其余908表候选；本次新端点不抵扣原38待证；全量目标未完成，应用目标usageLimited，手动续行
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

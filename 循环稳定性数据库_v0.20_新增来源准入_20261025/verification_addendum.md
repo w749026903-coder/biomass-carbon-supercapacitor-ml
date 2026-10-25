@@ -1,0 +1,9 @@
+# 只读核验摘要排序修正
+
+本版封版前988项科学/接口/来源检查通过。原verify在不同Python进程中遍历set(source_groups)，导致verification.json里的check_names次序变化；封版后所有实际检查仍通过，但按列表顺序比较固定摘要失败。检查数量和科学结果未变。
+
+保留SQLite、合同、CSV、原脚本、报告、README及primary merge_manifest原样，不重新封版。当前只读命令为 `python -B tools/verify_new_source_v020.py`。该脚本复制原verify逻辑，要求封版存在；只在比较verification.json时把双方check_names排序，严格保留名称、重复次数、检查数量和其它字段。全部原科学检查、CSV字节及primary哈希仍执行。
+
+本说明与修正版核验器由verification_addendum.json单独封存并锚定原manifest。原README中的release脚本verify命令是有排序缺陷的历史入口；当前以修正版为准。报告排序修正不代表任何未决科学问题获准通过。
+
+后续发布必须在封版前做两个独立进程的摘要一致性核验，汇总集合须先稳定排序。文件哈希检查与固定科学检查摘要分开；不要再以同一进程内重复运行代替跨进程可复现性检查。Windows用sqlite3连接上下文只管理事务，需显式close/closing后再处理本轮草稿文件。
