@@ -1,0 +1,9 @@
+# 封版核验补记
+
+原extract_literature_pool_v4.py在封版前完成1803项检查并封存数据、文档和接口。封版后verify增加四项CSV字节检查，却同时把这四项名字加进原verification.json固定摘要，造成sealed_report_verification.json比较失败。此错误发生在所有科学检查、四CSV比对与summary比对通过之后，属于核验结果记账错误，不是科学争议被解决，也不是数据变更。
+
+原脚本、SQLite、报告、README和primary merge_manifest均未改动或重新封版。只读tools/verify_literature_pool_v4.py保留原verify的科学检查逻辑，要求primary manifest存在，将额外四CSV比对从原1803项固定摘要计数中移出；仍实际比较四个CSV内容，并完整核验primary载荷SHA。没有跳过数值、原文、父库、来源、准入或任何CSV检查。
+
+当前复核命令：`python -B tools/verify_literature_pool_v4.py`。原README中的extract脚本verify命令保留为历史内容，存在上述报告记账缺陷，不再作为收尾复核入口。新增核验文件与本说明另由addendum_manifest.json封存，锚定原manifest SHA。
+
+以后封版前须先验证封版前后两种只读执行路径的摘要稳定性。条件性增加的哈希或CSV检查，不能在封版后改变原固定检查报告。数据质量核验和发布程序自洽分别检查，不以程序失败或通过替代科学判断。

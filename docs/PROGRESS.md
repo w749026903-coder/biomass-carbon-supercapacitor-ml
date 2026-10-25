@@ -307,3 +307,11 @@
 - 验证：v3的1417项、辅助输入290项、原29与附记2载荷哈希通过；旧v2/v1及循环v0.19保护复核；页面DOI/方法/辅助20-5-All25/来源复制/空结果与窄屏实测；diff检查通过，无拟合
 - 下一步/未决：持续目标active；926表候选未处理，33已处理也仅声明范围；下一批HempHoneycomb/Hardwood/Tucuma及本批未数字化曲线；原38待证不变
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-25T21:23:09+08:00：第四批新增92材料数值及53比电容报告；累计603数值、四目标63输入，循环主集保持43/31
+
+- 结果：第四批新增92材料数值及53比电容报告；累计603数值、四目标63输入，循环主集保持43/31
+- 文件：data/current_literature.json, data/literature_v4.py, tools/extract_literature_pool_v4.py, tools/verify_literature_pool_v4.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261025/批次04_循环原图与新来源, 文献提取进度, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/knowledge/循环原图与分用途多任务提取_20261025.md
+- 验证：1803科学与输入检查、4CSV、20原载荷和2附加载荷通过；桌面1440/窄屏390、四用途47/5/5/6/All63筛选、硬木61/30范围、来源复制及空结果通过；真实拟合0
+- 下一步/未决：全量目标未完成：918原表候选未处理，原38条待证保留；继续已有多样品/协议/原图；应用目标usageLimited，本次用户授权手动续行
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

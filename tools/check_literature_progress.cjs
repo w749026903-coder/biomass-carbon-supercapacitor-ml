@@ -13,7 +13,7 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   const material=component('material-evidence'),cap=component('capacitance-evidence');
   const expectCount=async(block,n)=>assert.match(await block.innerText(),new RegExp(`of ${n} results`));
   const choose=async(label,value)=>{await p.getByRole('button').filter({hasText:label}).click();await p.getByRole('menuitemradio',{name:value,exact:true}).click();};
-  await expectCount(material,519);await expectCount(cap,94);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),25);
+  await expectCount(material,611);await expectCount(cap,147);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),63);
   assert.equal(await p.locator('svg.recharts-surface').count(),2);
   assert.doesNotMatch(await p.locator('body').innerText(),/Creating dashboard|Updating dashboard|reported_mesopore_surface_area/);
   const desktop=await p.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,charts:[...document.querySelectorAll('svg.recharts-surface')].map(e=>({width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))}));
@@ -36,10 +36,13 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await p.keyboard.press('Escape');
   await choose(/比电容方法/,'All');await choose(/论文 DOI/,'10.3390/nano16161035');await expectCount(material,27);
   assert.equal(await cap.locator('tbody tr').count(),0);assert.match(await cap.innerText(),/No .*data|No .*results|0 results/i);
-  await choose(/论文 DOI/,'All');await expectCount(material,519);await expectCount(cap,94);
-  await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),20);
+  await choose(/论文 DOI/,'10.1002/smsc.202500174');await expectCount(material,61);await expectCount(cap,30);
+  await choose(/论文 DOI/,'All');await expectCount(material,611);await expectCount(cap,147);
+  await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),47);
   await choose(/辅助目标/,'双电极水系器件比电容');await expectCount(component('auxiliary-gcd-table'),5);
-  await choose(/辅助目标/,'All');await expectCount(component('auxiliary-gcd-table'),25);
+  await choose(/辅助目标/,'天然矿物残留碳三电极');await expectCount(component('auxiliary-gcd-table'),5);
+  await choose(/辅助目标/,'双电极作者两倍系数');await expectCount(component('auxiliary-gcd-table'),6);
+  await choose(/辅助目标/,'All');await expectCount(component('auxiliary-gcd-table'),63);
   await component('full-table-queue').getByPlaceholder('Search data').fill('no_such_literature_record_20261025');
   assert.match(await component('full-table-queue').innerText(),/No .*data|No .*results|0 results/i);
   await component('full-table-queue').getByPlaceholder('Search data').fill('');await expectCount(component('full-table-queue'),959);
@@ -51,7 +54,7 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   assert.equal(errors.length,0);
   const result={passed:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:2,
    doi_scope_checked:[{doi:'10.1021/acsenvironau.3c00048',material_cells:53,capacitance_reports:40},{doi:'10.3390/nano16161035',material_cells:27,capacitance_reports:0}],
-   method_filter_GCD8_and_material_scope_unchanged:true,auxiliary_task_20_5_all25_filters_checked:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
+   method_filter_GCD8_and_material_scope_unchanged:true,new_Hardwood_scope_61_30_checked:true,auxiliary_task_47_5_5_6_all63_filters_checked:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
    empty_scope_and_search_checked:true,all_reset_reconciled:true,javascript_errors:errors,scientific_goal_complete:false};
   fs.writeFileSync(path.join(app,'dashboard_visual_verification.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
  }finally{await browser.close();}
