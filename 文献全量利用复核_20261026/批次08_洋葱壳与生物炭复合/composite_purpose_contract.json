@@ -1,0 +1,44 @@
+{
+  "purpose": "reported_PAN_biochar_composite_2e_cycle_retention",
+  "source_DOI": "10.3390/gels10010082",
+  "sample": "ENFA-FBa",
+  "material_class": "intentional_wood_biochar_PAN_composite",
+  "scientific_input_reviewed": true,
+  "target": {
+    "retention_pct": 91,
+    "cycles": 10000,
+    "relation": "=",
+    "baseline": "author initialcapacitance; exact index unknown"
+  },
+  "conditions": {
+    "system": "2E_symmetric",
+    "electrolyte": "H2SO4",
+    "concentration_M": 1,
+    "current_A_g": 10,
+    "current_mass_basis": "author reported unknown; not inferred from cap formula",
+    "GCD_programme_V": [
+      0,
+      1
+    ],
+    "evidence": "OwnFig8B GCD + Fig8F andbodyp35 +methods54-57 common same-sample2Eprogramme",
+    "policy": "Existing reported-programme/table/commonprotocol rules; no everycyclepicture or exactbaselineindex gate"
+  },
+  "normalization": {
+    "two_electrode_capacitance_equivalent": "Eq4 2I*dt/(m_single*dV); notdevice-totalmass",
+    "retention_ratio_not_capacitance_magnitude": true,
+    "CE53_5_is_separate_response": true
+  },
+  "preparation_phase_temperatures_C": {
+    "biochar_ingredient": 500,
+    "PAN_framework": 900,
+    "final_aerogel_activation": 800
+  },
+  "final_component_fraction": null,
+  "independent_source_groups": 1,
+  "external_source_validation_possible": false,
+  "ordinary_biomass_cycling_admitted": false,
+  "training_authorized": false,
+  "model_fits": 0,
+  "grouping": "Quarantine every label, replicate, stage, curve, scope and auxiliaryuse of thisDOI asone source; no splitting samepaperconditions across train/test.",
+  "feature_policy": "Typed whitelist X, y, masks, groups and weights separate. No CE, other capacitance response, target, DOI or sample ID in X; optional fraction remainsnull."
+}
