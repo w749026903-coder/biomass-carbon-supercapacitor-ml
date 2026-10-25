@@ -299,3 +299,11 @@
 - 验证：新层404项、旧层110项、循环v0.19的23466项及封版哈希通过；Edge正常与窄屏、DOI/方法/空结果/来源复制实测；零新增准入或拟合
 - 下一步/未决：继续944个尚未处理表候选、全文SI/多样品/制备与曲线提取，并推进原固定38待证；全量目标active，不把局部完成称全部完成
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-25T17:43:28+08:00：第三批新增22材料354数值、53比电容报告；25条分目标辅助输入通过来源隔离预检，进度页刷新
+
+- 结果：第三批新增22材料354数值、53比电容报告；25条分目标辅助输入通过来源隔离预检，进度页刷新
+- 文件：README.md, data/current_literature.json, data/literature_v3.py, docs/CURRENT_STATE.md, docs/DATA_CORRECTION_GOAL.json, docs/LITERATURE_EXTRACTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/WORKSPACE_MEMORY.md, docs/knowledge/多样品工况与辅助任务准入_20261025.md, tools/extract_literature_material_pool_v3.py, tools/check_literature_auxiliary_inputs_v3.py, tools/verify_literature_v3_addendum.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261025/批次03_多样品与工况, 文献提取进度
+- 验证：v3的1417项、辅助输入290项、原29与附记2载荷哈希通过；旧v2/v1及循环v0.19保护复核；页面DOI/方法/辅助20-5-All25/来源复制/空结果与窄屏实测；diff检查通过，无拟合
+- 下一步/未决：持续目标active；926表候选未处理，33已处理也仅声明范围；下一批HempHoneycomb/Hardwood/Tucuma及本批未数字化曲线；原38待证不变
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

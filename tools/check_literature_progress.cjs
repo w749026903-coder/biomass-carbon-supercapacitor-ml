@@ -13,7 +13,7 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   const material=component('material-evidence'),cap=component('capacitance-evidence');
   const expectCount=async(block,n)=>assert.match(await block.innerText(),new RegExp(`of ${n} results`));
   const choose=async(label,value)=>{await p.getByRole('button').filter({hasText:label}).click();await p.getByRole('menuitemradio',{name:value,exact:true}).click();};
-  await expectCount(material,161);await expectCount(cap,41);await expectCount(component('full-table-queue'),959);
+  await expectCount(material,519);await expectCount(cap,94);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),25);
   assert.equal(await p.locator('svg.recharts-surface').count(),2);
   assert.doesNotMatch(await p.locator('body').innerText(),/Creating dashboard|Updating dashboard|reported_mesopore_surface_area/);
   const desktop=await p.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,charts:[...document.querySelectorAll('svg.recharts-surface')].map(e=>({width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height}))}));
@@ -22,7 +22,7 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await choose(/论文 DOI/,'10.1021/acsenvironau.3c00048');await expectCount(material,53);await expectCount(cap,40);
   await choose(/比电容方法/,'GCD');await expectCount(material,53);await expectCount(cap,8);
   assert.equal(await cap.locator('tbody tr').count(),8);
-  assert.ok((await cap.locator('tbody tr').allTextContents()).every(x=>x.includes('GCD')&&x.includes('0.50')));
+  assert.ok((await cap.locator('tbody tr').allTextContents()).every(x=>x.includes('GCD')&&x.includes('0.5 A/g')));
   await cap.getByRole('button',{name:'比电容 · 每种工况分别记录 actions',exact:true}).click();
   await p.locator('[role="menu"]').getByText('Copy data',{exact:true}).click();
   const clipboard=await p.evaluate(()=>navigator.clipboard.readText());
@@ -36,18 +36,22 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await p.keyboard.press('Escape');
   await choose(/比电容方法/,'All');await choose(/论文 DOI/,'10.3390/nano16161035');await expectCount(material,27);
   assert.equal(await cap.locator('tbody tr').count(),0);assert.match(await cap.innerText(),/No .*data|No .*results|0 results/i);
-  await choose(/论文 DOI/,'All');await expectCount(material,161);await expectCount(cap,41);
+  await choose(/论文 DOI/,'All');await expectCount(material,519);await expectCount(cap,94);
+  await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),20);
+  await choose(/辅助目标/,'双电极水系器件比电容');await expectCount(component('auxiliary-gcd-table'),5);
+  await choose(/辅助目标/,'All');await expectCount(component('auxiliary-gcd-table'),25);
   await component('full-table-queue').getByPlaceholder('Search data').fill('no_such_literature_record_20261025');
   assert.match(await component('full-table-queue').innerText(),/No .*data|No .*results|0 results/i);
   await component('full-table-queue').getByPlaceholder('Search data').fill('');await expectCount(component('full-table-queue'),959);
   await p.setViewportSize({width:390,height:844});await p.locator('.progress-intro').scrollIntoViewIfNeeded();
+  await p.getByText(/data for .* copied/).waitFor({state:'hidden',timeout:8000});
   const mobile=await p.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,chartWidths:[...document.querySelectorAll('svg.recharts-surface')].map(e=>e.getBoundingClientRect().width)}));
   assert.ok(mobile.scrollWidth<=mobile.width);assert.ok(mobile.chartWidths.every(w=>w>100&&w<=390));
   await p.screenshot({path:path.join(out,'mobile.png'),fullPage:true});
   assert.equal(errors.length,0);
   const result={passed:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:2,
    doi_scope_checked:[{doi:'10.1021/acsenvironau.3c00048',material_cells:53,capacitance_reports:40},{doi:'10.3390/nano16161035',material_cells:27,capacitance_reports:0}],
-   method_filter_GCD8_and_material_scope_unchanged:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
+   method_filter_GCD8_and_material_scope_unchanged:true,auxiliary_task_20_5_all25_filters_checked:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
    empty_scope_and_search_checked:true,all_reset_reconciled:true,javascript_errors:errors,scientific_goal_complete:false};
   fs.writeFileSync(path.join(app,'dashboard_visual_verification.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
  }finally{await browser.close();}
