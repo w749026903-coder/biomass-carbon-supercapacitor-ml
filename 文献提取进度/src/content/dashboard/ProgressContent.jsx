@@ -19,9 +19,9 @@ export function DashboardContent(){
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
   <div className="extraction-cards">
-   <MetricCard id="material-numbers" title="材料数值单元" queryId="overview" value={h.cumulative_numeric_material_facts} displayRows={rows} sourceRows={rows} description={`证据层累计${h.cumulative_materials}种材料，含对照与参考体系`}/>
+   <MetricCard id="material-numbers" title="材料数值单元" queryId="overview" value={h.cumulative_numeric_material_facts} displayRows={rows} sourceRows={rows} description={`累计${h.cumulative_materials}个材料登记，含前驱体、对照与待核名称`}/>
    <MetricCard id="cap-numbers" title="比电容数值单元" queryId="overview" value={h.numeric_capacitance_values} displayRows={rows} sourceRows={rows} description={`${h.capacitance_records}条报告；复述、竞争和换算不当独立样本`}/>
-   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description={`原39条中1条完成；v0.20另增${h.new_formal_cycling_admissions}条循环准入`}/>
+   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description="原39条中1条完成；新文献与特征冻结不抵扣"/>
   </div>
   <Section id="corpus-overview-title" title="全库排查范围" columns={2}>
    <EvidenceChart id="identity-catalogue" queryId="identity_states" title="初始480条身份匹配盘点" rows={reviewedRows('identity_states')} sourceRows={reviewedRows('identity_states')} variant="card" spec={{type:'bar',x:'category',y:'count',showXAxisLabel:false,showYAxisLabel:false,valueDecimals:0}} height={245}/>
@@ -35,13 +35,19 @@ export function DashboardContent(){
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
-    <p>第八批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_bounded_curve_samples} 个有界曲线采样</strong>。有意PAN/生物炭复合体系另有{h.new_composite_cycle_purpose_rows}条报告工况循环输入；不加入普通主集，1个来源不能构成跨来源性能检验。</p>
+    <p>第九批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条比电容报告</strong>，核定18条藻类辅助GCD输入。原58个有界曲线采样和1条复合体系循环输入保留。v0.21冻结5条既有循环记录的15个有争议特征；旧标签与准入保持，无新拟合。</p>
    </div>
   </DataComponent>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
   <Section id="evidence-title" title="材料与测试数据检索" filters={<Filters {...scope.filterProps}/>}>
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
+  </Section>
+  <Section id="systematic-series-title" title="第九批 · 多样品系列与原图复核">
+   <EvidenceTable id="source-classification-table" title="四个来源的身份与用途" queryId="source_classifications" columns={[f('doi','DOI'),f('classification','范围'),f('basis','原文依据'),f('remaining','尚未完成的范围')]}/>
+   <EvidenceTable id="systematic-scopes-table" title="32个材料登记 · 同配方名称与前驱体分开" queryId="systematic_material_scopes" columns={[f('doi','DOI'),f('sample_name','样品'),f('material_class','材料类别'),f('material_stage','阶段'),f('aliases','明确同条件别名'),f('independence','计数边界')]}/>
+   <EvidenceTable id="current-feature-freezes-table" title="当前循环输入 · 15个特征冲突已冻结" queryId="current_feature_freezes" columns={[f('sample_name','样品'),f('parameter','特征'),f('field_name','兼容字段'),f('table_value','原表值'),f('figure_value','原图值'),f('unit','单位'),f('selected_display','当前选值')]}/>
+   <EvidenceTable id="series-arithmetic-table" title="倍率与成本对账 · 不覆盖作者原值" queryId="series_arithmetic_audits" columns={[f('sample_name','样品'),f('kind','检查类型'),f('reported_rate_retention_pct','作者倍率保持率 %'),f('computed_from_printed_capacitances_pct','印刷电容算术比 %'),f('overlaps_reported_rounding','印刷精度区间相容'),f('reported_SUM_CNY','作者成本合计 CNY'),f('computed_printed_component_sum_CNY','分项算术合计 CNY')]}/>
   </Section>
   <Section id="auxiliary-title" title="已核定的辅助比电容输入" filters={<Filters {...auxiliaryScope.filterProps}/>}><EvidenceTable id="auxiliary-gcd-table" title="四个辅助目标分别调用 · 同DOI整组隔离" queryId="auxiliary_inputs" scope={auxiliaryScope} columns={[f('doi','DOI'),f('sample_name','样品'),f('task','任务'),f('capacitance_F_g','比电容 F/g'),f('current_A_g','电流 A/g'),f('electrolyte','电解液'),f('BET_surface_area_m2_g','BET m²/g'),f('EDX_C_at_pct','EDX C原子%'),f('mesopore_volume_cm3_g','介孔容 cm³/g')]}/>
   </Section>

@@ -80,7 +80,7 @@ def main():
           '材料×方法×电解液×工况×自身报告表单元，不同配置、归一化和单位分开。',[f"{summary['capacitance_records']}报告含{summary['numeric_capacitance_values']}数值、2未报告；复述、竞争、换算、参考和复合体系不能当独立样本相加。",'CV速率不当电流；面积电流不猜算A/g。辅助资格不等于循环保持率准入。'])
         query('auxiliary_inputs',auxiliary,['auxiliary_reported_GCD_v3','auxiliary_gcd_reviews_v3','material_facts','synthesis_stages_v3'],
           'SELECT * FROM auxiliary_reported_GCD_v3 ORDER BY purpose,source_group,sample_name,current_A_g;',
-          '103条普通三电极、5条器件总质量、5条天然矿物残留碳三电极、6条作者两倍系数双电极，四目标分开。已知冲突屏蔽；EDX与XPS、原方向Raman、缺失掩码分别保留。',['合计8个DOI组；普通三电极7组，其余每任务各1组；不是独立性或泛化性能证明。','这是输入预检通过的辅助比电容子集，正式循环主集仍43/31，未启动训练。'])
+          '121条普通三电极、5条器件总质量、5条天然矿物残留碳三电极、6条作者两倍系数双电极，四目标分开。已知冲突屏蔽；EDX与XPS、原方向Raman、缺失掩码分别保留。',['合计9个DOI组；普通三电极8组，其余每任务各1组；不是独立性或泛化性能证明。','新增藻类18行与5个既有循环端点同DOI，全部标签和其它响应必须一起留出。','这是输入预检通过的辅助比电容子集，正式循环主集仍43/31，未启动训练。'])
         query('des_inputs',des_rows,['purpose_reviews_v6','capacitance_observations','test_candidates','material_facts','figure_protocol_reviews_v6'],
           'db.des_reported_inputs("retention"); db.des_reported_inputs("capacitance") -- read-only API with explicit per-purpose review, selected facts and common own protocol',
           '同12个液态DES样品的两个独立均值目标，各12行；共1个DOI组，不是24次独立实验。',
@@ -115,6 +115,7 @@ def main():
         scopes=[]
         class_labels={'biomass_carbon':'生物质碳','synthetic_PAN_carbon_control':'合成PAN碳对照','intentional_wood_biochar_PAN_composite':'有意木生物炭/PAN复合'}
         for item in db.material_scopes():
+            if item['doi'] not in ['10.1016/j.heliyon.2024.e32915','10.3390/gels10010082']:continue
             r=item['scope'];scopes.append(dict(item,material_class=class_labels[r['origin_class']],route=r.get('aerogel_route','碳化/活化温度系列'),F_treatment=r.get('F_treated_biomass'),final_fraction_status='不适用：合成PAN对照' if r['origin_class']=='synthetic_PAN_carbon_control' else '未报告，不由前驱体配比反推' if 'composite' in r['origin_class'] else '单一生物质来源，未使用PAN'))
         query('new_material_scopes',scopes,['material_scopes_v8','materials','synthesis_stages_v3'],
           'db.material_scopes() -- 15new material registrations, classification/stage and precursor-vs-final composition kept separate',
@@ -124,6 +125,34 @@ def main():
         query('onion_raman_audit',ratios,['ratio_audits_v8','material_facts','transcribed_rows'],
           'db.ratio_audits() -- printed ratios and direct arithmetic of reported intensities, no silent replacement',
           '3样品的原强度与报告比值对账；派生算术不当新测量。',['600℃ID/IG的1.2与0.831、850/950℃2D/G的0.07与0.711/0.681均保留，竞争比值冻结。'])
+        classes={'original_biomass_research':'生物质原始研究','secondary_review_context':'综述二手背景','non_biomass_coal_reference':'非生物质煤基参考'}
+        classifications=[]
+        for item in db.source_classifications():
+            r=item['decision']
+            classifications.append(dict(doi=item['doi'],classification=classes[r['classification']],basis=r['basis'],remaining=r['remaining'],full_source_review_complete=False,source_sha256=r['source_sha256']))
+        query('source_classifications',classifications,['source_classifications_v9','source_scope_decisions'],
+          'db.source_classifications() -- own primary text, native article type and table citation scope, not title keywords',
+          '本批四个来源的范围决定；两篇自身原始研究、一个综述和一个煤基参考，不等于四个新独立训练来源。',['24张原候选中14张自身主表、7张综述背景、3张煤基参考；另提取2张SI表。所有全文完成标记仍为0。'])
+        series_scopes=[];material_stages={r['material_key']:r['material_stage'] for r in db.materials()}
+        for item in db.material_scopes():
+            if item['doi'] not in ['10.3390/molecules31132329','10.3390/polym15030663']:continue
+            r=item['scope'];series_scopes.append(dict(doi=item['doi'],sample_name=item['sample_name'],material_stage=material_stages[item['material_key']],material_class={'biomass_carbon':'生物质碳','biomass_precursor':'生物质前驱体','unresolved_graph_sample_identity':'图中样品身份待核'}[r['origin_class']],aliases=', '.join(r.get('source_equivalent_aliases',[])),independence='登记名称不等于独立配方/来源'))
+        query('systematic_material_scopes',series_scopes,['materials','material_scopes_v8','synthesis_stages_v3'],
+          'db.material_scopes() filtered to Algae/Eucommia -- recipe stages and unresolved graph label preserved',
+          '32个登记：11个藻类前驱体/碳登记、21个杜仲表/图名称；含一个EC550图名待核，不能当32个独立材料。')
+        frozen=[];main_byid={r['endpoint_id']:r for r in main_rows}
+        for item in db.legacy_feature_conflicts():
+            r=item['record'];field='Raman_ID_IG' if r['field_name']=='Raman_ID_IG' else 'XPS_N_at_pct';facts=db.facts(doi='10.3390/molecules31132329',sample=r['sample_name'],field=field)
+            table=next(f for f in facts if f['xml_id']=='molecules-31-02329-t004');graphic=next(f for f in facts if f['xml_id']=='Fig3_Raman_XPS')
+            selected=main_byid[r['endpoint_id']][r['field_name']];assert selected is None
+            frozen.append(dict(r,doi='10.3390/molecules31132329',parameter=label(field),table_value=table['value'],figure_value=graphic['value'],selected_value=selected,selected_display='空值（冲突冻结）',unit=table['unit'],source_path=table['source_path'],figure_path=graphic['source_path'],table_locator=table['locator'],figure_locator=graphic['locator']))
+        query('current_feature_freezes',frozen,['legacy_feature_conflicts_v9','feature_freezes_v21','cycling_API.fetch(reported_3e)'],
+          'db.legacy_feature_conflicts(); current cycling v0.21 fetch -- null verified in current row and material matrices',
+          '5条既有循环记录的15个特征选值冻结；两个氮字段是兼容表示，不是两个独立实验；标签、成员、来源权重保持。',['图表双方原值和旧选值保留，不填0、不择高值或覆盖旧模型。缺失变化不等于精度改善。'])
+        arithmetic=[dict(r['record'],doi=r['doi'],audit_id=r['audit_id']) for r in db.qualification_audits()]
+        query('series_arithmetic_audits',arithmetic,['qualification_audits_v9','transcribed_rows'],
+          'db.qualification_audits() -- 37 rate ratios,16 cost sums,6 repeated-condition receipts',
+          '倍率比值/成本合计是印刷数值算术检查，不能代替新测量或作者勘误；6条同配方材料复述不重复增加事实。',['比值按印刷精度区间判断，原表保持率仍原样保存；CV倍率、GCD倍率和循环保持率分开。'])
         curve_rows=[]
         for item in db.sampled_curves():
             r=item['reading'];curve_rows.append(dict(r,reading_id=item['reading_id'],doi=item['doi'],sample_name=item['sample_name'],source_path=item['source_path'],source_sha256=item['source_sha256'],x_kind={'plotted_cycle_coordinate':'循环图坐标 N','scan_rate_mV_s':'扫描速率 mV/s','reported_current_A_g':'报告电流 A/g'}[r['x_name']],error_kind='标记像素范围＋2px校准界限；非统计置信区间'))
@@ -153,6 +182,9 @@ def main():
         sources=[dict(r) for r in db.connection.execute(sql)]
         new_dois={'10.1021/acsomega.5c06396','10.1021/acsomega.5c10175','10.1021/acsomega.5c03461','10.1002/advs.202206320'}
         for r in sources:r.update(batch='批次08' if r['doi'] in ['10.1016/j.heliyon.2024.e32915','10.3390/gels10010082'] else '批次07' if r['doi']=='10.3390/nano16040260' else '批次05＋06 SI' if r['doi'] in ['10.1016/j.isci.2026.117248','10.1021/acsomega.3c00816'] else '批次05' if r['doi']=='10.1021/acsomega.5c05285' else '批次04' if r['doi'] in ['10.1021/acsomega.5c08826','10.1002/cplu.202400408','10.1002/smsc.202500174'] else ('批次03' if r['doi'] in new_dois else ('批次02' if r['doi'] in ['10.1021/acsenvironau.3c00048','10.3390/molecules29225413'] else '批次01')),scope='温度系列/EDAX/有界曲线；<95%和90/100min冲突保留' if r['doi']=='10.1016/j.heliyon.2024.e32915' else 'PAN对照/8复合体系分开；独立循环用途1条，非普通主集' if r['doi']=='10.3390/gels10010082' else '原料/4种碳/商业参考分开；EIS与串并联另计，曲线未全提取' if r['doi']=='10.3390/nano16040260' else '合成碳方法参考' if r['doi']=='10.3390/molecules29225413' else ('复合碳独立用途' if r['doi']=='10.1002/advs.202206320' else ('天然CaP与MnO2混合器件分用途' if r['doi']=='10.1002/cplu.202400408' else '部分材料/测试已核定，整篇未完成')))
+        classification_bydoi={r['doi']:r for r in classifications}
+        for r in sources:
+            if r['doi'] in classification_bydoi:r.update(batch='批次09',scope=classification_bydoi[r['doi']]['classification']+'；'+classification_bydoi[r['doi']]['remaining'])
         query('source_summary',sources,['reviewed_sources','materials','material_facts'],sql,'按DOI汇总数值单元，不是训练样本。',['只完成记录声明范围，尚未称全文全部利用。'])
         issue_labels={'reported_XPS_sum':'XPS合计限定','surface_partition_inconsistent':'孔面积分项不符','body_table_disagreement':'正文与表数值竞争','author_ratio_vs_volumes':'报告比例与孔容不符','reported_precision_variants':'数值精度表述不同','cycling_configuration_electrolyte_and_current_roles':'循环协议绑定冲突','own_table_conflict':'酸碱EIS表值冲突','element_label_binding_energy_conflict':'XPS元素标签与能量冲突','percentage_basis_not_explicit':'百分比基准未知','control_alias_not_merged':'无活化对照别名未合并'}
         actions={'PC800_XPS':'原值合计99.7%，不补元素、不归一化。','corn_cob_BET':'表1770与正文1705并存，标准面积待定。','corn_cob_volume_ratio':'孔容和报告比例并存，不用计算值覆盖。','corn_grain_precision':'保留各处精度，不能算作三次测量。','corn_husk_surface':'分项面积超过总量，隔离且不换列。','purple_EIS_AC5':'保留酸/碱四个竞争值，不自动交换列。','purple_XPS_AC30':'保留元素标签与能量冲突，C/O标准值冻结。','purple_control_alias':'SI无活化对照单独保存，别名不自动合并。','purple_microporosity':'微孔率基准未知，不猜面积比或体积比。','purple_cycle_protocol':'保留配置、电解液及电流角色竞争，循环标准条件留空。'}
@@ -178,10 +210,14 @@ def main():
             if candidate['candidate_id']=='LP8_Gels_ENFAFBa_2E_C10000':candidate['status']='已审：PAN/生物炭复合循环用途（非普通主集）'
             if candidate['candidate_id'].startswith('LP8_Onion'):candidate['status']='限值/参照待协调，未审为精确保持率输入'
             rawrecord=json.loads(candidate['details']);rel=rawrecord.get('retention_relation') or ''
+            if rawrecord.get('legacy_endpoint_id'):
+                candidate['formal_endpoint_id']=rawrecord['legacy_endpoint_id'];candidate['status']='既有正式3E端点的文献关联；不重复计数' if candidate['formal_endpoint_id'] in main_byid else '既有待证端点关联；循环电流仍缺'
             candidate['retention_relation']=rawrecord.get('retention_relation')
             candidate['retention_is_censored']=rawrecord.get('reported_retention_is_censored',False)
             candidate['retention_value_kind']='censored_limit_not_exact_target' if candidate['retention_is_censored'] else 'see_original_record_and_purpose_review'
-            candidate['retention_display']='未给精确值' if candidate['retention_pct'] is None else (rel if rel!='=' else '')+f"{candidate['retention_pct']:g}"
+            prefix=rel if rel in ['<','>','<=','>=','≤','≥','~'] else '≈' if rel=='approx' else ''
+            suffix='（由损失率换算）' if rel=='derived_complement' else ''
+            candidate['retention_display']='未给精确值' if candidate['retention_pct'] is None else prefix+f"{candidate['retention_pct']:g}"+suffix
             candidate['metric']=candidate['metric'].replace('电容保持率候选','电容保持率（作者报告）')
         query('cycling_candidates',candidates,['test_candidates','materials','literature_links_v20'],
           'SELECT t.*,m.doi,m.sample_name FROM test_candidates t JOIN materials m USING(material_key);',
@@ -198,13 +234,13 @@ def main():
       '正式双电极普通水系循环端点；与三电极主集分开，同来源全部标签整体留出。',
       ['新增NWJPC-2为99.8%/10000圈/5A/g；原26条保持。','标识和来源用于追溯及分组，不作为模型预测特征；未执行新拟合。'])
     for key in ['overview','formal_2e','cycling_candidates']:
-        source=queries[key]['source'];source['label']='文献v8与当前循环v0.20只读接口'
+        source=queries[key]['source'];source['label']='文献v9与当前循环v0.21只读接口'
         source['files'].extend([{'name':cycle_pointer['database_file']},{'name':'data/current_database.json'}])
         source['evidenceFlow'].append('候选当前状态通过literature_links_v20查询；不覆写文献v5的历史候选或将同次实验重复计数。')
-    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
+    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
     query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json','literature_pool_v6.summary.json','literature_pool_v7.summary.json','literature_pool_v8.summary.json'],
-      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 八个封版版本的独立累计快照',
-      '同一证据层八个批次累计快照，不内插每日进度，不当独立实验数。')
+      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 九个封版版本的独立累计快照',
+      '同一证据层九个批次累计快照，不内插每日进度，不当独立实验数。')
     result=dict(id=existing['id'],surface='dashboard',title='文献提取与补正进度',generatedAt=now,status='reviewed_local_snapshot',buildStatus=args.build_status,filters=[],queries=queries)
     target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(dict(snapshot=str(target.relative_to(ROOT)),queries={k:len(v['rows']) for k,v in queries.items()},buildStatus=args.build_status),ensure_ascii=False))
