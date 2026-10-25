@@ -331,3 +331,11 @@
 - 验证：988科学/接口检查跨两独立进程通过；旧277行/holds/历史链与17材料绑定、原件/旧manifest保护；留出隔离同DOI29辅助行；正式27行和候选链接、桌面/窄屏、筛选/来源复制通过；新拟合0
 - 下一步/未决：继续锦带花SI自身NWJPC2.5与糖原DES实际循环窗口、其余908表候选；本次新端点不抵扣原38待证；全量目标未完成，应用目标usageLimited，手动续行
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T01:30:29+08:00：第六批剩余SI封版：新增71材料数值、60EIS响应、6XRD峰；DES两均值用途各12行同1DOI，面板更新
+
+- 结果：第六批剩余SI封版：新增71材料数值、60EIS响应、6XRD峰；DES两均值用途各12行同1DOI，面板更新
+- 文件：README.md, data/current_literature.json, data/literature_current.py, data/literature_v6.py, tools/extract_remaining_si_v6.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/SI全表与DES用途输入_20261026.md, 文献全量利用复核_20261026/批次06_剩余SI与DES协议, 文献提取进度
+- 验证：文献590检查/两CSV两JSON/载荷SHA及循环988检查通过；桌面1440/窄屏390、Gly181/17、电流原值与更正、DES12/12/24、EIS60/XRD6和四辅助119筛选/复制/来源通过；真实拟合0
+- 下一步/未决：全量目标active未完成；904旧表候选未进入处理，原固定38待证保留。木苹果壳原图没有循环电流数值，不借倍率补填；继续棕榈壳等其它已有自身表格
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

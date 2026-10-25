@@ -1,0 +1,75 @@
+{
+  "schema": "DES_reported_mean_purpose_v1",
+  "source_DOI": "10.1021/acsomega.3c00816",
+  "physical_sample_rows": 12,
+  "independent_DOI_groups": 1,
+  "purposes": {
+    "retention": {
+      "name": "reported_DES_3e_retention_mean",
+      "target": "author mean retention_pct at1000cycles",
+      "extra_features": [
+        "cycle_count",
+        "cycle_voltage_lower_V",
+        "cycle_voltage_upper_V"
+      ]
+    },
+    "capacitance": {
+      "name": "reported_DES_3e_capacitance_mean",
+      "target": "author mean initial capacitance_F_g",
+      "extra_features": []
+    }
+  },
+  "predictor_allowlist": [
+    "BET_surface_area_m2_g",
+    "micropore_volume_cm3_g",
+    "mesopore_volume_cm3_g",
+    "total_pore_volume_cm3_g",
+    "XPS_C_at_pct",
+    "XPS_N_at_pct",
+    "XPS_O_at_pct",
+    "Raman_ID_IG",
+    "XRD_d002_nm",
+    "carbonization_temperature_C",
+    "carbonization_duration_h",
+    "current_A_g",
+    "temperature_C",
+    "initial_cycle_voltage_lower_V",
+    "initial_cycle_voltage_upper_V"
+  ],
+  "optional_features_may_be_null": true,
+  "missingness": "ND, author dash, absent sample measurement and competing values kept distinct in row evidence; no zero filling.",
+  "protocol": {
+    "configuration": "3E",
+    "electrolyte": "neat ethaline; choline_chloride:ethylene_glycol=1:2 molar composition",
+    "concentration_M": null,
+    "current_A_g": 1,
+    "current_mass_basis": "author report; physical denominator not unified",
+    "temperature_C": 30,
+    "reference": "silver_wire_pseudoreference",
+    "voltage_V": [
+      0,
+      1
+    ],
+    "evidence": "OwnTable3 first-cycleC and1000cycle retention per sample + actual ownFig10 initial GCD for every sample +SIphysicalp3-4 commonprotocol",
+    "later_cycles_individually_plotted": false,
+    "existing_decision": "cycling v0.20 data_contract window_evidence_policy and baseline_table_rule; no new every-cycle-picture requirement"
+  },
+  "variants": "MainTable3 mean± retained for mean targets. SI99% andmain100±2 are one sample/test report variant; not separate labels. Raman±0.004 and±0.007 both retained; d0025h table3.7A selected, body3.8A retained.",
+  "uncertainty": "Author± kept separately; no SD/SEM or numerical confidence level inferred.",
+  "excluded_from_X": [
+    "DOI/sample/row identifiers",
+    "target reported uncertainty",
+    "same-test other response",
+    "EIS fit responses",
+    "foreign comparison values",
+    "derived La duplicating Raman ID/IG"
+  ],
+  "grouping": "Same DOI and all aliases/documents, every sample/condition/target/curve, auxiliary use and pretraining must be isolated together. Twelve samples do not create an external-source validation fold.",
+  "purpose_reviewed_input_ready": true,
+  "ordinary_aqueous_cycling_admitted": false,
+  "current_cycling_database_membership": false,
+  "training_authorized": false,
+  "formal_cycling_database": "v0.20 unchanged",
+  "solid_device_scope": "Fig11d is10A/g first8cycles; not1A/g1000cycles, so its exact window is not transferred automatically.",
+  "model_fits": 0
+}

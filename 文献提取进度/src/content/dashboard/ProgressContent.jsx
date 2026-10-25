@@ -13,6 +13,7 @@ export function DashboardContent(){
  const {reviewedRows}=useDataApp(),rows=reviewedRows('overview'),h=rows[0]??{};
  const scope=useSectionFilters([{id:'doi',field:'doi',label:'论文 DOI',defaultValue:'all',queryIds:['material_facts','capacitances']},{id:'method',field:'method',label:'比电容方法',defaultValue:'all',queryIds:['capacitances']}],{},{id:'literature-evidence'});
  const auxiliaryScope=useSectionFilters([{id:'task',field:'task',label:'辅助目标',defaultValue:'all',queryIds:['auxiliary_inputs']}],{},{id:'auxiliary-gcd-inputs'});
+ const desScope=useSectionFilters([{id:'des-task',field:'task',label:'DES目标',defaultValue:'DES保持率均值',queryIds:['des_inputs']}],{},{id:'des-reported-inputs'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
   <div className="extraction-cards">
@@ -30,6 +31,7 @@ export function DashboardContent(){
     <p>历史已有 <strong>{h.historical_selected_fact_references} 项材料属性</strong>另行对账，其中 {h.historical_fact_references_with_same_source_table_candidates} 项存在同源表线索；不能与本页新增层直接相加。目录、论文、材料、数值单元与训练样本分母不同。</p>
     <p>正式三电极循环主集 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源</strong>；双电极普通水系循环集 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 来源</strong>。v0.20新增锦带花1条双电极端点，全部观察{h.cycling_observations}条；原固定38待证保持。本轮真实拟合 {h.model_fits} 次。</p>
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
+    <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
    </div>
   </DataComponent>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
@@ -38,6 +40,13 @@ export function DashboardContent(){
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
   <Section id="auxiliary-title" title="已核定的辅助比电容输入" filters={<Filters {...auxiliaryScope.filterProps}/>}><EvidenceTable id="auxiliary-gcd-table" title="四个辅助目标分别调用 · 同DOI整组隔离" queryId="auxiliary_inputs" scope={auxiliaryScope} columns={[f('doi','DOI'),f('sample_name','样品'),f('task','任务'),f('capacitance_F_g','比电容 F/g'),f('current_A_g','电流 A/g'),f('electrolyte','电解液'),f('BET_surface_area_m2_g','BET m²/g'),f('EDX_C_at_pct','EDX C原子%'),f('mesopore_volume_cm3_g','介孔容 cm³/g')]}/>
+  </Section>
+  <Section id="des-input-title" title="DES的两个独立均值目标" filters={<Filters {...desScope.filterProps}/>}>
+   <EvidenceTable id="des-input-table" title="同12样品 · 单一来源整体留出" queryId="des_inputs" scope={desScope} columns={[f('sample_name','样品'),f('task','目标'),f('target_value','作者均值'),f('target_unit','单位'),f('target_reported_uncertainty','作者±量'),f('cycle_count','圈数'),f('current_A_g','报告 A/g'),f('BET_surface_area_m2_g','BET m²/g'),f('XPS_N_at_pct','XPS N原子%'),f('carbonization_temperature_C','碳化 ℃'),f('carbonization_duration_h','碳化 h'),f('window_label','电压证据'),f('purpose_status','用途资格')]}/>
+  </Section>
+  <Section id="si-response-title" title="SI中的峰参数与测试响应">
+   <EvidenceTable id="eis-response-table" title="EIS拟合量 · 作为响应保存" queryId="eis_responses" columns={[f('sample_name','样品'),f('metric','参数'),f('value','均值'),f('reported_uncertainty','作者±量'),f('unit','单位'),f('uncertainty_description','作者不确定量定义'),f('locator','原文位置')]}/>
+   <EvidenceTable id="xrd-peaks-table" title="XRD原峰 · 仅(002)峰绑定层间距" queryId="xrd_peaks" columns={[f('sample_name','样品'),f('peak_number','峰序号'),f('two_theta_deg','2θ °'),f('d_A','间距 Å'),f('FWHM_deg','FWHM °'),f('integrated_intensity_counts_deg','积分强度 counts·°'),f('locator','原文位置')]}/>
   </Section>
   <Section id="issues-title" title="争议与待办">
    <EvidenceTable id="formal-2e-table" title="正式双电极循环数据 · 分来源调用" queryId="formal_2e" columns={[f('sample_name','样品'),f('source_group','来源组'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('electrolyte','电解液'),f('concentration_mol_L','浓度 M'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('BET_m2_g','BET m²/g'),f('retention_pct','保持率 %')]}/>
