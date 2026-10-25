@@ -1,0 +1,58 @@
+{
+  "schema": "full_existing_literature_extraction_goal_v1",
+  "requested_on": "2026-10-25",
+  "request": "设定目标，并开始执行；模型须适合现有文献，不能局限于已提取数据",
+  "app_goal_status_last_confirmed": "active",
+  "goal_created_at_unix": 1792915857,
+  "scope": "全部现有文献的身份、版本、材料、表图、SI与自身测试数据；逐项核证，排除重复、他引数据和不适用体系",
+  "baseline": {
+    "identity_entries": 480,
+    "distinct_metadata_DOI_values": 464,
+    "raw_table_candidates": 959,
+    "raw_table_rows": 6121,
+    "native_identity_without_current_normalized_DOI_observation_match": 254,
+    "cycling_database": "data/current_database.json",
+    "literature_database": "data/current_literature.json",
+    "counting_boundary": "身份不等于独立合格论文，自动表格行不等于样本；新工作队列不能抹去历史提取，也不能由部分单元审查推断整表完成"
+  },
+  "completion_requirements": [
+    "每个身份、版本及其正文/SI有可追溯处置，综述、重复、参考体系与原始研究分开",
+    "相关自身表格、曲线和全部样品完成材料/阶段/测试绑定或有证据支持的明确未决项",
+    "数值含来源SHA、原定位、单位、方法、原值与状态；未报告、低于误差、冲突、派生和未取得分开",
+    "形成版本化可调用数据库；循环、比电容和材料属性不混为一个目标",
+    "固定原39条补正队列逐项推进，不缩小范围、不伪造准入；外部证据问题继续冻结",
+    "全量来源、材料、曲线关系可用于整组隔离；辅助任务不能泄漏留出论文标签",
+    "根据文献实际覆盖制定模型路线并完成输入预检，不以高相关性承诺代替验证",
+    "原件、旧库、原值/冻结链及模型保护；每批核验并同步已核实origin"
+  ],
+  "fixed_correction_subtask": {
+    "path": "docs/DATA_CORRECTION_GOAL.json",
+    "fixed_records": 39,
+    "resolved": 1,
+    "pending": 38,
+    "pending_source_groups": 24
+  },
+  "not_authorized": [
+    "新的真实模型拟合或服务部署",
+    "作者联系",
+    "付费或访问绕过",
+    "原件覆写与删除",
+    "系统或共享运行时修改"
+  ],
+  "progress_policy": "逐批核验后刷新同一可视化入口，提取量、科学准入和模型误差分别报告；自动索引及工程通过均不冒充全量完成",
+  "consecutive_impasse_goal_turns": 0,
+  "goal_complete": false,
+  "latest_literature_release": "文献全量利用复核_20261025/批次02_紫玉米芯与对照",
+  "progress_dashboard": "文献提取进度",
+  "latest_progress": {
+    "materials": 24,
+    "numeric_material_values": 157,
+    "capacitance_records": 41,
+    "numeric_capacitance_values": 39,
+    "raw_candidates_touched": 15,
+    "raw_candidates_untouched": 944,
+    "new_formal_admissions": 0,
+    "real_model_fits": 0
+  },
+  "last_batch_verification_checks": 404
+}

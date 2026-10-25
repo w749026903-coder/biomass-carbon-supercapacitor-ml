@@ -291,3 +291,11 @@
 - 验证：v0.19封版后23466项及16载荷SHA；文献事实库110项含88原XML单元和四原件/旧索引SHA；两层只读API已实查；diff检查；训练资格和旧模型未改，新增拟合0
 - 下一步/未决：继续按480身份和959表候选对账，952表仍待审；原39条仍38待证；先补现有原文再冻结模型，CV/3E/2E/有机/凝胶和所有来源分组保留
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-25T16:53:59+08:00：创建active全量提取目标；第二批新增9材料69数值、41比电容报告及1循环候选，进度面板完成并实测
+
+- 结果：创建active全量提取目标；第二批新增9材料69数值、41比电容报告及1循环候选，进度面板完成并实测
+- 文件：README.md, data/current_literature.json, data/literature_v2.py, docs/CURRENT_STATE.md, docs/DATA_CORRECTION_GOAL.json, docs/LITERATURE_EXTRACTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/WORKSPACE_MEMORY.md, docs/knowledge/全量提取分层与争议保留_20261025.md, tools/extract_literature_material_pool_v2.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261025/批次02_紫玉米芯与对照, 文献提取进度
+- 验证：新层404项、旧层110项、循环v0.19的23466项及封版哈希通过；Edge正常与窄屏、DOI/方法/空结果/来源复制实测；零新增准入或拟合
+- 下一步/未决：继续944个尚未处理表候选、全文SI/多样品/制备与曲线提取，并推进原固定38待证；全量目标active，不把局部完成称全部完成
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

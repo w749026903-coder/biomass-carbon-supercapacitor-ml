@@ -2,7 +2,7 @@
   "schema": "persistent_evidence_correction_goal_v1",
   "requested_on": "2026-10-24",
   "user_request": "设置目标全部补正完毕再停止运行",
-  "app_goal_status_last_confirmed": "blocked",
+  "app_goal_status_last_confirmed": "active",
   "fixed_baseline_directory": "循环稳定性数据库_v0.16_补证与口径复核_20261024",
   "fixed_baseline_sha256": "6f497e1e26e9fb8f14811f15be13d8d56e4c5f92504d44f766526a83825571f9",
   "fixed_record_count": 39,
@@ -20,7 +20,7 @@
   ],
   "next_actions": [
     "Continue original fixed39 evidence task without shrinking scope;38remain pending,1resolved.",
-    "Continue full existing literature source/material/test/parameter audit;952table candidates remain and254catalogue identities have native content but no normalizedDOI observation match, not automatically254eligible papers.",
+    "Continue full existing literature source/material/test/parameter audit;944table candidates remain and254catalogue identities have native content but no normalizedDOI observation match, not automatically254eligible papers.",
     "Use the reviewed literature evidence layer to collect own material data and separate CV/3E/2E/organic/gel endpoints; do not infer training admission from availability.",
     "Only freeze a new model plan after literature utilization review; no new training executed in this task."
   ],
@@ -36,7 +36,7 @@
   "consecutive_impasse_goal_turns": 0,
   "blocked_audit_passed": true,
   "audited_next_app_goal_status": "blocked",
-  "app_goal_status_transition_note": "App last confirmed blocked; tools do not provide a resume mutation. Direct user request resumed actual evidence work with fresh impasse count0. This turn made progress; no new blocked or completion claim.",
+  "app_goal_status_transition_note": "User explicitly requested a new full-literature goal; create_goal succeeded2026-10-25, active verified. Original39record scope remains unchanged as subtask; old blocked audit is historical.",
   "external_evidence_required": "持续补正_v017_20261024/剩余补证资料清单.csv",
   "app_goal_status_confirmed_on": "2026-10-25",
   "user_material_confirmation": {
@@ -46,8 +46,10 @@
   },
   "user_resume_requested_on": "2026-10-25",
   "actual_work_resumed": true,
-  "last_goal_turn_classification": "progress: corrected omitted ownSSA evidence and46qualified fields; extracted88material values and6cycling candidates from4existing fulltexts.",
+  "last_goal_turn_classification": "progress: batch02 added69material numbers,41separate capacitance reports,1conflicted cycling candidate; original38pending unchanged.",
   "latest_user_scope": "Design around information extractable from existing literature, not only43already-admitted records; expand source/material/test/parameter utilization before new model selection.",
   "full_literature_work_entry": "文献全量利用复核_20261025/README.md",
-  "literature_pool_pointer": "data/current_literature.json"
+  "literature_pool_pointer": "data/current_literature.json",
+  "historical_app_goal_status": "blocked_before_new_full_literature_goal",
+  "current_parent_goal": "docs/LITERATURE_EXTRACTION_GOAL.json"
 }
