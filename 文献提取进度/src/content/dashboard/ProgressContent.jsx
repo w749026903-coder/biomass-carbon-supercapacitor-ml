@@ -14,12 +14,13 @@ export function DashboardContent(){
  const scope=useSectionFilters([{id:'doi',field:'doi',label:'论文 DOI',defaultValue:'all',queryIds:['material_facts','capacitances']},{id:'method',field:'method',label:'比电容方法',defaultValue:'all',queryIds:['capacitances']}],{},{id:'literature-evidence'});
  const auxiliaryScope=useSectionFilters([{id:'task',field:'task',label:'辅助目标',defaultValue:'all',queryIds:['auxiliary_inputs']}],{},{id:'auxiliary-gcd-inputs'});
  const desScope=useSectionFilters([{id:'des-task',field:'task',label:'DES目标',defaultValue:'DES保持率均值',queryIds:['des_inputs']}],{},{id:'des-reported-inputs'});
+ const palmScope=useSectionFilters([{id:'assembly',field:'assembly_label',label:'器件形式',defaultValue:'all',queryIds:['palm_electrical']},{id:'grain',field:'grain_label',label:'报告层级',defaultValue:'all',queryIds:['palm_electrical']}],{},{id:'palm-electrical-scope'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
   <div className="extraction-cards">
    <MetricCard id="material-numbers" title="材料数值单元" queryId="overview" value={h.cumulative_numeric_material_facts} displayRows={rows} sourceRows={rows} description={`证据层累计${h.cumulative_materials}种材料，含对照与参考体系`}/>
    <MetricCard id="cap-numbers" title="比电容数值单元" queryId="overview" value={h.numeric_capacitance_values} displayRows={rows} sourceRows={rows} description={`${h.capacitance_records}条报告；复述、竞争和换算不当独立样本`}/>
-   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description={`原39条中1条完成；另新增${h.new_formal_cycling_admissions}条循环准入`}/>
+   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description={`原39条中1条完成；v0.20另增${h.new_formal_cycling_admissions}条循环准入`}/>
   </div>
   <Section id="corpus-overview-title" title="全库排查范围" columns={2}>
    <EvidenceChart id="identity-catalogue" queryId="identity_states" title="480个身份条目的匹配状态" rows={reviewedRows('identity_states')} sourceRows={reviewedRows('identity_states')} variant="card" spec={{type:'bar',x:'category',y:'count',showXAxisLabel:false,showYAxisLabel:false,valueDecimals:0}} height={245}/>
@@ -32,6 +33,7 @@ export function DashboardContent(){
     <p>正式三电极循环主集 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源</strong>；双电极普通水系循环集 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 来源</strong>。v0.20新增锦带花1条双电极端点，全部观察{h.cycling_observations}条；原固定38待证保持。本轮真实拟合 {h.model_fits} 次。</p>
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
+    <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
    </div>
   </DataComponent>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
@@ -45,8 +47,14 @@ export function DashboardContent(){
    <EvidenceTable id="des-input-table" title="同12样品 · 单一来源整体留出" queryId="des_inputs" scope={desScope} columns={[f('sample_name','样品'),f('task','目标'),f('target_value','作者均值'),f('target_unit','单位'),f('target_reported_uncertainty','作者±量'),f('cycle_count','圈数'),f('current_A_g','报告 A/g'),f('BET_surface_area_m2_g','BET m²/g'),f('XPS_N_at_pct','XPS N原子%'),f('carbonization_temperature_C','碳化 ℃'),f('carbonization_duration_h','碳化 h'),f('window_label','电压证据'),f('purpose_status','用途资格')]}/>
   </Section>
   <Section id="si-response-title" title="SI中的峰参数与测试响应">
-   <EvidenceTable id="eis-response-table" title="EIS拟合量 · 作为响应保存" queryId="eis_responses" columns={[f('sample_name','样品'),f('metric','参数'),f('value','均值'),f('reported_uncertainty','作者±量'),f('unit','单位'),f('uncertainty_description','作者不确定量定义'),f('locator','原文位置')]}/>
-   <EvidenceTable id="xrd-peaks-table" title="XRD原峰 · 仅(002)峰绑定层间距" queryId="xrd_peaks" columns={[f('sample_name','样品'),f('peak_number','峰序号'),f('two_theta_deg','2θ °'),f('d_A','间距 Å'),f('FWHM_deg','FWHM °'),f('integrated_intensity_counts_deg','积分强度 counts·°'),f('locator','原文位置')]}/>
+   <EvidenceTable id="eis-response-table" title="糖原EIS拟合量 · 作为响应保存" queryId="eis_responses" columns={[f('sample_name','样品'),f('metric','参数'),f('value','均值'),f('reported_uncertainty','作者±量'),f('unit','单位'),f('uncertainty_description','作者不确定量定义'),f('locator','原文位置')]}/>
+   <EvidenceTable id="xrd-peaks-table" title="糖原XRD原峰 · 仅(002)峰绑定层间距" queryId="xrd_peaks" columns={[f('sample_name','样品'),f('peak_number','峰序号'),f('two_theta_deg','2θ °'),f('d_A','间距 Å'),f('FWHM_deg','FWHM °'),f('integrated_intensity_counts_deg','积分强度 counts·°'),f('locator','原文位置')]}/>
+  </Section>
+  <Section id="palm-audit-title" title="棕榈壳 · 作者统计与SI明细对账">
+   <EvidenceTable id="palm-statistics-table" title="8组统计对账 · 列表重算不覆盖原报告" queryId="palm_statistics" columns={[f('sample_name','样品'),f('system','配置'),f('reported_mean_F_g','作者均值 F/g'),f('arithmetic_mean_of_listed_reports','列表均值 F/g'),f('reported_SD_F_g','作者S F/g'),f('arithmetic_SD_of_listed_reports','列表S F/g'),f('listed_measurement_reports','列出报告数'),f('SI_footnote_n','脚注n'),f('explicit_repeat_reports','明示重复数')]}/>
+  </Section>
+  <Section id="palm-electrical-title" title="棕榈壳 · 单器件与串并联工况" filters={<Filters {...palmScope.filterProps}/>}>
+   <EvidenceTable id="palm-electrical-table" title="电学响应 · 按器件和工况绑定" queryId="palm_electrical" scope={palmScope} columns={[f('sample_name','材料'),f('printed_coin_id','印刷器件号'),f('printed_coin_pair','串联器件对'),f('assembly_label','形式'),f('grain_label','层级'),f('voltage_limit_per_coin_V','单器件 V'),f('current_A','电流 A'),f('experimental_capacitance_F','实验电容 F'),f('energy_efficiency_pct','能量效率 %'),f('specific_energy_Wh_kg','能量 Wh/kg'),f('specific_power_W_kg','功率 W/kg'),f('locator','原文位置')]}/>
   </Section>
   <Section id="issues-title" title="争议与待办">
    <EvidenceTable id="formal-2e-table" title="正式双电极循环数据 · 分来源调用" queryId="formal_2e" columns={[f('sample_name','样品'),f('source_group','来源组'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('electrolyte','电解液'),f('concentration_mol_L','浓度 M'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('BET_m2_g','BET m²/g'),f('retention_pct','保持率 %')]}/>

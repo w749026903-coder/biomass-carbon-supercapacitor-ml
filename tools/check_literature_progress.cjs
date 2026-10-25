@@ -13,9 +13,9 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   const material=component('material-evidence'),cap=component('capacitance-evidence');
   const expectCount=async(block,n)=>assert.match(await block.innerText(),new RegExp(`of ${n} results`));
   const choose=async(label,value)=>{await p.getByRole('button').filter({hasText:label}).click();await p.getByRole('menuitemradio',{name:value,exact:true}).click();};
-  await expectCount(material,908);await expectCount(cap,295);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),119);
+  await expectCount(material,1101);await expectCount(cap,368);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),119);
   assert.equal(await p.locator('svg.recharts-surface').count(),2);
-  await expectCount(component('cycling-candidates-table'),30);
+  await expectCount(component('cycling-candidates-table'),31);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('NWJPC-2');
   await expectCount(component('cycling-candidates-table'),2);
   assert.match(await component('cycling-candidates-table').innerText(),/容量保持率（锌离子，独立任务）/);
@@ -41,6 +41,8 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   assert.ok(clipboard.includes('GCD')&&!clipboard.includes('EIS')&&!clipboard.includes('CV'));
   await cap.getByRole('button',{name:'比电容 · 每种工况分别记录 actions',exact:true}).click();
   await p.locator('[role="menu"]').getByText('View data source',{exact:true}).click();
+  await p.getByText('SQL query',{exact:true}).waitFor({state:'visible'});
+  await p.getByText('Evidence flow',{exact:true}).waitFor({state:'visible'});
   assert.ok(await p.getByText('SQL query',{exact:true}).count());
   assert.ok(await p.getByText('Evidence flow',{exact:true}).count());
   await p.getByText('Data preview',{exact:true}).click();
@@ -57,7 +59,11 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   assert.match(await cap.innerText(),/0\.1 A\/g/);assert.match(await cap.innerText(),/正文原0\.01保留/);
   await cap.getByPlaceholder('Search data').fill('');
   await choose(/论文 DOI/,'10.1016/j.isci.2026.117248');await expectCount(material,111);await expectCount(cap,33);
-  await choose(/论文 DOI/,'All');await expectCount(material,908);await expectCount(cap,295);
+  await choose(/论文 DOI/,'10.3390/nano16040260');await expectCount(material,193);await expectCount(cap,73);
+  await choose(/比电容方法/,'EIS');await expectCount(material,193);await expectCount(cap,71);
+  await choose(/比电容方法/,'GCD');await expectCount(cap,2);assert.match(await cap.innerText(),/作者2m口径/);
+  await choose(/比电容方法/,'All');
+  await choose(/论文 DOI/,'All');await expectCount(material,1101);await expectCount(cap,368);
   await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),103);
   await choose(/辅助目标/,'双电极水系器件比电容');await expectCount(component('auxiliary-gcd-table'),5);
   await choose(/辅助目标/,'天然矿物残留碳三电极');await expectCount(component('auxiliary-gcd-table'),5);
@@ -69,6 +75,18 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await choose(/DES目标/,'All');await expectCount(des,24);
   await choose(/DES目标/,'DES保持率均值');await expectCount(des,12);
   await expectCount(component('eis-response-table'),60);await expectCount(component('xrd-peaks-table'),6);
+  await expectCount(component('palm-statistics-table'),8);await expectCount(component('palm-electrical-table'),164);
+  assert.match(await component('palm-statistics-table').innerText(),/49\.42/);
+  await component('palm-statistics-table').screenshot({path:path.join(out,'palm-statistics.png')});
+  await component('des-input-table').screenshot({path:path.join(out,'des-inputs.png')});
+  await choose(/器件形式/,'单硬币器件');await expectCount(component('palm-electrical-table'),144);
+  await choose(/报告层级/,'作者汇总均值');await expectCount(component('palm-electrical-table'),12);
+  await choose(/报告层级/,'逐器件工况');await expectCount(component('palm-electrical-table'),132);
+  await choose(/报告层级/,'All');await choose(/器件形式/,'两器件串联');await expectCount(component('palm-electrical-table'),12);
+  await choose(/器件形式/,'八器件串联');await expectCount(component('palm-electrical-table'),6);
+  await choose(/器件形式/,'八器件并联');await expectCount(component('palm-electrical-table'),2);
+  assert.match(await component('palm-electrical-table').innerText(),/475/);
+  await choose(/器件形式/,'All');await expectCount(component('palm-electrical-table'),164);
   await component('full-table-queue').getByPlaceholder('Search data').fill('no_such_literature_record_20261025');
   assert.match(await component('full-table-queue').innerText(),/No .*data|No .*results|0 results/i);
   await component('full-table-queue').getByPlaceholder('Search data').fill('');await expectCount(component('full-table-queue'),959);
@@ -80,7 +98,7 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   assert.equal(errors.length,0);
   const result={passed:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:2,
    doi_scope_checked:[{doi:'10.1021/acsenvironau.3c00048',material_cells:53,capacitance_reports:40},{doi:'10.3390/nano16161035',material_cells:27,capacitance_reports:0}],
-   method_filter_GCD8_and_material_scope_unchanged:true,formal_2e_27_and_new_endpoint_link_checked:true,cycle_candidates30_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,Glycogen_scope181_17_and_current_correction_checked:true,Weigela_scope111_33_checked:true,DES_two_targets12each_24reviews_same12samples_checked:true,EIS60_XRD6_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_103_5_5_6_all119_filters_checked:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
+   method_filter_GCD8_and_material_scope_unchanged:true,formal_2e_27_and_new_endpoint_link_checked:true,cycle_candidates31_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,Glycogen_scope181_17_and_current_correction_checked:true,Weigela_scope111_33_checked:true,DES_two_targets12each_24reviews_same12samples_checked:true,EIS60_XRD6_checked:true,Palm_material193_cap73_EIS71_GCD2_checked:true,Palm_statistics8_and_electrical164_144_12_132_12_6_2_filters_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_103_5_5_6_all119_filters_checked:true,source_inspector_and_scoped_copy_checked:true,scoped_copy_characters:clipboard.length,
    empty_scope_and_search_checked:true,all_reset_reconciled:true,javascript_errors:errors,scientific_goal_complete:false};
   fs.writeFileSync(path.join(app,'dashboard_visual_verification.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
  }finally{await browser.close();}
