@@ -315,3 +315,11 @@
 - 验证：1803科学与输入检查、4CSV、20原载荷和2附加载荷通过；桌面1440/窄屏390、四用途47/5/5/6/All63筛选、硬木61/30范围、来源复制及空结果通过；真实拟合0
 - 下一步/未决：全量目标未完成：918原表候选未处理，原38条待证保留；继续已有多样品/协议/原图；应用目标usageLimited，本次用户授权手动续行
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-25T22:03:56+08:00：第五批新增188材料数值、146比电容报告；累计791数值、293报告及103/5/5/6分用途输入，原循环库保持
+
+- 结果：第五批新增188材料数值、146比电容报告；累计791数值、293报告及103/5/5/6分用途输入，原循环库保持
+- 文件：data/current_literature.json, tools/extract_literature_pool_v5.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261025/批次05_碳化系列与多电解液, 文献提取进度, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/knowledge/碳化系列与循环原图裁决_20261025.md
+- 验证：3161项、四CSV和封版哈希通过；原附件包/父库保护；桌面1440/窄屏390、循环候选30/两NWJPC指标、木苹果壳5/98/CV69、四用途103/5/5/6/All119、来源复制与空结果通过；真实拟合0
+- 下一步/未决：NWJPC-2实际循环图支持0～1V，保留SI异文；优先正式增量准入/API/旧记录关系审查。908旧表候选未处理、原38待证保留；全量目标未完成，应用目标usageLimited，本轮手动续行
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

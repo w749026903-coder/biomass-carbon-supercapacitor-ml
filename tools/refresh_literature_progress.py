@@ -18,6 +18,8 @@ def label(f):
     if f=='author_t_pore_area_m2_g':return '作者t-pore面积（未统一孔类）'
     if f=='author_t_pore_volume_cm3_g':return '作者t-pore孔容（未统一孔类）'
     if f=='BET_fit_correlation_coefficient':return 'BET拟合相关系数（非模型R²）'
+    more={'meso_plus_macro_volume_cm3_g':'介孔+大孔孔容（非介孔单量）','BJH_average_pore_diameter_nm':'BJH平均孔径','reported_pore_diameter_A':'报告孔径（Å）','Raman_ID_IG_reported_uncertainty':'Raman ID/IG作者±量','Raman_derived_crystallite_La_nm':'Raman派生晶粒尺寸（非独立测量）','XRD_d002_A':'XRD层间距（Å）','TEM_interlayer_spacing_nm':'TEM层间距'}
+    if f in more:return more[f]
     extras={'Raman_IG_ID':'Raman强度比IG/ID','Raman_ID1_IG':'Raman强度比ID1/IG','water_contact_angle_deg':'水接触角','Boehm_total_acidic_groups_mmol_g':'Boehm总酸性基团','reported_product_yield_pct':'报告收率（基准另列）','electrode_height_mm':'电极高度','electrode_area_cm2':'电极面积','mass_loading_mg_cm2':'质量负载','printed_layer_count':'打印层数','DFT_micropore_peak_nm':'DFT微孔峰位','DFT_pore_diameter_nm':'DFT孔径','micro_to_meso_surface_area_ratio':'微孔/介孔面积比','micro_to_meso_pore_volume_ratio':'微孔/介孔孔容比','micropore_surface_fraction_pct':'微孔面积贡献','mesopore_surface_fraction_pct':'介孔面积贡献','micropore_volume_fraction_pct':'微孔孔容贡献','mesopore_volume_fraction_pct':'介孔孔容贡献','mesopore_to_BET_surface_area_ratio':'介孔/BET面积比','meso_to_micro_pore_volume_ratio':'介孔/微孔孔容比','micropore_to_BET_surface_area_ratio':'微孔/BET面积比'}
     if f in extras:return extras[f]
     return LABELS.get(f,f)
@@ -41,7 +43,7 @@ def main():
             for r in subset:r['task']=task_names[profile]
             auxiliary.extend(subset)
         eligible={r['observation_id'] for r in auxiliary}
-        for r in facts:r.update(parameter=label(r['field_name']),quantity=r['value'],evidence=r['locator'],status_label=('低于误差，空值' if 'censored' in r['review_status'] else '原文未给数值') if r['value'] is None else ('冲突冻结' if 'conflict' in r['review_status'] else '已提取，按用途调用'))
+        for r in facts:r.update(parameter=label(r['field_name']),quantity=r['value'],evidence=r['locator'],status_label=('原印数字格式异常，待核' if 'malformed' in r['review_status'] else ('低于误差，空值' if 'censored' in r['review_status'] else '原文横杠/未报告，非零')) if r['value'] is None else ('冲突冻结' if 'conflict' in r['review_status'] else '已提取，按用途调用'))
         for r in caps:
             cond=r['conditions'];area_current=cond.get('reported_current_mA_cm2')
             current_label=f'{area_current:g} mA/cm²' if area_current is not None else (f"{r['current_A_g']:g} A/g" if r['current_A_g'] is not None else '—')
@@ -55,7 +57,7 @@ def main():
           '材料×方法×电解液×工况×自身报告表单元，不同配置、归一化和单位分开。',[f"{summary['capacitance_records']}报告含{summary['numeric_capacitance_values']}数值、2未报告；复述、竞争、换算、参考和复合体系不能当独立样本相加。",'CV速率不当电流；面积电流不猜算A/g。辅助资格不等于循环保持率准入。'])
         query('auxiliary_inputs',auxiliary,['auxiliary_reported_GCD_v3','auxiliary_gcd_reviews_v3','material_facts','synthesis_stages_v3'],
           'SELECT * FROM auxiliary_reported_GCD_v3 ORDER BY purpose,source_group,sample_name,current_A_g;',
-          '47条普通三电极、5条器件总质量、5条天然矿物残留碳三电极、6条作者两倍系数双电极，四目标分开。已知冲突屏蔽；EDX与XPS、原方向Raman、缺失掩码分别保留。',['合计6个DOI组；普通三电极5组，其余每任务各1组；不是独立性或泛化性能证明。','这是输入预检通过的辅助比电容子集，正式循环主集仍43/31，未启动训练。'])
+          '103条普通三电极、5条器件总质量、5条天然矿物残留碳三电极、6条作者两倍系数双电极，四目标分开。已知冲突屏蔽；EDX与XPS、原方向Raman、缺失掩码分别保留。',['合计8个DOI组；普通三电极7组，其余每任务各1组；不是独立性或泛化性能证明。','这是输入预检通过的辅助比电容子集，正式循环主集仍43/31，未启动训练。'])
         queue=[dict(r) for r in db.connection.execute('select * from raw_table_queue order by review_state,previous_role,table_id')]
         for r in queue:r.update(state='未进入本流程处理' if r['review_state']=='automatic_candidate_unreviewed' else '已处理指定范围',role='比较/汇总候选' if 'comparison' in r['previous_role'] else '自身/上下文待核')
         query('table_queue',queue,['raw_table_queue'],'SELECT * FROM raw_table_queue ORDER BY review_state,previous_role,table_id;',
@@ -67,7 +69,7 @@ def main():
         sql='SELECT s.doi,s.title,COUNT(DISTINCT m.material_key) AS materials,COUNT(DISTINCT f.fact_id) AS cells,COUNT(DISTINCT CASE WHEN f.value IS NOT NULL THEN f.fact_id END) AS numeric_facts FROM reviewed_sources s LEFT JOIN materials m USING(doi) LEFT JOIN material_facts f USING(material_key) GROUP BY s.doi;'
         sources=[dict(r) for r in db.connection.execute(sql)]
         new_dois={'10.1021/acsomega.5c06396','10.1021/acsomega.5c10175','10.1021/acsomega.5c03461','10.1002/advs.202206320'}
-        for r in sources:r.update(batch='批次04' if r['doi'] in ['10.1021/acsomega.5c08826','10.1002/cplu.202400408','10.1002/smsc.202500174'] else ('批次03' if r['doi'] in new_dois else ('批次02' if r['doi'] in ['10.1021/acsenvironau.3c00048','10.3390/molecules29225413'] else '批次01')),scope='合成碳方法参考' if r['doi']=='10.3390/molecules29225413' else ('复合碳独立用途' if r['doi']=='10.1002/advs.202206320' else ('天然CaP与MnO2混合器件分用途' if r['doi']=='10.1002/cplu.202400408' else '部分材料/测试已核定，整篇未完成')))
+        for r in sources:r.update(batch='批次05' if r['doi'] in ['10.1016/j.isci.2026.117248','10.1021/acsomega.3c00816','10.1021/acsomega.5c05285'] else '批次04' if r['doi'] in ['10.1021/acsomega.5c08826','10.1002/cplu.202400408','10.1002/smsc.202500174'] else ('批次03' if r['doi'] in new_dois else ('批次02' if r['doi'] in ['10.1021/acsenvironau.3c00048','10.3390/molecules29225413'] else '批次01')),scope='合成碳方法参考' if r['doi']=='10.3390/molecules29225413' else ('复合碳独立用途' if r['doi']=='10.1002/advs.202206320' else ('天然CaP与MnO2混合器件分用途' if r['doi']=='10.1002/cplu.202400408' else '部分材料/测试已核定，整篇未完成')))
         query('source_summary',sources,['reviewed_sources','materials','material_facts'],sql,'按DOI汇总数值单元，不是训练样本。',['只完成记录声明范围，尚未称全文全部利用。'])
         issue_labels={'reported_XPS_sum':'XPS合计限定','surface_partition_inconsistent':'孔面积分项不符','body_table_disagreement':'正文与表数值竞争','author_ratio_vs_volumes':'报告比例与孔容不符','reported_precision_variants':'数值精度表述不同','cycling_configuration_electrolyte_and_current_roles':'循环协议绑定冲突','own_table_conflict':'酸碱EIS表值冲突','element_label_binding_energy_conflict':'XPS元素标签与能量冲突','percentage_basis_not_explicit':'百分比基准未知','control_alias_not_merged':'无活化对照别名未合并'}
         actions={'PC800_XPS':'原值合计99.7%，不补元素、不归一化。','corn_cob_BET':'表1770与正文1705并存，标准面积待定。','corn_cob_volume_ratio':'孔容和报告比例并存，不用计算值覆盖。','corn_grain_precision':'保留各处精度，不能算作三次测量。','corn_husk_surface':'分项面积超过总量，隔离且不换列。','purple_EIS_AC5':'保留酸/碱四个竞争值，不自动交换列。','purple_XPS_AC30':'保留元素标签与能量冲突，C/O标准值冻结。','purple_control_alias':'SI无活化对照单独保存，别名不自动合并。','purple_microporosity':'微孔率基准未知，不猜面积比或体积比。','purple_cycle_protocol':'保留配置、电解液及电流角色竞争，循环标准条件留空。'}
@@ -75,8 +77,19 @@ def main():
         actions.update(MNS_char_Vmeso='原0.36及比例均保留，冲突孔容和耦合比值在辅助特征中屏蔽。',Hurd2_partition='保留各测法原值，不用差值补孔容。',Hurd_Raman_direction='保留IG/ID；倒数单列为派生量。',Hurd_CE_not_retention='库仑效率单独存响应任务，不作保持率或预实验特征。',Hurd_cycle_baseline='循环初始28与新鲜速率测试38分开，不改作者取整78%。',Popcorn_capacitance_basis='同一测试两种表达共享组，不当两次独立实验。',Popcorn_current_range='两处范围保留，Table6的1A/g另有明确绑定。',CNF_precursor_final_basis='前驱体两组质量比分别保存，不推断最终CNT质量分数。')
         issue_labels.update(abstract_original_figure_retention_conflict='摘要与循环原图冲突',prose_figure_rate_capacitance_difference='正文与倍率原图差别',reported_BET_fit_range_quality_qualification='BET拟合范围质量限定',electrode_mass_reports_different_scope='电极质量表述范围不同',same_current_capacitance_conflict='同电流比电容冲突',native_calcium_phosphate_material_purpose='天然钙磷残留材料用途',hybrid_capacitance_and_retention_competition='混合器件摘要正文竞争',reported_precision_and_transcription_variants='表图精度与转录差异',cycling_voltage_binding_unresolved='循环电压绑定待证',author_factor2_capacitance_separate_target='作者两倍系数独立目标',adsorption_and_EIS_responses_not_pretest_features='吸附及EIS响应分开')
         actions.update(LP4_TAK_retention='摘要98%与原图约93.81%（3像素约±0.60百分点）并存；不猜归一化，循环冻结。',LP4_TAK_rate='7A/g正文约160与读图约168.63并存；不选作精确标签。',LP4_TAK_BET='保留BET及作者0.05～0.8拟合区间注记，不新设一律要求C常数的门槛。',LP4_TAK_mass='质量范围分别保留，不推断每电极质量，不因此否定作者报告A/g用途。',LP4_HAC_cap='1A/g的360/240冻结；其余五种电流按天然矿物残留用途调用。',LP4_HAC_scope='天然CaP另列；SI碳元素图不能量化Ca/P或证明为零。',LP4_HAC_hybrid='HAC、EMD和HAC||EMD各自绑定，不转移混合器件冲突到碳单电极。',LP4_WPC_precision='BET用主表/SI共同3377.94；微孔容明确选SI0.4797，保留主表0.48取整值。',LP4_WPC_voltage='87.5%有原图支持；循环电压仍未知，不用CV或能量反算填补。',LP4_WPC_basis='六条作者两倍系数Csp独立目标，不混入器件总质量比电容。',LP4_WPC_outcomes='24条CO₂吸附和8条EIS独立响应，不作保持率或预实验材料特征。')
+        issue_labels.update(cycling_SI_signed_voltage_vs_actual_own_cycle_insets='实际循环图与SI电压异文',own_body_table_capacitance_competition='正文与自身表倍率值竞争',synthesis_control_and_alias_not_assumed='活化剂用量与对照别名',XPS_envelope_dash_malformed_and_sum='XPS包络、横杠及原印数字',abstract_pore_volume_scope_not_assumed_total='摘要孔容范围不明',DES_and_mean_uncertainty_separate_purpose='DES与均值±量单独保存',cycling_current_not_bound_from_rate_test='循环电流仍缺数值',EIS_report_and_summary_competition='EIS表与总结竞争')
+        actions.update(LP5_WJ_voltage='实际首次/末次循环图与正文均0～1V，据此选择；保留SI−1～0V异文，正式增量准入尚未完成。',LP5_WJ_cap='NWJPC-1在1A/g的133/133.7冻结，其余四电流保留。',LP5_WJ_scope='对照KOH:前驱体3:1，掺杂组1:1；NWJPC组水热温度未明确绑定，未猜填180℃。',LP5_WJ_XPS='N1s横杠非0；总N0.9at%另存。原12.6.格式异常留空；99.64不归一化。',LP5_G_pore='明确微孔0.377、介孔0.520、总0.897；摘要0.38不当总孔容。',LP5_G_targets='12组DES保持率与作者±数保留；银丝伪参比、30℃及固态原型另列。',LP5_A_cycle='三浓度循环标签保留，电流未报数值；不借2A/g倍率工况补填。',LP5_A_EIS='保留42.96/42异文和4M最大Rct；EIS响应不作预实验材料特征。')
         issues=[dict(doi=r['doi'],sample=r['sample_name'],issue=issue_labels.get(r['issue'].get('kind'),r['issue'].get('kind')),action=actions.get(r['issue_id'],r['issue'].get('action')),details=json.dumps(r['issue'],ensure_ascii=False)) for r in db.issues()]
         query('issues',issues,['scientific_issues'],'SELECT * FROM scientific_issues;','每个争议/限定项，不是独立样本。',['保留双方原值与出处，不以性能或新版本择值。'])
+        material_map={m['material_key']:m for m in db.materials()};candidates=[]
+        for item in db.tests():
+            record=item['record'];m=material_map[item['material_key']]
+            kind='容量保持率（锌离子，独立任务）' if record.get('retention_metric')=='specific_capacity_mAh_g_not_capacitance' else '电容保持率候选'
+            candidates.append(dict(candidate_id=item['candidate_id'],doi=m['doi'],sample=m['sample_name'],system=record.get('system'),electrolyte=record.get('electrolyte'),concentration_mol_L=record.get('concentration_mol_L'),current_A_g=record.get('reported_current_A_g'),cycle_count=record.get('cycle_count'),retention_pct=record.get('retention_pct'),retention_uncertainty=record.get('reported_retention_uncertainty'),metric=kind,status='已备主要证据，正式增量准入待做' if item['candidate_id']=='LP5_SSC' else '候选，尚非正式成员',source_path=record.get('evidence_source_path'),source_sha256=record.get('source_sha256'),locator=record.get('locator'),details=json.dumps(record,ensure_ascii=False)))
+        query('cycling_candidates',candidates,['test_candidates','materials'],
+          'SELECT t.*,m.doi,m.sample_name FROM test_candidates t JOIN materials m USING(material_key);',
+          '文献层逐体系候选，不包含当前循环库的全部277观察；不等于新增正式准入。',
+          ['锌离子容量、普通电容保持率和DES用途明确分开；作者±量不猜SD或SEM。','早期候选中未结构化到相同字段的值保持空，原record_json和定位完整可查。'])
     with open_database() as cycling:main_rows=cycling.fetch('reported_3e').rows
     fixed=json.loads((ROOT/'docs/DATA_CORRECTION_GOAL.json').read_text('utf8'))
     active=json.loads((ROOT/'docs/LITERATURE_EXTRACTION_GOAL.json').read_text('utf8'))
@@ -84,10 +97,10 @@ def main():
     query('overview',overview,['summary.json','docs/LITERATURE_EXTRACTION_GOAL.json','cycling_v0_19.sqlite'],
       'SELECT COUNT(*) FROM materials; SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; SELECT COUNT(*) FROM capacitance_observations WHERE value IS NOT NULL;',
       '材料数值与比电容报告按当前证据层汇总；循环主集和固定待证另计。',['历史725项与本页新增层重叠未完全对账，不能直接相加。'])
-    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
-    query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json'],
-      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 分别读取四个封版版本',
-      '同一证据层四个批次累计快照，不内插每日进度，不当独立实验数。')
+    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
+    query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json'],
+      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 分别读取五个封版版本',
+      '同一证据层五个批次累计快照，不内插每日进度，不当独立实验数。')
     result=dict(id=existing['id'],surface='dashboard',title='文献提取与补正进度',generatedAt=now,status='reviewed_local_snapshot',buildStatus=args.build_status,filters=[],queries=queries)
     target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(dict(snapshot=str(target.relative_to(ROOT)),queries={k:len(v['rows']) for k,v in queries.items()},buildStatus=args.build_status),ensure_ascii=False))

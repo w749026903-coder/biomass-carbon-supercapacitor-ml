@@ -40,6 +40,7 @@ export function DashboardContent(){
   <Section id="auxiliary-title" title="已核定的辅助比电容输入" filters={<Filters {...auxiliaryScope.filterProps}/>}><EvidenceTable id="auxiliary-gcd-table" title="四个辅助目标分别调用 · 同DOI整组隔离" queryId="auxiliary_inputs" scope={auxiliaryScope} columns={[f('doi','DOI'),f('sample_name','样品'),f('task','任务'),f('capacitance_F_g','比电容 F/g'),f('current_A_g','电流 A/g'),f('electrolyte','电解液'),f('BET_surface_area_m2_g','BET m²/g'),f('EDX_C_at_pct','EDX C原子%'),f('mesopore_volume_cm3_g','介孔容 cm³/g')]}/>
   </Section>
   <Section id="issues-title" title="争议与待办">
+   <EvidenceTable id="cycling-candidates-table" title="循环候选 · 不等于正式准入" queryId="cycling_candidates" columns={[f('doi','DOI'),f('sample','样品'),f('system','配置'),f('metric','响应指标'),f('electrolyte','电解液'),f('current_A_g','循环 A/g'),f('cycle_count','圈数'),f('retention_pct','保持率 %'),f('retention_uncertainty','作者±量'),f('status','准入阶段'),f('locator','证据位置')]}/>
    <EvidenceTable id="scientific-issues" title="科学争议原值与处理边界" queryId="issues" columns={[f('doi','DOI'),f('sample','样品'),f('issue','问题类型'),f('action','处置'),f('details','竞争证据')]}/>
    <EvidenceTable id="full-table-queue" title="959个表候选的处理队列" queryId="table_queue" columns={[f('table_id','候选ID'),f('caption','表题'),f('locator','原定位'),f('raw_rows','原始行数'),f('role','原始角色'),f('state','当前处理范围')]}/>
   </Section>
