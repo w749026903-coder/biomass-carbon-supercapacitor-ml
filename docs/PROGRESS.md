@@ -443,3 +443,11 @@
 - 验证：4124项原像素/19锚点/去重/旧载荷/CSV核验；8071载荷/210标识/208家族隔离；五图桌面手机、20/95/94模式及5/5/1/11曲线、75新增过滤、权重有效位通过；拟合0
 - 下一步/未决：全量目标active；原959表候选149触及/810未触及，39来源未全篇完成；继续其它现有来源自身表与剩余连续波形及原38补证，普通176和循环主集不变
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-27T02:32:09+08:00：文献v17新增五来源64阶段登记、631材料数值、8个普通3E工况与6/1独立2E用途，原值与冻结保留
+
+- 结果：文献v17新增五来源64阶段登记、631材料数值、8个普通3E工况与6/1独立2E用途，原值与冻结保留
+- 文件：README.md, data/current_literature.json, data/literature_v17.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/多来源全样阶段与方法冲突_20261027.md, tools/extract_multisource_tables_v17.py, tools/verify_multisource_tables_v17.py, tools/verify_multisource_chain_v17.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261027/批次17_多来源全样表格与方法审查, 文献提取进度
+- 验证：2933原表/原PDF/单元/旧值/空值/CSV核验；9092载荷214标识212家族隔离；新旧筛选、0.001与1.028原报精度、5图与桌面手机显示通过；拟合0；354文件同步预检通过，私有origin及push权限已核实
+- 下一步/未决：全量目标active；159表候选触及800未触及，44来源未全篇完成；继续自身曲线与其它候选，ABPC4待循环逐测试审查，原38待证不抵扣
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
