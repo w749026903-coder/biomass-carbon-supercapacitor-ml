@@ -16,6 +16,7 @@ export function DashboardContent(){
  const desScope=useSectionFilters([{id:'des-task',field:'task',label:'DES目标',defaultValue:'DES保持率均值',queryIds:['des_inputs']}],{},{id:'des-reported-inputs'});
  const palmScope=useSectionFilters([{id:'assembly',field:'assembly_label',label:'器件形式',defaultValue:'all',queryIds:['palm_electrical']},{id:'grain',field:'grain_label',label:'报告层级',defaultValue:'all',queryIds:['palm_electrical']}],{},{id:'palm-electrical-scope'});
  const curveScope=useSectionFilters([{id:'curve-x-kind',field:'x_kind',label:'采样横轴',defaultValue:'all',queryIds:['bounded_curve_samples']}],{},{id:'bounded-curve-scope'});
+ const batch12Scope=useSectionFilters([{id:'batch12-target',field:'task',label:'新批次独立目标',defaultValue:'3E体积电容（作者假定密度）',queryIds:['batch12_inputs']}],{},{id:'batch12-target-scope'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
   <div className="extraction-cards">
@@ -36,13 +37,18 @@ export function DashboardContent(){
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
-    <p>第十一批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条比电容报告</strong>，核定13条青豌豆皮/水葫芦/红茶辅助GCD输入。原{h.cumulative_bounded_curve_samples}有界图点、{h.peer_model_numeric_cells}个同行参数、15格争议特征冻结及1条复合循环用途保持。两个Tondolo工作有明确复用关系，验证时须归入同一家族。</p>
+    <p>第十二批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条电容报告</strong>：核读苏铁绒/椰壳自身主表及椰壳SI六表。另设29个分目标表达行，Cs/Cd同测试、体积/质量共享来源隔离，不能当独立实验相加。其余四篇排查来源仍待核读，原{h.cumulative_bounded_curve_samples}有界图点与{h.peer_model_numeric_cells}个同行参数保留。</p>
    </div>
   </DataComponent>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
   <Section id="evidence-title" title="材料与测试数据检索" filters={<Filters {...scope.filterProps}/>}>
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
+  </Section>
+  <Section id="batch12-review-title" title="第十二批 · 体积电容与椰壳补充表" filters={<Filters {...batch12Scope.filterProps}/>}>
+   <EvidenceTable id="batch12-inputs-table" title="分目标输入 · 同测试表达不能重复计数" queryId="batch12_inputs" scope={batch12Scope} columns={[f('sample_name','样品'),f('task','目标'),f('quantity','作者数值'),f('unit','单位'),f('current_A_g','A/g'),f('electrolyte','电解液'),f('collector','集流体'),f('separator','隔膜'),f('voltage_lower_V','下限 V'),f('voltage_upper_V','上限 V'),f('evidence','原文位置')]}/>
+   <EvidenceTable id="batch12-sources-table" title="两篇指定范围 · 其余四篇继续排队" queryId="batch12_sources" columns={[f('doi','DOI'),f('scope','已核范围'),f('remaining','剩余工作')]}/>
+   <EvidenceTable id="batch12-decisions-table" title="13项处置 · 方法、身份与竞争原值" queryId="batch12_decisions" columns={[f('doi','DOI'),f('decision_id','核验项'),f('decision','证据与处理')]}/>
   </Section>
   <Section id="batch11-review-title" title="第十一批 · 多样品、原图裁决与前作复用">
    <EvidenceTable id="cycle23-admissions-table" title="v0.23新准入 · 两项用途与来源隔离" queryId="cycle23_admissions" columns={[f('sample_name','样品'),f('source_year_display','年份'),f('electrolyte_label','电解液'),f('retention_pct','保持率 %'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('BET_m2_g','自身BET m²/g'),f('profile_label','准入视图'),f('family_label','隔离范围')]}/>

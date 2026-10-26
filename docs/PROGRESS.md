@@ -387,3 +387,11 @@
 - 验证：873项准入/原值/冻结/旧年限/反例核验；历史固定输入复验和6161载荷家族隔离；新旧页面交互及1440/390显示通过；无新拟合
 - 下一步/未决：全量目标active；继续835未触及表候选及已有论文剩余自身表图/SI；原38待证与15冻结保持，不追分训练
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T11:07:46+08:00：文献v12补提苏铁绒和椰壳：163材料数值、76电容报告、61响应，体积与Cs/Cd分目标调用；原文冲突逐项保留
+
+- 结果：文献v12补提苏铁绒和椰壳：163材料数值、76电容报告、61响应，体积与Cs/Cd分目标调用；原文冲突逐项保留
+- 文件：README.md, data/current_literature.json, data/literature_v12.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/体积电容与椰壳SI成对口径_20261026.md, tools/extract_porous_series_v12.py, tools/verify_corpus_chain_v12.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261026/批次12_椰壳苏铁绒芒果核与原料边界, 文献提取进度
+- 验证：1487项单元/原件/父版/准入边界检查；6518载荷来源隔离与固定历史复验；同一页面新旧筛选及1440/390显示核验，无新拟合
+- 下一步/未决：全量目标active；828候选未触及、原38待证保持；下步审苏铁绒两盐2022跨年份循环，并继续芒果核/皮革/糠醛渣/商业AC四来源
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
