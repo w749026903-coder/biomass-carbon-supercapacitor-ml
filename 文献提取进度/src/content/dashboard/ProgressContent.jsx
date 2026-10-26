@@ -37,7 +37,8 @@ export function DashboardContent(){
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
-    <p>第十二批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条电容报告</strong>：核读苏铁绒/椰壳自身主表及椰壳SI六表。另设29个分目标表达行，Cs/Cd同测试、体积/质量共享来源隔离，不能当独立实验相加。其余四篇排查来源仍待核读，原{h.cumulative_bounded_curve_samples}有界图点与{h.peer_model_numeric_cells}个同行参数保留。</p>
+    <p>第十三批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条电容报告</strong>：芒果核、废皮革、糠醛渣与商业参考四个指定范围。9条新增普通3E输入、4条ZnS残留独立用途分开；商业参考24报告仅21标称条件，未取得生物质训练资格。循环新增5候选，正式准入待做，不能当5条已放行训练数据。</p>
+    <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。原{h.cumulative_bounded_curve_samples}个有界图点和{h.peer_model_numeric_cells}个同行参数保留，全部来源仍有剩余提取范围。</p>
    </div>
   </DataComponent>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
@@ -45,11 +46,18 @@ export function DashboardContent(){
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
+  <Section id="batch13-review-title" title="第十三批 · 多样品提取与图文冲突">
+   <EvidenceTable id="batch13-sources-table" title="四个来源范围 · 商业参考另列" queryId="batch13_sources" columns={[f('doi','DOI'),f('classification','身份与用途'),f('scope','已核范围'),f('remaining','剩余工作')]}/>
+   <EvidenceTable id="batch13-decisions-table" title="18项证据处置 · 工作值与未决冻结" queryId="batch13_decisions" columns={[f('doi','DOI'),f('decision_id','核验项'),f('decision','原值、依据与处理')]}/>
+   <EvidenceTable id="residue13-inputs-table" title="糠醛渣GCD · ZnS残留独立用途" queryId="residue13_inputs" columns={[f('sample_name','样品'),f('value','F/g'),f('current_A_g','A/g'),f('electrolyte','电解液'),f('window','测试窗口'),f('BET','BET m²/g'),f('Zn','ICP-OES Zn wt%'),f('purpose','用途边界'),f('evidence','原文位置')]}/>
+   <EvidenceTable id="interface13-reference-table" title="商业界面参考 · 24报告非训练输入" queryId="interface13_reference" columns={[f('sample_name','配方'),f('value','F/g'),f('current_A_g','A/g'),f('reported_plusminus','作者±量'),f('statistic','统计限定'),f('status','准入边界'),f('evidence','原文位置')]}/>
+   <EvidenceTable id="wetting13-table" title="接触角随时间 · 0/3/6秒分别保存" queryId="wetting13" columns={[f('sample','配方'),f('time_s','时间 s'),f('contact_angle_deg','接触角 °'),f('status','限定'),f('table_key','原表')]}/>
+  </Section>
   <Section id="batch12-review-title" title="第十二批 · 体积电容与椰壳补充表" filters={<Filters {...batch12Scope.filterProps}/>}>
    <EvidenceTable id="cycle24-admissions-table" title="v0.24苏铁绒循环 · 两盐同一来源" queryId="cycle24_admissions" columns={[f('sample_name','样品'),f('source_year_display','年份'),f('electrolyte_label','电解液'),f('retention_pct','保持率 %'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('profile_label','准入范围'),f('source_weight_label','来源权重'),f('feature_note','材料特征')]}/>
    <EvidenceTable id="cycle24-feature-masks-table" title="同材料N/O竞争 · 原值保留与空值通道" queryId="cycle24_feature_masks" columns={[f('material','材料'),f('field_name','通道'),f('raw_values','竞争原值 at%'),f('canonical','当前输入'),f('status','处置')]}/>
    <EvidenceTable id="batch12-inputs-table" title="分目标输入 · 同测试表达不能重复计数" queryId="batch12_inputs" scope={batch12Scope} columns={[f('sample_name','样品'),f('task','目标'),f('quantity','作者数值'),f('unit','单位'),f('current_A_g','A/g'),f('electrolyte','电解液'),f('collector','集流体'),f('separator','隔膜'),f('voltage_lower_V','下限 V'),f('voltage_upper_V','上限 V'),f('evidence','原文位置')]}/>
-   <EvidenceTable id="batch12-sources-table" title="两篇指定范围 · 其余四篇继续排队" queryId="batch12_sources" columns={[f('doi','DOI'),f('scope','已核范围'),f('remaining','剩余工作')]}/>
+   <EvidenceTable id="batch12-sources-table" title="两篇指定范围 · 剩余波形继续" queryId="batch12_sources" columns={[f('doi','DOI'),f('scope','已核范围'),f('remaining','剩余工作')]}/>
    <EvidenceTable id="batch12-decisions-table" title="13项处置 · 方法、身份与竞争原值" queryId="batch12_decisions" columns={[f('doi','DOI'),f('decision_id','核验项'),f('decision','证据与处理')]}/>
   </Section>
   <Section id="batch11-review-title" title="第十一批 · 多样品、原图裁决与前作复用">

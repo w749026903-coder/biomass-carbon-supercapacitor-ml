@@ -403,3 +403,11 @@
 - 验证：1219项准入/旧行/原值/冻结/年份守卫检查；钉住历史链及6520载荷隔离预检；页面新旧筛选、原值空值及1440/390显示通过；无新拟合
 - 下一步/未决：全量目标active；继续原选四篇及828未触及表候选、已审剩余图文/SI与原38待证，不追分训练
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T15:48:20+08:00：文献v13补提四来源指定范围：204材料数值、55电容报告、9普通3E与4残留用途输入，原图角色和争议分存
+
+- 结果：文献v13补提四来源指定范围：204材料数值、55电容报告、9普通3E与4残留用途输入，原图角色和争议分存
+- 文件：README.md, data/current_literature.json, data/literature_v13.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/图文角色冲突与残留组分分用途_20261026.md, tools/extract_source_series_v13.py, tools/verify_source_series_v13.py, tools/verify_source_chain_v13.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261026/批次13_芒果核皮革糠醛渣与界面参考, 文献提取进度
+- 验证：1753项原值/单元/原件/旧行核验及封版哈希；6999载荷来源家族隔离与历史链预检；同页新旧筛选、复制/来源和1440/390显示通过，无新拟合
+- 下一步/未决：全量目标active；继续芒果核和皮革候选的旧库DOI别名及正式逐测试准入、剩余波形和813未触及候选；原38待证保持
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

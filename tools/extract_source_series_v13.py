@@ -1,0 +1,242 @@
+"""Additive curation of four original-source scopes. No model fitting."""
+from pathlib import Path
+from contextlib import closing
+import collections,hashlib,json,re,sqlite3,sys,xml.etree.ElementTree as E,zipfile
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tools'))
+from extract_onion_composite_v8 import sha,write,ro,insert,mk
+from extract_palm_kernel_v7 import xml_grid
+OUT=ROOT/'文献全量利用复核_20261026/批次13_芒果核皮革糠醛渣与界面参考';EV=OUT/'evidence';DB=OUT/'literature_material_pool_v13.sqlite'
+PARENT=ROOT/'文献全量利用复核_20261026/批次12_椰壳苏铁绒芒果核与原料边界/literature_material_pool_v12.sqlite';PSHA='d6863d5941bcd01c12ab2565310b26258fb27adf043b2ab5e9bec55e6ea2069d'
+MA='10.1039/d5ra02129d';LE='10.1039/d6ra04144b';FU='10.3390/polym16233421';RF='10.1039/d6ra08120g'
+NAMES={MA:['MK7','MK8','MK9','MK10'],LE:['NSC','A-NSC6','A-NSC7','A-NSC8'],FU:['raw_FR','FR900','PC700-1','PC800-1','PC900-0','PC900-0.1','PC900-0.5','PC900-1','PC950-1'],RF:['NEAT_AC']+[a+'_'+v+'pct'for a in['Emim','Bmim']for v in['0.25','0.5','1','1.25']]}
+DOC={MA:'Mango13',LE:'Leather13',FU:'Furfural13',RF:'Interface13'}
+
+def clean(e):return re.sub(r'\s+',' ',re.sub(r'<svg\b.*?</svg>','[vector-symbol]',''.join(e.itertext()),flags=re.S)).strip()if e is not None else''
+def number(raw,part=None):
+    raw=raw.strip().replace('−','-')
+    if raw in['','—','–','-']:return None
+    if part=='malformed':assert raw=='1.o';return None
+    if part in['mean','uncertainty']:
+        pieces=raw.split('±');assert len(pieces)==2;raw=pieces[part=='uncertainty'].strip()
+    if part in['outside','inside']:
+        m=re.fullmatch(r'([\d.]+)\s*\(([\d.]+)\)',raw);assert m,raw;raw=m[2 if part=='inside'else 1]
+    assert re.fullmatch(r'[+-]?(?:\d+(?:\.\d+)?|\.\d+)(?:[eE][+-]?\d+)?',raw),raw
+    return float(raw)
+
+def curate(replace_unsealed=False):
+    assert not DB.exists()and not(OUT/'merge_manifest.json').exists()
+    if replace_unsealed:
+        recovery=json.loads((OUT/'draft_build_recovery.json').read_text('utf8'));assert sha(OUT/'curation_spec.json')==recovery['old_spec_sha256']
+    else:assert not(OUT/'curation_spec.json').exists()
+    notes=json.loads((OUT/'source_review_notes.json').read_text('utf8'));spec={k:[]for k in['sources','tables','units','facts','caps','responses','synthesis','candidates','decisions','feature_decisions','wetting']}
+    with closing(ro(ROOT/'全库复检与特征补提取_20261021/full_corpus_search_native.sqlite'))as c:
+        for s in notes['sources']:
+            path=ROOT/s['path'];assert sha(path)==s['sha256'];r=E.parse(path).getroot();doi=s['doi'];years={int(y.text)for y in r.findall('.//article-meta/pub-date/year')};assert len(years)==1
+            spec['sources'].append(dict(s,key=DOC[doi],title=clean(r.find('.//article-title')),year=years.pop(),scope_class='commercial_AC_origin_unverified_method_reference'if doi==RF else'original_biomass_research'))
+            raw={x[1]:x[0]for x in c.execute('select table_id,locator from raw_tables_v11 where source_sha256=?',(s['sha256'],))}
+            identity_roles=c.execute('select identity_key,role,basis from identity_sources where sha256=?',(s['sha256'],)).fetchall()
+            primary_dois={x.text.lower()for x in r.findall('./front/article-meta/article-id')if x.get('pub-id-type')=='doi'}
+            assert {x[0]for x in identity_roles}=={'doi:'+doi}and primary_dois=={doi}
+            spec['sources'][-1]['identity_evidence']=dict(catalogue_roles=identity_roles,primary_ids=[dict(kind=x.get('pub-id-type'),value=x.text)for x in r.findall('./front/article-meta/article-id')],same_DOI_multiple_catalogue_roles_not_multiple_sources=True)
+            for t in r.findall('.//table-wrap'):
+                id=t.get('id');loc='XML table-wrap '+id;comparison=(doi==MA and id=='tab3')or(doi==LE and id=='tab1')or(doi==FU and id.endswith('t004'))or(doi==RF and id=='tab4')
+                spec['tables'].append(dict(doi=doi,id=id,document=DOC[doi],locator=loc,caption=clean(t.find('caption')),footnote=clean(t.find('table-wrap-foot')),grid=xml_grid(t),raw_table_id=raw[loc],kind='mixed_comparison_own_rows_only'if comparison else'own_EIS_table_caption_mismatch'if doi==FU and id.endswith('t003')else'own_xml_table'))
+    def u(doi,id,header,rows,locator,doc=None,kind='own_numeric_prose'):
+        spec['units'].append(dict(doi=doi,id=id,header=header,rows=rows,locator=locator,document=doc or DOC[doi],kind=kind));return id
+    def f(doi,s,id,row,col,field,unit,method,part=None,status='own_reported_method_qualified'):
+        spec['facts'].append(dict(doi=doi,sample=s,id=id,row=row,col=col,field=field,unit=unit,method=method,part=part,status=status))
+    def cap(doi,s,id,row,col,j=None,select=False,purpose=None,part=None,status='own_reported',**cond):
+        spec['caps'].append(dict(doi=doi,sample=s,id=id,row=row,col=col,j=j,select=select,purpose=purpose,part=part,status=status,conditions=cond))
+    def resp(doi,s,id,row,col,metric,unit,part=None,**extra):spec['responses'].append(dict(doi=doi,sample=s,id=id,row=row,col=col,metric=metric,unit=unit,part=part,extra=extra))
+    def decision(doi,id,text):spec['decisions'].append(dict(id='LP13_'+id,doi=doi,decision=text))
+    def choose(doi,s,field,value,reason):spec['feature_decisions'].append(dict(doi=doi,sample=s,field=field,selected_value=value,reason=reason,author_erratum_claimed=False))
+    # Mango: detailed own table, in-source abstract dissent, and four separately bound samples.
+    for row,s in enumerate(NAMES[MA],2):
+        for col,field,unit in[(1,'BET_surface_area_m2_g','m2/g'),(2,'total_pore_volume_cm3_g','cm3/g'),(3,'mean_pore_diameter_reported_nm','nm')]:f(MA,s,'tab1',row,col,field,unit,'OwnTable1 BET/t-plot descriptions; poremean not silently4V/A')
+    id=u(MA,'own_material_prose',['sample','BET','mass_mg'],[['MK7','330.3','2.3'],['MK8','1090.2','2.0'],['MK9','1348.5','2.61'],['MK10','850.4','2.73']],'body6 individual3E loading masses; body11Table1BET; loadingmg notmg/cm2')
+    for row,s in enumerate(NAMES[MA],1):f(MA,s,id,row,2,'active_mass_mg_reported','mg','Individual3E workingelectrode active mass, not device5mg')
+    for place,value in [('abstract','1348.9'),('body11','1348.5'),('conclusion34','1348.5')]:
+        id=u(MA,'BET_'+place,['sample','BET'],[['MK9',value]],'Own'+place+' vsdetailedTable1; eachlocation separate, not independent measurements')
+        f(MA,'MK9',id,1,1,'BET_surface_area_m2_g','m2/g','Ownreport variant, workingselection in explicitdecision table',status='conflict_abstract_BET'if place=='abstract'else'own_repeated_report')
+    choose(MA,'MK9','BET_surface_area_m2_g',1348.5,'Use specifically bound ownTable1 supported bybody11/conclusion34 as working value; abstract1348.9 retained as dissent. No authorerratum/rawBETrecalculation claim; not a performance-based choice.')
+    id=u(MA,'Fig4h_EDS',['sample','C','O','Mg','P','K','particle_span'],[['MK10','84.86','10.9','.76','1.18','2.31','50.15']],'ActualFig4caption h=MK10; EDSinset percentages basisunspecified; 50.15nm is selectedimageparticleannotation, notporediameter',doc='MangoFig4_13',kind='own_printed_figure_annotations')
+    for col,e in enumerate(['C','O','Mg','P','K'],1):f(MA,'MK10',id,1,col,'EDS_'+e+'_reported_pct','%basis_unspecified','OwnFig4h/body12; no atom/wt conversion, not MK9')
+    f(MA,'MK10',id,1,6,'SEM_selected_particle_span_nm','nm','Single imageannotation, not samplemean or poremean')
+    id=u(MA,'structural_prose',['sample','d002','XRD002','XRD100','RamanD','RamanG','XPS_C','XPS_O'],[['MK9','3.5','25','43','1387','1532','284.75','530.89']],'body13..15; authorapproximate XRD/Raman positions; XPSsurvey peak energies not composition')
+    for col,field,unit in[(1,'XRD_d002_A','A'),(2,'XRD_002_position_deg','degree'),(3,'XRD_100_position_deg','degree'),(4,'Raman_D_reported_position_cm_inv','cm^-1'),(5,'Raman_G_reported_position_cm_inv','cm^-1'),(6,'XPS_C1s_survey_energy_eV','eV'),(7,'XPS_O1s_survey_energy_eV','eV')]:f(MA,'MK9',id,1,col,field,unit,'Author body13..15 quantities, not composition/IDIG',status='author_approximate_report'if col<=5 else'own_reported_method_qualified')
+    mcond=dict(system='3E',electrolyte='KOH',concentration_mol_L=3,voltage_lower_V=-1,voltage_upper_V=0,reference_electrode='SCE',capacitance_basis='single_working_carbon_electrode')
+    id=u(MA,'Fig7c_cap',['sample','C'],[[s,v]for s,v in zip(NAMES[MA],['107.9','124.9','205.8','132.2'])],'ActualFig7c printed bars; caption explicitly.25A/g',doc='MangoFig7_13',kind='own_printed_figure_annotations')
+    for row,s in enumerate(NAMES[MA],1):cap(MA,s,id,row,1,.25,select=True,**mcond)
+    id=u(MA,'body22_cap',['sample','C'],[[s,v]for s,v in zip(NAMES[MA],['107.9','124.9','205.8','132.2'])],'Ownbody22 samefour Fig7c reports, not four additional physical tests')
+    for row,s in enumerate(NAMES[MA],1):cap(MA,s,id,row,1,.25,status='own_repeat_not_new_test',**mcond)
+    electrolytes=['KOH','TEABF4/ACN+H2O','TEABF4/ACN','BMP-BTI/ACN','BMP-BTI','EMIM-BTI','EMIM-BF4']
+    id=u(MA,'Fig8c_devices',['sample','electrolyte','C'],[['MK9',salt,v]for salt,v in zip(electrolytes,['112.4','78.8','53.6','69.8','41.1','44.7','74'])],'ActualFig8c SEVENbars; current/concentration ofnonKOH notstated; no six-source truncation',doc='MangoFig8_13',kind='own_printed_figure_annotations')
+    for i,salt in enumerate(electrolytes,1):cap(MA,'MK9',id,i,2,system='2E_symmetric',electrolyte=salt,concentration_mol_L=3 if salt=='KOH'else None,voltage_lower_V=None,voltage_upper_V=None,capacitance_basis='author_Cs_factor4_total_active_mass',author_total_active_mass_mg=5,voltage_binding='RepresentativeFig8GCD/freshwindow notassumedidentical to maximumbar or100kcycle',current_missing=True)
+    id=u(MA,'device_prose_variants',['sample','electrolyte','C'],[['MK9','KOH','112.4'],['MK9','EMIM-BTI','46']],'body31 same devicecomparison; EMIMBTI46 vs actualFig8c44.7 dissent')
+    for i,salt in enumerate(['KOH','EMIM-BTI'],1):cap(MA,'MK9',id,i,2,system='2E_symmetric',electrolyte=salt,concentration_mol_L=3 if i==1 else None,capacitance_basis='author_Cs_factor4_total_active_mass',status='own_repeat_not_new_test'if i==1 else'conflict_prose46_figure44point7')
+    cap(MA,'MK9','tab3',13,5,system='2E_symmetric',electrolyte='KOH',concentration_mol_L=3,capacitance_basis='author_Cs_factor4_total_active_mass',status='own_comparison_repeat_not_new_test',voltage_lower_V=0,voltage_upper_V=1.2,window_scope='owncomparisontable, notautomaticallyfreshFig8barwindow')
+    for col,metric,unit in[(3,'device_energy_density','Wh/kg'),(4,'device_power_density','W/kg')]:resp(MA,'MK9','tab3',13,col,metric,unit,same_operating_point_not_confirmed=True)
+    id=u(MA,'energy_prose',['sample','E','P'],[['MK9','12.32','5137.86'],['MK9','44.78','249']],'body31 peakKOH /EMIMBTI3V; no assumption maxima sharej')
+    for i in[1,2]:resp(MA,'MK9',id,i,1,'device_energy_density','Wh/kg');resp(MA,'MK9',id,i,2,'device_power_density','W/kg')
+    for row,s in enumerate(NAMES[MA],2):
+        for col,metric,unit in[(1,'EIS_Rs','ohm'),(3,'EIS_C','mF'),(4,'EIS_W','author_ohm_s_half'),(5,'EIS_chi2','fit_chi2_not_ML_R2')]:resp(MA,s,'tab2',row,col,metric,unit)
+    id=u(MA,'CPE_parameters',['sample','Q','N'],[[s,q,n]for s,q,n in zip(NAMES[MA],['.423','.452','.694','.528'],['.98','.99','.94','1.0'])],'OwnTable2 packedQ(N) split literal numbers; Q columnauthorunit ΩsN retained')
+    for i,s in enumerate(NAMES[MA],1):resp(MA,s,id,i,1,'EIS_CPE_Q','author_table_ohm_s^N');resp(MA,s,id,i,2,'EIS_CPE_N','ratio')
+    id=u(MA,'cycle_Fig10',['sample','retention','CE','cycles','j','Vmax'],[['MK9','79.3','65','100000','2','1.2']],'ActualFig10a rightaxisgreen79.3retention/leftaxisblue65CE; actual10b/c/d0..1.2V; body32j2Ag',doc='MangoFig10_13',kind='own_printed_figure_annotations')
+    for col,metric,unit in[(1,'cycling_retention','%'),(2,'coulombic_efficiency','%'),(3,'cycle_count','cycles'),(4,'cycle_current','A/g')]:resp(MA,'MK9',id,1,col,metric,unit)
+    id=u(MA,'body32_CE_role_dissent',['sample','CE_claim'],[['MK9','79.3']],'Ownbody32 labels79.3 asCE; actualFig10a right-axis retention79.3/left-axisCE65 retained separately')
+    resp(MA,'MK9',id,1,1,'coulombic_efficiency','%',source_role_conflict=True,selected_for_role=False)
+    spec['candidates'].append(dict(candidate_id='LP13_Mango_MK9_2E_C100000',doi=MA,sample='MK9',record=dict(system='2E_symmetric',method='GCD',metric_kind='capacitance_retention',source_year=2025,retention_pct=79.3,retention_relation='eq',cycle_count=100000,reported_current_A_g=2,cycle_voltage_lower_V=0,cycle_voltage_upper_V=1.2,electrolyte='KOH',concentration_mol_L=3,baseline_reference='author_initial_normalized_Fig10a_reference',baseline_cycle=None,reference_electrode=None,BET_m2_g=1348.5,BET_working_value_abstract_dissent=True,purpose_reviewed_candidate_ready=True,admission_still_required=True,locator='ActualFig10a/b/c/d +body8/32/33; Eq2 authorfactor4; body32CErole error preserved',curve_group='doi:'+MA+':Fig10a_retention',competing_prose=dict(body32_calls_79point3_CE=True,generic_asymmetric_ZS_GP_template_wording_not_used_for_material_identity=True))))
+    # Leather: allfour EDS compositions, separate XPS parenthesis, fullSI response coefficients.
+    for row,s in enumerate(NAMES[LE],3):
+        f(LE,s,'tab2',row,1,'reported_carbon_yield_pct','%basis_not_further_specified','OwnTable2 product yield, not final composition')
+        for col,e in enumerate(['C','N','S','O'],2):f(LE,s,'tab2',row,col,'EDS_'+e+'_reported_pct','%basis_unspecified','Footnoteoutside=EDS, no wt/atlabel; do not convert',part='outside'if s=='A-NSC8'else None)
+        if s=='A-NSC8':
+            for col,e in enumerate(['C','N','S','O'],2):f(LE,s,'tab2',row,col,'XPS_'+e+'_reported_pct','%basis_unspecified','Footnoteinside=XPS; no explicit at/wt label, not EDS',part='inside')
+        for col,field,unit in[(6,'BET_surface_area_m2_g','m2/g'),(7,'total_pore_volume_cm3_g','cm3/g'),(8,'average_pore_diameter_reported_nm','nm'),(9,'water_contact_angle_time_unspecified_deg','degree')]:f(LE,s,'tab2',row,col,field,unit,'OwnTable2; A-NSC7 porefields blank, not inherited; contactangle time unreported')
+        cap(LE,s,'tab2',row,10,5,select=True,system='3E',electrolyte='KOH',concentration_mol_L=1,voltage_lower_V=0,voltage_upper_V=.5,reference_electrode='Ag/AgCl_saturated_KCl',capacitance_basis='single_working_carbon_electrode')
+        resp(LE,s,'tab2',row,11,'coulombic_efficiency','%',current_A_g=5,not_cycling_retention=True)
+    id=u(LE,'BET_precision',['sample','BET'],[['A-NSC6','531.71'],['A-NSC8','2214.50']],'body24 ownadditionalprecision; Table2 rounds532/2215')
+    for i,s in enumerate(['A-NSC6','A-NSC8'],1):f(LE,s,id,i,1,'BET_surface_area_m2_g','m2/g','Ownprose additionalprecision, tableintegerrounding retained')
+    choose(LE,'A-NSC6','BET_surface_area_m2_g',531.71,'Ownbody24 precision531.71 rounds to Table2 532; not a secondmeasurement.')
+    choose(LE,'A-NSC8','BET_surface_area_m2_g',2214.5,'Ownbody24 precision2214.50 at half-unit boundary matches publishedinteger2215 using half-up rounding; table/abstract retained, not a new measurement.')
+    cap(LE,'A-NSC8','tab1',18,6,1,select=True,system='3E',electrolyte='KOH',concentration_mol_L=1,voltage_lower_V=0,voltage_upper_V=.5,reference_electrode='Ag/AgCl_saturated_KCl',capacitance_basis='single_working_carbon_electrode',current_basis='body27 explicitly1158 at1Ag; tablecyclecurrent not borrowed')
+    id=u(LE,'GCD_1158_repeats',['sample','C','place'],[['A-NSC8','1158','abstract'],['A-NSC8','1158','body27'],['A-NSC8','1158','conclusion37']],'Ownsame1158GCD@1Ag reports, not independent tests')
+    for i in[1,2,3]:cap(LE,'A-NSC8',id,i,1,1,system='3E',electrolyte='KOH',concentration_mol_L=1,voltage_lower_V=0,voltage_upper_V=.5,reference_electrode='Ag/AgCl_saturated_KCl',capacitance_basis='single_working_carbon_electrode',status='own_repeat_not_new_test')
+    si=[['NSC','28.3','16.7','1.0','9.1','3.9'],['A-NSC6','11.2','18.3','1.0','5.9','12.8'],['A-NSC7','9.6','26.7','1.0','4.5','20.9'],['A-NSC8','6.7','75.1','1.o','1.3','33.1']]
+    id=u(LE,'SI_TableS1',['sample','Rs_ohm','Cdl_times1e5_F','Rct_times1e3_ohm','Zw_times1e3_ohm','Cp_times1e3_F'],si,'SIp5 actualTableS1 multiplicativecolumnheaders; A8 Rct printed1.o malformed',doc='LeatherSI13',kind='own_SI_table')
+    for i,s in enumerate(NAMES[LE],1):
+        for col,metric,unit in[(1,'EIS_Rs','ohm'),(2,'EIS_Cdl_scaled_coefficient','author_Cdl_times1e5_F'),(3,'EIS_Rct_scaled_coefficient','author_Rct_times1e3_ohm'),(4,'EIS_Zw_scaled_coefficient','author_Zw_times1e3_ohm'),(5,'EIS_Cp_scaled_coefficient','author_Cp_times1e3_F')]:resp(LE,s,id,i,col,metric,unit,part='malformed'if i==4 and col==3 else None,source_scale_preserved=True,not_pretest_predictor=True)
+    id=u(LE,'spectral_assignments',['sample','component','BE'],[['A-NSC8',label,value]for label,value in[('C_CC','282.4'),('C_CdoubleC','283.2'),('C_CN','284.1'),('C_CS','284.2'),('C_CO','286.5'),('N_pyridinic','398.9'),('N_pyrrolic','400.1'),('N_graphitic','401.5'),('S_CS','163.1'),('S_CdoubleS','166.6'),('O_quinone','529.6'),('O_phenol_ether','531.1')]],'body21 author assignments; fiveCpeaks after wordfour retained, no chemical relabel')
+    for i,row in enumerate(next(x['rows']for x in spec['units']if x['doi']==LE and x['id']==id),1):f(LE,'A-NSC8',id,i,2,'XPS_'+row[1]+'_binding_energy_eV','eV','Ownauthorcomponentassignment, not elementconcentration')
+    id=u(LE,'Trasatti_energy',['sample','Ctotal','Couter','diffusion_max','E','P'],[['A-NSC8','1076','36','97','40','250']],'body31/33: fittedCVlimit/chargecontributions and3E Ragone quantities, not deviceperformance')
+    for col,metric,unit in[(1,'Trasatti_total_limit_C','F/g'),(2,'Trasatti_outer_limit_C','F/g'),(3,'diffusion_controlled_maximum_contribution','%'),(4,'three_electrode_energy_density','Wh/kg'),(5,'three_electrode_power_density','W/kg')]:resp(LE,'A-NSC8',id,1,col,metric,unit,system='3E')
+    id=u(LE,'cycles_Fig5F',['sample','retention','cycles','j'],[['A-NSC8','99.2','10000','10']],'ActualFig5F printed99.2/caption10Ag andbody13/28; Table1ownrow99%@1Ag preserved',doc='LeatherFig5_13',kind='own_printed_figure_annotations')
+    for col,metric,unit in[(1,'cycling_retention','%'),(2,'cycle_count','cycles'),(3,'cycle_current','A/g')]:resp(LE,'A-NSC8',id,1,col,metric,unit)
+    spec['candidates'].append(dict(candidate_id='LP13_Leather_ANSC8_3E_C10000',doi=LE,sample='A-NSC8',record=dict(system='3E',method='GCD',metric_kind='capacitance_retention',source_year=2026,retention_pct=99.2,retention_relation='eq',cycle_count=10000,reported_current_A_g=10,cycle_voltage_lower_V=0,cycle_voltage_upper_V=.5,electrolyte='KOH',concentration_mol_L=1,reference_electrode='Ag/AgCl_saturated_KCl',baseline_reference='author_initial_capacitance_Fig5F',baseline_cycle=None,BET_m2_g=2214.5,purpose_reviewed_candidate_ready=True,admission_still_required=True,locator='ActualFig5F printed99.2 +caption10Ag/body13/28;3Ecommonmethod10; detailedbody24BET',curve_group='doi:'+LE+':Fig5F',competing_table_cycle_current_A_g=1,competing_table_retention_pct=99,element_percent_basis_unreported=True)))
+    # Furfural rawanalysis cannot become final-carbon composition; finalZnS is explicit.
+    for col,field,unit in[(1,'moisture_wt_ad_pct','wt%air_dried'),(2,'ash_wt_ad_pct','wt%air_dried'),(3,'volatile_wt_ad_pct','wt%air_dried'),(4,'fixed_carbon_wt_ad_pct','wt%air_dried'),(5,'C_wt_daf_pct','wt%dry_ash_free'),(6,'H_wt_daf_pct','wt%dry_ash_free'),(7,'N_wt_daf_pct','wt%dry_ash_free'),(8,'S_wt_daf_pct','wt%dry_ash_free'),(9,'O_wt_daf_pct','wt%dry_ash_free')]:f(FU,'raw_FR','polymers-16-03421-t001',3,col,'feedstock_'+field,unit,'OwnrawFR only; ad/daf separate; no transfer to finalPC')
+    for row,s in enumerate(NAMES[FU][1:],2):
+        for col,field,unit in[(1,'BET_surface_area_m2_g','m2/g'),(2,'total_pore_volume_cm3_g','cm3/g'),(3,'micropore_volume_cm3_g','cm3/g'),(4,'average_pore_diameter_reported_nm','nm')]:f(FU,s,'polymers-16-03421-t002',row,col,field,unit,'OwnTable2/SI BET/tplot; finalnativeSiO2/allAPS ZnSresidue preserved')
+    id=u(FU,'Raman_Fig8',['sample','ID_IG'],[[s,v]for s,v in [('FR900','.98'),('PC700-1','1.17'),('PC800-1','1.15'),('PC900-0','1.10'),('PC900-0.1','1.05'),('PC900-0.5','1.08'),('PC900-1','1.08'),('PC950-1','1.06')]],'ActualFig8a/b printedratios; PC900-0 repeated acrosspanels notnewmaterial',doc='FurfuralFig8_13',kind='own_printed_figure_annotations')
+    for i,row in enumerate(next(x['rows']for x in spec['units']if x['doi']==FU and x['id']==id),1):f(FU,row[0],id,i,1,'Raman_ID_IG','ratio','AuthorD/G intensity ratio from ownFig8 annotation')
+    id=u(FU,'final_characterization',['sample','contact','Zn_wt','S_wt'],[['PC900-0','8.7','',''],['PC900-1','34.2','1.19','19.26']],'body23 contactangles; body28 ICP_OESfinalZn1.19wt%;conclusion45S19.26wt% methodunspecified')
+    for i,s in enumerate(['PC900-0','PC900-1'],1):f(FU,s,id,i,1,'water_contact_angle_time_unspecified_deg','degree','Ownbody23 labels opposeactualFig5/caption, retainprose asdissent',status='conflict_prose_figure_contact_labels')
+    f(FU,'PC900-1',id,2,2,'ICP_OES_Zn_wt_pct','wt%','OwnfinalcarbonICP-OES; ZnSidentifiedXRD, no conversion to ZnSwt%')
+    f(FU,'PC900-1',id,2,3,'author_S_wt_pct_method_unspecified','wt%','Ownconclusion45; explicitwt%, methodnotlinked, not XPS/EDSatom%')
+    id=u(FU,'Fig5_contact',['sample','angle'],[['PC900-0','34.2'],['PC900-1','8.7']],'ActualFig5a/b angleprints andcaptions opposebody23 sampleassignment; do notresolvebyexpectedhydrophilicity',doc='FurfuralFig5_13',kind='own_printed_figure_annotations')
+    for i,s in enumerate(['PC900-0','PC900-1'],1):f(FU,s,id,i,1,'water_contact_angle_time_unspecified_deg','degree','OwnFig5samplecaption andangleannotations; proseopposes, canonicalfrozen',status='conflict_prose_figure_contact_labels')
+    id=u(FU,'Raman_components',['sample','I','D','Dprime','G'],[['PC900-1','1182','1320','1428','1585']],'body30 ownPC9001 fourcomponentRamanfit')
+    for col,name in enumerate(['I','D','Dprime','G'],1):f(FU,'PC900-1',id,1,col,'Raman_fitted_'+name+'_position_cm_inv','cm^-1','Ownfourcomponentfit, not new IDIG computation')
+    id=u(FU,'GCD_prose',['sample','j','C'],[['PC900-1','.5','153.03'],['PC900-1','20','102'],['PC900-0.1','.5','141.32'],['PC900-0.1','20','114.32']],'body34 ownGCD pointvalues; residualZnS/SiO2 separatepurpose, notordinarypurecarbon')
+    for i,(s,j)in enumerate([('PC900-1',.5),('PC900-1',20),('PC900-0.1',.5),('PC900-0.1',20)],1):cap(FU,s,id,i,2,j,purpose='reported_template_ZnS_residue_3e_GCD',system='3E',electrolyte='KOH',concentration_mol_L=6,voltage_lower_V=-1,voltage_upper_V=0,reference_electrode='Hg/HgO',capacitance_basis='single_working_carbon_electrode',final_ZnS_XRD_present=True,native_SiO2_XRD_present=True,ICP_Zn_quantified_only_for_PC9001=True)
+    cap(FU,'PC900-1','polymers-16-03421-t004',7,2,.5,system='3E',electrolyte='KOH',concentration_mol_L=6,voltage_lower_V=-1,voltage_upper_V=0,reference_electrode='Hg/HgO',capacitance_basis='single_working_carbon_electrode',status='own_comparison_rounded_not_new_test')
+    for row,s in enumerate(['FR900','PC700-1','PC800-1','PC900-1','PC950-1','PC900-0','PC900-0.1','PC900-0.5'],2):
+        for col,name in enumerate(['Rs','Rct','Wd'],1):resp(FU,s,'polymers-16-03421-t003',row,col,'EIS_'+name,'ohm',caption_wrong_rawFR_analysis=True,not_pretest_predictor=True)
+    id=u(FU,'rate_and_kinetics',['sample','retention','b','cap5','cap60'],[['PC900-1','66.7','.938','72','90'],['PC900-0.1','80.7','','']],'body34/39; retention is20Ag/.5Ag rate, b kinetics andscancontributions not cycling')
+    for i,s in enumerate(['PC900-1','PC900-0.1'],1):resp(FU,s,id,i,1,'rate_capacitance_retention','%',current_from_A_g=.5,current_to_A_g=20,not_cycle_lifetime=True)
+    for col,name,unit in[(2,'CV_oxidation_b_fit','fit_exponent'),(3,'capacitive_contribution_at5mV_s','%'),(4,'capacitive_contribution_at60mV_s','%')]:resp(FU,'PC900-1',id,1,col,name,unit)
+    # Commercial originunknown: all9variants and alltables retained as methodreference.
+    mapping=[(2,'NEAT_AC')]+[(r,a+'_'+v+'pct')for a,rows in [('Emim',[5,6,7,8]),('Bmim',[11,12,13,14])]for r,v in zip(rows,['0.25','0.5','1','1.25'])]
+    rcond=dict(system='3E',electrolyte='KOH',concentration_mol_L=1,voltage_lower_V=None,voltage_upper_V=None,reference_electrode='Hg/HgO',capacitance_basis='author_3e_reported_active_mass',source_origin_class='commercial_AC_origin_unverified',plot_axes_lower_V=-1,plot_axes_upper_V=.4,visible_peak_approx_V=.3,plot_axis_not_filled_as_canonical_window=True)
+    for row,s in mapping:
+        cap(RF,s,'tab1',row,1,1,part='mean',status='commercial_origin_unverified_reference_mean',reported_plusminus=number(next(t for t in spec['tables']if t['doi']==RF and t['id']=='tab1')['grid'][row-1][1]['raw'],'uncertainty'),plusminus_statistic='not_explicit_SD_SEM_CI',**rcond)
+        for col,metric,unit in[(1,'EIS_Rs','ohm'),(2,'EIS_Rs_fit_error','author_Error%'),(3,'EIS_Rct','ohm'),(4,'EIS_Rct_fit_error','author_Error%')]:resp(RF,s,'tab3',row,col,metric,unit,not_pretest_predictor=True)
+    selected=['NEAT_AC','Emim_0.25pct','Bmim_0.5pct']
+    for row,s in enumerate(selected,2):
+        for col,j in enumerate([.5,1,2,3,5],1):cap(RF,s,'tab2',row,col,j,status='commercial_reference_same_j1_repeat'if j==1 else'commercial_origin_unverified_reference',**rcond)
+    for col,s in enumerate(selected,1):
+        for row,field,unit in[(2,'BET_surface_area_m2_g','m2/g'),(3,'micropore_surface_area_m2_g','m2/g'),(4,'external_surface_area_m2_g','m2/g'),(5,'total_pore_volume_cm3_g','cm3/g'),(6,'micropore_volume_cm3_g','cm3/g'),(7,'reported_BET_pore_diameter_nm','nm')]:f(RF,s,'tab5',row,col,field,unit,'OwnreferenceTable5; externalarea notmesoporearea; other6loadingvariants notinherited')
+    for row,(s,t)in enumerate([(s,t)for s in selected for t in[0,3,6]],2):
+        f(RF,s,'tab6',row,2,'water_contact_angle_t'+str(t)+'s_deg','degree','OwnTable6 dynamicwetting time explicitly'+str(t)+'s; no poolinginitial andstable angles')
+        spec['wetting'].append(dict(doi=RF,sample=s,id='tab6',row=row,col=2,time_s=t))
+    for s in NAMES[RF][1:]:
+        agent,value=s.split('_');id=u(RF,'recipe_'+s,['sample','loading'],[[s,value.removesuffix('pct')]],'body8/9 nominal ILloadingmasspercentage, denominatornotexplicit andnotfinalmeasuredcomposition')
+        f(RF,s,id,1,1,'nominal_IL_recipe_loading_author_pct','%nominal_basis_unspecified','Authorloading gradient, not finalB/F/Npercentage',status='reported_nominal_recipe_not_final_composition')
+    peakrows=[('NEAT_AC','O_CO','531.68'),('NEAT_AC','O_CdoubleO','533.08'),('NEAT_AC','C_CC','284.78'),('NEAT_AC','C_CO','285.88'),('NEAT_AC','C_OCO','289.28'),('Emim_0.25pct','O_CO','531.78'),('Emim_0.25pct','O_CdoubleO','533.18'),('Emim_0.25pct','C_CC','284.88'),('Emim_0.25pct','C_CN','285.58'),('Emim_0.25pct','C_CO','286.78'),('Emim_0.25pct','C_CN_CO','288.48'),('Emim_0.25pct','C_OCO','289.78'),('Emim_0.25pct','N_C2NH_C2N','399.17'),('Emim_0.25pct','N_CN3','401.19'),('Bmim_0.5pct','O_CO','531.48'),('Bmim_0.5pct','O_CdoubleO','532.98'),('Bmim_0.5pct','C_CC','284.78'),('Bmim_0.5pct','C_CN','286.01'),('Bmim_0.5pct','C_CO','287.6'),('Bmim_0.5pct','C_CN_CO','289.26'),('Bmim_0.5pct','C_OCO','291.19'),('Bmim_0.5pct','N_C2NH_C2N','398.98'),('Bmim_0.5pct','N_CN3','400.88'),('Emim_1.25pct','B_BF','191.9'),('Emim_1.25pct','F_BF','684.9'),('Bmim_1.25pct','B_BF','192.3'),('Bmim_1.25pct','F_BF','685.1')]
+    id=u(RF,'XPS_prose36',['sample','component','BE'],[list(r)for r in peakrows],'body36 +actualFig6panelassignment; energies authorapprox, not atom%')
+    for i,(s,label,value)in enumerate(peakrows,1):f(RF,s,id,i,2,'XPS_'+label+'_reported_energy_eV','eV','Authorapproximatecomponentposition; proseOassignment order retainednot silentlyrelabelled',status='author_approximate_report')
+    id=u(RF,'XPS_low_load_ND',['sample','B','F'],[['Emim_0.25pct','',''],['Bmim_0.5pct','','']],'body35/36 optimal lowloadingB/F notobserved, detectionlimitsunknown; notzero')
+    for row,s in enumerate(['Emim_0.25pct','Bmim_0.5pct'],1):
+        for col,e in[(1,'B'),(2,'F')]:f(RF,s,id,row,col,'XPS_'+e+'_not_detected_reported_pct','%basis_unspecified','Authornotobserved lowloading; limitunknown, notzero',status='not_detected_limit_unknown')
+    for row,s in enumerate(selected,5):
+        original=next(t for t in spec['tables']if t['doi']==RF and t['id']=='tab4')['grid'][row-1]
+        retention=number(original[4]['raw'].removesuffix('%'));u(RF,'cycle_'+s,['sample','retention','cycles','j'],[[s,str(retention),'10000','1']],'OwnTable4row'+str(row)+' +body29/captionFig4g2E; GCDpanels showHgHgO signed axes, canonicalcellwindow unresolved')
+        resp(RF,s,'cycle_'+s,1,1,'cycling_retention','%',system_author='2E_symmetric',reference_only=True)
+        spec['candidates'].append(dict(candidate_id='LP13_Interface_'+s+'_2E_C10000',doi=RF,sample=s,record=dict(source_year=2026,system='2E_symmetric',method='GCD',metric_kind='capacitance_retention',retention_pct=retention,retention_relation='eq',cycle_count=10000,reported_current_A_g=1,electrolyte='KOH',concentration_mol_L=1,cycle_voltage_lower_V=None,cycle_voltage_upper_V=None,baseline_cycle=None,baseline_reference='author_capacitance_retention_reference',reference_electrode=None,reference_only=True,biomass_origin_confirmed=False,purpose_reviewed_candidate_ready=False,reason='Commercialprecursororiginunreported; claimed2Edevicefigures useHgHgO signedpotential axis, physicalcellwindow notresolved; authorformula2Imdt notunified',locator='OwnTable4/body29/Fig4g+caption; do not transfer3Econfig',curve_group='doi:'+RF+':Fig4g:'+s)))
+    # Stage-specific recipes, allconditions retained rather than guessing missing durations or drybinder fractions.
+    for i,s in enumerate(NAMES[MA]):spec['synthesis'].append(dict(doi=MA,sample=s,document=DOC[MA],locator='body5/6; body8 device',stages=[dict(stage='carbonization',single_nonactivated_process=True,temperature_C=[700,800,900,1000][i],duration_h=None,heating_rate_C_min=10,cooling_rate_C_min=2,atmosphere='N2',activating_agent=None,sieve_um=60),dict(stage='electrode_preparation',carbon_wt_pct=90,PVDF_wt_pct=5,carbonblack_wt_pct=5,collector='Ni_foam',active_mass_mg=[2.3,2,2.61,2.73][i],drying_C=80,drying_duration='overnight',press_kg_cm2=100),dict(stage='symmetric_device_if_MK9',used=s=='MK9',per_electrode_active_mass_mg=2.5 if s=='MK9'else None,total_active_mass_mg=5 if s=='MK9'else None,separator='Whatman_glass_microfiber',press_PSI=1000 if s=='MK9'else None)]))
+    for s in NAMES[LE]:
+        stages=[dict(stage='precarbonization',temperature_C=400,duration_h=1,atmosphere='N2',pre_drying_C=100,pre_drying_duration_h=None)]
+        if s!='NSC':stages.append(dict(stage='chemical_activation',temperature_C=int(s[-1])*100,duration_h=1,atmosphere='N2',agent='KOH',carbon_to_activator_mass_ratio=[1,3],heating_rate_C_min=None,extra400C_activation_wording_ambiguous=True,ambiguous400C_hold_not_added_to_canonical_duration=True))
+        stages.append(dict(stage='electrode_preparation',carbon_wt_pct=95,PVDF_wt_pct=5,solvent='NMP',collector='graphite_rod',collector_diameter_mm=6.15,casting_volume_uL_range=[25,30],cast_repetitions_range=[2,3],drying_C=80,drying_duration='overnight',active_mass_mg=None,not_inferred_from_cast_volume=True));spec['synthesis'].append(dict(doi=LE,sample=s,document=DOC[LE],locator='body7/8/10; no extra400Chold guessed',stages=stages))
+    for s in NAMES[FU]:
+        if s=='raw_FR':continue
+        temp=900 if s=='FR900'else int(s[2:5]);ratio=None if s=='FR900'else float(s.split('-')[1])
+        stages=[dict(stage='feedstock_water_wash',stirring_h=24,drying_C=80,drying_h=24,sieve_mesh=10),dict(stage='single_carbonization_template_activation',temperature_C=temp,duration_h=2,heating_rate_C_min=5,atmosphere='N2',nitrogen_purity_pct=99.9,raw_FR_ZnO_APS_mass_parts=None if s=='FR900'else[1,1,ratio],post_wash_HCl_M=1,post_drying_C=105,post_drying_h=12,final_native_SiO2_XRD_present=True,final_ZnS_XRD_present=s not in['FR900','PC900-0']),dict(stage='electrode_preparation',carbon_wt_pct=80,carbonblack_wt_pct=10,PTFE_wt_pct=10,collector='Ni_foam',carbon_sheet_thickness_approx_um=100,sheet_area_cm2=1,collector_area_cm2=2,drying_C=80,drying_h=12,vacuum=True,conditioning_cycles=50,conditioning_scan_mV_s=50)]
+        stages[-1].update(evidence_document='FurfuralSI13',evidence_locator='SIp2/3 electrodepreparation andconditioning')
+        spec['synthesis'].append(dict(doi=FU,sample=s,document=DOC[FU],locator='mainbody8..11 +SIp2/3; per-stageelectrodeSI pointer; finalresidue not assumedremoved',stages=stages))
+    for s in NAMES[RF]:
+        agent=None if s=='NEAT_AC'else s.split('_')[0];loading=None if agent is None else float(s.split('_')[1].removesuffix('pct'))
+        stages=[dict(stage='commercial_carbon_substrate',vendor='Jiangsu_Xianfeng',product='XFP01',feedstock_origin=None),dict(stage='IL_reagent_predrying_if_modified',applied=agent is not None,temperature_C=100,duration_h=24,vacuum_MPa=-.1),dict(stage='surface_impregnation_if_modified',applied=agent is not None,IL=agent,nominal_IL_loading_author_pct=loading,nominal_mass_denominator_unspecified=True,acetone_mL=20,initial_IL_stirring_h=1,AC_stirring_h=4,drying_C=60,drying_h=12),dict(stage='electrode_preparation',carbon_carbonblack_binder_solution_mass_parts=[8,1,1],binder='PVDF_NMP_solution',binder_solution_concentration_mg_mL=15,binder_solution_mixing_h=48,final_dry_PVDF_wt_pct=None,collector='Ni_foam',collector_size_cm=[1,2],coated_area_cm2=1,slurry_volume_uL=25,stirring_h=4,drying_C=60,drying_duration='overnight',vacuum=True)]
+        spec['synthesis'].append(dict(doi=RF,sample=s,document=DOC[RF],locator='body7..16; binder solution ratio not drysolids80/10/10',stages=stages))
+    for doi,id,text in[(MA,'BET_working_value','Table1/body11/conclusion34 1348.5 workingselection, abstract1348.9 dissent kept, noerratum claimed.'),(MA,'cycle_roles','ActualFig10a rightaxisgreen79.3 retention, leftaxisblue65 CE; body32 calls79.3CE butaxis evidence selected. Cycle0..1.2 Fig10b/c/d;2Ag100000body32.'),(MA,'device_identity','OwnsameMK9twoelectrodes/symmetricCR2032 bound; genericasymmetric/ZS_GP wording retained as template residue, not new material or secondsystem.'),(MA,'seven_electrolytes','ActualFig8c7bars override prosecount6 for enumeration. CurrentnonKOHconcentration missing, not guessed. EMIMBTI44.7figure vs46body31 unresolved, no selectbyperformance.'),(MA,'EDS_identity','OwnFig4h belongsMK10, not MK9; percentagebasisunspecified. Selected50.15nm particle span not porediameter.'),(LE,'cycle_actual_figure','ActualFig5F99.2/caption10Ag +methods13/results28 selected; Table1own99%@1Ag dissent preserved.99 matchesintegerrounding, current1vs10 corrected forcurrentpurpose.'),(LE,'EDS_XPS_basis','FootnoteEDSoutside/XPSinsideparenthesis. Neither labeledwt/at; method-specific unreportedbasis channels, not canonicalatom%. No Cr0 fromTGA residueclaim.'),(LE,'activation_stage','Precarbon400C1h and final600/700/800C1h clear; additional400Cactivation sentence ambiguous, not automatically summed.'),(LE,'SI_scaled_EIS','ActualSI_TableS1 scaledheaders stored literally; A8 Rct1.o malformednotfilled1.0. EIS/Trasatti/3ERagone responses notpretest predictors or2Edeviceperformance.'),(FU,'final_ZnS','APSsamples retainXRDZnS after1MHCl; PC9001 finalICPZn1.19wt%, noassumedpurecarbon or derivedZnSpercent. NativeSiO2all samples; separatepurpose.'),(FU,'rate_not_cycle','66.7/80.7 are20vs.5Ag rate retention, no cyclelife test. 114.32/141.32=80.894% vsreported80.7 preservedarithdissent, not corrected to improve performance.'),(FU,'contact_direction','Ownbody23 assignsPC9000 8.7/PC9001 34.2; actualFig5a/b andcaption assign34.2/8.7. Bothreport sets retained, canonicalcontactangle frozen; do notchoosebyexpectedtrend.'),(FU,'raw_and_caption','RawFR ad/daf composition staysfeedstock. Table3captioncopiedrawanalysis butactualcells Rs/Rct/Wd; classify asEISresponses. FittedWd mismatch disclosedauthor not erased.'),(RF,'origin_reference','XFP01 sourceoriginunreported; commercialmethodreference, not automaticallybiomass or coal. All9nominalvariants retained; no porosity inheritance from3measuredvariants.'),(RF,'surface_IL_binder','ILsurfaceimpregnation, actual1MKOHaqueous electrolyte. 8:1:1 usesPVDFsolution15mg/mL; not80/10/10drysolids, no massloading from25uL.'),(RF,'cycle_system_conflict','Body29/captionFig4g2E, butFig4GCD/CV usesHgHgO signedpotentialaxes; physicalcellwindow unresolved. Preserveauthorfactor2 formula and2Ecandidates, no ordinarytrainingadmission.'),(RF,'dynamic_contact_ND','Wetting0/3/6s separated; Emiminitial45.73>neat44.3 butfinal7.8<14.33. LowloadingB/Fnotobserved hasunknownlimits, notzero; highloadingbindingenergies separate.'),(RF,'repeat_statistics','Table1 author mean± fromrepeats, statistic/n unreported. Table2j1 repeats are notnewindependenttests; retainothercurrents andallloadings asreference.')]:decision(doi,id,text)
+    write(OUT/'curation_spec.json',spec);print(json.dumps({k:len(v)for k,v in spec.items()}))
+
+def documents(spec):
+    notes=json.loads((OUT/'source_review_notes.json').read_text('utf8'));docs={s['key']:dict(doi=s['doi'],path=ROOT/s['path'])for s in spec['sources']}
+    docs.update(LeatherSI13=dict(doi=LE,path=ROOT/notes['leather_SI']['path']),FurfuralSI13=dict(doi=FU,path=EV/'polymers-3313966-supplementary.pdf'))
+    for key,doi,path in [('MangoFig4_13',MA,EV/'d5ra02129d-f4.jpg'),('MangoFig7_13',MA,EV/'d5ra02129d-f7.jpg'),('MangoFig8_13',MA,EV/'d5ra02129d-f8.jpg'),('MangoFig10_13',MA,EV/'d5ra02129d-f10.jpg'),('LeatherFig5_13',LE,EV/'d6ra04144b-f5.jpg'),('FurfuralFig8_13',FU,ROOT/'文献扩充_大批补齐_20261018/sources/SUP_117/assets/polymers-16-03421-g008.jpg'),('FurfuralFig5_13',FU,ROOT/'文献扩充_大批补齐_20261018/sources/SUP_117/assets/polymers-16-03421-g005.jpg')]:docs[key]=dict(doi=doi,path=path)
+    return docs
+
+def build():
+    assert not DB.exists()and not(OUT/'merge_manifest.json').exists()and sha(PARENT)==PSHA
+    spec=json.loads((OUT/'curation_spec.json').read_text('utf8'));docs=documents(spec)
+    fact_keys=[(r['doi'],r['sample'],r['field'],r['id'])for r in spec['facts']];assert len(fact_keys)==len(set(fact_keys)),'Separate repeatedlocations beforewriting material/field/table facts'
+    with closing(ro(PARENT))as parent,closing(sqlite3.connect(DB))as c:
+        parent.backup(c);c.row_factory=sqlite3.Row;c.execute('pragma foreign_keys=on');c.executescript('''create table source_reviews_v13(doi text primary key references reviewed_sources,record_json text);create table cell_extractions_v13(kind text,record_id text,table_key text references reviewed_tables,row_ordinal integer,column_ordinal integer,parse_part text,primary key(kind,record_id));create table decisions_v13(decision_id text primary key,doi text references reviewed_sources,record_json text);create table material_feature_decisions_v13(material_key text references materials,field_name text,record_json text,primary key(material_key,field_name));create table purpose_reviews_v13(observation_id text references capacitance_observations,purpose text,eligible integer,reason text,primary key(observation_id,purpose));create table wettability_series_v13(material_key text references materials,time_s real,record_json text,primary key(material_key,time_s));''')
+        for s in spec['sources']:insert(c,'reviewed_sources',dict(doi=s['doi'],path=s['path'],sha256=s['sha256'],title=s['title'],stage='Allmainparagraphs/readownmain/SI tables andspecifiedoriginalfigures; remainingwaveformsnotcomplete'))
+        for key,d in docs.items():insert(c,'source_documents',dict(document_key=key,doi=d['doi'],path=d['path'].relative_to(ROOT).as_posix(),sha256=sha(d['path']),role='primary_xml'if key in DOC.values()else'own_SI_or_original_figure'))
+        for t in spec['tables']+spec['units']:
+            key=t['doi']+'#'+t['id'];rows=[[v['raw']for v in r]for r in t['grid']]if'grid'in t else t['rows']
+            insert(c,'reviewed_tables',dict(table_key=key,doi=t['doi'],xml_id=t['id'],caption=t.get('caption',t['id']),header_json=json.dumps(rows[0]if'grid'in t else t['header'],ensure_ascii=False),footnote=t.get('footnote','Ownspecifiedscope; repetitions/foreignreferences notindependentmeasurements'),source_raw_table_id=t.get('raw_table_id')));insert(c,'table_source_links',dict(table_key=key,document_key=t['document'],locator=t['locator']));insert(c,'extraction_units_v3',dict(table_key=key,kind=t['kind'],scope='Ownexplicitcell/sample/test only; authorreference origin andscaledheaders retained'))
+            for i,row in enumerate(rows,1):insert(c,'transcribed_rows',dict(table_key=key,row_ordinal=i,cells_json=json.dumps(row,ensure_ascii=False)));insert(c,'transcription_origins_v7',dict(table_key=key,row_ordinal=i,origin_json=json.dumps(t['grid'][i-1]if'grid'in t else dict(document=t['document'],locator=t['locator'],row=i),ensure_ascii=False)))
+            if t.get('raw_table_id'):c.execute('update raw_table_queue set review_state=?where table_id=?',('v13_declared_own_scope_reference_and_foreign_rows_separate',t['raw_table_id']))
+        for doi,names in NAMES.items():
+            for s in names:
+                stage='raw_feedstock'if s=='raw_FR'else'precarbonized_char_control_before_test'if doi==LE and s=='NSC'else'commercial_origin_unverified_surface_IL_composite'if doi==RF else'final_biomass_carbon_before_test'
+                insert(c,'materials',dict(material_key=mk(doi,s),doi=doi,sample_name=s,material_stage=stage))
+                scope=dict(origin_class='commercial_AC_origin_unverified_reference'if doi==RF else'biomass_carbon',feedstock={MA:'mango_kernel',LE:'waste_leather_pickle_pelt',FU:'furfural_residue',RF:None}[doi],stage=stage,native_SiO2_XRD_present=True if doi==FU and s!='raw_FR'else None,template_ZnS_XRD_present=True if doi==FU and s not in['raw_FR','FR900','PC900-0']else None,reference_only=doi==RF,not_assumed_pure_carbon=True,same_source_not_independent=True)
+                insert(c,'material_scopes_v8',dict(material_key=mk(doi,s),scope_json=json.dumps(scope,ensure_ascii=False)))
+        def cell(r):
+            key=r['doi']+'#'+r['id'];raw=json.loads(c.execute('select cells_json from transcribed_rows where table_key=?and row_ordinal=?',(key,r['row'])).fetchone()[0])[r['col']];return key,raw,number(raw,r.get('part'))
+        def receipt(kind,rid,r,key):insert(c,'cell_extractions_v13',dict(kind=kind,record_id=str(rid),table_key=key,row_ordinal=r['row'],column_ordinal=r['col'],parse_part=r.get('part')))
+        for r in spec['facts']:
+            key,raw,value=cell(r);doc=c.execute('select document_key from table_source_links where table_key=?',(key,)).fetchone()[0];status=r['status']if value is not None or r['status'].startswith('not_detected')else'author_blank_not_reported_not_zero'
+            cur=insert(c,'material_facts',dict(material_key=mk(r['doi'],r['sample']),field_name=r['field'],value=value,raw_value=raw,unit=r['unit'],method=r['method'],table_key=key,row_ordinal=r['row'],column_ordinal=r['col'],source_sha256=sha(docs[doc]['path']),review_status=status,training_eligible=0));receipt('fact',cur.lastrowid,r,key)
+        for r in spec['caps']:
+            key,raw,value=cell(r);cond=dict(extraction_batch='v13',current_mass_basis='author_reported_unknown_not_inferred',voltage_lower_V=None,voltage_upper_V=None,reference_electrode=None,physical_test_group='doi:'+r['doi']+':'+r['sample']+':'+r['id']+':row'+str(r['row']),repeat_reports_not_independent=True);cond.update(r['conditions']);rid=key+'#'+str(r['row'])+'#'+str(r['col'])
+            insert(c,'capacitance_observations',dict(observation_id=rid,material_key=mk(r['doi'],r['sample']),table_key=key,row_ordinal=r['row'],column_ordinal=r['col'],value=value,raw_value=raw,unit='F/g',method='GCD',system=cond['system'],electrolyte=cond['electrolyte'],concentration_mol_L=cond['concentration_mol_L'],current_A_g=r['j'],scan_rate_mV_s=None,conditions_json=json.dumps(cond,ensure_ascii=False),status=r['status'],source_group='doi:'+r['doi'],training_eligible=0));receipt('capacitance',rid,r,key)
+            if r['select']:insert(c,'auxiliary_gcd_reviews_v3',dict(observation_id=rid,purpose='reported_aqueous_3e_GCD_capacitance',eligible=1,reason='Ownspecificsample/GCD/current/3Eprotocol bound; optionalmissing composition/porefields notimputed; explicitBETworking/precision decisions retained',review_basis='OwnTable/Fig7c orLeatherFig5/ownprotocol; no performance-based selection'))
+            if r['purpose']:insert(c,'purpose_reviews_v13',dict(observation_id=rid,purpose=r['purpose'],eligible=1,reason='SeparatefinalZnS/template-residualpurpose; notordinarybiomasscarbon cohort; known andunknownresidue quantities remain distinct'))
+        for r in spec['responses']:
+            key,raw,value=cell(r);rid=key+'#'+str(r['row'])+'#'+str(r['col']);insert(c,'outcome_observations_v3',dict(outcome_id=rid,material_key=mk(r['doi'],r['sample']),table_key=key,record_json=json.dumps(dict(source_group='doi:'+r['doi'],extraction_batch='v13',metric=r['metric'],value=value,raw_value=raw,unit=r['unit'],feature_role='test_or_fitted_response_not_pretest_predictor',status='malformed_source_token_not_filled'if r.get('part')=='malformed'else'own_reported',**r['extra']),ensure_ascii=False),training_eligible=0));receipt('response',rid,r,key)
+        sources={s['doi']:s for s in spec['sources']}
+        for r in spec['candidates']:insert(c,'test_candidates',dict(candidate_id=r['candidate_id'],material_key=mk(r['doi'],r['sample']),record_json=json.dumps(dict(r['record'],source_group='doi:'+r['doi'],evidence_source_path=sources[r['doi']]['path'],source_sha256=sources[r['doi']]['sha256']),ensure_ascii=False),training_eligible=0))
+        for r in spec['synthesis']:insert(c,'synthesis_stages_v3',dict(material_key=mk(r['doi'],r['sample']),document_key=r['document'],locator=r['locator'],stages_json=json.dumps(r['stages'],ensure_ascii=False)))
+        for r in spec['feature_decisions']:insert(c,'material_feature_decisions_v13',dict(material_key=mk(r['doi'],r['sample']),field_name=r['field'],record_json=json.dumps(r,ensure_ascii=False)))
+        for r in spec['decisions']:insert(c,'decisions_v13',dict(decision_id=r['id'],doi=r['doi'],record_json=json.dumps(r,ensure_ascii=False)));insert(c,'scientific_issues',dict(issue_id=r['id'],doi=r['doi'],sample_name=None,issue_json=json.dumps(dict(kind=r['id'],action=r['decision']),ensure_ascii=False)))
+        for r in spec['wetting']:
+            key,raw,value=cell(r);insert(c,'wettability_series_v13',dict(material_key=mk(r['doi'],r['sample']),time_s=r['time_s'],record_json=json.dumps(dict(doi=r['doi'],sample=r['sample'],contact_angle_deg=value,time_s=r['time_s'],table_key=key,row=r['row'],col=r['col'],source_group='doi:'+r['doi'],stage='pretest_material_measurement',reference_only=True),ensure_ascii=False)))
+        for s in spec['sources']:
+            d=dict(classification=s['scope_class'],scope='Allmainparagraphs/readownmain/SI tables andspecifiedprintedfigures; allwaveformsnotcomplete',remaining='RemainingCV/GCD/EIS/adsorption/Raman/morphologywaveform digitization andadditional ownprosequantities; sourceorigin orfield disputes separatelypreserved',full_source_review_complete=False)
+            insert(c,'source_scope_decisions',dict(doi=s['doi'],scope=d['scope'],reason=d['remaining'],evidence_json=json.dumps(d,ensure_ascii=False),full_source_review_complete=0));insert(c,'source_reviews_v13',dict(doi=s['doi'],record_json=json.dumps(d,ensure_ascii=False)))
+        c.commit()
+    notes=json.loads((OUT/'source_review_notes.json').read_text('utf8'));paths={d['path']for d in docs.values()}|{p for p in EV.iterdir()if p.is_file()}|{ROOT/r['package']for r in notes['existing_package_receipts']}
+    write(OUT/'protected_inputs.json',dict(files=[dict(path=p.relative_to(ROOT).as_posix(),sha256=sha(p))for p in sorted(paths)]+[dict(path=PARENT.relative_to(ROOT).as_posix(),sha256=PSHA),dict(path='全库复检与特征补提取_20261021/full_corpus_search_native.sqlite',sha256='f2720c3e417904dad5857a6574cc72d5cf996f9b8716620d69594f11380c658c')]))
+    print('Built unsealed v13; no formalcyclingadmissions or fits')
+
+if __name__=='__main__':
+    if len(sys.argv)!=2 or sys.argv[1]not in['curate','build','recurate_unsealed']:raise SystemExit('One-use curate/build; recurate only verifiedfailed unsealeddraft; verifier/seal separate')
+    if sys.argv[1]=='recurate_unsealed':curate(True)
+    else:globals()[sys.argv[1]]()
