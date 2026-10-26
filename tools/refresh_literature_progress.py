@@ -90,6 +90,7 @@ def main():
             if r['doi']=='10.1039/d6ra08120g':r['status_label']='商业原料来源未核实，仅方法参考；±统计定义未知'
             if r['doi']=='10.1039/d5ra02129d'and 'repeat'in r['status']:r['status_label']='同文复述，不增加独立测试'
             if r['doi']=='10.1039/d6ra04144b'and 'repeat'in r['status']:r['status_label']='同文复述，不增加独立测试'
+            if cond.get('extraction_batch')=='v14':r['status_label']='标记遮挡：仅区间，点标签空'if r['value']is None else'糠醛渣有界用途：原图近似值，非作者精确点'
         query('material_facts',facts,['material_facts','materials','table_source_links','source_documents'],
           'SELECT f.*,m.doi,m.sample_name,d.path,d.sha256,l.locator FROM material_facts f JOIN materials m USING(material_key) JOIN table_source_links l USING(table_key) JOIN source_documents d USING(document_key);',
           '材料×参数×自身表单元；受限值为null，不同测法不拼成一个参数。',['原始层不自动取得训练资格；独立辅助用途视图另行审查。source_path返回实际正文或SI。'])
@@ -173,16 +174,16 @@ def main():
           '倍率比值/成本合计是印刷数值算术检查，不能代替新测量或作者勘误；6条同配方材料复述不重复增加事实。',['比值按印刷精度区间判断，原表保持率仍原样保存；CV倍率、GCD倍率和循环保持率分开。'])
         curve_rows=[]
         for item in db.sampled_curves():
-            r=item['reading'];curve_rows.append(dict(r,reading_id=item['reading_id'],doi=item['doi'],sample_name=item['sample_name'],source_path=item['source_path'],source_sha256=item['source_sha256'],x_kind={'plotted_cycle_coordinate':'循环图坐标 N','scan_rate_mV_s':'扫描速率 mV/s','reported_current_A_g':'报告电流 A/g'}[r['x_name']],error_kind='标记像素范围＋2px校准界限；非统计置信区间'))
+            r=item['reading'];curve_rows.append(dict(r,reading_id=item['reading_id'],doi=item['doi'],sample_name=item['sample_name'],source_path=item['source_path'],source_sha256=item['source_sha256'],x_kind={'plotted_cycle_coordinate':'循环图坐标 N','scan_rate_mV_s':'扫描速率 mV/s','reported_current_A_g':'报告电流 A/g'}[r['x_name']],error_kind=('遮挡标记8px范围：仅区间，不填中点'if r['y_value']is None else'原图4px读数界限：非实验误差')if r.get('extraction_batch')=='v14'else'标记像素范围＋2px校准界限；非统计置信区间'))
         query('bounded_curve_samples',curve_rows,['curve_samples_v8','source_documents','curve_samples.json'],
           'db.sampled_curves() -- source images, axes, pixel extents and uncertainty preserved',
-          '7原图面板/23曲线组的128个有界采样，非128个独立训练样本。',
+          '9面板/32曲线组的182条捕获：180数值、2仅区间；PC900-1双面板重复保留，不能当独立样本。',
           ['近似图像读取与作者精确报告分开；横轴分别是圈坐标、电流或扫描速率，不拼为一个工况。','原图误差由局部标记高度和校准像素给出，不假称SD、SEM或95%CI；同DOI所有曲线/标签整组隔离。'])
         cycle_rows=[dict(r,cycle_coordinate=r['x_value'],specific_capacitance_F_g=r['y_value'],sample_label='COH（550℃未活化）' if r['sample_name']=='COH_550C' else 'GLC-OH '+r['sample_name'][3:6]+'℃') for r in curve_rows if r['x_name']=='plotted_cycle_coordinate']
         query('onion_cycle_curves',cycle_rows,['curve_samples_v8','Onion_SI_image2.jpeg'],
           'SELECT reading_json FROM curve_samples_v8 WHERE document_key="Onion_SI_cycle"; -- 4curves sampled at7plotted coordinates',
           '2 A/g下绝对电容C(F/g)随图中循环坐标变化，不是已经归一化的保持率。',
-          ['图点近似，误差可在128点采样表/来源预览中查；所选坐标不是作者已确认的第1圈参照。','正文<95%与绝对C(N)仍未协调；未把图中电容或任意起点转换成精确保持率。'])
+          ['图点近似，误差可在有界图采样表/来源预览中查；所选坐标不是作者已确认的第1圈参照。','正文<95%与绝对C(N)仍未协调；未把图中电容或任意起点转换成精确保持率。'])
         custom=db.composite_cycle_inputs()
         query('composite_cycle_inputs',custom,['purpose_reviews_v8','test_candidates','material_facts','synthesis_stages_v3'],
           'db.composite_cycle_inputs(); db.composite_cycle_matrix() -- explicit separate PAN/biochar 2E reported-purpose contract',
@@ -207,6 +208,7 @@ def main():
             if r['doi'] in ['10.1039/d6ra02137a','10.1039/d5ra01262g','10.3390/ma17133233','10.3390/ma14216592']:r.update(batch='批次11',scope='自身表/SI/印字与协议；Tondolo前作复用、GP标签竞争与WH未知循环电流分别处置，未全文完成')
             if r['doi'] in ['10.1039/d2ra02141b','10.1039/d0ra09182k']:r.update(batch='批次12',scope='自身主表及椰壳SI六表；体积/质量与Cs/Cd分开，N/O和同工况竞争冻结；剩余波形待提取')
             if r['doi']in ['10.1039/d5ra02129d','10.1039/d6ra04144b','10.3390/polym16233421','10.1039/d6ra08120g']:r.update(batch='批次13',scope='商业原料来源未核实，仅方法参考；9配方分开，不进入生物质训练'if r['doi']=='10.1039/d6ra08120g'else'全正文/自身表及可得SI、指定印字核读；普通3E/残留组分分用途，剩余波形继续')
+            if r['doi']=='10.3390/polym16233421':r.update(batch='批次13＋14',scope='48标称倍率工况，46点标签/2仅区间；原图注记争议保留；12图审查但其余波形仍待提取')
         batch10=[dict(doi=r['doi'],classification='生物质原始研究',tables=len(r['record']['units']),scope='自身指定表/正文数值；他引比较分开',remaining='完整CV/GCD/吸附/EIS波形、形貌量化及剩余图值待提取')for r in db.batch10_sources()]
         query('batch10_sources',batch10,['source_reviews_v10','table_source_links'],'db.batch10_sources()','四个自身原始研究范围审查；15主表候选含2模型参数表，另2张SI参数表，不当实验表相加。',['四来源均未声称全文完成；同行模型数值与材料事实分库存放。'])
         peer=db.peer_model_review()
@@ -242,6 +244,29 @@ def main():
         reference13=[dict(doi=r['doi'],sample_name=r['sample_name'],value=r['value'],current_A_g=r['current_A_g'],reported_plusminus=r['conditions'].get('reported_plusminus'),statistic='±定义与n未报'if r['conditions'].get('reported_plusminus')is not None else'表2重复/工况值',status='商业来源未知，仅方法参考；训练资格为否',evidence=r['locator'])for r in db.interface_reference_reports()]
         query('interface13_reference',reference13,['capacitance_observations','materials'],'db.interface_reference_reports()','24报告/21标称条件，独立物理重复数未知；不是新增生物质训练输入。')
         query('wetting13', [dict(r['record'],status='按时间保存；商业参考，不推未报基准')for r in db.wettability_series_v13()],['wettability_series_v13','material_facts'],'db.wettability_series_v13()','三参考配方各0/3/6s，共9个时间限定读数；与材料原始事实同源，不能重复计实验。')
+        labels14={'author_exact':'作者正文精确值（4）','point_mixed':'点标签：4正文＋42读图','interval_mixed':'区间标签：48工况含2空点'}
+        inputs14=[]
+        for mode,title in labels14.items():
+            for r in db.furfural_rate_inputs(mode):inputs14.append(dict(doi=r['doi'],sample_name=r['sample_name'],mode_label=title,current_A_g=r['current_A_g'],target_value=r['target_value'],lower=r['target_lower_bound'],upper=r['target_upper_bound'],quality={'author_reported_exact':'作者报告值；实验误差未报','bounded_figure':'原图近似点；4px读取界限','occluded_interval_only':'仅区间，点标签为空；不取中点'}[r['target_value_kind']],source_group=r['source_family_group'],observation_id=r['observation_id'],graph_observation_id=r['graph_observation_id'],physical_test_group=r['physical_test_group']))
+        query('furfural14_inputs',inputs14,['purpose_reviews_v14','capacitance_observations','curve_samples_v8'],'db.furfural_rate_inputs(mode) for explicit author_exact/point_mixed/interval_mixed modes','98表达行对应同一48标称工况：46点模式含已存在4正文值，净新增42点条件；各模式不可相加。',['1DOI全部材料/工况整体留出；含ZnS/SiO₂残留用途，与普通碳用途分开。','2遮挡点只供区间损失；CSV空目标不填0或中点，界限不是SD/CI。'])
+        current_query=queries['furfural14_inputs']['source'];current_query['files'].extend([{'name':'point_inputs_v14.csv'},{'name':'interval_inputs_v14.csv'}])
+        primary14={r[0]for r in db.connection.execute('select reading_id from purpose_reviews_v14')}
+        rate_plot14=[dict(r,graph_capacitance_F_g=r['y_value'])for r in curve_rows if r['reading_id']in primary14]
+        query('furfural14_curve',rate_plot14,['curve_samples_v8','purpose_reviews_v14','Furfural14_Fig10'],'primary Fig10c/d readings with nullable y; retain gaps','8材料48标称工况，46原图数值/2区间；断线表示遮挡，不是模型预测或实验重复。',['原图4px界限与遮挡8px范围见源数据；图中不画区间中点，不跨空值连线。'])
+        ratio14=[]
+        for item in db.furfural_rate_audits():
+            r=item['record'];ratio14.append(dict(r,sample_name=r['sample'],canonical_display='空（争议未解）'if r['canonical_rate_retention_pct']is None else f"{r['canonical_rate_retention_pct']:g}%",interval_lower=r['derived_figure_interval_pct'][0],interval_upper=r['derived_figure_interval_pct'][1],status_label='倍率注记与自身曲线不符'if r['sample']=='FR900'else'倍率注记与正文精细点值算术不同'if r['sample']=='PC900-0.1'else'在报告/图像精度范围相容'))
+        query('furfural14_ratio_audits',ratio14,['rate_ratio_reviews_v14','curve_samples_v8'],'db.furfural_rate_audits()','8材料的倍率注记核查；FR900约46.2与79.3竞争，PC900-0.1精确报告算术异文保留，均非循环寿命。')
+        query('furfural14_contributions',[dict(r['record'],status='印刷和101；不归一化'if r['record']['printed_sum_pct']==101 else'原印成对值保留')for r in db.furfural_contributions()],['contribution_pairs_v14','outcome_observations_v3'],'db.furfural_contributions()','5组CV贡献率；10原印响应不是保持率或材料预实验特征。')
+        annotation14=[]
+        for item in db.furfural_series_annotations():
+            r=item['record'];v=(str(r['value'])+(' ± '+str(r['author_plusminus'])if 'author_plusminus'in r else''))if'value'in r else str(r['lower'])if r['lower']==r['upper']else f"{r['lower']}～{r['upper']}"
+            annotation14.append(dict(annotation_id=r['id'],category='前驱体投料描述'if r['kind']=='precursor_recipe_property'else'XRD集体峰位'if r['kind']=='author_series_XRD_peak_assignment'else'FTIR作者归属',value_display=v,unit=r['unit'],scope_label='投料前ZnO，非最终碳孔径'if r['kind']=='precursor_recipe_property'else'作者集体样品范围；非独立逐样测量'if r['kind']=='author_series_XRD_peak_assignment'else'系列级作者归属；不推官能团含量',assignment=r.get('assignment',r.get('phase','')+' '+r.get('plane','')),evidence=r['locator'],source_path=item['source_path'],source_sha256=item['source_sha256']))
+        query('furfural14_annotations',annotation14,['series_annotations_v14','source_documents'],'db.furfural_series_annotations()','18个集体/阶段限定注记；不复制为66个独立材料峰测量，不虚增材料数值。')
+        figure_status14={1:'N₂吸附/脱附支线尚待提取',2:'SEM样品/尺度已核；不推粒径均值',3:'TEM 100/50nm尺度已核；不推孔径均值',4:'EDS仅分布图，无定量表；S测法仍未知',5:'图文角度对调；原值与冻结保持',6:'7个FTIR集体归属已存；谱线未全提取',7:'10个XRD集体峰位已存；不推相含量',8:'8个D/G与4中心原有值保留；谱线仍待提取',9:'20mV/s及8扫描速率CV波形仍待提取',10:'54倍率捕获已存，2仅区间；连续GCD仍待提取',11:'Nyquist波形仍待提取；作者拟合Wd差异保留',12:'5组成对贡献率已读，101不归一化'}
+        query('furfural14_figures',[dict(figure='Fig'+str(r['figure_number']),review=figure_status14[r['figure_number']],source_path=r['record']['path'],source_sha256=r['record']['sha256'],completion='指定内容已核；整篇定量提取未完成')for r in db.figure_scope_reviews_v14()],['figure_scope_reviews_v14','source_documents'],'db.figure_scope_reviews_v14()','12图均已逐项审查；各图剩余波形单列，不能把全图检查说成全文提取完成。')
+        decisions14={'FR900_rate_annotation':'FR900注记79.3与自身端点比约46.2%不符；标准倍率留空，保留双方。','PC900point1_rate_arithmetic':'80.7与正文114.32/141.32算术约80.894%竞争，宽图界不掩盖精细报告异文。','two_occluded_markers':'两个5A/g点被覆盖，只保留区间，不填中点、不进点回归。','contribution101':'5mV/s的72+29印刷和101，取整边界可相容；不归一化。','S_method':'EDS仅元素图；S19.26wt%方法未知，不能借ICPZn1.19wt%填补。','stage_and_control':'FR900明确未添加，配方比0有依据；ZnO30±10nm是前驱体，非最终孔径。','series_annotations':'10XRD+7FTIR+1前驱体为集体/阶段限定注记，不伪增独立样品。','remaining_scope':'全12图已审，N₂/CV/EIS/连续GCD及谱线仍待提取，原38待证保持。'}
+        query('furfural14_decisions',[dict(decision_id=r['decision_id'],action=decisions14[r['record']['id']])for r in db.batch14_decisions()],['decisions_v14'],'db.batch14_decisions()','8项边界与争议处置，冻结与提取状态分开，未拟合。')
         query('source_summary',sources,['reviewed_sources','materials','material_facts'],sql,'按DOI汇总数值单元，不是训练样本。',['只完成记录声明范围，尚未称全文全部利用。'])
         issue_labels={'reported_XPS_sum':'XPS合计限定','surface_partition_inconsistent':'孔面积分项不符','body_table_disagreement':'正文与表数值竞争','author_ratio_vs_volumes':'报告比例与孔容不符','reported_precision_variants':'数值精度表述不同','cycling_configuration_electrolyte_and_current_roles':'循环协议绑定冲突','own_table_conflict':'酸碱EIS表值冲突','element_label_binding_energy_conflict':'XPS元素标签与能量冲突','percentage_basis_not_explicit':'百分比基准未知','control_alias_not_merged':'无活化对照别名未合并'}
         actions={'PC800_XPS':'原值合计99.7%，不补元素、不归一化。','corn_cob_BET':'表1770与正文1705并存，标准面积待定。','corn_cob_volume_ratio':'孔容和报告比例并存，不用计算值覆盖。','corn_grain_precision':'保留各处精度，不能算作三次测量。','corn_husk_surface':'分项面积超过总量，隔离且不换列。','purple_EIS_AC5':'保留酸/碱四个竞争值，不自动交换列。','purple_XPS_AC30':'保留元素标签与能量冲突，C/O标准值冻结。','purple_control_alias':'SI无活化对照单独保存，别名不自动合并。','purple_microporosity':'微孔率基准未知，不猜面积比或体积比。','purple_cycle_protocol':'保留配置、电解液及电流角色竞争，循环标准条件留空。'}
@@ -304,13 +329,16 @@ def main():
     query('cycle24_feature_masks',masks24,['feature_conflicts_v24','evidence_v24'],'db.feature_conflicts_v24(); selected null and unselected original N/O values','1个材料的N/O及报告百分比别名共4通道屏蔽；不是4个独立争议或新实验。')
     query('cycle25_admissions',cycle25,['reviewed_endpoints_v25','evidence_v25','report_decisions_v25','literature_links_v25'],'db.fetch(profile); current rows with literature_candidate_id_v25','2来源/2材料/2端点，Mango2E与Leather3E分用途；文献候选链接同一次测试，不重复计数。',['BET工作值/取整及循环电流/角色异文保留，未知电流分母和精确基线下标不猜填。','原38待证、15历史冻结和苏铁绒N/O屏蔽保持，当前没有新拟合。'])
     for key in ['overview','formal_2e','cycling_candidates','cycling_cohorts','new_cycle_admissions','cycle23_admissions','cycle24_admissions','cycle24_feature_masks','cycle25_admissions']:
-        source=queries[key]['source'];source['label']='文献v13与当前循环v0.25只读接口'
+        source=queries[key]['source'];source['label']='文献v14与当前循环v0.25只读接口'
         source['files'].extend([{'name':cycle_pointer['database_file']},{'name':'data/current_database.json'}])
         source['evidenceFlow'].append('候选当前状态通过不可变父链及literature_links_v22/v23/v24/v25查询；家族规则同时作用于矩阵权重和来源折，既有ID晋升不重复计实验。')
-    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=1645,materials=160),dict(batch='批次11',numeric_facts=1926,materials=175),dict(batch='批次12',numeric_facts=2089,materials=185),dict(batch='批次13',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
+    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=1645,materials=160),dict(batch='批次11',numeric_facts=1926,materials=175),dict(batch='批次12',numeric_facts=2089,materials=185),dict(batch='批次13',numeric_facts=2293,materials=211),dict(batch='批次14',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
     query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json','literature_pool_v6.summary.json','literature_pool_v7.summary.json','literature_pool_v8.summary.json'],
-      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十三个封版版本的累计快照',
-      '同一证据层十三个批次累计快照，不内插每日进度，不当独立实验数。')
+      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十四个封版版本的累计快照',
+      '同一证据层十四个批次累计快照，不内插每日进度，不当独立实验数。')
+    historical_summaries=sorted(folder.parent.glob('*/summary.json'))
+    if (folder.parent/'summary.json').is_file():historical_summaries.insert(0,folder.parent/'summary.json')
+    queries['batch_progress']['source']['files']=[dict(name=p.relative_to(ROOT).as_posix())for p in historical_summaries]
     result=dict(id=existing['id'],surface='dashboard',title='文献提取与补正进度',generatedAt=now,status='reviewed_local_snapshot',buildStatus=args.build_status,filters=[],queries=queries)
     target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(dict(snapshot=str(target.relative_to(ROOT)),queries={k:len(v['rows']) for k,v in queries.items()},buildStatus=args.build_status),ensure_ascii=False))

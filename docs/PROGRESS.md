@@ -419,3 +419,11 @@
 - 验证：1601项准入/旧行/原值/冻结/成员/来源折核验；7001载荷整源隔离及历史链预检；新旧页面筛选与1440/390核验通过，无新拟合
 - 下一步/未决：全量目标active；继续四篇剩余波形/正文数值及813未触及候选、其它逐测试准入和原38待证；3商业循环候选未准入
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T21:30:52+08:00：文献v14深化同一糠醛渣来源：净新增42近似点工况、2仅区间，倍率争议与18集体注记分存
+
+- 结果：文献v14深化同一糠醛渣来源：净新增42近似点工况、2仅区间，倍率争议与18集体注记分存
+- 文件：README.md, data/current_literature.json, data/literature_v14.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/有界倍率曲线与区间标签_20261026.md, tools/extract_furfural_curves_v14.py, tools/export_furfural_inputs_v14.py, tools/verify_furfural_curves_v14.py, tools/verify_furfural_chain_v14.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261026/批次14_糠醛渣倍率曲线与全图审查, 文献提取进度
+- 验证：1217项本批封版核验；7213载荷/209原始标识/207家族隔离；四图与八色曲线、两缺口及4/46/48/98模式、桌面手机通过；拟合0
+- 下一步/未决：目标继续active；813原始表候选未触及、37来源均未声称全篇完成，继续表图全文/SI及逐测试准入；原38条待证保留
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

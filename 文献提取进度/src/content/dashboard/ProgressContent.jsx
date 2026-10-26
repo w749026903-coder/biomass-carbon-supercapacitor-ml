@@ -17,6 +17,7 @@ export function DashboardContent(){
  const palmScope=useSectionFilters([{id:'assembly',field:'assembly_label',label:'器件形式',defaultValue:'all',queryIds:['palm_electrical']},{id:'grain',field:'grain_label',label:'报告层级',defaultValue:'all',queryIds:['palm_electrical']}],{},{id:'palm-electrical-scope'});
  const curveScope=useSectionFilters([{id:'curve-x-kind',field:'x_kind',label:'采样横轴',defaultValue:'all',queryIds:['bounded_curve_samples']}],{},{id:'bounded-curve-scope'});
  const batch12Scope=useSectionFilters([{id:'batch12-target',field:'task',label:'新批次独立目标',defaultValue:'3E体积电容（作者假定密度）',queryIds:['batch12_inputs']}],{},{id:'batch12-target-scope'});
+ const furfural14Scope=useSectionFilters([{id:'furfural14-mode',field:'mode_label',label:'糠醛渣标签模式',defaultValue:'点标签：4正文＋42读图',queryIds:['furfural14_inputs']}],{},{id:'furfural14-input-mode'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
   <div className="extraction-cards">
@@ -37,14 +38,26 @@ export function DashboardContent(){
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
-    <p>第十三批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条电容报告</strong>：芒果核、废皮革、糠醛渣与商业参考四个指定范围。9条新增普通3E输入、4条ZnS残留独立用途分开；商业参考24报告仅21标称条件，未取得生物质训练资格。5个新循环候选中芒果核、皮革已在v0.25准入，其余3个商业参考仍待审。</p>
-    <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。原{h.cumulative_bounded_curve_samples}个有界图点和{h.peer_model_numeric_cells}个同行参数保留，全部来源仍有剩余提取范围。</p>
+    <p>第十四批深化糠醛渣 <strong>8材料／48标称倍率工况</strong>：46点标签含原有4正文值和42个新读图条件，另2个被覆盖的点只留区间。它们全部来自同一DOI；不同模式不能相加，不按电流拆成独立论文。2个遮挡空值与原有2个未报告空值分开。</p>
+    <p>第十三批增加204项材料数值、55条电容报告：芒果核、废皮革、糠醛渣与商业参考四个指定范围。9条普通3E、4条残留用途分开，商业参考未取得生物质训练资格。5个循环候选中2个已在v0.25准入，其余3个商业参考仍待审。</p>
+    <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。有界图捕获现{h.cumulative_bounded_curve_samples}条，其中180数值／2仅区间；{h.peer_model_numeric_cells}个同行参数另计。12原图检查不代表整篇波形提取完成。</p>
    </div>
   </DataComponent>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
   <Section id="evidence-title" title="材料与测试数据检索" filters={<Filters {...scope.filterProps}/>}>
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
+  </Section>
+  <Section id="furfural14-title" title="第十四批 · 倍率曲线与点/区间标签" filters={<Filters {...furfural14Scope.filterProps}/>}>
+   <EvidenceChart id="furfural14-rate-chart" title="糠醛渣8材料倍率图 · 遮挡点保留缺口" queryId="furfural14_curve" rows={reviewedRows('furfural14_curve')} sourceRows={reviewedRows('furfural14_curve')} variant="card" spec={{type:'line',x:'x_value',y:'graph_capacitance_F_g',series:'sample_name',stackable:false,colors:{'PC700-1':'#d73027','PC800-1':'#00a6ca','PC900-1':'#1b9e77','PC950-1':'#984ea3','FR900':'#f28e2b','PC900-0':'#333333','PC900-0.1':'#cc79a7','PC900-0.5':'#377eb8'},xLabel:'作者报告电流（A/g）',yLabel:'原图读数（F/g）',valueDecimals:2}} height={370}>
+    <p className="scope-note">原图近似读数，常规标记4px读取界限；两个遮挡点不画中点、不跨空值连线。不是模型预测或实验误差条，完整上下界见下表与来源。</p>
+   </EvidenceChart>
+   <EvidenceTable id="furfural14-inputs-table" title="三个显式模式 · 同48工况不能相加" queryId="furfural14_inputs" scope={furfural14Scope} columns={[f('sample_name','样品'),f('mode_label','目标模式'),f('current_A_g','作者 A/g'),f('target_value','点目标 F/g'),f('lower','标签下界 F/g'),f('upper','标签上界 F/g'),f('quality','数值类型与界限'),f('physical_test_group','标称测试组')]}/>
+   <EvidenceTable id="furfural14-ratio-table" title="倍率注记核查 · 原值与未决分别保留" queryId="furfural14_ratio_audits" columns={[f('sample_name','材料'),f('author_rate_retention_pct','作者倍率 %'),f('derived_from_figure_pct','图点比 %'),f('interval_lower','图比下界 %'),f('interval_upper','图比上界 %'),f('derived_from_reported_exact_capacitances_pct','正文点值算术 %'),f('canonical_display','标准倍率'),f('status_label','核查状态')]}/>
+   <EvidenceTable id="furfural14-contribution-table" title="CV贡献率 · 印刷和101不归一化" queryId="furfural14_contributions" columns={[f('scan_rate_mV_s','扫描 mV/s'),f('capacitive_pct','电容贡献 %'),f('diffusion_pct','扩散贡献 %'),f('printed_sum_pct','印刷合计 %'),f('status','处置')]}/>
+   <EvidenceTable id="furfural14-annotations-table" title="18个集体/阶段注记 · 非逐样重复测量" queryId="furfural14_annotations" columns={[f('category','类别'),f('annotation_id','注记'),f('value_display','作者数值/范围'),f('unit','单位'),f('assignment','作者归属'),f('scope_label','适用边界'),f('evidence','原文位置')]}/>
+   <EvidenceTable id="furfural14-figures-table" title="12原图范围台账 · 剩余波形继续" queryId="furfural14_figures" columns={[f('figure','图'),f('review','已核/剩余范围'),f('completion','完成边界'),f('source_path','原图文件')]}/>
+   <EvidenceTable id="furfural14-decisions-table" title="8项处置 · 提取、冻结和阶段分开" queryId="furfural14_decisions" columns={[f('decision_id','核验项'),f('action','依据与处理')]}/>
   </Section>
   <Section id="batch13-review-title" title="第十三批 · 多样品提取与图文冲突">
    <EvidenceTable id="cycle25-admissions-table" title="v0.25正式循环 · 芒果核2E与皮革3E" queryId="cycle25_admissions" columns={[f('sample_name','样品'),f('source_year_display','年份'),f('electrolyte_label','电解液'),f('retention_pct','保持率 %'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('profile_label','用途'),f('review_note','原值与裁决'),f('feature_note','特征限定')]}/>
@@ -102,7 +115,7 @@ export function DashboardContent(){
   </Section>
   <Section id="curve-evidence-title" title="原文曲线采样 · 近似界限单独保留" filters={<Filters {...curveScope.filterProps}/>}>
    <EvidenceChart id="onion-absolute-cycle-chart" title="洋葱壳绝对电容（F/g）· 2 A/g原图采样" queryId="onion_cycle_curves" rows={reviewedRows('onion_cycle_curves')} sourceRows={reviewedRows('onion_cycle_curves')} variant="card" spec={{type:'line',x:'cycle_coordinate',y:'specific_capacitance_F_g',series:'sample_label',stackable:false,showXAxisLabel:false,showYAxisLabel:false,valueDecimals:1}} height={330}/>
-   <EvidenceTable id="bounded-curve-table" title="128个图点 · 原图/坐标/像素误差可查" queryId="bounded_curve_samples" scope={curveScope} columns={[f('sample_name','样品'),f('x_kind','横轴含义'),f('x_value','横轴值'),f('y_value','电容 F/g'),f('y_uncertainty','读图界限 ±F/g'),f('error_kind','界限定义'),f('curve_group','曲线组')]}/>
+   <EvidenceTable id="bounded-curve-table" title="182条图捕获 · 180数值与2仅区间" queryId="bounded_curve_samples" scope={curveScope} columns={[f('sample_name','样品'),f('x_kind','横轴含义'),f('x_value','横轴值'),f('y_value','电容 F/g'),f('y_uncertainty','读图界限 ±F/g'),f('y_lower_bound','区间下界 F/g'),f('y_upper_bound','区间上界 F/g'),f('error_kind','界限定义'),f('curve_group','曲线组')]}/>
    <EvidenceTable id="composite-cycle-table" title="复合体系循环输入 · 1条/1来源，非普通主集" queryId="composite_cycle_inputs" columns={[f('sample_name','样品'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('target_retention_pct','保持率 %'),f('BET_surface_area_m2_g','BET m²/g'),f('biochar_carbonization_temperature_C','生物炭 ℃'),f('PAN_carbonization_temperature_C','PAN ℃'),f('final_aerogel_activation_temperature_C','最终活化 ℃'),f('final_biochar_fraction','最终生物炭份额')]}/>
   </Section>
   <Section id="issues-title" title="争议与待办">
