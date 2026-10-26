@@ -33,6 +33,7 @@ def main():
     target=ROOT/'文献提取进度/src/data.json';existing=json.loads(target.read_text('utf8'))
     pointer=json.loads((ROOT/'data/current_literature.json').read_text('utf8'));folder=ROOT/pointer['directory'];summary=json.loads((folder/'summary.json').read_text('utf8'))
     now=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat(timespec='seconds');queries={}
+    def group(r):return r.get('source_family_group_v23',r['source_group'])
     def query(key,rows,tables,sql,definition,caveats=()):
         queries[key]=dict(rows=rows,source=dict(label='本地已核验文献证据层 '+pointer['version'],executedAt=now,tables=tables,sql=sql,
           files=[{'name':pointer['database_file']},{'name':'summary.json'},{'name':'verification.json'}],
@@ -46,6 +47,7 @@ def main():
         all_years_3e=cycling.fetch('reported_3e_all_years').rows;all_years_2e=cycling.fetch('reported_2e_all_years').rows
         current_byid={r['endpoint_id']:r for r in main_rows+two_rows+all_years_3e+all_years_2e}
         new_admissions=[dict(r,source_year_display=str(r['source_year']),electrolyte_label=f"{r['concentration_mol_L']:g}M {r['electrolyte']}",profiles=', '.join(r['admission_profiles_v22']),profile_label=('跨年份3E'if r['system']=='3E'else'跨年份2E')if r['source_year']<2023 else'原队列及跨年份2E',review_note='原图86；摘要87/结论89保留' if r['endpoint_id']=='v22:COT_CDAP800350_2E_C5000' else '自身循环与匹配条件逐测试核定') for r in current_byid.values()if r.get('literature_candidate_id_v22')]
+        cycle23=[dict(r,source_year_display=str(r['source_year']),electrolyte_label=f"{r['concentration_mol_L']:g}M {r['electrolyte']}",profile_label='仅跨年份3E'if r['source_year']<2023 else'原年份及跨年份2E',family_label='Tondolo原文及明确复用前作'if group(r).startswith('family:')else'本论文DOI组',review_note='原ID晋升用途；保留2021年限历史'if r.get('promoted_existing_endpoint_v23')else'新端点；同家族全部任务一起留出')for r in current_byid.values()if r.get('literature_candidate_id_v23')]
         links={r['candidate_id']:r for r in cycling.literature_links()} if hasattr(cycling,'literature_links') else {}
         observation_count=len(cycling.fetch('all_review').rows)
     cycle_summary=json.loads((cycle_folder/'summary.json').read_text('utf8')) if (cycle_folder/'summary.json').exists() else {}
@@ -150,7 +152,7 @@ def main():
             selected=main_byid[r['endpoint_id']][r['field_name']];assert selected is None
             frozen.append(dict(r,doi='10.3390/molecules31132329',parameter=label(field),table_value=table['value'],figure_value=graphic['value'],selected_value=selected,selected_display='空值（冲突冻结）',unit=table['unit'],source_path=table['source_path'],figure_path=graphic['source_path'],table_locator=table['locator'],figure_locator=graphic['locator']))
         query('current_feature_freezes',frozen,['legacy_feature_conflicts_v9','feature_freezes_v21','cycling_API.fetch(reported_3e)'],
-          'db.legacy_feature_conflicts(); current cycling v0.22 fetch -- v0.21 null freezes preserved in current row and material matrices',
+          'db.legacy_feature_conflicts(); current cycling v0.23 fetch -- v0.21 null freezes preserved in current row and material matrices',
           '5条既有循环记录的15个特征选值冻结；两个氮字段是兼容表示，不是两个独立实验；标签、成员、来源权重保持。',['图表双方原值和旧选值保留，不填0、不择高值或覆盖旧模型。缺失变化不等于精度改善。'])
         arithmetic=[dict(r['record'],doi=r['doi'],audit_id=r['audit_id']) for r in db.qualification_audits()]
         query('series_arithmetic_audits',arithmetic,['qualification_audits_v9','transcribed_rows'],
@@ -237,8 +239,8 @@ def main():
             rawrecord=json.loads(candidate['details']);rel=rawrecord.get('retention_relation') or ''
             if rawrecord.get('legacy_endpoint_id')and not link:
                 candidate['formal_endpoint_id']=rawrecord['legacy_endpoint_id'];prior=current_byid.get(candidate['formal_endpoint_id']);candidate['status']=('既有正式'+('3E'if prior['system']=='3E'else'2E')+'端点的文献关联；不重复计数') if prior else '既有待证端点关联；所缺条件见原记录'
-            if candidate['candidate_id']=='LP11_Tea_3E_C2000':candidate['status']='原ID/2021年；跨年份用途增量审查待做'
-            if candidate['candidate_id']=='LP11_Tondolo_2E_C10000':candidate['status']='证据已整理；逐测试准入待做，须与前作隔离'
+            if candidate['candidate_id']=='LP11_Tea_3E_C2000'and not link:candidate['status']='原ID/2021年；跨年份用途增量审查待做'
+            if candidate['candidate_id']=='LP11_Tondolo_2E_C10000'and not link:candidate['status']='证据已整理；逐测试准入待做，须与前作隔离'
             if candidate['candidate_id'].startswith('LP11_WHAC'):candidate['status']='实际循环电流未报告；保持候选，不借倍率工况'
             candidate['retention_relation']=rawrecord.get('retention_relation')
             candidate['retention_is_censored']=rawrecord.get('reported_retention_is_censored',False)
@@ -253,21 +255,22 @@ def main():
           ['锌离子容量、普通电容保持率和DES用途明确分开；作者±量不猜SD或SEM。','早期候选中未结构化到相同字段的值保持空，原record_json和定位完整可查。'])
     fixed=json.loads((ROOT/'docs/DATA_CORRECTION_GOAL.json').read_text('utf8'))
     active=json.loads((ROOT/'docs/LITERATURE_EXTRACTION_GOAL.json').read_text('utf8'))
-    overview=[dict(summary,goal_status=active['app_goal_status_last_confirmed'],formal_main_rows=len(main_rows),formal_main_sources=len({r['source_group'] for r in main_rows}),formal_2e_rows=len(two_rows),formal_2e_sources=len({r['source_group'] for r in two_rows}),all_years_3e_rows=len(all_years_3e),all_years_3e_sources=len({r['source_group']for r in all_years_3e}),all_years_2e_rows=len(all_years_2e),all_years_2e_sources=len({r['source_group']for r in all_years_2e}),new_formal_cycling_admissions=summary['formal_cycling_admissions'],last_cycling_release_purpose_admissions=cycle_summary.get('new_purpose_admissions',0),new_endpoint_records=cycle_summary.get('new_endpoints',0),promoted_existing_endpoints=cycle_summary.get('promoted_existing_endpoints',0),linked_candidates=len(links),cycling_observations=observation_count,fixed_goal_records=fixed['fixed_record_count'],fixed_resolved=fixed['scientifically_resolved_in_goal'],fixed_pending=fixed['current_pending'])]
+    overview=[dict(summary,goal_status=active['app_goal_status_last_confirmed'],formal_main_rows=len(main_rows),formal_main_sources=len({group(r)for r in main_rows}),formal_2e_rows=len(two_rows),formal_2e_sources=len({group(r)for r in two_rows}),all_years_3e_rows=len(all_years_3e),all_years_3e_sources=len({group(r)for r in all_years_3e}),all_years_2e_rows=len(all_years_2e),all_years_2e_sources=len({group(r)for r in all_years_2e}),new_formal_cycling_admissions=cycle_summary.get('new_purpose_admissions',0),last_cycling_release_purpose_admissions=cycle_summary.get('new_purpose_admissions',0),new_endpoint_records=cycle_summary.get('new_endpoints',0),promoted_existing_endpoints=cycle_summary.get('promoted_existing_endpoints',0),linked_candidates=len(links),cycling_observations=observation_count,fixed_goal_records=fixed['fixed_record_count'],fixed_resolved=fixed['scientifically_resolved_in_goal'],fixed_pending=fixed['current_pending'])]
     query('overview',overview,['summary.json','docs/LITERATURE_EXTRACTION_GOAL.json',cycle_pointer['database_file']],
       'SELECT COUNT(*) FROM materials; SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; SELECT COUNT(*) FROM capacitance_observations WHERE value IS NOT NULL;',
       '材料数值与比电容报告按当前证据层汇总；循环主集和固定待证另计。',['历史725项与本页新增层重叠未完全对账，不能直接相加。'])
     query('formal_2e',two_rows,['cycling_API.fetch(reported_2e)','profile_membership_v20','immutable_parent_chain'],
       "db.fetch('reported_2e').rows -- versioned read-only API across the immutable parent chain",
       '正式双电极普通水系循环端点；与三电极主集分开，同来源全部标签整体留出。',
-      ['原2023—2026年份规则保持；原27条加藜麦2条，29行/23来源。早期棉花/NFAC在另一个跨年份视图。','标识和来源用于追溯及分组，不作为模型预测特征；未执行新拟合。'])
-    cohorts=[dict(profile=p,year_scope=year,rows=len(rs),sources=len({r['source_group']for r in rs}),rule='不同人群分别报告；不把来源数当精度证明')for p,year,rs in [('reported_3e','2023—2026',main_rows),('reported_2e','2023—2026',two_rows),('reported_3e_all_years','已逐测试核定的跨年份',all_years_3e),('reported_2e_all_years','已逐测试核定的跨年份',all_years_2e)]]
+      ['原2023—2026年份规则保持；新增Tondolo后30行/24家族。2018/2019早期来源在跨年份视图。','来源家族用于权重和来源折，不作为X预测特征；未执行新拟合。'])
+    cohorts=[dict(profile=p,year_scope=year,rows=len(rs),sources=len({group(r)for r in rs}),rule='来源家族用于矩阵/权重/折分；不同队列分别报告')for p,year,rs in [('reported_3e','2023—2026',main_rows),('reported_2e','2023—2026',two_rows),('reported_3e_all_years','已逐测试核定的跨年份',all_years_3e),('reported_2e_all_years','已逐测试核定的跨年份',all_years_2e)]]
     query('cycling_cohorts',cohorts,['cycling_API.fetch','profile_membership_v22'],'db.fetch(profile).feature_matrix() -- no fitting','四个队列分开；跨年份是显式旧主集加早期核定测试，不能与旧模型直接比误差。')
     query('new_cycle_admissions',new_admissions,['reviewed_endpoints_v22','evidence_v22','changes_v22'],'db.fetch(profile); unique endpoint_id with literature_candidate_id_v22','五项用途准入=3新记录+2既有ID补证；不减少原38待证。',['棉花86%争议原值保留；NFAC真实101.7%不裁100；未知质量分母不猜算。'])
-    for key in ['overview','formal_2e','cycling_candidates','cycling_cohorts','new_cycle_admissions']:
-        source=queries[key]['source'];source['label']='文献v11与当前循环v0.22只读接口'
+    query('cycle23_admissions',cycle23,['reviewed_endpoints_v23','evidence_v23','changes_v23','source_family_rules'],'db.fetch(profile); current rows with literature_candidate_id_v23','2项用途=1新端点+1旧ID晋升；282观察不全是训练数据。',['Tondolo94%/10000/5A/g及红茶98.8%/2000/5A/g逐测试核定；前作同家族全部任务隔离。','红茶2021仅跨年份3E；15格冻结/原38待证保持，无新拟合。'])
+    for key in ['overview','formal_2e','cycling_candidates','cycling_cohorts','new_cycle_admissions','cycle23_admissions']:
+        source=queries[key]['source'];source['label']='文献v11与当前循环v0.23只读接口'
         source['files'].extend([{'name':cycle_pointer['database_file']},{'name':'data/current_database.json'}])
-        source['evidenceFlow'].append('候选当前状态通过不可变父链及literature_links_v22查询；既有ID补证与新增端点分别计数，不重复计实验。')
+        source['evidenceFlow'].append('候选当前状态通过不可变父链及literature_links_v22/v23查询；家族规则同时作用于矩阵权重和来源折，既有ID晋升不重复计实验。')
     progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=1645,materials=160),dict(batch='批次11',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
     query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json','literature_pool_v6.summary.json','literature_pool_v7.summary.json','literature_pool_v8.summary.json'],
       'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十一个封版版本的独立累计快照',

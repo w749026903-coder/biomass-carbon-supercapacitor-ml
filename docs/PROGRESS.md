@@ -379,3 +379,11 @@
 - 验证：1967原单元/原包/父版/用途检查；3839载荷来源家族隔离与固定历史复验；全部旧及新页面交互和1440/390显示通过；无新拟合
 - 下一步/未决：目标active；835候选未触及、固定38待证保持；下步逐测准入Tondolo新2E及红茶2021旧端点跨年份3E，不重复NSGP既有成员
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T09:58:15+08:00：循环v0.23核定Tondolo新2E及红茶既有2021端点跨年份3E用途；矩阵、权重与来源折统一前作家族隔离
+
+- 结果：循环v0.23核定Tondolo新2E及红茶既有2021端点跨年份3E用途；矩阵、权重与来源折统一前作家族隔离
+- 文件：README.md, data/current_database.json, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/knowledge/前作复用与自身图表身份裁决_20261026.md, tools/release_cycle_family_v023.py, tools/verify_cycle_family_v023.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 循环稳定性数据库_v0.23_跨年份端点与家族隔离_20261026, 文献提取进度
+- 验证：873项准入/原值/冻结/旧年限/反例核验；历史固定输入复验和6161载荷家族隔离；新旧页面交互及1440/390显示通过；无新拟合
+- 下一步/未决：全量目标active；继续835未触及表候选及已有论文剩余自身表图/SI；原38待证与15冻结保持，不追分训练
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
