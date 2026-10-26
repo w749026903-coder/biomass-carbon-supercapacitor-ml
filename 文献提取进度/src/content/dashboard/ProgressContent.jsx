@@ -31,12 +31,12 @@ export function DashboardContent(){
    <div className="scope-note" data-reviewed-rows="true">
     <p><strong>{h.raw_table_candidates} 个原始表候选：</strong>本流程已处理指定范围 {h.raw_candidates_touched} 个，尚未进入处理 {h.raw_candidates_untouched} 个。已处理不代表整篇或全部参数完成。</p>
     <p>历史已有 <strong>{h.historical_selected_fact_references} 项材料属性</strong>另行对账，其中 {h.historical_fact_references_with_same_source_table_candidates} 项存在同源表线索；不能与本页新增层直接相加。目录、论文、材料、数值单元与训练样本分母不同。</p>
-    <p>原2023—2026队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 来源</strong>。本批{h.new_formal_cycling_admissions}项用途准入含{h.new_endpoint_records}条新记录和{h.promoted_existing_endpoints}条旧ID补证，全部观察{h.cycling_observations}条；原固定38待证保持。本轮真实拟合 {h.model_fits} 次。</p>
+    <p>原2023—2026队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 来源</strong>。循环v0.22上一批核定{h.last_cycling_release_purpose_admissions}项用途（{h.new_endpoint_records}新记录、{h.promoted_existing_endpoints}旧ID补证），全部观察{h.cycling_observations}条；本批文献新增正式循环准入{h.new_formal_cycling_admissions}项。原固定38待证保持，真实拟合 {h.model_fits} 次。</p>
     <p>跨年份视图纳入逐测试核定的2018年棉花及2019年NFAC：三电极 <strong>{h.all_years_3e_rows} 条 / {h.all_years_3e_sources} 来源</strong>，双电极 <strong>{h.all_years_2e_rows} 条 / {h.all_years_2e_sources} 来源</strong>。原日期规则保持，不同队列分别报告。</p>
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
-    <p>第十批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条比电容报告、{h.new_bounded_curve_samples} 个有界图点</strong>，核定12条棉花/藜麦辅助GCD输入。累计{h.cumulative_bounded_curve_samples}图点；另存同行ANN的{h.peer_model_numeric_cells}个参数数值作为方法参考，不计实验样本。旧15个争议特征冻结和1条复合循环用途保持。</p>
+    <p>第十一批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条比电容报告</strong>，核定13条青豌豆皮/水葫芦/红茶辅助GCD输入。原{h.cumulative_bounded_curve_samples}有界图点、{h.peer_model_numeric_cells}个同行参数、15格争议特征冻结及1条复合循环用途保持。两个Tondolo工作有明确复用关系，验证时须归入同一家族。</p>
    </div>
   </DataComponent>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
@@ -44,12 +44,18 @@ export function DashboardContent(){
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
+  <Section id="batch11-review-title" title="第十一批 · 多样品、原图裁决与前作复用">
+   <EvidenceTable id="batch11-sources-table" title="四篇原始研究 · 指定范围与剩余工作" queryId="batch11_sources" columns={[f('doi','DOI'),f('scope','已核范围'),f('remaining','仍待提取')]}/>
+   <EvidenceTable id="batch11-decisions-table" title="8项证据处置 · 已解与未决分开" queryId="batch11_decisions" columns={[f('doi','DOI'),f('decision_id','核验项'),f('decision','依据与处理')]}/>
+   <EvidenceTable id="source-families-table" title="前作复用 · 两DOI同一家族留出" queryId="source_families" columns={[f('doi','本论文'),f('related_doi','前作'),f('family','隔离家族'),f('basis','原文明确依据')]}/>
+   <EvidenceTable id="batch11-quantity-audits-table" title="吸附物料衡算与Raman组分核查" queryId="batch11_quantity_audits" columns={[f('sample','材料'),f('kind_label','检查类型'),f('model_label','拟合模型'),f('initial_ppm','初始 mg/L'),f('reported_fitted_Qe_mg_g','作者拟合Qe mg/g'),f('maximum_from_stated_protocol_mg_g','给定投料上限 mg/g'),f('computed_sum','组分合计 %'),f('status_label','核查结论')]}/>
+  </Section>
   <Section id="batch10-review-title" title="第十批 · 自身证据与同行方法">
    <EvidenceTable id="batch10-sources-table" title="四篇原始研究 · 完成范围与剩余任务" queryId="batch10_sources" columns={[f('doi','DOI'),f('classification','类别'),f('tables','主表候选'),f('scope','已核范围'),f('remaining','仍待提取')]}/>
    <EvidenceTable id="peer-model-review-table" title="同行ANN审查 · 预测目标与验证边界" queryId="peer_model_review" columns={[f('doi','DOI'),f('target','目标'),f('samples','样本口径'),f('split','拆分方式'),f('validation_R2','作者验证R²'),f('parameters','参数数值数'),f('data_status','原始数据取得情况'),f('limits','适用边界')]}/>
    <EvidenceTable id="batch10-audits-table" title="28项数值核验 · 原报告与派生检查分开" queryId="batch10_audits" columns={[f('doi','DOI'),f('audit_id','核验项'),f('kind','类型'),f('details','证据与处置')]}/>
    <EvidenceTable id="cycling-cohorts-table" title="循环队列 · 原年份与跨年份分别调用" queryId="cycling_cohorts" columns={[f('profile','调用视图'),f('year_scope','年份范围'),f('rows','端点数'),f('sources','来源数'),f('rule','比较边界')]}/>
-   <EvidenceTable id="new-cycle-admissions-table" title="5项新核定用途 · 3新记录与2旧ID补证" queryId="new_cycle_admissions" columns={[f('sample_name','样品'),f('source_year_display','年份'),f('electrolyte_label','电解液'),f('retention_pct','保持率 %'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('BET_m2_g','自身BET m²/g'),f('profile_label','准入视图'),f('review_note','选值依据')]}/>
+   <EvidenceTable id="new-cycle-admissions-table" title="v0.22核定5用途 · 3新记录与2旧ID补证" queryId="new_cycle_admissions" columns={[f('sample_name','样品'),f('source_year_display','年份'),f('electrolyte_label','电解液'),f('retention_pct','保持率 %'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('BET_m2_g','自身BET m²/g'),f('profile_label','准入视图'),f('review_note','选值依据')]}/>
   </Section>
   <Section id="systematic-series-title" title="第九批 · 多样品系列与原图复核">
    <EvidenceTable id="source-classification-table" title="四个来源的身份与用途" queryId="source_classifications" columns={[f('doi','DOI'),f('classification','范围'),f('basis','原文依据'),f('remaining','尚未完成的范围')]}/>

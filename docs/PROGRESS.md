@@ -371,3 +371,11 @@
 - 验证：文献2183项、循环838项、历史固定输入复验及当前3706载荷来源隔离；桌面手机与全部筛选通过；无新拟合；327文件敏感及归档扫描通过
 - 下一步/未决：全量目标active；853候选未触及、原38待证保持，继续自身表图与SI，不追分调参
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T09:19:39+08:00：文献v11新增281材料数值、42电容报告、70响应与13辅助输入；解决GP标签对调、显式前作家族隔离及6项吸附协议未决
+
+- 结果：文献v11新增281材料数值、42电容报告、70响应与13辅助输入；解决GP标签对调、显式前作家族隔离及6项吸附协议未决
+- 文件：README.md, data/current_literature.json, data/literature_v11.py, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/knowledge/前作复用与自身图表身份裁决_20261026.md, tools/extract_biomass_series_v11.py, tools/verify_corpus_chain_v11.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261026/批次11_青豌豆皮水葫芦红茶与Tondolo, 文献提取进度
+- 验证：1967原单元/原包/父版/用途检查；3839载荷来源家族隔离与固定历史复验；全部旧及新页面交互和1440/390显示通过；无新拟合
+- 下一步/未决：目标active；835候选未触及、固定38待证保持；下步逐测准入Tondolo新2E及红茶2021旧端点跨年份3E，不重复NSGP既有成员
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

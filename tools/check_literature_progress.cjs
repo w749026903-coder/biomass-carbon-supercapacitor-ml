@@ -13,9 +13,9 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   const material=component('material-evidence'),cap=component('capacitance-evidence');
   const expectCount=async(block,n)=>assert.match(await block.innerText(),new RegExp(`of ${n} results`));
   const choose=async(label,value)=>{await p.getByRole('button').filter({hasText:label}).click();await p.getByRole('menuitemradio',{name:value,exact:true}).click();};
-  await expectCount(material,1712);await expectCount(cap,611);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),149);
+  await expectCount(material,2004);await expectCount(cap,653);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),162);
   assert.equal(await p.locator('svg.recharts-surface').count(),3);
-  await expectCount(component('cycling-candidates-table'),54);
+  await expectCount(component('cycling-candidates-table'),61);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('NWJPC-2');
   await expectCount(component('cycling-candidates-table'),2);
   assert.match(await component('cycling-candidates-table').innerText(),/容量保持率（锌离子，独立任务）/);
@@ -101,12 +101,29 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   assert.match(await component('cycling-candidates-table').innerText(),/既有正式2E端点的文献关联/);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('');
   await component('new-cycle-admissions-table').screenshot({path:path.join(out,'new-cycle-admissions.png')});
-  await choose(/论文 DOI/,'All');await expectCount(material,1712);await expectCount(cap,611);
-  await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),133);
+  await choose(/论文 DOI/,'10.1039/d6ra02137a');await expectCount(material,66);await expectCount(cap,8);
+  await choose(/论文 DOI/,'10.1039/d5ra01262g');await expectCount(material,54);await expectCount(cap,14);
+  await choose(/论文 DOI/,'10.3390/ma17133233');await expectCount(material,154);await expectCount(cap,7);
+  await choose(/论文 DOI/,'10.3390/ma14216592');await expectCount(material,18);await expectCount(cap,13);
+  await expectCount(component('batch11-sources-table'),4);await expectCount(component('batch11-decisions-table'),8);await expectCount(component('source-families-table'),1);await expectCount(component('batch11-quantity-audits-table'),8);
+  assert.match(await component('source-families-table').innerText(),/10\.1016\/j\.jece\.2025\.120693/);
+  await component('batch11-quantity-audits-table').getByPlaceholder('Search data').fill('协议或拟合不一致');await expectCount(component('batch11-quantity-audits-table'),6);
+  await component('batch11-quantity-audits-table').getByPlaceholder('Search data').fill('');
+  await component('auxiliary-gcd-table').getByPlaceholder('Search data').fill('10.1039/d5ra01262g');await expectCount(component('auxiliary-gcd-table'),3);
+  assert.match(await component('auxiliary-gcd-table').innerText(),/208\.78/);assert.match(await component('auxiliary-gcd-table').innerText(),/230\.22/);
+  await component('auxiliary-gcd-table').getByPlaceholder('Search data').fill('');
+  await component('cycling-candidates-table').getByPlaceholder('Search data').fill('LP11_WHAC');await expectCount(component('cycling-candidates-table'),4);
+  assert.match(await component('cycling-candidates-table').innerText(),/实际循环电流未报告/);
+  await component('cycling-candidates-table').getByPlaceholder('Search data').fill('LP11_Tea');await expectCount(component('cycling-candidates-table'),1);
+  assert.match(await component('cycling-candidates-table').innerText(),/跨年份用途增量审查待做/);
+  await component('cycling-candidates-table').getByPlaceholder('Search data').fill('');
+  await component('batch11-quantity-audits-table').screenshot({path:path.join(out,'quantity-audits-v11.png')});
+  await choose(/论文 DOI/,'All');await expectCount(material,2004);await expectCount(cap,653);
+  await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),146);
   await choose(/辅助目标/,'双电极水系器件比电容');await expectCount(component('auxiliary-gcd-table'),5);
   await choose(/辅助目标/,'天然矿物残留碳三电极');await expectCount(component('auxiliary-gcd-table'),5);
   await choose(/辅助目标/,'双电极作者两倍系数');await expectCount(component('auxiliary-gcd-table'),6);
-  await choose(/辅助目标/,'All');await expectCount(component('auxiliary-gcd-table'),149);
+  await choose(/辅助目标/,'All');await expectCount(component('auxiliary-gcd-table'),162);
   const des=component('des-input-table');await expectCount(des,12);
   assert.match(await des.innerText(),/DES保持率均值/);assert.doesNotMatch(await des.innerText(),/DES首圈比电容均值/);
   await choose(/DES目标/,'DES首圈比电容均值');await expectCount(des,12);assert.match(await des.innerText(),/F\/g/);
@@ -157,9 +174,9 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await component('onion-absolute-cycle-chart').screenshot({path:path.join(out,'onion-cycle-mobile.png')});
   await component('current-feature-freezes-table').screenshot({path:path.join(out,'feature-freezes-mobile.png')});
   assert.equal(errors.length,0);
-  const result={passed:true,build_manifest:JSON.parse(fs.readFileSync(path.join(app,'dist','data-app-build.json'),'utf8')),literature_pointer:JSON.parse(fs.readFileSync(path.resolve('data/current_literature.json'),'utf8')),cycling_pointer:JSON.parse(fs.readFileSync(path.resolve('data/current_database.json'),'utf8')),batch10_four_DOI_scopes_and_peer_reference_and_new5_admissions_checked:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:3,
+  const result={passed:true,build_manifest:JSON.parse(fs.readFileSync(path.join(app,'dist','data-app-build.json'),'utf8')),literature_pointer:JSON.parse(fs.readFileSync(path.resolve('data/current_literature.json'),'utf8')),cycling_pointer:JSON.parse(fs.readFileSync(path.resolve('data/current_database.json'),'utf8')),batch10_four_DOI_scopes_and_peer_reference_and_new5_admissions_checked:true,batch11_four_DOI_scopes13newauxiliary_and_prior_family_and6unresolved_massbalance_checked:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:3,
    doi_scope_checked:[{doi:'10.1021/acsenvironau.3c00048',material_cells:53,capacitance_reports:40},{doi:'10.3390/nano16161035',material_cells:27,capacitance_reports:0}],
-   method_filter_GCD8_and_material_scope_unchanged:true,formal_2e_29_and_new_endpoint_link_checked:true,cycle_candidates54_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,Glycogen_scope181_17_and_current_correction_checked:true,Weigela_scope111_33_checked:true,DES_two_targets12each_24reviews_same12samples_checked:true,EIS60_XRD6_checked:true,Palm_material193_cap73_EIS71_GCD2_checked:true,Onion_43_13_and_composite_109_22_CV6_GCD16_checked:true,curve_samples128_28_85_15_filters_checked:true,curve_four_series_real_unequal_cycle_spacing_checked:true,censored_retention_limit_not_exact95_checked:true,new_material_scopes15_raman3_composite_cycle1_checked:true,Palm_statistics8_and_electrical164_144_12_132_12_6_2_filters_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_133_5_5_6_all149_filters_checked:true,source_inspector_and_scoped_copy_checked:true,Algae108_35_Eucommia140_129_CV64_GCD64_checked:true,source_classification4_scopes32_feature_freezes15_arithmetic59_checked:true,scoped_copy_characters:clipboard.length,
+   method_filter_GCD8_and_material_scope_unchanged:true,formal_2e_29_and_new_endpoint_link_checked:true,cycle_candidates61_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,Glycogen_scope181_17_and_current_correction_checked:true,Weigela_scope111_33_checked:true,DES_two_targets12each_24reviews_same12samples_checked:true,EIS60_XRD6_checked:true,Palm_material193_cap73_EIS71_GCD2_checked:true,Onion_43_13_and_composite_109_22_CV6_GCD16_checked:true,curve_samples128_28_85_15_filters_checked:true,curve_four_series_real_unequal_cycle_spacing_checked:true,censored_retention_limit_not_exact95_checked:true,new_material_scopes15_raman3_composite_cycle1_checked:true,Palm_statistics8_and_electrical164_144_12_132_12_6_2_filters_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_146_5_5_6_all162_filters_checked:true,source_inspector_and_scoped_copy_checked:true,Algae108_35_Eucommia140_129_CV64_GCD64_checked:true,source_classification4_scopes32_feature_freezes15_arithmetic59_checked:true,scoped_copy_characters:clipboard.length,
    empty_scope_and_search_checked:true,all_reset_reconciled:true,javascript_errors:errors,scientific_goal_complete:false};
   fs.writeFileSync(path.join(app,'dashboard_visual_verification.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
  }finally{await browser.close();}

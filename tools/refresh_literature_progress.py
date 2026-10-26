@@ -83,7 +83,7 @@ def main():
           '材料×方法×电解液×工况×自身报告表单元，不同配置、归一化和单位分开。',[f"{summary['capacitance_records']}报告含{summary['numeric_capacitance_values']}数值、2未报告；复述、竞争、换算、参考和复合体系不能当独立样本相加。",'CV速率不当电流；面积电流不猜算A/g。辅助资格不等于循环保持率准入。'])
         query('auxiliary_inputs',auxiliary,['auxiliary_reported_GCD_v3','auxiliary_gcd_reviews_v3','material_facts','synthesis_stages_v3'],
           'SELECT * FROM auxiliary_reported_GCD_v3 ORDER BY purpose,source_group,sample_name,current_A_g;',
-          '133条普通三电极、5条器件总质量、5条天然矿物残留碳三电极、6条作者两倍系数双电极，四目标分开。已知冲突屏蔽；EDX与XPS、原方向Raman、缺失掩码分别保留。',['合计11个DOI组；普通三电极10组，其余每任务各1组；不是独立性或泛化性能证明。','棉花8/藜麦4新增辅助与其循环记录、全部标签和其它响应必须一起留出。','这是输入预检通过的辅助比电容子集，原年份三电极主集仍43/31，未启动训练。'])
+          '146条普通三电极、5条器件总质量、5条天然矿物残留碳三电极、6条作者两倍系数双电极，四目标分开。EDX与XPS、原方向Raman和缺失掩码分别保留。',['合计14个DOI组；普通三电极13组，其余每任务各1组；不是独立性或泛化性能证明。','新青豌豆3、水葫芦4、红茶6行与各自循环/曲线/其它响应同组；Tondolo与前作另有显式家族隔离。','输入预检通过不表示循环准入或精度改善；原年份三电极主集仍43/31，无新拟合。'])
         query('des_inputs',des_rows,['purpose_reviews_v6','capacitance_observations','test_candidates','material_facts','figure_protocol_reviews_v6'],
           'db.des_reported_inputs("retention"); db.des_reported_inputs("capacitance") -- read-only API with explicit per-purpose review, selected facts and common own protocol',
           '同12个液态DES样品的两个独立均值目标，各12行；共1个DOI组，不是24次独立实验。',
@@ -189,6 +189,7 @@ def main():
         for r in sources:
             if r['doi'] in classification_bydoi:r.update(batch='批次09',scope=classification_bydoi[r['doi']]['classification']+'；'+classification_bydoi[r['doi']]['remaining'])
             if r['doi'] in ['10.1039/c7ra11475c','10.1021/acsomega.3c04692','10.3390/nano14080686','10.1039/c9ra01255a']:r.update(batch='批次10',scope='自身材料/多工况与指定曲线核读；全波形/形貌及其它图值尚未全提取')
+            if r['doi'] in ['10.1039/d6ra02137a','10.1039/d5ra01262g','10.3390/ma17133233','10.3390/ma14216592']:r.update(batch='批次11',scope='自身表/SI/印字与协议；Tondolo前作复用、GP标签竞争与WH未知循环电流分别处置，未全文完成')
         batch10=[dict(doi=r['doi'],classification='生物质原始研究',tables=len(r['record']['units']),scope='自身指定表/正文数值；他引比较分开',remaining='完整CV/GCD/吸附/EIS波形、形貌量化及剩余图值待提取')for r in db.batch10_sources()]
         query('batch10_sources',batch10,['source_reviews_v10','table_source_links'],'db.batch10_sources()','四个自身原始研究范围审查；15主表候选含2模型参数表，另2张SI参数表，不当实验表相加。',['四来源均未声称全文完成；同行模型数值与材料事实分库存放。'])
         peer=db.peer_model_review()
@@ -196,6 +197,18 @@ def main():
         query('peer_model_review',peerrows,['peer_model_reviews_v10','peer_model_cells_v10'],'db.peer_model_review(); db.peer_model_cells()','原论文方法审查与240参数数值；不计本项目实验样本或真实拟合。',['架构表述不一致、归一化是否仅拟合训练集未明；8预测均值287.75与作者289保留；不承诺复现同分数。'])
         audits10=[dict(doi=r['doi'],audit_id=r['audit_id'],kind=r['record']['kind'],details=json.dumps(r['record'],ensure_ascii=False))for r in db.batch10_audits()]
         query('batch10_audits',audits10,['numerical_audits_v10'],'db.batch10_audits()','28项孔分量/百分比/文献模型算术核验；不是28次独立实验。')
+        sources11=[dict(doi=r['doi'],scope='自身指定表/SI/原图印字与正文',remaining='剩余波形、形貌与正文图值未全部完成')for r in db.batch11_sources()]
+        query('batch11_sources',sources11,['source_reviews_v11'],'db.batch11_sources()','四篇原始研究/15材料；18主表候选含6混合比较表，另2自身SI表；不能当18个新实验。')
+        decisions11=[dict(doi=r['doi'],decision_id=r['decision_id'],decision=r['record']['decision'])for r in db.batch11_decisions()]
+        query('batch11_decisions',decisions11,['decisions_v11'],'db.batch11_decisions()','8项逐来源处置，区分已解标签竞争、方法限定、仍缺循环电流及前作复用。')
+        relations11=[dict(doi=r['doi'],related_doi=r['related_doi'],family=r['record']['isolation_group'],basis=r['record']['basis'])for r in db.source_relations()]
+        query('source_families',relations11,['source_relations_v11'],'db.source_relations(); db.isolation_group(doi)','原文明确复用的两篇工作归入同一验证家族；不将复用表征当独立样本。')
+        audits11=json.loads((folder/'quantity_audits.json').read_text('utf8'))
+        for r in audits11:
+            r['status_label']='协议或拟合不一致，仍未解决'if r['status'].startswith('unresolved')else'原印精度保留，不归一化'
+            r['kind_label']='拟合容量与可用染料量核对'if r['kind']=='fitted_Qe_vs_stated_available_dye'else'Raman分峰百分比合计'
+            r['model_label']={'pseudo_first_order':'准一级动力学','pseudo_second_order':'准二级动力学'}.get(r.get('model'),'—')
+        query('batch11_quantity_audits',audits11,['quantity_audits.json','transcribed_rows'],'C0_mg_L * volume_L / adsorbent_g; compare to author fitted Qe, not new measurement','6项吸附拟合与给定物料衡算矛盾，另2项Raman百分比合计；算术核验不改原报告。')
         query('source_summary',sources,['reviewed_sources','materials','material_facts'],sql,'按DOI汇总数值单元，不是训练样本。',['只完成记录声明范围，尚未称全文全部利用。'])
         issue_labels={'reported_XPS_sum':'XPS合计限定','surface_partition_inconsistent':'孔面积分项不符','body_table_disagreement':'正文与表数值竞争','author_ratio_vs_volumes':'报告比例与孔容不符','reported_precision_variants':'数值精度表述不同','cycling_configuration_electrolyte_and_current_roles':'循环协议绑定冲突','own_table_conflict':'酸碱EIS表值冲突','element_label_binding_energy_conflict':'XPS元素标签与能量冲突','percentage_basis_not_explicit':'百分比基准未知','control_alias_not_merged':'无活化对照别名未合并'}
         actions={'PC800_XPS':'原值合计99.7%，不补元素、不归一化。','corn_cob_BET':'表1770与正文1705并存，标准面积待定。','corn_cob_volume_ratio':'孔容和报告比例并存，不用计算值覆盖。','corn_grain_precision':'保留各处精度，不能算作三次测量。','corn_husk_surface':'分项面积超过总量，隔离且不换列。','purple_EIS_AC5':'保留酸/碱四个竞争值，不自动交换列。','purple_XPS_AC30':'保留元素标签与能量冲突，C/O标准值冻结。','purple_control_alias':'SI无活化对照单独保存，别名不自动合并。','purple_microporosity':'微孔率基准未知，不猜面积比或体积比。','purple_cycle_protocol':'保留配置、电解液及电流角色竞争，循环标准条件留空。'}
@@ -224,6 +237,9 @@ def main():
             rawrecord=json.loads(candidate['details']);rel=rawrecord.get('retention_relation') or ''
             if rawrecord.get('legacy_endpoint_id')and not link:
                 candidate['formal_endpoint_id']=rawrecord['legacy_endpoint_id'];prior=current_byid.get(candidate['formal_endpoint_id']);candidate['status']=('既有正式'+('3E'if prior['system']=='3E'else'2E')+'端点的文献关联；不重复计数') if prior else '既有待证端点关联；所缺条件见原记录'
+            if candidate['candidate_id']=='LP11_Tea_3E_C2000':candidate['status']='原ID/2021年；跨年份用途增量审查待做'
+            if candidate['candidate_id']=='LP11_Tondolo_2E_C10000':candidate['status']='证据已整理；逐测试准入待做，须与前作隔离'
+            if candidate['candidate_id'].startswith('LP11_WHAC'):candidate['status']='实际循环电流未报告；保持候选，不借倍率工况'
             candidate['retention_relation']=rawrecord.get('retention_relation')
             candidate['retention_is_censored']=rawrecord.get('reported_retention_is_censored',False)
             candidate['retention_value_kind']='censored_limit_not_exact_target' if candidate['retention_is_censored'] else 'see_original_record_and_purpose_review'
@@ -237,7 +253,7 @@ def main():
           ['锌离子容量、普通电容保持率和DES用途明确分开；作者±量不猜SD或SEM。','早期候选中未结构化到相同字段的值保持空，原record_json和定位完整可查。'])
     fixed=json.loads((ROOT/'docs/DATA_CORRECTION_GOAL.json').read_text('utf8'))
     active=json.loads((ROOT/'docs/LITERATURE_EXTRACTION_GOAL.json').read_text('utf8'))
-    overview=[dict(summary,goal_status=active['app_goal_status_last_confirmed'],formal_main_rows=len(main_rows),formal_main_sources=len({r['source_group'] for r in main_rows}),formal_2e_rows=len(two_rows),formal_2e_sources=len({r['source_group'] for r in two_rows}),all_years_3e_rows=len(all_years_3e),all_years_3e_sources=len({r['source_group']for r in all_years_3e}),all_years_2e_rows=len(all_years_2e),all_years_2e_sources=len({r['source_group']for r in all_years_2e}),new_formal_cycling_admissions=cycle_summary.get('new_purpose_admissions',0),new_endpoint_records=cycle_summary.get('new_endpoints',0),promoted_existing_endpoints=cycle_summary.get('promoted_existing_endpoints',0),linked_candidates=len(links),cycling_observations=observation_count,fixed_goal_records=fixed['fixed_record_count'],fixed_resolved=fixed['scientifically_resolved_in_goal'],fixed_pending=fixed['current_pending'])]
+    overview=[dict(summary,goal_status=active['app_goal_status_last_confirmed'],formal_main_rows=len(main_rows),formal_main_sources=len({r['source_group'] for r in main_rows}),formal_2e_rows=len(two_rows),formal_2e_sources=len({r['source_group'] for r in two_rows}),all_years_3e_rows=len(all_years_3e),all_years_3e_sources=len({r['source_group']for r in all_years_3e}),all_years_2e_rows=len(all_years_2e),all_years_2e_sources=len({r['source_group']for r in all_years_2e}),new_formal_cycling_admissions=summary['formal_cycling_admissions'],last_cycling_release_purpose_admissions=cycle_summary.get('new_purpose_admissions',0),new_endpoint_records=cycle_summary.get('new_endpoints',0),promoted_existing_endpoints=cycle_summary.get('promoted_existing_endpoints',0),linked_candidates=len(links),cycling_observations=observation_count,fixed_goal_records=fixed['fixed_record_count'],fixed_resolved=fixed['scientifically_resolved_in_goal'],fixed_pending=fixed['current_pending'])]
     query('overview',overview,['summary.json','docs/LITERATURE_EXTRACTION_GOAL.json',cycle_pointer['database_file']],
       'SELECT COUNT(*) FROM materials; SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; SELECT COUNT(*) FROM capacitance_observations WHERE value IS NOT NULL;',
       '材料数值与比电容报告按当前证据层汇总；循环主集和固定待证另计。',['历史725项与本页新增层重叠未完全对账，不能直接相加。'])
@@ -249,13 +265,13 @@ def main():
     query('cycling_cohorts',cohorts,['cycling_API.fetch','profile_membership_v22'],'db.fetch(profile).feature_matrix() -- no fitting','四个队列分开；跨年份是显式旧主集加早期核定测试，不能与旧模型直接比误差。')
     query('new_cycle_admissions',new_admissions,['reviewed_endpoints_v22','evidence_v22','changes_v22'],'db.fetch(profile); unique endpoint_id with literature_candidate_id_v22','五项用途准入=3新记录+2既有ID补证；不减少原38待证。',['棉花86%争议原值保留；NFAC真实101.7%不裁100；未知质量分母不猜算。'])
     for key in ['overview','formal_2e','cycling_candidates','cycling_cohorts','new_cycle_admissions']:
-        source=queries[key]['source'];source['label']='文献v10与当前循环v0.22只读接口'
+        source=queries[key]['source'];source['label']='文献v11与当前循环v0.22只读接口'
         source['files'].extend([{'name':cycle_pointer['database_file']},{'name':'data/current_database.json'}])
         source['evidenceFlow'].append('候选当前状态通过不可变父链及literature_links_v22查询；既有ID补证与新增端点分别计数，不重复计实验。')
-    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
+    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=1645,materials=160),dict(batch='批次11',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
     query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json','literature_pool_v6.summary.json','literature_pool_v7.summary.json','literature_pool_v8.summary.json'],
-      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十个封版版本的独立累计快照',
-      '同一证据层十个批次累计快照，不内插每日进度，不当独立实验数。')
+      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十一个封版版本的独立累计快照',
+      '同一证据层十一个批次累计快照，不内插每日进度，不当独立实验数。')
     result=dict(id=existing['id'],surface='dashboard',title='文献提取与补正进度',generatedAt=now,status='reviewed_local_snapshot',buildStatus=args.build_status,filters=[],queries=queries)
     target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(dict(snapshot=str(target.relative_to(ROOT)),queries={k:len(v['rows']) for k,v in queries.items()},buildStatus=args.build_status),ensure_ascii=False))
