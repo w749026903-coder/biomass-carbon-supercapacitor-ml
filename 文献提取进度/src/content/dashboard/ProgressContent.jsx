@@ -27,7 +27,7 @@ export function DashboardContent(){
   <div className="extraction-cards">
    <MetricCard id="material-numbers" title="材料数值单元" queryId="overview" value={h.cumulative_numeric_material_facts} displayRows={rows} sourceRows={rows} description={`累计${h.cumulative_materials}个材料登记，含前驱体、对照与待核名称`}/>
    <MetricCard id="cap-numbers" title="比电容数值单元" queryId="overview" value={h.numeric_capacitance_values} displayRows={rows} sourceRows={rows} description={`${h.capacitance_records}条报告；复述、竞争和换算不当独立样本`}/>
-   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description="原39条中1条完成；新文献与特征冻结不抵扣"/>
+   <MetricCard id="pending-corrections" title="原固定队列仍待证" queryId="overview" value={h.fixed_pending} displayRows={rows} sourceRows={rows} description={`原39条中${h.fixed_resolved}条完成；新候选与特征冻结不抵扣`}/>
    <MetricCard id="graph-expanded-inputs" title="含读图的3E输入" queryId="overview" value={h.expanded_3e_with_graph_rows} displayRows={rows} sourceRows={rows} description={`普通${h.auxiliary_aqueous_3e_GCD_rows}＋显式有界图值169；${h.expanded_3e_with_graph_DOI_groups}DOI，显式用途`}/>
   </div>
   <Section id="corpus-overview-title" title="全库排查范围" columns={2}>
@@ -38,14 +38,14 @@ export function DashboardContent(){
    <div className="scope-note" data-reviewed-rows="true">
     <p><strong>{h.raw_table_candidates} 个原始表候选：</strong>本流程已处理指定范围 {h.raw_candidates_touched} 个，尚未进入处理 {h.raw_candidates_untouched} 个。已处理不代表整篇或全部参数完成。</p>
     <p>第十八批新增94普通碳有界倍率工况及11天然含硅碳独立工况，并更正上一批淀粉四单元的原图绑定。六个遮挡标称工况不代填，循环配置未决不强行准入。</p>
-    <p>第十七批新增五来源全样品提取：631材料数值、23电容报告。普通3E现184条/22DOI；新6条水系2E两倍系数和1条有机四倍系数在独立目标下调用。</p>
+    <p>第十七批新增五来源全样品提取：631材料数值、23电容报告。v17封版时普通3E为184条/22DOI；当前计数见上方；新6条水系2E两倍系数和1条有机四倍系数在独立目标下调用。</p>
     <p>历史已有 <strong>{h.historical_selected_fact_references} 项材料属性</strong>另行对账，其中 {h.historical_fact_references_with_same_source_table_candidates} 项存在同源表线索；不能与本页新增层直接相加。目录、论文、材料、数值单元与训练样本分母不同。</p>
-    <p>原2023—2026队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源家族</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 家族</strong>。当前循环v0.25核定芒果核和皮革{h.new_formal_cycling_admissions}项用途，{h.new_endpoint_records}新端点来自两篇论文，全部观察{h.cycling_observations}条。原固定38待证保持，真实拟合 {h.model_fits} 次。</p>
+    <p>原2023—2026队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源家族</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 家族</strong>。当前循环v0.26补正既有YPAC-1循环电流，新增{h.new_formal_cycling_admissions}项准入、{h.new_endpoint_records}新端点；全部观察仍{h.cycling_observations}条。原固定队列现{h.fixed_pending}条待证，真实拟合 {h.model_fits} 次。</p>
     <p>跨年份视图已逐测试核定2018年棉花、2019年NFAC、2021年红茶及2022年苏铁绒：三电极 <strong>{h.all_years_3e_rows} 条 / {h.all_years_3e_sources} 家族</strong>，双电极 <strong>{h.all_years_2e_rows} 条 / {h.all_years_2e_sources} 家族</strong>。苏铁绒两盐一起留出；原日期规则保持，Tondolo与前作同家族隔离。</p>
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>历史棕榈壳SI的器件、工况、EIS及电学响应继续保留；汇总、单件、多指标与串并联分别保存，数量与原值差异见下方专表，同一来源不能拆作独立论文。</p>
-    <p>第十六批已补入花椒全十样品倍率及椰枣叶工况，净新增75个有界近似条件。95次图捕获含一次6A/g双面板复述；94图示工况与19作者锚点去重，加原有CO2对照后，混合模式为95工况。本批历史范围是20作者值与75净新增近似工况；当前普通3E与扩展用途计数见上方，原固定队列仍38条待证。</p>
+    <p>第十六批已补入花椒全十样品倍率及椰枣叶工况，净新增75个有界近似条件。95次图捕获含一次6A/g双面板复述；94图示工况与19作者锚点去重，加原有CO2对照后，混合模式为95工况。本批历史范围是20作者值与75净新增近似工况；当前普通3E与扩展用途计数见上方，原固定队列现37条待证。</p>
     <p>第十五批新增核读花椒皮籽、椰枣叶两来源：154项材料数值、24条电容报告，20条自身普通3E输入。十样品的材料数据与倍率已对应，连续波形仍待；不把特征条数或多电流行当独立论文。</p>
     <p>第十四批深化糠醛渣 <strong>8材料／48标称倍率工况</strong>：46点标签含原有4正文值和42个新读图条件，另2个被覆盖的点只留区间。它们全部来自同一DOI；不同模式不能相加，不按电流拆成独立论文。2个遮挡空值与原有2个未报告空值分开。</p>
     <p>第十三批增加204项材料数值、55条电容报告：芒果核、废皮革、糠醛渣与商业参考四个指定范围。9条普通3E、4条残留用途分开，商业参考未取得生物质训练资格。5个循环候选中2个已在v0.25准入，其余3个商业参考仍待审。</p>
@@ -57,6 +57,13 @@ export function DashboardContent(){
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
+   <Section id="batch19-title" title="第十九批 · 三来源分阶段提取与旧记录补正">
+    <p>新增38个分阶段登记、477材料数值及5项空值，来自木质素、蛋米废料、烟草三个来源。原料NMR/GPC与纺丝液黏度单列；PEO投料不作最终组成。4条普通三电极比电容与三个单独的双电极用途分别调用。</p>
+    <EvidenceTable id="batch19-inputs-table" title="本批八条分用途输入" queryId="batch19_inputs" columns={[f('doi','DOI'),f('sample','材料'),f('task','目标用途'),f('current','A/g'),f('value','F/g'),f('weight_label','用途内来源权重'),f('missing_features','空特征数')]}/>
+    <EvidenceTable id="batch19-decisions-table" title="方法、阶段与异文处置" queryId="batch19_decisions" columns={[f('doi','DOI'),f('action','当前处理')]}/>
+    <EvidenceTable id="cycle26-correction-table" title="v0.26 · 既有YPAC-1循环电流补正" queryId="cycle26_correction" columns={[f('sample_name','材料'),f('old_current','旧状态'),f('reported_current_A_g','A/g'),f('retention_pct','保持率 %'),f('cycle_count','循环次数'),f('current_basis','原文依据'),f('status','当前状态')]}/>
+    <p>原审查漏掉既有正文中明确的10A/g循环句，现按原端点补正，不新增实验。原39条已解决2条，剩37条/23来源；全量文献利用仍在继续，没有进行新模型拟合。</p>
+   </Section>
    <Section id="rate18-title" title="第十八批 · 三来源倍率与证据更正" filters={<Filters {...rate18Scope.filterProps}/>}>
     <p>126捕获/114标称工况，8原始遮挡表达中2个可由自身重复图补回，6个工况仍空。普通点模式97含3旧作者值和94新图值；含天然硅稻壳碳另11条，不混入普通碳用途。连线仅辅助显示，不生成新数值。</p>
     <EvidenceChart id="rate18-chart" title="三来源原图倍率 · 遮挡保留断线" queryId="rate18_plot" rows={rate18Scope.componentProps('rate18_plot',[]).displayRows} sourceRows={rate18Scope.componentProps('rate18_plot',[]).sourceRows} variant="card" spec={{type:'line',x:'current',y:'value',series:'sample',xLabel:'标称电流（A/g）',yLabel:'原图电容（F/g）',colors:Object.fromEntries(['CS-700','NPC-700-3.5-1','NPC-700-3.5-2','NPC-700-3.5-3','NPC-700-1-2','NPC-700-2-2','NPC-700-4-2','NPC-600-2-2','NPC-800-2-2','NPC-900-2-2','RH-1000','RHPC-1000','ABC','ABPC-1','ABPC-2','ABPC-4'].map((s,i)=>[s,['#333333','#00a6ca','#ff7f00','#e7298a','#984ea3','#377eb8','#b15928','#66a61e','#a6761d','#666666','#8c510a','#01665e','#7570b3','#d95f02','#1b9e77','#e6ab02'][i]])),valueDecimals:2}} height={350}/>
