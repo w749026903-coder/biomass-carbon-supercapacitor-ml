@@ -395,3 +395,11 @@
 - 验证：1487项单元/原件/父版/准入边界检查；6518载荷来源隔离与固定历史复验；同一页面新旧筛选及1440/390显示核验，无新拟合
 - 下一步/未决：全量目标active；828候选未触及、原38待证保持；下步审苏铁绒两盐2022跨年份循环，并继续芒果核/皮革/糠醛渣/商业AC四来源
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T13:40:44+08:00：循环v0.24核定苏铁绒2022同材料两盐用途：跨年份3E47条/34家族，N/O冲突继续冻结、两行整来源隔离
+
+- 结果：循环v0.24核定苏铁绒2022同材料两盐用途：跨年份3E47条/34家族，N/O冲突继续冻结、两行整来源隔离
+- 文件：README.md, data/current_database.json, docs/CURRENT_STATE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/体积电容与椰壳SI成对口径_20261026.md, tools/release_cycas_cycles_v024.py, tools/verify_cycas_chain_v024.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 循环稳定性数据库_v0.24_苏铁绒跨年份循环准入_20261026, 文献提取进度
+- 验证：1219项准入/旧行/原值/冻结/年份守卫检查；钉住历史链及6520载荷隔离预检；页面新旧筛选、原值空值及1440/390显示通过；无新拟合
+- 下一步/未决：全量目标active；继续原选四篇及828未触及表候选、已审剩余图文/SI与原38待证，不追分训练
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
