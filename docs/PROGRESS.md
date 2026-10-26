@@ -435,3 +435,11 @@
 - 验证：1556项原文单元/阶段/空值/封版检查；7535载荷/210原始标识/208来源家族隔离；桌面手机、4图、来源过滤、XPS两尺度、循环后/SI复述及定性空值展示通过；拟合0
 - 下一步/未决：全量目标active；原959表候选149触及/810未触及，39来源均未整篇完成；继续未提取曲线、全文/SI和原38条待证；2器件候选缺自身循环电压，PAC已关联历史端点
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-27T01:13:11+08:00：文献v16四倍率面板95捕获/94图示工况、75净新增近似，显式3E扩展251条/18DOI
+
+- 结果：文献v16四倍率面板95捕获/94图示工况、75净新增近似，显式3E扩展251条/18DOI
+- 文件：README.md, data/current_literature.json, data/literature_v16.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/倍率全样读图与作者锚点去重_20261027.md, tools/extract_peel_graphs_v16.py, tools/verify_peel_graphs_v16.py, tools/verify_peel_graph_chain_v16.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261027/批次16_花椒全样倍率与椰枣叶工况, 文献提取进度
+- 验证：4124项原像素/19锚点/去重/旧载荷/CSV核验；8071载荷/210标识/208家族隔离；五图桌面手机、20/95/94模式及5/5/1/11曲线、75新增过滤、权重有效位通过；拟合0
+- 下一步/未决：全量目标active；原959表候选149触及/810未触及，39来源未全篇完成；继续其它现有来源自身表与剩余连续波形及原38补证，普通176和循环主集不变
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

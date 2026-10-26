@@ -1,5 +1,6 @@
 .literature-progress .progress-intro{color:var(--text);max-width:78ch;margin:0 0 22px;line-height:1.8}
-.literature-progress .extraction-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.literature-progress .extraction-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .literature-progress .scope-note{border-left:3px solid var(--chart-1);padding:3px 0 3px 18px;margin:20px 0 0;line-height:1.8}
 .literature-progress .scope-note p{margin:9px 0}
+@media(max-width:1100px){.literature-progress .extraction-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.literature-progress .extraction-cards{grid-template-columns:1fr}.literature-progress .scope-note{padding-left:12px}}
