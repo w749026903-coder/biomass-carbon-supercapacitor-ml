@@ -411,3 +411,11 @@
 - 验证：1753项原值/单元/原件/旧行核验及封版哈希；6999载荷来源家族隔离与历史链预检；同页新旧筛选、复制/来源和1440/390显示通过，无新拟合
 - 下一步/未决：全量目标active；继续芒果核和皮革候选的旧库DOI别名及正式逐测试准入、剩余波形和813未触及候选；原38待证保持
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T17:03:48+08:00：循环v0.25核定芒果核2E79.3%与皮革3E99.2%：普通3E44/32、2E31/25，工作BET及角色/电流异文保留
+
+- 结果：循环v0.25核定芒果核2E79.3%与皮革3E99.2%：普通3E44/32、2E31/25，工作BET及角色/电流异文保留
+- 文件：README.md, data/current_database.json, docs/CURRENT_STATE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/图文角色冲突与残留组分分用途_20261026.md, tools/release_mango_leather_cycles_v025.py, tools/verify_mango_leather_cycles_v025.py, tools/verify_mango_leather_chain_v025.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 循环稳定性数据库_v0.25_芒果核皮革循环准入_20261026, 文献提取进度
+- 验证：1601项准入/旧行/原值/冻结/成员/来源折核验；7001载荷整源隔离及历史链预检；新旧页面筛选与1440/390核验通过，无新拟合
+- 下一步/未决：全量目标active；继续四篇剩余波形/正文数值及813未触及候选、其它逐测试准入和原38待证；3商业循环候选未准入
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

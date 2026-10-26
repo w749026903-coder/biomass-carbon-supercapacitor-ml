@@ -51,6 +51,7 @@ def main():
         cycle23=[dict(r,source_year_display=str(r['source_year']),electrolyte_label=f"{r['concentration_mol_L']:g}M {r['electrolyte']}",profile_label='仅跨年份3E'if r['source_year']<2023 else'原年份及跨年份2E',family_label='Tondolo原文及明确复用前作'if group(r).startswith('family:')else'本论文DOI组',review_note='原ID晋升用途；保留2021年限历史'if r.get('promoted_existing_endpoint_v23')else'新端点；同家族全部任务一起留出')for r in current_byid.values()if r.get('literature_candidate_id_v23')]
         cycle24=[dict(r,source_year_display=str(r['source_year']),electrolyte_label=f"{r['concentration_mol_L']:g}M {r['electrolyte']}",profile_label='仅跨年份3E',feature_note='N/O竞争冻结；Raman0.91及BET/孔容可用',window_basis='同盐自身GCD＋共同协议',source_weight_label='同来源两行各0.5')for r in current_byid.values()if r.get('literature_candidate_id_v24')]
         masks24=[dict(field_name=r['field_name'],raw_values=' / '.join(f'{v:g}'for v in sorted({x['value']for x in r['record']['raw_reports']})),canonical='空值'if r['record']['canonical_value']is None else str(r['record']['canonical_value']),status='标签竞争未解决；循环用途不解除特征冻结',material='CF-HPC-2')for r in cycling.feature_conflicts_v24()]if hasattr(cycling,'feature_conflicts_v24')else[]
+        cycle25=[dict(r,source_year_display=str(r['source_year']),electrolyte_label=f"{r['concentration_mol_L']:g}M {r['electrolyte']}",profile_label='普通2E及跨年份2E'if r['system']=='2E_symmetric'else'普通3E及跨年份3E',review_note='原图保持率79.3/CE65；正文角色异文保留'if r['system']=='2E_symmetric'else'原图99.2与方法10A/g；比较表99@1A/g保留',feature_note='BET1348.5工作值；摘要1348.9留证，器件约5mg'if r['system']=='2E_symmetric'else'BET2214.5精度值；XPS百分比基准未知，标准通道空')for r in current_byid.values()if r.get('literature_candidate_id_v25')]
         links={r['candidate_id']:r for r in cycling.literature_links()} if hasattr(cycling,'literature_links') else {}
         observation_count=len(cycling.fetch('all_review').rows)
     cycle_summary=json.loads((cycle_folder/'summary.json').read_text('utf8')) if (cycle_folder/'summary.json').exists() else {}
@@ -272,7 +273,7 @@ def main():
             if candidate['candidate_id']=='LP11_Tea_3E_C2000'and not link:candidate['status']='原ID/2021年；跨年份用途增量审查待做'
             if candidate['candidate_id']=='LP11_Tondolo_2E_C10000'and not link:candidate['status']='证据已整理；逐测试准入待做，须与前作隔离'
             if candidate['candidate_id'].startswith('LP11_WHAC'):candidate['status']='实际循环电流未报告；保持候选，不借倍率工况'
-            if candidate['candidate_id'].startswith(('LP13_Mango','LP13_Leather')):candidate['status']='主要证据已核；正式逐测试增量准入待做'
+            if candidate['candidate_id'].startswith(('LP13_Mango','LP13_Leather'))and not link:candidate['status']='主要证据已核；正式逐测试增量准入待做'
             if candidate['candidate_id'].startswith('LP13_Interface'):candidate['status']='商业原料未知且器件窗口有争议；参考候选不准入'
             candidate['retention_relation']=rawrecord.get('retention_relation')
             candidate['retention_is_censored']=rawrecord.get('reported_retention_is_censored',False)
@@ -294,17 +295,18 @@ def main():
     query('formal_2e',two_rows,['cycling_API.fetch(reported_2e)','profile_membership_v20','immutable_parent_chain'],
       "db.fetch('reported_2e').rows -- versioned read-only API across the immutable parent chain",
       '正式双电极普通水系循环端点；与三电极主集分开，同来源全部标签整体留出。',
-      ['原2023—2026年份规则保持；新增Tondolo后30行/24家族。2018/2019早期来源在跨年份视图。','来源家族用于权重和来源折，不作为X预测特征；未执行新拟合。'])
+      ['原2023—2026年份规则保持；新增芒果核后31行/25家族，Tondolo与前作仍整组隔离。2018/2019早期来源在跨年份视图。','来源家族用于权重和来源折，不作为X预测特征；未执行新拟合。'])
     cohorts=[dict(profile=p,year_scope=year,rows=len(rs),sources=len({group(r)for r in rs}),rule='来源家族用于矩阵/权重/折分；不同队列分别报告')for p,year,rs in [('reported_3e','2023—2026',main_rows),('reported_2e','2023—2026',two_rows),('reported_3e_all_years','已逐测试核定的跨年份',all_years_3e),('reported_2e_all_years','已逐测试核定的跨年份',all_years_2e)]]
     query('cycling_cohorts',cohorts,['cycling_API.fetch','profile_membership_v22'],'db.fetch(profile).feature_matrix() -- no fitting','四个队列分开；跨年份是显式旧主集加早期核定测试，不能与旧模型直接比误差。')
     query('new_cycle_admissions',new_admissions,['reviewed_endpoints_v22','evidence_v22','changes_v22'],'db.fetch(profile); unique endpoint_id with literature_candidate_id_v22','五项用途准入=3新记录+2既有ID补证；不减少原38待证。',['棉花86%争议原值保留；NFAC真实101.7%不裁100；未知质量分母不猜算。'])
     query('cycle23_admissions',cycle23,['reviewed_endpoints_v23','evidence_v23','changes_v23','source_family_rules'],'db.fetch(profile); current rows with literature_candidate_id_v23','2项用途=1新端点+1旧ID晋升；282观察不全是训练数据。',['Tondolo94%/10000/5A/g及红茶98.8%/2000/5A/g逐测试核定；前作同家族全部任务隔离。','红茶2021仅跨年份3E；15格冻结/原38待证保持，无新拟合。'])
     query('cycle24_admissions',cycle24,['reviewed_endpoints_v24','evidence_v24','changes_v24'],'db.fetch(reported_3e_all_years); rows with literature_candidate_id_v24','同一2022论文/一种材料/两盐的2项用途；新增1来源，不能当两篇独立论文。',['96.71/96.36来自Fig8f印字，10000圈/1A/g；窗口按同盐自身GCD和共同协议，不冒称取得逐圈原始GCD。','未知质量分母和精确基线下标保留；N/O继续冻结，无新拟合。'])
     query('cycle24_feature_masks',masks24,['feature_conflicts_v24','evidence_v24'],'db.feature_conflicts_v24(); selected null and unselected original N/O values','1个材料的N/O及报告百分比别名共4通道屏蔽；不是4个独立争议或新实验。')
-    for key in ['overview','formal_2e','cycling_candidates','cycling_cohorts','new_cycle_admissions','cycle23_admissions','cycle24_admissions','cycle24_feature_masks']:
-        source=queries[key]['source'];source['label']='文献v13与当前循环v0.24只读接口'
+    query('cycle25_admissions',cycle25,['reviewed_endpoints_v25','evidence_v25','report_decisions_v25','literature_links_v25'],'db.fetch(profile); current rows with literature_candidate_id_v25','2来源/2材料/2端点，Mango2E与Leather3E分用途；文献候选链接同一次测试，不重复计数。',['BET工作值/取整及循环电流/角色异文保留，未知电流分母和精确基线下标不猜填。','原38待证、15历史冻结和苏铁绒N/O屏蔽保持，当前没有新拟合。'])
+    for key in ['overview','formal_2e','cycling_candidates','cycling_cohorts','new_cycle_admissions','cycle23_admissions','cycle24_admissions','cycle24_feature_masks','cycle25_admissions']:
+        source=queries[key]['source'];source['label']='文献v13与当前循环v0.25只读接口'
         source['files'].extend([{'name':cycle_pointer['database_file']},{'name':'data/current_database.json'}])
-        source['evidenceFlow'].append('候选当前状态通过不可变父链及literature_links_v22/v23/v24查询；家族规则同时作用于矩阵权重和来源折，既有ID晋升不重复计实验。')
+        source['evidenceFlow'].append('候选当前状态通过不可变父链及literature_links_v22/v23/v24/v25查询；家族规则同时作用于矩阵权重和来源折，既有ID晋升不重复计实验。')
     progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=1645,materials=160),dict(batch='批次11',numeric_facts=1926,materials=175),dict(batch='批次12',numeric_facts=2089,materials=185),dict(batch='批次13',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
     query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json','literature_pool_v6.summary.json','literature_pool_v7.summary.json','literature_pool_v8.summary.json'],
       'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十三个封版版本的累计快照',

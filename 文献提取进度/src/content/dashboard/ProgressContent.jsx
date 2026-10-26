@@ -32,12 +32,12 @@ export function DashboardContent(){
    <div className="scope-note" data-reviewed-rows="true">
     <p><strong>{h.raw_table_candidates} 个原始表候选：</strong>本流程已处理指定范围 {h.raw_candidates_touched} 个，尚未进入处理 {h.raw_candidates_untouched} 个。已处理不代表整篇或全部参数完成。</p>
     <p>历史已有 <strong>{h.historical_selected_fact_references} 项材料属性</strong>另行对账，其中 {h.historical_fact_references_with_same_source_table_candidates} 项存在同源表线索；不能与本页新增层直接相加。目录、论文、材料、数值单元与训练样本分母不同。</p>
-    <p>原2023—2026队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源家族</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 家族</strong>。当前循环v0.24核定苏铁绒{h.new_formal_cycling_admissions}项跨年份用途，{h.new_endpoint_records}新端点来自同一论文，全部观察{h.cycling_observations}条。原固定38待证保持，真实拟合 {h.model_fits} 次。</p>
+    <p>原2023—2026队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源家族</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 家族</strong>。当前循环v0.25核定芒果核和皮革{h.new_formal_cycling_admissions}项用途，{h.new_endpoint_records}新端点来自两篇论文，全部观察{h.cycling_observations}条。原固定38待证保持，真实拟合 {h.model_fits} 次。</p>
     <p>跨年份视图已逐测试核定2018年棉花、2019年NFAC、2021年红茶及2022年苏铁绒：三电极 <strong>{h.all_years_3e_rows} 条 / {h.all_years_3e_sources} 家族</strong>，双电极 <strong>{h.all_years_2e_rows} 条 / {h.all_years_2e_sources} 家族</strong>。苏铁绒两盐一起留出；原日期规则保持，Tondolo与前作同家族隔离。</p>
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
-    <p>第十三批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条电容报告</strong>：芒果核、废皮革、糠醛渣与商业参考四个指定范围。9条新增普通3E输入、4条ZnS残留独立用途分开；商业参考24报告仅21标称条件，未取得生物质训练资格。循环新增5候选，正式准入待做，不能当5条已放行训练数据。</p>
+    <p>第十三批增加 <strong>{h.new_numeric_material_facts} 项材料数值、{h.new_capacitance_reports} 条电容报告</strong>：芒果核、废皮革、糠醛渣与商业参考四个指定范围。9条新增普通3E输入、4条ZnS残留独立用途分开；商业参考24报告仅21标称条件，未取得生物质训练资格。5个新循环候选中芒果核、皮革已在v0.25准入，其余3个商业参考仍待审。</p>
     <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。原{h.cumulative_bounded_curve_samples}个有界图点和{h.peer_model_numeric_cells}个同行参数保留，全部来源仍有剩余提取范围。</p>
    </div>
   </DataComponent>
@@ -47,6 +47,7 @@ export function DashboardContent(){
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
   <Section id="batch13-review-title" title="第十三批 · 多样品提取与图文冲突">
+   <EvidenceTable id="cycle25-admissions-table" title="v0.25正式循环 · 芒果核2E与皮革3E" queryId="cycle25_admissions" columns={[f('sample_name','样品'),f('source_year_display','年份'),f('electrolyte_label','电解液'),f('retention_pct','保持率 %'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('profile_label','用途'),f('review_note','原值与裁决'),f('feature_note','特征限定')]}/>
    <EvidenceTable id="batch13-sources-table" title="四个来源范围 · 商业参考另列" queryId="batch13_sources" columns={[f('doi','DOI'),f('classification','身份与用途'),f('scope','已核范围'),f('remaining','剩余工作')]}/>
    <EvidenceTable id="batch13-decisions-table" title="18项证据处置 · 工作值与未决冻结" queryId="batch13_decisions" columns={[f('doi','DOI'),f('decision_id','核验项'),f('decision','原值、依据与处理')]}/>
    <EvidenceTable id="residue13-inputs-table" title="糠醛渣GCD · ZnS残留独立用途" queryId="residue13_inputs" columns={[f('sample_name','样品'),f('value','F/g'),f('current_A_g','A/g'),f('electrolyte','电解液'),f('window','测试窗口'),f('BET','BET m²/g'),f('Zn','ICP-OES Zn wt%'),f('purpose','用途边界'),f('evidence','原文位置')]}/>
