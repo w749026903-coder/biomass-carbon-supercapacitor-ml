@@ -427,3 +427,11 @@
 - 验证：1217项本批封版核验；7213载荷/209原始标识/207家族隔离；四图与八色曲线、两缺口及4/46/48/98模式、桌面手机通过；拟合0
 - 下一步/未决：目标继续active；813原始表候选未触及、37来源均未声称全篇完成，继续表图全文/SI及逐测试准入；原38条待证保留
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-27T00:34:06+08:00：文献v15新增花椒皮籽与椰枣叶：154材料数值、24电容报告、20自身3E输入，历史PAC循环关系去重
+
+- 结果：文献v15新增花椒皮籽与椰枣叶：154材料数值、24电容报告、20自身3E输入，历史PAC循环关系去重
+- 文件：README.md, data/current_literature.json, data/literature_v15.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/XPS尺度与孔模型及历史测试关系_20261027.md, tools/extract_peel_date_v15.py, tools/verify_peel_date_v15.py, tools/verify_peel_date_chain_v15.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261026/批次15_花椒皮籽与椰枣叶, 文献提取进度
+- 验证：1556项原文单元/阶段/空值/封版检查；7535载荷/210原始标识/208来源家族隔离；桌面手机、4图、来源过滤、XPS两尺度、循环后/SI复述及定性空值展示通过；拟合0
+- 下一步/未决：全量目标active；原959表候选149触及/810未触及，39来源均未整篇完成；继续未提取曲线、全文/SI和原38条待证；2器件候选缺自身循环电压，PAC已关联历史端点
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

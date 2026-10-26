@@ -18,6 +18,7 @@ export function DashboardContent(){
  const curveScope=useSectionFilters([{id:'curve-x-kind',field:'x_kind',label:'采样横轴',defaultValue:'all',queryIds:['bounded_curve_samples']}],{},{id:'bounded-curve-scope'});
  const batch12Scope=useSectionFilters([{id:'batch12-target',field:'task',label:'新批次独立目标',defaultValue:'3E体积电容（作者假定密度）',queryIds:['batch12_inputs']}],{},{id:'batch12-target-scope'});
  const furfural14Scope=useSectionFilters([{id:'furfural14-mode',field:'mode_label',label:'糠醛渣标签模式',defaultValue:'点标签：4正文＋42读图',queryIds:['furfural14_inputs']}],{},{id:'furfural14-input-mode'});
+ const batch15Scope=useSectionFilters([{id:'batch15-source',field:'doi',label:'批次15来源',defaultValue:'all',queryIds:['batch15_inputs','batch15_components','batch15_decisions']}],{},{id:'batch15-source-scope'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
   <div className="extraction-cards">
@@ -38,6 +39,7 @@ export function DashboardContent(){
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
     <p>另有 <strong>{h.DES_purpose_reviewed_rows_per_target} 组DES样品</strong>，分别通过保持率均值和首圈比电容均值用途审查，合计仅 {h.DES_independent_DOI_groups} 个DOI。两个目标各12行，不当24次独立实验，不混入普通水系循环集。</p>
     <p>棕榈壳SI新增 <strong>{h.new_Palm_individual_electrical_coins} 个器件 / {h.new_Palm_individual_electrical_conditions} 组工况</strong>，表格共提取{h.new_Palm_response_records}项EIS及电学响应；汇总、单件、多指标与串并联分别保存，同一来源不能拆作独立论文。作者汇总与SI明细的差异列在下方对账。</p>
+    <p>第十五批新增核读花椒皮籽、椰枣叶两来源：154项材料数值、24条电容报告，20条自身普通3E输入。十个花椒样品均有孔结构和Raman，但其它八样品的倍率曲线仍待提取；不把特征条数当训练样本。当前普通3E176条／18DOI，原固定队列仍38条待证。</p>
     <p>第十四批深化糠醛渣 <strong>8材料／48标称倍率工况</strong>：46点标签含原有4正文值和42个新读图条件，另2个被覆盖的点只留区间。它们全部来自同一DOI；不同模式不能相加，不按电流拆成独立论文。2个遮挡空值与原有2个未报告空值分开。</p>
     <p>第十三批增加204项材料数值、55条电容报告：芒果核、废皮革、糠醛渣与商业参考四个指定范围。9条普通3E、4条残留用途分开，商业参考未取得生物质训练资格。5个循环候选中2个已在v0.25准入，其余3个商业参考仍待审。</p>
     <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。有界图捕获现{h.cumulative_bounded_curve_samples}条，其中180数值／2仅区间；{h.peer_model_numeric_cells}个同行参数另计。12原图检查不代表整篇波形提取完成。</p>
@@ -48,7 +50,14 @@ export function DashboardContent(){
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
-  <Section id="furfural14-title" title="第十四批 · 倍率曲线与点/区间标签" filters={<Filters {...furfural14Scope.filterProps}/>}>
+   <Section id="batch15-title" title="第十五批 · 花椒皮籽与椰枣叶" filters={<Filters {...batch15Scope.filterProps}/>}>
+    <p>两来源新增20个自身三电极工况，SI复述和循环后电容另存。下面32行是XPS拟合分量表达，全表at%和C1s内%Area分别列示。两个器件循环缺物理电压，PAC700还与旧端点重复，不作新增准入。</p>
+    <EvidenceTable id="batch15-inputs-table" title="两来源 · 20条自身GCD输入" queryId="batch15_inputs" scope={batch15Scope} columns={[f('doi','DOI'),f('sample','样品'),f('current','作者A/g'),f('capacitance','电容F/g'),f('BET','BET m²/g'),f('XPS_N','XPS N at%'),f('XPS_O','XPS O at%'),f('Raman','Raman积分比'),f('window','测试窗口'),f('reference','工作参比'),f('weight','本批来源权重'),f('evidence','原文位置')]}/>
+    <EvidenceTable id="batch15-components-table" title="XPS组分 · 两种尺度分开" queryId="batch15_components" scope={batch15Scope} columns={[f('doi','DOI'),f('sample','样品'),f('component','组分'),f('energy','结合能eV'),f('absolute_at_pct','全表at%'),f('relative_area_pct','C1s内%Area'),f('basis','尺度'),f('status','核查状态')]}/>
+    <EvidenceTable id="batch15-decisions-table" title="十二项方法与冲突处置" queryId="batch15_decisions" scope={batch15Scope} columns={[f('doi','DOI'),f('decision_id','记录'),f('action','处置')]}/>
+    <EvidenceTable id="batch15-links-table" title="历史循环身份关联 · 避免重复端点" queryId="batch15_identity_links" columns={[f('candidate_id','本批候选'),f('existing_endpoint','旧端点'),f('relation','关系'),f('status','状态')]}/>
+   </Section>
+   <Section id="furfural14-title" title="第十四批 · 倍率曲线与点/区间标签" filters={<Filters {...furfural14Scope.filterProps}/>}>
    <EvidenceChart id="furfural14-rate-chart" title="糠醛渣8材料倍率图 · 遮挡点保留缺口" queryId="furfural14_curve" rows={reviewedRows('furfural14_curve')} sourceRows={reviewedRows('furfural14_curve')} variant="card" spec={{type:'line',x:'x_value',y:'graph_capacitance_F_g',series:'sample_name',stackable:false,colors:{'PC700-1':'#d73027','PC800-1':'#00a6ca','PC900-1':'#1b9e77','PC950-1':'#984ea3','FR900':'#f28e2b','PC900-0':'#333333','PC900-0.1':'#cc79a7','PC900-0.5':'#377eb8'},xLabel:'作者报告电流（A/g）',yLabel:'原图读数（F/g）',valueDecimals:2}} height={370}>
     <p className="scope-note">原图近似读数，常规标记4px读取界限；两个遮挡点不画中点、不跨空值连线。不是模型预测或实验误差条，完整上下界见下表与来源。</p>
    </EvidenceChart>
