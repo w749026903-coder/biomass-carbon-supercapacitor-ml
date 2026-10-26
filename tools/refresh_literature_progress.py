@@ -99,10 +99,11 @@ def main():
             if cond.get('extraction_batch')=='v15':r['status_label']='循环10000圈后电容，非新鲜标签'if cond.get('target_stage')=='post_10000_cycles'else'SI复述，关联同一标称工况'if cond.get('report_kind')=='repeat_SI_same_test'else'自身3E GCD报告工况用途已核定'
             if cond.get('extraction_batch')=='v16':r['status_label']='原图有界近似：显式读图用途，旧普通队列不变'
             if cond.get('extraction_batch')=='v17':r['status_label']='本批分用途工况已核定'if r['observation_id']in eligible17 else'自身复述或竞争报告；不重复/直接准入'
+            if cond.get('extraction_batch')=='v18':r['status_label']='遮挡：数值和数值界限均空，不代填'if r['value']is None else'有界近似报告：复述与作者锚点按用途去重'
         for r in facts:
             if r['review_status']=='qualitative_not_exact_numeric':r['status_label']='定性近1，精确值未给，不填1'
-        query('material_facts',facts,['material_facts','materials','table_source_links','source_documents'],
-          'SELECT f.*,m.doi,m.sample_name,d.path,d.sha256,l.locator FROM material_facts f JOIN materials m USING(material_key) JOIN table_source_links l USING(table_key) JOIN source_documents d USING(document_key);',
+        query('material_facts',facts,['material_facts','materials','resolved_table_sources_v18','source_binding_corrections_v18','source_documents'],
+          'SELECT f.*,m.doi,m.sample_name,r.path,r.sha256,r.locator FROM material_facts f JOIN materials m USING(material_key) JOIN resolved_table_sources_v18 r USING(table_key); -- current API retains original_provenance_v17 when corrected',
           '材料×参数×自身表单元；受限值为null，不同测法不拼成一个参数。',['原始层不自动取得训练资格；独立辅助用途视图另行审查。source_path返回实际正文或SI。'])
         query('capacitances',caps,['capacitance_observations','materials','table_source_links'],
           'SELECT x.*,m.doi,m.sample_name,l.locator FROM capacitance_observations x JOIN materials m USING(material_key) JOIN table_source_links l USING(table_key);',
@@ -306,9 +307,9 @@ def main():
             plot16.append(dict(plot_scope=group16,sample=r['sample_name'],current=r['current_A_g'],value=r['target_value'],lower=r['target_lower_bound'],upper=r['target_upper_bound'],doi=r['doi'],observation_id=r['observation_id'],source_path=r['source_path'],source_sha256=r['source_sha256']))
         query('rate16_plot',plot16,['curve_samples_v8','purpose_reviews_v16'],'primary bounded rate readings only; Date6Ag uses higher vertical resolution panel','图示主表达94工况；按皮/籽/椰枣切换，原始数值坐标，无模型预测；连线不新增训练点。',['纵向4像素界限约2.15/3.82/2.98/1.65F/g，完整上下界见数据与CSV。'])
         expanded16=db.expanded_graph_3e_inputs();em16=db.expanded_graph_3e_matrix();ew16=dict(zip(em16['observation_ids'],em16['sample_weight']))
-        expanded_rows16=[dict(doi=r['doi'],sample=r['sample_name'],current=r['current_A_g'],value=r['target_value'],kind='本批新增读图条件'if r['target_value_kind']=='bounded_original_figure'else'既有普通用途输入',weight=ew16[r['observation_id']],lower=r.get('target_lower_bound'),upper=r.get('target_upper_bound'),observation_id=r['observation_id'],source_group=db.isolation_group(r['source_group']))for r in expanded16]
+        expanded_rows16=[dict(doi=r['doi'],sample=r['sample_name'],current=r['current_A_g'],value=r['target_value'],kind=('第十八批新增读图条件'if r['conditions'].get('extraction_batch')=='v18'else'第十六批新增读图条件')if r['target_value_kind']=='bounded_original_figure'else'既有普通用途输入',weight=ew16[r['observation_id']],lower=r.get('target_lower_bound'),upper=r.get('target_upper_bound'),observation_id=r['observation_id'],source_group=db.isolation_group(r['source_group']))for r in expanded16]
         for r in expanded_rows16:r['weight_label']=format(r['weight'],'.8g')
-        query('expanded16_inputs',expanded_rows16,['auxiliary_gcd_reviews_v3','purpose_reviews_v16'],'db.expanded_graph_3e_inputs()','当前显式259输入/22DOI＝普通184＋75有界近似；不自动替换普通184，每来源权重和1。',['259行不是259篇论文；同材料多电流、其它辅助任务和所有证据一起按来源家族隔离。未拟合。'])
+        query('expanded16_inputs',expanded_rows16,['auxiliary_gcd_reviews_v3','purpose_reviews_v16'],'db.expanded_graph_3e_inputs()','当前显式353输入/22DOI＝普通184＋75旧图值＋94新图值；不自动替换普通184，每来源权重和1。',['353行不是353篇论文；同材料多电流、其它辅助任务和所有证据一起按来源家族隔离。未拟合。'])
         decision_labels16={'LP16_axes':'四面板独立标定，不跨面板借用量程','LP16_bounds':'4像素读图界限与作者原报值分开，不当实验CI','LP16_repeats':'6A/g保留双捕获、按分辨率选主表达；旧作者ID不扩样','LP16_scope':'三电极倍率不当器件循环；整来源跨任务隔离'}
         query('rate16_decisions',[dict(decision_id=r['decision_id'],action=decision_labels16[r['decision_id']],original_action=r['record']['decision'])for r in db.batch16_decisions()],['decisions_v16'],'db.batch16_decisions()','四项量程、读图界限、复述和用途处理；工程通过不代表全量完成。')
         for r in sources:
@@ -326,6 +327,20 @@ def main():
         new17={r['doi']for r in db.batch17_sources()}
         for r in sources:
             if r['doi']in new17:r.update(batch='批次17',scope='全样品自身主表/方法；8张木质素SI表；指定图值。连续波形未提取完')
+        rate18=[];plots18=[]
+        for purpose,label18 in [('ordinary_3e','普通碳3E'),('native_silica_3e','含天然硅碳3E（独立用途）')]:
+            for mode,mode_label in [('author_exact','作者原报值'),('point_mixed','作者值＋可读图值'),('figure_only','原图主表达（含遮挡空值）')]:
+                rr=db.batch18_rate_inputs(mode,purpose);counter18={}
+                for r in rr:counter18[r['source_family_group']]=counter18.get(r['source_family_group'],0)+1
+                for r in rr:rate18.append(dict(purpose=label18,mode=mode_label,doi=r['doi'],sample=r['sample_name'],current=r['current_A_g'],value=r['target_value'],lower=r['target_lower_bound'],upper=r['target_upper_bound'],kind='遮挡，无数值或数值界限'if r['target_value']is None else'作者原值'if r['target_value_kind'].startswith('author_reported')else'原图有界近似',weight_label=format(1/counter18[r['source_family_group']],'.8g'),observation_id=r['observation_id'],source_path=r['source_path'],source_sha256=r['source_sha256'],evidence=r['locator']))
+            for r in db.batch18_rate_inputs('figure_only',purpose):plots18.append(dict(plot_scope='淀粉（十材料）'if r['doi']=='10.3390/molecules29112532'else'稻壳（两阶段）'if r['doi']=='10.1021/acsomega.2c07932'else'混合碳（四材料）',sample=r['sample_name'],current=r['current_A_g'],value=r['target_value'],lower=r['target_lower_bound'],upper=r['target_upper_bound'],kind='遮挡空值'if r['target_value']is None else'原图近似',purpose=label18,doi=r['doi'],observation_id=r['observation_id'],source_path=r['source_path'],source_sha256=r['source_sha256']))
+        query('rate18_inputs',rate18,['purpose_reviews_v18','capacitance_observations','resolved_table_sources_v18'],'db.batch18_rate_inputs(mode,purpose)','普通碳3/97/103与天然含硅碳0/11/11分别调用，全部225表达行不可相加。',['8原始遮挡表达中2个可从自身重复图补回，6标称工况仍空。点矩阵接口拒绝空目标。','97普通点工况含3旧作者锚点＋94新图值；11天然含硅碳另列。不是新论文或独立实验。'])
+        query('rate18_plot',plots18,['curve_samples_v8','purpose_reviews_v18'],'db.batch18_rate_inputs(figure_only,purpose); primary nominal report expression','114原图主表达/16材料曲线，6遮挡空点断线；未插值、未拟合。',['电流含1.5与7A/g，保持不等距坐标；±4纵向像素不是实验CI。'])
+        corrections18=[]
+        for r in db.batch18_binding_corrections():
+            docs18={v['document_key']:dict(v)for v in db.connection.execute('select *from source_documents')};a=docs18[r['old_document_key']];b=docs18[r['new_document_key']];corrections18.append(dict(table_key=r['table_key'],old_path=a['path'],old_image=Path(a['path']).name,old_sha=a['sha256'],new_path=b['path'],new_image=Path(b['path']).name,new_sha=b['sha256'],action='XML先列Scheme1；按原文Figure标签与href更正，数值不变，旧绑定保留'))
+        query('bindings18',corrections18,['source_binding_corrections_v18','figure_identity_resolution_v18','resolved_table_sources_v18'],'db.batch18_binding_corrections(); resolved_table_sources_v18','4份转录单元的来源更正，涉及13事实/16响应及1条XPS注记。',['v17原库/原SHA保留；当前facts API返回更正后路径，并附original_provenance_v17。','旧技术核验缺少图号/图像语义检查，本批新增原文label/href交叉检查，不能用排列序号代替图号。'])
+        query('cycle_review18',[dict(candidate_id=r['candidate_id'],sample='ABPC-4',retention='约100%',CE='95.08%',configuration='当前未选：图注3E，正文/结论2E语境',window='未知，不借用3E倍率窗口',status='继续冻结循环准入；原值/原候选保留')for r in db.batch18_cycle_reviews()],['cycle_reviews_v18','test_candidates'],'db.batch18_cycle_reviews()','角色问题与配置问题分别审；没有取得能解决配置冲突的原始证据，不准入。')
         query('source_summary',sources,['reviewed_sources','materials','material_facts'],sql,'按DOI汇总数值单元，不是训练样本。',['只完成记录声明范围，尚未称全文全部利用。'])
         issue_labels={'reported_XPS_sum':'XPS合计限定','surface_partition_inconsistent':'孔面积分项不符','body_table_disagreement':'正文与表数值竞争','author_ratio_vs_volumes':'报告比例与孔容不符','reported_precision_variants':'数值精度表述不同','cycling_configuration_electrolyte_and_current_roles':'循环协议绑定冲突','own_table_conflict':'酸碱EIS表值冲突','element_label_binding_energy_conflict':'XPS元素标签与能量冲突','percentage_basis_not_explicit':'百分比基准未知','control_alias_not_merged':'无活化对照别名未合并'}
         actions={'PC800_XPS':'原值合计99.7%，不补元素、不归一化。','corn_cob_BET':'表1770与正文1705并存，标准面积待定。','corn_cob_volume_ratio':'孔容和报告比例并存，不用计算值覆盖。','corn_grain_precision':'保留各处精度，不能算作三次测量。','corn_husk_surface':'分项面积超过总量，隔离且不换列。','purple_EIS_AC5':'保留酸/碱四个竞争值，不自动交换列。','purple_XPS_AC30':'保留元素标签与能量冲突，C/O标准值冻结。','purple_control_alias':'SI无活化对照单独保存，别名不自动合并。','purple_microporosity':'微孔率基准未知，不猜面积比或体积比。','purple_cycle_protocol':'保留配置、电解液及电流角色竞争，循环标准条件留空。'}
@@ -360,7 +375,7 @@ def main():
             if candidate['candidate_id'].startswith(('LP13_Mango','LP13_Leather'))and not link:candidate['status']='主要证据已核；正式逐测试增量准入待做'
             if candidate['candidate_id']=='LP17_Rice_CV':candidate['metric']='CV循环保持率（独立方法）';candidate['status']='200mV/s CV；不作GCD循环准入'
             if candidate['candidate_id'].startswith('LP17_NPC'):candidate['status']='配置/SCE轴与器件窗口争议待核；未准入'
-            if candidate['candidate_id']=='LP17_ABPC4':candidate['status']='工作保持率约100、CE95.08；待循环逐测试增量审查'
+            if candidate['candidate_id']=='LP17_ABPC4':candidate['status']='约100保持率/CE95.08角色已核；图注3E与2E语境冲突冻结';candidate['system']='当前未选（原候选曾记3E）'
             if candidate['candidate_id'].startswith('LP13_Interface'):candidate['status']='商业原料未知且器件窗口有争议；参考候选不准入'
             candidate['retention_relation']=rawrecord.get('retention_relation')
             candidate['retention_is_censored']=rawrecord.get('reported_retention_is_censored',False)
@@ -391,14 +406,14 @@ def main():
     query('cycle24_feature_masks',masks24,['feature_conflicts_v24','evidence_v24'],'db.feature_conflicts_v24(); selected null and unselected original N/O values','1个材料的N/O及报告百分比别名共4通道屏蔽；不是4个独立争议或新实验。')
     query('cycle25_admissions',cycle25,['reviewed_endpoints_v25','evidence_v25','report_decisions_v25','literature_links_v25'],'db.fetch(profile); current rows with literature_candidate_id_v25','2来源/2材料/2端点，Mango2E与Leather3E分用途；文献候选链接同一次测试，不重复计数。',['BET工作值/取整及循环电流/角色异文保留，未知电流分母和精确基线下标不猜填。','原38待证、15历史冻结和苏铁绒N/O屏蔽保持，当前没有新拟合。'])
     for key in ['overview','formal_2e','cycling_candidates','cycling_cohorts','new_cycle_admissions','cycle23_admissions','cycle24_admissions','cycle24_feature_masks','cycle25_admissions']:
-        source=queries[key]['source'];source['label']='文献v17与当前循环v0.25只读接口'
+        source=queries[key]['source'];source['label']='文献v18与当前循环v0.25只读接口'
         source['files'].extend([{'name':cycle_pointer['database_file']},{'name':'data/current_database.json'}])
         source['evidenceFlow'].append('候选当前状态通过不可变父链及literature_links_v22/v23/v24/v25查询；家族规则同时作用于矩阵权重和来源折，既有ID晋升不重复计实验。')
-    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=1645,materials=160),dict(batch='批次11',numeric_facts=1926,materials=175),dict(batch='批次12',numeric_facts=2089,materials=185),dict(batch='批次13',numeric_facts=2293,materials=211),dict(batch='批次14',numeric_facts=2293,materials=211),dict(batch='批次15',numeric_facts=2447,materials=225),dict(batch='批次16',numeric_facts=2447,materials=225),dict(batch='批次17',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
+    progress=[dict(batch='批次01',numeric_facts=88,materials=15),dict(batch='批次02',numeric_facts=157,materials=24),dict(batch='批次03',numeric_facts=511,materials=46),dict(batch='批次04',numeric_facts=603,materials=61),dict(batch='批次05',numeric_facts=791,materials=84),dict(batch='批次06',numeric_facts=862,materials=86),dict(batch='批次07',numeric_facts=1055,materials=92),dict(batch='批次08',numeric_facts=1205,materials=107),dict(batch='批次09',numeric_facts=1453,materials=139),dict(batch='批次10',numeric_facts=1645,materials=160),dict(batch='批次11',numeric_facts=1926,materials=175),dict(batch='批次12',numeric_facts=2089,materials=185),dict(batch='批次13',numeric_facts=2293,materials=211),dict(batch='批次14',numeric_facts=2293,materials=211),dict(batch='批次15',numeric_facts=2447,materials=225),dict(batch='批次16',numeric_facts=2447,materials=225),dict(batch='批次17',numeric_facts=3078,materials=289),dict(batch='批次18',numeric_facts=summary['cumulative_numeric_material_facts'],materials=summary['cumulative_materials'])]
     for r in progress:r['batch_short']=r['batch'].removeprefix('批次')
     query('batch_progress',progress,['literature_pool_v1.summary.json','literature_pool_v2.summary.json','literature_pool_v3.summary.json','literature_pool_v4.summary.json','literature_pool_v5.summary.json','literature_pool_v6.summary.json','literature_pool_v7.summary.json','literature_pool_v8.summary.json'],
-      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十七个封版版本的累计快照',
-      '同一证据层十七个批次累计快照；材料事实与测试行分计，不内插每日进度。')
+      'SELECT COUNT(*) FROM material_facts WHERE value IS NOT NULL; -- 十八个封版版本的累计快照',
+      '同一证据层十八个批次累计快照；材料事实与测试行分计，不内插每日进度。')
     historical_summaries=[]
     for review_root in sorted(ROOT.glob('文献全量利用复核_*')):
         historical_summaries.extend(sorted(review_root.glob('*/summary.json')))

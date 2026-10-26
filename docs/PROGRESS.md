@@ -451,3 +451,11 @@
 - 验证：2933原表/原PDF/单元/旧值/空值/CSV核验；9092载荷214标识212家族隔离；新旧筛选、0.001与1.028原报精度、5图与桌面手机显示通过；拟合0；354文件同步预检通过，私有origin及push权限已核实
 - 下一步/未决：全量目标active；159表候选触及800未触及，44来源未全篇完成；继续自身曲线与其它候选，ABPC4待循环逐测试审查，原38待证不抵扣
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-27T03:20:03+08:00：文献v18新增94普通碳有界倍率工况与11含硅碳独立工况，更正四单元图像引用并保留旧库
+
+- 结果：文献v18新增94普通碳有界倍率工况与11含硅碳独立工况，更正四单元图像引用并保留旧库
+- 文件：README.md, data/current_literature.json, data/literature_v18.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/原图编号定位与遮挡标记防误提取_20261027.md, tools/extract_multisource_rates_v18.py, tools/verify_multisource_rates_v18.py, tools/verify_multisource_chain_v18.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261027/批次18_淀粉稻壳混合碳倍率与循环再核, 文献提取进度
+- 验证：8388原像素/原文图号href/更正前后/旧行/CSV检查，9551载荷214标识212家族隔离，六图桌面手机及新旧筛选通过；327文件同步预检和私有origin权限核验通过；无拟合
+- 下一步/未决：全量目标active；800原表候选未触及，44来源未全篇完成；继续原38待证和残余曲线，六标称遮挡与ABPC4配置冲突仍冻结
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
