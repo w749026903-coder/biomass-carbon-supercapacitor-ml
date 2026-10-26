@@ -363,3 +363,11 @@
 - 验证：文献v9的3258项单元/原文保护核验、循环v0.21的730项全观察/矩阵核验、历史版本钉住原输入及当前44候选全DOI留出通过；辅助137行/9DOI。最终浏览器1440/390px、DOI/方法/目标筛选、来源复制、15冻结字段、三幅图与限值/换算显示通过；无新拟合。
 - 下一步/未决：全量目标仍active：累计1453材料数值、567比电容报告；91旧表候选处理指定范围、868未触及，23来源均非全文完成。继续逐身份/版本与自身多样品三电极表图/SI，原39项范围1完成38待证保持，不以新输入抵扣，不启动新训练。
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-26T08:38:29+08:00：第十批新增192材料数值、44比电容报告、70有界图点；v0.22核定5用途，跨年份独立视图与同行ANN参考分开
+
+- 结果：第十批新增192材料数值、44比电容报告、70有界图点；v0.22核定5用途，跨年份独立视图与同行ANN参考分开
+- 文件：README.md, data/current_database.json, data/current_literature.json, data/literature_v10.py, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/knowledge/自身循环原图与同行ANN审查_20261026.md, tools/extract_four_sources_v10.py, tools/release_cycle_admissions_v022.py, tools/verify_corpus_chain_v10.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 循环稳定性数据库_v0.22_原图循环与新增来源_20261026, 文献全量利用复核_20261026/批次10_棉花藜麦黄瓜与同行ANN, 文献提取进度
+- 验证：文献2183项、循环838项、历史固定输入复验及当前3706载荷来源隔离；桌面手机与全部筛选通过；无新拟合；327文件敏感及归档扫描通过
+- 下一步/未决：全量目标active；853候选未触及、原38待证保持，继续自身表图与SI，不追分调参
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

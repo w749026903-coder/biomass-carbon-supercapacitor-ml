@@ -13,16 +13,16 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   const material=component('material-evidence'),cap=component('capacitance-evidence');
   const expectCount=async(block,n)=>assert.match(await block.innerText(),new RegExp(`of ${n} results`));
   const choose=async(label,value)=>{await p.getByRole('button').filter({hasText:label}).click();await p.getByRole('menuitemradio',{name:value,exact:true}).click();};
-  await expectCount(material,1501);await expectCount(cap,567);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),137);
+  await expectCount(material,1712);await expectCount(cap,611);await expectCount(component('full-table-queue'),959);await expectCount(component('auxiliary-gcd-table'),149);
   assert.equal(await p.locator('svg.recharts-surface').count(),3);
-  await expectCount(component('cycling-candidates-table'),44);
+  await expectCount(component('cycling-candidates-table'),54);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('NWJPC-2');
   await expectCount(component('cycling-candidates-table'),2);
   assert.match(await component('cycling-candidates-table').innerText(),/容量保持率（锌离子，独立任务）/);
   assert.match(await component('cycling-candidates-table').innerText(),/已准入：双电极报告工况/);
   assert.match(await component('cycling-candidates-table').innerText(),/v20:WJ2026_NWJPC2_SSC_C10000/);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('');
-  await expectCount(component('formal-2e-table'),27);
+  await expectCount(component('formal-2e-table'),29);
   await component('formal-2e-table').getByPlaceholder('Search data').fill('NWJPC-2');
   await expectCount(component('formal-2e-table'),1);
   assert.match(await component('formal-2e-table').innerText(),/99\.8/);
@@ -83,12 +83,30 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await component('source-classification-table').getByPlaceholder('Search data').fill('');
   await p.getByText(/data for .* copied/).waitFor({state:'hidden',timeout:8000});
   await component('current-feature-freezes-table').screenshot({path:path.join(out,'feature-freezes.png')});
-  await choose(/论文 DOI/,'All');await expectCount(material,1501);await expectCount(cap,567);
-  await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),121);
+  await choose(/论文 DOI/,'10.1039/c7ra11475c');await expectCount(material,89);await expectCount(cap,17);
+  await choose(/论文 DOI/,'10.1021/acsomega.3c04692');await expectCount(material,27);await expectCount(cap,5);
+  await choose(/论文 DOI/,'10.3390/nano14080686');await expectCount(material,60);await expectCount(cap,7);
+  await choose(/论文 DOI/,'10.1039/c9ra01255a');await expectCount(material,35);await expectCount(cap,15);
+  await expectCount(component('batch10-sources-table'),4);await expectCount(component('batch10-audits-table'),28);
+  await expectCount(component('peer-model-review-table'),1);await expectCount(component('cycling-cohorts-table'),4);await expectCount(component('new-cycle-admissions-table'),5);
+  assert.match(await component('peer-model-review-table').innerText(),/200余样本；不是200篇论文/);
+  assert.match(await component('peer-model-review-table').innerText(),/未取得所称XLSX/);
+  assert.match(await component('new-cycle-admissions-table').innerText(),/101\.7/);
+  assert.match(await component('new-cycle-admissions-table').innerText(),/原图86；摘要87\/结论89保留/);
+  await component('cycling-candidates-table').getByPlaceholder('Search data').fill('LP10_Cotton_3E');await expectCount(component('cycling-candidates-table'),1);
+  assert.match(await component('cycling-candidates-table').innerText(),/三电极报告工况（跨年份独立视图）/);
+  await component('cycling-candidates-table').getByPlaceholder('Search data').fill('LP10_Quinoa_2E');await expectCount(component('cycling-candidates-table'),2);
+  assert.match(await component('cycling-candidates-table').innerText(),/已准入：双电极报告工况/);
+  await component('cycling-candidates-table').getByPlaceholder('Search data').fill('LP10_Cucumber');await expectCount(component('cycling-candidates-table'),1);
+  assert.match(await component('cycling-candidates-table').innerText(),/既有正式2E端点的文献关联/);
+  await component('cycling-candidates-table').getByPlaceholder('Search data').fill('');
+  await component('new-cycle-admissions-table').screenshot({path:path.join(out,'new-cycle-admissions.png')});
+  await choose(/论文 DOI/,'All');await expectCount(material,1712);await expectCount(cap,611);
+  await choose(/辅助目标/,'三电极水系比电容');await expectCount(component('auxiliary-gcd-table'),133);
   await choose(/辅助目标/,'双电极水系器件比电容');await expectCount(component('auxiliary-gcd-table'),5);
   await choose(/辅助目标/,'天然矿物残留碳三电极');await expectCount(component('auxiliary-gcd-table'),5);
   await choose(/辅助目标/,'双电极作者两倍系数');await expectCount(component('auxiliary-gcd-table'),6);
-  await choose(/辅助目标/,'All');await expectCount(component('auxiliary-gcd-table'),137);
+  await choose(/辅助目标/,'All');await expectCount(component('auxiliary-gcd-table'),149);
   const des=component('des-input-table');await expectCount(des,12);
   assert.match(await des.innerText(),/DES保持率均值/);assert.doesNotMatch(await des.innerText(),/DES首圈比电容均值/);
   await choose(/DES目标/,'DES首圈比电容均值');await expectCount(des,12);assert.match(await des.innerText(),/F\/g/);
@@ -108,12 +126,12 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   assert.match(await component('palm-electrical-table').innerText(),/475/);
   await choose(/器件形式/,'All');await expectCount(component('palm-electrical-table'),164);
   await expectCount(component('new-material-scope-table'),15);await expectCount(component('onion-raman-audit-table'),3);
-  await expectCount(component('bounded-curve-table'),58);await expectCount(component('composite-cycle-table'),1);
+  await expectCount(component('bounded-curve-table'),128);await expectCount(component('composite-cycle-table'),1);
   assert.match(await component('composite-cycle-table').innerText(),/91/);
   await choose(/采样横轴/,'循环图坐标 N');await expectCount(component('bounded-curve-table'),28);
-  await choose(/采样横轴/,'报告电流 A/g');await expectCount(component('bounded-curve-table'),15);
+  await choose(/采样横轴/,'报告电流 A/g');await expectCount(component('bounded-curve-table'),85);
   await choose(/采样横轴/,'扫描速率 mV/s');await expectCount(component('bounded-curve-table'),15);
-  await choose(/采样横轴/,'All');await expectCount(component('bounded-curve-table'),58);
+  await choose(/采样横轴/,'All');await expectCount(component('bounded-curve-table'),128);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('LP8_Onion');await expectCount(component('cycling-candidates-table'),4);
   assert.match(await component('cycling-candidates-table').innerText(),/<95/);assert.match(await component('cycling-candidates-table').innerText(),/未给精确值/);
   await component('cycling-candidates-table').getByPlaceholder('Search data').fill('');
@@ -139,9 +157,9 @@ const {chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('
   await component('onion-absolute-cycle-chart').screenshot({path:path.join(out,'onion-cycle-mobile.png')});
   await component('current-feature-freezes-table').screenshot({path:path.join(out,'feature-freezes-mobile.png')});
   assert.equal(errors.length,0);
-  const result={passed:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:3,
+  const result={passed:true,build_manifest:JSON.parse(fs.readFileSync(path.join(app,'dist','data-app-build.json'),'utf8')),literature_pointer:JSON.parse(fs.readFileSync(path.resolve('data/current_literature.json'),'utf8')),cycling_pointer:JSON.parse(fs.readFileSync(path.resolve('data/current_database.json'),'utf8')),batch10_four_DOI_scopes_and_peer_reference_and_new5_admissions_checked:true,browser:'isolated headless Microsoft Edge',desktop,mobile,chart_count:3,
    doi_scope_checked:[{doi:'10.1021/acsenvironau.3c00048',material_cells:53,capacitance_reports:40},{doi:'10.3390/nano16161035',material_cells:27,capacitance_reports:0}],
-   method_filter_GCD8_and_material_scope_unchanged:true,formal_2e_27_and_new_endpoint_link_checked:true,cycle_candidates44_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,Glycogen_scope181_17_and_current_correction_checked:true,Weigela_scope111_33_checked:true,DES_two_targets12each_24reviews_same12samples_checked:true,EIS60_XRD6_checked:true,Palm_material193_cap73_EIS71_GCD2_checked:true,Onion_43_13_and_composite_109_22_CV6_GCD16_checked:true,curve_samples58_28_15_15_filters_checked:true,curve_four_series_real_unequal_cycle_spacing_checked:true,censored_retention_limit_not_exact95_checked:true,new_material_scopes15_raman3_composite_cycle1_checked:true,Palm_statistics8_and_electrical164_144_12_132_12_6_2_filters_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_121_5_5_6_all137_filters_checked:true,source_inspector_and_scoped_copy_checked:true,Algae108_35_Eucommia140_129_CV64_GCD64_checked:true,source_classification4_scopes32_feature_freezes15_arithmetic59_checked:true,scoped_copy_characters:clipboard.length,
+   method_filter_GCD8_and_material_scope_unchanged:true,formal_2e_29_and_new_endpoint_link_checked:true,cycle_candidates54_and_NWJPC2_targets_separated:true,new_Hardwood_scope_61_30_checked:true,Glycogen_scope181_17_and_current_correction_checked:true,Weigela_scope111_33_checked:true,DES_two_targets12each_24reviews_same12samples_checked:true,EIS60_XRD6_checked:true,Palm_material193_cap73_EIS71_GCD2_checked:true,Onion_43_13_and_composite_109_22_CV6_GCD16_checked:true,curve_samples128_28_85_15_filters_checked:true,curve_four_series_real_unequal_cycle_spacing_checked:true,censored_retention_limit_not_exact95_checked:true,new_material_scopes15_raman3_composite_cycle1_checked:true,Palm_statistics8_and_electrical164_144_12_132_12_6_2_filters_checked:true,new_WoodApple_scope_5_98_and_CV69_checked:true,auxiliary_task_133_5_5_6_all149_filters_checked:true,source_inspector_and_scoped_copy_checked:true,Algae108_35_Eucommia140_129_CV64_GCD64_checked:true,source_classification4_scopes32_feature_freezes15_arithmetic59_checked:true,scoped_copy_characters:clipboard.length,
    empty_scope_and_search_checked:true,all_reset_reconciled:true,javascript_errors:errors,scientific_goal_complete:false};
   fs.writeFileSync(path.join(app,'dashboard_visual_verification.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
  }finally{await browser.close();}
