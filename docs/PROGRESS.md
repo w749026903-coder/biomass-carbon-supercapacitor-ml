@@ -475,3 +475,11 @@
 - 验证：5899原表/单元/旧行/空值/CSV检查；10105载荷219标识216家族隔离；六图与五来源筛选、源详情和桌面/手机验证通过，最终complete快照SHA已核，拟合0；408文件同步预检通过
 - 下一步/未决：继续745未触及表候选、既有来源剩余图点/波形、原37待证及本批3新循环候选逐测试审查，不降低标准或新拟合
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-27T20:37:06+08:00：文献v21完成83候选DOI对账、3既有端点关联与3条CV5mV/s补正，新增36倍率捕获含9净新Coffee工况
+
+- 结果：文献v21完成83候选DOI对账、3既有端点关联与3条CV5mV/s补正，新增36倍率捕获含9净新Coffee工况
+- 文件：README.md, data/current_literature.json, data/literature_v21.py, data/cycling_identity.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/候选身份与CV方法前向补正_20261027.md, tools/extract_identity_rates_v21.py, tools/verify_identity_rates_v21.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261027/批次21_候选身份对账与咖啡稻壳工况复核, 文献提取进度
+- 验证：1606原图/旧行/方法筛选/CSV/规范DOI核验；9644载荷219标识216家族隔离；全部历史链、旧冻结及37待证保持；8图桌面手机与新旧筛选/源详情通过，最终complete快照与22封版输出SHA已核，拟合0；337文件同步预检通过
+- 下一步/未决：继续745原始候选及已有来源剩余表图/SI；RHC前作重叠待核保留，先读source_relationships避免重复预览；原37继续，不造新端点或降低准入
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
