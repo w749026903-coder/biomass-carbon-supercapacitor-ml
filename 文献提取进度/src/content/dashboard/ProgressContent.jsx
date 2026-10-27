@@ -24,6 +24,7 @@ export function DashboardContent(){
  const batch20Scope=useSectionFilters([{id:'batch20-target',field:'task',label:'第20批用途',defaultValue:'all',queryIds:['batch20_inputs']}],{},{id:'batch20-target-scope'});
  const rate21Scope=useSectionFilters([{id:'rate21-purpose',field:'task',label:'第21批用途',defaultValue:'咖啡/污泥：作者容量用途',queryIds:['rate21_points']}],{},{id:'rate21-purpose-scope'});
  const rate16Scope=useSectionFilters([{id:'rate16-mode',field:'mode',label:'全样倍率标签模式',defaultValue:'报告值＋读图（95总工况）',queryIds:['rate16_inputs']},{id:'rate16-plot-range',field:'plot_scope',label:'倍率图范围',defaultValue:'花椒皮（5材料）',queryIds:['rate16_plot']}],{},{id:'rate16-mode-scope'});
+ const batch22Scope=useSectionFilters([{id:'batch22-purpose',field:'task',label:'第22批用途',defaultValue:'all',queryIds:['batch22_inputs']}],{},{id:'batch22-purpose-scope'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
   <div className="extraction-cards">
@@ -59,6 +60,14 @@ export function DashboardContent(){
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
+   <Section id="batch22-section" title="第二十二批 · 全样品、材料阶段与图文争议" filters={<Filters {...batch22Scope.filterProps}/>}>
+    <p>四篇已有论文新增235个材料数值、3项未报告与28条电容报告。38项登记包括预炭化物、对照、动力学前驱体和另批氢存储样品，不能当38种独立最终碳。14张主表已审，当前还有{h.raw_candidates_untouched}个原始候选未触及。</p>
+    <EvidenceTable id="batch22-inputs-table" title="九类用途 · 共27个表达行" queryId="batch22_inputs" scope={batch22Scope} columns={[f('sample','样品'),f('task','用途'),f('method','方法'),f('value','F/g'),f('current','报告A/g'),f('scan','扫描mV/s'),f('source_weight','来源权重'),f('ready','状态')]}/>
+    <p>松木三个GCD工况已包含于普通三电极192条；WET-1的247@0.1 A/g与原图首点低于220冲突，该工况继续冻结。林业原样品与去灰折算共享测试组；SAP混合废物、含锰CV与普通生物质分用途。林业SI和另外10个主图尚未取得，连续波形仍未全量提取。</p>
+    <EvidenceTable id="batch22-decisions-table" title="五项问题处置 · 原值与证据均保留" queryId="batch22_decisions" columns={[f('doi','DOI'),f('action','处理依据与边界')]}/>
+    <EvidenceTable id="batch22-links-table" title="六条既有循环端点关联" queryId="batch22_links" columns={[f('sample','样品'),f('endpoint','原端点'),f('status','状态'),f('evidence','依据')]}/>
+    <p>林业三个水系端点待逐测试准入，三个有机记录仅作新候选；松木两条循环已在主集，SAP原记录仍不进入普通生物质用途。本批循环准入和拟合均为0，原固定37条待证保持。</p>
+   </Section>
    <Section id="rate21-charts" title="第二十一批 · 身份对账与倍率细化" columns={2}>
     <EvidenceChart id="coffee21-rate-chart" title="咖啡/污泥 · 3旧锚点＋9新近似工况" queryId="coffee21_plot" rows={reviewedRows('coffee21_plot')} sourceRows={reviewedRows('coffee21_plot')} variant="card" spec={{type:'line',x:'current',y:'value',series:'series',xLabel:'报告电流 A/g',yLabel:'作者容量 F/g',colors:{'无KCl / PVDF':'#333333','KCl / PVDF':'#ee3333','KCl / PTFE':'#2255dd'},valueDecimals:2}} height={310}/>
     <EvidenceChart id="rice21-rate-chart" title="稻壳 · 24个图点仍属待核检查用途" queryId="rice21_plot" rows={reviewedRows('rice21_plot')} sourceRows={reviewedRows('rice21_plot')} variant="card" spec={{type:'line',x:'current',y:'value',series:'series',xLabel:'报告电流 A/g',yLabel:'GCD Ct F/g',colors:{'m+/m−=1':'#333333','m+/m−=1.25':'#ee3333','m+/m−=1.5':'#2255dd','m+/m−=2':'#d91ed9'},valueDecimals:2}} height={310}/>
@@ -76,7 +85,7 @@ export function DashboardContent(){
     <EvidenceTable id="batch20-inputs-table" title="十九条分用途输入 · 六目标分别调用" queryId="batch20_inputs" scope={batch20Scope} columns={[f('doi','DOI'),f('sample','材料'),f('task','用途'),f('method','方法'),f('current','A/g'),f('scan','mV/s'),f('raw_value','原报 F/g'),f('binder','粘结剂'),f('weight_label','用途内来源权重')]}/>
     <EvidenceTable id="batch20-decisions-table" title="本批六项证据处置" queryId="batch20_decisions" columns={[f('doi','DOI'),f('action','处理与仍未解决的问题')]}/>
     <EvidenceTable id="batch20-protocols-table" title="五来源方法与归一化依据" queryId="batch20_protocols" columns={[f('doi','DOI'),f('protocol','方法范围')]}/>
-    <p>本批触及28个原始候选，包含HTML重复和合并解析表；累计尚有745个候选未处理。三个文献层循环候选已在v21对应既有端点，螺旋藻也关联既有端点，均不增加实验数。原固定37条待证及循环v0.26不变。</p>
+    <p>本批触及28个原始候选，包含HTML重复和合并解析表；当批封版时尚有745个候选未处理，当前数量见上方。三个文献层循环候选已在v21对应既有端点，螺旋藻也关联既有端点，均不增加实验数。原固定37条待证及循环v0.26不变。</p>
    </Section>
    <Section id="batch19-title" title="第十九批 · 三来源分阶段提取与旧记录补正">
     <p>新增38个分阶段登记、477材料数值及5项空值，来自木质素、蛋米废料、烟草三个来源。原料NMR/GPC与纺丝液黏度单列；PEO投料不作最终组成。4条普通三电极比电容与三个单独的双电极用途分别调用。</p>

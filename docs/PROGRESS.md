@@ -483,3 +483,11 @@
 - 验证：1606原图/旧行/方法筛选/CSV/规范DOI核验；9644载荷219标识216家族隔离；全部历史链、旧冻结及37待证保持；8图桌面手机与新旧筛选/源详情通过，最终complete快照与22封版输出SHA已核，拟合0；337文件同步预检通过
 - 下一步/未决：继续745原始候选及已有来源剩余表图/SI；RHC前作重叠待核保留，先读source_relationships避免重复预览；原37继续，不造新端点或降低准入
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-27T23:56:45+08:00：文献v22核读四来源，新增235材料数值、28电容报告与九用途27表达，松木247图文争议保留冻结
+
+- 结果：文献v22核读四来源，新增235材料数值、28电容报告与九用途27表达，松木247图文争议保留冻结
+- 文件：README.md, data/current_literature.json, data/literature_v22.py, docs/CURRENT_STATE.md, docs/DATA_CORRECTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/全样品图文异文与原样品去灰口径_20261027.md, tools/extract_four_sources_v22.py, tools/verify_four_sources_v22.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261027/批次22_林业多前驱体松木配方与参考体系, 文献提取进度
+- 验证：5756项原表单元原值SHA与API检查、9931载荷220标识217家族隔离和全部历史链通过；8图及新旧筛选导出、桌面手机无溢出，最终complete快照SHA已核；无新拟合/循环准入；408文件同步预检通过
+- 下一步/未决：继续731未触及候选和剩余图/SI；逐测试审查林业三既有水系循环的材料残留用途，原固定37待证保持，不猜值或降低准入
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
