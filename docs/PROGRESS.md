@@ -467,3 +467,11 @@
 - 验证：文献5273项、固定历史10223载荷来源隔离、循环1602项；旧端点/矩阵/原值/SHA保持；桌面及390px移动页六图无溢出无JS错误，当前指针/计数一致
 - 下一步/未决：继续773未触及表候选、已有来源剩余曲线/SI及37条待证；按现行用途逐测试审核，不猜值、不新拟合
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-27T19:21:28+08:00：文献v20核读五来源，新增299材料数值、33电容报告与19条分用途输入，原37待证保持
+
+- 结果：文献v20核读五来源，新增299材料数值、33电容报告与19条分用途输入，原37待证保持
+- 文件：README.md, data/current_literature.json, data/literature_v20.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/CV_GCD与阶段及原图误读复核_20261027.md, tools/extract_five_sources_v20.py, tools/verify_five_sources_v20.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261027/批次20_橙汁稻壳咖啡污泥螺旋藻与辣木, 文献提取进度
+- 验证：5899原表/单元/旧行/空值/CSV检查；10105载荷219标识216家族隔离；六图与五来源筛选、源详情和桌面/手机验证通过，最终complete快照SHA已核，拟合0；408文件同步预检通过
+- 下一步/未决：继续745未触及表候选、既有来源剩余图点/波形、原37待证及本批3新循环候选逐测试审查，不降低标准或新拟合
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

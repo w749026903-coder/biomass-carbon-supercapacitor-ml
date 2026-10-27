@@ -1,0 +1,142 @@
+{
+  "status": "pre_curation_primary_review_not_sealed_or_admitted",
+  "parent_version": "v19",
+  "cycling_parent_version": "v0.26",
+  "formal_new_admissions": 0,
+  "model_fits": 0,
+  "previous_goal_turn": "progress: originalbody/table/SIreading and normalOAassetacquisition; no releasedv20yet",
+  "OJ": {
+    "doi": "10.3390/nano14010071",
+    "scope": "9final3x3KOH/time, hydrochar andpreactivationpyrochar; allownmain4tables/SI2tables; qualitative42mainfigure scopes beingvisuallychecked",
+    "recipe": "225mljuice->180C6hhydrochar7.2g->800CN2pyrochar3.6g(holdunreported)->KOH/carbon3,4,5 at800C 30,120,210min;N2flow800mlmin;wash1MHCl,neutralwater,dry80overnight",
+    "electrode": "85AC/10CB/5PVDF;~2mgperelectrode; CR2032,polyamide,1MNa2SO4;CV0..1.4V vsGCD/cycle0..1V;5000cycles1Agsampleevery250",
+    "author_CV_F_g_at10mV_s": {
+      "4:1@120": 22.26,
+      "5:1@120": 56.05,
+      "5:1@210": 26.95
+    },
+    "cap_basis": "CVCT/(2m), moneelectrodemass; no3Erescaling. GCDi specificcurrentmassbasisnotinferred",
+    "conflicts": [
+      "Fig7captiona/bcolorsblue5:1@120/red5:1@210 vsP64reversedwording; actualfigurelegendneedsbind",
+      "Table2I2D/Gdashfor4:1@120 vsbody0(no discerniblepeak), do notturnNDinto0",
+      "XPSwithinC/Opeakfractionsnotwholeelementat%;Si isauthorsubstrate",
+      "Originalg007/g008 root/figures duplicatesSHAequal, nooutsideoriginaldeleted"
+    ],
+    "pub_date": "2023-12-26; volume/SI2024 separatelypreserved"
+  },
+  "RH": {
+    "doi": "10.1039/d5ra03028e",
+    "materials": "onefreshRHC andtwoaftercyclingpositiveelectrodes; massratios1/1.25/1.5/2 aretestconfigurations notnewcarbons",
+    "recipe": "precarbon500C1hN2/10Cmin; char:KOH1:4,110C24h dry;700C1hactivation,waterneutral(noacidreported),dry110C24h",
+    "core": "2E6MKOH,0..1Vcycle1Ag10k;positive4mgcm2x1cm2;negativeaccordingratio;authorcurrentmassbasisunknownnotinferred",
+    "own_retention_author": {
+      "1": 27.9,
+      "2": 96.4
+    },
+    "own_CV_or_method_unselected_C_vs_ratio": {
+      "1": 155,
+      "1.25": 167,
+      "2": 141
+    },
+    "cap_basis": "NativeEq1CV integral/(2mtvDV); Eq2GCDI_dt/(mtDV), mttotalpositive+negative. KeepauthorCt; energy consistencyquestionnotusedtoinferwrongnormalization",
+    "fresh_BET": 3185,
+    "fresh_O_at_pct": 8.54,
+    "post_cycle_O_at_pct": {
+      "ratio1positive": 21.22,
+      "ratio2positive": 9.12
+    },
+    "conflicts": [
+      "SIpore1.145+.661=1.806 vsVtotal1.766; noforcedpartition orzero",
+      "bodyXRD00243/10022 assignments inconsistentwithstandard/graph needsannotationnotvalueguess",
+      "Table1Emax10000.361 vsconclusion.354; originaltableschosenasworkingraw, dissentretained",
+      "3EcomponentwindowsinSI S3distinctpositive/negative, notwholecell0..1V/CV-1.2...2"
+    ],
+    "prior_reference": "2016ColloidsSurfacesA511294302 ref15, methodcomparison alone notproofdatareusefamily"
+  },
+  "CO": {
+    "doi": "10.1021/acsomega.3c09438",
+    "materials": "nominal8finalcarbons plusrawDS/SCblend; testbinderPVDF/PTFEseparateconfiguration, notindependentcarbons",
+    "recipe": "driedsludge+spentcoffee1:1(contextP6DSandSS typo retained),raw100C24h; singlecombinedactivation800/850/900C1hN2/5Cmin; Na2S2O3/K2CO3/trisodiumcitrate1.5plusKCl3.3dry/3.6wet or1.5wet. Wet20mlwater25C~18h,dry80C24h;waterwashonly,dry80C24h",
+    "tests": "2Esymmetriccoin,80/10/10AC/CB/binder;2..4mgcm2coatnotprovenactive-only;6MKOH0..1V or1MCH3COONa0..1.5V;pairedcells uncertaintySDexplicit",
+    "own_author_C_F_g": [
+      {
+        "sample": "SSC-Na2S2O3-1.5-800",
+        "binder": "PVDF",
+        "j": 1,
+        "value": "67.4 ±0.4"
+      },
+      {
+        "sample": "SSC-Na2S2O3-KCl-1.5-3.3-800",
+        "binder": "PVDF",
+        "j": 1,
+        "value": "89 ±14"
+      },
+      {
+        "sample": "SSC-Na2S2O3-KCl-1.5-3.3-800",
+        "binder": "PTFE",
+        "j": 1,
+        "value": "157 ±24",
+        "visual_recheck": "OriginalFig7dbluefirstpoint~157 supports157±24. Earlier~97hypothesis withdrawn; noactualtargetconflict."
+      },
+      {
+        "sample": "SSC-Na3C6H5O7-KCl-1.5-1.5L-850",
+        "j": 0.2,
+        "value": "101.8 ±10.2",
+        "electrolyte": "1MCH3COONa"
+      }
+    ],
+    "formula_native": "Eq1C=4I/((dV/dt)m);Eq2Cg=2I_dt/(mDV);bodym each electrode (g) also saysmilligram;Eq3E=CgV²/(2*3.6). Do notinfercurrentdenominator orwhichCs/Cg fromenergy; keepliteral andreport ambiguity separatepurpose.",
+    "cycle": "98.4±.3% SD/20000/10Ag/1MCH3COONa,2E; actualFig10before-afterCV0..1.5; noexistingcyclingendpoint matched",
+    "conflicts": [
+      "Table1wet800BET878±44 vsTable2wet800820±41, same nominal noindependentreplicateproof",
+      "wet850averageporeTable23.76±.04 vsTable33.89±.04; freezecompetingstandardfield",
+      "Raman900body1.025 vsactualFig4printed1.029, preserveboth; bodyaliasNa2S2O7 vsrealNa2S2O3 alsoin8/9legends",
+      "binderPTFETable4ESR.37±.00 vsbody~.4; keepauthorrounded0uncertainty, notmissing",
+      "postcycleWarburg/CV/EISresponsesexcludedfrompredictors; nativeashunquantifiedsource flag retained"
+    ],
+    "initial_review_correction": "Highresolutionoriginalgraphrecheck: PTFE157 agreeswithsource, not97; nofalseconflict tocreate."
+  },
+  "SP": {
+    "doi": "10.3390/nano13172431",
+    "materials": "rawSpirulina,PSB400C2h5CminN2, fivefinal7004/8001/8002/8004/9004;activations2h5CminN2KOHratio1/2/4,1MHClwash105C12h dry",
+    "main_3E": "6MKOH/HgHgO/Pt,-1..0V;SNPB8004 own348.5Fg@1Ag; existingcyclecandidate:V05:018 94.14/10000/10Ag alreadyapproved notnewendpoint",
+    "two_E": "actualbody0..1.3V for6MKOH afterCVwindowtest0..1.8;body307Fg@.5 vsconclusion304;47Fg@20;SIfigS5actualpointneeded; abstract30Agvsbody20 at9685power",
+    "critical_percent_basis": "BodyclaimedXPSat matchesthreebulkEAwt values exactly. Preservebothmethodclaims andflag attributionrisk; no proof literalXPSisfalse, no conversion/normalization. Currentcyclecoreunchanged; no automatic oldfeaturefreeze fromthiscoincidence alone.",
+    "raman": "ActualprintedFig3dIG/ID: PSB1.0231,7004 1.1409,8001 1.0945,8002 1.1238,8004 1.1619,9004 1.1348; body1.023/1.162rounded. No unmarked reciprocal.",
+    "other_conflicts": [
+      "PSBSBET.9027 vsSmeso2.2235 andVmeso.0028>Vtotal.0025; method-qualifiedrawvaluesnotforcedconsistent",
+      "microporedashesnot0",
+      "ret94.14actualFig6 vsconclusiononly5%loss; owncycleplotwinsworkinglabel, oldendpointretained",
+      "E/PunitsreversedinbodyP31; do notswaprawprintsilently; noenergyderivedvoltage"
+    ]
+  },
+  "MO": {
+    "doi": "10.1021/acsomega.2c04301",
+    "materials": "fouractualMOL600/650/750/850; Table1lastrowprintsMOL750again. Lastrowstructural/EDSfactsunbound, do notinheritallto850. BodyexplicitC88.91for850canbeseparateownreport.",
+    "recipe": "rawsun2d+110C35h;250C2.5hprecarbon,crush24h/250mesh;0.5MZnCl2,80C2h/300rpm,dry110C2d;~.7gpressed19mm8ton(noinventpressureMPa).IntegratedN2to600C3Cmin thenCO2to650/750/85010Cmin;holdtimesunreported;water+HCl1m/Lasprintednotconvertedto1M",
+    "scope": "retainedZnO/CaCO3,EDSpercentbasisunknown; separate residualZn/Ca binderfreeauthorcapacitance purpose, noXPSprojection",
+    "tests": "two8mmx.19mmdiscs,~10mgloadingambiguousper/total;no binder,eggshellmembrane,steel;1MH2SO4/6MKOH/1MNa2SO4,0..1V;CV1,2,5,10mVs, GCD1Ag;EqCsp=I_dt/(mDV),mworkingelectrode;do notinfercurrentdenominator",
+    "own_GCD_F_g_at1": {
+      "MOL650_H2SO4": 156,
+      "MOL750_H2SO4": 307,
+      "MOL850_H2SO4": 221,
+      "MOL750_KOH": 254,
+      "MOL750_Na2SO4": 201
+    },
+    "own_CV_F_g_at1mVs": {
+      "MOL600_H2SO4": 101,
+      "MOL650_H2SO4": 196,
+      "MOL750_H2SO4": 283,
+      "MOL850_H2SO4": 211,
+      "MOL750_KOH": 248,
+      "MOL750_Na2SO4": 202
+    },
+    "conflicts": [
+      "NativeTable3headerCVspans283and307 columns butbody/actualGCDexplicit307; rawtable retained, role mappedfromownprotocol notsilentlabelrewrite",
+      "MOL750BETTable412.196/conclusion412.196 vsbody433;VtotalTable.2697 vsbody.244, retaincompetingreports andevidence-basedworkingchoice",
+      "VolumeCacid101.61/KOH684.07/Na66.53 asprinted; unverifiedresponses, notguessed84.07",
+      "78% at10mVs mistakenlycalledlongtermcyclinginP28; actualFig7e scanrate, no cyclingendpoint invented",
+      "EDS Ca incorrectlycalledpotassiuminprose, keepCaelementlabel notconvertK; Zn.00onecontrolisreportedrounded0, notproofabsenceforall"
+    ]
+  }
+}

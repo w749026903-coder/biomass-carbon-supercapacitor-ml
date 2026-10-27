@@ -21,6 +21,7 @@ export function DashboardContent(){
  const batch15Scope=useSectionFilters([{id:'batch15-source',field:'doi',label:'批次15来源',defaultValue:'all',queryIds:['batch15_inputs','batch15_components','batch15_decisions']}],{},{id:'batch15-source-scope'});
  const rate18Scope=useSectionFilters([{id:'rate18-purpose',field:'purpose',label:'新倍率用途',defaultValue:'普通碳3E',queryIds:['rate18_inputs']},{id:'rate18-mode',field:'mode',label:'新倍率标签',defaultValue:'作者值＋可读图值',queryIds:['rate18_inputs']},{id:'rate18-scope',field:'plot_scope',label:'新倍率图范围',defaultValue:'淀粉（十材料）',queryIds:['rate18_plot']}],{},{id:'rate18-scope'});
  const batch17Scope=useSectionFilters([{id:'batch17-target',field:'task',label:'批次17目标',defaultValue:'三电极水系GCD',queryIds:['batch17_inputs']}],{},{id:'batch17-target-scope'});
+ const batch20Scope=useSectionFilters([{id:'batch20-target',field:'task',label:'第20批用途',defaultValue:'all',queryIds:['batch20_inputs']}],{},{id:'batch20-target-scope'});
  const rate16Scope=useSectionFilters([{id:'rate16-mode',field:'mode',label:'全样倍率标签模式',defaultValue:'报告值＋读图（95总工况）',queryIds:['rate16_inputs']},{id:'rate16-plot-range',field:'plot_scope',label:'倍率图范围',defaultValue:'花椒皮（5材料）',queryIds:['rate16_plot']}],{},{id:'rate16-mode-scope'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
@@ -57,9 +58,16 @@ export function DashboardContent(){
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
    <EvidenceTable id="capacitance-evidence" title="比电容 · 每种工况分别记录" queryId="capacitances" columns={capCols} scope={scope}/>
   </Section>
+   <Section id="batch20-title" title="第二十批 · 五来源表格、SI与方法核对" filters={<Filters {...batch20Scope.filterProps}/>}>
+    <p>新增299个材料数值、8项空值和33条电容报告；40项登记含27种最终碳、12项其它阶段及1项身份未定表行。19条分用途输入分开调用，其中1条已计入普通三电极189条。CV、作者容量表达、残留Zn/Ca碳及普通GCD各有明确用途。</p>
+    <EvidenceTable id="batch20-inputs-table" title="十九条分用途输入 · 六目标分别调用" queryId="batch20_inputs" scope={batch20Scope} columns={[f('doi','DOI'),f('sample','材料'),f('task','用途'),f('method','方法'),f('current','A/g'),f('scan','mV/s'),f('raw_value','原报 F/g'),f('binder','粘结剂'),f('weight_label','用途内来源权重')]}/>
+    <EvidenceTable id="batch20-decisions-table" title="本批六项证据处置" queryId="batch20_decisions" columns={[f('doi','DOI'),f('action','处理与仍未解决的问题')]}/>
+    <EvidenceTable id="batch20-protocols-table" title="五来源方法与归一化依据" queryId="batch20_protocols" columns={[f('doi','DOI'),f('protocol','方法范围')]}/>
+    <p>本批触及28个原始候选，包含HTML重复和合并解析表；累计尚有745个候选未处理。新增3个循环候选待逐测试审核；螺旋藻关联既有端点，不增加实验数。原固定37条待证及循环v0.26不变。</p>
+   </Section>
    <Section id="batch19-title" title="第十九批 · 三来源分阶段提取与旧记录补正">
     <p>新增38个分阶段登记、477材料数值及5项空值，来自木质素、蛋米废料、烟草三个来源。原料NMR/GPC与纺丝液黏度单列；PEO投料不作最终组成。4条普通三电极比电容与三个单独的双电极用途分别调用。</p>
-    <EvidenceTable id="batch19-inputs-table" title="本批八条分用途输入" queryId="batch19_inputs" columns={[f('doi','DOI'),f('sample','材料'),f('task','目标用途'),f('current','A/g'),f('value','F/g'),f('weight_label','用途内来源权重'),f('missing_features','空特征数')]}/>
+    <EvidenceTable id="batch19-inputs-table" title="第十九批八条分用途输入" queryId="batch19_inputs" columns={[f('doi','DOI'),f('sample','材料'),f('task','目标用途'),f('current','A/g'),f('value','F/g'),f('weight_label','用途内来源权重'),f('missing_features','空特征数')]}/>
     <EvidenceTable id="batch19-decisions-table" title="方法、阶段与异文处置" queryId="batch19_decisions" columns={[f('doi','DOI'),f('action','当前处理')]}/>
     <EvidenceTable id="cycle26-correction-table" title="v0.26 · 既有YPAC-1循环电流补正" queryId="cycle26_correction" columns={[f('sample_name','材料'),f('old_current','旧状态'),f('reported_current_A_g','A/g'),f('retention_pct','保持率 %'),f('cycle_count','循环次数'),f('current_basis','原文依据'),f('status','当前状态')]}/>
     <p>原审查漏掉既有正文中明确的10A/g循环句，现按原端点补正，不新增实验。原39条已解决2条，剩37条/23来源；全量文献利用仍在继续，没有进行新模型拟合。</p>
