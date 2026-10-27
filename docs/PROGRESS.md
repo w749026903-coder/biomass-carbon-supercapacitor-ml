@@ -491,3 +491,11 @@
 - 验证：5756项原表单元原值SHA与API检查、9931载荷220标识217家族隔离和全部历史链通过；8图及新旧筛选导出、桌面手机无溢出，最终complete快照SHA已核；无新拟合/循环准入；408文件同步预检通过
 - 下一步/未决：继续731未触及候选和剩余图/SI；逐测试审查林业三既有水系循环的材料残留用途，原固定37待证保持，不猜值或降低准入
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T00:45:39+08:00：循环v0.27补正三条既有林业水系端点，仅准入残留敏感性用途；普通主集和原37待证保持
+
+- 结果：循环v0.27补正三条既有林业水系端点，仅准入残留敏感性用途；普通主集和原37待证保持
+- 文件：README.md, data/current_database.json, docs/CURRENT_STATE.md, docs/DATA_CORRECTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/含灰循环分用途与共同GCD程序补证_20261028.md, tools/release_forest_cycles_v027.py, tools/verify_forest_cycles_v027.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 循环稳定性数据库_v0.27_林业含灰双电极准入_20261028, 文献提取进度
+- 验证：1904项原表SHA原值旧矩阵来源权重反例与钉住旧API的历史链通过；八图及新旧筛选导出桌面手机验证、最终complete快照和13封版输出SHA通过；无拟合；338文件同步预检通过
+- 下一步/未决：继续731未触及候选和剩余自身表图SI、原固定37待证；已初筛综述/PersonalAccount与鹅羽松木和蜜瓜皮机器学习来源，不把他引或复合体系混入普通训练集
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
