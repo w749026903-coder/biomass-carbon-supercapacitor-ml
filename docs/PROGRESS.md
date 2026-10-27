@@ -499,3 +499,11 @@
 - 验证：1904项原表SHA原值旧矩阵来源权重反例与钉住旧API的历史链通过；八图及新旧筛选导出桌面手机验证、最终complete快照和13封版输出SHA通过；无拟合；338文件同步预检通过
 - 下一步/未决：继续731未触及候选和剩余自身表图SI、原固定37待证；已初筛综述/PersonalAccount与鹅羽松木和蜜瓜皮机器学习来源，不把他引或复合体系混入普通训练集
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T02:09:52+08:00：文献v23新增147材料数值与7个分用途输入；309二手行隔离，原37待证保持
+
+- 结果：文献v23新增147材料数值与7个分用途输入；309二手行隔离，原37待证保持
+- 文件：data/current_literature.json, data/literature_v23.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/同行汇编核验与含铜对照分层_20261028.md, tools/extract_peer_feather_v23.py, tools/transcribe_peer_SI_v23.py, tools/verify_peer_feather_v23.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, 文献全量利用复核_20261028/批次23_同体系机器学习蜜瓜皮鹅羽与综述对账, 文献提取进度
+- 验证：文献5714项、循环v027及历史链1904项通过；原表/原值/SHA与用途矩阵、来源隔离、166行PDF几何复现通过；最终进度页8图、筛选/导出/来源追溯、桌面1440与手机390、最终构建SHA及零JS异常通过；382文件敏感内容/LFS预检通过
+- 下一步/未决：继续715表候选、60来源残余波形/SI与原固定37待证；原39中2解决，不降低准入；本轮0拟合
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

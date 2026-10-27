@@ -24,6 +24,7 @@ export function DashboardContent(){
  const batch20Scope=useSectionFilters([{id:'batch20-target',field:'task',label:'第20批用途',defaultValue:'all',queryIds:['batch20_inputs']}],{},{id:'batch20-target-scope'});
  const rate21Scope=useSectionFilters([{id:'rate21-purpose',field:'task',label:'第21批用途',defaultValue:'咖啡/污泥：作者容量用途',queryIds:['rate21_points']}],{},{id:'rate21-purpose-scope'});
  const rate16Scope=useSectionFilters([{id:'rate16-mode',field:'mode',label:'全样倍率标签模式',defaultValue:'报告值＋读图（95总工况）',queryIds:['rate16_inputs']},{id:'rate16-plot-range',field:'plot_scope',label:'倍率图范围',defaultValue:'花椒皮（5材料）',queryIds:['rate16_plot']}],{},{id:'rate16-mode-scope'});
+ const batch23Scope=useSectionFilters([{id:'batch23-purpose',field:'task',label:'第23批用途',defaultValue:'all',queryIds:['batch23_inputs']}],{},{id:'batch23-purpose-scope'});
  const batch22Scope=useSectionFilters([{id:'batch22-purpose',field:'task',label:'第22批用途',defaultValue:'all',queryIds:['batch22_inputs']}],{},{id:'batch22-purpose-scope'});
  return <article className="literature-progress">
   <p className="progress-intro" data-editable-id="extraction-introduction" data-editable-narrative="true">全量目标尚未完成，按用户续行逐批推进：先充分提取已有文献，再确定模型路线。材料事实、测试报告、分用途输入与正式循环准入分别计数。</p>
@@ -56,6 +57,16 @@ export function DashboardContent(){
     <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。有界图捕获现{h.cumulative_bounded_curve_samples}条，其中{h.cumulative_numeric_curve_samples}数值／2仅区间／{h.cumulative_occluded_curve_samples}遮挡；{h.peer_model_numeric_cells}个同行参数另计。12原图检查不代表整篇波形提取完成。</p>
    </div>
   </DataComponent>
+  <Section id="batch23-section" title="第二十三批 · 自身实验与二手汇编分层" filters={<Filters {...batch23Scope.filterProps}/>}>
+   <p>新增147项自身材料数值、14条电容报告（12数值、2未报告）。17项登记含原料、水热炭及最终材料；M-3-25的581.74/587.14竞争保留，蜜瓜皮与前作样品重叠待核。没有新增循环准入或拟合。</p>
+   <EvidenceTable id="batch23-inputs-table" title="七条用途输入 · 同一来源家族" queryId="batch23_inputs" scope={batch23Scope} columns={[f('sample','样品'),f('task','用途'),f('system','配置'),f('value','F/g'),f('current','报告A/g'),f('source_weight','来源权重'),f('status','状态')]}/>
+   <p>两条零Cu对照已计入普通三电极194条/27 DOI；含图363条为嵌套视图。含Cu复合体系单列，不因论文包含Cu就丢弃所有对照，也不把Cu材料混入普通碳。</p>
+   <EvidenceTable id="secondary23-table" title="309条二手检索索引 · 无正式训练资格" queryId="secondary23_rows" columns={[f('curator','汇编DOI'),f('row_id','原行'),f('cited','被引DOI'),f('description','原表内容'),f('location','位置'),f('status','边界')]}/>
+   <p>其中166行为同行SI的41 DOI汇编，另143行为综述/上下文。89/164重复，32/33同记录特征却有120/190 F/g；原行全部保留，不能直接增加训练样本。续页首6行已按PDF坐标补回。</p>
+   <EvidenceTable id="peer23-metrics-table" title="同行原报指标 · 缩放和拆分尚未复现" queryId="peer23_metrics" columns={[f('model','同行模型'),f('RMSE','原报RMSE'),f('MAE','原报MAE'),f('R2','原报R²'),f('scope','指标边界')]}/>
+   <p>该论文自身验证实测611 F/g，模型预测229/208 F/g；自身BET33低于其汇编的263下界。不能把缩放MAE当成原始F/g，更不能和本项目保持率百分点直接比较；这也未证明本项目误差由同一原因造成。</p>
+   <EvidenceTable id="batch23-decisions-table" title="本批五项证据与处置" queryId="batch23_decisions" columns={[f('doi','DOI'),f('decision','处理与用途边界')]}/>
+  </Section>
   <Section id="sources-title" title="已提取来源与范围"><EvidenceTable id="reviewed-sources" title="来源清单 · 指定表格已核定" queryId="source_summary" columns={[f('doi','DOI'),f('title','论文'),f('batch','批次'),f('materials','材料数'),f('numeric_facts','数值单元'),f('scope','用途边界')]}/></Section>
   <Section id="evidence-title" title="材料与测试数据检索" filters={<Filters {...scope.filterProps}/>}>
    <EvidenceTable id="material-evidence" title="材料属性 · 按方法保留原值" queryId="material_facts" columns={factCols} scope={scope}/>
@@ -69,7 +80,7 @@ export function DashboardContent(){
    <Section id="batch22-section" title="第二十二批 · 全样品、材料阶段与图文争议" filters={<Filters {...batch22Scope.filterProps}/>}>
     <p>四篇已有论文新增235个材料数值、3项未报告与28条电容报告。38项登记包括预炭化物、对照、动力学前驱体和另批氢存储样品，不能当38种独立最终碳。14张主表已审，当前还有{h.raw_candidates_untouched}个原始候选未触及。</p>
     <EvidenceTable id="batch22-inputs-table" title="九类用途 · 共27个表达行" queryId="batch22_inputs" scope={batch22Scope} columns={[f('sample','样品'),f('task','用途'),f('method','方法'),f('value','F/g'),f('current','报告A/g'),f('scan','扫描mV/s'),f('source_weight','来源权重'),f('ready','状态')]}/>
-    <p>松木三个GCD工况已包含于普通三电极192条；WET-1的247@0.1 A/g与原图首点低于220冲突，该工况继续冻结。林业原样品与去灰折算共享测试组；SAP混合废物、含锰CV与普通生物质分用途。林业SI和另外10个主图尚未取得，连续波形仍未全量提取。</p>
+    <p>松木三个GCD工况在v22封版时已包含于普通三电极192条；当前为194条；WET-1的247@0.1 A/g与原图首点低于220冲突，该工况继续冻结。林业原样品与去灰折算共享测试组；SAP混合废物、含锰CV与普通生物质分用途。林业SI和另外10个主图尚未取得，连续波形仍未全量提取。</p>
     <EvidenceTable id="batch22-decisions-table" title="五项问题处置 · 原值与证据均保留" queryId="batch22_decisions" columns={[f('doi','DOI'),f('action','处理依据与边界')]}/>
     <EvidenceTable id="batch22-links-table" title="六条既有循环端点关联" queryId="batch22_links" columns={[f('sample','样品'),f('endpoint','原端点'),f('status','状态'),f('evidence','依据')]}/>
     <p>文献v22封版时，林业三个水系端点待逐测试准入，现已在循环v0.27按残留用途处理；三个有机记录仍仅候选。松木两条循环早已在主集，SAP原记录仍不进入普通生物质用途。文献v22本身未执行循环准入或拟合，原固定37条待证保持。</p>
@@ -156,7 +167,7 @@ export function DashboardContent(){
    <EvidenceTable id="cycle23-admissions-table" title="v0.23新准入 · 两项用途与来源隔离" queryId="cycle23_admissions" columns={[f('sample_name','样品'),f('source_year_display','年份'),f('electrolyte_label','电解液'),f('retention_pct','保持率 %'),f('cycle_count','圈数'),f('reported_current_A_g','作者 A/g'),f('cycle_voltage_lower_V','下限 V'),f('cycle_voltage_upper_V','上限 V'),f('BET_m2_g','自身BET m²/g'),f('profile_label','准入视图'),f('family_label','隔离范围')]}/>
    <EvidenceTable id="batch11-sources-table" title="四篇原始研究 · 指定范围与剩余工作" queryId="batch11_sources" columns={[f('doi','DOI'),f('scope','已核范围'),f('remaining','仍待提取')]}/>
    <EvidenceTable id="batch11-decisions-table" title="8项证据处置 · 已解与未决分开" queryId="batch11_decisions" columns={[f('doi','DOI'),f('decision_id','核验项'),f('decision','依据与处理')]}/>
-   <EvidenceTable id="source-families-table" title="前作复用 · 两DOI同一家族留出" queryId="source_families" columns={[f('doi','本论文'),f('related_doi','前作'),f('family','隔离家族'),f('basis','原文明确依据')]}/>
+   <EvidenceTable id="source-families-table" title="前作关联 · 已知复用与待核均共同留出" queryId="source_families" columns={[f('doi','本论文'),f('related_doi','前作'),f('family','隔离家族'),f('basis','关联依据与状态')]}/>
    <EvidenceTable id="batch11-quantity-audits-table" title="吸附物料衡算与Raman组分核查" queryId="batch11_quantity_audits" columns={[f('sample','材料'),f('kind_label','检查类型'),f('model_label','拟合模型'),f('initial_ppm','初始 mg/L'),f('reported_fitted_Qe_mg_g','作者拟合Qe mg/g'),f('maximum_from_stated_protocol_mg_g','给定投料上限 mg/g'),f('computed_sum','组分合计 %'),f('status_label','核查结论')]}/>
   </Section>
   <Section id="batch10-review-title" title="第十批 · 自身证据与同行方法">
