@@ -1,0 +1,58 @@
+[
+  {
+    "issue_id": "corn_residual_silica",
+    "doi": "10.3390/ma19173741",
+    "locator": "XML body p12 zero based",
+    "disposition": "separate_native_residue_scope",
+    "reason": "Acid washed material retains quartz; not inferred ash free."
+  },
+  {
+    "issue_id": "corn_BET_prose_precision",
+    "doi": "10.3390/ma19173741",
+    "sample": "CS-1000",
+    "table_value": 6.6534,
+    "prose_value": 6.7,
+    "blocked_fields": [
+      "BET_surface_area_m2_g",
+      "BET_prose_report_m2_g"
+    ],
+    "scientific_resolution": false
+  },
+  {
+    "issue_id": "soot_EDS_sum_AP_PS",
+    "doi": "10.1021/acsomega.5c04992",
+    "sample": "AP + PS",
+    "reported_sum": 91.74,
+    "disposition": "do_not_renormalize_or_fill_blank",
+    "scientific_resolution": false
+  },
+  {
+    "issue_id": "soot_EDS_N_table_figure",
+    "doi": "10.1021/acsomega.5c04992",
+    "samples": [
+      "AP",
+      "PS"
+    ],
+    "reason": "Table1 reports N while Figure2/prose do not identify corresponding N. N kept inspection-only; lack of visible peak is not proof of zero.",
+    "scientific_resolution": false
+  },
+  {
+    "issue_id": "corn_2e_basis_label_formula",
+    "doi": "10.3390/ma19173741",
+    "reason": "Single-electrode text versus total-mass Eq5; own formula scope separate, no factor2/4 inference.",
+    "scientific_resolution": false
+  },
+  {
+    "issue_id": "corn_cycle_old_identity",
+    "doi": "10.3390/ma19173741",
+    "endpoint_id": "candidate:B20:B2_012:1",
+    "retention_reports": [
+      93.75,
+      93.7
+    ],
+    "cycle_count": 30000,
+    "current_A_g": 2,
+    "reason": "Existing device identity; Figure5e trace/baseline ambiguity and residual-silica review retained. No new cycling row/admission.",
+    "scientific_resolution": false
+  }
+]

@@ -571,3 +571,11 @@
 - 验证：GitHub API核验private=false/visibility=public；当前owner保留admin；HAUTOsako待接受write邀请；无科学数据或其它仓库/系统设置变动
 - 下一步/未决：对方接受邀请后写权限生效；后续继续文献数据工作，保持普通访客无直接写权限
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T21:58:43+08:00：设定全量文献质量利用目标active，首批两篇新增160事实145数值、120实际输入连接和11比电容报告
+
+- 结果：设定全量文献质量利用目标active，首批两篇新增160事实145数值、120实际输入连接和11比电容报告
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/PROGRESS.md, docs/DATA_QUALITY_GOAL.json, docs/knowledge/残留阶段_原始表头与有界湿润曲线_20261028.md, data/current_training_ready.json, data/training_ready.py, tools/extract_corn_soot_v3.py, tools/finalize_corn_soot_v3.py, tools/link_corn_candidate_v3.py, tools/verify_corn_soot_v3.py, tools/report_corn_soot_v3.py, tools/check_corn_soot_v3_report.cjs, 全量文献训练数据接入_v3_玉米秸秆与烟炱_20261028
+- 验证：98016独立核验；继承表逐行和原件SHA/冻结/旧模型保持；15有界湿润点；旧候选关联不新增循环；主3E47/34和2E31/25不变；页面桌面手机通过；3临时图释放549234字节
+- 下一步/未决：目标保持active，下一批木质素/商用碳布正文与SI；继续原37及剩余表图/未接入队列，不强凑准入或新拟合
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
