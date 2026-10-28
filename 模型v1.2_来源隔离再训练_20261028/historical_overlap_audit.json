@@ -1,0 +1,69 @@
+{
+  "kind": "postrun_descriptive_metadata_correction_not_training_change",
+  "original_input_audit_sha256": "988a2ca184841b420c7d956be3ed4b0a56b754f1703fc3e506ad6ffd9e489c7f",
+  "original_historical_overlap": {
+    "prior_rows": 42,
+    "prior_groups": 30,
+    "current_groups_already_in_v11": 0,
+    "current_groups_not_in_v11": [
+      "doi:10.1002/asia.70648",
+      "doi:10.1002/ente.202201281",
+      "doi:10.1007/s00339-023-07141-8",
+      "doi:10.1007/s10854-026-18573-2",
+      "doi:10.1016/j.biombioe.2026.109160",
+      "doi:10.1016/j.biombioe.2026.109168",
+      "doi:10.1016/j.heliyon.2024.e25628",
+      "doi:10.1016/j.ijbiomac.2023.128794",
+      "doi:10.1016/j.jaap.2026.107754",
+      "doi:10.1016/j.jenvman.2025.125582",
+      "doi:10.1016/j.jenvman.2026.129124",
+      "doi:10.1016/j.jpcs.2023.111318",
+      "doi:10.1021/acs.energyfuels.4c01398",
+      "doi:10.1021/acsomega.3c04692",
+      "doi:10.1021/acsomega.4c11529",
+      "doi:10.1021/acssusresmgt.3c00028",
+      "doi:10.1039/d3ra07014j",
+      "doi:10.1039/d4cp01914h",
+      "doi:10.1039/d4ta02115k",
+      "doi:10.1039/d4ya00076e",
+      "doi:10.1039/d5ra08165c",
+      "doi:10.1039/d6na00276e",
+      "doi:10.1039/d6nj00244g",
+      "doi:10.1039/d6ra04144b",
+      "doi:10.1088/1361-6528/ace97a",
+      "doi:10.3390/mi14030572",
+      "doi:10.3390/molecules28124633",
+      "doi:10.3390/molecules28186543",
+      "doi:10.3390/molecules31132329",
+      "doi:10.3390/nano13101654",
+      "doi:10.3390/nano13172431",
+      "doi:10.3390/polym15234478",
+      "doi:10.3390/polym17091198",
+      "doi:10.3390/polym17111544"
+    ],
+    "interpretation": "All this run is exploratory. No group is prospectively designated untouched external validation."
+  },
+  "corrected_historical_overlap": {
+    "prior_rows": 42,
+    "prior_groups": 30,
+    "current_groups_already_in_v11": 30,
+    "current_groups_not_in_v11": [
+      "doi:10.1016/j.heliyon.2024.e25628",
+      "doi:10.1039/d6nj00244g",
+      "doi:10.1039/d6ra04144b",
+      "doi:10.3390/molecules28186543"
+    ],
+    "common_endpoint_ids": 42,
+    "interpretation": "All this run is exploratory. Bare DOI and doi: spellings refer to the same source; no prospectively untouched external test was designated."
+  },
+  "cause": "Initial descriptive overlap compared bare historical DOIs with new doi: family keys using lower() only. Actual training used normalized current family keys throughout.",
+  "unchanged": {
+    "training_plan.json": "8ac99f0dab0addb84c4df5432edd0456ffdff23a9ae650628a56bbad1c6ed78c",
+    "input_snapshot.json": "bca52cf4eb2bfb5fd96f3447b1e159ffce35440baf228dc84b12240e47fc357a",
+    "model_v1_2.joblib": "b8d13b60f9e3128f47cd4a12fbc3f188db86a45f7622d799ebdc1bfc9510f780",
+    "evaluation.sqlite": "e8e81f6cd2fe48dd749f2762082f0a1d114cab894099ca76e012875a32c0daa4",
+    "outer_predictions.json": "bbafb4b2a6092fd9390b52c6d12caf061d31df72d22998d2e7431912038f57d4",
+    "results.json": "dbc76ffa3149036d58394838c2070003d76f607457ce337fdbac78acce4ab635"
+  },
+  "corrected_input_audit_sha256": "943020e6da10324f54be6f9dfdb9c3bbf15db45f0893678705f6459c73a7f430"
+}

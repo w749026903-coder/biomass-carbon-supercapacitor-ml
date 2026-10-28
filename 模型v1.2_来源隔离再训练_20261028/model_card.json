@@ -1,0 +1,74 @@
+{
+  "model": "v1.2",
+  "task": "Reviewed biomass-derived porous-carbon3E GCD retention at specified cycles and reported protocol",
+  "rows": 47,
+  "source_families": 34,
+  "source_database": "cycling_v0.29",
+  "literature_database": "literature_pool_v26",
+  "authorization": "User request2026-10-28: 接续到下一个对话并尝试训练一次",
+  "selected_candidate": "material_I_ridge100",
+  "feature_catalogue": 50,
+  "enabled_numeric": 25,
+  "categorical_fields": 6,
+  "final_model_sha256": "b8d13b60f9e3128f47cd4a12fbc3f188db86a45f7622d799ebdc1bfc9510f780",
+  "input_snapshot_sha256": "bca52cf4eb2bfb5fd96f3447b1e159ffce35440baf228dc84b12240e47fc357a",
+  "metrics": [
+    {
+      "variant": "nested",
+      "mae": 5.150877566728672,
+      "rmse": 6.908698265995934,
+      "r2": 0.09552397348164998,
+      "vs_mean": {
+        "mae_low": 3.868191448221383,
+        "mae_high": 6.65232368446538,
+        "delta_mae": 0.0018953920406144487,
+        "delta_low": -0.45189214983958265,
+        "delta_high": 0.44761763661895393,
+        "resamples": 5000,
+        "independent_prediction_interval": false
+      }
+    },
+    {
+      "variant": "source_mean",
+      "mae": 5.148982174688054,
+      "rmse": 7.47069789265514,
+      "r2": -0.057613432116568,
+      "vs_mean": {
+        "mae_low": 3.59575672905526,
+        "mae_high": 6.930875846702315,
+        "delta_mae": 0.0,
+        "delta_low": 0.0,
+        "delta_high": 0.0,
+        "resamples": 5000,
+        "independent_prediction_interval": false
+      }
+    },
+    {
+      "variant": "source_median",
+      "mae": 5.2236764705882335,
+      "rmse": 7.44432946453007,
+      "r2": -0.0501607447236605,
+      "vs_mean": {
+        "mae_low": 3.7120588235294107,
+        "mae_high": 6.976816176470588,
+        "delta_mae": 0.07469429590017852,
+        "delta_low": -0.05110617201426143,
+        "delta_high": 0.20023065953654248,
+        "resamples": 5000,
+        "independent_prediction_interval": false
+      }
+    }
+  ],
+  "independent_external_validation": false,
+  "reliable_for_design": false,
+  "positive_prediction": true,
+  "upper_clipped": false,
+  "calibrated_prediction_interval": null,
+  "forbidden_uses": [
+    "2E or CV protocols",
+    "engineering design guarantees",
+    "unreviewed material/composite/gel extrapolation",
+    "treating all-library capacity reports as cycling labels"
+  ],
+  "metadata_correction": "Historical DOI overlap count corrected with retained original count/receipt; no training input, split, weights or scores changed."
+}

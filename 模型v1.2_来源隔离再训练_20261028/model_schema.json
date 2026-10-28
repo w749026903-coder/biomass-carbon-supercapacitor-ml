@@ -1,0 +1,575 @@
+[
+  {
+    "field": "cycle_count",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 34,
+    "transform": "log1p",
+    "missing_indicator": false,
+    "impute": 9.210440366976517,
+    "center": 8.877325674856506,
+    "scale": 0.9756333018644326,
+    "minimum": 1000,
+    "maximum": 50000
+  },
+  {
+    "field": "reported_current_A_g",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 34,
+    "transform": "log1p",
+    "missing_indicator": false,
+    "impute": 2.3978952727983707,
+    "center": 2.112492146835641,
+    "scale": 0.6720961016181383,
+    "minimum": 0.1,
+    "maximum": 30
+  },
+  {
+    "field": "electrolyte",
+    "kind": "categorical",
+    "vocabulary": [
+      "H2SO4",
+      "KOH"
+    ],
+    "source_support": {
+      "H2SO4": 7,
+      "KOH": 26,
+      "Na2SO4": 1,
+      "NaOH": 1
+    },
+    "unknown_policy": "one explicit unknown-or-rare column"
+  },
+  {
+    "field": "concentration_mol_L",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 34,
+    "transform": "raw",
+    "missing_indicator": false,
+    "impute": 6.0,
+    "center": 3.9558823529411766,
+    "scale": 2.3400843595239427,
+    "minimum": 0.5,
+    "maximum": 6
+  },
+  {
+    "field": "cycle_voltage_lower_V",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 34,
+    "transform": "raw",
+    "missing_indicator": false,
+    "impute": -1.0,
+    "center": -0.7308823529411764,
+    "scale": 0.402659304587556,
+    "minimum": -1,
+    "maximum": 0.0
+  },
+  {
+    "field": "cycle_voltage_upper_V",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 34,
+    "transform": "raw",
+    "missing_indicator": false,
+    "impute": 0.0,
+    "center": 0.22794117647058823,
+    "scale": 0.3693577845536501,
+    "minimum": -0.2,
+    "maximum": 1.0
+  },
+  {
+    "field": "BET_m2_g",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 34,
+    "transform": "log1p",
+    "missing_indicator": false,
+    "impute": 7.145401161296455,
+    "center": 6.96400169597466,
+    "scale": 0.8762250147580297,
+    "minimum": 10.9,
+    "maximum": 3784.233
+  },
+  {
+    "field": "reference_electrode",
+    "kind": "categorical",
+    "vocabulary": [
+      "Ag/AgCl",
+      "Hg/HgO",
+      "SCE"
+    ],
+    "source_support": {
+      "Ag/AgCl": 11,
+      "Ag/AgCl_saturated_KCl": 1,
+      "Hg/Hg2SO4 (saturated K2SO4)": 1,
+      "Hg/HgO": 16,
+      "HgO/Hg (reported order)": 1,
+      "SCE": 4
+    },
+    "unknown_policy": "one explicit unknown-or-rare column"
+  },
+  {
+    "field": "total_pore_volume_cm3_g",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 27,
+    "transform": "log1p",
+    "missing_indicator": true,
+    "impute": 0.5933268452777344,
+    "center": 0.5539812019522017,
+    "scale": 0.2986887080862396,
+    "minimum": 0.053,
+    "maximum": 2.625
+  },
+  {
+    "field": "micropore_volume_cm3_g",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 14,
+    "transform": "log1p",
+    "missing_indicator": true,
+    "impute": 0.35767444427181594,
+    "center": 0.35157558096639285,
+    "scale": 0.14068270607748373,
+    "minimum": 0.003,
+    "maximum": 0.837
+  },
+  {
+    "field": "mesopore_volume_cm3_g",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 6,
+    "transform": "log1p",
+    "missing_indicator": true,
+    "impute": 0.13714983814723364,
+    "center": 0.3554053838547808,
+    "scale": 0.30470338248247136,
+    "minimum": 0.0163,
+    "maximum": 1.2114
+  },
+  {
+    "field": "average_pore_diameter_nm",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 14,
+    "transform": "log1p",
+    "missing_indicator": true,
+    "impute": 1.205072199769237,
+    "center": 1.2318035588379022,
+    "scale": 0.3195066738477829,
+    "minimum": 1.47,
+    "maximum": 19.54
+  },
+  {
+    "field": "micropore_surface_area_m2_g",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 16,
+    "transform": "log1p",
+    "missing_indicator": true,
+    "impute": 6.5638555265321274,
+    "center": 6.640961665258125,
+    "scale": 0.5290109679309883,
+    "minimum": 283,
+    "maximum": 2544.4
+  },
+  {
+    "field": "external_surface_area_m2_g",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 4,
+    "transform": "log1p",
+    "missing_indicator": true
+  },
+  {
+    "field": "Raman_ID_IG",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 21,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 0.97,
+    "center": 1.0313609047619046,
+    "scale": 0.19619312897096958,
+    "minimum": 0.773994,
+    "maximum": 1.65
+  },
+  {
+    "field": "XRD_d002_nm",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 4,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "XPS_percentage_basis",
+    "kind": "categorical",
+    "vocabulary": [
+      "atomic_explicit",
+      "not_explicitly_reported"
+    ],
+    "source_support": {
+      "atomic_explicit": 15,
+      "not_explicitly_reported": 3,
+      "unreported": 1,
+      "weight_explicit": 1
+    },
+    "unknown_policy": "one explicit unknown-or-rare column"
+  },
+  {
+    "field": "mass_loading_mg_cm2",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 11,
+    "transform": "log1p",
+    "missing_indicator": true,
+    "impute": 1.2237754316221157,
+    "center": 1.3800443188590246,
+    "scale": 0.5830506136171193,
+    "minimum": 0.8,
+    "maximum": 10
+  },
+  {
+    "field": "activation_temperature_C",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 27,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 700.0,
+    "center": 709.7166666666666,
+    "scale": 103.30929021363201,
+    "minimum": 399.85,
+    "maximum": 900
+  },
+  {
+    "field": "activation_duration_h",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 24,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 2.0,
+    "center": 1.7708333333333333,
+    "scale": 0.5947542676508415,
+    "minimum": 0.5,
+    "maximum": 3
+  },
+  {
+    "field": "heating_rate_C_min",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 17,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 5.0,
+    "center": 6.352941176470588,
+    "scale": 2.3995385946318986,
+    "minimum": 3,
+    "maximum": 10
+  },
+  {
+    "field": "material_density_g_cm3",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 1,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "bulk_N_wt_pct",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 4,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "bulk_O_wt_pct",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 4,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "joint_carbonization_activation_temperature_C_v23",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 0,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "joint_carbonization_activation_duration_h_v23",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 0,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "hydrothermal_carbonization_temperature_C_v23",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 0,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "hydrothermal_carbonization_duration_h_v23",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 0,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "XPS_N_atomic_pct_v15",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 11,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 2.55,
+    "center": 3.963636363636363,
+    "scale": 2.7656637300598557,
+    "minimum": 1.05,
+    "maximum": 10.28
+  },
+  {
+    "field": "XPS_O_atomic_pct_v15",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 13,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 12.33,
+    "center": 11.5,
+    "scale": 4.259041062167722,
+    "minimum": 2.7,
+    "maximum": 17.65
+  },
+  {
+    "field": "XPS_N_weight_pct_v15",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 1,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "XPS_O_weight_pct_v15",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 1,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "carbonization_temperature_C",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 8,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 700.0,
+    "center": 725.0,
+    "scale": 95.19716382329885,
+    "minimum": 600,
+    "maximum": 850
+  },
+  {
+    "field": "carbonization_duration_h",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 6,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 2.0,
+    "center": 3.0,
+    "scale": 1.4142135623730951,
+    "minimum": 2,
+    "maximum": 6
+  },
+  {
+    "field": "carbonization_heating_rate_C_min",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 3,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "precarbonization_temperature_C",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 12,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 400.0,
+    "center": 487.5,
+    "scale": 135.59283412727484,
+    "minimum": 300,
+    "maximum": 800
+  },
+  {
+    "field": "precarbonization_duration_h",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 12,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 2.0,
+    "center": 1.7499999999999998,
+    "scale": 0.5951190357119043,
+    "minimum": 1,
+    "maximum": 3
+  },
+  {
+    "field": "precarbonization_heating_rate_C_min",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 8,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 5.0,
+    "center": 6.875,
+    "scale": 2.4206145913796355,
+    "minimum": 5,
+    "maximum": 10
+  },
+  {
+    "field": "hydrothermal_temperature_C",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 5,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 180.0,
+    "center": 184.0,
+    "scale": 49.63869458396343,
+    "minimum": 120,
+    "maximum": 240
+  },
+  {
+    "field": "hydrothermal_duration_h",
+    "kind": "numeric",
+    "enabled": true,
+    "source_support": 5,
+    "transform": "raw",
+    "missing_indicator": true,
+    "impute": 2.0,
+    "center": 4.8,
+    "scale": 4.445222154178574,
+    "minimum": 1,
+    "maximum": 12
+  },
+  {
+    "field": "post_treatment_temperature_C",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 2,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "post_treatment_duration_h",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 2,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "post_treatment_heating_rate_C_min",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 1,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "pretreatment_temperature_C",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 2,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "pretreatment_duration_h",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 2,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "pretreatment_heating_rate_C_min",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 2,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "microwave_power_W_v14",
+    "kind": "numeric",
+    "enabled": false,
+    "source_support": 2,
+    "transform": "raw",
+    "missing_indicator": true
+  },
+  {
+    "field": "activation_primary_chemistry",
+    "kind": "categorical",
+    "vocabulary": [
+      "hydroxide_containing"
+    ],
+    "source_support": {
+      "carbonate": 2,
+      "explicit_no_chemical_or_template": 1,
+      "explicit_nonactivated_control": 2,
+      "hydroxide_containing": 18,
+      "nitrate": 1,
+      "permanganate": 1,
+      "phosphoric_acid": 2,
+      "template_salt_mixture": 1,
+      "zinc_chloride": 1
+    },
+    "unknown_policy": "one explicit unknown-or-rare column"
+  },
+  {
+    "field": "activation_stage_status",
+    "kind": "categorical",
+    "vocabulary": [
+      "chemical_or_template_stage_reported",
+      "no_separate_activation_reported"
+    ],
+    "source_support": {
+      "chemical_or_template_stage_reported": 26,
+      "direct_pyrolysis_without_chemical_template": 1,
+      "explicit_nonactivated_control": 2,
+      "no_separate_activation_reported": 3
+    },
+    "unknown_policy": "one explicit unknown-or-rare column"
+  },
+  {
+    "field": "precursor_origin_class",
+    "kind": "categorical",
+    "vocabulary": [
+      "plant_residue",
+      "processed_biopolymer"
+    ],
+    "source_support": {
+      "algal_biomass": 2,
+      "plant_residue": 19,
+      "processed_biopolymer": 7
+    },
+    "unknown_policy": "one explicit unknown-or-rare column"
+  }
+]

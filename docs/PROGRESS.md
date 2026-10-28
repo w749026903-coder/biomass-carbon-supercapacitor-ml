@@ -539,3 +539,11 @@
 - 验证：v26与v029封版数据库SHA逐字节核验通过；草稿未生成数据库或准入，明确ready_for_merge=false；任务范围和敏感信息/LFS预检通过，diff检查通过
 - 下一步/未决：新对话先冻结训练计划，再以已封版数据执行一次来源隔离训练及可视化评估；批次27继续候选，不进训练
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T15:05:42+08:00：完成模型v1.2一次来源隔离再训练及可视化；MAE与均值持平，预设性能门槛未过
+
+- 结果：完成模型v1.2一次来源隔离再训练及可视化；MAE与均值持平，预设性能门槛未过
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/knowledge/来源隔离再训练与材料特征覆盖_v12_20261028.md, models/v1_2, tools/prepare_model_v12.py, tools/train_model_v12.py, tools/verify_model_v12.py, tools/analyze_model_v12.py, tools/build_model_v12_report.py, tools/check_model_v12_report.cjs, tools/predict_model_v12.py, 模型v1.2_来源隔离再训练_20261028
+- 验证：47条34来源；冻结五候选后560次拟合，26259项核验、533保护文件与46原文SHA、44封版输出通过；桌面手机与4SVG、筛选排序和6链接通过；无新准入或共享运行时改动
+- 下一步/未决：一次训练已完成，保留困难来源和原37待证；后续按用户指示继续文献利用或新实验，不重跑本计划追分
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

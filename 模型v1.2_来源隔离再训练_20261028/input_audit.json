@@ -1,0 +1,504 @@
+{
+  "rows": 47,
+  "source_families": 34,
+  "review_observations": 287,
+  "pending_original": 37,
+  "old_feature_freeze_count": 15,
+  "conflict_masked_endpoints": [],
+  "freeze_index": {
+    "candidate:TE007": [
+      "N_at_pct",
+      "Raman_ID_IG",
+      "XPS_N_reported_pct"
+    ],
+    "candidate:v11:AHPC2026:AC-850:3E:10000": [
+      "N_at_pct",
+      "Raman_ID_IG",
+      "XPS_N_reported_pct"
+    ],
+    "candidate:v11:AHPC2026:AHPC-700:3E:10000": [
+      "N_at_pct",
+      "Raman_ID_IG",
+      "XPS_N_reported_pct"
+    ],
+    "candidate:v11:AHPC2026:AHPC-800:3E:10000": [
+      "N_at_pct",
+      "Raman_ID_IG",
+      "XPS_N_reported_pct"
+    ],
+    "candidate:v11:AHPC2026:AHPC-900:3E:10000": [
+      "N_at_pct",
+      "Raman_ID_IG",
+      "XPS_N_reported_pct"
+    ]
+  },
+  "raw_source_family_rules": [
+    {
+      "doi": "10.1039/d6ra02137a",
+      "related_doi": "10.1016/j.jece.2025.120693",
+      "kind": "explicit_prior_work_material_characterization_reuse",
+      "basis": "ownp5/6/36/39 andreference1; do not count reused XPS/three-electrode reports as independent",
+      "isolation_group": "family:Tondolo_TAC_JECE_RSC"
+    }
+  ],
+  "literature_links": [
+    {
+      "candidate_id": "LP5_SSC",
+      "endpoint_id": "v20:WJ2026_NWJPC2_SSC_C10000",
+      "literature_database_sha256": "b632d3b74123a644dc7cd72a139640a14355bb5c4420d5b34ebc7300620ea578",
+      "status": "admitted_reported_2e_v020",
+      "review_version": "v0.20"
+    },
+    {
+      "candidate_id": "LP10_Cotton_3E_C5000",
+      "endpoint_id": "v22:COT_CDAP800350_3E_C5000",
+      "literature_database_sha256": "843f58a2c737bdb187cf800888732d20f5b3c13a6c94f14ab3cd04d500977b99",
+      "status": "admitted_reported_protocol_v022",
+      "review_version": "v0.22"
+    },
+    {
+      "candidate_id": "LP10_Cotton_2E_C5000",
+      "endpoint_id": "v22:COT_CDAP800350_2E_C5000",
+      "literature_database_sha256": "843f58a2c737bdb187cf800888732d20f5b3c13a6c94f14ab3cd04d500977b99",
+      "status": "admitted_reported_protocol_v022",
+      "review_version": "v0.22"
+    },
+    {
+      "candidate_id": "LP10_Quinoa_2E_KOH_C10000",
+      "endpoint_id": "candidate:V05:012",
+      "literature_database_sha256": "843f58a2c737bdb187cf800888732d20f5b3c13a6c94f14ab3cd04d500977b99",
+      "status": "admitted_reported_protocol_v022",
+      "review_version": "v0.22"
+    },
+    {
+      "candidate_id": "LP10_Quinoa_2E_Na2SO4_C10000",
+      "endpoint_id": "candidate:V05:013",
+      "literature_database_sha256": "843f58a2c737bdb187cf800888732d20f5b3c13a6c94f14ab3cd04d500977b99",
+      "status": "admitted_reported_protocol_v022",
+      "review_version": "v0.22"
+    },
+    {
+      "candidate_id": "LP10_NFAC_2E_C10000",
+      "endpoint_id": "v22:NFACc_2E_C10000",
+      "literature_database_sha256": "843f58a2c737bdb187cf800888732d20f5b3c13a6c94f14ab3cd04d500977b99",
+      "status": "admitted_reported_protocol_v022",
+      "review_version": "v0.22"
+    },
+    {
+      "candidate_id": "LP11_Tondolo_2E_C10000",
+      "endpoint_id": "v23:NTAC_2E_C10000",
+      "literature_database_sha256": "f1aab46cbd15b4be6fbbbebe823f176efd5263953826ce42a991ee147312c70e",
+      "status": "admitted_reported_protocol_v023",
+      "review_version": "v0.23"
+    },
+    {
+      "candidate_id": "LP11_Tea_3E_C2000",
+      "endpoint_id": "candidate:TE045",
+      "literature_database_sha256": "f1aab46cbd15b4be6fbbbebe823f176efd5263953826ce42a991ee147312c70e",
+      "status": "admitted_reported_protocol_v023",
+      "review_version": "v0.23"
+    },
+    {
+      "candidate_id": "LP12_Cycas_KOH_3E_C10000",
+      "endpoint_id": "v24:CFHPC2_KOH_3E_C10000",
+      "literature_database_sha256": "d6863d5941bcd01c12ab2565310b26258fb27adf043b2ab5e9bec55e6ea2069d",
+      "status": "admitted_reported_protocol_v024",
+      "review_version": "v0.24"
+    },
+    {
+      "candidate_id": "LP12_Cycas_Na2SO4_3E_C10000",
+      "endpoint_id": "v24:CFHPC2_Na2SO4_3E_C10000",
+      "literature_database_sha256": "d6863d5941bcd01c12ab2565310b26258fb27adf043b2ab5e9bec55e6ea2069d",
+      "status": "admitted_reported_protocol_v024",
+      "review_version": "v0.24"
+    },
+    {
+      "candidate_id": "LP13_Mango_MK9_2E_C100000",
+      "endpoint_id": "v25:Mango_MK9_2E_C100000",
+      "literature_database_sha256": "60f9245ad39234bea13a8b830ca41b328f36752cd27dcc4f2df1081ddb10167f",
+      "status": "admitted_reported_protocol_v025",
+      "review_version": "v0.25"
+    },
+    {
+      "candidate_id": "LP13_Leather_ANSC8_3E_C10000",
+      "endpoint_id": "v25:Leather_ANSC8_3E_C10000",
+      "literature_database_sha256": "60f9245ad39234bea13a8b830ca41b328f36752cd27dcc4f2df1081ddb10167f",
+      "status": "admitted_reported_protocol_v025",
+      "review_version": "v0.25"
+    },
+    {
+      "candidate_id": "candidate:TE009",
+      "endpoint_id": "candidate:TE009",
+      "literature_sha256": "2575e0462738b534de8931dd98a1ea471948741a976eba36235199235892392e",
+      "status": "existing_endpoint_corrected_and_admitted_reported_protocol_v026",
+      "review_version": "v0.26"
+    },
+    {
+      "candidate_id": "candidate:B20:B2_004:1",
+      "endpoint_id": "candidate:B20:B2_004:1",
+      "literature_sha256": "407161771aaefe2bd1539f545a36b1166d80ff145c569ceac3d3fa5ffff6a778",
+      "status": "existing_forest_endpoint_admitted_residue_only_v027",
+      "review_version": "v0.27"
+    },
+    {
+      "candidate_id": "candidate:B20:B2_004:2",
+      "endpoint_id": "candidate:B20:B2_004:2",
+      "literature_sha256": "407161771aaefe2bd1539f545a36b1166d80ff145c569ceac3d3fa5ffff6a778",
+      "status": "existing_forest_endpoint_admitted_residue_only_v027",
+      "review_version": "v0.27"
+    },
+    {
+      "candidate_id": "candidate:B20:B2_004:3",
+      "endpoint_id": "candidate:B20:B2_004:3",
+      "literature_sha256": "407161771aaefe2bd1539f545a36b1166d80ff145c569ceac3d3fa5ffff6a778",
+      "status": "existing_forest_endpoint_admitted_residue_only_v027",
+      "review_version": "v0.27"
+    },
+    {
+      "candidate_id": "LP24:HPC700:2E:C30000",
+      "endpoint_id": "v28:HPC700_2E_C30000",
+      "literature_sha256": "dbc6f8fac63977522890b3bc4884f8a4c2cd1855e432a22b4403d4e913d46aab",
+      "status": "explicit_2022_all_years_2e_admission_v028",
+      "review_version": "v0.28"
+    },
+    {
+      "candidate_id": "LP26:AC-500:3E:C1000",
+      "endpoint_id": "candidate:TE036",
+      "literature_sha256": "c48964f31d2e7bcd9745785c1a21c51cb81000afd26d0e8ace73fd8de06ccef5",
+      "status": "existing_endpoint_label_corrected_ownBETpending",
+      "review_version": "v0.29"
+    },
+    {
+      "candidate_id": "LP26:AC-600:3E:C1000",
+      "endpoint_id": "candidate:TE037",
+      "literature_sha256": "c48964f31d2e7bcd9745785c1a21c51cb81000afd26d0e8ace73fd8de06ccef5",
+      "status": "existing_endpoint_label_corrected_and_ordinary3E_admitted",
+      "review_version": "v0.29"
+    },
+    {
+      "candidate_id": "LP26:AC-700:3E:C1000",
+      "endpoint_id": "candidate:TE038",
+      "literature_sha256": "c48964f31d2e7bcd9745785c1a21c51cb81000afd26d0e8ace73fd8de06ccef5",
+      "status": "existing_endpoint_label_corrected_and_ordinary3E_admitted",
+      "review_version": "v0.29"
+    }
+  ],
+  "selected_preparation_v29": [
+    {
+      "endpoint_id": "candidate:TE037",
+      "sample_name": "AC-600C",
+      "source_group": "doi:10.1016/j.heliyon.2024.e25628",
+      "source_family_group": "doi:10.1016/j.heliyon.2024.e25628",
+      "preparation_values": {
+        "carbonization_temperature_C": 600,
+        "carbonization_duration_h": 3,
+        "carbonization_N2_flow_mL_min": 100,
+        "wetting_temperature_C": 25,
+        "wetting_duration_h": 24,
+        "preheat_temperature_C": 110,
+        "preheat_duration_h": 2
+      },
+      "source_field_map": {
+        "carbonization_temperature_C": "carbonization_temperature_C",
+        "carbonization_duration_h": "carbonization_duration_h",
+        "carbonization_N2_flow_mL_min": "carbonization_N2_flow_mL_min_v29",
+        "wetting_temperature_C": "wetting_temperature_C_v29",
+        "wetting_duration_h": "wetting_duration_h_v29",
+        "preheat_temperature_C": "preheat_temperature_C_v29",
+        "preheat_duration_h": "preheat_duration_h_v29"
+      },
+      "carbonization_atmosphere": "N2",
+      "phase": "joint_phosphoric_activation_carbonization",
+      "cycling_purpose_eligible": true,
+      "literature_material_key": "literature:ba91eece0fe506bc9cd65f23",
+      "evidence": [
+        {
+          "evidence_id": "candidate:TE037#carbonization_temperature_C#13",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "carbonization_temperature_C",
+          "value_json": "600",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 sameownfourtemperatures400/500/600/700,3hN2; MainP17preheat110C2hseparate",
+          "selected": 1,
+          "note": "Onejointphosphoricactivation/carbonizationstep; separateactivationfieldsremainunknown",
+          "value": 600,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE037#carbonization_duration_h#14",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "carbonization_duration_h",
+          "value_json": "3",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 sameownfourtemperatures400/500/600/700,3hN2; MainP17preheat110C2hseparate",
+          "selected": 1,
+          "note": "Onejointphosphoricactivation/carbonizationstep; separateactivationfieldsremainunknown",
+          "value": 3,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE037#wetting_temperature_C_v29#15",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "wetting_temperature_C_v29",
+          "value_json": "25",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 25,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE037#wetting_duration_h_v29#16",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "wetting_duration_h_v29",
+          "value_json": "24",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 24,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE037#preheat_temperature_C_v29#17",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "preheat_temperature_C_v29",
+          "value_json": "110",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 110,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE037#preheat_duration_h_v29#18",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "preheat_duration_h_v29",
+          "value_json": "2",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 2,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE037#carbonization_N2_flow_mL_min_v29#19",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "carbonization_N2_flow_mL_min_v29",
+          "value_json": "100",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 continuous100mL/minN2 during3hcarbonization",
+          "selected": 1,
+          "note": "Reportedgasflow, no STPconversion orseparateactivationcycle",
+          "value": 100,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE037#carbonization_atmosphere_v29#20",
+          "endpoint_id": "candidate:TE037",
+          "field_name": "carbonization_atmosphere_v29",
+          "value_json": "\"N2\"",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 continuous100mL/minN2 during3hcarbonization",
+          "selected": 1,
+          "note": "Reportedgasflow, no STPconversion orseparateactivationcycle",
+          "value": "N2",
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        }
+      ],
+      "coverage_note": "This incremental preparation export covers oneDOI only; no automatic append/imputation to legacy material matrix or inference of loading/massratio.",
+      "model_fits": 0
+    },
+    {
+      "endpoint_id": "candidate:TE038",
+      "sample_name": "AC-700C",
+      "source_group": "doi:10.1016/j.heliyon.2024.e25628",
+      "source_family_group": "doi:10.1016/j.heliyon.2024.e25628",
+      "preparation_values": {
+        "carbonization_temperature_C": 700,
+        "carbonization_duration_h": 3,
+        "carbonization_N2_flow_mL_min": 100,
+        "wetting_temperature_C": 25,
+        "wetting_duration_h": 24,
+        "preheat_temperature_C": 110,
+        "preheat_duration_h": 2
+      },
+      "source_field_map": {
+        "carbonization_temperature_C": "carbonization_temperature_C",
+        "carbonization_duration_h": "carbonization_duration_h",
+        "carbonization_N2_flow_mL_min": "carbonization_N2_flow_mL_min_v29",
+        "wetting_temperature_C": "wetting_temperature_C_v29",
+        "wetting_duration_h": "wetting_duration_h_v29",
+        "preheat_temperature_C": "preheat_temperature_C_v29",
+        "preheat_duration_h": "preheat_duration_h_v29"
+      },
+      "carbonization_atmosphere": "N2",
+      "phase": "joint_phosphoric_activation_carbonization",
+      "cycling_purpose_eligible": true,
+      "literature_material_key": "literature:be1c6d69f12735e5a7c8bf08",
+      "evidence": [
+        {
+          "evidence_id": "candidate:TE038#carbonization_temperature_C#13",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "carbonization_temperature_C",
+          "value_json": "700",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 sameownfourtemperatures400/500/600/700,3hN2; MainP17preheat110C2hseparate",
+          "selected": 1,
+          "note": "Onejointphosphoricactivation/carbonizationstep; separateactivationfieldsremainunknown",
+          "value": 700,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE038#carbonization_duration_h#14",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "carbonization_duration_h",
+          "value_json": "3",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 sameownfourtemperatures400/500/600/700,3hN2; MainP17preheat110C2hseparate",
+          "selected": 1,
+          "note": "Onejointphosphoricactivation/carbonizationstep; separateactivationfieldsremainunknown",
+          "value": 3,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE038#wetting_temperature_C_v29#15",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "wetting_temperature_C_v29",
+          "value_json": "25",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 25,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE038#wetting_duration_h_v29#16",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "wetting_duration_h_v29",
+          "value_json": "24",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 24,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE038#preheat_temperature_C_v29#17",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "preheat_temperature_C_v29",
+          "value_json": "110",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 110,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE038#preheat_duration_h_v29#18",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "preheat_duration_h_v29",
+          "value_json": "2",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP17 wets25C24h thenpreheats110C2h",
+          "selected": 1,
+          "note": "Distinctstages; neitherisfinalcarbondryingorelectrodedrying",
+          "value": 2,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE038#carbonization_N2_flow_mL_min_v29#19",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "carbonization_N2_flow_mL_min_v29",
+          "value_json": "100",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 continuous100mL/minN2 during3hcarbonization",
+          "selected": 1,
+          "note": "Reportedgasflow, no STPconversion orseparateactivationcycle",
+          "value": 100,
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        },
+        {
+          "evidence_id": "candidate:TE038#carbonization_atmosphere_v29#20",
+          "endpoint_id": "candidate:TE038",
+          "field_name": "carbonization_atmosphere_v29",
+          "value_json": "\"N2\"",
+          "path": "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml",
+          "sha256": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+          "locator": "MainP18 continuous100mL/minN2 during3hcarbonization",
+          "selected": 1,
+          "note": "Reportedgasflow, no STPconversion orseparateactivationcycle",
+          "value": "N2",
+          "currently_selected": 1,
+          "review_version": "v0.29"
+        }
+      ],
+      "coverage_note": "This incremental preparation export covers oneDOI only; no automatic append/imputation to legacy material matrix or inference of loading/massratio.",
+      "model_fits": 0
+    }
+  ],
+  "library_auxiliary_gcd": 208,
+  "library_expanded_3e": 386,
+  "auxiliary_learning_used": false,
+  "unsealed_batch27_used": false,
+  "raw_library_feature_join_performed": false,
+  "rationale": "Use existing traceable cycling-material feature projections. v26 material library contains multiple samples/stages; publication-only or guessed alias joins are prohibited. Auxiliary data are not cycling labels.",
+  "leakage_prohibitions": [
+    "same-test capacitance/CE/retention/EIS/Ragone",
+    "DOI/sample IDs",
+    "unknown XPS basis substitution",
+    "precursor/composite inheritance",
+    "unsealed batch27"
+  ],
+  "preprocessing_compatibility": "Legacy parameters() assumes admission_profiles_v13; newer admitted endpoints need no invented historical key. Read current selected values and original v14 changes directly. Corrected before plan freezing or any fit.",
+  "historical_overlap": {
+    "prior_rows": 42,
+    "prior_groups": 30,
+    "current_groups_already_in_v11": 30,
+    "current_groups_not_in_v11": [
+      "doi:10.1016/j.heliyon.2024.e25628",
+      "doi:10.1039/d6nj00244g",
+      "doi:10.1039/d6ra04144b",
+      "doi:10.3390/molecules28186543"
+    ],
+    "common_endpoint_ids": 42,
+    "interpretation": "All this run is exploratory. Bare DOI and doi: spellings refer to the same source; no prospectively untouched external test was designated."
+  },
+  "historical_overlap_correction": "historical_overlap_audit.json"
+}

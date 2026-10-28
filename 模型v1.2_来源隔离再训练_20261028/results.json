@@ -1,0 +1,72 @@
+{
+  "run_id": "retention-v1.2-source-isolated-20261028",
+  "rows": 47,
+  "source_families": 34,
+  "estimator_fits": 560,
+  "final_candidate": "material_I_ridge100",
+  "final_spec": {
+    "id": "material_I_ridge100",
+    "kind": "ridge",
+    "block": "material",
+    "current": true,
+    "alpha": 100.0
+  },
+  "metrics": [
+    {
+      "variant": "nested",
+      "mae": 5.150877566728672,
+      "rmse": 6.908698265995934,
+      "r2": 0.09552397348164998,
+      "vs_mean": {
+        "mae_low": 3.868191448221383,
+        "mae_high": 6.65232368446538,
+        "delta_mae": 0.0018953920406144487,
+        "delta_low": -0.45189214983958265,
+        "delta_high": 0.44761763661895393,
+        "resamples": 5000,
+        "independent_prediction_interval": false
+      }
+    },
+    {
+      "variant": "source_mean",
+      "mae": 5.148982174688054,
+      "rmse": 7.47069789265514,
+      "r2": -0.057613432116568,
+      "vs_mean": {
+        "mae_low": 3.59575672905526,
+        "mae_high": 6.930875846702315,
+        "delta_mae": 0.0,
+        "delta_low": 0.0,
+        "delta_high": 0.0,
+        "resamples": 5000,
+        "independent_prediction_interval": false
+      }
+    },
+    {
+      "variant": "source_median",
+      "mae": 5.2236764705882335,
+      "rmse": 7.44432946453007,
+      "r2": -0.0501607447236605,
+      "vs_mean": {
+        "mae_low": 3.7120588235294107,
+        "mae_high": 6.976816176470588,
+        "delta_mae": 0.07469429590017852,
+        "delta_low": -0.05110617201426143,
+        "delta_high": 0.20023065953654248,
+        "resamples": 5000,
+        "independent_prediction_interval": false
+      }
+    }
+  ],
+  "descriptive_acceptance_passed": false,
+  "independent_external_validation": false,
+  "reliable_for_design": false,
+  "evaluation": "Exploratory nested leave-one-source-family-out validation; all47 source-held-out predictions. Not new external validation; not directly comparable to old42/30 scores.",
+  "final_model": "Refit on all47 reviewed rows; these training rows do not independently validate the saved weight.",
+  "positive_target_no_upper_clip": true,
+  "source_weighting": "Each source family totals one; means/medians fit only on training sources",
+  "warnings_count": 0,
+  "elapsed_seconds": 22.859,
+  "model_sha256": "b8d13b60f9e3128f47cd4a12fbc3f188db86a45f7622d799ebdc1bfc9510f780",
+  "plan_sha256": "8ac99f0dab0addb84c4df5432edd0456ffdff23a9ae650628a56bbad1c6ed78c"
+}
