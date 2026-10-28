@@ -587,3 +587,11 @@
 - 验证：57900数据核验与36封版输出；新34电容行/9EIS/8木质素属性分用途，99%机械恢复不作循环；mA单位/公式泄漏/全部任务前作隔离/父库只读通过；桌面手机通过；原37/主47与31/冻结/旧模型不变，拟合准入0；5临时图释放1405316字节
 - 下一步/未决：优先本地主集30行/26来源：U002 OPB系列4行，再U024 ALPC800两工况和SI；继续原37、剩余曲线和表格；全量目标未完成
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T23:59:51+08:00：v5接通OPB四条主集记录：规范材料关联21/47，新增60个非空特征单元并补证44个原值；累计3391/4837数值接入70.11%
+
+- 结果：v5接通OPB四条主集记录：规范材料关联21/47，新增60个非空特征单元并补证44个原值；累计3391/4837数值接入70.11%
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/PROGRESS.md, docs/DATA_QUALITY_GOAL.json, docs/knowledge/主训练记录桥接_区间特征_派生行更新与嵌套用途_20261028.md, data/current_training_store.json, data/training_store.py, tools/extract_opb_main_v5.py, tools/extend_opb_loading_v5.py, tools/finalize_opb_profiles_v5.py, tools/check_opb_primary_pdf_v5.py, tools/verify_opb_main_v5.py, tools/report_opb_main_v5.py, tools/check_opb_main_v5_report.cjs, 全量文献训练数据接入_v5_OPB主集关联_20261028
+- 验证：61406项数据核验及61项独立PDF检查通过；216条普通GCD包含于394条含图用途；原标签工况、37条待证与历史原件SHA保留；只读父链及更新回执验证；桌面手机可视化通过；38项产物封版；回收本批可重建临时文件2227928字节；新增拟合及循环准入均0
+- 下一步/未决：目标保持active；优先核读已有U024正文和SUP139补充材料，桥接ALPC-800两工况；继续剩余26条/25来源、固定37待证及未完成表图SI覆盖，不追分拟合
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
