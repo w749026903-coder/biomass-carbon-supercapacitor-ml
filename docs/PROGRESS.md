@@ -507,3 +507,11 @@
 - 验证：文献5714项、循环v027及历史链1904项通过；原表/原值/SHA与用途矩阵、来源隔离、166行PDF几何复现通过；最终进度页8图、筛选/导出/来源追溯、桌面1440与手机390、最终构建SHA及零JS异常通过；382文件敏感内容/LFS预检通过
 - 下一步/未决：继续715表候选、60来源残余波形/SI与原固定37待证；原39中2解决，不降低准入；本轮0拟合
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T08:12:20+08:00：文献v24新增223材料数值与18分用途输入，4浓度争议仅核查，2循环候选不直接准入
+
+- 结果：文献v24新增223材料数值与18分用途输入，4浓度争议仅核查，2循环候选不直接准入
+- 文件：data/current_literature.json, data/literature_v24.py, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/参比分用途_原料阶段_单位与异文证据单元_20261028.md, tools/extract_four_primary_v24.py, tools/verify_four_primary_v24.py, tools/refresh_literature_progress.py, tools/check_literature_progress.cjs, tools/smoke_literature_progress_v24.cjs, 文献全量利用复核_20261028/批次24_糠醛渣食物气凝胶柚皮与麦壳全样品, 文献提取进度
+- 验证：6041项原表/原值/SHA/旧API/矩阵/来源隔离通过；父v23的5714项只读复核通过；全量页面筛选/导出/来源/8图及桌面手机核验通过，最终两处中文措辞精确差分与CRLF原快照重建、当前构建smoke通过；373文件敏感内容/LFS预检通过；循环v027/原37保持，0拟合；审批额度恢复后重验封版及QA完整
+- 下一步/未决：继续707原始表候选、剩余曲线/SI与原37；优先以正规EuropePMC补麦壳原图和器件窗口；不改已封版
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

@@ -24,6 +24,7 @@ export function DashboardContent(){
  const batch20Scope=useSectionFilters([{id:'batch20-target',field:'task',label:'第20批用途',defaultValue:'all',queryIds:['batch20_inputs']}],{},{id:'batch20-target-scope'});
  const rate21Scope=useSectionFilters([{id:'rate21-purpose',field:'task',label:'第21批用途',defaultValue:'咖啡/污泥：作者容量用途',queryIds:['rate21_points']}],{},{id:'rate21-purpose-scope'});
  const rate16Scope=useSectionFilters([{id:'rate16-mode',field:'mode',label:'全样倍率标签模式',defaultValue:'报告值＋读图（95总工况）',queryIds:['rate16_inputs']},{id:'rate16-plot-range',field:'plot_scope',label:'倍率图范围',defaultValue:'花椒皮（5材料）',queryIds:['rate16_plot']}],{},{id:'rate16-mode-scope'});
+ const batch24Scope=useSectionFilters([{id:'batch24-purpose',field:'task',label:'第24批用途',defaultValue:'all',queryIds:['batch24_inputs']}],{},{id:'batch24-purpose-scope'});
  const batch23Scope=useSectionFilters([{id:'batch23-purpose',field:'task',label:'第23批用途',defaultValue:'all',queryIds:['batch23_inputs']}],{},{id:'batch23-purpose-scope'});
  const batch22Scope=useSectionFilters([{id:'batch22-purpose',field:'task',label:'第22批用途',defaultValue:'all',queryIds:['batch22_inputs']}],{},{id:'batch22-purpose-scope'});
  return <article className="literature-progress">
@@ -44,7 +45,7 @@ export function DashboardContent(){
     <p>第十八批新增94普通碳有界倍率工况及11天然含硅碳独立工况，并更正上一批淀粉四单元的原图绑定。六个遮挡标称工况不代填，循环配置未决不强行准入。</p>
     <p>第十七批新增五来源全样品提取：631材料数值、23电容报告。v17封版时普通3E为184条/22DOI；当前计数见上方；新6条水系2E两倍系数和1条有机四倍系数在独立目标下调用。</p>
     <p>历史已有 <strong>{h.historical_selected_fact_references} 项材料属性</strong>另行对账，其中 {h.historical_fact_references_with_same_source_table_candidates} 项存在同源表线索；不能与本页新增层直接相加。目录、论文、材料、数值单元与训练样本分母不同。</p>
-    <p>原2023—2026普通队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源家族</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 家族</strong>。当前{h.cycling_version}新增{h.new_residue_only_admissions}条含残留用途准入、普通主集新增{h.new_ordinary_main_admissions}条；{h.new_endpoint_records}新端点，全部观察仍{h.cycling_observations}条。原固定队列现{h.fixed_pending}条待证，真实拟合 {h.model_fits} 次。</p>
+    <p>原2023—2026普通队列：三电极循环 <strong>{h.formal_main_rows} 条 / {h.formal_main_sources} 来源家族</strong>，双电极 <strong>{h.formal_2e_rows} 条 / {h.formal_2e_sources} 家族</strong>。当前{h.cycling_version}新增{h.new_residue_only_admissions}条含残留用途准入、普通主集新增{h.new_ordinary_main_admissions}条；{h.new_endpoint_records}新端点，全部观察仍{h.cycling_observations}条。原固定队列现{h.fixed_pending}条待证，本提取流程新拟合 {h.model_fits} 次。</p>
     <p>双电极含报告无机组分敏感性用途 <strong>{h.formal_2e_residue_rows}条 / {h.formal_2e_residue_sources}家族</strong>，再含既有近似标签为{h.formal_2e_approx_rows}条 / {h.formal_2e_approx_sources}家族。两者嵌套，不能相加，也不与普通碳主集混称。</p>
     <p>跨年份视图已逐测试核定2018年棉花、2019年NFAC、2021年红茶及2022年苏铁绒：三电极 <strong>{h.all_years_3e_rows} 条 / {h.all_years_3e_sources} 家族</strong>，双电极 <strong>{h.all_years_2e_rows} 条 / {h.all_years_2e_sources} 家族</strong>。苏铁绒两盐一起留出；原日期规则保持，Tondolo与前作同家族隔离。</p>
     <p>已有 <strong>{h.auxiliary_purpose_reviewed_input_rows} 条辅助GCD输入</strong>按四个目标分别核定：普通三电极水系 {h.auxiliary_aqueous_3e_GCD_rows} 条、双电极器件总质量 {h.auxiliary_aqueous_2e_GCD_rows} 条、天然矿物残留碳三电极 {h.auxiliary_native_mineral_3e_GCD_rows} 条、双电极作者两倍系数 {h.auxiliary_author_factor2_2e_GCD_rows} 条。合计 {h.auxiliary_independent_DOI_groups} 个DOI组，输入预检通过不表示泛化精度已得到证明。</p>
@@ -57,10 +58,20 @@ export function DashboardContent(){
     <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。有界图捕获现{h.cumulative_bounded_curve_samples}条，其中{h.cumulative_numeric_curve_samples}数值／2仅区间／{h.cumulative_occluded_curve_samples}遮挡；{h.peer_model_numeric_cells}个同行参数另计。12原图检查不代表整篇波形提取完成。</p>
    </div>
   </DataComponent>
+  <Section id="batch24-section" title="第二十四批 · 四篇原始研究的全样品与阶段提取" filters={<Filters {...batch24Scope.filterProps}/>}>
+   <p>新增223项材料数值、13项未报告、26条电容报告及25项阶段登记；17个可得原图范围与本地SI已核读，麦壳9个图形资产仍未取得。登记、数值和工况不是独立论文数。</p>
+   <EvidenceTable id="batch24-inputs-table" title="18条分用途输入 · 11条3E与7条独立2E表达" queryId="batch24_inputs" scope={batch24Scope} columns={[f('sample','样品'),f('task','用途'),f('value','F/g'),f('current','报告A/g'),f('source_weight','来源权重'),f('basis','质量表达'),f('reference','协议边界')]}/>
+   <p>普通三电极辅助现205条/30 DOI；含图374条为嵌套视图。食物气凝胶、柚皮的未知/争议参比仍明确保留，报告电容用途没有解除其循环冻结。麦壳2E四倍Cs与器件电容分开；NSOC-800的873 K只作明确单位换算，不从样品名猜800°C。</p>
+   <EvidenceTable id="inspection24-table" title="糠醛渣四条电容 · 浓度争议仅供核查" queryId="inspection24_rows" columns={[f('sample','样品'),f('value','作者F/g'),f('current','报告A/g'),f('scope','用途限制')]}/>
+   <EvidenceTable id="batch24-decisions-table" title="五项证据处置 · 不覆盖异文" queryId="batch24_decisions" columns={[f('doi','DOI'),f('action','处理与未决边界')]}/>
+   <EvidenceTable id="batch24-candidates-table" title="两个器件循环候选 · 非新增准入" queryId="batch24_candidates" columns={[f('sample','样品'),f('retention','作者保持率'),f('cycles','圈数'),f('current','报告A/g'),f('status','状态'),f('evidence','证据与缺项')]}/>
+   <EvidenceTable id="batch24-links-table" title="三个既有3E端点 · 原冻结保持" queryId="batch24_links" columns={[f('sample','样品'),f('endpoint','原端点'),f('scope','边界')]}/>
+   <p>本批没有增加循环库观察、正式循环准入或模型拟合，原固定37条待证保持。原始表候选累计触及252个、仍707个未处理；自身SI未被旧自动表格索引发现，单独转录并保留定位，不改变959候选分母。</p>
+  </Section>
   <Section id="batch23-section" title="第二十三批 · 自身实验与二手汇编分层" filters={<Filters {...batch23Scope.filterProps}/>}>
    <p>新增147项自身材料数值、14条电容报告（12数值、2未报告）。17项登记含原料、水热炭及最终材料；M-3-25的581.74/587.14竞争保留，蜜瓜皮与前作样品重叠待核。没有新增循环准入或拟合。</p>
    <EvidenceTable id="batch23-inputs-table" title="七条用途输入 · 同一来源家族" queryId="batch23_inputs" scope={batch23Scope} columns={[f('sample','样品'),f('task','用途'),f('system','配置'),f('value','F/g'),f('current','报告A/g'),f('source_weight','来源权重'),f('status','状态')]}/>
-   <p>两条零Cu对照已计入普通三电极194条/27 DOI；含图363条为嵌套视图。含Cu复合体系单列，不因论文包含Cu就丢弃所有对照，也不把Cu材料混入普通碳。</p>
+   <p>两条零Cu对照在v23封版时已计入普通三电极194条/27 DOI、含图363条；当前计数见总览。含Cu复合体系单列，不因论文包含Cu就丢弃所有对照，也不把Cu材料混入普通碳。</p>
    <EvidenceTable id="secondary23-table" title="309条二手检索索引 · 无正式训练资格" queryId="secondary23_rows" columns={[f('curator','汇编DOI'),f('row_id','原行'),f('cited','被引DOI'),f('description','原表内容'),f('location','位置'),f('status','边界')]}/>
    <p>其中166行为同行SI的41 DOI汇编，另143行为综述/上下文。89/164重复，32/33同记录特征却有120/190 F/g；原行全部保留，不能直接增加训练样本。续页首6行已按PDF坐标补回。</p>
    <EvidenceTable id="peer23-metrics-table" title="同行原报指标 · 缩放和拆分尚未复现" queryId="peer23_metrics" columns={[f('model','同行模型'),f('RMSE','原报RMSE'),f('MAE','原报MAE'),f('R2','原报R²'),f('scope','指标边界')]}/>
@@ -80,7 +91,7 @@ export function DashboardContent(){
    <Section id="batch22-section" title="第二十二批 · 全样品、材料阶段与图文争议" filters={<Filters {...batch22Scope.filterProps}/>}>
     <p>四篇已有论文新增235个材料数值、3项未报告与28条电容报告。38项登记包括预炭化物、对照、动力学前驱体和另批氢存储样品，不能当38种独立最终碳。14张主表已审，当前还有{h.raw_candidates_untouched}个原始候选未触及。</p>
     <EvidenceTable id="batch22-inputs-table" title="九类用途 · 共27个表达行" queryId="batch22_inputs" scope={batch22Scope} columns={[f('sample','样品'),f('task','用途'),f('method','方法'),f('value','F/g'),f('current','报告A/g'),f('scan','扫描mV/s'),f('source_weight','来源权重'),f('ready','状态')]}/>
-    <p>松木三个GCD工况在v22封版时已包含于普通三电极192条；当前为194条；WET-1的247@0.1 A/g与原图首点低于220冲突，该工况继续冻结。林业原样品与去灰折算共享测试组；SAP混合废物、含锰CV与普通生物质分用途。林业SI和另外10个主图尚未取得，连续波形仍未全量提取。</p>
+    <p>松木三个GCD工况在v22封版时已包含于普通三电极192条；当前为205条；WET-1的247@0.1 A/g与原图首点低于220冲突，该工况继续冻结。林业原样品与去灰折算共享测试组；SAP混合废物、含锰CV与普通生物质分用途。林业SI和另外10个主图尚未取得，连续波形仍未全量提取。</p>
     <EvidenceTable id="batch22-decisions-table" title="五项问题处置 · 原值与证据均保留" queryId="batch22_decisions" columns={[f('doi','DOI'),f('action','处理依据与边界')]}/>
     <EvidenceTable id="batch22-links-table" title="六条既有循环端点关联" queryId="batch22_links" columns={[f('sample','样品'),f('endpoint','原端点'),f('status','状态'),f('evidence','依据')]}/>
     <p>文献v22封版时，林业三个水系端点待逐测试准入，现已在循环v0.27按残留用途处理；三个有机记录仍仅候选。松木两条循环早已在主集，SAP原记录仍不进入普通生物质用途。文献v22本身未执行循环准入或拟合，原固定37条待证保持。</p>
