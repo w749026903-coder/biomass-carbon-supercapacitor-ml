@@ -1,0 +1,1564 @@
+{
+  "total_facts": 4670,
+  "numeric_facts": 4469,
+  "nonpoint_facts": 201,
+  "material_registrations": 458,
+  "reviewed_sources": 65,
+  "numeric_facts_connected_to_training_inputs": 2823,
+  "numeric_fact_connection_rate": 0.631684940702618,
+  "denominator": "Distinct numeric material fact IDs in immutable v26; numerator unique IDs with feature/target receipts into the prepared tasks, not estimator use or independent sample counts.",
+  "confirmed_cycle_material_links": 48,
+  "main3e_material_links": 17,
+  "new_main3e_nonmissing_feature_cells": 82,
+  "task_counts": {
+    "capacity:2e_author_factor2": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "capacity:2e_device": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "capacity:3e_native_mineral": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "capacity:3e_reported": {
+      "rows": 208,
+      "source_families": 31,
+      "source_holdout_validation_possible": true
+    },
+    "capacity:3e_with_graph": {
+      "rows": 386,
+      "source_families": 31,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_2e": {
+      "rows": 31,
+      "source_families": 25,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_2e_all_years": {
+      "rows": 34,
+      "source_families": 28,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_2e_approx": {
+      "rows": 38,
+      "source_families": 29,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_2e_residue": {
+      "rows": 36,
+      "source_families": 27,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_3e": {
+      "rows": 47,
+      "source_families": 34,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_3e_all_years": {
+      "rows": 51,
+      "source_families": 37,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_3e_residue_sensitivity": {
+      "rows": 48,
+      "source_families": 35,
+      "source_holdout_validation_possible": true
+    },
+    "cycle:reported_3e_sensitivity": {
+      "rows": 54,
+      "source_families": 40,
+      "source_holdout_validation_possible": true
+    },
+    "lineage:composite_or_mixed_separate:final_BET_from_measured_precursor": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "lineage:native_residue_separate:final_BET_from_measured_precursor": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "lineage:ordinary_biomass_pretest:final_BET_from_measured_precursor": {
+      "rows": 13,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:BET_minus_tplot_external_area_m2_g": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:BET_surface_area_m2_g": {
+      "rows": 22,
+      "source_families": 5,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:BJH_mesopore_volume_cm3_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:CO2_2D_NLDFT_pore_volume_cm3_g": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:CO2_2D_NLDFT_surface_area_m2_g": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:DFT_micropore_peak_nm__unit_nm": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:N2_2D_NLDFT_pore_volume_cm3_g": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:N2_2D_NLDFT_surface_area_m2_g": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:Raman_AD_AG__unit_ratio": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:Raman_D_FWHM_cm_inv__unit_cm_1": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:Raman_D_position_cm_inv__unit_cm_1": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:Raman_G_FWHM_cm_inv__unit_cm_1": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:Raman_G_position_cm_inv__unit_cm_1": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:Raman_ID_IG": {
+      "rows": 14,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:Raman_ID_IG__unit_ratio": {
+      "rows": 14,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:XPS_C_at_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XPS_C_wt_pct__unit_wt": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XPS_N_at_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XPS_N_wt_pct__unit_wt": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XPS_O_at_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XPS_O_wt_pct__unit_wt": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XPS_S_wt_pct__unit_wt": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XRD_Lc_nm__unit_nm": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:XRD_d002_nm__unit_nm": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:author_micropore_volume_fraction_pct__unit_": {
+      "rows": 7,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:average_pore_diameter_reported_nm": {
+      "rows": 9,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:average_pore_diameter_reported_nm__unit_nm": {
+      "rows": 9,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:micropore_volume_cm3_g": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:total_pore_volume_cm3_g": {
+      "rows": 19,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:composite_or_mixed_separate:tplot_micropore_area_m2_g": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:composite_or_mixed_separate:tplot_micropore_volume_cm3_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:BET_surface_area_m2_g": {
+      "rows": 13,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:native_residue_separate:QSDFT_micropore_volume_cm3_g": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:QSDFT_total_pore_volume_cm3_g": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:Raman_D_position_cm_inv__unit_cm_1": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:Raman_G_position_cm_inv__unit_cm_1": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:XRD_La_A__unit_angstrom": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:XRD_Lc_A__unit_angstrom": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:XRD_d002_A__unit_angstrom": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:XRD_d100_A__unit_angstrom": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:author_overall_AC_mass_yield_pct__unit_": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:author_t_pore_area_m2_g": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:author_t_pore_volume_cm3_g": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:average_pore_diameter_reported_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:average_pore_diameter_reported_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:reported_mesopore_area_method_unspecified_m2_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:reported_micropore_area_method_unspecified_m2_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:native_residue_separate:total_pore_volume_cm3_g": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Ar_BET_surface_area_m2_g": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Ar_total_pore_volume_cm3_g": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:BET_surface_area_m2_g": {
+      "rows": 253,
+      "source_families": 47,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:BET_surface_area_m2_g_author_plusminus": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:BJH_ads_pore_volume_cm3_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:BJH_average_pore_diameter_A__unit_angstrom": {
+      "rows": 20,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:BJH_average_pore_diameter_nm": {
+      "rows": 10,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:BJH_average_pore_diameter_nm__unit_nm": {
+      "rows": 10,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:BJH_des_pore_volume_cm3_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:BJH_mesopore_volume_cm3_g": {
+      "rows": 7,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:BJH_pore_diameter_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:BJH_pore_diameter_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DA_micropore_volume_cm3_g": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DA_pore_diameter_mode_nm": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DA_pore_diameter_mode_nm__unit_nm": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_diameter_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_diameter_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_peak_1_nm__unit_nm": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_peak_2_nm__unit_nm": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_peak_3_nm__unit_nm": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_peak_4_nm__unit_nm": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_volume_cm3_g": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_pore_width_mode_nm__unit_nm": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DFT_surface_area_m2_g": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DH_ads_pore_volume_cm3_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DH_des_pore_volume_cm3_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:DR_micropore_size_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_C_at_pct": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_C_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_C_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_K_at_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_N_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_N_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_O_at_pct": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_O_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_O_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_S_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDS_S_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Al_at_pct": {
+      "rows": 3,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_Al_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Al_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_C_at_pct": {
+      "rows": 11,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_C_wt_pct": {
+      "rows": 8,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_C_wt_pct__unit_wt": {
+      "rows": 8,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_Ca_at_pct": {
+      "rows": 2,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_Ca_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Ca_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Cl_at_pct": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_K_at_pct": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Lu_at_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Lu_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Lu_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Mg_at_pct": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_N_at_pct": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_N_wt_pct": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_N_wt_pct__unit_wt": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Na_at_pct": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_O_at_pct": {
+      "rows": 10,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_O_wt_pct": {
+      "rows": 7,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_O_wt_pct__unit_wt": {
+      "rows": 7,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_P_at_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_S_at_pct": {
+      "rows": 2,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:EDX_S_wt_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_S_wt_pct__unit_wt": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:EDX_Si_at_pct": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:HK_at_0_31_pore_volume_cm3_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:HK_micropore_volume_cm3_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:NLDFT_pore_peak_1_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:NLDFT_pore_peak_2_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:NLDFT_pore_peak_3_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_2D_position_cm_inv__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D1_position__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D1_reported_width__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D2_position__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D2_reported_width__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D3_position__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D3_reported_width__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D4_position__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D4_reported_width__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_D_position_cm_inv__unit_cm_1": {
+      "rows": 11,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:Raman_D_reported_position_cm_inv__unit_cm_1": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_Dstar_position_cm_inv__unit_cm_1": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_Dstarstar_position_cm_inv__unit_cm_1": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_G_position__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_G_position_cm_inv__unit_cm_1": {
+      "rows": 11,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:Raman_G_reported_position_cm_inv__unit_cm_1": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_G_reported_width__unit_cm_1": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_I2D_IG__unit_ratio": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_ID1_IG__unit_ratio": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_ID_IG": {
+      "rows": 129,
+      "source_families": 26,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:Raman_ID_IG__unit_ratio": {
+      "rows": 129,
+      "source_families": 26,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:Raman_IG_ID__unit_ratio": {
+      "rows": 20,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:Raman_derived_crystallite_La_nm__unit_nm": {
+      "rows": 12,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_fitted_D_position_cm_inv__unit_cm_1": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_fitted_Dprime_position_cm_inv__unit_cm_1": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_fitted_G_position_cm_inv__unit_cm_1": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_fitted_I_position_cm_inv__unit_cm_1": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:Raman_integrated_area_ID_IG__unit_ratio": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_Al_at_pct": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_B_at_pct": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_B_wt_pct__unit_wt": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_CC_envelope_pct__unit_withinC1s": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_CC_sp2_envelope_pct__unit_withinC1s": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_COOH_COOR_envelope_pct__unit_of_C1s_envelope": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_CO_envelope_pct__unit_withinC1s": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_C_C_double_C_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_C_envelope_pct__unit_of_C1s_envelope": {
+      "rows": 11,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_C_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_OH_envelope_pct__unit_of_C1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_OH_envelope_pct__unit_withinC1s": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_O_C_N_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_O_C_OH_envelope_pct__unit_of_C1s_envelope": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_O_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_O_envelope_pct__unit_withinC1s": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_double_C_envelope_pct__unit_of_C1s_envelope": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_double_O_C_N_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_double_O_envelope_pct__unit_of_C1s_envelope": {
+      "rows": 11,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_C_double_O_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_OCO_envelope_pct__unit_withinC1s": {
+      "rows": 6,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_O_C_double_O_envelope_pct__unit_of_C1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C1s_O_double_C_OH_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C_O_reported_ratio__unit_ratio": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C_at_pct": {
+      "rows": 80,
+      "source_families": 17,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_C_to_N_atomic_ratio__unit_ratio": {
+      "rows": 21,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_C_wt_pct__unit_wt": {
+      "rows": 8,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_Ca_at_pct": {
+      "rows": 7,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_Cl_at_pct": {
+      "rows": 3,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_F_at_pct": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_K_at_pct": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_Mg_at_pct": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_N1s_graphitic_envelope_pct__unit_of_N1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_N1s_oxide_envelope_pct__unit_of_N1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_N1s_pyridinic_envelope_pct__unit_of_N1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_N1s_pyrrolic_envelope_pct__unit_of_N1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_N_at_pct": {
+      "rows": 54,
+      "source_families": 12,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_N_wt_pct__unit_wt": {
+      "rows": 9,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_Na_at_pct": {
+      "rows": 4,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_C_OH_envelope_pct__unit_of_O1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_C_O_C_C_OH_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_C_O_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_C_double_O_envelope_pct__unit_of_O1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_C_double_O_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_O_C_double_O_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_O_N_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_O_double_C_OH_envelope_pct__unit_of_O1s_envelope": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O1s_O_double_C_O_envelope_pct__unit_of_corresponding_element_envelope": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O_C_reported_ratio__unit_ratio": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_O_at_pct": {
+      "rows": 80,
+      "source_families": 18,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_O_wt_pct__unit_wt": {
+      "rows": 9,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_P_at_pct": {
+      "rows": 5,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_S_at_pct": {
+      "rows": 20,
+      "source_families": 5,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XPS_S_wt_pct__unit_wt": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XPS_Si_at_pct": {
+      "rows": 7,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XRD_002_FWHM_deg__unit_degree": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_002_position_deg__unit_degree": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_100_position_deg__unit_degree": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_2theta002_deg__unit_degree": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_2theta100_deg__unit_degree": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_Scherrer_La100_nm__unit_nm": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_Scherrer_Lc002_nm__unit_nm": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_d002_A__unit_angstrom": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:XRD_d002_nm__unit_nm": {
+      "rows": 10,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:XRD_d100_nm__unit_nm": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:activation_stage_yield_pct__unit_": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:author_BJH_mesopore_volume_cm3_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:author_HK_micropore_volume_cm3_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:author_carbon_efficiency_pct__unit_": {
+      "rows": 21,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:author_carbon_efficiency_pct__unit_carbon_to_lignin_plus_Nsource_mass": {
+      "rows": 21,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:author_mesopore_volume_fraction_pct__unit_": {
+      "rows": 5,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:author_micropore_volume_fraction__unit_ratio": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:author_micropore_volume_fraction_pct__unit_": {
+      "rows": 11,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:author_product_yield_pct__unit_": {
+      "rows": 6,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:average_pore_diameter_nm": {
+      "rows": 12,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:average_pore_diameter_nm__unit_nm": {
+      "rows": 12,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:average_pore_diameter_reported_nm": {
+      "rows": 24,
+      "source_families": 6,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:average_pore_diameter_reported_nm__unit_nm": {
+      "rows": 24,
+      "source_families": 6,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:average_pore_size_nm__unit_nm": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:average_pore_width_nm__unit_nm": {
+      "rows": 18,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_C_wt_pct": {
+      "rows": 20,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_H_C_mass_ratio__unit_mass_ratio": {
+      "rows": 9,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_H_wt_pct": {
+      "rows": 20,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_N_wt_pct": {
+      "rows": 20,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_ON_C_mass_ratio__unit_mass_ratio": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_O_C_mass_ratio__unit_mass_ratio": {
+      "rows": 9,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_O_wt_pct": {
+      "rows": 20,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_S_wt_pct": {
+      "rows": 9,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_author_CH_mass_ratio__unit_ratio": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_author_CN_mass_ratio__unit_ratio": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_author_CO_mass_ratio__unit_ratio": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:bulk_EA_author_C_NO_mass_ratio__unit_ratio": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:macropore_volume_cm3_g": {
+      "rows": 14,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:macropore_volume_fraction_pct__unit_": {
+      "rows": 11,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:mean_pore_diameter_reported_nm": {
+      "rows": 29,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:mean_pore_diameter_reported_nm__unit_nm": {
+      "rows": 29,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:meso_to_micro_pore_volume_ratio__unit_ratio": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:mesopore_area_reported_m2_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:mesopore_surface_area_m2_g": {
+      "rows": 15,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:mesopore_surface_fraction_pct__unit_": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:mesopore_to_BET_surface_area_ratio__unit_ratio": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:mesopore_to_total_volume_reported_ratio__unit_ratio": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:mesopore_volume_cm3_g": {
+      "rows": 100,
+      "source_families": 17,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:mesopore_volume_fraction_pct__unit_": {
+      "rows": 34,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:micro_to_meso_pore_volume_ratio__unit_ratio": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:micropore_area_reported_m2_g": {
+      "rows": 7,
+      "source_families": 2,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:micropore_surface_area_m2_g": {
+      "rows": 80,
+      "source_families": 15,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:micropore_surface_fraction_pct__unit_": {
+      "rows": 11,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:micropore_to_BET_surface_area_ratio__unit_ratio": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:micropore_volume_cm3_g": {
+      "rows": 130,
+      "source_families": 24,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:micropore_volume_fraction_pct__unit_": {
+      "rows": 22,
+      "source_families": 4,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:micropore_volume_fraction_pct__unit_reported": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:pore_volume_below0p7nm_cm3_g": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:pore_volume_below1nm_cm3_g": {
+      "rows": 2,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:pore_width_nm__unit_nm": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_N2_pore_volume_cm3_g": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_mesopore_area_method_unspecified_m2_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_mesopore_fraction_pct__unit_": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_mesopore_surface_area_m2_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_mesopore_surface_fraction_pct__unit_": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_mesopore_volume_fraction_pct__unit_": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_mesopore_volume_fraction_pct__unit_reported": {
+      "rows": 7,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_mesopore_volume_method_unspecified_cm3_g": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_micropore_area_method_unspecified_m2_g": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_micropore_surface_area_m2_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_micropore_volume_method_unspecified_cm3_g": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_pore_diameter_A__unit_angstrom": {
+      "rows": 12,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_pore_size_nm__unit_nm": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_pore_width_nm__unit_nm": {
+      "rows": 3,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_product_yield_pct__unit_of_dryrawprecursor": {
+      "rows": 1,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_product_yield_pct__unit_of_raw_dry_hemp_mass": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:reported_product_yield_pct__unit_wt": {
+      "rows": 32,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:reported_total_surface_area_m2_g": {
+      "rows": 4,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:total_pore_volume_cm3_g": {
+      "rows": 222,
+      "source_families": 42,
+      "source_holdout_validation_possible": true
+    },
+    "material:ordinary_biomass_pretest:total_pore_volume_cm3_g_author_plusminus": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:tplot_external_area_m2_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:tplot_micropore_area_m2_g": {
+      "rows": 5,
+      "source_families": 1,
+      "source_holdout_validation_possible": false
+    },
+    "material:ordinary_biomass_pretest:tplot_micropore_volume_cm3_g": {
+      "rows": 8,
+      "source_families": 3,
+      "source_holdout_validation_possible": true
+    }
+  },
+  "usage_counts": {
+    "specialized_target_or_feature_contract_pending": 969,
+    "connected_to_training_inputs": 2823,
+    "stage_specific_or_no_qualified_target": 168,
+    "composition_or_measurement_basis_unresolved": 199,
+    "nonpoint_or_missing_retained": 201,
+    "competing_or_nonselected_report": 124,
+    "reference_or_identity_unresolved": 49,
+    "measurement_uncertainty_metadata_not_independent_predictor": 19,
+    "method_or_unit_ambiguity_retained": 108,
+    "lineage_or_stage_association_requires_review": 10
+  },
+  "old_model_fits": 560,
+  "new_model_fits": 0,
+  "new_cycling_admissions": 0,
+  "original_pending": 37,
+  "unsealed_batch27_used": false,
+  "property_tasks_do_not_supply_missing_cycle_labels": true,
+  "ordinary3e_and_graph_tasks_nested": true,
+  "source_databases": {
+    "literature": {
+      "version": "literature_pool_v26",
+      "directory": "文献全量利用复核_20261028/批次26_木粉炭化系列与锰复合全样品",
+      "database_file": "literature_material_pool_v26.sqlite",
+      "sha256": "c48964f31d2e7bcd9745785c1a21c51cb81000afd26d0e8ace73fd8de06ccef5",
+      "api_module": "data.literature_v26",
+      "scope": "Allwood4temperatureand4MnO2series;14facts/10numeric,16capacities,59responses;3ordinary+3compositeinputs,8disputed400Cinspection. Eightcycleclaims and3oldlinks separatelyreviewed; 65sourcespartial, nofit."
+    },
+    "cycling": {
+      "version": "cycling_v0.29",
+      "version_directory": "循环稳定性数据库_v0.29_木粉原图标签与用途补正_20261028",
+      "database_file": "cycling_v0_29.sqlite",
+      "sha256": "092124bd9df25ae2d258cd46588ae27fde9371ace329cb3070ae3f48b4f7d279",
+      "parent_database_file": "循环稳定性数据库_v0.28_麦壳跨年份器件循环准入_20261028/cycling_v0_28.sqlite",
+      "default_profile": "reported_3e",
+      "stage": "specific_original_graph_labels_over_loss_complements_three_existing_wood_tests",
+      "ready_for_training_inputs": true,
+      "research_training_authorized": false,
+      "all_records_admitted": false
+    }
+  },
+  "typed_additional_selected_features": 1277,
+  "additional_main3e_typed_cells": 31,
+  "explicit_lineage_edges": 94,
+  "prepared_lineage_pairs": 24,
+  "cross_task_freeze_selected_fields_held": 0,
+  "cross_task_freeze_input_rows_held": 0,
+  "protocol_only_auxiliary_rows_preserved": 14,
+  "lineage_comparison_pairs_held": 5
+}

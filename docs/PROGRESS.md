@@ -547,3 +547,11 @@
 - 验证：47条34来源；冻结五候选后560次拟合，26259项核验、533保护文件与46原文SHA、44封版输出通过；桌面手机与4SVG、筛选排序和6链接通过；无新准入或共享运行时改动
 - 下一步/未决：一次训练已完成，保留困难来源和原37待证；后续按用户指示继续文献利用或新实验，不重跑本计划追分
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T17:32:20+08:00：将2823项数值事实接入可调用训练数据层，新增82个主集材料单元并保留全量未接入队列
+
+- 结果：将2823项数值事实接入可调用训练数据层，新增82个主集材料单元并保留全量未接入队列
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/knowledge/提取数值到训练输入的逐项接入_20261028.md, data/current_training_datasets.json, data/training_datasets.py, tools/build_training_associations_v1.py, tools/extend_training_associations_v1.py, tools/finalize_training_associations_v1.py, tools/verify_training_associations_v1.py, 全量文献训练数据接入_v1_20261028
+- 验证：4670事实逐项对账；114566项核验和33封版输出通过；48身份链接/主3E17条、47/34与31/25标签保持；208嵌套386不重复计数、253材料BET辅助/47来源、24真实前驱体配对；原37待证和冻结保持、拟合0/新准入0
+- 下一步/未决：继续1646项数值的具体用途/证据与剩余论文提取；后续新实验从data.training_datasets调用，跨全部任务按来源隔离，不能将接入率当已拟合比例或独立样本数
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

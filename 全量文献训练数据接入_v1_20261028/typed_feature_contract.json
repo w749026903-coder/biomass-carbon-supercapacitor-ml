@@ -1,0 +1,992 @@
+{
+  "DFT_micropore_peak_nm__unit_nm": {
+    "original_field": "DFT_micropore_peak_nm",
+    "unit": "nm",
+    "method": "BET/XPS/Raman/DFT reported own generic block;layer binding not explicit",
+    "measurement_group": "adsorption_porosity"
+  },
+  "Raman_ID_IG__unit_ratio": {
+    "original_field": "Raman_ID_IG",
+    "unit": "ratio",
+    "method": "AuthorD/G intensity ratio from ownFig8 annotation",
+    "measurement_group": "Raman"
+  },
+  "XPS_C_to_N_atomic_ratio__unit_ratio": {
+    "original_field": "XPS_C_to_N_atomic_ratio",
+    "unit": "ratio",
+    "method": "Own mainTable1; Ceff excludes carbonate; C/N from XPS; N2 BET; BM defaults not actual processing conditions",
+    "measurement_group": "XPS"
+  },
+  "author_carbon_efficiency_pct__unit_": {
+    "original_field": "author_carbon_efficiency_pct",
+    "unit": "%",
+    "method": "Own SI repeat, not another material/test",
+    "measurement_group": "reported_yield"
+  },
+  "author_carbon_efficiency_pct__unit_carbon_to_lignin_plus_Nsource_mass": {
+    "original_field": "author_carbon_efficiency_pct",
+    "unit": "%carbon_to_lignin_plus_Nsource_mass",
+    "method": "Own mainTable1; Ceff excludes carbonate; C/N from XPS; N2 BET; BM defaults not actual processing conditions",
+    "measurement_group": "reported_yield"
+  },
+  "extrusion_barrel_temperature_C__unit_degC": {
+    "original_field": "extrusion_barrel_temperature_C",
+    "unit": "degC",
+    "method": "Own mainTable1; Ceff excludes carbonate; C/N from XPS; N2 BET; BM defaults not actual processing conditions",
+    "measurement_group": "process"
+  },
+  "extrusion_feed_rate_g_min__unit_g_min": {
+    "original_field": "extrusion_feed_rate_g_min",
+    "unit": "g/min",
+    "method": "Own mainTable1; Ceff excludes carbonate; C/N from XPS; N2 BET; BM defaults not actual processing conditions",
+    "measurement_group": "process"
+  },
+  "extrusion_screw_speed_rpm__unit_rpm": {
+    "original_field": "extrusion_screw_speed_rpm",
+    "unit": "rpm",
+    "method": "Own mainTable1; Ceff excludes carbonate; C/N from XPS; N2 BET; BM defaults not actual processing conditions",
+    "measurement_group": "process"
+  },
+  "EDX_C_wt_pct__unit_wt": {
+    "original_field": "EDX_C_wt_pct",
+    "unit": "wt%",
+    "method": "OwnSI EDXmass%; not XPS and not final atom%",
+    "measurement_group": "EDS"
+  },
+  "EDX_O_wt_pct__unit_wt": {
+    "original_field": "EDX_O_wt_pct",
+    "unit": "wt%",
+    "method": "OwnSI EDXmass%; not XPS and not final atom%",
+    "measurement_group": "EDS"
+  },
+  "NLDFT_pore_peak_1_nm__unit_nm": {
+    "original_field": "NLDFT_pore_peak_1_nm",
+    "unit": "nm",
+    "method": "NLDFT multimodal peaks; slash values not averaged",
+    "measurement_group": "adsorption_porosity"
+  },
+  "NLDFT_pore_peak_2_nm__unit_nm": {
+    "original_field": "NLDFT_pore_peak_2_nm",
+    "unit": "nm",
+    "method": "NLDFT multimodal peaks; slash values not averaged",
+    "measurement_group": "adsorption_porosity"
+  },
+  "NLDFT_pore_peak_3_nm__unit_nm": {
+    "original_field": "NLDFT_pore_peak_3_nm",
+    "unit": "nm",
+    "method": "NLDFT multimodal peaks; slash values not averaged",
+    "measurement_group": "adsorption_porosity"
+  },
+  "micropore_surface_fraction_pct__unit_": {
+    "original_field": "micropore_surface_fraction_pct",
+    "unit": "%",
+    "method": "OwnTable2 BET/t-plot as described, author rounding retained",
+    "measurement_group": "adsorption_porosity"
+  },
+  "micropore_volume_fraction_pct__unit_": {
+    "original_field": "micropore_volume_fraction_pct",
+    "unit": "%",
+    "method": "OwnreportedN2/BET porosity table; pore-volume fit model not further specified; literal XML precision preserved",
+    "measurement_group": "adsorption_porosity"
+  },
+  "reported_product_yield_pct__unit_wt": {
+    "original_field": "reported_product_yield_pct",
+    "unit": "wt%",
+    "method": "OwnN2BET; tablefootnotes VtotalP/P0~.95,BJH4V/A,meso=total-micro;yielddryrawwood",
+    "measurement_group": "reported_yield"
+  },
+  "Raman_D_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_D_position_cm_inv",
+    "unit": "cm-1",
+    "method": "OwnSI Lorentzianpeakpositions; dashnot0",
+    "measurement_group": "Raman"
+  },
+  "Raman_G_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_G_position_cm_inv",
+    "unit": "cm-1",
+    "method": "OwnSI Lorentzianpeakpositions; dashnot0",
+    "measurement_group": "Raman"
+  },
+  "EDX_Al_wt_pct__unit_wt": {
+    "original_field": "EDX_Al_wt_pct",
+    "unit": "wt%",
+    "method": "OwnEDAX instrument output; author element assignment retained; not XPS; K correction column excluded from composition",
+    "measurement_group": "EDS"
+  },
+  "EDX_Ca_wt_pct__unit_wt": {
+    "original_field": "EDX_Ca_wt_pct",
+    "unit": "wt%",
+    "method": "OwnEDAX instrument output; author element assignment retained; not XPS; K correction column excluded from composition",
+    "measurement_group": "EDS"
+  },
+  "EDX_Lu_wt_pct__unit_wt": {
+    "original_field": "EDX_Lu_wt_pct",
+    "unit": "wt%",
+    "method": "OwnEDAX instrument output; author element assignment retained; not XPS; K correction column excluded from composition",
+    "measurement_group": "EDS"
+  },
+  "BJH_average_pore_diameter_nm__unit_nm": {
+    "original_field": "BJH_average_pore_diameter_nm",
+    "unit": "nm",
+    "method": "OwnfootnoteBET,tplot atP/P0=.95,BJHdesorption; no porevolume inferred",
+    "measurement_group": "adsorption_porosity"
+  },
+  "XPS_C1s_C_C_C_double_C_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_C1s_C_C_C_double_C_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS relative fitted element envelope; not global atomic%",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_O_C_N_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_C1s_C_O_C_N_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS relative fitted element envelope; not global atomic%",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_double_O_C_N_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_C1s_C_double_O_C_N_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS relative fitted element envelope; not global atomic%",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_O_double_C_OH_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_C1s_O_double_C_OH_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS relative fitted element envelope; not global atomic%",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_C_O_C_C_OH_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_O1s_C_O_C_C_OH_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS relative fitted element envelope; not global atomic%",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_O_double_C_O_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_O1s_O_double_C_O_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS relative fitted element envelope; not global atomic%",
+    "measurement_group": "XPS"
+  },
+  "XPS_N1s_graphitic_envelope_pct__unit_of_N1s_envelope": {
+    "original_field": "XPS_N1s_graphitic_envelope_pct",
+    "unit": "% of N1s envelope",
+    "method": "Relative nitrogen-species distribution; captionat% not global nitrogen atomic fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_N1s_oxide_envelope_pct__unit_of_N1s_envelope": {
+    "original_field": "XPS_N1s_oxide_envelope_pct",
+    "unit": "% of N1s envelope",
+    "method": "Relative nitrogen-species distribution; captionat% not global nitrogen atomic fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_N1s_pyridinic_envelope_pct__unit_of_N1s_envelope": {
+    "original_field": "XPS_N1s_pyridinic_envelope_pct",
+    "unit": "% of N1s envelope",
+    "method": "Relative nitrogen-species distribution; captionat% not global nitrogen atomic fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_N1s_pyrrolic_envelope_pct__unit_of_N1s_envelope": {
+    "original_field": "XPS_N1s_pyrrolic_envelope_pct",
+    "unit": "% of N1s envelope",
+    "method": "Relative nitrogen-species distribution; captionat% not global nitrogen atomic fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_O_N_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_O1s_O_N_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS relative fitted element envelope; not global atomic%",
+    "measurement_group": "XPS"
+  },
+  "reported_mesopore_surface_fraction_pct__unit_": {
+    "original_field": "reported_mesopore_surface_fraction_pct",
+    "unit": "%",
+    "method": "author_SSA_meso_over_SSA_T",
+    "measurement_group": "adsorption_porosity"
+  },
+  "reported_mesopore_volume_fraction_pct__unit_": {
+    "original_field": "reported_mesopore_volume_fraction_pct",
+    "unit": "%",
+    "method": "author_V_meso_over_V_T",
+    "measurement_group": "adsorption_porosity"
+  },
+  "reported_pore_size_nm__unit_nm": {
+    "original_field": "reported_pore_size_nm",
+    "unit": "nm",
+    "method": "author_pore_size_definition_not_explicit",
+    "measurement_group": "adsorption_porosity"
+  },
+  "pore_width_nm__unit_nm": {
+    "original_field": "pore_width_nm",
+    "unit": "nm",
+    "method": "reported width, not silently diameter",
+    "measurement_group": "adsorption_porosity"
+  },
+  "XRD_La_A__unit_angstrom": {
+    "original_field": "XRD_La_A",
+    "unit": "angstrom",
+    "method": "OwnXRDmicrocrystallinesize; lastduplicateMOL750row unbound",
+    "measurement_group": "XRD"
+  },
+  "XRD_Lc_A__unit_angstrom": {
+    "original_field": "XRD_Lc_A",
+    "unit": "angstrom",
+    "method": "OwnXRDmicrocrystallinesize; lastduplicateMOL750row unbound",
+    "measurement_group": "XRD"
+  },
+  "XRD_d002_A__unit_angstrom": {
+    "original_field": "XRD_d002_A",
+    "unit": "angstrom",
+    "method": "Own BET/pore/yield/XRD/TEM methods remain distinct",
+    "measurement_group": "XRD"
+  },
+  "XRD_d100_A__unit_angstrom": {
+    "original_field": "XRD_d100_A",
+    "unit": "angstrom",
+    "method": "OwnXRDmicrocrystallinesize; lastduplicateMOL750row unbound",
+    "measurement_group": "XRD"
+  },
+  "average_pore_diameter_reported_nm__unit_nm": {
+    "original_field": "average_pore_diameter_reported_nm",
+    "unit": "nm",
+    "method": "OwnTable2/SI BET/tplot; finalnativeSiO2/allAPS ZnSresidue preserved",
+    "measurement_group": "adsorption_porosity"
+  },
+  "mean_pore_diameter_reported_nm__unit_nm": {
+    "original_field": "mean_pore_diameter_reported_nm",
+    "unit": "nm",
+    "method": "Own Table1; BET P/P0 .05-.20, Vt .99, BJH adsorption PSD; micro method not further stated",
+    "measurement_group": "adsorption_porosity"
+  },
+  "Raman_derived_crystallite_La_nm__unit_nm": {
+    "original_field": "Raman_derived_crystallite_La_nm",
+    "unit": "nm",
+    "method": "Author La derived from RamanID/IG and532nm, not independent observation",
+    "measurement_group": "Raman"
+  },
+  "reported_pore_diameter_A__unit_angstrom": {
+    "original_field": "reported_pore_diameter_A",
+    "unit": "angstrom",
+    "method": "Reported BET/porosity table; diameter originalangstrom,not silently nm",
+    "measurement_group": "adsorption_porosity"
+  },
+  "XRD_d002_nm__unit_nm": {
+    "original_field": "XRD_d002_nm",
+    "unit": "nm",
+    "method": "XRD",
+    "measurement_group": "XRD"
+  },
+  "XPS_C1s_COOH_COOR_envelope_pct__unit_of_C1s_envelope": {
+    "original_field": "XPS_C1s_COOH_COOR_envelope_pct",
+    "unit": "% of C1s envelope",
+    "method": "XPS C1s fitted component; not global elemental abundance",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_C_envelope_pct__unit_of_C1s_envelope": {
+    "original_field": "XPS_C1s_C_C_envelope_pct",
+    "unit": "% of C1s envelope",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_O_C_OH_envelope_pct__unit_of_C1s_envelope": {
+    "original_field": "XPS_C1s_C_O_C_OH_envelope_pct",
+    "unit": "% of C1s envelope",
+    "method": "XPS C1s fitted component; not global elemental abundance",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_double_C_envelope_pct__unit_of_C1s_envelope": {
+    "original_field": "XPS_C1s_C_double_C_envelope_pct",
+    "unit": "% of C1s envelope",
+    "method": "XPS C1s fitted component; not global elemental abundance",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_double_O_envelope_pct__unit_of_C1s_envelope": {
+    "original_field": "XPS_C1s_C_double_O_envelope_pct",
+    "unit": "% of C1s envelope",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "average_pore_width_nm__unit_nm": {
+    "original_field": "average_pore_width_nm",
+    "unit": "nm",
+    "method": "OwnreportedN2/BET porosity table; pore-volume fit model not further specified; literal XML precision preserved",
+    "measurement_group": "adsorption_porosity"
+  },
+  "micropore_to_BET_surface_area_ratio__unit_ratio": {
+    "original_field": "micropore_to_BET_surface_area_ratio",
+    "unit": "ratio",
+    "method": "BET; micropore t-plot; other reported pore metric retains author basis",
+    "measurement_group": "adsorption_porosity"
+  },
+  "micropore_volume_fraction_pct__unit_reported": {
+    "original_field": "micropore_volume_fraction_pct",
+    "unit": "% reported",
+    "method": "BET; micropore t-plot; other reported pore metric retains author basis",
+    "measurement_group": "adsorption_porosity"
+  },
+  "reported_mesopore_volume_fraction_pct__unit_reported": {
+    "original_field": "reported_mesopore_volume_fraction_pct",
+    "unit": "% reported",
+    "method": "BET; micropore t-plot; other reported pore metric retains author basis",
+    "measurement_group": "adsorption_porosity"
+  },
+  "Raman_ID1_IG__unit_ratio": {
+    "original_field": "Raman_ID1_IG",
+    "unit": "ratio",
+    "method": "reported fitted D1/G,not generic unqualified D/G",
+    "measurement_group": "Raman"
+  },
+  "reported_product_yield_pct__unit_of_dryrawprecursor": {
+    "original_field": "reported_product_yield_pct",
+    "unit": "% of dryrawprecursor",
+    "method": "Own BET/pore/yield/XRD/TEM methods remain distinct",
+    "measurement_group": "reported_yield"
+  },
+  "XPS_C1s_C_C_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_C1s_C_C_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS; envelope fractions not global elemental fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_O_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_C1s_C_O_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS; envelope fractions not global elemental fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_double_O_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_C1s_C_double_O_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS; envelope fractions not global elemental fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_C_O_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_O1s_C_O_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS; envelope fractions not global elemental fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_C_double_O_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_O1s_C_double_O_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS; envelope fractions not global elemental fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_O_C_double_O_envelope_pct__unit_of_corresponding_element_envelope": {
+    "original_field": "XPS_O1s_O_C_double_O_envelope_pct",
+    "unit": "% of corresponding element envelope",
+    "method": "XPS; envelope fractions not global elemental fraction",
+    "measurement_group": "XPS"
+  },
+  "XPS_O_C_reported_ratio__unit_ratio": {
+    "original_field": "XPS_O_C_reported_ratio",
+    "unit": "ratio",
+    "method": "XPS; envelope fractions not global elemental fraction",
+    "measurement_group": "XPS"
+  },
+  "mesopore_surface_fraction_pct__unit_": {
+    "original_field": "mesopore_surface_fraction_pct",
+    "unit": "%",
+    "method": "reported contribution to matching total",
+    "measurement_group": "adsorption_porosity"
+  },
+  "mesopore_volume_fraction_pct__unit_": {
+    "original_field": "mesopore_volume_fraction_pct",
+    "unit": "%",
+    "method": "OwnN2BET; tablefootnotes VtotalP/P0~.95,BJH4V/A,meso=total-micro;yielddryrawwood",
+    "measurement_group": "adsorption_porosity"
+  },
+  "micro_to_meso_pore_volume_ratio__unit_ratio": {
+    "original_field": "micro_to_meso_pore_volume_ratio",
+    "unit": "ratio",
+    "method": "author reported",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DFT_pore_diameter_nm__unit_nm": {
+    "original_field": "DFT_pore_diameter_nm",
+    "unit": "nm",
+    "method": "author reported; micro/meso volume and diameter DFT per footnote",
+    "measurement_group": "adsorption_porosity"
+  },
+  "Raman_IG_ID__unit_ratio": {
+    "original_field": "Raman_IG_ID",
+    "unit": "ratio",
+    "method": "Ownsamplemethod-bound claim; no rawEAinheritance",
+    "measurement_group": "Raman"
+  },
+  "XPS_C1s_C_OH_envelope_pct__unit_of_C1s_envelope": {
+    "original_field": "XPS_C1s_C_OH_envelope_pct",
+    "unit": "% of C1s envelope",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_O_C_double_O_envelope_pct__unit_of_C1s_envelope": {
+    "original_field": "XPS_C1s_O_C_double_O_envelope_pct",
+    "unit": "% of C1s envelope",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "XPS_C_O_reported_ratio__unit_ratio": {
+    "original_field": "XPS_C_O_reported_ratio",
+    "unit": "ratio",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_C_OH_envelope_pct__unit_of_O1s_envelope": {
+    "original_field": "XPS_O1s_C_OH_envelope_pct",
+    "unit": "% of O1s envelope",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_C_double_O_envelope_pct__unit_of_O1s_envelope": {
+    "original_field": "XPS_O1s_C_double_O_envelope_pct",
+    "unit": "% of O1s envelope",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "XPS_O1s_O_double_C_OH_envelope_pct__unit_of_O1s_envelope": {
+    "original_field": "XPS_O1s_O_double_C_OH_envelope_pct",
+    "unit": "% of O1s envelope",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "XPS"
+  },
+  "meso_to_micro_pore_volume_ratio__unit_ratio": {
+    "original_field": "meso_to_micro_pore_volume_ratio",
+    "unit": "ratio",
+    "method": "author reported; micro/meso volume and diameter DFT per footnote",
+    "measurement_group": "adsorption_porosity"
+  },
+  "mesopore_to_BET_surface_area_ratio__unit_ratio": {
+    "original_field": "mesopore_to_BET_surface_area_ratio",
+    "unit": "ratio",
+    "method": "author reported; micro/meso volume and diameter DFT per footnote",
+    "measurement_group": "adsorption_porosity"
+  },
+  "reported_product_yield_pct__unit_of_raw_dry_hemp_mass": {
+    "original_field": "reported_product_yield_pct",
+    "unit": "% of raw dry hemp mass",
+    "method": "XPS envelope-qualified or raw-mass yield",
+    "measurement_group": "reported_yield"
+  },
+  "Raman_AD_AG__unit_ratio": {
+    "original_field": "Raman_AD_AG",
+    "unit": "ratio",
+    "method": "Mo XRD lambda.7093Angstrom; Raman532nm mapped>=25points, ID/IG distinct AD/AG; author uncertainty not assumed experimental CI",
+    "measurement_group": "Raman"
+  },
+  "Raman_D_FWHM_cm_inv__unit_cm_1": {
+    "original_field": "Raman_D_FWHM_cm_inv",
+    "unit": "cm-1",
+    "method": "Mo XRD lambda.7093Angstrom; Raman532nm mapped>=25points, ID/IG distinct AD/AG; author uncertainty not assumed experimental CI",
+    "measurement_group": "Raman"
+  },
+  "Raman_G_FWHM_cm_inv__unit_cm_1": {
+    "original_field": "Raman_G_FWHM_cm_inv",
+    "unit": "cm-1",
+    "method": "Mo XRD lambda.7093Angstrom; Raman532nm mapped>=25points, ID/IG distinct AD/AG; author uncertainty not assumed experimental CI",
+    "measurement_group": "Raman"
+  },
+  "XPS_C_wt_pct__unit_wt": {
+    "original_field": "XPS_C_wt_pct",
+    "unit": "wt%",
+    "method": "Own Table2 explicitly wt%; not atomic percent",
+    "measurement_group": "XPS"
+  },
+  "XPS_N_wt_pct__unit_wt": {
+    "original_field": "XPS_N_wt_pct",
+    "unit": "wt%",
+    "method": "Own Table2 explicitly wt%; not atomic percent",
+    "measurement_group": "XPS"
+  },
+  "XPS_O_wt_pct__unit_wt": {
+    "original_field": "XPS_O_wt_pct",
+    "unit": "wt%",
+    "method": "Own Table2 explicitly wt%; not atomic percent",
+    "measurement_group": "XPS"
+  },
+  "XPS_S_wt_pct__unit_wt": {
+    "original_field": "XPS_S_wt_pct",
+    "unit": "wt%",
+    "method": "Own Table2 explicitly wt%; not atomic percent",
+    "measurement_group": "XPS"
+  },
+  "XRD_Lc_nm__unit_nm": {
+    "original_field": "XRD_Lc_nm",
+    "unit": "nm",
+    "method": "Mo XRD lambda.7093Angstrom; Raman532nm mapped>=25points, ID/IG distinct AD/AG; author uncertainty not assumed experimental CI",
+    "measurement_group": "XRD"
+  },
+  "NMR31P_aliphatic_OH_mmol_g__unit_mmol_g": {
+    "original_field": "NMR31P_aliphatic_OH_mmol_g",
+    "unit": "mmol/g",
+    "method": "Rawlignin31P NMR; explicit0.00 retained, not missing",
+    "measurement_group": "NMR31P"
+  },
+  "NMR31P_carboxylic_OH_mmol_g__unit_mmol_g": {
+    "original_field": "NMR31P_carboxylic_OH_mmol_g",
+    "unit": "mmol/g",
+    "method": "Rawlignin31P NMR; explicit0.00 retained, not missing",
+    "measurement_group": "NMR31P"
+  },
+  "NMR31P_guaiacyl_OH_mmol_g__unit_mmol_g": {
+    "original_field": "NMR31P_guaiacyl_OH_mmol_g",
+    "unit": "mmol/g",
+    "method": "Rawlignin31P NMR; explicit0.00 retained, not missing",
+    "measurement_group": "NMR31P"
+  },
+  "NMR31P_p_hydroxyphenyl_OH_mmol_g__unit_mmol_g": {
+    "original_field": "NMR31P_p_hydroxyphenyl_OH_mmol_g",
+    "unit": "mmol/g",
+    "method": "Rawlignin31P NMR; explicit0.00 retained, not missing",
+    "measurement_group": "NMR31P"
+  },
+  "NMR31P_phenolic_OH_mmol_g__unit_mmol_g": {
+    "original_field": "NMR31P_phenolic_OH_mmol_g",
+    "unit": "mmol/g",
+    "method": "Quantitative31P NMR rawlignin total includes carboxylic; not simply aliphatic+phenolic",
+    "measurement_group": "NMR31P"
+  },
+  "NMR31P_syringyl_condensed_phenolic_OH_mmol_g__unit_mmol_g": {
+    "original_field": "NMR31P_syringyl_condensed_phenolic_OH_mmol_g",
+    "unit": "mmol/g",
+    "method": "Rawlignin31P NMR; explicit0.00 retained, not missing",
+    "measurement_group": "NMR31P"
+  },
+  "NMR31P_total_OH_mmol_g__unit_mmol_g": {
+    "original_field": "NMR31P_total_OH_mmol_g",
+    "unit": "mmol/g",
+    "method": "Quantitative31P NMR rawlignin total includes carboxylic; not simply aliphatic+phenolic",
+    "measurement_group": "NMR31P"
+  },
+  "average_pore_diameter_nm__unit_nm": {
+    "original_field": "average_pore_diameter_nm",
+    "unit": "nm",
+    "method": "author_4V_over_SBET",
+    "measurement_group": "adsorption_porosity"
+  },
+  "Raman_integrated_area_ID_IG__unit_ratio": {
+    "original_field": "Raman_integrated_area_ID_IG",
+    "unit": "ratio",
+    "method": "Integrated D/G areas, NOT peakheight ID/IG; 514.5nm/.7mW fit",
+    "measurement_group": "Raman"
+  },
+  "XRD_2theta002_deg__unit_degree": {
+    "original_field": "XRD_2theta002_deg",
+    "unit": "degree",
+    "method": "OwnXRD/Scherrer, shape factors .9(Lc),1.84(La); no independent direct TEM measurement",
+    "measurement_group": "XRD"
+  },
+  "XRD_2theta100_deg__unit_degree": {
+    "original_field": "XRD_2theta100_deg",
+    "unit": "degree",
+    "method": "OwnXRD/Scherrer, shape factors .9(Lc),1.84(La); no independent direct TEM measurement",
+    "measurement_group": "XRD"
+  },
+  "XRD_Scherrer_La100_nm__unit_nm": {
+    "original_field": "XRD_Scherrer_La100_nm",
+    "unit": "nm",
+    "method": "OwnXRD/Scherrer, shape factors .9(Lc),1.84(La); no independent direct TEM measurement",
+    "measurement_group": "XRD"
+  },
+  "XRD_Scherrer_Lc002_nm__unit_nm": {
+    "original_field": "XRD_Scherrer_Lc002_nm",
+    "unit": "nm",
+    "method": "OwnXRD/Scherrer, shape factors .9(Lc),1.84(La); no independent direct TEM measurement",
+    "measurement_group": "XRD"
+  },
+  "XRD_d100_nm__unit_nm": {
+    "original_field": "XRD_d100_nm",
+    "unit": "nm",
+    "method": "OwnXRD/Scherrer, shape factors .9(Lc),1.84(La); no independent direct TEM measurement",
+    "measurement_group": "XRD"
+  },
+  "author_overall_AC_mass_yield_pct__unit_": {
+    "original_field": "author_overall_AC_mass_yield_pct",
+    "unit": "%",
+    "method": "Authorapproximateoverallrawbiomass-to-ACmassyield, notcarbonization-onlyyield",
+    "measurement_group": "reported_yield"
+  },
+  "EDX_N_wt_pct__unit_wt": {
+    "original_field": "EDX_N_wt_pct",
+    "unit": "wt%",
+    "method": "OwnSI EDXmass%; not XPS and not final atom%",
+    "measurement_group": "EDS"
+  },
+  "EDX_S_wt_pct__unit_wt": {
+    "original_field": "EDX_S_wt_pct",
+    "unit": "wt%",
+    "method": "OwnSI EDXmass%; not XPS and not final atom%",
+    "measurement_group": "EDS"
+  },
+  "Raman_D_reported_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_D_reported_position_cm_inv",
+    "unit": "cm^-1",
+    "method": "Author body13..15 quantities, not composition/IDIG",
+    "measurement_group": "Raman"
+  },
+  "Raman_G_reported_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_G_reported_position_cm_inv",
+    "unit": "cm^-1",
+    "method": "Author body13..15 quantities, not composition/IDIG",
+    "measurement_group": "Raman"
+  },
+  "XRD_002_position_deg__unit_degree": {
+    "original_field": "XRD_002_position_deg",
+    "unit": "degree",
+    "method": "Author body13..15 quantities, not composition/IDIG",
+    "measurement_group": "XRD"
+  },
+  "XRD_100_position_deg__unit_degree": {
+    "original_field": "XRD_100_position_deg",
+    "unit": "degree",
+    "method": "Author body13..15 quantities, not composition/IDIG",
+    "measurement_group": "XRD"
+  },
+  "Raman_D1_position__unit_cm_1": {
+    "original_field": "Raman_D1_position",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_D1_reported_width__unit_cm_1": {
+    "original_field": "Raman_D1_reported_width",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_D2_position__unit_cm_1": {
+    "original_field": "Raman_D2_position",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_D2_reported_width__unit_cm_1": {
+    "original_field": "Raman_D2_reported_width",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_D3_position__unit_cm_1": {
+    "original_field": "Raman_D3_position",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_D3_reported_width__unit_cm_1": {
+    "original_field": "Raman_D3_reported_width",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_D4_position__unit_cm_1": {
+    "original_field": "Raman_D4_position",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_D4_reported_width__unit_cm_1": {
+    "original_field": "Raman_D4_reported_width",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_G_position__unit_cm_1": {
+    "original_field": "Raman_G_position",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "Raman_G_reported_width__unit_cm_1": {
+    "original_field": "Raman_G_reported_width",
+    "unit": "cm^-1",
+    "method": "OwnfivecomponentGaussianfit; area not peak intensity; width not silently redefined",
+    "measurement_group": "Raman"
+  },
+  "average_pore_size_nm__unit_nm": {
+    "original_field": "average_pore_size_nm",
+    "unit": "nm",
+    "method": "OwnTable1; statedBET P/P0=.05..95 is a reported qualification, not an automatic rejection",
+    "measurement_group": "adsorption_porosity"
+  },
+  "reported_BET_pore_diameter_nm__unit_nm": {
+    "original_field": "reported_BET_pore_diameter_nm",
+    "unit": "nm",
+    "method": "OwnreferenceTable5; externalarea notmesoporearea; other6loadingvariants notinherited",
+    "measurement_group": "adsorption_porosity"
+  },
+  "macropore_volume_fraction_pct__unit_": {
+    "original_field": "macropore_volume_fraction_pct",
+    "unit": "%",
+    "method": "OwnreportedN2/BET porosity table; pore-volume fit model not further specified; literal XML precision preserved",
+    "measurement_group": "adsorption_porosity"
+  },
+  "EDS_C_wt_pct__unit_wt": {
+    "original_field": "EDS_C_wt_pct",
+    "unit": "wt%",
+    "method": "EDSweightnotXPSatoms; bindingpositionsnotatomicpercent; rawbody/figureassignmentsretained",
+    "measurement_group": "EDS"
+  },
+  "EDS_N_wt_pct__unit_wt": {
+    "original_field": "EDS_N_wt_pct",
+    "unit": "wt%",
+    "method": "EDSweightnotXPSatoms; bindingpositionsnotatomicpercent; rawbody/figureassignmentsretained",
+    "measurement_group": "EDS"
+  },
+  "EDS_O_wt_pct__unit_wt": {
+    "original_field": "EDS_O_wt_pct",
+    "unit": "wt%",
+    "method": "EDSweightnotXPSatoms; bindingpositionsnotatomicpercent; rawbody/figureassignmentsretained",
+    "measurement_group": "EDS"
+  },
+  "EDS_S_wt_pct__unit_wt": {
+    "original_field": "EDS_S_wt_pct",
+    "unit": "wt%",
+    "method": "EDSweightnotXPSatoms; bindingpositionsnotatomicpercent; rawbody/figureassignmentsretained",
+    "measurement_group": "EDS"
+  },
+  "reported_pore_width_nm__unit_nm": {
+    "original_field": "reported_pore_width_nm",
+    "unit": "nm",
+    "method": "author_width_not_silently_diameter",
+    "measurement_group": "adsorption_porosity"
+  },
+  "XPS_C1s_CC_envelope_pct__unit_withinC1s": {
+    "original_field": "XPS_C1s_CC_envelope_pct",
+    "unit": "%withinC1s",
+    "method": "OwnC1sdeconvolutionfractions sumapproximately100; notwholematerialatomicpercent",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_O_envelope_pct__unit_withinC1s": {
+    "original_field": "XPS_C1s_C_O_envelope_pct",
+    "unit": "%withinC1s",
+    "method": "OwnC1sdeconvolutionfractions sumapproximately100; notwholematerialatomicpercent",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_OCO_envelope_pct__unit_withinC1s": {
+    "original_field": "XPS_C1s_OCO_envelope_pct",
+    "unit": "%withinC1s",
+    "method": "FractionwithinC1s, notwholematerialatomicpercent",
+    "measurement_group": "XPS"
+  },
+  "author_micropore_volume_fraction_pct__unit_": {
+    "original_field": "author_micropore_volume_fraction_pct",
+    "unit": "%",
+    "method": "AuthorVmicro/Vtotal percent",
+    "measurement_group": "adsorption_porosity"
+  },
+  "author_product_yield_pct__unit_": {
+    "original_field": "author_product_yield_pct",
+    "unit": "%",
+    "method": "Vario bulk elemental analysis massratios numerically consistent; distinctfromXPS surfacepercent; yieldbasis not overdefined",
+    "measurement_group": "reported_yield"
+  },
+  "author_mesopore_volume_fraction_pct__unit_": {
+    "original_field": "author_mesopore_volume_fraction_pct",
+    "unit": "%",
+    "method": "OwnN2BET/BJHporedistribution; compartmentvolume methodnotseparatelydeclared",
+    "measurement_group": "adsorption_porosity"
+  },
+  "BJH_pore_diameter_nm__unit_nm": {
+    "original_field": "BJH_pore_diameter_nm",
+    "unit": "nm",
+    "method": "BJH",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DA_pore_diameter_mode_nm__unit_nm": {
+    "original_field": "DA_pore_diameter_mode_nm",
+    "unit": "nm",
+    "method": "DA mode, not average",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DFT_pore_width_mode_nm__unit_nm": {
+    "original_field": "DFT_pore_width_mode_nm",
+    "unit": "nm",
+    "method": "DFT mode, not average",
+    "measurement_group": "adsorption_porosity"
+  },
+  "activation_stage_yield_pct__unit_": {
+    "original_field": "activation_stage_yield_pct",
+    "unit": "%",
+    "method": "Ownstage-specific yield; HPCyieldparentcarbon-to-activated, MHPC/NHPCyieldrawwheathusk-to-prechar",
+    "measurement_group": "reported_yield"
+  },
+  "precarbonization_stage_yield_pct__unit_": {
+    "original_field": "precarbonization_stage_yield_pct",
+    "unit": "%",
+    "method": "Ownstage-specific yield; HPCyieldparentcarbon-to-activated, MHPC/NHPCyieldrawwheathusk-to-prechar",
+    "measurement_group": "reported_yield"
+  },
+  "bulk_EA_author_CH_mass_ratio__unit_ratio": {
+    "original_field": "bulk_EA_author_CH_mass_ratio",
+    "unit": "ratio",
+    "method": "Printedbulkweightfractionsratio, notatomicratio",
+    "measurement_group": "bulk_EA"
+  },
+  "bulk_EA_author_CN_mass_ratio__unit_ratio": {
+    "original_field": "bulk_EA_author_CN_mass_ratio",
+    "unit": "ratio",
+    "method": "Printedbulkweightfractionsratio, notatomicratio",
+    "measurement_group": "bulk_EA"
+  },
+  "bulk_EA_author_CO_mass_ratio__unit_ratio": {
+    "original_field": "bulk_EA_author_CO_mass_ratio",
+    "unit": "ratio",
+    "method": "Printedbulkweightfractionsratio, notatomicratio",
+    "measurement_group": "bulk_EA"
+  },
+  "bulk_EA_author_C_NO_mass_ratio__unit_ratio": {
+    "original_field": "bulk_EA_author_C_NO_mass_ratio",
+    "unit": "ratio",
+    "method": "Printedbulkweightfractionsratio, notatomicratio",
+    "measurement_group": "bulk_EA"
+  },
+  "reported_mesopore_fraction_pct__unit_": {
+    "original_field": "reported_mesopore_fraction_pct",
+    "unit": "%",
+    "method": "N2BET77K P/P0.02-.25; totalP/P0.99, tplotVmicro, BJHVmeso; dashednotzero",
+    "measurement_group": "adsorption_porosity"
+  },
+  "Raman_Dstar_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_Dstar_position_cm_inv",
+    "unit": "cm-1",
+    "method": "OwnSI Lorentzianpeakpositions; dashnot0",
+    "measurement_group": "Raman"
+  },
+  "Raman_Dstarstar_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_Dstarstar_position_cm_inv",
+    "unit": "cm-1",
+    "method": "OwnSI Lorentzianpeakpositions; dashnot0",
+    "measurement_group": "Raman"
+  },
+  "Raman_2D_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_2D_position_cm_inv",
+    "unit": "cm-1",
+    "method": "OwnSI Lorentzianpeakpositions; dashnot0",
+    "measurement_group": "Raman"
+  },
+  "Raman_I2D_IG__unit_ratio": {
+    "original_field": "Raman_I2D_IG",
+    "unit": "ratio",
+    "method": "Dash means unresolved/notdiscerniblepeak; bodyzero kept as distinctclaim",
+    "measurement_group": "Raman"
+  },
+  "XPS_C1s_CC_sp2_envelope_pct__unit_withinC1s": {
+    "original_field": "XPS_C1s_CC_sp2_envelope_pct",
+    "unit": "%withinC1s",
+    "method": "FractionwithinC1s, notwholematerialatomicpercent",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_CO_envelope_pct__unit_withinC1s": {
+    "original_field": "XPS_C1s_CO_envelope_pct",
+    "unit": "%withinC1s",
+    "method": "FractionwithinC1s, notwholematerialatomicpercent",
+    "measurement_group": "XPS"
+  },
+  "XPS_C1s_C_OH_envelope_pct__unit_withinC1s": {
+    "original_field": "XPS_C1s_C_OH_envelope_pct",
+    "unit": "%withinC1s",
+    "method": "FractionwithinC1s, notwholematerialatomicpercent",
+    "measurement_group": "XPS"
+  },
+  "mesopore_to_total_volume_reported_ratio__unit_ratio": {
+    "original_field": "mesopore_to_total_volume_reported_ratio",
+    "unit": "ratio",
+    "method": "OwnNLDFT; below0.7andbelow1nm are nestedsubsets, notadditivecomponents",
+    "measurement_group": "adsorption_porosity"
+  },
+  "XRD_002_FWHM_deg__unit_degree": {
+    "original_field": "XRD_002_FWHM_deg",
+    "unit": "degree",
+    "method": "Author endpoint values; not inferred from inconsistent subsequent plane wording",
+    "measurement_group": "XRD"
+  },
+  "bulk_EA_H_C_mass_ratio__unit_mass_ratio": {
+    "original_field": "bulk_EA_H_C_mass_ratio",
+    "unit": "mass_ratio",
+    "method": "Numerically mass percentages ratio; not atomic ratio",
+    "measurement_group": "bulk_EA"
+  },
+  "bulk_EA_ON_C_mass_ratio__unit_mass_ratio": {
+    "original_field": "bulk_EA_ON_C_mass_ratio",
+    "unit": "mass_ratio",
+    "method": "Numerical elemental mass-fraction ratios, not atomic ratios",
+    "measurement_group": "bulk_EA"
+  },
+  "bulk_EA_O_C_mass_ratio__unit_mass_ratio": {
+    "original_field": "bulk_EA_O_C_mass_ratio",
+    "unit": "mass_ratio",
+    "method": "Numerically mass percentages ratio; not atomic ratio",
+    "measurement_group": "bulk_EA"
+  },
+  "author_micropore_volume_fraction__unit_ratio": {
+    "original_field": "author_micropore_volume_fraction",
+    "unit": "ratio",
+    "method": "OwnTable2: BET,P/P0.990total,HKmicro; mesovolume methodunspecified, no assumedexhaustivepartition",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DFT_pore_peak_1_nm__unit_nm": {
+    "original_field": "DFT_pore_peak_1_nm",
+    "unit": "nm",
+    "method": "Ownsamplemethod-bound claim; no rawEAinheritance",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DFT_pore_peak_2_nm__unit_nm": {
+    "original_field": "DFT_pore_peak_2_nm",
+    "unit": "nm",
+    "method": "Ownsamplemethod-bound claim; no rawEAinheritance",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DFT_pore_peak_3_nm__unit_nm": {
+    "original_field": "DFT_pore_peak_3_nm",
+    "unit": "nm",
+    "method": "Ownsamplemethod-bound claim; no rawEAinheritance",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DFT_pore_peak_4_nm__unit_nm": {
+    "original_field": "DFT_pore_peak_4_nm",
+    "unit": "nm",
+    "method": "Ownsamplemethod-bound claim; no rawEAinheritance",
+    "measurement_group": "adsorption_porosity"
+  },
+  "DR_micropore_size_nm__unit_nm": {
+    "original_field": "DR_micropore_size_nm",
+    "unit": "nm",
+    "method": "Dubinin-Radushkevich mean, not PSDpeak",
+    "measurement_group": "adsorption_porosity"
+  },
+  "BJH_average_pore_diameter_A__unit_angstrom": {
+    "original_field": "BJH_average_pore_diameter_A",
+    "unit": "angstrom",
+    "method": "OwnN2BET; tablefootnotes VtotalP/P0~.95,BJH4V/A,meso=total-micro;yielddryrawwood",
+    "measurement_group": "adsorption_porosity"
+  },
+  "XPS_B_wt_pct__unit_wt": {
+    "original_field": "XPS_B_wt_pct",
+    "unit": "wt%",
+    "method": "Own Table2 explicitly wt%; not atomic percent",
+    "measurement_group": "XPS"
+  },
+  "Raman_fitted_D_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_fitted_D_position_cm_inv",
+    "unit": "cm^-1",
+    "method": "Ownfourcomponentfit, not new IDIG computation",
+    "measurement_group": "Raman"
+  },
+  "Raman_fitted_Dprime_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_fitted_Dprime_position_cm_inv",
+    "unit": "cm^-1",
+    "method": "Ownfourcomponentfit, not new IDIG computation",
+    "measurement_group": "Raman"
+  },
+  "Raman_fitted_G_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_fitted_G_position_cm_inv",
+    "unit": "cm^-1",
+    "method": "Ownfourcomponentfit, not new IDIG computation",
+    "measurement_group": "Raman"
+  },
+  "Raman_fitted_I_position_cm_inv__unit_cm_1": {
+    "original_field": "Raman_fitted_I_position_cm_inv",
+    "unit": "cm^-1",
+    "method": "Ownfourcomponentfit, not new IDIG computation",
+    "measurement_group": "Raman"
+  }
+}
