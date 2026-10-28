@@ -563,3 +563,11 @@
 - 验证：216542项独立核验；35封版输出；原表SHA/冻结/37待证/旧模型保持；主3E补23非空单元；桌面手机和筛选通过；本轮拟合0/新准入0；删除3页可重建临时PNG回收560452字节
 - 下一步/未决：继续1411未接入数值的具体用途与剩余原表/曲线/SI；315谱峰或±及另6误差属元数据，不强凑预测变量；后续新实验用data.training_current并冻结计划
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T21:27:35+08:00：按用户授权公开本仓库，普通访客只读下载、明确协作者可写；恢复HAUTOsako写权限邀请待接受
+
+- 结果：按用户授权公开本仓库，普通访客只读下载、明确协作者可写；恢复HAUTOsako写权限邀请待接受
+- 文件：project_repository.json, AGENTS.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/PROGRESS.md
+- 验证：GitHub API核验private=false/visibility=public；当前owner保留admin；HAUTOsako待接受write邀请；无科学数据或其它仓库/系统设置变动
+- 下一步/未决：对方接受邀请后写权限生效；后续继续文献数据工作，保持普通访客无直接写权限
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
