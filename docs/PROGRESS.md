@@ -515,3 +515,11 @@
 - 验证：6041项原表/原值/SHA/旧API/矩阵/来源隔离通过；父v23的5714项只读复核通过；全量页面筛选/导出/来源/8图及桌面手机核验通过，最终两处中文措辞精确差分与CRLF原快照重建、当前构建smoke通过；373文件敏感内容/LFS预检通过；循环v027/原37保持，0拟合；审批额度恢复后重验封版及QA完整
 - 下一步/未决：继续707原始表候选、剩余曲线/SI与原37；优先以正规EuropePMC补麦壳原图和器件窗口；不改已封版
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T08:51:38+08:00：文献v25取得麦壳9原图、20捕获净12工况；循环v028新增1条仅跨年份2E，固定37保持；页面构建缺失如实暂停
+
+- 结果：文献v25取得麦壳9原图、20捕获净12工况；循环v028新增1条仅跨年份2E，固定37保持；页面构建缺失如实暂停
+- 文件：data/current_literature.json, data/literature_v25.py, data/current_database.json, docs/CURRENT_STATE.md, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/公开图包与跨年份器件程序证据_20261028.md, tools/extract_wheat_figures_v25.py, tools/verify_wheat_figures_v25.py, tools/release_wheat_cycle_v028.py, tools/verify_wheat_cycle_v028.py, tools/refresh_literature_progress.py, 文献全量利用复核_20261028/批次25_麦壳原图与循环程序复核, 循环稳定性数据库_v0.28_麦壳跨年份器件循环准入_20261028, 文献提取进度
+- 验证：文献17123及循环1117项只读复核通过；SQLite完整性外键、父库原件SHA、旧行矩阵、原值冻结及同DOI跨任务隔离通过；234运行时文件完整；页面源查询已核，构建入口缺失未进行新渲染，旧dist及HTTP原SHA保持；无新拟合
+- 下一步/未决：继续707候选和原37；先核Heliyon2024全样品表图，不把AC400BET继承AC500；恢复Data构建器后重建同页并做交互核验
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
