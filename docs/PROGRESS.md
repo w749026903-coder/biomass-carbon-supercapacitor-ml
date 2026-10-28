@@ -595,3 +595,11 @@
 - 验证：61406项数据核验及61项独立PDF检查通过；216条普通GCD包含于394条含图用途；原标签工况、37条待证与历史原件SHA保留；只读父链及更新回执验证；桌面手机可视化通过；38项产物封版；回收本批可重建临时文件2227928字节；新增拟合及循环准入均0
 - 下一步/未决：目标保持active；优先核读已有U024正文和SUP139补充材料，桥接ALPC-800两工况；继续剩余26条/25来源、固定37待证及未完成表图SI覆盖，不追分拟合
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-29T00:22:07+08:00：v6桥接ALPC两条主记录，规范关联23/47、38新单元及16补证；76新数值连接，累计3467/4922=70.44%；34电容报告与3 EIS目标分用途可调用
+
+- 结果：v6桥接ALPC两条主记录，规范关联23/47、38新单元及16补证；76新数值连接，累计3467/4922=70.44%；34电容报告与3 EIS目标分用途可调用
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/PROGRESS.md, docs/DATA_QUALITY_GOAL.json, docs/knowledge/ALPC补充表_计量一致性_EDX与XPS及倍率去重_20261029.md, data/current_training_latest.json, data/training_latest.py, tools/prepare_alpc_evidence_v6.py, tools/extract_alpc_v6.py, tools/verify_alpc_v6.py, tools/report_alpc_v6.py, tools/check_alpc_v6_report.cjs, 全量文献训练数据接入_v6_ALPC主集与补充表_20261029
+- 验证：63538项原件SHA、父版未变行、SQLite外键完整性、旧目标工况、事实回执、测量块泄漏、整DOI所有任务隔离与220嵌套425核验通过；S1 21格视觉留证而非独立OCR，3微孔疑点保留；30图标记含3锚点确认净27条件；桌面手机及30行展开通过；44输出封版，临时文本回收97219字节；新增拟合与循环准入0
+- 下一步/未决：总体目标active；优先已有本地YZPC-3 ADD039正文，再KAC-5 U016；继续24主行/24来源、固定37与剩余表图SI；保留EDX/XPS、421/409、CV反序、器件工况等证据边界，不追分拟合
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
