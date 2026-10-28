@@ -523,3 +523,11 @@
 - 验证：文献17123及循环1117项只读复核通过；SQLite完整性外键、父库原件SHA、旧行矩阵、原值冻结及同DOI跨任务隔离通过；234运行时文件完整；页面源查询已核，构建入口缺失未进行新渲染，旧dist及HTTP原SHA保持；无新拟合
 - 下一步/未决：继续707候选和原37；先核Heliyon2024全样品表图，不把AC400BET继承AC500；恢复Data构建器后重建同页并做交互核验
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T10:34:07+08:00：文献v26完整木粉144段2表12图、14事实16电容59响应；循环v029原图纠正三旧标签、两既有端点进入普通3E，AC500仍待BET
+
+- 结果：文献v26完整木粉144段2表12图、14事实16电容59响应；循环v029原图纠正三旧标签、两既有端点进入普通3E，AC500仍待BET
+- 文件：data/current_literature.json, data/literature_v26.py, data/current_database.json, docs/CURRENT_STATE.md, docs/DATA_CORRECTION_GOAL.json, docs/KNOWLEDGE_BASE.md, docs/LITERATURE_EXTRACTION_GOAL.json, docs/WORKSPACE_MEMORY.md, docs/knowledge/循环印字与正文补数的逐测试补正_20261028.md, tools/extract_wood_temperatures_v26.py, tools/verify_wood_temperatures_v26.py, tools/release_wood_labels_v029.py, tools/verify_wood_labels_v029.py, tools/refresh_literature_progress.py, 文献全量利用复核_20261028/批次26_木粉炭化系列与锰复合全样品, 循环稳定性数据库_v0.29_木粉原图标签与用途补正_20261028, 文献提取进度
+- 验证：文献17654与循环1285项核验通过，40封版输出SHA和234受保护运行时文件核对；原表32自身数值格覆盖、旧值旧ID矩阵及来源隔离通过；普通3E47/34、跨年份51/37、原37待证保持，敏感性54/40只改两旧标签；制备逐字段证据和CSV可读；页面源查询已准备并标paused，构建器仍缺，旧dist/HTTP原SHA保持，无新渲染或拟合
+- 下一步/未决：继续705候选，优先核L14温度系列10.3390/ma19173741、坚果壳烟炱5c04992及木质素凝胶110433的全部自身表图；保留原37及所有未决，恢复正常Data构建器后再测同页渲染
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。

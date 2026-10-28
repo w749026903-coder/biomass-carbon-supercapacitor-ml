@@ -59,10 +59,21 @@ export function DashboardContent(){
     <p>第十二批体积与Cs/Cd的29个表达行继续独立调用；Cs/Cd同测试、体积/质量共享来源隔离。有界图捕获现{h.cumulative_bounded_curve_samples}条，其中{h.cumulative_numeric_curve_samples}数值／2仅区间／{h.cumulative_occluded_curve_samples}遮挡；{h.peer_model_numeric_cells}个同行参数另计。12原图检查不代表整篇波形提取完成。</p>
    </div>
   </DataComponent>
+  <Section id="batch26-section" title="第二十六批 · 木粉温度系列与含锰复合物">
+   <p>144段正文、2张自身表和12张原图已核读。四温度碳与各自MnO₂复合物分用途；新增10项材料数值、16个电容报告及59项响应。Raman方向、400℃BET/电容异文保留，AC-500自身数值BET仍未报，不能借其它温度。</p>
+   <EvidenceTable id="batch26-inputs-table" title="3种碳＋3种复合物 · 同一DOI分目标" queryId="batch26_inputs" columns={[f('sample','样品'),f('task','用途'),f('value','F/g'),f('current','报告A/g'),f('BET','自身BET'),f('weight','用途内来源权重'),f('status','边界')]}/>
+   <EvidenceTable id="batch26-inspection-table" title="400℃竞争电容 · 8条报告仅核查" queryId="batch26_inspection" columns={[f('sample','样品'),f('raw','原报F/g'),f('status','状态'),f('locator','原文位置')]}/>
+   <EvidenceTable id="batch26-cycle-claims-table" title="8个原图循环标签 · 3个对应旧端点" queryId="batch26_cycle_claims" columns={[f('sample','样品'),f('retention','图示保持率%'),f('cycles','圈数'),f('current','报告A/g'),f('source','选择依据')]}/>
+   <p>所有材料、制备、响应和测试来自同一论文，不能当多个独立来源。配料8mg不等于实测负载；复合物不继承碳BET。连续谱图、等温线及电化学波形仍未全部数字化，全量提取继续。</p>
+  </Section>
+  <Section id="cycle29-section" title="循环v0.29 · 纠正原图标签并补审用途">
+   <EvidenceTable id="cycle29-reviews-table" title="3条既有记录 · 原值和缺证继续可查" queryId="cycle29_reviews" columns={[f('sample_name','样品'),f('previous_retention','旧损失率补数%'),f('retention_pct','当前原图值%'),f('BET_m2_g','自身BET'),f('status','准入状态'),f('basis','证据依据')]}/>
+   <p>AC-500/600/700的原图末端91.4/78.4/62.2替代旧正文损失率补数90.3/76.4/59.2，旧值与出处保留；不是按性能高低择值。AC-600/700补审进入普通三电极，主集现47条/34家族；原敏感性54/40只纠正其中两条标签，不重复新增。AC-500仍缺自身BET，原37条待证不抵扣，没有新拟合。</p>
+  </Section>
   <Section id="batch25-section" title="第二十五批 · 麦壳原图补证与倍率工况" filters={<Filters {...batch25Scope.filterProps}/>}>
    <p>9张原图已从Europe PMC正式公开包取得并核读。图7(d)和图8(b)提取20个实际倍率标记，其中8个已有正文值、净补12个标称工况。所有模式和两个用途只有同一个DOI，不能当20个独立来源。</p>
    <EvidenceTable id="batch25-rates-table" title="倍率输入 · 三电极与双电极四倍Cs分开" queryId="batch25_rates" scope={batch25Scope} columns={[f('sample','样品'),f('task','用途'),f('mode','模式'),f('current','报告A/g'),f('value','F/g'),f('lower','读取下界'),f('upper','读取上界'),f('kind','数值性质'),f('weight','来源权重')]}/>
-   <p>三电极仅作者值6条、混合15条；双电极2条、混合5条，都是嵌套表示。读取上下界来自±4y/±2x像素，不是实验SD或置信区间。普通辅助205/30 DOI保持；含图三电极现383/30 DOI，新增9个读图条件仍来自已有来源。</p>
+   <p>三电极仅作者值6条、混合15条；双电极2条、混合5条，都是嵌套表示。读取上下界来自±4y/±2x像素，不是实验SD或置信区间。v25封版时普通辅助205/30 DOI、含图383/30 DOI，新增9个读图条件仍来自已有来源；当前计数见总览。</p>
    <EvidenceTable id="batch25-figures-table" title="9张原图 · SHA与实际获取状态" queryId="batch25_figures" columns={[f('label','原图'),f('status','状态'),f('path','原图路径'),f('sha256','SHA256')]}/>
    <p>连续谱图、吸附、CV/GCD/EIS及其它Ragone/CE/循环标记未全部数字化；整篇仍部分完成。原始表候选252个触及、707个待处理，原37条待证保持。</p>
   </Section>
