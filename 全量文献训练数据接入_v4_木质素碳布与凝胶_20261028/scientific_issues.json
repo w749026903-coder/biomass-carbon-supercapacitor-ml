@@ -1,0 +1,36 @@
+[
+  {
+    "issue_id": "v27B_BET_inheritance_forbidden",
+    "doi": "10.1016/j.isci.2024.110433",
+    "reason": "Composite-fabric BET not reproducible; lignin SI BET belongs to separate raw/calcined lignin only, not coated CF.",
+    "scientific_resolution": false
+  },
+  {
+    "issue_id": "v27B_TGA_suffix",
+    "doi": "10.1016/j.isci.2024.110433",
+    "reason": "Body p15 and SI FigS1 differ in C suffixes; loading numbers and lignin-normalized capacitances retained, no silent sample alias repair.",
+    "scientific_resolution": false
+  },
+  {
+    "issue_id": "v27B_GCD_units",
+    "doi": "10.1016/j.isci.2024.110433",
+    "reason": "Table3 mA/g is consistent with C=current*discharge_time for 1V; preserve native units and explicit /1000 conversion to A/g, not silent thousandfold repair.",
+    "scientific_resolution": false
+  },
+  {
+    "issue_id": "v27B_power_typo",
+    "doi": "10.1016/j.isci.2024.110433",
+    "reason": "Conclusion reports 664mW/kg while Table3 entry8 is674 and text gives other rounded values; retain report-specific numbers, no preference for maximum.",
+    "scientific_resolution": false,
+    "values": [
+      664,
+      674
+    ]
+  },
+  {
+    "issue_id": "v27B_99percent_role",
+    "doi": "10.1016/j.isci.2024.110433",
+    "reason": "99% is unbending recovery. Figure7D separately shows absolute GCD capacitance decay and CE. No retention normalization is invented from its first visible point.",
+    "scientific_resolution": false
+  }
+]

@@ -1,6 +1,15 @@
-## 2026-10-28当前接续：全量文献数值已接入训练数据层
+# 工作区与接续记忆（最新入口见首节）
 
-## 当前目标与输入v3（2026-10-28）
+## 当前：输入v4与后续主集关联优先（2026-10-28）
+
+目标工具与docs/DATA_QUALITY_GOAL.json均active，全量未完成。最新API data.training_catalog / data/current_training_catalog.json；v4小增量DB只读连接SHA固定v3，父文件必须保留，旧三版入口不变。140事实/113数值、109新实际连接；39电容报告34准备行、9EIS、8木质素属性、10绝对Csp曲线读数；累计3287/4727=69.54%，243非点。68登记/64有材料事实，均未整篇完成。
+
+木质素/商用CF正文67段与6页SI、主图范围已核读：99%是解除弯折恢复；图7D仅绝对mF/g（10有界读取，约±2圈/±4mF/g）不造保持率；表3mA/g显式÷1000，输入排除放电时间；组分BET不继承；TGA后缀未绑定；图1气流0.5L/min仅对应煅烧WCF。57900核验、页面通过，主3E47/34和2E31/25、原37/冻结/旧模型不动，拟合/准入0。只读verify_lignin_cf_v4.py；已封版后不重跑extract/extend/report。
+
+优先接续：当前主集47行仅17行有规范文献材料桥接，剩30行/26家族全部有本地原文索引，已有BET/工况未丢。v4/main3e_unlinked_priorities.json逐行列相对路径/SHA。先10.1039/d4ta02115k的OPBNP/OPB/OPNP/OPC，源三电极端点扩充_20261018/corpus/U002/main.pdf（91466159221eff1915c059b26cd7d1927ad00ce0c5f4121ff324882eace3d98e），4主集行；再10.1021/acssusresmgt.3c00028 ALPC-800两工况，U024/main.pdf及SUP_139/SI/rm3c00028_si_001.pdf。目标应优先补主集关联/关键特征，不能长期只增加偏离主体系的辅助任务；继续原37和原表图/SI。
+
+
+## 历史：目标首批与输入v3（2026-10-28）
 
 用户已明确设定目标继续提升数据库质量和现有文献利用率，工具目标active，docs/DATA_QUALITY_GOAL.json记范围/完成证据；没有完成全部论文，不标complete，也不因旧paused历史停下。当前API data.training_ready / data/current_training_ready.json；v2入口data.training_current保留历史，避免修改v2封版清单。
 
