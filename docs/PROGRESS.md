@@ -603,3 +603,11 @@
 - 验证：63538项原件SHA、父版未变行、SQLite外键完整性、旧目标工况、事实回执、测量块泄漏、整DOI所有任务隔离与220嵌套425核验通过；S1 21格视觉留证而非独立OCR，3微孔疑点保留；30图标记含3锚点确认净27条件；桌面手机及30行展开通过；44输出封版，临时文本回收97219字节；新增拟合与循环准入0
 - 下一步/未决：总体目标active；优先已有本地YZPC-3 ADD039正文，再KAC-5 U016；继续24主行/24来源、固定37与剩余表图SI；保留EDX/XPS、421/409、CV反序、器件工况等证据边界，不追分拟合
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-29T00:46:56+08:00：v7药渣地肤两条主记录桥接25/47，34新单元及26补证；301事实275数值中260新连接，累计3727/5197=71.71%；14电容及23 EIS分用途可调用
+
+- 结果：v7药渣地肤两条主记录桥接25/47，34新单元及26补证；301事实275数值中260新连接，累计3727/5197=71.71%；14电容及23 EIS分用途可调用
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/PROGRESS.md, docs/DATA_QUALITY_GOAL.json, docs/knowledge/药渣地肤_阶段配方_时点接触角与缺BET用途_20261029.md, data/current_training_latest.json, tools/build_reviewed_training_extension.py, tools/curate_yzpc_kochia_v7.py, tools/verify_yzpc_kochia_v7.py, tools/report_yzpc_kochia_v7.py, tools/check_yzpc_kochia_v7_report.cjs, 全量文献训练数据接入_v7_药渣与地肤主集_20261029
+- 验证：68594核验及62原文表格数值格新鲜解析通过；原件SHA/历史原值/目标工况/测量块泄漏/全部任务来源隔离、229普通嵌套434含图通过；3缺BET对照独立用途，2器件明确总活性质量；YZPC原微孔冻结、2-3负载边界和70ms接触角保持；桌面手机/字段展开通过；37输出封版，未用可重建页释放2762756字节；新拟合与循环准入0
+- 下一步/未决：总体目标active；继续本地OAC623 B_R087、AMFS ADD056，再剩22主行/22来源、固定37和原表图SI；两SI403不造内容；历史验证需显式用该版entrypoint_snapshot的DB和SHA，不把可变latest当历史指针
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
