@@ -555,3 +555,11 @@
 - 验证：4670事实逐项对账；114566项核验和33封版输出通过；48身份链接/主3E17条、47/34与31/25标签保持；208嵌套386不重复计数、253材料BET辅助/47来源、24真实前驱体配对；原37待证和冻结保持、拟合0/新准入0
 - 下一步/未决：继续1646项数值的具体用途/证据与剩余论文提取；后续新实验从data.training_datasets调用，跨全部任务按来源隔离，不能将接入率当已拟合比例或独立样本数
 - Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
+
+## 2026-10-28T18:28:16+08:00：训练输入v2新增245事实连接并撤回10误差数值，净3058项；按训练来源检查覆盖并隔离所有辅助任务
+
+- 结果：训练输入v2新增245事实连接并撤回10误差数值，净3058项；按训练来源检查覆盖并隔离所有辅助任务
+- 文件：AGENTS.md, README.md, docs/CURRENT_STATE.md, docs/WORKSPACE_MEMORY.md, docs/KNOWLEDGE_BASE.md, docs/PROGRESS.md, docs/knowledge/训练输入误差列与跨来源覆盖校验_20261028.md, data/current_training_inputs.json, data/training_current.py, tools/improve_training_inputs_v2.py, tools/finalize_training_inputs_v2.py, tools/verify_training_inputs_v2.py, tools/report_training_inputs_v2.py, tools/check_training_inputs_v2_report.cjs, 全量文献训练数据接入_v2_质量与覆盖_20261028
+- 验证：216542项独立核验；35封版输出；原表SHA/冻结/37待证/旧模型保持；主3E补23非空单元；桌面手机和筛选通过；本轮拟合0/新准入0；删除3页可重建临时PNG回收560452字节
+- 下一步/未决：继续1411未接入数值的具体用途与剩余原表/曲线/SI；315谱峰或±及另6误差属元数据，不强凑预测变量；后续新实验用data.training_current并冻结计划
+- Git：本条随任务提交；远程成功以本次命令最后的SHA核验为准。
