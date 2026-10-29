@@ -1,0 +1,60 @@
+{
+  "run_id": "v1.3-v7-assisted-20261029",
+  "frozen_at": "2026-10-29T11:36:05+08:00",
+  "authorization": {
+    "authorized": true,
+    "user_request": "先充分利用新获取到的数据尝试进行一次模型训练，再重新生成进展报告，页数要少一点，但又要用大白话讲清楚"
+  },
+  "input_pointer": {
+    "version": "training_latest_v7_YZPC_Kochia",
+    "directory": "全量文献训练数据接入_v7_药渣与地肤主集_20261029",
+    "database_file": "training_extension_v7.sqlite",
+    "sha256": "dd933ec815668060a10a1a828e2dcf8460eb862b16f4f9807d47b10a3816a097",
+    "entry": "data.training_latest",
+    "new_model_fits": 0
+  },
+  "snapshot_sha256": "a30c9d544905a99e6ed3e61f40a22aff1874a8cf5a92aed3f6835660c2aa8528",
+  "primary": "latest_assisted_ridge",
+  "retention_recipes": [
+    "legacy_input_ridge",
+    "latest_ridge",
+    "latest_trees",
+    "latest_assisted_ridge"
+  ],
+  "primary_preselected_not_outer_score_winner": true,
+  "hyperparameters": {
+    "ridge_alpha": 100.0,
+    "tree_estimators": 160,
+    "tree_depth": 4,
+    "tree_leaf": 3,
+    "tree_max_features": 0.8
+  },
+  "transforms": "Train-fold-only source-weighted scaling/imputation, positive log target, no upper clipping",
+  "feature_guard": {
+    "minimum_sources": 3,
+    "minimum_row_fraction_main": 0.2,
+    "minimum_row_fraction_aux": 0.1,
+    "categorical_vocabulary_minimum_sources": 3
+  },
+  "source_weighting": "Each source totals one; graph-only rows receive0.5 relative weight within their own source",
+  "validation": "One entire source family held out in each task. All related auxiliary rows from a main held-out family excluded. No prospective untouched external test.",
+  "auxiliary_stack": "For each retention training split, create 3-fold source-cross-fitted capacity and BET predictions. Each helper excludes outer test family and its query families. Fit final helpers excluding outer family to predict main test. Never use observed auxiliary responses as retention predictors.",
+  "capacity_query": "Predicted auxiliary 3E response at supplied cycling current/electrolyte/window; hypothetical model query, not experimentally measured initial capacitance or copied fresh-GCD protocol.",
+  "plan_fit_counts": {
+    "retention": 140,
+    "assisting_helpers": 280,
+    "standalone_auxiliary": 88,
+    "total": 508
+  },
+  "diagnostic_baselines": [
+    "Training-only source-weighted arithmetic mean",
+    "Training-only source-weighted median"
+  ],
+  "acceptance": "Preselected primary retention recipe must beat both baselines in source-equal MAE and paired5000 source-bootstrap delta vsmean upper95%<0. Descriptive only, no calibrated prediction intervals.",
+  "stop": "Exactly508 estimator fits; do not add recipes or refit after held-out scores. Preserve failures and difficult samples.",
+  "new_external_validation": false,
+  "training_2e": false,
+  "unsealed_v8_used": false,
+  "new_data_admission": false,
+  "methods_source": "https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-for-grouped-data"
+}

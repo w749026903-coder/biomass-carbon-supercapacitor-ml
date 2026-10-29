@@ -1,0 +1,110 @@
+{
+  "run_id": "v1.3-v7-assisted-20261029",
+  "primary_preselected": "latest_assisted_ridge",
+  "metrics": {
+    "legacy_input_ridge": {
+      "mae": 5.0453644774022415,
+      "rmse": 6.8659234902983055,
+      "r2": 0.10668931553307548,
+      "vs_mean": {
+        "delta_mae": -0.10361769728581362,
+        "delta_low": -0.5775826348247809,
+        "delta_high": 0.3657435201840299,
+        "resamples": 5000,
+        "descriptive_not_prediction_interval": true
+      }
+    },
+    "latest_ridge": {
+      "mae": 5.013354643576038,
+      "rmse": 6.867483878738526,
+      "r2": 0.10628323175959742,
+      "vs_mean": {
+        "delta_mae": -0.13562753111201808,
+        "delta_low": -0.5911144453522194,
+        "delta_high": 0.3172423999257603,
+        "resamples": 5000,
+        "descriptive_not_prediction_interval": true
+      }
+    },
+    "latest_trees": {
+      "mae": 5.78562367345342,
+      "rmse": 7.909278251064351,
+      "r2": -0.1854365624876,
+      "vs_mean": {
+        "delta_mae": 0.6366414987653631,
+        "delta_low": -0.46540149134209097,
+        "delta_high": 1.845137975405164,
+        "resamples": 5000,
+        "descriptive_not_prediction_interval": true
+      }
+    },
+    "latest_assisted_ridge": {
+      "mae": 4.924935044280854,
+      "rmse": 6.742200193711193,
+      "r2": 0.13859399165837727,
+      "vs_mean": {
+        "delta_mae": -0.22404713040720192,
+        "delta_low": -0.7540445213206811,
+        "delta_high": 0.29956983491875827,
+        "resamples": 5000,
+        "descriptive_not_prediction_interval": true
+      }
+    },
+    "mean_baseline": {
+      "mae": 5.148982174688056,
+      "rmse": 7.47069789265514,
+      "r2": -0.05761343211656822
+    },
+    "median_baseline": {
+      "mae": 5.223676470588235,
+      "rmse": 7.44432946453007,
+      "r2": -0.05016074472366072
+    },
+    "capacity": {
+      "model": {
+        "mae": 96.17122821253368,
+        "rmse": 132.94824640451876,
+        "r2": 0.08870301950394588
+      },
+      "mean_baseline": {
+        "mae": 103.38800874581337,
+        "rmse": 141.24688844928386,
+        "r2": -0.028614124354439108
+      },
+      "rows": 434,
+      "sources": 35
+    },
+    "BET": {
+      "model": {
+        "mae": 734.9517871525555,
+        "rmse": 956.647865061888,
+        "r2": -0.04353177102393668
+      },
+      "mean_baseline": {
+        "mae": 775.3309270091916,
+        "rmse": 950.4906759968491,
+        "r2": -0.03014221443852505
+      },
+      "rows": 266,
+      "sources": 51
+    }
+  },
+  "acceptance_passed": false,
+  "reliable_for_design": false,
+  "independent_external_validation": false,
+  "actual_estimator_fits": 508,
+  "unique_numeric_material_facts_fitted": 1147,
+  "actual_model_files": {
+    "legacy_input_ridge.joblib": "dfdb4356a0165abc0b2810c81907a551dbf461ddee187b4c39c6b31a893ab2ae",
+    "latest_ridge.joblib": "4ef543c316e7272b68b6029702d331a7b75875b351791ac849f947d643fd396b",
+    "latest_trees.joblib": "1e776990135ed5a5c767bdd29d27ae3453a38ff40d97db91a9c06c09032ba8c8",
+    "latest_assisted_ridge.joblib": "cb19a3553e0ce58534a86a0fcf067de65cd06669c8c330889e81a7f78add8f53",
+    "capacity.joblib": "4fd9a995ecb86eeae3f389e9deb22475cbfd3fa01cd229794ea0987c7e6252e4",
+    "BET.joblib": "be80367066308d9daae8763b124a1c34a7760251759a9c7dcaa5cd77ca373146"
+  },
+  "plan_sha256": "5fa17d0b1be8383569294c6277afbf63fbd195f96b760d6ab9d7ec12cd295c6a",
+  "snapshot_sha256": "a30c9d544905a99e6ed3e61f40a22aff1874a8cf5a92aed3f6835660c2aa8528",
+  "elapsed_seconds": 51.578,
+  "stop_completed_no_post_score_candidates": true,
+  "notes": "All fixed recipes reported. Best outer score is not a separately validated model-selection procedure. No new cycling admissions or clipping."
+}

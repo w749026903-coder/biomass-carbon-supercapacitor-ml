@@ -1,0 +1,35 @@
+{
+  "model_version": "1.3",
+  "dataset_version": "v7",
+  "purpose": "Exploratory biomass-derived porous carbon ordinary aqueous 3E GCD reported-current cycling retention",
+  "prediction_unit": "percent, ratio=percent/100",
+  "primary": "latest_assisted_ridge.joblib",
+  "protocol": "All747 task rows final research refits are not external evaluation; metrics from source-held-out runs",
+  "metrics": {
+    "mae": 4.924935044280854,
+    "rmse": 6.742200193711193,
+    "r2": 0.13859399165837727,
+    "vs_mean": {
+      "delta_mae": -0.22404713040720192,
+      "delta_low": -0.7540445213206811,
+      "delta_high": 0.29956983491875827,
+      "resamples": 5000,
+      "descriptive_not_prediction_interval": true
+    }
+  },
+  "reliable_for_design": false,
+  "calibrated_prediction_interval": null,
+  "external_validation": false,
+  "actual_experiment_fact_ids": 1147,
+  "final_assisted_system_fact_ids": 1072,
+  "feature_count": 32,
+  "generated_auxiliary_feature_count": 2,
+  "known_limitations": [
+    "Small34-source cycling cohort",
+    "Weak auxiliaries",
+    "Sparse method-specific features",
+    "Unknown physical current mass basis remains unknown",
+    "No fresh external validation"
+  ],
+  "no_upper_clip": true
+}
