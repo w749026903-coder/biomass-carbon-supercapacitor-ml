@@ -1,0 +1,6272 @@
+{
+  "status": "complete",
+  "completed_at": "2026-10-29T20:13:10+08:00",
+  "planned_fits": 986,
+  "actual_fits": 986,
+  "failed_fits": 1,
+  "warnings": 0,
+  "elapsed_seconds": 38.703,
+  "metrics": [
+    {
+      "rows": 51,
+      "sources": 6,
+      "materials": 22,
+      "curves": 0,
+      "mae": 110.83709682681446,
+      "rmse": 158.69071889455975,
+      "r2": 0.13554730119449276,
+      "mape_pct": 74.96066512782672,
+      "p90_ape_pct": 132.37357274755297,
+      "p90_absolute_error": 327.80813823103546,
+      "target_weighted_sd": 170.67932251250596,
+      "row_equal_r2": 0.17459818860620646,
+      "per_source": [
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 57.479390508147944,
+          "mape_pct": 132.36675827599583
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 8,
+          "mae": 326.0735033662919,
+          "mape_pct": 59.47010708796175
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 68.8414096972055,
+          "mape_pct": 28.969653700466722
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 54.98923858840003,
+          "mape_pct": 84.251504802436
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 15,
+          "mae": 70.41111166356808,
+          "mape_pct": 111.26964308394918
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 15,
+          "mae": 87.22792713727334,
+          "mape_pct": 33.43632381615085
+        }
+      ],
+      "source_p90_mape_pct": 121.8182006799725,
+      "source_p90_mae": 206.65071525178263,
+      "source_bootstrap_95pct": {
+        "mae": [
+          61.37037553365829,
+          198.47479791468618
+        ],
+        "r2": [
+          -0.5866286140404452,
+          0.23331676257872777
+        ],
+        "mape_pct": [
+          44.755594487272155,
+          105.77978285545257
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_H2SO4_1",
+      "model": "fixed_Matern_GPR",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.2701118287066935,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 51,
+      "sources": 6,
+      "materials": 22,
+      "curves": 0,
+      "mae": 115.0196127944567,
+      "rmse": 157.7176719210805,
+      "r2": 0.14611596243387726,
+      "mape_pct": 69.17431208335049,
+      "p90_ape_pct": 146.13866186296443,
+      "p90_absolute_error": 344.69113674895704,
+      "target_weighted_sd": 170.67932251250596,
+      "row_equal_r2": 0.28406287522141915,
+      "per_source": [
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 51.66343001283283,
+          "mape_pct": 88.17215277384953
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 8,
+          "mae": 324.7780410107444,
+          "mape_pct": 60.97231585383537
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 106.79790665243638,
+          "mape_pct": 46.22692165618176
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 50.34852502818413,
+          "mape_pct": 68.90242646921949
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 15,
+          "mae": 69.42515562167802,
+          "mape_pct": 111.35516983301319
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 15,
+          "mae": 87.10461844086451,
+          "mape_pct": 39.41688591400361
+        }
+      ],
+      "source_p90_mape_pct": 99.76366130343136,
+      "source_p90_mae": 215.7879738315904,
+      "source_bootstrap_95pct": {
+        "mae": [
+          60.19283031532399,
+          200.15095172242198
+        ],
+        "r2": [
+          -0.6391574202470307,
+          0.35953974192200516
+        ],
+        "mape_pct": [
+          50.933597189926296,
+          89.56328303407389
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_H2SO4_1",
+      "model": "random_forest",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.24256898413185335,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 51,
+      "sources": 6,
+      "materials": 22,
+      "curves": 0,
+      "mae": 113.81640501239941,
+      "rmse": 156.35227738036943,
+      "r2": 0.16083646800104112,
+      "mape_pct": 54.90479939547414,
+      "p90_ape_pct": 118.37011566527063,
+      "p90_absolute_error": 297.5564947979333,
+      "target_weighted_sd": 170.67932251250596,
+      "row_equal_r2": 0.30879469793348524,
+      "per_source": [
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 43.67271999179078,
+          "mape_pct": 34.32384308865483
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 8,
+          "mae": 277.891346532987,
+          "mape_pct": 51.48091406974444
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 167.51981232030732,
+          "mape_pct": 75.49221403777811
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 49.44378954807741,
+          "mape_pct": 50.57778487174335
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 15,
+          "mae": 58.20539225751472,
+          "mape_pct": 89.94948463046671
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 15,
+          "mae": 86.16536942371937,
+          "mape_pct": 27.60455567445746
+        }
+      ],
+      "source_p90_mape_pct": 82.72084933412242,
+      "source_p90_mae": 222.70557942664715,
+      "source_bootstrap_95pct": {
+        "mae": [
+          55.08816957202362,
+          183.84532736142893
+        ],
+        "r2": [
+          -2.074540511793208,
+          0.4348276630495511
+        ],
+        "mape_pct": [
+          37.65258274461873,
+          73.44990907715378
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_H2SO4_1",
+      "model": "ridge",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.25049238841502297,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 51,
+      "sources": 6,
+      "materials": 22,
+      "curves": 0,
+      "mae": 136.65794858875722,
+      "rmse": 197.13052869193592,
+      "r2": -0.33396966199520506,
+      "mape_pct": 62.647088754764795,
+      "p90_ape_pct": 117.25700581177453,
+      "p90_absolute_error": 320.82527605403016,
+      "target_weighted_sd": 170.67932251250596,
+      "row_equal_r2": 0.1317540857762578,
+      "per_source": [
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 52.86251785998748,
+          "mape_pct": 48.98686217987238
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 8,
+          "mae": 274.21674842236195,
+          "mape_pct": 52.08114050345149
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 309.01799277187644,
+          "mape_pct": 127.73339918247189
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 54.39831986182776,
+          "mape_pct": 48.971004049689505
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 15,
+          "mae": 43.52939306921555,
+          "mape_pct": 67.42218660265918
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 15,
+          "mae": 85.92271954727421,
+          "mape_pct": 30.68794001044437
+        }
+      ],
+      "source_p90_mape_pct": 97.57779289256553,
+      "source_p90_mae": 291.6173705971192,
+      "source_bootstrap_95pct": {
+        "mae": [
+          55.51747687791799,
+          223.05974125826344
+        ],
+        "r2": [
+          -8.830711848622627,
+          0.45275799221060437
+        ],
+        "mape_pct": [
+          42.932120531793636,
+          91.4273987082423
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_H2SO4_1",
+      "model": "small_BP_MLP",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.10007548876892158,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 51,
+      "sources": 6,
+      "materials": 22,
+      "curves": 0,
+      "mae": 151.85490214263854,
+      "rmse": 198.79942596445372,
+      "r2": -0.35665191259971407,
+      "mape_pct": 139.29215914689118,
+      "p90_ape_pct": 326.9271995610024,
+      "p90_absolute_error": 386.57081700118067,
+      "target_weighted_sd": 170.67932251250596,
+      "row_equal_r2": -0.3470595895652846,
+      "per_source": [
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 128.7491829988194,
+          "mape_pct": 300.77859344072084
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 8,
+          "mae": 378.71373530106257,
+          "mape_pct": 67.83783717283514
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 22.46716122261576,
+          "mape_pct": 9.099056828079556
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 122.8491829988194,
+          "mape_pct": 158.19627608429178
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 15,
+          "mae": 167.72198110979932,
+          "mape_pct": 260.1604522907874
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 15,
+          "mae": 90.6281692247147,
+          "mape_pct": 39.68073906463234
+        }
+      ],
+      "source_p90_mape_pct": 280.46952286575413,
+      "source_p90_mae": 273.21785820543096,
+      "source_bootstrap_95pct": {
+        "mae": [
+          75.74658706545979,
+          252.74812581660768
+        ],
+        "r2": [
+          -3.2441667493903497,
+          -0.2787148466503655
+        ],
+        "mape_pct": [
+          53.93228417375846,
+          231.88341218822947
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_H2SO4_1",
+      "model": "training_mean",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 51,
+      "sources": 6,
+      "materials": 22,
+      "curves": 0,
+      "mae": 110.32152294051843,
+      "rmse": 164.38285124751448,
+      "r2": 0.07242038125109207,
+      "mape_pct": 50.71482898040184,
+      "p90_ape_pct": 96.80900305089817,
+      "p90_absolute_error": 365.05491638183594,
+      "target_weighted_sd": 170.67932251250596,
+      "row_equal_r2": 0.17906771226161233,
+      "per_source": [
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 48.08783531188965,
+          "mape_pct": 63.36207224202965
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 8,
+          "mae": 347.81761932373047,
+          "mape_pct": 62.8289348218656
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 103.19598571777342,
+          "mape_pct": 44.07233827787611
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 27.737451553344723,
+          "mape_pct": 22.024329502440537
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 15,
+          "mae": 42.80061238591758,
+          "mape_pct": 69.07271340069501
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 15,
+          "mae": 92.2896333504549,
+          "mape_pct": 42.92858563750413
+        }
+      ],
+      "source_p90_mape_pct": 66.21739282136232,
+      "source_p90_mae": 225.50680252075193,
+      "source_bootstrap_95pct": {
+        "mae": [
+          46.027728935816185,
+          206.25621523112866
+        ],
+        "r2": [
+          -0.7044890833753789,
+          0.4938814790000473
+        ],
+        "mape_pct": [
+          36.33978959956301,
+          62.91358092397606
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_H2SO4_1",
+      "model": "xgboost",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.2735070031727225,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 286,
+      "sources": 22,
+      "materials": 82,
+      "curves": 0,
+      "mae": 76.63337275544227,
+      "rmse": 92.06593495553102,
+      "r2": 0.30485331208132993,
+      "mape_pct": 96.20149880244809,
+      "p90_ape_pct": 225.12354717487716,
+      "p90_absolute_error": 145.32356509928698,
+      "target_weighted_sd": 110.42330434187807,
+      "row_equal_r2": 0.18313460927431724,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 6,
+          "mae": 62.54134803499485,
+          "mape_pct": 36.698861002759735
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 3,
+          "mae": 20.76041646855183,
+          "mape_pct": 7.4504536611421885
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 3,
+          "mae": 92.73911904193974,
+          "mape_pct": 159.36430538849748
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 29,
+          "mae": 117.2758155012241,
+          "mape_pct": 108.65209798870201
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 11,
+          "mae": 90.88186560256001,
+          "mape_pct": 141.19491192396418
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 9,
+          "mae": 29.062137926385354,
+          "mape_pct": 22.073144921916196
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 4,
+          "mae": 61.77909906412665,
+          "mape_pct": 746.5215435824872
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 8,
+          "mae": 48.685379134204055,
+          "mape_pct": 20.089407682219683
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 1,
+          "mae": 122.1215130776128,
+          "mape_pct": 41.96615569677416
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 8,
+          "mae": 53.27003400964804,
+          "mape_pct": 70.1207602375732
+        },
+        {
+          "source": "doi:10.3390/ma16134577",
+          "rows": 2,
+          "mae": 105.73170084226669,
+          "mape_pct": 211.16244231310233
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 3,
+          "mae": 145.9697020527972,
+          "mape_pct": 199.44599479796682
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 2,
+          "mae": 108.0679908145411,
+          "mape_pct": 40.23725045192869
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 2,
+          "mae": 138.09394567386886,
+          "mape_pct": 44.24433328098323
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 55,
+          "mae": 34.73714579723815,
+          "mape_pct": 21.15648791954829
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 52.84107048653348,
+          "mape_pct": 14.9182423093393
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 18,
+          "mae": 115.6711825049844,
+          "mape_pct": 41.43411894448506
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 8.536893003135788,
+          "mape_pct": 2.449610617829494
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 80,
+          "mae": 46.530518616028786,
+          "mape_pct": 106.31670790985618
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 31,
+          "mae": 108.22262921928832,
+          "mape_pct": 30.27914834204744
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 3,
+          "mae": 67.94452737632508,
+          "mape_pct": 25.116138935599242
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 54.47016637147449,
+          "mape_pct": 25.540855745135797
+        }
+      ],
+      "source_p90_mape_pct": 195.43782585701996,
+      "source_p90_mae": 121.63694331997394,
+      "source_bootstrap_95pct": {
+        "mae": [
+          60.377183134858406,
+          93.09854078976524
+        ],
+        "r2": [
+          -0.008305627416318375,
+          0.4948527377000152
+        ],
+        "mape_pct": [
+          46.53345012219266,
+          178.00225417575368
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_KOH6",
+      "model": "fixed_Matern_GPR",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.20212254532207452,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 286,
+      "sources": 22,
+      "materials": 82,
+      "curves": 0,
+      "mae": 78.93626321722674,
+      "rmse": 94.3064340212014,
+      "r2": 0.2706077093133983,
+      "mape_pct": 75.94615095783908,
+      "p90_ape_pct": 167.43153771686633,
+      "p90_absolute_error": 153.57013268355132,
+      "target_weighted_sd": 110.42330434187807,
+      "row_equal_r2": 0.2031440028609225,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 6,
+          "mae": 54.00448826288711,
+          "mape_pct": 29.213763813117954
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 3,
+          "mae": 32.72564946687528,
+          "mape_pct": 12.568484553476445
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 3,
+          "mae": 70.96502958859236,
+          "mape_pct": 130.2918176032942
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 29,
+          "mae": 65.21211672063892,
+          "mape_pct": 64.70258047446653
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 11,
+          "mae": 83.09549757316731,
+          "mape_pct": 135.52158466870475
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 9,
+          "mae": 20.870739227051967,
+          "mape_pct": 14.317029311005523
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 4,
+          "mae": 96.2642362418838,
+          "mape_pct": 517.088372674987
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 8,
+          "mae": 53.3508775400584,
+          "mape_pct": 26.013784378866376
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 1,
+          "mae": 107.39656762446899,
+          "mape_pct": 36.906036984353605
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 8,
+          "mae": 41.28547979399101,
+          "mape_pct": 18.2498716830534
+        },
+        {
+          "source": "doi:10.3390/ma16134577",
+          "rows": 2,
+          "mae": 119.08613207027611,
+          "mape_pct": 134.92768214883745
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 3,
+          "mae": 122.45544573194516,
+          "mape_pct": 170.44191980492053
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 2,
+          "mae": 144.7283819806547,
+          "mape_pct": 49.577132913183135
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 2,
+          "mae": 110.58796567963327,
+          "mape_pct": 35.31394282254064
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 55,
+          "mae": 32.95850728404802,
+          "mape_pct": 20.456935630618204
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 78.87435193541688,
+          "mape_pct": 18.263356577544766
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 18,
+          "mae": 122.85103460035832,
+          "mape_pct": 41.86402680348761
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 81.04866004683396,
+          "mape_pct": 23.256430429507592
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 80,
+          "mae": 60.98622382954824,
+          "mape_pct": 111.50935260353863
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 31,
+          "mae": 109.63054890641084,
+          "mape_pct": 31.87490677504638
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 3,
+          "mae": 107.02124625338644,
+          "mape_pct": 38.1737216651113
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 21.198610420861044,
+          "mape_pct": 10.282586752797569
+        }
+      ],
+      "source_p90_mape_pct": 135.462194416718,
+      "source_p90_mae": 122.11851436577827,
+      "source_bootstrap_95pct": {
+        "mae": [
+          63.806228660259364,
+          93.98266148937503
+        ],
+        "r2": [
+          0.0365961423719647,
+          0.41649026967751374
+        ],
+        "mape_pct": [
+          40.65105957202463,
+          132.20084191543364
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_KOH6",
+      "model": "random_forest",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.1781457279906179,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 286,
+      "sources": 22,
+      "materials": 82,
+      "curves": 0,
+      "mae": 107.4231942086627,
+      "rmse": 159.43266207043567,
+      "r2": -1.0846498430619316,
+      "mape_pct": 114.2583623002817,
+      "p90_ape_pct": 150.69668836459442,
+      "p90_absolute_error": 228.0376670542342,
+      "target_weighted_sd": 110.42330434187807,
+      "row_equal_r2": -0.5805888950828282,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 6,
+          "mae": 140.48505239891878,
+          "mape_pct": 56.12698249793924
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 3,
+          "mae": 46.83776938505284,
+          "mape_pct": 17.7544204422911
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 3,
+          "mae": 77.3217873633438,
+          "mape_pct": 107.22913061440411
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 29,
+          "mae": 91.34148584141471,
+          "mape_pct": 86.70799002759074
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 11,
+          "mae": 62.50759162840474,
+          "mape_pct": 92.73165035349373
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 9,
+          "mae": 55.482808083119956,
+          "mape_pct": 40.075968213402696
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 4,
+          "mae": 497.1763793054902,
+          "mape_pct": 1383.2481850505067
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 8,
+          "mae": 183.2716532494363,
+          "mape_pct": 77.66861103988356
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 1,
+          "mae": 158.5344355604602,
+          "mape_pct": 54.47918747782138
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 8,
+          "mae": 37.67417803999582,
+          "mape_pct": 25.237471031519494
+        },
+        {
+          "source": "doi:10.3390/ma16134577",
+          "rows": 2,
+          "mae": 96.15828317291496,
+          "mape_pct": 149.1638082961784
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 3,
+          "mae": 85.12801792977187,
+          "mape_pct": 103.59600016116441
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 2,
+          "mae": 157.0250083569,
+          "mape_pct": 47.101376252601945
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 2,
+          "mae": 94.1468342981208,
+          "mape_pct": 30.47028294334144
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 55,
+          "mae": 35.64444804194271,
+          "mape_pct": 18.927127333306764
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 120.72059456267031,
+          "mape_pct": 32.325985208928
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 18,
+          "mae": 74.88958980498968,
+          "mape_pct": 31.87251252570367
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 99.29529490139669,
+          "mape_pct": 28.49219365893736
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 80,
+          "mae": 88.71534378161891,
+          "mape_pct": 65.77418756245022
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 31,
+          "mae": 35.32407510791117,
+          "mape_pct": 12.094642397261968
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 3,
+          "mae": 74.38949548183872,
+          "mape_pct": 27.582078755499904
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 51.24014629486588,
+          "mape_pct": 25.024178761970155
+        }
+      ],
+      "source_p90_mape_pct": 106.86581756908015,
+      "source_p90_mae": 158.38349284010417,
+      "source_bootstrap_95pct": {
+        "mae": [
+          76.48032825912283,
+          155.43580194938127
+        ],
+        "r2": [
+          -3.9359172597496324,
+          0.2403917226600009
+        ],
+        "mape_pct": [
+          42.95396064914636,
+          249.7678859160524
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_KOH6",
+      "model": "ridge",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": -0.11844933462743024,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 286,
+      "sources": 22,
+      "materials": 82,
+      "curves": 0,
+      "mae": 88.37315421012394,
+      "rmse": 110.76847737820059,
+      "r2": -0.006261586317783507,
+      "mape_pct": 100.81014000463014,
+      "p90_ape_pct": 171.36159608707842,
+      "p90_absolute_error": 187.72912903318743,
+      "target_weighted_sd": 110.42330434187807,
+      "row_equal_r2": -0.2681226532054988,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 6,
+          "mae": 56.427357205755925,
+          "mape_pct": 38.17263171710283
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 3,
+          "mae": 33.540242213436,
+          "mape_pct": 12.608135807948553
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 3,
+          "mae": 207.70383279165893,
+          "mape_pct": 290.5658998689662
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 29,
+          "mae": 134.6651074108315,
+          "mape_pct": 125.35034486578543
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 11,
+          "mae": 38.26832564696532,
+          "mape_pct": 56.47856966957757
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 9,
+          "mae": 153.10192479294852,
+          "mape_pct": 110.58924055695532
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 4,
+          "mae": 129.8976196867048,
+          "mape_pct": 863.9208452437314
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 8,
+          "mae": 39.32021099423228,
+          "mape_pct": 18.602148070196304
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 1,
+          "mae": 118.72253825482073,
+          "mape_pct": 40.798123111622246
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 8,
+          "mae": 65.68614333964533,
+          "mape_pct": 37.61203619486867
+        },
+        {
+          "source": "doi:10.3390/ma16134577",
+          "rows": 2,
+          "mae": 112.9751908280412,
+          "mape_pct": 116.84899497746044
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 3,
+          "mae": 162.98620931001034,
+          "mape_pct": 214.29145035997487
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 2,
+          "mae": 83.7462633920091,
+          "mape_pct": 26.313482729916956
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 2,
+          "mae": 190.74304896959393,
+          "mape_pct": 61.097974347870355
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 55,
+          "mae": 35.75700042620984,
+          "mape_pct": 20.62224665415477
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 28.387112381535474,
+          "mape_pct": 7.968238715892621
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 18,
+          "mae": 102.70124325233913,
+          "mape_pct": 40.35074673910159
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 0.8634347729414458,
+          "mape_pct": 0.24775746712810495
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 80,
+          "mae": 114.23454103004268,
+          "mape_pct": 83.59794297683821
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 31,
+          "mae": 61.81539567167785,
+          "mape_pct": 20.309522810716455
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 3,
+          "mae": 35.51721216013138,
+          "mape_pct": 14.003156439058795
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 37.14943809119495,
+          "mape_pct": 17.47359077699536
+        }
+      ],
+      "source_p90_mape_pct": 205.3973398105561,
+      "source_p90_mae": 161.99778085830417,
+      "source_bootstrap_95pct": {
+        "mae": [
+          65.65584688924552,
+          112.70420817135525
+        ],
+        "r2": [
+          -0.6422033767456499,
+          0.3711793404050603
+        ],
+        "mape_pct": [
+          43.19581380322306,
+          196.0547438142489
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_KOH6",
+      "model": "small_BP_MLP",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.07989241752346066,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 286,
+      "sources": 22,
+      "materials": 82,
+      "curves": 0,
+      "mae": 96.04654487496005,
+      "rmse": 113.83357474873809,
+      "r2": -0.06272101999285429,
+      "mape_pct": 124.55631846285382,
+      "p90_ape_pct": 246.4037795241855,
+      "p90_absolute_error": 180.34365699071677,
+      "target_weighted_sd": 110.42330434187807,
+      "row_equal_r2": -0.1540882994830437,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 6,
+          "mae": 62.91698288757093,
+          "mape_pct": 48.432358456257084
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 3,
+          "mae": 53.353168406108594,
+          "mape_pct": 19.077225607949238
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 3,
+          "mae": 132.84365699071674,
+          "mape_pct": 217.87258434389668
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 29,
+          "mae": 103.48210499680243,
+          "mape_pct": 101.82617475834734
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 11,
+          "mae": 158.11273197703315,
+          "mape_pct": 253.02273887253205
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 9,
+          "mae": 63.88580728907603,
+          "mape_pct": 49.490729317855774
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 4,
+          "mae": 98.11508556214537,
+          "mape_pct": 919.1520709301811
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 8,
+          "mae": 46.02340959987971,
+          "mape_pct": 20.794993705865743
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 1,
+          "mae": 79.19443824737843,
+          "mape_pct": 27.21458359016441
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 8,
+          "mae": 75.16471912368922,
+          "mape_pct": 105.10103811272855
+        },
+        {
+          "source": "doi:10.3390/ma16134577",
+          "rows": 2,
+          "mae": 125.0,
+          "mape_pct": 324.8240360547798
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 3,
+          "mae": 138.4484188954787,
+          "mape_pct": 205.10395579869925
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 2,
+          "mae": 154.835,
+          "mape_pct": 53.818076172491416
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 2,
+          "mae": 102.2420572949975,
+          "mape_pct": 32.23286893217272
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 55,
+          "mae": 43.822208021374905,
+          "mape_pct": 30.58055073999158
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 149.53158110452134,
+          "mape_pct": 38.66500143427058
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 18,
+          "mae": 87.3081715046416,
+          "mape_pct": 33.612810466257066
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 139.43253348547367,
+          "mape_pct": 40.009335289949405
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 80,
+          "mae": 84.04462293298344,
+          "mape_pct": 152.96514870436013
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 31,
+          "mae": 121.89061016764511,
+          "mape_pct": 33.76506645172573
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 3,
+          "mae": 81.70872396166415,
+          "mape_pct": 26.657572122649384
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 11.66795479993985,
+          "mape_pct": 6.020086319659198
+        }
+      ],
+      "source_p90_mape_pct": 249.5077234196686,
+      "source_p90_mae": 148.5216763426166,
+      "source_bootstrap_95pct": {
+        "mae": [
+          79.27230564501193,
+          112.53623717166691
+        ],
+        "r2": [
+          -0.2584077608363691,
+          -0.05175581645764866
+        ],
+        "mape_pct": [
+          60.82884633596164,
+          223.14010844447566
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_KOH6",
+      "model": "training_mean",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 286,
+      "sources": 22,
+      "materials": 82,
+      "curves": 0,
+      "mae": 74.82440076115681,
+      "rmse": 88.17440542223338,
+      "r2": 0.3623775470604208,
+      "mape_pct": 73.91322419137174,
+      "p90_ape_pct": 131.54444272826316,
+      "p90_absolute_error": 131.677001953125,
+      "target_weighted_sd": 110.42330434187807,
+      "row_equal_r2": 0.05020466098416765,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 6,
+          "mae": 71.69147186279298,
+          "mape_pct": 35.069410174290226
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 3,
+          "mae": 26.675618489583332,
+          "mape_pct": 11.587722503341686
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 3,
+          "mae": 92.04398701985676,
+          "mape_pct": 173.2185984233592
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 29,
+          "mae": 60.56000854492188,
+          "mape_pct": 61.41149682861179
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 11,
+          "mae": 65.85114417639149,
+          "mape_pct": 101.18806307968299
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 9,
+          "mae": 23.44448004828559,
+          "mape_pct": 16.013358677832105
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 4,
+          "mae": 113.22597885131836,
+          "mape_pct": 481.78184272890456
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 8,
+          "mae": 69.16836318969726,
+          "mape_pct": 32.49756465419118
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 1,
+          "mae": 114.02842712402344,
+          "mape_pct": 39.185026503100836
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 8,
+          "mae": 37.32023643493652,
+          "mape_pct": 17.73338419791876
+        },
+        {
+          "source": "doi:10.3390/ma16134577",
+          "rows": 2,
+          "mae": 101.45573806762695,
+          "mape_pct": 143.19795154389882
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 3,
+          "mae": 97.3434944152832,
+          "mape_pct": 130.3494263420477
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 2,
+          "mae": 93.57472320556641,
+          "mape_pct": 35.298447856121214
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 2,
+          "mae": 74.36980438232422,
+          "mape_pct": 24.190103921507784
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 55,
+          "mae": 49.01670764465015,
+          "mape_pct": 29.182270534743484
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 78.55004272460937,
+          "mape_pct": 18.421537440474406
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 18,
+          "mae": 107.81911083221435,
+          "mape_pct": 38.624444285251165
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 57.874725341796875,
+          "mape_pct": 16.606807845565818
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 80,
+          "mae": 75.42645112695715,
+          "mape_pct": 139.68593876570512
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 31,
+          "mae": 109.69506399462833,
+          "mape_pct": 32.43685819964495
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 3,
+          "mae": 102.20671183268229,
+          "mape_pct": 36.27389005234778
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 24.794527435302726,
+          "mape_pct": 12.136787651636737
+        }
+      ],
+      "source_p90_mape_pct": 142.84675026607945,
+      "source_p90_mae": 109.50746867838693,
+      "source_bootstrap_95pct": {
+        "mae": [
+          62.75429575246764,
+          87.18904858453115
+        ],
+        "r2": [
+          0.09589041636250742,
+          0.5048438014072798
+        ],
+        "mape_pct": [
+          40.35867079852338,
+          126.18363949262846
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "A_KOH6",
+      "model": "xgboost",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.22095687191487912,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 177,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 66.55512159962512,
+      "rmse": 85.25455829133203,
+      "r2": 0.17051910565386896,
+      "mape_pct": 42.735548531250664,
+      "p90_ape_pct": 101.28316831683168,
+      "p90_absolute_error": 139.3,
+      "target_weighted_sd": 93.60831224747398,
+      "row_equal_r2": -0.13233008051268658,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 20,
+          "mae": 82.63149999999997,
+          "mape_pct": 68.43794562002505
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 16,
+          "mae": 49.306250000000006,
+          "mape_pct": 38.56155791724874
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 9,
+          "mae": 13.205619412515958,
+          "mape_pct": 23.57667050926002
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 24,
+          "mae": 76.41666666666666,
+          "mape_pct": 67.2308814021734
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 27,
+          "mae": 113.64814814814818,
+          "mape_pct": 91.62624509380127
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 4,
+          "mae": 32.25,
+          "mape_pct": 13.072932749234615
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 40.900000000000006,
+          "mape_pct": 15.376192445235603
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 43,
+          "mae": 45.25369507706464,
+          "mape_pct": 28.356137209057295
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 4,
+          "mae": 92.25,
+          "mape_pct": 33.96939610283307
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 26,
+          "mae": 119.68933669185556,
+          "mape_pct": 47.14752626363746
+        }
+      ],
+      "source_p90_mape_pct": 70.75677556740266,
+      "source_p90_mae": 114.25226700251892,
+      "normalized_curve_r2": -2.4690284961275286,
+      "normalized_curve_mae": 0.25422058987004476,
+      "source_bootstrap_95pct": {
+        "mae": [
+          45.271268916449515,
+          86.78960971080116
+        ],
+        "r2": [
+          -0.4418643752550422,
+          0.5491696493265994
+        ],
+        "mape_pct": [
+          28.790425721825436,
+          58.13402767857548
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "B_one_anchor",
+      "model": "constant_low_anchor",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 72,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 62.292402777777774,
+        "rmse": 75.12604098003123,
+        "r2": 0.18438460845877802,
+        "mape_pct": 39.44148437279175,
+        "p90_ape_pct": 101.28316831683168,
+        "p90_absolute_error": 127.87,
+        "target_weighted_sd": 83.18553162041152,
+        "row_equal_r2": -0.40299469638712804,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 20,
+            "mae": 82.63149999999999,
+            "mape_pct": 68.43794562002505
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 16,
+            "mae": 49.306250000000006,
+            "mape_pct": 38.56155791724874
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 24,
+            "mae": 76.41666666666666,
+            "mape_pct": 67.2308814021734
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 4,
+            "mae": 32.25,
+            "mape_pct": 13.072932749234615
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 4,
+            "mae": 40.900000000000006,
+            "mape_pct": 15.376192445235603
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 4,
+            "mae": 92.25,
+            "mape_pct": 33.96939610283307
+          }
+        ],
+        "source_p90_mape_pct": 67.83441351109923,
+        "source_p90_mae": 87.44075,
+        "normalized_curve_r2": -2.428813539264229,
+        "normalized_curve_mae": 0.24384577206412122,
+        "source_bootstrap_95pct": {
+          "mae": [
+            44.93129166666667,
+            80.28345833333333
+          ],
+          "r2": [
+            -2.813423910256519,
+            0.43258908820072595
+          ],
+          "mape_pct": [
+            22.339287300170703,
+            57.512612047055065
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 177,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 32.814058147964765,
+      "rmse": 41.69374499570126,
+      "r2": 0.8016131043185593,
+      "mape_pct": 20.470047264033497,
+      "p90_ape_pct": 41.3503046245297,
+      "p90_absolute_error": 72.26640620467487,
+      "target_weighted_sd": 93.60831224747398,
+      "row_equal_r2": 0.7076301963709672,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 20,
+          "mae": 37.49335763827237,
+          "mape_pct": 32.00762675135003
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 16,
+          "mae": 17.895916789244932,
+          "mape_pct": 12.93491976900095
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 9,
+          "mae": 8.41080756911516,
+          "mape_pct": 13.20163797933868
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 24,
+          "mae": 45.89762333030692,
+          "mape_pct": 41.54429956691731
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 27,
+          "mae": 44.36424589275941,
+          "mape_pct": 37.614050854329946
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 4,
+          "mae": 25.933001356769935,
+          "mape_pct": 10.097157954177847
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 36.04822649826826,
+          "mape_pct": 13.195477240618228
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 43,
+          "mae": 25.058365005018068,
+          "mape_pct": 14.938378979336118
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 4,
+          "mae": 16.602515827192633,
+          "mape_pct": 6.32664868316523
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 26,
+          "mae": 70.43652157269987,
+          "mape_pct": 22.8402748621006
+        }
+      ],
+      "source_p90_mape_pct": 38.00707572558868,
+      "source_p90_mae": 48.35151315454621,
+      "normalized_curve_r2": 0.07202171089617315,
+      "normalized_curve_mae": 0.1286835534671363,
+      "source_bootstrap_95pct": {
+        "mae": [
+          22.899302668194206,
+          43.474961828475166
+        ],
+        "r2": [
+          0.6376268452026748,
+          0.8950652487140702
+        ],
+        "mape_pct": [
+          13.916502437818899,
+          27.95464016741964
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "B_one_anchor",
+      "model": "random_forest",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.506964192096832,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 72,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 29.978440240009178,
+        "rmse": 35.95888035374193,
+        "r2": 0.8131398347651978,
+        "mape_pct": 19.351021660871602,
+        "p90_ape_pct": 52.95501498484576,
+        "p90_absolute_error": 57.31292742901883,
+        "target_weighted_sd": 83.18553162041152,
+        "row_equal_r2": 0.6282408563174654,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 20,
+            "mae": 37.49335763827237,
+            "mape_pct": 32.00762675135004
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 16,
+            "mae": 17.895916789244932,
+            "mape_pct": 12.93491976900095
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 24,
+            "mae": 45.89762333030692,
+            "mape_pct": 41.54429956691731
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 4,
+            "mae": 25.933001356769935,
+            "mape_pct": 10.097157954177847
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 4,
+            "mae": 36.04822649826826,
+            "mape_pct": 13.195477240618228
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 4,
+            "mae": 16.602515827192633,
+            "mape_pct": 6.32664868316523
+          }
+        ],
+        "source_p90_mape_pct": 36.775963159133674,
+        "source_p90_mae": 41.69549048428965,
+        "normalized_curve_r2": 0.07775093990929938,
+        "normalized_curve_mae": 0.12094174016822873,
+        "source_bootstrap_95pct": {
+          "mae": [
+            21.829682181318887,
+            38.18902736185919
+          ],
+          "r2": [
+            0.30804476184632545,
+            0.903882763471016
+          ],
+          "mape_pct": [
+            9.98232549848009,
+            30.41828772355307
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 177,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 43.85489728191954,
+      "rmse": 59.010394433083924,
+      "r2": 0.6025996868095187,
+      "mape_pct": 25.896324263116046,
+      "p90_ape_pct": 54.79114803965898,
+      "p90_absolute_error": 76.51128098852566,
+      "target_weighted_sd": 93.60831224747398,
+      "row_equal_r2": 0.5808503310848643,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 20,
+          "mae": 25.261473544727068,
+          "mape_pct": 22.590200549973947
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 16,
+          "mae": 86.15475437749384,
+          "mape_pct": 69.67037405111384
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 9,
+          "mae": 16.390365374224626,
+          "mape_pct": 26.497465547000193
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 24,
+          "mae": 16.540828655089904,
+          "mape_pct": 14.724236298440788
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 27,
+          "mae": 53.62652284192065,
+          "mape_pct": 32.63288970255761
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 4,
+          "mae": 55.29641908720802,
+          "mape_pct": 21.746198064803046
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 26.072339151097665,
+          "mape_pct": 9.46818165710837
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 43,
+          "mae": 28.463406325480676,
+          "mape_pct": 14.621978172650453
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 4,
+          "mae": 74.57426805150246,
+          "mape_pct": 25.520556971365405
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 26,
+          "mae": 56.16859541045034,
+          "mape_pct": 21.491161616146787
+        }
+      ],
+      "source_p90_mape_pct": 36.336638137413225,
+      "source_p90_mae": 75.73231668410159,
+      "normalized_curve_r2": -1.0711723488231306,
+      "normalized_curve_mae": 0.17941636632469485,
+      "source_bootstrap_95pct": {
+        "mae": [
+          30.151287589593615,
+          57.92106855755986
+        ],
+        "r2": [
+          0.1397891786454384,
+          0.8145248730199266
+        ],
+        "mape_pct": [
+          17.895677867443986,
+          36.52536511526002
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "B_one_anchor",
+      "model": "ridge",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.34107404166824395,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 72,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 47.316680477853154,
+        "rmse": 64.08062590777222,
+        "r2": 0.4065858508460224,
+        "mape_pct": 27.2866245988009,
+        "p90_ape_pct": 71.8294719696942,
+        "p90_absolute_error": 75.0672085998566,
+        "target_weighted_sd": 83.18553162041152,
+        "row_equal_r2": 0.1383659631234726,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 20,
+            "mae": 25.261473544727068,
+            "mape_pct": 22.590200549973947
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 16,
+            "mae": 86.15475437749384,
+            "mape_pct": 69.67037405111384
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 24,
+            "mae": 16.540828655089904,
+            "mape_pct": 14.724236298440788
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 4,
+            "mae": 55.29641908720802,
+            "mape_pct": 21.746198064803046
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 4,
+            "mae": 26.072339151097665,
+            "mape_pct": 9.46818165710837
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 4,
+            "mae": 74.57426805150246,
+            "mape_pct": 25.520556971365405
+          }
+        ],
+        "source_p90_mape_pct": 47.595465511239624,
+        "source_p90_mae": 80.36451121449815,
+        "normalized_curve_r2": -1.7931749066083187,
+        "normalized_curve_mae": 0.1918817080923866,
+        "source_bootstrap_95pct": {
+          "mae": [
+            27.495560439656607,
+            68.76219026076416
+          ],
+          "r2": [
+            -1.8386822675309222,
+            0.7928332592758736
+          ],
+          "mape_pct": [
+            15.312872006784069,
+            44.67862617775988
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 177,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 35.84629167302935,
+      "rmse": 45.3694378924177,
+      "r2": 0.7650919135488818,
+      "mape_pct": 22.78513881935076,
+      "p90_ape_pct": 51.06883345209291,
+      "p90_absolute_error": 78.61638977050781,
+      "target_weighted_sd": 93.60831224747398,
+      "row_equal_r2": 0.6542324167512901,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 20,
+          "mae": 40.03452749633788,
+          "mape_pct": 34.782521557043815
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 16,
+          "mae": 22.593546009063722,
+          "mape_pct": 15.433296297090537
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 9,
+          "mae": 7.8704176521544875,
+          "mape_pct": 12.420735343127646
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 24,
+          "mae": 55.323525110880524,
+          "mape_pct": 49.201436635868674
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 27,
+          "mae": 56.1111051771376,
+          "mape_pct": 45.951052972392496
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 4,
+          "mae": 18.563091278076172,
+          "mape_pct": 7.329899889461342
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 46.12655105590821,
+          "mape_pct": 16.801067688659334
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 43,
+          "mae": 33.60734767418004,
+          "mape_pct": 19.00758978849769
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 4,
+          "mae": 17.43163299560547,
+          "mape_pct": 6.563509016783808
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 26,
+          "mae": 60.80117228094932,
+          "mape_pct": 20.360279004582218
+        }
+      ],
+      "source_p90_mape_pct": 46.276091338740116,
+      "source_p90_mae": 56.580111887518775,
+      "normalized_curve_r2": -0.15733758384864216,
+      "normalized_curve_mae": 0.14103810409682135,
+      "source_bootstrap_95pct": {
+        "mae": [
+          25.164622338280882,
+          46.3443758836926
+        ],
+        "r2": [
+          0.557811413615177,
+          0.8686467573631421
+        ],
+        "mape_pct": [
+          14.668027331177514,
+          32.1330023591886
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "B_one_anchor",
+      "model": "xgboost",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.4614044597699112,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 72,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 33.34547899097866,
+        "rmse": 41.38988307282525,
+        "r2": 0.7524329702408995,
+        "mape_pct": 21.685288514151253,
+        "p90_ape_pct": 59.11670885587993,
+        "p90_absolute_error": 68.53373229980468,
+        "target_weighted_sd": 83.18553162041152,
+        "row_equal_r2": 0.5005021429568881,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 20,
+            "mae": 40.03452749633789,
+            "mape_pct": 34.782521557043815
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 16,
+            "mae": 22.593546009063722,
+            "mape_pct": 15.433296297090537
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 24,
+            "mae": 55.323525110880524,
+            "mape_pct": 49.201436635868674
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 4,
+            "mae": 18.563091278076172,
+            "mape_pct": 7.329899889461342
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 4,
+            "mae": 46.12655105590821,
+            "mape_pct": 16.801067688659334
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 4,
+            "mae": 17.43163299560547,
+            "mape_pct": 6.563509016783808
+          }
+        ],
+        "source_p90_mape_pct": 41.99197909645625,
+        "source_p90_mae": 50.72503808339437,
+        "normalized_curve_r2": -0.19982083675346596,
+        "normalized_curve_mae": 0.13322915223579312,
+        "source_bootstrap_95pct": {
+          "mae": [
+            22.6248300558726,
+            45.11579086049398
+          ],
+          "r2": [
+            0.12028057656501293,
+            0.8627069840466622
+          ],
+          "mape_pct": [
+            10.131262111819616,
+            34.419633173795084
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 115,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 58.13160590121373,
+      "rmse": 75.43523068125856,
+      "r2": 0.3945817521961764,
+      "mape_pct": 35.66694547661937,
+      "p90_ape_pct": 89.51612903225806,
+      "p90_absolute_error": 119.0,
+      "target_weighted_sd": 96.94969995682419,
+      "row_equal_r2": 0.12910752574909246,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 75.98416666666667,
+          "mape_pct": 60.612001983295315
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 42.9125,
+          "mape_pct": 30.50915641710838
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 11.691297208538584,
+          "mape_pct": 19.77206530485281
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 70.33333333333333,
+          "mape_pct": 59.22039498058728
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 21,
+          "mae": 108.16190476190475,
+          "mape_pct": 80.44480128056979
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 25.0,
+          "mape_pct": 9.808450704225352
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 31.5,
+          "mape_pct": 11.322481999523552
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 42.19381422053523,
+          "mape_pct": 25.778475391245372
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 75.0,
+          "mape_pct": 25.996830294824562
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 98.53904282115867,
+          "mape_pct": 33.204796409961226
+        }
+      ],
+      "source_p90_mape_pct": 62.59528191302275,
+      "source_p90_mae": 99.50132901523328,
+      "normalized_curve_r2": -2.0811862612824887,
+      "normalized_curve_mae": 0.22391497697566887,
+      "source_bootstrap_95pct": {
+        "mae": [
+          38.57021050636548,
+          77.09166966292882
+        ],
+        "r2": [
+          -0.10950067651394067,
+          0.6745920599654652
+        ],
+        "mape_pct": [
+          22.900247150758304,
+          50.132841339987685
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "C_three_anchor_interpolation",
+      "model": "constant_low_anchor",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 53.455,
+        "rmse": 66.41718751015628,
+        "r2": 0.3994625560584515,
+        "mape_pct": 32.91155272992741,
+        "p90_ape_pct": 89.51612903225806,
+        "p90_absolute_error": 113.0,
+        "target_weighted_sd": 85.70584389603837,
+        "row_equal_r2": -0.27920008793217854,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 75.98416666666668,
+            "mape_pct": 60.612001983295336
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 42.9125,
+            "mape_pct": 30.50915641710838
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 70.33333333333334,
+            "mape_pct": 59.22039498058729
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 25.0,
+            "mape_pct": 9.808450704225352
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 31.5,
+            "mape_pct": 11.322481999523552
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 75.0,
+            "mape_pct": 25.996830294824562
+          }
+        ],
+        "source_p90_mape_pct": 59.91619848194131,
+        "source_p90_mae": 75.49208333333334,
+        "normalized_curve_r2": -1.8920056268588912,
+        "normalized_curve_mae": 0.21083412379950195,
+        "source_bootstrap_95pct": {
+          "mae": [
+            36.62328125,
+            69.36638888888889
+          ],
+          "r2": [
+            -1.8763866014067312,
+            0.5823217607046807
+          ],
+          "mape_pct": [
+            17.45939312577172,
+            49.59373127373436
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 115,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 4.296821683551067,
+      "rmse": 7.612360806228879,
+      "r2": 0.9938348195811537,
+      "mape_pct": 2.5668673917623646,
+      "p90_ape_pct": 4.806898736916428,
+      "p90_absolute_error": 8.732157850545775,
+      "target_weighted_sd": 96.94969995682419,
+      "row_equal_r2": 0.9913007499334433,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 6.748206985836338,
+          "mape_pct": 5.504967506004419
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 6.10007403152067,
+          "mape_pct": 3.35849885318642
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 1.3234924640840922,
+          "mape_pct": 2.2084582666625256
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 3.818571762614336,
+          "mape_pct": 3.0026089639526776
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 21,
+          "mae": 3.2521726426897257,
+          "mape_pct": 3.2018038677259915
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 1.101807117568839,
+          "mape_pct": 0.3928355230838737
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 2.432919284706429,
+          "mape_pct": 0.8508854704863195
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 5.000888180467457,
+          "mape_pct": 3.0596222752835525
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 4.3149673512844515,
+          "mape_pct": 1.3759733061501258
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 8.875117014738322,
+          "mape_pct": 2.713019885087736
+        }
+      ],
+      "source_p90_mape_pct": 3.5731457184682194,
+      "source_p90_mae": 6.960897988726535,
+      "normalized_curve_r2": 0.9653302182153315,
+      "normalized_curve_mae": 0.017287424492668763,
+      "source_bootstrap_95pct": {
+        "mae": [
+          2.876564303087355,
+          5.800158952901497
+        ],
+        "r2": [
+          0.9858746395473236,
+          0.9974012181822589
+        ],
+        "mape_pct": [
+          1.74128286289254,
+          3.4773487320495104
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "C_three_anchor_interpolation",
+      "model": "linear_logcurrent",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.9260845865697759,
+      "screening_checks": {
+        "r2": true,
+        "mae": true,
+        "rmse": true,
+        "mape": true,
+        "p90_ape": true,
+        "source_tail": true,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": true,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 4.086091088921845,
+        "rmse": 7.5511647859564635,
+        "r2": 0.9922374032774453,
+        "mape_pct": 2.4142949371439726,
+        "p90_ape_pct": 4.304583688737047,
+        "p90_absolute_error": 6.866241441904464,
+        "target_weighted_sd": 85.70584389603837,
+        "row_equal_r2": 0.9830982317159217,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 6.748206985836341,
+            "mape_pct": 5.504967506004422
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 6.10007403152067,
+            "mape_pct": 3.35849885318642
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 3.8185717626143356,
+            "mape_pct": 3.002608963952677
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 1.101807117568839,
+            "mape_pct": 0.3928355230838737
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 2.432919284706429,
+            "mape_pct": 0.8508854704863195
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 4.3149673512844515,
+            "mape_pct": 1.3759733061501258
+          }
+        ],
+        "source_p90_mape_pct": 4.431733179595421,
+        "source_p90_mae": 6.424140508678505,
+        "normalized_curve_r2": 0.9642196075291228,
+        "normalized_curve_mae": 0.016255405926109173,
+        "source_bootstrap_95pct": {
+          "mae": [
+            2.52401508299253,
+            5.721715028570672
+          ],
+          "r2": [
+            0.9729118032348764,
+            0.9970048460614475
+          ],
+          "mape_pct": [
+            1.127242991591982,
+            3.9553584410478386
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 115,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 9.666197909518617,
+      "rmse": 16.00794888368325,
+      "r2": 0.9727366989630746,
+      "mape_pct": 4.798125758124994,
+      "p90_ape_pct": 10.977854085973323,
+      "p90_absolute_error": 21.119149727960803,
+      "target_weighted_sd": 96.94969995682419,
+      "row_equal_r2": 0.9570451133931465,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 8.889921977100622,
+          "mape_pct": 6.483579030346203
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 6.2683894571911996,
+          "mape_pct": 4.2608669525480405
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 4.478071555646959,
+          "mape_pct": 6.890160785672105
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 7.373734006203818,
+          "mape_pct": 5.175197840038478
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 21,
+          "mae": 6.8780083625732615,
+          "mape_pct": 4.210869629802825
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 5.8385806091110055,
+          "mape_pct": 2.123936318420381
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 5.841325911349344,
+          "mape_pct": 2.042495761167763
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 5.155018912580289,
+          "mape_pct": 3.23495868083956
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 6.000527288800782,
+          "mape_pct": 1.8205816015436895
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 39.93840101462888,
+          "mape_pct": 11.73861098087089
+        }
+      ],
+      "source_p90_mape_pct": 7.375005805191981,
+      "source_p90_mae": 11.994769880853436,
+      "normalized_curve_r2": 0.8998057582043911,
+      "normalized_curve_mae": 0.036480388127505786,
+      "source_bootstrap_95pct": {
+        "mae": [
+          5.771367248504762,
+          16.53869661484566
+        ],
+        "r2": [
+          0.9331629150582003,
+          0.9938261236037863
+        ],
+        "mape_pct": [
+          3.1464766924420493,
+          6.765357394975057
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "C_three_anchor_interpolation",
+      "model": "nonnegative_inverse_sqrt",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.8337187187647126,
+      "screening_checks": {
+        "r2": true,
+        "mae": true,
+        "rmse": false,
+        "mape": true,
+        "p90_ape": false,
+        "source_tail": true,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 6.702079874959462,
+        "rmse": 8.758868902666354,
+        "r2": 0.9895557999630471,
+        "mape_pct": 3.651109584010759,
+        "p90_ape_pct": 7.224863275603852,
+        "p90_absolute_error": 12.293764530145964,
+        "target_weighted_sd": 85.70584389603837,
+        "row_equal_r2": 0.9777061169655896,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 8.889921977100625,
+            "mape_pct": 6.483579030346205
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 6.2683894571911996,
+            "mape_pct": 4.2608669525480405
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 7.373734006203817,
+            "mape_pct": 5.175197840038479
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 5.8385806091110055,
+            "mape_pct": 2.123936318420381
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 5.841325911349344,
+            "mape_pct": 2.042495761167763
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 6.000527288800782,
+            "mape_pct": 1.8205816015436895
+          }
+        ],
+        "source_p90_mape_pct": 5.829388435192342,
+        "source_p90_mae": 8.131827991652221,
+        "normalized_curve_r2": 0.9480023172380008,
+        "normalized_curve_mae": 0.027155442880711658,
+        "source_bootstrap_95pct": {
+          "mae": [
+            5.93857918152517,
+            7.692202551007704
+          ],
+          "r2": [
+            0.9551774794755262,
+            0.9915488326660393
+          ],
+          "mape_pct": [
+            2.3518263327318873,
+            5.154882940798815
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 115,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 4.0557476895012945,
+      "rmse": 6.321438048588207,
+      "r2": 0.9957485327932369,
+      "mape_pct": 2.41715831266436,
+      "p90_ape_pct": 4.489195763964748,
+      "p90_absolute_error": 8.19812419688185,
+      "target_weighted_sd": 96.94969995682419,
+      "row_equal_r2": 0.9936075570805908,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 7.562063076895242,
+          "mape_pct": 5.883758926976963
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 4.095754255966538,
+          "mape_pct": 2.467259793391273
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 0.710100269129498,
+          "mape_pct": 1.1439063337468431
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 4.828800281121078,
+          "mape_pct": 3.6265034924104556
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 21,
+          "mae": 3.2651081085699047,
+          "mape_pct": 3.2136109016384182
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 1.3214674120226704,
+          "mape_pct": 0.5142382816203531
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 2.4519324252744923,
+          "mape_pct": 0.816677487117518
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 4.865313757334314,
+          "mape_pct": 3.000992526148211
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 5.290498612359329,
+          "mape_pct": 1.6908674301753897
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 6.166438696339873,
+          "mape_pct": 1.813767953418171
+        }
+      ],
+      "source_p90_mape_pct": 3.8522290358671056,
+      "source_p90_mae": 6.30600113439541,
+      "normalized_curve_r2": 0.9727489245086538,
+      "normalized_curve_mae": 0.0161985476178515,
+      "source_bootstrap_95pct": {
+        "mae": [
+          2.770560919181984,
+          5.234936170377987
+        ],
+        "r2": [
+          0.990102968081778,
+          0.9978279431547806
+        ],
+        "mape_pct": [
+          1.5650479901831815,
+          3.412111030154085
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "C_three_anchor_interpolation",
+      "model": "pchip_logcurrent",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.9302316248342863,
+      "screening_checks": {
+        "r2": true,
+        "mae": true,
+        "rmse": true,
+        "mape": true,
+        "p90_ape": true,
+        "source_tail": true,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": true,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 4.258419343939892,
+        "rmse": 6.2900017234156325,
+        "r2": 0.9946138225437743,
+        "mape_pct": 2.499884235281992,
+        "p90_ape_pct": 5.589123476507842,
+        "p90_absolute_error": 7.241380717779151,
+        "target_weighted_sd": 85.70584389603837,
+        "row_equal_r2": 0.9869958101564807,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 7.562063076895245,
+            "mape_pct": 5.883758926976966
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 4.095754255966538,
+            "mape_pct": 2.467259793391273
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 4.828800281121077,
+            "mape_pct": 3.6265034924104547
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 1.3214674120226704,
+            "mape_pct": 0.5142382816203531
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 2.4519324252744923,
+            "mape_pct": 0.816677487117518
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 5.290498612359329,
+            "mape_pct": 1.6908674301753897
+          }
+        ],
+        "source_p90_mape_pct": 4.75513120969371,
+        "source_p90_mae": 6.426280844627287,
+        "normalized_curve_r2": 0.9699471006140475,
+        "normalized_curve_mae": 0.017198487249716756,
+        "source_bootstrap_95pct": {
+          "mae": [
+            2.6789892039307763,
+            5.89378732345855
+          ],
+          "r2": [
+            0.9840650600877987,
+            0.9959420276074462
+          ],
+          "mape_pct": [
+            1.186993888383529,
+            4.093619592308356
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 115,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 84.66621244314587,
+      "rmse": 100.47663665409331,
+      "r2": -0.46482241247673706,
+      "mape_pct": 56.20775105254457,
+      "p90_ape_pct": 106.73453406421301,
+      "p90_absolute_error": 148.1108312342569,
+      "target_weighted_sd": 83.0180639347949,
+      "row_equal_r2": -0.9193325075133378,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 104.60249999999998,
+          "mape_pct": 94.51570563742035
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 60.4625,
+          "mape_pct": 52.860808782108045
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 15.697865353037763,
+          "mape_pct": 28.48855194148409
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 89.77777777777779,
+          "mape_pct": 82.44449764080366
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 21,
+          "mae": 127.91428571428567,
+          "mape_pct": 108.37225045462951
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 50.5,
+          "mape_pct": 21.060944206008585
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 59.30000000000001,
+          "mape_pct": 23.093381740269017
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 57.78251044781841,
+          "mape_pct": 37.83604548216578
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 129.0,
+          "mape_pct": 50.77895824783791
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 151.62468513853906,
+          "mape_pct": 62.62636639271867
+        }
+      ],
+      "source_p90_mape_pct": 95.90136011914126,
+      "source_p90_mae": 131.2624685138539,
+      "normalized_curve_r2": -4.892586114609164,
+      "normalized_curve_mae": 0.32136568678536104,
+      "source_bootstrap_95pct": {
+        "mae": [
+          58.75786522025859,
+          109.419922173778
+        ],
+        "r2": [
+          -1.5777507364000096,
+          0.19632862781427077
+        ],
+        "mape_pct": [
+          38.84803908201468,
+          74.38915553483983
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "D_low_current_extrapolation",
+      "model": "constant_low_anchor",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 82.27379629629628,
+        "rmse": 91.44187860835935,
+        "r2": -0.5087416368978093,
+        "mape_pct": 54.12571604240792,
+        "p90_ape_pct": 106.11649720186016,
+        "p90_absolute_error": 145.0,
+        "target_weighted_sd": 74.44537156375195,
+        "row_equal_r2": -1.8941191366898935,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 104.6025,
+            "mape_pct": 94.5157056374204
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 60.4625,
+            "mape_pct": 52.860808782108045
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 89.77777777777779,
+            "mape_pct": 82.44449764080366
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 50.5,
+            "mape_pct": 21.060944206008585
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 59.30000000000001,
+            "mape_pct": 23.093381740269017
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 129.0,
+            "mape_pct": 50.77895824783791
+          }
+        ],
+        "source_p90_mape_pct": 88.48010163911204,
+        "source_p90_mae": 116.80125000000001,
+        "normalized_curve_r2": -5.428347243361447,
+        "normalized_curve_mae": 0.31966027230011645,
+        "source_bootstrap_95pct": {
+          "mae": [
+            61.6400462962963,
+            105.37833333333332
+          ],
+          "r2": [
+            -7.177620283989713,
+            0.06116323355959978
+          ],
+          "mape_pct": [
+            32.3301427427936,
+            76.26793773252864
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 115,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 23.58575968008745,
+      "rmse": 33.86491721178827,
+      "r2": 0.8335994204538402,
+      "mape_pct": 14.967107706265674,
+      "p90_ape_pct": 29.91413356628562,
+      "p90_absolute_error": 42.562848425632936,
+      "target_weighted_sd": 83.0180639347949,
+      "row_equal_r2": 0.7673643795605126,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 17.33747775560228,
+          "mape_pct": 17.182066308959982
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 15.787208992867019,
+          "mape_pct": 14.896120077672546
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 7.16293235259713,
+          "mape_pct": 13.5695441285168
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 19.090356434491582,
+          "mape_pct": 18.454136766568027
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 21,
+          "mae": 18.45651798315828,
+          "mape_pct": 16.754467013928256
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 22.927348836409635,
+          "mape_pct": 9.603073872726737
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 20.157682415647656,
+          "mape_pct": 7.937270819879151
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 12.11948269174321,
+          "mape_pct": 8.342937276428671
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 32.07328842878729,
+          "mape_pct": 12.76695316997991
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 70.7453009095704,
+          "mape_pct": 30.164507627996638
+        }
+      ],
+      "source_p90_mape_pct": 19.625173852710883,
+      "source_p90_mae": 35.94048967686559,
+      "normalized_curve_r2": 0.44742987528304734,
+      "normalized_curve_mae": 0.08766604175935794,
+      "source_bootstrap_95pct": {
+        "mae": [
+          15.257633111345228,
+          35.02290837760213
+        ],
+        "r2": [
+          0.6160019946358268,
+          0.9394498695441021
+        ],
+        "mape_pct": [
+          11.525375997727169,
+          19.1143214499884
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "D_low_current_extrapolation",
+      "model": "nonnegative_inverse_sqrt",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.7214265407712019,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 21.228893810634244,
+        "rmse": 24.093759064507537,
+        "r2": 0.8952548983602062,
+        "mape_pct": 13.473270169297727,
+        "p90_ape_pct": 27.222643346503677,
+        "p90_absolute_error": 41.88118673669652,
+        "target_weighted_sd": 74.44537156375195,
+        "row_equal_r2": 0.8456000705081048,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 17.337477755602286,
+            "mape_pct": 17.18206630895999
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 15.787208992867019,
+            "mape_pct": 14.896120077672546
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 19.09035643449158,
+            "mape_pct": 18.45413676656803
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 22.927348836409635,
+            "mape_pct": 9.603073872726737
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 20.157682415647656,
+            "mape_pct": 7.937270819879151
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 32.07328842878729,
+            "mape_pct": 12.76695316997991
+          }
+        ],
+        "source_p90_mape_pct": 17.818101537764008,
+        "source_p90_mae": 27.500318632598464,
+        "normalized_curve_r2": 0.552828216058709,
+        "normalized_curve_mae": 0.08219925807827011,
+        "source_bootstrap_95pct": {
+          "mae": [
+            17.5491337384873,
+            25.761934449166656
+          ],
+          "r2": [
+            0.6061746174269371,
+            0.9231185923551738
+          ],
+          "mape_pct": [
+            10.457293772144041,
+            16.489246566451413
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 108,
+      "sources": 10,
+      "materials": 28,
+      "curves": 30,
+      "mae": 22.621579716959214,
+      "rmse": 51.84637955513294,
+      "r2": 0.6259294269769828,
+      "mape_pct": 12.289015542265794,
+      "p90_ape_pct": 29.015918968438097,
+      "p90_absolute_error": 37.944878028941815,
+      "target_weighted_sd": 84.7698983592558,
+      "row_equal_r2": 0.3139176523567839,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 18.37239499126997,
+          "mape_pct": 15.257099598412179
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 15.312470464931408,
+          "mape_pct": 12.085883070030839
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 3.6721964055783713,
+          "mape_pct": 7.0881094165244765
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 12.850835550440115,
+          "mape_pct": 12.659558950271634
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 14,
+          "mae": 6.780782868534295,
+          "mape_pct": 7.145786538486656
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 6.6429814845906066,
+          "mape_pct": 2.8185021165131854
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 10.819794935511396,
+          "mape_pct": 4.273674191142597
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 16.4409906396268,
+          "mape_pct": 11.140237995766958
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 13.447753397713626,
+          "mape_pct": 5.332488379257625
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 121.87559643139556,
+          "mape_pct": 45.088815166251834
+        }
+      ],
+      "source_p90_mape_pct": 18.240271155196133,
+      "source_p90_mae": 28.722715135282492,
+      "normalized_curve_r2": 0.10073938718207887,
+      "normalized_curve_mae": 0.07616187635195666,
+      "source_bootstrap_95pct": {
+        "mae": [
+          9.217610145179023,
+          45.64004065984776
+        ],
+        "r2": [
+          -0.08402828830126892,
+          0.9775161901438402
+        ],
+        "mape_pct": [
+          6.802906840348555,
+          20.170114052064577
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "D_low_current_extrapolation",
+      "model": "positive_saturating",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.732814554186538,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 12.907705137409522,
+        "rmse": 16.849623529651062,
+        "r2": 0.9487722831884927,
+        "mape_pct": 8.737867717604676,
+        "p90_ape_pct": 22.348956463556867,
+        "p90_absolute_error": 26.24439972735138,
+        "target_weighted_sd": 74.44537156375195,
+        "row_equal_r2": 0.887570207549953,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 18.372394991269978,
+            "mape_pct": 15.257099598412184
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 15.312470464931408,
+            "mape_pct": 12.085883070030839
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 12.850835550440113,
+            "mape_pct": 12.65955895027163
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 6.6429814845906066,
+            "mape_pct": 2.8185021165131854
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 10.819794935511396,
+            "mape_pct": 4.273674191142597
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 13.447753397713626,
+            "mape_pct": 5.332488379257625
+          }
+        ],
+        "source_p90_mape_pct": 13.958329274341907,
+        "source_p90_mae": 16.842432728100693,
+        "normalized_curve_r2": 0.7667144400488288,
+        "normalized_curve_mae": 0.051434231953066546,
+        "source_bootstrap_95pct": {
+          "mae": [
+            9.918160541988042,
+            15.922172821295714
+          ],
+          "r2": [
+            0.6063477369075145,
+            0.962022182019852
+          ],
+          "mape_pct": [
+            5.120204645035235,
+            12.641538199132773
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 115,
+      "sources": 10,
+      "materials": 29,
+      "curves": 31,
+      "mae": 15.88530342821145,
+      "rmse": 24.857883461504645,
+      "r2": 0.9103432290672674,
+      "mape_pct": 10.390878331350057,
+      "p90_ape_pct": 25.339561298925677,
+      "p90_absolute_error": 30.50243447759405,
+      "target_weighted_sd": 83.0180639347949,
+      "row_equal_r2": 0.8628742584070748,
+      "per_source": [
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 12,
+          "mae": 12.569449856405093,
+          "mape_pct": 11.539261144309158
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 8,
+          "mae": 13.859660582554469,
+          "mape_pct": 11.593829882259186
+        },
+        {
+          "source": "doi:10.1021/acsomega.2c07932",
+          "rows": 7,
+          "mae": 4.569143197765128,
+          "mape_pct": 8.762613953998688
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 18,
+          "mae": 16.26668062302059,
+          "mape_pct": 15.763007173901629
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "rows": 21,
+          "mae": 10.940801016219085,
+          "mape_pct": 11.572869960187456
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 2,
+          "mae": 14.170710463528934,
+          "mape_pct": 5.932931369445944
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 2,
+          "mae": 11.40294048204268,
+          "mape_pct": 4.5022795736006005
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 25,
+          "mae": 9.707491686505229,
+          "mape_pct": 6.8863304993391425
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 2,
+          "mae": 14.644430202653155,
+          "mape_pct": 5.80812770107812
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 18,
+          "mae": 50.72172617142013,
+          "mape_pct": 21.54753205538064
+        }
+      ],
+      "source_p90_mape_pct": 16.341459662049527,
+      "source_p90_mae": 19.712185177860533,
+      "normalized_curve_r2": 0.6942734902798064,
+      "normalized_curve_mae": 0.06008133125419696,
+      "source_bootstrap_95pct": {
+        "mae": [
+          10.423542414678185,
+          24.09247593180422
+        ],
+        "r2": [
+          0.7885346735691855,
+          0.9732242843158024
+        ],
+        "mape_pct": [
+          7.589592753196108,
+          13.648266206014847
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "D_low_current_extrapolation",
+      "model": "powerlaw",
+      "baseline": "constant_low_anchor",
+      "mae_reduction_vs_baseline": 0.8123772993993492,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": true
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false,
+      "author_only_sensitivity": {
+        "rows": 44,
+        "sources": 6,
+        "materials": 12,
+        "curves": 14,
+        "mae": 13.818978701700821,
+        "rmse": 16.420210664150375,
+        "r2": 0.951350089512671,
+        "mape_pct": 9.18990614076577,
+        "p90_ape_pct": 19.3834638621165,
+        "p90_absolute_error": 23.181047796865286,
+        "target_weighted_sd": 74.44537156375195,
+        "row_equal_r2": 0.9007163118674055,
+        "per_source": [
+          {
+            "source": "doi:10.1002/smsc.202500174",
+            "rows": 12,
+            "mae": 12.569449856405097,
+            "mape_pct": 11.53926114430916
+          },
+          {
+            "source": "doi:10.1016/j.isci.2026.117248",
+            "rows": 8,
+            "mae": 13.859660582554469,
+            "mape_pct": 11.593829882259186
+          },
+          {
+            "source": "doi:10.1021/acsomega.5c05285",
+            "rows": 18,
+            "mae": 16.266680623020587,
+            "mape_pct": 15.763007173901626
+          },
+          {
+            "source": "doi:10.1039/c7ra11475c",
+            "rows": 2,
+            "mae": 14.170710463528934,
+            "mape_pct": 5.932931369445944
+          },
+          {
+            "source": "doi:10.1039/d4ta02115k",
+            "rows": 2,
+            "mae": 11.40294048204268,
+            "mape_pct": 4.5022795736006005
+          },
+          {
+            "source": "doi:10.3390/molecules31132329",
+            "rows": 2,
+            "mae": 14.644430202653155,
+            "mape_pct": 5.80812770107812
+          }
+        ],
+        "source_p90_mape_pct": 13.678418528080407,
+        "source_p90_mae": 15.45555541283687,
+        "normalized_curve_r2": 0.7672919661398804,
+        "normalized_curve_mae": 0.055249827030961755,
+        "source_bootstrap_95pct": {
+          "mae": [
+            12.547060347956794,
+            14.980139002061286
+          ],
+          "r2": [
+            0.6941328572263048,
+            0.9569460712221863
+          ],
+          "mape_pct": [
+            6.140287945597508,
+            12.487626056720428
+          ],
+          "descriptive_reused_sources": true
+        }
+      }
+    },
+    {
+      "rows": 148,
+      "sources": 17,
+      "materials": 148,
+      "curves": 0,
+      "mae": 403.9189936488623,
+      "rmse": 526.409022624786,
+      "r2": 0.6632220758453651,
+      "mape_pct": 114.10041778242231,
+      "p90_ape_pct": 152.18332855956496,
+      "p90_absolute_error": 902.0065103019442,
+      "target_weighted_sd": 907.0923756738932,
+      "row_equal_r2": 0.6922598846402364,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 471.62463739693067,
+          "mape_pct": 31.511503983606328
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 423.0465273224801,
+          "mape_pct": 14.689840053367172
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 547.7326361241759,
+          "mape_pct": 31.781697440235725
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 792.3976291218909,
+          "mape_pct": 144.05822868403186
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 299.7077420776095,
+          "mape_pct": 64.82222141440863
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 387.2696011644021,
+          "mape_pct": 247.08238937746682
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 508.23850603593206,
+          "mape_pct": 120.34888688934863
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 876.9618269580247,
+          "mape_pct": 765.5959854982914
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 137.78828184060598,
+          "mape_pct": 8.712444302740742
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 287.36514949188245,
+          "mape_pct": 41.30500810981209
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 339.52251260638366,
+          "mape_pct": 42.61552743110729
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 324.3394912376469,
+          "mape_pct": 13.170763204006064
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 323.6241710977301,
+          "mape_pct": 19.567597089992972
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 406.0226355903245,
+          "mape_pct": 42.00222827481112
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 187.61336385830705,
+          "mape_pct": 14.143047041969163
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 276.0081350208882,
+          "mape_pct": 47.74246193495437
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 277.3600450854433,
+          "mape_pct": 290.5572715710287
+        }
+      ],
+      "source_p90_mape_pct": 264.4723422548916,
+      "source_p90_mae": 645.598633323262,
+      "source_bootstrap_95pct": {
+        "mae": [
+          320.81413577853493,
+          495.4943753479197
+        ],
+        "r2": [
+          0.30906835773856317,
+          0.7993745754719558
+        ],
+        "mape_pct": [
+          46.337560156340174,
+          212.7225462762476
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_known_family_new_material",
+      "model": "random_forest",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": -0.11067704901698239,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 148,
+      "sources": 17,
+      "materials": 148,
+      "curves": 0,
+      "mae": 404.1523365440018,
+      "rmse": 530.4879333620241,
+      "r2": 0.6579827692281143,
+      "mape_pct": 114.72281532251527,
+      "p90_ape_pct": 111.42267484576787,
+      "p90_absolute_error": 943.7363126330597,
+      "target_weighted_sd": 907.0923756738932,
+      "row_equal_r2": 0.6862735674703051,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 464.8248508209115,
+          "mape_pct": 31.290033414729542
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 469.7602002006179,
+          "mape_pct": 16.215671459870556
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 537.2260697450291,
+          "mape_pct": 31.289844814541286
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 808.4110384535214,
+          "mape_pct": 143.24500504929298
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 281.86032227395333,
+          "mape_pct": 61.753428705675965
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 260.11110025545406,
+          "mape_pct": 254.63772413986365
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 591.3204307283124,
+          "mape_pct": 140.9988149056944
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 868.8442499615584,
+          "mape_pct": 764.3972431470037
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 138.61996233542897,
+          "mape_pct": 8.761476234938307
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 293.88391853924816,
+          "mape_pct": 41.74266536484472
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 265.8366346352312,
+          "mape_pct": 38.09437522501976
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 275.67881536999886,
+          "mape_pct": 11.093268641311273
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 328.3309264571392,
+          "mape_pct": 19.285178520459265
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 457.63782742133645,
+          "mape_pct": 44.42380148356041
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 259.4390558673931,
+          "mape_pct": 20.631849774933762
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 269.627518707802,
+          "mape_pct": 46.069972825560036
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 299.17679947509475,
+          "mape_pct": 276.3575067754601
+        }
+      ],
+      "source_p90_mape_pct": 263.3256371941022,
+      "source_p90_mae": 678.1566738183961,
+      "source_bootstrap_95pct": {
+        "mae": [
+          318.4487787947111,
+          497.94764796343077
+        ],
+        "r2": [
+          0.29369493098677035,
+          0.8000149813614637
+        ],
+        "mape_pct": [
+          46.77501032374909,
+          212.94739666611804
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_known_family_new_material",
+      "model": "ridge",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": -0.1113186841028726,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 148,
+      "sources": 17,
+      "materials": 148,
+      "curves": 0,
+      "mae": 363.66916378289756,
+      "rmse": 481.14333468419983,
+      "r2": 0.7186506510696165,
+      "mape_pct": 143.24330590523076,
+      "p90_ape_pct": 168.3868808567603,
+      "p90_absolute_error": 736.9555555555557,
+      "target_weighted_sd": 907.0923756738932,
+      "row_equal_r2": 0.7280242462650688,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 433.27368421052614,
+          "mape_pct": 30.787174680576538
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 367.3659999999998,
+          "mape_pct": 13.05574541637757
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 495.8666666666666,
+          "mape_pct": 29.89095719160172
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 640.7619047619047,
+          "mape_pct": 140.5155918825036
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 249.90000000000003,
+          "mape_pct": 59.42976172915738
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 448.729090909091,
+          "mape_pct": 586.034989775948
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 412.0,
+          "mape_pct": 112.82008798969615
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 504.40000000000003,
+          "mape_pct": 739.2920263877749
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 138.56000000000012,
+          "mape_pct": 8.778619437404435
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 285.0444444444445,
+          "mape_pct": 44.139570182512266
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 313.51111111111106,
+          "mape_pct": 41.61008406392509
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 325.85000000000014,
+          "mape_pct": 13.300655438534921
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 309.8619444444444,
+          "mape_pct": 18.781247221639944
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 404.38888888888897,
+          "mape_pct": 46.384499845926634
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 248.60526315789483,
+          "mape_pct": 19.46291110610867
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 284.14000000000004,
+          "mape_pct": 51.25933229624484
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 320.1167857142857,
+          "mape_pct": 479.5929457429895
+        }
+      ],
+      "source_p90_mape_pct": 522.169763356173,
+      "source_p90_mae": 499.28,
+      "source_bootstrap_95pct": {
+        "mae": [
+          309.95968384285135,
+          416.50161931036365
+        ],
+        "r2": [
+          0.45405400653868216,
+          0.8196640071694813
+        ],
+        "mape_pct": [
+          50.781303899636896,
+          262.10827949679896
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_known_family_new_material",
+      "model": "training_mean",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 148,
+      "sources": 17,
+      "materials": 148,
+      "curves": 0,
+      "mae": 403.86897644431133,
+      "rmse": 529.4808754954059,
+      "r2": 0.6592800813580145,
+      "mape_pct": 109.14128493112553,
+      "p90_ape_pct": 120.13314499607175,
+      "p90_absolute_error": 907.9649414062501,
+      "target_weighted_sd": 907.0923756738932,
+      "row_equal_r2": 0.6929589679675763,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 464.82470703124994,
+          "mape_pct": 31.29002667585792
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 448.2849267578125,
+          "mape_pct": 15.544839831069613
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 537.2258300781251,
+          "mape_pct": 31.289837370195524
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 808.4110630580356,
+          "mape_pct": 143.24500887497558
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 231.94544677734376,
+          "mape_pct": 55.70788232441019
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 240.8934769370339,
+          "mape_pct": 246.49796801499994
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 592.2275543212892,
+          "mape_pct": 141.25048277959317
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 868.84423828125,
+          "mape_pct": 764.3971402203271
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 138.61988525390635,
+          "mape_pct": 8.761471212856293
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 292.8873022460938,
+          "mape_pct": 42.615916902587074
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 319.55685424804693,
+          "mape_pct": 43.88160116342745
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 351.52739257812505,
+          "mape_pct": 14.348816784404292
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 325.3365180121528,
+          "mape_pct": 19.16613781060458
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 524.820994873047,
+          "mape_pct": 53.47861618031106
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 204.51993935032897,
+          "mape_pct": 15.831386654724573
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 269.62753515625,
+          "mape_pct": 46.06997664829671
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 246.2189345932007,
+          "mape_pct": 182.02473438049265
+        }
+      ],
+      "source_p90_mape_pct": 207.8140278342956,
+      "source_p90_mae": 678.7009578159877,
+      "source_bootstrap_95pct": {
+        "mae": [
+          315.8205313206565,
+          500.935278813576
+        ],
+        "r2": [
+          0.2810052268175795,
+          0.8082514021838255
+        ],
+        "mape_pct": [
+          44.56917019676285,
+          207.24048461440884
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_known_family_new_material",
+      "model": "xgboost",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": -0.11053951411017127,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 225,
+      "sources": 43,
+      "materials": 225,
+      "curves": 0,
+      "mae": 830.933492560892,
+      "rmse": 1061.783908904365,
+      "r2": -0.2712407002736106,
+      "mape_pct": 143.1234771478965,
+      "p90_ape_pct": 169.36386320684622,
+      "p90_absolute_error": 1801.6374975032682,
+      "target_weighted_sd": 941.720978019839,
+      "row_equal_r2": -0.3758421856096894,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 2166.973747752941,
+          "mape_pct": 73.01286680035679
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 1738.5566247870572,
+          "mape_pct": 52.50041068519947
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 266.07966904690306,
+          "mape_pct": 306.5408986121412
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e32915",
+          "rows": 3,
+          "mae": 548.9381072523494,
+          "mape_pct": 79.66675889738576
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 886.2494974152277,
+          "mape_pct": 38.26281092846378
+        },
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 240.82500000000002,
+          "mape_pct": 69.79687311489076
+        },
+        {
+          "source": "doi:10.1021/acsomega.3c04692",
+          "rows": 4,
+          "mae": 597.8364740206591,
+          "mape_pct": 75.99098774154274
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 1026.1242685317702,
+          "mape_pct": 85.39315077454347
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 1,
+          "mae": 362.5988958652613,
+          "mape_pct": 61.457439977162934
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 3,
+          "mae": 181.46378103972177,
+          "mape_pct": 20.795603032140836
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c08826",
+          "rows": 3,
+          "mae": 963.936368953905,
+          "mape_pct": 52.21749638347303
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 4,
+          "mae": 1335.894991806876,
+          "mape_pct": 51.13418908726723
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 784.6361957671933,
+          "mape_pct": 92.93613373164186
+        },
+        {
+          "source": "doi:10.1039/c9ra01255a",
+          "rows": 4,
+          "mae": 1543.9993279620244,
+          "mape_pct": 49.62904117714008
+        },
+        {
+          "source": "doi:10.1039/d0ra09182k",
+          "rows": 1,
+          "mae": 1342.814523058882,
+          "mape_pct": 67.20793408703113
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 4,
+          "mae": 432.0865937992068,
+          "mape_pct": 306.74013952527946
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 167.0326061968964,
+          "mape_pct": 10.054312956777181
+        },
+        {
+          "source": "doi:10.1039/d5ra03028e",
+          "rows": 1,
+          "mae": 2142.561744102585,
+          "mape_pct": 67.27038443022245
+        },
+        {
+          "source": "doi:10.1039/d6ra04144b",
+          "rows": 2,
+          "mae": 626.8098299768374,
+          "mape_pct": 81.11117144172687
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 521.6885377661843,
+          "mape_pct": 806.2363161702586
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 470.2682887861335,
+          "mape_pct": 160.33931087293294
+        },
+        {
+          "source": "doi:10.3390/ma17133233",
+          "rows": 4,
+          "mae": 54.79326284823753,
+          "mape_pct": 5.789146487947509
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 697.4620294808562,
+          "mape_pct": 1003.4787933615842
+        },
+        {
+          "source": "doi:10.3390/molecules26237104",
+          "rows": 3,
+          "mae": 634.6156033452938,
+          "mape_pct": 47.73039258848321
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 942.352089325503,
+          "mape_pct": 58.628903037057626
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 4,
+          "mae": 590.0,
+          "mape_pct": 39.47099319931391
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 256.54,
+          "mape_pct": 39.15165772072359
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 1011.3222777271427,
+          "mape_pct": 52.12515636328952
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 1113.6124905635493,
+          "mape_pct": 106.69460429341005
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 2,
+          "mae": 430.21209329100077,
+          "mape_pct": 46.748429791580904
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 3,
+          "mae": 679.0831198096233,
+          "mape_pct": 28.229641793693137
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 1116.6175836326527,
+          "mape_pct": 45.820018596654485
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 304.4929698621625,
+          "mape_pct": 17.95880330945378
+        },
+        {
+          "source": "doi:10.3390/nano14080686",
+          "rows": 2,
+          "mae": 671.9533071160246,
+          "mape_pct": 31.246683347228128
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 350.2987617505132,
+          "mape_pct": 36.202611435565736
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 4,
+          "mae": 2010.4985109568338,
+          "mape_pct": 65.21058443024458
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 4,
+          "mae": 265.7584157827669,
+          "mape_pct": 28.802694870267917
+        },
+        {
+          "source": "doi:10.3390/nano16040260",
+          "rows": 4,
+          "mae": 1314.8894289084176,
+          "mape_pct": 281.5988797600055
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 491.5579590577711,
+          "mape_pct": 34.77595332796161
+        },
+        {
+          "source": "doi:10.3390/polym15193976",
+          "rows": 4,
+          "mae": 569.65,
+          "mape_pct": 185.40089009535185
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 1087.2236525911987,
+          "mape_pct": 223.1547870023782
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 498.7159453355956,
+          "mape_pct": 1090.1792222423533
+        },
+        {
+          "source": "family:Tondolo_TAC_JECE_RSC",
+          "rows": 2,
+          "mae": 2291.11560484459,
+          "mape_pct": 77.61643987742107
+        }
+      ],
+      "source_p90_mape_pct": 301.5524948417141,
+      "source_p90_mae": 1699.6451654220514,
+      "source_bootstrap_95pct": {
+        "mae": [
+          665.0840143870049,
+          1010.2107016044952
+        ],
+        "r2": [
+          -0.6418733452825994,
+          -0.01333816971742239
+        ],
+        "mape_pct": [
+          80.38871931123757,
+          224.18402001201474
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_unseen_source",
+      "model": "random_forest",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": -0.031192601128712694,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 225,
+      "sources": 43,
+      "materials": 225,
+      "curves": 0,
+      "mae": 992.1123317509187,
+      "rmse": 1340.092189685554,
+      "r2": -1.0249992286755663,
+      "mape_pct": 168.53840561428177,
+      "p90_ape_pct": 225.59833399102033,
+      "p90_absolute_error": 1769.3296061191902,
+      "target_weighted_sd": 941.720978019839,
+      "row_equal_r2": -0.6061111318446037,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 2228.621900980954,
+          "mape_pct": 74.63263921757348
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 1685.3284390762474,
+          "mape_pct": 51.01273835087918
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 440.8617189920777,
+          "mape_pct": 440.7468378038841
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e32915",
+          "rows": 3,
+          "mae": 732.2482824116768,
+          "mape_pct": 120.90682711658715
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 525.2688601965068,
+          "mape_pct": 27.20910176836762
+        },
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 240.82500000000002,
+          "mape_pct": 64.76876574652253
+        },
+        {
+          "source": "doi:10.1021/acsomega.3c04692",
+          "rows": 4,
+          "mae": 474.8524437611567,
+          "mape_pct": 61.50709362241979
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 1062.9796044286106,
+          "mape_pct": 84.30509784206762
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 1,
+          "mae": 5146.854970258084,
+          "mape_pct": 872.3483000437432
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 3,
+          "mae": 822.2500096804918,
+          "mape_pct": 69.54483190101018
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c08826",
+          "rows": 3,
+          "mae": 862.7457803808418,
+          "mape_pct": 58.7902532952459
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 4,
+          "mae": 981.2674849486377,
+          "mape_pct": 37.117858357217216
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 1089.5250431571633,
+          "mape_pct": 126.7052386904129
+        },
+        {
+          "source": "doi:10.1039/c9ra01255a",
+          "rows": 4,
+          "mae": 1804.5902071250057,
+          "mape_pct": 58.48165051427833
+        },
+        {
+          "source": "doi:10.1039/d0ra09182k",
+          "rows": 1,
+          "mae": 1412.6793279090475,
+          "mape_pct": 70.7046710665189
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 4,
+          "mae": 361.07863559762376,
+          "mape_pct": 269.38410165631706
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 578.9410596400471,
+          "mape_pct": 33.197550012872064
+        },
+        {
+          "source": "doi:10.1039/d5ra03028e",
+          "rows": 1,
+          "mae": 1737.7462057788591,
+          "mape_pct": 54.56032043261724
+        },
+        {
+          "source": "doi:10.1039/d6ra04144b",
+          "rows": 2,
+          "mae": 595.1196434408843,
+          "mape_pct": 100.99181390018924
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 487.1110010665814,
+          "mape_pct": 723.1073519542206
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 759.4525096082737,
+          "mape_pct": 207.22897459740636
+        },
+        {
+          "source": "doi:10.3390/ma17133233",
+          "rows": 4,
+          "mae": 637.9646058613357,
+          "mape_pct": 66.66037950121633
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 760.5296061191902,
+          "mape_pct": 1043.4462033153043
+        },
+        {
+          "source": "doi:10.3390/molecules26237104",
+          "rows": 3,
+          "mae": 698.0188366710076,
+          "mape_pct": 52.659213261663936
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 1002.0634653763349,
+          "mape_pct": 62.38634919861785
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 4,
+          "mae": 1390.29262693056,
+          "mape_pct": 92.41988460399484
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 263.4750010002688,
+          "mape_pct": 36.29600452585861
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 1056.0871668551858,
+          "mape_pct": 54.780570191902584
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 1169.1962113800607,
+          "mape_pct": 113.03818107606925
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 2,
+          "mae": 322.14165115389596,
+          "mape_pct": 33.47708248130285
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 3,
+          "mae": 420.1271733296217,
+          "mape_pct": 17.521098208067816
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 529.2907964122764,
+          "mape_pct": 20.663545101488133
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 347.6766833217936,
+          "mape_pct": 22.870973431016466
+        },
+        {
+          "source": "doi:10.3390/nano14080686",
+          "rows": 2,
+          "mae": 1110.1708692689517,
+          "mape_pct": 52.63351525333967
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 367.12205324031873,
+          "mape_pct": 28.91400273298135
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 4,
+          "mae": 1360.1327114619169,
+          "mape_pct": 44.109827020954725
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 4,
+          "mae": 239.70960403869782,
+          "mape_pct": 21.180342974683583
+        },
+        {
+          "source": "doi:10.3390/nano16040260",
+          "rows": 4,
+          "mae": 1393.286042385746,
+          "mape_pct": 296.2446657252327
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 602.495385738253,
+          "mape_pct": 42.96419873985502
+        },
+        {
+          "source": "doi:10.3390/polym15193976",
+          "rows": 4,
+          "mae": 569.6500000000001,
+          "mape_pct": 169.72895203457267
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 1607.0329768366923,
+          "mape_pct": 322.31506897617385
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 432.72097447132126,
+          "mape_pct": 965.8234610528816
+        },
+        {
+          "source": "family:Tondolo_TAC_JECE_RSC",
+          "rows": 2,
+          "mae": 2351.2976949972963,
+          "mape_pct": 79.76590411658654
+        }
+      ],
+      "source_p90_mape_pct": 417.06048403834257,
+      "source_p90_mae": 1727.262652438337,
+      "source_bootstrap_95pct": {
+        "mae": [
+          767.7761548154522,
+          1258.5475528058719
+        ],
+        "r2": [
+          -2.83008329251407,
+          -0.12082252618583832
+        ],
+        "mape_pct": [
+          97.05496108125742,
+          251.2747848548015
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_unseen_source",
+      "model": "ridge",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": -0.2312163430036862,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 225,
+      "sources": 43,
+      "materials": 225,
+      "curves": 0,
+      "mae": 805.7985401091677,
+      "rmse": 959.7922933438164,
+      "r2": -0.03874758456826988,
+      "mape_pct": 227.1596165963057,
+      "p90_ape_pct": 313.54848752064095,
+      "p90_absolute_error": 1505.4408322641925,
+      "target_weighted_sd": 941.720978019839,
+      "row_equal_r2": -0.03812935003301865,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 1496.385718494694,
+          "mape_pct": 55.39352321530609
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 1796.8883776925175,
+          "mape_pct": 54.26320039151356
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 1354.207931831292,
+          "mape_pct": 1312.8855339697718
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e32915",
+          "rows": 3,
+          "mae": 707.732009023129,
+          "mape_pct": 124.6017806215603
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 827.3666697844297,
+          "mape_pct": 36.45974011511003
+        },
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 911.3335270693872,
+          "mape_pct": 231.5338560759415
+        },
+        {
+          "source": "doi:10.1021/acsomega.3c04692",
+          "rows": 4,
+          "mae": 715.4759897251697,
+          "mape_pct": 128.33739738692265
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 575.0807114309042,
+          "mape_pct": 117.43206295496557
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 1,
+          "mae": 927.7912651646254,
+          "mape_pct": 157.25275680756363
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 3,
+          "mae": 346.60872548208573,
+          "mape_pct": 36.58522610864973
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c08826",
+          "rows": 3,
+          "mae": 757.3764565853364,
+          "mape_pct": 65.63443674186833
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 4,
+          "mae": 1101.6551634068032,
+          "mape_pct": 41.87607221389669
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 745.7579318312917,
+          "mape_pct": 150.45895677618782
+        },
+        {
+          "source": "doi:10.1039/c9ra01255a",
+          "rows": 4,
+          "mae": 1566.9765919782317,
+          "mape_pct": 50.40960856547353
+        },
+        {
+          "source": "doi:10.1039/d0ra09182k",
+          "rows": 1,
+          "mae": 513.7325443591844,
+          "mape_pct": 25.71233955751674
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 4,
+          "mae": 1182.6558484979587,
+          "mape_pct": 701.6014228508482
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 229.85000155888147,
+          "mape_pct": 12.551894730807955
+        },
+        {
+          "source": "doi:10.1039/d5ra03028e",
+          "rows": 1,
+          "mae": 1728.994449121089,
+          "mape_pct": 54.285540003801856
+        },
+        {
+          "source": "doi:10.1039/d6ra04144b",
+          "rows": 2,
+          "mae": 841.395,
+          "mape_pct": 107.12561240415747
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 990.1226504460107,
+          "mape_pct": 1625.5325117219647
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 560.7555508789111,
+          "mape_pct": 165.16509339017992
+        },
+        {
+          "source": "doi:10.3390/ma17133233",
+          "rows": 4,
+          "mae": 554.331146117006,
+          "mape_pct": 58.81116003378831
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 466.791901955918,
+          "mape_pct": 855.2506931518503
+        },
+        {
+          "source": "doi:10.3390/molecules26237104",
+          "rows": 3,
+          "mae": 193.71983659319673,
+          "mape_pct": 16.662488129814303
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 141.583863992744,
+          "mape_pct": 8.491860383068351
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 4,
+          "mae": 590.0,
+          "mape_pct": 52.64093906458153
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 676.8145984979589,
+          "mape_pct": 116.15793889773595
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 491.03499999999997,
+          "mape_pct": 23.844077665170836
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 409.53888421224434,
+          "mape_pct": 60.510968137066236
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 2,
+          "mae": 705.3686461170062,
+          "mape_pct": 100.12856131484135
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 3,
+          "mae": 741.7007983274381,
+          "mape_pct": 31.14488646300309
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 919.0587348353748,
+          "mape_pct": 37.49589340665929
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 344.65366808902365,
+          "mape_pct": 18.452406872324598
+        },
+        {
+          "source": "doi:10.3390/nano14080686",
+          "rows": 2,
+          "mae": 623.792068168708,
+          "mape_pct": 28.795486291040547
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 372.68730345795944,
+          "mape_pct": 41.72091762929681
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 4,
+          "mae": 1624.3355205496607,
+          "mape_pct": 52.681740528311565
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 4,
+          "mae": 366.9330508789113,
+          "mape_pct": 39.86192181376647
+        },
+        {
+          "source": "doi:10.3390/nano16040260",
+          "rows": 4,
+          "mae": 786.7615032598633,
+          "mape_pct": 182.93583529642012
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 291.34119348470387,
+          "mape_pct": 25.18324456535117
+        },
+        {
+          "source": "doi:10.3390/polym15193976",
+          "rows": 4,
+          "mae": 914.3331325823126,
+          "mape_pct": 426.6011212347833
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 910.6015032598632,
+          "mape_pct": 189.4618513169043
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 1190.3536163551014,
+          "mape_pct": 2098.1608668135154
+        },
+        {
+          "source": "family:Tondolo_TAC_JECE_RSC",
+          "rows": 2,
+          "mae": 1455.4581395972796,
+          "mape_pct": 47.77008802784226
+        }
+      ],
+      "source_p90_mape_pct": 646.6013625276364,
+      "source_p90_mae": 1488.2002027152112,
+      "source_bootstrap_95pct": {
+        "mae": [
+          680.0287816857922,
+          932.848668573576
+        ],
+        "r2": [
+          -0.1444069792577959,
+          -0.036815980552880136
+        ],
+        "mape_pct": [
+          110.98319151081449,
+          373.99565613838126
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_unseen_source",
+      "model": "training_mean",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 225,
+      "sources": 43,
+      "materials": 225,
+      "curves": 0,
+      "mae": 805.1234519487612,
+      "rmse": 1006.4671056532578,
+      "r2": -0.14223294148792576,
+      "mape_pct": 146.7896856261057,
+      "p90_ape_pct": 191.2021940862018,
+      "p90_absolute_error": 1669.0859741210938,
+      "target_weighted_sd": 941.720978019839,
+      "row_equal_r2": -0.2683506032540366,
+      "per_source": [
+        {
+          "source": "doi:10.1002/cssc.202200651",
+          "rows": 20,
+          "mae": 2161.178967285156,
+          "mape_pct": 72.86061202751989
+        },
+        {
+          "source": "doi:10.1002/smsc.202500174",
+          "rows": 6,
+          "mae": 1800.1220068359378,
+          "mape_pct": 54.364887094625566
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 427.4302978515625,
+          "mape_pct": 455.7644279170901
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e32915",
+          "rows": 3,
+          "mae": 909.9505208333333,
+          "mape_pct": 156.8135499318569
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "rows": 6,
+          "mae": 850.1048990885417,
+          "mape_pct": 37.15601506071311
+        },
+        {
+          "source": "doi:10.1021/acsenvironau.3c00048",
+          "rows": 4,
+          "mae": 272.6744934082031,
+          "mape_pct": 82.0760948718526
+        },
+        {
+          "source": "doi:10.1021/acsomega.3c04692",
+          "rows": 4,
+          "mae": 503.75392150878906,
+          "mape_pct": 66.8179365431512
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c03461",
+          "rows": 7,
+          "mae": 984.6645333426341,
+          "mape_pct": 86.6171359955296
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c05285",
+          "rows": 1,
+          "mae": 736.066650390625,
+          "mape_pct": 124.75705938824153
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c06396",
+          "rows": 3,
+          "mae": 182.62353515625,
+          "mape_pct": 20.94121152977101
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c08826",
+          "rows": 3,
+          "mae": 800.5431722005208,
+          "mape_pct": 62.830575904421195
+        },
+        {
+          "source": "doi:10.1021/acsomega.5c10175",
+          "rows": 4,
+          "mae": 1180.5413818359375,
+          "mape_pct": 44.993978485018836
+        },
+        {
+          "source": "doi:10.1039/c7ra11475c",
+          "rows": 5,
+          "mae": 565.0564605712891,
+          "mape_pct": 68.3620507605836
+        },
+        {
+          "source": "doi:10.1039/c9ra01255a",
+          "rows": 4,
+          "mae": 1580.6588134765625,
+          "mape_pct": 50.874411332853434
+        },
+        {
+          "source": "doi:10.1039/d0ra09182k",
+          "rows": 1,
+          "mae": 1309.8875122070312,
+          "mape_pct": 65.55993554589746
+        },
+        {
+          "source": "doi:10.1039/d2ra02141b",
+          "rows": 4,
+          "mae": 503.7947387695312,
+          "mape_pct": 344.46453333786985
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "rows": 3,
+          "mae": 233.33882649739581,
+          "mape_pct": 12.697731603948936
+        },
+        {
+          "source": "doi:10.1039/d5ra03028e",
+          "rows": 1,
+          "mae": 1891.28125,
+          "mape_pct": 59.38088697017269
+        },
+        {
+          "source": "doi:10.1039/d6ra04144b",
+          "rows": 2,
+          "mae": 681.904033203125,
+          "mape_pct": 76.33151512735816
+        },
+        {
+          "source": "doi:10.3390/gels10010082",
+          "rows": 11,
+          "mae": 552.7701515891335,
+          "mape_pct": 880.9606201515289
+        },
+        {
+          "source": "doi:10.3390/ma14216592",
+          "rows": 6,
+          "mae": 393.9713541666667,
+          "mape_pct": 148.36633446677328
+        },
+        {
+          "source": "doi:10.3390/ma17133233",
+          "rows": 4,
+          "mae": 569.6494506835938,
+          "mape_pct": 59.471217181799005
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 5,
+          "mae": 383.69794921875007,
+          "mape_pct": 771.1404531962535
+        },
+        {
+          "source": "doi:10.3390/molecules26237104",
+          "rows": 3,
+          "mae": 588.9357299804688,
+          "mape_pct": 44.17934491505934
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 6,
+          "mae": 897.5678222656251,
+          "mape_pct": 55.81077216331632
+        },
+        {
+          "source": "doi:10.3390/molecules28248136",
+          "rows": 4,
+          "mae": 672.1315307617188,
+          "mape_pct": 40.66427395879719
+        },
+        {
+          "source": "doi:10.3390/molecules29112532",
+          "rows": 10,
+          "mae": 256.53999999999996,
+          "mape_pct": 39.82925864142062
+        },
+        {
+          "source": "doi:10.3390/molecules30010026",
+          "rows": 2,
+          "mae": 598.7277636718749,
+          "mape_pct": 27.650412885238495
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 10,
+          "mae": 612.6781982421875,
+          "mape_pct": 65.27308415078328
+        },
+        {
+          "source": "doi:10.3390/nano12010122",
+          "rows": 2,
+          "mae": 350.5570983886719,
+          "mape_pct": 40.2293748845517
+        },
+        {
+          "source": "doi:10.3390/nano12213804",
+          "rows": 3,
+          "mae": 822.5160319010416,
+          "mape_pct": 34.90734116351486
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 5,
+          "mae": 969.3891357421875,
+          "mape_pct": 39.628907187511054
+        },
+        {
+          "source": "doi:10.3390/nano14010071",
+          "rows": 9,
+          "mae": 353.9401920572917,
+          "mape_pct": 18.868579970712958
+        },
+        {
+          "source": "doi:10.3390/nano14080686",
+          "rows": 2,
+          "mae": 664.46337890625,
+          "mape_pct": 30.749974649210714
+        },
+        {
+          "source": "doi:10.3390/nano14100836",
+          "rows": 10,
+          "mae": 355.73621093750006,
+          "mape_pct": 33.63803746581067
+        },
+        {
+          "source": "doi:10.3390/nano14161368",
+          "rows": 4,
+          "mae": 1668.129248046875,
+          "mape_pct": 54.10260371128477
+        },
+        {
+          "source": "doi:10.3390/nano15050387",
+          "rows": 4,
+          "mae": 302.93176513671875,
+          "mape_pct": 33.184203373736665
+        },
+        {
+          "source": "doi:10.3390/nano16040260",
+          "rows": 4,
+          "mae": 1019.5582275390625,
+          "mape_pct": 226.42611945499752
+        },
+        {
+          "source": "doi:10.3390/polym15030663",
+          "rows": 19,
+          "mae": 601.4459017783718,
+          "mape_pct": 43.1526563628021
+        },
+        {
+          "source": "doi:10.3390/polym15193976",
+          "rows": 4,
+          "mae": 569.6500000000001,
+          "mape_pct": 203.5079269503675
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 5,
+          "mae": 1023.8208398437502,
+          "mape_pct": 211.0598889374109
+        },
+        {
+          "source": "doi:10.3390/polym16233421",
+          "rows": 8,
+          "mae": 560.1634643554687,
+          "mape_pct": 1189.1368332001796
+        },
+        {
+          "source": "family:Tondolo_TAC_JECE_RSC",
+          "rows": 2,
+          "mae": 2255.7609741210936,
+          "mape_pct": 76.35371347100632
+        }
+      ],
+      "source_p90_mape_pct": 320.8568505612959,
+      "source_p90_mae": 1650.635161132813,
+      "source_bootstrap_95pct": {
+        "mae": [
+          657.6344358656972,
+          966.6868849280908
+        ],
+        "r2": [
+          -0.47128988424127416,
+          0.0819447298321914
+        ],
+        "mape_pct": [
+          83.29922070078442,
+          226.49071189338812
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "E_BET_unseen_source",
+      "model": "xgboost",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.0008377877680382229,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90_ape": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 28,
+      "sources": 19,
+      "materials": 19,
+      "curves": 0,
+      "mae": 5.231971509155416,
+      "rmse": 7.756757759702846,
+      "r2": 0.18545459559222144,
+      "mape_pct": 5.939761671273869,
+      "p90_ape_pct": 14.656791476502326,
+      "p90_absolute_error": 11.490924517577824,
+      "target_weighted_sd": 8.594538867091712,
+      "row_equal_r2": 0.1688903968180403,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 1,
+          "mae": 1.6713781559465133,
+          "mape_pct": 1.7410189124442847
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 1,
+          "mae": 4.258831930977365,
+          "mape_pct": 4.715792194637765
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "rows": 1,
+          "mae": 17.23709014188482,
+          "mape_pct": 15.784881082312108
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 19.590924517577825,
+          "mape_pct": 29.587981363313727
+        },
+        {
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "rows": 1,
+          "mae": 1.42492355132255,
+          "mape_pct": 1.5488299470897282
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2025.125582",
+          "rows": 1,
+          "mae": 9.042432317088483,
+          "mape_pct": 8.506521464805724
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "rows": 1,
+          "mae": 5.771408862194704,
+          "mape_pct": 6.226571218248683
+        },
+        {
+          "source": "doi:10.1016/j.jpcs.2023.111318",
+          "rows": 1,
+          "mae": 4.509608385332115,
+          "mape_pct": 4.596950443763624
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 8.22593375981296,
+          "mape_pct": 10.135734147806762
+        },
+        {
+          "source": "doi:10.1039/d4ya00076e",
+          "rows": 1,
+          "mae": 1.6242136873409407,
+          "mape_pct": 1.7430926028556992
+        },
+        {
+          "source": "doi:10.1039/d5ra08165c",
+          "rows": 1,
+          "mae": 4.690812166822369,
+          "mape_pct": 4.690812166822369
+        },
+        {
+          "source": "doi:10.1088/1361-6528/ace97a",
+          "rows": 1,
+          "mae": 4.623351492420568,
+          "mape_pct": 4.703307723723873
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 2,
+          "mae": 2.0344393514089347,
+          "mape_pct": 2.0873143069610287
+        },
+        {
+          "source": "doi:10.3390/molecules28124633",
+          "rows": 1,
+          "mae": 1.5380759733670573,
+          "mape_pct": 1.59717131190764
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 1,
+          "mae": 8.563347583244678,
+          "mape_pct": 10.410099177297202
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 5,
+          "mae": 2.1627467716895152,
+          "mape_pct": 2.320839280515956
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 0.17012824905538082,
+          "mape_pct": 0.18071834401463865
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 1,
+          "mae": 2.1159795332286393,
+          "mape_pct": 2.116826263734133
+        },
+        {
+          "source": "doi:10.3390/polym17091198",
+          "rows": 1,
+          "mae": 0.151832243237493,
+          "mape_pct": 0.161009801948561
+        }
+      ],
+      "source_p90_mape_pct": 11.485055558300179,
+      "source_p90_mae": 10.681363882047744,
+      "source_bootstrap_95pct": {
+        "mae": [
+          3.1635285898439838,
+          7.657552674628532
+        ],
+        "r2": [
+          -0.392215009813739,
+          0.33145937836635886
+        ],
+        "mape_pct": [
+          3.3384926034628806,
+          9.479740311144747
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "F_retention_KOH6",
+      "model": "random_forest",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.12226094730470571,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "p90_abs": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 28,
+      "sources": 19,
+      "materials": 19,
+      "curves": 0,
+      "mae": 6.375231653575113,
+      "rmse": 8.770126404986929,
+      "r2": -0.04127764820539248,
+      "mape_pct": 6.790676563157507,
+      "p90_ape_pct": 12.002186672845028,
+      "p90_absolute_error": 11.522099205931227,
+      "target_weighted_sd": 8.594538867091712,
+      "row_equal_r2": 0.2154163413493636,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 1,
+          "mae": 11.522099205931227,
+          "mape_pct": 12.002186672845028
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 1,
+          "mae": 5.17426862650251,
+          "mape_pct": 5.729452581665939
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "rows": 1,
+          "mae": 27.171247826808482,
+          "mape_pct": 24.882095079494945
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 8.29819287029526,
+          "mape_pct": 13.092957601572202
+        },
+        {
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "rows": 1,
+          "mae": 7.844478066648605,
+          "mape_pct": 8.526606594183267
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2025.125582",
+          "rows": 1,
+          "mae": 9.375835679454639,
+          "mape_pct": 8.820165267596087
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "rows": 1,
+          "mae": 7.853973391622972,
+          "mape_pct": 8.473377270064702
+        },
+        {
+          "source": "doi:10.1016/j.jpcs.2023.111318",
+          "rows": 1,
+          "mae": 6.018859215997864,
+          "mape_pct": 6.135432432209852
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 6.746189071202224,
+          "mape_pct": 8.132382617213068
+        },
+        {
+          "source": "doi:10.1039/d4ya00076e",
+          "rows": 1,
+          "mae": 2.06590127865789,
+          "mape_pct": 2.2171080474971987
+        },
+        {
+          "source": "doi:10.1039/d5ra08165c",
+          "rows": 1,
+          "mae": 0.7844997999654169,
+          "mape_pct": 0.7844997999654167
+        },
+        {
+          "source": "doi:10.1088/1361-6528/ace97a",
+          "rows": 1,
+          "mae": 4.684025577318337,
+          "mape_pct": 4.765031106122419
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 2,
+          "mae": 4.3544011358904555,
+          "mape_pct": 4.500725650183824
+        },
+        {
+          "source": "doi:10.3390/molecules28124633",
+          "rows": 1,
+          "mae": 3.4371974226609296,
+          "mape_pct": 3.5692600443000306
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 1,
+          "mae": 3.945205521520748,
+          "mape_pct": 4.796019355118828
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 5,
+          "mae": 2.4116290139599865,
+          "mape_pct": 2.611233286143807
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 1.6169254407912632,
+          "mape_pct": 1.7175753566935026
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 1,
+          "mae": 0.5109413719117697,
+          "mape_pct": 0.5111458302438673
+        },
+        {
+          "source": "doi:10.3390/polym17091198",
+          "rows": 1,
+          "mae": 7.313530900786532,
+          "mape_pct": 7.755600106878613
+        }
+      ],
+      "source_p90_mape_pct": 12.220340858590461,
+      "source_p90_mae": 9.805088384749954,
+      "source_bootstrap_95pct": {
+        "mae": [
+          4.201873203571006,
+          9.097480514154775
+        ],
+        "r2": [
+          -2.434651615712629,
+          0.6065047427252658
+        ],
+        "mape_pct": [
+          4.637743633719421,
+          9.310973725912573
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "F_retention_KOH6",
+      "model": "ridge",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": -0.0695375122991424,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "p90_abs": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 28,
+      "sources": 19,
+      "materials": 19,
+      "curves": 0,
+      "mae": 5.960736842105266,
+      "rmse": 9.034932207825362,
+      "r2": -0.10510778065640847,
+      "mape_pct": 6.830925396866271,
+      "p90_ape_pct": 15.266634249128765,
+      "p90_absolute_error": 15.878333333333345,
+      "target_weighted_sd": 8.594538867091712,
+      "row_equal_r2": -0.13913992098310812,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 1,
+          "mae": 1.9450000000000216,
+          "mape_pct": 2.026041666666689
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 1,
+          "mae": 4.061111111111103,
+          "mape_pct": 4.496856506600712
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "rows": 1,
+          "mae": 15.878333333333345,
+          "mape_pct": 14.5405982905983
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 25.182777777777765,
+          "mape_pct": 37.64927320070577
+        },
+        {
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "rows": 1,
+          "mae": 2.277222222222207,
+          "mape_pct": 2.475241545893703
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2025.125582",
+          "rows": 1,
+          "mae": 12.817222222222242,
+          "mape_pct": 12.057593812062315
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "rows": 1,
+          "mae": 1.5488888888888823,
+          "mape_pct": 1.6710420637489292
+        },
+        {
+          "source": "doi:10.1016/j.jpcs.2023.111318",
+          "rows": 1,
+          "mae": 4.16166666666669,
+          "mape_pct": 4.242269792728533
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 8.979999999999997,
+          "mape_pct": 11.092969170483629
+        },
+        {
+          "source": "doi:10.1039/d4ya00076e",
+          "rows": 1,
+          "mae": 1.0316666666666379,
+          "mape_pct": 1.107176074980294
+        },
+        {
+          "source": "doi:10.1039/d5ra08165c",
+          "rows": 1,
+          "mae": 6.167222222222236,
+          "mape_pct": 6.167222222222236
+        },
+        {
+          "source": "doi:10.1088/1361-6528/ace97a",
+          "rows": 1,
+          "mae": 4.3727777777777845,
+          "mape_pct": 4.448400587769872
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 2,
+          "mae": 2.050555555555569,
+          "mape_pct": 2.10313755252082
+        },
+        {
+          "source": "doi:10.3390/molecules28124633",
+          "rows": 1,
+          "mae": 2.2616666666666845,
+          "mape_pct": 2.3485635167878343
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 1,
+          "mae": 12.558333333333323,
+          "mape_pct": 15.266634249128765
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 5,
+          "mae": 1.6656666666666697,
+          "mape_pct": 1.787980821319938
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 0.01833333333333087,
+          "mape_pct": 0.01947454146306657
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 1,
+          "mae": 6.125000000000014,
+          "mape_pct": 6.1274509803921715
+        },
+        {
+          "source": "doi:10.3390/polym17091198",
+          "rows": 1,
+          "mae": 0.150555555555556,
+          "mape_pct": 0.1596559443855313
+        }
+      ],
+      "source_p90_mape_pct": 14.685805482304392,
+      "source_p90_mae": 13.42944444444446,
+      "source_bootstrap_95pct": {
+        "mae": [
+          3.482834649122814,
+          9.182792982456144
+        ],
+        "r2": [
+          -0.5009231211460009,
+          -0.10209116526537598
+        ],
+        "mape_pct": [
+          3.653374087504118,
+          11.325715940815881
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "F_retention_KOH6",
+      "model": "training_mean",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.0,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "p90_abs": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    },
+    {
+      "rows": 28,
+      "sources": 19,
+      "materials": 19,
+      "curves": 0,
+      "mae": 5.203900805021586,
+      "rmse": 8.004533968642695,
+      "r2": 0.13258496797797847,
+      "mape_pct": 5.977008714791929,
+      "p90_ape_pct": 16.57908932193295,
+      "p90_absolute_error": 15.53365783691406,
+      "target_weighted_sd": 8.594538867091712,
+      "row_equal_r2": 0.01534127207767888,
+      "per_source": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "rows": 1,
+          "mae": 2.0571212768554688,
+          "mape_pct": 2.1428346633911133
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "rows": 1,
+          "mae": 4.7110189819335915,
+          "mape_pct": 5.216497599306379
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "rows": 1,
+          "mae": 18.104365539550784,
+          "mape_pct": 16.57908932193295
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "rows": 2,
+          "mae": 19.565905761718746,
+          "mape_pct": 29.551913984038237
+        },
+        {
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "rows": 1,
+          "mae": 2.9308013916015625,
+          "mape_pct": 3.1856536865234375
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2025.125582",
+          "rows": 1,
+          "mae": 5.145390319824216,
+          "mape_pct": 4.8404424457424415
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "rows": 1,
+          "mae": 6.467981872558596,
+          "mape_pct": 6.978079482747433
+        },
+        {
+          "source": "doi:10.1016/j.jpcs.2023.111318",
+          "rows": 1,
+          "mae": 4.418595886230463,
+          "mape_pct": 4.504175215321573
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "rows": 4,
+          "mae": 9.472745513916017,
+          "mape_pct": 11.6986164912222
+        },
+        {
+          "source": "doi:10.1039/d4ya00076e",
+          "rows": 1,
+          "mae": 1.3140942382812568,
+          "mape_pct": 1.4102749927895006
+        },
+        {
+          "source": "doi:10.1039/d5ra08165c",
+          "rows": 1,
+          "mae": 2.8176498413085938,
+          "mape_pct": 2.8176498413085938
+        },
+        {
+          "source": "doi:10.1088/1361-6528/ace97a",
+          "rows": 1,
+          "mae": 2.936405944824216,
+          "mape_pct": 2.9871881432596297
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "rows": 2,
+          "mae": 1.1455909729003864,
+          "mape_pct": 1.177124314190651
+        },
+        {
+          "source": "doi:10.3390/molecules28124633",
+          "rows": 1,
+          "mae": 0.29720764160155966,
+          "mape_pct": 0.30862683447721667
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "rows": 1,
+          "mae": 10.387666931152339,
+          "mape_pct": 12.627846986569825
+        },
+        {
+          "source": "doi:10.3390/molecules31132329",
+          "rows": 5,
+          "mae": 4.565841369628905,
+          "mape_pct": 4.972728948852422
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "rows": 1,
+          "mae": 0.4327462768554682,
+          "mape_pct": 0.45968374426967085
+        },
+        {
+          "source": "doi:10.3390/polym15234478",
+          "rows": 1,
+          "mae": 2.0877999877929625,
+          "mape_pct": 2.0886354419697506
+        },
+        {
+          "source": "doi:10.3390/polym17091198",
+          "rows": 1,
+          "mae": 0.015185546875002842,
+          "mape_pct": 0.01610344313361913
+        }
+      ],
+      "source_p90_mape_pct": 13.418095453642447,
+      "source_p90_mae": 11.931006652832021,
+      "source_bootstrap_95pct": {
+        "mae": [
+          3.0621735779611674,
+          7.72632203152305
+        ],
+        "r2": [
+          -0.5452316391297686,
+          0.37085877558104413
+        ],
+        "mape_pct": [
+          3.3081967043839837,
+          9.42770931783283
+        ],
+        "descriptive_reused_sources": true
+      },
+      "route": "F_retention_KOH6",
+      "model": "xgboost",
+      "baseline": "training_mean",
+      "mae_reduction_vs_baseline": 0.12697021477907988,
+      "screening_checks": {
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "p90_abs": false,
+        "source_tail": false,
+        "baseline_improvement": false
+      },
+      "all_numeric_screening_gates_pass": false,
+      "prospective_generalization_confirmed": false
+    }
+  ],
+  "failures": [
+    {
+      "route": "D_low_current_extrapolation",
+      "model": "positive_saturating",
+      "held_unit": "curve:1a6973ba8e99ca1d",
+      "train_sources": [],
+      "test_sources": [
+        "doi:10.1021/acssusresmgt.3c00028"
+      ],
+      "train_row_ids": [],
+      "test_row_ids": [
+        "v29_ALPC:ALPC-900:GCD:H2SO4:4",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:5",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:6",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:7",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:8",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:9",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:10"
+      ],
+      "calibration_row_ids": [
+        "v29_ALPC:ALPC-900:GCD:H2SO4:1",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:2",
+        "v29_ALPC:ALPC-900:GCD:H2SO4:3"
+      ],
+      "anchor_indices": [
+        0,
+        1,
+        2
+      ],
+      "status": "failed",
+      "error": "ValueError('Calibration optimizer did not converge')",
+      "fit_index": 308,
+      "elapsed_seconds": 11.109
+    }
+  ],
+  "reliable_for_design": false,
+  "no_untouched_prospective_test": true
+}

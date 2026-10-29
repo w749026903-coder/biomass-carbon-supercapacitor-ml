@@ -1,0 +1,26 @@
+{
+  "frozen_at": "2026-10-29T20:12:32+08:00",
+  "runner_sha256": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+  "plan_sha256": "db7441857721aa5ad25413c6a94a37aec09ec657e0a92c01d4f401416b55af1f",
+  "planned_fits": 986,
+  "bet_rows": 225,
+  "bet_sources": 43,
+  "bet_local_rows": 148,
+  "bet_criteria": {
+    "r2_gt": 0.95,
+    "mae_max_m2_g": 100.0,
+    "rmse_max_m2_g": 150.0,
+    "mape_max_pct": 5.0,
+    "p90_ape_max_pct": 10.0,
+    "source_p90_mape_max_pct": 10.0
+  },
+  "retention_additional_criteria": {
+    "p90_absolute_error_max_pp": 2.0,
+    "source_p90_mae_max_pp": 2.0
+  },
+  "baseline_improvement_min_fraction": 0.2,
+  "all_thresholds_are_project_engineering_goals": true,
+  "mlp_and_gp_training_weights": "MLP/GPR library fit has no sample weights here; source-balanced evaluation still enforced",
+  "predefined_sensitivity": "Author-only curves are evaluated from the same predictions, no new fits and no outcome-based subset selection; no retrospective replacement of primary",
+  "weights": "Equal source, then material or curve, then row; no sample identity predictor"
+}

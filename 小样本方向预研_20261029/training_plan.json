@@ -1,0 +1,172 @@
+{
+  "run_id": "small-sample-routes-20261029",
+  "frozen_at": "2026-10-29T20:09:54+08:00",
+  "authorization": "2026-10-29 user explicitly requests new directions, multiple methods and preliminary feasibility training; all basic metrics and generalization must meet declared targets.",
+  "input_pointer": {
+    "version": "training_latest_v7_YZPC_Kochia",
+    "directory": "全量文献训练数据接入_v7_药渣与地肤主集_20261029",
+    "database_file": "training_extension_v7.sqlite",
+    "sha256": "dd933ec815668060a10a1a828e2dcf8460eb862b16f4f9807d47b10a3816a097",
+    "entry": "data.training_latest",
+    "new_model_fits": 0
+  },
+  "input_sha256": "041d44d13d0e758ab47c1e91262254f1d921231dcbfbc279e858849876982805",
+  "inventory": {
+    "capacity_all": {
+      "rows": 434,
+      "sources": 35,
+      "materials": 130
+    },
+    "capacity_KOH6": {
+      "rows": 286,
+      "sources": 22,
+      "materials": 82
+    },
+    "capacity_H2SO4_1": {
+      "rows": 51,
+      "sources": 6,
+      "materials": 22
+    },
+    "retention_KOH6": {
+      "rows": 28,
+      "sources": 19,
+      "materials": 28
+    },
+    "BET_process_only": {
+      "rows": 249,
+      "sources": 46,
+      "materials": 249
+    },
+    "curves": {
+      "curves": 31,
+      "sources": 10,
+      "points": 208,
+      "author_only_curves": 14,
+      "author_only_sources": 6,
+      "excluded_groups": 214
+    }
+  },
+  "selection_policy": "Scopes and curve anchoring chosen by scientific input availability and independent counts, not favorable held-out scores. Existing literature/labels were previously viewed; exploratory feasibility, no untouched prospective validation.",
+  "criteria": {
+    "capacity": {
+      "r2_gt": 0.95,
+      "mae_max_F_g": 10.0,
+      "rmse_max_F_g": 15.0,
+      "mape_max_pct": 5.0,
+      "p90_ape_max_pct": 10.0,
+      "source_p90_mape_max_pct": 10.0,
+      "baseline_mae_improvement_min_fraction": 0.2
+    },
+    "retention": {
+      "r2_gt": 0.95,
+      "mae_max_percentage_points": 1.0,
+      "rmse_max_percentage_points": 1.5
+    },
+    "generalization": "Whole source-family holdout; calibrated routes permit only predeclared target-curve anchors. Source bootstrap 2000 intervals; report source-wise and curve-normalized diagnostics. Truly prospective new-source validation remains required for final reliability, not claimed by this experiment."
+  },
+  "threshold_basis": "Engineering goals, not a universal standard. Biomass-carbon J Energy Storage S2352152X2402560X reports R2 .951, MAE11.090, RMSE14.756; target MAE10/RMSE15 deliberately demanding, plus relative errors and source validation. Retention1/1.5pp is a provisional design goal rather than a published universal cutoff.",
+  "model_candidates": [
+    "ridge",
+    "random_forest",
+    "xgboost",
+    "small_BP_MLP",
+    "fixed_Matern_GPR"
+  ],
+  "model_parameters": {
+    "ridge_alpha": 1.0,
+    "forest_trees": 160,
+    "forest_max_depth": 6,
+    "forest_leaf": 2,
+    "xgb_trees": 160,
+    "xgb_depth": 2,
+    "xgb_learning_rate": 0.04,
+    "mlp_hidden": [
+      16
+    ],
+    "mlp_alpha": 1.0,
+    "mlp_solver": "lbfgs",
+    "mlp_max_iter": 1500,
+    "gpr_optimizer": null,
+    "gpr_Matern_nu": 1.5,
+    "gpr_length_scale": 2.0,
+    "gpr_alpha": 0.04,
+    "seed": 20261029
+  },
+  "routes": [
+    {
+      "id": "A",
+      "name": "限定工况的零实测比电容预测",
+      "domains": [
+        "capacity_KOH6",
+        "capacity_H2SO4_1"
+      ],
+      "primary": "random_forest",
+      "validation": "Leave one entire source family out; no target-source capacitance or sample identity input. Fit only training-fold encoding and imputation."
+    },
+    {
+      "id": "B",
+      "name": "一个低倍率实测点+跨来源归一化迁移",
+      "primary": "random_forest",
+      "models": [
+        "ridge",
+        "random_forest",
+        "xgboost"
+      ],
+      "validation": "Leave source out; other sources train C/C_low from log(j/j_low), C_low and static material features. The new material has exactly its minimum-current capacitance anchor; test all other currents."
+    },
+    {
+      "id": "C",
+      "name": "三个预定倍率实测点补全中间倍率",
+      "primary": "pchip_logcurrent",
+      "models": [
+        "linear_logcurrent",
+        "pchip_logcurrent",
+        "nonnegative_inverse_sqrt"
+      ],
+      "validation": "Per curve anchor indices 0,(n-1)//2,n-1, determined only by sorted currents. Test remaining currents, never score anchors. Independent new curves may be calibrated with those three measurements. All normalized-curve and author-only sensitivities retained."
+    },
+    {
+      "id": "D",
+      "name": "三个低电流点外推高电流",
+      "primary": "nonnegative_inverse_sqrt",
+      "models": [
+        "powerlaw",
+        "nonnegative_inverse_sqrt",
+        "positive_saturating"
+      ],
+      "validation": "Per curve anchor first three currents; predict all higher currents. All eligible curves kept, no selection on errors."
+    },
+    {
+      "id": "E",
+      "name": "只用制备参数预测BET或同家族插值",
+      "primary": "random_forest",
+      "models": [
+        "ridge",
+        "random_forest",
+        "xgboost"
+      ],
+      "validation": "BET process-only >=3 nonmissing process fields. Both leave-source-out and leave-material-out within sources with>=5 materials; latter assumes known family/protocol and is not unseen-source generalization."
+    },
+    {
+      "id": "F",
+      "name": "保留循环任务但限制6M KOH",
+      "primary": "random_forest",
+      "models": [
+        "ridge",
+        "random_forest",
+        "xgboost"
+      ],
+      "validation": "New narrowed task leave source out; keep difficult records and true >100 labels, no inherited old training plan rerun."
+    }
+  ],
+  "eligibility": {
+    "zero_shot_min_sources": 5,
+    "zero_shot_min_rows": 25,
+    "curves_min_points": 5,
+    "bet_min_fields": 3,
+    "bet_within_source_min_materials": 5
+  },
+  "stop": "One frozen pass of named scopes/models; no hyperparameter search, no stacking selected on outer outcomes, no added scopes after seeing scores. Maximum1200 estimator/calibration fits; invalid runs stop, failures preserved. No global packages or pretrained weights installed/downloaded, LightGBM and TabPFN noted as untested resource options.",
+  "new_data_admission": false,
+  "new_service": false
+}

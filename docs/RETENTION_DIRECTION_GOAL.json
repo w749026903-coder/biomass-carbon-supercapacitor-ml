@@ -1,0 +1,15 @@
+{
+  "requested_on": "2026-10-29",
+  "status": "active",
+  "objective": "保持原定输入输出，设计并初步验证多个小样本/受限范围的电容保持率预测方案；R²>0.95与误差、来源泛化同时验收，不能保证或伪造达标。",
+  "fixed_inputs": ["cycle_count", "reported_current_A_g", "electrolyte", "concentration_mol_L", "cycle_voltage_lower_V", "cycle_voltage_upper_V", "BET_m2_g", "reference_electrode"],
+  "fixed_output": "capacitance_retention_pct_at_specified_cycles_and_conditions",
+  "contract_basis": "循环稳定性数据库_v0.6_报告工况训练就绪_20261018/README.md and live data.cycling_db reported_3e feature_matrix feature_names verified 2026-10-29",
+  "permitted_changes": ["科学理由事先限定材料/测试范围，元数据仅用于筛选和来源隔离", "原输入内的特征变换/交互与物理启发模型", "预先固定的RF/XGBoost/BP/GPR/岭回归或等权组合", "基于现有文献补充符合相同输入输出合同的真实记录"],
+  "not_target_success": ["比电容、BET、倍率曲线或寿命预测的高分", "增加早期实测保持率、终点相关量或样品/来源ID作为输入", "更换测试集/删掉困难数据直到出现0.95", "把训练R²或Pearson r平方当外部测试R²"],
+  "engineering_acceptance": {"r2_gt": 0.95, "mae_max_percentage_points": 2, "rmse_max_percentage_points": 3, "p90_absolute_error_max_percentage_points": 5, "source_p90_mae_max_percentage_points": 5, "mae_improvement_vs_training_mean_min_fraction": 0.2, "preferred_precision_mae_pp": 1, "preferred_precision_rmse_pp": 1.5},
+  "threshold_status": "项目建议验收线，参考保持率论文并结合用户0.95挑战目标，不是行业统一标准；需同一最终未见来源测试同时达到。",
+  "generalization": "整来源隔离、预处理限训练折、全部样品和工况同源一起留出；报告分来源误差和来源bootstrap区间。研究候选确定后再收集未用于路线选择的独立来源作最终验收，探索性留出不冒称最终外部验证。",
+  "run_directory": "小样本方向预研_20261029",
+  "steering": "用户连续强调保持率以及原定输入输出固定。早期阶段中比电容/BET与三点倍率插值仅为偏离目标的方法试验，不能报项目达标。"
+}

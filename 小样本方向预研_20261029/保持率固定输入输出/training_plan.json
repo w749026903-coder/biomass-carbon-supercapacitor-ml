@@ -1,0 +1,82 @@
+{
+  "frozen_at": "2026-10-29T20:24:33+08:00",
+  "authorization": "2026-10-29 follow-up explicitly fixes capacitance retention and original input/output; this new phase excludes early-cycle/history inputs and all capacitance/BET targets.",
+  "fixed_inputs": [
+    "cycle_count",
+    "reported_current_A_g",
+    "electrolyte",
+    "concentration_mol_L",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V",
+    "BET_m2_g",
+    "reference_electrode"
+  ],
+  "fixed_output": "capacitance_retention_pct",
+  "scope_counts": {
+    "R1_KOH6_10000": {
+      "rows": 14,
+      "sources": 7
+    },
+    "R2_KOH6_10000_j10": {
+      "rows": 10,
+      "sources": 6
+    },
+    "R3_plant_residue_KOH6": {
+      "rows": 13,
+      "sources": 9
+    }
+  },
+  "source_snapshot_sha256": "041d44d13d0e758ab47c1e91262254f1d921231dcbfbc279e858849876982805",
+  "runner_sha256": "021981573608d57a469c8dd25a7a6491efde63b4ca29b21ec9e911a56ed0e1e3",
+  "engine_sha256": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+  "goal_sha256": "bb4d50b9e917d4cb55e418f09349abed388fea770e35398500f408a85fc0cdc6",
+  "models": [
+    "ridge",
+    "random_forest",
+    "xgboost",
+    "small_BP_MLP",
+    "fixed_Matern_GPR"
+  ],
+  "primary": "random_forest",
+  "scope_filters": "6M KOH+10000 cycles; same+j10; plant-residue metadata filter+6M KOH. All eight API inputs retained, class/DOI/sample never encoded.",
+  "routes": [
+    "R1/R2/R3: narrow-domain full source holdout",
+    "R4: 10000-normalized log-retention-rate target transformation over all47, using original N in reconstruction",
+    "R5: known source family leave one material out, only families with>=4 materials; one shared input schema, no identity predictor",
+    "R6: fixed equal RF+XGB and RF+GPR prediction blends on R1/R2/R3, no learned weights"
+  ],
+  "planned_fits": 251,
+  "max_fits": 400,
+  "parameters": {
+    "ridge_alpha": 1.0,
+    "forest_trees": 160,
+    "forest_max_depth": 6,
+    "forest_leaf": 2,
+    "xgb_trees": 160,
+    "xgb_depth": 2,
+    "xgb_learning_rate": 0.04,
+    "mlp_hidden": [
+      16
+    ],
+    "mlp_alpha": 1.0,
+    "mlp_solver": "lbfgs",
+    "mlp_max_iter": 1500,
+    "gpr_optimizer": null,
+    "gpr_Matern_nu": 1.5,
+    "gpr_length_scale": 2.0,
+    "gpr_alpha": 0.04,
+    "seed": 20261029
+  },
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_max_percentage_points": 2,
+    "rmse_max_percentage_points": 3,
+    "p90_absolute_error_max_percentage_points": 5,
+    "source_p90_mae_max_percentage_points": 5,
+    "mae_improvement_vs_training_mean_min_fraction": 0.2,
+    "preferred_precision_mae_pp": 1,
+    "preferred_precision_rmse_pp": 1.5
+  },
+  "validation": "Exploratory reused sources; no outcome-based added scope or hyperparameter search. R5 tests known families only, cannot pass unseen-family generalization gate.",
+  "stop": "Exactly scheduled fits; failures kept, no further candidates after seeing results. No extra measured inputs, simulated labels, old plan reruns or data admission."
+}
