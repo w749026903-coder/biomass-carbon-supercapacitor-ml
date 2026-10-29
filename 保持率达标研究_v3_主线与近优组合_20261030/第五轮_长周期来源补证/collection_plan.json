@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-10-30T02:13:23.368046+08:00",
+  "purpose": "Repair source support for long-cycle activation/degradation without deleting the unique50k activation case. Collection only; no new model fit/admission from search snippets.",
+  "selection": "Primary biomass porous-carbon aqueous3E cycling at>=50000 cycles; also inventory2E findings separately. Retain all qualifying identities irrespective of retention direction or score.",
+  "candidates": [
+    {
+      "doi": "10.3390/catal16040368",
+      "primary_url": "https://www.mdpi.com/2073-4344/16/4/368",
+      "reason": "50000-cycle biomass/lignin3E; not in current training. Primary search already exposed endpoint, not a blind test."
+    },
+    {
+      "doi": "10.1021/acsomega.0c06171",
+      "pmcid": "PMC7992145",
+      "local_source": "三电极端点扩充_20261018/new_sources/PMC7992145/main.xml",
+      "reason": "50000-cycle biomass/dragonfruit3E; existing reviewed source, never call untouched independent source. Area current500mA/cm2 retained as metadata, not falsely put into reportedA/g. Optional B fields may be missing per approved contract."
+    }
+  ],
+  "nonselected_inventory": [
+    {
+      "doi": "10.1039/d5ra08165c",
+      "reason": "Already used source;50000 result refers2E, not3E."
+    },
+    {
+      "doi": "10.1021/acssuschemeng.9b02425",
+      "reason": "Search long-cycle results correspond symmetric2E and solid-state; do not relabel3E."
+    },
+    {
+      "doi": "10.1038/s41598-020-64020-5",
+      "reason": "Coal-based, outside unchanged biomass scope."
+    }
+  ],
+  "immutable_output": "specifiedN capacitance_retention_pct",
+  "current_contract": "Existing10/20percent windows,min3 points,optional verified static fields; mass/area units and electrode configurations remain distinct.",
+  "no_new_admission_without_graph_and_conditions_review": true,
+  "new_formal_cycle_admissions": 0,
+  "new_external_validation_claims": 0
+}

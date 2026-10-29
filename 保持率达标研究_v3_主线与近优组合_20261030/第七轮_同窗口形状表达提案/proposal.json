@@ -1,0 +1,43 @@
+{
+  "status": "awaiting_user_contract_discussion_no_model_fits",
+  "reason": "Existing six summaries may lose initial-peak/curvature information; more complex regressors did not resolve the data limitations. These features summarize exactly the same already approved early observations, not longer cycling or new experiments.",
+  "output_unchanged": "specifiedN capacitance retention",
+  "window_unchanged": [
+    0.1,
+    0.2
+  ],
+  "minimum_current_window_points": 3,
+  "proposed_additional_features": [
+    "first_half_slope_pp",
+    "last_half_slope_pp",
+    "quadratic_curvature_pp",
+    "peak_relative_time_fraction"
+  ],
+  "normalization": "z=(n-min_early_n)/(max_early_n-min_early_n), only points with n_upper<=declared fraction*N. Halves split at z=.5; each must have>=3 real early points. Otherwise all4 remain missing and old row is preserved. No interpolation/future point borrowing.",
+  "formulas": {
+    "slopes": "OLS slope ofR onz separately for each half; expressedpp per observed early span.",
+    "curvature": "2*a2 from degree2 OLS inR=a0+a1*z+a2*z^2; not assumed physical derivative or ground truth.",
+    "peak": "z at maximum observed earlyR, first occurrence if tied; graph noise noted, not guaranteed physical activation peak."
+  },
+  "counts": {
+    "B_3E_early20": {
+      "current_rows": 30,
+      "current_sources": 24,
+      "shape_computable_rows": 18,
+      "shape_computable_sources": 16,
+      "original_rows_not_removed": true
+    },
+    "B_3E_early10": {
+      "current_rows": 20,
+      "current_sources": 19,
+      "shape_computable_rows": 4,
+      "shape_computable_sources": 4,
+      "original_rows_not_removed": true
+    }
+  },
+  "deployment_cost": "No extra physical measurement beyond approved early window. Software input expands from6 summaries to6+4 summaries and therefore requires discussion before fitting.",
+  "validation": "If approved, retain six-summary control, same source isolation/author labels/uncertainty; no source filtered by new feature availability or outcome; A/2E histories preserved.",
+  "data_sha256": "e242336b078b4dc56c782050ffb68730141ee36862850008887a6a25869ae305",
+  "model_fits": 0,
+  "old_training_api_changed": false
+}

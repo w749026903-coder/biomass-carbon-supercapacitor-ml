@@ -1,0 +1,84 @@
+{
+  "frozen_at": "2026-10-30T02:16:14.597457+08:00",
+  "runner_sha256": "5609d322bbeedde4629e76d1da68773dbe970d46994c10173dc193c3d296d5b8",
+  "protected": {
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/input_snapshot.json": "e242336b078b4dc56c782050ffb68730141ee36862850008887a6a25869ae305",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/candidate_configurations.json": "c1697432bdd09dcf1bebb689556d8e5df455746649a703f825a91dc2d17102f8",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/training_plan.json": "c35a3c8a677fb2077f064bd16036e5b641ca5fa895e326fbf28accb7c4957834",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/nested_selection.json": "ee9adc9105f2e75a4e6cb3ede277a38ed67622a612b65463eece679ba6ac10a2",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/fit_predictions.jsonl.gz": "84f93034deadacbc23c827fd991f4fd9ba4303f70e43fef1def4ee26f6bf5fdd",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/heldout_predictions.json": "eda7905a7d68d4dddf0d72de86523fac2705ce1ae8928841ecd8548840785722",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/results.json": "a7273632e17059809cb618e4921135a06d59ecf9c08318dd9795bc0f425747c6",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三轮_扩充来源验证/independent_verification.json": "c13a24850cb0dc72fe7cb6c337f8e2f7e6fee80cd85ed3df02265035e3d5b460",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818"
+  },
+  "rules": [
+    "prior_nested_selected",
+    "family8_equal",
+    "candidate16_equal",
+    "oneSE_family_mean",
+    "oneSE_simplest",
+    "near4_median",
+    "soft_family_T1",
+    "soft_family_T2",
+    "inverse_family_MAE"
+  ],
+  "primary": "oneSE_family_mean",
+  "simplicity_order": [
+    "Ridge_early",
+    "RF_early",
+    "ExtraTrees_early",
+    "GPR_early",
+    "XGB_early",
+    "RF_static",
+    "GPR_static",
+    "XGB_static"
+  ],
+  "near_families": [
+    "RF_early",
+    "GPR_early",
+    "XGB_early",
+    "RF_static"
+  ],
+  "cohorts": [
+    "B_3E_early20",
+    "B_3E_early10"
+  ],
+  "source_counts": {
+    "B_3E_early20": [
+      30,
+      24
+    ],
+    "B_3E_early10": [
+      20,
+      19
+    ]
+  },
+  "new_estimator_fits": 0,
+  "new_ensemble_weight_fits": 0,
+  "rule_definition": {
+    "oneSE": "For each outer source, use winning candidate inner-source MAE standard error=std(per-sourceMAE,ddof1)/sqrt(G); accept selected family representatives with innerMAE<=winner+SE; mean them or choose first fixed simplicity order. No outer error informs eligibility.",
+    "soft": "Weights=softmax(-(innerMAE-minMAE)/T), T fixed1 or2pp over8 family winners.",
+    "inverse": "Weights proportional1/(innerMAE+.25pp) over8 family winners. No outer weights learned.",
+    "candidate16_equal": "Equal mean all16 archived candidate predictions; no candidate eliminated.",
+    "near4_median": "Median RF/GPR/XGB-early andRF-static selected in prior inner folds."
+  },
+  "metrics_unchanged": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "scientific_status": "New prespecified analysis rules on already exposed development sources. Model predictions reused, not new prospective confirmation. Keep original third-round primary/results intact. No highest-score replacement of this primary.",
+  "output": "capacitance_retention_pct_at_declaredN_and_conditions",
+  "inputs": "Same six approved early summaries and optional static values, windows/minimum3 unchanged.",
+  "A_and_2E": "Historical A/2E results retained; no corresponding new inner prediction archive or new data in this batch, no false new fits.",
+  "stop": "Exactly9 finite rules x2 unchanged cohorts. No outcome-driven rules added.",
+  "goal_status": "active"
+}

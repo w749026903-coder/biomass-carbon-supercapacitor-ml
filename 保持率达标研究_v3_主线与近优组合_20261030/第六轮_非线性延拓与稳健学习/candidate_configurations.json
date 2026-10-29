@@ -1,0 +1,384 @@
+{
+  "reused_controls": [
+    {
+      "id": "ExtraTrees_early_p2_raw_delta",
+      "family": "ExtraTrees_early",
+      "kind": "ExtraTrees",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "ExtraTrees_early_p2_raw_log_ratio",
+      "family": "ExtraTrees_early",
+      "kind": "ExtraTrees",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "log_ratio"
+    },
+    {
+      "id": "GPR_early_p1_continuation_delta",
+      "family": "GPR_early",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_early_p1_continuation_log_ratio",
+      "family": "GPR_early",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "log_ratio"
+    },
+    {
+      "id": "GPR_static_p1_raw_delta",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_static_p0_raw_delta",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 2.0,
+        "alpha": 0.04,
+        "nu": 1.5
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "RF_early_p0_raw_delta",
+      "family": "RF_early",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "RF_early_p0_continuation_delta",
+      "family": "RF_early",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "RF_static_p2_raw_delta",
+      "family": "RF_static",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 1,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "RF_static_p0_raw_delta",
+      "family": "RF_static",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "Ridge_early_p2_continuation_log_ratio",
+      "family": "Ridge_early",
+      "kind": "Ridge",
+      "parameters": {
+        "alpha": 10.0
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "log_ratio"
+    },
+    {
+      "id": "Ridge_early_p2_continuation_delta",
+      "family": "Ridge_early",
+      "kind": "Ridge",
+      "parameters": {
+        "alpha": 10.0
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_early_p1_raw_log_ratio",
+      "family": "XGB_early",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "log_ratio"
+    },
+    {
+      "id": "XGB_early_p1_raw_delta",
+      "family": "XGB_early",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_static_p1_raw_delta",
+      "family": "XGB_static",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_static_p1_raw_log_ratio",
+      "family": "XGB_static",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "log_ratio"
+    }
+  ],
+  "new": [
+    {
+      "id": "Ridge_signed_p0.25",
+      "family": "Ridge_signed",
+      "kind": "Ridge_signed",
+      "power": 0.25,
+      "target": "delta",
+      "parameters": {
+        "alpha": 1.0
+      }
+    },
+    {
+      "id": "Ridge_signed_p0.5",
+      "family": "Ridge_signed",
+      "kind": "Ridge_signed",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "alpha": 1.0
+      }
+    },
+    {
+      "id": "Ridge_signed_p1.0",
+      "family": "Ridge_signed",
+      "kind": "Ridge_signed",
+      "power": 1.0,
+      "target": "delta",
+      "parameters": {
+        "alpha": 1.0
+      }
+    },
+    {
+      "id": "Huber_signed_p0.25",
+      "family": "Huber_signed",
+      "kind": "Huber_signed",
+      "power": 0.25,
+      "target": "delta",
+      "parameters": {
+        "epsilon": 1.35,
+        "alpha": 0.1,
+        "max_iter": 500,
+        "tol": 1e-05
+      }
+    },
+    {
+      "id": "Huber_signed_p0.5",
+      "family": "Huber_signed",
+      "kind": "Huber_signed",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "epsilon": 1.35,
+        "alpha": 0.1,
+        "max_iter": 500,
+        "tol": 1e-05
+      }
+    },
+    {
+      "id": "Huber_signed_p1.0",
+      "family": "Huber_signed",
+      "kind": "Huber_signed",
+      "power": 1.0,
+      "target": "delta",
+      "parameters": {
+        "epsilon": 1.35,
+        "alpha": 0.1,
+        "max_iter": 500,
+        "tol": 1e-05
+      }
+    },
+    {
+      "id": "GPR_linear_kernel_a0.01",
+      "family": "GPR_linear_kernel",
+      "kind": "GPR_linear_kernel",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "alpha": 0.01,
+        "length_scale": 2.0,
+        "nu": 1.5,
+        "sigma_0": 1.0
+      }
+    },
+    {
+      "id": "GPR_linear_kernel_a0.1",
+      "family": "GPR_linear_kernel",
+      "kind": "GPR_linear_kernel",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "alpha": 0.1,
+        "length_scale": 2.0,
+        "nu": 1.5,
+        "sigma_0": 1.0
+      }
+    },
+    {
+      "id": "GPR_linear_kernel_a1.0",
+      "family": "GPR_linear_kernel",
+      "kind": "GPR_linear_kernel",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "alpha": 1.0,
+        "length_scale": 2.0,
+        "nu": 1.5,
+        "sigma_0": 1.0
+      }
+    },
+    {
+      "id": "BP_signed_h4",
+      "family": "BP_signed",
+      "kind": "BP_signed",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "hidden_layer_sizes": [
+          4
+        ],
+        "alpha": 10.0,
+        "solver": "lbfgs",
+        "max_iter": 500,
+        "tol": 1e-05,
+        "random_state": 20261029
+      }
+    },
+    {
+      "id": "BP_signed_h8",
+      "family": "BP_signed",
+      "kind": "BP_signed",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "hidden_layer_sizes": [
+          8
+        ],
+        "alpha": 10.0,
+        "solver": "lbfgs",
+        "max_iter": 500,
+        "tol": 1e-05,
+        "random_state": 20261029
+      }
+    },
+    {
+      "id": "BP_signed_h8_4",
+      "family": "BP_signed",
+      "kind": "BP_signed",
+      "power": 0.5,
+      "target": "delta",
+      "parameters": {
+        "hidden_layer_sizes": [
+          8,
+          4
+        ],
+        "alpha": 10.0,
+        "solver": "lbfgs",
+        "max_iter": 500,
+        "tol": 1e-05,
+        "random_state": 20261029
+      }
+    }
+  ]
+}
