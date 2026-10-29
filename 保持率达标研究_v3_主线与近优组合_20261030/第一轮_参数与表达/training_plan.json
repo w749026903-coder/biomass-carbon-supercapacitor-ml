@@ -1,0 +1,104 @@
+{
+  "frozen_at": "2026-10-30T00:12:50.517341+08:00",
+  "runner_sha256": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+  "preparer_sha256": "4754da1cc165c5a88bd51861cdcb9dcfc8c2123c55b8ce29a7ccee9cd379e73f",
+  "input_sha256": "a0b3cb33e82eb4fbc0ecf625cf11402c799d7efd1fceeadc8351fb45d5d0d7e4",
+  "candidate_sha256": "c2a2ee106c279bccb3b5a27ead81843aa0ddf24b369259e29f1ba7d802850677",
+  "source_protection_sha256": "bc42d405d3d3c6d0f28cdaf8c57b481a5f33ce48c93172919643591c2c4624c8",
+  "goal_sha256": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+  "B_cohorts": [
+    "B_3E_early20",
+    "B_3E_early10",
+    "B_2E_early20"
+  ],
+  "A_cohorts": [
+    "A_2E",
+    "A_3E"
+  ],
+  "counts": {
+    "B_3E_early20": {
+      "rows": 13,
+      "sources": 8
+    },
+    "B_3E_early10": {
+      "rows": 7,
+      "sources": 6
+    },
+    "B_2E_early20": {
+      "rows": 6,
+      "sources": 6
+    },
+    "A_2E": {
+      "rows": 31,
+      "sources": 25
+    },
+    "A_3E": {
+      "rows": 47,
+      "sources": 34
+    }
+  },
+  "planned_estimator_fits": 6324,
+  "planned_ensemble_weight_fits": 20,
+  "primary_method": "nested_selected",
+  "near_threshold_branches": [
+    "RF_early",
+    "GPR_early",
+    "XGB_early",
+    "RF_static"
+  ],
+  "additional_families": [
+    "GPR_static",
+    "XGB_static",
+    "Ridge_early",
+    "ExtraTrees_early"
+  ],
+  "B_candidates": 72,
+  "A_candidates": 12,
+  "seed": 20261029,
+  "selection": "For each outer source, rank all candidates by inner whole-source MAE, tie RMSE then ID. Also retain separately selected per-family models. All numerical fixed-candidate outer scores are exploratory diagnostics, never a posthoc primary replacement.",
+  "pair_cache": "Train a candidate once excluding source pair{i,j}; predictions for j can be inner validation for outer i, and vice versa. Neither excluded source enters preprocessing/fitting. Only j labels enter outer-i inner selection. Outer final predictions come from separate fits excluding i only.",
+  "features": "Raw approved6 early summaries; optional approved static6/7; continuation view uses only algebraic functions of approved six. No new measured descriptor or later cycle information.",
+  "targets": "delta=Rfinal-Rearly; log_ratio=log(Rfinal/Rearly); test target values never used. A uses Rfinal or log(Rfinal). Train-only source-weighted target scaling.",
+  "ensemble": "Prespecified RF/GPR/XGB-early and RF-static branches; equal mean and nonnegative unit-sum inner-OOF least-squares weights with fixed1.0 L2 penalty to equal weights, no outer labels.",
+  "baselines": [
+    "training_mean",
+    "early_persistence",
+    "early_linear"
+  ],
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "generalization": "At least10 development source families and genuinely new untouched external-source validation; reuse of these development sources alone never achieves reliable-model acceptance.",
+  "author_values_changed": 0,
+  "frozen_conflicts_retained": 3,
+  "early2E10": "Previous4-source results retained as history, not newly optimized because two-level training would have only2 source families.",
+  "stop": "Exactly6324 base estimator fits plus20 inner ensemble-weight fits. No in-run new candidates or scope. Next research phase remains active irrespective of this phase completion.",
+  "method_sources": [
+    "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.gaussian_process.kernels.Matern.html",
+    "https://xgboost.readthedocs.io/en/stable/parameter.html"
+  ],
+  "installed_versions": {
+    "captured": "post_run_observation_no_installation_performed",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\机器学习-超级电容器\\循环稳定性数据库_v0.2_20261017\\.venv\\Scripts\\python.exe",
+    "packages": {
+      "numpy": "2.3.4",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.7.2",
+      "xgboost": "3.1.1",
+      "joblib": "1.5.2"
+    }
+  },
+  "weighting_note": "GPR estimator fit has no sample-weight argument; train target scaling and every metric are source-weighted. Other candidate fits receive source weights.",
+  "pre_fit_amendment": "Before any estimator fit: add the explicitly required20% improvement check against the linear baseline, and document GPR weighting. Candidate/input lists and6324 fit budget unchanged."
+}
