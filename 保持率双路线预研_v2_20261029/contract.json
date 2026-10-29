@@ -1,0 +1,28 @@
+{
+  "version": "retention_dual_route_v2_20261029",
+  "status": "scenarios_authorized_data_audit_in_progress",
+  "authorization": "User explicitly selected: 同时评估下列两种方案，分别验收（推荐）; both material/condition-only and early-observation-assisted retention prediction.",
+  "immutable_output": "capacitance_retention_pct_at_declared_cycle_count_and_conditions",
+  "route_A": {
+    "scenario": "No measured cycling retention from the query material is an external input",
+    "two_electrode_inputs": ["cycle_count", "reported_current_A_g", "electrolyte", "concentration_mol_L", "cycle_voltage_lower_V", "cycle_voltage_upper_V", "BET_m2_g"],
+    "three_electrode_inputs": ["cycle_count", "reported_current_A_g", "electrolyte", "concentration_mol_L", "cycle_voltage_lower_V", "cycle_voltage_upper_V", "BET_m2_g", "reference_electrode"],
+    "baseline_3e": "Reuse completed v1 eight-input feasibility results as a fixed historical comparison; do not rerun old plans",
+    "new_work": "Evaluate 2E independently; review dense cycling labels for future fixed-input trajectory supervision"
+  },
+  "route_B": {
+    "scenario": "Use only a declared initial observation window to predict later retention; target cycle count is specified before observation",
+    "predeclared_observation_fractions": [0.1, 0.2],
+    "allowed_new_features": ["last_early_retention_pct", "early_mean_retention_pct", "early_retention_slope_per_1000_cycles", "early_retention_range_pp", "early_observed_cycle_count", "target_cycle_count"],
+    "optional_verified_static_inputs": ["reported_current_A_g", "electrolyte", "concentration_mol_L", "cycle_voltage_lower_V", "cycle_voltage_upper_V", "BET_m2_g", "reference_electrode"],
+    "minimum_early_points": 3,
+    "test_target": "Author-declared final cycle count and own curve retention; author-reported endpoint kept distinct from graph-read endpoint",
+    "prohibited": ["using future retention to construct early features", "same curve/material/source future points in model training", "lifetime or capacitance substituted for retention output"]
+  },
+  "electrode_handling": "Two- and three-electrode tasks have separate datasets, models and reported acceptance; reference electrode is not zero-filled for2E.",
+  "data_rules": "Real original figures/tables/SI only. Pixel/graph reading bounds, author endpoint and conflicts retained. Missing BET may be a recorded optional missing feature in B, not invented or a modification of old strict A admission.",
+  "validation": "Hold out entire source family, including all its samples/curves, separately by electrode task. Exploratory reused literature is not untouched prospective validation.",
+  "criteria_reference": "docs/RETENTION_CONTRACT_DISCUSSION_20261029.md",
+  "model_fits_so_far": 0,
+  "next": "Audit and hash-bind real curve data, then freeze a finite training plan before new fits. Do not add candidates in response to outer scores."
+}

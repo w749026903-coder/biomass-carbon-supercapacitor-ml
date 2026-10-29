@@ -1,0 +1,71 @@
+{
+  "frozen_at": "2026-10-29T21:07:10+08:00",
+  "authorization": "User selected both A/B scenarios, separately evaluated; this is material/condition-only A.",
+  "output": "capacitance_retention_pct",
+  "inputs_by_system": {
+    "2E": [
+      "cycle_count",
+      "reported_current_A_g",
+      "electrolyte",
+      "concentration_mol_L",
+      "cycle_voltage_lower_V",
+      "cycle_voltage_upper_V",
+      "BET_m2_g"
+    ],
+    "3E": [
+      "cycle_count",
+      "reported_current_A_g",
+      "electrolyte",
+      "concentration_mol_L",
+      "cycle_voltage_lower_V",
+      "cycle_voltage_upper_V",
+      "BET_m2_g",
+      "reference_electrode"
+    ]
+  },
+  "input_sha256": "de32daa1797bc4a47dc3f916cf188c7c799843971bf4a6bf9144c24cd000fda7",
+  "baseline_source_sha256": "43527fd87d5066e8e93ef5f96a6990a3fe445e9286393175fd8a1328bc8d2039",
+  "contract_sha256": "fb0edc6bcb833e615be454246ee6190ef8c603b15c620f812da5420041f64795",
+  "runner_sha256": "b324fd906a843f97ccbaf4f7e24089bdd7cc26e0246bdafc8e7f6eb1e50affeb",
+  "engine_sha256": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+  "models": [
+    "ridge",
+    "random_forest",
+    "xgboost",
+    "small_BP_MLP",
+    "fixed_Matern_GPR"
+  ],
+  "primary_model": "random_forest",
+  "planned_fits": 295,
+  "parameters": {
+    "ridge_alpha": 1.0,
+    "forest_trees": 160,
+    "forest_max_depth": 6,
+    "forest_leaf": 2,
+    "xgb_trees": 160,
+    "xgb_depth": 2,
+    "xgb_learning_rate": 0.04,
+    "mlp_hidden": [
+      16
+    ],
+    "mlp_alpha": 1.0,
+    "mlp_solver": "lbfgs",
+    "mlp_max_iter": 1500,
+    "gpr_optimizer": null,
+    "gpr_Matern_nu": 1.5,
+    "gpr_length_scale": 2.0,
+    "gpr_alpha": 0.04,
+    "seed": 20261029
+  },
+  "validation": "Whole-source-family holdout separately within each electrode configuration. Existing explored sources, no untouched external claim. No early measured retention as input.",
+  "stop": "One named pass only; no score-driven new model, scope or hyperparameters.",
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_improvement_vs_mean_min": 0.2
+  },
+  "data_admissions": 0
+}

@@ -1,0 +1,191 @@
+{
+  "audit_scope": "Original multiple-route preliminary feasibility/report objective, including later user-approved A/B. No reduction to high-score-only or one scenario.",
+  "requirements": [
+    {
+      "requirement": "多个适配小样本路线及初步可行性",
+      "status": "proved",
+      "current_evidence": "原8项阶段R1–R5及固定组合251次；用户批准后的A/B两场景、两/三电极、10%/20%单独验证439次。每项结果和失败/负分保留。",
+      "files": [
+        {
+          "path": "../小样本方向预研_20261029/保持率固定输入输出/training_plan.json",
+          "sha256": "4ce78d934412be81cdcc50657d61a38db49f5fdbcb97e436ba1b407c0834e640"
+        },
+        {
+          "path": "A_材料工况直接预测/results.json",
+          "sha256": "fcad2482e9f5ab07edf7ff0950256452c69f65185791916e6a8b9302dec58bea"
+        },
+        {
+          "path": "B_早期实测辅助预测/results.json",
+          "sha256": "035b9650f5de4614b998ab459a827fa4b88e53858a3d0c316fb2ae6793a2f416"
+        }
+      ]
+    },
+    {
+      "requirement": "保持率输出与可协商输入边界",
+      "status": "proved",
+      "current_evidence": "用户批准A/B；输出均指定N/条件的作者电容保持率。原8项为基准，B额外早期实测成本明示，2E/3E分开。",
+      "files": [
+        {
+          "path": "contract.json",
+          "sha256": "fb0edc6bcb833e615be454246ee6190ef8c603b15c620f812da5420041f64795"
+        },
+        {
+          "path": "reviewed_curve_data.json",
+          "sha256": "ce7589fda1c4509da4f7c2746055770d51e2788c5eede7f69c496e5068c1f468"
+        }
+      ]
+    },
+    {
+      "requirement": "R²挑战、MAE/RMSE、相对误差与简单基线",
+      "status": "proved",
+      "current_evidence": "所有原定模型均报告来源均衡指标、均值基线；B另有早期沿用/线性外推、配对区间、尾部和共同对象比较。没有全面通过的模型。",
+      "files": [
+        {
+          "path": "A_材料工况直接预测/results.json",
+          "sha256": "fcad2482e9f5ab07edf7ff0950256452c69f65185791916e6a8b9302dec58bea"
+        },
+        {
+          "path": "B_早期实测辅助预测/results.json",
+          "sha256": "035b9650f5de4614b998ab459a827fa4b88e53858a3d0c316fb2ae6793a2f416"
+        },
+        {
+          "path": "../小样本方向预研_20261029/审计补充/相对误差与配对基线核验.json",
+          "sha256": "3a3760c238b3d7cb9927f0e2be26b2bb6509be8880d8e6ee06c2bcb24648b243"
+        }
+      ]
+    },
+    {
+      "requirement": "先冻结有限计划、停止追分",
+      "status": "proved",
+      "current_evidence": "A295/B144正好等于各计划，事件全留；旧251和偏题986保留历史不重跑，不把比电容高分充保持率。",
+      "files": [
+        {
+          "path": "A_材料工况直接预测/training_plan.json",
+          "sha256": "631a8d9295430dac54f98e24656bb36f47b0befb36eacafeeb26ab9ee0d1c005"
+        },
+        {
+          "path": "B_早期实测辅助预测/training_plan.json",
+          "sha256": "89c276707e875e269764fe659c23b3cef2e3ce867cdee2248c23a9b859417090"
+        },
+        {
+          "path": "A_材料工况直接预测/fit_events.jsonl",
+          "sha256": "f6db887a7c32378706a42b150ce7e9ed3c5118166be500ec8e47d0900269029f"
+        },
+        {
+          "path": "B_早期实测辅助预测/fit_events.jsonl",
+          "sha256": "1a19fa748cd3869b5d8ef8d8c3b15578077301ba3d3001ef555fa1604b7fa768"
+        }
+      ]
+    },
+    {
+      "requirement": "实际数据支持与使用边界",
+      "status": "proved",
+      "current_evidence": "55来源资源审查，22曲线核验，19/13可作探索输入；3图文偏差冻结。图读界限、基准未知、后期拐点和样本非独立已披露。不是全项目文献利用率普查。",
+      "files": [
+        {
+          "path": "curve_resource_inventory.json",
+          "sha256": "5a0ce4975684970ac7f22dac305b89a43fb53beecde051b06e1223191a587434"
+        },
+        {
+          "path": "reviewed_curve_data.json",
+          "sha256": "ce7589fda1c4509da4f7c2746055770d51e2788c5eede7f69c496e5068c1f468"
+        },
+        {
+          "path": "冲突与读图限制.md",
+          "sha256": "d01859269054bbb4858435cfea1a7ba8ca0892e4b6165c22147ca39d1b9c72d0"
+        }
+      ]
+    },
+    {
+      "requirement": "泄漏与泛化核验",
+      "status": "proved",
+      "current_evidence": "已知来源家族/材料/曲线整组隔离；早期上界≤10/20%N，训练内预处理、测试编码目标恒1。只作已探索来源验证，无新独立测试。",
+      "files": [
+        {
+          "path": "independent_verification.json",
+          "sha256": "dd7a8b7b74d2521d0be115df92d44cc285fdd9c61c21e3391687fcbcf9288f6c"
+        },
+        {
+          "path": "B_早期实测辅助预测/heldout_predictions.json",
+          "sha256": "8103083d70e49573e5b4dcae691e08c709453d52e40c8bf1da54336b690279d8"
+        }
+      ]
+    },
+    {
+      "requirement": "原库/旧模型与真实性",
+      "status": "proved",
+      "current_evidence": "63保护源和v1.3全部46输出SHA保持；v7DB SHA另核一致。A既有标签后来发现3图文偏差后在解释中提示，B冻结；不改标签、不删除难例或裁至100。",
+      "files": [
+        {
+          "path": "independent_verification.json",
+          "sha256": "dd7a8b7b74d2521d0be115df92d44cc285fdd9c61c21e3391687fcbcf9288f6c"
+        },
+        {
+          "path": "冲突与读图限制.md",
+          "sha256": "d01859269054bbb4858435cfea1a7ba8ca0892e4b6165c22147ca39d1b9c72d0"
+        }
+      ]
+    },
+    {
+      "requirement": "可复现结果和方法学习",
+      "status": "proved",
+      "current_evidence": "参数/成员/事件/输入/代码SHA、两个环境版本与复现说明齐备。保持率研究和固定GitHub提交阅读证据区分于其他目标，无第三方代码执行。",
+      "files": [
+        {
+          "path": "复现说明.md",
+          "sha256": "c53ffedfa4f753ae0d8ecf396689c6210f0ee882c34fd1b2b728db42962387c4"
+        },
+        {
+          "path": "ML环境版本.json",
+          "sha256": "7c3c5d85a9d4b2e486f885f2b2339b5c39a36ff8ac68755a5b9dcfdb2d5ed150"
+        },
+        {
+          "path": "图读环境版本.json",
+          "sha256": "5d1b07eb17865a3102570ba0b69edc8eeee621a2b9c89e2cb5e1fa21e56100c6"
+        },
+        {
+          "path": "../小样本方向预研_20261029/保持率固定输入输出/文献与开源方法审查.json",
+          "sha256": "4d1504537171e454a79b5f503b7c8f697408bd67a384f4c695b331b8fad9a8f6"
+        }
+      ]
+    },
+    {
+      "requirement": "白话可视化报告、多路线取舍与后续思路",
+      "status": "proved",
+      "current_evidence": "报告呈现预定主方案与RF候选、散点、全48模型表、基线/区间/误差限制和4条后续建议；桌面手机/链接已核验。最新文档覆盖旧待选择状态。",
+      "files": [
+        {
+          "path": "双路线保持率预研报告.html",
+          "sha256": "81928fb3db437090af325d609ef951f26da4bbc38768b9bfc96157b87b20ab9e"
+        },
+        {
+          "path": "README.md",
+          "sha256": "eb03144e237ee381fef02117f4a85a3bdc8d304b70bf6e62d4b934750d903497"
+        },
+        {
+          "path": "版式核验.json",
+          "sha256": "c4abed13056408fea1746ba9db89201826229b164ac5b2c659248c7894900580"
+        },
+        {
+          "path": "../docs/knowledge/早期循环辅助保持率与小样本核验_20261029.md",
+          "sha256": "a19554ec8f78a7888dc66ecf367935a220d58d499f9d9b8b4e62fede553cd7a0"
+        }
+      ]
+    },
+    {
+      "requirement": "挑战目标是否真实达到",
+      "status": "not_achieved_not_required_for_preliminary_feasibility_completion",
+      "current_evidence": "0个模型全面过线；R²0.907757候选只有13条/8来源，不能宣称0.95或可靠外部泛化。任务原定义允许负的可行性结论。",
+      "files": [
+        {
+          "path": "completion.json",
+          "sha256": "49816ae3307ecc0caf09019196eeec5dde70eee2f698379aaa6aa73232a7c149"
+        }
+      ]
+    }
+  ],
+  "scientific_deliverables_verified": true,
+  "high_accuracy_retention_model_achieved": false,
+  "user_report_delivery": "HTML prepared and rendered; open in Codex and final user report follow.",
+  "git_sync": "Verified separately after normal push; do not infer remote SHA from this pre-commit artifact."
+}

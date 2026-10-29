@@ -1,0 +1,124 @@
+{
+  "comparisons": [
+    {
+      "route": "R1_KOH6_10000",
+      "model": "random_forest",
+      "label": "R1 固定6M KOH与10000圈",
+      "rows": 14,
+      "sources": 7,
+      "mae_pp": 5.156471462736221,
+      "rmse_pp": 6.460769981067628,
+      "r2": -0.5226696380512332,
+      "mape_pct": 5.897942832693279,
+      "baseline_mae_pp": 4.689880952380943,
+      "baseline_mape_pct": 5.35231277931916,
+      "mae_change_vs_baseline_pp": 0.4665905103552781,
+      "mae_improvement_pct": -9.948877489489384,
+      "paired_source_bootstrap_95pct_delta_mae_pp": [
+        -1.0186138366897108,
+        1.9922103250974175
+      ],
+      "statistically_confirmed_improvement": false,
+      "generalization_scope": "whole-source-family-held-out exploration",
+      "untouched_external_test": false
+    },
+    {
+      "route": "R2_KOH6_10000_j10",
+      "model": "random_forest",
+      "label": "R2 再固定10 A/g",
+      "rows": 10,
+      "sources": 6,
+      "mae_pp": 4.120746479434766,
+      "rmse_pp": 5.646010864298891,
+      "r2": -0.5456233685117517,
+      "mape_pct": 4.646906454607913,
+      "baseline_mae_pp": 4.129466666666667,
+      "baseline_mape_pct": 4.65694204146535,
+      "mae_change_vs_baseline_pp": -0.00872018723190049,
+      "mae_improvement_pct": 0.21116981769802035,
+      "paired_source_bootstrap_95pct_delta_mae_pp": [
+        -0.597006977686677,
+        0.7131262539235507
+      ],
+      "statistically_confirmed_improvement": false,
+      "generalization_scope": "whole-source-family-held-out exploration",
+      "untouched_external_test": false
+    },
+    {
+      "route": "R3_plant_residue_KOH6",
+      "model": "random_forest",
+      "label": "R3 植物残余物与6M KOH",
+      "rows": 13,
+      "sources": 9,
+      "mae_pp": 4.130473803334423,
+      "rmse_pp": 5.435416954815079,
+      "r2": -0.4824332164989411,
+      "mape_pct": 4.465748865085784,
+      "baseline_mae_pp": 3.7083333333333304,
+      "baseline_mape_pct": 4.077546005297247,
+      "mae_change_vs_baseline_pp": 0.4221404700010929,
+      "mae_improvement_pct": -11.383563235984528,
+      "paired_source_bootstrap_95pct_delta_mae_pp": [
+        -0.9198377306531751,
+        1.7069484435405486
+      ],
+      "statistically_confirmed_improvement": false,
+      "generalization_scope": "whole-source-family-held-out exploration",
+      "untouched_external_test": false
+    },
+    {
+      "route": "R4_per_cycle_rate",
+      "model": "random_forest",
+      "label": "R4 每圈衰减速率变换",
+      "rows": 47,
+      "sources": 34,
+      "mae_pp": 7.646050520452598,
+      "rmse_pp": 11.158644163543917,
+      "r2": -1.3595406650062447,
+      "mape_pct": 8.366138899021447,
+      "baseline_mae_pp": 5.148982174688054,
+      "baseline_mape_pct": 5.776308323763404,
+      "mae_change_vs_baseline_pp": 2.4970683457645437,
+      "mae_improvement_pct": -48.496348618954514,
+      "paired_source_bootstrap_95pct_delta_mae_pp": [
+        0.5699153270204776,
+        4.872397303028482
+      ],
+      "statistically_confirmed_improvement": false,
+      "generalization_scope": "whole-source-family-held-out exploration",
+      "untouched_external_test": false
+    },
+    {
+      "route": "R5_known_family",
+      "model": "fixed_Matern_GPR",
+      "label": "R5 已知家族内留材料",
+      "rows": 13,
+      "sources": 3,
+      "mae_pp": 3.28638667388586,
+      "rmse_pp": 5.120867286913375,
+      "r2": 0.22005038590953663,
+      "mape_pct": 3.842091976334054,
+      "baseline_mae_pp": 3.727777777777777,
+      "baseline_mape_pct": 4.25583902990398,
+      "mae_change_vs_baseline_pp": -0.44139110389191716,
+      "mae_improvement_pct": 11.840595931526842,
+      "paired_source_bootstrap_95pct_delta_mae_pp": [
+        -1.0197625359226776,
+        0.272097457090851
+      ],
+      "statistically_confirmed_improvement": false,
+      "generalization_scope": "known-family new-material exploration",
+      "untouched_external_test": false
+    }
+  ],
+  "bootstrap": "2000 paired source resamples; descriptive, reused development sources, no new fits",
+  "relative_error_definition": "100*source/material-balanced mean(abs(predicted-actual)/actual). Retention actuals positive. Near100 labels can yield small MAPE despite poor R2.",
+  "failed_model_coverage": [
+    {
+      "route": "R1_KOH6_10000",
+      "model": "small_BP_MLP",
+      "valid_predictions": 10,
+      "complete": false
+    }
+  ]
+}
