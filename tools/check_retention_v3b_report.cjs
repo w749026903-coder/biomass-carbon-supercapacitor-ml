@@ -1,0 +1,11 @@
+const fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('node:url'),{createRequire}=require('node:module');
+const{chromium}=createRequire(process.env.CODEX_NODE_MODULES+'/package.json')('playwright');
+(async()=>{const root=path.resolve('保持率达标研究_v3_主线与近优组合_20261030'),browser=await chromium.launch({headless:true,channel:'msedge'});try{
+ const page=await browser.newPage({viewport:{width:1360,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(pathToFileURL(path.join(root,'研究进度.html')).href);await page.evaluate(()=>document.fonts.ready);const text=await page.locator('body').innerText();
+ for(const s of ['目标继续active','30条 / 24来源','3440＋43','0.675','1.632','87107'])if(!text.includes(s))throw Error('Missing '+s);
+ const points=await page.locator('svg circle').evaluateAll(xs=>xs.map(x=>({x:+x.getAttribute('cx'),y:+x.getAttribute('cy')})));if(points.length!==30||points.some(p=>p.x<55||p.x>495||p.y<40||p.y>270))throw Error('Scatter point outside plotted data axes');
+ if(await page.locator('table').first().locator('tbody tr').count()!==14)throw Error('Expected14 comparison rows');
+ for(const href of await page.locator('a').evaluateAll(xs=>xs.map(x=>x.getAttribute('href'))))if(!fs.existsSync(path.resolve(root,decodeURIComponent(href))))throw Error('Missing link '+href);
+ const desktop=await page.evaluate(()=>({width:innerWidth,content:document.documentElement.scrollWidth}));if(desktop.width!==desktop.content)throw Error('Desktop overflow');await page.screenshot({path:path.join(root,'研究进度预览.png'),fullPage:true});await page.setViewportSize({width:390,height:844});const mobile=await page.evaluate(()=>({width:innerWidth,content:document.documentElement.scrollWidth}));if(mobile.width!==mobile.content)throw Error('Mobile overflow');await page.locator('summary').click();if(await page.locator('details').getAttribute('open')===null)throw Error('Cannot expand10% results');if(errors.length)throw Error(errors.join('\n'));
+ const result={status:'passed',desktop,mobile,comparison_rows:14,local_links_exist:true,early10_toggle_checked:true,browser_errors:errors};fs.writeFileSync(path.join(root,'版式核验.json'),JSON.stringify(result,null,2)+'\n');process.stdout.write(JSON.stringify(result)+'\n');
+ }finally{await browser.close();}})().catch(e=>{process.stderr.write(e.stack+'\n');process.exitCode=1});

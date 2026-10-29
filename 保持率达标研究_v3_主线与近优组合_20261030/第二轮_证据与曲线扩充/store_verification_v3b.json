@@ -1,0 +1,31 @@
+{
+  "status": "research_store_verified",
+  "checks": 53,
+  "input_sha256": "9a55024d8b7b55fc634dcfcd31b4019d744f10a5413077ac1c74ab9d3d3ad8e9",
+  "sqlite_sha256": "3f79549f536831107d93bd0e0b1d6413d651f0c9d2f93e8790df8ee08db36f9e",
+  "views": {
+    "training_B_2E_early10": [
+      4,
+      4
+    ],
+    "training_B_2E_early20": [
+      6,
+      6
+    ],
+    "training_B_3E_early10": [
+      20,
+      19
+    ],
+    "training_B_3E_early20": [
+      30,
+      24
+    ]
+  },
+  "new_early_curves": 17,
+  "old_endpoint_labels_changed": 0,
+  "new_formal_cycle_admissions": 0,
+  "new_independent_external_sources": 0,
+  "phase2_model_fits": 0,
+  "research_goal_status": "active",
+  "api": "sqlite3.connect(\"file:/absolute/path/cycling_research_v3b.sqlite?mode=ro\",uri=True); SELECT * FROM training_B_3E_early20; do not treat all curve_points as independent samples."
+}

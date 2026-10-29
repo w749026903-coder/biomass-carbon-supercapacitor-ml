@@ -1,0 +1,1302 @@
+{
+  "status": "diagnostics_complete_no_new_fits",
+  "model_fits": 0,
+  "goal_status": "active",
+  "input_sha256": "e242336b078b4dc56c782050ffb68730141ee36862850008887a6a25869ae305",
+  "routes": {
+    "B_3E_early20": {
+      "rows": 30,
+      "sources": 24,
+      "primary_r2": 0.6753692031800946,
+      "primary_mae": 3.090146948554058,
+      "primary_rmse": 4.157731830155256,
+      "target_weighted_sd": 7.297290161874969,
+      "rmse_needed_for_r2_gt_095": 1.6317236853492874,
+      "inner_family_choices": {
+        "GPR_early": 6,
+        "GPR_static": 15,
+        "RF_early": 1,
+        "Ridge_early": 1,
+        "RF_static": 1
+      },
+      "difficult_cases": [
+        {
+          "row_id": "incoming:ADD_027_T01::early20",
+          "sample": "CCL-K2CO3-1-700",
+          "source_family": "doi:10.1016/j.biombioe.2026.109168",
+          "target_cycles": 50000.0,
+          "observed_retention_pct": 109.2,
+          "predicted_retention_pct": 96.47456739119325,
+          "absolute_error_pp": 12.725432608806756,
+          "early_points": 10,
+          "last_early": 100.7168458781362,
+          "mean_early": 100.50179211469535,
+          "early_range": 1.4336917562724096,
+          "slope": 0.06492471069344982,
+          "slope_y_bounds_only": [
+            -0.25969884277379907,
+            0.38954826416070143
+          ],
+          "maximum_reading_bound_pp": 1.0752688172043037,
+          "target_cycles_outside_other_source_range": true,
+          "other_source_cycle_range": [
+            1000.0,
+            20000.0
+          ],
+          "actual_remaining_change_pp": 8.483154121863805
+        },
+        {
+          "row_id": "legacy:R087_CY01::early20",
+          "sample": "OAC623",
+          "source_family": "doi:10.1007/s00339-023-07141-8",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 85.5,
+          "predicted_retention_pct": 94.14439273555654,
+          "absolute_error_pp": 8.644392735556536,
+          "early_points": 8,
+          "last_early": 96.44128113879003,
+          "mean_early": 99.06583629893238,
+          "early_range": 3.558718861209968,
+          "slope": -19.834222443835777,
+          "slope_y_bounds_only": [
+            -52.7430087505242,
+            13.070041925422899
+          ],
+          "maximum_reading_bound_pp": 2.1582733812949613,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -10.941281138790032
+        },
+        {
+          "row_id": "candidate:TE037::early20",
+          "sample": "AC-600C",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 78.4,
+          "predicted_retention_pct": 85.87504718347137,
+          "absolute_error_pp": 7.475047183471361,
+          "early_points": 5,
+          "last_early": 88.34196891191709,
+          "mean_early": 88.73056994818653,
+          "early_range": 1.2953367875647785,
+          "slope": -9.576058686769999,
+          "slope_y_bounds_only": [
+            -24.558347973918572,
+            5.406230600379011
+          ],
+          "maximum_reading_bound_pp": 0.7772020725388558,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -9.941968911917087
+        },
+        {
+          "row_id": "candidate:TE026::early20",
+          "sample": "KAC-5",
+          "source_family": "doi:10.1002/ente.202201281",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 90.31,
+          "predicted_retention_pct": 95.18065735555082,
+          "absolute_error_pp": 4.870657355550819,
+          "early_points": 10,
+          "last_early": 96.64570230607967,
+          "mean_early": 98.30188679245283,
+          "early_range": 3.35429769392033,
+          "slope": -1.8142560034674513,
+          "slope_y_bounds_only": [
+            -2.7704894756353884,
+            -0.8580225312995036
+          ],
+          "maximum_reading_bound_pp": 0.6289308176100629,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -6.335702306079668
+        },
+        {
+          "row_id": "incoming:ADD_031_T01::early20",
+          "sample": "SS-300",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "target_cycles": 8000.0,
+          "observed_retention_pct": 98.3,
+          "predicted_retention_pct": 93.98218848826828,
+          "absolute_error_pp": 4.317811511731719,
+          "early_points": 8,
+          "last_early": 98.44897959182066,
+          "mean_early": 98.66326530610634,
+          "early_range": 2.204081632652702,
+          "slope": -1.2480663755613963,
+          "slope_y_bounds_only": [
+            -3.932719337596347,
+            1.4365865864735197
+          ],
+          "maximum_reading_bound_pp": 1.4693877551018062,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -0.14897959182066245
+        },
+        {
+          "row_id": "incoming:ADD_035_T01::early20",
+          "sample": "CMC",
+          "source_family": "doi:10.1039/d6nj00244g",
+          "target_cycles": 15000.0,
+          "observed_retention_pct": 96.7,
+          "predicted_retention_pct": 101.01571842502975,
+          "absolute_error_pp": 4.315718425029743,
+          "early_points": 7,
+          "last_early": 100.6896551724138,
+          "mean_early": 100.2463054187192,
+          "early_range": 0.6896551724137936,
+          "slope": 0.32764797720882716,
+          "slope_y_bounds_only": [
+            -1.8157901500811595,
+            2.4710861044987587
+          ],
+          "maximum_reading_bound_pp": 2.068965517241381,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.9896551724137908
+        },
+        {
+          "row_id": "candidate:TE009::early20",
+          "sample": "YPAC-1",
+          "source_family": "doi:10.3390/molecules28186543",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 82.26,
+          "predicted_retention_pct": 86.46422551686237,
+          "absolute_error_pp": 4.2042255168623655,
+          "early_points": 8,
+          "last_early": 89.00523560209425,
+          "mean_early": 90.87041884816753,
+          "early_range": 6.020942408376953,
+          "slope": -3.260946828622878,
+          "slope_y_bounds_only": [
+            -5.751303140550599,
+            -0.7705905166951679
+          ],
+          "maximum_reading_bound_pp": 1.5706806282722567,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -6.74523560209424
+        },
+        {
+          "row_id": "candidate:V05:018::early20",
+          "sample": "SNPB-800-4",
+          "source_family": "doi:10.3390/nano13172431",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 94.14,
+          "predicted_retention_pct": 90.16410208014646,
+          "absolute_error_pp": 3.975897919853537,
+          "early_points": 9,
+          "last_early": 93.61702127659575,
+          "mean_early": 93.77462568951931,
+          "early_range": 1.7730496453900741,
+          "slope": -0.7389749145929636,
+          "slope_y_bounds_only": [
+            -2.515295642262144,
+            1.037345813076191
+          ],
+          "maximum_reading_bound_pp": 1.0638297872340416,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": 0.5229787234042504
+        },
+        {
+          "row_id": "candidate:TE021::early20",
+          "sample": "OPBNP",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 93.6,
+          "predicted_retention_pct": 97.0589737973846,
+          "absolute_error_pp": 3.4589737973846013,
+          "early_points": 38,
+          "last_early": 99.2,
+          "mean_early": 99.95263157894736,
+          "early_range": 1.2000000000000028,
+          "slope": -0.5486566214449381,
+          "slope_y_bounds_only": [
+            -2.4012852266070106,
+            1.3039719837171018
+          ],
+          "maximum_reading_bound_pp": 1.2000000000000028,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -5.6000000000000085
+        },
+        {
+          "row_id": "candidate:TE030::early20",
+          "sample": "ALPC-800",
+          "source_family": "doi:10.1021/acssusresmgt.3c00028",
+          "target_cycles": 2000.0,
+          "observed_retention_pct": 100.0,
+          "predicted_retention_pct": 97.24057893630929,
+          "absolute_error_pp": 2.7594210636907093,
+          "early_points": 4,
+          "last_early": 100.0,
+          "mean_early": 100.01136363636364,
+          "early_range": 0.022727272727266268,
+          "slope": -0.022882231404980788,
+          "slope_y_bounds_only": [
+            -0.5720557851239931,
+            0.5262913223139662
+          ],
+          "maximum_reading_bound_pp": 0.06818181818181301,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": 0.0
+        },
+        {
+          "row_id": "legacy:R078_CY01::early20",
+          "sample": "C/600C",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "target_cycles": 8000.0,
+          "observed_retention_pct": 98.1,
+          "predicted_retention_pct": 95.3557264204051,
+          "absolute_error_pp": 2.744273579594889,
+          "early_points": 18,
+          "last_early": 98.21826280623608,
+          "mean_early": 98.46572630536997,
+          "early_range": 1.2249443207126944,
+          "slope": -0.6523370180357034,
+          "slope_y_bounds_only": [
+            -1.9533388515028332,
+            0.648664815431423
+          ],
+          "maximum_reading_bound_pp": 0.6681514476614723,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -0.11826280623608909
+        },
+        {
+          "row_id": "candidate:TE029::early20",
+          "sample": "ALPC-800",
+          "source_family": "doi:10.1021/acssusresmgt.3c00028",
+          "target_cycles": 2000.0,
+          "observed_retention_pct": 100.0,
+          "predicted_retention_pct": 97.31461688257218,
+          "absolute_error_pp": 2.6853831174278184,
+          "early_points": 4,
+          "last_early": 100.0,
+          "mean_early": 100.00568181818181,
+          "early_range": 0.022727272727266268,
+          "slope": -0.06776660839158913,
+          "slope_y_bounds_only": [
+            -0.7067089160837554,
+            0.5711756993007668
+          ],
+          "maximum_reading_bound_pp": 0.06818181818181301,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": 0.0
+        },
+        {
+          "row_id": "incoming:ADD_056_T01::early20",
+          "sample": "AMFS-derived activated carbon",
+          "source_family": "doi:10.1007/s10854-026-18573-2",
+          "target_cycles": 5000.0,
+          "observed_retention_pct": 100.0,
+          "predicted_retention_pct": 97.37779078299938,
+          "absolute_error_pp": 2.6222092170006164,
+          "early_points": 3,
+          "last_early": 100.0,
+          "mean_early": 100.0,
+          "early_range": 0.0,
+          "slope": 0.0,
+          "slope_y_bounds_only": [
+            -2.4430002406420117,
+            2.4430002406420863
+          ],
+          "maximum_reading_bound_pp": 0.6097560975609753,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": 0.0
+        },
+        {
+          "row_id": "candidate:V05:009::early20",
+          "sample": "QSC-2",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 94.8,
+          "predicted_retention_pct": 97.36991512108926,
+          "absolute_error_pp": 2.5699151210892666,
+          "early_points": 6,
+          "last_early": 100.0,
+          "mean_early": 100.0,
+          "early_range": 0.0,
+          "slope": 0.0,
+          "slope_y_bounds_only": [
+            -11.231413795936929,
+            11.231413795936966
+          ],
+          "maximum_reading_bound_pp": 6.741573033707866,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -5.200000000000003
+        },
+        {
+          "row_id": "incoming:ADD_003_T01::early20",
+          "sample": "AUACW",
+          "source_family": "doi:10.1039/d4cp01914h",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 93.6,
+          "predicted_retention_pct": 95.36954500178425,
+          "absolute_error_pp": 1.7695450017842518,
+          "early_points": 7,
+          "last_early": 97.36217356897916,
+          "mean_early": 97.51290650789464,
+          "early_range": 3.868812098830574,
+          "slope": -1.6644942999040102,
+          "slope_y_bounds_only": [
+            -3.490153623307422,
+            0.16116502349948256
+          ],
+          "maximum_reading_bound_pp": 1.0551305724083306,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.762173568979165
+        },
+        {
+          "row_id": "candidate:TE038::early20",
+          "sample": "AC-700C",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 62.2,
+          "predicted_retention_pct": 63.85434695597046,
+          "absolute_error_pp": 1.6543469559704604,
+          "early_points": 4,
+          "last_early": 66.32124352331607,
+          "mean_early": 69.5919689119171,
+          "early_range": 8.290155440414509,
+          "slope": -63.65077720207255,
+          "slope_y_bounds_only": [
+            -77.52020725388607,
+            -49.78134715025937
+          ],
+          "maximum_reading_bound_pp": 0.7772020725388558,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -4.121243523316068
+        },
+        {
+          "row_id": "candidate:TE034::early20",
+          "sample": "DRY-1",
+          "source_family": "doi:10.3390/mi14030572",
+          "target_cycles": 5000.0,
+          "observed_retention_pct": 97.8,
+          "predicted_retention_pct": 96.19780814813244,
+          "absolute_error_pp": 1.602191851867559,
+          "early_points": 5,
+          "last_early": 98.78787878787878,
+          "mean_early": 99.04646464646464,
+          "early_range": 1.050505050505052,
+          "slope": -1.12659596564568,
+          "slope_y_bounds_only": [
+            -1.8823878634619509,
+            -0.370804067829396
+          ],
+          "maximum_reading_bound_pp": 0.24242424242424931,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -0.9878787878787847
+        },
+        {
+          "row_id": "legacy:R013_CY01::early20",
+          "sample": "EUAC1-60",
+          "source_family": "doi:10.1021/acsomega.4c11529",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 89.9,
+          "predicted_retention_pct": 91.4550263896291,
+          "absolute_error_pp": 1.5550263896290915,
+          "early_points": 16,
+          "last_early": 94.04761904761905,
+          "mean_early": 97.60251322751323,
+          "early_range": 9.391534391534393,
+          "slope": -4.833158263305321,
+          "slope_y_bounds_only": [
+            -6.110469187675055,
+            -3.5558473389355463
+          ],
+          "maximum_reading_bound_pp": 0.7936507936507979,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -4.147619047619045
+        },
+        {
+          "row_id": "incoming:ADD_009_T01::early20",
+          "sample": "A-BC-0.2",
+          "source_family": "doi:10.1016/j.jenvman.2026.129124",
+          "target_cycles": 20000.0,
+          "observed_retention_pct": 92.69,
+          "predicted_retention_pct": 91.17238929975944,
+          "absolute_error_pp": 1.517610700240553,
+          "early_points": 4,
+          "last_early": 94.28571428571429,
+          "mean_early": 95.97402597402598,
+          "early_range": 5.454545454545453,
+          "slope": -1.6699943974652907,
+          "slope_y_bounds_only": [
+            -2.3059425229844006,
+            -1.0340462719462025
+          ],
+          "maximum_reading_bound_pp": 0.779220779220779,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -1.595714285714294
+        },
+        {
+          "row_id": "candidate:V05:010::early20",
+          "sample": "QSC-3",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 97.8,
+          "predicted_retention_pct": 96.28427348871885,
+          "absolute_error_pp": 1.5157265112811444,
+          "early_points": 6,
+          "last_early": 99.46236559139786,
+          "mean_early": 99.46236559139784,
+          "early_range": 0.0,
+          "slope": -5.106790557258135e-30,
+          "slope_y_bounds_only": [
+            -5.500088071100393,
+            5.500088071100331
+          ],
+          "maximum_reading_bound_pp": 3.2698748457606115,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -1.6623655913978581
+        },
+        {
+          "row_id": "candidate:TE052::early20",
+          "sample": "SC-0.03",
+          "source_family": "doi:10.3390/polym17111544",
+          "target_cycles": 5000.0,
+          "observed_retention_pct": 93.7,
+          "predicted_retention_pct": 92.27026595983727,
+          "absolute_error_pp": 1.429734040162728,
+          "early_points": 10,
+          "last_early": 96.7018469656992,
+          "mean_early": 98.21240105540898,
+          "early_range": 3.8258575197889257,
+          "slope": -4.471951144866343,
+          "slope_y_bounds_only": [
+            -5.704390261520471,
+            -3.239512028212337
+          ],
+          "maximum_reading_bound_pp": 0.39577836411609724,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.001846965699201
+        },
+        {
+          "row_id": "incoming:ADD_039_T01::early20",
+          "sample": "YZPC-3",
+          "source_family": "doi:10.1002/asia.70648",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 96.0,
+          "predicted_retention_pct": 97.37287791659858,
+          "absolute_error_pp": 1.3728779165985827,
+          "early_points": 5,
+          "last_early": 99.13494809688581,
+          "mean_early": 99.48096885813149,
+          "early_range": 0.8650519031141926,
+          "slope": -0.6481857203687329,
+          "slope_y_bounds_only": [
+            -1.427729431856426,
+            0.13135799111896485
+          ],
+          "maximum_reading_bound_pp": 0.5190311418685121,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.1349480968858074
+        },
+        {
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "sample": "A-NSC8",
+          "source_family": "doi:10.1039/d6ra04144b",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 99.2,
+          "predicted_retention_pct": 97.86602855888096,
+          "absolute_error_pp": 1.333971441119047,
+          "early_points": 4,
+          "last_early": 100.54054054054055,
+          "mean_early": 100.54054054054055,
+          "early_range": 0.0,
+          "slope": 0.0,
+          "slope_y_bounds_only": [
+            -3.243243243243249,
+            3.243243243243249
+          ],
+          "maximum_reading_bound_pp": 1.6216216216216282,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -1.3405405405405446
+        },
+        {
+          "row_id": "candidate:TE025::early20",
+          "sample": "SSC2-0.6",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "target_cycles": 2000.0,
+          "observed_retention_pct": 93.18,
+          "predicted_retention_pct": 94.13145159975414,
+          "absolute_error_pp": 0.9514515997541366,
+          "early_points": 7,
+          "last_early": 96.41025641025641,
+          "mean_early": 96.55677655677655,
+          "early_range": 2.051282051282044,
+          "slope": -4.392155406158288,
+          "slope_y_bounds_only": [
+            -17.520707202020624,
+            8.736396389703808
+          ],
+          "maximum_reading_bound_pp": 1.538461538461533,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.230256410256402
+        },
+        {
+          "row_id": "incoming:ADD_005_T01::early20",
+          "sample": "NCHU20",
+          "source_family": "doi:10.1016/j.biombioe.2026.109160",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 91.08,
+          "predicted_retention_pct": 92.01001113140292,
+          "absolute_error_pp": 0.9300111314029209,
+          "early_points": 16,
+          "last_early": 94.62915601023018,
+          "mean_early": 95.78005115089513,
+          "early_range": 2.8132992327365827,
+          "slope": -19.129335657734927,
+          "slope_y_bounds_only": [
+            -33.455269850752,
+            -4.803401464717117
+          ],
+          "maximum_reading_bound_pp": 0.767263427109981,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.5491560102301776
+        },
+        {
+          "row_id": "incoming:ADD_025_T01::early20",
+          "sample": "RMAC-800",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 92.0,
+          "predicted_retention_pct": 91.10315300083069,
+          "absolute_error_pp": 0.8968469991693127,
+          "early_points": 5,
+          "last_early": 93.75,
+          "mean_early": 95.14285714285714,
+          "early_range": 3.2142857142857224,
+          "slope": -3.1233617300131127,
+          "slope_y_bounds_only": [
+            -6.779980340760118,
+            0.5332568807339881
+          ],
+          "maximum_reading_bound_pp": 1.6071428571428572,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -1.75
+        },
+        {
+          "row_id": "candidate:TE033::early20",
+          "sample": "WET-1",
+          "source_family": "doi:10.3390/mi14030572",
+          "target_cycles": 5000.0,
+          "observed_retention_pct": 94.4,
+          "predicted_retention_pct": 93.64722810681975,
+          "absolute_error_pp": 0.7527718931802525,
+          "early_points": 5,
+          "last_early": 96.20202020202021,
+          "mean_early": 96.76767676767676,
+          "early_range": 0.9696969696969688,
+          "slope": -1.1266917458263397,
+          "slope_y_bounds_only": [
+            -1.8516100095241088,
+            -0.4017734821287921
+          ],
+          "maximum_reading_bound_pp": 0.24242424242424931,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -1.802020202020202
+        },
+        {
+          "row_id": "candidate:TE020::early20",
+          "sample": "AO-PC",
+          "source_family": "doi:10.3390/nano13101654",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 97.0,
+          "predicted_retention_pct": 96.27553049572018,
+          "absolute_error_pp": 0.7244695042798242,
+          "early_points": 8,
+          "last_early": 98.88888888888889,
+          "mean_early": 99.40972222222223,
+          "early_range": 1.1111111111111143,
+          "slope": -0.531729643099306,
+          "slope_y_bounds_only": [
+            -1.9158139678234316,
+            0.8523546816248655
+          ],
+          "maximum_reading_bound_pp": 0.8333333333333286,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -1.8888888888888857
+        },
+        {
+          "row_id": "candidate:V05:011::early20",
+          "sample": "QSC-4",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 95.5,
+          "predicted_retention_pct": 96.14957288319239,
+          "absolute_error_pp": 0.6495728831923913,
+          "early_points": 5,
+          "last_early": 98.86363636363636,
+          "mean_early": 98.97727272727272,
+          "early_range": 0.5681818181818272,
+          "slope": -0.2792262915352943,
+          "slope_y_bounds_only": [
+            -10.346281701919365,
+            9.787179335623504
+          ],
+          "maximum_reading_bound_pp": 7.038770053475929,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.3636363636363598
+        },
+        {
+          "row_id": "candidate:V05:008::early20",
+          "sample": "QSC",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 93.6,
+          "predicted_retention_pct": 92.98398115163774,
+          "absolute_error_pp": 0.6160188483622591,
+          "early_points": 6,
+          "last_early": 95.65217391304348,
+          "mean_early": 98.55072463768117,
+          "early_range": 4.347826086956516,
+          "slope": -1.6266712885015318,
+          "slope_y_bounds_only": [
+            -46.811179253548296,
+            43.5015288242509
+          ],
+          "maximum_reading_bound_pp": 30.0,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -2.0521739130434895
+        }
+      ],
+      "reading_bound_warning": "Pixel reading intervals are deterministic digitization bounds, not Gaussian standard deviations or experimental replicate errors. Slope intervals use y bounds only at fixed read x; they are sensitivity descriptions, not calibrated confidence intervals."
+    },
+    "B_3E_early10": {
+      "rows": 20,
+      "sources": 19,
+      "primary_r2": 0.606768026580874,
+      "primary_mae": 3.6357852550160454,
+      "primary_rmse": 4.886785634254912,
+      "target_weighted_sd": 7.7928959409717775,
+      "rmse_needed_for_r2_gt_095": 1.7425445065595082,
+      "inner_family_choices": {
+        "Ridge_early": 10,
+        "ExtraTrees_early": 8,
+        "GPR_static": 1
+      },
+      "difficult_cases": [
+        {
+          "row_id": "incoming:ADD_027_T01::early10",
+          "sample": "CCL-K2CO3-1-700",
+          "source_family": "doi:10.1016/j.biombioe.2026.109168",
+          "target_cycles": 50000.0,
+          "observed_retention_pct": 109.2,
+          "predicted_retention_pct": 95.87724226471876,
+          "absolute_error_pp": 13.322757735281243,
+          "early_points": 5,
+          "last_early": 100.0,
+          "mean_early": 100.28673835125448,
+          "early_range": 1.4336917562724096,
+          "slope": -2.2965309653955046e-17,
+          "slope_y_bounds_only": [
+            -0.6483870967741883,
+            0.6483870967742025
+          ],
+          "maximum_reading_bound_pp": 1.0752688172043037,
+          "target_cycles_outside_other_source_range": true,
+          "other_source_cycle_range": [
+            1000.0,
+            15000.0
+          ],
+          "actual_remaining_change_pp": 9.200000000000003
+        },
+        {
+          "row_id": "legacy:R087_CY01::early10",
+          "sample": "OAC623",
+          "source_family": "doi:10.1007/s00339-023-07141-8",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 85.5,
+          "predicted_retention_pct": 94.9048630373722,
+          "absolute_error_pp": 9.404863037372195,
+          "early_points": 4,
+          "last_early": 100.0,
+          "mean_early": 100.0,
+          "early_range": 0.0,
+          "slope": 0.0,
+          "slope_y_bounds_only": [
+            -73.73775952152693,
+            73.73775952152687
+          ],
+          "maximum_reading_bound_pp": 2.1582733812949613,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -14.5
+        },
+        {
+          "row_id": "candidate:TE021::early10",
+          "sample": "OPBNP",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 93.6,
+          "predicted_retention_pct": 100.17816598600407,
+          "absolute_error_pp": 6.57816598600408,
+          "early_points": 19,
+          "last_early": 100.0,
+          "mean_early": 100.23157894736842,
+          "early_range": 0.4000000000000057,
+          "slope": -0.48054415680768875,
+          "slope_y_bounds_only": [
+            -4.188064090151079,
+            3.2269757765356655
+          ],
+          "maximum_reading_bound_pp": 1.2000000000000028,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -6.400000000000006
+        },
+        {
+          "row_id": "candidate:TE026::early10",
+          "sample": "KAC-5",
+          "source_family": "doi:10.1002/ente.202201281",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 90.31,
+          "predicted_retention_pct": 95.93373875330198,
+          "absolute_error_pp": 5.6237387533019785,
+          "early_points": 5,
+          "last_early": 98.53249475890985,
+          "mean_early": 99.20335429769392,
+          "early_range": 1.4675052410901515,
+          "slope": -1.9125164481994343,
+          "slope_y_bounds_only": [
+            -3.832985147742769,
+            0.007952251343875005
+          ],
+          "maximum_reading_bound_pp": 0.6289308176100629,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -8.222494758909846
+        },
+        {
+          "row_id": "candidate:TE009::early10",
+          "sample": "YPAC-1",
+          "source_family": "doi:10.3390/molecules28186543",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 82.26,
+          "predicted_retention_pct": 86.95873782531687,
+          "absolute_error_pp": 4.698737825316869,
+          "early_points": 3,
+          "last_early": 90.57591623036649,
+          "mean_early": 92.75741710296684,
+          "early_range": 4.450261780104711,
+          "slope": -8.288784789198122,
+          "slope_y_bounds_only": [
+            -14.93996772034803,
+            -1.6376018580482494
+          ],
+          "maximum_reading_bound_pp": 1.5706806282722567,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -8.315916230366483
+        },
+        {
+          "row_id": "candidate:V05:018::early10",
+          "sample": "SNPB-800-4",
+          "source_family": "doi:10.3390/nano13172431",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 94.14,
+          "predicted_retention_pct": 89.800052479959,
+          "absolute_error_pp": 4.339947520040994,
+          "early_points": 4,
+          "last_early": 93.61702127659575,
+          "mean_early": 94.14893617021276,
+          "early_range": 1.4184397163120508,
+          "slope": -2.117250281050913,
+          "slope_y_bounds_only": [
+            -6.351750843152779,
+            2.117250281050893
+          ],
+          "maximum_reading_bound_pp": 1.0638297872340416,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": 0.5229787234042504
+        },
+        {
+          "row_id": "candidate:TE037::early10",
+          "sample": "AC-600C",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 78.4,
+          "predicted_retention_pct": 82.00928926641724,
+          "absolute_error_pp": 3.6092892664172354,
+          "early_points": 3,
+          "last_early": 88.47150259067358,
+          "mean_early": 88.98963730569949,
+          "early_range": 1.1658031088082907,
+          "slope": -23.43192945762231,
+          "slope_y_bounds_only": [
+            -55.8105956172451,
+            8.946736702001346
+          ],
+          "maximum_reading_bound_pp": 0.7772020725388558,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -10.071502590673575
+        },
+        {
+          "row_id": "incoming:ADD_031_T01::early10",
+          "sample": "SS-300",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "target_cycles": 8000.0,
+          "observed_retention_pct": 98.3,
+          "predicted_retention_pct": 94.69442464816822,
+          "absolute_error_pp": 3.6055753518317744,
+          "early_points": 4,
+          "last_early": 98.44897959182066,
+          "mean_early": 99.18367346937156,
+          "early_range": 1.4693877551018062,
+          "slope": -2.330663911133699,
+          "slope_y_bounds_only": [
+            -8.016459386646702,
+            3.355131564379299
+          ],
+          "maximum_reading_bound_pp": 1.4693877551018062,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -0.14897959182066245
+        },
+        {
+          "row_id": "candidate:TE025::early10",
+          "sample": "SSC2-0.6",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "target_cycles": 2000.0,
+          "observed_retention_pct": 93.18,
+          "predicted_retention_pct": 89.79085273440592,
+          "absolute_error_pp": 3.38914726559409,
+          "early_points": 3,
+          "last_early": 96.41025641025641,
+          "mean_early": 97.09401709401709,
+          "early_range": 1.025641025641022,
+          "slope": -10.417928528164712,
+          "slope_y_bounds_only": [
+            -41.671714112658634,
+            20.835857056329637
+          ],
+          "maximum_reading_bound_pp": 1.538461538461533,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.230256410256402
+        },
+        {
+          "row_id": "incoming:ADD_003_T01::early10",
+          "sample": "AUACW",
+          "source_family": "doi:10.1039/d4cp01914h",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 93.6,
+          "predicted_retention_pct": 96.87049420244443,
+          "absolute_error_pp": 3.2704942024444392,
+          "early_points": 3,
+          "last_early": 99.12072452299306,
+          "mean_early": 98.5345408716551,
+          "early_range": 1.7585509540138986,
+          "slope": 0.04202347437769181,
+          "slope_y_bounds_only": [
+            -4.222406208386989,
+            4.306453157142503
+          ],
+          "maximum_reading_bound_pp": 1.0551305724083306,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -5.5207245229930635
+        },
+        {
+          "row_id": "incoming:ADD_005_T01::early10",
+          "sample": "NCHU20",
+          "source_family": "doi:10.1016/j.biombioe.2026.109160",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 91.08,
+          "predicted_retention_pct": 88.15412170992262,
+          "absolute_error_pp": 2.925878290077378,
+          "early_points": 6,
+          "last_early": 96.16368286445012,
+          "mean_early": 96.7604433077579,
+          "early_range": 1.278772378516635,
+          "slope": -26.785419543564288,
+          "slope_y_bounds_only": [
+            -67.34987702540542,
+            13.779037938274882
+          ],
+          "maximum_reading_bound_pp": 0.767263427109981,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -5.083682864450125
+        },
+        {
+          "row_id": "legacy:R078_CY01::early10",
+          "sample": "C/600C",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "target_cycles": 8000.0,
+          "observed_retention_pct": 98.1,
+          "predicted_retention_pct": 95.22077607661741,
+          "absolute_error_pp": 2.8792239233825825,
+          "early_points": 9,
+          "last_early": 98.21826280623608,
+          "mean_early": 98.67607027963375,
+          "early_range": 1.1135857461024443,
+          "slope": -1.8672775614499417,
+          "slope_y_bounds_only": [
+            -4.475486980904828,
+            0.7409318580051063
+          ],
+          "maximum_reading_bound_pp": 0.6681514476614723,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -0.11826280623608909
+        },
+        {
+          "row_id": "legacy:R013_CY01::early10",
+          "sample": "EUAC1-60",
+          "source_family": "doi:10.1021/acsomega.4c11529",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 89.9,
+          "predicted_retention_pct": 92.58619476038031,
+          "absolute_error_pp": 2.686194760380303,
+          "early_points": 8,
+          "last_early": 96.29629629629629,
+          "mean_early": 99.6362433862434,
+          "early_range": 7.142857142857153,
+          "slope": -10.367063492063501,
+          "slope_y_bounds_only": [
+            -12.952097505668931,
+            -7.782029478458014
+          ],
+          "maximum_reading_bound_pp": 0.7936507936507979,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -6.396296296296285
+        },
+        {
+          "row_id": "candidate:TE034::early10",
+          "sample": "DRY-1",
+          "source_family": "doi:10.3390/mi14030572",
+          "target_cycles": 5000.0,
+          "observed_retention_pct": 97.8,
+          "predicted_retention_pct": 95.6102999654887,
+          "absolute_error_pp": 2.1897000345113042,
+          "early_points": 3,
+          "last_early": 98.86868686868686,
+          "mean_early": 99.21885521885521,
+          "early_range": 0.9696969696969688,
+          "slope": -2.577244474918892,
+          "slope_y_bounds_only": [
+            -3.936039210457718,
+            -1.2184497393798353
+          ],
+          "maximum_reading_bound_pp": 0.24242424242424931,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -1.0686868686868678
+        },
+        {
+          "row_id": "candidate:TE052::early10",
+          "sample": "SC-0.03",
+          "source_family": "doi:10.3390/polym17111544",
+          "target_cycles": 5000.0,
+          "observed_retention_pct": 93.7,
+          "predicted_retention_pct": 94.50191173729344,
+          "absolute_error_pp": 0.8019117372934375,
+          "early_points": 5,
+          "last_early": 98.08707124010554,
+          "mean_early": 99.31398416886543,
+          "early_range": 2.044854881266488,
+          "slope": -6.282246787041888,
+          "slope_y_bounds_only": [
+            -8.955784836914704,
+            -3.6087087371690583
+          ],
+          "maximum_reading_bound_pp": 0.39577836411609724,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -4.387071240105541
+        },
+        {
+          "row_id": "incoming:ADD_035_T01::early10",
+          "sample": "CMC",
+          "source_family": "doi:10.1039/d6nj00244g",
+          "target_cycles": 15000.0,
+          "observed_retention_pct": 96.7,
+          "predicted_retention_pct": 97.36654397446021,
+          "absolute_error_pp": 0.6665439744602111,
+          "early_points": 3,
+          "last_early": 100.0,
+          "mean_early": 100.0,
+          "early_range": 0.0,
+          "slope": 0.0,
+          "slope_y_bounds_only": [
+            -5.2288717102405755,
+            5.2288717102406075
+          ],
+          "maximum_reading_bound_pp": 2.068965517241381,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.299999999999997
+        },
+        {
+          "row_id": "candidate:TE020::early10",
+          "sample": "AO-PC",
+          "source_family": "doi:10.3390/nano13101654",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 97.0,
+          "predicted_retention_pct": 96.47949745791513,
+          "absolute_error_pp": 0.5205025420848699,
+          "early_points": 4,
+          "last_early": 99.16666666666667,
+          "mean_early": 99.58333333333334,
+          "early_range": 0.8333333333333286,
+          "slope": -1.0056283023202375,
+          "slope_y_bounds_only": [
+            -3.49012175511141,
+            1.4788651504709236
+          ],
+          "maximum_reading_bound_pp": 0.8333333333333286,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -2.1666666666666714
+        },
+        {
+          "row_id": "incoming:ADD_025_T01::early10",
+          "sample": "RMAC-800",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 92.0,
+          "predicted_retention_pct": 91.82305556472569,
+          "absolute_error_pp": 0.17694443527430792,
+          "early_points": 3,
+          "last_early": 95.08928571428572,
+          "mean_early": 95.98214285714285,
+          "early_range": 1.875,
+          "slope": -3.556805399325083,
+          "slope_y_bounds_only": [
+            -9.833520809898744,
+            2.7199100112486434
+          ],
+          "maximum_reading_bound_pp": 1.6071428571428572,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.0892857142857224
+        },
+        {
+          "row_id": "incoming:ADD_039_T01::early10",
+          "sample": "YZPC-3",
+          "source_family": "doi:10.1002/asia.70648",
+          "target_cycles": 10000.0,
+          "observed_retention_pct": 96.0,
+          "predicted_retention_pct": 96.15117212678531,
+          "absolute_error_pp": 0.1511721267853119,
+          "early_points": 3,
+          "last_early": 99.13494809688581,
+          "mean_early": 99.7116493656286,
+          "early_range": 0.8650519031141926,
+          "slope": -1.0899653979238826,
+          "slope_y_bounds_only": [
+            -2.397923875432525,
+            0.21799307958477243
+          ],
+          "maximum_reading_bound_pp": 0.5190311418685121,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -3.1349480968858074
+        },
+        {
+          "row_id": "candidate:TE038::early10",
+          "sample": "AC-700C",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "target_cycles": 1000.0,
+          "observed_retention_pct": 62.2,
+          "predicted_retention_pct": 62.28755142131772,
+          "absolute_error_pp": 0.08755142131771976,
+          "early_points": 3,
+          "last_early": 67.74611398963731,
+          "mean_early": 70.68221070811745,
+          "early_range": 6.865284974093271,
+          "slope": -110.56624722427843,
+          "slope_y_bounds_only": [
+            -137.1021465581048,
+            -84.03034789045148
+          ],
+          "maximum_reading_bound_pp": 0.7772020725388558,
+          "target_cycles_outside_other_source_range": false,
+          "other_source_cycle_range": [
+            1000.0,
+            50000.0
+          ],
+          "actual_remaining_change_pp": -5.5461139896373055
+        }
+      ],
+      "reading_bound_warning": "Pixel reading intervals are deterministic digitization bounds, not Gaussian standard deviations or experimental replicate errors. Slope intervals use y bounds only at fixed read x; they are sensitivity descriptions, not calibrated confidence intervals."
+    }
+  },
+  "interpretation": [
+    "Expanded coverage does not preserve the small8-source highR2. Cohorts changed, so old/new R2 are not a matched causal improvement comparison.",
+    "Primary inner selection frequently chooses GPR-static even when other fixed families have lower outer aggregate error; this is selection instability, not authority to replace the primary posthoc.",
+    "CCL50k activation growth is poorly represented by near-flat first10k data and lies beyond other-source target-cycle support. Keep actual109.2% and the error; no100% clipping.",
+    "OAC short-horizon fast initial loss and later plateau challenge linear continuation. EUAC initial activation peak similarly weakens a single slope summary.",
+    "Graph-reading uncertainty can be comparable with the accuracy budget implied by R2>.95. It is not proof of an irreducible error floor; prioritize better original trace evidence and train-only uncertainty treatment.",
+    "Next hypotheses: stable/risk-controlled family selection and fixed mixtures; nonlinear activation/degradation continuation within approved inputs; richer same-window shape representation only after checking input-contract boundary; new source validation frozen before revealing external endpoints. Preserve all near branches and A/2E evidence."
+  ]
+}
