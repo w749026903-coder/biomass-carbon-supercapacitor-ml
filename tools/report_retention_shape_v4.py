@@ -1,0 +1,31 @@
+"""Current local dashboard; keep earlier round plans and results unchanged."""
+from pathlib import Path
+import html,json,re,subprocess
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'保持率达标研究_v3_主线与近优组合_20261030';RUN=BASE/'第九轮_同窗口形状对照';P8=BASE/'第八轮_原文补证与双电极曲线'
+def read(p):return json.loads(Path(p).read_text('utf8'))
+def main():
+ old=subprocess.check_output(['git','-c','safe.directory='+ROOT.as_posix(),'show','5eb361dd884fedbeae3790980fa41c99d1e7aace:保持率达标研究_v3_主线与近优组合_20261030/研究进度.html']).decode('utf8');style=re.search(r'<style>(.*?)</style>',old,re.S).group(1)
+ result=read(RUN/'results.json');audit=read(RUN/'independent_verification.json');precision=read(RUN/'shape_precision_results.json')['summary']['B_3E_early20'];counts=read(RUN/'training_plan.json')['counts'];lookup={(m['route'],m['model']):m for m in result['metrics']};paired={p['route']:p for p in read(RUN/'paired_comparison.json')}
+ names={'RF_early':'随机森林RF','GPR_early':'高斯过程GPR','XGB_early':'XGBoost','RF_static':'RF＋材料/工况','GPR_static':'GPR＋材料/工况','XGB_static':'XGBoost＋材料/工况','Ridge_early':'Ridge','ExtraTrees_early':'ExtraTrees'}
+ def m(route,method):return lookup[(route,method)]
+ def table(route):
+  methods=[('oneSE_family_mean','预定主比较：相近家族均值'),('nested_selected','训练内单一选模')]+[('family::'+k,v)for k,v in names.items()]+[('near4_equal','RF/GPR/XGB/RF静态等权组合')];rows=[]
+  for suffix,label in methods:
+   a=m(route,'six_'+suffix);b=m(route,'shape_'+suffix);rows.append(f'<tr><td>{html.escape(label)}</td><td>{a["r2"]:.3f}</td><td>{b["r2"]:.3f}</td><td>{a["mae"]:.3f}</td><td>{b["mae"]:.3f}</td><td>{a["rmse"]:.3f}</td><td>{b["rmse"]:.3f}</td></tr>')
+  return '<div class="table"><table><thead><tr><th>方法</th><th>原R²</th><th>形状R²</th><th>原MAE</th><th>形状MAE</th><th>原RMSE</th><th>形状RMSE</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>'
+ def paragraph(route):
+  a=m(route,'six_oneSE_family_mean');b=m(route,'shape_oneSE_family_mean');p=paired[route];ci=p['source_bootstrap95'];c=counts[route]
+  return f'<p>全体{c["rows"]}条/{c["sources"]}来源都保留，其中{c["shape_computable_rows"]}条/{c["shape_computable_sources"]}来源可算完整形状。原六项主对照R²={a["r2"]:.3f}、MAE={a["mae"]:.3f}pp；形状主方法R²={b["r2"]:.3f}、MAE={b["mae"]:.3f}pp、RMSE={b["rmse"]:.3f}pp。逐来源配对MAE差（形状减原六项）{p["shape_minus_six_MAE_pp"]:+.3f}pp，95%重采样区间[{ci[0]:+.3f}, {ci[1]:+.3f}]；这是已见来源上的探索比较。</p>'
+ route='B_3E_early20';primary=m(route,'shape_oneSE_family_mean');control=m(route,'six_oneSE_family_mean');passes=sum(v['numeric_pass']for v in result['metrics']);body=f'''<p class="small">2026-10-30 · 本地原文核查与已授权形状对照</p><h1>保持率研究：同窗口形状特征实测比较</h1><p class="status"><b>目标继续active，当前仍没有全面达标模型。</b>预测输出始终是指定圈数和条件下的电容保持率。原RF、GPR、XGBoost、静态特征组合及A直接预测继续保留；这轮不改早期窗口、作者标签或来源划分。</p>
+<div class="cards"><div class="card"><span class="number">30条 / 24来源</span>三电极前20%主验证，记录一条未删</div><div class="card"><span class="number">5360新拟合</span>另复用3440次旧控制拟合预测</div><div class="card"><span class="number">R² {primary['r2']:.3f}</span>本轮预定形状主方法；仍未达0.95</div></div>
+<h2>网站打不开，已经换成本地核查</h2><p>直接读你提供的正文PDF、原始嵌入图和已有补充材料，不反复卡在出版商验证页面。稻穗碳RPPAC的正文第4页、图8c和第13页共同确认：对称双电极、1M硫酸、0～1V、10A/g、6000圈、保持率88%。原图读出60个实际菱形标记，末端87.881%，固定读图区间87.515%～88.246%，与作者88%一致；没有把能量保持49%或功率141%混为电容保持率。</p><p>这60点只对应<b>一条曲线、一个来源</b>，加入双电极研究输入。两电极前20%现7条/7来源，前10%5条/5来源。三电极数据完全不变；主v7库、旧3b库和原候选标签保留，正式循环准入新增0。</p><p><a href="../用户补充文献核验_20261018/pdfs/missing_main_received/U019.pdf">打开本地正文PDF</a> · <a href="第八轮_原文补证与双电极曲线/rppac_curve_overlay.png">查看原图与60个核读点</a> · <a href="第八轮_原文补证与双电极曲线/替代核查与来源处置.md">替代核查办法及其他来源处置</a></p>
+<h2>形状信息是否带来改善：在同一批数据上比较</h2><p>你已批准增加前半段斜率、后半段斜率、曲率和峰值相对位置。只用原来前10%/20%的实际点；每半段不足3点，新字段留空，原记录继续参加验证。保留16个原候选，各自做“原六项”和“六项＋形状”匹配比较；所有参数只在训练来源内选择。三电极对照直接复用已归档预测，没有重复报成新拟合。</p>{paragraph(route)}<div class="box"><b>判定仍按事前主方案和全部门槛。</b>原六项主对照为{control['r2']:.3f}/{control['mae']:.3f}/{control['rmse']:.3f}；形状主方法为{primary['r2']:.3f}/{primary['mae']:.3f}/{primary['rmse']:.3f}（R²/MAE/RMSE）。这轮没有据外层最高分更换主方法；数值全面通过{passes}个，可靠外部泛化通过0个。</div>
+{table(route)}<p class="small">MAE/RMSE单位均为保持率百分点pp；表中每家族在内层选参数，不是按外层成绩挑最佳模型。3E主集R²&gt;0.95实际要求同权RMSE&lt;1.632pp；RMSE≤3pp并不足以通过R²门槛。</p>
+<details><summary>展开：三电极前10%（20条 / 19来源）</summary>{paragraph('B_3E_early10')}{table('B_3E_early10')}</details>
+<details><summary>展开：双电极前20%（7条 / 7来源）</summary>{paragraph('B_2E_early20')}{table('B_2E_early20')}<p>来源不足10且没有新外部验证，即使单项高分也不能全面验收。这里两个特征方案都在扩充后的同一批数据上训练，新增文献与特征效果不混算。</p></details>
+<details><summary>展开：双电极前10%（5条 / 5来源）</summary>{paragraph('B_2E_early10')}{table('B_2E_early10')}<p>仅1来源可算形状，达不到训练折中至少3来源的字段使用门槛，因此形状字段实际上均被省略；两个方案等价。没有把增加空字段说成利用了新信息。</p></details>
+<h2>仍要解决的问题</h2><ul><li>长周期活化增长覆盖依然少：三电极主集只有CCL一个来源终值超过100%、达到50000圈。整篇留出时，训练缺同类样本。它继续保留，不能靠删掉难例取得高分。</li><li>形状特征的有效覆盖有限：三电极前20%18条/16来源，前10%4条/4来源。进一步在原读图纵向界限内做0拟合敏感性检查：{precision['computable']}条可算记录中，仅{precision['quadratic_curvature_pp_sign_identified']}条曲率符号保持稳定，{precision['peak_unique']}条峰位置能唯一确定。微小起伏被曲率放大的问题需要处理。该分析固定横坐标，逐点极端扰动未必物理可实现，不能当作统计置信区间或唯一误差原因。</li><li>来源证据分开处理：HPCN预印本已补清50000圈90.7%为双电极，不能补入三电极；稻壳GAC缓存正文已补出协议和终值，但尚无可核读原图，不造早期点；火龙果正文123%与图127.34%冲突继续冻结。</li><li>这些都是已见开发来源，尚无真正未触碰的外部来源验证。现有模型可作研究比较，不能宣称可靠设计预测。</li></ul>
+<h2>下一步按问题推进</h2><p>先复核形状信号对读图精度是否稳定，再围绕训练内表现和误差来源冻结下一轮有限方案；近优家族与A/2E均保留。继续优先补同工况的长周期增长、后期转折及独立来源曲线。两点稀疏窗口提案仍未获授权，未实施；不加后期观测、不改输出、不改真实标签。</p><p class="small">本地像素/数据库1132项核验；本轮{audit['checks']}项独立核验，{audit['protected_sha256_files']}份保护SHA一致，失败拟合{result['failed_estimator_fits']}次、警告{sum(audit['fit_warnings'].values())}次。内层全部预测、折划分、训练内填补/标准化、选模与外层指标均保存并复算；核验不重训、不把已见来源变成新外部测试。</p>
+<p><a href="第九轮_同窗口形状对照/training_plan.json">冻结计划</a> · <a href="第九轮_同窗口形状对照/results.json">完整结果</a> · <a href="第九轮_同窗口形状对照/independent_verification.json">独立核验</a> · <a href="第九轮_同窗口形状对照/paired_comparison.json">逐来源配对比较</a> · <a href="第七轮_同窗口形状表达提案/authorization_20261030.json">用户批准回执</a> · <a href="第四轮_选模稳定性复核/results.json">稳定性历史</a> · <a href="第六轮_非线性延拓与稳健学习/results.json">非线性/BP历史</a> · <a href="research_goal.json">完整目标</a></p>'''
+ page='<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>保持率研究：本地核查与形状对照</title><style>'+style+'</style></head><body><main>'+body+'</main></body></html>';(BASE/'研究进度.html').write_bytes(page.encode('utf8'));print('Current local report generated from P9 saved predictions')
+if __name__=='__main__':main()

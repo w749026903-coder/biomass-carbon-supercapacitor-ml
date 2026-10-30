@@ -1,0 +1,10 @@
+{
+  "frozen_at": "2026-10-30T13:40:45.830855+08:00",
+  "input_sha256": "dbbdb623b977faf88a4f505ae52d1137c178b5ade68701c13e546fe617a1a0ba",
+  "runner_sha256": "3780c9039cb4d582354d2922db342baa739cc471de40de8d23981ad5f4a66938",
+  "model_fits": 0,
+  "scope": "All current rows; four already approved shape summaries; no new model inputs or row filtering.",
+  "method": "For each computable row and fixed observed x coordinates, slopes/curvature are linear functions a dot y. Exact independent per-point ordinate-box bound=sum(abs(a_i)*b_i), using original per-point reading_bound_pp. Peak possible indices satisfy upper_i>=max_j lower_j. Bounds are deterministic sensitivity sets, not SD,CI,noise distributions or physical uncertainty truth.",
+  "limits": "No horizontal-coordinate/calibration uncertainty propagated; no independent error assumption or MonteCarlo. Slope/curvature conditional on unchanged x/half assignment. No claim that perturbation produces a physically realizable full curve.",
+  "report": "Retain all rows and flag unidentifiable signs without rejecting records. Check extreme ordinate vectors reproduce both analytic extrema. No training or changes to author targets."
+}
