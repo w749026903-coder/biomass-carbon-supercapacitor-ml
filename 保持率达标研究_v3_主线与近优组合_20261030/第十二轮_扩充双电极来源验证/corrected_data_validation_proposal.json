@@ -1,0 +1,40 @@
+{
+  "status": "concrete_revalidation_proposal_not_yet_frozen_no_new_fit",
+  "reason": "Evidence-backed metric correction requires revalidatingchanged20%inputs;not extra tuning to chase scores.",
+  "candidate_grid": "exact existing16baseconfigurations × six/approvedshape",
+  "planned_new_fits_if_frozen": 3520,
+  "planned_exact_reused_10pct_fit_predictions": 2880,
+  "primary": "six_oneSE_family_mean unchanged",
+  "B20_rows_sources": [
+    27,
+    22
+  ],
+  "B10_rows_sources": [
+    23,
+    18
+  ],
+  "changed_rows": [
+    {
+      "endpoint_id": "v25:Mango_MK9_2E_C100000",
+      "before_target": 79.3,
+      "after_target": 65.0,
+      "changed_fields": [
+        "curve_id",
+        "target",
+        "features",
+        "last_early",
+        "linear_forecast",
+        "point_indices",
+        "early_points",
+        "reading_bound_pp"
+      ]
+    }
+  ],
+  "unchanged_10pct_snapshot_exact": true,
+  "old_fits_retained": true,
+  "source_isolation": "outerwhole-sourceLOSO andinner4hashedfolds, unchangedsource list",
+  "new_inputs_or_windows": false,
+  "new_untouched_external_sources": 0,
+  "prerequisite": "Create distinct runner/verifier/sourceprotection and freeze plan hashes before any newfit. Do not restartP12. Confirm exact old10%prediction keys and fingerprints atfreeze.",
+  "secondary_avenue": "Rebuild full-curve supervision inventory fromcurrentSQLapproved curves;old3gMK9greenCEcandidates quarantined. Do not use rawhistoricalapproved flag without current supersession status."
+}

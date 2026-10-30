@@ -1,0 +1,44 @@
+{
+  "discovered_at": "2026-10-31T03:55:30+08:00",
+  "endpoint_id": "v25:Mango_MK9_2E_C100000",
+  "source_family": "doi:10.1039/d5ra02129d",
+  "status": "confirmed_forward_corrected_v7r1_and_v3h",
+  "old_misclassified_target": 79.3,
+  "correct_capacitance_retention_figure_annotation": 65.0,
+  "co_reported_coulombic_efficiency_pct": 79.3,
+  "axes": {
+    "left": "Coulombic efficiency percent, green,79.3",
+    "right": "Capacitance retention percent,blue,65"
+  },
+  "evidence": [
+    {
+      "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA015/figures/d5ra02129d-f10.jpg",
+      "sha256": "c700292980a05eb698329ac2223ac42a398024c69ac29aed46f2381d981a8008",
+      "locator": "Fig10a left/rightaxis labels, arrow directions and65/79.3 annotations"
+    },
+    {
+      "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/sources/OA015/main.xml",
+      "sha256": "d66ffb8e759bdceec85ef5ecde91b4d76b7f3e28c1a924c16ab40e33a731fa2a",
+      "locator": "Fig10 caption and paragraph explicitly calling79.3 coulombic efficiency;Table3 has no cyclingretention column"
+    }
+  ],
+  "historical_misclassification_locations": [
+    "tools/extract_source_series_v13.py:85-86",
+    "tools/digitize_retention_markers_v2.py:40"
+  ],
+  "P12_scientific_impact": {
+    "B_2E_early20": "Invalid for intended capacitance-retention task: wrong feature curve andtarget contaminate inner/outer training andvalidation. Do not fix by only rescoring or dropping thissource.",
+    "B_2E_early10": "MK9 not in this frozen cohort;this specific error does not contaminate its fitted rows. Still all numericgatesfail."
+  },
+  "technical_verifier_scope": "429385 checks establish implementation, split/encoder/selection/gate consistency with frozen inputs, not correct semantic identification of axes.",
+  "raw_results_preserved": true,
+  "posthoc_MK9_late_onset_interpretation": "Withdrawn: apparent lateonset curve is coulombic efficiency, not capacitance retention.",
+  "curve_supervision_inventory": "The pre-correction MK9 candidates are invalid for retention. Do not train from this inventory before rebuilding corrected data.",
+  "current_data_next": "Forward-reclassifyboth A inputs andBbluecurve, preserve oldv7/3g andfrozenP12. No new fits inthiscorrection batch.",
+  "current_canonical_database": "全量文献训练数据接入_v7r1_循环指标纠错_20261031/training_metric_correction_v7r1.sqlite",
+  "current_research_database": "保持率达标研究_v3_主线与近优组合_20261030/第十一轮_双电极原文曲线补充/batch5_指标纠错_20261031/cycling_research_v3h.sqlite",
+  "correction_checks": 63917,
+  "processed_rows_corrected": 6,
+  "old_payloads_and_model_results_retained": true,
+  "other5_legacy_source_metric_roles_rechecked": true
+}
