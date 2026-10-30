@@ -1,0 +1,16 @@
+{
+  "figure": "Fig6g",
+  "pdf_page": 8,
+  "calibration": {
+    "x0": 182.0,
+    "x5000": 1894.0,
+    "y0": 572.5,
+    "y100": 79.5,
+    "pixel_bound": 3,
+    "excluded_frame_x_min": 1887
+  },
+  "segmentation": "Grey highlight components locate actual glossy black glyphs; highlight is not the geometric marker centre. Lower-arc circle fit from actual dark pixels, using x=round(gx)-8..round(gx)+12; remove frame x>=1887. No blue efficiency, joining-line densification or fabricated early markers.",
+  "marker_qc": ">=12 lower contour columns,circle radius10..18px,max radial residual<=1.5px. Bounds remain3px. Reject unresolved glyphs, preserve QC log. Early window>=3 actual markers unchanged.",
+  "target": "Original author73% after5000,source initial baseline cycle indexunknown. Do not scale figure to73.",
+  "contrast": "White/grey highlights are offset upward and cannot be used as retention coordinates. Blue curve is coulombic efficiency."
+}
