@@ -1,0 +1,1352 @@
+{
+  "status": "predictions_locked_before_author_endpoint_access",
+  "frozen_at": "2026-11-04T21:20:04+08:00",
+  "source": "doi:10.3390/nano16211412",
+  "plan_sha256": "951a548da87d262e18e6c1a57847a6c00d57bbd9f15babe61a6b74bff9f6de7b",
+  "input_sha256": "5cf366580c80005725a1f403855abbf558ed9bf4ebdee9e681c0b89522c703c2",
+  "fits": 16,
+  "failures": 0,
+  "warnings": 0,
+  "terminal_labels_entered": 0,
+  "results": {
+    "2E": {
+      "training_rows": 27,
+      "training_sources": 22,
+      "train_row_ids": [
+        "candidate:V05:002::early20",
+        "incoming:ADD_066_T01::early20",
+        "legacy:R091_CY01::early20",
+        "incoming:ADD_054_T01::early20",
+        "incoming:ADD_054_T02::early20",
+        "incoming:ADD_054_T03::early20",
+        "legacy:R111_CY01::early20",
+        "incoming:ADD_043_T01::early20",
+        "incoming:ADD_043_T02::early20",
+        "incoming:ADD_026_T01::early20",
+        "incoming:ADD_026_T02::early20",
+        "v20:WJ2026_NWJPC2_SSC_C10000::early20",
+        "incoming:ADD_019_T01::early20",
+        "incoming:ADD_019_T02::early20",
+        "incoming:ADD_010_T01::early20",
+        "legacy:R107_CY01::early20",
+        "candidate:V05:013::early20",
+        "legacy:R104_CY01::early20",
+        "incoming:ADD_003_T02::early20",
+        "candidate:V05:014::early20",
+        "v25:Mango_MK9_2E_C100000::early20",
+        "legacy:SRC124_CY01::early20",
+        "candidate:V05:015::early20",
+        "legacy:R093_CY01::early20",
+        "legacy:R103_CY01::early20",
+        "candidate:V05:019::early20",
+        "v23:NTAC_2E_C10000::early20"
+      ],
+      "primary": "GPR_early_p1_continuation_delta",
+      "predictions": [
+        {
+          "config_id": "ExtraTrees_early_p2_raw_delta",
+          "family": "ExtraTrees_early",
+          "status": "complete",
+          "predicted_retention_pct": 92.58195728570672,
+          "encoder": [
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 99.72237310640351,
+              "log": false,
+              "center": 99.45725341413397,
+              "scale": 6.127558122443536
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1790.4290429042903,
+              "log": true,
+              "center": 7.507219386993551,
+              "scale": 0.8750488266688616
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -0.6148621190130621,
+              "log": false,
+              "center": -1.2333796734015703,
+              "scale": 4.308809594305774
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "GPR_early_p1_continuation_delta",
+          "family": "GPR_early",
+          "status": "complete",
+          "predicted_retention_pct": 93.94088012631404,
+          "encoder": [
+            {
+              "field": "early_linear_remaining_change_pp",
+              "kind": "numeric",
+              "median": -7.1748879530446885,
+              "log": false,
+              "center": -6.228866396237201,
+              "scale": 26.10957880595981
+            },
+            {
+              "field": "early_mean_minus_last_pp",
+              "kind": "numeric",
+              "median": 0.515267175572518,
+              "log": false,
+              "center": 0.41367789525259363,
+              "scale": 2.2161685920361207
+            },
+            {
+              "field": "early_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "observed_fraction",
+              "kind": "numeric",
+              "median": 0.1815384615384615,
+              "log": false,
+              "center": 0.17238535297458885,
+              "scale": 0.025705041939398023
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "GPR_static_p1_raw_delta",
+          "family": "GPR_static",
+          "status": "complete",
+          "predicted_retention_pct": 93.89140867296568,
+          "encoder": [
+            {
+              "field": "BET_m2_g",
+              "kind": "numeric",
+              "median": 2035.6,
+              "log": true,
+              "center": 7.324633689596437,
+              "scale": 0.6984780387422153
+            },
+            {
+              "field": "concentration_mol_L",
+              "kind": "numeric",
+              "median": 3.0,
+              "log": true,
+              "center": 1.2810151256991202,
+              "scale": 0.6272020364927438
+            },
+            {
+              "field": "cycle_voltage_lower_V",
+              "kind": "numeric",
+              "median": 0.0,
+              "log": false,
+              "center": 0.0,
+              "scale": 1
+            },
+            {
+              "field": "cycle_voltage_upper_V",
+              "kind": "numeric",
+              "median": 1.0,
+              "log": false,
+              "center": 1.213636363636364,
+              "scale": 0.31808440067128924
+            },
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 99.72237310640351,
+              "log": false,
+              "center": 99.45725341413397,
+              "scale": 6.127558122443536
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1790.4290429042903,
+              "log": true,
+              "center": 7.507219386993551,
+              "scale": 0.8750488266688616
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -0.6148621190130621,
+              "log": false,
+              "center": -1.2333796734015703,
+              "scale": 4.308809594305774
+            },
+            {
+              "field": "electrolyte",
+              "kind": "categorical",
+              "vocab": [
+                "H2SO4",
+                "KOH",
+                "Li2SO4",
+                "Na2SO4",
+                "NaNO3",
+                "sodium_acetate"
+              ]
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "reported_current_A_g",
+              "kind": "numeric",
+              "median": 5.0,
+              "log": true,
+              "center": 1.8771137491013086,
+              "scale": 0.6635812148103012
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "RF_early_p0_raw_delta",
+          "family": "RF_early",
+          "status": "complete",
+          "predicted_retention_pct": 90.08083601312109,
+          "encoder": [
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 99.72237310640351,
+              "log": false,
+              "center": 99.45725341413397,
+              "scale": 6.127558122443536
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1790.4290429042903,
+              "log": true,
+              "center": 7.507219386993551,
+              "scale": 0.8750488266688616
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -0.6148621190130621,
+              "log": false,
+              "center": -1.2333796734015703,
+              "scale": 4.308809594305774
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "RF_static_p2_raw_delta",
+          "family": "RF_static",
+          "status": "complete",
+          "predicted_retention_pct": 93.60977347628723,
+          "encoder": [
+            {
+              "field": "BET_m2_g",
+              "kind": "numeric",
+              "median": 2035.6,
+              "log": true,
+              "center": 7.324633689596437,
+              "scale": 0.6984780387422153
+            },
+            {
+              "field": "concentration_mol_L",
+              "kind": "numeric",
+              "median": 3.0,
+              "log": true,
+              "center": 1.2810151256991202,
+              "scale": 0.6272020364927438
+            },
+            {
+              "field": "cycle_voltage_lower_V",
+              "kind": "numeric",
+              "median": 0.0,
+              "log": false,
+              "center": 0.0,
+              "scale": 1
+            },
+            {
+              "field": "cycle_voltage_upper_V",
+              "kind": "numeric",
+              "median": 1.0,
+              "log": false,
+              "center": 1.213636363636364,
+              "scale": 0.31808440067128924
+            },
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 99.72237310640351,
+              "log": false,
+              "center": 99.45725341413397,
+              "scale": 6.127558122443536
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1790.4290429042903,
+              "log": true,
+              "center": 7.507219386993551,
+              "scale": 0.8750488266688616
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -0.6148621190130621,
+              "log": false,
+              "center": -1.2333796734015703,
+              "scale": 4.308809594305774
+            },
+            {
+              "field": "electrolyte",
+              "kind": "categorical",
+              "vocab": [
+                "H2SO4",
+                "KOH",
+                "Li2SO4",
+                "Na2SO4",
+                "NaNO3",
+                "sodium_acetate"
+              ]
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "reported_current_A_g",
+              "kind": "numeric",
+              "median": 5.0,
+              "log": true,
+              "center": 1.8771137491013086,
+              "scale": 0.6635812148103012
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "Ridge_early_p2_continuation_delta",
+          "family": "Ridge_early",
+          "status": "complete",
+          "predicted_retention_pct": 94.07609968100269,
+          "encoder": [
+            {
+              "field": "early_linear_remaining_change_pp",
+              "kind": "numeric",
+              "median": -7.1748879530446885,
+              "log": false,
+              "center": -6.228866396237201,
+              "scale": 26.10957880595981
+            },
+            {
+              "field": "early_mean_minus_last_pp",
+              "kind": "numeric",
+              "median": 0.515267175572518,
+              "log": false,
+              "center": 0.41367789525259363,
+              "scale": 2.2161685920361207
+            },
+            {
+              "field": "early_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "observed_fraction",
+              "kind": "numeric",
+              "median": 0.1815384615384615,
+              "log": false,
+              "center": 0.17238535297458885,
+              "scale": 0.025705041939398023
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "XGB_early_p1_raw_delta",
+          "family": "XGB_early",
+          "status": "complete",
+          "predicted_retention_pct": 92.11056518554688,
+          "encoder": [
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 99.72237310640351,
+              "log": false,
+              "center": 99.45725341413397,
+              "scale": 6.127558122443536
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1790.4290429042903,
+              "log": true,
+              "center": 7.507219386993551,
+              "scale": 0.8750488266688616
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -0.6148621190130621,
+              "log": false,
+              "center": -1.2333796734015703,
+              "scale": 4.308809594305774
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "XGB_static_p1_raw_delta",
+          "family": "XGB_static",
+          "status": "complete",
+          "predicted_retention_pct": 90.7717514038086,
+          "encoder": [
+            {
+              "field": "BET_m2_g",
+              "kind": "numeric",
+              "median": 2035.6,
+              "log": true,
+              "center": 7.324633689596437,
+              "scale": 0.6984780387422153
+            },
+            {
+              "field": "concentration_mol_L",
+              "kind": "numeric",
+              "median": 3.0,
+              "log": true,
+              "center": 1.2810151256991202,
+              "scale": 0.6272020364927438
+            },
+            {
+              "field": "cycle_voltage_lower_V",
+              "kind": "numeric",
+              "median": 0.0,
+              "log": false,
+              "center": 0.0,
+              "scale": 1
+            },
+            {
+              "field": "cycle_voltage_upper_V",
+              "kind": "numeric",
+              "median": 1.0,
+              "log": false,
+              "center": 1.213636363636364,
+              "scale": 0.31808440067128924
+            },
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 99.72237310640351,
+              "log": false,
+              "center": 99.45725341413397,
+              "scale": 6.127558122443536
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1790.4290429042903,
+              "log": true,
+              "center": 7.507219386993551,
+              "scale": 0.8750488266688616
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 3.6755386565272374,
+              "log": false,
+              "center": 4.761207326183738,
+              "scale": 4.783935706025341
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -0.6148621190130621,
+              "log": false,
+              "center": -1.2333796734015703,
+              "scale": 4.308809594305774
+            },
+            {
+              "field": "electrolyte",
+              "kind": "categorical",
+              "vocab": [
+                "H2SO4",
+                "KOH",
+                "Li2SO4",
+                "Na2SO4",
+                "NaNO3",
+                "sodium_acetate"
+              ]
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 99.80988593155894,
+              "log": false,
+              "center": 99.04357551888138,
+              "scale": 7.797717029166752
+            },
+            {
+              "field": "reported_current_A_g",
+              "kind": "numeric",
+              "median": 5.0,
+              "log": true,
+              "center": 1.8771137491013086,
+              "scale": 0.6635812148103012
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 9.278842509197919,
+              "scale": 0.896342447493048
+            }
+          ],
+          "warnings": []
+        }
+      ],
+      "baselines": {
+        "training_mean": 94.72121212121213,
+        "early_persistence": 98.30839297332464,
+        "early_linear": 179.7718309884512
+      }
+    },
+    "3E": {
+      "training_rows": 30,
+      "training_sources": 24,
+      "train_row_ids": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "legacy:R087_CY01::early20",
+        "incoming:ADD_056_T01::early20",
+        "incoming:ADD_005_T01::early20",
+        "incoming:ADD_027_T01::early20",
+        "candidate:TE037::early20",
+        "candidate:TE038::early20",
+        "incoming:ADD_025_T01::early20",
+        "incoming:ADD_009_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:008::early20",
+        "candidate:V05:009::early20",
+        "candidate:V05:010::early20",
+        "candidate:V05:011::early20",
+        "legacy:R013_CY01::early20",
+        "candidate:TE029::early20",
+        "candidate:TE030::early20",
+        "incoming:ADD_003_T01::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "incoming:ADD_035_T01::early20",
+        "v25:Leather_ANSC8_3E_C10000::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:TE020::early20",
+        "candidate:V05:018::early20",
+        "candidate:TE052::early20"
+      ],
+      "primary": "GPR_early_p1_continuation_delta",
+      "predictions": [
+        {
+          "config_id": "ExtraTrees_early_p2_raw_delta",
+          "family": "ExtraTrees_early",
+          "status": "complete",
+          "predicted_retention_pct": 82.43410793988562,
+          "encoder": [
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 98.60699497189376,
+              "log": false,
+              "center": 97.1824877163608,
+              "scale": 4.820357008612981
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1560.2645502645503,
+              "log": true,
+              "center": 7.022414128416925,
+              "scale": 0.9683643097114031
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -1.12664385573601,
+              "log": false,
+              "center": -4.434629766484957,
+              "scale": 10.116803288799346
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "GPR_early_p1_continuation_delta",
+          "family": "GPR_early",
+          "status": "complete",
+          "predicted_retention_pct": 84.06279410729091,
+          "encoder": [
+            {
+              "field": "early_linear_remaining_change_pp",
+              "kind": "numeric",
+              "median": -5.7500438173717985,
+              "log": false,
+              "center": -11.422607369100385,
+              "scale": 12.590698144136475
+            },
+            {
+              "field": "early_mean_minus_last_pp",
+              "kind": "numeric",
+              "median": 0.3023033099157715,
+              "log": false,
+              "center": 0.8468532469205795,
+              "scale": 1.0414382027747326
+            },
+            {
+              "field": "early_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "observed_fraction",
+              "kind": "numeric",
+              "median": 0.17747311750280664,
+              "log": false,
+              "center": 0.17046272299048706,
+              "scale": 0.017773830714493975
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "GPR_static_p1_raw_delta",
+          "family": "GPR_static",
+          "status": "complete",
+          "predicted_retention_pct": 84.06424341732014,
+          "encoder": [
+            {
+              "field": "BET_m2_g",
+              "kind": "numeric",
+              "median": 1294.28,
+              "log": true,
+              "center": 7.194311763219724,
+              "scale": 0.721533772297184
+            },
+            {
+              "field": "concentration_mol_L",
+              "kind": "numeric",
+              "median": 4.5,
+              "log": true,
+              "center": 1.439304639846297,
+              "scale": 0.5808324726657839
+            },
+            {
+              "field": "cycle_voltage_lower_V",
+              "kind": "numeric",
+              "median": -1.0,
+              "log": false,
+              "center": -0.7604166666666667,
+              "scale": 0.3839159973946848
+            },
+            {
+              "field": "cycle_voltage_upper_V",
+              "kind": "numeric",
+              "median": 0.0,
+              "log": false,
+              "center": 0.22291666666666668,
+              "scale": 0.3658549253309144
+            },
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 98.60699497189376,
+              "log": false,
+              "center": 97.1824877163608,
+              "scale": 4.820357008612981
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1560.2645502645503,
+              "log": true,
+              "center": 7.022414128416925,
+              "scale": 0.9683643097114031
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -1.12664385573601,
+              "log": false,
+              "center": -4.434629766484957,
+              "scale": 10.116803288799346
+            },
+            {
+              "field": "electrolyte",
+              "kind": "categorical",
+              "vocab": [
+                "H2SO4",
+                "KOH",
+                "Na2SO4",
+                "NaOH"
+              ]
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "reference_electrode",
+              "kind": "categorical",
+              "vocab": [
+                "Ag/AgCl",
+                "Ag/AgCl_saturated_KCl",
+                "Hg/Hg2SO4 (saturated K2SO4)",
+                "Hg/HgO",
+                "HgO/Hg (reported order)",
+                "SCE"
+              ]
+            },
+            {
+              "field": "reported_current_A_g",
+              "kind": "numeric",
+              "median": 6.0,
+              "log": true,
+              "center": 2.0418850010760825,
+              "scale": 0.6434368851337064
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "RF_early_p0_raw_delta",
+          "family": "RF_early",
+          "status": "complete",
+          "predicted_retention_pct": 81.59421763227887,
+          "encoder": [
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 98.60699497189376,
+              "log": false,
+              "center": 97.1824877163608,
+              "scale": 4.820357008612981
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1560.2645502645503,
+              "log": true,
+              "center": 7.022414128416925,
+              "scale": 0.9683643097114031
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -1.12664385573601,
+              "log": false,
+              "center": -4.434629766484957,
+              "scale": 10.116803288799346
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "RF_static_p2_raw_delta",
+          "family": "RF_static",
+          "status": "complete",
+          "predicted_retention_pct": 81.83938214243935,
+          "encoder": [
+            {
+              "field": "BET_m2_g",
+              "kind": "numeric",
+              "median": 1294.28,
+              "log": true,
+              "center": 7.194311763219724,
+              "scale": 0.721533772297184
+            },
+            {
+              "field": "concentration_mol_L",
+              "kind": "numeric",
+              "median": 4.5,
+              "log": true,
+              "center": 1.439304639846297,
+              "scale": 0.5808324726657839
+            },
+            {
+              "field": "cycle_voltage_lower_V",
+              "kind": "numeric",
+              "median": -1.0,
+              "log": false,
+              "center": -0.7604166666666667,
+              "scale": 0.3839159973946848
+            },
+            {
+              "field": "cycle_voltage_upper_V",
+              "kind": "numeric",
+              "median": 0.0,
+              "log": false,
+              "center": 0.22291666666666668,
+              "scale": 0.3658549253309144
+            },
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 98.60699497189376,
+              "log": false,
+              "center": 97.1824877163608,
+              "scale": 4.820357008612981
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1560.2645502645503,
+              "log": true,
+              "center": 7.022414128416925,
+              "scale": 0.9683643097114031
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -1.12664385573601,
+              "log": false,
+              "center": -4.434629766484957,
+              "scale": 10.116803288799346
+            },
+            {
+              "field": "electrolyte",
+              "kind": "categorical",
+              "vocab": [
+                "H2SO4",
+                "KOH",
+                "Na2SO4",
+                "NaOH"
+              ]
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "reference_electrode",
+              "kind": "categorical",
+              "vocab": [
+                "Ag/AgCl",
+                "Ag/AgCl_saturated_KCl",
+                "Hg/Hg2SO4 (saturated K2SO4)",
+                "Hg/HgO",
+                "HgO/Hg (reported order)",
+                "SCE"
+              ]
+            },
+            {
+              "field": "reported_current_A_g",
+              "kind": "numeric",
+              "median": 6.0,
+              "log": true,
+              "center": 2.0418850010760825,
+              "scale": 0.6434368851337064
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "Ridge_early_p2_continuation_delta",
+          "family": "Ridge_early",
+          "status": "complete",
+          "predicted_retention_pct": 79.66631003268063,
+          "encoder": [
+            {
+              "field": "early_linear_remaining_change_pp",
+              "kind": "numeric",
+              "median": -5.7500438173717985,
+              "log": false,
+              "center": -11.422607369100385,
+              "scale": 12.590698144136475
+            },
+            {
+              "field": "early_mean_minus_last_pp",
+              "kind": "numeric",
+              "median": 0.3023033099157715,
+              "log": false,
+              "center": 0.8468532469205795,
+              "scale": 1.0414382027747326
+            },
+            {
+              "field": "early_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "observed_fraction",
+              "kind": "numeric",
+              "median": 0.17747311750280664,
+              "log": false,
+              "center": 0.17046272299048706,
+              "scale": 0.017773830714493975
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "XGB_early_p1_raw_delta",
+          "family": "XGB_early",
+          "status": "complete",
+          "predicted_retention_pct": 82.29157257080078,
+          "encoder": [
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 98.60699497189376,
+              "log": false,
+              "center": 97.1824877163608,
+              "scale": 4.820357008612981
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1560.2645502645503,
+              "log": true,
+              "center": 7.022414128416925,
+              "scale": 0.9683643097114031
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -1.12664385573601,
+              "log": false,
+              "center": -4.434629766484957,
+              "scale": 10.116803288799346
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "config_id": "XGB_static_p1_raw_delta",
+          "family": "XGB_static",
+          "status": "complete",
+          "predicted_retention_pct": 82.07927703857422,
+          "encoder": [
+            {
+              "field": "BET_m2_g",
+              "kind": "numeric",
+              "median": 1294.28,
+              "log": true,
+              "center": 7.194311763219724,
+              "scale": 0.721533772297184
+            },
+            {
+              "field": "concentration_mol_L",
+              "kind": "numeric",
+              "median": 4.5,
+              "log": true,
+              "center": 1.439304639846297,
+              "scale": 0.5808324726657839
+            },
+            {
+              "field": "cycle_voltage_lower_V",
+              "kind": "numeric",
+              "median": -1.0,
+              "log": false,
+              "center": -0.7604166666666667,
+              "scale": 0.3839159973946848
+            },
+            {
+              "field": "cycle_voltage_upper_V",
+              "kind": "numeric",
+              "median": 0.0,
+              "log": false,
+              "center": 0.22291666666666668,
+              "scale": 0.3658549253309144
+            },
+            {
+              "field": "early_mean_retention_pct",
+              "kind": "numeric",
+              "median": 98.60699497189376,
+              "log": false,
+              "center": 97.1824877163608,
+              "scale": 4.820357008612981
+            },
+            {
+              "field": "early_observed_cycle_count",
+              "kind": "numeric",
+              "median": 1560.2645502645503,
+              "log": true,
+              "center": 7.022414128416925,
+              "scale": 0.9683643097114031
+            },
+            {
+              "field": "early_retention_range_pp",
+              "kind": "numeric",
+              "median": 1.364514271918594,
+              "log": false,
+              "center": 2.5462390558866845,
+              "scale": 2.3369046067782797
+            },
+            {
+              "field": "early_retention_slope_per_1000_cycles",
+              "kind": "numeric",
+              "median": -1.12664385573601,
+              "log": false,
+              "center": -4.434629766484957,
+              "scale": 10.116803288799346
+            },
+            {
+              "field": "electrolyte",
+              "kind": "categorical",
+              "vocab": [
+                "H2SO4",
+                "KOH",
+                "Na2SO4",
+                "NaOH"
+              ]
+            },
+            {
+              "field": "last_early_retention_pct",
+              "kind": "numeric",
+              "median": 97.79021818760762,
+              "log": false,
+              "center": 96.33563446944022,
+              "scale": 5.352696891671861
+            },
+            {
+              "field": "reference_electrode",
+              "kind": "categorical",
+              "vocab": [
+                "Ag/AgCl",
+                "Ag/AgCl_saturated_KCl",
+                "Hg/Hg2SO4 (saturated K2SO4)",
+                "Hg/HgO",
+                "HgO/Hg (reported order)",
+                "SCE"
+              ]
+            },
+            {
+              "field": "reported_current_A_g",
+              "kind": "numeric",
+              "median": 6.0,
+              "log": true,
+              "center": 2.0418850010760825,
+              "scale": 0.6434368851337064
+            },
+            {
+              "field": "target_cycle_count",
+              "kind": "numeric",
+              "median": 10000.0,
+              "log": true,
+              "center": 8.796247673493216,
+              "scale": 0.9515172287761697
+            }
+          ],
+          "warnings": []
+        }
+      ],
+      "baselines": {
+        "training_mean": 93.67854166666666,
+        "early_persistence": 86.72182821118992,
+        "early_linear": 31.846479623505772
+      }
+    }
+  }
+}
