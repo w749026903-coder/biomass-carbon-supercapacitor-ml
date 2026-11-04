@@ -1,0 +1,376 @@
+{
+  "analysis": "Descriptive paired source bootstrap, 5000 fixed-seed resamples; all sources already exposed in development.",
+  "results_sha256": "4b21af4d467b2c00515d9876a1af75a4c5e2e23f1d794c37a8aea9c1ab0154b0",
+  "comparisons": [
+    {
+      "system": "2E",
+      "author_only": {
+        "rows": 27,
+        "sources": 22,
+        "r2": 0.5911993753479593,
+        "mae": 5.769490194556153,
+        "rmse": 7.870927040399979,
+        "p90_absolute_error": 12.270590279976815,
+        "source_p90_mae": 12.097160376141149,
+        "gates": {
+          "coverage": true,
+          "positive": true,
+          "r2": false,
+          "mae": false,
+          "rmse": false,
+          "mape": false,
+          "p90ape": false,
+          "p90abs": false,
+          "source_tail": false,
+          "baselines": false
+        }
+      },
+      "intermediate_25": {
+        "rows": 27,
+        "sources": 22,
+        "r2": 0.5730450090039568,
+        "mae": 6.347201169838956,
+        "rmse": 8.04379805325929,
+        "p90_absolute_error": 12.819225018028249,
+        "source_p90_mae": 11.159971473786493,
+        "gates": {
+          "coverage": true,
+          "positive": true,
+          "r2": false,
+          "mae": false,
+          "rmse": false,
+          "mape": false,
+          "p90ape": false,
+          "p90abs": false,
+          "source_tail": false,
+          "baselines": false
+        }
+      },
+      "paired_mae_delta_pp": 0.5777109752828037,
+      "paired_source_bootstrap95_pp": [
+        -0.06120787521524828,
+        1.2464992400224426
+      ],
+      "sources_improved": 7,
+      "sources_worsened": 15,
+      "fixed_families": [
+        {
+          "config": "ExtraTrees_early_p2_raw_delta",
+          "mae_delta": -0.12397124279410043
+        },
+        {
+          "config": "GPR_early_p1_continuation_delta",
+          "mae_delta": 0.4385847289669389
+        },
+        {
+          "config": "GPR_static_p1_raw_delta",
+          "mae_delta": -0.15510367504385325
+        },
+        {
+          "config": "RF_early_p0_raw_delta",
+          "mae_delta": 0.17120159197016793
+        },
+        {
+          "config": "RF_static_p2_raw_delta",
+          "mae_delta": -0.20551607076103728
+        },
+        {
+          "config": "Ridge_early_p2_continuation_delta",
+          "mae_delta": -0.27154141335169335
+        },
+        {
+          "config": "XGB_early_p1_raw_delta",
+          "mae_delta": 0.4088301777905059
+        },
+        {
+          "config": "XGB_static_p1_raw_delta",
+          "mae_delta": 0.49578921500160344
+        }
+      ],
+      "baselines": {
+        "early_linear": 18.107461881917427,
+        "early_persistence": 6.249555296508186,
+        "training_mean": 7.874419191919193
+      },
+      "source_deltas": [
+        {
+          "source": "doi:10.1002/est2.70547",
+          "mae_delta_pp": 4.279483171285591
+        },
+        {
+          "source": "doi:10.1007/s10854-023-10314-z",
+          "mae_delta_pp": 0.5486347380514331
+        },
+        {
+          "source": "doi:10.1007/s11664-023-10223-1",
+          "mae_delta_pp": -2.2580898285691973
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2025.107773",
+          "mae_delta_pp": -0.2083741308638971
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2025.108253",
+          "mae_delta_pp": 0.2630565954180355
+        },
+        {
+          "source": "doi:10.1016/j.biortech.2025.132730",
+          "mae_delta_pp": 0.578618280154906
+        },
+        {
+          "source": "doi:10.1016/j.ijbiomac.2024.138815",
+          "mae_delta_pp": -1.3798296959324574
+        },
+        {
+          "source": "doi:10.1016/j.isci.2026.117248",
+          "mae_delta_pp": -0.22634977951027224
+        },
+        {
+          "source": "doi:10.1016/j.jelechem.2026.120000",
+          "mae_delta_pp": 0.6280865008628709
+        },
+        {
+          "source": "doi:10.1016/j.jes.2024.03.039",
+          "mae_delta_pp": 4.682793881654945
+        },
+        {
+          "source": "doi:10.1016/j.ultsonch.2024.107213",
+          "mae_delta_pp": 0.02304305991351896
+        },
+        {
+          "source": "doi:10.1021/acsomega.3c04692",
+          "mae_delta_pp": 1.2700930804576984
+        },
+        {
+          "source": "doi:10.1021/acsomega.3c09438",
+          "mae_delta_pp": 1.0884256938343668
+        },
+        {
+          "source": "doi:10.1039/d4cp01914h",
+          "mae_delta_pp": 0.628629776414769
+        },
+        {
+          "source": "doi:10.1039/d5ra01262g",
+          "mae_delta_pp": 0.6100446717106394
+        },
+        {
+          "source": "doi:10.1039/d5ra02129d",
+          "mae_delta_pp": 0.018636006441241193
+        },
+        {
+          "source": "doi:10.1039/d5ra08165c",
+          "mae_delta_pp": -0.06695402759993385
+        },
+        {
+          "source": "doi:10.1088/1402-4896/ae73bc",
+          "mae_delta_pp": 2.3699077317951236
+        },
+        {
+          "source": "doi:10.3390/coatings13071236",
+          "mae_delta_pp": 0.721830620054817
+        },
+        {
+          "source": "doi:10.3390/molecules30010089",
+          "mae_delta_pp": 1.600340544377076
+        },
+        {
+          "source": "doi:10.3390/nano14080686",
+          "mae_delta_pp": -1.992467120746383
+        },
+        {
+          "source": "family:Tondolo_TAC_JECE_RSC",
+          "mae_delta_pp": -0.46991831298321074
+        }
+      ]
+    },
+    {
+      "system": "3E",
+      "author_only": {
+        "rows": 30,
+        "sources": 24,
+        "r2": 0.6757684434229272,
+        "mae": 3.0878143184829385,
+        "rmse": 4.1551743948250595,
+        "p90_absolute_error": 7.475047118470158,
+        "source_p90_mae": 4.779860864684108,
+        "gates": {
+          "coverage": true,
+          "positive": true,
+          "r2": false,
+          "mae": false,
+          "rmse": false,
+          "mape": true,
+          "p90ape": true,
+          "p90abs": false,
+          "source_tail": true,
+          "baselines": false
+        }
+      },
+      "intermediate_25": {
+        "rows": 30,
+        "sources": 24,
+        "r2": 0.6838792252972621,
+        "mae": 3.021428233175387,
+        "rmse": 4.102873568341345,
+        "p90_absolute_error": 7.510265167065043,
+        "source_p90_mae": 5.244330381963638,
+        "gates": {
+          "coverage": true,
+          "positive": true,
+          "r2": false,
+          "mae": false,
+          "rmse": false,
+          "mape": true,
+          "p90ape": true,
+          "p90abs": false,
+          "source_tail": false,
+          "baselines": false
+        }
+      },
+      "paired_mae_delta_pp": -0.06638608530755159,
+      "paired_source_bootstrap95_pp": [
+        -0.4312839508372386,
+        0.30493915926695714
+      ],
+      "sources_improved": 14,
+      "sources_worsened": 10,
+      "fixed_families": [
+        {
+          "config": "ExtraTrees_early_p2_raw_delta",
+          "mae_delta": -0.08804900248376724
+        },
+        {
+          "config": "GPR_early_p1_continuation_delta",
+          "mae_delta": 0.04728177352111507
+        },
+        {
+          "config": "GPR_static_p1_raw_delta",
+          "mae_delta": 0.05002864916902361
+        },
+        {
+          "config": "RF_early_p0_raw_delta",
+          "mae_delta": -0.04736175509380969
+        },
+        {
+          "config": "RF_static_p2_raw_delta",
+          "mae_delta": 0.029040957731513384
+        },
+        {
+          "config": "Ridge_early_p2_continuation_delta",
+          "mae_delta": -0.08995015296874742
+        },
+        {
+          "config": "XGB_early_p1_raw_delta",
+          "mae_delta": -0.07898094367541209
+        },
+        {
+          "config": "XGB_static_p1_raw_delta",
+          "mae_delta": -0.04464676878042617
+        }
+      ],
+      "baselines": {
+        "early_linear": 9.884616859281591,
+        "early_persistence": 3.4076038732125657,
+        "training_mean": 4.873442028985506
+      },
+      "source_deltas": [
+        {
+          "source": "doi:10.1002/asia.70648",
+          "mae_delta_pp": 0.38569580490259625
+        },
+        {
+          "source": "doi:10.1002/ente.202201281",
+          "mae_delta_pp": 0.4632454252494398
+        },
+        {
+          "source": "doi:10.1007/s00339-023-07141-8",
+          "mae_delta_pp": -0.7761013709987452
+        },
+        {
+          "source": "doi:10.1007/s10854-026-18573-2",
+          "mae_delta_pp": -2.0061188139630417
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2026.109160",
+          "mae_delta_pp": 2.5173473079262862
+        },
+        {
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "mae_delta_pp": -0.08268700601475132
+        },
+        {
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "mae_delta_pp": 0.01760900558116063
+        },
+        {
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "mae_delta_pp": 0.9646224877660785
+        },
+        {
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "mae_delta_pp": 0.8606393908305847
+        },
+        {
+          "source": "doi:10.1016/j.jpcs.2023.111318",
+          "mae_delta_pp": 0.04782159753973758
+        },
+        {
+          "source": "doi:10.1021/acsomega.3c04692",
+          "mae_delta_pp": -0.0636358868594229
+        },
+        {
+          "source": "doi:10.1021/acsomega.4c11529",
+          "mae_delta_pp": -0.01210446831363754
+        },
+        {
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "mae_delta_pp": 0.5200269779581745
+        },
+        {
+          "source": "doi:10.1039/d4cp01914h",
+          "mae_delta_pp": 0.2840954375276681
+        },
+        {
+          "source": "doi:10.1039/d4ta02115k",
+          "mae_delta_pp": -0.3767497284764403
+        },
+        {
+          "source": "doi:10.1039/d4ya00076e",
+          "mae_delta_pp": -0.20864588952392182
+        },
+        {
+          "source": "doi:10.1039/d6nj00244g",
+          "mae_delta_pp": -0.11372699067739234
+        },
+        {
+          "source": "doi:10.1039/d6ra04144b",
+          "mae_delta_pp": -0.12902896320913726
+        },
+        {
+          "source": "doi:10.1088/1361-6528/ace97a",
+          "mae_delta_pp": -2.2355390599879
+        },
+        {
+          "source": "doi:10.3390/mi14030572",
+          "mae_delta_pp": -0.5553841377884652
+        },
+        {
+          "source": "doi:10.3390/molecules28186543",
+          "mae_delta_pp": 0.8281812551278733
+        },
+        {
+          "source": "doi:10.3390/nano13101654",
+          "mae_delta_pp": -0.5045969006831399
+        },
+        {
+          "source": "doi:10.3390/nano13172431",
+          "mae_delta_pp": -0.49334928793352617
+        },
+        {
+          "source": "doi:10.3390/polym17111544",
+          "mae_delta_pp": -0.9248822333613163
+        }
+      ]
+    }
+  ]
+}
