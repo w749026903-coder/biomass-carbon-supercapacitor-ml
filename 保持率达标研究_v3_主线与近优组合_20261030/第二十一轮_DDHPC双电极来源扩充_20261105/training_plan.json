@@ -1,0 +1,200 @@
+{
+  "frozen_at": "2026-11-05T01:40:35+08:00",
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.7.2",
+    "xgboost": "3.1.1",
+    "numpy": "2.3.4",
+    "scipy": "1.16.3"
+  },
+  "protected": {
+    "tools/retention_ddhpc_development_v21.py": "8778eee7757c37c684578f8d24c9cee097cf862ace50d7a6d3fa863813f3b08c",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十一轮_DDHPC双电极来源扩充_20261105/input_snapshot.json": "403293ba3298ae226374bcf134cb6007dc1f265ad0a119aa25aae1551ae62589",
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十四轮_中段监督对照_20261104/input_snapshot.json": "c1d2c52a54749d019831406ac5dd61f290e54536218c0d8fe7603e5f66e18d62",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十四轮_中段监督对照_20261104/training_plan.json": "87b81ec7ff28623981a2733900dbeb27d2a14d5fa6c860cef28bc10a4d2cb0bb",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十四轮_中段监督对照_20261104/fit_events.jsonl.gz": "dc960e52d8657a8ab55985af6ada3dcec6500be68ab348a999fe08da1064487a",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十四轮_中段监督对照_20261104/heldout_predictions.json": "7da65d51da9b4c9473f3bcbd98cf6f6ed8cc6451eb519c92f5046bee52503e4b",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十四轮_中段监督对照_20261104/results.json": "4b21af4d467b2c00515d9876a1af75a4c5e2e23f1d794c37a8aea9c1ab0154b0",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十六轮_外部单篇预测锁定_20261104/training_plan.json": "951a548da87d262e18e6c1a57847a6c00d57bbd9f15babe61a6b74bff9f6de7b",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十轮_DDHPC双电极刊本补证_20261105/curve_evidence.json": "68344103c60c3902aabb2528c36ff63bb5b2130897600630613541c4da6e0b2c",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十轮_DDHPC双电极刊本补证_20261105/verification.json": "86279f8ce1df4d33da437d680b7bf16f6177a717cd1bcab5b321e85dba05a0dd",
+    "data/current_retention_research.json": "fd5a60e55b34ccc92c5640271e255d9477da308e771af7dc21edf2c569b03463",
+    "data/current_training_latest.json": "e56d3ab9e219b78ee8c07dbd896bbeb9e0b6949b4a8574dc0d8f034f2b9fe725",
+    "tools/retention_horizon_normalization_v19.py": "9ca72d9a6007fa7541dcd7250ff3966375425ef9f13099dfdec27e7b813cda2b",
+    "tools/retention_v3_optimizer.py": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+    "tools/retention_shape_v4.py": "5f871167001c70f96630fdc54ebd466d2d05a152189cd19dfbe977b332dfe24a",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+    "tools/verify_retention_v3b.py": "aeb0a5b72c4752ce9e8629159310b05cad5052392d07bf01413dbbf7881989bf"
+  },
+  "sources": [
+    "doi:10.1002/est2.70547",
+    "doi:10.1007/s10854-023-10314-z",
+    "doi:10.1007/s11664-023-10223-1",
+    "doi:10.1016/j.biombioe.2025.107773",
+    "doi:10.1016/j.biombioe.2025.108253",
+    "doi:10.1016/j.biortech.2025.132730",
+    "doi:10.1016/j.ijbiomac.2024.138815",
+    "doi:10.1016/j.isci.2026.117248",
+    "doi:10.1016/j.jelechem.2026.120000",
+    "doi:10.1016/j.jes.2024.03.039",
+    "doi:10.1016/j.ultsonch.2024.107213",
+    "doi:10.1021/acsomega.3c04692",
+    "doi:10.1021/acsomega.3c09438",
+    "doi:10.1039/c9ra06603a",
+    "doi:10.1039/d4cp01914h",
+    "doi:10.1039/d5ra01262g",
+    "doi:10.1039/d5ra02129d",
+    "doi:10.1039/d5ra08165c",
+    "doi:10.1088/1402-4896/ae73bc",
+    "doi:10.3390/coatings13071236",
+    "doi:10.3390/molecules30010089",
+    "doi:10.3390/nano14080686",
+    "family:Tondolo_TAC_JECE_RSC"
+  ],
+  "configurations": [
+    {
+      "id": "ExtraTrees_early_p2_raw_delta",
+      "family": "ExtraTrees_early",
+      "kind": "ExtraTrees",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_early_p1_continuation_delta",
+      "family": "GPR_early",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_static_p1_raw_delta",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "RF_early_p0_raw_delta",
+      "family": "RF_early",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "RF_static_p2_raw_delta",
+      "family": "RF_static",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 1,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "Ridge_early_p2_continuation_delta",
+      "family": "Ridge_early",
+      "kind": "Ridge",
+      "parameters": {
+        "alpha": 10.0
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_early_p1_raw_delta",
+      "family": "XGB_early",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_static_p1_raw_delta",
+      "family": "XGB_static",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    }
+  ],
+  "primary": "GPR_early_p1_continuation_delta",
+  "planned_new_fits": 184,
+  "reused_p14_control_fits": 176,
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "baselines": [
+    "training_mean",
+    "early_persistence",
+    "early_linear"
+  ],
+  "scope": "B 2E approved early20 only; retain P14 encoder, fixed model, weights and delta target. Two P20 records from one source.",
+  "source_roles": "DDHPC is one exposed development source; both records held together; external accepted sources = 0.",
+  "comparisons": "Primary matched contrast uses exact original 27 endpoints; expanded 29-endpoint and DDHPC-only predictions reported separately.",
+  "sensitivity": "DDHPC-only held-source fold: reuse the same fit, vary shared reference ordinate by ±4 px and zero axis by ±1 px; hold other pixels fixed. No selection or statistical confidence interpretation.",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261105,
+    "interval": [
+      0.025,
+      0.975
+    ],
+    "unit": "source"
+  },
+  "external_sources": 0
+}
