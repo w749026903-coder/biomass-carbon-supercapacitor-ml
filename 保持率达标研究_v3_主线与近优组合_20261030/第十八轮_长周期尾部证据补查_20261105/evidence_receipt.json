@@ -1,0 +1,211 @@
+{
+  "status": "complete_evidence_screen_no_fits",
+  "goal_status": "active",
+  "new_fits": 0,
+  "accepted_external_sources": 0,
+  "new_3E20_admitted": 0,
+  "new_2E20_admitted": 0,
+  "corpus_screen": {
+    "input_files": 526,
+    "distinct_file_hashes": 497,
+    "candidate_text_snippets": 57,
+    "coverage_unit": "file hash and text match, not article, candidate, or validated row",
+    "match_rule": "5000+ cycles, nearby capacitance/retention terms and 30–80% in the same scanned passage; whole-document three-electrode cue used only for sorting",
+    "shortlist": {
+      "local_cache": ".local-literature-cache/P18/corpus_shortlist.tsv",
+      "bytes": 14617,
+      "sha256": "25d3eb75e4db680a432fd783a51e783b0e9873d8627e5f9c67a461f8984b9066",
+      "url": null
+    }
+  },
+  "developed_source_3E": {
+    "doi": "10.1016/j.indcrop.2022.114906",
+    "sample": "SSC-700",
+    "stage": "exposed_abstract_waiting_original_figure_and_protocol",
+    "system": "3E author abstract",
+    "target_cycle_count": 10000,
+    "author_retention_pct": 73.97,
+    "publisher_abstract": "https://www.sciencedirect.com/science/article/abs/pii/S0926669022003892",
+    "two_electrode_separate": "same material, different test; reported 0.5% capacity loss at 5000 cycles",
+    "reported_current_A_g": null,
+    "early_markers": null,
+    "reason": "0.5 A/g in abstract is for specific capacitance, not automatically the current for cycling; the review/table cycling current is a lead only.",
+    "openalex_discovery": {
+      "local_cache": ".local-literature-cache/P18/SSC700_openalex.json",
+      "bytes": 27555,
+      "sha256": "bc4b931e7ebde3bba733ece63feb11b6d39b011648e6cf97ba0f67df5f360c72",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.indcrop.2022.114906"
+    },
+    "open_locations_reported": 0,
+    "future_family_checks": [
+      "10.1016/j.apsusc.2023.156365",
+      "10.1002/cssc.202400780"
+    ]
+  },
+  "developed_source_2E": {
+    "doi": "10.1039/c9ra06603a",
+    "source_family": "doi:10.1039/c9ra06603a",
+    "system": "2E",
+    "target_cycle_count": 5000,
+    "reported_current_A_g": 10.0,
+    "current_mass_basis": null,
+    "electrolyte": "H2SO4",
+    "concentration_mol_L": 1.0,
+    "voltage_limits_V": [
+      0,
+      1
+    ],
+    "evidence_locators": [
+      "Experimental section: Electrochemical testing",
+      "Results, Fig. 5(d) and caption",
+      "Conclusions",
+      "Results: MPBET",
+      "publisher correction: spelling of an author name"
+    ],
+    "main_xml": {
+      "local_cache": ".local-literature-cache/P18/DDHPC_main.xml",
+      "bytes": 90798,
+      "sha256": "0744e49adfc80f069ea5f40c6d2206569a99a9d8587f440bfe2c8b4c9798f8b1",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9075029/fullTextXML"
+    },
+    "native_fig5": {
+      "local_cache": ".local-literature-cache/P18/DDHPC_fig5.jpg",
+      "bytes": 174437,
+      "sha256": "fd63edf63b0ba9c0be6238811f3d5dcf18081e03ab594a5251ad39060e35b635",
+      "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/15b4/9075029/3c075d3fe67f/c9ra06603a-f5.jpg"
+    },
+    "author_name_correction_xml": {
+      "local_cache": ".local-literature-cache/P18/DDHPC_correction.xml",
+      "bytes": 4897,
+      "sha256": "f9df1da45811cadc80142fc9d9552a25f4d7c84c182773bca51a9c89b4535a82",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9049019/fullTextXML"
+    },
+    "plot_axes": {
+      "image_width_px": 728,
+      "image_height_px": 626,
+      "x_0_px": 436.5,
+      "x_5000_px": 710.5,
+      "y_zero_px": 572,
+      "axis_y_bound_px": 1,
+      "y_marker_bound_px": 4,
+      "early_x_500_px": 464,
+      "early_x_1000_px": 491,
+      "rule": "Endpoint ratio from C(N)/C(reference) is a compatibility screen. Axis-contact estimates and shared reference are not independent statistical error."
+    },
+    "samples": [
+      {
+        "sample": "DDHPC-1kh",
+        "fig5d_color": "black",
+        "BET_m2_g": 1095,
+        "author_retention_pct": 77,
+        "precision_role": "integer; results use about, conclusion repeats same integer",
+        "graph_start_y_px": 475,
+        "graph_end_y_px": 499,
+        "graph_ratio_pct": 75.257732,
+        "graph_ratio_screen_interval_pct": [
+          68.0,
+          82.978723
+        ],
+        "status": "held_2E_early_marker_and_initial_reference_geometry_unresolved"
+      },
+      {
+        "sample": "DDHPC-2kh",
+        "fig5d_color": "red",
+        "BET_m2_g": 1216,
+        "author_retention_pct": 72,
+        "precision_role": "integer; results use about, conclusion repeats same integer",
+        "graph_start_y_px": 478,
+        "graph_end_y_px": 504,
+        "graph_ratio_pct": 72.340426,
+        "graph_ratio_screen_interval_pct": [
+          64.948454,
+          80.21978
+        ],
+        "status": "held_2E_early_marker_and_initial_reference_geometry_unresolved"
+      },
+      {
+        "sample": "DDHPC-3kh",
+        "fig5d_color": "blue",
+        "BET_m2_g": 2204,
+        "author_retention_pct": 65,
+        "precision_role": "integer; results use about, conclusion repeats same integer",
+        "graph_start_y_px": 417,
+        "graph_end_y_px": 471,
+        "graph_ratio_pct": 65.16129,
+        "graph_ratio_screen_interval_pct": [
+          60.759494,
+          69.736842
+        ],
+        "status": "held_2E_early_marker_and_initial_reference_geometry_unresolved"
+      },
+      {
+        "sample": "DDHPC-4kh",
+        "fig5d_color": "violet",
+        "BET_m2_g": 2502,
+        "author_retention_pct": 56,
+        "precision_role": "integer; results use about, conclusion repeats same integer",
+        "graph_start_y_px": 368,
+        "graph_end_y_px": 456,
+        "graph_ratio_pct": 56.862745,
+        "graph_ratio_screen_interval_pct": [
+          53.623188,
+          60.199005
+        ],
+        "status": "held_2E_early_marker_and_initial_reference_geometry_unresolved"
+      }
+    ],
+    "model_group_count": 1,
+    "next": "Obtain high-resolution source or underlying cycling table and verify marker centres, same-curve C reference and early-window boundary before freezing a 2E comparison."
+  },
+  "kept_frozen": {
+    "R018_C4": {
+      "doi": "10.1007/s13399-025-06799-9",
+      "path": "三电极端点扩充_20261018/corpus/B_R018/main.pdf",
+      "sha256": "f08eadb564726b73890353c032e8d364a2d962f7d598592260d39b61c11db617",
+      "conclusion_pct": 40,
+      "body_initial_F_g": 138.5,
+      "body_final_F_g": 36.45,
+      "body_ratio_pct": 26.31769,
+      "status": "competing claims; retained and not admitted"
+    },
+    "WHAC150": {
+      "doi": "10.3390/ma17133233",
+      "status": "Fig. 8(a) cycling current still not located",
+      "target_pct": 76.87,
+      "cycles": 7000
+    },
+    "NPCA": {
+      "doi": "10.1016/j.seppur.2024.130569",
+      "status": "approximate text vs graph, separately preserved"
+    }
+  },
+  "protected": {
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/completion.json": "4390c5faaa0f6186c77102fdcbdb36fc1e8b6cecb0f6e39c0b9469b11f2d1c2a",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/input_snapshot.json": "45cbdf1c1a1e0f29d92c2c5bf512c4edc007e0b903bd94f5e2e6b72fac58b158",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/results.json": "79d443344ceae30d0cc3bcef15cf903e047dac73a2a8c8d687030c1bb785d0c1",
+    "data/current_retention_research.json": "fd5a60e55b34ccc92c5640271e255d9477da308e771af7dc21edf2c569b03463",
+    "data/current_training_latest.json": "e56d3ab9e219b78ee8c07dbd896bbeb9e0b6949b4a8574dc0d8f034f2b9fe725"
+  },
+  "P17_count_correction": {
+    "previous_prose_run_checks": 480,
+    "verified_run_checks": 472,
+    "review_checks": 64
+  },
+  "P17_3E_long_tail_baseline": {
+    "rows": 32,
+    "source_families": 26,
+    "at_least_5000_cycles": 24,
+    "at_least_5000_and_at_most_80pct": 1
+  },
+  "exact_doi_sources_table_matches": {
+    "v7r1": {
+      "10.1016/j.indcrop.2022.114906": 0,
+      "10.1039/c9ra06603a": 0
+    },
+    "3h": {
+      "10.1016/j.indcrop.2022.114906": 0,
+      "10.1039/c9ra06603a": 0
+    },
+    "interpretation": "Exact DOI identity checks only, not laboratory/data-family independence."
+  }
+}
