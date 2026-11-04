@@ -1,0 +1,209 @@
+{
+  "frozen_at": "2026-11-05T01:26:46+08:00",
+  "system": "3E",
+  "early_fraction": 0.2,
+  "rows": 32,
+  "sources": [
+    "doi:10.1002/asia.70648",
+    "doi:10.1002/ente.202201281",
+    "doi:10.1007/s00339-023-07141-8",
+    "doi:10.1007/s10854-026-18573-2",
+    "doi:10.1016/j.biombioe.2026.109160",
+    "doi:10.1016/j.biombioe.2026.109168",
+    "doi:10.1016/j.heliyon.2024.e25628",
+    "doi:10.1016/j.ijbiomac.2023.128794",
+    "doi:10.1016/j.jenvman.2026.129124",
+    "doi:10.1016/j.jpcs.2023.111318",
+    "doi:10.1016/j.solidstatesciences.2025.108046",
+    "doi:10.1021/acsomega.3c04692",
+    "doi:10.1021/acsomega.4c11529",
+    "doi:10.1021/acssusresmgt.3c00028",
+    "doi:10.1039/d4cp01914h",
+    "doi:10.1039/d4ta02115k",
+    "doi:10.1039/d4ya00076e",
+    "doi:10.1039/d6nj00244g",
+    "doi:10.1039/d6ra04144b",
+    "doi:10.1088/1361-6528/ace97a",
+    "doi:10.3390/mi14030572",
+    "doi:10.3390/molecules28186543",
+    "doi:10.3390/nano13101654",
+    "doi:10.3390/nano13172431",
+    "doi:10.3390/nano16211412",
+    "doi:10.3390/polym17111544"
+  ],
+  "configurations": [
+    {
+      "id": "ExtraTrees_early_p2_raw_delta",
+      "family": "ExtraTrees_early",
+      "kind": "ExtraTrees",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_early_p1_continuation_delta",
+      "family": "GPR_early",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_static_p1_raw_delta",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "RF_early_p0_raw_delta",
+      "family": "RF_early",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "RF_static_p2_raw_delta",
+      "family": "RF_static",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 1,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "Ridge_early_p2_continuation_delta",
+      "family": "Ridge_early",
+      "kind": "Ridge",
+      "parameters": {
+        "alpha": 10.0
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_early_p1_raw_delta",
+      "family": "XGB_early",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_static_p1_raw_delta",
+      "family": "XGB_static",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    }
+  ],
+  "primary": "GPR_early_p1_continuation_delta",
+  "planned_new_fits": 208,
+  "reused_control_fits": 208,
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.7.2",
+    "xgboost": "3.1.1",
+    "numpy": "2.3.4",
+    "scipy": "1.16.3"
+  },
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "protected": {
+    "tools/retention_horizon_normalization_v19.py": "9ca72d9a6007fa7541dcd7250ff3966375425ef9f13099dfdec27e7b813cda2b",
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/training_plan.json": "ce8b4162f11e1f3e379649435ce80fe1578e082c91394c897e86bd60cd036851",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/input_snapshot.json": "45cbdf1c1a1e0f29d92c2c5bf512c4edc007e0b903bd94f5e2e6b72fac58b158",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/results.json": "79d443344ceae30d0cc3bcef15cf903e047dac73a2a8c8d687030c1bb785d0c1",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/heldout_predictions.json": "2f710a294bb4cb8ed55da633d863a2fe7199224e38d59a4ace01f5a8332d2280",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/fit_events.json": "83916ab42ca7f2041bcdf450f80c493753ae21e37059062de354dc5657d0382e",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/completion.json": "4390c5faaa0f6186c77102fdcbdb36fc1e8b6cecb0f6e39c0b9469b11f2d1c2a",
+    "data/current_training_latest.json": "e56d3ab9e219b78ee8c07dbd896bbeb9e0b6949b4a8574dc0d8f034f2b9fe725",
+    "data/current_retention_research.json": "fd5a60e55b34ccc92c5640271e255d9477da308e771af7dc21edf2c569b03463",
+    "tools/retention_v3_optimizer.py": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+    "tools/retention_shape_v4.py": "5f871167001c70f96630fdc54ebd466d2d05a152189cd19dfbe977b332dfe24a",
+    "tools/verify_retention_v3b.py": "aeb0a5b72c4752ce9e8629159310b05cad5052392d07bf01413dbbf7881989bf",
+    "tools/retention_tail_development_v17.py": "ba7c97ad0a751db55477ffade0c640898bb5801840aaf8d5e8cdd9004435fcd0",
+    "tools/retention_corrected2e_v13.py": "27e4b4eb3dc050e748537e7fec778166ea7004e23cb5725f3895b67eba66db27"
+  },
+  "target": "z=(retention_at_N-last_early)/log1p((N-N_observed)/1000); exact inverse in pp, no clipping",
+  "contrast": "Only fitted target changes. Exact P17 predictions on identical whole-source splits. All data and difficulties retained.",
+  "inference": "Predeclared GPR primary. Fixed-family exploration on seen development sources. No reselection using outer scores.",
+  "neighborhood": {
+    "horizon_ratio_max": 1.1,
+    "last_pp": 2,
+    "early_mean_pp": 2,
+    "nominal_window_trend_pp": 2,
+    "range_pp": 2,
+    "observed_fraction": 0.04,
+    "distance": "RMS across 5 scaled differences",
+    "role": "Outcome-blind nearest other source per row; inspect target gap only afterward. Descriptive."
+  },
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261105,
+    "unit": "source",
+    "interval": [
+      0.025,
+      0.975
+    ]
+  },
+  "external_sources": 0,
+  "other_routes": "A, 2E, 10% and prior alternatives retained as separate research routes"
+}
