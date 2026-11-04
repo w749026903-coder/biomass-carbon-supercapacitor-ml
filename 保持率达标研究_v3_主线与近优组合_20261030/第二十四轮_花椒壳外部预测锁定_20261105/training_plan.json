@@ -1,0 +1,275 @@
+{
+  "frozen_at": "2026-11-05T02:03:58+08:00",
+  "doi": "10.1039/c9ra08319g",
+  "sample": "NC-3//NC-3",
+  "system": "2E",
+  "target_cycle_count": 5000,
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.7.2",
+    "xgboost": "3.1.1",
+    "numpy": "2.3.4",
+    "scipy": "1.16.3"
+  },
+  "protected": {
+    "tools/retention_zanth_case_v24.py": "c4d0a67b4abdd802d5cb43c71344c8de7a19113a22d91440f72685b18f83b7ad",
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十三轮_MK9纠错复验_20261104/input_snapshot.json": "9c7fcc82d65ca18369437aea7656bbc71746f8254f861179e12c06a99012ad43",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十三轮_MK9纠错复验_20261104/completion.json": "dab2a2c9707d8cbd85864f9cf586b1008f760c788667835f2ac36171bc0ae0e7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十四轮_中段监督对照_20261104/training_plan.json": "87b81ec7ff28623981a2733900dbeb27d2a14d5fa6c860cef28bc10a4d2cb0bb",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十一轮_DDHPC双电极来源扩充_20261105/input_snapshot.json": "403293ba3298ae226374bcf134cb6007dc1f265ad0a119aa25aae1551ae62589",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十一轮_DDHPC双电极来源扩充_20261105/training_plan.json": "0125db8a76e2c573f56d8cd106f9c47fe39f02015bdddb608e74d719d6f7e272",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十一轮_DDHPC双电极来源扩充_20261105/verification.json": "ab0fefc677622d169d9f813fb1ee2ce48e4f1be74c21d7307882734ecc43b481",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十二轮_外部验证来源盲态预留_20261105/structural_screen.json": "6aaae95a740b1b1ccdb2776f2c958d8cee4dc534ea446a1348b2d236c9acfadc",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十三轮_花椒壳早期盲态输入_20261105/blind_early_input.json": "b94ae3fc7292f104cd640f198913a510d85148a9b93de4f98e73cd670ff83fab",
+    "保持率达标研究_v3_主线与近优组合_20261030/第二十三轮_花椒壳早期盲态输入_20261105/verification.json": "b1de6568087d684e5357b83e8e5bb038d41894f64e6448460551abe28a6bd56e",
+    "data/current_retention_research.json": "fd5a60e55b34ccc92c5640271e255d9477da308e771af7dc21edf2c569b03463",
+    "data/current_training_latest.json": "e56d3ab9e219b78ee8c07dbd896bbeb9e0b6949b4a8574dc0d8f034f2b9fe725",
+    "tools/retention_v3_optimizer.py": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+    "tools/retention_shape_v4.py": "5f871167001c70f96630fdc54ebd466d2d05a152189cd19dfbe977b332dfe24a",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818"
+  },
+  "train_rows": {
+    "early20": [
+      "candidate:V05:002::early20",
+      "incoming:ADD_066_T01::early20",
+      "legacy:R091_CY01::early20",
+      "incoming:ADD_054_T01::early20",
+      "incoming:ADD_054_T02::early20",
+      "incoming:ADD_054_T03::early20",
+      "legacy:R111_CY01::early20",
+      "incoming:ADD_043_T01::early20",
+      "incoming:ADD_043_T02::early20",
+      "incoming:ADD_026_T01::early20",
+      "incoming:ADD_026_T02::early20",
+      "v20:WJ2026_NWJPC2_SSC_C10000::early20",
+      "incoming:ADD_019_T01::early20",
+      "incoming:ADD_019_T02::early20",
+      "incoming:ADD_010_T01::early20",
+      "legacy:R107_CY01::early20",
+      "candidate:V05:013::early20",
+      "legacy:R104_CY01::early20",
+      "incoming:ADD_003_T02::early20",
+      "candidate:V05:014::early20",
+      "v25:Mango_MK9_2E_C100000::early20",
+      "legacy:SRC124_CY01::early20",
+      "candidate:V05:015::early20",
+      "legacy:R093_CY01::early20",
+      "legacy:R103_CY01::early20",
+      "candidate:V05:019::early20",
+      "v23:NTAC_2E_C10000::early20",
+      "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+      "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20"
+    ],
+    "early10": [
+      "candidate:V05:002::early10",
+      "incoming:ADD_066_T01::early10",
+      "incoming:ADD_054_T01::early10",
+      "incoming:ADD_054_T02::early10",
+      "incoming:ADD_054_T03::early10",
+      "legacy:R111_CY01::early10",
+      "incoming:ADD_043_T01::early10",
+      "incoming:ADD_043_T02::early10",
+      "incoming:ADD_026_T01::early10",
+      "incoming:ADD_026_T02::early10",
+      "v20:WJ2026_NWJPC2_SSC_C10000::early10",
+      "incoming:ADD_019_T01::early10",
+      "incoming:ADD_019_T02::early10",
+      "incoming:ADD_010_T01::early10",
+      "legacy:R107_CY01::early10",
+      "candidate:V05:013::early10",
+      "incoming:ADD_003_T02::early10",
+      "candidate:V05:014::early10",
+      "legacy:SRC124_CY01::early10",
+      "candidate:V05:015::early10",
+      "legacy:R093_CY01::early10",
+      "legacy:R103_CY01::early10",
+      "candidate:V05:019::early10"
+    ]
+  },
+  "train_sources": {
+    "early20": [
+      "doi:10.1002/est2.70547",
+      "doi:10.1007/s10854-023-10314-z",
+      "doi:10.1007/s11664-023-10223-1",
+      "doi:10.1016/j.biombioe.2025.107773",
+      "doi:10.1016/j.biombioe.2025.108253",
+      "doi:10.1016/j.biortech.2025.132730",
+      "doi:10.1016/j.ijbiomac.2024.138815",
+      "doi:10.1016/j.isci.2026.117248",
+      "doi:10.1016/j.jelechem.2026.120000",
+      "doi:10.1016/j.jes.2024.03.039",
+      "doi:10.1016/j.ultsonch.2024.107213",
+      "doi:10.1021/acsomega.3c04692",
+      "doi:10.1021/acsomega.3c09438",
+      "doi:10.1039/c9ra06603a",
+      "doi:10.1039/d4cp01914h",
+      "doi:10.1039/d5ra01262g",
+      "doi:10.1039/d5ra02129d",
+      "doi:10.1039/d5ra08165c",
+      "doi:10.1088/1402-4896/ae73bc",
+      "doi:10.3390/coatings13071236",
+      "doi:10.3390/molecules30010089",
+      "doi:10.3390/nano14080686",
+      "family:Tondolo_TAC_JECE_RSC"
+    ],
+    "early10": [
+      "doi:10.1002/est2.70547",
+      "doi:10.1007/s10854-023-10314-z",
+      "doi:10.1016/j.biombioe.2025.107773",
+      "doi:10.1016/j.biombioe.2025.108253",
+      "doi:10.1016/j.biortech.2025.132730",
+      "doi:10.1016/j.ijbiomac.2024.138815",
+      "doi:10.1016/j.isci.2026.117248",
+      "doi:10.1016/j.jelechem.2026.120000",
+      "doi:10.1016/j.jes.2024.03.039",
+      "doi:10.1016/j.ultsonch.2024.107213",
+      "doi:10.1021/acsomega.3c04692",
+      "doi:10.1039/d4cp01914h",
+      "doi:10.1039/d5ra01262g",
+      "doi:10.1039/d5ra08165c",
+      "doi:10.1088/1402-4896/ae73bc",
+      "doi:10.3390/coatings13071236",
+      "doi:10.3390/molecules30010089",
+      "doi:10.3390/nano14080686"
+    ]
+  },
+  "configurations": [
+    {
+      "id": "ExtraTrees_early_p2_raw_delta",
+      "family": "ExtraTrees_early",
+      "kind": "ExtraTrees",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_early_p1_continuation_delta",
+      "family": "GPR_early",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_static_p1_raw_delta",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "RF_early_p0_raw_delta",
+      "family": "RF_early",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "RF_static_p2_raw_delta",
+      "family": "RF_static",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 1,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "Ridge_early_p2_continuation_delta",
+      "family": "Ridge_early",
+      "kind": "Ridge",
+      "parameters": {
+        "alpha": 10.0
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_early_p1_raw_delta",
+      "family": "XGB_early",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_static_p1_raw_delta",
+      "family": "XGB_static",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    }
+  ],
+  "primary": "GPR_early_p1_continuation_delta",
+  "primary_window": "early20",
+  "secondary_window": "early10",
+  "planned_fits": 16,
+  "author_label_accessed": false,
+  "endpoints_at_freeze": 0,
+  "external_sources_accepted": 0,
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "comparison": "Fixed eight configurations from P21, same fit rule. Early20 trains on P21; early10 uses P13 approved six-field inputs. Both windows have different eligible training pools.",
+  "test": "One prospective source-excluded case, provisional lab independence. Only per-case errors and three baselines. R2/aggregate gates undefined for a single endpoint.",
+  "author_locator": "Fig. 8(C) and linked electrochemical performance paragraph.",
+  "sealed_xml": {
+    "path": ".local-literature-cache/P22/PMC9049566_sealed_fulltext.xml",
+    "sha256": "98df42e922a6dba709ed77d9ca8b1cad53f0b4ef0442718102f8965883165bf8"
+  },
+  "reveal_gate": "Exact predictions and pre-reveal verification must be in a verified origin/main commit before XML terminal access. No refitting after reveal."
+}
