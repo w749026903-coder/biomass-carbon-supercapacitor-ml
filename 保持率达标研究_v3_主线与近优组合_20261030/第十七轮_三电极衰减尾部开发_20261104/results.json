@@ -1,0 +1,614 @@
+{
+  "status": "complete_development_trial",
+  "fits": 208,
+  "checks": 472,
+  "failures": 0,
+  "warnings": 0,
+  "old_rows": 30,
+  "old_sources": 24,
+  "expanded_rows": 32,
+  "expanded_sources": 26,
+  "primary": "GPR_early_p1_continuation_delta",
+  "results": {
+    "ExtraTrees_early_p2_raw_delta": {
+      "full": {
+        "mae": 3.834730970225797,
+        "rmse": 6.519217340609536,
+        "r2": 0.6780732426932792,
+        "mape_pct": 5.0327070171025206,
+        "p90_ape_pct": 8.618224381956852,
+        "p90_absolute_error": 6.856373219807338,
+        "source_p90_mae": 6.220491309657689
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": true,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "mae_reduction": {
+        "training_mean": 0.5182089063146522,
+        "early_persistence": 0.23294673834725899,
+        "early_linear": 0.7203250649938149
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.6875341811435867,
+        "rmse": 3.6875203979433784,
+        "r2": 0.7446442557329553,
+        "mape_pct": 2.8870323749861244,
+        "p90_ape_pct": 6.883158411428368,
+        "p90_absolute_error": 5.396396194559841,
+        "source_p90_mae": 4.7686144505531365
+      },
+      "new_common": {
+        "mae": 2.803999259288036,
+        "rmse": 3.8426083232785126,
+        "r2": 0.7227133203342682,
+        "mape_pct": 3.061005555381816,
+        "p90_ape_pct": 8.019149964686944,
+        "p90_absolute_error": 6.856373219807338,
+        "source_p90_mae": 4.853530352120032
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "ExtraTrees_early_p2_raw_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 70.38460939950804
+        },
+        {
+          "route": "3E",
+          "model": "ExtraTrees_early_p2_raw_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 81.8224136034498
+        }
+      ]
+    },
+    "GPR_early_p1_continuation_delta": {
+      "full": {
+        "mae": 4.118176429699449,
+        "rmse": 7.136867003159705,
+        "r2": 0.6141829976221194,
+        "mape_pct": 5.424300332306864,
+        "p90_ape_pct": 12.229948829759225,
+        "p90_absolute_error": 12.65784238861859,
+        "source_p90_mae": 9.885686946960526
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "mae_reduction": {
+        "training_mean": 0.4825971518055957,
+        "early_persistence": 0.17624973251346443,
+        "early_linear": 0.699652795916377
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.5709218151785187,
+        "rmse": 3.7062524512386132,
+        "r2": 0.7420433281645983,
+        "mape_pct": 2.7659934010184664,
+        "p90_ape_pct": 9.53143236192095,
+        "p90_absolute_error": 7.472642971746026,
+        "source_p90_mae": 4.455598921559881
+      },
+      "new_common": {
+        "mae": 2.7476187883844934,
+        "rmse": 3.8375172209011796,
+        "r2": 0.7234475922519188,
+        "mape_pct": 2.9054592291844696,
+        "p90_ape_pct": 7.363244796071762,
+        "p90_absolute_error": 5.772783920120261,
+        "source_p90_mae": 3.876048501876885
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "GPR_early_p1_continuation_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.45784238861859
+        },
+        {
+          "route": "3E",
+          "model": "GPR_early_p1_continuation_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.47189386233923
+        }
+      ]
+    },
+    "GPR_static_p1_raw_delta": {
+      "full": {
+        "mae": 4.294826925623883,
+        "rmse": 7.268684994141354,
+        "r2": 0.5997992932705071,
+        "mape_pct": 5.581700372737506,
+        "p90_ape_pct": 12.173886146040289,
+        "p90_absolute_error": 12.65785082053263,
+        "source_p90_mae": 9.779288607360982
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "mae_reduction": {
+        "training_mean": 0.46040299104378335,
+        "early_persistence": 0.14091470115833593,
+        "early_linear": 0.686769306474726
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.7329835288487314,
+        "rmse": 3.868220162908338,
+        "r2": 0.7190046469626539,
+        "mape_pct": 2.9314731622868813,
+        "p90_ape_pct": 9.534498875599692,
+        "p90_absolute_error": 7.475047118470158,
+        "source_p90_mae": 4.779860864684108
+      },
+      "new_common": {
+        "mae": 2.9378180932975977,
+        "rmse": 4.088634029116791,
+        "r2": 0.6860696914346887,
+        "mape_pct": 3.073845007762824,
+        "p90_ape_pct": 7.327101872491405,
+        "p90_absolute_error": 5.744447868033262,
+        "source_p90_mae": 5.074597586759378
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "GPR_static_p1_raw_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.45785082053263
+        },
+        {
+          "route": "3E",
+          "model": "GPR_static_p1_raw_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.50001500654598
+        }
+      ]
+    },
+    "RF_early_p0_raw_delta": {
+      "full": {
+        "mae": 3.5750728353364667,
+        "rmse": 6.3331184524597965,
+        "r2": 0.69619048101983,
+        "mape_pct": 4.631132304543688,
+        "p90_ape_pct": 7.249075669001745,
+        "p90_absolute_error": 6.197959696996492,
+        "source_p90_mae": 5.782872759236227
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": true,
+        "p90ape": true,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "mae_reduction": {
+        "training_mean": 0.55083204931059,
+        "early_persistence": 0.28488561511018373,
+        "early_linear": 0.7392624748311273
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.6748778465151135,
+        "rmse": 3.8141251801770615,
+        "r2": 0.7268088324255897,
+        "mape_pct": 2.8579392219942834,
+        "p90_ape_pct": 7.400233472245682,
+        "p90_absolute_error": 5.801783042240615,
+        "source_p90_mae": 4.517404634624541
+      },
+      "new_common": {
+        "mae": 2.77014333688273,
+        "rmse": 3.9890737610753324,
+        "r2": 0.7011722651744163,
+        "mape_pct": 3.0207168897252474,
+        "p90_ape_pct": 7.249075669001745,
+        "p90_absolute_error": 6.197959696996492,
+        "source_p90_mae": 5.343881484133701
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "RF_early_p0_raw_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 65.57181179264099
+        },
+        {
+          "route": "3E",
+          "model": "RF_early_p0_raw_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 80.69664184092161
+        }
+      ]
+    },
+    "RF_static_p2_raw_delta": {
+      "full": {
+        "mae": 3.7270263878623084,
+        "rmse": 6.276339965232187,
+        "r2": 0.7016135659531384,
+        "mape_pct": 4.81920803821401,
+        "p90_ape_pct": 8.421152036401974,
+        "p90_absolute_error": 7.200084991123688,
+        "source_p90_mae": 5.771105416470384
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": true,
+        "p90ape": true,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "mae_reduction": {
+        "training_mean": 0.5317407835010127,
+        "early_persistence": 0.2544906619857915,
+        "early_linear": 0.7281801850286378
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.6454141996711464,
+        "rmse": 3.661480178947881,
+        "r2": 0.7482380208004299,
+        "mape_pct": 2.8263446313852882,
+        "p90_ape_pct": 7.455144563801704,
+        "p90_absolute_error": 5.8448333380205355,
+        "source_p90_mae": 3.958302841933786
+      },
+      "new_common": {
+        "mae": 2.769571251634594,
+        "rmse": 3.677731446248666,
+        "r2": 0.7459981992779039,
+        "mape_pct": 2.9650286686917093,
+        "p90_ape_pct": 5.895387415044637,
+        "p90_absolute_error": 3.9108430183122067,
+        "source_p90_mae": 3.8102316654098742
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "RF_static_p2_raw_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 60.45787415818292
+        },
+        {
+          "route": "3E",
+          "model": "RF_static_p2_raw_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 81.0908502033727
+        }
+      ]
+    },
+    "Ridge_early_p2_continuation_delta": {
+      "full": {
+        "mae": 4.234395521767084,
+        "rmse": 7.129975585511089,
+        "r2": 0.6149277340466428,
+        "mape_pct": 5.663053058044268,
+        "p90_ape_pct": 10.584449363201617,
+        "p90_absolute_error": 11.558218704616166,
+        "source_p90_mae": 10.00850184761719
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "mae_reduction": {
+        "training_mean": 0.46799552162367797,
+        "early_persistence": 0.15300266920473116,
+        "early_linear": 0.6911766949140217
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.6826464753696224,
+        "rmse": 3.398559733927583,
+        "r2": 0.7830964878205707,
+        "mape_pct": 2.9199755699442753,
+        "p90_ape_pct": 6.358890823514303,
+        "p90_absolute_error": 5.4368516541047285,
+        "source_p90_mae": 5.080545548011601
+      },
+      "new_common": {
+        "mae": 2.782933095495417,
+        "rmse": 3.9156944596220815,
+        "r2": 0.7120650639909034,
+        "mape_pct": 3.0698860134817525,
+        "p90_ape_pct": 6.986215586445062,
+        "p90_absolute_error": 5.9732143264105275,
+        "source_p90_mae": 5.61617403032296
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "Ridge_early_p2_continuation_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 45.98997553629369
+        },
+        {
+          "route": "3E",
+          "model": "Ridge_early_p2_continuation_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 79.49386481034787
+        }
+      ]
+    },
+    "XGB_early_p1_raw_delta": {
+      "full": {
+        "mae": 3.636459843866187,
+        "rmse": 6.429212142419259,
+        "r2": 0.6869010093219747,
+        "mape_pct": 4.740290440499043,
+        "p90_ape_pct": 8.947466757019106,
+        "p90_absolute_error": 7.650084077251336,
+        "source_p90_mae": 6.178322407096715
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": true,
+        "p90ape": true,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "mae_reduction": {
+        "training_mean": 0.5431194576823267,
+        "early_persistence": 0.27260649944824356,
+        "early_linear": 0.7347853921481242
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.700907612089304,
+        "rmse": 3.569755055615385,
+        "r2": 0.7606939910716115,
+        "mape_pct": 2.889271652234787,
+        "p90_ape_pct": 7.4336102954980925,
+        "p90_absolute_error": 5.827950471670505,
+        "source_p90_mae": 4.088513919725365
+      },
+      "new_common": {
+        "mae": 2.7266889569955044,
+        "rmse": 3.798111961210589,
+        "r2": 0.7290979480025676,
+        "mape_pct": 2.955496486038627,
+        "p90_ape_pct": 8.947466757019106,
+        "p90_absolute_error": 7.288855506224948,
+        "source_p90_mae": 4.599120375547273
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "XGB_early_p1_raw_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 62.59269188364172
+        },
+        {
+          "route": "3E",
+          "model": "XGB_early_p1_raw_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 81.90011285627048
+        }
+      ]
+    },
+    "XGB_static_p1_raw_delta": {
+      "full": {
+        "mae": 3.5736830644927564,
+        "rmse": 6.363376461408605,
+        "r2": 0.693280498735166,
+        "mape_pct": 4.651906668742089,
+        "p90_ape_pct": 9.79445085066845,
+        "p90_absolute_error": 8.374255477321526,
+        "source_p90_mae": 6.409949275344701
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": true,
+        "p90ape": true,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "mae_reduction": {
+        "training_mean": 0.5510066584865563,
+        "early_persistence": 0.2851636080820231,
+        "early_linear": 0.7393638337200314
+      },
+      "numeric_pass": false,
+      "old_common": {
+        "mae": 2.8367241114017236,
+        "rmse": 3.7526906960708377,
+        "r2": 0.7355385893501594,
+        "mape_pct": 3.0272919455437632,
+        "p90_ape_pct": 8.952153572966093,
+        "p90_absolute_error": 7.018488401205417,
+        "source_p90_mae": 3.99055962265963
+      },
+      "new_common": {
+        "mae": 2.6894163713883272,
+        "rmse": 3.819199391872195,
+        "r2": 0.7260814562363949,
+        "mape_pct": 2.912464915572945,
+        "p90_ape_pct": 9.79445085066845,
+        "p90_absolute_error": 6.484191848082858,
+        "source_p90_mae": 4.430694745322758
+      },
+      "added_source_cases": [
+        {
+          "route": "3E",
+          "model": "XGB_static_p1_raw_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 62.86897133310461
+        },
+        {
+          "route": "3E",
+          "model": "XGB_static_p1_raw_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 81.43873809659641
+        }
+      ]
+    }
+  },
+  "baselines": {
+    "training_mean": {
+      "mae": 7.959323076923076,
+      "rmse": 11.940207831524544,
+      "r2": -0.07991588007842787,
+      "mape_pct": 10.284989204123622,
+      "p90_ape_pct": 17.256959706959705,
+      "p90_absolute_error": 18.8446,
+      "source_p90_mae": 20.228000000000005
+    },
+    "early_persistence": {
+      "mae": 4.999302084920734,
+      "rmse": 8.22342666060518,
+      "r2": 0.48776198924953396,
+      "mape_pct": 6.674896573137164,
+      "p90_ape_pct": 12.79682004536846,
+      "p90_absolute_error": 10.941281138790032,
+      "source_p90_mae": 9.712217630326919
+    },
+    "early_linear": {
+      "mae": 13.71138593503558,
+      "rmse": 23.980220467567392,
+      "r2": -3.3558458119749215,
+      "mape_pct": 17.76549929137547,
+      "p90_ape_pct": 39.29686776041111,
+      "p90_absolute_error": 26.879878358138924,
+      "source_p90_mae": 26.434077196849135
+    }
+  },
+  "numeric_passes": 0,
+  "external_sources_accepted": 0,
+  "goal_achieved": false
+}

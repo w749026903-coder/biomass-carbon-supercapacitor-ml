@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "checks": 64,
+  "verification": "Independent primary Matern solve on three withheld sources; old row identities, paired source error and artifact SHA checks",
+  "primary_reconstruction": [
+    {
+      "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+      "max_abs_reconstruction_difference_pp": 0.0
+    },
+    {
+      "source": "doi:10.3390/nano16211412",
+      "max_abs_reconstruction_difference_pp": 0.0
+    },
+    {
+      "source": "doi:10.1016/j.heliyon.2024.e25628",
+      "max_abs_reconstruction_difference_pp": 0.0
+    }
+  ],
+  "matched_source_bootstrap95_pp": [
+    -0.2313268388346482,
+    0.6026238159501356
+  ],
+  "matched_source_mae_delta_pp": 0.17669697320597524,
+  "matched_sources_with_lower_mae": 10,
+  "tail_coverage_old": {
+    "below5000_cycles": {
+      "endpoints": 7,
+      "sources": 5,
+      "endpoints_at_most80": 2,
+      "sources_at_most80": 1,
+      "lowest_retention_pct": 62.2
+    },
+    "at_least5000_cycles": {
+      "endpoints": 23,
+      "sources": 19,
+      "endpoints_at_most80": 0,
+      "sources_at_most80": 0,
+      "lowest_retention_pct": 82.26
+    }
+  },
+  "tail_coverage_expanded": {
+    "below5000_cycles": {
+      "endpoints": 8,
+      "sources": 6,
+      "endpoints_at_most80": 3,
+      "sources_at_most80": 2,
+      "lowest_retention_pct": 62.2
+    },
+    "at_least5000_cycles": {
+      "endpoints": 24,
+      "sources": 20,
+      "endpoints_at_most80": 1,
+      "sources_at_most80": 1,
+      "lowest_retention_pct": 55.0
+    }
+  },
+  "results_sha256": "79d443344ceae30d0cc3bcef15cf903e047dac73a2a8c8d687030c1bb785d0c1"
+}
