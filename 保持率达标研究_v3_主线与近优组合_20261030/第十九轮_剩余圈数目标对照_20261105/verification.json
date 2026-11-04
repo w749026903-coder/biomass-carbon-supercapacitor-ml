@@ -1,0 +1,85 @@
+{
+  "status": "verified",
+  "checks": {
+    "plan": 2,
+    "protected": 16,
+    "fit_counts": 2,
+    "neighbor": 120,
+    "fit_status": 208,
+    "matched_control": 208,
+    "split": 624,
+    "train_transform": 416,
+    "inverse": 256,
+    "row_targets": 8,
+    "row_sources": 256,
+    "prediction": 256,
+    "metrics": 112,
+    "source_delta": 8,
+    "source_bootstrap": 16,
+    "tail_decomposition": 2
+  },
+  "total_checks": 2510,
+  "protected_hashes": 16,
+  "frozen_git_commit": "c996f8b73508ce690214a9fb69da7ea8ce791ac3",
+  "verified_new_fits": 208,
+  "verified_control_prediction_links": 208,
+  "external_sources": 0,
+  "results_sha256": "3dab608a622bd7d539a75ba450fb4e9fd3062c4d34b19a51e43c415fdf734458",
+  "predictions_sha256": "93e15e9882fd7edd09887b77ec15acfa3b49d01276ea8e5a25ef41dfe96bb5b8",
+  "neighborhood_sha256": "68cc4af82a926010fc6c672b89368bdc76a25e22167d50396752504d21db3115",
+  "fit_events_sha256": "2a41c239262187f6747eebb79ad1b876dfd1128786d5472477c8a4424e29864a",
+  "descriptive_neighborhood": {
+    "with_candidate": 29,
+    "close_directed": 16,
+    "close_unique_pairs": 9,
+    "gap_gt5_directed": 2
+  },
+  "fixed_configuration_diagnostics": {
+    "GPR_early_p1_continuation_delta": {
+      "tail": [
+        {
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "observed": 64.8,
+          "control": 77.45784238861859,
+          "variant": 79.52828609046466,
+          "control_abs_error_pp": 12.65784238861859,
+          "variant_abs_error_pp": 14.728286090464664
+        },
+        {
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "observed": 55.0,
+          "control": 83.47189386233923,
+          "variant": 79.2694036116442,
+          "control_abs_error_pp": 28.47189386233923,
+          "variant_abs_error_pp": 24.269403611644194
+        }
+      ],
+      "remaining_24_sources_mean_delta_pp": 0.9877139363720225
+    },
+    "Ridge_early_p2_continuation_delta": {
+      "tail": [
+        {
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "observed": 64.8,
+          "control": 45.98997553629369,
+          "variant": 68.00888457616824,
+          "control_abs_error_pp": 18.810024463706306,
+          "variant_abs_error_pp": 3.208884576168245
+        },
+        {
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "observed": 55.0,
+          "control": 79.49386481034787,
+          "variant": 65.76965597899643,
+          "control_abs_error_pp": 24.493864810347873,
+          "variant_abs_error_pp": 10.769655978996425
+        }
+      ],
+      "remaining_24_sources_mean_delta_pp": 0.7994431091233093
+    }
+  }
+}
