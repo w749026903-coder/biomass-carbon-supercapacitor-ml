@@ -1,0 +1,15 @@
+{
+  "phase": 39,
+  "purpose": "Check whether the two cycling panels of one sealed pomelo source support early-window inputs for external prediction.",
+  "paper_family_count": 1,
+  "panels": {"3E": "Fig. 2(f)", "2E": "Fig. 3(f)"},
+  "target_cycles": 10000,
+  "approved_window_fractions": [0.1, 0.2],
+  "prior_metadata_sha256": "2e0d364ffba42df13f87c041b215e91501ac7476e9173b07e8464a19adbb3e79",
+  "prior_geometry_sha256": "d39f98eb25c9da7406de8f9050220eb6909d30558c10df26e45d3aaad6bfeaa2",
+  "publisher_pdf_sha256": "5b036b935f1e1427c2a1a76a7f2fa6187aaa04a2d22edd5f7b831bc24cd1dd24",
+  "exposure_policy": "Only early trace pixels through the previously sealed inward 20% bound. Axis labels may be inspected in a separately masked strip outside the plot. Never display full panels, raw captions or results paragraphs. Return filtered protocol facts only. Any exposure routes the entire paper to development.",
+  "marker_gate": "At least three individually resolved positive-cycle markers belonging to the same sample and test. Exclude a normalization origin and points whose geometry interval crosses a window boundary. Connected trace pixels, imposed grids and interpolation do not count.",
+  "protocol_gate": "Explicit sample and panel binding, electrode system and reported cycling current, with normalization and other input provenance documented. Holds stay unresolved when the published evidence cannot support these fields.",
+  "fitting_and_acceptance": "Zero fits or score comparisons. A source may proceed to a separate frozen prediction lock only after input review. No endpoint extraction or acceptance in this phase."
+}
