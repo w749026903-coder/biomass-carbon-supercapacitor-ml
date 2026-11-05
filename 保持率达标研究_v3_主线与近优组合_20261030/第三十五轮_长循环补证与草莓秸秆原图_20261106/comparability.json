@@ -1,0 +1,136 @@
+{
+  "systems": {
+    "3E": {
+      "nearest": {
+        "row_id": "strawberry",
+        "source_family": "doi:10.1038/s41598-026-36557-4",
+        "horizon": 10000,
+        "possible_neighbors": 16,
+        "neighbor_id": "candidate:TE026::early20",
+        "neighbor_source": "doi:10.1002/ente.202201281",
+        "neighbor_horizon": 10000.0,
+        "distance": 0.5642657384902282,
+        "scaled_feature_gaps": [
+          0.35820400283546405,
+          0.21772969782487195,
+          0.7227077684427898,
+          0.9337435711807842,
+          0.1485907598686831
+        ],
+        "observed_retention_pct": 95.6,
+        "neighbor_retention_pct": 90.31,
+        "target_gap_pp": 5.289999999999992
+      },
+      "nearest_static": {
+        "reported_current_A_g": 10.0,
+        "electrolyte": "KOH",
+        "concentration_mol_L": 6,
+        "cycle_voltage_lower_V": -1.0,
+        "cycle_voltage_upper_V": 0.0,
+        "BET_m2_g": 1441.3,
+        "reference_electrode": "Hg/HgO"
+      },
+      "same_reported_protocol_at_10000": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_025_T01::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20"
+      ],
+      "strawberry_static": {
+        "reported_current_A_g": 10.0,
+        "electrolyte": "KOH",
+        "concentration_mol_L": 6.0,
+        "BET_m2_g": 2746.5,
+        "cycle_voltage_lower_V": -1.0,
+        "cycle_voltage_upper_V": 0.0,
+        "reference_electrode": "Hg/HgO"
+      }
+    },
+    "2E": {
+      "nearest": {
+        "row_id": "strawberry",
+        "source_family": "doi:10.1038/s41598-026-36557-4",
+        "horizon": 10000,
+        "possible_neighbors": 14,
+        "neighbor_id": "incoming:ADD_043_T02::early20",
+        "neighbor_source": "doi:10.1016/j.biortech.2025.132730",
+        "neighbor_horizon": 10000.0,
+        "distance": 1.1503294167027882,
+        "scaled_feature_gaps": [
+          0.9106528398233209,
+          1.9174768202658896,
+          1.3671399572278453,
+          0.29198534659752085,
+          0.3949123680602944
+        ],
+        "observed_retention_pct": 70.1,
+        "neighbor_retention_pct": 90.9,
+        "target_gap_pp": 20.80000000000001
+      },
+      "nearest_static": {
+        "reported_current_A_g": 5,
+        "electrolyte": "H2SO4",
+        "concentration_mol_L": 1,
+        "cycle_voltage_lower_V": 0,
+        "cycle_voltage_upper_V": 1,
+        "BET_m2_g": 2401
+      },
+      "same_reported_protocol_at_10000": [],
+      "strawberry_static": {
+        "reported_current_A_g": 10.0,
+        "electrolyte": "KOH",
+        "concentration_mol_L": 6.0,
+        "BET_m2_g": 2746.5,
+        "cycle_voltage_lower_V": 0.0,
+        "cycle_voltage_upper_V": 1.2,
+        "reference_electrode": null
+      }
+    }
+  },
+  "coffee_strawberry_2E": {
+    "row_id": "strawberry",
+    "source_family": "doi:10.1038/s41598-026-36557-4",
+    "horizon": 10000,
+    "possible_neighbors": 1,
+    "neighbor_id": "coffee",
+    "neighbor_source": "doi:10.3390/nano12152647",
+    "neighbor_horizon": 10000,
+    "distance": 0.6839110220344952,
+    "scaled_feature_gaps": [
+      1.04529972968907,
+      0.57633111802771,
+      0.39110486187366966,
+      0.6072770625073574,
+      0.6261899904800767
+    ],
+    "observed_retention_pct": 70.1,
+    "neighbor_retention_pct": 75.0,
+    "target_gap_pp": 4.900000000000006
+  },
+  "coffee_static": {
+    "reported_current_A_g": 2.0,
+    "BET_m2_g": null,
+    "electrolyte": "H2SO4",
+    "concentration_mol_L": 1.0,
+    "cycle_voltage_lower_V": 0.0,
+    "cycle_voltage_upper_V": 1.0,
+    "reference_electrode": null
+  },
+  "protocol_match_fields": [
+    "electrolyte",
+    "concentration_mol_L",
+    "reported_current_A_g",
+    "cycle_voltage_lower_V",
+    "cycle_voltage_upper_V"
+  ],
+  "nearest_rule": "Previously fixed early-curve scales and horizon ratio; no use of endpoint in neighbor selection.",
+  "qualification": "Reported protocol matches do not establish common mass denominator or raw test equivalence.",
+  "input_sha256": {
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/input_snapshot.json": "f53e5040fa2bb5c093b6b22cc25ab80a99c68ce5aa0792ee6607335fa7456786",
+    "保持率达标研究_v3_主线与近优组合_20261030/第十九轮_剩余圈数目标对照_20261105/training_plan.json": "b2d7080d38c7af3d20fcba9496657f1a2453ebb835eb3cbbe7d3a51bf28340ef",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十五轮_长循环补证与草莓秸秆原图_20261106/strawberry_evidence.json": "ade870a7ad9f2fe354b831b7317f1e7fac3c65b01073cf66db15170171c44e43",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十三轮_刊本原图盲态复核_20261105/native_curve_evidence.json": "a8e91ac9bf209d217ccbe6cdbacdf5a1e93f88c308c2b183f700c1718e46407b"
+  },
+  "new_fits": 0
+}
