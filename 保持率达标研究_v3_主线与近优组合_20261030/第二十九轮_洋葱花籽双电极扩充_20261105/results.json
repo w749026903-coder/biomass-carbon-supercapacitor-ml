@@ -1,0 +1,674 @@
+{
+  "status": "verified_development",
+  "primary": "GPR_early_p1_continuation_delta",
+  "new_fits": 200,
+  "failures": 0,
+  "warnings": 0,
+  "checks": 312,
+  "baselines": {
+    "training_mean": {
+      "mae": 10.178647342995163,
+      "rmse": 14.753384114952327,
+      "r2": -0.08507475829721667,
+      "mape_pct": 12.117378991007387,
+      "p90_ape_pct": 36.12187894240195,
+      "p90_absolute_error": 28.642028985507253,
+      "source_p90_mae": 26.137681159420293
+    },
+    "early_persistence": {
+      "mae": 7.532383570351081,
+      "rmse": 10.709869324606464,
+      "r2": 0.4281992705810308,
+      "mape_pct": 9.568991513551756,
+      "p90_ape_pct": 25.026507442259042,
+      "p90_absolute_error": 18.619721537040732,
+      "source_p90_mae": 18.456521571507363
+    },
+    "early_linear": {
+      "mae": 20.53226437158799,
+      "rmse": 28.584733710219624,
+      "r2": -3.0732837331645593,
+      "mape_pct": 23.708586707323843,
+      "p90_ape_pct": 57.98337258125375,
+      "p90_absolute_error": 57.68208531089077,
+      "source_p90_mae": 41.63444323800876
+    }
+  },
+  "results": {
+    "ExtraTrees_early_p2_raw_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 7.621687865583714,
+        "rmse": 9.759407074399647,
+        "r2": 0.5104021080868685,
+        "mape_pct": 8.973377344005582,
+        "p90_ape_pct": 20.115101168742694,
+        "p90_absolute_error": 17.616599900929018,
+        "source_p90_mae": 16.042283496227093
+      },
+      "expanded_common": {
+        "mae": 7.5133331964764745,
+        "rmse": 9.551110928572214,
+        "r2": 0.531078170320664,
+        "mape_pct": 8.740255930705203,
+        "p90_ape_pct": 21.339295626008703,
+        "p90_absolute_error": 15.878994670212222,
+        "source_p90_mae": 14.76207794074857
+      },
+      "full": {
+        "mae": 7.710449737263354,
+        "rmse": 9.678292469617052,
+        "r2": 0.5330462738923062,
+        "mape_pct": 9.06179377585064,
+        "p90_ape_pct": 21.339295626008703,
+        "p90_absolute_error": 15.878994670212222,
+        "source_p90_mae": 14.61866508255521
+      },
+      "common_mae_change": {
+        "delta_mae_pp": -0.10835466910724038,
+        "percentile_interval_pp": [
+          -0.4958964717301146,
+          0.25244591809751643
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 80.87899467021222,
+          "joint_hold_prediction": 82.61659990092902,
+          "absolute_error_change_with_other_source_pp": -1.7376052307167953
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 70.21881264405835,
+          "joint_hold_prediction": 71.98735852624242,
+          "absolute_error_change_with_other_source_pp": -1.7685458821840712
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 86.64413017536161,
+          "joint_hold_prediction": 87.86518289021713,
+          "absolute_error_change_with_other_source_pp": -1.2210527148555173
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    },
+    "GPR_early_p1_continuation_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 6.461859782973569,
+        "rmse": 8.724155706744769,
+        "r2": 0.6087633882943385,
+        "mape_pct": 7.858112268662124,
+        "p90_ape_pct": 17.425015319939867,
+        "p90_absolute_error": 13.157482241900837,
+        "source_p90_mae": 13.070038030231892
+      },
+      "expanded_common": {
+        "mae": 6.423228655211076,
+        "rmse": 8.632244150726583,
+        "r2": 0.6169635504055553,
+        "mape_pct": 7.773460239740325,
+        "p90_ape_pct": 16.993296024297518,
+        "p90_absolute_error": 14.137075679458079,
+        "source_p90_mae": 13.7906817631139
+      },
+      "full": {
+        "mae": 6.731656540902253,
+        "rmse": 8.909274407645599,
+        "r2": 0.6043045719887294,
+        "mape_pct": 8.223843499901196,
+        "p90_ape_pct": 18.582658483601193,
+        "p90_absolute_error": 14.137075679458079,
+        "source_p90_mae": 14.04360234916044
+      },
+      "common_mae_change": {
+        "delta_mae_pp": -0.038631127762494416,
+        "percentile_interval_pp": [
+          -0.20296200353148278,
+          0.13376598106555293
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 85.67212097287599,
+          "joint_hold_prediction": 86.20781675167802,
+          "absolute_error_change_with_other_source_pp": -0.5356957788020367
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 75.14193058924641,
+          "joint_hold_prediction": 75.76268387732283,
+          "absolute_error_change_with_other_source_pp": -0.6207532880764148
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 88.2254979117993,
+          "joint_hold_prediction": 88.99675399270652,
+          "absolute_error_change_with_other_source_pp": -0.7712560809072215
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    },
+    "GPR_static_p1_raw_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 7.358799827486598,
+        "rmse": 9.119298845604291,
+        "r2": 0.5725202282228883,
+        "mape_pct": 8.741414332101794,
+        "p90_ape_pct": 18.51656134106233,
+        "p90_absolute_error": 15.819810527034065,
+        "source_p90_mae": 13.413263159565828
+      },
+      "expanded_common": {
+        "mae": 7.463153166611633,
+        "rmse": 9.104247862650107,
+        "r2": 0.5739301351388327,
+        "mape_pct": 8.792110868306642,
+        "p90_ape_pct": 17.70139032215498,
+        "p90_absolute_error": 16.369688517814907,
+        "source_p90_mae": 13.526962026340058
+      },
+      "full": {
+        "mae": 7.730219527330375,
+        "rmse": 9.351607809664232,
+        "r2": 0.5640377038834656,
+        "mape_pct": 9.202696404700081,
+        "p90_ape_pct": 18.646163741749277,
+        "p90_absolute_error": 16.369688517814907,
+        "source_p90_mae": 13.776565368485425
+      },
+      "common_mae_change": {
+        "delta_mae_pp": 0.10435333912503383,
+        "percentile_interval_pp": [
+          -0.12484949124498923,
+          0.3331225295948841
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 85.34662302437353,
+          "joint_hold_prediction": 85.97065463311466,
+          "absolute_error_change_with_other_source_pp": -0.6240316087411344
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 75.13335322379389,
+          "joint_hold_prediction": 75.75601001777798,
+          "absolute_error_change_with_other_source_pp": -0.6226567939840919
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 88.27274582386147,
+          "joint_hold_prediction": 89.10261838889639,
+          "absolute_error_change_with_other_source_pp": -0.8298725650349184
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    },
+    "RF_early_p0_raw_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 7.980435129850252,
+        "rmse": 10.674170235660336,
+        "r2": 0.4143192872668512,
+        "mape_pct": 9.295527299444318,
+        "p90_ape_pct": 23.361034594755154,
+        "p90_absolute_error": 14.923369892493781,
+        "source_p90_mae": 13.729533712658544
+      },
+      "expanded_common": {
+        "mae": 7.802353910582367,
+        "rmse": 10.558982029867357,
+        "r2": 0.4268915995670748,
+        "mape_pct": 9.004138962817812,
+        "p90_ape_pct": 20.090721567851475,
+        "p90_absolute_error": 15.199948888911905,
+        "source_p90_mae": 12.961486998118932
+      },
+      "full": {
+        "mae": 7.901498982619944,
+        "rmse": 10.543536945391178,
+        "r2": 0.4458223462134221,
+        "mape_pct": 9.199185795879398,
+        "p90_ape_pct": 20.090721567851475,
+        "p90_absolute_error": 15.199948888911905,
+        "source_p90_mae": 12.855836847991498
+      },
+      "common_mae_change": {
+        "delta_mae_pp": -0.17808121926788473,
+        "percentile_interval_pp": [
+          -0.504512117355569,
+          0.12126688175604942
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 78.05896901910346,
+          "joint_hold_prediction": 79.92336989249378,
+          "absolute_error_change_with_other_source_pp": -1.8644008733903235
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 67.17360257509547,
+          "joint_hold_prediction": 69.08217937306289,
+          "absolute_error_change_with_other_source_pp": -1.908576797967413
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 84.58183563948417,
+          "joint_hold_prediction": 87.49290728161671,
+          "absolute_error_change_with_other_source_pp": -2.9110716421325407
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    },
+    "RF_static_p2_raw_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 7.98311618157049,
+        "rmse": 10.476767099731045,
+        "r2": 0.43578159110579484,
+        "mape_pct": 9.324175039152365,
+        "p90_ape_pct": 27.344059411070425,
+        "p90_absolute_error": 18.45855310706041,
+        "source_p90_mae": 16.87900799613869
+      },
+      "expanded_common": {
+        "mae": 7.783120586815032,
+        "rmse": 10.307629898209193,
+        "r2": 0.4538520525402949,
+        "mape_pct": 9.000045857373113,
+        "p90_ape_pct": 24.79221698215441,
+        "p90_absolute_error": 16.426084329151834,
+        "source_p90_mae": 14.785834541369402
+      },
+      "full": {
+        "mae": 7.908507899626811,
+        "rmse": 10.328283638220793,
+        "r2": 0.4682191748377632,
+        "mape_pct": 9.229457930424864,
+        "p90_ape_pct": 24.79221698215441,
+        "p90_absolute_error": 16.426084329151834,
+        "source_p90_mae": 14.742061837962392
+      },
+      "common_mae_change": {
+        "delta_mae_pp": -0.1999955947554565,
+        "percentile_interval_pp": [
+          -0.6018909138524131,
+          0.15001269301992748
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 79.9876643182202,
+          "joint_hold_prediction": 83.45855310706041,
+          "absolute_error_change_with_other_source_pp": -3.470888788840213
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 69.88364151000647,
+          "joint_hold_prediction": 72.64637208478119,
+          "absolute_error_change_with_other_source_pp": -2.7627305747747215
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 85.1924160942977,
+          "joint_hold_prediction": 89.59459611967961,
+          "absolute_error_change_with_other_source_pp": -4.4021800253819094
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    },
+    "Ridge_early_p2_continuation_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 8.639634716434589,
+        "rmse": 10.902626253305888,
+        "r2": 0.38898070917885075,
+        "mape_pct": 10.077899422474154,
+        "p90_ape_pct": 24.473634109309607,
+        "p90_absolute_error": 19.205194137935678,
+        "source_p90_mae": 16.65872122925745
+      },
+      "expanded_common": {
+        "mae": 8.331892449717856,
+        "rmse": 10.49953417003237,
+        "r2": 0.4333267197795948,
+        "mape_pct": 9.642822806110825,
+        "p90_ape_pct": 24.29633685996923,
+        "p90_absolute_error": 17.87019771765833,
+        "source_p90_mae": 14.85913543872499
+      },
+      "full": {
+        "mae": 8.268074911093354,
+        "rmse": 10.371774000260329,
+        "r2": 0.46373129790582657,
+        "mape_pct": 9.6218781015288,
+        "p90_ape_pct": 24.29633685996923,
+        "p90_absolute_error": 17.87019771765833,
+        "source_p90_mae": 14.805794500940591
+      },
+      "common_mae_change": {
+        "delta_mae_pp": -0.3077422667167318,
+        "percentile_interval_pp": [
+          -0.5749278370717941,
+          -0.08126489438414009
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 82.87019771765833,
+          "joint_hold_prediction": 84.20519413793568,
+          "absolute_error_change_with_other_source_pp": -1.3349964202773492
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 68.06143691092925,
+          "joint_hold_prediction": 71.01115895978973,
+          "absolute_error_change_with_other_source_pp": -2.9497220488604796
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 81.20027152272982,
+          "joint_hold_prediction": 84.48874965620986,
+          "absolute_error_change_with_other_source_pp": -3.288478133480041
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    },
+    "XGB_early_p1_raw_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 7.229825085033809,
+        "rmse": 9.970693980912044,
+        "r2": 0.48897347014999015,
+        "mape_pct": 8.51324668506723,
+        "p90_ape_pct": 27.585169750884788,
+        "p90_absolute_error": 17.559396401429794,
+        "source_p90_mae": 16.09156525810808
+      },
+      "expanded_common": {
+        "mae": 7.408573535918242,
+        "rmse": 10.100511439013829,
+        "r2": 0.47557981139794925,
+        "mape_pct": 8.687973576248634,
+        "p90_ape_pct": 27.328678539821077,
+        "p90_absolute_error": 16.482345238710067,
+        "source_p90_mae": 15.386265499196945
+      },
+      "full": {
+        "mae": 7.612888154284207,
+        "rmse": 10.20223837214432,
+        "r2": 0.48111956640192777,
+        "mape_pct": 9.015497771811608,
+        "p90_ape_pct": 27.328678539821077,
+        "p90_absolute_error": 16.482345238710067,
+        "source_p90_mae": 15.132796943542946
+      },
+      "common_mae_change": {
+        "delta_mae_pp": 0.17874845088443345,
+        "percentile_interval_pp": [
+          -0.19791002798493865,
+          0.5512677104466482
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 81.48234523871007,
+          "joint_hold_prediction": 82.5593964014298,
+          "absolute_error_change_with_other_source_pp": -1.0770511627197266
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 71.3040599822998,
+          "joint_hold_prediction": 72.38111114501953,
+          "absolute_error_change_with_other_source_pp": -1.0770511627197266
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 86.71212437670138,
+          "joint_hold_prediction": 89.0954876236191,
+          "absolute_error_change_with_other_source_pp": -2.3833632469177246
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    },
+    "XGB_static_p1_raw_delta": {
+      "complete": true,
+      "control_common": {
+        "mae": 7.605458013878965,
+        "rmse": 10.544895758884936,
+        "r2": 0.42841969674886005,
+        "mape_pct": 9.025081953083582,
+        "p90_ape_pct": 27.474300123766177,
+        "p90_absolute_error": 18.550079003358505,
+        "source_p90_mae": 16.89465592583269
+      },
+      "expanded_common": {
+        "mae": 7.649051292070749,
+        "rmse": 10.408622162322294,
+        "r2": 0.4430975093531888,
+        "mape_pct": 8.972921288828058,
+        "p90_ape_pct": 27.376991426205333,
+        "p90_absolute_error": 16.561894074464462,
+        "source_p90_mae": 15.523830349050462
+      },
+      "full": {
+        "mae": 7.841690961758881,
+        "rmse": 10.492891317174363,
+        "r2": 0.4511335177418788,
+        "mape_pct": 9.286348143985867,
+        "p90_ape_pct": 27.376991426205333,
+        "p90_absolute_error": 16.561894074464462,
+        "source_p90_mae": 15.29936980044602
+      },
+      "common_mae_change": {
+        "delta_mae_pp": 0.04359327819178446,
+        "percentile_interval_pp": [
+          -0.41854751022131664,
+          0.5497213012004739
+        ]
+      },
+      "cross_source_transfer": [
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+          "sample_name": "DDHPC-3kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 65.0,
+          "single_hold_prediction": 81.56189407446446,
+          "joint_hold_prediction": 83.5500790033585,
+          "absolute_error_change_with_other_source_pp": -1.988184928894043
+        },
+        {
+          "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+          "sample_name": "DDHPC-4kh",
+          "source": "doi:10.1039/c9ra06603a",
+          "observed": 56.0,
+          "single_hold_prediction": 71.3836088180542,
+          "joint_hold_prediction": 73.37179374694824,
+          "absolute_error_change_with_other_source_pp": -1.988184928894043
+        },
+        {
+          "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+          "sample_name": "Act_OFSCBC//Act_OFSCBC",
+          "source": "doi:10.1016/j.diamond.2024.111703",
+          "observed": 74.4,
+          "single_hold_prediction": 86.6724033645859,
+          "joint_hold_prediction": 88.9700599006882,
+          "absolute_error_change_with_other_source_pp": -2.297656536102295
+        }
+      ],
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "numeric_pass": false
+    }
+  },
+  "numeric_passes": 0,
+  "external_sources": 0,
+  "goal_achieved": false
+}
