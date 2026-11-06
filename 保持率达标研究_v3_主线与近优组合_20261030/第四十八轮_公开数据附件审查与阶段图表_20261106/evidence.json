@@ -1,0 +1,179 @@
+{
+  "freeze_commit": "ed32cd5",
+  "primary_access": {
+    "nanda.csv": {
+      "url": "https://zenodo.org/records/7882621/files/RawData%20%281%29.csv?download=1",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "route": "proxy",
+          "type": "HTTPError",
+          "http": 403
+        },
+        {
+          "route": "direct",
+          "type": "URLError",
+          "http": null
+        }
+      ]
+    },
+    "samanea.docx": {
+      "url": "https://spiral.imperial.ac.uk/bitstreams/abfaf58d-0a0c-4583-aea3-24668511794c/download",
+      "status": "unavailable",
+      "attempts": [
+        {
+          "route": "proxy",
+          "type": "HTTPError",
+          "http": 405
+        },
+        {
+          "route": "direct",
+          "type": "HTTPError",
+          "http": 405
+        }
+      ]
+    },
+    "samanea_files.json": {
+      "url": "https://data.mendeley.com/public-api/datasets/3w6yb4d844/files?version=1",
+      "status": "downloaded",
+      "http": 200,
+      "bytes": 13,
+      "sha256": "067b54b10f9034fdaa6ee1ea34518b5d7369f4b5a8d813f0fcc6890fa201826e",
+      "previous_attempts": []
+    },
+    "dataverse.json": {
+      "url": "https://dataverse.no/api/datasets/:persistentId/?persistentId=doi%3A10.18710%2FF4NFMJ",
+      "status": "downloaded",
+      "http": 200,
+      "bytes": 28316,
+      "sha256": "52fd6944eb6a9912454f646dc77c9564894a02ed7d66edbeb0ef4b78752faf98",
+      "previous_attempts": []
+    }
+  },
+  "alternate_access": {
+    "nanda_api_file": {
+      "url": "https://zenodo.org/api/records/7882621/files/RawData%20%281%29.csv/content",
+      "status": "unavailable_or_unverified",
+      "http": 403,
+      "error_type": "HTTPError"
+    },
+    "nanda_legacy": {
+      "url": "https://zenodo.org/record/7882621/files/RawData%20%281%29.csv",
+      "status": "unavailable_or_unverified",
+      "http": 403,
+      "error_type": "HTTPError"
+    },
+    "nanda_api_archive": {
+      "url": "https://zenodo.org/api/records/7882621/files-archive",
+      "status": "unavailable_or_unverified",
+      "http": 403,
+      "error_type": "HTTPError"
+    },
+    "samanea_spiral_api": {
+      "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/abfaf58d-0a0c-4583-aea3-24668511794c/content",
+      "status": "verified_payload",
+      "bytes": 5698033,
+      "sha256": "5ffb280c1ae4242dbcad638664a85cc5a20ff4d6f6a333a5c8e60ecec0c44011",
+      "cache": "samanea_spiral_api.payload"
+    },
+    "samanea_mendeley_files": {
+      "url": "https://data.mendeley.com/public-api/datasets/3w6yb4d844/versions/1/files",
+      "status": "unavailable_or_unverified",
+      "http": 404,
+      "error_type": "HTTPError"
+    },
+    "samanea_mendeley_snapshot": {
+      "url": "https://data.mendeley.com/public-api/datasets/3w6yb4d844/snapshot/1",
+      "status": "verified_payload",
+      "bytes": 4934,
+      "sha256": "42065cd5b4c295eff8995ce1704123df1736a1fbca0495284cf12ba753d4bf3c",
+      "cache": "samanea_mendeley_snapshot.payload"
+    },
+    "dataverse_readme": {
+      "url": "https://dataverse.no/api/access/datafile/277088",
+      "status": "verified_payload",
+      "bytes": 4835,
+      "sha256": "ff03cabfc7bb19fdd7881b42e73ddef27db569f9a09198159801573e4e7ee868",
+      "cache": "dataverse_readme.payload"
+    }
+  },
+  "nanda": {
+    "record": "10.5281/zenodo.7882621",
+    "verified_downloads": 0,
+    "csv_header_verified": false,
+    "rows_audited": 0,
+    "repository_advertised_md5": "bbc9d1498b6648611b2b8b84871daf00"
+  },
+  "samanea": {
+    "known_project_source": "EXT_043",
+    "article_doi": "10.1002/est2.616",
+    "accepted_manuscript_sha256": "5ffb280c1ae4242dbcad638664a85cc5a20ff4d6f6a333a5c8e60ecec0c44011",
+    "dataset_identity_verified": true,
+    "dataset_files_individually_verified": false,
+    "3E_rate_test": {
+      "panel": "6(e)",
+      "electrolyte": "H2SO4",
+      "current_density_A_g": 10,
+      "relative_capacitance_pct": {
+        "NSAC8": 77.6,
+        "NSAC7": 66.0
+      },
+      "is_cycle_target": false
+    },
+    "2E_cycling": {
+      "panel": "8(d)",
+      "cell": "NSAC8||NSAC8",
+      "cycles": 5000,
+      "author_fig8d_retention_pct": {
+        "H2SO4": 91.3,
+        "Na2SO4": 94.3
+      },
+      "actual_cycle_current_A_g": null,
+      "conclusion_retention_pct_unbound_to_cycle_horizon": {
+        "H2SO4": 99.6,
+        "Na2SO4": 99.8
+      },
+      "native_image": "word/media/image36.png",
+      "native_image_sha256": "bc6e624670c12d71737d450811f7879121979de585b7560b76e9334b46b9bc53",
+      "native_image_dimensions": [
+        3216,
+        2461
+      ],
+      "visually_reviewed_positive_markers_per_curve_by_10pct": 0,
+      "visually_reviewed_positive_markers_per_curve_at_or_before_20pct_at_most": 1,
+      "first_positive_marker_nominal_cycle": 1000
+    },
+    "manuscript_raw_embedded_data_files": 0,
+    "development_only": true,
+    "current_catalog_exact_matches": {
+      "current_training_latest": 0,
+      "current_retention_research": 0
+    }
+  },
+  "dataverse": {
+    "total_files": 26,
+    "folder_counts": {
+      "Electrochemistry/CyclicVoltammetry": 4,
+      "Electrochemistry/GalvanostaticChargeDischarge": 2,
+      "Electrochemistry/ImpedanceSpectroscopy": 2,
+      "Electrochemistry/RatePerformance": 2,
+      "Morphology": 7,
+      "NitrogenSorption": 4,
+      "Structure/RamanSpectroscopy": 2,
+      "Structure/XRayDiffraction": 2,
+      "root": 1
+    },
+    "dedicated_long_cycle_assets_in_inventory": [],
+    "readme_overview_mentions_cycling": true,
+    "readme_file_list_has_dedicated_long_cycle_asset": false,
+    "underlying_article_doi": null,
+    "biomass_origin_confirmed": false,
+    "readme_md5": "99bc257f019c0af9893584d1d4e2f1dc",
+    "disposition": "No dedicated long-cycle file located in the public inventory or the README listing. Raw CSV contents were not screened."
+  },
+  "new_early_inputs": 0,
+  "predictions_locked": 0,
+  "new_fits": 0,
+  "canonical_admissions": 0,
+  "independent_acceptances": 0
+}
