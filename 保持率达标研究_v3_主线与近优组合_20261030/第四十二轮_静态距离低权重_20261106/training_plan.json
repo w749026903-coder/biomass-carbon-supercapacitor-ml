@@ -1,0 +1,180 @@
+{
+  "frozen_at": "2026-11-06T08:47:07+08:00",
+  "system": "3E",
+  "window": 0.2,
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.7.2",
+    "xgboost": "3.1.1",
+    "numpy": "2.3.4",
+    "scipy": "1.16.3"
+  },
+  "scope": "The exact P31/P41 33 records and 27 source families. Exploratory whole-source holdout. PSAC-3 is not in the development cohort.",
+  "source_families": [
+    "doi:10.1002/asia.70648",
+    "doi:10.1002/ente.202201281",
+    "doi:10.1007/s00339-023-07141-8",
+    "doi:10.1007/s10854-026-18573-2",
+    "doi:10.1016/j.biombioe.2026.109160",
+    "doi:10.1016/j.biombioe.2026.109168",
+    "doi:10.1016/j.heliyon.2024.e25628",
+    "doi:10.1016/j.ijbiomac.2023.128794",
+    "doi:10.1016/j.jenvman.2026.129124",
+    "doi:10.1016/j.jpcs.2023.111318",
+    "doi:10.1016/j.solidstatesciences.2025.108046",
+    "doi:10.1021/acsomega.3c04692",
+    "doi:10.1021/acsomega.4c11529",
+    "doi:10.1021/acssusresmgt.3c00028",
+    "doi:10.1039/d4cp01914h",
+    "doi:10.1039/d4ta02115k",
+    "doi:10.1039/d4ya00076e",
+    "doi:10.1039/d6nj00244g",
+    "doi:10.1039/d6ra04144b",
+    "doi:10.1088/1361-6528/ace97a",
+    "doi:10.3390/mi14030572",
+    "doi:10.3390/molecules28186543",
+    "doi:10.3390/nano12050810",
+    "doi:10.3390/nano13101654",
+    "doi:10.3390/nano13172431",
+    "doi:10.3390/nano16211412",
+    "doi:10.3390/polym17111544"
+  ],
+  "row_ids": [
+    "incoming:ADD_039_T01::early20",
+    "candidate:TE026::early20",
+    "legacy:R087_CY01::early20",
+    "incoming:ADD_056_T01::early20",
+    "incoming:ADD_005_T01::early20",
+    "incoming:ADD_027_T01::early20",
+    "candidate:TE037::early20",
+    "candidate:TE038::early20",
+    "incoming:ADD_025_T01::early20",
+    "incoming:ADD_009_T01::early20",
+    "legacy:R078_CY01::early20",
+    "candidate:V05:008::early20",
+    "candidate:V05:009::early20",
+    "candidate:V05:010::early20",
+    "candidate:V05:011::early20",
+    "legacy:R013_CY01::early20",
+    "candidate:TE029::early20",
+    "candidate:TE030::early20",
+    "incoming:ADD_003_T01::early20",
+    "candidate:TE021::early20",
+    "candidate:TE025::early20",
+    "incoming:ADD_035_T01::early20",
+    "v25:Leather_ANSC8_3E_C10000::early20",
+    "incoming:ADD_031_T01::early20",
+    "candidate:TE033::early20",
+    "candidate:TE034::early20",
+    "candidate:TE009::early20",
+    "candidate:TE020::early20",
+    "candidate:V05:018::early20",
+    "candidate:TE052::early20",
+    "legacy:R042_CY01::early20",
+    "retired_case:JPC-800-0.5_3E::early20",
+    "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+  ],
+  "views": [
+    "raw",
+    "continuation"
+  ],
+  "squared_static_distance_weights": {
+    "zero": 0.0,
+    "one_sixteenth": 0.0625,
+    "one_quarter": 0.25,
+    "one": 1.0
+  },
+  "configs": {
+    "raw": {
+      "id": "GPR_static_p1_raw_delta",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    "continuation": {
+      "id": "continuation_static",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": true,
+      "target": "delta"
+    }
+  },
+  "columns": "Only the encoded static columns, including their missingness and one-hot indicators, are multiplied by sqrt(weight). All early columns retain unit weight.",
+  "reuse": {
+    "raw": {
+      "zero": "raw_early",
+      "one": "raw_static"
+    },
+    "continuation": {
+      "zero": "continuation_early",
+      "one": "continuation_static"
+    }
+  },
+  "new_fits": 108,
+  "reused_folds": 108,
+  "protected": {
+    "tools/retention_static_weight_v42.py": "f172834a864077480f274ceeb5fd411add4b2f333f719cbe3f835178bc31b071",
+    "tools/retention_static_verify_v41.py": "7357feaf5cc7c18370db7e76ba07095808ec21c9071a786de7f2a078e1ca6c9d",
+    "tools/retention_static_ablation_v41.py": "999c168201e847be8828db3451d7da1de77405aa95b953e832ca584494f5e862",
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第四十轮_柚子籽三电极外部锁定_20261106/case_result.json": "12bedddf47cf86cd1d43d95a57a9a43cad60f89c9e536054205c9f3eab373610",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/training_plan.json": "66b0d248cacc40be39c43666311367ba9c80faa1c5fd4e1d617c70459f830fa7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/input_snapshot.json": "f53e5040fa2bb5c093b6b22cc25ab80a99c68ce5aa0792ee6607335fa7456786",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/heldout_predictions.json": "9ab9578b6c02f6dfbcc1a8481105cbfaa7ab4cd3917825481b5d8387991cae6b",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/fit_events.json": "1067b9ab8b511e18b8285cd4da53ed5b3949f4dd16941a5a3124dfefa1d7bd62",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/results.json": "a05b2f100c55d808634e49b4c2d2155c129dc43a64b98dfc91b41b7866615bca",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/independent_verification.json": "eea1453e578e48945e8f8e33aa49a50c6b89ec3478f81b26d58b8c8c05cae617",
+    "tools/retention_sawdust_development_v31.py": "9c539048d5b72a6b9c509e1868c9c22f2d7ab2f759be5d16eead3408a803c4ec",
+    "tools/retention_sawdust_verify_v31.py": "870955ab28b40ba894adde67fa6d1dbb9b19e7875e0bb26b5c11ba7c1b8c8ed3",
+    "tools/retention_onion_development_v29.py": "c7a9c2f95f2d44adf446f9ece6d00dfc05eb1ff5318e9d588f7b94e713234529",
+    "tools/retention_shape_v4.py": "5f871167001c70f96630fdc54ebd466d2d05a152189cd19dfbe977b332dfe24a",
+    "tools/retention_v3_optimizer.py": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+    "tools/retention_horizon_normalization_v19.py": "9ca72d9a6007fa7541dcd7250ff3966375425ef9f13099dfdec27e7b813cda2b",
+    "tools/verify_retention_v3b.py": "aeb0a5b72c4752ce9e8629159310b05cad5052392d07bf01413dbbf7881989bf",
+    "tools/prepare_small_sample_routes.py": "1c9f5c34e015fbbe6e482921cc792c268a2dd63329c6491f7d44c527b3b8f26a",
+    "保持率达标研究_v3_主线与近优组合_20261030/第四十一轮_三电极GPR静态项配对_20261106/training_plan.json": "175696a9ba332eecc1f93ba41b9abf35aa2e2b44db608e1a4e21bab5d9610692",
+    "保持率达标研究_v3_主线与近优组合_20261030/第四十一轮_三电极GPR静态项配对_20261106/results.json": "4f28c72e9e96813e03284a8d8d5639b858499f6312f7f552fbeab7d837bcb61f",
+    "保持率达标研究_v3_主线与近优组合_20261030/第四十一轮_三电极GPR静态项配对_20261106/heldout_predictions.json": "4d94c1b24b236938e41c40b36c035814327dc52ac4c3b7d6c1af6158bd68896f",
+    "保持率达标研究_v3_主线与近优组合_20261030/第四十一轮_三电极GPR静态项配对_20261106/verification.json": "c4a1820dc34934a91103fe2a13982285653bc197add1fce00ba96cd721213171"
+  },
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "low_retention_pct_max": 80,
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261106,
+    "interval": [
+      0.025,
+      0.975
+    ],
+    "unit": "source"
+  },
+  "contrast_rule": "For each view and each low weight, compare with both endpoints using common paired source bootstrap draws. All contrasts reported; no promotion based on outer data.",
+  "further_validation_rule": "A low weight warrants prospective follow-up on model performance if both views have upper MAE delta interval below zero against both endpoints, with neither p90 absolute nor pooled <=80% MAE higher than the corresponding zero-weight control. All formal acceptance gates remain.",
+  "retained_primary": "continuation_zero",
+  "other_routes": "RF, XGBoost, A, other curve features, 2E and early10 kept in prior results. Do not promote by these development outcomes."
+}
