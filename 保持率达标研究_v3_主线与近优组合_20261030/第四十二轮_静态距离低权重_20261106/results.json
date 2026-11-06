@@ -1,0 +1,892 @@
+{
+  "plan_sha256": "6946ea3154dea9ffb407ec62221a71c42c15bf0a86da6ccc43d885197df02226",
+  "new_fits": 108,
+  "reused_folds": 108,
+  "failures": 0,
+  "warnings": 0,
+  "external_sources": 0,
+  "goal_achieved": false,
+  "baselines": {
+    "training_mean": {
+      "mae": 7.872421652421648,
+      "rmse": 11.726936952722077,
+      "r2": -0.07679165463006998,
+      "mape_pct": 10.121553231080155,
+      "p90_ape_pct": 17.374084249084245,
+      "p90_absolute_error": 18.972499999999997,
+      "source_p90_mae": 19.95296153846154
+    },
+    "early_persistence": {
+      "mae": 5.042404574624807,
+      "rmse": 8.156403574704434,
+      "r2": 0.47909333640767515,
+      "mape_pct": 6.689957655494012,
+      "p90_ape_pct": 12.79682004536846,
+      "p90_absolute_error": 10.941281138790032,
+      "source_p90_mae": 9.4664049286343
+    },
+    "early_linear": {
+      "mae": 13.731338273966712,
+      "rmse": 23.691216249650047,
+      "r2": -3.3947807577529225,
+      "mape_pct": 17.713954062309796,
+      "p90_ape_pct": 39.29686776041111,
+      "p90_absolute_error": 26.879878358138924,
+      "source_p90_mae": 26.344916964591178
+    }
+  },
+  "arms": {
+    "raw_zero": {
+      "metrics": {
+        "mae": 3.958714734654606,
+        "rmse": 7.006027712626655,
+        "r2": 0.6156683041848912,
+        "mape_pct": 5.210731399653109,
+        "p90_ape_pct": 12.087969904435312,
+        "p90_absolute_error": 12.567720547881962,
+        "source_p90_mae": 9.515317001046263
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "low_retention_mae_pp": 14.575911735354168,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "raw_early",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.07577725879895
+        },
+        {
+          "route": "3E",
+          "model": "raw_early",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.04812613415721
+        },
+        {
+          "route": "3E",
+          "model": "raw_early",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.36772054788196
+        },
+        {
+          "route": "3E",
+          "model": "raw_early",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.24618909585968
+        }
+      ]
+    },
+    "raw_one_sixteenth": {
+      "metrics": {
+        "mae": 3.8382796975041304,
+        "rmse": 6.968998114135777,
+        "r2": 0.6197202546052172,
+        "mape_pct": 5.075061545576043,
+        "p90_ape_pct": 12.19518258253464,
+        "p90_absolute_error": 12.567720547890502,
+        "source_p90_mae": 9.281307088610598
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "low_retention_mae_pp": 14.583831759925413,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "raw_one_sixteenth",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.06898407357131
+        },
+        {
+          "route": "3E",
+          "model": "raw_one_sixteenth",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.048126139295576
+        },
+        {
+          "route": "3E",
+          "model": "raw_one_sixteenth",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.3677205478905
+        },
+        {
+          "route": "3E",
+          "model": "raw_one_sixteenth",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.27334576474787
+        }
+      ]
+    },
+    "raw_one_quarter": {
+      "metrics": {
+        "mae": 4.001045993208142,
+        "rmse": 7.042746189140763,
+        "r2": 0.6116291951484847,
+        "mape_pct": 5.238285841046129,
+        "p90_ape_pct": 12.197256133920725,
+        "p90_absolute_error": 12.567720547907683,
+        "source_p90_mae": 9.146882575799665
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "low_retention_mae_pp": 14.598759970643084,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "raw_one_quarter",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.06820034306068
+        },
+        {
+          "route": "3E",
+          "model": "raw_one_quarter",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.048126147857005
+        },
+        {
+          "route": "3E",
+          "model": "raw_one_quarter",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.36772054790768
+        },
+        {
+          "route": "3E",
+          "model": "raw_one_quarter",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.31852226641973
+        }
+      ]
+    },
+    "raw_one": {
+      "metrics": {
+        "mae": 4.227129566733221,
+        "rmse": 7.126352519879354,
+        "r2": 0.602353555033932,
+        "mape_pct": 5.471818003087685,
+        "p90_ape_pct": 12.221638128435925,
+        "p90_absolute_error": 12.567720547926456,
+        "source_p90_mae": 9.118521124885204
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "low_retention_mae_pp": 14.620143983915426,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "GPR_static_p1_raw_delta",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.06883401242884
+        },
+        {
+          "route": "3E",
+          "model": "GPR_static_p1_raw_delta",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.04812615360057
+        },
+        {
+          "route": "3E",
+          "model": "GPR_static_p1_raw_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.36772054792645
+        },
+        {
+          "route": "3E",
+          "model": "GPR_static_p1_raw_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.3823574744057
+        }
+      ]
+    },
+    "continuation_zero": {
+      "metrics": {
+        "mae": 4.023013328319935,
+        "rmse": 6.986659205979975,
+        "r2": 0.617790374423254,
+        "mape_pct": 5.284673940505222,
+        "p90_ape_pct": 12.262286693011902,
+        "p90_absolute_error": 12.567712828476047,
+        "source_p90_mae": 9.26523754393501
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "low_retention_mae_pp": 14.617215942402549,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "GPR_early_p1_continuation_delta",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.09726531466312
+        },
+        {
+          "route": "3E",
+          "model": "GPR_early_p1_continuation_delta",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.04794552966893
+        },
+        {
+          "route": "3E",
+          "model": "GPR_early_p1_continuation_delta",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.36771282847604
+        },
+        {
+          "route": "3E",
+          "model": "GPR_early_p1_continuation_delta",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.3592751062345
+        }
+      ]
+    },
+    "continuation_one_sixteenth": {
+      "metrics": {
+        "mae": 3.9808876207612096,
+        "rmse": 6.981035954803486,
+        "r2": 0.6184053738789821,
+        "mape_pct": 5.23282233535974,
+        "p90_ape_pct": 12.19253057109046,
+        "p90_absolute_error": 12.567713637353847,
+        "source_p90_mae": 9.170879386636159
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": true
+      },
+      "low_retention_mae_pp": 14.616668625864243,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "continuation_one_sixteenth",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.09264537651977
+        },
+        {
+          "route": "3E",
+          "model": "continuation_one_sixteenth",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.04801253771892
+        },
+        {
+          "route": "3E",
+          "model": "continuation_one_sixteenth",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.36771363735384
+        },
+        {
+          "route": "3E",
+          "model": "continuation_one_sixteenth",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.35997582083846
+        }
+      ]
+    },
+    "continuation_one_quarter": {
+      "metrics": {
+        "mae": 4.045464774999191,
+        "rmse": 7.027969331046271,
+        "r2": 0.6132572190844906,
+        "mape_pct": 5.2921654531994795,
+        "p90_ape_pct": 12.145981035451499,
+        "p90_absolute_error": 12.567715570026635,
+        "source_p90_mae": 9.13017336408291
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "low_retention_mae_pp": 14.618720254632077,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "continuation_one_quarter",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.08416245225585
+        },
+        {
+          "route": "3E",
+          "model": "continuation_one_quarter",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.04809583813046
+        },
+        {
+          "route": "3E",
+          "model": "continuation_one_quarter",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.36771557002663
+        },
+        {
+          "route": "3E",
+          "model": "continuation_one_quarter",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.3704118868069
+        }
+      ]
+    },
+    "continuation_one": {
+      "metrics": {
+        "mae": 4.284797303582773,
+        "rmse": 7.134641757068219,
+        "r2": 0.6014279475171642,
+        "mape_pct": 5.53603990301123,
+        "p90_ape_pct": 12.215188173817873,
+        "p90_absolute_error": 12.567719132757631,
+        "source_p90_mae": 9.118468715918514
+      },
+      "gates": {
+        "coverage": true,
+        "positive": true,
+        "r2": false,
+        "mae": false,
+        "rmse": false,
+        "mape": false,
+        "p90ape": false,
+        "p90abs": false,
+        "tail": false,
+        "baselines": false
+      },
+      "low_retention_mae_pp": 14.623477250777784,
+      "low_records": [
+        {
+          "route": "3E",
+          "model": "continuation_static",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 84.07124116360566
+        },
+        {
+          "route": "3E",
+          "model": "continuation_static",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.04812585393745
+        },
+        {
+          "route": "3E",
+          "model": "continuation_static",
+          "row_id": "legacy:R042_CY01::early20",
+          "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+          "curve_id": "legacy:R042_CY01",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "predicted": 77.36771913275763
+        },
+        {
+          "route": "3E",
+          "model": "continuation_static",
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "source_family": "doi:10.3390/nano16211412",
+          "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+          "curve_id": "retired_case:JPC-800-0.5_3E",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "predicted": 83.39115496474162
+        }
+      ]
+    }
+  },
+  "contrasts": {
+    "raw_one_sixteenth_vs_raw_zero": {
+      "mae_change_pp": -0.12043503715047506,
+      "source_paired_interval_pp": [
+        -0.5075239812185584,
+        0.2732822694088628
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": -1.045213196719601,
+        "doi:10.1002/ente.202201281": 0.7297745484400342,
+        "doi:10.1007/s00339-023-07141-8": -0.39001652073180537,
+        "doi:10.1007/s10854-026-18573-2": 1.076171125836936,
+        "doi:10.1016/j.biombioe.2026.109160": -2.443684550186731,
+        "doi:10.1016/j.biombioe.2026.109168": 0.11707624448446552,
+        "doi:10.1016/j.heliyon.2024.e25628": -0.003396595183001949,
+        "doi:10.1016/j.ijbiomac.2023.128794": -0.08805515070413608,
+        "doi:10.1016/j.jenvman.2026.129124": 0.31726870137086394,
+        "doi:10.1016/j.jpcs.2023.111318": 1.5717280003647005,
+        "doi:10.1016/j.solidstatesciences.2025.108046": 8.540723683836404e-12,
+        "doi:10.1021/acsomega.3c04692": -0.47499409134864123,
+        "doi:10.1021/acsomega.4c11529": -0.19177138313916942,
+        "doi:10.1021/acssusresmgt.3c00028": -0.13285301732145882,
+        "doi:10.1039/d4cp01914h": -1.7026858889609002,
+        "doi:10.1039/d4ta02115k": 0.8512372839560243,
+        "doi:10.1039/d4ya00076e": 0.29844708410551846,
+        "doi:10.1039/d6nj00244g": -0.4726789030582097,
+        "doi:10.1039/d6ra04144b": -2.093378725688325,
+        "doi:10.1088/1361-6528/ace97a": 2.6332618704430217,
+        "doi:10.3390/mi14030572": -0.14856604039213292,
+        "doi:10.3390/molecules28186543": 0.41346145256109423,
+        "doi:10.3390/nano12050810": -1.197796991761137,
+        "doi:10.3390/nano13101654": -0.677664452367452,
+        "doi:10.3390/nano13172431": -0.41286874775688887,
+        "doi:10.3390/nano16211412": 0.02715666888819257,
+        "doi:10.3390/polym17111544": 0.18829527179737227
+      }
+    },
+    "raw_one_sixteenth_vs_raw_one": {
+      "mae_change_pp": -0.3888498692290888,
+      "source_paired_interval_pp": [
+        -0.7282546335345874,
+        -0.07607842014936064
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": -0.3908748000668395,
+        "doi:10.1002/ente.202201281": -0.10229991034381669,
+        "doi:10.1007/s00339-023-07141-8": 0.2713099395662928,
+        "doi:10.1007/s10854-026-18573-2": -2.0251797753117984,
+        "doi:10.1016/j.biombioe.2026.109160": 0.5115211658048651,
+        "doi:10.1016/j.biombioe.2026.109168": -0.02888945612420457,
+        "doi:10.1016/j.heliyon.2024.e25628": 7.503772373596007e-05,
+        "doi:10.1016/j.ijbiomac.2023.128794": -0.01432253424117394,
+        "doi:10.1016/j.jenvman.2026.129124": 0.4510410735035606,
+        "doi:10.1016/j.jpcs.2023.111318": -2.234392298006526,
+        "doi:10.1016/j.solidstatesciences.2025.108046": -3.595346242946107e-11,
+        "doi:10.1021/acsomega.3c04692": 0.02500854943656705,
+        "doi:10.1021/acsomega.4c11529": 0.41392213736840233,
+        "doi:10.1021/acssusresmgt.3c00028": -0.18373952017337558,
+        "doi:10.1039/d4cp01914h": -0.5564222973431185,
+        "doi:10.1039/d4ta02115k": -0.2128572479448252,
+        "doi:10.1039/d4ya00076e": -0.3155239389848391,
+        "doi:10.1039/d6nj00244g": 0.6464153953442917,
+        "doi:10.1039/d6ra04144b": -1.602293238300149,
+        "doi:10.1088/1361-6528/ace97a": -1.4430645336046837,
+        "doi:10.3390/mi14030572": -2.342316566602797,
+        "doi:10.3390/molecules28186543": -0.6091430588682556,
+        "doi:10.3390/nano12050810": 0.6625517093713993,
+        "doi:10.3390/nano13101654": -1.5720671348476998,
+        "doi:10.3390/nano13172431": 0.025045884212872238,
+        "doi:10.3390/nano16211412": -0.10901170965782114,
+        "doi:10.3390/polym17111544": 0.2365606589404905
+      }
+    },
+    "raw_one_quarter_vs_raw_zero": {
+      "mae_change_pp": 0.04233125855353598,
+      "source_paired_interval_pp": [
+        -0.4542570580886617,
+        0.567206261642197
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": -1.099663552428737,
+        "doi:10.1002/ente.202201281": 1.117426071429009,
+        "doi:10.1007/s00339-023-07141-8": -0.6140573754281462,
+        "doi:10.1007/s10854-026-18573-2": 2.058117008898506,
+        "doi:10.1016/j.biombioe.2026.109160": -2.998193897166601,
+        "doi:10.1016/j.biombioe.2026.109168": 0.1193405625980688,
+        "doi:10.1016/j.heliyon.2024.e25628": -0.0037884647190331577,
+        "doi:10.1016/j.ijbiomac.2023.128794": -0.2492694501542303,
+        "doi:10.1016/j.jenvman.2026.129124": 0.24443052989326475,
+        "doi:10.1016/j.jpcs.2023.111318": 2.870765018022695,
+        "doi:10.1016/j.solidstatesciences.2025.108046": 2.5721647034515627e-11,
+        "doi:10.1021/acsomega.3c04692": -0.5951270828103468,
+        "doi:10.1021/acsomega.4c11529": -0.516596118187195,
+        "doi:10.1021/acssusresmgt.3c00028": -0.14514205949359393,
+        "doi:10.1039/d4cp01914h": -1.5762416842155318,
+        "doi:10.1039/d4ta02115k": 1.6202846289225192,
+        "doi:10.1039/d4ya00076e": 0.4071296116304808,
+        "doi:10.1039/d6nj00244g": -0.6692446245903909,
+        "doi:10.1039/d6ra04144b": -1.2586118202749503,
+        "doi:10.1088/1361-6528/ace97a": 3.5818157619379036,
+        "doi:10.3390/mi14030572": 0.7244952848905015,
+        "doi:10.3390/molecules28186543": 0.747858256852254,
+        "doi:10.3390/nano12050810": -1.749526287691381,
+        "doi:10.3390/nano13101654": 0.1307976074643591,
+        "doi:10.3390/nano13172431": -0.46033169331458623,
+        "doi:10.3390/nano16211412": 0.07233317056005362,
+        "doi:10.3390/polym17111544": -0.6160554217051413
+      }
+    },
+    "raw_one_quarter_vs_raw_one": {
+      "mae_change_pp": -0.22608357352507782,
+      "source_paired_interval_pp": [
+        -0.40662240642648745,
+        -0.057541000427395496
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": -0.44532515577597553,
+        "doi:10.1002/ente.202201281": 0.28535161264515807,
+        "doi:10.1007/s00339-023-07141-8": 0.04726908486995196,
+        "doi:10.1007/s10854-026-18573-2": -1.0432338922502282,
+        "doi:10.1016/j.biombioe.2026.109160": -0.042988181175005025,
+        "doi:10.1016/j.biombioe.2026.109168": -0.02662513801060129,
+        "doi:10.1016/j.heliyon.2024.e25628": -0.0003168318122952485,
+        "doi:10.1016/j.ijbiomac.2023.128794": -0.17553683369126816,
+        "doi:10.1016/j.jenvman.2026.129124": 0.3782029020259614,
+        "doi:10.1016/j.jpcs.2023.111318": -0.9353552803485314,
+        "doi:10.1016/j.solidstatesciences.2025.108046": -1.8772539078781847e-11,
+        "doi:10.1021/acsomega.3c04692": -0.09512444202513848,
+        "doi:10.1021/acsomega.4c11529": 0.08909740232037677,
+        "doi:10.1021/acssusresmgt.3c00028": -0.1960285623455107,
+        "doi:10.1039/d4cp01914h": -0.4299780925977501,
+        "doi:10.1039/d4ta02115k": 0.5561900970216698,
+        "doi:10.1039/d4ya00076e": -0.20684141145987678,
+        "doi:10.1039/d6nj00244g": 0.4498496738121105,
+        "doi:10.1039/d6ra04144b": -0.7675263328867743,
+        "doi:10.1088/1361-6528/ace97a": -0.4945106421098018,
+        "doi:10.3390/mi14030572": -1.4692552413201625,
+        "doi:10.3390/molecules28186543": -0.2747462545770958,
+        "doi:10.3390/nano12050810": 0.11082241344115529,
+        "doi:10.3390/nano13101654": -0.7636050750158887,
+        "doi:10.3390/nano13172431": -0.02241706134482513,
+        "doi:10.3390/nano16211412": -0.0638352079859601,
+        "doi:10.3390/polym17111544": -0.567790034562023
+      }
+    },
+    "continuation_one_sixteenth_vs_continuation_zero": {
+      "mae_change_pp": -0.042125707558726085,
+      "source_paired_interval_pp": [
+        -0.22849712178667983,
+        0.1383299458360786
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": -0.4244131627601888,
+        "doi:10.1002/ente.202201281": 0.2662154172003999,
+        "doi:10.1007/s00339-023-07141-8": -0.15726413474995216,
+        "doi:10.1007/s10854-026-18573-2": 0.6331297862897858,
+        "doi:10.1016/j.biombioe.2026.109160": -1.6404379002284344,
+        "doi:10.1016/j.biombioe.2026.109168": -0.07617368513821532,
+        "doi:10.1016/j.heliyon.2024.e25628": -0.0023434730966691575,
+        "doi:10.1016/j.ijbiomac.2023.128794": 0.021169273064487015,
+        "doi:10.1016/j.jenvman.2026.129124": 0.003770381840510595,
+        "doi:10.1016/j.jpcs.2023.111318": 0.026125685374978502,
+        "doi:10.1016/j.solidstatesciences.2025.108046": 8.088778002957042e-07,
+        "doi:10.1021/acsomega.3c04692": -0.2944694064677229,
+        "doi:10.1021/acsomega.4c11529": -0.4104923167003989,
+        "doi:10.1021/acssusresmgt.3c00028": 0.16025757503277305,
+        "doi:10.1039/d4cp01914h": -0.4611990319021828,
+        "doi:10.1039/d4ta02115k": 0.5546654897477343,
+        "doi:10.1039/d4ya00076e": -0.04716424643663686,
+        "doi:10.1039/d6nj00244g": 0.6111802332645624,
+        "doi:10.1039/d6ra04144b": -0.5453780088640059,
+        "doi:10.1088/1361-6528/ace97a": 1.0169891379586034,
+        "doi:10.3390/mi14030572": 0.4052952114333619,
+        "doi:10.3390/molecules28186543": -0.16546358779824288,
+        "doi:10.3390/nano12050810": -0.11799634402058246,
+        "doi:10.3390/nano13101654": -0.39860655500095277,
+        "doi:10.3390/nano13172431": 0.3096037149790054,
+        "doi:10.3390/nano16211412": 0.0007007146039477163,
+        "doi:10.3390/polym17111544": -0.40509568058936907
+      }
+    },
+    "continuation_one_sixteenth_vs_continuation_one": {
+      "mae_change_pp": -0.303909682821565,
+      "source_paired_interval_pp": [
+        -0.6645902137312893,
+        0.03515073965360046
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": 0.5386555212498081,
+        "doi:10.1002/ente.202201281": 0.28119536064345096,
+        "doi:10.1007/s00339-023-07141-8": 0.08735478146526443,
+        "doi:10.1007/s10854-026-18573-2": -2.4187101788511853,
+        "doi:10.1016/j.biombioe.2026.109160": 0.3783918416860814,
+        "doi:10.1016/j.biombioe.2026.109168": -0.024742102178336722,
+        "doi:10.1016/j.heliyon.2024.e25628": 0.010758764566318746,
+        "doi:10.1016/j.ijbiomac.2023.128794": -0.08391344117582378,
+        "doi:10.1016/j.jenvman.2026.129124": -0.04079570375883179,
+        "doi:10.1016/j.jpcs.2023.111318": -1.6334803228102572,
+        "doi:10.1016/j.solidstatesciences.2025.108046": -5.495403783584152e-06,
+        "doi:10.1021/acsomega.3c04692": 0.45443560440427433,
+        "doi:10.1021/acsomega.4c11529": 0.8754278557108819,
+        "doi:10.1021/acssusresmgt.3c00028": -0.7168437498488909,
+        "doi:10.1039/d4cp01914h": 0.31636769744848436,
+        "doi:10.1039/d4ta02115k": 0.7363742517307235,
+        "doi:10.1039/d4ya00076e": -0.48007126130669064,
+        "doi:10.1039/d6nj00244g": 1.5405210771292133,
+        "doi:10.1039/d6ra04144b": -1.710473949699562,
+        "doi:10.1088/1361-6528/ace97a": -1.8026585385337768,
+        "doi:10.3390/mi14030572": -1.6075291821923587,
+        "doi:10.3390/molecules28186543": 0.005449488886284826,
+        "doi:10.3390/nano12050810": -0.08750756360058176,
+        "doi:10.3390/nano13101654": -1.4253023147734467,
+        "doi:10.3390/nano13172431": -1.16554608613967,
+        "doi:10.3390/nano16211412": -0.03117914390316301,
+        "doi:10.3390/polym17111544": -0.2017346469266812
+      }
+    },
+    "continuation_one_quarter_vs_continuation_zero": {
+      "mae_change_pp": 0.02245144667925581,
+      "source_paired_interval_pp": [
+        -0.2896602723582902,
+        0.3368734224923092
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": -1.1250117494210343,
+        "doi:10.1002/ente.202201281": 0.2725652611387379,
+        "doi:10.1007/s00339-023-07141-8": -0.2251087941205583,
+        "doi:10.1007/s10854-026-18573-2": 1.730567401739151,
+        "doi:10.1016/j.biombioe.2026.109160": -2.0793828465767916,
+        "doi:10.1016/j.biombioe.2026.109168": -0.1270057780559597,
+        "doi:10.1016/j.heliyon.2024.e25628": -0.006626585434396759,
+        "doi:10.1016/j.ijbiomac.2023.128794": 0.05659057803002554,
+        "doi:10.1016/j.jenvman.2026.129124": 0.0209366354596483,
+        "doi:10.1016/j.jpcs.2023.111318": 0.7443533332026817,
+        "doi:10.1016/j.solidstatesciences.2025.108046": 2.741550588325481e-06,
+        "doi:10.1021/acsomega.3c04692": -0.6591419969467331,
+        "doi:10.1021/acsomega.4c11529": -0.9719162830051431,
+        "doi:10.1021/acssusresmgt.3c00028": 0.5033374306430853,
+        "doi:10.1039/d4cp01914h": -1.3094420257858985,
+        "doi:10.1039/d4ta02115k": 0.6465219816001877,
+        "doi:10.1039/d4ya00076e": -0.0044137326076452155,
+        "doi:10.1039/d6nj00244g": -0.31456658818210315,
+        "doi:10.1039/d6ra04144b": 0.3206946719134294,
+        "doi:10.1088/1361-6528/ace97a": 1.7772602674074842,
+        "doi:10.3390/mi14030572": 1.1963558541469652,
+        "doi:10.3390/molecules28186543": -0.21998910177451592,
+        "doi:10.3390/nano12050810": -0.08073432024842497,
+        "doi:10.3390/nano13101654": 0.24531430735613924,
+        "doi:10.3390/nano13172431": 0.7647506543371776,
+        "doi:10.3390/nano16211412": 0.011136780572396532,
+        "doi:10.3390/polym17111544": -0.5608590365985862
+      }
+    },
+    "continuation_one_quarter_vs_continuation_one": {
+      "mae_change_pp": -0.23933252858358306,
+      "source_paired_interval_pp": [
+        -0.4274724274970544,
+        -0.05462927946738073
+      ],
+      "per_source_change_pp": {
+        "doi:10.1002/asia.70648": -0.16194306541103745,
+        "doi:10.1002/ente.202201281": 0.287545204581789,
+        "doi:10.1007/s00339-023-07141-8": 0.0195101220946583,
+        "doi:10.1007/s10854-026-18573-2": -1.3212725634018199,
+        "doi:10.1016/j.biombioe.2026.109160": -0.060553104662275814,
+        "doi:10.1016/j.biombioe.2026.109168": -0.0755741950960811,
+        "doi:10.1016/j.heliyon.2024.e25628": 0.006475652228591144,
+        "doi:10.1016/j.ijbiomac.2023.128794": -0.04849213621028525,
+        "doi:10.1016/j.jenvman.2026.129124": -0.023629450139694086,
+        "doi:10.1016/j.jpcs.2023.111318": -0.915252674982554,
+        "doi:10.1016/j.solidstatesciences.2025.108046": -3.562730995554375e-06,
+        "doi:10.1021/acsomega.3c04692": 0.08976301392526409,
+        "doi:10.1021/acsomega.4c11529": 0.31400388940613766,
+        "doi:10.1021/acssusresmgt.3c00028": -0.3737638942385786,
+        "doi:10.1039/d4cp01914h": -0.5318752964352313,
+        "doi:10.1039/d4ta02115k": 0.8282307435831768,
+        "doi:10.1039/d4ya00076e": -0.437320747477699,
+        "doi:10.1039/d6nj00244g": 0.6147742556825477,
+        "doi:10.1039/d6ra04144b": -0.8444012689221267,
+        "doi:10.1088/1361-6528/ace97a": -1.042387409084896,
+        "doi:10.3390/mi14030572": -0.8164685394787554,
+        "doi:10.3390/molecules28186543": -0.04907602508998821,
+        "doi:10.3390/nano12050810": -0.05024553982842428,
+        "doi:10.3390/nano13101654": -0.7813814524163547,
+        "doi:10.3390/nano13172431": -0.7103991467814978,
+        "doi:10.3390/nano16211412": -0.020743077934714194,
+        "doi:10.3390/polym17111544": -0.3574980029358983
+      }
+    }
+  },
+  "low_weights_meeting_followup_rule": [],
+  "numeric_passes": 0
+}

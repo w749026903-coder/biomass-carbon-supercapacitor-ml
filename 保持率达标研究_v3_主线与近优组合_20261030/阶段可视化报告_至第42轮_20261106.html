@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电容保持率研究 · 第 42 轮阶段报告</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light;--ink:#172e2a;--muted:#4e615b;--paper:#f4f6f3;--card:#fff;--rule:#dce4de;--teal:#126b59;--blue:#41658d;--amber:#934713}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.62 "Microsoft YaHei","Segoe UI",sans-serif}main{max-width:1060px;margin:auto;padding:32px 22px 52px}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(28px,4.7vw,46px);line-height:1.15;letter-spacing:-.035em}h2{font-size:24px;line-height:1.3}h3{font-size:17px}
+a{color:var(--teal);text-underline-offset:3px}header{padding:20px 0 26px;border-bottom:1px solid var(--rule)}.eyebrow{font-size:.82rem;font-weight:700;color:var(--teal);letter-spacing:.10em;margin:0 0 12px}
+.lede{max-width:760px;font-size:1.12rem;margin-top:14px}.muted,small{color:var(--muted)}.note{font-size:.89rem}.kpis,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.kpis{margin-top:24px}.kpi,.card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 18px}.kpi strong{display:block;font-size:30px;line-height:1.18;color:var(--ink);font-variant-numeric:tabular-nums}.kpi span{font-size:.91rem;color:var(--muted)}
+section{margin-top:28px}.intro{margin:7px 0 14px;color:var(--muted)}.metric{padding:12px 0;border-bottom:1px solid var(--rule)}.metric:last-child{border-bottom:0;padding-bottom:4px}.metric h3{display:flex;justify-content:space-between;gap:8px}.metric h3 span{font-weight:500;color:var(--amber);font-size:.87rem}
+.barrow{display:grid;grid-template-columns:68px 1fr 45px;gap:8px;align-items:center;font-size:.89rem;margin:7px 0}.barrow b{text-align:right;font-variant-numeric:tabular-nums}.track{height:9px;background:#e9eeea;border-radius:5px;position:relative}.fill{height:100%;width:var(--value);background:var(--teal);border-radius:inherit;display:block}.two{background:var(--blue)}.goal{position:absolute;left:var(--goal);height:17px;top:-4px;width:2px;background:var(--amber)}
+svg{max-width:100%;height:auto;display:block}.svg-label{fill:var(--muted);font:13px "Microsoft YaHei","Segoe UI",sans-serif}.ci{stroke:var(--teal);stroke-width:3;stroke-linecap:round}.dot{fill:var(--teal)}
+.tablebox{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;min-width:565px;background:var(--card);border:1px solid var(--rule)}th,td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}th{background:#e7efe9;color:#29433a;font-size:.9rem}tbody tr:last-child td{border-bottom:0}.tier{white-space:nowrap;font-weight:700}.next{display:grid;gap:10px}.next article{border-left:4px solid var(--teal);padding:7px 12px;background:var(--card)}.next p{font-size:.94rem}.links{margin-top:9px;font-size:.9rem}footer{border-top:1px solid var(--rule);margin-top:28px;padding-top:13px}.plain-list{padding-left:1.25em;margin:9px 0 0}
+@media(max-width:560px){main{padding:16px 14px 36px}.kpi,.card{padding:12px 14px}.barrow{grid-template-columns:60px 1fr 42px}.grid{grid-template-columns:1fr}.tablebox table,.tablebox tbody,.tablebox tr,.tablebox td{display:block;min-width:0}.tablebox thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.tablebox tr{padding:9px 12px;border-bottom:1px solid var(--rule)}.tablebox tr:last-child,.tablebox td{border:0}.tablebox td{padding:3px 0}.tablebox td:last-child{color:var(--muted)}}
+@media print{body{background:white}main{max-width:none;padding:0}section,.card,.kpi,table{break-inside:avoid}a{color:inherit;text-decoration:none}}
+  .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .steps li{border:1px solid var(--rule);border-radius:12px;background:var(--card);padding:13px 16px}
+  .steps strong{display:block;font-size:1.24rem}.steps .observed{border-top:4px solid var(--teal)}
+  .steps .pending{border-top:4px solid #b5c3bb}.steps p{font-size:.91rem;color:var(--muted)}
+  @media(max-width:560px){.steps{grid-template-columns:1fr;gap:8px}}
+
+.chart{margin:8px 0}.chart text{font-size:15px;fill:var(--muted)}.chart .gridline{stroke:var(--rule)}
+.chart .raw-line{stroke:var(--teal);fill:none;stroke-width:2.4}.chart .cont-line{stroke:var(--blue);fill:none;stroke-width:2.4;stroke-dasharray:6 4}
+.chart .raw-dot{fill:var(--teal)}.chart .cont-dot{fill:var(--blue)}.chart .chart-value{font-size:14px;font-weight:700}
+.key{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem;margin:8px 0 0}.key span{display:flex;align-items:center;gap:6px}
+.key i{display:inline-block;width:20px;border-top:3px solid var(--teal)}.key .cont i{border-top:3px dashed var(--blue)}
+.metric-table table{min-width:0}.metric-table th,.metric-table td{padding:8px 10px}
+@media(max-width:560px){.metric-table table{display:table;font-size:.81rem}.metric-table thead{position:static;width:auto;height:auto;clip-path:none;display:table-header-group}.metric-table tbody{display:table-row-group}.metric-table tr{display:table-row}.metric-table th,.metric-table td{display:table-cell;padding:7px 4px}}
+</style>
+</head>
+<body>
+<main>
+<a href="研究进度.html">返回研究进度</a>
+<header>
+  <p class="eyebrow">2026 年 11 月 6 日 · 覆盖至第 42 轮</p>
+  <h1>电容保持率研究阶段报告</h1>
+  <p class="lede"><strong>降低静态特征权重后，平均误差略降，重衰减样本仍没有改善。</strong> 柚子籽碳完成一次先锁预测、后看实测值的检验。下一步优先补能检验重衰减的独立来源。</p>
+  <div class="kpis">
+    <div class="kpi"><strong>0 / 8</strong><span>第 42 轮三电极配置同时达到全部数值门槛</span></div>
+    <div class="kpi"><strong>1 篇</strong><span>第 40–42 轮完成前瞻性单例评分</span></div>
+    <div class="kpi"><strong>0 篇</strong><span>正式独立验收通过</span></div>
+  </div>
+</header>
+
+<section aria-labelledby="weights">
+  <h2 id="weights">静态特征降权有没有帮助</h2>
+  <p class="intro">同一批三电极 33 条记录、27 篇论文，逐篇留出，使用前 20% 循环。横轴是预先选定的四个静态距离权重。</p>
+  <div class="grid">
+    <div class="card">
+      <h3>平均绝对误差（MAE）</h3>
+      <p class="note muted">单位为百分点，越低越好。项目门槛 2，低于图示范围。</p>
+      <div class="key"><span><i></i>原始早期表达</span><span class="cont"><i></i>早期延续表达</span></div>
+      <svg class="chart" viewBox="0 0 508 194" role="img" aria-label="两种表达各四个权重的平均绝对误差，权重十六分之一的均值略低于零权重">
+        <title>三电极静态距离权重对照</title>
+        <line class="gridline" x1="58" y1="144.50" x2="478" y2="144.50"/><text x="13" y="149.50">3.8</text>
+<line class="gridline" x1="58" y1="106.50" x2="478" y2="106.50"/><text x="13" y="111.50">4.0</text>
+<line class="gridline" x1="58" y1="68.50" x2="478" y2="68.50"/><text x="13" y="73.50">4.2</text>
+<text x="64" y="176" text-anchor="middle">0</text>
+<text x="200" y="176" text-anchor="middle">1/16</text>
+<text x="336" y="176" text-anchor="middle">1/4</text>
+<text x="472" y="176" text-anchor="middle">1</text>
+<polyline class="raw-line" points="64,114.34 200,137.23 336,106.30 472,63.35"/>
+<circle class="raw-dot" cx="64" cy="114.34" r="4" data-arm="raw_zero" data-mae="3.958714735"><title>3.959 个百分点</title></circle><text class="chart-value" x="64" y="136.34" text-anchor="middle">3.96</text>
+<circle class="raw-dot" cx="200" cy="137.23" r="4" data-arm="raw_one_sixteenth" data-mae="3.838279698"><title>3.838 个百分点</title></circle><text class="chart-value" x="200" y="159.23" text-anchor="middle">3.84</text>
+<circle class="raw-dot" cx="336" cy="106.30" r="4" data-arm="raw_one_quarter" data-mae="4.001045993"><title>4.001 个百分点</title></circle><text class="chart-value" x="336" y="128.30" text-anchor="middle">4.00</text>
+<circle class="raw-dot" cx="472" cy="63.35" r="4" data-arm="raw_one" data-mae="4.227129567"><title>4.227 个百分点</title></circle><text class="chart-value" x="472" y="85.35" text-anchor="middle">4.23</text>
+<polyline class="cont-line" points="64,102.13 200,110.13 336,97.86 472,52.39"/>
+<circle class="cont-dot" cx="64" cy="102.13" r="4" data-arm="continuation_zero" data-mae="4.023013328"><title>4.023 个百分点</title></circle><text class="chart-value" x="64" y="90.13" text-anchor="middle">4.02</text>
+<circle class="cont-dot" cx="200" cy="110.13" r="4" data-arm="continuation_one_sixteenth" data-mae="3.980887621"><title>3.981 个百分点</title></circle><text class="chart-value" x="200" y="98.13" text-anchor="middle">3.98</text>
+<circle class="cont-dot" cx="336" cy="97.86" r="4" data-arm="continuation_one_quarter" data-mae="4.045464775"><title>4.045 个百分点</title></circle><text class="chart-value" x="336" y="85.86" text-anchor="middle">4.05</text>
+<circle class="cont-dot" cx="472" cy="52.39" r="4" data-arm="continuation_one" data-mae="4.284797304"><title>4.285 个百分点</title></circle><text class="chart-value" x="472" y="40.39" text-anchor="middle">4.28</text>
+      </svg>
+    </div>
+    <div class="card">
+      <h3>低保持率记录仍是主要难点</h3>
+      <p class="intro">权重 1/16 相对零权重的平均误差只下降 0.12 和 0.04 个百分点。两个按论文配对重采样的区间都跨零。</p>
+      <p>保持率不高于 80% 的四条记录，八组平均误差约 <strong>14.6 个百分点</strong>。盐地碱蓬实测 <strong>55%</strong>，八组仍预测 <strong>约 83%</strong>。</p>
+      <p class="links"><a href="第四十二轮_静态距离低权重_20261106/README.md">完整权重对照与逐来源数据</a></p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="gates">
+  <h2 id="gates">主模型离目标还有多远</h2>
+  <p class="intro">保持原定主 GPR。下表为整篇留出的开发集成绩，三电极用本轮复用的零权重对照，双电极用第 31 轮历史结果。</p>
+  <div class="metric-table"><table>
+    <thead><tr><th scope="col">指标</th><th scope="col">三电极</th><th scope="col">双电极</th><th scope="col">门槛</th></tr></thead>
+    <tbody><tr><th scope="row">R²</th><td>0.618</td><td>0.623</td><td>&gt; 0.95</td></tr>
+<tr><th scope="row">MAE（pp）</th><td>4.02</td><td>6.54</td><td>≤ 2</td></tr>
+<tr><th scope="row">RMSE（pp）</th><td>6.99</td><td>8.65</td><td>≤ 3</td></tr>
+<tr><th scope="row">90% 绝对误差（pp）</th><td>12.57</td><td>14.48</td><td>≤ 5</td></tr></tbody>
+  </table></div>
+  <p class="links"><a href="第三十一轮_杉木屑双体系开发对照_20261105/README.md">整篇留出与双电极原始结果</a></p>
+</section>
+
+<section aria-labelledby="evidence">
+  <h2 id="evidence">最近三轮改变了什么</h2>
+  <div class="tablebox" style="margin-top:12px"><table>
+    <thead><tr><th scope="col">轮次</th><th scope="col">证据</th><th scope="col">可以得出的结论</th></tr></thead>
+    <tbody>
+      <tr><td class="tier">第 40 轮</td><td>柚子籽 10,000 圈实测 93.8%。主 GPR 误差 2.77，含静态项 GPR 误差 0.65 个百分点。</td><td>单例值得追查。两个配置也使用了不同的曲线表达。</td></tr>
+      <tr><td class="tier">第 41 轮</td><td>在相同表达下加入全权重静态项，平均误差分别增加 0.27 和 0.26 个百分点。</td><td>两组差值区间跨零。33 条记录与最相近训练记录的相似度均下降。</td></tr>
+      <tr><td class="tier">第 42 轮</td><td>108 次新拟合、108 折预测复用。较低权重使相似度有所恢复。</td><td>相对零权重的稳定收益尚未建立，重衰减尾部仍未改善。</td></tr>
+    </tbody>
+  </table></div>
+  <p class="links"><a href="第四十轮_柚子籽三电极外部锁定_20261106/README.md">外部单例</a> · <a href="第四十一轮_三电极GPR静态项配对_20261106/README.md">静态项配对</a> · <a href="阶段可视化报告_至第39轮_20261106.html">上一份阶段报告</a></p>
+</section>
+
+<section aria-labelledby="next">
+  <h2 id="next">下一步优先补什么</h2>
+  <div class="next" style="margin-top:12px">
+    <article><h3>先补能检验迟发衰减的三电极曲线</h3><p>目标是同一试验的早期实测点、实际循环电流和长期终点均可核实。优先匹配现有困难样本的工况。</p></article>
+    <article><h3>储备多篇真正未见终点的来源</h3><p>先锁定预测和基线，再揭示终点。RF、XGBoost、静态组合、双电极和材料工况直推继续保留。</p></article>
+  </div>
+</section>
+
+<footer class="muted note">下次常规阶段报告覆盖至第 45 轮。研究方向变化、关键证据冲突解除或达标时提前更新。</footer>
+</main>
+</body>
+</html>
