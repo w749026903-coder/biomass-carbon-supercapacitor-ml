@@ -1,0 +1,64 @@
+{
+  "phase": 44,
+  "parent": "54f8881",
+  "scientific_question": "Locate additional evidence suitable for a whole-source test of late decline without reusing known outcomes as prospective evidence.",
+  "development": {
+    "ledger_eligibility": "Staged 3E GCD endpoints at least 5000 cycles and at most 80% retention; exact P31 three-electrode source absent. Audit all returned ledger identities, at most six highest-priority unique source families for original evidence. Prefer at least one open local original; sort by known cycling current first, then lower retention and DOI. Previously reviewed ineligible sources stay logged; no bypass.",
+    "binding": "Same tested sample, GCD current and electrode system, at least three distinct positive early observations wholly within approved 10% or 20% horizon, and defensible long-cycle author or graph evidence. Preserve source wording, uncertainty and conflicts separately."
+  },
+  "blind": {
+    "provider": "Europe PMC lite",
+    "publication_window": "2020-01-01 to 2026-11-06 inclusive",
+    "title_precursor_terms": {
+      "shell_seed_peel": [
+        "husk",
+        "shell",
+        "seed",
+        "peel",
+        "rind",
+        "pomace",
+        "stone"
+      ],
+      "stalk_fiber_aquatic": [
+        "bagasse",
+        "corncob",
+        "straw",
+        "stalk",
+        "luffa",
+        "hyacinth",
+        "algae",
+        "pith",
+        "bark"
+      ],
+      "wood_residue": [
+        "sawdust",
+        "lignin",
+        "cellulose",
+        "wood",
+        "coffee",
+        "sludge",
+        "spent"
+      ]
+    },
+    "query_template": "(TITLE:supercapacitor OR TITLE:supercapacitors OR TITLE:\"electrochemical capacitor\") AND (TITLE:\"porous carbon\" OR TITLE:\"activated carbon\" OR TITLE:\"carbon electrode\" OR TITLE:\"carbon electrodes\") AND ({precursor_title_terms}) AND OPEN_ACCESS:Y AND IN_PMC:Y AND HAS_PDF:Y AND FIRST_PDATE:[2020-01-01 TO 2026-11-06]",
+    "limits": {
+      "one_page_each": true,
+      "page_size": 60,
+      "candidate_cap": 6
+    },
+    "triage": "Newest first by publication date, then DOI. Require DOI and PMCID and named original biomass carbon in title; reject reviews, corrections, titles disclosing numeric cycling outcomes, non-biomass precursors, and explicit mixed-phase devices or non-supercapacitor tasks. Exclude exact DOI or normalized title matches in tracked project text and both live source catalogs. Preserve all exclusion counts.",
+    "exposure": "Bibliographic metadata only until candidate identities are separately frozen. After freeze, automated structure-only screening may cache original XML and emit flags, IDs and counts without captions, figures, endpoints, or absolute terminal quantities. Verify lineage and masked early observations separately before locking predictions."
+  },
+  "protected": {
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/training_plan.json": "66b0d248cacc40be39c43666311367ba9c80faa1c5fd4e1d617c70459f830fa7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第四十三轮_循环工况与盲态来源复核_20261106/source_triage.json": "78bd80edef9579ab4b0e4351e633986750faa9d4767a9cd4b49b09ac1ca79ae4",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十二轮_盲态文献筛选扩充_20261105/metadata_freeze.json": "2e0d364ffba42df13f87c041b215e91501ac7476e9173b07e8464a19adbb3e79",
+    "三电极端点扩充_20261018/三电极端点_53条.json": "28974e751470c5ecf6886ab4ca87f74f4b58edd66a54e4906aba5d132349d41e",
+    "data/current_training_latest.json": "e56d3ab9e219b78ee8c07dbd896bbeb9e0b6949b4a8574dc0d8f034f2b9fe725",
+    "data/current_retention_research.json": "fd5a60e55b34ccc92c5640271e255d9477da308e771af7dc21edf2c569b03463"
+  },
+  "new_fits": 0,
+  "formal_admissions": 0,
+  "independent_acceptances": 0
+}
