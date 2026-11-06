@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电容保持率预测 · 第 51 轮阶段报告</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light;--paper:#f4f6f4;--ink:#19302c;--muted:#4c625b;--rule:#d6e1da;--three:#16705d;--two:#3e628e;--limit:#9a4726}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Microsoft YaHei","Segoe UI",sans-serif}main{max-width:1020px;margin:auto;padding:30px 24px 42px}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(29px,5vw,48px);line-height:1.16}h2{font-size:24px;line-height:1.35}h3{font-size:17px}a{color:#085d4c;text-underline-offset:3px;overflow-wrap:anywhere}
+header{padding:24px 0 20px;border-bottom:1px solid var(--rule)}.kicker{color:var(--three);font-weight:700;font-size:.88rem;margin-bottom:12px}.lede{margin-top:14px;max-width:720px;font-size:1.1rem}.caption,.source{font-size:.91rem;color:var(--muted);margin-top:7px}
+section{margin-top:27px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:13px}.card{background:white;border:1px solid var(--rule);border-radius:11px;padding:14px 16px;min-width:0}.card p+p{margin-top:7px}
+.chart{padding:12px 0;border-bottom:1px solid var(--rule)}.chart:nth-last-child(1){border:0;padding-bottom:0}.chart:first-child{padding-top:0}.chart h3{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap}.gate{color:var(--limit);font-size:.82rem;font-weight:700}.series{display:grid;grid-template-columns:54px 1fr 47px;align-items:center;gap:8px;font-size:.88rem;margin-top:6px}.series b{text-align:right;font-variant-numeric:tabular-nums}.track{height:9px;background:#e9eeea;border-radius:4px;position:relative}.bar{display:block;width:var(--value);height:100%;border-radius:inherit;background:var(--three)}.two{background:var(--two)}.marker{position:absolute;left:var(--target);width:2px;height:17px;top:-4px;background:var(--limit)}
+.band{margin-top:12px;padding:12px 15px;background:#fff4e9;border-left:4px solid var(--limit)}.checks{display:grid;gap:10px;padding-left:22px;margin:12px 0 0}.checks li{padding-left:4px}footer{margin-top:25px;padding-top:12px;border-top:1px solid var(--rule)}
+@media(max-width:620px){main{padding:18px 14px 30px}.cards{grid-template-columns:1fr}.card{padding:12px 13px}.series{grid-template-columns:50px 1fr 45px}}
+@media print{body{background:white}main{padding:0}section,.card{break-inside:avoid}a{text-decoration:none;color:inherit}}
+</style>
+</head>
+<body><main>
+<a href="研究进度.html">返回研究进度</a>
+<header>
+<p class="kicker">2026-11-07 · 阶段可视化 · 第 49–51 轮</p>
+<h1>两份公开原包已核实，尚无新增可用训练数据</h1>
+<p class="lede">目标仍是预测指定圈数下的电容保持率。本阶段打通了公开数据的文件夹和下载入口，识别了两类容易误用的表。三轮均未新增可用的早期输入、模型拟合或正式独立验收。</p>
+</header>
+<section aria-labelledby="evidence"><h2 id="evidence">从文件到可用数据，卡在哪一步</h2>
+<div class="cards">
+<article class="card"><h3>第 49–50 轮 · 木源碳</h3><p>已确认两份长循环 CSV 的文件名，原表下载仍受限。刊本图复算了 19 个早期标记，样品和归一化参照尚未绑定。</p><p class="source"><a href="第四十九轮_木源长循环原始数据核查_20261107/README.md">原表目录</a> · <a href="第五十轮_木源碳双电极早期盲态图读_20261107/README.md">逐点图读</a></p></article>
+<article class="card"><h3>第 51 轮 · TPAC 和 NMOVC</h3><p>两个原包的 SHA-256 均与存档一致。TPAC 的大表属于热重，电化学 Word 文件只有图片，未定位到逐圈电容表。NMOVC 有循环工程文件，试验属于钠离子电池，排除。</p><p class="source"><a href="第五十一轮_公开逐圈数据筛查与阶段图表_20261107/README.md">原包和用途核验</a></p></article>
+</div>
+<div class="band"><strong>下一批有可核实的入口。</strong> 已知雨树碳数据的根目录返回空列表，但公开目录接口找到了 14 个子目录。先定位 Fig. 8(d) 对应的长循环文件，确认样品、电流和初始参照。雨树碳终点已见，即使补齐也只作开发对照。</div>
+</section>
+<section aria-labelledby="model"><h2 id="model">主模型离门槛还有多远</h2>
+<p class="caption">前 20% 循环辅助的预定 GPR。每次留出整篇论文来检验。三电极 33 条／27 个来源，双电极 31 条／25 个来源。橙线是项目门槛，误差以百分点（pp）计。</p>
+<div class="cards" aria-label="各体系成绩和门槛">
+<div class="card">
+<div class="chart" data-metric="r2" style="--target:95%"><h3>R² · 越高越好 <span class="gate">目标 &gt; 0.95</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:61.8%"></i><i class="marker"></i></span><b>0.618</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:62.3%"></i><i class="marker"></i></span><b>0.623</b></div></div>
+<div class="chart" data-metric="mae" style="--target:12.5%"><h3>平均绝对误差（MAE） <span class="gate">目标 ≤ 2 pp</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:25.125%"></i><i class="marker"></i></span><b>4.02</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:40.875%"></i><i class="marker"></i></span><b>6.54</b></div></div>
+</div><div class="card">
+<div class="chart" data-metric="rmse" style="--target:18.75%"><h3>均方根误差（RMSE） <span class="gate">目标 ≤ 3 pp</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:43.6875%"></i><i class="marker"></i></span><b>6.99</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:54.0625%"></i><i class="marker"></i></span><b>8.65</b></div></div>
+<div class="chart" data-metric="p90_absolute_error" style="--target:31.25%"><h3>绝对误差第 90 百分位 <span class="gate">目标 ≤ 5 pp</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:78.5625%"></i><i class="marker"></i></span><b>12.57</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:90.5%"></i><i class="marker"></i></span><b>14.48</b></div></div>
+</div></div>
+<p class="source">这组基准来自第 31 轮。同轮两体系共 16 个配置，0 个同时达标。<br><a href="第三十一轮_杉木屑双体系开发对照_20261105/README.md">整篇留出结果与全部模型</a></p>
+</section>
+
+<section aria-labelledby="next"><h2 id="next">下一次训练的条件</h2>
+<ol class="checks">
+<li>三电极优先补长循环重衰减样本，双电极继续补工况可比的来源。原始数据必须能绑定样品、试验体系、循环工况及归一化参照，所用早期窗口至少三个可分辨观测。</li>
+<li>只有新增证据能进入开发对照或独立验证，才冻结有限模型比较。在相同的整篇留出样本上看误差变化。未见论文先锁预测，再读终点。</li>
+</ol>
+<p class="source">先前的调参和来源单例详见上一份阶段复盘。<br><a href="阶段可视化报告_进展与停手条件_20261107.html">查看第 49 轮复盘</a></p>
+</section>
+<footer class="caption">下次常规更新至第 54 轮。出现可用新来源、方向变化或达标时提前更新。</footer>
+</main></body>
+</html>
