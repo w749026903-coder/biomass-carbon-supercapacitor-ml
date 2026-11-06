@@ -1,0 +1,295 @@
+{
+  "frozen_at": "2026-11-06T08:29:06+08:00",
+  "source_family": "doi:10.1039/d0na00778a",
+  "sample": "PSAC-3",
+  "system": "3E",
+  "cycle_count": 10000,
+  "window": 0.2,
+  "figure": "Fig. 2(f)",
+  "input_points": [
+    {
+      "cycle_reading": 1165.5172413793102,
+      "cycle_interval": [
+        1082.7586206896551,
+        1248.2758620689654
+      ],
+      "early_ordinate_pct": 99.25949124821659,
+      "geometry_interval_pct": [
+        98.39649232696524,
+        100.12249016946794
+      ]
+    },
+    {
+      "cycle_reading": 1352.7333894028586,
+      "cycle_interval": [
+        1269.9747687132035,
+        1435.4920100925137
+      ],
+      "early_ordinate_pct": 98.99176467492832,
+      "geometry_interval_pct": [
+        98.12876575367697,
+        99.85476359617967
+      ]
+    },
+    {
+      "cycle_reading": 1559.2713077423562,
+      "cycle_interval": [
+        1476.512687052701,
+        1642.0299284320113
+      ],
+      "early_ordinate_pct": 98.70550161812298,
+      "geometry_interval_pct": [
+        97.84250269687163,
+        99.56850053937433
+      ]
+    },
+    {
+      "cycle_reading": 1751.7241379310344,
+      "cycle_interval": [
+        1668.9655172413793,
+        1834.4827586206895
+      ],
+      "early_ordinate_pct": 98.67813823769305,
+      "geometry_interval_pct": [
+        97.8151393164417,
+        99.5411371589444
+      ]
+    }
+  ],
+  "static_features": {
+    "reported_current_A_g": 10,
+    "electrolyte": "KOH",
+    "concentration_mol_L": 1,
+    "cycle_voltage_lower_V": null,
+    "cycle_voltage_upper_V": null,
+    "BET_m2_g": 1187.439,
+    "reference_electrode": "Hg/HgO"
+  },
+  "static_provenance": "PSAC-3 Table 1 BET; 3E results for 1 M KOH; methods for Hg/HgO; Fig. 2(f) for A/g. The precise cycling voltage window remains unknown.",
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.7.2",
+    "xgboost": "3.1.1",
+    "numpy": "2.3.4",
+    "scipy": "1.16.3"
+  },
+  "train_rows": [
+    "incoming:ADD_039_T01::early20",
+    "candidate:TE026::early20",
+    "legacy:R087_CY01::early20",
+    "incoming:ADD_056_T01::early20",
+    "incoming:ADD_005_T01::early20",
+    "incoming:ADD_027_T01::early20",
+    "candidate:TE037::early20",
+    "candidate:TE038::early20",
+    "incoming:ADD_025_T01::early20",
+    "incoming:ADD_009_T01::early20",
+    "legacy:R078_CY01::early20",
+    "candidate:V05:008::early20",
+    "candidate:V05:009::early20",
+    "candidate:V05:010::early20",
+    "candidate:V05:011::early20",
+    "legacy:R013_CY01::early20",
+    "candidate:TE029::early20",
+    "candidate:TE030::early20",
+    "incoming:ADD_003_T01::early20",
+    "candidate:TE021::early20",
+    "candidate:TE025::early20",
+    "incoming:ADD_035_T01::early20",
+    "v25:Leather_ANSC8_3E_C10000::early20",
+    "incoming:ADD_031_T01::early20",
+    "candidate:TE033::early20",
+    "candidate:TE034::early20",
+    "candidate:TE009::early20",
+    "candidate:TE020::early20",
+    "candidate:V05:018::early20",
+    "candidate:TE052::early20",
+    "legacy:R042_CY01::early20",
+    "retired_case:JPC-800-0.5_3E::early20",
+    "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+  ],
+  "train_sources": [
+    "doi:10.1002/asia.70648",
+    "doi:10.1002/ente.202201281",
+    "doi:10.1007/s00339-023-07141-8",
+    "doi:10.1007/s10854-026-18573-2",
+    "doi:10.1016/j.biombioe.2026.109160",
+    "doi:10.1016/j.biombioe.2026.109168",
+    "doi:10.1016/j.heliyon.2024.e25628",
+    "doi:10.1016/j.ijbiomac.2023.128794",
+    "doi:10.1016/j.jenvman.2026.129124",
+    "doi:10.1016/j.jpcs.2023.111318",
+    "doi:10.1016/j.solidstatesciences.2025.108046",
+    "doi:10.1021/acsomega.3c04692",
+    "doi:10.1021/acsomega.4c11529",
+    "doi:10.1021/acssusresmgt.3c00028",
+    "doi:10.1039/d4cp01914h",
+    "doi:10.1039/d4ta02115k",
+    "doi:10.1039/d4ya00076e",
+    "doi:10.1039/d6nj00244g",
+    "doi:10.1039/d6ra04144b",
+    "doi:10.1088/1361-6528/ace97a",
+    "doi:10.3390/mi14030572",
+    "doi:10.3390/molecules28186543",
+    "doi:10.3390/nano12050810",
+    "doi:10.3390/nano13101654",
+    "doi:10.3390/nano13172431",
+    "doi:10.3390/nano16211412",
+    "doi:10.3390/polym17111544"
+  ],
+  "configurations": [
+    {
+      "id": "ExtraTrees_early_p2_raw_delta",
+      "family": "ExtraTrees_early",
+      "kind": "ExtraTrees",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 2,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_early_p1_continuation_delta",
+      "family": "GPR_early",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "GPR_static_p1_raw_delta",
+      "family": "GPR_static",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "RF_early_p0_raw_delta",
+      "family": "RF_early",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "RF_static_p2_raw_delta",
+      "family": "RF_static",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 240,
+        "max_depth": 3,
+        "min_samples_leaf": 1,
+        "max_features": 0.7
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    },
+    {
+      "id": "Ridge_early_p2_continuation_delta",
+      "family": "Ridge_early",
+      "kind": "Ridge",
+      "parameters": {
+        "alpha": 10.0
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_early_p1_raw_delta",
+      "family": "XGB_early",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "XGB_static_p1_raw_delta",
+      "family": "XGB_static",
+      "kind": "XGB",
+      "parameters": {
+        "n_estimators": 256,
+        "max_depth": 1,
+        "learning_rate": 0.03,
+        "reg_lambda": 10.0,
+        "min_child_weight": 1.0
+      },
+      "feature_view": "raw",
+      "static": true,
+      "target": "delta"
+    }
+  ],
+  "primary": "GPR_early_p1_continuation_delta",
+  "baselines": [
+    "training_mean",
+    "early_persistence",
+    "early_linear"
+  ],
+  "planned_fits": 8,
+  "scenario_counts": {
+    "center": 1,
+    "y_only_corners": 16,
+    "xy_corners": 256
+  },
+  "stress_rule": "Four original points, center and coordinate-box corners. Report discrete sensitivity only, without probability or a global interval guarantee. Identical frozen test scenarios for all eight methods and three baselines.",
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "single_case_scope": "Per-case errors and sensitivity, no aggregate R2 or independent acceptance. No source exchange with 2E. Early10 and A are out of this case and retained.",
+  "endpoint_at_freeze": null,
+  "reveal_rule": "Verify plan and prediction bytes on origin/main first. Use the original author retention statement for PSAC-3 tied to Fig. 2(f) and 10000 GCD cycles. Preserve a same-panel graph reading separately if available. A conflict remains explicit. No refits after reveal.",
+  "protected": {
+    "tools/retention_pomelo_external_v40.py": "344fb81c4ba279a03f3854c2c882cd36e2d7d663f81532c09bdf6db1e8b7e376",
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/training_plan.json": "66b0d248cacc40be39c43666311367ba9c80faa1c5fd4e1d617c70459f830fa7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/input_snapshot.json": "f53e5040fa2bb5c093b6b22cc25ab80a99c68ce5aa0792ee6607335fa7456786",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十九轮_柚子籽盲态输入核验_20261106/screen_plan.json": "9d1ea7faf62b663da6c525f691be78074ff0977d45751bd9e9880e56c1cc570f",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十九轮_柚子籽盲态输入核验_20261106/early_input_evidence.json": "acd341debd8a91fdeab987af48854ea7ecf2e5dfcec1a562ec348b348421636f",
+    ".local-literature-cache/P32/PMC9419826_sealed_fulltext.xml": "bc1645c8ea65fdd7e6ec1cb39813012bba7d40bf4d9acf1842d3f6ff6bdb42d0",
+    ".local-literature-cache/P32/pomelo_publisher_sealed.pdf": "5b036b935f1e1427c2a1a76a7f2fa6187aaa04a2d22edd5f7b831bc24cd1dd24",
+    "tools/retention_shape_v4.py": "5f871167001c70f96630fdc54ebd466d2d05a152189cd19dfbe977b332dfe24a",
+    "tools/retention_v3_optimizer.py": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+    "tools/retention_suaeda_case_v16.py": "e9b25bf42f3265879224d36fd2f1c51ae139f8d490ce47f5cbaab7c13a0f0f05",
+    "tools/retention_corrected2e_v13.py": "27e4b4eb3dc050e748537e7fec778166ea7004e23cb5725f3895b67eba66db27",
+    "tools/prepare_small_sample_routes.py": "1c9f5c34e015fbbe6e482921cc792c268a2dd63329c6491f7d44c527b3b8f26a"
+  }
+}
