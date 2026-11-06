@@ -1,0 +1,319 @@
+{
+  "phase": 57,
+  "freeze_commit": "89e8a21",
+  "plan_sha256": "cc38ca38db50f4c21417a3e5c50ac1060576f1378193bf0282714940d36bc458",
+  "protected_hashes_checked": 5,
+  "article_doi": "10.1002/smsc.202500540",
+  "dataset_version_doi": "10.5281/zenodo.19549171",
+  "source_family_provisional": "provisional:10.1002/smsc.202500540+10.1016/j.cartre.2024.100436",
+  "archive_receipt": {
+    "api_access": [
+      {
+        "access_mode": "JSON record REST metadata",
+        "url": "https://zenodo.org/api/records/19549171",
+        "http": 200,
+        "media_type": "application/json",
+        "bytes": 5743,
+        "valid_json_object": true,
+        "sha256": "01743f619e5090541296fb98b3b6fe3733cdec6545d58b811267539db51f505e"
+      },
+      {
+        "access_mode": "archive byte-range negotiation",
+        "url": "https://zenodo.org/api/records/19549171/files/Small%20Science%20Paper.zip/content",
+        "http": 406,
+        "kind": "HTTPError"
+      },
+      {
+        "access_mode": "official REST files metadata subresource",
+        "url": "https://zenodo.org/api/records/19549171/files",
+        "http": 200,
+        "media_type": "application/json",
+        "bytes": 1640,
+        "valid_json_object": true,
+        "sha256": "82f79dbb624155ed7c7a8dff85fb256204ce09daee30e8b1ad8553c351054426"
+      }
+    ],
+    "verified_range_download": {
+      "access_mode": "archive byte-range negotiation",
+      "accept": "*/*",
+      "verified_archive": true,
+      "url": "https://zenodo.org/api/records/19549171/files/Small%20Science%20Paper.zip/content",
+      "http": 206,
+      "bytes": 994338,
+      "range_received": true,
+      "sha256": "92c825237e3a529c73ddcd08c661cace2100ae88caeca835aea85795e951d63a"
+    },
+    "archive_md5": "c57733a0acc2f1f5db6c2ed9a62b8c47",
+    "archive_sha256": "92c825237e3a529c73ddcd08c661cace2100ae88caeca835aea85795e951d63a",
+    "license": "cc-by-4.0",
+    "dataset_creators": [
+      "Pourkheirollah, Hamed",
+      "Vitto, Remuel Isaac"
+    ]
+  },
+  "system": "2E",
+  "protocol": {
+    "current_mA_absolute": 10,
+    "mass_normalized_current_A_g_verified": null,
+    "upper_voltage_V": 1.2,
+    "cycle_count": 10000,
+    "author_stated_record_interval_cycles": 100
+  },
+  "panels": {
+    "a": {
+      "electrolyte_label": "NaCl",
+      "member": "Small Science Paper/Folder1/Book1.Long-term cycling (NaCl).csv",
+      "member_zip_crc32": "b33dfa43",
+      "member_byte_size": 10146,
+      "sample_formulas_as_reported": {
+        "YP-80F": "(B/260.365862506019)*100",
+        "AWC 3-800": "(C/325.831131537081)*100",
+        "AWC 2-600": "(D/401.526912375989)*100",
+        "AWC 3-600": "(E/311.543337180222)*100",
+        "AWC 4-700": "(F/351.979458512525)*100"
+      },
+      "first_observation_cycle": 100,
+      "all_first_retention_values_exactly_100_pct": true,
+      "figure_trace_links": {
+        "red": {
+          "sample": "AWC 3-600",
+          "required_interval_matches": 4,
+          "column_comparisons": {
+            "YP-80F": {
+              "points_in_interval": 0,
+              "rmse_pp": 3.301361,
+              "aligned_cycles": [
+                500,
+                700,
+                800,
+                1400
+              ]
+            },
+            "AWC 3-800": {
+              "points_in_interval": 0,
+              "rmse_pp": 4.22701,
+              "aligned_cycles": [
+                500,
+                700,
+                800,
+                1400
+              ]
+            },
+            "AWC 2-600": {
+              "points_in_interval": 0,
+              "rmse_pp": 2.103237,
+              "aligned_cycles": [
+                500,
+                700,
+                800,
+                1400
+              ]
+            },
+            "AWC 3-600": {
+              "points_in_interval": 4,
+              "rmse_pp": 0.082448,
+              "aligned_cycles": [
+                500,
+                700,
+                800,
+                1400
+              ]
+            },
+            "AWC 4-700": {
+              "points_in_interval": 0,
+              "rmse_pp": 2.634044,
+              "aligned_cycles": [
+                500,
+                700,
+                800,
+                1400
+              ]
+            }
+          },
+          "distinct_monotonic_alignments_checked": 12
+        }
+      }
+    },
+    "b": {
+      "electrolyte_label": "KxHyPO4",
+      "member": "Small Science Paper/Folder1/Book1.Long-term cycling (KxHyPO4).csv",
+      "member_zip_crc32": "7447591d",
+      "member_byte_size": 10144,
+      "sample_formulas_as_reported": {
+        "YP-80F": "(B/274.79753680437)*100",
+        "AWC 3-800": "(C/356.257547110672)*100",
+        "AWC 2-600": "(D/312.2737639702)*100",
+        "AWC 3-600": "(E/441.746075133477)*100",
+        "AWC 4-700": "(F/354.851762010923)*100"
+      },
+      "first_observation_cycle": 100,
+      "all_first_retention_values_exactly_100_pct": true,
+      "figure_trace_links": {
+        "red": {
+          "sample": "AWC 3-600",
+          "required_interval_matches": 7,
+          "column_comparisons": {
+            "YP-80F": {
+              "points_in_interval": 0,
+              "rmse_pp": 3.71268,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1800
+              ]
+            },
+            "AWC 3-800": {
+              "points_in_interval": 1,
+              "rmse_pp": 0.516786,
+              "aligned_cycles": [
+                400,
+                600,
+                800,
+                900,
+                1300,
+                1500,
+                1800
+              ]
+            },
+            "AWC 2-600": {
+              "points_in_interval": 0,
+              "rmse_pp": 2.11012,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1800
+              ]
+            },
+            "AWC 3-600": {
+              "points_in_interval": 7,
+              "rmse_pp": 0.095085,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1800
+              ]
+            },
+            "AWC 4-700": {
+              "points_in_interval": 0,
+              "rmse_pp": 2.132656,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1800
+              ]
+            }
+          },
+          "distinct_monotonic_alignments_checked": 48
+        },
+        "blue": {
+          "sample": "AWC 3-800",
+          "required_interval_matches": 8,
+          "column_comparisons": {
+            "YP-80F": {
+              "points_in_interval": 0,
+              "rmse_pp": 4.459283,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1600,
+                1800
+              ]
+            },
+            "AWC 3-800": {
+              "points_in_interval": 8,
+              "rmse_pp": 0.078019,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1300,
+                1500,
+                1600,
+                1800
+              ]
+            },
+            "AWC 2-600": {
+              "points_in_interval": 0,
+              "rmse_pp": 2.756981,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1600,
+                1800
+              ]
+            },
+            "AWC 3-600": {
+              "points_in_interval": 1,
+              "rmse_pp": 0.52392,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1600,
+                1800
+              ]
+            },
+            "AWC 4-700": {
+              "points_in_interval": 0,
+              "rmse_pp": 2.806857,
+              "aligned_cycles": [
+                300,
+                500,
+                700,
+                800,
+                1200,
+                1400,
+                1600,
+                1800
+              ]
+            }
+          },
+          "distinct_monotonic_alignments_checked": 192
+        }
+      }
+    }
+  },
+  "denominator_identity": "author's sample-specific numeric divisor from workbook formula",
+  "denominator_cycle_index": null,
+  "sample_condition_series_with_early_data": 10,
+  "normalized_early_values": 200,
+  "linked_biomass_sample_condition_series": 3,
+  "linked_distinct_source_families": 1,
+  "early10_post_reference_observations_per_series": 9,
+  "early20_post_reference_observations_per_series": 19,
+  "source_lineage_status": "held pending companion experiment attribution and historical exposure audit",
+  "admissible_to_prediction_lock": 0,
+  "endpoint_exposures": 0,
+  "predictions_locked": 0,
+  "new_fits": 0,
+  "canonical_admissions": 0,
+  "external_sources": 0
+}
