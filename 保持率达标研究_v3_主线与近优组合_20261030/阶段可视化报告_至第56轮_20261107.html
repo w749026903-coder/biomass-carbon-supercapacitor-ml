@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>电容保持率预测 · 至第 56 轮进展</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light;--paper:#f4f6f4;--ink:#19302c;--muted:#4c625b;--rule:#d6e1da;--three:#16705d;--two:#3e628e;--limit:#9a4726}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Microsoft YaHei","Segoe UI",sans-serif}main{max-width:1020px;margin:auto;padding:30px 24px 42px}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(29px,5vw,48px);line-height:1.16}h2{font-size:24px;line-height:1.35}h3{font-size:17px}a{color:#085d4c;text-underline-offset:3px;overflow-wrap:anywhere}
+header{padding:24px 0 20px;border-bottom:1px solid var(--rule)}.kicker{color:var(--three);font-weight:700;font-size:.88rem;margin-bottom:12px}.lede{margin-top:14px;max-width:720px;font-size:1.1rem}.caption,.source{font-size:.91rem;color:var(--muted);margin-top:7px}
+section{margin-top:27px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:13px}.card{background:white;border:1px solid var(--rule);border-radius:11px;padding:14px 16px;min-width:0}.card p+p{margin-top:7px}
+.chart{padding:12px 0;border-bottom:1px solid var(--rule)}.chart:nth-last-child(1){border:0;padding-bottom:0}.chart:first-child{padding-top:0}.chart h3{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap}.gate{color:var(--limit);font-size:.82rem;font-weight:700}.series{display:grid;grid-template-columns:54px 1fr 47px;align-items:center;gap:8px;font-size:.88rem;margin-top:6px}.series b{text-align:right;font-variant-numeric:tabular-nums}.track{height:9px;background:#e9eeea;border-radius:4px;position:relative}.bar{display:block;width:var(--value);height:100%;border-radius:inherit;background:var(--three)}.two{background:var(--two)}.marker{position:absolute;left:var(--target);width:2px;height:17px;top:-4px;background:var(--limit)}
+.band{margin-top:12px;padding:12px 15px;background:#fff4e9;border-left:4px solid var(--limit)}.checks{display:grid;gap:10px;padding-left:22px;margin:12px 0 0}.checks li{padding-left:4px}footer{margin-top:25px;padding-top:12px;border-top:1px solid var(--rule)}
+@media(max-width:620px){main{padding:18px 14px 30px}.cards{grid-template-columns:1fr}.card{padding:12px 13px}.series{grid-template-columns:50px 1fr 45px}}
+@media print{body{background:white}main{padding:0}section,.card{break-inside:avoid}a{text-decoration:none;color:inherit}}
+.rounds{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:750px){.rounds{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<a href="研究进度.html">返回研究进度</a>
+<header>
+<p class="kicker">2026-11-07 · 阶段可视化 · 第 55–56 轮提前更新</p>
+<h1>模型精度还没有可靠改善</h1>
+<p class="lede">目标仍是用前期循环数据，预测指定圈数的电容保持率。最近完成的是图表核验。第 43–56 轮新增可用于盲测的早期输入、新拟合和正式独立验收均为 0。</p>
+</header>
+<section aria-labelledby="evidence"><h2 id="evidence">最近两轮拿到了什么</h2>
+<div class="cards">
+<article class="card"><h3>第 55 轮 · 两篇判明试验归属</h3><p>黑液／木炭碳给的是循环后的 CV 对照。植物蛋白／木质素碳明确是 5 A/g、3,000 圈的双电极试验。</p><p class="source"><a href="第五十五轮_两篇封存候选循环归属核查_20261107/README.md">试验归属和封存记录</a></p></article>
+<article class="card"><h3>第 56 轮 · 早期标记不足</h3><p>遮住末段后，前 10%／20% 保守确认 0／1 个实测标记。门槛是至少 3 个。补图横轴到 6,000 圈，试验关系待核。</p><p class="source"><a href="第五十六轮_植物蛋白木质素盲态轴与早期输入_20261107/README.md">核查边界与点数</a></p></article>
+</div>
+</section>
+<section aria-labelledby="model"><h2 id="model">主模型离门槛还有多远</h2>
+<p class="caption">前 20% 循环辅助的预定 GPR。每次留出整篇论文来检验。三电极 33 条／27 个来源，双电极 31 条／25 个来源。橙线是项目门槛，误差以百分点（pp）计。</p>
+<div class="cards" aria-label="各体系成绩和门槛">
+<div class="card">
+<div class="chart" data-metric="r2" style="--target:95%"><h3>R² · 越高越好 <span class="gate">目标 &gt; 0.95</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:61.8%"></i><i class="marker"></i></span><b>0.618</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:62.3%"></i><i class="marker"></i></span><b>0.623</b></div></div>
+<div class="chart" data-metric="mae" style="--target:12.5%"><h3>平均绝对误差（MAE） <span class="gate">目标 ≤ 2 pp</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:25.125%"></i><i class="marker"></i></span><b>4.02</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:40.875%"></i><i class="marker"></i></span><b>6.54</b></div></div>
+</div><div class="card">
+<div class="chart" data-metric="rmse" style="--target:18.75%"><h3>均方根误差（RMSE） <span class="gate">目标 ≤ 3 pp</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:43.6875%"></i><i class="marker"></i></span><b>6.99</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:54.0625%"></i><i class="marker"></i></span><b>8.65</b></div></div>
+<div class="chart" data-metric="p90_absolute_error" style="--target:31.25%"><h3>绝对误差第 90 百分位 <span class="gate">目标 ≤ 5 pp</span></h3>
+<div class="series"><span>三电极</span><span class="track" aria-hidden="true"><i class="bar" style="--value:78.5625%"></i><i class="marker"></i></span><b>12.57</b></div>
+<div class="series"><span>双电极</span><span class="track" aria-hidden="true"><i class="bar two" style="--value:90.5%"></i><i class="marker"></i></span><b>14.48</b></div></div>
+</div></div>
+<p class="source">这组基准来自第 31 轮。同轮两体系共 16 个配置，0 个同时达标。<br><a href="第三十一轮_杉木屑双体系开发对照_20261105/README.md">整篇留出结果与全部模型</a></p>
+</section>
+
+<section aria-labelledby="change"><h2 id="change">最近一次模型调整改变了多少</h2>
+<div class="cards">
+<article class="card"><h3>三电极，同一批论文对照</h3>
+<p>静态特征降权后，原主配置 MAE <strong>4.023 → 3.981</strong> pp。改变量 −0.042 pp，按论文配对的描述性 95% 区间为 −0.228 至 +0.138 pp，尚不能确认可重复的改善。</p>
+<p class="source"><a href="第四十二轮_静态距离低权重_20261106/README.md">第 42 轮同批对照</a></p></article>
+<article class="card"><h3>大误差依然集中在重衰减来源</h3>
+<p>四条保持率 ≤80% 的三电极记录，主配置平均误差仍约 <strong>14.6 pp</strong>。另有单篇锁定预测的案例，仍需多篇未见来源检验。</p>
+<p class="source"><a href="第四十二轮_静态距离低权重_20261106/README.md">重衰减误差</a> · <a href="第四十轮_柚子籽三电极外部锁定_20261106/README.md">单篇锁定案例</a></p></article>
+</div></section>
+<section aria-labelledby="next"><h2 id="next">下一轮什么时候值得做</h2>
+<div class="band"><strong>先暂停同批扫参、泛搜题录和反复读同一张低信息图。</strong> 优先找实际三电极循环工况明确、前 20% 有足够实测点、后段衰减明显的逐圈数据。另一条入口是可先锁定预测的未见论文，终点继续封存。</div>
+<ol class="checks">
+<li>有新证据能够增加可比难例或推进未见来源盲测时，再冻结一轮有限对照。</li>
+<li>比较同一批留出论文的 MAE、RMSE 和尾部误差。能单独解释哪些来源改善、哪些仍失败，再决定后续投入。</li>
+</ol>
+<p class="source"><a href="阶段可视化报告_至第54轮_20261107.html">第 54 轮阶段报告</a></p>
+</section>
+<footer class="caption">常规每完成 3 轮汇总一次，关键变化提前更新。下一次常规节点是第 57 轮完成后。</footer>
+</main></body>
+</html>
