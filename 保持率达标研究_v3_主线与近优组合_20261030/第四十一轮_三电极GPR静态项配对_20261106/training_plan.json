@@ -1,0 +1,220 @@
+{
+  "frozen_at": "2026-11-06T08:39:48+08:00",
+  "system": "3E",
+  "early_fraction": 0.2,
+  "scope": "Fixed P31 3E development cohort, exact whole-source folds. The already-seen pomelo case is excluded. No new external validation.",
+  "train_eval_rows": [
+    "incoming:ADD_039_T01::early20",
+    "candidate:TE026::early20",
+    "legacy:R087_CY01::early20",
+    "incoming:ADD_056_T01::early20",
+    "incoming:ADD_005_T01::early20",
+    "incoming:ADD_027_T01::early20",
+    "candidate:TE037::early20",
+    "candidate:TE038::early20",
+    "incoming:ADD_025_T01::early20",
+    "incoming:ADD_009_T01::early20",
+    "legacy:R078_CY01::early20",
+    "candidate:V05:008::early20",
+    "candidate:V05:009::early20",
+    "candidate:V05:010::early20",
+    "candidate:V05:011::early20",
+    "legacy:R013_CY01::early20",
+    "candidate:TE029::early20",
+    "candidate:TE030::early20",
+    "incoming:ADD_003_T01::early20",
+    "candidate:TE021::early20",
+    "candidate:TE025::early20",
+    "incoming:ADD_035_T01::early20",
+    "v25:Leather_ANSC8_3E_C10000::early20",
+    "incoming:ADD_031_T01::early20",
+    "candidate:TE033::early20",
+    "candidate:TE034::early20",
+    "candidate:TE009::early20",
+    "candidate:TE020::early20",
+    "candidate:V05:018::early20",
+    "candidate:TE052::early20",
+    "legacy:R042_CY01::early20",
+    "retired_case:JPC-800-0.5_3E::early20",
+    "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+  ],
+  "source_families": [
+    "doi:10.1002/asia.70648",
+    "doi:10.1002/ente.202201281",
+    "doi:10.1007/s00339-023-07141-8",
+    "doi:10.1007/s10854-026-18573-2",
+    "doi:10.1016/j.biombioe.2026.109160",
+    "doi:10.1016/j.biombioe.2026.109168",
+    "doi:10.1016/j.heliyon.2024.e25628",
+    "doi:10.1016/j.ijbiomac.2023.128794",
+    "doi:10.1016/j.jenvman.2026.129124",
+    "doi:10.1016/j.jpcs.2023.111318",
+    "doi:10.1016/j.solidstatesciences.2025.108046",
+    "doi:10.1021/acsomega.3c04692",
+    "doi:10.1021/acsomega.4c11529",
+    "doi:10.1021/acssusresmgt.3c00028",
+    "doi:10.1039/d4cp01914h",
+    "doi:10.1039/d4ta02115k",
+    "doi:10.1039/d4ya00076e",
+    "doi:10.1039/d6nj00244g",
+    "doi:10.1039/d6ra04144b",
+    "doi:10.1088/1361-6528/ace97a",
+    "doi:10.3390/mi14030572",
+    "doi:10.3390/molecules28186543",
+    "doi:10.3390/nano12050810",
+    "doi:10.3390/nano13101654",
+    "doi:10.3390/nano13172431",
+    "doi:10.3390/nano16211412",
+    "doi:10.3390/polym17111544"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.7.2",
+    "xgboost": "3.1.1",
+    "numpy": "2.3.4",
+    "scipy": "1.16.3"
+  },
+  "arms": {
+    "raw_early": {
+      "configuration": {
+        "id": "raw_early",
+        "family": "GPR_early",
+        "kind": "GPR",
+        "parameters": {
+          "length_scale": 0.7,
+          "alpha": 0.01,
+          "nu": 1.5
+        },
+        "feature_view": "raw",
+        "static": false,
+        "target": "delta"
+      },
+      "reuse_p31": null
+    },
+    "raw_static": {
+      "configuration": {
+        "id": "GPR_static_p1_raw_delta",
+        "family": "GPR_static",
+        "kind": "GPR",
+        "parameters": {
+          "length_scale": 0.7,
+          "alpha": 0.01,
+          "nu": 1.5
+        },
+        "feature_view": "raw",
+        "static": true,
+        "target": "delta"
+      },
+      "reuse_p31": "GPR_static_p1_raw_delta"
+    },
+    "continuation_early": {
+      "configuration": {
+        "id": "GPR_early_p1_continuation_delta",
+        "family": "GPR_early",
+        "kind": "GPR",
+        "parameters": {
+          "length_scale": 0.7,
+          "alpha": 0.01,
+          "nu": 1.5
+        },
+        "feature_view": "continuation",
+        "static": false,
+        "target": "delta"
+      },
+      "reuse_p31": "GPR_early_p1_continuation_delta"
+    },
+    "continuation_static": {
+      "configuration": {
+        "id": "continuation_static",
+        "family": "GPR_static",
+        "kind": "GPR",
+        "parameters": {
+          "length_scale": 0.7,
+          "alpha": 0.01,
+          "nu": 1.5
+        },
+        "feature_view": "continuation",
+        "static": true,
+        "target": "delta"
+      },
+      "reuse_p31": null
+    }
+  },
+  "primary_model_retained": "continuation_early",
+  "planned_fits": 54,
+  "planned_reused_folds": 54,
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "baselines": [
+    "training_mean",
+    "early_persistence",
+    "early_linear"
+  ],
+  "contrasts": {
+    "static_on_raw": {
+      "raw_static": 1,
+      "raw_early": -1
+    },
+    "static_on_continuation": {
+      "continuation_static": 1,
+      "continuation_early": -1
+    },
+    "continuation_without_static": {
+      "continuation_early": 1,
+      "raw_early": -1
+    },
+    "continuation_with_static": {
+      "continuation_static": 1,
+      "raw_static": -1
+    },
+    "interaction_static_raw_minus_continuation": {
+      "raw_static": 1,
+      "raw_early": -1,
+      "continuation_static": -1,
+      "continuation_early": 1
+    }
+  },
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261106,
+    "interval": [
+      0.025,
+      0.975
+    ],
+    "unit": "source"
+  },
+  "treatment_evidence_rule": "Static benefit requires both matched MAE changes with upper paired interval below zero and no increase in p90 absolute error or in pooled <=80% endpoint MAE in either view. A development result cannot satisfy external acceptance.",
+  "low_retention_pct_max": 80,
+  "interpretation": "An added block under fixed Matérn geometry changes distances and missingness representation. The comparison does not establish the intrinsic value of each feature or its value under retuning.",
+  "other_routes": "RF, XGBoost, A, other curve features, 2E and early10 kept in prior results. Do not promote by these development outcomes.",
+  "protected": {
+    "tools/retention_static_ablation_v41.py": "999c168201e847be8828db3451d7da1de77405aa95b953e832ca584494f5e862",
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第四十轮_柚子籽三电极外部锁定_20261106/case_result.json": "12bedddf47cf86cd1d43d95a57a9a43cad60f89c9e536054205c9f3eab373610",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/training_plan.json": "66b0d248cacc40be39c43666311367ba9c80faa1c5fd4e1d617c70459f830fa7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/input_snapshot.json": "f53e5040fa2bb5c093b6b22cc25ab80a99c68ce5aa0792ee6607335fa7456786",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/heldout_predictions.json": "9ab9578b6c02f6dfbcc1a8481105cbfaa7ab4cd3917825481b5d8387991cae6b",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/fit_events.json": "1067b9ab8b511e18b8285cd4da53ed5b3949f4dd16941a5a3124dfefa1d7bd62",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/results.json": "a05b2f100c55d808634e49b4c2d2155c129dc43a64b98dfc91b41b7866615bca",
+    "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/independent_verification.json": "eea1453e578e48945e8f8e33aa49a50c6b89ec3478f81b26d58b8c8c05cae617",
+    "tools/retention_sawdust_development_v31.py": "9c539048d5b72a6b9c509e1868c9c22f2d7ab2f759be5d16eead3408a803c4ec",
+    "tools/retention_sawdust_verify_v31.py": "870955ab28b40ba894adde67fa6d1dbb9b19e7875e0bb26b5c11ba7c1b8c8ed3",
+    "tools/retention_onion_development_v29.py": "c7a9c2f95f2d44adf446f9ece6d00dfc05eb1ff5318e9d588f7b94e713234529",
+    "tools/retention_shape_v4.py": "5f871167001c70f96630fdc54ebd466d2d05a152189cd19dfbe977b332dfe24a",
+    "tools/retention_v3_optimizer.py": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+    "tools/retention_horizon_normalization_v19.py": "9ca72d9a6007fa7541dcd7250ff3966375425ef9f13099dfdec27e7b813cda2b",
+    "tools/verify_retention_v3b.py": "aeb0a5b72c4752ce9e8629159310b05cad5052392d07bf01413dbbf7881989bf",
+    "tools/prepare_small_sample_routes.py": "1c9f5c34e015fbbe6e482921cc792c268a2dd63329c6491f7d44c527b3b8f26a"
+  }
+}
