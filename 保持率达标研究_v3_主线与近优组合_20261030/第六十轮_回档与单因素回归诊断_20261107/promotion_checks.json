@@ -1,0 +1,359 @@
+{
+  "p59_rf_3e": {
+    "system": "3E",
+    "matched_rows": 33,
+    "candidate_extra_rows": 2,
+    "benchmark_metrics": {
+      "mae": 3.4968876885667943,
+      "rmse": 6.219961019742959,
+      "r2": 0.6970731098107809,
+      "mape_pct": 4.518451823682524,
+      "p90_ape_pct": 7.741198780365455,
+      "p90_absolute_error": 6.618724957212464,
+      "source_p90_mae": 6.127933245783398
+    },
+    "candidate_matched_metrics": {
+      "mae": 3.6691184476675462,
+      "rmse": 6.40658669506707,
+      "r2": 0.6786221689439478,
+      "mape_pct": 4.6675069828482805,
+      "p90_ape_pct": 6.493263972367049,
+      "p90_absolute_error": 5.551740696373827,
+      "source_p90_mae": 5.583598546844496
+    },
+    "delta": {
+      "r2": -0.018450940866833077,
+      "mae": 0.17223075910075192,
+      "rmse": 0.18662567532411067,
+      "p90_absolute_error": -1.0669842608386375,
+      "source_p90_mae": -0.5443346989389015
+    },
+    "regressed_metrics": [
+      "r2",
+      "mae",
+      "rmse"
+    ],
+    "matched_point_metrics_non_regressing": false,
+    "paired_common_mae": {
+      "delta_mae_pp": 0.17223075910075136,
+      "percentile_interval_pp": [
+        -0.1768280686316218,
+        0.5358472651859664
+      ]
+    },
+    "most_regressed_rows": [
+      {
+        "row_id": "candidate:TE029::early20",
+        "source_family": "doi:10.1021/acssusresmgt.3c00028",
+        "sample_name": "ALPC-800",
+        "benchmark": 98.47360016397899,
+        "candidate": 95.29166678388405,
+        "observed": 100.0,
+        "change_in_absolute_error_pp": 3.1819333800949323
+      },
+      {
+        "row_id": "incoming:ADD_027_T01::early20",
+        "source_family": "doi:10.1016/j.biombioe.2026.109168",
+        "sample_name": "CCL-K2CO3-1-700",
+        "benchmark": 96.40401111547283,
+        "candidate": 94.09424343839984,
+        "observed": 109.2,
+        "change_in_absolute_error_pp": 2.3097676770729834
+      },
+      {
+        "row_id": "candidate:TE030::early20",
+        "source_family": "doi:10.1021/acssusresmgt.3c00028",
+        "sample_name": "ALPC-800",
+        "benchmark": 98.47360016397899,
+        "candidate": 96.43228399322268,
+        "observed": 100.0,
+        "change_in_absolute_error_pp": 2.0413161707563034
+      },
+      {
+        "row_id": "incoming:ADD_056_T01::early20",
+        "source_family": "doi:10.1007/s10854-026-18573-2",
+        "sample_name": "AMFS-derived activated carbon",
+        "benchmark": 98.86378261982485,
+        "candidate": 97.5802271191343,
+        "observed": 100.0,
+        "change_in_absolute_error_pp": 1.2835555006905395
+      },
+      {
+        "row_id": "incoming:ADD_031_T01::early20",
+        "source_family": "doi:10.1088/1361-6528/ace97a",
+        "sample_name": "SS-300",
+        "benchmark": 97.50209323285237,
+        "candidate": 96.37735423005776,
+        "observed": 98.3,
+        "change_in_absolute_error_pp": 1.1247390027946125
+      }
+    ],
+    "interpretation": "Development regression screen. Prediction records alone cannot verify training isolation or external acceptance."
+  },
+  "p59_gpr_2e": {
+    "system": "2E",
+    "matched_rows": 31,
+    "candidate_extra_rows": 2,
+    "benchmark_metrics": {
+      "mae": 6.5382545845160704,
+      "rmse": 8.650155031215906,
+      "r2": 0.6230916306488481,
+      "mape_pct": 7.9653739571330755,
+      "p90_ape_pct": 18.12884747278378,
+      "p90_absolute_error": 14.47588442735028,
+      "source_p90_mae": 14.080675664310624
+    },
+    "candidate_matched_metrics": {
+      "mae": 6.309919185979987,
+      "rmse": 8.47416686302958,
+      "r2": 0.6382720878836423,
+      "mape_pct": 7.631873290976593,
+      "p90_ape_pct": 16.798609299388623,
+      "p90_absolute_error": 15.440673325592215,
+      "source_p90_mae": 14.263670122853389
+    },
+    "delta": {
+      "r2": 0.01518045723479422,
+      "mae": -0.22833539853608364,
+      "rmse": -0.17598816818632557,
+      "p90_absolute_error": 0.9647888982419346,
+      "source_p90_mae": 0.18299445854276541
+    },
+    "regressed_metrics": [
+      "p90_absolute_error",
+      "source_p90_mae"
+    ],
+    "matched_point_metrics_non_regressing": false,
+    "paired_common_mae": {
+      "delta_mae_pp": -0.22833539853608653,
+      "percentile_interval_pp": [
+        -0.60950399813768,
+        0.11628571583268486
+      ]
+    },
+    "most_regressed_rows": [
+      {
+        "row_id": "incoming:ADD_043_T02::early20",
+        "source_family": "doi:10.1016/j.biortech.2025.132730",
+        "sample_name": "CE-K-PC//CE-K-PC",
+        "benchmark": 83.77966619605708,
+        "candidate": 80.54277415667786,
+        "observed": 90.9,
+        "change_in_absolute_error_pp": 3.2368920393792138
+      },
+      {
+        "row_id": "incoming:ADD_066_T01::early20",
+        "source_family": "doi:10.1007/s10854-023-10314-z",
+        "sample_name": "MMC//MMC",
+        "benchmark": 81.12411557264971,
+        "candidate": 80.15932667440778,
+        "observed": 95.6,
+        "change_in_absolute_error_pp": 0.9647888982419346
+      },
+      {
+        "row_id": "incoming:ADD_019_T01::early20",
+        "source_family": "doi:10.1016/j.jelechem.2026.120000",
+        "sample_name": "PC_NaCl-3//PC_NaCl-3",
+        "benchmark": 131.23197144444092,
+        "candidate": 130.55099647900371,
+        "observed": 142.22,
+        "change_in_absolute_error_pp": 0.6809749654372013
+      },
+      {
+        "row_id": "legacy:R104_CY01::early20",
+        "source_family": "doi:10.1021/acsomega.3c09438",
+        "sample_name": "SSC-Na3C6H5O7-KCl-1.5-1.5L-850",
+        "benchmark": 94.14951207908142,
+        "candidate": 93.5563967179155,
+        "observed": 98.4,
+        "change_in_absolute_error_pp": 0.5931153611659141
+      },
+      {
+        "row_id": "candidate:V05:014::early20",
+        "source_family": "doi:10.1039/d5ra01262g",
+        "sample_name": "NSGP",
+        "benchmark": 98.14179938338387,
+        "candidate": 97.62302406244548,
+        "observed": 99.46,
+        "change_in_absolute_error_pp": 0.5187753209383885
+      }
+    ],
+    "interpretation": "Development regression screen. Prediction records alone cannot verify training isolation or external acceptance."
+  },
+  "p60_rf_strawberry": {
+    "system": "3E",
+    "matched_rows": 33,
+    "candidate_extra_rows": 0,
+    "benchmark_metrics": {
+      "mae": 3.4968876885667943,
+      "rmse": 6.219961019742959,
+      "r2": 0.6970731098107809,
+      "mape_pct": 4.518451823682524,
+      "p90_ape_pct": 7.741198780365455,
+      "p90_absolute_error": 6.618724957212464,
+      "source_p90_mae": 6.127933245783398
+    },
+    "candidate_matched_metrics": {
+      "mae": 3.456111120188597,
+      "rmse": 6.114894524776815,
+      "r2": 0.7072206507616805,
+      "mape_pct": 4.446457731074093,
+      "p90_ape_pct": 7.168747645362851,
+      "p90_absolute_error": 6.129279236785237,
+      "source_p90_mae": 5.139349999412986
+    },
+    "delta": {
+      "r2": 0.010147540950899647,
+      "mae": -0.04077656837819754,
+      "rmse": -0.10506649496614351,
+      "p90_absolute_error": -0.4894457204272271,
+      "source_p90_mae": -0.9885832463704114
+    },
+    "regressed_metrics": [],
+    "matched_point_metrics_non_regressing": true,
+    "paired_common_mae": {
+      "delta_mae_pp": -0.04077656837819848,
+      "percentile_interval_pp": [
+        -0.23153232069959345,
+        0.1304600276798159
+      ]
+    },
+    "most_regressed_rows": [
+      {
+        "row_id": "candidate:TE009::early20",
+        "source_family": "doi:10.3390/molecules28186543",
+        "sample_name": "YPAC-1",
+        "benchmark": 82.65866872359335,
+        "candidate": 83.67077754388103,
+        "observed": 82.26,
+        "change_in_absolute_error_pp": 1.0121088202876791
+      },
+      {
+        "row_id": "legacy:R013_CY01::early20",
+        "source_family": "doi:10.1021/acsomega.4c11529",
+        "sample_name": "EUAC1-60",
+        "benchmark": 88.82676687968066,
+        "candidate": 88.05999302785175,
+        "observed": 89.9,
+        "change_in_absolute_error_pp": 0.7667738518289156
+      },
+      {
+        "row_id": "incoming:ADD_009_T01::early20",
+        "source_family": "doi:10.1016/j.jenvman.2026.129124",
+        "sample_name": "A-BC-0.2",
+        "benchmark": 90.0503980933612,
+        "candidate": 89.6874350586514,
+        "observed": 92.69,
+        "change_in_absolute_error_pp": 0.36296303470979296
+      },
+      {
+        "row_id": "incoming:ADD_003_T01::early20",
+        "source_family": "doi:10.1039/d4cp01914h",
+        "sample_name": "AUACW",
+        "benchmark": 94.97523542875604,
+        "candidate": 95.33797490611713,
+        "observed": 93.6,
+        "change_in_absolute_error_pp": 0.3627394773610888
+      },
+      {
+        "row_id": "incoming:ADD_031_T01::early20",
+        "source_family": "doi:10.1088/1361-6528/ace97a",
+        "sample_name": "SS-300",
+        "benchmark": 97.50209323285237,
+        "candidate": 97.16915372696042,
+        "observed": 98.3,
+        "change_in_absolute_error_pp": 0.3329395058919573
+      }
+    ],
+    "interpretation": "Development regression screen. Prediction records alone cannot verify training isolation or external acceptance."
+  },
+  "p60_fixed_mix_3e": {
+    "system": "3E",
+    "matched_rows": 33,
+    "candidate_extra_rows": 0,
+    "benchmark_metrics": {
+      "mae": 3.4968876885667943,
+      "rmse": 6.219961019742959,
+      "r2": 0.6970731098107809,
+      "mape_pct": 4.518451823682524,
+      "p90_ape_pct": 7.741198780365455,
+      "p90_absolute_error": 6.618724957212464,
+      "source_p90_mae": 6.127933245783398
+    },
+    "candidate_matched_metrics": {
+      "mae": 3.443184699191447,
+      "rmse": 6.182936987834832,
+      "r2": 0.7006686933573552,
+      "mape_pct": 4.460320271471218,
+      "p90_ape_pct": 8.304521745894759,
+      "p90_absolute_error": 7.100366092740018,
+      "source_p90_mae": 5.58165793739254
+    },
+    "delta": {
+      "r2": 0.003595583546574299,
+      "mae": -0.05370298937534734,
+      "rmse": -0.03702403190812653,
+      "p90_absolute_error": 0.4816411355275534,
+      "source_p90_mae": -0.5462753083908574
+    },
+    "regressed_metrics": [
+      "p90_absolute_error"
+    ],
+    "matched_point_metrics_non_regressing": false,
+    "paired_common_mae": {
+      "delta_mae_pp": -0.0537029893753478,
+      "percentile_interval_pp": [
+        -0.2554883858473091,
+        0.13210458026784927
+      ]
+    },
+    "most_regressed_rows": [
+      {
+        "row_id": "legacy:R013_CY01::early20",
+        "source_family": "doi:10.1021/acsomega.4c11529",
+        "sample_name": "EUAC1-60",
+        "benchmark": 88.82676687968066,
+        "candidate": 87.87351374535763,
+        "observed": 89.9,
+        "change_in_absolute_error_pp": 0.9532531343230346
+      },
+      {
+        "row_id": "candidate:V05:011::early20",
+        "source_family": "doi:10.1021/acsomega.3c04692",
+        "sample_name": "QSC-4",
+        "benchmark": 95.76353300335496,
+        "candidate": 96.55979287441363,
+        "observed": 95.5,
+        "change_in_absolute_error_pp": 0.7962598710586661
+      },
+      {
+        "row_id": "candidate:V05:009::early20",
+        "source_family": "doi:10.1021/acsomega.3c04692",
+        "sample_name": "QSC-2",
+        "benchmark": 97.08701479803668,
+        "candidate": 97.7897155899363,
+        "observed": 94.8,
+        "change_in_absolute_error_pp": 0.7027007918996304
+      },
+      {
+        "row_id": "retired_case:JPC-800-0.5_3E::early20",
+        "source_family": "doi:10.3390/nano16211412",
+        "sample_name": "JPC-800-0.5",
+        "benchmark": 80.43424118127136,
+        "candidate": 80.91845994914507,
+        "observed": 55.0,
+        "change_in_absolute_error_pp": 0.4842187678737133
+      },
+      {
+        "row_id": "legacy:R087_CY01::early20",
+        "source_family": "doi:10.1007/s00339-023-07141-8",
+        "sample_name": "OAC623",
+        "benchmark": 92.11872495721246,
+        "candidate": 92.60036609274002,
+        "observed": 85.5,
+        "change_in_absolute_error_pp": 0.4816411355275534
+      }
+    ],
+    "interpretation": "Development regression screen. Prediction records alone cannot verify training isolation or external acceptance."
+  }
+}

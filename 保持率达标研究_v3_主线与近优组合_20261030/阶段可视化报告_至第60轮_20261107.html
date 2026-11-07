@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 60 轮 · 电容保持率回档与诊断</title><link rel="icon" href="data:,"><style>
+:root{--paper:#f5f7f4;--ink:#18332d;--sub:#50645d;--rule:#d9e3dd;--green:#146a54;--rust:#a45331}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Microsoft YaHei","Segoe UI",sans-serif}
+main{max-width:960px;margin:auto;padding:26px 22px 40px}a{color:#125e4c;overflow-wrap:anywhere}h1,h2,h3,p{margin:0}
+h1{font-size:clamp(31px,5.4vw,48px);line-height:1.16}h2{font-size:23px;line-height:1.35}h3{font-size:17px}
+header{padding:20px 0;border-bottom:1px solid var(--rule)}header p,.sub{margin-top:8px;color:var(--sub)}.kicker{font-weight:700;color:var(--green);margin:0 0 10px}
+section{margin-top:24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:11px}.card{padding:13px 15px;background:white;border:1px solid var(--rule);border-radius:9px;min-width:0}
+.card p+p{margin-top:6px}.band{background:#fff2e8;border-left:4px solid var(--rust);padding:11px 14px;margin-top:11px}
+.barrow{display:grid;grid-template-columns:160px minmax(0,1fr) 60px;gap:10px;align-items:center;margin-top:9px;font-size:.91rem}
+.barrow b{text-align:right;font-variant-numeric:tabular-nums}.track{height:9px;background:#e3ece6;border-radius:5px;position:relative}
+.track i{display:block;height:100%;border-radius:inherit}.warn{background:var(--rust)}.good{background:var(--green)}.track .marker{position:absolute;left:96%;width:2px;height:15px;top:-3px;background:#38544a;border-radius:0}
+details{margin-top:10px}summary{cursor:pointer;font-weight:700;color:var(--green)}.scroll{overflow:auto}
+table{border-collapse:collapse;width:100%;background:white;margin-top:7px}td,th{padding:6px 8px;border-bottom:1px solid var(--rule);white-space:nowrap;text-align:right}th:first-child{text-align:left}thead{background:#e6f0ea}
+footer{margin-top:22px;padding-top:10px;border-top:1px solid var(--rule);color:var(--sub)}
+@media(max-width:650px){main{padding:16px 13px 28px}.grid{grid-template-columns:1fr}.barrow{grid-template-columns:120px minmax(0,1fr) 54px;gap:6px;font-size:.85rem}}
+@media print{body{background:white}main{padding:0}.card{break-inside:avoid}}
+</style></head><body><main>
+<a href="研究进度.html">返回研究进度</a>
+<header><p class="kicker">2026-11-07 · 第 60 轮</p><h1>恢复原基准，定位三电极退步</h1>
+<p>135 次单因素拟合。旧基准已固定到可复算的输入和模型配置。独立验收仍为 0。</p></header>
+<section aria-labelledby="benchmark"><h2 id="benchmark">回档后从哪里继续</h2><div class="grid">
+<article class="card"><h3>三电极 · 早期随机森林</h3><p>33 条／27 篇，R² <b>0.697</b>，平均误差 <b>3.50</b> pp。</p><p>P90 绝对误差 6.62 pp，项目要求 ≤5。</p></article>
+<article class="card"><h3>双电极 · 早期高斯过程</h3><p>31 条／25 篇，R² <b>0.623</b>，平均误差 <b>6.54</b> pp。</p><p>第 59 轮平均误差更低，旧论文的 P90 变大，继续保留作对照。</p></article>
+</div><p class="sub"><a href="../data/current_retention_model_benchmarks.json">可复现基准入口</a> · 目标 R² &gt;0.95，MAE ≤2，RMSE ≤3 pp。</p></section>
+<section aria-labelledby="diagnosis"><h2 id="diagnosis">稻草单独加入，就复现了退步</h2>
+<p class="sub">A-NSC8 在 10,000 圈实测 99.20%。下图画的是三电极高斯过程预测，刻度从 80% 到 100%，竖线为实测。</p>
+<div class="card"><div class="barrow"><span>第 31 轮原训练集</span><span class="track" aria-hidden="true"><i class="good" style="width:86.6109%"></i><i class="marker"></i></span><b>97.32%</b></div><div class="barrow"><span>只加入稻草活性炭</span><span class="track" aria-hidden="true"><i class="warn" style="width:28.4050%"></i><i class="marker"></i></span><b>85.68%</b></div><div class="barrow"><span>只加入草莓秸秆</span><span class="track" aria-hidden="true"><i class="good" style="width:86.7409%"></i><i class="marker"></i></span><b>97.35%</b></div><div class="barrow"><span>两条都加入，固定原缩放</span><span class="track" aria-hidden="true"><i class="warn" style="width:28.5329%"></i><i class="marker"></i></span><b>85.71%</b></div></div>
+<details><summary>展开同一批 33 条的评分</summary><div class="scroll"><table><thead><tr><th>训练方式</th><th>A-NSC8 预测</th><th>R²</th><th>MAE</th></tr></thead><tbody><tr><th scope="row">第 31 轮原训练集</th><td>97.32%</td><td>0.618</td><td>4.023</td></tr><tr><th scope="row">只加入稻草活性炭</th><td>85.68%</td><td>0.564</td><td>4.636</td></tr><tr><th scope="row">只加入草莓秸秆</th><td>97.35%</td><td>0.618</td><td>3.991</td></tr><tr><th scope="row">两条都加入</th><td>85.70%</td><td>0.565</td><td>4.599</td></tr><tr><th scope="row">两条都加入，固定原缩放</th><td>85.71%</td><td>0.564</td><td>4.620</td></tr></tbody></table></div></details>
+<div class="band">固定旧缩放后仍出现低估。稻草继续保留为迟发衰减难例。</div>
+</section>
+<section aria-labelledby="mix"><h2 id="mix">优化候选的取舍</h2><div class="grid">
+<article class="card"><h3>随机森林只加草莓秸秆</h3><p>同批旧记录 MAE 3.497→3.456，P90 6.619→6.129 pp。来源配对区间跨零，进入后续验证。</p></article>
+<article class="card"><h3>等权组合</h3><p>三电极随机森林＋XGBoost 的 MAE 降到 3.443 pp，P90 升到 7.100 pp。双电极组合的 MAE 也未下降。</p></article>
+</div>
+<p class="sub"><a href="第六十轮_回档与单因素回归诊断_20261107/README.md">诊断明细与下一步</a> · <a href="第六十轮_回档与单因素回归诊断_20261107/promotion_checks.json">回归预检输出</a> · <a href="阶段可视化报告_至第59轮_20261107.html">第 59 轮训练结果</a></p></section>
+<footer>新候选先过同论文回归预检，再单独查难例与未见来源。第 60 轮为常规可视化更新。</footer>
+</main></body></html>

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "status": "rollback_development_reference_not_release",
+  "early_window_fraction": 0.2,
+  "output": "capacitance_retention_pct_at_declared_cycle_count_and_conditions",
+  "dataset": {
+    "path": "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/input_snapshot.json",
+    "sha256": "f53e5040fa2bb5c093b6b22cc25ab80a99c68ce5aa0792ee6607335fa7456786"
+  },
+  "configuration_plan": {
+    "path": "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/training_plan.json",
+    "sha256": "66b0d248cacc40be39c43666311367ba9c80faa1c5fd4e1d617c70459f830fa7"
+  },
+  "predictions": {
+    "path": "保持率达标研究_v3_主线与近优组合_20261030/第三十一轮_杉木屑双体系开发对照_20261105/heldout_predictions.json",
+    "sha256": "9ab9578b6c02f6dfbcc1a8481105cbfaa7ab4cd3917825481b5d8387991cae6b"
+  },
+  "reference_by_system": {
+    "3E": {
+      "configuration": "RF_early_p0_raw_delta",
+      "archived_prediction_keys": [
+        "3E",
+        "loso",
+        "RF_early_p0_raw_delta"
+      ],
+      "rows_sources": [
+        33,
+        27
+      ],
+      "verified_development_metrics": {
+        "mae": 3.4968876885667943,
+        "rmse": 6.219961019742959,
+        "r2": 0.6970731098107809,
+        "mape_pct": 4.518451823682524,
+        "p90_ape_pct": 7.741198780365455,
+        "p90_absolute_error": 6.618724957212464,
+        "source_p90_mae": 6.127933245783398
+      }
+    },
+    "2E": {
+      "configuration": "GPR_early_p1_continuation_delta",
+      "archived_prediction_keys": [
+        "2E",
+        "loso",
+        "GPR_early_p1_continuation_delta"
+      ],
+      "rows_sources": [
+        31,
+        25
+      ],
+      "verified_development_metrics": {
+        "mae": 6.5382545845160704,
+        "rmse": 8.650155031215906,
+        "r2": 0.6230916306488481,
+        "mape_pct": 7.9653739571330755,
+        "p90_ape_pct": 18.12884747278378,
+        "p90_absolute_error": 14.47588442735028,
+        "source_p90_mae": 14.080675664310624
+      }
+    }
+  },
+  "rollback_audit": {
+    "path": "保持率达标研究_v3_主线与近优组合_20261030/第六十轮_回档与单因素回归诊断_20261107/results.json",
+    "sha256": "ee7a968a26e98b7cb6fb4fc74d2731460dadd462a27e1e169ef3236c7dd650e6"
+  },
+  "keep_regression_cases": "Retain all source rows, prior predictions and new difficult cases in the corresponding archived snapshots.",
+  "promotion_policy": {
+    "matched_set": "Hold the same full papers and compare all reference rows on the same observed endpoints.",
+    "point_metrics": [
+      "r2",
+      "mae",
+      "rmse",
+      "p90_absolute_error",
+      "source_p90_mae"
+    ],
+    "other_evidence": [
+      "source-paired MAE uncertainty",
+      "separately reported errors on added or difficult sources",
+      "predeclared final metrics and independent untouched sources"
+    ],
+    "weights": "Fixed before scoring or learned only within source-grouped inner folds."
+  }
+}
