@@ -1,0 +1,2760 @@
+{
+  "status": "source_held_out_development_only",
+  "cases": {
+    "author:3E": {
+      "primary": "GPR_early_p1_continuation_delta",
+      "rows": 35,
+      "sources": 29,
+      "baseline": {
+        "training_mean": {
+          "mae": 7.777672413793103,
+          "rmse": 11.410109353978145,
+          "r2": -0.07124271525660242,
+          "mape_pct": 9.919421171636337,
+          "p90_ape_pct": 17.4170918367347,
+          "p90_absolute_error": 19.019464285714292,
+          "source_p90_mae": 19.46953571428572
+        },
+        "early_persistence": {
+          "mae": 5.321272707356454,
+          "rmse": 8.44580254933389,
+          "r2": 0.4130648537291961,
+          "mape_pct": 6.969489757642627,
+          "p90_ape_pct": 19.64313465012783,
+          "p90_absolute_error": 16.40987468671679,
+          "source_p90_mae": 12.03499984837538
+        },
+        "early_linear": {
+          "mae": 13.563265585845121,
+          "rmse": 23.076020925154722,
+          "r2": -3.381573652712726,
+          "mape_pct": 17.38705142208673,
+          "p90_ape_pct": 39.29686776041111,
+          "p90_absolute_error": 26.879878358138924,
+          "source_p90_mae": 26.166596500075254
+        }
+      },
+      "results": {
+        "ExtraTrees_early_p2_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 3.7644722881400927,
+            "rmse": 6.371107337272766,
+            "r2": 0.6821718614619334,
+            "mape_pct": 4.923154665917821,
+            "p90_ape_pct": 8.596011527232998,
+            "p90_absolute_error": 6.793573340035707,
+            "source_p90_mae": 6.059558617802474
+          },
+          "expanded_common": {
+            "mae": 3.8637230924137187,
+            "rmse": 6.42140991422798,
+            "r2": 0.6771332746462206,
+            "mape_pct": 5.0062986201406705,
+            "p90_ape_pct": 8.721515534197955,
+            "p90_absolute_error": 6.708201672323938,
+            "source_p90_mae": 6.074205908625742
+          },
+          "full": {
+            "mae": 4.149634911321596,
+            "rmse": 6.778044581307529,
+            "r2": 0.6219779697725566,
+            "mape_pct": 5.315603564198697,
+            "p90_ape_pct": 11.073675223449019,
+            "p90_absolute_error": 12.09245334400633,
+            "source_p90_mae": 7.785052006660412
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.0992508042736266,
+            "percentile_interval_pp": [
+              -0.16371376947643024,
+              0.3599464478679844
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 94.32408053807087
+            },
+            {
+              "route": "3E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 98.28296947122672
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 78.18855194458206
+            },
+            {
+              "route": "3E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 52.50450056904154
+            },
+            {
+              "route": "3E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 70.45154206616027
+            },
+            {
+              "route": "3E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 81.43519136340497
+            }
+          ]
+        },
+        "GPR_early_p1_continuation_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 4.023013328319935,
+            "rmse": 6.986659205979975,
+            "r2": 0.617790374423254,
+            "mape_pct": 5.284673940505222,
+            "p90_ape_pct": 12.262286693011902,
+            "p90_absolute_error": 12.567712828476047,
+            "source_p90_mae": 9.26523754393501
+          },
+          "expanded_common": {
+            "mae": 4.598995089212453,
+            "rmse": 7.455096934284559,
+            "r2": 0.5648198376311662,
+            "mape_pct": 5.847068821386584,
+            "p90_ape_pct": 13.609393125147836,
+            "p90_absolute_error": 13.500517980146654,
+            "source_p90_mae": 12.71900020492678
+          },
+          "full": {
+            "mae": 4.806945727158192,
+            "rmse": 7.711703232769392,
+            "r2": 0.5106620649130434,
+            "mape_pct": 6.071038893958009,
+            "p90_ape_pct": 17.913625204062413,
+            "p90_absolute_error": 13.735683163293729,
+            "source_p90_mae": 13.547551016776069
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.5759817608925185,
+            "percentile_interval_pp": [
+              -0.06398755913408487,
+              1.5836562165977826
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 95.8635161833776
+            },
+            {
+              "route": "3E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 98.50504249547375
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 83.7467682692482
+            },
+            {
+              "route": "3E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 61.70421922001938
+            },
+            {
+              "route": "3E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 76.99798835478019
+            },
+            {
+              "route": "3E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 82.96414047880474
+            }
+          ]
+        },
+        "GPR_static_p1_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 4.227129566733221,
+            "rmse": 7.126352519879354,
+            "r2": 0.602353555033932,
+            "mape_pct": 5.471818003087685,
+            "p90_ape_pct": 12.221638128435925,
+            "p90_absolute_error": 12.567720547926456,
+            "source_p90_mae": 9.118521124885204
+          },
+          "expanded_common": {
+            "mae": 4.2997825959146505,
+            "rmse": 7.088361483985414,
+            "r2": 0.6065820105122947,
+            "mape_pct": 5.525985788597362,
+            "p90_ape_pct": 12.496777086842293,
+            "p90_absolute_error": 12.197993404535907,
+            "source_p90_mae": 8.757876157804828
+          },
+          "full": {
+            "mae": 4.472340983517518,
+            "rmse": 7.206524064183875,
+            "r2": 0.572673377184882,
+            "mape_pct": 5.698771237278515,
+            "p90_ape_pct": 14.529271763864246,
+            "p90_absolute_error": 12.197993404535907,
+            "source_p90_mae": 12.149801586132934
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.07265302918143096,
+            "percentile_interval_pp": [
+              -0.04170850950814704,
+              0.1748063625009203
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 94.13399519921975
+            },
+            {
+              "route": "3E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 95.6777536315322
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 83.72511723228676
+            },
+            {
+              "route": "3E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 61.7043493584448
+            },
+            {
+              "route": "3E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 76.9979934045359
+            },
+            {
+              "route": "3E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 82.9753688800186
+            }
+          ]
+        },
+        "RF_early_p0_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 3.4968876885667943,
+            "rmse": 6.219961019742959,
+            "r2": 0.6970731098107809,
+            "mape_pct": 4.518451823682524,
+            "p90_ape_pct": 7.741198780365455,
+            "p90_absolute_error": 6.618724957212464,
+            "source_p90_mae": 6.127933245783398
+          },
+          "expanded_common": {
+            "mae": 3.6691184476675462,
+            "rmse": 6.40658669506707,
+            "r2": 0.6786221689439478,
+            "mape_pct": 4.6675069828482805,
+            "p90_ape_pct": 6.493263972367049,
+            "p90_absolute_error": 5.551740696373827,
+            "source_p90_mae": 5.583598546844496
+          },
+          "full": {
+            "mae": 3.948491171696251,
+            "rmse": 6.801899727409176,
+            "r2": 0.6193124105383232,
+            "mape_pct": 4.98209581960306,
+            "p90_ape_pct": 13.833110404395752,
+            "p90_absolute_error": 15.10575656160016,
+            "source_p90_mae": 7.526259570360425
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.17223075910075136,
+            "percentile_interval_pp": [
+              -0.1768280686316218,
+              0.5358472651859664
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": true,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 95.4402123470781
+            },
+            {
+              "route": "3E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 98.82025823924565
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 77.77586704896058
+            },
+            {
+              "route": "3E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 51.56136230593843
+            },
+            {
+              "route": "3E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 65.07999206449523
+            },
+            {
+              "route": "3E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 80.66947775246507
+            }
+          ]
+        },
+        "RF_static_p2_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 3.9904264512477727,
+            "rmse": 6.563041565335733,
+            "r2": 0.6627338073303293,
+            "mape_pct": 5.137384742256914,
+            "p90_ape_pct": 10.683746453558545,
+            "p90_absolute_error": 10.286781861524801,
+            "source_p90_mae": 8.330876159512336
+          },
+          "expanded_common": {
+            "mae": 3.86930185798832,
+            "rmse": 6.016572054373303,
+            "r2": 0.7165602574711316,
+            "mape_pct": 4.897099448798221,
+            "p90_ape_pct": 10.554863260544648,
+            "p90_absolute_error": 10.33570350469725,
+            "source_p90_mae": 8.762922623336006
+          },
+          "full": {
+            "mae": 3.9764380564355606,
+            "rmse": 6.1092259738909975,
+            "r2": 0.6928994124925706,
+            "mape_pct": 5.003820422885563,
+            "p90_ape_pct": 11.876023790299033,
+            "p90_absolute_error": 10.33570350469725,
+            "source_p90_mae": 10.248978813132709
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.12112459325945171,
+            "percentile_interval_pp": [
+              -0.4540746195986737,
+              0.16908300947653257
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 94.98174416929498
+            },
+            {
+              "route": "3E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 93.76729764024158
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 81.47099019827492
+            },
+            {
+              "route": "3E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 55.81317141059042
+            },
+            {
+              "route": "3E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 60.549524405868375
+            },
+            {
+              "route": "3E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 77.81906110276861
+            }
+          ]
+        },
+        "Ridge_early_p2_continuation_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 4.070798193778255,
+            "rmse": 6.896854517811447,
+            "r2": 0.6275528712017981,
+            "mape_pct": 5.433897442749665,
+            "p90_ape_pct": 10.394218387545306,
+            "p90_absolute_error": 11.350486479199475,
+            "source_p90_mae": 9.585537541973062
+          },
+          "expanded_common": {
+            "mae": 4.160439118559695,
+            "rmse": 6.885363041808112,
+            "r2": 0.6287929732253765,
+            "mape_pct": 5.499315573395339,
+            "p90_ape_pct": 11.131912986299326,
+            "p90_absolute_error": 12.156048981038865,
+            "source_p90_mae": 9.48346903281405
+          },
+          "full": {
+            "mae": 4.489555899757682,
+            "rmse": 7.321746313481956,
+            "r2": 0.5588994262729716,
+            "mape_pct": 5.850451950792599,
+            "p90_ape_pct": 19.77057555085068,
+            "p90_absolute_error": 16.51633881518066,
+            "source_p90_mae": 13.02810694786722
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.08964092478144142,
+            "percentile_interval_pp": [
+              -0.24790257085213213,
+              0.4227720162311868
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 94.25107392331971
+            },
+            {
+              "route": "3E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 100.05633881518067
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 82.78619277762114
+            },
+            {
+              "route": "3E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 51.18269464295949
+            },
+            {
+              "route": "3E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 48.110315342299415
+            },
+            {
+              "route": "3E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 79.91255750717151
+            }
+          ]
+        },
+        "XGB_early_p1_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 3.501022398820515,
+            "rmse": 6.208392810400446,
+            "r2": 0.6981988605701676,
+            "mape_pct": 4.550105327956233,
+            "p90_ape_pct": 8.867844711424059,
+            "p90_absolute_error": 7.582007228267571,
+            "source_p90_mae": 5.623717722468539
+          },
+          "expanded_common": {
+            "mae": 3.7221601958243835,
+            "rmse": 6.383249027291419,
+            "r2": 0.6809593099743746,
+            "mape_pct": 4.773788143195768,
+            "p90_ape_pct": 9.220129773087415,
+            "p90_absolute_error": 7.883210955989739,
+            "source_p90_mae": 6.488149630812231
+          },
+          "full": {
+            "mae": 4.028634593031547,
+            "rmse": 6.749110801190036,
+            "r2": 0.6251984447092227,
+            "mape_pct": 5.110611610565293,
+            "p90_ape_pct": 11.12536485945127,
+            "p90_absolute_error": 12.148898426520788,
+            "source_p90_mae": 8.736348450095946
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.2211377970038697,
+            "percentile_interval_pp": [
+              -0.12040360069848546,
+              0.5540006535757251
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 94.04673569894237
+            },
+            {
+              "route": "3E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 98.31881360959888
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 78.61725272539366
+            },
+            {
+              "route": "3E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 55.4379503714606
+            },
+            {
+              "route": "3E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 62.8295769544425
+            },
+            {
+              "route": "3E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 81.78715967023533
+            }
+          ]
+        },
+        "XGB_static_p1_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 3.6315239997188526,
+            "rmse": 6.268948090133896,
+            "r2": 0.6922827462703484,
+            "mape_pct": 4.688211490578363,
+            "p90_ape_pct": 9.621147313466988,
+            "p90_absolute_error": 8.226080953014275,
+            "source_p90_mae": 7.011241614918392
+          },
+          "expanded_common": {
+            "mae": 3.954271152912209,
+            "rmse": 5.993935244432589,
+            "r2": 0.718689078131743,
+            "mape_pct": 4.946984462797729,
+            "p90_ape_pct": 10.343496455803425,
+            "p90_absolute_error": 9.564761579910126,
+            "source_p90_mae": 9.114629900168492
+          },
+          "full": {
+            "mae": 4.219295075680256,
+            "rmse": 6.448872757585114,
+            "r2": 0.65780324712384,
+            "mape_pct": 5.248281053299498,
+            "p90_ape_pct": 10.990189107101145,
+            "p90_absolute_error": 11.29509812973734,
+            "source_p90_mae": 9.910828889875567
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.32274715319335534,
+            "percentile_interval_pp": [
+              -0.22777089018611954,
+              0.8482132999768842
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "3E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+              "sample_name": "SPC3",
+              "observed": 95.6,
+              "predicted": 95.36676734185619
+            },
+            {
+              "route": "3E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+              "source_family": "doi:10.1039/d6na00276e",
+              "material_key": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "curve_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC",
+              "sample_name": "Rice-straw AC",
+              "observed": 83.54,
+              "predicted": 98.90100340795398
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "3E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "candidate:TE037::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+              "curve_id": "marker_v2:candidate:TE037",
+              "sample_name": "AC-600C",
+              "observed": 78.4,
+              "predicted": 78.75963916185606
+            },
+            {
+              "route": "3E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "candidate:TE038::early20",
+              "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+              "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+              "curve_id": "marker_v2:candidate:TE038",
+              "sample_name": "AC-700C",
+              "observed": 62.2,
+              "predicted": 55.66752076025455
+            },
+            {
+              "route": "3E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "legacy:R042_CY01::early20",
+              "source_family": "doi:10.1016/j.solidstatesciences.2025.108046",
+              "material_key": "doi:10.1016/j.solidstatesciences.2025.108046::CGBC",
+              "curve_id": "legacy:R042_CY01",
+              "sample_name": "CGBC",
+              "observed": 64.8,
+              "predicted": 62.46888588388586
+            },
+            {
+              "route": "3E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "retired_case:JPC-800-0.5_3E::early20",
+              "source_family": "doi:10.3390/nano16211412",
+              "material_key": "doi:10.3390/nano16211412::JPC-800-0.5",
+              "curve_id": "retired_case:JPC-800-0.5_3E",
+              "sample_name": "JPC-800-0.5",
+              "observed": 55.0,
+              "predicted": 77.06453775251072
+            }
+          ]
+        }
+      },
+      "numeric_passes": 0
+    },
+    "author:2E": {
+      "primary": "GPR_early_p1_continuation_delta",
+      "rows": 33,
+      "sources": 27,
+      "baseline": {
+        "training_mean": {
+          "mae": 11.445830959164292,
+          "rmse": 15.03179999219957,
+          "r2": -0.07557707405383574,
+          "mape_pct": 13.625671522187229,
+          "p90_ape_pct": 30.240681809868697,
+          "p90_absolute_error": 26.494871794871813,
+          "source_p90_mae": 23.31717948717951
+        },
+        "early_persistence": {
+          "mae": 8.298883568155768,
+          "rmse": 11.235052066870415,
+          "r2": 0.3991449185416883,
+          "mape_pct": 10.670719190192122,
+          "p90_ape_pct": 27.010201922242523,
+          "p90_absolute_error": 18.934151547492007,
+          "source_p90_mae": 18.745493541221244
+        },
+        "early_linear": {
+          "mae": 21.279534573913825,
+          "rmse": 28.579483579660245,
+          "r2": -2.8880184175320487,
+          "mape_pct": 25.149722125794856,
+          "p90_ape_pct": 57.98337258125375,
+          "p90_absolute_error": 43.13962920045279,
+          "source_p90_mae": 40.12925727556475
+        }
+      },
+      "results": {
+        "ExtraTrees_early_p2_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 7.580165237499026,
+            "rmse": 9.46630323520206,
+            "r2": 0.5486132327332043,
+            "mape_pct": 8.889337314245648,
+            "p90_ape_pct": 21.53467521894473,
+            "p90_absolute_error": 13.961068459974868,
+            "source_p90_mae": 14.391754323300884
+          },
+          "expanded_common": {
+            "mae": 7.314037484232103,
+            "rmse": 9.217389757591791,
+            "r2": 0.5720392863969398,
+            "mape_pct": 8.525870095352872,
+            "p90_ape_pct": 21.746535821131648,
+            "p90_absolute_error": 13.995361890466583,
+            "source_p90_mae": 14.062117731713585
+          },
+          "full": {
+            "mae": 7.101224302702917,
+            "rmse": 9.030778171876301,
+            "r2": 0.6117871481289316,
+            "mape_pct": 8.363428282990263,
+            "p90_ape_pct": 21.746535821131648,
+            "p90_absolute_error": 13.995361890466583,
+            "source_p90_mae": 14.020024512421791
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.26612775326692206,
+            "percentile_interval_pp": [
+              -0.5113420274235754,
+              -0.04094248372735671
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 78.93030208638193
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 74.94818301920573
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 81.39536942933915
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 84.07975613044023
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 78.93030208638193
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 79.61928165634359
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 69.67332668425075
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 86.5691009817702
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 83.44640082130257
+            },
+            {
+              "route": "2E",
+              "model": "ExtraTrees_early_p2_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 74.94818301920573
+            }
+          ]
+        },
+        "GPR_early_p1_continuation_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 6.5382545845160704,
+            "rmse": 8.650155031215906,
+            "r2": 0.6230916306488481,
+            "mape_pct": 7.9653739571330755,
+            "p90_ape_pct": 18.12884747278378,
+            "p90_absolute_error": 14.47588442735028,
+            "source_p90_mae": 14.080675664310624
+          },
+          "expanded_common": {
+            "mae": 6.309919185979987,
+            "rmse": 8.47416686302958,
+            "r2": 0.6382720878836423,
+            "mape_pct": 7.631873290976593,
+            "p90_ape_pct": 16.798609299388623,
+            "p90_absolute_error": 15.440673325592215,
+            "source_p90_mae": 14.263670122853389
+          },
+          "full": {
+            "mae": 6.393441094200656,
+            "rmse": 8.422704537030071,
+            "r2": 0.6623065073127514,
+            "mape_pct": 7.834315289008079,
+            "p90_ape_pct": 16.798609299388623,
+            "p90_absolute_error": 15.440673325592215,
+            "source_p90_mae": 13.675168521483974
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.22833539853608653,
+            "percentile_interval_pp": [
+              -0.60950399813768,
+              0.11628571583268486
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 79.71844249758668
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 80.25648739633144
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 84.36588394088247
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 86.89816531874514
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 79.71844249758668
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 84.63277855933488
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 74.02097175684492
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 84.33312694825612
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 83.65578996598364
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 80.25648739633144
+            }
+          ]
+        },
+        "GPR_static_p1_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 7.706677333100292,
+            "rmse": 9.228470193074779,
+            "r2": 0.5710097451864247,
+            "mape_pct": 9.156285535652316,
+            "p90_ape_pct": 18.240541241635768,
+            "p90_absolute_error": 13.67429015883252,
+            "source_p90_mae": 13.752094295773144
+          },
+          "expanded_common": {
+            "mae": 7.759364819079468,
+            "rmse": 9.183186641440685,
+            "r2": 0.5752094750099028,
+            "mape_pct": 9.125110387445186,
+            "p90_ape_pct": 17.12429457995269,
+            "p90_absolute_error": 14.354287868900073,
+            "source_p90_mae": 14.42738492335903
+          },
+          "full": {
+            "mae": 7.866583839589357,
+            "rmse": 9.236517871904411,
+            "r2": 0.5938970826993151,
+            "mape_pct": 9.402635419325128,
+            "p90_ape_pct": 18.242944587972215,
+            "p90_absolute_error": 14.354287868900073,
+            "source_p90_mae": 14.403019238539377
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": 0.05268748597917359,
+            "percentile_interval_pp": [
+              -0.2247510866828679,
+              0.3309484061061615
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 82.88830415616852
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 80.62533903575742
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 84.87106161586586
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 87.14047516748481
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 82.88830415616852
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 84.24219991683903
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 74.03835879211861
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 84.26676226891712
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 85.9370123639794
+            },
+            {
+              "route": "2E",
+              "model": "GPR_static_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 80.62533903575742
+            }
+          ]
+        },
+        "RF_early_p0_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 7.517657644134693,
+            "rmse": 10.11330488200258,
+            "r2": 0.48480196390762387,
+            "mape_pct": 8.726738735320698,
+            "p90_ape_pct": 21.294785175071038,
+            "p90_absolute_error": 14.341666436599695,
+            "source_p90_mae": 13.176734699115533
+          },
+          "expanded_common": {
+            "mae": 7.1276496820029225,
+            "rmse": 9.733541039225353,
+            "r2": 0.5227678124049364,
+            "mape_pct": 8.260369247869372,
+            "p90_ape_pct": 18.216019959123653,
+            "p90_absolute_error": 14.756974970381208,
+            "source_p90_mae": 13.326298534376125
+          },
+          "full": {
+            "mae": 6.913793901381048,
+            "rmse": 9.437343883790525,
+            "r2": 0.5760456259196287,
+            "mape_pct": 8.080853808384829,
+            "p90_ape_pct": 18.216019959123653,
+            "p90_absolute_error": 14.756974970381208,
+            "source_p90_mae": 13.081600931904381
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.39000796213176897,
+            "percentile_interval_pp": [
+              -0.7229755582799023,
+              -0.0874437606827725
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 74.0223515806909
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 70.44115829347572
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 78.38799560028164
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 80.12055822229894
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 74.0223515806909
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 76.84041297343038
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 69.34399848049141
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 87.43833362023572
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 82.696793832166
+            },
+            {
+              "route": "2E",
+              "model": "RF_early_p0_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 70.44115829347572
+            }
+          ]
+        },
+        "RF_static_p2_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 7.726480097437507,
+            "rmse": 10.117457542939032,
+            "r2": 0.4843787823609039,
+            "mape_pct": 8.982339375974375,
+            "p90_ape_pct": 22.02947456689165,
+            "p90_absolute_error": 14.319158468479571,
+            "source_p90_mae": 14.938042550123534
+          },
+          "expanded_common": {
+            "mae": 7.334703568305411,
+            "rmse": 9.709911649030902,
+            "r2": 0.5250820817383555,
+            "mape_pct": 8.513975111910824,
+            "p90_ape_pct": 20.573853745211487,
+            "p90_absolute_error": 14.829626232173126,
+            "source_p90_mae": 14.824682676407951
+          },
+          "full": {
+            "mae": 7.061800596172565,
+            "rmse": 9.396573209976477,
+            "r2": 0.5797008003160482,
+            "mape_pct": 8.255190468378267,
+            "p90_ape_pct": 20.573853745211487,
+            "p90_absolute_error": 14.829626232173126,
+            "source_p90_mae": 14.433753016995889
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.39177652913209426,
+            "percentile_interval_pp": [
+              -0.717998140678115,
+              -0.030290513211215238
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 73.38392387475349
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 70.98289698572952
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 80.88508155013291
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 83.94778240532774
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 73.38392387475349
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 78.37300493438747
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 69.93078246195604
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 85.01925828584388
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 83.18755518146337
+            },
+            {
+              "route": "2E",
+              "model": "RF_static_p2_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 70.98289698572952
+            }
+          ]
+        },
+        "Ridge_early_p2_continuation_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 8.087181069715804,
+            "rmse": 10.131643397221719,
+            "r2": 0.48293184663870525,
+            "mape_pct": 9.392834692651421,
+            "p90_ape_pct": 21.350114771362833,
+            "p90_absolute_error": 14.592598851910296,
+            "source_p90_mae": 14.825714612134531
+          },
+          "expanded_common": {
+            "mae": 7.854497461346354,
+            "rmse": 9.876533904737316,
+            "r2": 0.5086430346988853,
+            "mape_pct": 9.04508161784027,
+            "p90_ape_pct": 18.796300979805608,
+            "p90_absolute_error": 14.617585830894654,
+            "source_p90_mae": 14.320326138876863
+          },
+          "full": {
+            "mae": 7.636122192349113,
+            "rmse": 9.647761915771968,
+            "r2": 0.556929623107655,
+            "mape_pct": 8.889126365809737,
+            "p90_ape_pct": 18.796300979805608,
+            "p90_absolute_error": 14.617585830894654,
+            "source_p90_mae": 14.171696292867967
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.23268360836945226,
+            "percentile_interval_pp": [
+              -0.477457262997326,
+              -0.012621968195684502
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 78.63597561787414
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 73.7231129581069
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 86.06947841686483
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 79.22184087588151
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 78.63597561787414
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 82.22294465300921
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 66.52592854869114
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 83.56676064309877
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 84.69242830534778
+            },
+            {
+              "route": "2E",
+              "model": "Ridge_early_p2_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 73.7231129581069
+            }
+          ]
+        },
+        "XGB_early_p1_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 7.292513714760196,
+            "rmse": 9.875145753171488,
+            "r2": 0.5087811459055396,
+            "mape_pct": 8.611223242467439,
+            "p90_ape_pct": 26.090665437295833,
+            "p90_absolute_error": 15.356409072875977,
+            "source_p90_mae": 15.227846187266396
+          },
+          "expanded_common": {
+            "mae": 6.943989252378199,
+            "rmse": 9.380527726765774,
+            "r2": 0.5567563302437921,
+            "mape_pct": 8.137988228227043,
+            "p90_ape_pct": 20.91832034921741,
+            "p90_absolute_error": 14.259188059213997,
+            "source_p90_mae": 14.148876338226467
+          },
+          "full": {
+            "mae": 6.755162227639794,
+            "rmse": 9.111236468375312,
+            "r2": 0.6048388906133484,
+            "mape_pct": 7.988564032794587,
+            "p90_ape_pct": 20.91832034921741,
+            "p90_absolute_error": 14.259188059213997,
+            "source_p90_mae": 14.0937204777327
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.34852446238199875,
+            "percentile_interval_pp": [
+              -0.6482014800707498,
+              -0.09188324093818677
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 75.70075463587091
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 71.81110579905136
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 78.9385146206795
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 86.22524788896945
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 75.70075463587091
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 78.59690822699132
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 70.36990928649902
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 83.6747185144669
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 81.93397091143768
+            },
+            {
+              "route": "2E",
+              "model": "XGB_early_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 71.81110579905136
+            }
+          ]
+        },
+        "XGB_static_p1_raw_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 7.584992467340068,
+            "rmse": 10.229634087714004,
+            "r2": 0.47288157408804565,
+            "mape_pct": 8.965541275849516,
+            "p90_ape_pct": 25.662210377950885,
+            "p90_absolute_error": 15.123533248901367,
+            "source_p90_mae": 15.122879832896277
+          },
+          "expanded_common": {
+            "mae": 7.245270632889893,
+            "rmse": 9.670471759261767,
+            "r2": 0.5289323062629572,
+            "mape_pct": 8.53948958896385,
+            "p90_ape_pct": 20.990821605133124,
+            "p90_absolute_error": 14.339798334482552,
+            "source_p90_mae": 14.115680651886137
+          },
+          "full": {
+            "mae": 6.92583463095014,
+            "rmse": 9.346809277396224,
+            "r2": 0.5841407926501427,
+            "mape_pct": 8.211384769346491,
+            "p90_ape_pct": 20.990821605133124,
+            "p90_absolute_error": 14.339798334482552,
+            "source_p90_mae": 14.003621810587928
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.33972183445017506,
+            "percentile_interval_pp": [
+              -0.6503654394257034,
+              -0.07877523416005526
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": false
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 74.38243150049493
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 73.41666228708847
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 81.51852122010577
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 86.50099852602389
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 74.38243150049493
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 78.64403404333653
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 69.91497421264648
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 87.11321939566197
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 81.41464565509003
+            },
+            {
+              "route": "2E",
+              "model": "XGB_static_p1_raw_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 73.41666228708847
+            }
+          ]
+        }
+      },
+      "numeric_passes": 0
+    },
+    "coffee_plot:2E": {
+      "primary": "GPR_early_p1_continuation_delta",
+      "rows": 33,
+      "sources": 27,
+      "baseline": {
+        "training_mean": {
+          "mae": 11.491952379769419,
+          "rmse": 15.072159497046556,
+          "r2": -0.07559214528536584,
+          "mape_pct": 13.690523721813678,
+          "p90_ape_pct": 30.188433829825968,
+          "p90_absolute_error": 26.45824596086186,
+          "source_p90_mae": 23.280553653169555
+        },
+        "early_persistence": {
+          "mae": 8.334152889794982,
+          "rmse": 11.273972808279696,
+          "r2": 0.3982021587620316,
+          "mape_pct": 10.725934750440437,
+          "p90_ape_pct": 27.010201922242523,
+          "p90_absolute_error": 18.934151547492007,
+          "source_p90_mae": 18.745493541221244
+        },
+        "early_linear": {
+          "mae": 21.24426525227461,
+          "rmse": 28.533097281513058,
+          "r2": -2.8547347030145067,
+          "mape_pct": 25.126245636372953,
+          "p90_ape_pct": 57.98337258125375,
+          "p90_absolute_error": 43.13962920045279,
+          "source_p90_mae": 40.12925727556475
+        }
+      },
+      "results": {
+        "GPR_early_p1_continuation_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 6.5382545845160704,
+            "rmse": 8.650155031215906,
+            "r2": 0.6230916306488481,
+            "mape_pct": 7.9653739571330755,
+            "p90_ape_pct": 18.12884747278378,
+            "p90_absolute_error": 14.47588442735028,
+            "source_p90_mae": 14.080675664310624
+          },
+          "expanded_common": {
+            "mae": 6.313804768205684,
+            "rmse": 8.477509973997234,
+            "r2": 0.6379866238121135,
+            "mape_pct": 7.633382102066557,
+            "p90_ape_pct": 16.745806967875442,
+            "p90_absolute_error": 15.477160571661571,
+            "source_p90_mae": 14.26984849663668
+          },
+          "full": {
+            "mae": 6.425201605593156,
+            "rmse": 8.441768294290943,
+            "r2": 0.6625856764615367,
+            "mape_pct": 7.876543355304419,
+            "p90_ape_pct": 16.745806967875442,
+            "p90_absolute_error": 15.477160571661571,
+            "source_p90_mae": 13.666192459124233
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.2244498163103878,
+            "percentile_interval_pp": [
+              -0.6133597707238448,
+              0.13569967366833408
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 79.52656506528285
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 74.04772831574121,
+              "predicted": 80.25648739633144
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 84.34873646482836
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 86.85888038409934
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 70.1,
+              "predicted": 79.52656506528285
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 84.59303512695186
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 73.9802499218009
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 84.29536711830744
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 83.66919960731137
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 74.04772831574121,
+              "predicted": 80.25648739633144
+            }
+          ]
+        }
+      },
+      "numeric_passes": 0
+    },
+    "strawberry_plot:2E": {
+      "primary": "GPR_early_p1_continuation_delta",
+      "rows": 33,
+      "sources": 27,
+      "baseline": {
+        "training_mean": {
+          "mae": 11.388129985881672,
+          "rmse": 14.968864095499415,
+          "r2": -0.0755533293814028,
+          "mape_pct": 13.53615809252819,
+          "p90_ape_pct": 28.06421963764777,
+          "p90_absolute_error": 26.54069315600799,
+          "source_p90_mae": 22.620694797909323
+        },
+        "early_persistence": {
+          "mae": 8.25475929446906,
+          "rmse": 11.162797645157827,
+          "r2": 0.40186342111386164,
+          "mape_pct": 10.592108917179369,
+          "p90_ape_pct": 25.026507442259042,
+          "p90_absolute_error": 18.619721537040732,
+          "source_p90_mae": 18.293321605973993
+        },
+        "early_linear": {
+          "mae": 21.323658847600534,
+          "rmse": 28.62104594103739,
+          "r2": -2.932106388604664,
+          "mape_pct": 25.188355274663614,
+          "p90_ape_pct": 57.98337258125375,
+          "p90_absolute_error": 43.13962920045279,
+          "source_p90_mae": 40.12925727556475
+        }
+      },
+      "results": {
+        "GPR_early_p1_continuation_delta": {
+          "complete": true,
+          "control_common": {
+            "mae": 6.5382545845160704,
+            "rmse": 8.650155031215906,
+            "r2": 0.6230916306488481,
+            "mape_pct": 7.9653739571330755,
+            "p90_ape_pct": 18.12884747278378,
+            "p90_absolute_error": 14.47588442735028,
+            "source_p90_mae": 14.080675664310624
+          },
+          "expanded_common": {
+            "mae": 6.333383177842945,
+            "rmse": 8.48350685261032,
+            "r2": 0.6374742756979263,
+            "mape_pct": 7.664087950213925,
+            "p90_ape_pct": 16.886466635692194,
+            "p90_absolute_error": 15.357504798929469,
+            "source_p90_mae": 14.239915350139682
+          },
+          "full": {
+            "mae": 6.380159601616775,
+            "rmse": 8.38990152825368,
+            "r2": 0.6621157211119836,
+            "mape_pct": 7.805914272064533,
+            "p90_ape_pct": 16.886466635692194,
+            "p90_absolute_error": 15.357504798929469,
+            "source_p90_mae": 13.681120625744791
+          },
+          "paired_common_mae": {
+            "delta_mae_pp": -0.20487140667312495,
+            "percentile_interval_pp": [
+              -0.5531612922121549,
+              0.1125726848231681
+            ]
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": false,
+            "p90ape": false,
+            "p90abs": false,
+            "tail": false,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "added": [
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 71.2913553895411,
+              "predicted": 79.71844249758668
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 80.50264268953372
+            }
+          ],
+          "low_retention": [
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "legacy:R091_CY01::early20",
+              "source_family": "doi:10.1007/s11664-023-10223-1",
+              "material_key": "doi:10.1007/s11664-023-10223-1::HPCS-800-2",
+              "curve_id": "local_curve_v3d:legacy:R091_CY01",
+              "sample_name": "HPCS-800-2",
+              "observed": 73.0,
+              "predicted": 84.3953191813376
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC::early20",
+              "source_family": "doi:10.1016/j.diamond.2024.111703",
+              "material_key": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "curve_id": "development:doi:10.1016/j.diamond.2024.111703::Act_OFSCBC//Act_OFSCBC",
+              "sample_name": "Act_OFSCBC//Act_OFSCBC",
+              "observed": 74.4,
+              "predicted": 86.963531176955
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3::early20",
+              "source_family": "doi:10.1038/s41598-026-36557-4",
+              "material_key": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "curve_id": "development:doi:10.1038/s41598-026-36557-4::2E::SPC3//SPC3",
+              "sample_name": "SPC3//SPC3",
+              "observed": 71.2913553895411,
+              "predicted": 79.71844249758668
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-3kh",
+              "sample_name": "DDHPC-3kh",
+              "observed": 65.0,
+              "predicted": 84.67403325274375
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh::early20",
+              "source_family": "doi:10.1039/c9ra06603a",
+              "material_key": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "curve_id": "development:doi:10.1039/c9ra06603a::DDHPC-4kh",
+              "sample_name": "DDHPC-4kh",
+              "observed": 56.0,
+              "predicted": 74.0661599910964
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "v25:Mango_MK9_2E_C100000::early20",
+              "source_family": "doi:10.1039/d5ra02129d",
+              "material_key": "doi:10.1039/d5ra02129d::MK9",
+              "curve_id": "metric_v3h:v25:Mango_MK9_2E_C100000",
+              "sample_name": "MK9",
+              "observed": 65.0,
+              "predicted": 84.37895284234712
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC::early20",
+              "source_family": "doi:10.3390/nano12050810",
+              "material_key": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "curve_id": "development:doi:10.3390/nano12050810::2E::SD-AC//SD-AC",
+              "sample_name": "SD-AC//SD-AC",
+              "observed": 80.0,
+              "predicted": 83.82629304853089
+            },
+            {
+              "route": "2E",
+              "model": "GPR_early_p1_continuation_delta",
+              "row_id": "development:doi:10.3390/nano12152647::2E::AC-CSS::early20",
+              "source_family": "doi:10.3390/nano12152647",
+              "material_key": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "curve_id": "development:doi:10.3390/nano12152647::2E::AC-CSS",
+              "sample_name": "AC-CSS",
+              "observed": 75.0,
+              "predicted": 80.50264268953372
+            }
+          ]
+        }
+      },
+      "numeric_passes": 0
+    }
+  },
+  "new_fits": 502,
+  "failures": 0,
+  "warnings": 0,
+  "checks": 592,
+  "numeric_passes": 0,
+  "external_sources": 0,
+  "goal_achieved": false
+}
