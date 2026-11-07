@@ -1,0 +1,114 @@
+{
+  "status": "original_13_retrospective_priority_candidate",
+  "freeze_commit": "ebe5032",
+  "rows": 13,
+  "sources": 8,
+  "metrics": {
+    "mae": 1.7552672800956537,
+    "rmse": 2.1498482447616705,
+    "r2": 0.9501484533830327,
+    "mape_pct": 2.078839360468974,
+    "p90_ape_pct": 3.9081614497766903,
+    "p90_absolute_error": 3.4350897735719883,
+    "source_p90_mae": 3.4821070258661306
+  },
+  "numerical_gates": {
+    "coverage": true,
+    "positive": true,
+    "r2": true,
+    "mae": true,
+    "rmse": true,
+    "mape": true,
+    "p90ape": true,
+    "p90abs": true,
+    "tail": true,
+    "baselines": true
+  },
+  "numerical_pass": true,
+  "simple_baselines": {
+    "training_mean": {
+      "mae": 7.598518518518514,
+      "rmse": 9.952185297407302,
+      "r2": -0.06831649535127982,
+      "mape_pct": 9.330143134274675,
+      "p90_ape_pct": 17.177579365079378,
+      "p90_absolute_error": 13.467222222222233,
+      "source_p90_mae": 12.885148148148145
+    },
+    "early_persistence": {
+      "mae": 3.1244488000265775,
+      "rmse": 4.054399844593072,
+      "r2": 0.8226969606517445,
+      "mape_pct": 3.6994526992529835,
+      "p90_ape_pct": 8.199897401038465,
+      "p90_absolute_error": 6.74523560209424,
+      "source_p90_mae": 6.831146786750941
+    },
+    "early_linear": {
+      "mae": 10.005110499425813,
+      "rmse": 15.834612473155186,
+      "r2": -1.7044434553716798,
+      "mape_pct": 12.72824349532122,
+      "p90_ape_pct": 24.473741292178318,
+      "p90_absolute_error": 20.132099586945884,
+      "source_p90_mae": 21.88895252152992
+    }
+  },
+  "mae_improvement_vs_each_baseline": {
+    "training_mean": 0.7689987494512445,
+    "early_persistence": 0.43821538055585263,
+    "early_linear": 0.824562929095447
+  },
+  "paired_mae_vs_strawberry_GPR": {
+    "delta_mae_pp": -0.27120681688967174,
+    "percentile_interval_pp": [
+      -0.7205799412878551,
+      0.14397021097555918
+    ]
+  },
+  "source_bootstrap_descriptive_r2_interval": [
+    -0.19096006012307168,
+    0.9726439910751501
+  ],
+  "bootstrap_valid_resamples": 10000,
+  "jackknife_scoring_sensitivity_no_refit": [
+    {
+      "source_removed_from_scoring_only": "doi:10.1016/j.heliyon.2024.e25628",
+      "r2": 0.8718251412920176
+    },
+    {
+      "source_removed_from_scoring_only": "doi:10.1021/acsomega.3c04692",
+      "r2": 0.9548730826235845
+    },
+    {
+      "source_removed_from_scoring_only": "doi:10.1039/d6ra04144b",
+      "r2": 0.9447130711797612
+    },
+    {
+      "source_removed_from_scoring_only": "doi:10.3390/mi14030572",
+      "r2": 0.948306294884484
+    },
+    {
+      "source_removed_from_scoring_only": "doi:10.3390/molecules28186543",
+      "r2": 0.9500184352065076
+    },
+    {
+      "source_removed_from_scoring_only": "doi:10.3390/nano13101654",
+      "r2": 0.9477963040417462
+    },
+    {
+      "source_removed_from_scoring_only": "doi:10.3390/nano13172431",
+      "r2": 0.9655393455750103
+    },
+    {
+      "source_removed_from_scoring_only": "doi:10.3390/polym17111544",
+      "r2": 0.9525836400777127
+    }
+  ],
+  "minimum_development_sources": 10,
+  "development_source_count_gate": false,
+  "formal_external_sources": 0,
+  "formal_acceptance": false,
+  "method": "50/50 fixed mixture of P60 strawberry-only GPR and early RF, paired outer source folds.",
+  "limit": "The 13 are a historical comparison panel, not a deployable physical inclusion rule."
+}
