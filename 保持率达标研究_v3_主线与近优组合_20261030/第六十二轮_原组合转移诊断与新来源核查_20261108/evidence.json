@@ -1,0 +1,856 @@
+{
+  "phase": 62,
+  "freeze_commit": "af42a8f",
+  "protected_files_checked": 7,
+  "transfer": {
+    "original13": {
+      "rows": 13,
+      "sources": 8,
+      "metrics": {
+        "mae": 1.7552672800956537,
+        "rmse": 2.1498482447616705,
+        "r2": 0.9501484533830327,
+        "mape_pct": 2.078839360468974,
+        "p90_ape_pct": 3.9081614497766903,
+        "p90_absolute_error": 3.4350897735719883,
+        "source_p90_mae": 3.4821070258661306
+      }
+    },
+    "other20": {
+      "rows": 20,
+      "sources": 19,
+      "metrics": {
+        "mae": 4.489841453325204,
+        "rmse": 7.485878447717048,
+        "r2": 0.6066013780141193,
+        "mape_pct": 5.9539160640228745,
+        "p90_ape_pct": 11.857002722983635,
+        "p90_absolute_error": 12.94784697349813,
+        "source_p90_mae": 7.884942120999976
+      }
+    },
+    "all33": {
+      "rows": 33,
+      "sources": 27,
+      "metrics": {
+        "mae": 3.6795972538497828,
+        "rmse": 6.387789063836697,
+        "r2": 0.6805053181317691,
+        "mape_pct": 4.805745188895792,
+        "p90_ape_pct": 9.897179700313632,
+        "p90_absolute_error": 6.619215907875443,
+        "source_p90_mae": 6.4957098306321175
+      }
+    },
+    "fixed_combination_under_predeclared_scope": {
+      "koh_1_to_6m_1000_to_10000": {
+        "rows": 25,
+        "sources": 20,
+        "metrics": {
+          "mae": 3.499137200875831,
+          "rmse": 6.584879930384999,
+          "r2": 0.6844066240092914,
+          "mape_pct": 5.001513647866999,
+          "p90_ape_pct": 6.623198262293678,
+          "p90_absolute_error": 4.119629319146668,
+          "source_p90_mae": 4.001095139726519
+        }
+      },
+      "koh_6m_5000_to_10000": {
+        "rows": 11,
+        "sources": 10,
+        "metrics": {
+          "mae": 4.7421508594388,
+          "rmse": 8.857885599460966,
+          "r2": 0.4864867573238849,
+          "mape_pct": 7.117900258860086,
+          "p90_ape_pct": 4.1336112589305865,
+          "p90_absolute_error": 3.7330643279402125,
+          "source_p90_mae": 6.059077894317918
+        }
+      }
+    },
+    "other20_error_terms": [
+      {
+        "row_id": "retired_case:JPC-800-0.5_3E::early20",
+        "sample_name": "JPC-800-0.5",
+        "source": "doi:10.3390/nano16211412",
+        "observed": 55.0,
+        "predicted": 81.99319999171735,
+        "signed_error_pp": 26.993199991717347,
+        "feature_values": {
+          "last_early_retention_pct": 86.72182821118992,
+          "early_mean_retention_pct": 91.43870314083081,
+          "early_retention_slope_per_1000_cycles": -6.81421962044746,
+          "early_retention_range_pp": 15.996847911741526,
+          "early_observed_cycle_count": 1946.9357249626307,
+          "target_cycle_count": 10000
+        },
+        "static_conditions": {
+          "reported_current_A_g": 5.0,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6.0,
+          "BET_m2_g": 1536.0,
+          "cycle_voltage_lower_V": null,
+          "cycle_voltage_upper_V": null,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 38.34909714699207,
+        "early_linear_pct": 31.846479623505772,
+        "fraction_of_other20_weighted_square_error": 0.6843363386421958
+      },
+      {
+        "row_id": "incoming:ADD_027_T01::early20",
+        "sample_name": "CCL-K2CO3-1-700",
+        "source": "doi:10.1016/j.biombioe.2026.109168",
+        "observed": 109.2,
+        "predicted": 96.25215302650187,
+        "signed_error_pp": -12.94784697349813,
+        "feature_values": {
+          "last_early_retention_pct": 100.7168458781362,
+          "early_mean_retention_pct": 100.50179211469535,
+          "early_retention_slope_per_1000_cycles": 0.06492471069344982,
+          "early_retention_range_pp": 1.4336917562724096,
+          "early_observed_cycle_count": 9203.980099502487,
+          "target_cycle_count": 50000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -0.2,
+          "cycle_voltage_upper_V": 0.8,
+          "BET_m2_g": 908,
+          "reference_electrode": "Ag/AgCl"
+        },
+        "source_weighted_squared_error": 8.823512697322352,
+        "early_linear_pct": 103.36551566762022,
+        "fraction_of_other20_weighted_square_error": 0.15745482481905357
+      },
+      {
+        "row_id": "legacy:R087_CY01::early20",
+        "sample_name": "OAC623",
+        "source": "doi:10.1007/s00339-023-07141-8",
+        "observed": 85.5,
+        "predicted": 92.11921590787544,
+        "signed_error_pp": 6.619215907875443,
+        "feature_values": {
+          "last_early_retention_pct": 96.44128113879003,
+          "early_mean_retention_pct": 99.06583629893238,
+          "early_retention_slope_per_1000_cycles": -19.834222443835777,
+          "early_retention_range_pp": 3.558718861209968,
+          "early_observed_cycle_count": 175.74257425742573,
+          "target_cycle_count": 1000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 0.1,
+          "electrolyte": "NaOH",
+          "concentration_mol_L": 2.0,
+          "cycle_voltage_lower_V": 0.0,
+          "cycle_voltage_upper_V": 1.0,
+          "BET_m2_g": 715.0,
+          "reference_electrode": "SCE"
+        },
+        "source_weighted_squared_error": 2.3060010123721746,
+        "early_linear_pct": 80.09277600562837,
+        "fraction_of_other20_weighted_square_error": 0.04115038963402944
+      },
+      {
+        "row_id": "legacy:R042_CY01::early20",
+        "sample_name": "CGBC",
+        "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+        "observed": 64.8,
+        "predicted": 71.21337244580323,
+        "signed_error_pp": 6.413372445803233,
+        "feature_values": {
+          "last_early_retention_pct": 81.27753303964758,
+          "early_mean_retention_pct": 92.25928256765259,
+          "early_retention_slope_per_1000_cycles": -136.4239240654594,
+          "early_retention_range_pp": 24.008810572687224,
+          "early_observed_cycle_count": 174.7104247104247,
+          "target_cycle_count": 1000
+        },
+        "static_conditions": {
+          "reported_current_A_g": 1.0,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 1.0,
+          "reference_electrode": "SCE",
+          "BET_m2_g": null,
+          "cycle_voltage_lower_V": null,
+          "cycle_voltage_upper_V": null
+        },
+        "source_weighted_squared_error": 2.1648076909783236,
+        "early_linear_pct": -31.311709311672672,
+        "fraction_of_other20_weighted_square_error": 0.03863080696346382
+      },
+      {
+        "row_id": "candidate:TE026::early20",
+        "sample_name": "KAC-5",
+        "source": "doi:10.1002/ente.202201281",
+        "observed": 90.31,
+        "predicted": 94.04306432794021,
+        "signed_error_pp": 3.7330643279402125,
+        "feature_values": {
+          "last_early_retention_pct": 96.64570230607967,
+          "early_mean_retention_pct": 98.30188679245283,
+          "early_retention_slope_per_1000_cycles": -1.8142560034674513,
+          "early_retention_range_pp": 3.35429769392033,
+          "early_observed_cycle_count": 1823.2044198895028,
+          "target_cycle_count": 10000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10.0,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -1.0,
+          "cycle_voltage_upper_V": 0.0,
+          "BET_m2_g": 1441.3,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.7334615408705111,
+        "early_linear_pct": 81.81090183573808,
+        "fraction_of_other20_weighted_square_error": 0.013088558082352618
+      },
+      {
+        "row_id": "incoming:ADD_005_T01::early20",
+        "sample_name": "NCHU20",
+        "source": "doi:10.1016/j.biombioe.2026.109160",
+        "observed": 91.08,
+        "predicted": 87.46165260735648,
+        "signed_error_pp": -3.618347392643514,
+        "feature_values": {
+          "last_early_retention_pct": 94.62915601023018,
+          "early_mean_retention_pct": 95.78005115089513,
+          "early_retention_slope_per_1000_cycles": -19.129335657734927,
+          "early_retention_range_pp": 2.8132992327365827,
+          "early_observed_cycle_count": 185.27918781725887,
+          "target_cycle_count": 1000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 5,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 1,
+          "cycle_voltage_lower_V": -0.9,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 3784.233,
+          "reference_electrode": "Ag/AgCl"
+        },
+        "source_weighted_squared_error": 0.6890756765184272,
+        "early_linear_pct": 79.04408812664411,
+        "fraction_of_other20_weighted_square_error": 0.01229649615240033
+      },
+      {
+        "row_id": "candidate:TE021::early20",
+        "sample_name": "OPBNP",
+        "source": "doi:10.1039/d4ta02115k",
+        "observed": 93.6,
+        "predicted": 96.81282520839758,
+        "signed_error_pp": 3.2128252083975894,
+        "feature_values": {
+          "last_early_retention_pct": 99.2,
+          "early_mean_retention_pct": 99.95263157894736,
+          "early_retention_slope_per_1000_cycles": -0.5486566214449381,
+          "early_retention_range_pp": 1.2000000000000028,
+          "early_observed_cycle_count": 1945.3924914675767,
+          "target_cycle_count": 10000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 5,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 1774.8,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.5432760957744744,
+        "early_linear_pct": 94.78078625730357,
+        "fraction_of_other20_weighted_square_error": 0.009694715180101489
+      },
+      {
+        "row_id": "incoming:ADD_025_T01::early20",
+        "sample_name": "RMAC-800",
+        "source": "doi:10.1016/j.ijbiomac.2023.128794",
+        "observed": 92.0,
+        "predicted": 89.20246968864174,
+        "signed_error_pp": -2.7975303113582584,
+        "feature_values": {
+          "last_early_retention_pct": 93.75,
+          "early_mean_retention_pct": 95.14285714285714,
+          "early_retention_slope_per_1000_cycles": -3.1233617300131127,
+          "early_retention_range_pp": 3.2142857142857224,
+          "early_observed_cycle_count": 1250.0,
+          "target_cycle_count": 10000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 3291,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.41190399173517017,
+        "early_linear_pct": 66.42058486238527,
+        "fraction_of_other20_weighted_square_error": 0.007350391288110444
+      },
+      {
+        "row_id": "incoming:ADD_009_T01::early20",
+        "sample_name": "A-BC-0.2",
+        "source": "doi:10.1016/j.jenvman.2026.129124",
+        "observed": 92.69,
+        "predicted": 89.9458914521406,
+        "signed_error_pp": -2.7441085478593976,
+        "feature_values": {
+          "last_early_retention_pct": 94.28571428571429,
+          "early_mean_retention_pct": 95.97402597402598,
+          "early_retention_slope_per_1000_cycles": -1.6699943974652907,
+          "early_retention_range_pp": 5.454545454545453,
+          "early_observed_cycle_count": 2948.6897159216023,
+          "target_cycle_count": 20000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 2279.2,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.3963227222334217,
+        "early_linear_pct": 65.81012164186107,
+        "fraction_of_other20_weighted_square_error": 0.007072344874622449
+      },
+      {
+        "row_id": "incoming:ADD_035_T01::early20",
+        "sample_name": "CMC",
+        "source": "doi:10.1039/d6nj00244g",
+        "observed": 96.7,
+        "predicted": 99.36578612288349,
+        "signed_error_pp": 2.665786122883489,
+        "feature_values": {
+          "last_early_retention_pct": 100.6896551724138,
+          "early_mean_retention_pct": 100.2463054187192,
+          "early_retention_slope_per_1000_cycles": 0.32764797720882716,
+          "early_retention_range_pp": 0.6896551724137936,
+          "early_observed_cycle_count": 2651.1627906976746,
+          "target_cycle_count": 15000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "H2SO4",
+          "concentration_mol_L": 2,
+          "cycle_voltage_lower_V": -0.3,
+          "cycle_voltage_upper_V": 0.9,
+          "BET_m2_g": 1404.6,
+          "reference_electrode": "SCE"
+        },
+        "source_weighted_squared_error": 0.3740218764714833,
+        "early_linear_pct": 104.7357267049228,
+        "fraction_of_other20_weighted_square_error": 0.006674388200991965
+      },
+      {
+        "row_id": "candidate:TE029::early20",
+        "sample_name": "ALPC-800",
+        "source": "doi:10.1021/acssusresmgt.3c00028",
+        "observed": 100.0,
+        "predicted": 97.3277358743485,
+        "signed_error_pp": -2.6722641256514947,
+        "feature_values": {
+          "last_early_retention_pct": 100.0,
+          "early_mean_retention_pct": 100.00568181818181,
+          "early_retention_slope_per_1000_cycles": -0.06776660839158913,
+          "early_retention_range_pp": 0.022727272727266268,
+          "early_observed_cycle_count": 275.39503386004515,
+          "target_cycle_count": 2000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "H2SO4",
+          "concentration_mol_L": 0.5,
+          "cycle_voltage_lower_V": -0.2,
+          "cycle_voltage_upper_V": 1,
+          "BET_m2_g": 718.0,
+          "reference_electrode": "Ag/AgCl"
+        },
+        "source_weighted_squared_error": 0.18792093571694599,
+        "early_linear_pct": 99.8831293706294,
+        "fraction_of_other20_weighted_square_error": 0.0033534329272426468
+      },
+      {
+        "row_id": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+        "sample_name": "SD-AC",
+        "source": "doi:10.3390/nano12050810",
+        "observed": 87.03,
+        "predicted": 88.86816679289397,
+        "signed_error_pp": 1.838166792893972,
+        "feature_values": {
+          "last_early_retention_pct": 93.1930693069307,
+          "early_mean_retention_pct": 95.59327012582916,
+          "early_retention_slope_per_1000_cycles": -2.546374571811061,
+          "early_retention_range_pp": 6.207159177456205,
+          "early_observed_cycle_count": 1983.4384858044164,
+          "target_cycle_count": 10000
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10.0,
+          "BET_m2_g": 621.0,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 3.0,
+          "cycle_voltage_lower_V": null,
+          "cycle_voltage_upper_V": null,
+          "reference_electrode": null
+        },
+        "source_weighted_squared_error": 0.17783458728937424,
+        "early_linear_pct": 72.77990091382388,
+        "fraction_of_other20_weighted_square_error": 0.003173442907484507
+      },
+      {
+        "row_id": "legacy:R078_CY01::early20",
+        "sample_name": "C/600C",
+        "source": "doi:10.1016/j.jpcs.2023.111318",
+        "observed": 98.1,
+        "predicted": 96.32265650849908,
+        "signed_error_pp": -1.7773434915009148,
+        "feature_values": {
+          "last_early_retention_pct": 98.21826280623608,
+          "early_mean_retention_pct": 98.46572630536997,
+          "early_retention_slope_per_1000_cycles": -0.6523370180357034,
+          "early_retention_range_pp": 1.2249443207126944,
+          "early_observed_cycle_count": 1519.7132616487454,
+          "target_cycle_count": 8000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 5.0,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6.0,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 2074.72,
+          "reference_electrode": "SCE"
+        },
+        "source_weighted_squared_error": 0.16626052035687694,
+        "early_linear_pct": 93.99093187932371,
+        "fraction_of_other20_weighted_square_error": 0.002966904679024384
+      },
+      {
+        "row_id": "candidate:TE030::early20",
+        "sample_name": "ALPC-800",
+        "source": "doi:10.1021/acssusresmgt.3c00028",
+        "observed": 100.0,
+        "predicted": 97.56228982612632,
+        "signed_error_pp": -2.4377101738736826,
+        "feature_values": {
+          "last_early_retention_pct": 100.0,
+          "early_mean_retention_pct": 100.01136363636364,
+          "early_retention_slope_per_1000_cycles": -0.022882231404980788,
+          "early_retention_range_pp": 0.022727272727266268,
+          "early_observed_cycle_count": 297.96839729119637,
+          "target_cycle_count": 2000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "Na2SO4",
+          "concentration_mol_L": 0.5,
+          "cycle_voltage_lower_V": -0.9,
+          "cycle_voltage_upper_V": 0.9,
+          "BET_m2_g": 718.0,
+          "reference_electrode": "Ag/AgCl"
+        },
+        "source_weighted_squared_error": 0.15637976031071735,
+        "early_linear_pct": 99.96105371900822,
+        "fraction_of_other20_weighted_square_error": 0.0027905833662416313
+      },
+      {
+        "row_id": "legacy:R013_CY01::early20",
+        "sample_name": "EUAC1-60",
+        "source": "doi:10.1021/acsomega.4c11529",
+        "observed": 89.9,
+        "predicted": 88.28340468251419,
+        "signed_error_pp": -1.6165953174858174,
+        "feature_values": {
+          "last_early_retention_pct": 94.04761904761905,
+          "early_mean_retention_pct": 97.60251322751323,
+          "early_retention_slope_per_1000_cycles": -4.833158263305321,
+          "early_retention_range_pp": 9.391534391534393,
+          "early_observed_cycle_count": 1832.3586744639376,
+          "target_cycle_count": 10000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 1.0,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 1.0,
+          "cycle_voltage_lower_V": -1.0,
+          "cycle_voltage_upper_V": 0.2,
+          "BET_m2_g": 1589.0,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.1375463379219511,
+        "early_linear_pct": 54.57211588339041,
+        "fraction_of_other20_weighted_square_error": 0.002454502564333074
+      },
+      {
+        "row_id": "incoming:ADD_039_T01::early20",
+        "sample_name": "YZPC-3",
+        "source": "doi:10.1002/asia.70648",
+        "observed": 96.0,
+        "predicted": 97.58466739937151,
+        "signed_error_pp": 1.5846673993715115,
+        "feature_values": {
+          "last_early_retention_pct": 99.13494809688581,
+          "early_mean_retention_pct": 99.48096885813149,
+          "early_retention_slope_per_1000_cycles": -0.6481857203687329,
+          "early_retention_range_pp": 0.8650519031141926,
+          "early_observed_cycle_count": 1600.5291005291006,
+          "target_cycle_count": 10000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 3358.574,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.13216688245425628,
+        "early_linear_pct": 93.69053100119605,
+        "fraction_of_other20_weighted_square_error": 0.0023585066444150545
+      },
+      {
+        "row_id": "incoming:ADD_003_T01::early20",
+        "sample_name": "AUACW",
+        "source": "doi:10.1039/d4cp01914h",
+        "observed": 93.6,
+        "predicted": 95.07025338240476,
+        "signed_error_pp": 1.4702533824047634,
+        "feature_values": {
+          "last_early_retention_pct": 97.36217356897916,
+          "early_mean_retention_pct": 97.51290650789464,
+          "early_retention_slope_per_1000_cycles": -1.6644942999040102,
+          "early_retention_range_pp": 3.868812098830574,
+          "early_observed_cycle_count": 1773.263415775493,
+          "target_cycle_count": 10000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 30,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 1,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 1321.3,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.11377078991961302,
+        "early_linear_pct": 83.66881741772568,
+        "fraction_of_other20_weighted_square_error": 0.002030229956121019
+      },
+      {
+        "row_id": "incoming:ADD_031_T01::early20",
+        "sample_name": "SS-300",
+        "source": "doi:10.1088/1361-6528/ace97a",
+        "observed": 98.3,
+        "predicted": 96.94298296393856,
+        "signed_error_pp": -1.3570170360614355,
+        "feature_values": {
+          "last_early_retention_pct": 98.44897959182066,
+          "early_mean_retention_pct": 98.66326530610634,
+          "early_retention_slope_per_1000_cycles": -1.2480663755613963,
+          "early_retention_range_pp": 2.204081632652702,
+          "early_observed_cycle_count": 1475.5043227665708,
+          "target_cycle_count": 8000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 10,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 1073.4,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.09692080190320859,
+        "early_linear_pct": 90.30597591956993,
+        "fraction_of_other20_weighted_square_error": 0.0017295433699124172
+      },
+      {
+        "row_id": "incoming:ADD_056_T01::early20",
+        "sample_name": "AMFS-derived activated carbon",
+        "source": "doi:10.1007/s10854-026-18573-2",
+        "observed": 100.0,
+        "predicted": 98.79170454101745,
+        "signed_error_pp": -1.2082954589825476,
+        "feature_values": {
+          "last_early_retention_pct": 100.0,
+          "early_mean_retention_pct": 100.0,
+          "early_retention_slope_per_1000_cycles": 0.0,
+          "early_retention_range_pp": 0.0,
+          "early_observed_cycle_count": 749.7238859861519,
+          "target_cycle_count": 5000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 7,
+          "electrolyte": "H2SO4",
+          "concentration_mol_L": 1,
+          "cycle_voltage_lower_V": -0.2,
+          "cycle_voltage_upper_V": 0.6,
+          "BET_m2_g": 1267.26,
+          "reference_electrode": "Ag/AgCl"
+        },
+        "source_weighted_squared_error": 0.07684094295778134,
+        "early_linear_pct": 100.0,
+        "fraction_of_other20_weighted_square_error": 0.0013712200149063073
+      },
+      {
+        "row_id": "candidate:TE025::early20",
+        "sample_name": "SSC2-0.6",
+        "source": "doi:10.1039/d4ya00076e",
+        "observed": 93.18,
+        "predicted": 93.02563564526129,
+        "signed_error_pp": -0.15436435473871768,
+        "feature_values": {
+          "last_early_retention_pct": 96.41025641025641,
+          "early_mean_retention_pct": 96.55677655677655,
+          "early_retention_slope_per_1000_cycles": -4.392155406158288,
+          "early_retention_range_pp": 2.051282051282044,
+          "early_observed_cycle_count": 356.5891472868217,
+          "target_cycle_count": 2000.0
+        },
+        "static_conditions": {
+          "reported_current_A_g": 5,
+          "electrolyte": "KOH",
+          "concentration_mol_L": 6,
+          "cycle_voltage_lower_V": -1,
+          "cycle_voltage_upper_V": 0,
+          "BET_m2_g": 1658.8,
+          "reference_electrode": "Hg/HgO"
+        },
+        "source_weighted_squared_error": 0.0012541238954684563,
+        "early_linear_pct": 89.19214054897301,
+        "fraction_of_other20_weighted_square_error": 2.237973299707495e-05
+      }
+    ],
+    "all_sources_known_development": true,
+    "independent_acceptance": 0
+  },
+  "source_screen": {
+    "recent_metadata": {
+      "query": "FIRST_PDATE:[2026-09-11 TO 2026-11-08] AND OPEN_ACCESS:Y AND IN_PMC:Y AND (TITLE:supercapacitor OR TITLE:supercapacitors) AND (biomass OR biochar OR cellulose OR lignin OR \"activated carbon\")",
+      "api_hit_count": 23,
+      "unique_doi_with_pmc_count": 18
+    },
+    "preselected_known_screen": [
+      {
+        "doi": "10.3390/polym18182203",
+        "pmcid": "PMC13611747",
+        "tracked_paths": 92,
+        "catalog": {
+          "current_training_latest": 0,
+          "current_retention_research": 0
+        }
+      },
+      {
+        "doi": "10.3390/molecules31132329",
+        "pmcid": "PMC13363400",
+        "tracked_paths": 262,
+        "catalog": {
+          "current_training_latest": 1,
+          "current_retention_research": 1
+        }
+      },
+      {
+        "doi": "10.3390/ma19132797",
+        "pmcid": "PMC13363457",
+        "tracked_paths": 75,
+        "catalog": {
+          "current_training_latest": 1,
+          "current_retention_research": 0
+        }
+      },
+      {
+        "doi": "10.3390/ma19173741",
+        "pmcid": "PMC13567600",
+        "tracked_paths": 106,
+        "catalog": {
+          "current_training_latest": 1,
+          "current_retention_research": 0
+        }
+      }
+    ],
+    "fixed_candidates": [
+      {
+        "doi": "10.1016/j.ultsonch.2026.108104",
+        "pmcid": "PMC13691559",
+        "catalog": {
+          "current_training_latest": 0,
+          "current_retention_research": 0
+        },
+        "tracked_matches": [
+          "docs/knowledge/原始数据包与正式版本追踪_20261024.md",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/openalex_moresearch2.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/openalex_search2.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/开放与付费候选发现.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/补充原料候选发现.json",
+          "循环稳定性数据库_v0.18_来源题录与质量核查_20261024/README.md",
+          "循环稳定性数据库_v0.18_来源题录与质量核查_20261024/verification.json",
+          "持续补正_v017_20261024/AC700_formal_acquisition.json",
+          "持续补正_v017_20261024/AC700_open_locations.json",
+          "持续补正_v017_20261024/README.md",
+          "持续补正_v017_20261024/field_changes.json",
+          "持续补正_v017_20261024/post_v017_figure_review/field_changes_v018.json",
+          "持续补正_v017_20261024/post_v017_figure_review/related_data_discovery.json",
+          "持续补正_v017_20261024/publisher_metadata_pass.json",
+          "持续补正_v017_20261024/retrieved/AC700_EuropePMC.json",
+          "持续补正_v017_20261024/retrieved/AC700_OpenAlex.json",
+          "持续补正_v017_20261024/retrieved/AC700_formal_API.xml",
+          "持续补正_v017_20261024/source_review.json",
+          "持续补正_v017_20261024/work_queue.json",
+          "持续补正_v017_20261024/剩余补证资料清单.csv"
+        ],
+        "disposition": "historically_seen_or_cataloged"
+      },
+      {
+        "doi": "10.1039/d6ra08646b",
+        "pmcid": "PMC13618356",
+        "catalog": {
+          "current_training_latest": 0,
+          "current_retention_research": 0
+        },
+        "tracked_matches": [
+          "三电极端点扩充_20261018/discovery_epmc.json",
+          "三电极端点扩充_20261018/new_open_candidates.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/epmc_query1_page1.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/openalex_moresearch1.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/openalex_moresearch2.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/新DOI发现与摘要.json",
+          "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/补充原料候选发现.json",
+          "数据补充_v07_20261018/targeted_search.json",
+          "文献扩充_大批补齐_20261018/metadata/epmc_2026.json"
+        ],
+        "disposition": "historically_seen_or_cataloged"
+      }
+    ],
+    "rsc_structure": {
+      "doi": "10.1039/d6ra08646b",
+      "pmcid": "PMC13618356",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13618356/fullTextXML",
+      "sha256": "d4ec3ae9b498df70a885f8a427f90cd2b3a8f220a79b12828ac9cc54d965bf64",
+      "bytes": 170668,
+      "roles": [
+        {
+          "section_id": "sec17",
+          "paragraph": 5,
+          "flags": [
+            "CNT",
+            "TiO2",
+            "cycle"
+          ]
+        },
+        {
+          "section_id": "sec17",
+          "paragraph": 11,
+          "flags": [
+            "CNT",
+            "TiO2",
+            "cycle"
+          ]
+        },
+        {
+          "section_id": "sec21",
+          "paragraph": 1,
+          "flags": [
+            "CNT",
+            "TiO2",
+            "cycle"
+          ]
+        }
+      ],
+      "cycle_caption_flags": [
+        {
+          "id": "fig5",
+          "label": "Fig. 5",
+          "flags": [
+            "CNT",
+            "KOH",
+            "TiO2",
+            "cycle"
+          ]
+        }
+      ],
+      "supplementary_links": [
+        {
+          "id": "RA-016-D6RA08646B-s001"
+        },
+        {
+          "id": "db_ds_supplementary-material1_reqid_"
+        }
+      ]
+    },
+    "rsc_abstract_screen": [
+      {
+        "path": "三电极端点扩充_20261018/discovery_epmc.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "三电极端点扩充_20261018/new_open_candidates.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/epmc_query1_page1.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/openalex_moresearch1.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/openalex_moresearch2.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/新DOI发现与摘要.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "同体系文献补充_第二批_20261017/定向扩搜40至60篇_20261017/补充原料候选发现.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "数据补充_v07_20261018/targeted_search.json",
+        "abstract_terminal_risk": false
+      },
+      {
+        "path": "文献扩充_大批补齐_20261018/metadata/epmc_2026.json",
+        "abstract_terminal_risk": false
+      }
+    ],
+    "supplement_attempts": [
+      {
+        "url": "https://www.rsc.org/suppdata/d6/ra/d6ra08646b/d6ra08646b1.pdf",
+        "error": "HTTPError",
+        "http": 403
+      },
+      {
+        "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13618356.1/RA-016-D6RA08646B-s001.pdf",
+        "error": "HTTPError",
+        "http": 404
+      },
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/13618356/bin/RA-016-D6RA08646B-s001.pdf",
+        "error": "HTTPError",
+        "http": 404
+      }
+    ],
+    "decisions": {
+      "10.1016/j.ultsonch.2026.108104": "prior full text and audit in AC700 project files; development only",
+      "10.1039/d6ra08646b": "known bibliographic source, composite cycle figure, no linked bare-carbon long-cycle series; supplement unavailable"
+    },
+    "fit_ready_new_sources": 0,
+    "locked_predictions": 0,
+    "formal_external_acceptance": 0
+  },
+  "new_fits": 0,
+  "scope_promoted": false
+}
