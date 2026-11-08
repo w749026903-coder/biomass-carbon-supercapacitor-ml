@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-CN"><head><base href="第十七轮_三电极衰减尾部开发_20261104/"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>电容保持率研究进度</title><style>*{box-sizing:border-box}body{background:#f4f6f5;color:#1c392f;margin:0;font:16px/1.7 "Microsoft YaHei",sans-serif}main{max-width:980px;margin:26px auto;padding:0 20px 30px}h1{font-size:30px;line-height:1.35}h2{font-size:21px}.status{background:#fff0dd;border-left:5px solid #925b30;padding:13px}.table{overflow:auto}table{border-collapse:collapse;width:100%;background:white}th,td{padding:8px 11px;min-width:76px;text-align:left;border-bottom:1px solid #dbe5e0}th{background:#e1ede6}a{color:#146448;overflow-wrap:anywhere}img{width:100%;max-width:630px;height:auto;display:block}details{margin:15px 0}summary{cursor:pointer}small{color:#53645c}@media(max-width:620px){h1{font-size:24px}}</style></head><body><main><small>2026-11-07 · 证据进度至第 62 轮</small><h1>电容保持率研究进度</h1><p class="status"><strong><a href="../阶段可视化报告_至第61轮_20261108.html">打开最新阶段可视化报告</a></strong>。第 61 轮提前更新。原 13 条通过数值门槛，物理适用范围仍待验证。</p>
+<!doctype html><html lang="zh-CN"><head><base href="第十七轮_三电极衰减尾部开发_20261104/"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>电容保持率研究进度</title><style>*{box-sizing:border-box}body{background:#f4f6f5;color:#1c392f;margin:0;font:16px/1.7 "Microsoft YaHei",sans-serif}main{max-width:980px;margin:26px auto;padding:0 20px 30px}h1{font-size:30px;line-height:1.35}h2{font-size:21px}.status{background:#fff0dd;border-left:5px solid #925b30;padding:13px}.table{overflow:auto}table{border-collapse:collapse;width:100%;background:white}th,td{padding:8px 11px;min-width:76px;text-align:left;border-bottom:1px solid #dbe5e0}th{background:#e1ede6}a{color:#146448;overflow-wrap:anywhere}img{width:100%;max-width:630px;height:auto;display:block}details{margin:15px 0}summary{cursor:pointer}small{color:#53645c}@media(max-width:620px){h1{font-size:24px}}</style></head><body><main><small>2026-11-07 · 证据进度至第 63 轮</small><h1>电容保持率研究进度</h1><p class="status"><strong><a href="../阶段可视化报告_至第63轮_20261108.html">打开最新阶段可视化报告</a></strong>。第 63 轮常规更新。25% 强衰减修正保住原 13 条并降低额外 20 条误差。</p>
 <section id="literature-evidence">
 <h2>文献核查 · 离线查看</h2>
 <p class="status"><strong><a href="../文献核查_离线.html">打开离线文献核查表</a></strong>。8 篇论文的核查结论、图号和待补项可直接阅读。本地原件点不开时，按核查表里的路径在文件资源管理器中打开。</p>
@@ -15,6 +15,11 @@
 </ul>
 <p><a href="../../docs/knowledge/文献核查本地入口_20261104.md">核查记录、页码和文件校验值</a></p>
 </details>
+</section>
+<section id="p63-decline">
+<h2>第 63 轮 · 强衰减修正</h2>
+<p>原 13 条 R² 0.950148，预测逐条不变。额外 20 条 R² 0.607→0.699、MAE 4.490→4.006 pp。25% 通过开发回归检查，50% 和全局重训拒绝，独立验收 0。</p>
+<p><a href="../第六十三轮_强衰减尾部修正与双队列守门_20261108/README.md">两条病例、读图敏感性与取舍</a></p>
 </section>
 <section id="p62-transfer">
 <h2>第 62 轮 · 同一组合在其余论文上的转移误差</h2>

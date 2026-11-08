@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第 63 轮 · 保持率强衰减修正</title><link rel="icon" href="data:,"><style>
+:root{--paper:#f5f7f4;--ink:#18332d;--sub:#50645d;--rule:#d9e3dd;--green:#146a54;--rust:#a45331}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Microsoft YaHei","Segoe UI",sans-serif}
+main{max-width:960px;margin:auto;padding:26px 22px 40px}a{color:#125e4c;overflow-wrap:anywhere}h1,h2,h3,p{margin:0}
+h1{font-size:clamp(31px,5.4vw,48px);line-height:1.16}h2{font-size:23px;line-height:1.35}h3{font-size:17px}
+header{padding:20px 0;border-bottom:1px solid var(--rule)}header p,.sub{margin-top:8px;color:var(--sub)}.kicker{font-weight:700;color:var(--green);margin:0 0 10px}
+section{margin-top:24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:11px}.card{padding:13px 15px;background:white;border:1px solid var(--rule);border-radius:9px;min-width:0}
+.card p+p{margin-top:6px}.band{background:#fff2e8;border-left:4px solid var(--rust);padding:11px 14px;margin-top:11px}
+.barrow{display:grid;grid-template-columns:160px minmax(0,1fr) 60px;gap:10px;align-items:center;margin-top:9px;font-size:.91rem}
+.barrow b{text-align:right;font-variant-numeric:tabular-nums}.track{height:9px;background:#e3ece6;border-radius:5px;position:relative}
+.track i{display:block;height:100%;border-radius:inherit}.warn{background:var(--rust)}.good{background:var(--green)}.track .marker{position:absolute;left:96%;width:2px;height:15px;top:-3px;background:#38544a;border-radius:0}
+details{margin-top:10px}summary{cursor:pointer;font-weight:700;color:var(--green)}.scroll{overflow:auto}
+table{border-collapse:collapse;width:100%;background:white;margin-top:7px}td,th{padding:6px 8px;border-bottom:1px solid var(--rule);white-space:nowrap;text-align:right}th:first-child{text-align:left}thead{background:#e6f0ea}
+footer{margin-top:22px;padding-top:10px;border-top:1px solid var(--rule);color:var(--sub)}
+@media(max-width:650px){main{padding:16px 13px 28px}.grid{grid-template-columns:1fr}.barrow{grid-template-columns:120px minmax(0,1fr) 54px;gap:6px;font-size:.85rem}}
+@media print{body{background:white}main{padding:0}.card{break-inside:avoid}}
+</style></head><body><main>
+<a href="研究进度.html">返回研究进度</a>
+<header><p class="kicker">2026-11-08 · 第 63 轮阶段可视化</p><h1>原 13 条成绩保持，强衰减误差下降</h1>
+<p>只在前段跌幅有明显证据时，以 25% 权重加入较缓的趋势外推。两篇历史论文触发修正。</p></header>
+<section aria-labelledby="metric"><h2 id="metric">两批历史记录分开评估</h2><div class="grid">
+<article class="card"><h3>原 13 条／8 篇</h3><p>R² <b>0.950148</b>，MAE <b>1.755</b> pp，RMSE 2.150 pp。</p><p>每条预测与原组合一致。</p></article>
+<article class="card"><h3>额外 20 条／19 篇</h3><p>R² <b>0.607 → 0.699</b>，MAE <b>4.490 → 4.006</b> pp。</p><p>RMSE 7.486 → 6.548 pp，P90 保持 12.948 pp。</p></article>
+</div><p class="sub">合计 33 条 R² 0.681 → 0.753。这次收益来自两篇，正式独立验收为 0。</p></section>
+<section aria-labelledby="cases"><h2 id="cases">修正作用在哪两条</h2><div class="scroll">
+<table><thead><tr><th>样品</th><th>实测</th><th>原预测</th><th>修正预测</th><th>绝对误差减少</th></tr></thead><tbody>
+<tr><th scope="row">咖啡渣碳</th><td>64.80%</td><td>71.21%</td><td>63.33%</td><td>4.95 pp</td></tr>
+<tr><th scope="row">盐地碱蓬</th><td>55.00%</td><td>81.99%</td><td>77.75%</td><td>4.25 pp</td></tr>
+</tbody></table></div><p class="sub">图读扰动中，两条修正项仍朝降低误差的方向变化。原模型输出固定。</p></section>
+<section aria-labelledby="guard"><h2 id="guard">回归检查的取舍</h2>
+<div class="band">50% 修正拉高尾部误差。全局重训使原 13 条 R² 降为 0.919。两者不采用，25% 修正进入下一次独立来源对照。</div>
+<p class="sub"><a href="第六十三轮_强衰减尾部修正与双队列守门_20261108/README.md">完整结果与适用条件</a> · <a href="第六十三轮_强衰减尾部修正与双队列守门_20261108/geometry_sensitivity.json">读图敏感性</a> · <a href="阶段可视化报告_至第61轮_20261108.html">原 13 条过线记录</a></p></section>
+<footer>第 63 轮为常规可视化更新。模型正式验收仍需未见论文。</footer>
+</main></body></html>

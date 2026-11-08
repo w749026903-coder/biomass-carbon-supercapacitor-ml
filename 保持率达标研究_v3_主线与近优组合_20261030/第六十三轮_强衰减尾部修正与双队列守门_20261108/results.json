@@ -1,0 +1,668 @@
+{
+  "status": "retrospective_regression_screen",
+  "fits": 54,
+  "failures": 0,
+  "warnings": 0,
+  "triggered_rows": [
+    {
+      "row_id": "legacy:R042_CY01::early20",
+      "sample_name": "CGBC",
+      "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+      "early_change_pp": -23.83468171413914,
+      "log_prior_pct": 39.694942121562086,
+      "observed_fraction": 0.1747104247104247
+    },
+    {
+      "row_id": "retired_case:JPC-800-0.5_3E::early20",
+      "sample_name": "JPC-800-0.5",
+      "source": "doi:10.3390/nano16211412",
+      "early_change_pp": -13.266847616790457,
+      "log_prior_pct": 65.01290894940337,
+      "observed_fraction": 0.19469357249626307
+    }
+  ],
+  "candidates": {
+    "strong_log_25": {
+      "candidate": "strong_log_25",
+      "cohorts": {
+        "legacy13": {
+          "metrics": {
+            "mae": 1.7552672800956537,
+            "rmse": 2.1498482447616705,
+            "r2": 0.9501484533830327,
+            "mape_pct": 2.078839360468974,
+            "p90_ape_pct": 3.9081614497766903,
+            "p90_absolute_error": 3.4350897735719883,
+            "source_p90_mae": 3.4821070258661306
+          },
+          "delta": {
+            "r2": 0.0,
+            "mae": 0.0,
+            "rmse": 0.0,
+            "p90_absolute_error": 0.0,
+            "source_p90_mae": 0.0,
+            "mape_pct": 0.0,
+            "p90_ape_pct": 0.0
+          },
+          "regressed_metrics": [],
+          "paired_mae": {
+            "delta_mae_pp": 0.0,
+            "percentile_interval_pp": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "other20": {
+          "metrics": {
+            "mae": 4.00604092326601,
+            "rmse": 6.54776817187756,
+            "r2": 0.6990226033005029,
+            "mape_pct": 5.145874734107453,
+            "p90_ape_pct": 11.857002722983635,
+            "p90_absolute_error": 12.94784697349813,
+            "source_p90_mae": 7.884942120999976
+          },
+          "delta": {
+            "r2": 0.09242122528638363,
+            "mae": -0.4838005300591943,
+            "rmse": -0.9381102758394881,
+            "p90_absolute_error": 0.0,
+            "source_p90_mae": 0.0,
+            "mape_pct": -0.8080413299154214,
+            "p90_ape_pct": 0.0
+          },
+          "regressed_metrics": [],
+          "paired_mae": {
+            "delta_mae_pp": -0.48380053005919355,
+            "percentile_interval_pp": [
+              -1.1910259422540974,
+              0.0
+            ]
+          }
+        },
+        "all33": {
+          "metrics": {
+            "mae": 3.3391450289933124,
+            "rmse": 5.616005145430144,
+            "r2": 0.753045187107418,
+            "mape_pct": 4.237123512288644,
+            "p90_ape_pct": 7.741772991667184,
+            "p90_absolute_error": 6.619215907875443,
+            "source_p90_mae": 4.887524959914311
+          },
+          "delta": {
+            "r2": 0.0725398689756489,
+            "mae": -0.3404522248564703,
+            "rmse": -0.7717839184065536,
+            "p90_absolute_error": 0.0,
+            "source_p90_mae": -1.6081848707178068,
+            "mape_pct": -0.5686216766071484,
+            "p90_ape_pct": -2.1554067086464483
+          },
+          "regressed_metrics": [],
+          "paired_mae": {
+            "delta_mae_pp": -0.34045222485646953,
+            "percentile_interval_pp": [
+              -0.8641317575109458,
+              0.0
+            ]
+          }
+        }
+      },
+      "changed": [
+        {
+          "row_id": "legacy:R042_CY01::early20",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "baseline": 71.21337244580323,
+          "candidate": 63.333764864742946,
+          "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "delta_abs_error_pp": -4.947137310546182
+        },
+        {
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "baseline": 81.99319999171735,
+          "candidate": 77.74812723113885,
+          "source": "doi:10.3390/nano16211412",
+          "delta_abs_error_pp": -4.245072760578495
+        }
+      ],
+      "complete": true,
+      "positive": true,
+      "development_screen_pass": true,
+      "formal_acceptance": false
+    },
+    "strong_log_50": {
+      "candidate": "strong_log_50",
+      "cohorts": {
+        "legacy13": {
+          "metrics": {
+            "mae": 1.7552672800956537,
+            "rmse": 2.1498482447616705,
+            "r2": 0.9501484533830327,
+            "mape_pct": 2.078839360468974,
+            "p90_ape_pct": 3.9081614497766903,
+            "p90_absolute_error": 3.4350897735719883,
+            "source_p90_mae": 3.4821070258661306
+          },
+          "delta": {
+            "r2": 0.0,
+            "mae": 0.0,
+            "rmse": 0.0,
+            "p90_absolute_error": 0.0,
+            "source_p90_mae": 0.0,
+            "mape_pct": 0.0,
+            "p90_ape_pct": 0.0
+          },
+          "regressed_metrics": [],
+          "paired_mae": {
+            "delta_mae_pp": 0.0,
+            "percentile_interval_pp": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "other20": {
+          "metrics": {
+            "mae": 4.197332229607158,
+            "rmse": 6.175813415179563,
+            "r2": 0.7322462108726095,
+            "mape_pct": 5.37964179369873,
+            "p90_ape_pct": 14.422596784440334,
+            "p90_absolute_error": 12.94784697349813,
+            "source_p90_mae": 10.066243567753492
+          },
+          "delta": {
+            "r2": 0.12564483285849026,
+            "mae": -0.29250922371804666,
+            "rmse": -1.3100650325374845,
+            "p90_absolute_error": 0.0,
+            "source_p90_mae": 2.1813014467535163,
+            "mape_pct": -0.5742742703241444,
+            "p90_ape_pct": 2.5655940614566983
+          },
+          "regressed_metrics": [
+            "source_p90_mae",
+            "p90_ape_pct"
+          ],
+          "paired_mae": {
+            "delta_mae_pp": -0.2925092237180467,
+            "percentile_interval_pp": [
+              -1.3405492928142615,
+              0.4630216216601214
+            ]
+          }
+        },
+        "all33": {
+          "metrics": {
+            "mae": 3.4737574297518985,
+            "rmse": 5.31123036330728,
+            "r2": 0.7791218392261392,
+            "mape_pct": 4.40162625792695,
+            "p90_ape_pct": 11.857002722983635,
+            "p90_absolute_error": 9.345842716317335,
+            "source_p90_mae": 7.709866631252206
+          },
+          "delta": {
+            "r2": 0.09861652109437014,
+            "mae": -0.20583982409788426,
+            "rmse": -1.076558700529417,
+            "p90_absolute_error": 2.7266268084418925,
+            "source_p90_mae": 1.2141568006200885,
+            "mape_pct": -0.404118930968842,
+            "p90_ape_pct": 1.9598230226700029
+          },
+          "regressed_metrics": [
+            "p90_absolute_error",
+            "source_p90_mae",
+            "p90_ape_pct"
+          ],
+          "paired_mae": {
+            "delta_mae_pp": -0.20583982409788473,
+            "percentile_interval_pp": [
+              -0.9433495023507766,
+              0.32583003005712247
+            ]
+          }
+        }
+      },
+      "changed": [
+        {
+          "row_id": "legacy:R042_CY01::early20",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "baseline": 71.21337244580323,
+          "candidate": 55.45415728368266,
+          "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "delta_abs_error_pp": 2.932470270514102
+        },
+        {
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "baseline": 81.99319999171735,
+          "candidate": 73.50305447056036,
+          "source": "doi:10.3390/nano16211412",
+          "delta_abs_error_pp": -8.49014552115699
+        }
+      ],
+      "complete": true,
+      "positive": true,
+      "development_screen_pass": false,
+      "formal_acceptance": false
+    },
+    "globally_anchored_residual_mix": {
+      "candidate": "globally_anchored_residual_mix",
+      "cohorts": {
+        "legacy13": {
+          "metrics": {
+            "mae": 1.883070181081775,
+            "rmse": 2.737509968591322,
+            "r2": 0.9191696524929599,
+            "mape_pct": 2.3437362035026283,
+            "p90_ape_pct": 7.1359339495242295,
+            "p90_absolute_error": 5.594572216426997,
+            "source_p90_mae": 3.36320188786374
+          },
+          "delta": {
+            "r2": -0.030978800890072766,
+            "mae": 0.12780290098612124,
+            "rmse": 0.5876617238296515,
+            "p90_absolute_error": 2.1594824428550083,
+            "source_p90_mae": -0.11890513800239066,
+            "mape_pct": 0.26489684303365424,
+            "p90_ape_pct": 3.227772499747539
+          },
+          "regressed_metrics": [
+            "r2",
+            "mae",
+            "rmse",
+            "p90_absolute_error",
+            "mape_pct",
+            "p90_ape_pct"
+          ],
+          "paired_mae": {
+            "delta_mae_pp": 0.12780290098612124,
+            "percentile_interval_pp": [
+              -0.7132651591479267,
+              1.1273591998248262
+            ]
+          }
+        },
+        "other20": {
+          "metrics": {
+            "mae": 4.448150296936292,
+            "rmse": 6.669072114015842,
+            "r2": 0.6877674905715556,
+            "mape_pct": 5.777168647302051,
+            "p90_ape_pct": 13.110013006022456,
+            "p90_absolute_error": 11.76819333415115,
+            "source_p90_mae": 9.149869409152268
+          },
+          "delta": {
+            "r2": 0.08116611255743633,
+            "mae": -0.04169115638891263,
+            "rmse": -0.8168063337012059,
+            "p90_absolute_error": -1.1796536393469808,
+            "source_p90_mae": 1.2649272881522924,
+            "mape_pct": -0.17674741672082384,
+            "p90_ape_pct": 1.2530102830388206
+          },
+          "regressed_metrics": [
+            "source_p90_mae",
+            "p90_ape_pct"
+          ],
+          "paired_mae": {
+            "delta_mae_pp": -0.041691156388912166,
+            "percentile_interval_pp": [
+              -0.8523037604193028,
+              0.6973373141419015
+            ]
+          }
+        },
+        "all33": {
+          "metrics": {
+            "mae": 3.688126558905324,
+            "rmse": 5.7895359661875085,
+            "r2": 0.7375479236704094,
+            "mape_pct": 4.75985533062074,
+            "p90_ape_pct": 10.776733822482736,
+            "p90_absolute_error": 8.495288427902551,
+            "source_p90_mae": 7.6448771256660715
+          },
+          "delta": {
+            "r2": 0.05704260553864038,
+            "mae": 0.008529305055541059,
+            "rmse": -0.5982530976491889,
+            "p90_absolute_error": 1.8760725200271082,
+            "source_p90_mae": 1.149167295033954,
+            "mape_pct": -0.04588985827505265,
+            "p90_ape_pct": 0.8795541221691039
+          },
+          "regressed_metrics": [
+            "mae",
+            "p90_absolute_error",
+            "source_p90_mae",
+            "p90_ape_pct"
+          ],
+          "paired_mae": {
+            "delta_mae_pp": 0.008529305055542178,
+            "percentile_interval_pp": [
+              -0.6370473064454877,
+              0.5959394510023858
+            ]
+          }
+        }
+      },
+      "changed": [
+        {
+          "row_id": "incoming:ADD_039_T01::early20",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "baseline": 97.58466739937151,
+          "candidate": 96.78778876468743,
+          "source": "doi:10.1002/asia.70648",
+          "delta_abs_error_pp": -0.7968786346840773
+        },
+        {
+          "row_id": "candidate:TE026::early20",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "baseline": 94.04306432794021,
+          "candidate": 93.88779401515569,
+          "source": "doi:10.1002/ente.202201281",
+          "delta_abs_error_pp": -0.1552703127845234
+        },
+        {
+          "row_id": "legacy:R087_CY01::early20",
+          "sample_name": "OAC623",
+          "observed": 85.5,
+          "baseline": 92.11921590787544,
+          "candidate": 92.57793625750841,
+          "source": "doi:10.1007/s00339-023-07141-8",
+          "delta_abs_error_pp": 0.45872034963296926
+        },
+        {
+          "row_id": "incoming:ADD_056_T01::early20",
+          "sample_name": "AMFS-derived activated carbon",
+          "observed": 100.0,
+          "baseline": 98.79170454101745,
+          "candidate": 99.33425808987792,
+          "source": "doi:10.1007/s10854-026-18573-2",
+          "delta_abs_error_pp": -0.542553548860468
+        },
+        {
+          "row_id": "incoming:ADD_005_T01::early20",
+          "sample_name": "NCHU20",
+          "observed": 91.08,
+          "baseline": 87.46165260735648,
+          "candidate": 88.34754873717765,
+          "source": "doi:10.1016/j.biombioe.2026.109160",
+          "delta_abs_error_pp": -0.8858961298211625
+        },
+        {
+          "row_id": "incoming:ADD_027_T01::early20",
+          "sample_name": "CCL-K2CO3-1-700",
+          "observed": 109.2,
+          "baseline": 96.25215302650187,
+          "candidate": 97.43180666584885,
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "delta_abs_error_pp": -1.1796536393469808
+        },
+        {
+          "row_id": "candidate:TE037::early20",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "baseline": 81.46399857662493,
+          "candidate": 83.994572216427,
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "delta_abs_error_pp": 2.5305736398020713
+        },
+        {
+          "row_id": "candidate:TE038::early20",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "baseline": 58.080370680853335,
+          "candidate": 54.5081035303635,
+          "source": "doi:10.1016/j.heliyon.2024.e25628",
+          "delta_abs_error_pp": 3.572267150489836
+        },
+        {
+          "row_id": "incoming:ADD_025_T01::early20",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "baseline": 89.20246968864174,
+          "candidate": 88.92390526956558,
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "delta_abs_error_pp": 0.2785644190761616
+        },
+        {
+          "row_id": "incoming:ADD_009_T01::early20",
+          "sample_name": "A-BC-0.2",
+          "observed": 92.69,
+          "baseline": 89.9458914521406,
+          "candidate": 87.84420695855171,
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "delta_abs_error_pp": 2.101684493588891
+        },
+        {
+          "row_id": "legacy:R078_CY01::early20",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "baseline": 96.32265650849908,
+          "candidate": 96.13781343128018,
+          "source": "doi:10.1016/j.jpcs.2023.111318",
+          "delta_abs_error_pp": 0.18484307721890048
+        },
+        {
+          "row_id": "legacy:R042_CY01::early20",
+          "sample_name": "CGBC",
+          "observed": 64.8,
+          "baseline": 71.21337244580323,
+          "candidate": 56.304711572097446,
+          "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "delta_abs_error_pp": 2.081915982099318
+        },
+        {
+          "row_id": "candidate:V05:008::early20",
+          "sample_name": "QSC",
+          "observed": 93.6,
+          "baseline": 90.6231071241687,
+          "candidate": 90.88864045732734,
+          "source": "doi:10.1021/acsomega.3c04692",
+          "delta_abs_error_pp": -0.26553333315864336
+        },
+        {
+          "row_id": "candidate:V05:009::early20",
+          "sample_name": "QSC-2",
+          "observed": 94.8,
+          "baseline": 97.52844566520031,
+          "candidate": 97.84883138200361,
+          "source": "doi:10.1021/acsomega.3c04692",
+          "delta_abs_error_pp": 0.3203857168033011
+        },
+        {
+          "row_id": "candidate:V05:010::early20",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "baseline": 97.05350409239404,
+          "candidate": 97.46158614535811,
+          "source": "doi:10.1021/acsomega.3c04692",
+          "delta_abs_error_pp": -0.40808205296407607
+        },
+        {
+          "row_id": "candidate:V05:011::early20",
+          "sample_name": "QSC-4",
+          "observed": 95.5,
+          "baseline": 96.75978145495165,
+          "candidate": 97.11031781402623,
+          "source": "doi:10.1021/acsomega.3c04692",
+          "delta_abs_error_pp": 0.3505363590745816
+        },
+        {
+          "row_id": "legacy:R013_CY01::early20",
+          "sample_name": "EUAC1-60",
+          "observed": 89.9,
+          "baseline": 88.28340468251419,
+          "candidate": 85.13512921661344,
+          "source": "doi:10.1021/acsomega.4c11529",
+          "delta_abs_error_pp": 3.1482754659007526
+        },
+        {
+          "row_id": "candidate:TE029::early20",
+          "sample_name": "ALPC-800",
+          "observed": 100.0,
+          "baseline": 97.3277358743485,
+          "candidate": 98.87928680834179,
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "delta_abs_error_pp": -1.5515509339932834
+        },
+        {
+          "row_id": "candidate:TE030::early20",
+          "sample_name": "ALPC-800",
+          "observed": 100.0,
+          "baseline": 97.56228982612632,
+          "candidate": 98.93304454220336,
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "delta_abs_error_pp": -1.3707547160770446
+        },
+        {
+          "row_id": "incoming:ADD_003_T01::early20",
+          "sample_name": "AUACW",
+          "observed": 93.6,
+          "baseline": 95.07025338240476,
+          "candidate": 94.51274118341266,
+          "source": "doi:10.1039/d4cp01914h",
+          "delta_abs_error_pp": -0.5575121989921001
+        },
+        {
+          "row_id": "candidate:TE021::early20",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "baseline": 96.81282520839758,
+          "candidate": 96.31725510308414,
+          "source": "doi:10.1039/d4ta02115k",
+          "delta_abs_error_pp": -0.4955701053134476
+        },
+        {
+          "row_id": "candidate:TE025::early20",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "baseline": 93.02563564526129,
+          "candidate": 94.5174004905548,
+          "source": "doi:10.1039/d4ya00076e",
+          "delta_abs_error_pp": 1.1830361358160815
+        },
+        {
+          "row_id": "incoming:ADD_035_T01::early20",
+          "sample_name": "CMC",
+          "observed": 96.7,
+          "baseline": 99.36578612288349,
+          "candidate": 100.59506454206749,
+          "source": "doi:10.1039/d6nj00244g",
+          "delta_abs_error_pp": 1.2292784191839985
+        },
+        {
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "sample_name": "A-NSC8",
+          "observed": 99.2,
+          "baseline": 98.75169535323334,
+          "candidate": 99.16035580172138,
+          "source": "doi:10.1039/d6ra04144b",
+          "delta_abs_error_pp": -0.4086604484880354
+        },
+        {
+          "row_id": "incoming:ADD_031_T01::early20",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "baseline": 96.94298296393856,
+          "candidate": 96.79158660872417,
+          "source": "doi:10.1088/1361-6528/ace97a",
+          "delta_abs_error_pp": 0.15139635521438777
+        },
+        {
+          "row_id": "candidate:TE033::early20",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "baseline": 95.17354000780409,
+          "candidate": 95.4094363170845,
+          "source": "doi:10.3390/mi14030572",
+          "delta_abs_error_pp": 0.23589630928040606
+        },
+        {
+          "row_id": "candidate:TE034::early20",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "baseline": 97.65087574884359,
+          "candidate": 97.1018143733055,
+          "source": "doi:10.3390/mi14030572",
+          "delta_abs_error_pp": 0.5490613755380878
+        },
+        {
+          "row_id": "candidate:TE009::early20",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "baseline": 84.3294389249885,
+          "candidate": 81.58393179548156,
+          "source": "doi:10.3390/molecules28186543",
+          "delta_abs_error_pp": -1.3933707204700454
+        },
+        {
+          "row_id": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+          "sample_name": "SD-AC",
+          "observed": 87.03,
+          "baseline": 88.86816679289397,
+          "candidate": 88.59171947174428,
+          "source": "doi:10.3390/nano12050810",
+          "delta_abs_error_pp": -0.2764473211496892
+        },
+        {
+          "row_id": "candidate:TE020::early20",
+          "sample_name": "AO-PC",
+          "observed": 97.0,
+          "baseline": 96.3738583244341,
+          "candidate": 95.98304123183424,
+          "source": "doi:10.3390/nano13101654",
+          "delta_abs_error_pp": 0.3908170925998604
+        },
+        {
+          "row_id": "candidate:V05:018::early20",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "baseline": 90.70491022642801,
+          "candidate": 92.18985937835771,
+          "source": "doi:10.3390/nano13172431",
+          "delta_abs_error_pp": -1.4849491519296976
+        },
+        {
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "sample_name": "JPC-800-0.5",
+          "observed": 55.0,
+          "baseline": 81.99319999171735,
+          "candidate": 76.73428803858417,
+          "source": "doi:10.3390/nano16211412",
+          "delta_abs_error_pp": -5.258911953133179
+        },
+        {
+          "row_id": "candidate:TE052::early20",
+          "sample_name": "SC-0.03",
+          "observed": 93.7,
+          "baseline": 92.21788683339116,
+          "candidate": 91.74252630720827,
+          "source": "doi:10.3390/polym17111544",
+          "delta_abs_error_pp": 0.4753605261828966
+        }
+      ],
+      "complete": true,
+      "positive": true,
+      "development_screen_pass": false,
+      "formal_acceptance": false
+    }
+  },
+  "external_sources": 0,
+  "formal_acceptance": false
+}

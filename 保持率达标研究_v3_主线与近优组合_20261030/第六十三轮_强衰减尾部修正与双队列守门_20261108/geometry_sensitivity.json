@@ -1,0 +1,74 @@
+{
+  "status": "post_screen_diagnostic",
+  "scope": "Only the correction term recomputed; frozen original model output held constant. X and Y corners separately. Neither confidence bounds nor new validation.",
+  "results": {
+    "JPC-800-0.5": {
+      "geometry_source": "保持率达标研究_v3_主线与近优组合_20261030/第十六轮_外部单篇预测锁定_20261104/locked_early_inputs.json",
+      "sha256": "5cf366580c80005725a1f403855abbf558ed9bf4ebdee9e681c0b89522c703c2",
+      "early_points": 14,
+      "fixed_archived_combination_pct": 81.99319999171735,
+      "cases": [
+        {
+          "axis_perturbed": "x",
+          "valid_corners": 16384,
+          "triggers": 16384,
+          "corrected_prediction_range": [
+            77.48960152167187,
+            77.97486424304599
+          ],
+          "absolute_error_improvement_range_pp": [
+            4.018335748671362,
+            4.503598470045475
+          ]
+        },
+        {
+          "axis_perturbed": "y",
+          "valid_corners": 16384,
+          "triggers": 16384,
+          "corrected_prediction_range": [
+            77.30823690227109,
+            78.18801756000661
+          ],
+          "absolute_error_improvement_range_pp": [
+            3.8051824317107332,
+            4.684963089446256
+          ]
+        }
+      ]
+    },
+    "CGBC": {
+      "geometry_source": "保持率达标研究_v3_主线与近优组合_20261030/第十七轮_三电极衰减尾部开发_20261104/source_decisions.json",
+      "sha256": "181566ca0bc59a0e1c777ec628411f30566c74ae5272b9549ea02536e99548a1",
+      "early_points": 7,
+      "fixed_archived_combination_pct": 71.21337244580323,
+      "cases": [
+        {
+          "axis_perturbed": "x",
+          "valid_corners": 128,
+          "triggers": 128,
+          "corrected_prediction_range": [
+            62.35313657439342,
+            63.92096956739535
+          ],
+          "absolute_error_improvement_range_pp": [
+            3.9665090201966535,
+            5.534342013198589
+          ]
+        },
+        {
+          "axis_perturbed": "y",
+          "valid_corners": 128,
+          "triggers": 128,
+          "corrected_prediction_range": [
+            62.11105923001227,
+            64.55647049947362
+          ],
+          "absolute_error_improvement_range_pp": [
+            3.7244316758155094,
+            6.169842945276855
+          ]
+        }
+      ]
+    }
+  }
+}
