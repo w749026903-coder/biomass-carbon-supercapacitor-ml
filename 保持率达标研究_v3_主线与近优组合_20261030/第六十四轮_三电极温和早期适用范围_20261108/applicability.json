@@ -1,0 +1,38 @@
+{
+  "status": "prioritized_physical_scope_for_independent_validation",
+  "systems": [
+    "3E"
+  ],
+  "test_setup": "aqueous KOH 1–6 mol/L, as-reported cycle current 1–10 A/g",
+  "target_cycle_range_inclusive": [
+    1000,
+    10000
+  ],
+  "latest_observation_fraction_upper_inclusive": 0.2,
+  "minimum_separable_early_points": 3,
+  "early_observed_range_strictly_less_than_pp": 10.0,
+  "absolute_fitted_early_change_strictly_less_than_pp": 10.0,
+  "fitted_change_definition": "early slope in percentage points per 1000 cycles multiplied by the last observed cycle / 1000",
+  "sample_class": "biomass-derived porous carbon",
+  "prediction": "50/50 GPR + early RF",
+  "scoreboard": {
+    "mae": 1.7502070232079403,
+    "rmse": 2.2666615753416086,
+    "r2": 0.8933427544408243,
+    "mape_pct": 1.941443257596892,
+    "p90_ape_pct": 3.687546609085816,
+    "p90_absolute_error": 3.4714563777933876,
+    "source_p90_mae": 3.5235739764910448
+  },
+  "scope_counts": {
+    "in_scope_rows": 23,
+    "eligible_pool_rows": 35,
+    "in_scope_papers": 18
+  },
+  "failed_numerical_gates": [
+    "r2"
+  ],
+  "formal_external_acceptance": false,
+  "evidence_sha256": "2870d06c76dc01443fa024e2ceff9072ed35b81bce41445ebff99abc04594e7a",
+  "off_scope_action": "Record reason and abstain for this pilot; preserve source records and labels."
+}

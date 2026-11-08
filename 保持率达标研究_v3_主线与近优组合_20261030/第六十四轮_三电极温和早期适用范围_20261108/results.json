@@ -1,0 +1,556 @@
+{
+  "status": "predeclared_applicability_pilot",
+  "scopes": {
+    "koh_1_to_6m_mild_early": {
+      "rows": 23,
+      "sources": 18,
+      "old13_membership": 12,
+      "pool_rows": 35,
+      "scope_coverage": 0.6571428571428571,
+      "excluded": [
+        {
+          "row_id": "legacy:R087_CY01::early20",
+          "sample_name": "OAC623",
+          "source": "doi:10.1007/s00339-023-07141-8",
+          "reasons": [
+            "electrolyte_and_concentration",
+            "reported_cycle_current_A_g"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_056_T01::early20",
+          "sample_name": "AMFS-derived activated carbon",
+          "source": "doi:10.1007/s10854-026-18573-2",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_027_T01::early20",
+          "sample_name": "CCL-K2CO3-1-700",
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "reasons": [
+            "target_cycle_range"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_009_T01::early20",
+          "sample_name": "A-BC-0.2",
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "reasons": [
+            "target_cycle_range"
+          ]
+        },
+        {
+          "row_id": "candidate:TE029::early20",
+          "sample_name": "ALPC-800",
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "candidate:TE030::early20",
+          "sample_name": "ALPC-800",
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_003_T01::early20",
+          "sample_name": "AUACW",
+          "source": "doi:10.1039/d4cp01914h",
+          "reasons": [
+            "reported_cycle_current_A_g"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_035_T01::early20",
+          "sample_name": "CMC",
+          "source": "doi:10.1039/d6nj00244g",
+          "reasons": [
+            "electrolyte_and_concentration",
+            "target_cycle_range"
+          ]
+        },
+        {
+          "row_id": "candidate:TE020::early20",
+          "sample_name": "AO-PC",
+          "source": "doi:10.3390/nano13101654",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "legacy:R042_CY01::early20",
+          "sample_name": "CGBC",
+          "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "reasons": [
+            "early_amplitude",
+            "fitted_early_change"
+          ]
+        },
+        {
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "sample_name": "JPC-800-0.5",
+          "source": "doi:10.3390/nano16211412",
+          "reasons": [
+            "early_amplitude",
+            "fitted_early_change"
+          ]
+        },
+        {
+          "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+          "sample_name": "Rice-straw AC",
+          "source": "doi:10.1039/d6na00276e",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        }
+      ],
+      "minimum_source_count_gate": true,
+      "models": {
+        "GPR_early_p1_continuation_delta": {
+          "complete": true,
+          "metrics": {
+            "mae": 1.8161889478594062,
+            "rmse": 2.2866992592249855,
+            "r2": 0.8914486819900876,
+            "mape_pct": 2.0267685812705873,
+            "p90_ape_pct": 3.6190368850249754,
+            "p90_absolute_error": 3.378514850499002,
+            "source_p90_mae": 3.3832708465118744
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": true,
+            "rmse": true,
+            "mape": true,
+            "p90ape": true,
+            "p90abs": true,
+            "tail": true,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "wider_on_same_rows": {
+            "mae": 2.6410000246286556,
+            "rmse": 3.9386700056360726,
+            "r2": 0.677955274725049,
+            "mape_pct": 2.848255632799485,
+            "p90_ape_pct": 4.186232683486182,
+            "p90_absolute_error": 3.780586736456371,
+            "source_p90_mae": 3.5476928777162104
+          },
+          "paired_mae": {
+            "delta_mae_pp": -0.8248110767692489,
+            "percentile_interval_pp": [
+              -2.3119091178692877,
+              0.14500248210502734
+            ]
+          }
+        },
+        "RF_early_p0_raw_delta": {
+          "complete": true,
+          "metrics": {
+            "mae": 1.7819210144805087,
+            "rmse": 2.3679844903650245,
+            "r2": 0.8835941769426712,
+            "mape_pct": 1.9637287531718386,
+            "p90_ape_pct": 4.453561291889161,
+            "p90_absolute_error": 4.022011202705102,
+            "source_p90_mae": 3.5891147548735503
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": true,
+            "rmse": true,
+            "mape": true,
+            "p90ape": true,
+            "p90abs": true,
+            "tail": true,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "wider_on_same_rows": {
+            "mae": 2.129628387512096,
+            "rmse": 2.8793286286656246,
+            "r2": 0.8278926294361424,
+            "mape_pct": 2.4466323541438837,
+            "p90_ape_pct": 4.123731914417589,
+            "p90_absolute_error": 3.7241422919105247,
+            "source_p90_mae": 3.9687833568454853
+          },
+          "paired_mae": {
+            "delta_mae_pp": -0.34770737303158783,
+            "percentile_interval_pp": [
+              -1.015710478160267,
+              0.25920895050665343
+            ]
+          }
+        },
+        "half_GPR_RF": {
+          "complete": true,
+          "metrics": {
+            "mae": 1.7502070232079403,
+            "rmse": 2.2666615753416086,
+            "r2": 0.8933427544408243,
+            "mape_pct": 1.941443257596892,
+            "p90_ape_pct": 3.687546609085816,
+            "p90_absolute_error": 3.4714563777933876,
+            "source_p90_mae": 3.5235739764910448
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": true,
+            "rmse": true,
+            "mape": true,
+            "p90ape": true,
+            "p90abs": true,
+            "tail": true,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "wider_on_same_rows": {
+            "mae": 2.3516514927009364,
+            "rmse": 3.0183777084441026,
+            "r2": 0.8108683687087295,
+            "mape_pct": 2.6069898366608344,
+            "p90_ape_pct": 4.154982298951893,
+            "p90_absolute_error": 3.754011790273367,
+            "source_p90_mae": 3.817087287610177
+          },
+          "paired_mae": {
+            "delta_mae_pp": -0.6014444694929958,
+            "percentile_interval_pp": [
+              -1.5047345416512068,
+              0.09525677877219155
+            ]
+          }
+        }
+      }
+    },
+    "koh_6m_mild_early": {
+      "rows": 14,
+      "sources": 12,
+      "old13_membership": 6,
+      "pool_rows": 35,
+      "scope_coverage": 0.4,
+      "excluded": [
+        {
+          "row_id": "legacy:R087_CY01::early20",
+          "sample_name": "OAC623",
+          "source": "doi:10.1007/s00339-023-07141-8",
+          "reasons": [
+            "electrolyte_and_concentration",
+            "reported_cycle_current_A_g"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_056_T01::early20",
+          "sample_name": "AMFS-derived activated carbon",
+          "source": "doi:10.1007/s10854-026-18573-2",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_005_T01::early20",
+          "sample_name": "NCHU20",
+          "source": "doi:10.1016/j.biombioe.2026.109160",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_027_T01::early20",
+          "sample_name": "CCL-K2CO3-1-700",
+          "source": "doi:10.1016/j.biombioe.2026.109168",
+          "reasons": [
+            "target_cycle_range"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_009_T01::early20",
+          "sample_name": "A-BC-0.2",
+          "source": "doi:10.1016/j.jenvman.2026.129124",
+          "reasons": [
+            "target_cycle_range"
+          ]
+        },
+        {
+          "row_id": "candidate:V05:008::early20",
+          "sample_name": "QSC",
+          "source": "doi:10.1021/acsomega.3c04692",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "candidate:V05:009::early20",
+          "sample_name": "QSC-2",
+          "source": "doi:10.1021/acsomega.3c04692",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "candidate:V05:010::early20",
+          "sample_name": "QSC-3",
+          "source": "doi:10.1021/acsomega.3c04692",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "candidate:V05:011::early20",
+          "sample_name": "QSC-4",
+          "source": "doi:10.1021/acsomega.3c04692",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "legacy:R013_CY01::early20",
+          "sample_name": "EUAC1-60",
+          "source": "doi:10.1021/acsomega.4c11529",
+          "reasons": [
+            "electrolyte_and_concentration",
+            "reported_cycle_current_A_g"
+          ]
+        },
+        {
+          "row_id": "candidate:TE029::early20",
+          "sample_name": "ALPC-800",
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "candidate:TE030::early20",
+          "sample_name": "ALPC-800",
+          "source": "doi:10.1021/acssusresmgt.3c00028",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_003_T01::early20",
+          "sample_name": "AUACW",
+          "source": "doi:10.1039/d4cp01914h",
+          "reasons": [
+            "electrolyte_and_concentration",
+            "reported_cycle_current_A_g"
+          ]
+        },
+        {
+          "row_id": "incoming:ADD_035_T01::early20",
+          "sample_name": "CMC",
+          "source": "doi:10.1039/d6nj00244g",
+          "reasons": [
+            "electrolyte_and_concentration",
+            "target_cycle_range"
+          ]
+        },
+        {
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "sample_name": "A-NSC8",
+          "source": "doi:10.1039/d6ra04144b",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "candidate:TE020::early20",
+          "sample_name": "AO-PC",
+          "source": "doi:10.3390/nano13101654",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "candidate:TE052::early20",
+          "sample_name": "SC-0.03",
+          "source": "doi:10.3390/polym17111544",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "legacy:R042_CY01::early20",
+          "sample_name": "CGBC",
+          "source": "doi:10.1016/j.solidstatesciences.2025.108046",
+          "reasons": [
+            "electrolyte_and_concentration",
+            "reported_cycle_current_A_g",
+            "early_amplitude",
+            "fitted_early_change"
+          ]
+        },
+        {
+          "row_id": "retired_case:JPC-800-0.5_3E::early20",
+          "sample_name": "JPC-800-0.5",
+          "source": "doi:10.3390/nano16211412",
+          "reasons": [
+            "early_amplitude",
+            "fitted_early_change"
+          ]
+        },
+        {
+          "row_id": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+          "sample_name": "SD-AC",
+          "source": "doi:10.3390/nano12050810",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        },
+        {
+          "row_id": "development:doi:10.1039/d6na00276e::3E::Rice-straw AC::early20",
+          "sample_name": "Rice-straw AC",
+          "source": "doi:10.1039/d6na00276e",
+          "reasons": [
+            "electrolyte_and_concentration"
+          ]
+        }
+      ],
+      "minimum_source_count_gate": true,
+      "models": {
+        "GPR_early_p1_continuation_delta": {
+          "complete": true,
+          "metrics": {
+            "mae": 2.059239189224716,
+            "rmse": 2.637609603729559,
+            "r2": 0.8911423399693374,
+            "mape_pct": 2.336572826970048,
+            "p90_ape_pct": 4.799759356041126,
+            "p90_absolute_error": 3.948282046279431,
+            "source_p90_mae": 3.933916038443573
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": true,
+            "mape": true,
+            "p90ape": true,
+            "p90abs": true,
+            "tail": true,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "wider_on_same_rows": {
+            "mae": 1.9969049262574352,
+            "rmse": 2.4684908842458584,
+            "r2": 0.9046543202527333,
+            "mape_pct": 2.2183424096376583,
+            "p90_ape_pct": 4.186232683486182,
+            "p90_absolute_error": 3.780586736456371,
+            "source_p90_mae": 3.4340576300351273
+          },
+          "paired_mae": {
+            "delta_mae_pp": 0.06233426296728103,
+            "percentile_interval_pp": [
+              -0.5028917146750203,
+              0.6160506362702844
+            ]
+          }
+        },
+        "RF_early_p0_raw_delta": {
+          "complete": true,
+          "metrics": {
+            "mae": 2.3953961419905685,
+            "rmse": 3.0660656331661595,
+            "r2": 0.8529040016205447,
+            "mape_pct": 2.6619624045173,
+            "p90_ape_pct": 5.462213225581868,
+            "p90_absolute_error": 4.932924764022985,
+            "source_p90_mae": 4.436225385875457
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": false,
+            "mape": true,
+            "p90ape": true,
+            "p90abs": true,
+            "tail": true,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "wider_on_same_rows": {
+            "mae": 2.042266244049018,
+            "rmse": 3.0245791816675456,
+            "r2": 0.8568577363444323,
+            "mape_pct": 2.4246665175323274,
+            "p90_ape_pct": 4.123731914417589,
+            "p90_absolute_error": 3.7241422919105247,
+            "source_p90_mae": 3.706351132603345
+          },
+          "paired_mae": {
+            "delta_mae_pp": 0.3531298979415502,
+            "percentile_interval_pp": [
+              -0.3097112486852447,
+              1.0682430728378864
+            ]
+          }
+        },
+        "half_GPR_RF": {
+          "complete": true,
+          "metrics": {
+            "mae": 2.191378727162994,
+            "rmse": 2.8218597816118454,
+            "r2": 0.8754026448935106,
+            "mape_pct": 2.459401554678916,
+            "p90_ape_pct": 4.591826587915839,
+            "p90_absolute_error": 4.146878591546795,
+            "source_p90_mae": 4.120272416183561
+          },
+          "gates": {
+            "coverage": true,
+            "positive": true,
+            "r2": false,
+            "mae": false,
+            "rmse": true,
+            "mape": true,
+            "p90ape": true,
+            "p90abs": true,
+            "tail": true,
+            "baselines": true
+          },
+          "numeric_pass": false,
+          "wider_on_same_rows": {
+            "mae": 1.9690915150990673,
+            "rmse": 2.453298921980781,
+            "r2": 0.9058242907197316,
+            "mape_pct": 2.2608232283687166,
+            "p90_ape_pct": 4.154982298951893,
+            "p90_absolute_error": 3.752364514183455,
+            "source_p90_mae": 3.726833658905566
+          },
+          "paired_mae": {
+            "delta_mae_pp": 0.222287212063927,
+            "percentile_interval_pp": [
+              -0.2619730853145242,
+              0.786165976446167
+            ]
+          }
+        }
+      }
+    }
+  },
+  "new_fits": 60,
+  "failures": 0,
+  "warnings": 0,
+  "formal_external_sources": 0,
+  "formal_acceptance": false
+}
