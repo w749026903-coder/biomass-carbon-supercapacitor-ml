@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>电容保持率研究 · 第 66 轮</title>
+<style>
+:root{color-scheme:light;--paper:#f4f6f5;--ink:#19372e;--green:#165a45;--gray:#4a6259;--line:#cbdad2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Microsoft YaHei","PingFang SC",sans-serif}
+main{max-width:960px;margin:auto;padding:34px 22px 44px}
+h1{font-size:clamp(1.75rem,5vw,2.65rem);line-height:1.2;margin:8px 0 12px}
+h2{font-size:1.25rem;margin:0 0 12px}
+p{margin:8px 0 12px}
+a{color:var(--green);overflow-wrap:anywhere}
+section{margin-top:21px;padding:18px 20px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.eyebrow,.note{color:var(--gray);font-size:.91rem}
+.tag{font-weight:bold;color:#884016;background:#fef0d9;padding:9px 14px;border-radius:6px}
+.table{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead{background:#eaf2ed}
+.track{height:13px;background:#e6eee9;border-radius:8px;overflow:hidden}
+.bar{height:100%;width:var(--width);background:#388164}
+.target{background:#c58636}
+.item{margin:12px 0}
+footer{margin-top:18px}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">2026 年 11 月 8 日 · 阶段报告 · 第 64–66 轮</div>
+<h1>电容保持率预测</h1>
+<p>用三电极生物质多孔碳的早期循环记录，预测指定圈数下的电容保持率。以下各项对照固定 23 条记录、18 篇论文，整篇留出。</p>
+<p class="tag">保留第 64 轮组合　R² 0.8933　MAE 1.750 个百分点　正式独立验收 0 篇</p>
+</header>
+<section>
+<h2>增加曲线形状后，整体误差没有同步改善</h2>
+<div class="table" role="region" tabindex="0" aria-label="固定样本的模型对照">
+<table>
+<thead><tr><th>方案</th><th>R²</th><th>MAE</th><th>RMSE</th><th>90% 误差分位</th></tr></thead>
+<tbody>
+<tr><td>第 64 轮基准</td><td>0.8933</td><td>1.750</td><td>2.267</td><td>3.471</td></tr>
+<tr><td>第 66 轮 · 加四项形状</td><td>0.8928</td><td>1.862</td><td>2.272</td><td>3.198</td></tr>
+<tr><td>第 66 轮 · 形状完整才混合</td><td>0.8952</td><td>1.782</td><td>2.246</td><td>3.349</td></tr>
+</tbody>
+</table></div>
+<p class="note">误差单位为百分点。形状字段完整 15/23 条。第 65 轮的支持向量回归也出现 R² 微升但 MAE 增大的情况。</p>
+</section>
+<section>
+<h2>离 R² &gt; 0.95 还有多远</h2>
+<div class="item">现有 RMSE　2.267 个百分点<div class="track" aria-hidden="true"><div class="bar" style="--width:90.68%"></div></div></div>
+<div class="item">同一批数据需要低于　1.552 个百分点<div class="track" aria-hidden="true"><div class="bar target" style="--width:62.08%"></div></div></div>
+<p class="note">两条刻度均按 0–2.5 个百分点绘制。假设木粉碳两条预测完全准确，R² 也只有 0.9207。四个来源合计贡献 63.9% 的平方误差。</p>
+</section>
+<section>
+<h2>下一步先补哪种数据</h2>
+<p>优先查木粉碳、KAC-5、SNPB-800-4 和 OPBNP 所在论文的原始循环附件。先补同一前 20% 窗口内的实测点，核清终点与归一化，再用原六项做同批对照。</p>
+<p>AC-600C 刊图在前 200 圈内只能确认 5 个合格点。若后续拿到同一循环试验的早期逐圈放电曲线，可另设计一组验证，看看电压与放电电量的形状变化能否提前反映衰减。</p>
+</section>
+<footer>
+<a href="第六十六轮_温和范围曲线形状对照_20261108/README.md">完整实验记录</a> ·
+<a href="第六十六轮_温和范围曲线形状对照_20261108/figure_and_error_audit.json">读图和误差明细</a> ·
+<a href="研究进度.html">研究进度</a>
+</footer>
+</main></body></html>

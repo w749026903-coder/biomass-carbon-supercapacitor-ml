@@ -1,0 +1,131 @@
+{
+  "source_files": {
+    "文献全量利用复核_20261028/批次26_木粉炭化系列与锰复合全样品/evidence/gr10.jpg": "6489506056bb8c454fa8bf8363347b1fb07572ee4df35ef471e4742cf10f9318",
+    "三电极端点扩充_20261018/new_sources/PMC10869866/main.xml": "0ea6db90c41ca5c56fe6e814da93eb339d1ab8c6df8cf617bd03e32bf5b9b736",
+    "保持率达标研究_v3_主线与近优组合_20261030/第九轮_同窗口形状对照/input_snapshot.json": "dbbdb623b977faf88a4f505ae52d1137c178b5ade68701c13e546fe617a1a0ba"
+  },
+  "original_article": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10869866/#sec3.2.3",
+  "figure": "Fig. 10(a); blue AC-600C; image 719 by 279 pixels; x0=49 and x1000=288.",
+  "early_observation": [
+    {
+      "x_px": 54.0,
+      "cycle_upper": 33.47280334728033,
+      "y_px": 62.0
+    },
+    {
+      "x_px": 61.0,
+      "cycle_upper": 62.761506276150634,
+      "y_px": 65.0
+    },
+    {
+      "x_px": 66.0,
+      "cycle_upper": 83.68200836820085,
+      "y_px": 66.5
+    },
+    {
+      "x_px": 71.0,
+      "cycle_upper": 104.60251046025104,
+      "y_px": 67.0
+    },
+    {
+      "x_px": 84.0,
+      "cycle_upper": 158.9958158995816,
+      "y_px": 67.0
+    }
+  ],
+  "next_visual_marker": {
+    "x_px_approx": 97,
+    "pixel_bound": 3,
+    "approx_cycle": 200.836820083682,
+    "upper_cycle": 213.38912133891213
+  },
+  "result": "No sixth independently discernible marker with cycle upper bound at most 200; blue between the previous and next visible marker is a connecting line.",
+  "label_conflict": [
+    {
+      "row_id": "candidate:TE037::early20",
+      "sample": "AC-600C",
+      "figure_endpoint_pct": 78.4,
+      "text_loss_pct": 23.6,
+      "text_complement_pct": 76.4,
+      "fixed_prediction_pct": 85.25826665248965
+    },
+    {
+      "row_id": "candidate:TE038::early20",
+      "sample": "AC-700C",
+      "figure_endpoint_pct": 62.2,
+      "text_loss_pct": 40.8,
+      "text_complement_pct": 59.2,
+      "fixed_prediction_pct": 62.77832123558102
+    }
+  ],
+  "label_policy": "Existing P26 conflict retained. P66 primary reproduces frozen Fig. 10(a) values; alternate text-complement metrics are sensitivity only. No fits or formal admissions use the alternate values.",
+  "endpoint_sensitivity_scores": {
+    "control": {
+      "mae": 1.8890959120968291,
+      "rmse": 2.5213651677003184,
+      "r2": 0.88439996689125,
+      "mape_pct": 2.1625956298809776,
+      "p90_ape_pct": 4.036299088457068,
+      "p90_absolute_error": 3.578321235581015,
+      "source_p90_mae": 3.5235739764910448
+    },
+    "shape_equal": {
+      "mae": 2.0006197525212115,
+      "rmse": 2.5548938984580603,
+      "r2": 0.8813050616795434,
+      "mape_pct": 2.294629756804871,
+      "p90_ape_pct": 3.649659914315114,
+      "p90_absolute_error": 3.225824366226746,
+      "source_p90_mae": 3.206092017782521
+    },
+    "guarded_shape": {
+      "mae": 1.9213703839482386,
+      "rmse": 2.5030879964021384,
+      "r2": 0.8860698429770916,
+      "mape_pct": 2.1969765713481446,
+      "p90_ape_pct": 3.788515670361139,
+      "p90_absolute_error": 3.4214085019031444,
+      "source_p90_mae": 3.37047081097799
+    }
+  },
+  "all_rows_fixed_for_budget": true,
+  "target_r2_strictly_above": 0.95,
+  "required_rmse_strictly_below_pp": 1.5519456314753926,
+  "baseline_weighted_mse_pp2": 5.137754697130103,
+  "maximum_weighted_mse_exclusive_pp2": 2.408535243055555,
+  "required_fraction_mse_reduction_strictly_above": 0.5312085949917115,
+  "source_squared_error_share": [
+    {
+      "source": "doi:10.1016/j.heliyon.2024.e25628",
+      "mse_pp2": 1.3158410257826525,
+      "share": 0.25611207684120607
+    },
+    {
+      "source": "doi:10.1002/ente.202201281",
+      "mse_pp2": 0.7381860930824569,
+      "share": 0.14367873450532778
+    },
+    {
+      "source": "doi:10.3390/nano13172431",
+      "mse_pp2": 0.6695005212734658,
+      "share": 0.1303099429109455
+    },
+    {
+      "source": "doi:10.1039/d4ta02115k",
+      "mse_pp2": 0.5605471805647675,
+      "share": 0.10910353133011262
+    }
+  ],
+  "replace_only_two_wood_predictions_with_actual_labels": {
+    "status": "counterfactual upper bound on perfect local correction, not model validation",
+    "score": {
+      "mae": 1.5436351374281998,
+      "rmse": 1.9549715269914933,
+      "r2": 0.9206589631111473,
+      "mape_pct": 1.6726219797179442,
+      "p90_ape_pct": 3.687546609085816,
+      "p90_absolute_error": 3.4714563777933876,
+      "source_p90_mae": 3.2649535273036623
+    }
+  }
+}
