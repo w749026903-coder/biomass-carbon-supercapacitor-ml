@@ -1,0 +1,2116 @@
+{
+  "status": "retrospective_existing_predictions_no_new_fitting",
+  "source_predictions_sha256": "6a669f7cdc8596fbc5f7eabe1f1b746326e8ddf180c94134d7b2dba152e2f60e",
+  "scope_plan_sha256": "dcf461f0fdc8df440a673d0d2f27a974e16db60b93ced9fc8ee009516fecf2cc",
+  "comparison": "P67 post-screen candidate scored on each predeclared P68 scope; P64 filtered to the same rows.",
+  "independent_external_sources": 0,
+  "formal_acceptance": false,
+  "scopes": {
+    "bet1000": {
+      "rows": 16,
+      "sources": 15,
+      "metrics": {
+        "mae": 1.5182569445453462,
+        "rmse": 1.9188419908898275,
+        "r2": 0.7968602483152742,
+        "mape_pct": 1.637709197848527,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.2531971727457485
+      },
+      "worst_overprediction": {
+        "sample": "KAC-5",
+        "pp": 3.60469462725419,
+        "row_id": "candidate:TE026::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.11109038262354716,
+        "percentile_interval_pp": [
+          -0.258444296077125,
+          0.012519312767267641
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_005_T01::early20",
+          "source_family": "doi:10.1016/j.biombioe.2026.109160",
+          "material_key": "doi:10.1016/j.biombioe.2026.109160::NCHU20",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_005_T01",
+          "sample_name": "NCHU20",
+          "observed": 91.08,
+          "predicted": 91.34871464087598
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R013_CY01::early20",
+          "source_family": "doi:10.1021/acsomega.4c11529",
+          "material_key": "doi:10.1021/acsomega.4c11529::EUAC1-60",
+          "curve_id": "pdf_curve_v3b:legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "observed": 89.9,
+          "predicted": 90.10805403926508
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "source_family": "doi:10.1039/d6ra04144b",
+          "material_key": "doi:10.1039/d6ra04144b::A-NSC8",
+          "curve_id": "marker_v2:v25:Leather_ANSC8_3E_C10000",
+          "sample_name": "A-NSC8",
+          "observed": 99.2,
+          "predicted": 97.85792065207795
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        }
+      ]
+    },
+    "bet1500": {
+      "rows": 12,
+      "sources": 12,
+      "metrics": {
+        "mae": 1.4361042539130766,
+        "rmse": 1.8205072185578361,
+        "r2": 0.8275808311071846,
+        "mape_pct": 1.5500401122118583,
+        "p90_ape_pct": 3.5423385321952474,
+        "p90_absolute_error": 2.968608245812547,
+        "source_p90_mae": 2.9631401888896733
+      },
+      "worst_overprediction": {
+        "sample": "OPBNP",
+        "pp": 2.968608245812547,
+        "row_id": "candidate:TE021::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.1354890549851516,
+        "percentile_interval_pp": [
+          -0.3163488554688518,
+          0.01691633570494546
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_005_T01::early20",
+          "source_family": "doi:10.1016/j.biombioe.2026.109160",
+          "material_key": "doi:10.1016/j.biombioe.2026.109160::NCHU20",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_005_T01",
+          "sample_name": "NCHU20",
+          "observed": 91.08,
+          "predicted": 91.34871464087598
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R013_CY01::early20",
+          "source_family": "doi:10.1021/acsomega.4c11529",
+          "material_key": "doi:10.1021/acsomega.4c11529::EUAC1-60",
+          "curve_id": "pdf_curve_v3b:legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "observed": 89.9,
+          "predicted": 90.10805403926508
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "source_family": "doi:10.1039/d6ra04144b",
+          "material_key": "doi:10.1039/d6ra04144b::A-NSC8",
+          "curve_id": "marker_v2:v25:Leather_ANSC8_3E_C10000",
+          "sample_name": "A-NSC8",
+          "observed": 99.2,
+          "predicted": 97.85792065207795
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        }
+      ]
+    },
+    "koh2to6": {
+      "rows": 20,
+      "sources": 15,
+      "metrics": {
+        "mae": 1.8734588672202577,
+        "rmse": 2.368998989404671,
+        "r2": 0.8959345212343076,
+        "mape_pct": 2.093954112125478,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.5399860259663343
+      },
+      "worst_overprediction": {
+        "sample": "AC-600C",
+        "pp": 6.858266652489647,
+        "row_id": "candidate:TE037::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.09193167887470892,
+        "percentile_interval_pp": [
+          -0.24392564784170886,
+          0.029069079164434887
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 85.25826665248965
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE038::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-700C",
+          "curve_id": "marker_v2:candidate:TE038",
+          "sample_name": "AC-700C",
+          "observed": 62.2,
+          "predicted": 62.77832123558102
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:008::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC",
+          "curve_id": "marker_v2:candidate:V05:008",
+          "sample_name": "QSC",
+          "observed": 93.6,
+          "predicted": 91.21198862133065
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:009::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-2",
+          "curve_id": "marker_v2:candidate:V05:009",
+          "sample_name": "QSC-2",
+          "observed": 94.8,
+          "predicted": 96.84761343210549
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:011::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-4",
+          "curve_id": "marker_v2:candidate:V05:011",
+          "sample_name": "QSC-4",
+          "observed": 95.5,
+          "predicted": 96.35817426386501
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+          "source_family": "doi:10.3390/nano12050810",
+          "material_key": "development:doi:10.3390/nano12050810::3E::SD-AC",
+          "curve_id": "development:doi:10.3390/nano12050810::3E::SD-AC",
+          "sample_name": "SD-AC",
+          "observed": 87.03,
+          "predicted": 89.32501935846099
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE052::early20",
+          "source_family": "doi:10.3390/polym17111544",
+          "material_key": "doi:10.3390/polym17111544::SC-0.03",
+          "curve_id": "marker_v2:candidate:TE052",
+          "sample_name": "SC-0.03",
+          "observed": 93.7,
+          "predicted": 92.83037673553022
+        }
+      ]
+    },
+    "current5to10": {
+      "rows": 20,
+      "sources": 16,
+      "metrics": {
+        "mae": 1.6246489408166604,
+        "rmse": 1.974376313663025,
+        "r2": 0.7849960696891191,
+        "mape_pct": 1.7636539183985196,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.2057656849235485
+      },
+      "worst_overprediction": {
+        "sample": "KAC-5",
+        "pp": 3.60469462725419,
+        "row_id": "candidate:TE026::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.10494174687619418,
+        "percentile_interval_pp": [
+          -0.24744088666235559,
+          0.012470273694203051
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_005_T01::early20",
+          "source_family": "doi:10.1016/j.biombioe.2026.109160",
+          "material_key": "doi:10.1016/j.biombioe.2026.109160::NCHU20",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_005_T01",
+          "sample_name": "NCHU20",
+          "observed": 91.08,
+          "predicted": 91.34871464087598
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:008::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC",
+          "curve_id": "marker_v2:candidate:V05:008",
+          "sample_name": "QSC",
+          "observed": 93.6,
+          "predicted": 91.21198862133065
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:009::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-2",
+          "curve_id": "marker_v2:candidate:V05:009",
+          "sample_name": "QSC-2",
+          "observed": 94.8,
+          "predicted": 96.84761343210549
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:011::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-4",
+          "curve_id": "marker_v2:candidate:V05:011",
+          "sample_name": "QSC-4",
+          "observed": 95.5,
+          "predicted": 96.35817426386501
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "source_family": "doi:10.1039/d6ra04144b",
+          "material_key": "doi:10.1039/d6ra04144b::A-NSC8",
+          "curve_id": "marker_v2:v25:Leather_ANSC8_3E_C10000",
+          "sample_name": "A-NSC8",
+          "observed": 99.2,
+          "predicted": 97.85792065207795
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+          "source_family": "doi:10.3390/nano12050810",
+          "material_key": "development:doi:10.3390/nano12050810::3E::SD-AC",
+          "curve_id": "development:doi:10.3390/nano12050810::3E::SD-AC",
+          "sample_name": "SD-AC",
+          "observed": 87.03,
+          "predicted": 89.32501935846099
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE052::early20",
+          "source_family": "doi:10.3390/polym17111544",
+          "material_key": "doi:10.3390/polym17111544::SC-0.03",
+          "curve_id": "marker_v2:candidate:TE052",
+          "sample_name": "SC-0.03",
+          "observed": 93.7,
+          "predicted": 92.83037673553022
+        }
+      ]
+    },
+    "window_minus1_to_0": {
+      "rows": 17,
+      "sources": 13,
+      "metrics": {
+        "mae": 1.69912074660058,
+        "rmse": 2.061181342695846,
+        "r2": 0.7358525457293873,
+        "mape_pct": 1.8410372861520954,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.3480601483901498
+      },
+      "worst_overprediction": {
+        "sample": "KAC-5",
+        "pp": 3.60469462725419,
+        "row_id": "candidate:TE026::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.11966765165597912,
+        "percentile_interval_pp": [
+          -0.28760338798270013,
+          0.012817916753544215
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:008::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC",
+          "curve_id": "marker_v2:candidate:V05:008",
+          "sample_name": "QSC",
+          "observed": 93.6,
+          "predicted": 91.21198862133065
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:009::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-2",
+          "curve_id": "marker_v2:candidate:V05:009",
+          "sample_name": "QSC-2",
+          "observed": 94.8,
+          "predicted": 96.84761343210549
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:011::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-4",
+          "curve_id": "marker_v2:candidate:V05:011",
+          "sample_name": "QSC-4",
+          "observed": 95.5,
+          "predicted": 96.35817426386501
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE052::early20",
+          "source_family": "doi:10.3390/polym17111544",
+          "material_key": "doi:10.3390/polym17111544::SC-0.03",
+          "curve_id": "marker_v2:candidate:TE052",
+          "sample_name": "SC-0.03",
+          "observed": 93.7,
+          "predicted": 92.83037673553022
+        }
+      ]
+    },
+    "hghgo": {
+      "rows": 15,
+      "sources": 12,
+      "metrics": {
+        "mae": 1.6411466484899289,
+        "rmse": 2.0560357655877475,
+        "r2": 0.7290765383522924,
+        "mape_pct": 1.7924005465796118,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.3954916362123497
+      },
+      "worst_overprediction": {
+        "sample": "KAC-5",
+        "pp": 3.60469462725419,
+        "row_id": "candidate:TE026::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.12163390857371474,
+        "percentile_interval_pp": [
+          -0.29966670167227494,
+          0.022990667399070484
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:008::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC",
+          "curve_id": "marker_v2:candidate:V05:008",
+          "sample_name": "QSC",
+          "observed": 93.6,
+          "predicted": 91.21198862133065
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:009::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-2",
+          "curve_id": "marker_v2:candidate:V05:009",
+          "sample_name": "QSC-2",
+          "observed": 94.8,
+          "predicted": 96.84761343210549
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:011::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-4",
+          "curve_id": "marker_v2:candidate:V05:011",
+          "sample_name": "QSC-4",
+          "observed": 95.5,
+          "predicted": 96.35817426386501
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R013_CY01::early20",
+          "source_family": "doi:10.1021/acsomega.4c11529",
+          "material_key": "doi:10.1021/acsomega.4c11529::EUAC1-60",
+          "curve_id": "pdf_curve_v3b:legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "observed": 89.9,
+          "predicted": 90.10805403926508
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE052::early20",
+          "source_family": "doi:10.3390/polym17111544",
+          "material_key": "doi:10.3390/polym17111544::SC-0.03",
+          "curve_id": "marker_v2:candidate:TE052",
+          "sample_name": "SC-0.03",
+          "observed": 93.7,
+          "predicted": 92.83037673553022
+        }
+      ]
+    },
+    "cycles5000to10000": {
+      "rows": 19,
+      "sources": 15,
+      "metrics": {
+        "mae": 1.717315658158123,
+        "rmse": 2.038159242954542,
+        "r2": 0.790229255854602,
+        "mape_pct": 1.8645425016608383,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.2531971727457485
+      },
+      "worst_overprediction": {
+        "sample": "KAC-5",
+        "pp": 3.60469462725419,
+        "row_id": "candidate:TE026::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.10553302542506368,
+        "percentile_interval_pp": [
+          -0.2575455894883105,
+          0.022323258495649503
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:008::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC",
+          "curve_id": "marker_v2:candidate:V05:008",
+          "sample_name": "QSC",
+          "observed": 93.6,
+          "predicted": 91.21198862133065
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:009::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-2",
+          "curve_id": "marker_v2:candidate:V05:009",
+          "sample_name": "QSC-2",
+          "observed": 94.8,
+          "predicted": 96.84761343210549
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:011::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-4",
+          "curve_id": "marker_v2:candidate:V05:011",
+          "sample_name": "QSC-4",
+          "observed": 95.5,
+          "predicted": 96.35817426386501
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R013_CY01::early20",
+          "source_family": "doi:10.1021/acsomega.4c11529",
+          "material_key": "doi:10.1021/acsomega.4c11529::EUAC1-60",
+          "curve_id": "pdf_curve_v3b:legacy:R013_CY01",
+          "sample_name": "EUAC1-60",
+          "observed": 89.9,
+          "predicted": 90.10805403926508
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "source_family": "doi:10.1039/d6ra04144b",
+          "material_key": "doi:10.1039/d6ra04144b::A-NSC8",
+          "curve_id": "marker_v2:v25:Leather_ANSC8_3E_C10000",
+          "sample_name": "A-NSC8",
+          "observed": 99.2,
+          "predicted": 97.85792065207795
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+          "source_family": "doi:10.3390/nano12050810",
+          "material_key": "development:doi:10.3390/nano12050810::3E::SD-AC",
+          "curve_id": "development:doi:10.3390/nano12050810::3E::SD-AC",
+          "sample_name": "SD-AC",
+          "observed": 87.03,
+          "predicted": 89.32501935846099
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE052::early20",
+          "source_family": "doi:10.3390/polym17111544",
+          "material_key": "doi:10.3390/polym17111544::SC-0.03",
+          "curve_id": "marker_v2:candidate:TE052",
+          "sample_name": "SC-0.03",
+          "observed": 93.7,
+          "predicted": 92.83037673553022
+        }
+      ]
+    },
+    "mild_under5pp": {
+      "rows": 19,
+      "sources": 15,
+      "metrics": {
+        "mae": 1.8429135113674273,
+        "rmse": 2.5251841169023335,
+        "r2": 0.7262804381488923,
+        "mape_pct": 2.0524579533107015,
+        "p90_ape_pct": 3.9914678631980847,
+        "p90_absolute_error": 3.60469462725419,
+        "source_p90_mae": 3.5399860259663343
+      },
+      "worst_overprediction": {
+        "sample": "AC-600C",
+        "pp": 6.858266652489647,
+        "row_id": "candidate:TE037::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.12143133622865723,
+        "percentile_interval_pp": [
+          -0.2651141497476636,
+          -0.002626822834594805
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_005_T01::early20",
+          "source_family": "doi:10.1016/j.biombioe.2026.109160",
+          "material_key": "doi:10.1016/j.biombioe.2026.109160::NCHU20",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_005_T01",
+          "sample_name": "NCHU20",
+          "observed": 91.08,
+          "predicted": 91.34871464087598
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE037::early20",
+          "source_family": "doi:10.1016/j.heliyon.2024.e25628",
+          "material_key": "doi:10.1016/j.heliyon.2024.e25628::AC-600C",
+          "curve_id": "marker_v2:candidate:TE037",
+          "sample_name": "AC-600C",
+          "observed": 78.4,
+          "predicted": 85.25826665248965
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:008::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC",
+          "curve_id": "marker_v2:candidate:V05:008",
+          "sample_name": "QSC",
+          "observed": 93.6,
+          "predicted": 91.21198862133065
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:009::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-2",
+          "curve_id": "marker_v2:candidate:V05:009",
+          "sample_name": "QSC-2",
+          "observed": 94.8,
+          "predicted": 96.84761343210549
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:011::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-4",
+          "curve_id": "marker_v2:candidate:V05:011",
+          "sample_name": "QSC-4",
+          "observed": 95.5,
+          "predicted": 96.35817426386501
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "source_family": "doi:10.1039/d6ra04144b",
+          "material_key": "doi:10.1039/d6ra04144b::A-NSC8",
+          "curve_id": "marker_v2:v25:Leather_ANSC8_3E_C10000",
+          "sample_name": "A-NSC8",
+          "observed": 99.2,
+          "predicted": 97.85792065207795
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE052::early20",
+          "source_family": "doi:10.3390/polym17111544",
+          "material_key": "doi:10.3390/polym17111544::SC-0.03",
+          "curve_id": "marker_v2:candidate:TE052",
+          "sample_name": "SC-0.03",
+          "observed": 93.7,
+          "predicted": 92.83037673553022
+        }
+      ]
+    },
+    "bet1000_current5to10": {
+      "rows": 15,
+      "sources": 14,
+      "metrics": {
+        "mae": 1.6118428663510793,
+        "rmse": 1.9854116576881486,
+        "r2": 0.7838070716464818,
+        "mape_pct": 1.7381578336025985,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.30062866056795
+      },
+      "worst_overprediction": {
+        "sample": "KAC-5",
+        "pp": 3.60469462725419,
+        "row_id": "candidate:TE026::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.12588773628545422,
+        "percentile_interval_pp": [
+          -0.2778509730627805,
+          0.004500209394560456
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_005_T01::early20",
+          "source_family": "doi:10.1016/j.biombioe.2026.109160",
+          "material_key": "doi:10.1016/j.biombioe.2026.109160::NCHU20",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_005_T01",
+          "sample_name": "NCHU20",
+          "observed": 91.08,
+          "predicted": 91.34871464087598
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "v25:Leather_ANSC8_3E_C10000::early20",
+          "source_family": "doi:10.1039/d6ra04144b",
+          "material_key": "doi:10.1039/d6ra04144b::A-NSC8",
+          "curve_id": "marker_v2:v25:Leather_ANSC8_3E_C10000",
+          "sample_name": "A-NSC8",
+          "observed": 99.2,
+          "predicted": 97.85792065207795
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        }
+      ]
+    },
+    "bet1000_window_minus1_to_0": {
+      "rows": 13,
+      "sources": 12,
+      "metrics": {
+        "mae": 1.7462505116764229,
+        "rmse": 2.107776232834739,
+        "r2": 0.7575206488667923,
+        "mape_pct": 1.8905229713434315,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.3954916362123497
+      },
+      "worst_overprediction": {
+        "sample": "KAC-5",
+        "pp": 3.60469462725419,
+        "row_id": "candidate:TE026::early20"
+      },
+      "regression": [],
+      "paired_mae": {
+        "delta_mae_pp": -0.1218612950914905,
+        "percentile_interval_pp": [
+          -0.3002895112331317,
+          0.023698431555493855
+        ]
+      },
+      "predictions": [
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_039_T01::early20",
+          "source_family": "doi:10.1002/asia.70648",
+          "material_key": "doi:10.1002/asia.70648::YZPC-3",
+          "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+          "sample_name": "YZPC-3",
+          "observed": 96.0,
+          "predicted": 96.79023404604652
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE026::early20",
+          "source_family": "doi:10.1002/ente.202201281",
+          "material_key": "doi:10.1002/ente.202201281::KAC-5",
+          "curve_id": "pdf_curve_v3:candidate:TE026",
+          "sample_name": "KAC-5",
+          "observed": 90.31,
+          "predicted": 93.91469462725419
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_025_T01::early20",
+          "source_family": "doi:10.1016/j.ijbiomac.2023.128794",
+          "material_key": "doi:10.1016/j.ijbiomac.2023.128794::RMAC-800",
+          "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+          "sample_name": "RMAC-800",
+          "observed": 92.0,
+          "predicted": 90.45574133872381
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "legacy:R078_CY01::early20",
+          "source_family": "doi:10.1016/j.jpcs.2023.111318",
+          "material_key": "doi:10.1016/j.jpcs.2023.111318::C/600C",
+          "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+          "sample_name": "C/600C",
+          "observed": 98.1,
+          "predicted": 96.20611563887877
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:010::early20",
+          "source_family": "doi:10.1021/acsomega.3c04692",
+          "material_key": "doi:10.1021/acsomega.3c04692::QSC-3",
+          "curve_id": "marker_v2:candidate:V05:010",
+          "sample_name": "QSC-3",
+          "observed": 97.8,
+          "predicted": 96.38732071008096
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source_family": "doi:10.1038/s41598-026-36557-4",
+          "material_key": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+          "sample_name": "SPC3",
+          "observed": 95.6,
+          "predicted": 95.32609996498388
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE021::early20",
+          "source_family": "doi:10.1039/d4ta02115k",
+          "material_key": "doi:10.1039/d4ta02115k::OPBNP",
+          "curve_id": "pdf_curve_v3b:candidate:TE021",
+          "sample_name": "OPBNP",
+          "observed": 93.6,
+          "predicted": 96.56860824581254
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE025::early20",
+          "source_family": "doi:10.1039/d4ya00076e",
+          "material_key": "doi:10.1039/d4ya00076e::SSC2-0.6",
+          "curve_id": "pdf_curve_v3b:candidate:TE025",
+          "sample_name": "SSC2-0.6",
+          "observed": 93.18,
+          "predicted": 93.35398757908382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "incoming:ADD_031_T01::early20",
+          "source_family": "doi:10.1088/1361-6528/ace97a",
+          "material_key": "doi:10.1088/1361-6528/ace97a::SS-300",
+          "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+          "sample_name": "SS-300",
+          "observed": 98.3,
+          "predicted": 97.07307110810316
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE033::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::WET-1",
+          "curve_id": "marker_v2:candidate:TE033",
+          "sample_name": "WET-1",
+          "observed": 94.4,
+          "predicted": 94.36669077503139
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE034::early20",
+          "source_family": "doi:10.3390/mi14030572",
+          "material_key": "doi:10.3390/mi14030572::DRY-1",
+          "curve_id": "marker_v2:candidate:TE034",
+          "sample_name": "DRY-1",
+          "observed": 97.8,
+          "predicted": 96.41535002082412
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:TE009::early20",
+          "source_family": "doi:10.3390/molecules28186543",
+          "material_key": "doi:10.3390/molecules28186543::YPAC-1",
+          "curve_id": "marker_v2:candidate:TE009",
+          "sample_name": "YPAC-1",
+          "observed": 82.26,
+          "predicted": 85.17392767658382
+        },
+        {
+          "route": "3E",
+          "model": "post_screen_10000_midpoint",
+          "row_id": "candidate:V05:018::early20",
+          "source_family": "doi:10.3390/nano13172431",
+          "material_key": "doi:10.3390/nano13172431::SNPB-800-4",
+          "curve_id": "marker_v2:candidate:V05:018",
+          "sample_name": "SNPB-800-4",
+          "observed": 94.14,
+          "predicted": 90.69707687596545
+        }
+      ]
+    }
+  }
+}
