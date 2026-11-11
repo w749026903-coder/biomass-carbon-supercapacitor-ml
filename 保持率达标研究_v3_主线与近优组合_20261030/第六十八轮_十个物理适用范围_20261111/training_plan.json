@@ -1,0 +1,3766 @@
+{
+  "frozen_at": "2026-11-11T23:02:36.890235+08:00",
+  "parent_git": "457fd55164000560f7007bb2a7acb878fbca0c61",
+  "environment": {
+    "python": "3.12.14",
+    "sklearn": "1.7.2",
+    "xgboost": "3.1.1",
+    "numpy": "2.3.4",
+    "scipy": "1.16.3"
+  },
+  "target": "author capacitance retention pct at declared cycle count",
+  "parent_rules": {
+    "mol_L_min": 1.0,
+    "mol_L_max": 6.0,
+    "A_g_min": 1.0,
+    "A_g_max": 10.0
+  },
+  "parent_rows": [
+    "incoming:ADD_039_T01::early20",
+    "candidate:TE026::early20",
+    "incoming:ADD_005_T01::early20",
+    "candidate:TE037::early20",
+    "candidate:TE038::early20",
+    "incoming:ADD_025_T01::early20",
+    "legacy:R078_CY01::early20",
+    "candidate:V05:008::early20",
+    "candidate:V05:009::early20",
+    "candidate:V05:010::early20",
+    "candidate:V05:011::early20",
+    "legacy:R013_CY01::early20",
+    "candidate:TE021::early20",
+    "candidate:TE025::early20",
+    "v25:Leather_ANSC8_3E_C10000::early20",
+    "incoming:ADD_031_T01::early20",
+    "candidate:TE033::early20",
+    "candidate:TE034::early20",
+    "candidate:TE009::early20",
+    "candidate:V05:018::early20",
+    "candidate:TE052::early20",
+    "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+    "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+  ],
+  "scopes": {
+    "bet1000": {
+      "rules": {
+        "bet_min": 1000
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_005_T01::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:010::early20",
+        "legacy:R013_CY01::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "v25:Leather_ANSC8_3E_C10000::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.biombioe.2026.109160": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_005_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:010::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.4c11529": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R013_CY01::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1039/d6ra04144b": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "v25:Leather_ANSC8_3E_C10000::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "candidate:TE037::early20": [
+          "bet_min"
+        ],
+        "candidate:TE038::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:008::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:009::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:011::early20": [
+          "bet_min"
+        ],
+        "candidate:TE052::early20": [
+          "bet_min"
+        ],
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20": [
+          "bet_min"
+        ]
+      }
+    },
+    "bet1500": {
+      "rules": {
+        "bet_min": 1500
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "incoming:ADD_005_T01::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:010::early20",
+        "legacy:R013_CY01::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "v25:Leather_ANSC8_3E_C10000::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.biombioe.2026.109160": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_005_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:010::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.4c11529": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R013_CY01::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1039/d6ra04144b": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "v25:Leather_ANSC8_3E_C10000::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE009::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "candidate:TE026::early20": [
+          "bet_min"
+        ],
+        "candidate:TE037::early20": [
+          "bet_min"
+        ],
+        "candidate:TE038::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:008::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:009::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:011::early20": [
+          "bet_min"
+        ],
+        "incoming:ADD_031_T01::early20": [
+          "bet_min"
+        ],
+        "candidate:TE033::early20": [
+          "bet_min"
+        ],
+        "candidate:TE034::early20": [
+          "bet_min"
+        ],
+        "candidate:TE052::early20": [
+          "bet_min"
+        ],
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20": [
+          "bet_min"
+        ]
+      }
+    },
+    "koh2to6": {
+      "rules": {
+        "koh_min": 2
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "candidate:TE037::early20",
+        "candidate:TE038::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:008::early20",
+        "candidate:V05:009::early20",
+        "candidate:V05:010::early20",
+        "candidate:V05:011::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "candidate:TE052::early20",
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.heliyon.2024.e25628": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE037::early20",
+            "candidate:TE038::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano12050810": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        },
+        "doi:10.3390/polym17111544": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "candidate:TE038::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE052::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "incoming:ADD_005_T01::early20": [
+          "koh_min"
+        ],
+        "legacy:R013_CY01::early20": [
+          "koh_min"
+        ],
+        "v25:Leather_ANSC8_3E_C10000::early20": [
+          "koh_min"
+        ]
+      }
+    },
+    "current5to10": {
+      "rules": {
+        "current_min": 5
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_005_T01::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:008::early20",
+        "candidate:V05:009::early20",
+        "candidate:V05:010::early20",
+        "candidate:V05:011::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "v25:Leather_ANSC8_3E_C10000::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "candidate:TE052::early20",
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.biombioe.2026.109160": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_005_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1039/d6ra04144b": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "v25:Leather_ANSC8_3E_C10000::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano12050810": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        },
+        "doi:10.3390/polym17111544": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE052::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "candidate:TE037::early20": [
+          "current_min"
+        ],
+        "candidate:TE038::early20": [
+          "current_min"
+        ],
+        "legacy:R013_CY01::early20": [
+          "current_min"
+        ]
+      }
+    },
+    "window_minus1_to_0": {
+      "rules": {
+        "voltage_window": [
+          -1,
+          0
+        ]
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:008::early20",
+        "candidate:V05:009::early20",
+        "candidate:V05:010::early20",
+        "candidate:V05:011::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "candidate:TE052::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        },
+        "doi:10.3390/polym17111544": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE052::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "incoming:ADD_005_T01::early20": [
+          "voltage_window"
+        ],
+        "candidate:TE037::early20": [
+          "voltage_window"
+        ],
+        "candidate:TE038::early20": [
+          "voltage_window"
+        ],
+        "legacy:R013_CY01::early20": [
+          "voltage_window"
+        ],
+        "v25:Leather_ANSC8_3E_C10000::early20": [
+          "voltage_window"
+        ],
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20": [
+          "voltage_window"
+        ]
+      }
+    },
+    "hghgo": {
+      "rules": {
+        "reference": [
+          "Hg/HgO",
+          "HgO/Hg (reported order)"
+        ]
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_025_T01::early20",
+        "candidate:V05:008::early20",
+        "candidate:V05:009::early20",
+        "candidate:V05:010::early20",
+        "candidate:V05:011::early20",
+        "legacy:R013_CY01::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "candidate:TE052::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.4c11529": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R013_CY01::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        },
+        "doi:10.3390/polym17111544": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE052::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "incoming:ADD_005_T01::early20": [
+          "reference"
+        ],
+        "candidate:TE037::early20": [
+          "reference"
+        ],
+        "candidate:TE038::early20": [
+          "reference"
+        ],
+        "legacy:R078_CY01::early20": [
+          "reference"
+        ],
+        "v25:Leather_ANSC8_3E_C10000::early20": [
+          "reference"
+        ],
+        "candidate:TE033::early20": [
+          "reference"
+        ],
+        "candidate:TE034::early20": [
+          "reference"
+        ],
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20": [
+          "reference"
+        ]
+      }
+    },
+    "cycles5000to10000": {
+      "rules": {
+        "cycle_min": 5000
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:008::early20",
+        "candidate:V05:009::early20",
+        "candidate:V05:010::early20",
+        "candidate:V05:011::early20",
+        "legacy:R013_CY01::early20",
+        "candidate:TE021::early20",
+        "v25:Leather_ANSC8_3E_C10000::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "candidate:TE052::early20",
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.4c11529": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R013_CY01::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d6ra04144b": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "v25:Leather_ANSC8_3E_C10000::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano12050810": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        },
+        "doi:10.3390/polym17111544": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "legacy:R013_CY01::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE052::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "incoming:ADD_005_T01::early20": [
+          "cycle_min"
+        ],
+        "candidate:TE037::early20": [
+          "cycle_min"
+        ],
+        "candidate:TE038::early20": [
+          "cycle_min"
+        ],
+        "candidate:TE025::early20": [
+          "cycle_min"
+        ]
+      }
+    },
+    "mild_under5pp": {
+      "rules": {
+        "early_max_exclusive": 5
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_005_T01::early20",
+        "candidate:TE037::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:008::early20",
+        "candidate:V05:009::early20",
+        "candidate:V05:010::early20",
+        "candidate:V05:011::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "v25:Leather_ANSC8_3E_C10000::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:V05:018::early20",
+        "candidate:TE052::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.biombioe.2026.109160": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_005_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.heliyon.2024.e25628": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE037::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1039/d6ra04144b": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "v25:Leather_ANSC8_3E_C10000::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:V05:018::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE052::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        },
+        "doi:10.3390/polym17111544": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "candidate:TE037::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:008::early20",
+            "candidate:V05:009::early20",
+            "candidate:V05:010::early20",
+            "candidate:V05:011::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE052::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "candidate:TE038::early20": [
+          "early_max_exclusive"
+        ],
+        "legacy:R013_CY01::early20": [
+          "early_max_exclusive"
+        ],
+        "candidate:TE009::early20": [
+          "early_max_exclusive"
+        ],
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20": [
+          "early_max_exclusive"
+        ]
+      }
+    },
+    "bet1000_current5to10": {
+      "rules": {
+        "bet_min": 1000,
+        "current_min": 5
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_005_T01::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:010::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "v25:Leather_ANSC8_3E_C10000::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.biombioe.2026.109160": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_005_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:010::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1039/d6ra04144b": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "v25:Leather_ANSC8_3E_C10000::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_005_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "v25:Leather_ANSC8_3E_C10000::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "candidate:TE037::early20": [
+          "bet_min",
+          "current_min"
+        ],
+        "candidate:TE038::early20": [
+          "bet_min",
+          "current_min"
+        ],
+        "candidate:V05:008::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:009::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:011::early20": [
+          "bet_min"
+        ],
+        "legacy:R013_CY01::early20": [
+          "current_min"
+        ],
+        "candidate:TE052::early20": [
+          "bet_min"
+        ],
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20": [
+          "bet_min"
+        ]
+      }
+    },
+    "bet1000_window_minus1_to_0": {
+      "rules": {
+        "bet_min": 1000,
+        "voltage_window": [
+          -1,
+          0
+        ]
+      },
+      "rows": [
+        "incoming:ADD_039_T01::early20",
+        "candidate:TE026::early20",
+        "incoming:ADD_025_T01::early20",
+        "legacy:R078_CY01::early20",
+        "candidate:V05:010::early20",
+        "candidate:TE021::early20",
+        "candidate:TE025::early20",
+        "incoming:ADD_031_T01::early20",
+        "candidate:TE033::early20",
+        "candidate:TE034::early20",
+        "candidate:TE009::early20",
+        "candidate:V05:018::early20",
+        "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+      ],
+      "folds": {
+        "doi:10.1002/asia.70648": {
+          "train": [
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_039_T01::early20"
+          ]
+        },
+        "doi:10.1002/ente.202201281": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE026::early20"
+          ]
+        },
+        "doi:10.1016/j.ijbiomac.2023.128794": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_025_T01::early20"
+          ]
+        },
+        "doi:10.1016/j.jpcs.2023.111318": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "legacy:R078_CY01::early20"
+          ]
+        },
+        "doi:10.1021/acsomega.3c04692": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:010::early20"
+          ]
+        },
+        "doi:10.1038/s41598-026-36557-4": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20"
+          ],
+          "test": [
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ]
+        },
+        "doi:10.1039/d4ta02115k": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE021::early20"
+          ]
+        },
+        "doi:10.1039/d4ya00076e": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE025::early20"
+          ]
+        },
+        "doi:10.1088/1361-6528/ace97a": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "incoming:ADD_031_T01::early20"
+          ]
+        },
+        "doi:10.3390/mi14030572": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE009::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE033::early20",
+            "candidate:TE034::early20"
+          ]
+        },
+        "doi:10.3390/molecules28186543": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:V05:018::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:TE009::early20"
+          ]
+        },
+        "doi:10.3390/nano13172431": {
+          "train": [
+            "incoming:ADD_039_T01::early20",
+            "candidate:TE026::early20",
+            "incoming:ADD_025_T01::early20",
+            "legacy:R078_CY01::early20",
+            "candidate:V05:010::early20",
+            "candidate:TE021::early20",
+            "candidate:TE025::early20",
+            "incoming:ADD_031_T01::early20",
+            "candidate:TE033::early20",
+            "candidate:TE034::early20",
+            "candidate:TE009::early20",
+            "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20"
+          ],
+          "test": [
+            "candidate:V05:018::early20"
+          ]
+        }
+      },
+      "excluded": {
+        "incoming:ADD_005_T01::early20": [
+          "voltage_window"
+        ],
+        "candidate:TE037::early20": [
+          "bet_min",
+          "voltage_window"
+        ],
+        "candidate:TE038::early20": [
+          "bet_min",
+          "voltage_window"
+        ],
+        "candidate:V05:008::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:009::early20": [
+          "bet_min"
+        ],
+        "candidate:V05:011::early20": [
+          "bet_min"
+        ],
+        "legacy:R013_CY01::early20": [
+          "voltage_window"
+        ],
+        "v25:Leather_ANSC8_3E_C10000::early20": [
+          "voltage_window"
+        ],
+        "candidate:TE052::early20": [
+          "bet_min"
+        ],
+        "development:doi:10.3390/nano12050810::3E::SD-AC::early20": [
+          "bet_min",
+          "voltage_window"
+        ]
+      }
+    }
+  },
+  "minimum_development_sources": 10,
+  "configurations": [
+    {
+      "id": "GPR_early_p1_continuation_delta",
+      "family": "GPR_early",
+      "kind": "GPR",
+      "parameters": {
+        "length_scale": 0.7,
+        "alpha": 0.01,
+        "nu": 1.5
+      },
+      "feature_view": "continuation",
+      "static": false,
+      "target": "delta"
+    },
+    {
+      "id": "RF_early_p0_raw_delta",
+      "family": "RF_early",
+      "kind": "RF",
+      "parameters": {
+        "n_estimators": 160,
+        "max_depth": 6,
+        "min_samples_leaf": 2,
+        "max_features": 1.0
+      },
+      "feature_view": "raw",
+      "static": false,
+      "target": "delta"
+    }
+  ],
+  "criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "planned_fits": 278,
+  "decision": "Exploratory parallel screening. Rank matched MAE, jointly report R2, RMSE, tail, worst overprediction, sources and coverage. A challenger must have lower MAE and no regression in other tracked metrics or worst overprediction against P64 on exactly the same rows. Confirm selected scopes on untouched sources.",
+  "training_scope": "Two fixed P64 configurations with 50/50 output average. Each scope trains only in-scope sources; P64 and P59 archived controls filtered to exact matched test rows.",
+  "thresholds": "Round-number material/condition criteria for exploration, not universal standards. Exact voltage range refers to reported cycling window. No label used for scope membership.",
+  "protected": {
+    "tools/retention_scope_screen_v68.py": "a9903847d37c90997d47f1fec87eccd09d3e588aae9d92712ba3db2137bf980a",
+    "保持率达标研究_v3_主线与近优组合_20261030/第五十九轮_四条补证曲线来源留出再训练_20261107/input_snapshot.json": "18131a11eb0b9c6768f6460999659d2f696558f5bc0a3bb72586b3c928353c58",
+    "保持率达标研究_v3_主线与近优组合_20261030/第五十九轮_四条补证曲线来源留出再训练_20261107/heldout_predictions.json": "adde1638b9be9f49208b341032950187490dab2dc73986384c60f6470e575913",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十四轮_三电极温和早期适用范围_20261108/training_plan.json": "43a4a17afe1943b5698512575f74fe1d9678b6a80d16de465a063a9980ed7d8f",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十四轮_三电极温和早期适用范围_20261108/predictions.json": "dbf565971c54d9c88ec41b9c2f9fb520b4043674c6922655fc85d7e73b8fd5f2",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十四轮_三电极温和早期适用范围_20261108/applicability.json": "4b2a28c0224eb18adcdb9bf7ff8c8666ce6ae4418da6b582b3cb010f2952d056",
+    "tools/retention_mild_scope_v64.py": "8bcb4194c4d6ff3574e7bb35f2a79401902dcda620eae00dbde98ab088c38529",
+    "tools/retention_literature_svr_v65.py": "d151e797057f97e5730bff7cf985352f39c62f8f2211309bf5ebbe53e5a17b11",
+    "tools/retention_new_evidence_development_v59.py": "7c3dbbe401da2be0feeec027b36da53791000ce17968ac4af0efb2ab387db15d",
+    "tools/retention_shape_v4.py": "5f871167001c70f96630fdc54ebd466d2d05a152189cd19dfbe977b332dfe24a",
+    "tools/retention_v3_optimizer.py": "7d508b190bc56c47dd357288838724019381e5a34803106725e06299dfff982e",
+    "tools/run_small_sample_routes.py": "8aa64a9bb729ab55f03c9f77b7a6a01a2b785c14d175ace4d56f504073175818",
+    "tools/retention_horizon_normalization_v19.py": "9ca72d9a6007fa7541dcd7250ff3966375425ef9f13099dfdec27e7b813cda2b",
+    "tools/retention_sawdust_verify_v31.py": "870955ab28b40ba894adde67fa6d1dbb9b19e7875e0bb26b5c11ba7c1b8c8ed3"
+  }
+}
