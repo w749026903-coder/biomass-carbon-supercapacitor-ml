@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>电容保持率预测 · 第 67–69 轮</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f6f5;color:#17362c;font:16px/1.65 "Microsoft YaHei",sans-serif}
+main{max-width:880px;margin:auto;padding:32px 20px}
+h1{font-size:clamp(1.8rem,5vw,2.55rem);line-height:1.3;margin:5px 0 12px}
+h2{font-size:1.2rem;margin:0 0 12px}
+small{color:#4a645a}
+a{color:#166447;overflow-wrap:anywhere}
+section{margin-top:18px;padding:18px 20px;border:1px solid #cedbd3;border-radius:12px;background:#fff}
+.table{overflow:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+td,th{text-align:right;padding:8px 10px;border-bottom:1px solid #d5e1db}
+td:first-child,th:first-child{text-align:left}
+thead{background:#e9f1ec}
+.bar{background:#377f64;height:9px;border-radius:6px;width:var(--value)}
+.limit{background:#a16b31}
+.measure{margin:9px 0 14px}
+</style>
+<main>
+<small>2026 年 11 月 16 日 · 研究进度</small>
+<h1>哪些材料适合早期保持率预测</h1>
+<p>第 67 轮用真实中间圈数辅助训练，第 68 轮比较十种使用范围，第 69 轮检查逐篇评分敏感性。最新结果基于历史开发论文，正式独立验收 0 篇。</p>
+<section>
+<h2>两个值得保留的范围</h2>
+<div class="table" tabindex="0" role="region" aria-label="范围与误差">
+<table>
+<thead><tr><th>范围</th><th>记录／篇</th><th>MAE（百分点）</th><th>R²</th><th>逐篇暂去后的 R²</th></tr></thead>
+<tbody>
+<tr><td>BET ≥1,500 m²/g</td><td>12／12</td><td>1.436</td><td>0.828</td><td>0.657–0.879</td></tr>
+<tr><td>KOH 2–6 M</td><td>20／15</td><td>1.874</td><td>0.896</td><td>0.759–0.912</td></tr>
+</tbody></table></div>
+<p>高 BET 组平均误差更小。KOH 2–6 M 组的 R² 更接近项目目标。两个范围具有重合论文。</p>
+</section>
+<section>
+<h2>达到 R² &gt;0.95 所需的误差幅度</h2>
+<div class="measure">高 BET · 当前 RMSE 1.820 个百分点<div class="bar" style="--value:72.8%" aria-hidden="true"></div></div>
+<div class="measure">高 BET · 需低于 0.980<div class="bar limit" style="--value:39.2%" aria-hidden="true"></div></div>
+<div class="measure">KOH 2–6 M · 当前 RMSE 2.369 个百分点<div class="bar" style="--value:94.8%" aria-hidden="true"></div></div>
+<div class="measure">KOH 2–6 M · 需低于 1.642<div class="bar limit" style="--value:65.7%" aria-hidden="true"></div></div>
+<small>同一刻度为 0–2.5 个百分点。所需误差按各组现有终点的离散度计算。</small>
+</section>
+<section>
+<h2>制备工艺核查</h2>
+<p>已确认 YZPC-3、SNPB-800-4 和 SPC3 使用 KOH 活化。YPAC-1 的试剂名称与化学式冲突，暂留待核。下一步优先验证 KOH 2–6 M 的新论文，同时观察高 BET 子组的表现。</p>
+</section>
+<p><a href="第六十九轮_范围稳健性与活化工艺核查_20261116/README.md">核查报告和原文</a> · <a href="第六十八轮_十个物理适用范围_20261111/README.md">十种范围完整比较</a> · <a href="研究进度.html">研究进度</a></p>
+</main>
+</html>
