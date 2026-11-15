@@ -1,0 +1,77 @@
+{
+  "date_local": "2026-11-16",
+  "goal": "Prospective paper-held-out validation of specified-cycle capacitance retention",
+  "parent_git": "dc3295d4600cdc5c5a3e9a2efc010304d8f872bb",
+  "primary_scope": {
+    "system": "3E",
+    "material": "biomass-derived porous carbon",
+    "reported_electrolyte": "KOH",
+    "electrolyte_mol_L_inclusive": [
+      2,
+      6
+    ],
+    "reported_cycle_current_A_g_inclusive": [
+      1,
+      10
+    ],
+    "target_cycles_inclusive": [
+      1000,
+      10000
+    ],
+    "maximum_early_fraction": 0.2,
+    "minimum_verified_early_points": 3,
+    "amplitude_and_absolute_fitted_early_change_below_pp": 10
+  },
+  "subgroup": {
+    "reported_BET_m2_g_minimum_inclusive": 1500,
+    "denominator": "all eligible primary-scope records; report BET unavailable count"
+  },
+  "baseline": "P64 equal GPR/RF with fixed configuration and 23 archived development endpoints, when independent of all held papers",
+  "challenger": "For target 10000 cycles only, fit P67 midpoint augmentation using the frozen 15 author-figure observations and original 23 endpoints; retain P64 estimator and weight settings. For other targets reuse the baseline.",
+  "training_sources": "Check DOI, author/title and potential shared experimental lineage against frozen development sources. Reclassify pre-exposed or same-experiment sources as development.",
+  "before_unseal": "Confirm provenance, actual test protocol, three time-bounded points on same curve, normalization, and early scope; verify prediction lock including each eligible record and baseline outputs before reading its endpoint.",
+  "acceptance_criteria": {
+    "r2_gt": 0.95,
+    "mae_pp_max": 2,
+    "rmse_pp_max": 3,
+    "mape_pct_max": 5,
+    "p90_ape_pct_max": 10,
+    "p90_abs_pp_max": 5,
+    "source_p90_mae_pp_max": 5,
+    "mae_reduction_vs_each_baseline_min": 0.2,
+    "positive_predictions": true,
+    "complete_coverage": true
+  },
+  "generalization": "At least10 development source families and genuinely new untouched external-source validation; reuse of these development sources alone never achieves reliable-model acceptance.",
+  "reference_predictions": [
+    "training_source_mean",
+    "early_persistence",
+    "early_linear"
+  ],
+  "queries": [
+    "TITLE:supercapacitor* AND (TITLE:cellulose OR TITLE:lignin OR TITLE:bamboo OR TITLE:bagasse OR TITLE:tea OR TITLE:coffee) AND TITLE_ABS:carbon AND OPEN_ACCESS:Y",
+    "TITLE:supercapacitor* AND (TITLE:wood OR TITLE:husk OR TITLE:stalk OR TITLE:flower OR TITLE:fruit OR TITLE:pomace) AND TITLE_ABS:carbon AND OPEN_ACCESS:Y",
+    "TITLE_ABS:supercapacitor* AND (TITLE_ABS:\"potassium hydroxide\" OR TITLE_ABS:KOH) AND TITLE_ABS:\"plant waste\" AND OPEN_ACCESS:Y",
+    "TITLE:supercapacitor* AND (TITLE:biochar OR TITLE:biowaste OR TITLE:\"biomass-derived carbon\") AND OPEN_ACCESS:Y AND FIRST_PDATE:[2025-01-01 TO 2026-11-16]"
+  ],
+  "page_size": 100,
+  "max_structural_candidates": 6,
+  "protected": {
+    "tools/retention_prospective_screen_v70.py": "77a446e3591fd21f1d3a69ea3fc44f15c9d286640b86cc2612c77965284bb411",
+    "tools/retention_blind_reserve_v22.py": "d8feaf5870f578641a16f3cd0840d420669c472f89de77809f5b5d89737b29d2",
+    "tools/retention_new_evidence_development_v59.py": "7c3dbbe401da2be0feeec027b36da53791000ce17968ac4af0efb2ab387db15d",
+    "tools/retention_horizon_routes_v67.py": "f3d8db410b104c4600a81bcc3f53f8e5dbde7487820075748042047de25d907e",
+    "tools/retention_mild_scope_v64.py": "8bcb4194c4d6ff3574e7bb35f2a79401902dcda620eae00dbde98ab088c38529",
+    "data/current_training_latest.json": "e56d3ab9e219b78ee8c07dbd896bbeb9e0b6949b4a8574dc0d8f034f2b9fe725",
+    "data/current_retention_research.json": "fd5a60e55b34ccc92c5640271e255d9477da308e771af7dc21edf2c569b03463",
+    "保持率达标研究_v3_主线与近优组合_20261030/research_goal.json": "6a365fceacc7883aee6ba3ed57d943cb52f3db6dfeb513ee23c4003b4b9fe8c7",
+    "保持率达标研究_v3_主线与近优组合_20261030/第五十九轮_四条补证曲线来源留出再训练_20261107/input_snapshot.json": "18131a11eb0b9c6768f6460999659d2f696558f5bc0a3bb72586b3c928353c58",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十四轮_三电极温和早期适用范围_20261108/training_plan.json": "43a4a17afe1943b5698512575f74fe1d9678b6a80d16de465a063a9980ed7d8f",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十四轮_三电极温和早期适用范围_20261108/applicability.json": "4b2a28c0224eb18adcdb9bf7ff8c8666ce6ae4418da6b582b3cb010f2952d056",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十七轮_中间圈数与万圈限域_20261111/training_plan.json": "7b987b280c285b3cc55adb13be57812c055e55f1413a2de1bcfdb6c42df9b52d",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十七轮_中间圈数与万圈限域_20261111/midpoint_evidence.json": "ba66afea5cd7c7038ea76e5afaf01c40b8e1ab916d6bef42f2d86a56c99a13c3",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十七轮_中间圈数与万圈限域_20261111/diagnostic_10000.json": "6a669f7cdc8596fbc5f7eabe1f1b746326e8ddf180c94134d7b2dba152e2f60e",
+    "保持率达标研究_v3_主线与近优组合_20261030/第六十八轮_十个物理适用范围_20261111/training_plan.json": "dcf461f0fdc8df440a673d0d2f27a974e16db60b93ced9fc8ee009516fecf2cc",
+    "保持率达标研究_v3_主线与近优组合_20261030/第七十轮_定向盲测计划与题录筛查_20261116/plan.json": "f9349614f6677198c0a518ab9c62db0e9b7cf7623264c035283ae92ff992d7df"
+  }
+}
