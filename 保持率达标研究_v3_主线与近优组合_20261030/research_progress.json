@@ -1,5 +1,5 @@
 {
-  "goal_status": "active",
+  "goal_status": "paused",
   "high_accuracy_goal_achieved": false,
   "visual_reporting": {
     "cadence_rounds": 3,
@@ -54,12 +54,7 @@
     "2point_sparse_comparison"
   ],
   "last_goal_turn_classification": "progress",
-  "last_goal_turn_evidence": [
-    "6400fits completed,0fail/warn,429385technicalchecks",
-    "Confirmed MK9CE/retentionsemanticerrorfromprimaryaxes/body;old20%conclusionswithdrawn",
-    "v7r1sixprocessedrecordsand3hbluecurveforwardcorrected,63917checks",
-    "59frozenobjectspreserved,2pointerarchives;10%exactcohortidentityverified"
-  ],
+  "last_goal_turn_evidence": ["P76 seven early markers and one reviewed development source connected", "60 fixed fits, no failures or warnings; matched regression criteria not met", "User-requested conditional pause; concrete external literature and numerical-curve needs documented"],
   "phase8": "local_RPPAC_2E_curve_verified_v3c_active",
   "source_acquisition_route": "User asked to replace inaccessible website; prioritize local PDFs/SI, use public cached text with explicit pixel limitations. No further browser challenge attempts.",
   "phase8_new_actual_curves": 1,
@@ -1258,5 +1253,38 @@
       "evidence_sha256": "bb7380bc847fa9ce556528e422fd191b497da8e68b99448c43df21a4944ff363",
       "stage_visual": "阶段可视化报告_至第75轮_20261116.html",
       "stage_visual_sha256": "6e27b1c4b7b12277494881812ba8f0326cfb4314632bb340efaa2708e19c0243"
+    },
+    "phase76": {
+      "status": "completed_data_increment_comparison_no_candidate_promoted",
+      "fits": 60,
+      "failures": 0,
+      "warnings": 0,
+      "rows_sources": [
+        24,
+        19
+      ],
+      "primary_same_old_rows_sources": [
+        20,
+        15
+      ],
+      "retained_metrics": {
+        "mae": 1.8734588672202577,
+        "rmse": 2.368998989404671,
+        "r2": 0.8959345212343076,
+        "mape_pct": 2.093954112125478,
+        "p90_ape_pct": 3.6572372254456664,
+        "p90_absolute_error": 3.44292312403455,
+        "source_p90_mae": 3.5399860259663343
+      },
+      "candidate_regressed": true,
+      "independent_scored_sources": 1,
+      "independent_r2": null,
+      "high_bet_independent_sources": 0,
+      "formal_acceptance": false,
+      "direction_decision": "Pause per 2026-11-18 user instruction, pending informative curve/raw table or candidate full text; do not infer data scarcity is proven cause of model error.",
+      "report": "第七十六轮_莲茎补证与同批增量对照_20261118/README.md",
+      "results_sha256": "6f9d052b1b221682f316780e68d48e38eb458e30bf837e29f30775f42caf01ad",
+      "verification_sha256": "0870376cc00a1177f2a7f51015063e99b469e82417765699e75dab41c37f4ca7",
+      "direction_review_sha256": "712b310abf003f9876e890ac58b3d83f61150af2a3ff90ac72b5c5afa2a0a97a"
     }
 }
