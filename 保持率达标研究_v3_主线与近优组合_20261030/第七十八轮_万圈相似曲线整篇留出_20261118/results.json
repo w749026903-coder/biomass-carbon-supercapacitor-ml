@@ -1,0 +1,437 @@
+{
+  "metrics": {
+    "all": {
+      "control": {
+        "rows": 20,
+        "papers": 15,
+        "mae": 1.8734588672202575,
+        "rmse": 2.368998989404671,
+        "r2": 0.8959345212343075,
+        "mape": 2.093954112125478,
+        "p90_ape": 3.6572372254456664,
+        "p90_abs": 3.44292312403455,
+        "src_p90_mae": 3.5399860259663343,
+        "max_abs": 6.858266652489647
+      },
+      "candidate": {
+        "rows": 20,
+        "papers": 15,
+        "mae": 2.5309441063906615,
+        "rmse": 3.22076502050777,
+        "r2": 0.807648748015781,
+        "mape": 2.8154138767959975,
+        "p90_ape": 5.222009062089439,
+        "p90_abs": 4.9159993310509975,
+        "src_p90_mae": 4.502474076666246,
+        "max_abs": 7.147830900743628
+      }
+    },
+    "10000": {
+      "control": {
+        "rows": 12,
+        "papers": 9,
+        "mae": 2.1677983739582927,
+        "rmse": 2.441751497944193,
+        "r2": 0.688569619185791,
+        "mape": 2.3946066301566042,
+        "p90_ape": 3.9914678631980847,
+        "p90_abs": 3.60469462725419,
+        "src_p90_mae": 3.4752774246784783,
+        "max_abs": 3.60469462725419
+      },
+      "candidate": {
+        "rows": 12,
+        "papers": 9,
+        "mae": 3.263607105908966,
+        "rmse": 3.7279264415475644,
+        "r2": 0.2740733841645059,
+        "mape": 3.597039571274136,
+        "p90_ape": 8.213065495511465,
+        "p90_abs": 7.147830900743628,
+        "src_p90_mae": 5.362365644989524,
+        "max_abs": 7.147830900743628
+      }
+    }
+  },
+  "gates": {
+    "all mae": false,
+    "all rmse": false,
+    "all r2": false,
+    "10000 mae": false,
+    "10000 rmse": false,
+    "10000 r2": false,
+    "p90_abs": false,
+    "src_p90_mae": false,
+    "max_abs": false,
+    "coverage_positive": true,
+    "changed_source_count": true
+  },
+  "retain_as_research_candidate": false,
+  "delta_mae_source_bootstrap_95pp": [
+    -0.044913135670613835,
+    1.5119150376839359
+  ],
+  "rows": [
+    {
+      "row": "incoming:ADD_039_T01::early20",
+      "curve_id": "pdf_curve_v3:incoming:ADD_039_T01",
+      "source": "doi:10.1002/asia.70648",
+      "sample": "YZPC-3",
+      "horizon": 10000.0,
+      "observed": 96.0,
+      "control": 96.79023404604652,
+      "candidate": 94.02457073642029,
+      "donors": [
+        {
+          "donor": "candidate:TE021::early20",
+          "source": "doi:10.1039/d4ta02115k",
+          "shared_cycle": 1500,
+          "estimate": 93.0149480968858,
+          "weight": 0.44621200490418794
+        },
+        {
+          "donor": "candidate:TE026::early20",
+          "source": "doi:10.1002/ente.202201281",
+          "shared_cycle": 1500,
+          "estimate": 92.09217508373544,
+          "weight": 0.4444409574874606
+        },
+        {
+          "donor": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source": "doi:10.1038/s41598-026-36557-4",
+          "shared_cycle": 1500,
+          "estimate": 97.33917060123527,
+          "weight": 0.39502249734758677
+        }
+      ],
+      "eligible_donor_sources": 3
+    },
+    {
+      "row": "candidate:TE026::early20",
+      "curve_id": "pdf_curve_v3:candidate:TE026",
+      "source": "doi:10.1002/ente.202201281",
+      "sample": "KAC-5",
+      "horizon": 10000.0,
+      "observed": 90.31,
+      "control": 93.91469462725419,
+      "candidate": 94.19218619508912,
+      "donors": [
+        {
+          "donor": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+          "source": "doi:10.1038/s41598-026-36557-4",
+          "shared_cycle": 1500,
+          "estimate": 95.55699551749983,
+          "weight": 0.6753560114374347
+        },
+        {
+          "donor": "incoming:ADD_039_T01::early20",
+          "source": "doi:10.1002/asia.70648",
+          "shared_cycle": 1500,
+          "estimate": 94.21782491626456,
+          "weight": 0.4444409574874606
+        },
+        {
+          "donor": "candidate:TE021::early20",
+          "source": "doi:10.1039/d4ta02115k",
+          "shared_cycle": 1500,
+          "estimate": 91.23277301315036,
+          "weight": 0.31530814414111635
+        }
+      ],
+      "eligible_donor_sources": 3
+    },
+    {
+      "row": "candidate:TE037::early20",
+      "curve_id": "marker_v2:candidate:TE037",
+      "source": "doi:10.1016/j.heliyon.2024.e25628",
+      "sample": "AC-600C",
+      "horizon": 1000.0,
+      "observed": 78.4,
+      "control": 85.25826665248965,
+      "candidate": 85.25826665248965,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:TE038::early20",
+      "curve_id": "marker_v2:candidate:TE038",
+      "source": "doi:10.1016/j.heliyon.2024.e25628",
+      "sample": "AC-700C",
+      "horizon": 1000.0,
+      "observed": 62.2,
+      "control": 62.77832123558102,
+      "candidate": 62.77832123558102,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "incoming:ADD_025_T01::early20",
+      "curve_id": "pdf_curve_v3:incoming:ADD_025_T01",
+      "source": "doi:10.1016/j.ijbiomac.2023.128794",
+      "sample": "RMAC-800",
+      "horizon": 10000.0,
+      "observed": 92.0,
+      "control": 90.45574133872381,
+      "candidate": 90.31135752986877,
+      "donors": [
+        {
+          "donor": "candidate:V05:018::early20",
+          "source": "doi:10.3390/nano13172431",
+          "shared_cycle": 1000,
+          "estimate": 94.57144811115936,
+          "weight": 0.4382682512327018
+        },
+        {
+          "donor": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+          "source": "doi:10.3390/nano12050810",
+          "shared_cycle": 1000,
+          "estimate": 85.64346825405394,
+          "weight": 0.39998002069772826
+        }
+      ],
+      "eligible_donor_sources": 2
+    },
+    {
+      "row": "legacy:R078_CY01::early20",
+      "curve_id": "pdf_curve_v3b:legacy:R078_CY01",
+      "source": "doi:10.1016/j.jpcs.2023.111318",
+      "sample": "C/600C",
+      "horizon": 8000.0,
+      "observed": 98.1,
+      "control": 96.20611563887877,
+      "candidate": 96.20611563887877,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:V05:008::early20",
+      "curve_id": "marker_v2:candidate:V05:008",
+      "source": "doi:10.1021/acsomega.3c04692",
+      "sample": "QSC",
+      "horizon": 10000.0,
+      "observed": 93.6,
+      "control": 91.21198862133065,
+      "candidate": 91.21198862133065,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:V05:009::early20",
+      "curve_id": "marker_v2:candidate:V05:009",
+      "source": "doi:10.1021/acsomega.3c04692",
+      "sample": "QSC-2",
+      "horizon": 10000.0,
+      "observed": 94.8,
+      "control": 96.84761343210549,
+      "candidate": 96.84761343210549,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:V05:010::early20",
+      "curve_id": "marker_v2:candidate:V05:010",
+      "source": "doi:10.1021/acsomega.3c04692",
+      "sample": "QSC-3",
+      "horizon": 10000.0,
+      "observed": 97.8,
+      "control": 96.38732071008096,
+      "candidate": 96.38732071008096,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:V05:011::early20",
+      "curve_id": "marker_v2:candidate:V05:011",
+      "source": "doi:10.1021/acsomega.3c04692",
+      "sample": "QSC-4",
+      "horizon": 10000.0,
+      "observed": 95.5,
+      "control": 96.35817426386501,
+      "candidate": 96.35817426386501,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:TE021::early20",
+      "curve_id": "pdf_curve_v3b:candidate:TE021",
+      "source": "doi:10.1039/d4ta02115k",
+      "sample": "OPBNP",
+      "horizon": 10000.0,
+      "observed": 93.6,
+      "control": 96.56860824581254,
+      "candidate": 94.96701326878451,
+      "donors": [
+        {
+          "donor": "incoming:ADD_039_T01::early20",
+          "source": "doi:10.1002/asia.70648",
+          "shared_cycle": 1500,
+          "estimate": 96.58505190311419,
+          "weight": 0.44621200490418794
+        },
+        {
+          "donor": "candidate:TE026::early20",
+          "source": "doi:10.1002/ente.202201281",
+          "shared_cycle": 1500,
+          "estimate": 92.67722698684963,
+          "weight": 0.31530814414111635
+        }
+      ],
+      "eligible_donor_sources": 2
+    },
+    {
+      "row": "candidate:TE025::early20",
+      "curve_id": "pdf_curve_v3b:candidate:TE025",
+      "source": "doi:10.1039/d4ya00076e",
+      "sample": "SSC2-0.6",
+      "horizon": 2000.0,
+      "observed": 93.18,
+      "control": 93.35398757908382,
+      "candidate": 93.35398757908382,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "incoming:ADD_031_T01::early20",
+      "curve_id": "pdf_curve_v3b:incoming:ADD_031_T01",
+      "source": "doi:10.1088/1361-6528/ace97a",
+      "sample": "SS-300",
+      "horizon": 8000.0,
+      "observed": 98.3,
+      "control": 97.07307110810316,
+      "candidate": 97.07307110810316,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:TE033::early20",
+      "curve_id": "marker_v2:candidate:TE033",
+      "source": "doi:10.3390/mi14030572",
+      "sample": "WET-1",
+      "horizon": 5000.0,
+      "observed": 94.4,
+      "control": 94.36669077503139,
+      "candidate": 94.36669077503139,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:TE034::early20",
+      "curve_id": "marker_v2:candidate:TE034",
+      "source": "doi:10.3390/mi14030572",
+      "sample": "DRY-1",
+      "horizon": 5000.0,
+      "observed": 97.8,
+      "control": 96.41535002082412,
+      "candidate": 96.41535002082412,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:TE009::early20",
+      "curve_id": "marker_v2:candidate:TE009",
+      "source": "doi:10.3390/molecules28186543",
+      "sample": "YPAC-1",
+      "horizon": 10000.0,
+      "observed": 82.26,
+      "control": 85.17392767658382,
+      "candidate": 85.17392767658382,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "candidate:V05:018::early20",
+      "curve_id": "marker_v2:candidate:V05:018",
+      "source": "doi:10.3390/nano13172431",
+      "sample": "SNPB-800-4",
+      "horizon": 10000.0,
+      "observed": 94.14,
+      "control": 90.69707687596545,
+      "candidate": 89.224000668949,
+      "donors": [
+        {
+          "donor": "incoming:ADD_025_T01::early20",
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "shared_cycle": 1000,
+          "estimate": 91.56855188884066,
+          "weight": 0.4382682512327018
+        },
+        {
+          "donor": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+          "source": "doi:10.3390/nano12050810",
+          "shared_cycle": 1500,
+          "estimate": 85.9987161725291,
+          "weight": 0.318589682308023
+        }
+      ],
+      "eligible_donor_sources": 2
+    },
+    {
+      "row": "candidate:TE052::early20",
+      "curve_id": "marker_v2:candidate:TE052",
+      "source": "doi:10.3390/polym17111544",
+      "sample": "SC-0.03",
+      "horizon": 5000.0,
+      "observed": 93.7,
+      "control": 92.83037673553022,
+      "candidate": 92.83037673553022,
+      "donors": [],
+      "eligible_donor_sources": 0
+    },
+    {
+      "row": "development:doi:10.3390/nano12050810::3E::SD-AC::early20",
+      "curve_id": "development:doi:10.3390/nano12050810::3E::SD-AC",
+      "source": "doi:10.3390/nano12050810",
+      "sample": "SD-AC",
+      "horizon": 10000,
+      "observed": 87.03,
+      "control": 89.32501935846099,
+      "candidate": 94.17783090074363,
+      "donors": [
+        {
+          "donor": "incoming:ADD_025_T01::early20",
+          "source": "doi:10.1016/j.ijbiomac.2023.128794",
+          "shared_cycle": 1000,
+          "estimate": 93.38653174594606,
+          "weight": 0.39998002069772826
+        },
+        {
+          "donor": "candidate:V05:018::early20",
+          "source": "doi:10.3390/nano13172431",
+          "shared_cycle": 1500,
+          "estimate": 95.17128382747092,
+          "weight": 0.318589682308023
+        }
+      ],
+      "eligible_donor_sources": 2
+    },
+    {
+      "row": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3::early20",
+      "curve_id": "development:doi:10.1038/s41598-026-36557-4::3E::SPC3",
+      "source": "doi:10.1038/s41598-026-36557-4",
+      "sample": "SPC3",
+      "horizon": 10000,
+      "observed": 95.6,
+      "control": 95.32609996498388,
+      "candidate": 91.79518474392204,
+      "donors": [
+        {
+          "donor": "candidate:TE026::early20",
+          "source": "doi:10.1002/ente.202201281",
+          "shared_cycle": 1500,
+          "estimate": 90.35300448250015,
+          "weight": 0.6753560114374347
+        },
+        {
+          "donor": "incoming:ADD_039_T01::early20",
+          "source": "doi:10.1002/asia.70648",
+          "shared_cycle": 1500,
+          "estimate": 94.26082939876471,
+          "weight": 0.39502249734758677
+        }
+      ],
+      "eligible_donor_sources": 2
+    }
+  ],
+  "locked_new_external_sources": 0,
+  "pointer_switched": false
+}
