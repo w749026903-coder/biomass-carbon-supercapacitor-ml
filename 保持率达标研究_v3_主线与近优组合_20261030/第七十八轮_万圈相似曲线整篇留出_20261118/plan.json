@@ -1,0 +1,65 @@
+{
+  "round": 78,
+  "parent": "78dcbe1d20ae2c452e5faf4618f66ad2bfb1489b",
+  "protected": {
+    "rows": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第五十九轮_四条补证曲线来源留出再训练_20261107/input_snapshot.json",
+      "sha256": "18131a11eb0b9c6768f6460999659d2f696558f5bc0a3bb72586b3c928353c58"
+    },
+    "cohort": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第六十四轮_三电极温和早期适用范围_20261108/training_plan.json",
+      "sha256": "43a4a17afe1943b5698512575f74fe1d9678b6a80d16de465a063a9980ed7d8f"
+    },
+    "reference": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第六十七轮_中间圈数与万圈限域_20261111/diagnostic_10000.json",
+      "sha256": "6a669f7cdc8596fbc5f7eabe1f1b746326e8ddf180c94134d7b2dba152e2f60e"
+    },
+    "simple": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第六十四轮_三电极温和早期适用范围_20261108/predictions.json",
+      "sha256": "dbf565971c54d9c88ec41b9c2f9fb520b4043674c6922655fc85d7e73b8fd5f2"
+    },
+    "wood": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第三十轮_杉木屑双体系原图_20261105/curve_evidence.json",
+      "sha256": "cba6f05756e45a692edad48a2c25b8d042f52dc9cc497e71d4f615b61fbc095c"
+    },
+    "strawberry": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第三十五轮_长循环补证与草莓秸秆原图_20261106/strawberry_evidence.json",
+      "sha256": "ade870a7ad9f2fe354b831b7317f1e7fac3c65b01073cf66db15170171c44e43"
+    },
+    "db_pointer": {
+      "path": "data/current_retention_research.json",
+      "sha256": "fd5a60e55b34ccc92c5640271e255d9477da308e771af7dc21edf2c569b03463"
+    },
+    "training_pointer": {
+      "path": "data/current_training_latest.json",
+      "sha256": "e56d3ab9e219b78ee8c07dbd896bbeb9e0b6949b4a8574dc0d8f034f2b9fe725"
+    },
+    "model_reference": {
+      "path": "data/current_retention_model_benchmarks.json",
+      "sha256": "6164fe41d9fa411c3fca897ada5a02dfb1b45d868c77b2d973aa86e9103bf3d5"
+    },
+    "late_external": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第七十五轮_盲测预测锁定核验_20261116/revealed_case.json",
+      "sha256": "bb7380bc847fa9ce556528e422fd191b497da8e68b99448c43df21a4944ff363"
+    },
+    "short_diagnostic": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第七十七轮_两篇正文与绿茶高BET核查_20261118/reveal_and_checks.json",
+      "sha256": "42ae370f1a1b7c90ea974a346c5aa6152ac023dad21164b2be2a9c518387da41"
+    },
+    "retained_results": {
+      "path": "保持率达标研究_v3_主线与近优组合_20261030/第七十六轮_莲茎补证与同批增量对照_20261118/results.json",
+      "sha256": "6f9d052b1b221682f316780e68d48e38eb458e30bf837e29f30775f42caf01ad"
+    }
+  },
+  "target": "capacitance retention percent at the specified horizon and conditions",
+  "evaluation": "known development data, source-held out; unchanged 20 rows/15 papers in 2–6 M KOH P64 mild 3E scope. No external records used to choose neighbors or score this model. Only 12 10000-cycle rows/9 sources eligible for alternative; everyone else is scored unchanged.",
+  "candidate_count": 1,
+  "donor_protocol": "Same 10000-cycle primary scope, different paper; reported A/g ratio <=2, KOH molarity difference <=3; if both cell voltage widths known, difference <=0.2 V. Missing width flagged, not imputed.",
+  "distance": "Grid cycles 500,1000,1500. Linear interpolation between verified early markers only, no extrapolation or synthetic training rows. Require >=2 common grid coordinates; all ordinates and last donor/query marker interval half widths (max side) <=2pp at used locations. Nominal shape match = RMS absolute difference in % at shared grid <=2pp. Distance = sqrt(shape_rms^2 + log2(Jd/Jq)^2 + ((Md-Mq)/3)^2).",
+  "neighbors": "One closest curve per other source (stable row_id tiebreak), closest 3 sources; require >=2. Transfer donor terminal minus donor value at last shared coordinate to query value there. Inverse (1 + distance) weight; otherwise use unchanged P67 frozen prediction. No intercept, blend sweep or tunable k.",
+  "measurements": "Upper x bound <=2000; compare lower/upper y envelopes; record pairwise common-grid values, actual-marker intervals, shared overlap, and registered endpoint differences for retrospective diagnosis only. Interpolated uncertainty descriptive, not statistical.",
+  "retention_rule": "Retain for further blind testing only if overall and 10000-cycle source-balanced MAE and RMSE strictly lower and R² strictly higher, overall source and absolute p90 errors and maximum absolute error do not rise, all rows predicted positive, changed predictions span at least two papers. Otherwise reject immediately; do not alter rollback state or test new variants after unblinding. Even development success is not deployment.",
+  "sensitivity": "Paired source bootstrap 10000 replicates seed 20261118 on MAE difference; fixed nearest matches with overlapping early reading envelopes are evidence for ambiguity, not causal proof.",
+  "short_horizon": "Reconcile the locked 1000-cycle comparison already done; no training, rerouting or use of GKN8 to adjust weights. No new blind sample.",
+  "checkpoint": "P64/P67, current pointer files and both P75/P77 locked evidence unchanged; no canonical database writes."
+}
