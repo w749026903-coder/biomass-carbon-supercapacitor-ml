@@ -44,7 +44,7 @@ def prep(folder):
             for field,val,unit in zip(['BET','micropore_area','mesopore_area','total_pore_volume','micropore_volume','mesopore_volume','micropore_volume_share','mesopore_volume_share','reported_Dg'],vals.split(),['m2/g']*3+['cm3/g']*3+['%','%','nm'],strict=True): fact(OIL,s,field,val,unit,'p8 Table 2')
     text=flat(rr[OIL].pages[10].extract_text());assert '93.01%' in text and '22.52' in text and '20.95' in text and '10 Ag-1' in text
     for j,cs in zip([.4,.8,1,3,5,10],[87.09,80.51,65.55,60.40,56.69,45.82],strict=True):
-        assert f'{cs:.2f}' in text;fact(OIL,'PRC8','GCD_specific_capacitance',cs,'F/g','p11 section 3.4 / Fig 10b',f'2E symmetric;aqueous Na2SO4;0–1 V;{j} A/g','separate_device_rate_series')
+        assert f'{cs:.2f}' in text;fact(OIL,'PRC8','GCD_specific_capacitance',cs,'F/g','p11 section 3.9 / Fig 10b',f'2E symmetric;aqueous Na2SO4;0–1 V;{j} A/g','separate_device_rate_series')
     for field,val,unit in [('initial_cycle_specific_capacitance',22.52,'F/g'),('later_cycle_specific_capacitance',20.95,'F/g'),('author_terminal_retention_approx',93.01,'%')]:
         fact(OIL,'PRC8',field,val,unit,'p11–12 Fig 10f and cycling paragraph','2E symmetric;Na2SO4;10 A/g;5000 cycles;mass denominator unconfirmed','separate_device_cycling')
     assert len(facts)==132 and len({(f['doi'],f['sample'],f['field'],f['condition']) for f in facts})==132
