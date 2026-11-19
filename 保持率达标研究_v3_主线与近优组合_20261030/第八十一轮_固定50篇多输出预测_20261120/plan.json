@@ -1,0 +1,70 @@
+{
+  "cohort_commit": "b7f86a5",
+  "database_sha256": "d4944ce49ccd42dbb893fbcb52a90921d8df726399316edb297604ce81871499",
+  "inputs_sha256": "aeead40097d5dfa002cfffbcd2ad4ce04e1de84186b730f757556f608dcd12b1",
+  "code_sha256": "27aa453ddac01c32cc95ed8f428ee4a23f73d43d34daf7d7be3c02f27034a8c7",
+  "latest": {
+    "version": "training_latest_v7r1_MK9_metric_corrected",
+    "directory": "全量文献训练数据接入_v7r1_循环指标纠错_20261031",
+    "database_file": "training_metric_correction_v7r1.sqlite",
+    "sha256": "5720c67c5f6ec0edf8dd97b50e40387894464a3823c9f29f7ea70cbefc47de3a",
+    "entry": "data.training_latest",
+    "new_model_fits": 0,
+    "metric_correction": "MK9: capacitance_retention65%,coulombic_efficiency79.3%;old79.3retention role superseded"
+  },
+  "versions": [
+    "3.12.14",
+    "2.3.4",
+    "1.7.2"
+  ],
+  "coverage": {
+    "protocol50": [
+      66,
+      50,
+      37
+    ],
+    "direct_A": [
+      51,
+      37,
+      37
+    ],
+    "early_B": [
+      37,
+      31,
+      31
+    ],
+    "specific_C": [
+      107,
+      16,
+      16
+    ],
+    "rate_C": [
+      48,
+      10,
+      10
+    ],
+    "BET": [
+      72,
+      16,
+      16
+    ]
+  },
+  "evaluators": [
+    "fold_mean",
+    "measured_anchor where applicable",
+    "ridge alpha 10",
+    "RF 48 depth 5 leaf 2",
+    "Huber GB 40 depth 2 leaf 3",
+    "fixed 50% ridge + 50% RF (primary)"
+  ],
+  "seed": 811,
+  "units": {
+    "protocol50": "pp",
+    "direct_A": "pp",
+    "early_B": "pp",
+    "specific_C": "F/g",
+    "rate_C": "F/g",
+    "BET": "m²/g"
+  },
+  "rules": "Every DOI held out entirely; equal total training and scoring weight per DOI. Only A-admitted rows train the 50-DOI protocol stress test. Keep all held-only rows for a separate audit, not primary training admissions. Group bootstrap measures descriptive uncertainty. Pearson r>0.90 is a screen, original retention goal R²>0.95, MAE<=2pp, RMSE<=3pp remains distinct. Do not select secondary winner as externally validated. No additional configurations after results. No formal threshold for non-retention MAE yet; compare source-weighted mean and measured reference. No prospective external cohort."
+}
